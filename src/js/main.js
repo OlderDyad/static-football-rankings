@@ -3,16 +3,32 @@ const ITEMS_PER_PAGE = 100;
 let currentPage = 1;
 let programsData = [];
 
+// Helper function to get image path
+function getImagePath(relativePath) {
+    if (!relativePath) return 'images/placeholder-image.jpg';
+    
+    if (currentConfig.useLocalImages) {
+        return `${currentConfig.imagesPath}/${relativePath.replace('images/', '')}`;
+    } else {
+        // Use WebV2 path
+        return `${currentConfig.webv2BasePath}/${relativePath}`;
+    }
+}
+
 // Initialize the page
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        // Show loading state
+        updateLoadingState(true);
+        
         // Fetch the programs data
         const response = await fetch('data/all-time-programs-fifty.json');
         programsData = await response.json();
         
         // Initialize the page with the first program's header
         if (programsData.length > 0) {
-            updateTeamHeader(programsData[0]);
+            const topProgram = programsData[0];
+            await updateTeamHeader(topProgram);
         }
         
         // Set up the initial view
@@ -21,27 +37,79 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         // Set up search functionality
         document.getElementById('searchInput').addEventListener('input', handleSearch);
+        
+        // Remove loading state
+        updateLoadingState(false);
     } catch (error) {
         console.error('Error initializing page:', error);
+        updateLoadingState(false, error.message);
     }
 });
+
+// Update loading state
+function updateLoadingState(isLoading, errorMessage = '') {
+    const header = document.querySelector('.team-header');
+    if (isLoading) {
+        header.innerHTML = `
+            <div class="container">
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p>Loading program data...</p>
+                </div>
+            </div>
+        `;
+    } else if (errorMessage) {
+        header.innerHTML = `
+            <div class="container">
+                <div class="text-center text-danger">
+                    <p>Error loading data: ${errorMessage}</p>
+                </div>
+            </div>
+        `;
+    }
+}
 
 // Update team header with program data
 function updateTeamHeader(program) {
     const header = document.querySelector('.team-header');
-    const teamName = document.querySelector('.team-name');
-    const teamMascot = document.querySelector('.team-mascot');
-    const teamLogo = document.querySelector('.team-logo');
-    const schoolLogo = document.querySelector('.school-logo');
+    const headerContent = `
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <img src="${getImagePath(program.LogoURL)}" 
+                         alt="${program.Team} Logo" 
+                         class="img-fluid team-logo" 
+                         style="max-height: 100px;" 
+                         onerror="this.src='images/placeholder-image.jpg'" />
+                </div>
+                <div class="col-md-6 text-center">
+                    <h2 class="team-name">${program.Team}</h2>
+                    <p class="team-mascot">${program.Mascot || ''}</p>
+                    <div class="team-stats">
+                        <small>Seasons: ${program.Seasons} | Combined Rating: ${program.AvgCombined.toFixed(3)}</small>
+                    </div>
+                </div>
+                <div class="col-md-3 text-right">
+                    <img src="${getImagePath(program.School_Logo_URL)}" 
+                         alt="${program.Team} School Logo" 
+                         class="img-fluid school-logo" 
+                         style="max-height: 100px;"
+                         onerror="this.src='images/placeholder-image.jpg'" />
+                </div>
+            </div>
+        </div>
+    `;
     
-    teamName.textContent = program.Team;
-    teamMascot.textContent = program.Mascot || '';
-    teamLogo.src = program.LogoURL || 'images/placeholder-image.jpg';
-    schoolLogo.src = program.School_Logo_URL || 'images/placeholder-image.jpg';
+    header.innerHTML = headerContent;
     
+    // Set header colors
     header.style.backgroundColor = program.PrimaryColor || '#000000';
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
+
+// Rest of your existing code...
 
 // Handle search functionality
 function handleSearch(event) {

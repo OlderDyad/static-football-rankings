@@ -1,0 +1,169 @@
+/* Base layout */
+.page {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 300px; /* Sidebar width */
+    background-color: #343a40;
+    color: white;
+    padding: 15px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    margin-left: 0; /* Removed unnecessary margin between panels */
+}
+
+/* Top navigation row */
+.top-row {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.top-row a {
+    color: #61dafb;
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+}
+
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Navigation menu */
+.nav-scrollable {
+    overflow-y: auto;
+    height: calc(100% - 3.5rem);
+    width: 300px;
+}
+
+.nav-item {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 5px;
+}
+
+/* Reduced indent for links */
+.nav-item a {
+    color: #d7d7d7;
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+    padding-left: 2px; /* Reduced padding for smaller indent */
+}
+
+.nav-item a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+/* Icon styles */
+.oi {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item a .oi {
+    margin-right: 5px; /* Reduced icon margin */
+    font-size: 0.8rem;
+}
+
+/* Red links with increased specificity */
+.nav-item.red-link a {
+    color: #ff6b6b !important; /* Force red color */
+}
+
+.nav-item.red-link a:hover {
+    color: #ff4757 !important; /* Darker red on hover */
+}
+
+.nav-item.red-link a.active {
+    background-color: rgba(255,99,99,0.25);
+    color: white;
+}
+
+/* Custom font */
+@font-face {
+    font-family: 'Monotype Corsiva';
+    src: url('/fonts/MonotypeCorsiva.ttf') format('truetype');
+}
+
+/* Responsive design */
+@media (max-width: 640.98px) {
+    .top-row:not(.auth) {
+        display: none;
+    }
+
+    .top-row.auth {
+        justify-content: space-between;
+    }
+
+    .top-row a, .top-row .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 300px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row, article {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .collapse {
+        display: block;
+    }
+
+    .nav-scrollable {
+        height: calc(100vh - 3.5rem);
+        overflow-y: auto;
+    }
+}
+
+
+
