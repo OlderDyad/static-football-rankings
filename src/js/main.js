@@ -1,7 +1,18 @@
-﻿// Configuration
+﻿// ============= 1. CORE FUNCTIONALITY =============
 const ITEMS_PER_PAGE = 100;
 let currentPage = 1;
 let programsData = [];
+
+// Add this function at the top level
+function updateTimestamp() {
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('en-US', {
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric'
+    });
+    document.getElementById('lastUpdated').textContent = formattedDate;
+}
 
 // Helper function to get image path
 function getImagePath(relativePath) {
@@ -10,43 +21,10 @@ function getImagePath(relativePath) {
     if (currentConfig.useLocalImages) {
         return `${currentConfig.imagesPath}/${relativePath.replace('images/', '')}`;
     } else {
-        // Use WebV2 path
         return `${currentConfig.webv2BasePath}/${relativePath}`;
     }
 }
 
-// Initialize the page
-document.addEventListener('DOMContentLoaded', async function() {
-    try {
-        // Show loading state
-        updateLoadingState(true);
-        
-        // Fetch the programs data
-        const response = await fetch('data/all-time-programs-fifty.json');
-        programsData = await response.json();
-        
-        // Initialize the page with the first program's header
-        if (programsData.length > 0) {
-            const topProgram = programsData[0];
-            await updateTeamHeader(topProgram);
-        }
-        
-        // Set up the initial view
-        setupPagination();
-        displayCurrentPage();
-        
-        // Set up search functionality
-        document.getElementById('searchInput').addEventListener('input', handleSearch);
-        
-        // Remove loading state
-        updateLoadingState(false);
-    } catch (error) {
-        console.error('Error initializing page:', error);
-        updateLoadingState(false, error.message);
-    }
-});
-
-// Update loading state
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
     if (isLoading) {
@@ -71,7 +49,6 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 }
 
-// Update team header with program data
 function updateTeamHeader(program) {
     const header = document.querySelector('.team-header');
     const headerContent = `
@@ -103,15 +80,10 @@ function updateTeamHeader(program) {
     `;
     
     header.innerHTML = headerContent;
-    
-    // Set header colors
     header.style.backgroundColor = program.PrimaryColor || '#000000';
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
 
-// Rest of your existing code...
-
-// Handle search functionality
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
     const filteredPrograms = programsData.filter(program => 
@@ -124,7 +96,6 @@ function handleSearch(event) {
     displayCurrentPage(filteredPrograms);
 }
 
-// Set up pagination
 function setupPagination(data = programsData) {
     const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
     const paginationElement = document.getElementById('pagination');
@@ -148,7 +119,6 @@ function setupPagination(data = programsData) {
     }
 }
 
-// Display current page of data
 function displayCurrentPage(data = programsData) {
     const tableBody = document.getElementById('programsTableBody');
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -159,7 +129,6 @@ function displayCurrentPage(data = programsData) {
     
     currentData.forEach(program => {
         const row = document.createElement('tr');
-        
         row.innerHTML = `
             <td>${program.Rank}</td>
             <td>${program.Team}</td>
@@ -171,10 +140,125 @@ function displayCurrentPage(data = programsData) {
             <td>${program.State}</td>
             <td>${program.Seasons}</td>
             <td>
-                <a href="/program/${encodeURIComponent(program.Team)}" class="btn btn-primary btn-sm">View Details</a>
+                <a href="/program/${encodeURIComponent(program.Team)}" 
+                   class="btn btn-primary btn-sm">View Details</a>
             </td>
         `;
-        
         tableBody.appendChild(row);
     });
 }
+
+// ============= 2. COMMENTS FUNCTIONALITY =============
+async function loadComments() {
+    try {
+        console.log('Loading comments...');
+        const response = await fetch('/api/comments');  // Add leading slash
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const comments = await response.json();
+        console.log('Comments loaded:', comments);
+        displayComments(comments);
+    } catch (error) {
+        console.error('Error loading comments:', error);
+    }
+}
+
+function displayComments(comments) {
+    const commentsListElement = document.getElementById('commentsList');
+    if (!commentsListElement) {
+        console.error('Comments list element not found');
+        return;
+    }
+    commentsListElement.innerHTML = comments.map(comment => `
+        <div class="comment mb-3 p-3 border rounded">
+            <div class="comment-header d-flex justify-content-between">
+                <strong>${comment.author}</strong>
+                <small class="text-muted">
+                    ${new Date(comment.timestamp).toLocaleDateString()}
+                </small>
+            </div>
+            <div class="comment-body mt-2">
+                ${comment.text}
+            </div>
+        </div>
+    `).join('');
+}
+
+// In the submitComment function (around line 178)
+async function submitComment() {
+    const textElement = document.getElementById('commentText');
+    const text = textElement.value.trim();
+    
+    if (!text) {
+        alert('Please enter a comment');
+        return;
+    }
+    
+    try {
+        console.log('Submitting comment...');
+        const response = await fetch('/api/comments', {  // Add leading slash
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                text,
+                programName: document.querySelector('.team-name').textContent,
+                author: {
+                    email: 'anonymous@example.com'
+                }
+            })
+        });
+        
+        console.log('Response status:', response.status);
+        
+        if (response.ok) {
+            textElement.value = '';
+            loadComments();
+            console.log('Comment submitted successfully');
+        } else {
+            const error = await response.json();
+            alert(`Error posting comment: ${error.message}`);
+        }
+    } catch (error) {
+        console.error('Error posting comment:', error);
+        alert('Error posting comment. Please try again.');
+    }
+}
+
+// ============= 3. INITIALIZATION =============
+// Update the initializeApp function
+async function initializeApp() {
+    try {
+        // Initialize rankings
+        updateLoadingState(true);
+        const response = await fetch('data/all-time-programs-fifty.json');
+        programsData = await response.json();
+        
+        if (programsData.length > 0) {
+            await updateTeamHeader(programsData[0]);
+        }
+        
+        setupPagination();
+        displayCurrentPage();
+        updateLoadingState(false);
+        updateTimestamp();  // Add this line
+
+        // Set up event listeners
+        document.getElementById('searchInput').addEventListener('input', handleSearch);
+        
+        // Initialize comments
+        const submitButton = document.getElementById('submitComment');
+        if (submitButton) {
+            submitButton.addEventListener('click', submitComment);
+        }
+        loadComments();
+    } catch (error) {
+        console.error('Error initializing app:', error);
+        updateLoadingState(false, error.message);
+    }
+}
+
+// Start the application
+document.addEventListener('DOMContentLoaded', initializeApp);
