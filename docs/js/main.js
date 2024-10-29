@@ -22,7 +22,9 @@ function updateTimestamp() {
 function cleanPath(path) {
     if (!path) return '';
     // Remove escaped forward slashes and any double slashes
-    return path.replace(/\\\//g, '/').replace(/\/\//g, '/');
+    return path.replace(/\\\//g, '/')
+              .replace(/\/\//g, '/')
+              .replace(/Teams\//i, 'teams/');  // Case-insensitive replace
 }
 
 // Replace the existing getImagePath function with this version
