@@ -1,9 +1,12 @@
-﻿// ============= 1. CORE FUNCTIONALITY =============
+﻿// ============= 1. CORE FUNCTIONALITY ============= 
 const ITEMS_PER_PAGE = 100;
 let currentPage = 1;
 let programsData = [];
 
-// Add this function at the top level
+// Add this to keep track of failed image loads
+const failedImages = new Set();
+
+// Add this function at the top level to update the timestamp
 function updateTimestamp() {
     const today = new Date();
     const formattedDate = today.toLocaleDateString('en-US', {
@@ -14,15 +17,49 @@ function updateTimestamp() {
     document.getElementById('lastUpdated').textContent = formattedDate;
 }
 
-// Helper function to get image path
+// Helper function to get image path with better fallback handling
+// Add this helper function just BEFORE getImagePath
+function cleanPath(path) {
+    if (!path) return '';
+    // Remove escaped forward slashes and any double slashes
+    return path.replace(/\\\//g, '/').replace(/\/\//g, '/');
+}
+
+// Replace the existing getImagePath function with this version
 function getImagePath(relativePath) {
-    if (!relativePath) return 'images/placeholder-image.jpg';
-    
-    if (currentConfig.useLocalImages) {
-        return `${currentConfig.imagesPath}/${relativePath.replace('images/', '')}`;
-    } else {
-        return `${currentConfig.webv2BasePath}/${relativePath}`;
+    if (!relativePath || failedImages.has(relativePath)) {
+        return 'images/placeholder-image.jpg';
     }
+    
+    try {
+        let imagePath;
+        const cleanedPath = cleanPath(relativePath);
+        
+        if (currentConfig.useLocalImages) {
+            imagePath = `${currentConfig.imagesPath}/${cleanedPath.replace('images/', '')}`;
+        } else {
+            imagePath = `${currentConfig.webv2BasePath}/${cleanedPath}`;
+        }
+        
+        // Clean the final path just in case
+        return cleanPath(imagePath);
+    } catch (error) {
+        console.warn(`Error processing image path: ${relativePath}`, error);
+        return 'images/placeholder-image.jpg';
+    }
+}
+
+// Function to handle image errors
+function handleImageError(imgElement, originalSrc) {
+    // Add to failed images set
+    failedImages.add(originalSrc);
+
+    // Set placeholder and prevent further error callbacks
+    imgElement.src = 'images/placeholder-image.jpg';
+    imgElement.onerror = null;
+
+    // Optional: Log failed image loads during development
+    console.debug(`Image failed to load: ${originalSrc}`);
 }
 
 function updateLoadingState(isLoading, errorMessage = '') {
@@ -49,6 +86,7 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 }
 
+// Update the team header function to use better image handling
 function updateTeamHeader(program) {
     const header = document.querySelector('.team-header');
     const headerContent = `
@@ -59,7 +97,7 @@ function updateTeamHeader(program) {
                          alt="${program.Team} Logo" 
                          class="img-fluid team-logo" 
                          style="max-height: 100px;" 
-                         onerror="this.src='images/placeholder-image.jpg'" />
+                         onerror="handleImageError(this, '${program.LogoURL}')" />
                 </div>
                 <div class="col-md-6 text-center">
                     <h2 class="team-name">${program.Team}</h2>
@@ -73,7 +111,7 @@ function updateTeamHeader(program) {
                          alt="${program.Team} School Logo" 
                          class="img-fluid school-logo" 
                          style="max-height: 100px;"
-                         onerror="this.src='images/placeholder-image.jpg'" />
+                         onerror="handleImageError(this, '${program.School_Logo_URL}')" />
                 </div>
             </div>
         </div>
@@ -148,85 +186,6 @@ function displayCurrentPage(data = programsData) {
     });
 }
 
-// ============= 2. COMMENTS FUNCTIONALITY =============
-async function loadComments() {
-    try {
-        console.log('Loading comments...');
-        const response = await fetch('/api/comments');  // Add leading slash
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const comments = await response.json();
-        console.log('Comments loaded:', comments);
-        displayComments(comments);
-    } catch (error) {
-        console.error('Error loading comments:', error);
-    }
-}
-
-function displayComments(comments) {
-    const commentsListElement = document.getElementById('commentsList');
-    if (!commentsListElement) {
-        console.error('Comments list element not found');
-        return;
-    }
-    commentsListElement.innerHTML = comments.map(comment => `
-        <div class="comment mb-3 p-3 border rounded">
-            <div class="comment-header d-flex justify-content-between">
-                <strong>${comment.author}</strong>
-                <small class="text-muted">
-                    ${new Date(comment.timestamp).toLocaleDateString()}
-                </small>
-            </div>
-            <div class="comment-body mt-2">
-                ${comment.text}
-            </div>
-        </div>
-    `).join('');
-}
-
-// In the submitComment function (around line 178)
-async function submitComment() {
-    const textElement = document.getElementById('commentText');
-    const text = textElement.value.trim();
-    
-    if (!text) {
-        alert('Please enter a comment');
-        return;
-    }
-    
-    try {
-        console.log('Submitting comment...');
-        const response = await fetch('/api/comments', {  // Add leading slash
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                text,
-                programName: document.querySelector('.team-name').textContent,
-                author: {
-                    email: 'anonymous@example.com'
-                }
-            })
-        });
-        
-        console.log('Response status:', response.status);
-        
-        if (response.ok) {
-            textElement.value = '';
-            loadComments();
-            console.log('Comment submitted successfully');
-        } else {
-            const error = await response.json();
-            alert(`Error posting comment: ${error.message}`);
-        }
-    } catch (error) {
-        console.error('Error posting comment:', error);
-        alert('Error posting comment. Please try again.');
-    }
-}
-
 // ============= 3. INITIALIZATION =============
 // Update the initializeApp function
 async function initializeApp() {
@@ -243,7 +202,7 @@ async function initializeApp() {
         setupPagination();
         displayCurrentPage();
         updateLoadingState(false);
-        updateTimestamp();  // Add this line
+        updateTimestamp();  // Add this line to update the date
 
         // Set up event listeners
         document.getElementById('searchInput').addEventListener('input', handleSearch);
