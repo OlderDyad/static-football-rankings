@@ -190,11 +190,24 @@ function displayCurrentPage(data = programsData) {
 }
 
 // Comments Handling Functions
+// In the loadComments function
 async function loadComments() {
     try {
         console.log('Loading comments...');
         const programName = document.querySelector('.team-name').textContent;
-        const response = await fetch(`${API_BASE_URL}/api/comments?programName=${encodeURIComponent(programName)}`);
+        const response = await fetch(
+            `${API_BASE_URL}/api/comments?programName=${encodeURIComponent(programName)}`,
+            {
+                mode: 'cors',  // Explicitly set CORS mode
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+        
+        // Add response debugging
+        console.log('Response status:', response.status);
+        console.log('Response headers:', Object.fromEntries(response.headers));
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -203,7 +216,7 @@ async function loadComments() {
         const comments = await response.json();
         displayComments(comments);
     } catch (error) {
-        console.error('Error loading comments:', error);
+        console.error('Detailed error:', error);
         const commentsList = document.getElementById('commentsList');
         if (commentsList) {
             commentsList.innerHTML = `<div class="alert alert-danger">Error loading comments. Please try again later.</div>`;
