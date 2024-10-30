@@ -4,26 +4,23 @@ import { rateLimit } from '../utils/rateLimit';
 
     // At the top of docs/api/comments.js
     export default async function handler(req, res) {
-        const allowedOrigin = process.env.CORS_ORIGIN || 'https://olderdyad.github.io';
-        
         // Set CORS headers
-        res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+        res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
+        res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
         res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-        res.setHeader('Access-Control-Max-Age', '86400'); // 24 hours
-    
+      
         // Handle preflight requests
         if (req.method === 'OPTIONS') {
-            res.status(200).end();
-            return;
+            return res.status(200).end();
         }
-
-    // Apply rate limiting
-    try {
-        await rateLimit(req, res);
-    } catch (error) {
-        return res.status(429).json({ error: 'Too many requests' });
-    }
+    
+        // Apply rate limiting
+        try {
+            await rateLimit(req, res);
+        } catch (error) {
+            return res.status(429).json({ error: 'Too many requests' });
+        }
 
     if (req.method === 'POST') {
         return handlePostComment(req, res);
