@@ -187,19 +187,11 @@ async function initializeApp() {
     try {
         // Initialize rankings
         updateLoadingState(true);
-        console.log('Fetching data...');
         const response = await fetch('data/all-time-programs-fifty.json');
-        console.log('Response status:', response.status);
-        
         programsData = await response.json();
-        console.log('Data loaded:', programsData.length, 'programs');
-        console.log('First program:', programsData[0]);
         
         if (programsData.length > 0) {
-            console.log('Updating header with program:', programsData[0].Team);
             await updateTeamHeader(programsData[0]);
-        } else {
-            console.error('No programs found in data');
         }
         
         setupPagination();
@@ -210,14 +202,13 @@ async function initializeApp() {
         // Set up event listeners
         document.getElementById('searchInput').addEventListener('input', handleSearch);
         
-        /* Comment out comments functionality for now
         // Initialize comments
         const submitButton = document.getElementById('submitComment');
         if (submitButton) {
             submitButton.addEventListener('click', submitComment);
         }
         loadComments();
-        */
+        
     } catch (error) {
         console.error('Error initializing app:', error);
         console.error('Full error details:', {
@@ -225,6 +216,75 @@ async function initializeApp() {
             stack: error.stack
         });
         updateLoadingState(false, error.message);
+    }
+}
+
+// Comments Handling Functions
+async function loadComments() {
+    try {
+        console.log('Loading comments...');
+        const programName = document.querySelector('.team-name').textContent;
+        const response = await fetch(`/api/comments?programName=${encodeURIComponent(programName)}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const comments = await response.json();
+        displayComments(comments);
+    } catch (error) {
+        console.error('Error loading comments:', error);
+        const commentsList = document.getElementById('commentsList');
+        if (commentsList) {
+            commentsList.innerHTML = `<div class="alert alert-danger">Error loading comments. Please try again later.</div>`;
+        }
+    }
+}
+
+async function submitComment() {
+    const textElement = document.getElementById('commentText');
+    const emailElement = document.getElementById('commentEmail');
+    const text = textElement.value.trim();
+    const email = emailElement.value.trim();
+    
+    if (!text) {
+        alert('Please enter a comment');
+        return;
+    }
+    
+    if (!email) {
+        alert('Please enter your email');
+        return;
+    }
+    
+    try {
+        // First, request email verification
+        const verifyResponse = await fetch('/api/verify-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email,
+                pendingCommentData: {
+                    text,
+                    programName: document.querySelector('.team-name').textContent,
+                    parentId: null
+                }
+            })
+        });
+        
+        if (verifyResponse.ok) {
+            textElement.value = '';
+            emailElement.value = '';
+            alert('Please check your email to verify and post your comment.');
+        } else {
+            const error = await verifyResponse.json();
+            alert(`Error: ${error.message || 'Failed to send verification email'}`);
+        }
+    } catch (error) {
+        console.error('Error submitting comment:', error);
+        alert('Error submitting comment. Please try again.');
     }
 }
 
