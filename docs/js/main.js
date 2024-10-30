@@ -1,9 +1,7 @@
-﻿// ============= 1. CORE FUNCTIONALITY ============= 
+﻿// ============= 1. CORE FUNCTIONALITY =============
 const ITEMS_PER_PAGE = 100;
 let currentPage = 1;
 let programsData = [];
-
-// Vercel - comments
 const API_BASE_URL = 'https://static-football-rankings.vercel.app';
 
 // Add this to keep track of failed image loads
@@ -45,7 +43,6 @@ function getImagePath(relativePath) {
         return 'images/placeholder-image.jpg';
     }
 }
-        
 
 // Function to handle image errors
 function handleImageError(imgElement, originalSrc) {
@@ -84,7 +81,6 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 }
 
-// Update the team header function to use better image handling
 function updateTeamHeader(program) {
     const header = document.querySelector('.team-header');
     const headerContent = `
@@ -184,46 +180,7 @@ function displayCurrentPage(data = programsData) {
     });
 }
 
-// ============= 3. INITIALIZATION =============
-// Update the initializeApp function
-async function initializeApp() {
-    try {
-        // Initialize rankings
-        updateLoadingState(true);
-        const response = await fetch('data/all-time-programs-fifty.json');
-        programsData = await response.json();
-        
-        if (programsData.length > 0) {
-            await updateTeamHeader(programsData[0]);
-        }
-        
-        setupPagination();
-        displayCurrentPage();
-        updateLoadingState(false);
-        updateTimestamp();
-
-        // Set up event listeners
-        document.getElementById('searchInput').addEventListener('input', handleSearch);
-        
-        // Initialize comments
-        const submitButton = document.getElementById('submitComment');
-        if (submitButton) {
-            submitButton.addEventListener('click', submitComment);
-        }
-        loadComments();
-        
-    } catch (error) {
-        console.error('Error initializing app:', error);
-        console.error('Full error details:', {
-            message: error.message,
-            stack: error.stack
-        });
-        updateLoadingState(false, error.message);
-    }
-}
-
 // Comments Handling Functions
-// Update loadComments function
 async function loadComments() {
     try {
         console.log('Loading comments...');
@@ -245,10 +202,36 @@ async function loadComments() {
     }
 }
 
-// Update submitComment function
+function displayComments(comments) {
+    const commentsListElement = document.getElementById('commentsList');
+    if (!commentsListElement) {
+        console.error('Comments list element not found');
+        return;
+    }
+    commentsListElement.innerHTML = comments.map(comment => `
+        <div class="comment mb-3 p-3 border rounded">
+            <div class="comment-header d-flex justify-content-between">
+                <strong>${comment.author_email}</strong>
+                <small class="text-muted">
+                    ${new Date(comment.created_at).toLocaleDateString()}
+                </small>
+            </div>
+            <div class="comment-body mt-2">
+                ${comment.text}
+            </div>
+        </div>
+    `).join('');
+}
+
 async function submitComment() {
     const textElement = document.getElementById('commentText');
     const emailElement = document.getElementById('commentEmail');
+    
+    if (!textElement || !emailElement) {
+        console.error('Comment form elements not found');
+        return;
+    }
+
     const text = textElement.value.trim();
     const email = emailElement.value.trim();
     
@@ -263,7 +246,6 @@ async function submitComment() {
     }
     
     try {
-        // First, request email verification
         const verifyResponse = await fetch(`${API_BASE_URL}/api/verify-email`, {
             method: 'POST',
             headers: {
@@ -290,6 +272,38 @@ async function submitComment() {
     } catch (error) {
         console.error('Error submitting comment:', error);
         alert('Error submitting comment. Please try again.');
+    }
+}
+
+// ============= 3. INITIALIZATION =============
+async function initializeApp() {
+    try {
+        // Initialize rankings
+        updateLoadingState(true);
+        const response = await fetch('data/all-time-programs-fifty.json');
+        programsData = await response.json();
+        
+        if (programsData.length > 0) {
+            await updateTeamHeader(programsData[0]);
+        }
+        
+        setupPagination();
+        displayCurrentPage();
+        updateLoadingState(false);
+        updateTimestamp();
+
+        // Set up event listeners
+        document.getElementById('searchInput').addEventListener('input', handleSearch);
+        
+        // Initialize comments
+        const submitButton = document.getElementById('submitComment');
+        if (submitButton) {
+            submitButton.addEventListener('click', submitComment);
+        }
+        loadComments();
+    } catch (error) {
+        console.error('Error initializing app:', error);
+        updateLoadingState(false, error.message);
     }
 }
 
