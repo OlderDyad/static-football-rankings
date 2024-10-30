@@ -7,6 +7,15 @@ const API_BASE_URL = 'https://static-football-rankings.vercel.app';
 // Add this to keep track of failed image loads
 const failedImages = new Set();
 
+// Debug messages
+const DEBUG = true;
+
+function debugLog(...args) {
+    if (DEBUG) {
+        console.log(...args);
+    }
+}
+
 // Add this function at the top level to update the timestamp
 function updateTimestamp() {
     const today = new Date();
@@ -278,7 +287,7 @@ async function submitComment() {
 // ============= 3. INITIALIZATION =============
 async function initializeApp() {
     try {
-        // Initialize rankings
+        debugLog('Initializing app...');
         updateLoadingState(true);
         const response = await fetch('data/all-time-programs-fifty.json');
         programsData = await response.json();
@@ -295,10 +304,18 @@ async function initializeApp() {
         // Set up event listeners
         document.getElementById('searchInput').addEventListener('input', handleSearch);
         
-        // Initialize comments
+        // Add more detailed logging for comments
+        debugLog('Setting up comment functionality...');
         const submitButton = document.getElementById('submitComment');
+        debugLog('Submit button found:', !!submitButton);
+        const commentText = document.getElementById('commentText');
+        debugLog('Comment text area found:', !!commentText);
+        const commentEmail = document.getElementById('commentEmail');
+        debugLog('Comment email input found:', !!commentEmail);
+
         if (submitButton) {
             submitButton.addEventListener('click', submitComment);
+            debugLog('Comment submit listener added');
         }
         loadComments();
     } catch (error) {
