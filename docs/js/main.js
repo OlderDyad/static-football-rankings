@@ -17,17 +17,13 @@ function updateTimestamp() {
     document.getElementById('lastUpdated').textContent = formattedDate;
 }
 
-// Helper function to get image path with better fallback handling
-// Add this helper function just BEFORE getImagePath
 function cleanPath(path) {
     if (!path) return '';
     // Remove escaped forward slashes and any double slashes
     return path.replace(/\\\//g, '/')
-              .replace(/\/\//g, '/')
-              .replace(/Teams\//i, 'teams/');  // Case-insensitive replace
+              .replace(/\/\//g, '/');
 }
 
-// Replace the existing getImagePath function with this version
 function getImagePath(relativePath) {
     if (!relativePath || failedImages.has(relativePath)) {
         return 'images/placeholder-image.jpg';
@@ -37,11 +33,15 @@ function getImagePath(relativePath) {
         let imagePath;
         const cleanedPath = cleanPath(relativePath);
         
-        if (currentConfig.useLocalImages) {
-            imagePath = `${currentConfig.imagesPath}/${cleanedPath.replace('images/', '')}`;
-        } else {
-            imagePath = `${currentConfig.webv2BasePath}/${cleanedPath}`;
-        }
+        // Always prefix with webv2 for consistent path structure
+        imagePath = `webv2/${cleanedPath}`;
+        
+        return imagePath;
+    } catch (error) {
+        console.warn(`Error processing image path: ${relativePath}`, error);
+        return 'images/placeholder-image.jpg';
+    }
+}
         
         // Clean the final path just in case
         return cleanPath(imagePath);
