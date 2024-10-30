@@ -187,29 +187,43 @@ async function initializeApp() {
     try {
         // Initialize rankings
         updateLoadingState(true);
+        console.log('Fetching data...');
         const response = await fetch('data/all-time-programs-fifty.json');
+        console.log('Response status:', response.status);
+        
         programsData = await response.json();
+        console.log('Data loaded:', programsData.length, 'programs');
+        console.log('First program:', programsData[0]);
         
         if (programsData.length > 0) {
+            console.log('Updating header with program:', programsData[0].Team);
             await updateTeamHeader(programsData[0]);
+        } else {
+            console.error('No programs found in data');
         }
         
         setupPagination();
         displayCurrentPage();
         updateLoadingState(false);
-        updateTimestamp();  // Add this line to update the date
+        updateTimestamp();
 
         // Set up event listeners
         document.getElementById('searchInput').addEventListener('input', handleSearch);
         
+        /* Comment out comments functionality for now
         // Initialize comments
         const submitButton = document.getElementById('submitComment');
         if (submitButton) {
             submitButton.addEventListener('click', submitComment);
         }
         loadComments();
+        */
     } catch (error) {
         console.error('Error initializing app:', error);
+        console.error('Full error details:', {
+            message: error.message,
+            stack: error.stack
+        });
         updateLoadingState(false, error.message);
     }
 }
