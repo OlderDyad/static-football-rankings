@@ -43,13 +43,6 @@ function getImagePath(relativePath) {
     }
 }
         
-        // Clean the final path just in case
-        return cleanPath(imagePath);
-    } catch (error) {
-        console.warn(`Error processing image path: ${relativePath}`, error);
-        return 'images/placeholder-image.jpg';
-    }
-}
 
 // Function to handle image errors
 function handleImageError(imgElement, originalSrc) {
