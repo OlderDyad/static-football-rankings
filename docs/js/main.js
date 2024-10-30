@@ -3,6 +3,9 @@ const ITEMS_PER_PAGE = 100;
 let currentPage = 1;
 let programsData = [];
 
+// Vercel - comments
+const API_BASE_URL = 'https://static-football-rankings.vercel.app';
+
 // Add this to keep track of failed image loads
 const failedImages = new Set();
 
@@ -220,11 +223,12 @@ async function initializeApp() {
 }
 
 // Comments Handling Functions
+// Update loadComments function
 async function loadComments() {
     try {
         console.log('Loading comments...');
         const programName = document.querySelector('.team-name').textContent;
-        const response = await fetch(`/api/comments?programName=${encodeURIComponent(programName)}`);
+        const response = await fetch(`${API_BASE_URL}/api/comments?programName=${encodeURIComponent(programName)}`);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -241,6 +245,7 @@ async function loadComments() {
     }
 }
 
+// Update submitComment function
 async function submitComment() {
     const textElement = document.getElementById('commentText');
     const emailElement = document.getElementById('commentEmail');
@@ -259,7 +264,7 @@ async function submitComment() {
     
     try {
         // First, request email verification
-        const verifyResponse = await fetch('/api/verify-email', {
+        const verifyResponse = await fetch(`${API_BASE_URL}/api/verify-email`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
