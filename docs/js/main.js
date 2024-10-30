@@ -200,23 +200,31 @@ async function loadComments() {
         const url = `${API_BASE_URL}/api/comments?programName=${encodeURIComponent(programName)}`;
         debugLog('Request URL:', url);
 
+        // Try with no-cors mode first
         const response = await fetch(url, {
             method: 'GET',
-            mode: 'cors',
-            credentials: 'omit',
+            mode: 'no-cors', // Change this to test API accessibility
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Accept': 'application/json'
             }
         });
 
-        debugLog('Response status:', response.status);
-        debugLog('Response headers:', Object.fromEntries(response.headers));
+        debugLog('Response received:', {
+            status: response.status,
+            statusText: response.statusText,
+            type: response.type
+        });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        if (response.type === 'opaque') {
+            debugLog('Received opaque response - API is reachable but CORS needs configuration');
+            // Show temporary message
+            const commentsList = document.getElementById('commentsList');
+            if (commentsList) {
+                commentsList.innerHTML = `<div class="alert alert-warning">Comments are temporarily unavailable while we configure the service. Please check back later.</div>`;
+            }
+            return;
         }
-        
+
         const comments = await response.json();
         displayComments(comments);
     } catch (error) {

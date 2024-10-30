@@ -2,17 +2,21 @@
 import { createClient } from '@vercel/postgres';
 import { rateLimit } from '../utils/rateLimit';
 
-export default async function handler(req, res) {
-    // Enable CORS
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  
-    // Handle preflight
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
-    }
+    // At the top of docs/api/comments.js
+    export default async function handler(req, res) {
+        const allowedOrigin = process.env.CORS_ORIGIN || 'https://olderdyad.github.io';
+        
+        // Set CORS headers
+        res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        res.setHeader('Access-Control-Max-Age', '86400'); // 24 hours
+    
+        // Handle preflight requests
+        if (req.method === 'OPTIONS') {
+            res.status(200).end();
+            return;
+        }
 
     // Apply rate limiting
     try {
