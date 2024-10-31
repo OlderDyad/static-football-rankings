@@ -1,14 +1,15 @@
 {
   "version": 2,
+  "buildCommand": null,
+  "outputDirectory": "docs",
   "functions": {
     "api/*.js": {
-      "runtime": "edge",
-      "memory": 256
+      "runtime": "nodejs18.x"
     }
   },
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -25,10 +26,6 @@
         {
           "key": "Access-Control-Allow-Credentials",
           "value": "true"
-        },
-        {
-          "key": "Access-Control-Max-Age",
-          "value": "86400"
         }
       ]
     }
@@ -37,7 +34,7 @@
     {
       "src": "/api/(.*)",
       "methods": ["OPTIONS"],
-      "dest": "/api/$1"
+      "status": 200
     },
     {
       "src": "/api/(.*)",

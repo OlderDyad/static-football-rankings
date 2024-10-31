@@ -195,18 +195,17 @@ function displayCurrentPage(data = programsData) {
 async function loadComments() {
     try {
         console.log('Loading comments...');
-        // Use the base URL for comments on the main page
         const url = `${API_BASE_URL}/api/comments`;
         console.log('Request URL:', url);
 
         const response = await fetch(url, {
             method: 'GET',
-            mode: 'cors',
-            credentials: 'include',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            }
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            mode: 'cors'
         });
 
         console.log('Response status:', response.status);
@@ -274,16 +273,16 @@ async function submitComment() {
         console.log('Submitting comment...');
         const verifyResponse = await fetch(`${API_BASE_URL}/api/verify-email`, {
             method: 'POST',
-            mode: 'cors',
-            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },
+            credentials: 'include',
+            mode: 'cors',
             body: JSON.stringify({
                 email,
                 pendingCommentData: {
                     text,
-                    page: 'static-football-rankings',  // Use page instead of programName
+                    page: 'main',
                     parentId: null
                 }
             })
