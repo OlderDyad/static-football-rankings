@@ -91,23 +91,23 @@ async function handleGetComments(req, res) {
     try {
         await client.connect();
     
-        const { programName } = req.query;
+        const { page } = req.query;  // Changed from programName to page
     
         // Fetch comments with replies using recursive CTE
         const result = await client.sql`
             WITH RECURSIVE comment_tree AS (
                 SELECT 
-                    id, text, program_name, parent_id, author_email, created_at,
+                    id, text, page, parent_id, author_email, created_at,
                     status, 1 as level
                 FROM comments
                 WHERE parent_id IS NULL 
-                    AND program_name = ${programName}
+                    AND page = ${page}
                     AND status = 'approved'
         
                 UNION ALL
         
                 SELECT 
-                    c.id, c.text, c.program_name, c.parent_id, c.author_email, 
+                    c.id, c.text, c.page, c.parent_id, c.author_email, 
                     c.created_at, c.status, ct.level + 1
                 FROM comments c
                 JOIN comment_tree ct ON c.parent_id = ct.id
