@@ -3,13 +3,13 @@
   "buildCommand": null,
   "outputDirectory": "docs",
   "functions": {
-    "api/*.js": {
+    "docs/api/*.js": {  // Update this path
       "runtime": "nodejs18.x"
     }
   },
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/api/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -21,11 +21,7 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type"
-        },
-        {
-          "key": "Access-Control-Allow-Credentials",
-          "value": "true"
+          "value": "*"
         }
       ]
     }
@@ -33,12 +29,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "methods": ["OPTIONS"],
-      "status": 200
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "dest": "/docs/api/$1"  // Update this path
     }
   ]
 }
