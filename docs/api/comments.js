@@ -3,23 +3,23 @@ import { createClient } from '@vercel/postgres';
 import { rateLimit } from '../utils/rateLimit';
 import { setCorsHeaders } from '../utils/cors';
 
-import { setCorsHeaders } from '../utils/cors';
+
 
 
     // At the top of docs/api/comments.js
     export default async function handler(req, res) {
-        // Set CORS headers
-        res.setHeader('Access-Control-Allow-Credentials', 'true');
+        // Set CORS headers first thing
         res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
-        res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
         res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-        setCorsHeaders(res);
-      
-        // Handle preflight requests
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+    
+        // Handle preflight request
         if (req.method === 'OPTIONS') {
             return res.status(200).end();
         }
+    
+
     
         // Apply rate limiting
         try {
