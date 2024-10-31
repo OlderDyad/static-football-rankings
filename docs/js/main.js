@@ -191,50 +191,36 @@ function displayCurrentPage(data = programsData) {
 
 // Comments Handling Functions
 // In the loadComments function
+// Find this function in main.js and replace it
 async function loadComments() {
     try {
         console.log('Loading comments...');
-        const programName = document.querySelector('.team-name').textContent;
-        
-        debugLog('Fetching comments for:', programName);
-        const url = `${API_BASE_URL}/api/comments?programName=${encodeURIComponent(programName)}`;
-        debugLog('Request URL:', url);
+        // Change from programName to page parameter
+        console.log('Fetching comments for main page');
+        const url = `${API_BASE_URL}/api/comments?page=static-football-rankings`;
+        console.log('Request URL:', url);
 
-        // Try with no-cors mode first
         const response = await fetch(url, {
             method: 'GET',
-            mode: 'no-cors', // Change this to test API accessibility
+            mode: 'cors',
+            credentials: 'include',
             headers: {
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
             }
         });
 
-        debugLog('Response received:', {
-            status: response.status,
-            statusText: response.statusText,
-            type: response.type
-        });
+        console.log('Response status:', response.status);
+        console.log('Response type:', response.type);
 
-        if (response.type === 'opaque') {
-            debugLog('Received opaque response - API is reachable but CORS needs configuration');
-            // Show temporary message
-            const commentsList = document.getElementById('commentsList');
-            if (commentsList) {
-                commentsList.innerHTML = `<div class="alert alert-warning">Comments are temporarily unavailable while we configure the service. Please check back later.</div>`;
-            }
-            return;
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const comments = await response.json();
         displayComments(comments);
     } catch (error) {
         console.error('Detailed error:', error);
-        debugLog('Error details:', {
-            name: error.name,
-            message: error.message,
-            stack: error.stack
-        });
-        
         const commentsList = document.getElementById('commentsList');
         if (commentsList) {
             commentsList.innerHTML = `<div class="alert alert-danger">Error loading comments. Please try again later.</div>`;
@@ -286,20 +272,25 @@ async function submitComment() {
     }
     
     try {
+        console.log('Submitting comment...');
         const verifyResponse = await fetch(`${API_BASE_URL}/api/verify-email`, {
             method: 'POST',
+            mode: 'cors',
+            credentials: 'include',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 email,
                 pendingCommentData: {
                     text,
-                    programName: document.querySelector('.team-name').textContent,
+                    page: 'static-football-rankings',  // Use page instead of programName
                     parentId: null
                 }
             })
         });
+        
+        console.log('Verify response status:', verifyResponse.status);
         
         if (verifyResponse.ok) {
             textElement.value = '';

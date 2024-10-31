@@ -3,6 +3,7 @@ import { createClient } from '@vercel/postgres';
 import { createTransport } from 'nodemailer';
 import { sign } from 'jsonwebtoken';
 import { rateLimit } from '../utils/rateLimit';
+import { setCorsHeaders } from '../utils/cors';
 
 const EMAIL_SECRET = process.env.EMAIL_SECRET;
 const SMTP_CONFIG = {
@@ -14,11 +15,16 @@ const SMTP_CONFIG = {
   }
 };
 
+
 export default async function handler(req, res) {
   // Enable CORS
+  
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+   // Set CORS headers
+   setCorsHeaders(res);
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
