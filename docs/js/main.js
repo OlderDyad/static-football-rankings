@@ -195,9 +195,8 @@ function displayCurrentPage(data = programsData) {
 async function loadComments() {
     try {
         console.log('Loading comments...');
-        // Change from programName to page parameter
-        console.log('Fetching comments for main page');
-        const url = `${API_BASE_URL}/api/comments?page=static-football-rankings`;
+        // Use the base URL for comments on the main page
+        const url = `${API_BASE_URL}/api/comments`;
         console.log('Request URL:', url);
 
         const response = await fetch(url, {
