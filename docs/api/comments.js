@@ -1,8 +1,8 @@
 // api/comments.js
 import { createClient } from '@vercel/postgres';
 import { rateLimit } from '../utils/rateLimit';
-import { createClient } from '@vercel/postgres';
-import { rateLimit } from '../utils/rateLimit';
+import { setCorsHeaders } from '../utils/cors';
+
 import { setCorsHeaders } from '../utils/cors';
 
 
