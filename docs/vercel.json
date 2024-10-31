@@ -3,7 +3,7 @@
   "buildCommand": null,
   "outputDirectory": "docs",
   "functions": {
-    "docs/api/*.js": {  // Update this path
+    "docs/api/**/index.js": {
       "runtime": "nodejs18.x"
     }
   },
@@ -28,8 +28,11 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/docs/api/$1"  // Update this path
+      "handle": "filesystem"
+    },
+    {
+      "src": "/api/.*",
+      "dest": "/docs/api/$1"
     }
   ]
 }
