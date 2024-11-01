@@ -1,31 +1,25 @@
 {
   "version": 2,
+  "buildCommand": null,
+  "outputDirectory": "docs",
   "functions": {
-    "api/comments/index.js": {
-      "runtime": "edge",
-      "memory": 256
-    },
-    "api/verify-email/index.js": {
-      "runtime": "edge",
-      "memory": 256
+    "api/*.js": {
+      "runtime": "edge"
     }
   },
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
-        { "key": "Access-Control-Allow-Credentials", "value": "true" }
-      ]
-    }
-  ],
   "routes": [
-    { "src": "/api/comments", "dest": "/api/comments/index.js" },
-    { "src": "/api/verify-email", "dest": "/api/verify-email/index.js" }
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://olderdyad.github.io",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "*"
+      },
+      "dest": "/api/$1"
+    }
   ]
 }
+
 
 
 
