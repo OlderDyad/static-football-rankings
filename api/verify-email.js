@@ -1,11 +1,15 @@
 {
   "version": 2,
   "functions": {
-    "api/comments/index.js": {
+    "api/comments.js": {
       "runtime": "edge",
       "memory": 256
     },
-    "api/verify-email/index.js": {
+    "api/verify-email.js": {
+      "runtime": "edge",
+      "memory": 256
+    },
+    "api/confirm-email.js": {
       "runtime": "edge",
       "memory": 256
     }
@@ -22,12 +26,8 @@
     }
   ],
   "routes": [
-    { "src": "/api/comments", "dest": "/api/comments/index.js" },
-    { "src": "/api/verify-email", "dest": "/api/verify-email/index.js" }
+    { "src": "/api/comments", "dest": "/api/comments.js" },
+    { "src": "/api/verify-email", "dest": "/api/verify-email.js" },
+    { "src": "/api/confirm-email", "dest": "/api/confirm-email.js" }
   ]
 }
-
-
-
-
-
