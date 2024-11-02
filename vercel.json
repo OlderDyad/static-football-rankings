@@ -2,10 +2,12 @@
   "version": 2,
   "functions": {
     "api/comments/index.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "edge",
+      "memory": 256
     },
     "api/verify-email/index.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "edge",
+      "memory": 256
     }
   },
   "headers": [
@@ -24,6 +26,7 @@
     { "src": "/api/verify-email", "dest": "/api/verify-email/index.js" }
   ]
 }
+
 
 
 
