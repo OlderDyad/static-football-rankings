@@ -1,33 +1,16 @@
-{
-  "version": 2,
-  "functions": {
-    "api/comments.js": {
-      "runtime": "edge",
-      "memory": 256
-    },
-    "api/verify-email.js": {
-      "runtime": "edge",
-      "memory": 256
-    },
-    "api/confirm-email.js": {
-      "runtime": "edge",
-      "memory": 256
+export default async function handler(req, res) {
+    // Set CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (req.method === "OPTIONS") {
+        return res.status(200).end();
     }
-  },
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
-        { "key": "Access-Control-Allow-Credentials", "value": "true" }
-      ]
+
+    if (req.method === "POST") {
+        return res.status(200).json({ message: "Email verification placeholder" });
+    } else {
+        return res.status(405).json({ error: "Method not allowed" });
     }
-  ],
-  "routes": [
-    { "src": "/api/comments", "dest": "/api/comments.js" },
-    { "src": "/api/verify-email", "dest": "/api/verify-email.js" },
-    { "src": "/api/confirm-email", "dest": "/api/confirm-email.js" }
-  ]
 }

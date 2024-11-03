@@ -2,11 +2,11 @@
   "version": 2,
   "functions": {
     "api/comments.js": {
-      "runtime": "edge",
+      "runtime": "nodejs18.x",
       "memory": 256
     },
     "api/verify-email.js": {
-      "runtime": "edge",
+      "runtime": "nodejs18.x",
       "memory": 256
     }
   },
@@ -14,7 +14,7 @@
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "https://olderdyad.github.io/static-football-rankings" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
         { "key": "Access-Control-Allow-Credentials", "value": "true" }
@@ -26,6 +26,7 @@
     { "src": "/api/verify-email", "dest": "/api/verify-email.js" }
   ]
 }
+
 
 
 
