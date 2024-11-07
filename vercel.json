@@ -1,11 +1,7 @@
 {
   "version": 2,
   "functions": {
-    "api/comments.js": {
-      "runtime": "nodejs18.x",
-      "memory": 256
-    },
-    "api/verify-email.js": {
+    "api/*.js": {
       "runtime": "nodejs18.x",
       "memory": 256
     }
@@ -14,7 +10,7 @@
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "https://olderdyad.github.io, http://localhost:8000" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
         { "key": "Access-Control-Allow-Credentials", "value": "true" }
@@ -22,8 +18,10 @@
     }
   ],
   "routes": [
-    { "src": "/api/comments", "dest": "/api/comments.js" },
-    { "src": "/api/verify-email", "dest": "/api/verify-email.js" }
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
   ]
 }
 
