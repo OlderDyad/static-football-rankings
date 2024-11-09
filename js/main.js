@@ -222,61 +222,106 @@ function displayCurrentPage(data = programsData) {
 }
 
 // Comments Functions
+// Replace the loadComments function
 async function loadComments() {
     try {
-        const response = await fetch('/api/comments');
+        console.log('Loading comments...');
+        const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
+            method: 'GET',
+            mode: 'cors',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const comments = await response.json();
         displayComments(comments);
     } catch (error) {
         console.error('Error loading comments:', error);
+        // Display user-friendly error message
+        const commentsListElement = document.getElementById('commentsList');
+        if (commentsListElement) {
+            commentsListElement.innerHTML = `
+                <div class="alert alert-warning">
+                    Comments temporarily unavailable. Please try again later.
+                </div>
+            `;
+        }
     }
 }
 
-function displayComments(comments) {
-    const commentsListElement = document.getElementById('commentsList');
-    if (!commentsListElement) return;
-
-    commentsListElement.innerHTML = comments.map(comment => `
-        <div class="comment mb-3 p-3 border rounded">
-            <div class="comment-header d-flex justify-content-between">
-                <strong>${comment.author || 'Anonymous'}</strong>
-                <small class="text-muted">
-                    ${new Date(comment.timestamp).toLocaleDateString()}
-                </small>
-            </div>
-            <div class="comment-body mt-2">
-                ${comment.text}
-            </div>
-        </div>
-    `).join('');
-}
-
+// Replace the submitComment function
 async function submitComment() {
+    console.log('Submitting comment...');
     const textElement = document.getElementById('commentText');
-    const text = textElement.value.trim();
+    const emailElement = document.getElementById('commentEmail');
+    const text = textElement?.value?.trim();
+    const email = emailElement?.value?.trim();
     
-    if (!text) return;
+    if (!text || !email) {
+        alert('Please provide both comment and email');
+        return;
+    }
     
     try {
-        const response = await fetch('/api/comments', {
+        // First verify email
+        const verifyResponse = await fetch('https://static-football-rankings.vercel.app/api/verify-email', {
             method: 'POST',
+            mode: 'cors',
+            credentials: 'include',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        });
+
+        if (!verifyResponse.ok) {
+            throw new Error(`Email verification failed: ${verifyResponse.status}`);
+        }
+
+        // Then submit comment
+        const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 text,
-                author: 'Anonymous', // Will add authentication later
+                email,
+                author: email.split('@')[0], // Use part before @ as author name
                 programName: document.querySelector('.team-name')?.textContent || 'General'
             })
         });
-        
-        if (response.ok) {
-            textElement.value = '';
-            await loadComments();
+
+        if (!response.ok) {
+            throw new Error(`Comment submission failed: ${response.status}`);
         }
+
+        // Clear form and reload comments
+        textElement.value = '';
+        emailElement.value = '';
+        await loadComments();
+        
     } catch (error) {
-        console.error('Error posting comment:', error);
+        console.error('Error submitting comment:', error);
+        alert('Unable to submit comment. Please try again later.');
     }
+}
+
+// Add this helper function for API URLs
+function getApiUrl(endpoint) {
+    const isProd = window.location.hostname === 'olderdyad.github.io';
+    const baseUrl = isProd 
+        ? 'https://static-football-rankings.vercel.app'
+        : 'http://localhost:3000';
+    return `${baseUrl}/api/${endpoint}`;
 }
 
 // Program Details View
