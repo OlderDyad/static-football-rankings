@@ -1,5 +1,5 @@
 ﻿// Constants
-const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot/images';
+const WEBV2_IMAGE_BASE = '/images';
 const ITEMS_PER_PAGE = 100;
 
 // State management
@@ -9,6 +9,7 @@ let programsData = [];
 // Main initialization
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        // Initialize both rankings and comments
         await initializeRankings();
         initializeComments();
     } catch (error) {
@@ -21,8 +22,7 @@ async function initializeRankings() {
     try {
         updateLoadingState(true);
         
-        // Updated path to match new structure
-        const response = await fetch('/data/all-time-programs-fifty.json');
+        const response = await fetch('data/all-time-programs-fifty.json');
         programsData = await response.json();
         
         if (programsData.length > 0) {
@@ -41,10 +41,20 @@ async function initializeRankings() {
     }
 }
 
-// Loading State Management
+// Comments Initialization
+function initializeComments() {
+    const submitButton = document.getElementById('submitComment');
+    if (submitButton) {
+        submitButton.addEventListener('click', submitComment);
+    }
+    loadComments();
+}
+
+// Rankings Functions
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
     if (isLoading) {
+        header.classList.add('loading');
         header.innerHTML = `
             <div class="container">
                 <div class="text-center">
@@ -66,13 +76,12 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 }
 
-// Team Header Update
 async function updateTeamHeader(program) {
     const header = document.querySelector('.team-header');
     
     const getImagePath = (relativePath) => {
-        if (!relativePath) return '/images/placeholder-image.jpg';
-        return `${relativePath}`; // Simplified path handling
+        if (!relativePath) return 'images/placeholder-image.jpg';
+        return `${relativePath}`;
     };
 
     header.innerHTML = `
@@ -83,7 +92,7 @@ async function updateTeamHeader(program) {
                          alt="${program.Team} Logo" 
                          class="img-fluid team-logo" 
                          style="max-height: 100px;" 
-                         onerror="this.src='/images/placeholder-image.jpg'" />
+                         onerror="this.src='images/placeholder-image.jpg'" />
                 </div>
                 <div class="col-md-6 text-center">
                     <h2 class="team-name">${program.Team}</h2>
@@ -97,7 +106,7 @@ async function updateTeamHeader(program) {
                          alt="${program.Team} School Logo" 
                          class="img-fluid school-logo" 
                          style="max-height: 100px;"
-                         onerror="this.src='/images/placeholder-image.jpg'" />
+                         onerror="this.src='images/placeholder-image.jpg'" />
                 </div>
             </div>
         </div>
@@ -107,7 +116,6 @@ async function updateTeamHeader(program) {
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
 
-// Search and Pagination
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
     const filteredPrograms = programsData.filter(program => 
@@ -123,27 +131,65 @@ function handleSearch(event) {
 function setupPagination(data = programsData) {
     const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
     const paginationElement = document.getElementById('pagination');
-    
     if (!paginationElement) return;
     
     paginationElement.innerHTML = '';
     
-    for (let i = 1; i <= totalPages; i++) {
-        const li = document.createElement('li');
-        li.className = `page-item ${currentPage === i ? 'active' : ''}`;
-        
-        const button = document.createElement('button');
-        button.className = 'page-link';
-        button.textContent = i;
-        button.addEventListener('click', () => {
-            currentPage = i;
+    // Add Previous button
+    const prevLi = document.createElement('li');
+    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+    prevLi.innerHTML = `
+        <button class="page-link" ${currentPage === 1 ? 'disabled' : ''}>
+            Previous
+        </button>
+    `;
+    prevLi.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
             displayCurrentPage(data);
             setupPagination(data);
-        });
-        
-        li.appendChild(button);
-        paginationElement.appendChild(li);
+        }
+    });
+    paginationElement.appendChild(prevLi);
+
+    // Add page numbers
+    for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+            const li = document.createElement('li');
+            li.className = `page-item ${currentPage === i ? 'active' : ''}`;
+            li.innerHTML = `
+                <button class="page-link">${i}</button>
+            `;
+            li.addEventListener('click', () => {
+                currentPage = i;
+                displayCurrentPage(data);
+                setupPagination(data);
+            });
+            paginationElement.appendChild(li);
+        } else if (i === currentPage - 3 || i === currentPage + 3) {
+            const li = document.createElement('li');
+            li.className = 'page-item disabled';
+            li.innerHTML = '<button class="page-link">...</button>';
+            paginationElement.appendChild(li);
+        }
     }
+
+    // Add Next button
+    const nextLi = document.createElement('li');
+    nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+    nextLi.innerHTML = `
+        <button class="page-link" ${currentPage === totalPages ? 'disabled' : ''}>
+            Next
+        </button>
+    `;
+    nextLi.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayCurrentPage(data);
+            setupPagination(data);
+        }
+    });
+    paginationElement.appendChild(nextLi);
 }
 
 function displayCurrentPage(data = programsData) {
@@ -175,15 +221,7 @@ function displayCurrentPage(data = programsData) {
     });
 }
 
-// Comments System
-function initializeComments() {
-    const submitButton = document.getElementById('submitComment');
-    if (submitButton) {
-        submitButton.addEventListener('click', submitComment);
-    }
-    loadComments();
-}
-
+// Comments Functions
 async function loadComments() {
     try {
         const response = await fetch('/api/comments');
@@ -197,7 +235,7 @@ async function loadComments() {
 function displayComments(comments) {
     const commentsListElement = document.getElementById('commentsList');
     if (!commentsListElement) return;
-    
+
     commentsListElement.innerHTML = comments.map(comment => `
         <div class="comment mb-3 p-3 border rounded">
             <div class="comment-header d-flex justify-content-between">
@@ -244,6 +282,5 @@ async function submitComment() {
 // Program Details View
 function showProgramDetails(teamName) {
     console.log(`Showing details for team: ${teamName}`);
-    // Implement program details view functionality
-    // This could open a modal or navigate to a details page
+    // Implement program details view
 }
