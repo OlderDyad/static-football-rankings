@@ -1,7 +1,6 @@
 ﻿// Constants
-const WEBV2_IMAGE_BASE = '/images';
+const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot/images';
 const ITEMS_PER_PAGE = 100;
-const DEFAULT_PLACEHOLDER_IMAGE = '/images/placeholder-image.jpg';
 const API_BASE_URL = 'https://static-football-rankings.vercel.app';
 
 // State management
@@ -97,8 +96,8 @@ async function updateTeamHeader(program) {
     if (!header) return;
     
     const getImagePath = (relativePath) => {
-        if (!relativePath) return DEFAULT_PLACEHOLDER_IMAGE;
-        return relativePath;
+        if (!relativePath) return '';
+        return `${WEBV2_IMAGE_BASE}/${relativePath.replace('images/', '')}`;
     };
 
     header.innerHTML = `
@@ -108,8 +107,7 @@ async function updateTeamHeader(program) {
                     <img src="${getImagePath(program.LogoURL)}" 
                          alt="${program.Team} Logo" 
                          class="img-fluid team-logo" 
-                         style="max-height: 100px;" 
-                         onerror="this.onerror=null; this.src='${DEFAULT_PLACEHOLDER_IMAGE}';" />
+                         style="max-height: 100px;" />
                 </div>
                 <div class="col-md-6 text-center">
                     <h2 class="team-name">${program.Team}</h2>
@@ -122,8 +120,7 @@ async function updateTeamHeader(program) {
                     <img src="${getImagePath(program.School_Logo_URL)}" 
                          alt="${program.Team} School Logo" 
                          class="img-fluid school-logo" 
-                         style="max-height: 100px;"
-                         onerror="this.onerror=null; this.src='${DEFAULT_PLACEHOLDER_IMAGE}';" />
+                         style="max-height: 100px;" />
                 </div>
             </div>
         </div>
