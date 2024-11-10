@@ -96,7 +96,7 @@ async function updateTeamHeader(program) {
     if (!header) return;
     
     const getImagePath = (relativePath) => {
-        if (!relativePath) return '';
+        if (!relativePath) return `${WEBV2_IMAGE_BASE}/placeholder-image.jpg`;
         return `${WEBV2_IMAGE_BASE}/${relativePath.replace('images/', '')}`;
     };
 
