@@ -228,8 +228,6 @@ async function loadComments() {
         console.log('Loading comments...');
         const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
             method: 'GET',
-            mode: 'cors',
-            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -269,11 +267,9 @@ async function submitComment() {
     }
     
     try {
-        // First verify email
+        // Email verification
         const verifyResponse = await fetch('https://static-football-rankings.vercel.app/api/verify-email', {
             method: 'POST',
-            mode: 'cors',
-            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -284,18 +280,16 @@ async function submitComment() {
             throw new Error(`Email verification failed: ${verifyResponse.status}`);
         }
 
-        // Then submit comment
+        // Comment submission
         const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
             method: 'POST',
-            mode: 'cors',
-            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 text,
                 email,
-                author: email.split('@')[0], // Use part before @ as author name
+                author: email.split('@')[0],
                 programName: document.querySelector('.team-name')?.textContent || 'General'
             })
         });
