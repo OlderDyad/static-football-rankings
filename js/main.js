@@ -1,59 +1,60 @@
-﻿// ============= 1. CORE FUNCTIONALITY ============= 
+﻿// Constants
+const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot/images';
 const ITEMS_PER_PAGE = 100;
+
+// State management
 let currentPage = 1;
 let programsData = [];
 
-// Add this to keep track of failed image loads
-const failedImages = new Set();
-
-// Add this function at the top level to update the timestamp
-function updateTimestamp() {
-    const today = new Date();
-    const formattedDate = today.toLocaleDateString('en-US', {
-        month: '2-digit',
-        day: '2-digit',
-        year: 'numeric'
-    });
-    document.getElementById('lastUpdated').textContent = formattedDate;
-}
-
-// Helper function to get image path with better fallback handling
-function getImagePath(relativePath) {
-    // If no path or already failed, return placeholder immediately
-    if (!relativePath || failedImages.has(relativePath)) {
-        return 'images/placeholder-image.jpg';
-    }
-
+// Main initialization
+document.addEventListener('DOMContentLoaded', async function() {
     try {
-        let imagePath;
-        if (currentConfig.useLocalImages) {
-            imagePath = `${currentConfig.imagesPath}/${relativePath.replace('images/', '')}`;
-        } else {
-            imagePath = `${currentConfig.webv2BasePath}/${relativePath}`;
-        }
-        return imagePath;
+        // Initialize both rankings and comments
+        await initializeRankings();
+        initializeComments();
     } catch (error) {
-        console.warn(`Error processing image path: ${relativePath}`, error);
-        return 'images/placeholder-image.jpg';
+        console.error('Initialization error:', error);
+    }
+});
+
+// Rankings Initialization
+async function initializeRankings() {
+    try {
+        updateLoadingState(true);
+        
+        const response = await fetch('data/all-time-programs-fifty.json');
+        programsData = await response.json();
+        
+        if (programsData.length > 0) {
+            await updateTeamHeader(programsData[0]);
+        }
+        
+        setupPagination();
+        displayCurrentPage();
+        
+        document.getElementById('searchInput').addEventListener('input', handleSearch);
+        
+        updateLoadingState(false);
+    } catch (error) {
+        console.error('Error initializing rankings:', error);
+        updateLoadingState(false, error.message);
     }
 }
 
-// Function to handle image errors
-function handleImageError(imgElement, originalSrc) {
-    // Add to failed images set
-    failedImages.add(originalSrc);
-
-    // Set placeholder and prevent further error callbacks
-    imgElement.src = 'images/placeholder-image.jpg';
-    imgElement.onerror = null;
-
-    // Optional: Log failed image loads during development
-    console.debug(`Image failed to load: ${originalSrc}`);
+// Comments Initialization
+function initializeComments() {
+    const submitButton = document.getElementById('submitComment');
+    if (submitButton) {
+        submitButton.addEventListener('click', submitComment);
+    }
+    loadComments();
 }
 
+// Rankings Functions
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
     if (isLoading) {
+        header.classList.add('loading');
         header.innerHTML = `
             <div class="container">
                 <div class="text-center">
@@ -75,10 +76,15 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 }
 
-// Update the team header function to use better image handling
-function updateTeamHeader(program) {
+async function updateTeamHeader(program) {
     const header = document.querySelector('.team-header');
-    const headerContent = `
+    
+    const getImagePath = (relativePath) => {
+        if (!relativePath) return 'images/placeholder-image.jpg';
+        return `${WEBV2_IMAGE_BASE}/${relativePath.replace('images/', '')}`;
+    };
+
+    header.innerHTML = `
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3">
@@ -86,7 +92,7 @@ function updateTeamHeader(program) {
                          alt="${program.Team} Logo" 
                          class="img-fluid team-logo" 
                          style="max-height: 100px;" 
-                         onerror="handleImageError(this, '${program.LogoURL}')" />
+                         onerror="this.src='images/placeholder-image.jpg'" />
                 </div>
                 <div class="col-md-6 text-center">
                     <h2 class="team-name">${program.Team}</h2>
@@ -100,13 +106,12 @@ function updateTeamHeader(program) {
                          alt="${program.Team} School Logo" 
                          class="img-fluid school-logo" 
                          style="max-height: 100px;"
-                         onerror="handleImageError(this, '${program.School_Logo_URL}')" />
+                         onerror="this.src='images/placeholder-image.jpg'" />
                 </div>
             </div>
         </div>
     `;
     
-    header.innerHTML = headerContent;
     header.style.backgroundColor = program.PrimaryColor || '#000000';
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
@@ -175,38 +180,58 @@ function displayCurrentPage(data = programsData) {
     });
 }
 
-// ============= 3. INITIALIZATION =============
-// Update the initializeApp function
-async function initializeApp() {
+// Comments Functions
+async function loadComments() {
     try {
-        // Initialize rankings
-        updateLoadingState(true);
-        const response = await fetch('data/all-time-programs-fifty.json');
-        programsData = await response.json();
-        
-        if (programsData.length > 0) {
-            await updateTeamHeader(programsData[0]);
-        }
-        
-        setupPagination();
-        displayCurrentPage();
-        updateLoadingState(false);
-        updateTimestamp();  // Add this line to update the date
-
-        // Set up event listeners
-        document.getElementById('searchInput').addEventListener('input', handleSearch);
-        
-        // Initialize comments
-        const submitButton = document.getElementById('submitComment');
-        if (submitButton) {
-            submitButton.addEventListener('click', submitComment);
-        }
-        loadComments();
+        const response = await fetch('/api/comments');
+        const comments = await response.json();
+        displayComments(comments);
     } catch (error) {
-        console.error('Error initializing app:', error);
-        updateLoadingState(false, error.message);
+        console.error('Error loading comments:', error);
     }
 }
 
-// Start the application
-document.addEventListener('DOMContentLoaded', initializeApp);
+function displayComments(comments) {
+    const commentsListElement = document.getElementById('commentsList');
+    commentsListElement.innerHTML = comments.map(comment => `
+        <div class="comment mb-3 p-3 border rounded">
+            <div class="comment-header d-flex justify-content-between">
+                <strong>${comment.author}</strong>
+                <small class="text-muted">
+                    ${new Date(comment.timestamp).toLocaleDateString()}
+                </small>
+            </div>
+            <div class="comment-body mt-2">
+                ${comment.text}
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textElement = document.getElementById('commentText');
+    const text = textElement.value.trim();
+    
+    if (!text) return;
+    
+    try {
+        const response = await fetch('/api/comments', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                text,
+                author: 'Anonymous', // We'll add authentication later
+                programName: document.querySelector('.team-name').textContent
+            })
+        });
+        
+        if (response.ok) {
+            textElement.value = '';
+            loadComments();
+        }
+    } catch (error) {
+        console.error('Error posting comment:', error);
+    }
+}
