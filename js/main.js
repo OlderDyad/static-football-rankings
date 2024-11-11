@@ -1,12 +1,22 @@
 ﻿// Constants
-const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot/images';
+const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot';
 const ITEMS_PER_PAGE = 100;
 
 // State management
 let currentPage = 1;
 let programsData = [];
 
-// Core Functions
+// Utility Functions
+function getImagePath(relativePath, isPlaceholder = false) {
+    if (!relativePath || isPlaceholder) {
+        console.log('Using placeholder image');
+        return `${WEBV2_IMAGE_BASE}/images/placeholder-image.jpg`;
+    }
+    const fullPath = `${WEBV2_IMAGE_BASE}/${relativePath}`;
+    console.log('Constructed image path:', fullPath);
+    return fullPath;
+}
+
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
     if (!header) {
@@ -15,7 +25,6 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 
     if (isLoading) {
-        header.classList.add('loading');
         header.innerHTML = `
             <div class="container">
                 <div class="text-center">
@@ -24,78 +33,16 @@ function updateLoadingState(isLoading, errorMessage = '') {
                     </div>
                     <p>Loading program data...</p>
                 </div>
-            </div>
-        `;
+            </div>`;
     } else if (errorMessage) {
         header.innerHTML = `
             <div class="container">
-                <div class="text-center text-danger">
-                    <p>Error loading data: ${errorMessage}</p>
-                </div>
-            </div>
-        `;
+                <div class="alert alert-danger">${errorMessage}</div>
+            </div>`;
     }
 }
 
-function getImagePath(relativePath) {
-    if (!relativePath) {
-        console.log('No image path provided, using placeholder');
-        return 'images/placeholder-image.jpg';
-    }
-    const fullPath = `${WEBV2_IMAGE_BASE}/${relativePath.replace('images/', '')}`;
-    console.log('Constructed image path:', fullPath);
-    return fullPath;
-}
-
-// Main initialization
-document.addEventListener('DOMContentLoaded', async function() {
-    console.log('DOM Content Loaded');
-    try {
-        console.log('Starting initialization...');
-        await initializeRankings();
-        console.log('Rankings initialized');
-        initializeComments();
-        console.log('Comments initialized');
-    } catch (error) {
-        console.error('Initialization error:', error);
-    }
-});
-
-// Rankings Initialization
-async function initializeRankings() {
-    try {
-        console.log('Initializing rankings...');
-        updateLoadingState(true);
-        
-        const response = await fetch('data/all-time-programs-fifty.json');
-        if (!response.ok) {
-            throw new Error(`Failed to fetch data: ${response.status}`);
-        }
-        
-        programsData = await response.json();
-        console.log('Data loaded, first program:', programsData[0]);
-        
-        if (programsData.length > 0) {
-            await updateTeamHeader(programsData[0]);
-            console.log('Team header updated');
-        }
-        
-        setupPagination();
-        displayCurrentPage();
-        
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.addEventListener('input', handleSearch);
-        }
-        
-        updateLoadingState(false);
-        console.log('Rankings initialization complete');
-    } catch (error) {
-        console.error('Error initializing rankings:', error);
-        updateLoadingState(false, error.message);
-    }
-}
-
+// Core Functions
 async function updateTeamHeader(program) {
     console.log('Updating team header for:', program.Team);
     const header = document.querySelector('.team-header');
@@ -112,7 +59,7 @@ async function updateTeamHeader(program) {
                          alt="${program.Team} Logo" 
                          class="img-fluid team-logo" 
                          style="max-height: 100px;" 
-                         onerror="console.error('Logo load failed:', this.src); this.src='images/placeholder-image.jpg'" />
+                         onerror="this.src='${getImagePath(null, true)}'" />
                 </div>
                 <div class="col-md-6 text-center">
                     <h2 class="team-name">${program.Team}</h2>
@@ -126,7 +73,7 @@ async function updateTeamHeader(program) {
                          alt="${program.Team} School Logo" 
                          class="img-fluid school-logo" 
                          style="max-height: 100px;"
-                         onerror="console.error('School logo load failed:', this.src); this.src='images/placeholder-image.jpg'" />
+                         onerror="this.src='${getImagePath(null, true)}'" />
                 </div>
             </div>
         </div>
@@ -136,6 +83,32 @@ async function updateTeamHeader(program) {
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
 
+// Data Loading and Display
+async function initializeRankings() {
+    console.log('Initializing rankings...');
+    try {
+        updateLoadingState(true);
+        const response = await fetch('data/all-time-programs-fifty.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        programsData = await response.json();
+        console.log('Data loaded, programs count:', programsData.length);
+        
+        if (programsData.length > 0) {
+            await updateTeamHeader(programsData[0]);
+            setupPagination();
+            displayCurrentPage();
+        }
+        
+        updateLoadingState(false);
+    } catch (error) {
+        console.error('Error initializing rankings:', error);
+        updateLoadingState(false, error.message);
+    }
+}
+
+// Search and Pagination Functions
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
     console.log('Searching for:', searchTerm);
@@ -160,22 +133,48 @@ function setupPagination(data = programsData) {
     const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
     paginationElement.innerHTML = '';
     
+    // Add Previous button
+    const prevLi = document.createElement('li');
+    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+    prevLi.innerHTML = `
+        <button class="page-link" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
+    `;
+    prevLi.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            displayCurrentPage(data);
+            setupPagination(data);
+        }
+    });
+    paginationElement.appendChild(prevLi);
+
+    // Add page numbers
     for (let i = 1; i <= totalPages; i++) {
         const li = document.createElement('li');
         li.className = `page-item ${currentPage === i ? 'active' : ''}`;
-        
-        const button = document.createElement('button');
-        button.className = 'page-link';
-        button.textContent = i;
-        button.addEventListener('click', () => {
+        li.innerHTML = `<button class="page-link">${i}</button>`;
+        li.addEventListener('click', () => {
             currentPage = i;
             displayCurrentPage(data);
             setupPagination(data);
         });
-        
-        li.appendChild(button);
         paginationElement.appendChild(li);
     }
+
+    // Add Next button
+    const nextLi = document.createElement('li');
+    nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+    nextLi.innerHTML = `
+        <button class="page-link" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
+    `;
+    nextLi.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayCurrentPage(data);
+            setupPagination(data);
+        }
+    });
+    paginationElement.appendChild(nextLi);
 }
 
 function displayCurrentPage(data = programsData) {
@@ -204,23 +203,27 @@ function displayCurrentPage(data = programsData) {
             <td>${program.State}</td>
             <td>${program.Seasons}</td>
             <td>
-                <a href="/program/${encodeURIComponent(program.Team)}" 
-                   class="btn btn-primary btn-sm">View Details</a>
+                <button onclick="showProgramDetails('${program.Team}')" 
+                        class="btn btn-primary btn-sm">View Details</button>
             </td>
         `;
         tableBody.appendChild(row);
     });
 }
 
-// Comments Initialization and Functions
+// Program Details
+function showProgramDetails(teamName) {
+    console.log(`Showing details for team: ${teamName}`);
+    // Implementation for program details view will go here
+}
+
+// Comments System
 function initializeComments() {
-    console.log('Initializing comments...');
+    console.log('Initializing comments system...');
     const submitButton = document.getElementById('submitComment');
     if (submitButton) {
         submitButton.addEventListener('click', submitComment);
         console.log('Comment submit button initialized');
-    } else {
-        console.warn('Comment submit button not found');
     }
     loadComments();
 }
@@ -229,12 +232,8 @@ async function loadComments() {
     try {
         console.log('Loading comments...');
         const response = await fetch('/api/comments');
-        if (!response.ok) {
-            throw new Error(`Failed to load comments: ${response.status}`);
-        }
         const comments = await response.json();
         displayComments(comments);
-        console.log('Comments loaded successfully');
     } catch (error) {
         console.error('Error loading comments:', error);
     }
@@ -243,7 +242,7 @@ async function loadComments() {
 function displayComments(comments) {
     const commentsListElement = document.getElementById('commentsList');
     if (!commentsListElement) {
-        console.error('Comments list element not found');
+        console.warn('Comments list element not found');
         return;
     }
 
@@ -288,10 +287,24 @@ async function submitComment() {
             textElement.value = '';
             await loadComments();
             console.log('Comment submitted successfully');
-        } else {
-            throw new Error(`Failed to submit comment: ${response.status}`);
         }
     } catch (error) {
         console.error('Error posting comment:', error);
     }
 }
+
+// Main initialization - keep at end
+document.addEventListener('DOMContentLoaded', async function() {
+    console.log('DOM Content Loaded');
+    try {
+        await initializeRankings();
+        initializeComments();
+        
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', handleSearch);
+        }
+    } catch (error) {
+        console.error('Initialization error:', error);
+    }
+});
