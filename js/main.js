@@ -1,5 +1,5 @@
 ﻿// Constants
-const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot/images';
+const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot';
 const ITEMS_PER_PAGE = 100;
 
 // State management
@@ -8,12 +8,13 @@ let programsData = [];
 
 // Main initialization
 document.addEventListener('DOMContentLoaded', async function() {
+    console.log('Initializing app...');
     try {
         // Initialize both rankings and comments
         await initializeRankings();
         initializeComments();
     } catch (error) {
-        console.error('Initialization error:', error);
+        console.error('Error initializing app:', error);
     }
 });
 
@@ -25,7 +26,13 @@ async function initializeRankings() {
         const response = await fetch('data/all-time-programs-fifty.json');
         programsData = await response.json();
         
+        // Log first program data to verify structure
         if (programsData.length > 0) {
+            console.log('First program data:', programsData[0]);
+            console.log('Constructed image paths:', {
+                logo: getImagePath(programsData[0].LogoURL),
+                schoolLogo: getImagePath(programsData[0].School_Logo_URL)
+            });
             await updateTeamHeader(programsData[0]);
         }
         
@@ -41,48 +48,32 @@ async function initializeRankings() {
     }
 }
 
-// Comments Initialization
-function initializeComments() {
-    const submitButton = document.getElementById('submitComment');
-    if (submitButton) {
-        submitButton.addEventListener('click', submitComment);
+// Image Path Handling
+function getImagePath(relativePath) {
+    if (!relativePath) {
+        console.log('No image path provided, using placeholder');
+        return `${WEBV2_IMAGE_BASE}/images/placeholder-image.jpg`;
     }
-    loadComments();
+    
+    // Remove leading 'images/' if present as it's included in WEBV2_IMAGE_BASE
+    const cleanPath = relativePath.startsWith('images/') 
+        ? relativePath.substring(7) 
+        : relativePath;
+        
+    const fullPath = `${WEBV2_IMAGE_BASE}/images/${cleanPath}`;
+    console.log(`Constructed image path: ${fullPath} from relative path: ${relativePath}`);
+    return fullPath;
 }
 
-// Rankings Functions
-function updateLoadingState(isLoading, errorMessage = '') {
-    const header = document.querySelector('.team-header');
-    if (isLoading) {
-        header.classList.add('loading');
-        header.innerHTML = `
-            <div class="container">
-                <div class="text-center">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <p>Loading program data...</p>
-                </div>
-            </div>
-        `;
-    } else if (errorMessage) {
-        header.innerHTML = `
-            <div class="container">
-                <div class="text-center text-danger">
-                    <p>Error loading data: ${errorMessage}</p>
-                </div>
-            </div>
-        `;
-    }
-}
-
+// Team Header Update
 async function updateTeamHeader(program) {
     const header = document.querySelector('.team-header');
     
-    const getImagePath = (relativePath) => {
-        if (!relativePath) return 'images/placeholder-image.jpg';
-        return `${WEBV2_IMAGE_BASE}/${relativePath.replace('images/', '')}`;
-    };
+    console.log('Updating team header for:', program.Team);
+    console.log('Using image paths:', {
+        logo: getImagePath(program.LogoURL),
+        schoolLogo: getImagePath(program.School_Logo_URL)
+    });
 
     header.innerHTML = `
         <div class="container">
@@ -92,7 +83,7 @@ async function updateTeamHeader(program) {
                          alt="${program.Team} Logo" 
                          class="img-fluid team-logo" 
                          style="max-height: 100px;" 
-                         onerror="this.src='images/placeholder-image.jpg'" />
+                         onerror="console.error('Failed to load logo:', this.src); this.src='${WEBV2_IMAGE_BASE}/images/placeholder-image.jpg';" />
                 </div>
                 <div class="col-md-6 text-center">
                     <h2 class="team-name">${program.Team}</h2>
@@ -106,7 +97,7 @@ async function updateTeamHeader(program) {
                          alt="${program.Team} School Logo" 
                          class="img-fluid school-logo" 
                          style="max-height: 100px;"
-                         onerror="this.src='images/placeholder-image.jpg'" />
+                         onerror="console.error('Failed to load school logo:', this.src); this.src='${WEBV2_IMAGE_BASE}/images/placeholder-image.jpg';" />
                 </div>
             </div>
         </div>
@@ -116,6 +107,7 @@ async function updateTeamHeader(program) {
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
 
+// Search and Pagination
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
     const filteredPrograms = programsData.filter(program => 
@@ -131,24 +123,55 @@ function handleSearch(event) {
 function setupPagination(data = programsData) {
     const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
     const paginationElement = document.getElementById('pagination');
+    if (!paginationElement) {
+        console.warn('Pagination element not found');
+        return;
+    }
+    
     paginationElement.innerHTML = '';
     
+    // Add Previous button
+    const prevLi = document.createElement('li');
+    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+    prevLi.innerHTML = `
+        <button class="page-link" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
+    `;
+    prevLi.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            displayCurrentPage(data);
+            setupPagination(data);
+        }
+    });
+    paginationElement.appendChild(prevLi);
+
+    // Add page numbers
     for (let i = 1; i <= totalPages; i++) {
         const li = document.createElement('li');
         li.className = `page-item ${currentPage === i ? 'active' : ''}`;
-        
-        const button = document.createElement('button');
-        button.className = 'page-link';
-        button.textContent = i;
-        button.addEventListener('click', () => {
+        li.innerHTML = `<button class="page-link">${i}</button>`;
+        li.addEventListener('click', () => {
             currentPage = i;
             displayCurrentPage(data);
             setupPagination(data);
         });
-        
-        li.appendChild(button);
         paginationElement.appendChild(li);
     }
+
+    // Add Next button
+    const nextLi = document.createElement('li');
+    nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+    nextLi.innerHTML = `
+        <button class="page-link" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
+    `;
+    nextLi.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayCurrentPage(data);
+            setupPagination(data);
+        }
+    });
+    paginationElement.appendChild(nextLi);
 }
 
 function displayCurrentPage(data = programsData) {
@@ -172,8 +195,8 @@ function displayCurrentPage(data = programsData) {
             <td>${program.State}</td>
             <td>${program.Seasons}</td>
             <td>
-                <a href="/program/${encodeURIComponent(program.Team)}" 
-                   class="btn btn-primary btn-sm">View Details</a>
+                <button onclick="showProgramDetails('${program.Team}')" 
+                        class="btn btn-primary btn-sm">View Details</button>
             </td>
         `;
         tableBody.appendChild(row);
@@ -181,6 +204,14 @@ function displayCurrentPage(data = programsData) {
 }
 
 // Comments Functions
+function initializeComments() {
+    const submitButton = document.getElementById('submitComment');
+    if (submitButton) {
+        submitButton.addEventListener('click', submitComment);
+    }
+    loadComments();
+}
+
 async function loadComments() {
     try {
         const response = await fetch('/api/comments');
@@ -193,10 +224,15 @@ async function loadComments() {
 
 function displayComments(comments) {
     const commentsListElement = document.getElementById('commentsList');
+    if (!commentsListElement) {
+        console.warn('Comments list element not found');
+        return;
+    }
+
     commentsListElement.innerHTML = comments.map(comment => `
         <div class="comment mb-3 p-3 border rounded">
             <div class="comment-header d-flex justify-content-between">
-                <strong>${comment.author}</strong>
+                <strong>${comment.author || 'Anonymous'}</strong>
                 <small class="text-muted">
                     ${new Date(comment.timestamp).toLocaleDateString()}
                 </small>
@@ -222,16 +258,22 @@ async function submitComment() {
             },
             body: JSON.stringify({
                 text,
-                author: 'Anonymous', // We'll add authentication later
-                programName: document.querySelector('.team-name').textContent
+                author: 'Anonymous',
+                programName: document.querySelector('.team-name')?.textContent || 'General'
             })
         });
         
         if (response.ok) {
             textElement.value = '';
-            loadComments();
+            await loadComments();
         }
     } catch (error) {
         console.error('Error posting comment:', error);
     }
+}
+
+// Program Details View
+function showProgramDetails(teamName) {
+    console.log(`Showing details for team: ${teamName}`);
+    // Implement program details view
 }
