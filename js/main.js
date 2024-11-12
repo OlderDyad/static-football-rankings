@@ -1,27 +1,28 @@
 ﻿// 1. Constants
 const REPO_BASE = '/static-football-rankings';
 const IMAGE_BASE = `${REPO_BASE}/docs/images`;
+const DEFAULT_PLACEHOLDER = `${IMAGE_BASE}/placeholder-image.jpg`;
+const ITEMS_PER_PAGE = 100;
+const API_BASE = 'https://static-football-rankings.vercel.app/api';
 
 // 2. State management
 let currentPage = 1;
 let programsData = [];
 
 // 3. Utility Functions
-
-// Updated getImagePath function
 function getImagePath(relativePath, isPlaceholder = false) {
     if (!relativePath || isPlaceholder) {
         const placeholderPath = `${IMAGE_BASE}/placeholder-image.jpg`;
         console.log('Using placeholder:', placeholderPath);
         return placeholderPath;
     }
-    
+
     // Remove any 'images/' prefix from the path
     const cleanPath = relativePath.replace(/^images\//, '');
-    
+
     // Convert 'Teams' to lowercase 'teams' in the path
     const normalizedPath = cleanPath.replace(/^Teams\//, 'teams/');
-    
+
     const fullPath = `${IMAGE_BASE}/${normalizedPath}`;
     console.log('Constructed path:', fullPath);
     return fullPath;
@@ -63,13 +64,13 @@ async function initializeRankings() {
         }
         programsData = await response.json();
         console.log('Data loaded, programs count:', programsData.length);
-        
+
         if (programsData.length > 0) {
             await updateTeamHeader(programsData[0]);
             setupPagination();
             displayCurrentPage();
         }
-        
+
         updateLoadingState(false);
     } catch (error) {
         console.error('Error initializing rankings:', error);
@@ -89,10 +90,10 @@ async function updateTeamHeader(program) {
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3">
-                    <img src="${getImagePath(program.LogoURL)}" 
-                         alt="${program.Team} Logo" 
-                         class="img-fluid team-logo" 
-                         style="max-height: 100px;" 
+                    <img src="${getImagePath(program.LogoURL)}"
+                         alt="${program.Team} Logo"
+                         class="img-fluid team-logo"
+                         style="max-height: 100px;"
                          onerror="this.src='${DEFAULT_PLACEHOLDER}'" />
                 </div>
                 <div class="col-md-6 text-center">
@@ -103,16 +104,16 @@ async function updateTeamHeader(program) {
                     </div>
                 </div>
                 <div class="col-md-3 text-right">
-                    <img src="${getImagePath(program.School_Logo_URL)}" 
-                         alt="${program.Team} School Logo" 
-                         class="img-fluid school-logo" 
+                    <img src="${getImagePath(program.School_Logo_URL)}"
+                         alt="${program.Team} School Logo"
+                         class="img-fluid school-logo"
                          style="max-height: 100px;"
                          onerror="this.src='${DEFAULT_PLACEHOLDER}'" />
                 </div>
             </div>
         </div>
     `;
-    
+
     header.style.backgroundColor = program.PrimaryColor || '#000000';
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
@@ -121,12 +122,12 @@ async function updateTeamHeader(program) {
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
     console.log('Searching for:', searchTerm);
-    
-    const filteredPrograms = programsData.filter(program => 
+
+    const filteredPrograms = programsData.filter(program =>
         program.Team.toLowerCase().includes(searchTerm) ||
         program.State.toLowerCase().includes(searchTerm)
     );
-    
+
     currentPage = 1;
     setupPagination(filteredPrograms);
     displayCurrentPage(filteredPrograms);
@@ -147,7 +148,7 @@ function setupPagination(data = programsData) {
 
     const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
     paginationElement.innerHTML = '';
-    
+
     // Add Previous button
     const prevLi = document.createElement('li');
     prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
@@ -202,9 +203,9 @@ function displayCurrentPage(data = programsData) {
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
     const currentData = data.slice(start, end);
-    
+
     tableBody.innerHTML = '';
-    
+
     currentData.forEach(program => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -218,7 +219,7 @@ function displayCurrentPage(data = programsData) {
             <td>${program.State}</td>
             <td>${program.Seasons}</td>
             <td>
-                <button onclick="showProgramDetails('${program.Team}')" 
+                <button onclick="showProgramDetails('${program.Team}')"
                         class="btn btn-primary btn-sm">View Details</button>
             </td>
         `;
@@ -234,22 +235,21 @@ function showProgramDetails(teamName) {
 
 // 7. Comments System
 async function loadComments() {
+    console.log('Loading comments...');
     try {
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'GET',
-            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             }
-            // Removed credentials: 'include'
         });
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const comments = await response.json();
-        displayComments(comments);
+        displayComments(Array.isArray(comments) ? comments : []);
     } catch (error) {
         console.error('Error loading comments:', error);
         const commentsListElement = document.getElementById('commentsList');
@@ -263,7 +263,6 @@ async function loadComments() {
     }
 }
 
-
 function displayComments(comments) {
     const commentsListElement = document.getElementById('commentsList');
     if (!commentsListElement) {
@@ -271,16 +270,13 @@ function displayComments(comments) {
         return;
     }
 
-    // Ensure comments is an array
-    const commentArray = Array.isArray(comments) ? comments : [];
-    
-    if (commentArray.length === 0) {
+    if (comments.length === 0) {
         commentsListElement.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
         return;
     }
 
     try {
-        commentsListElement.innerHTML = commentArray.map(comment => `
+        commentsListElement.innerHTML = comments.map(comment => `
             <div class="comment mb-3 p-3 border rounded">
                 <div class="comment-header d-flex justify-content-between">
                     <strong>${comment.author || 'Anonymous'}</strong>
@@ -302,32 +298,34 @@ function displayComments(comments) {
 async function submitComment() {
     const textElement = document.getElementById('commentText');
     const text = textElement?.value?.trim();
-    
-    if (!text) return;
-    
+
+    if (!text) {
+        console.warn('No comment text provided');
+        return;
+    }
+
     try {
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'POST',
-            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
-            // Removed credentials: 'include'
             body: JSON.stringify({
                 text,
                 author: 'Anonymous',
                 programName: document.querySelector('.team-name')?.textContent || 'General'
             })
         });
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         textElement.value = '';
         await loadComments();
+        console.log('Comment submitted successfully');
     } catch (error) {
-        console.error('Error posting comment:', error);
+        console.error('Error submitting comment:', error);
         alert('Unable to submit comment. Please try again later.');
     }
 }
@@ -338,16 +336,16 @@ document.addEventListener('DOMContentLoaded', async function() {
     try {
         await initializeRankings();
         await loadComments();
-        
+
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
             searchInput.addEventListener('input', handleSearch);
         }
 
         const submitButton = document.getElementById('submitComment');
-if (submitButton) {
-    submitButton.addEventListener('click', submitComment);
-}
+        if (submitButton) {
+            submitButton.addEventListener('click', submitComment);
+        }
     } catch (error) {
         console.error('Initialization error:', error);
     }
