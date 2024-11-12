@@ -234,15 +234,14 @@ function showProgramDetails(teamName) {
 
 // 7. Comments System
 async function loadComments() {
-    console.log('Loading comments...');
     try {
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'GET',
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'application/json'
             }
+            // Removed credentials: 'include'
         });
         
         if (!response.ok) {
@@ -250,12 +249,6 @@ async function loadComments() {
         }
         
         const comments = await response.json();
-        // Verify comments is an array
-        if (!Array.isArray(comments)) {
-            console.warn('Received non-array comments:', comments);
-            displayComments([]);
-            return;
-        }
         displayComments(comments);
     } catch (error) {
         console.error('Error loading comments:', error);
@@ -269,6 +262,7 @@ async function loadComments() {
         }
     }
 }
+
 
 function displayComments(comments) {
     const commentsListElement = document.getElementById('commentsList');
@@ -309,19 +303,16 @@ async function submitComment() {
     const textElement = document.getElementById('commentText');
     const text = textElement?.value?.trim();
     
-    if (!text) {
-        console.warn('No comment text provided');
-        return;
-    }
+    if (!text) return;
     
     try {
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'POST',
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'application/json'
             },
+            // Removed credentials: 'include'
             body: JSON.stringify({
                 text,
                 author: 'Anonymous',
@@ -335,9 +326,8 @@ async function submitComment() {
         
         textElement.value = '';
         await loadComments();
-        console.log('Comment submitted successfully');
     } catch (error) {
-        console.error('Error submitting comment:', error);
+        console.error('Error posting comment:', error);
         alert('Unable to submit comment. Please try again later.');
     }
 }
@@ -355,9 +345,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         const submitButton = document.getElementById('submitComment');
-        if (submitButton) {
-            submitButton.addEventListener('click', submitComment);
-        }
+if (submitButton) {
+    submitButton.addEventListener('click', submitComment);
+}
     } catch (error) {
         console.error('Initialization error:', error);
     }
