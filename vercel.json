@@ -16,7 +16,7 @@
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "https://olderdyad.github.io" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization, X-Requested-With" },
         { "key": "Access-Control-Allow-Credentials", "value": "true" }
       ]
     }
@@ -26,6 +26,7 @@
     { "source": "/api/verify-email", "destination": "/api/verify-email.js" }
   ]
 }
+
 
 
 
