@@ -1,5 +1,15 @@
 {
   "version": 2,
+  "functions": {
+    "api/comments.js": {
+      "runtime": "nodejs18.x",
+      "memory": 256
+    },
+    "api/verify-email.js": {
+      "runtime": "nodejs18.x",
+      "memory": 256
+    }
+  },
   "headers": [
     {
       "source": "/api/(.*)",
