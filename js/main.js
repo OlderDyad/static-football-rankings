@@ -239,14 +239,11 @@ async function loadComments() {
     try {
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'  // <-- Add this line
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const comments = await response.json();
         displayComments(Array.isArray(comments) ? comments : []);
@@ -307,9 +304,8 @@ async function submitComment() {
     try {
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',  // <-- Add this line
             body: JSON.stringify({
                 text,
                 author: 'Anonymous',
@@ -317,9 +313,7 @@ async function submitComment() {
             })
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         textElement.value = '';
         await loadComments();
