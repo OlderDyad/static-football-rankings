@@ -1,7 +1,9 @@
 ﻿// 1. Constants
-const REPO_BASE = '/static-football-rankings';
-const WEBV2_IMAGE_BASE = `${REPO_BASE}/docs/images`;
-const DEFAULT_PLACEHOLDER = `${REPO_BASE}/docs/images/placeholder-image.jpg`;
+// For static page elements (banners, placeholders)
+const STATIC_IMAGE_PATH = '/wwwroot/images'; // This was working for banners
+// For WebV2 team-specific images
+const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot/images';
+const DEFAULT_PLACEHOLDER = `${STATIC_IMAGE_PATH}/placeholder-image.jpg`;
 const ITEMS_PER_PAGE = 100;
 const API_BASE = 'https://static-football-rankings.vercel.app/api';
 
@@ -10,6 +12,7 @@ let currentPage = 1;
 let programsData = [];
 
 // 3. Utility Functions
+
 function getImagePath(relativePath, isPlaceholder = false) {
     if (!relativePath || isPlaceholder) {
         console.log('Using placeholder image');
@@ -18,11 +21,12 @@ function getImagePath(relativePath, isPlaceholder = false) {
     
     // Handle team-specific images from WebV2
     if (relativePath.includes('Teams/')) {
-        return `${WEBV2_IMAGE_BASE}/teams/${relativePath.split('Teams/')[1]}`;
+        console.log('Loading team image:', relativePath);
+        return `${WEBV2_IMAGE_BASE}/${relativePath.replace('images/', '')}`;
     }
     
-    // For other images, use the local docs path
-    return `${WEBV2_IMAGE_BASE}/${relativePath}`;
+    // For banner images and other static content
+    return `${STATIC_IMAGE_PATH}/${relativePath.replace('images/', '')}`;
 }
 
 function updateLoadingState(isLoading, errorMessage = '') {
@@ -275,29 +279,32 @@ function displayComments(comments) {
         return;
     }
 
-    if (!Array.isArray(comments) || comments.length === 0) {
+    // Ensure comments is an array
+    const commentArray = Array.isArray(comments) ? comments : [];
+    
+    if (commentArray.length === 0) {
         commentsListElement.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
         return;
     }
 
-    commentsListElement.innerHTML = comments.map(comment => {
-        // Validate comment object
-        const author = comment?.author || 'Anonymous';
-        const timestamp = comment?.timestamp ? new Date(comment.timestamp).toLocaleDateString() : 'Unknown date';
-        const text = comment?.text || '';
-
-        return `
+    try {
+        commentsListElement.innerHTML = commentArray.map(comment => `
             <div class="comment mb-3 p-3 border rounded">
                 <div class="comment-header d-flex justify-content-between">
-                    <strong>${author}</strong>
-                    <small class="text-muted">${timestamp}</small>
+                    <strong>${comment.author || 'Anonymous'}</strong>
+                    <small class="text-muted">
+                        ${new Date(comment.timestamp).toLocaleDateString()}
+                    </small>
                 </div>
                 <div class="comment-body mt-2">
-                    ${text}
+                    ${comment.text}
                 </div>
             </div>
-        `;
-    }).join('');
+        `).join('');
+    } catch (error) {
+        console.error('Error displaying comments:', error);
+        commentsListElement.innerHTML = '<div class="alert alert-warning">Error displaying comments</div>';
+    }
 }
 
 async function submitComment() {
