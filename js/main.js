@@ -1,8 +1,8 @@
 ﻿// Constants
-const WEBV2_BASE = 'http://localhost:5000/McKnightFootballRankings.WebV2/wwwroot'; // Development
-//const WEBV2_BASE = 'https://your-production-domain.com/McKnightFootballRankings.WebV2/wwwroot'; // Production
-const WEBV2_IMAGE_BASE = `${WEBV2_BASE}/images`;
-const DEFAULT_PLACEHOLDER = '/docs/images/placeholder-image.jpg'; // Updated to use docs folder
+// For GitHub Pages, use the repository base path
+const REPO_BASE = '/static-football-rankings';
+const WEBV2_IMAGE_BASE = `${REPO_BASE}/docs/images`;
+const DEFAULT_PLACEHOLDER = `${REPO_BASE}/docs/images/placeholder-image.jpg`;
 const ITEMS_PER_PAGE = 100;
 
 // State management
@@ -15,13 +15,14 @@ function getImagePath(relativePath, isPlaceholder = false) {
         console.log('Using placeholder image');
         return DEFAULT_PLACEHOLDER;
     }
-    // If path already contains 'images/', don't add it again
-    const cleanPath = relativePath.replace(/^images\//, '');
-    const fullPath = relativePath.includes('images/') 
-        ? `${WEBV2_BASE}/${cleanPath}`
-        : `${WEBV2_IMAGE_BASE}/${cleanPath}`;
-    console.log('Constructed image path:', fullPath);
-    return fullPath;
+    
+    // Handle team-specific images from WebV2
+    if (relativePath.includes('Teams/')) {
+        return `${WEBV2_IMAGE_BASE}/teams/${relativePath.split('Teams/')[1]}`;
+    }
+    
+    // For other images, use the local docs path
+    return `${WEBV2_IMAGE_BASE}/${relativePath}`;
 }
 
 function updateLoadingState(isLoading, errorMessage = '') {
