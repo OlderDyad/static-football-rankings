@@ -1,5 +1,7 @@
 ﻿// Constants
-const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot';
+const WEBV2_BASE = 'https://your-webv2-domain.com'; // Need actual WebV2 domain
+const WEBV2_IMAGE_BASE = `${WEBV2_BASE}/images`;
+const DEFAULT_PLACEHOLDER = '/images/placeholder-image.jpg'; // Local placeholder
 const ITEMS_PER_PAGE = 100;
 
 // State management
@@ -10,9 +12,11 @@ let programsData = [];
 function getImagePath(relativePath, isPlaceholder = false) {
     if (!relativePath || isPlaceholder) {
         console.log('Using placeholder image');
-        return `${WEBV2_IMAGE_BASE}/images/placeholder-image.jpg`;
+        return DEFAULT_PLACEHOLDER;
     }
-    const fullPath = `${WEBV2_IMAGE_BASE}/${relativePath}`;
+    // If path starts with 'images/', remove it to prevent duplication
+    const cleanPath = relativePath.replace(/^images\//, '');
+    const fullPath = `${WEBV2_IMAGE_BASE}/${cleanPath}`;
     console.log('Constructed image path:', fullPath);
     return fullPath;
 }
@@ -59,7 +63,7 @@ async function updateTeamHeader(program) {
                          alt="${program.Team} Logo" 
                          class="img-fluid team-logo" 
                          style="max-height: 100px;" 
-                         onerror="this.src='${getImagePath(null, true)}'" />
+                         onerror="this.src='${DEFAULT_PLACEHOLDER}'" />
                 </div>
                 <div class="col-md-6 text-center">
                     <h2 class="team-name">${program.Team}</h2>
@@ -73,7 +77,7 @@ async function updateTeamHeader(program) {
                          alt="${program.Team} School Logo" 
                          class="img-fluid school-logo" 
                          style="max-height: 100px;"
-                         onerror="this.src='${getImagePath(null, true)}'" />
+                         onerror="this.src='${DEFAULT_PLACEHOLDER}'" />
                 </div>
             </div>
         </div>
@@ -126,8 +130,14 @@ function handleSearch(event) {
 function setupPagination(data = programsData) {
     const paginationElement = document.getElementById('pagination');
     if (!paginationElement) {
-        console.error('Pagination element not found');
-        return;
+        console.warn('Creating pagination element');
+        const nav = document.createElement('nav');
+        nav.innerHTML = '<ul class="pagination" id="pagination"></ul>';
+        const tableContainer = document.querySelector('.table-responsive');
+        if (tableContainer) {
+            tableContainer.after(nav);
+        }
+        return setupPagination(data); // Retry now that element exists
     }
 
     const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
@@ -217,88 +227,11 @@ function showProgramDetails(teamName) {
     // Implementation for program details view will go here
 }
 
-// Comments System
-function initializeComments() {
-    console.log('Initializing comments system...');
-    const submitButton = document.getElementById('submitComment');
-    if (submitButton) {
-        submitButton.addEventListener('click', submitComment);
-        console.log('Comment submit button initialized');
-    }
-    loadComments();
-}
-
-async function loadComments() {
-    try {
-        console.log('Loading comments...');
-        const response = await fetch('/api/comments');
-        const comments = await response.json();
-        displayComments(comments);
-    } catch (error) {
-        console.error('Error loading comments:', error);
-    }
-}
-
-function displayComments(comments) {
-    const commentsListElement = document.getElementById('commentsList');
-    if (!commentsListElement) {
-        console.warn('Comments list element not found');
-        return;
-    }
-
-    commentsListElement.innerHTML = comments.map(comment => `
-        <div class="comment mb-3 p-3 border rounded">
-            <div class="comment-header d-flex justify-content-between">
-                <strong>${comment.author || 'Anonymous'}</strong>
-                <small class="text-muted">
-                    ${new Date(comment.timestamp).toLocaleDateString()}
-                </small>
-            </div>
-            <div class="comment-body mt-2">
-                ${comment.text}
-            </div>
-        </div>
-    `).join('');
-}
-
-async function submitComment() {
-    const textElement = document.getElementById('commentText');
-    const text = textElement?.value?.trim();
-    
-    if (!text) {
-        console.warn('No comment text provided');
-        return;
-    }
-    
-    try {
-        const response = await fetch('/api/comments', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                text,
-                author: 'Anonymous',
-                programName: document.querySelector('.team-name')?.textContent || 'General'
-            })
-        });
-        
-        if (response.ok) {
-            textElement.value = '';
-            await loadComments();
-            console.log('Comment submitted successfully');
-        }
-    } catch (error) {
-        console.error('Error posting comment:', error);
-    }
-}
-
 // Main initialization - keep at end
 document.addEventListener('DOMContentLoaded', async function() {
     console.log('DOM Content Loaded');
     try {
         await initializeRankings();
-        initializeComments();
         
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
