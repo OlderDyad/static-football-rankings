@@ -21,11 +21,12 @@
       ]
     }
   ],
-  "routes": [
-    { "src": "/api/comments", "dest": "/api/comments.js" },
-    { "src": "/api/verify-email", "dest": "/api/verify-email.js" }
+  "rewrites": [
+    { "source": "/api/comments", "destination": "/api/comments.js" },
+    { "source": "/api/verify-email", "destination": "/api/verify-email.js" }
   ]
 }
+
 
 
 
