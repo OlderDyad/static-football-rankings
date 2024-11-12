@@ -248,6 +248,12 @@ async function loadComments() {
         }
         
         const comments = await response.json();
+        // Verify comments is an array
+        if (!Array.isArray(comments)) {
+            console.warn('Received non-array comments:', comments);
+            displayComments([]);
+            return;
+        }
         displayComments(comments);
     } catch (error) {
         console.error('Error loading comments:', error);
@@ -269,19 +275,29 @@ function displayComments(comments) {
         return;
     }
 
-    commentsListElement.innerHTML = comments.map(comment => `
-        <div class="comment mb-3 p-3 border rounded">
-            <div class="comment-header d-flex justify-content-between">
-                <strong>${comment.author || 'Anonymous'}</strong>
-                <small class="text-muted">
-                    ${new Date(comment.timestamp).toLocaleDateString()}
-                </small>
+    if (!Array.isArray(comments) || comments.length === 0) {
+        commentsListElement.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
+        return;
+    }
+
+    commentsListElement.innerHTML = comments.map(comment => {
+        // Validate comment object
+        const author = comment?.author || 'Anonymous';
+        const timestamp = comment?.timestamp ? new Date(comment.timestamp).toLocaleDateString() : 'Unknown date';
+        const text = comment?.text || '';
+
+        return `
+            <div class="comment mb-3 p-3 border rounded">
+                <div class="comment-header d-flex justify-content-between">
+                    <strong>${author}</strong>
+                    <small class="text-muted">${timestamp}</small>
+                </div>
+                <div class="comment-body mt-2">
+                    ${text}
+                </div>
             </div>
-            <div class="comment-body mt-2">
-                ${comment.text}
-            </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 async function submitComment() {
