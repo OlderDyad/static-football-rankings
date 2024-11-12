@@ -1,15 +1,15 @@
-﻿// Constants
-// For GitHub Pages, use the repository base path
+﻿// 1. Constants
 const REPO_BASE = '/static-football-rankings';
 const WEBV2_IMAGE_BASE = `${REPO_BASE}/docs/images`;
 const DEFAULT_PLACEHOLDER = `${REPO_BASE}/docs/images/placeholder-image.jpg`;
 const ITEMS_PER_PAGE = 100;
+const API_BASE = 'https://static-football-rankings.vercel.app/api';
 
-// State management
+// 2. State management
 let currentPage = 1;
 let programsData = [];
 
-// Utility Functions
+// 3. Utility Functions
 function getImagePath(relativePath, isPlaceholder = false) {
     if (!relativePath || isPlaceholder) {
         console.log('Using placeholder image');
@@ -50,7 +50,31 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 }
 
-// Core Functions
+// 4. Core Data Loading and Display
+async function initializeRankings() {
+    console.log('Initializing rankings...');
+    try {
+        updateLoadingState(true);
+        const response = await fetch('data/all-time-programs-fifty.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        programsData = await response.json();
+        console.log('Data loaded, programs count:', programsData.length);
+        
+        if (programsData.length > 0) {
+            await updateTeamHeader(programsData[0]);
+            setupPagination();
+            displayCurrentPage();
+        }
+        
+        updateLoadingState(false);
+    } catch (error) {
+        console.error('Error initializing rankings:', error);
+        updateLoadingState(false, error.message);
+    }
+}
+
 async function updateTeamHeader(program) {
     console.log('Updating team header for:', program.Team);
     const header = document.querySelector('.team-header');
@@ -91,32 +115,7 @@ async function updateTeamHeader(program) {
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
 
-// Data Loading and Display
-async function initializeRankings() {
-    console.log('Initializing rankings...');
-    try {
-        updateLoadingState(true);
-        const response = await fetch('data/all-time-programs-fifty.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        programsData = await response.json();
-        console.log('Data loaded, programs count:', programsData.length);
-        
-        if (programsData.length > 0) {
-            await updateTeamHeader(programsData[0]);
-            setupPagination();
-            displayCurrentPage();
-        }
-        
-        updateLoadingState(false);
-    } catch (error) {
-        console.error('Error initializing rankings:', error);
-        updateLoadingState(false, error.message);
-    }
-}
-
-// Search and Pagination Functions
+// 5. Search and Pagination Functions
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
     console.log('Searching for:', searchTerm);
@@ -225,21 +224,118 @@ function displayCurrentPage(data = programsData) {
     });
 }
 
-// Program Details
+// 6. Program Details
 function showProgramDetails(teamName) {
     console.log(`Showing details for team: ${teamName}`);
     // Implementation for program details view will go here
 }
 
-// Main initialization - keep at end
+// 7. Comments System
+async function loadComments() {
+    console.log('Loading comments...');
+    try {
+        const response = await fetch(`${API_BASE}/comments`, {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const comments = await response.json();
+        displayComments(comments);
+    } catch (error) {
+        console.error('Error loading comments:', error);
+        const commentsListElement = document.getElementById('commentsList');
+        if (commentsListElement) {
+            commentsListElement.innerHTML = `
+                <div class="alert alert-warning">
+                    Comments temporarily unavailable. Please try again later.
+                </div>
+            `;
+        }
+    }
+}
+
+function displayComments(comments) {
+    const commentsListElement = document.getElementById('commentsList');
+    if (!commentsListElement) {
+        console.warn('Comments list element not found');
+        return;
+    }
+
+    commentsListElement.innerHTML = comments.map(comment => `
+        <div class="comment mb-3 p-3 border rounded">
+            <div class="comment-header d-flex justify-content-between">
+                <strong>${comment.author || 'Anonymous'}</strong>
+                <small class="text-muted">
+                    ${new Date(comment.timestamp).toLocaleDateString()}
+                </small>
+            </div>
+            <div class="comment-body mt-2">
+                ${comment.text}
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textElement = document.getElementById('commentText');
+    const text = textElement?.value?.trim();
+    
+    if (!text) {
+        console.warn('No comment text provided');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_BASE}/comments`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                text,
+                author: 'Anonymous',
+                programName: document.querySelector('.team-name')?.textContent || 'General'
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        textElement.value = '';
+        await loadComments();
+        console.log('Comment submitted successfully');
+    } catch (error) {
+        console.error('Error submitting comment:', error);
+        alert('Unable to submit comment. Please try again later.');
+    }
+}
+
+// 8. Main initialization
 document.addEventListener('DOMContentLoaded', async function() {
     console.log('DOM Content Loaded');
     try {
         await initializeRankings();
+        await loadComments();
         
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
             searchInput.addEventListener('input', handleSearch);
+        }
+
+        const submitButton = document.getElementById('submitComment');
+        if (submitButton) {
+            submitButton.addEventListener('click', submitComment);
         }
     } catch (error) {
         console.error('Initialization error:', error);
