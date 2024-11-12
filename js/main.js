@@ -1,13 +1,6 @@
 ﻿// 1. Constants
-// Corrected static paths for GitHub Pages
 const REPO_BASE = '/static-football-rankings';
-const STATIC_IMAGE_PATH = `${REPO_BASE}/docs/images`; // For banner images
-const DEFAULT_PLACEHOLDER = `${STATIC_IMAGE_PATH}/placeholder-image.jpg`;
-
-// For WebV2 team-specific images
-const WEBV2_IMAGE_BASE = '/McKnightFootballRankings.WebV2/wwwroot/images';
-const ITEMS_PER_PAGE = 100;
-const API_BASE = 'https://static-football-rankings.vercel.app/api';
+const IMAGE_BASE = `${REPO_BASE}/docs/images`;
 
 // 2. State management
 let currentPage = 1;
@@ -18,20 +11,20 @@ let programsData = [];
 // Updated getImagePath function
 function getImagePath(relativePath, isPlaceholder = false) {
     if (!relativePath || isPlaceholder) {
-        console.log('Using placeholder image');
-        return DEFAULT_PLACEHOLDER;
+        const placeholderPath = `${IMAGE_BASE}/placeholder-image.jpg`;
+        console.log('Using placeholder:', placeholderPath);
+        return placeholderPath;
     }
     
-    // Handle team-specific images
-    if (relativePath.includes('Teams/')) {
-        const teamPath = relativePath.replace(/^images\/Teams\//, '');
-        const fullPath = `${STATIC_IMAGE_PATH}/teams/${teamPath}`;
-        console.log('Team image path:', fullPath);
-        return fullPath;
-    }
+    // Remove any 'images/' prefix from the path
+    const cleanPath = relativePath.replace(/^images\//, '');
     
-    // For other static images
-    return `${STATIC_IMAGE_PATH}/${relativePath.replace('images/', '')}`;
+    // Convert 'Teams' to lowercase 'teams' in the path
+    const normalizedPath = cleanPath.replace(/^Teams\//, 'teams/');
+    
+    const fullPath = `${IMAGE_BASE}/${normalizedPath}`;
+    console.log('Constructed path:', fullPath);
+    return fullPath;
 }
 
 function updateLoadingState(isLoading, errorMessage = '') {
