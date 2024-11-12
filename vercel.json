@@ -1,13 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "api/comments.js": {
-      "runtime": "nodejs18.x"
-    },
-    "api/verify-email.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "headers": [
     {
       "source": "/api/(.*)",
@@ -24,6 +16,7 @@
     { "source": "/api/verify-email", "destination": "/api/verify-email.js" }
   ]
 }
+
 
 
 
