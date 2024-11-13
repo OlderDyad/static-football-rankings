@@ -310,6 +310,29 @@ function displayComments(comments) {
     }
 }
 
+function updateCommentFormState(isSubmitting) {
+    const submitButton = document.getElementById('submitComment');
+    const textElement = document.getElementById('commentText');
+    
+    if (!submitButton || !textElement) {
+        console.warn('Comment form elements not found');
+        return;
+    }
+    
+    if (isSubmitting) {
+        submitButton.disabled = true;
+        submitButton.innerHTML = `
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Posting...
+        `;
+        textElement.disabled = true;
+    } else {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Post Comment';
+        textElement.disabled = false;
+    }
+}
+
 async function submitComment() {
     console.log('Comment submission started');
     const textElement = document.getElementById('commentText');
@@ -319,6 +342,8 @@ async function submitComment() {
         console.log('No comment text provided');
         return;
     }
+    
+    updateCommentFormState(true);
     
     try {
         console.log('Sending comment:', text);
@@ -342,16 +367,40 @@ async function submitComment() {
         const result = await response.json();
         console.log('Submit response:', result);
         
-        if (result.success || result.message) {
+        if (result.id && result.text) {
             console.log('Comment submitted successfully');
             textElement.value = '';
-            await loadComments();
+            
+            // Show success message
+            const successDiv = document.createElement('div');
+            successDiv.className = 'alert alert-success mt-2';
+            successDiv.textContent = 'Comment posted successfully!';
+            textElement.parentNode.insertBefore(successDiv, textElement.nextSibling);
+            
+            // Remove success message after 3 seconds
+            setTimeout(() => {
+                successDiv.remove();
+            }, 3000);
+            
+            // Reload comments after slight delay
+            setTimeout(async () => {
+                await loadComments();
+            }, 500);
         } else {
-            throw new Error('Unexpected API response');
+            throw new Error('Unexpected API response format');
         }
     } catch (error) {
         console.error('Error submitting comment:', error);
-        alert('Unable to submit comment. Please try again later.');
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger mt-2';
+        errorDiv.textContent = 'Unable to submit comment. Please try again later.';
+        textElement.parentNode.insertBefore(errorDiv, textElement.nextSibling);
+        
+        setTimeout(() => {
+            errorDiv.remove();
+        }, 3000);
+    } finally {
+        updateCommentFormState(false);
     }
 }
 
