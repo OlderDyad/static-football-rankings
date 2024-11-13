@@ -2,28 +2,12 @@
   "version": 2,
   "functions": {
     "api/comments.js": {
-      "runtime": "@vercel/node@latest",
-      "memory": 256
+      "runtime": "nodejs18.x"
     },
     "api/verify-email.js": {
-      "runtime": "@vercel/node@latest",
-      "memory": 256
+      "runtime": "nodejs18.x"
     }
-  },
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "https://olderdyad.github.io" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
-      ]
-    }
-  ],
-  "rewrites": [
-    { "source": "/api/comments", "destination": "/api/comments.js" },
-    { "source": "/api/verify-email", "destination": "/api/verify-email.js" }
-  ]
+  }
 }
 
 
