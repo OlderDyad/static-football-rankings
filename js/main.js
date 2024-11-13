@@ -367,7 +367,8 @@ async function submitComment() {
         const result = await response.json();
         console.log('Submit response:', result);
         
-        if (result.id && result.text) {
+        // More flexible response check
+        if (result && typeof result.text === 'string') {
             console.log('Comment submitted successfully');
             textElement.value = '';
             
@@ -382,12 +383,13 @@ async function submitComment() {
                 successDiv.remove();
             }, 3000);
             
-            // Reload comments after slight delay
-            setTimeout(async () => {
-                await loadComments();
-            }, 500);
+            // Reload comments immediately
+            await loadComments();
         } else {
-            throw new Error('Unexpected API response format');
+            console.warn('Unexpected API response format:', result);
+            // Still treat it as a success if we got a response
+            textElement.value = '';
+            await loadComments();
         }
     } catch (error) {
         console.error('Error submitting comment:', error);
