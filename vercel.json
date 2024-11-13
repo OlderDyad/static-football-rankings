@@ -2,11 +2,11 @@
   "version": 2,
   "functions": {
     "api/comments.js": {
-      "runtime": "nodejs18.x",
+      "runtime": "@vercel/node@latest",
       "memory": 256
     },
     "api/verify-email.js": {
-      "runtime": "nodejs18.x",
+      "runtime": "@vercel/node@latest",
       "memory": 256
     }
   },
