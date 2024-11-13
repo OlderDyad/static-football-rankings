@@ -134,6 +134,7 @@ function handleSearch(event) {
 }
 
 function setupPagination(data = programsData) {
+    console.log('Setting up pagination with data length:', data.length);
     const paginationElement = document.getElementById('pagination');
     if (!paginationElement) {
         console.warn('Creating pagination element');
@@ -194,6 +195,7 @@ function setupPagination(data = programsData) {
 }
 
 function displayCurrentPage(data = programsData) {
+    console.log('Displaying page:', currentPage);
     const tableBody = document.getElementById('programsTableBody');
     if (!tableBody) {
         console.error('Table body element not found');
@@ -227,17 +229,27 @@ function displayCurrentPage(data = programsData) {
     });
 }
 
-// 6. Program Details
-function showProgramDetails(teamName) {
-    console.log(`Showing details for team: ${teamName}`);
-    // Implementation for program details view will go here
-}
-
-// 7. Comments System
+// 6. Comments System
 async function loadComments() {
-    console.log('Loading comments...');
+    console.log('Starting comments load...');
+    const commentsListElement = document.getElementById('commentsList');
+    
+    if (!commentsListElement) {
+        console.warn('Comments list element not found');
+        return;
+    }
+
+    // Show loading state
+    commentsListElement.innerHTML = `
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading comments...</span>
+            </div>
+        </div>
+    `;
+
     try {
-        const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
+        const response = await fetch(`${API_BASE}/comments`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -249,21 +261,20 @@ async function loadComments() {
         }
         
         const comments = await response.json();
+        console.log('Comments loaded:', comments);
         displayComments(Array.isArray(comments) ? comments : []);
     } catch (error) {
         console.error('Error loading comments:', error);
-        const commentsListElement = document.getElementById('commentsList');
-        if (commentsListElement) {
-            commentsListElement.innerHTML = `
-                <div class="alert alert-warning">
-                    Comments temporarily unavailable. Please try again later.
-                </div>
-            `;
-        }
+        commentsListElement.innerHTML = `
+            <div class="alert alert-warning">
+                Comments temporarily unavailable. Please try again later.
+            </div>
+        `;
     }
 }
 
 function displayComments(comments) {
+    console.log('Displaying comments:', comments);
     const commentsListElement = document.getElementById('commentsList');
     if (!commentsListElement) {
         console.warn('Comments list element not found');
@@ -296,13 +307,18 @@ function displayComments(comments) {
 }
 
 async function submitComment() {
+    console.log('Comment submission started');
     const textElement = document.getElementById('commentText');
     const text = textElement?.value?.trim();
     
-    if (!text) return;
+    if (!text) {
+        console.log('No comment text provided');
+        return;
+    }
     
     try {
-        const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
+        console.log('Sending comment:', text);
+        const response = await fetch(`${API_BASE}/comments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -318,6 +334,7 @@ async function submitComment() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
+        console.log('Comment submitted successfully');
         textElement.value = '';
         await loadComments();
     } catch (error) {
@@ -326,11 +343,18 @@ async function submitComment() {
     }
 }
 
-// 8. Main initialization
+// Program Details
+function showProgramDetails(teamName) {
+    console.log(`Showing details for team: ${teamName}`);
+    // Implementation for program details view will go here
+}
+
+// Main initialization
 document.addEventListener('DOMContentLoaded', async function() {
     console.log('DOM Content Loaded');
     try {
         await initializeRankings();
+        console.log('Starting initial comments load');
         await loadComments();
 
         const searchInput = document.getElementById('searchInput');
