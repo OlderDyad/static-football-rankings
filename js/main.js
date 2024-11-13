@@ -260,9 +260,13 @@ async function loadComments() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
-        const comments = await response.json();
-        console.log('Comments loaded:', comments);
-        displayComments(Array.isArray(comments) ? comments : []);
+        const data = await response.json();
+        console.log('Raw API response:', data);
+        
+        // Handle both array and object responses
+        const comments = data.comments || (Array.isArray(data) ? data : []);
+        console.log('Processed comments:', comments);
+        displayComments(comments);
     } catch (error) {
         console.error('Error loading comments:', error);
         commentsListElement.innerHTML = `
@@ -326,7 +330,8 @@ async function submitComment() {
             body: JSON.stringify({
                 text,
                 author: 'Anonymous',
-                programName: document.querySelector('.team-name')?.textContent || 'General'
+                programName: document.querySelector('.team-name')?.textContent || 'General',
+                timestamp: new Date().toISOString()
             })
         });
         
@@ -334,9 +339,16 @@ async function submitComment() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
-        console.log('Comment submitted successfully');
-        textElement.value = '';
-        await loadComments();
+        const result = await response.json();
+        console.log('Submit response:', result);
+        
+        if (result.success || result.message) {
+            console.log('Comment submitted successfully');
+            textElement.value = '';
+            await loadComments();
+        } else {
+            throw new Error('Unexpected API response');
+        }
     } catch (error) {
         console.error('Error submitting comment:', error);
         alert('Unable to submit comment. Please try again later.');
