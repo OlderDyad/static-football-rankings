@@ -237,14 +237,17 @@ function showProgramDetails(teamName) {
 async function loadComments() {
     console.log('Loading comments...');
     try {
-        const response = await fetch(`${API_BASE}/comments`, {
+        const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include'  // <-- Add this line
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
-
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const comments = await response.json();
         displayComments(Array.isArray(comments) ? comments : []);
     } catch (error) {
@@ -295,29 +298,28 @@ function displayComments(comments) {
 async function submitComment() {
     const textElement = document.getElementById('commentText');
     const text = textElement?.value?.trim();
-
-    if (!text) {
-        console.warn('No comment text provided');
-        return;
-    }
-
+    
+    if (!text) return;
+    
     try {
-        const response = await fetch(`${API_BASE}/comments`, {
+        const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',  // <-- Add this line
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({
                 text,
                 author: 'Anonymous',
                 programName: document.querySelector('.team-name')?.textContent || 'General'
             })
         });
-
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         textElement.value = '';
         await loadComments();
-        console.log('Comment submitted successfully');
     } catch (error) {
         console.error('Error submitting comment:', error);
         alert('Unable to submit comment. Please try again later.');
