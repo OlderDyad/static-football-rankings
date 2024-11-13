@@ -1,13 +1,11 @@
 {
   "version": 2,
-  "functions": {
-    "api/comments.js": {
-      "runtime": "vercel-node@1.0.0"
-    },
-    "api/verify-email.js": {
-      "runtime": "vercel-node@1.0.0"
+  "builds": [
+    {
+      "src": "api/*.js",
+      "use": "vercel-node@1.0.0"
     }
-  }
+  ]
 }
 
 
