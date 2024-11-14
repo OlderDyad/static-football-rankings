@@ -1,23 +1,50 @@
+// api/comments.js
+
+// Simple in-memory storage for comments
+let comments = [];
+
 export default async function handler(req, res) {
     // Set CORS headers
-    res.setHeader("Access-Control-Allow-Origin", "https://olderdyad.github.io");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    // Handle preflight requests
-    if (req.method === "OPTIONS") {
+    // Handle preflight
+    if (req.method === 'OPTIONS') {
         res.status(200).end();
         return;
     }
 
-    // Define behavior for GET and POST requests
-    if (req.method === "GET") {
-        return res.status(200).json({ message: "GET request to comments" });
-    } else if (req.method === "POST") {
-        return res.status(200).json({ message: "POST request to comments" });
-    } else {
-        return res.status(405).json({ error: "Method not allowed" });
+    if (req.method === 'GET') {
+        return res.status(200).json(comments);
     }
+
+    if (req.method === 'POST') {
+        try {
+            const { text, author, programName } = req.body;
+            
+            if (!text) {
+                return res.status(400).json({ error: 'Comment text is required' });
+            }
+
+            const newComment = {
+                id: Date.now(),
+                text,
+                author: author || 'Anonymous',
+                programName: programName || 'General',
+                timestamp: new Date().toISOString()
+            };
+
+            comments.push(newComment);
+            return res.status(201).json(newComment);
+        } catch (error) {
+            console.error('Error creating comment:', error);
+            return res.status(500).json({ error: 'Error creating comment' });
+        }
+    }
+
+    res.setHeader('Allow', ['GET', 'POST', 'OPTIONS']);
+    res.status(405).json({ error: `Method ${req.method} Not Allowed` });
 }
 
 
