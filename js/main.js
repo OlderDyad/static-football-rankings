@@ -251,6 +251,7 @@ async function loadComments() {
     try {
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'GET',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -349,6 +350,7 @@ async function submitComment() {
         console.log('Sending comment:', text);
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -368,7 +370,7 @@ async function submitComment() {
         console.log('Submit response:', result);
         
         // More flexible response check
-        if (result && typeof result.text === 'string') {
+        if (result) {
             console.log('Comment submitted successfully');
             textElement.value = '';
             
@@ -383,13 +385,10 @@ async function submitComment() {
                 successDiv.remove();
             }, 3000);
             
-            // Reload comments immediately
+            // Reload comments
             await loadComments();
         } else {
-            console.warn('Unexpected API response format:', result);
-            // Still treat it as a success if we got a response
-            textElement.value = '';
-            await loadComments();
+            throw new Error('No response from server');
         }
     } catch (error) {
         console.error('Error submitting comment:', error);
