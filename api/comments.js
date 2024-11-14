@@ -1,13 +1,12 @@
 // api/comments.js
 
-// Simple in-memory storage for comments
-let comments = [];
+let comments = []; // Simple in-memory storage for comments
 
 export default async function handler(req, res) {
     // Set CORS headers
-    res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader("Access-Control-Allow-Origin", "https://olderdyad.github.io");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.setHeader("Access-Control-Allow-Credentials", "true");
 
     // Handle preflight
@@ -17,13 +16,14 @@ export default async function handler(req, res) {
     }
 
     if (req.method === 'GET') {
+        console.log("GET request - Current comments:", comments); // Debugging line
         return res.status(200).json(comments);
     }
 
     if (req.method === 'POST') {
         try {
             const { text, author, programName } = req.body;
-            
+
             if (!text) {
                 return res.status(400).json({ error: 'Comment text is required' });
             }
@@ -37,6 +37,8 @@ export default async function handler(req, res) {
             };
 
             comments.push(newComment);
+            console.log("POST request - New comment added:", newComment); // Debugging line
+            console.log("POST request - Updated comments list:", comments); // Debugging line
             return res.status(201).json(newComment);
         } catch (error) {
             console.error('Error creating comment:', error);
@@ -47,5 +49,6 @@ export default async function handler(req, res) {
     res.setHeader('Allow', ['GET', 'POST', 'OPTIONS']);
     res.status(405).json({ error: `Method ${req.method} Not Allowed` });
 }
+
 
 
