@@ -230,6 +230,34 @@ function displayCurrentPage(data = programsData) {
 }
 
 // 6. Comments System
+
+//updateCommentFormStat
+
+function updateCommentFormState(isSubmitting) {
+    const submitButton = document.getElementById('submitComment');
+    const textElement = document.getElementById('commentText');
+    
+    if (!submitButton || !textElement) {
+        console.warn('Comment form elements not found');
+        return;
+    }
+    
+    if (isSubmitting) {
+        submitButton.disabled = true;
+        submitButton.innerHTML = `
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Posting...
+        `;
+        textElement.disabled = true;
+    } else {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Post Comment';
+        textElement.disabled = false;
+    }
+}
+
+
+// loadComments
 async function loadComments() {
     console.log('Starting comments load...');
     const commentsListElement = document.getElementById('commentsList');
