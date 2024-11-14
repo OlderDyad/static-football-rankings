@@ -285,55 +285,57 @@ function displayComments(comments) {
         console.warn('Comments list element not found');
         return;
     }
-
+ 
     if (comments.length === 0) {
         commentsListElement.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
         return;
     }
-
-    try {
-        commentsListElement.innerHTML = comments.map(comment => `
+ 
+    commentsListElement.innerHTML = comments.map(comment => {
+        const timestamp = new Date(comment.timestamp);
+        const timeAgo = getTimeAgo(timestamp);
+        
+        return `
             <div class="comment mb-3 p-3 border rounded">
                 <div class="comment-header d-flex justify-content-between">
-                    <strong>${comment.author || 'Anonymous'}</strong>
-                    <small class="text-muted">
-                        ${new Date(comment.timestamp).toLocaleDateString()}
-                    </small>
+                    <div>
+                        <strong class="me-2">${comment.author || 'Anonymous'}</strong>
+                        <small class="text-muted">• ${timeAgo}</small>
+                    </div>
+                    ${comment.programName ? `
+                        <small class="text-muted">
+                            Re: ${comment.programName}
+                        </small>
+                    ` : ''}
                 </div>
                 <div class="comment-body mt-2">
                     ${comment.text}
                 </div>
             </div>
-        `).join('');
-    } catch (error) {
-        console.error('Error displaying comments:', error);
-        commentsListElement.innerHTML = '<div class="alert alert-warning">Error displaying comments</div>';
-    }
-}
-
-function updateCommentFormState(isSubmitting) {
-    const submitButton = document.getElementById('submitComment');
-    const textElement = document.getElementById('commentText');
-    
-    if (!submitButton || !textElement) {
-        console.warn('Comment form elements not found');
-        return;
-    }
-    
-    if (isSubmitting) {
-        submitButton.disabled = true;
-        submitButton.innerHTML = `
-            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Posting...
         `;
-        textElement.disabled = true;
-    } else {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Post Comment';
-        textElement.disabled = false;
-    }
-}
-
+    }).join('');
+ }
+ 
+ function getTimeAgo(date) {
+    const now = new Date();
+    const diffInSeconds = Math.floor((now - date) / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+ 
+    if (diffInSeconds < 60) return 'Just now';
+    if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+    if (diffInHours < 24) return `${diffInHours}h ago`;
+    if (diffInDays < 7) return `${diffInDays}d ago`;
+    
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    });
+ }
+ 
+ //submitComment
 async function submitComment() {
     console.log('Comment submission started');
     const textElement = document.getElementById('commentText');
