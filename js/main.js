@@ -363,8 +363,7 @@ function displayComments(comments) {
     });
  }
  
- //submitComment
-async function submitComment() {
+ aasync function submitComment() {
     console.log('Comment submission started');
     const textElement = document.getElementById('commentText');
     const text = textElement?.value?.trim();
@@ -375,6 +374,10 @@ async function submitComment() {
     }
     
     updateCommentFormState(true);
+    
+    // Get page identifier
+    const pageIdentifier = document.querySelector('h1')?.dataset.pageName || 'unknown-page';
+    console.log('Submitting comment for page:', pageIdentifier);
     
     try {
         console.log('Sending comment:', text);
@@ -387,7 +390,7 @@ async function submitComment() {
             body: JSON.stringify({
                 text,
                 author: 'Anonymous',
-                programName: document.querySelector('.team-name')?.textContent || 'General',
+                programName: pageIdentifier,
                 timestamp: new Date().toISOString()
             })
         });
@@ -433,7 +436,7 @@ async function submitComment() {
     } finally {
         updateCommentFormState(false);
     }
-}
+ }
 
 // Program Details
 function showProgramDetails(teamName) {
