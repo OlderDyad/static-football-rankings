@@ -363,7 +363,7 @@ function displayComments(comments) {
     });
  }
  
- aasync function submitComment() {
+ async function submitComment() {
     console.log('Comment submission started');
     const textElement = document.getElementById('commentText');
     const text = textElement?.value?.trim();
