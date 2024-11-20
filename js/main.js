@@ -257,7 +257,6 @@ function updateCommentFormState(isSubmitting) {
 }
 
 
-// loadComments
 async function loadComments() {
     console.log('Starting comments load...');
     const commentsListElement = document.getElementById('commentsList');
@@ -267,7 +266,6 @@ async function loadComments() {
         return;
     }
 
-    // Show loading state
     commentsListElement.innerHTML = `
         <div class="text-center">
             <div class="spinner-border text-primary" role="status">
@@ -292,9 +290,9 @@ async function loadComments() {
         const data = await response.json();
         console.log('Raw API response:', data);
         
-        // Handle both array and object responses
         const comments = data.comments || (Array.isArray(data) ? data : []);
-        console.log('Processed comments:', comments);
+        comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        console.log('Processed and sorted comments:', comments);
         displayComments(comments);
     } catch (error) {
         console.error('Error loading comments:', error);
