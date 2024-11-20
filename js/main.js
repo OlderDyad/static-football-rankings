@@ -444,10 +444,8 @@ function showProgramDetails(teamName) {
 
 // Main initialization
 document.addEventListener('DOMContentLoaded', async function() {
-    console.log('DOM Content Loaded');
     try {
         await initializeRankings();
-        console.log('Starting initial comments load');
         await loadComments();
 
         const searchInput = document.getElementById('searchInput');
