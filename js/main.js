@@ -256,6 +256,7 @@ function updateCommentFormState(isSubmitting) {
     }
 }
 
+//Load Comments
 
 async function loadComments() {
     console.log('Starting comments load...');
@@ -265,7 +266,7 @@ async function loadComments() {
         console.warn('Comments list element not found');
         return;
     }
-
+ 
     commentsListElement.innerHTML = `
         <div class="text-center">
             <div class="spinner-border text-primary" role="status">
@@ -273,11 +274,10 @@ async function loadComments() {
             </div>
         </div>
     `;
-
+ 
     try {
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'GET',
-            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -302,7 +302,7 @@ async function loadComments() {
             </div>
         `;
     }
-}
+ }
 
 function displayComments(comments) {
     console.log('Displaying comments:', comments);
