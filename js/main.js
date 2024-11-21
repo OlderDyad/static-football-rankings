@@ -5,15 +5,126 @@ const DEFAULT_PLACEHOLDER = `${IMAGE_BASE}/placeholder-image.jpg`;
 const ITEMS_PER_PAGE = 100;
 const API_BASE = 'https://static-football-rankings.vercel.app/api';
 const LOGIN_API_BASE = `${API_BASE}/auth`;
-let isLoggedIn = false;
-let userName = '';
-
 
 // 2. State management
 let currentPage = 1;
 let programsData = [];
+let isLoggedIn = false;
+let userName = '';
 
-// 3. Utility Functions
+// 3. Authentication Functions
+async function checkLoginStatus() {
+    console.log("Checking login status...");
+    try {
+        const response = await fetch(`${LOGIN_API_BASE}/status`, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Login status:", data);
+
+        isLoggedIn = data.loggedIn;
+        userName = data.user?.name || '';
+
+        if (isLoggedIn) {
+            showLoggedInState();
+        } else {
+            showLoggedOutState();
+        }
+
+        return data;
+    } catch (error) {
+        console.error("Error checking login status:", error);
+        showLoggedOutState();
+        return { loggedIn: false };
+    }
+}
+
+function showLoggedInState() {
+    const loginArea = document.getElementById('loginArea');
+    if (loginArea) {
+        loginArea.innerHTML = `
+            <div class="d-flex align-items-center">
+                <span class="me-2">Welcome, ${userName}</span>
+                <button id="logoutButton" class="btn btn-outline-secondary btn-sm">Logout</button>
+            </div>
+        `;
+        const logoutButton = document.getElementById('logoutButton');
+        if (logoutButton) {
+            logoutButton.addEventListener('click', handleLogout);
+        }
+    }
+
+    const commentForm = document.getElementById('commentForm');
+    if (commentForm) {
+        commentForm.style.display = 'block';
+    }
+}
+
+function showLoggedOutState() {
+    const loginArea = document.getElementById('loginArea');
+    if (loginArea) {
+        loginArea.innerHTML = `
+            <button id="loginButton" class="btn btn-primary">
+                <img src="${REPO_BASE}/docs/images/google-logo.png" alt="Google" class="me-2" style="height: 18px;">
+                Sign in with Google
+            </button>
+        `;
+        const loginButton = document.getElementById('loginButton');
+        if (loginButton) {
+            loginButton.addEventListener('click', handleLogin);
+        }
+    }
+
+    const commentForm = document.getElementById('commentForm');
+    if (commentForm) {
+        commentForm.style.display = 'none';
+    }
+}
+
+async function handleLogin() {
+    try {
+        const loginUrl = `${LOGIN_API_BASE}/google`;
+        console.log('Redirecting to:', loginUrl);
+        window.location.href = loginUrl;
+    } catch (error) {
+        console.error('Login error:', error);
+    }
+}
+
+async function handleLogout() {
+    try {
+        const response = await fetch(`${LOGIN_API_BASE}/logout`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        isLoggedIn = false;
+        userName = '';
+        showLoggedOutState();
+        await loadComments();
+    } catch (error) {
+        console.error('Logout error:', error);
+    }
+}
+
+// 4. Utility Functions
 function getImagePath(relativePath, isPlaceholder = false) {
     if (!relativePath || isPlaceholder) {
         const placeholderPath = `${IMAGE_BASE}/placeholder-image.jpg`;
@@ -21,12 +132,8 @@ function getImagePath(relativePath, isPlaceholder = false) {
         return placeholderPath;
     }
 
-    // Remove any 'images/' prefix from the path
     const cleanPath = relativePath.replace(/^images\//, '');
-
-    // Convert 'Teams' to lowercase 'teams' in the path
     const normalizedPath = cleanPath.replace(/^Teams\//, 'teams/');
-
     const fullPath = `${IMAGE_BASE}/${normalizedPath}`;
     console.log('Constructed path:', fullPath);
     return fullPath;
@@ -57,7 +164,7 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 }
 
-// 4. Core Data Loading and Display
+// 5. Core Data Loading and Display
 async function initializeRankings() {
     console.log('Initializing rankings...');
     try {
@@ -122,7 +229,7 @@ async function updateTeamHeader(program) {
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
 
-// 5. Search and Pagination Functions
+// 6. Search and Pagination Functions
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
     console.log('Searching for:', searchTerm);
@@ -148,7 +255,7 @@ function setupPagination(data = programsData) {
         if (tableContainer) {
             tableContainer.after(nav);
         }
-        return setupPagination(data); // Retry now that element exists
+        return setupPagination(data);
     }
 
     const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
@@ -233,82 +340,7 @@ function displayCurrentPage(data = programsData) {
     });
 }
 
-// 6. Comments System
-
-//Google Login:
-async function checkLoginStatus() {
-    try {
-        const response = await fetch(`${LOGIN_API_BASE}/status`, {
-            method: 'GET',
-            credentials: 'include'
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            isLoggedIn = true;
-            userName = data.name || 'User';
-            showLoggedInState();
-        } else {
-            isLoggedIn = false;
-            showLoggedOutState();
-        }
-    } catch (error) {
-        console.error('Error checking login status:', error);
-        isLoggedIn = false;
-        showLoggedOutState();
-    }
-}
-
-function showLoggedInState() {
-    const loginArea = document.getElementById('loginArea');
-    if (loginArea) {
-        loginArea.innerHTML = `
-            <span class="text-muted">Logged in as ${userName}</span>
-            <button id="logoutButton" class="btn btn-outline-secondary ms-2">Logout</button>
-        `;
-        const logoutButton = document.getElementById('logoutButton');
-        logoutButton.addEventListener('click', handleLogout);
-    }
-
-    const commentForm = document.getElementById('commentForm');
-    if (commentForm) commentForm.style.display = 'block';
-}
-
-function showLoggedOutState() {
-    const loginArea = document.getElementById('loginArea');
-    if (loginArea) {
-        loginArea.innerHTML = `
-            <button id="loginButton" class="btn btn-outline-primary">Login with Google</button>
-        `;
-        const loginButton = document.getElementById('loginButton');
-        loginButton.addEventListener('click', handleLogin);
-    }
-
-    const commentForm = document.getElementById('commentForm');
-    if (commentForm) commentForm.style.display = 'none';
-}
-
-function handleLogin() {
-    window.location.href = `${LOGIN_API_BASE}/google`;
-}
-
-async function handleLogout() {
-    try {
-        await fetch(`${LOGIN_API_BASE}/logout`, {
-            method: 'POST',
-            credentials: 'include'
-        });
-        isLoggedIn = false;
-        userName = '';
-        showLoggedOutState();
-    } catch (error) {
-        console.error('Error logging out:', error);
-    }
-}
-
-
-//updateCommentFormStat
-
+// 7. Comments System
 function updateCommentFormState(isSubmitting) {
     const submitButton = document.getElementById('submitComment');
     const textElement = document.getElementById('commentText');
@@ -332,8 +364,6 @@ function updateCommentFormState(isSubmitting) {
     }
 }
 
-//Load Comments
-
 async function loadComments() {
     console.log('Starting comments load...');
     const commentsListElement = document.getElementById('commentsList');
@@ -354,8 +384,10 @@ async function loadComments() {
     try {
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'GET',
+            credentials: 'include',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
         });
         
@@ -378,7 +410,7 @@ async function loadComments() {
             </div>
         `;
     }
- }
+}
 
 function displayComments(comments) {
     console.log('Displaying comments:', comments);
@@ -416,9 +448,9 @@ function displayComments(comments) {
             </div>
         `;
     }).join('');
- }
- 
- function getTimeAgo(date) {
+}
+
+function getTimeAgo(date) {
     const now = new Date();
     const diffInSeconds = Math.floor((now - date) / 1000);
     const diffInMinutes = Math.floor(diffInSeconds / 60);
@@ -435,9 +467,21 @@ function displayComments(comments) {
         month: 'short',
         day: 'numeric'
     });
- }
- 
- async function submitComment() {
+}
+
+async function submitComment() {
+    if (!isLoggedIn) {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-warning';
+        alertDiv.textContent = 'Please sign in to post comments';
+        const commentForm = document.getElementById('commentForm');
+        if (commentForm) {
+            commentForm.insertBefore(alertDiv, commentForm.firstChild);
+            setTimeout(() => alertDiv.remove(), 3000);
+        }
+        return;
+    }
+
     console.log('Comment submission started');
     const textElement = document.getElementById('commentText');
     const text = textElement?.value?.trim();
@@ -449,7 +493,6 @@ function displayComments(comments) {
     
     updateCommentFormState(true);
     
-    // Get page identifier
     const pageIdentifier = document.querySelector('h1')?.dataset.pageName || 'unknown-page';
     console.log('Submitting comment for page:', pageIdentifier);
     
@@ -457,13 +500,14 @@ function displayComments(comments) {
         console.log('Sending comment:', text);
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'POST',
-            mode: 'cors',
+            credentials: 'include',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify({
                 text,
-                author: 'Anonymous',
+                author: userName || 'Anonymous',
                 programName: pageIdentifier,
                 timestamp: new Date().toISOString()
             })
@@ -476,23 +520,19 @@ function displayComments(comments) {
         const result = await response.json();
         console.log('Submit response:', result);
         
-        // More flexible response check
         if (result) {
             console.log('Comment submitted successfully');
             textElement.value = '';
             
-            // Show success message
             const successDiv = document.createElement('div');
             successDiv.className = 'alert alert-success mt-2';
             successDiv.textContent = 'Comment posted successfully!';
             textElement.parentNode.insertBefore(successDiv, textElement.nextSibling);
             
-            // Remove success message after 3 seconds
             setTimeout(() => {
                 successDiv.remove();
             }, 3000);
             
-            // Reload comments
             await loadComments();
         } else {
             throw new Error('No response from server');
@@ -510,15 +550,15 @@ function displayComments(comments) {
     } finally {
         updateCommentFormState(false);
     }
- }
+}
 
-// Program Details
+// 8. Program Details
 function showProgramDetails(teamName) {
     console.log(`Showing details for team: ${teamName}`);
     // Implementation for program details view will go here
 }
 
-// Main initialization
+// 9. Main initialization
 document.addEventListener('DOMContentLoaded', async function() {
     try {
         await checkLoginStatus();
