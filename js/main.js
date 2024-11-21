@@ -4,6 +4,10 @@ const IMAGE_BASE = `${REPO_BASE}/docs/images`;
 const DEFAULT_PLACEHOLDER = `${IMAGE_BASE}/placeholder-image.jpg`;
 const ITEMS_PER_PAGE = 100;
 const API_BASE = 'https://static-football-rankings.vercel.app/api';
+const LOGIN_API_BASE = `${API_BASE}/auth`;
+let isLoggedIn = false;
+let userName = '';
+
 
 // 2. State management
 let currentPage = 1;
@@ -231,6 +235,78 @@ function displayCurrentPage(data = programsData) {
 
 // 6. Comments System
 
+//Google Login:
+async function checkLoginStatus() {
+    try {
+        const response = await fetch(`${LOGIN_API_BASE}/status`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            isLoggedIn = true;
+            userName = data.name || 'User';
+            showLoggedInState();
+        } else {
+            isLoggedIn = false;
+            showLoggedOutState();
+        }
+    } catch (error) {
+        console.error('Error checking login status:', error);
+        isLoggedIn = false;
+        showLoggedOutState();
+    }
+}
+
+function showLoggedInState() {
+    const loginArea = document.getElementById('loginArea');
+    if (loginArea) {
+        loginArea.innerHTML = `
+            <span class="text-muted">Logged in as ${userName}</span>
+            <button id="logoutButton" class="btn btn-outline-secondary ms-2">Logout</button>
+        `;
+        const logoutButton = document.getElementById('logoutButton');
+        logoutButton.addEventListener('click', handleLogout);
+    }
+
+    const commentForm = document.getElementById('commentForm');
+    if (commentForm) commentForm.style.display = 'block';
+}
+
+function showLoggedOutState() {
+    const loginArea = document.getElementById('loginArea');
+    if (loginArea) {
+        loginArea.innerHTML = `
+            <button id="loginButton" class="btn btn-outline-primary">Login with Google</button>
+        `;
+        const loginButton = document.getElementById('loginButton');
+        loginButton.addEventListener('click', handleLogin);
+    }
+
+    const commentForm = document.getElementById('commentForm');
+    if (commentForm) commentForm.style.display = 'none';
+}
+
+function handleLogin() {
+    window.location.href = `${LOGIN_API_BASE}/google`;
+}
+
+async function handleLogout() {
+    try {
+        await fetch(`${LOGIN_API_BASE}/logout`, {
+            method: 'POST',
+            credentials: 'include'
+        });
+        isLoggedIn = false;
+        userName = '';
+        showLoggedOutState();
+    } catch (error) {
+        console.error('Error logging out:', error);
+    }
+}
+
+
 //updateCommentFormStat
 
 function updateCommentFormState(isSubmitting) {
@@ -445,6 +521,7 @@ function showProgramDetails(teamName) {
 // Main initialization
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        await checkLoginStatus();
         await initializeRankings();
         await loadComments();
 

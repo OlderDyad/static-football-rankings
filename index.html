@@ -63,16 +63,22 @@
     <div class="comments-section">
         <h3>Comments</h3>
         
+        <!-- Login Button -->
+        <div id="loginArea" class="mb-3">
+            <button id="loginButton" class="btn btn-outline-primary">Login with Google</button>
+            <span id="loginStatus" class="ms-2 text-muted"></span>
+        </div>
+
         <!-- Comment Form -->
-<div class="comment-form mb-4">
-    <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Leave a comment..."></textarea>
-    <button id="submitComment" class="btn btn-primary">Post Comment</button>
-</div>
+        <div class="comment-form mb-4" id="commentForm" style="display: none;">
+            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Leave a comment..."></textarea>
+            <button id="submitComment" class="btn btn-primary">Post Comment</button>
+        </div>
         
         <!-- Comments Display Area -->
         <div id="commentsList" class="comments-list"></div>
     </div>
- </div>
+</div>
 
 <!-- Copywrite -->
 

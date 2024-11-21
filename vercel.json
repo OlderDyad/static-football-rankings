@@ -17,7 +17,9 @@
     }
   ],
   "rewrites": [
-    { "source": "/api/comments", "destination": "/api/comments.js" }
+    { "source": "/api/comments", "destination": "/api/comments.js" },
+    { "source": "/api/auth/google", "destination": "/api/auth/google.js" },
+    { "source": "/api/auth/callback", "destination": "/api/auth/callback.js" }
   ]
 }
 
