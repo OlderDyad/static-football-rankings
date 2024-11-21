@@ -6,7 +6,7 @@
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "https://olderdyad.github.io" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Accept, Authorization" },
         { "key": "Access-Control-Allow-Credentials", "value": "true" }
       ]
     }
@@ -17,11 +17,40 @@
       "use": "@vercel/node"
     }
   ],
-  "rewrites": [
-    { "source": "/api/comments", "destination": "/api/comments.js" },
-    { "source": "/api/auth/google", "destination": "/api/auth/google.js" },
-    { "source": "/api/auth/status", "destination": "/api/auth/status.js" },
-    { "source": "/api/auth/callback", "destination": "/api/auth/callback.js" }
+  "routes": [
+    {
+      "src": "/api/comments",
+      "methods": ["OPTIONS", "GET", "POST"],
+      "dest": "/api/comments.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://olderdyad.github.io",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Accept, Authorization",
+        "Access-Control-Allow-Credentials": "true"
+      }
+    },
+    {
+      "src": "/api/auth/google",
+      "methods": ["GET", "OPTIONS"],
+      "dest": "/api/auth/google.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://olderdyad.github.io",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Accept, Authorization",
+        "Access-Control-Allow-Credentials": "true"
+      }
+    },
+    {
+      "src": "/api/auth/status",
+      "methods": ["GET", "OPTIONS"],
+      "dest": "/api/auth/status.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://olderdyad.github.io",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Accept, Authorization",
+        "Access-Control-Allow-Credentials": "true"
+      }
+    }
   ]
 }
     
