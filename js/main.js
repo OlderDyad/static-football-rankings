@@ -3,7 +3,7 @@ const REPO_BASE = '/static-football-rankings';
 const IMAGE_BASE = `${REPO_BASE}/docs/images`;
 const DEFAULT_PLACEHOLDER = `${IMAGE_BASE}/placeholder-image.jpg`;
 const ITEMS_PER_PAGE = 100;
-const API_BASE = 'https://static-football-rankings.vercel.app/api';
+const API_BASE = 'https://static-football-rankings-89e0jbz5g-david-mcknight-s-projects.vercel.app/api';
 const LOGIN_API_BASE = `${API_BASE}/auth`;
 
 // 2. State management
