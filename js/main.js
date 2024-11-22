@@ -74,9 +74,13 @@ function showLoggedOutState() {
     const loginArea = document.getElementById('loginArea');
     if (loginArea) {
         loginArea.innerHTML = `
-            <button id="loginButton" class="btn btn-primary">
-                <img src="${REPO_BASE}/docs/images/google-logo.png" alt="Google" class="me-2" style="height: 18px;">
-                Sign in with Google
+            <button id="loginButton" class="btn btn-light d-flex align-items-center gap-2">
+                <img src="${REPO_BASE}/docs/images/google-logo.png" 
+                     alt="Google" 
+                     style="height: 18px; width: 18px;"
+                     onerror="this.style.display='none'"
+                />
+                <span>Sign in with Google</span>
             </button>
         `;
         const loginButton = document.getElementById('loginButton');
@@ -92,12 +96,20 @@ function showLoggedOutState() {
 }
 
 async function handleLogin() {
+    console.log('Initiating Google login...');
     try {
-        const loginUrl = `${LOGIN_API_BASE}/google`;
-        console.log('Redirecting to:', loginUrl);
-        window.location.href = loginUrl;
+        window.location.href = `${LOGIN_API_BASE}/google`;
     } catch (error) {
         console.error('Login error:', error);
+        // Show error to user
+        const loginArea = document.getElementById('loginArea');
+        if (loginArea) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'alert alert-danger mt-2';
+            errorDiv.textContent = 'Login failed. Please try again.';
+            loginArea.appendChild(errorDiv);
+            setTimeout(() => errorDiv.remove(), 3000);
+        }
     }
 }
 
@@ -123,6 +135,22 @@ async function handleLogout() {
         console.error('Logout error:', error);
     }
 }
+
+// Add this to check for auth errors on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    if (error === 'auth_failed') {
+        const loginArea = document.getElementById('loginArea');
+        if (loginArea) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'alert alert-danger mt-2';
+            errorDiv.textContent = 'Authentication failed. Please try again.';
+            loginArea.appendChild(errorDiv);
+            setTimeout(() => errorDiv.remove(), 3000);
+        }
+    }
+});
 
 // 4. Utility Functions
 function getImagePath(relativePath, isPlaceholder = false) {
