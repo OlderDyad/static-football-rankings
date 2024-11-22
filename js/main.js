@@ -45,7 +45,7 @@ async function checkLoginStatus() {
     } catch (error) {
         console.error("Error checking login status:", error);
         showLoggedOutState();
-        return { loggedIn: false };
+        return { loggedIn: false, user: null };
     }
 }
 

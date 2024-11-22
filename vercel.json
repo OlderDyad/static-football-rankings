@@ -17,39 +17,18 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/comments",
-      "methods": ["OPTIONS", "GET", "POST"],
-      "dest": "/api/comments.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "https://olderdyad.github.io",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Accept, Authorization",
-        "Access-Control-Allow-Credentials": "true"
-      }
+      "source": "/api/comments",
+      "destination": "/api/comments.js"
     },
     {
-      "src": "/api/auth/google",
-      "methods": ["GET", "OPTIONS"],
-      "dest": "/api/auth/google.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "https://olderdyad.github.io",
-        "Access-Control-Allow-Methods": "GET, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Accept, Authorization",
-        "Access-Control-Allow-Credentials": "true"
-      }
+      "source": "/api/auth/google",
+      "destination": "/api/auth/google.js"
     },
     {
-      "src": "/api/auth/status",
-      "methods": ["GET", "OPTIONS"],
-      "dest": "/api/auth/status.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "https://olderdyad.github.io",
-        "Access-Control-Allow-Methods": "GET, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Accept, Authorization",
-        "Access-Control-Allow-Credentials": "true"
-      }
+      "source": "/api/auth/status",
+      "destination": "/api/auth/status.js"
     }
   ]
 }
