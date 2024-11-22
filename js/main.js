@@ -1,9 +1,32 @@
 ﻿// 1. Constants
+
 const REPO_BASE = '/static-football-rankings';
 const IMAGE_BASE = `${REPO_BASE}/docs/images`;
 const DEFAULT_PLACEHOLDER = `${IMAGE_BASE}/placeholder-image.jpg`;
 const ITEMS_PER_PAGE = 100;
-const API_BASE = 'https://static-football-rankings-89e0jbz5g-david-mcknight-s-projects.vercel.app/api';
+
+// Determine API base URL based on environment
+const API_BASE = (() => {
+    // List of possible API URLs in order of preference
+    const possibleUrls = [
+        'https://static-football-rankings.vercel.app/api',
+        'https://static-football-rankings-ezvwkrbl1-david-mcknight-s-projects.vercel.app/api'
+    ];
+
+    // Function to check if URL is responsive
+    async function checkUrl(url) {
+        try {
+            const response = await fetch(`${url}/auth/verify-config`);
+            return response.ok;
+        } catch {
+            return false;
+        }
+    }
+
+    // Return the first working URL, or the default one
+    return possibleUrls[0];
+})();
+
 const LOGIN_API_BASE = `${API_BASE}/auth`;
 
 // 2. State management
