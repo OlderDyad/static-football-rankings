@@ -1,24 +1,30 @@
-// api/auth/verify-config.js
+// Create this file at: api/auth/verify-config.js
+
 export default async function handler(req, res) {
+    // Set CORS headers first
     res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
-    
+
+    // Handle preflight
     if (req.method === 'OPTIONS') {
-        res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
         return res.status(200).end();
     }
 
+    // Verify environment variables
     const config = {
-        hasClientId: !!process.env.GOOGLE_CLIENT_ID,
-        hasClientSecret: !!process.env.GOOGLE_CLIENT_SECRET,
-        clientIdPrefix: process.env.GOOGLE_CLIENT_ID ? process.env.GOOGLE_CLIENT_ID.substring(0, 10) + '...' : 'not set',
-        redirectUri: 'https://static-football-rankings.vercel.app/api/auth/callback'
+        hasClientId: Boolean(process.env.GOOGLE_CLIENT_ID),
+        hasClientSecret: Boolean(process.env.GOOGLE_CLIENT_SECRET),
+        clientIdStart: process.env.GOOGLE_CLIENT_ID ? 
+            `${process.env.GOOGLE_CLIENT_ID.substring(0, 8)}...` : 'not set',
+        timestamp: new Date().toISOString()
     };
 
-    res.status(200).json({ 
+    // Return configuration status
+    return res.status(200).json({
         success: true,
         config,
-        message: 'These are your current OAuth configuration settings'
+        message: 'OAuth Configuration Status'
     });
 }
