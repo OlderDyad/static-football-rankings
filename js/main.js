@@ -386,8 +386,8 @@ async function loadComments() {
             method: 'GET',
             credentials: 'include',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             }
         });
         
@@ -398,10 +398,13 @@ async function loadComments() {
         const data = await response.json();
         console.log('Raw API response:', data);
         
-        const comments = data.comments || (Array.isArray(data) ? data : []);
-        comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-        console.log('Processed and sorted comments:', comments);
-        displayComments(comments);
+        if (data.success) {
+            const comments = data.comments || [];
+            console.log('Processed comments:', comments);
+            displayComments(comments);
+        } else {
+            throw new Error(data.error || 'Failed to load comments');
+        }
     } catch (error) {
         console.error('Error loading comments:', error);
         commentsListElement.innerHTML = `
@@ -469,6 +472,7 @@ function getTimeAgo(date) {
     });
 }
 
+// Update submitComment function to match new API response format
 async function submitComment() {
     if (!isLoggedIn) {
         const alertDiv = document.createElement('div');
@@ -482,7 +486,6 @@ async function submitComment() {
         return;
     }
 
-    console.log('Comment submission started');
     const textElement = document.getElementById('commentText');
     const text = textElement?.value?.trim();
     
@@ -494,16 +497,14 @@ async function submitComment() {
     updateCommentFormState(true);
     
     const pageIdentifier = document.querySelector('h1')?.dataset.pageName || 'unknown-page';
-    console.log('Submitting comment for page:', pageIdentifier);
     
     try {
-        console.log('Sending comment:', text);
         const response = await fetch(`${API_BASE}/comments`, {
             method: 'POST',
             credentials: 'include',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 text,
@@ -518,9 +519,8 @@ async function submitComment() {
         }
         
         const result = await response.json();
-        console.log('Submit response:', result);
         
-        if (result) {
+        if (result.success) {
             console.log('Comment submitted successfully');
             textElement.value = '';
             
@@ -529,13 +529,11 @@ async function submitComment() {
             successDiv.textContent = 'Comment posted successfully!';
             textElement.parentNode.insertBefore(successDiv, textElement.nextSibling);
             
-            setTimeout(() => {
-                successDiv.remove();
-            }, 3000);
+            setTimeout(() => successDiv.remove(), 3000);
             
             await loadComments();
         } else {
-            throw new Error('No response from server');
+            throw new Error(result.error || 'Failed to submit comment');
         }
     } catch (error) {
         console.error('Error submitting comment:', error);
@@ -544,9 +542,7 @@ async function submitComment() {
         errorDiv.textContent = 'Unable to submit comment. Please try again later.';
         textElement.parentNode.insertBefore(errorDiv, textElement.nextSibling);
         
-        setTimeout(() => {
-            errorDiv.remove();
-        }, 3000);
+        setTimeout(() => errorDiv.remove(), 3000);
     } finally {
         updateCommentFormState(false);
     }
