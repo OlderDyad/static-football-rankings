@@ -34,7 +34,12 @@ debug('Configuration loaded:', {
     REPO_BASE,
     API_BASE,
     LOGIN_API_BASE
+
+debug('Auth state changed:', { isLoggedIn, userName });
+debug('API request to:', `${API_BASE}/auth/status`);
 });
+
+
 
 //=============================================================================
 // SECTION 3: AUTHENTICATION HANDLERS
