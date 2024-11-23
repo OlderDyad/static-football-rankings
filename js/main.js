@@ -104,43 +104,77 @@ function showLoggedInState() {
 }
 
 //=============================================================================
-// SECTION 3: AUTHENTICATION HANDLERS
+// SECTION 3: AUTHENTICATION AND COMMENTS
 //=============================================================================
 
-function showLoggedInState() {
-    console.log('Showing logged in state');
-    const authContainer = document.getElementById('authContainer');
-    const commentForm = document.getElementById('commentForm');
-    const authorName = document.getElementById('authorName');
+async function checkLoginStatus() {
+    console.log("Checking login status...");
+    try {
+        const response = await fetch(`${LOGIN_API_BASE}/status`, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            }
+        });
 
-    if (authContainer) {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Login status data:", data);
+
+        isLoggedIn = Boolean(data.loggedIn);
+        userName = data.user?.name || '';
+        console.log(`Auth state: logged in = ${isLoggedIn}, user = ${userName}`);
+
+        updateAuthUI();
+        return data;
+    } catch (error) {
+        console.error("Error checking login status:", error);
+        isLoggedIn = false;
+        userName = '';
+        updateAuthUI();
+        return { loggedIn: false, user: null };
+    }
+}
+
+function updateAuthUI() {
+    console.log('Updating auth UI, logged in:', isLoggedIn);
+    const authContainer = document.getElementById('authContainer');
+    
+    if (!authContainer) {
+        console.error('Auth container not found');
+        return;
+    }
+
+    if (isLoggedIn) {
         authContainer.innerHTML = `
             <div class="d-flex align-items-center justify-content-between">
                 <span class="me-2">Welcome, ${userName}</span>
                 <button id="logoutButton" class="btn btn-outline-secondary btn-sm">Logout</button>
             </div>
         `;
+        
         const logoutButton = document.getElementById('logoutButton');
         if (logoutButton) {
             logoutButton.addEventListener('click', handleLogout);
         }
-    }
 
-    if (commentForm) {
-        commentForm.style.display = 'block';
-    }
+        // Show comment form
+        const commentForm = document.getElementById('commentForm');
+        if (commentForm) {
+            commentForm.style.display = 'block';
+        }
 
-    if (authorName) {
-        authorName.textContent = userName || 'Anonymous';
-    }
-}
-
-function showLoggedOutState() {
-    console.log('Showing logged out state');
-    const authContainer = document.getElementById('authContainer');
-    const commentForm = document.getElementById('commentForm');
-
-    if (authContainer) {
+        // Update author name
+        const authorName = document.getElementById('authorName');
+        if (authorName) {
+            authorName.textContent = userName || 'Anonymous';
+        }
+    } else {
         authContainer.innerHTML = `
             <div class="d-flex align-items-center">
                 <button id="loginButton" class="btn btn-primary d-flex align-items-center gap-2">
@@ -153,80 +187,119 @@ function showLoggedOutState() {
                 </button>
             </div>
         `;
+        
         const loginButton = document.getElementById('loginButton');
         if (loginButton) {
             loginButton.addEventListener('click', handleLogin);
         }
-    } else {
-        console.error('Auth container not found');
-    }
 
-    if (commentForm) {
-        commentForm.style.display = 'none';
+        // Hide comment form
+        const commentForm = document.getElementById('commentForm');
+        if (commentForm) {
+            commentForm.style.display = 'none';
+        }
     }
 }
 
 function handleLogin() {
     console.log('Initiating Google login...');
     try {
-        window.location.href = `${LOGIN_API_BASE}/google?t=${Date.now()}`;
+        const loginUrl = `${LOGIN_API_BASE}/google?t=${Date.now()}`;
+        console.log('Redirecting to:', loginUrl);
+        window.location.href = loginUrl;
     } catch (error) {
         console.error('Login error:', error);
-        const authContainer = document.getElementById('authContainer');
-        if (authContainer) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'alert alert-danger mt-2';
-            errorDiv.textContent = 'Login failed. Please try again.';
-            authContainer.appendChild(errorDiv);
-            setTimeout(() => errorDiv.remove(), 3000);
-        }
+        showAuthError('Login failed. Please try again.');
     }
 }
 
-async function handleLogout() {
+function showAuthError(message) {
+    const authContainer = document.getElementById('authContainer');
+    if (authContainer) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger mt-2';
+        errorDiv.textContent = message;
+        authContainer.appendChild(errorDiv);
+        setTimeout(() => errorDiv.remove(), 3000);
+    }
+}
+
+// Update loadComments function to handle the response format correctly
+async function loadComments() {
+    console.log('Loading comments...');
+    const commentsContainer = document.getElementById('commentsList');
+    if (!commentsContainer) return;
+
     try {
-        const response = await fetch(`${LOGIN_API_BASE}/logout`, {
-            method: 'POST',
+        const response = await fetch(`${API_BASE}/comments`, {
+            method: 'GET',
             credentials: 'include',
             headers: {
-                "Content-Type": "application/json"
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             }
         });
+
+        console.log('Response status:', response.status);
+        console.log('Response type:', response.type);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        isLoggedIn = false;
-        userName = '';
-        showLoggedOutState();
-        await loadComments();
+        const data = await response.json();
+        console.log('Comments data:', data);
+
+        // Extract comments array from response
+        const comments = data.comments || [];
+        displayComments(comments);
     } catch (error) {
-        console.error('Logout error:', error);
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'alert alert-danger mt-2';
-        errorDiv.textContent = 'Logout failed. Please try again.';
-        const authContainer = document.getElementById('authContainer');
-        if (authContainer) {
-            authContainer.appendChild(errorDiv);
-            setTimeout(() => errorDiv.remove(), 3000);
-        }
+        console.error('Error loading comments:', error);
+        commentsContainer.innerHTML = `
+            <div class="alert alert-warning">
+                Error loading comments. Please try again later.
+            </div>
+        `;
     }
 }
 
-// Update error handling in initialization code
-const authErrorHandler = (error) => {
-    const authContainer = document.getElementById('authContainer');
-    if (authContainer) {
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'alert alert-danger mt-2';
-        errorDiv.textContent = error === 'auth_failed' 
-            ? 'Authentication failed. Please try again.'
-            : 'An error occurred. Please try again.';
-        authContainer.appendChild(errorDiv);
-        setTimeout(() => errorDiv.remove(), 3000);
+// Update initialization
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        console.log('Starting application initialization...');
+        
+        // Check for auth errors
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        if (error) {
+            console.log('Auth error detected:', error);
+            showAuthError(error === 'auth_failed' 
+                ? 'Authentication failed. Please try again.'
+                : 'An error occurred. Please try again.');
+        }
+
+        // Initialize in order
+        await checkLoginStatus();
+        await initializeRankings();
+        await loadComments();
+
+        // Set up event listeners
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', handleSearch);
+        }
+
+        const submitButton = document.getElementById('submitComment');
+        if (submitButton) {
+            submitButton.addEventListener('click', submitComment);
+        }
+
+        console.log('Application initialization complete');
+    } catch (error) {
+        console.error('Initialization error:', error);
+        showAuthError('Failed to initialize application. Please refresh the page.');
     }
-};
+});
 
 //=============================================================================
 // SECTION 4: UTILITY FUNCTIONS
