@@ -1,46 +1,68 @@
 // api/auth/status.js
-
 export default async function handler(req, res) {
-    // Set CORS headers first
-    const corsHeaders = {
-        'Access-Control-Allow-Origin': 'https://olderdyad.github.io',
-        'Access-Control-Allow-Methods': 'GET, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Accept, Authorization',
-        'Access-Control-Allow-Credentials': 'true'
-    };
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
 
-    // Apply CORS headers to all responses
-    Object.entries(corsHeaders).forEach(([key, value]) => {
-        res.setHeader(key, value);
-    });
-
-    // Handle preflight request
+    // Handle preflight
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
     }
 
-    // Handle the actual request
-    if (req.method === 'GET') {
-        try {
-            // TODO: Add your session verification logic here
+    try {
+        // Get auth token from cookies
+        const authToken = req.cookies?.auth_token;
+        const userName = req.cookies?.user_name;
+
+        if (!authToken) {
             return res.status(200).json({
                 success: true,
                 loggedIn: false,
                 user: null
             });
-        } catch (error) {
-            console.error('Auth status error:', error);
-            return res.status(500).json({
-                success: false,
-                error: 'Internal server error'
+        }
+
+        // Verify token with Google
+        const userResponse = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+            headers: {
+                'Authorization': `Bearer ${authToken}`
+            }
+        });
+
+        if (!userResponse.ok) {
+            // Token is invalid, clear cookies
+            res.setHeader('Set-Cookie', [
+                'auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=None',
+                'user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None',
+                'user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=None'
+            ]);
+
+            return res.status(200).json({
+                success: true,
+                loggedIn: false,
+                user: null
             });
         }
-    }
 
-    // Handle invalid methods
-    res.setHeader('Allow', ['GET', 'OPTIONS']);
-    return res.status(405).json({
-        success: false,
-        error: `Method ${req.method} Not Allowed`
-    });
+        const userData = await userResponse.json();
+
+        // Return user info
+        return res.status(200).json({
+            success: true,
+            loggedIn: true,
+            user: {
+                name: userName || userData.name,
+                email: userData.email
+            }
+        });
+    } catch (error) {
+        console.error('Auth status error:', error);
+        return res.status(500).json({
+            success: false,
+            error: 'Internal server error',
+            details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
+    }
 }
