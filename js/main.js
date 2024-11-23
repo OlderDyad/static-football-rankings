@@ -119,148 +119,6 @@ function showLoggedInState() {
 // SECTION 3: AUTHENTICATION AND COMMENTS
 //=============================================================================
 
-// Check login status
-async function checkLoginStatus() {
-    console.log("[DEBUG] Checking login status...");
-    try {
-        const response = await fetch(`${LOGIN_API_BASE}/status`, {
-            method: "GET",
-            credentials: "include",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log("[DEBUG] Login status data:", data);
-
-        isLoggedIn = Boolean(data.loggedIn);
-        userName = data.user?.name || '';
-        console.log(`[DEBUG] Auth state: logged in = ${isLoggedIn}, user = ${userName}`);
-
-        updateAuthUI();
-        return data;
-    } catch (error) {
-        console.error("[ERROR] Error checking login status:", error);
-        isLoggedIn = false;
-        userName = '';
-        updateAuthUI();
-        return { loggedIn: false, user: null };
-    }
-}
-
-// Update the authentication UI
-function updateAuthUI() {
-    console.log("[DEBUG] Updating auth UI, logged in:", isLoggedIn);
-    const authContainer = document.getElementById('authContainer');
-
-    if (!authContainer) {
-        console.error("[ERROR] Auth container not found");
-        return;
-    }
-
-    if (isLoggedIn) {
-        authContainer.innerHTML = `
-            <div class="d-flex align-items-center justify-content-between">
-                <span class="me-2">Welcome, ${userName}</span>
-                <button id="logoutButton" class="btn btn-outline-secondary btn-sm">Logout</button>
-            </div>
-        `;
-
-        const logoutButton = document.getElementById('logoutButton');
-        if (logoutButton) {
-            logoutButton.addEventListener('click', handleLogout);
-        }
-
-        const commentForm = document.getElementById('commentForm');
-        if (commentForm) {
-            commentForm.style.display = 'block';
-        }
-
-        const authorName = document.getElementById('authorName');
-        if (authorName) {
-            authorName.textContent = userName || 'Anonymous';
-        }
-    } else {
-        authContainer.innerHTML = `
-            <div class="d-flex align-items-center">
-                <button id="loginButton" class="btn btn-primary d-flex align-items-center gap-2">
-                    <img src="${REPO_BASE}/docs/images/google-logo.png" 
-                         alt="Google Logo" 
-                         style="height: 18px; width: 18px;"
-                         onerror="this.style.display='none'" />
-                    <span>Sign in with Google</span>
-                </button>
-            </div>
-        `;
-
-        const loginButton = document.getElementById('loginButton');
-        if (loginButton) {
-            loginButton.addEventListener('click', handleLogin);
-        }
-
-        const commentForm = document.getElementById('commentForm');
-        if (commentForm) {
-            commentForm.style.display = 'none';
-        }
-    }
-}
-
-// Handle login action
-function handleLogin() {
-    console.log("[DEBUG] Initiating Google login...");
-    try {
-        const loginUrl = `${LOGIN_API_BASE}/google?t=${Date.now()}`;
-        console.log("[DEBUG] Redirecting to:", loginUrl);
-        window.location.href = loginUrl;
-    } catch (error) {
-        console.error("[ERROR] Login error:", error);
-        showAuthError("Login failed. Please try again.");
-    }
-}
-
-// Handle logout action
-async function handleLogout() {
-    try {
-        const response = await fetch(`${LOGIN_API_BASE}/logout`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        isLoggedIn = false;
-        userName = '';
-        updateAuthUI();
-        await loadComments();
-    } catch (error) {
-        console.error("[ERROR] Logout error:", error);
-        showAuthError("Logout failed. Please try again.");
-    }
-}
-
-// Show authentication error message
-function showAuthError(message) {
-    const authContainer = document.getElementById('authContainer');
-    if (authContainer) {
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'alert alert-danger mt-2';
-        errorDiv.textContent = message;
-        authContainer.appendChild(errorDiv);
-        setTimeout(() => errorDiv.remove(), 3000);
-    }
-}
-
 // Load and display comments
 async function loadComments() {
     console.log("[DEBUG] Loading comments...");
@@ -280,22 +138,32 @@ async function loadComments() {
             }
         });
 
-        console.log("[DEBUG] Comments response:", {
-            status: response.status,
-            type: response.type
-        });
+        console.log("[DEBUG] Raw response:", response);
+        console.log("[DEBUG] Response status:", response.status);
+        console.log("[DEBUG] Response type:", response.type);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = await response.json();
-        console.log("[DEBUG] Comments API Response:", data);
+        const rawData = await response.json();
+        console.log("[DEBUG] Raw data from API:", rawData);
 
-        // Ensure the response has a comments array
-        const comments = data.comments || [];
-        console.log("[DEBUG] Processed comments:", comments);
+        // Safely extract comments array
+        let comments;
+        if (rawData && typeof rawData === 'object') {
+            comments = rawData.comments || [];
+        } else {
+            comments = [];
+        }
 
+        // Verify it's an array
+        if (!Array.isArray(comments)) {
+            console.error("[ERROR] Comments is not an array:", comments);
+            comments = [];
+        }
+
+        console.log("[DEBUG] Final comments array:", comments);
         displayComments(comments);
     } catch (error) {
         console.error("[ERROR] Error loading comments:", error);
@@ -308,8 +176,8 @@ async function loadComments() {
 }
 
 // Display comments
-function displayComments(comments = []) {
-    console.log("[DEBUG] Displaying comments:", comments);
+function displayComments(commentsArray = []) {
+    console.log("[DEBUG] Starting displayComments with:", commentsArray);
     const commentsContainer = document.getElementById('commentsList');
     
     if (!commentsContainer) {
@@ -317,35 +185,45 @@ function displayComments(comments = []) {
         return;
     }
 
-    if (!Array.isArray(comments) || comments.length === 0) {
+    // Ensure we have an array
+    if (!Array.isArray(commentsArray)) {
+        console.error("[ERROR] Invalid comments data type:", typeof commentsArray);
+        commentsContainer.innerHTML = '<div class="alert alert-warning">Error displaying comments.</div>';
+        return;
+    }
+
+    // Handle empty array
+    if (commentsArray.length === 0) {
+        console.log("[DEBUG] No comments to display");
         commentsContainer.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
         return;
     }
 
     try {
-        const commentHTML = comments.map(comment => {
-            if (!comment || typeof comment !== 'object') {
-                console.warn("[WARN] Invalid comment data:", comment);
-                return '';
-            }
-
-            const timestamp = new Date(comment.timestamp || Date.now());
-            return `
-                <div class="comment mb-3 p-3 border rounded">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <strong>${escapeHTML(comment.author || 'Anonymous')}</strong>
-                            <small class="text-muted ms-2">${getTimeAgo(timestamp)}</small>
+        console.log("[DEBUG] Generating HTML for comments");
+        const commentsHTML = commentsArray
+            .filter(comment => comment && typeof comment === 'object')
+            .map(comment => {
+                console.log("[DEBUG] Processing comment:", comment);
+                const timestamp = new Date(comment.timestamp || Date.now());
+                return `
+                    <div class="comment mb-3 p-3 border rounded">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>${escapeHTML(comment.author || 'Anonymous')}</strong>
+                                <small class="text-muted ms-2">${getTimeAgo(timestamp)}</small>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            ${escapeHTML(comment.text || '')}
                         </div>
                     </div>
-                    <div class="mt-2">
-                        ${escapeHTML(comment.text || '')}
-                    </div>
-                </div>
-            `;
-        }).filter(Boolean).join('');
+                `;
+            })
+            .join('');
 
-        commentsContainer.innerHTML = commentHTML || '<p class="text-muted">No comments to display.</p>';
+        console.log("[DEBUG] Final HTML generated:", commentsHTML.substring(0, 100) + '...');
+        commentsContainer.innerHTML = commentsHTML || '<p class="text-muted">No valid comments to display.</p>';
     } catch (error) {
         console.error("[ERROR] Error rendering comments:", error);
         commentsContainer.innerHTML = '<div class="alert alert-warning">Error displaying comments.</div>';
@@ -358,6 +236,131 @@ function escapeHTML(str) {
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
+}
+
+// Helper function for time formatting
+function getTimeAgo(date) {
+    const now = new Date();
+    const diffInSeconds = Math.floor((now - date) / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+
+    if (diffInSeconds < 60) return 'Just now';
+    if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+    if (diffInHours < 24) return `${diffInHours}h ago`;
+    if (diffInDays < 7) return `${diffInDays}d ago`;
+    
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    });
+}
+
+// Handle comment submission
+async function submitComment() {
+    if (!isLoggedIn) {
+        showAuthError('Please sign in to post comments');
+        return;
+    }
+
+    const textElement = document.getElementById('commentText');
+    const text = textElement?.value?.trim();
+    
+    if (!text) {
+        console.log("[DEBUG] No comment text provided");
+        return;
+    }
+    
+    updateCommentFormState(true);
+    const pageIdentifier = document.querySelector('h1')?.dataset.pageName || 'unknown-page';
+    
+    try {
+        const response = await fetch(`${API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                text,
+                author: userName || 'Anonymous',
+                programName: pageIdentifier,
+                timestamp: new Date().toISOString()
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            console.log("[DEBUG] Comment submitted successfully");
+            textElement.value = '';
+            
+            const successDiv = document.createElement('div');
+            successDiv.className = 'alert alert-success mt-2';
+            successDiv.textContent = 'Comment posted successfully!';
+            textElement.parentNode.insertBefore(successDiv, textElement.nextSibling);
+            
+            setTimeout(() => successDiv.remove(), 3000);
+            
+            await loadComments();
+        } else {
+            throw new Error(result.error || 'Failed to submit comment');
+        }
+    } catch (error) {
+        console.error("[ERROR] Error submitting comment:", error);
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger mt-2';
+        errorDiv.textContent = 'Unable to submit comment. Please try again later.';
+        textElement.parentNode.insertBefore(errorDiv, textElement.nextSibling);
+        
+        setTimeout(() => errorDiv.remove(), 3000);
+    } finally {
+        updateCommentFormState(false);
+    }
+}
+
+// Update comment form state during submission
+function updateCommentFormState(isSubmitting) {
+    const submitButton = document.getElementById('submitComment');
+    const textElement = document.getElementById('commentText');
+    
+    if (!submitButton || !textElement) {
+        console.warn("[WARN] Comment form elements not found");
+        return;
+    }
+    
+    submitButton.disabled = isSubmitting;
+    submitButton.innerHTML = isSubmitting 
+        ? '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Posting...'
+        : 'Post Comment';
+    textElement.disabled = isSubmitting;
+}
+
+// Format timestamp for display
+function getTimeAgo(date) {
+    const now = new Date();
+    const diffInSeconds = Math.floor((now - date) / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+ 
+    if (diffInSeconds < 60) return 'Just now';
+    if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+    if (diffInHours < 24) return `${diffInHours}h ago`;
+    if (diffInDays < 7) return `${diffInDays}d ago`;
+    
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    });
 }
 
 //=============================================================================
