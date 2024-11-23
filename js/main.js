@@ -36,6 +36,11 @@ let isLoggedIn = false;
 let userName = '';
 
 // 3. Authentication Functions
+// State management - add at the top of your file
+let isLoggedIn = false;
+let userName = '';
+
+// Update check login status function
 async function checkLoginStatus() {
     console.log("Checking login status...");
     try {
@@ -53,11 +58,14 @@ async function checkLoginStatus() {
         }
 
         const data = await response.json();
-        console.log("Login status:", data);
+        console.log("Login status data:", data);
 
-        isLoggedIn = data.loggedIn;
+        // Update global state
+        isLoggedIn = Boolean(data.loggedIn);
         userName = data.user?.name || '';
+        console.log(`Auth state: logged in = ${isLoggedIn}, user = ${userName}`);
 
+        // Update UI based on state
         if (isLoggedIn) {
             showLoggedInState();
         } else {
@@ -67,16 +75,23 @@ async function checkLoginStatus() {
         return data;
     } catch (error) {
         console.error("Error checking login status:", error);
+        isLoggedIn = false;
+        userName = '';
         showLoggedOutState();
         return { loggedIn: false, user: null };
     }
 }
 
+// Update login state display function
 function showLoggedInState() {
+    console.log('Showing logged in state');
     const loginArea = document.getElementById('loginArea');
+    const commentForm = document.getElementById('commentForm');
+    const authorName = document.getElementById('authorName');
+
     if (loginArea) {
         loginArea.innerHTML = `
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center justify-content-between">
                 <span class="me-2">Welcome, ${userName}</span>
                 <button id="logoutButton" class="btn btn-outline-secondary btn-sm">Logout</button>
             </div>
@@ -87,24 +102,33 @@ function showLoggedInState() {
         }
     }
 
-    const commentForm = document.getElementById('commentForm');
     if (commentForm) {
         commentForm.style.display = 'block';
     }
+
+    if (authorName) {
+        authorName.textContent = userName || 'Anonymous';
+    }
 }
 
+// Update logout state display function
 function showLoggedOutState() {
+    console.log('Showing logged out state');
     const loginArea = document.getElementById('loginArea');
+    const commentForm = document.getElementById('commentForm');
+
     if (loginArea) {
         loginArea.innerHTML = `
-            <button id="loginButton" class="btn btn-light d-flex align-items-center gap-2">
-                <img src="${REPO_BASE}/docs/images/google-logo.png" 
-                     alt="Google" 
-                     style="height: 18px; width: 18px;"
-                     onerror="this.style.display='none'"
-                />
-                <span>Sign in with Google</span>
-            </button>
+            <div class="d-flex align-items-center">
+                <button id="loginButton" class="btn btn-primary d-flex align-items-center gap-2">
+                    <img src="${REPO_BASE}/docs/images/google-logo.png" 
+                         alt="" 
+                         style="height: 18px; width: 18px;"
+                         onerror="this.style.display='none'"
+                    />
+                    <span>Sign in with Google</span>
+                </button>
+            </div>
         `;
         const loginButton = document.getElementById('loginButton');
         if (loginButton) {
@@ -112,66 +136,57 @@ function showLoggedOutState() {
         }
     }
 
-    const commentForm = document.getElementById('commentForm');
     if (commentForm) {
         commentForm.style.display = 'none';
     }
 }
 
-async function handleLogin() {
-    console.log('Initiating Google login...');
+// Update the initialization code
+document.addEventListener('DOMContentLoaded', async function() {
     try {
-        window.location.href = `${LOGIN_API_BASE}/google`;
-    } catch (error) {
-        console.error('Login error:', error);
-        // Show error to user
-        const loginArea = document.getElementById('loginArea');
-        if (loginArea) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'alert alert-danger mt-2';
-            errorDiv.textContent = 'Login failed. Please try again.';
-            loginArea.appendChild(errorDiv);
-            setTimeout(() => errorDiv.remove(), 3000);
-        }
-    }
-}
-
-async function handleLogout() {
-    try {
-        const response = await fetch(`${LOGIN_API_BASE}/logout`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                "Content-Type": "application/json"
+        console.log('Starting application initialization...');
+        
+        // Check for auth errors first
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        if (error) {
+            console.log('Auth error detected:', error);
+            const loginArea = document.getElementById('loginArea');
+            if (loginArea) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'alert alert-danger mt-2';
+                errorDiv.textContent = error === 'auth_failed' 
+                    ? 'Authentication failed. Please try again.'
+                    : 'An error occurred. Please try again.';
+                loginArea.appendChild(errorDiv);
+                setTimeout(() => errorDiv.remove(), 3000);
             }
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        isLoggedIn = false;
-        userName = '';
-        showLoggedOutState();
+        // Initialize components in order
+        await checkLoginStatus();
+        await initializeRankings();
         await loadComments();
-    } catch (error) {
-        console.error('Logout error:', error);
-    }
-}
 
-// Add this to check for auth errors on page load
-document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const error = urlParams.get('error');
-    if (error === 'auth_failed') {
-        const loginArea = document.getElementById('loginArea');
-        if (loginArea) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'alert alert-danger mt-2';
-            errorDiv.textContent = 'Authentication failed. Please try again.';
-            loginArea.appendChild(errorDiv);
-            setTimeout(() => errorDiv.remove(), 3000);
+        // Set up event listeners
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', handleSearch);
         }
+
+        const submitButton = document.getElementById('submitComment');
+        if (submitButton) {
+            submitButton.addEventListener('click', submitComment);
+        }
+
+        console.log('Application initialization complete');
+    } catch (error) {
+        console.error('Initialization error:', error);
+        // Show error to user
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger';
+        errorDiv.textContent = 'Failed to initialize application. Please refresh the page.';
+        document.body.insertBefore(errorDiv, document.body.firstChild);
     }
 });
 
@@ -573,10 +588,31 @@ function showProgramDetails(teamName) {
 // 9. Main initialization
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        console.log('Starting application initialization...');
+        
+        // Check for auth errors first
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        if (error) {
+            console.log('Auth error detected:', error);
+            const loginArea = document.getElementById('loginArea');
+            if (loginArea) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'alert alert-danger mt-2';
+                errorDiv.textContent = error === 'auth_failed' 
+                    ? 'Authentication failed. Please try again.'
+                    : 'An error occurred. Please try again.';
+                loginArea.appendChild(errorDiv);
+                setTimeout(() => errorDiv.remove(), 3000);
+            }
+        }
+
+        // Initialize components in order
         await checkLoginStatus();
         await initializeRankings();
         await loadComments();
 
+        // Set up event listeners
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
             searchInput.addEventListener('input', handleSearch);
@@ -586,7 +622,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (submitButton) {
             submitButton.addEventListener('click', submitComment);
         }
+
+        console.log('Application initialization complete');
     } catch (error) {
         console.error('Initialization error:', error);
+        // Show error to user
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger';
+        errorDiv.textContent = 'Failed to initialize application. Please refresh the page.';
+        document.body.insertBefore(errorDiv, document.body.firstChild);
     }
 });
