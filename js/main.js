@@ -119,8 +119,9 @@ function showLoggedInState() {
 // SECTION 3: AUTHENTICATION AND COMMENTS
 //=============================================================================
 
+// Check login status
 async function checkLoginStatus() {
-    console.log("Checking login status...");
+    console.log("[DEBUG] Checking login status...");
     try {
         const response = await fetch(`${LOGIN_API_BASE}/status`, {
             method: "GET",
@@ -136,16 +137,16 @@ async function checkLoginStatus() {
         }
 
         const data = await response.json();
-        console.log("Login status data:", data);
+        console.log("[DEBUG] Login status data:", data);
 
         isLoggedIn = Boolean(data.loggedIn);
         userName = data.user?.name || '';
-        console.log(`Auth state: logged in = ${isLoggedIn}, user = ${userName}`);
+        console.log(`[DEBUG] Auth state: logged in = ${isLoggedIn}, user = ${userName}`);
 
         updateAuthUI();
         return data;
     } catch (error) {
-        console.error("Error checking login status:", error);
+        console.error("[ERROR] Error checking login status:", error);
         isLoggedIn = false;
         userName = '';
         updateAuthUI();
@@ -153,12 +154,13 @@ async function checkLoginStatus() {
     }
 }
 
+// Update the authentication UI
 function updateAuthUI() {
-    console.log('Updating auth UI, logged in:', isLoggedIn);
+    console.log("[DEBUG] Updating auth UI, logged in:", isLoggedIn);
     const authContainer = document.getElementById('authContainer');
-    
+
     if (!authContainer) {
-        console.error('Auth container not found');
+        console.error("[ERROR] Auth container not found");
         return;
     }
 
@@ -169,7 +171,7 @@ function updateAuthUI() {
                 <button id="logoutButton" class="btn btn-outline-secondary btn-sm">Logout</button>
             </div>
         `;
-        
+
         const logoutButton = document.getElementById('logoutButton');
         if (logoutButton) {
             logoutButton.addEventListener('click', handleLogout);
@@ -191,13 +193,12 @@ function updateAuthUI() {
                     <img src="${REPO_BASE}/docs/images/google-logo.png" 
                          alt="" 
                          style="height: 18px; width: 18px;"
-                         onerror="this.style.display='none'"
-                    />
+                         onerror="this.style.display='none'" />
                     <span>Sign in with Google</span>
                 </button>
             </div>
         `;
-        
+
         const loginButton = document.getElementById('loginButton');
         if (loginButton) {
             loginButton.addEventListener('click', handleLogin);
@@ -210,18 +211,20 @@ function updateAuthUI() {
     }
 }
 
+// Handle login action
 function handleLogin() {
-    console.log('Initiating Google login...');
+    console.log("[DEBUG] Initiating Google login...");
     try {
         const loginUrl = `${LOGIN_API_BASE}/google?t=${Date.now()}`;
-        console.log('Redirecting to:', loginUrl);
+        console.log("[DEBUG] Redirecting to:", loginUrl);
         window.location.href = loginUrl;
     } catch (error) {
-        console.error('Login error:', error);
-        showAuthError('Login failed. Please try again.');
+        console.error("[ERROR] Login error:", error);
+        showAuthError("Login failed. Please try again.");
     }
 }
 
+// Show authentication error message
 function showAuthError(message) {
     const authContainer = document.getElementById('authContainer');
     if (authContainer) {
@@ -233,9 +236,9 @@ function showAuthError(message) {
     }
 }
 
-// Update loadComments function to handle the response format correctly
+// Load and display comments
 async function loadComments() {
-    console.log('Loading comments...');
+    console.log("[DEBUG] Loading comments...");
     const commentsContainer = document.getElementById('commentsList');
     if (!commentsContainer) return;
 
@@ -249,21 +252,24 @@ async function loadComments() {
             }
         });
 
-        console.log('Response status:', response.status);
-        console.log('Response type:', response.type);
+        console.log("[DEBUG] Comments response:", {
+            status: response.status,
+            type: response.type
+        });
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log('Comments data:', data);
+        console.log("[DEBUG] Comments data:", data);
 
-        // Extract comments array from response
-        const comments = data.comments || [];
+        const comments = Array.isArray(data.comments) ? data.comments : [];
+        console.log("[DEBUG] Processed comments:", comments);
+
         displayComments(comments);
     } catch (error) {
-        console.error('Error loading comments:', error);
+        console.error("[ERROR] Error loading comments:", error);
         commentsContainer.innerHTML = `
             <div class="alert alert-warning">
                 Error loading comments. Please try again later.
@@ -272,22 +278,24 @@ async function loadComments() {
     }
 }
 
-// Update initialization
-document.addEventListener('DOMContentLoaded', async function() {
+// Initialization logic
+document.addEventListener('DOMContentLoaded', async function () {
     try {
-        console.log('Starting application initialization...');
-        
-        // Check for auth errors
+        console.log("[DEBUG] Starting application initialization...");
+
+        // Check for authentication errors
         const urlParams = new URLSearchParams(window.location.search);
         const error = urlParams.get('error');
         if (error) {
-            console.log('Auth error detected:', error);
-            showAuthError(error === 'auth_failed' 
-                ? 'Authentication failed. Please try again.'
-                : 'An error occurred. Please try again.');
+            console.log("[DEBUG] Auth error detected:", error);
+            showAuthError(
+                error === 'auth_failed' 
+                ? 'Authentication failed. Please try again.' 
+                : 'An error occurred. Please try again.'
+            );
         }
 
-        // Initialize in order
+        // Initialize features
         await checkLoginStatus();
         await initializeRankings();
         await loadComments();
@@ -303,12 +311,13 @@ document.addEventListener('DOMContentLoaded', async function() {
             submitButton.addEventListener('click', submitComment);
         }
 
-        console.log('Application initialization complete');
+        console.log("[DEBUG] Application initialization complete");
     } catch (error) {
-        console.error('Initialization error:', error);
-        showAuthError('Failed to initialize application. Please refresh the page.');
+        console.error("[ERROR] Initialization error:", error);
+        showAuthError("Failed to initialize application. Please refresh the page.");
     }
 });
+
 
 //=============================================================================
 // SECTION 4: UTILITY FUNCTIONS
