@@ -4,15 +4,15 @@ export default async function handler(req, res) {
         // Set CORS headers
         res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
         res.setHeader('Access-Control-Allow-Credentials', 'true');
-        
+
         if (req.method === 'OPTIONS') {
             res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
             res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
             return res.status(200).end();
         }
 
-        // Use the new URL for redirect
-        const redirectUri = 'https://static-football-rankings-89e0jbz5g-david-mcknight-s-projects.vercel.app/api/auth/callback';
+        // Use permanent domain for redirect
+        const redirectUri = 'https://static-football-rankings.vercel.app/api/auth/callback';
         
         const params = new URLSearchParams({
             client_id: process.env.GOOGLE_CLIENT_ID,
@@ -25,8 +25,8 @@ export default async function handler(req, res) {
         });
 
         const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
-        
         console.log('Redirecting to Google OAuth:', googleAuthUrl);
+        
         res.redirect(googleAuthUrl);
     } catch (error) {
         console.error('Google auth error:', error);
