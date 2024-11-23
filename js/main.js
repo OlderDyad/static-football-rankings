@@ -224,6 +224,31 @@ function handleLogin() {
     }
 }
 
+// Handle logout action
+async function handleLogout() {
+    try {
+        const response = await fetch(`${LOGIN_API_BASE}/logout`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        isLoggedIn = false;
+        userName = '';
+        updateAuthUI();
+        await loadComments();
+    } catch (error) {
+        console.error("[ERROR] Logout error:", error);
+        showAuthError("Logout failed. Please try again.");
+    }
+}
+
 // Show authentication error message
 function showAuthError(message) {
     const authContainer = document.getElementById('authContainer');
@@ -268,10 +293,7 @@ async function loadComments() {
         console.log("[DEBUG] Comments API Response:", data);
 
         // Ensure the response has a comments array
-        const comments = Array.isArray(data.comments) ? data.comments : [];
-        if (!Array.isArray(comments)) {
-            throw new Error("Invalid comments data received from API");
-        }
+        const comments = data.comments || [];
         console.log("[DEBUG] Processed comments:", comments);
 
         displayComments(comments);
@@ -285,45 +307,58 @@ async function loadComments() {
     }
 }
 
-// Initialization logic
-document.addEventListener('DOMContentLoaded', async function () {
-    try {
-        console.log("[DEBUG] Starting application initialization...");
-
-        // Check for authentication errors
-        const urlParams = new URLSearchParams(window.location.search);
-        const error = urlParams.get('error');
-        if (error) {
-            console.log("[DEBUG] Auth error detected:", error);
-            showAuthError(
-                error === 'auth_failed' 
-                ? 'Authentication failed. Please try again.' 
-                : 'An error occurred. Please try again.'
-            );
-        }
-
-        // Initialize features
-        await checkLoginStatus();
-        await initializeRankings();
-        await loadComments();
-
-        // Set up event listeners
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.addEventListener('input', handleSearch);
-        }
-
-        const submitButton = document.getElementById('submitComment');
-        if (submitButton) {
-            submitButton.addEventListener('click', submitComment);
-        }
-
-        console.log("[DEBUG] Application initialization complete");
-    } catch (error) {
-        console.error("[ERROR] Initialization error:", error);
-        showAuthError("Failed to initialize application. Please refresh the page.");
+// Display comments
+function displayComments(comments = []) {
+    console.log("[DEBUG] Displaying comments:", comments);
+    const commentsContainer = document.getElementById('commentsList');
+    
+    if (!commentsContainer) {
+        console.error("[ERROR] Comments container not found");
+        return;
     }
-});
+
+    if (!Array.isArray(comments) || comments.length === 0) {
+        commentsContainer.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
+        return;
+    }
+
+    try {
+        const commentHTML = comments.map(comment => {
+            if (!comment || typeof comment !== 'object') {
+                console.warn("[WARN] Invalid comment data:", comment);
+                return '';
+            }
+
+            const timestamp = new Date(comment.timestamp || Date.now());
+            return `
+                <div class="comment mb-3 p-3 border rounded">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>${escapeHTML(comment.author || 'Anonymous')}</strong>
+                            <small class="text-muted ms-2">${getTimeAgo(timestamp)}</small>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        ${escapeHTML(comment.text || '')}
+                    </div>
+                </div>
+            `;
+        }).filter(Boolean).join('');
+
+        commentsContainer.innerHTML = commentHTML || '<p class="text-muted">No comments to display.</p>';
+    } catch (error) {
+        console.error("[ERROR] Error rendering comments:", error);
+        commentsContainer.innerHTML = '<div class="alert alert-warning">Error displaying comments.</div>';
+    }
+}
+
+// Helper function to escape HTML
+function escapeHTML(str) {
+    if (!str) return '';
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
 
 //=============================================================================
 // SECTION 4: UTILITY FUNCTIONS
