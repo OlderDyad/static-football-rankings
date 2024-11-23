@@ -191,7 +191,7 @@ function updateAuthUI() {
             <div class="d-flex align-items-center">
                 <button id="loginButton" class="btn btn-primary d-flex align-items-center gap-2">
                     <img src="${REPO_BASE}/docs/images/google-logo.png" 
-                         alt="" 
+                         alt="Google Logo" 
                          style="height: 18px; width: 18px;"
                          onerror="this.style.display='none'" />
                     <span>Sign in with Google</span>
@@ -240,7 +240,10 @@ function showAuthError(message) {
 async function loadComments() {
     console.log("[DEBUG] Loading comments...");
     const commentsContainer = document.getElementById('commentsList');
-    if (!commentsContainer) return;
+    if (!commentsContainer) {
+        console.error("[ERROR] Comments container not found");
+        return;
+    }
 
     try {
         const response = await fetch(`${API_BASE}/comments`, {
@@ -262,9 +265,13 @@ async function loadComments() {
         }
 
         const data = await response.json();
-        console.log("[DEBUG] Comments data:", data);
+        console.log("[DEBUG] Comments API Response:", data);
 
+        // Ensure the response has a comments array
         const comments = Array.isArray(data.comments) ? data.comments : [];
+        if (!Array.isArray(comments)) {
+            throw new Error("Invalid comments data received from API");
+        }
         console.log("[DEBUG] Processed comments:", comments);
 
         displayComments(comments);
@@ -317,7 +324,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         showAuthError("Failed to initialize application. Please refresh the page.");
     }
 });
-
 
 //=============================================================================
 // SECTION 4: UTILITY FUNCTIONS
