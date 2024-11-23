@@ -2,6 +2,14 @@
 // SECTION 1: CONFIGURATION AND CONSTANTS
 //=============================================================================
 
+// Debug Configuration
+const DEBUG = true;
+function debug(...args) {
+    if (DEBUG) {
+        console.log('[DEBUG]', ...args);
+    }
+}
+
 // Repository and Image Paths
 const REPO_BASE = '/static-football-rankings';
 const IMAGE_BASE = `${REPO_BASE}/docs/images`;
@@ -12,6 +20,13 @@ const ITEMS_PER_PAGE = 100;
 const API_BASE = 'https://static-football-rankings.vercel.app/api';
 const LOGIN_API_BASE = `${API_BASE}/auth`;
 
+// Log initial configuration
+debug('Configuration loaded:', {
+    REPO_BASE,
+    API_BASE,
+    LOGIN_API_BASE
+});
+
 //=============================================================================
 // SECTION 2: GLOBAL STATE MANAGEMENT
 //=============================================================================
@@ -21,24 +36,12 @@ let programsData = [];
 let isLoggedIn = false;
 let userName = '';
 
-// Debug helper
-const DEBUG = true;
-function debug(...args) {
-    if (DEBUG) {
-        console.log('[DEBUG]', ...args);
-    }
-}
-
-// Initialize state tracker
-debug('Configuration loaded:', {
-    REPO_BASE,
-    API_BASE,
-    LOGIN_API_BASE
-
-debug('Auth state changed:', { isLoggedIn, userName });
-debug('API request to:', `${API_BASE}/auth/status`);
+// Log initial state
+debug('Initial state:', {
+    currentPage,
+    isLoggedIn,
+    userName
 });
-
 
 
 //=============================================================================
@@ -565,8 +568,9 @@ function displayCurrentPage(data = programsData) {
 // SECTION 7: COMMENTS SYSTEM
 //=============================================================================
 
+// Display comments handler
 function displayComments(commentsData = []) {
-    console.log('Displaying comments:', commentsData);
+    debug('Displaying comments:', commentsData);
     const commentsContainer = document.getElementById('commentsList');
     
     if (!commentsContainer) {
@@ -574,11 +578,13 @@ function displayComments(commentsData = []) {
         return;
     }
 
+    // Handle empty or invalid data
     if (!Array.isArray(commentsData) || commentsData.length === 0) {
         commentsContainer.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
         return;
     }
 
+    // Render comments
     const commentHTML = commentsData.map(comment => {
         const timestamp = new Date(comment.timestamp);
         return `
@@ -599,8 +605,9 @@ function displayComments(commentsData = []) {
     commentsContainer.innerHTML = commentHTML;
 }
 
+// Load comments from API
 async function loadComments() {
-    console.log('Loading comments...');
+    debug('Loading comments...');
     const commentsContainer = document.getElementById('commentsList');
     if (!commentsContainer) return;
 
@@ -614,17 +621,27 @@ async function loadComments() {
             }
         });
 
-        console.log('Response status:', response.status);
-        console.log('Response type:', response.type);
+        debug('Comments response:', {
+            status: response.status,
+            type: response.type
+        });
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log('Comments data:', data);
+        debug('Raw comments data:', data);
 
-        const comments = Array.isArray(data) ? data : (data.comments || []);
+        // Handle both array and object response formats
+        let comments = [];
+        if (data && data.comments && Array.isArray(data.comments)) {
+            comments = data.comments;
+        } else if (Array.isArray(data)) {
+            comments = data;
+        }
+
+        debug('Processed comments:', comments);
         displayComments(comments);
     } catch (error) {
         console.error('Error loading comments:', error);
@@ -636,16 +653,10 @@ async function loadComments() {
     }
 }
 
+// Submit new comment
 async function submitComment() {
     if (!isLoggedIn) {
-        const alertDiv = document.createElement('div');
-        alertDiv.className = 'alert alert-warning';
-        alertDiv.textContent = 'Please sign in to post comments';
-        const commentForm = document.getElementById('commentForm');
-        if (commentForm) {
-            commentForm.insertBefore(alertDiv, commentForm.firstChild);
-            setTimeout(() => alertDiv.remove(), 3000);
-        }
+        showAlert('warning', 'Please sign in to post comments');
         return;
     }
 
@@ -653,12 +664,11 @@ async function submitComment() {
     const text = textElement?.value?.trim();
     
     if (!text) {
-        console.log('No comment text provided');
+        debug('No comment text provided');
         return;
     }
     
     updateCommentFormState(true);
-    
     const pageIdentifier = document.querySelector('h1')?.dataset.pageName || 'unknown-page';
     
     try {
@@ -684,39 +694,40 @@ async function submitComment() {
         const result = await response.json();
         
         if (result.success) {
-            console.log('Comment submitted successfully');
+            debug('Comment submitted successfully');
             textElement.value = '';
-            
-            const successDiv = document.createElement('div');
-            successDiv.className = 'alert alert-success mt-2';
-            successDiv.textContent = 'Comment posted successfully!';
-            textElement.parentNode.insertBefore(successDiv, textElement.nextSibling);
-            
-            setTimeout(() => successDiv.remove(), 3000);
-            
+            showAlert('success', 'Comment posted successfully!');
             await loadComments();
         } else {
             throw new Error(result.error || 'Failed to submit comment');
         }
     } catch (error) {
         console.error('Error submitting comment:', error);
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'alert alert-danger mt-2';
-        errorDiv.textContent = 'Unable to submit comment. Please try again later.';
-        textElement.parentNode.insertBefore(errorDiv, textElement.nextSibling);
-        
-        setTimeout(() => errorDiv.remove(), 3000);
+        showAlert('danger', 'Unable to submit comment. Please try again later.');
     } finally {
         updateCommentFormState(false);
     }
 }
 
+// Helper function to show alerts
+function showAlert(type, message, duration = 3000) {
+    const commentForm = document.getElementById('commentForm');
+    if (commentForm) {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type} mt-2`;
+        alertDiv.textContent = message;
+        commentForm.insertBefore(alertDiv, commentForm.firstChild);
+        setTimeout(() => alertDiv.remove(), duration);
+    }
+}
+
+// Update form state during submission
 function updateCommentFormState(isSubmitting) {
     const submitButton = document.getElementById('submitComment');
     const textElement = document.getElementById('commentText');
     
     if (!submitButton || !textElement) {
-        console.warn('Comment form elements not found');
+        debug('Comment form elements not found');
         return;
     }
     
@@ -732,7 +743,7 @@ function updateCommentFormState(isSubmitting) {
 //=============================================================================
 
 function showProgramDetails(teamName) {
-    console.log(`Showing details for team: ${teamName}`);
+    debug(`Showing details for team: ${teamName}`);
     // Implementation for program details view will go here
 }
 
@@ -742,26 +753,19 @@ function showProgramDetails(teamName) {
 
 document.addEventListener('DOMContentLoaded', async function() {
     try {
-        console.log('Starting application initialization...');
+        debug('Starting application initialization...');
         
-        // Check for auth errors first
+        // Check for auth errors
         const urlParams = new URLSearchParams(window.location.search);
         const error = urlParams.get('error');
         if (error) {
-            console.log('Auth error detected:', error);
-            const loginArea = document.getElementById('loginArea');
-            if (loginArea) {
-                const errorDiv = document.createElement('div');
-                errorDiv.className = 'alert alert-danger mt-2';
-                errorDiv.textContent = error === 'auth_failed' 
-                    ? 'Authentication failed. Please try again.'
-                    : 'An error occurred. Please try again.';
-                loginArea.appendChild(errorDiv);
-                setTimeout(() => errorDiv.remove(), 3000);
-            }
+            debug('Auth error detected:', error);
+            showAuthError(error === 'auth_failed' 
+                ? 'Authentication failed. Please try again.'
+                : 'An error occurred. Please try again.');
         }
 
-        // Initialize components in order
+        // Initialize components in sequence
         await checkLoginStatus();
         await initializeRankings();
         await loadComments();
@@ -777,12 +781,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             submitButton.addEventListener('click', submitComment);
         }
 
-        console.log('Application initialization complete');
+        debug('Application initialization complete');
     } catch (error) {
         console.error('Initialization error:', error);
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'alert alert-danger';
-        errorDiv.textContent = 'Failed to initialize application. Please refresh the page.';
-        document.body.insertBefore(errorDiv, document.body.firstChild);
+        showAuthError('Failed to initialize application. Please refresh the page.');
     }
 });
