@@ -1,43 +1,41 @@
-﻿// 1. Constants
+﻿/**
+ * main.js - Football Rankings Application
+ * Version: 1.0.0
+ * Last Updated: 2024-11-22
+ */
+
+//=============================================================================
+// SECTION 1: CONFIGURATION AND CONSTANTS
+//=============================================================================
 
 const REPO_BASE = '/static-football-rankings';
 const IMAGE_BASE = `${REPO_BASE}/docs/images`;
 const DEFAULT_PLACEHOLDER = `${IMAGE_BASE}/placeholder-image.jpg`;
 const ITEMS_PER_PAGE = 100;
 
-// Determine API base URL based on environment
+// API Configuration
 const API_BASE = (() => {
-    // List of possible API URLs in order of preference
     const possibleUrls = [
-        'https://static-football-rankings.vercel.app/api',
-        'https://static-football-rankings-ezvwkrbl1-david-mcknight-s-projects.vercel.app/api'
+        'https://static-football-rankings.vercel.app/api'
     ];
-
-    // Function to check if URL is responsive
-    async function checkUrl(url) {
-        try {
-            const response = await fetch(`${url}/auth/verify-config`);
-            return response.ok;
-        } catch {
-            return false;
-        }
-    }
-
-    // Return the first working URL, or the default one
     return possibleUrls[0];
 })();
 
 const LOGIN_API_BASE = `${API_BASE}/auth`;
 
-// 2. State management
+//=============================================================================
+// SECTION 2: GLOBAL STATE MANAGEMENT
+//=============================================================================
+
 let currentPage = 1;
 let programsData = [];
 let isLoggedIn = false;
 let userName = '';
 
-// 3. Authentication Functions
+//=============================================================================
+// SECTION 3: AUTHENTICATION HANDLERS
+//=============================================================================
 
-// Check login status function
 async function checkLoginStatus() {
     console.log("Checking login status...");
     try {
@@ -57,12 +55,10 @@ async function checkLoginStatus() {
         const data = await response.json();
         console.log("Login status data:", data);
 
-        // Update global state
         isLoggedIn = Boolean(data.loggedIn);
         userName = data.user?.name || '';
         console.log(`Auth state: logged in = ${isLoggedIn}, user = ${userName}`);
 
-        // Update UI based on state
         if (isLoggedIn) {
             showLoggedInState();
         } else {
@@ -79,7 +75,6 @@ async function checkLoginStatus() {
     }
 }
 
-// Update login state display function
 function showLoggedInState() {
     console.log('Showing logged in state');
     const loginArea = document.getElementById('loginArea');
@@ -108,7 +103,10 @@ function showLoggedInState() {
     }
 }
 
-// Update logout state display function
+//=============================================================================
+// SECTION 3: AUTHENTICATION HANDLERS (continued)
+//=============================================================================
+
 function showLoggedOutState() {
     console.log('Showing logged out state');
     const loginArea = document.getElementById('loginArea');
@@ -138,56 +136,50 @@ function showLoggedOutState() {
     }
 }
 
-// Update the initialization code
-document.addEventListener('DOMContentLoaded', async function() {
+async function handleLogin() {
+    console.log('Initiating Google login...');
     try {
-        console.log('Starting application initialization...');
-        
-        // Check for auth errors first
-        const urlParams = new URLSearchParams(window.location.search);
-        const error = urlParams.get('error');
-        if (error) {
-            console.log('Auth error detected:', error);
-            const loginArea = document.getElementById('loginArea');
-            if (loginArea) {
-                const errorDiv = document.createElement('div');
-                errorDiv.className = 'alert alert-danger mt-2';
-                errorDiv.textContent = error === 'auth_failed' 
-                    ? 'Authentication failed. Please try again.'
-                    : 'An error occurred. Please try again.';
-                loginArea.appendChild(errorDiv);
-                setTimeout(() => errorDiv.remove(), 3000);
-            }
-        }
-
-        // Initialize components in order
-        await checkLoginStatus();
-        await initializeRankings();
-        await loadComments();
-
-        // Set up event listeners
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.addEventListener('input', handleSearch);
-        }
-
-        const submitButton = document.getElementById('submitComment');
-        if (submitButton) {
-            submitButton.addEventListener('click', submitComment);
-        }
-
-        console.log('Application initialization complete');
+        window.location.href = `${LOGIN_API_BASE}/google`;
     } catch (error) {
-        console.error('Initialization error:', error);
-        // Show error to user
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'alert alert-danger';
-        errorDiv.textContent = 'Failed to initialize application. Please refresh the page.';
-        document.body.insertBefore(errorDiv, document.body.firstChild);
+        console.error('Login error:', error);
+        const loginArea = document.getElementById('loginArea');
+        if (loginArea) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'alert alert-danger mt-2';
+            errorDiv.textContent = 'Login failed. Please try again.';
+            loginArea.appendChild(errorDiv);
+            setTimeout(() => errorDiv.remove(), 3000);
+        }
     }
-});
+}
 
-// 4. Utility Functions
+async function handleLogout() {
+    try {
+        const response = await fetch(`${LOGIN_API_BASE}/logout`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        isLoggedIn = false;
+        userName = '';
+        showLoggedOutState();
+        await loadComments();
+    } catch (error) {
+        console.error('Logout error:', error);
+    }
+}
+
+//=============================================================================
+// SECTION 4: UTILITY FUNCTIONS
+//=============================================================================
+
 function getImagePath(relativePath, isPlaceholder = false) {
     if (!relativePath || isPlaceholder) {
         const placeholderPath = `${IMAGE_BASE}/placeholder-image.jpg`;
@@ -227,7 +219,35 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 }
 
-// 5. Core Data Loading and Display
+function escapeHTML(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
+function getTimeAgo(date) {
+    const now = new Date();
+    const diffInSeconds = Math.floor((now - date) / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+ 
+    if (diffInSeconds < 60) return 'Just now';
+    if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+    if (diffInHours < 24) return `${diffInHours}h ago`;
+    if (diffInDays < 7) return `${diffInDays}d ago`;
+    
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    });
+}
+
+//=============================================================================
+// SECTION 5: CORE DATA LOADING AND DISPLAY
+//=============================================================================
+
 async function initializeRankings() {
     console.log('Initializing rankings...');
     try {
@@ -251,6 +271,10 @@ async function initializeRankings() {
         updateLoadingState(false, error.message);
     }
 }
+
+//=============================================================================
+// SECTION 5: CORE DATA LOADING AND DISPLAY (continued)
+//=============================================================================
 
 async function updateTeamHeader(program) {
     console.log('Updating team header for:', program.Team);
@@ -292,7 +316,10 @@ async function updateTeamHeader(program) {
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
 
-// 6. Search and Pagination Functions
+//=============================================================================
+// SECTION 6: SEARCH AND PAGINATION FUNCTIONS
+//=============================================================================
+
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
     console.log('Searching for:', searchTerm);
@@ -403,7 +430,10 @@ function displayCurrentPage(data = programsData) {
     });
 }
 
-// 7. Comments System
+//=============================================================================
+// SECTION 7: COMMENTS SYSTEM
+//=============================================================================
+
 function displayComments(commentsData = []) {
     console.log('Displaying comments:', commentsData);
     const commentsContainer = document.getElementById('commentsList');
@@ -438,31 +468,6 @@ function displayComments(commentsData = []) {
     commentsContainer.innerHTML = commentHTML;
 }
 
-function escapeHTML(str) {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-}
-
-function getTimeAgo(date) {
-    const now = new Date();
-    const diffInSeconds = Math.floor((now - date) / 1000);
-    const diffInMinutes = Math.floor(diffInSeconds / 60);
-    const diffInHours = Math.floor(diffInMinutes / 60);
-    const diffInDays = Math.floor(diffInHours / 24);
- 
-    if (diffInSeconds < 60) return 'Just now';
-    if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
-    if (diffInHours < 24) return `${diffInHours}h ago`;
-    if (diffInDays < 7) return `${diffInDays}d ago`;
-    
-    return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-    });
-}
-
 async function loadComments() {
     console.log('Loading comments...');
     const commentsContainer = document.getElementById('commentsList');
@@ -488,7 +493,6 @@ async function loadComments() {
         const data = await response.json();
         console.log('Comments data:', data);
 
-        // Handle both array format and object with comments property
         const comments = Array.isArray(data) ? data : (data.comments || []);
         displayComments(comments);
     } catch (error) {
@@ -576,13 +580,35 @@ async function submitComment() {
     }
 }
 
-// 8. Program Details
+function updateCommentFormState(isSubmitting) {
+    const submitButton = document.getElementById('submitComment');
+    const textElement = document.getElementById('commentText');
+    
+    if (!submitButton || !textElement) {
+        console.warn('Comment form elements not found');
+        return;
+    }
+    
+    submitButton.disabled = isSubmitting;
+    submitButton.innerHTML = isSubmitting 
+        ? '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Posting...'
+        : 'Post Comment';
+    textElement.disabled = isSubmitting;
+}
+
+//=============================================================================
+// SECTION 8: PROGRAM DETAILS
+//=============================================================================
+
 function showProgramDetails(teamName) {
     console.log(`Showing details for team: ${teamName}`);
     // Implementation for program details view will go here
 }
 
-// 9. Main initialization
+//=============================================================================
+// SECTION 9: MAIN INITIALIZATION
+//=============================================================================
+
 document.addEventListener('DOMContentLoaded', async function() {
     try {
         console.log('Starting application initialization...');
@@ -623,7 +649,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.log('Application initialization complete');
     } catch (error) {
         console.error('Initialization error:', error);
-        // Show error to user
         const errorDiv = document.createElement('div');
         errorDiv.className = 'alert alert-danger';
         errorDiv.textContent = 'Failed to initialize application. Please refresh the page.';
