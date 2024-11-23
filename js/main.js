@@ -392,116 +392,44 @@ function displayCurrentPage(data = programsData) {
 }
 
 // 7. Comments System
-function updateCommentFormState(isSubmitting) {
-    const submitButton = document.getElementById('submitComment');
-    const textElement = document.getElementById('commentText');
+function displayComments(commentsData = []) {
+    console.log('Displaying comments:', commentsData);
+    const commentsContainer = document.getElementById('commentsList');
     
-    if (!submitButton || !textElement) {
-        console.warn('Comment form elements not found');
+    if (!commentsContainer) {
+        console.error('Comments container not found');
         return;
     }
-    
-    if (isSubmitting) {
-        submitButton.disabled = true;
-        submitButton.innerHTML = `
-            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Posting...
-        `;
-        textElement.disabled = true;
-    } else {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Post Comment';
-        textElement.disabled = false;
-    }
-}
 
-async function loadComments() {
-    console.log('Starting comments load...');
-    const commentsListElement = document.getElementById('commentsList');
-    
-    if (!commentsListElement) {
-        console.warn('Comments list element not found');
+    if (!Array.isArray(commentsData) || commentsData.length === 0) {
+        commentsContainer.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
         return;
     }
- 
-    commentsListElement.innerHTML = `
-        <div class="text-center">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading comments...</span>
-            </div>
-        </div>
-    `;
- 
-    try {
-        const response = await fetch(`${API_BASE}/comments`, {
-            method: 'GET',
-            credentials: 'include',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        console.log('Raw API response:', data);
-        
-        if (data.success) {
-            const comments = data.comments || [];
-            console.log('Processed comments:', comments);
-            displayComments(comments);
-        } else {
-            throw new Error(data.error || 'Failed to load comments');
-        }
-    } catch (error) {
-        console.error('Error loading comments:', error);
-        commentsListElement.innerHTML = `
-            <div class="alert alert-warning">
-                Comments temporarily unavailable. Please try again later.
-            </div>
-        `;
-    }
-}
 
-function displayComments(comments) {
-    console.log('Displaying comments:', comments);
-    const commentsListElement = document.getElementById('commentsList');
-    if (!commentsListElement) {
-        console.warn('Comments list element not found');
-        return;
-    }
- 
-    if (comments.length === 0) {
-        commentsListElement.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
-        return;
-    }
- 
-    commentsListElement.innerHTML = comments.map(comment => {
+    const commentHTML = commentsData.map(comment => {
         const timestamp = new Date(comment.timestamp);
-        const timeAgo = getTimeAgo(timestamp);
-        
         return `
             <div class="comment mb-3 p-3 border rounded">
-                <div class="comment-header d-flex justify-content-between">
+                <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <strong class="me-2">${comment.author || 'Anonymous'}</strong>
-                        <small class="text-muted">• ${timeAgo}</small>
+                        <strong>${comment.author || 'Anonymous'}</strong>
+                        <small class="text-muted ms-2">${getTimeAgo(timestamp)}</small>
                     </div>
-                    ${comment.programName ? `
-                        <small class="text-muted">
-                            Re: ${comment.programName}
-                        </small>
-                    ` : ''}
                 </div>
-                <div class="comment-body mt-2">
-                    ${comment.text}
+                <div class="mt-2">
+                    ${escapeHTML(comment.text)}
                 </div>
             </div>
         `;
     }).join('');
+
+    commentsContainer.innerHTML = commentHTML;
+}
+
+function escapeHTML(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
 }
 
 function getTimeAgo(date) {
@@ -523,7 +451,44 @@ function getTimeAgo(date) {
     });
 }
 
-// Update submitComment function to match new API response format
+async function loadComments() {
+    console.log('Loading comments...');
+    const commentsContainer = document.getElementById('commentsList');
+    if (!commentsContainer) return;
+
+    try {
+        const response = await fetch(`${API_BASE}/comments`, {
+            method: 'GET',
+            credentials: 'include',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        });
+
+        console.log('Response status:', response.status);
+        console.log('Response type:', response.type);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('Comments data:', data);
+
+        // Handle both array format and object with comments property
+        const comments = Array.isArray(data) ? data : (data.comments || []);
+        displayComments(comments);
+    } catch (error) {
+        console.error('Error loading comments:', error);
+        commentsContainer.innerHTML = `
+            <div class="alert alert-warning">
+                Error loading comments. Please try again later.
+            </div>
+        `;
+    }
+}
+
 async function submitComment() {
     if (!isLoggedIn) {
         const alertDiv = document.createElement('div');
