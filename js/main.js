@@ -1,26 +1,15 @@
-﻿/**
- * main.js - Football Rankings Application
- * Version: 1.0.0
- * Last Updated: 2024-11-22
- */
-
-//=============================================================================
+﻿//=============================================================================
 // SECTION 1: CONFIGURATION AND CONSTANTS
 //=============================================================================
 
+// Repository and Image Paths
 const REPO_BASE = '/static-football-rankings';
 const IMAGE_BASE = `${REPO_BASE}/docs/images`;
 const DEFAULT_PLACEHOLDER = `${IMAGE_BASE}/placeholder-image.jpg`;
 const ITEMS_PER_PAGE = 100;
 
 // API Configuration
-const API_BASE = (() => {
-    const possibleUrls = [
-        'https://static-football-rankings.vercel.app/api'
-    ];
-    return possibleUrls[0];
-})();
-
+const API_BASE = 'https://static-football-rankings.vercel.app/api';
 const LOGIN_API_BASE = `${API_BASE}/auth`;
 
 //=============================================================================
@@ -31,6 +20,21 @@ let currentPage = 1;
 let programsData = [];
 let isLoggedIn = false;
 let userName = '';
+
+// Debug helper
+const DEBUG = true;
+function debug(...args) {
+    if (DEBUG) {
+        console.log('[DEBUG]', ...args);
+    }
+}
+
+// Initialize state tracker
+debug('Configuration loaded:', {
+    REPO_BASE,
+    API_BASE,
+    LOGIN_API_BASE
+});
 
 //=============================================================================
 // SECTION 3: AUTHENTICATION HANDLERS
@@ -163,13 +167,11 @@ function updateAuthUI() {
             logoutButton.addEventListener('click', handleLogout);
         }
 
-        // Show comment form
         const commentForm = document.getElementById('commentForm');
         if (commentForm) {
             commentForm.style.display = 'block';
         }
 
-        // Update author name
         const authorName = document.getElementById('authorName');
         if (authorName) {
             authorName.textContent = userName || 'Anonymous';
@@ -193,7 +195,6 @@ function updateAuthUI() {
             loginButton.addEventListener('click', handleLogin);
         }
 
-        // Hide comment form
         const commentForm = document.getElementById('commentForm');
         if (commentForm) {
             commentForm.style.display = 'none';

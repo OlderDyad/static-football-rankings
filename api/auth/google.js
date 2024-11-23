@@ -1,7 +1,6 @@
 // api/auth/google.js
 export default async function handler(req, res) {
     try {
-        // Set CORS headers
         res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
         res.setHeader('Access-Control-Allow-Credentials', 'true');
 
@@ -11,7 +10,6 @@ export default async function handler(req, res) {
             return res.status(200).end();
         }
 
-        // Use permanent domain for redirect
         const redirectUri = 'https://static-football-rankings.vercel.app/api/auth/callback';
         
         const params = new URLSearchParams({
@@ -23,6 +21,16 @@ export default async function handler(req, res) {
             state: Buffer.from(Date.now().toString()).toString('base64'),
             prompt: 'consent'
         });
+
+        const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
+        console.log('Redirecting to Google OAuth:', googleAuthUrl);
+        
+        res.redirect(googleAuthUrl);
+    } catch (error) {
+        console.error('Google auth error:', error);
+        res.redirect('https://olderdyad.github.io/static-football-rankings/?error=auth_configuration');
+    }
+}
 
         const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
         console.log('Redirecting to Google OAuth:', googleAuthUrl);
