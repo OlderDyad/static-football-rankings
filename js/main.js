@@ -104,16 +104,44 @@ function showLoggedInState() {
 }
 
 //=============================================================================
-// SECTION 3: AUTHENTICATION HANDLERS (continued)
+// SECTION 3: AUTHENTICATION HANDLERS
 //=============================================================================
+
+function showLoggedInState() {
+    console.log('Showing logged in state');
+    const authContainer = document.getElementById('authContainer');
+    const commentForm = document.getElementById('commentForm');
+    const authorName = document.getElementById('authorName');
+
+    if (authContainer) {
+        authContainer.innerHTML = `
+            <div class="d-flex align-items-center justify-content-between">
+                <span class="me-2">Welcome, ${userName}</span>
+                <button id="logoutButton" class="btn btn-outline-secondary btn-sm">Logout</button>
+            </div>
+        `;
+        const logoutButton = document.getElementById('logoutButton');
+        if (logoutButton) {
+            logoutButton.addEventListener('click', handleLogout);
+        }
+    }
+
+    if (commentForm) {
+        commentForm.style.display = 'block';
+    }
+
+    if (authorName) {
+        authorName.textContent = userName || 'Anonymous';
+    }
+}
 
 function showLoggedOutState() {
     console.log('Showing logged out state');
-    const loginArea = document.getElementById('loginArea');
+    const authContainer = document.getElementById('authContainer');
     const commentForm = document.getElementById('commentForm');
 
-    if (loginArea) {
-        loginArea.innerHTML = `
+    if (authContainer) {
+        authContainer.innerHTML = `
             <div class="d-flex align-items-center">
                 <button id="loginButton" class="btn btn-primary d-flex align-items-center gap-2">
                     <img src="${REPO_BASE}/docs/images/google-logo.png" 
@@ -129,6 +157,8 @@ function showLoggedOutState() {
         if (loginButton) {
             loginButton.addEventListener('click', handleLogin);
         }
+    } else {
+        console.error('Auth container not found');
     }
 
     if (commentForm) {
@@ -136,18 +166,18 @@ function showLoggedOutState() {
     }
 }
 
-async function handleLogin() {
+function handleLogin() {
     console.log('Initiating Google login...');
     try {
-        window.location.href = `${LOGIN_API_BASE}/google`;
+        window.location.href = `${LOGIN_API_BASE}/google?t=${Date.now()}`;
     } catch (error) {
         console.error('Login error:', error);
-        const loginArea = document.getElementById('loginArea');
-        if (loginArea) {
+        const authContainer = document.getElementById('authContainer');
+        if (authContainer) {
             const errorDiv = document.createElement('div');
             errorDiv.className = 'alert alert-danger mt-2';
             errorDiv.textContent = 'Login failed. Please try again.';
-            loginArea.appendChild(errorDiv);
+            authContainer.appendChild(errorDiv);
             setTimeout(() => errorDiv.remove(), 3000);
         }
     }
@@ -173,8 +203,30 @@ async function handleLogout() {
         await loadComments();
     } catch (error) {
         console.error('Logout error:', error);
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger mt-2';
+        errorDiv.textContent = 'Logout failed. Please try again.';
+        const authContainer = document.getElementById('authContainer');
+        if (authContainer) {
+            authContainer.appendChild(errorDiv);
+            setTimeout(() => errorDiv.remove(), 3000);
+        }
     }
 }
+
+// Update error handling in initialization code
+const authErrorHandler = (error) => {
+    const authContainer = document.getElementById('authContainer');
+    if (authContainer) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger mt-2';
+        errorDiv.textContent = error === 'auth_failed' 
+            ? 'Authentication failed. Please try again.'
+            : 'An error occurred. Please try again.';
+        authContainer.appendChild(errorDiv);
+        setTimeout(() => errorDiv.remove(), 3000);
+    }
+};
 
 //=============================================================================
 // SECTION 4: UTILITY FUNCTIONS
