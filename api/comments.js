@@ -1,11 +1,11 @@
 // api/comments.js
-const comments = [];
+let comments = []; // Initialize as empty array at module scope
 
 export default async function handler(req, res) {
-    // Set CORS headers immediately
+    // Set CORS headers
     res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization');   
     res.setHeader('Access-Control-Allow-Credentials', 'true');
 
     // Handle preflight request
@@ -15,9 +15,9 @@ export default async function handler(req, res) {
 
     try {
         if (req.method === 'GET') {
-            return res.status(200).json({
-                success: true,
-                comments: comments
+            return res.status(200).json({ 
+                success: true, 
+                comments: comments // Return the array directly in comments property
             });
         }
 
@@ -32,13 +32,14 @@ export default async function handler(req, res) {
             }
 
             const newComment = {
-                id: Date.now().toString(),
+                id: Date.now().toString(), 
                 text: text.trim(),
                 author: author?.trim() || 'Anonymous',
-                programName: programName?.trim() || 'General',
+                programName: programName?.trim() || 'General', 
                 timestamp: new Date().toISOString()
             };
 
+            // Add to start of array
             comments.unshift(newComment);
 
             return res.status(201).json({
@@ -59,24 +60,6 @@ export default async function handler(req, res) {
         });
     }
 }
-
-// Optional: Add type definitions for better code organization
-/**
- * @typedef {Object} Comment
- * @property {string} id - Unique identifier
- * @property {string} text - Comment content
- * @property {string} author - Comment author
- * @property {string} programName - Associated program
- * @property {string} timestamp - ISO timestamp
- */
-
-/**
- * @typedef {Object} ApiResponse
- * @property {boolean} success - Operation success status
- * @property {Comment[] | Comment} [comments] - Array of comments or single comment
- * @property {string} [error] - Error message if success is false
- */
-
 
 
 

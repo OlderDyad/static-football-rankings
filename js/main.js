@@ -569,8 +569,8 @@ function displayCurrentPage(data = programsData) {
 //=============================================================================
 
 // Display comments handler
-function displayComments(commentsData = []) {
-    debug('Displaying comments:', commentsData);
+function displayComments(comments = []) {
+    debug('Displaying comments:', comments);
     const commentsContainer = document.getElementById('commentsList');
     
     if (!commentsContainer) {
@@ -579,30 +579,34 @@ function displayComments(commentsData = []) {
     }
 
     // Handle empty or invalid data
-    if (!Array.isArray(commentsData) || commentsData.length === 0) {
+    if (comments.length === 0) {
         commentsContainer.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
         return;
     }
 
-    // Render comments
-    const commentHTML = commentsData.map(comment => {
-        const timestamp = new Date(comment.timestamp);
-        return `
-            <div class="comment mb-3 p-3 border rounded">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <strong>${comment.author || 'Anonymous'}</strong>
-                        <small class="text-muted ms-2">${getTimeAgo(timestamp)}</small>
+    try {
+        const commentHTML = comments.map(comment => {
+            const timestamp = new Date(comment.timestamp || Date.now());
+            return `
+                <div class="comment mb-3 p-3 border rounded">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>${escapeHTML(comment.author || 'Anonymous')}</strong>
+                            <small class="text-muted ms-2">${getTimeAgo(timestamp)}</small>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        ${escapeHTML(comment.text || '')}
                     </div>
                 </div>
-                <div class="mt-2">
-                    ${escapeHTML(comment.text)}
-                </div>
-            </div>
-        `;
-    }).join('');
+            `;
+        }).join('');
 
-    commentsContainer.innerHTML = commentHTML;
+        commentsContainer.innerHTML = commentHTML;
+    } catch (error) {
+        console.error('Error rendering comments:', error);
+        commentsContainer.innerHTML = '<div class="alert alert-warning">Error displaying comments.</div>';
+    }
 }
 
 // Load comments from API
@@ -631,17 +635,10 @@ async function loadComments() {
         }
 
         const data = await response.json();
-        debug('Raw comments data:', data);
+        debug('Comments data:', data);
 
-        // Handle both array and object response formats
-        let comments = [];
-        if (data && data.comments && Array.isArray(data.comments)) {
-            comments = data.comments;
-        } else if (Array.isArray(data)) {
-            comments = data;
-        }
-
-        debug('Processed comments:', comments);
+        // Extract comments array
+        const comments = Array.isArray(data.comments) ? data.comments : [];
         displayComments(comments);
     } catch (error) {
         console.error('Error loading comments:', error);
@@ -737,6 +734,7 @@ function updateCommentFormState(isSubmitting) {
         : 'Post Comment';
     textElement.disabled = isSubmitting;
 }
+
 
 //=============================================================================
 // SECTION 8: PROGRAM DETAILS
