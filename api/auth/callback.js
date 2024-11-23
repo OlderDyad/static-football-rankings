@@ -1,16 +1,27 @@
 // api/auth/callback.js
 export default async function handler(req, res) {
+    console.log('Auth callback started');
+    
     try {
-        const { code } = req.query;
+        // Set CORS headers
+        res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+        const { code, state } = req.query;
         
         if (!code) {
             console.error('No authorization code received');
             return res.redirect('https://olderdyad.github.io/static-football-rankings/?error=no_code');
         }
 
-        // Set CORS headers
-        res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
-        res.setHeader('Access-Control-Allow-Credentials', 'true');
+        // Verify environment variables
+        const clientId = process.env.GOOGLE_CLIENT_ID;
+        const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+        
+        if (!clientId || !clientSecret) {
+            console.error('Missing OAuth credentials');
+            return res.redirect('https://olderdyad.github.io/static-football-rankings/?error=config_error');
+        }
 
         // Exchange code for tokens
         const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
@@ -20,8 +31,8 @@ export default async function handler(req, res) {
             },
             body: JSON.stringify({
                 code,
-                client_id: process.env.GOOGLE_CLIENT_ID,
-                client_secret: process.env.GOOGLE_CLIENT_SECRET,
+                client_id: clientId,
+                client_secret: clientSecret,
                 redirect_uri: 'https://static-football-rankings.vercel.app/api/auth/callback',
                 grant_type: 'authorization_code'
             })
@@ -48,17 +59,18 @@ export default async function handler(req, res) {
             return res.redirect('https://olderdyad.github.io/static-football-rankings/?error=user_info_failed');
         }
 
-        // Set session cookies
+        // Set cookies
+        const cookieOptions = 'Path=/; HttpOnly; Secure; SameSite=None';
         res.setHeader('Set-Cookie', [
-            `auth_token=${tokens.access_token}; Path=/; HttpOnly; Secure; SameSite=None`,
-            `user_name=${userData.name}; Path=/; Secure; SameSite=None`,
-            `user_email=${userData.email}; Path=/; HttpOnly; Secure; SameSite=None`
+            `auth_token=${tokens.access_token}; ${cookieOptions}`,
+            `user_name=${encodeURIComponent(userData.name)}; ${cookieOptions}`,
+            `user_email=${encodeURIComponent(userData.email)}; ${cookieOptions}`
         ]);
 
-        // Log successful authentication
-        console.log('Successfully authenticated user:', userData.email);
+        // Log success
+        console.log('Authentication successful for:', userData.email);
 
-        // Redirect back to the application
+        // Redirect back to app
         res.redirect('https://olderdyad.github.io/static-football-rankings/');
     } catch (error) {
         console.error('Auth callback error:', error);
