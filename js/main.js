@@ -36,11 +36,8 @@ let isLoggedIn = false;
 let userName = '';
 
 // 3. Authentication Functions
-// State management - add at the top of your file
-let isLoggedIn = false;
-let userName = '';
 
-// Update check login status function
+// Check login status function
 async function checkLoginStatus() {
     console.log("Checking login status...");
     try {
