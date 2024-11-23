@@ -116,7 +116,152 @@ function showLoggedInState() {
 }
 
 //=============================================================================
-// SECTION 3: AUTHENTICATION AND COMMENTS
+// SECTION 3.0: AUTHENTICATION UI
+//=============================================================================
+
+// Check login status
+async function checkLoginStatus() {
+    console.log("[DEBUG] Checking login status...");
+    try {
+        const response = await fetch(`${LOGIN_API_BASE}/status`, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("[DEBUG] Login status data:", data);
+
+        isLoggedIn = Boolean(data.loggedIn);
+        userName = data.user?.name || '';
+        console.log(`[DEBUG] Auth state: logged in = ${isLoggedIn}, user = ${userName}`);
+
+        updateAuthUI();
+        return data;
+    } catch (error) {
+        console.error("[ERROR] Error checking login status:", error);
+        isLoggedIn = false;
+        userName = '';
+        updateAuthUI();
+        return { loggedIn: false, user: null };
+    }
+}
+
+// Update the authentication UI
+function updateAuthUI() {
+    console.log("[DEBUG] Updating auth UI, logged in:", isLoggedIn);
+    const authContainer = document.getElementById('authContainer');
+
+    if (!authContainer) {
+        console.error("[ERROR] Auth container not found");
+        return;
+    }
+
+    if (isLoggedIn) {
+        authContainer.innerHTML = `
+            <div class="d-flex align-items-center justify-content-between">
+                <span class="me-2">Welcome, ${userName}</span>
+                <button id="logoutButton" class="btn btn-outline-secondary btn-sm">Logout</button>
+            </div>
+        `;
+
+        const logoutButton = document.getElementById('logoutButton');
+        if (logoutButton) {
+            logoutButton.addEventListener('click', handleLogout);
+        }
+
+        const commentForm = document.getElementById('commentForm');
+        if (commentForm) {
+            commentForm.style.display = 'block';
+        }
+
+        const authorName = document.getElementById('authorName');
+        if (authorName) {
+            authorName.textContent = userName || 'Anonymous';
+        }
+    } else {
+        authContainer.innerHTML = `
+            <div class="d-flex align-items-center">
+                <button id="loginButton" class="btn btn-primary d-flex align-items-center gap-2">
+                    <img src="${REPO_BASE}/docs/images/google-logo.png" 
+                         alt="Google Logo" 
+                         style="height: 18px; width: 18px;"
+                         onerror="this.style.display='none'" />
+                    <span>Sign in with Google</span>
+                </button>
+            </div>
+        `;
+
+        const loginButton = document.getElementById('loginButton');
+        if (loginButton) {
+            loginButton.addEventListener('click', handleLogin);
+        }
+
+        const commentForm = document.getElementById('commentForm');
+        if (commentForm) {
+            commentForm.style.display = 'none';
+        }
+    }
+}
+
+// Handle login and logout
+function handleLogin() {
+    console.log("[DEBUG] Initiating Google login...");
+    try {
+        const loginUrl = `${LOGIN_API_BASE}/google?t=${Date.now()}`;
+        console.log("[DEBUG] Redirecting to:", loginUrl);
+        window.location.href = loginUrl;
+    } catch (error) {
+        console.error("[ERROR] Login error:", error);
+        showAuthError("Login failed. Please try again.");
+    }
+}
+
+async function handleLogout() {
+    try {
+        const response = await fetch(`${LOGIN_API_BASE}/logout`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        isLoggedIn = false;
+        userName = '';
+        updateAuthUI();
+        await loadComments();
+    } catch (error) {
+        console.error("[ERROR] Logout error:", error);
+        showAuthError("Logout failed. Please try again.");
+    }
+}
+
+// Show authentication error message
+function showAuthError(message) {
+    const authContainer = document.getElementById('authContainer');
+    if (authContainer) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger mt-2';
+        errorDiv.textContent = message;
+        authContainer.appendChild(errorDiv);
+        setTimeout(() => errorDiv.remove(), 3000);
+    }
+}
+
+//=============================================================================
+// SECTION 3.1: AUTHENTICATION AND COMMENTS
 //=============================================================================
 
 // Load and display comments
@@ -257,6 +402,10 @@ function getTimeAgo(date) {
         day: 'numeric'
     });
 }
+
+//=============================================================================
+// SECTION 3.2: HANDLING COMMENT SUBMISSION
+//=============================================================================
 
 // Handle comment submission
 async function submitComment() {
