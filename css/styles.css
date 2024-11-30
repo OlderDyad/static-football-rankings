@@ -1,74 +1,44 @@
-﻿/* Custom Styles */
-.team-header {
-    padding: 20px 0;
-    margin-bottom: 20px;
+﻿.public-home {
+    text-align: center;
 }
 
-.table th, .table td {
-    padding: 0.5rem;
-}
-
-.table-responsive {
-    overflow-x: auto;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.page-item {
-    margin: 0 2px;
-}
-
-.page-link {
-    padding: 8px 12px;
-    border: 1px solid #dee2e6;
-    background-color: #fff;
-    color: #007bff;
-    cursor: pointer;
-}
-
-.page-item.active .page-link {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: #fff;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-}
-
-/* Add to your existing styles.css */
-.header-banner, .footer-banner {
-    max-height: 200px;
-    overflow: hidden;
-}
-
-.header-banner img, .footer-banner img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* Add some spacing */
-.header-banner {
+.hero-image {
+    position: relative;
     margin-bottom: 2rem;
 }
 
-.footer-banner {
-    margin-top: 2rem;
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.main-nav {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-nav a {
+    display: block;
+    padding: 1rem;
+    color: #0056b3;
+    text-decoration: none;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #f8f9fa;
+    border-color: #0056b3;
 }
