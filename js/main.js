@@ -584,10 +584,6 @@ function getTimeAgo(date) {
 // SECTION 5: CORE DATA LOADING AND DISPLAY
 //=============================================================================
 
-//=============================================================================
-// SECTION 5: CORE DATA LOADING AND DISPLAY
-//=============================================================================
-
 async function initializeRankings() {
     console.log('Initializing rankings...');
     try {
@@ -651,7 +647,6 @@ async function updateTeamHeader(program) {
     header.style.color = program.SecondaryColor || '#FFFFFF';
 }
 
-// Additional display functions needed for other pages
 function displayCurrentPage(data = programsData) {
     console.log('Displaying page:', currentPage);
     const tableBody = document.getElementById('programsTableBody');
@@ -686,13 +681,6 @@ function displayCurrentPage(data = programsData) {
         tableBody.appendChild(row);
     });
 }
-
-// Export functions for other modules
-export {
-    initializeRankings,
-    updateTeamHeader,
-    displayCurrentPage
-};
 
 //=============================================================================
 // SECTION 6: SEARCH AND PAGINATION FUNCTIONS
