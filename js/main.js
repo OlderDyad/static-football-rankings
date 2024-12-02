@@ -49,7 +49,7 @@ const API_BASE = 'https://static-football-rankings.vercel.app/api';
 const LOGIN_API_BASE = `${API_BASE}/auth`;
 
 // Log initial configuration
-debug('Initial state:', {
+log(DEBUG_LEVELS.INFO, 'Initial state', {
     currentPage,
     isLoggedIn,
     userName
