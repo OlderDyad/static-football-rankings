@@ -881,13 +881,13 @@ function showProgramDetails(teamName) {
 
 document.addEventListener('DOMContentLoaded', async function() {
     try {
-        debug('Starting application initialization...');
+        log(DEBUG_LEVELS.INFO, 'Starting application initialization');
         
         // Check for auth errors
         const urlParams = new URLSearchParams(window.location.search);
         const error = urlParams.get('error');
         if (error) {
-            debug('Auth error detected:', error);
+            log(DEBUG_LEVELS.WARN, 'Auth error detected', { error });
             showAuthError(error === 'auth_failed' 
                 ? 'Authentication failed. Please try again.'
                 : 'An error occurred. Please try again.');
@@ -909,9 +909,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             submitButton.addEventListener('click', submitComment);
         }
 
-        debug('Application initialization complete');
+        log(DEBUG_LEVELS.INFO, 'Application initialization complete');
     } catch (error) {
-        console.error('Initialization error:', error);
+        log(DEBUG_LEVELS.ERROR, 'Initialization failed', error);
         showAuthError('Failed to initialize application. Please refresh the page.');
     }
 });
