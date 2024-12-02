@@ -3,10 +3,38 @@
 //=============================================================================
 
 // Debug Configuration
-const DEBUG = true;
-function debug(...args) {
-    if (DEBUG) {
-        console.log('[DEBUG]', ...args);
+
+const DEBUG_LEVELS = {
+    ERROR: 'ERROR',
+    WARN: 'WARN',
+    INFO: 'INFO',
+    DEBUG: 'DEBUG'
+};
+
+const DEBUG_CONFIG = {
+    enabled: true,
+    level: DEBUG_LEVELS.INFO  // Change to DEBUG_LEVELS.DEBUG for more verbose logging
+};
+
+function log(level, message, data = null) {
+    if (!DEBUG_CONFIG.enabled) return;
+    
+    const timestamp = new Date().toISOString().split('T')[1].slice(0, -1);
+    const prefix = `[${timestamp}][${level}]`;
+    
+    switch (level) {
+        case DEBUG_LEVELS.ERROR:
+            console.error(`${prefix} ${message}`, data || '');
+            break;
+        case DEBUG_LEVELS.WARN:
+            console.warn(`${prefix} ${message}`, data || '');
+            break;
+        case DEBUG_LEVELS.INFO:
+        case DEBUG_LEVELS.DEBUG:
+            if (DEBUG_CONFIG.level === DEBUG_LEVELS.DEBUG || level === DEBUG_LEVELS.INFO) {
+                console.log(`${prefix} ${message}`, data || '');
+            }
+            break;
     }
 }
 
@@ -21,10 +49,10 @@ const API_BASE = 'https://static-football-rankings.vercel.app/api';
 const LOGIN_API_BASE = `${API_BASE}/auth`;
 
 // Log initial configuration
-debug('Configuration loaded:', {
-    REPO_BASE,
-    API_BASE,
-    LOGIN_API_BASE
+debug('Initial state:', {
+    currentPage,
+    isLoggedIn,
+    userName
 });
 
 //=============================================================================
@@ -37,7 +65,7 @@ let isLoggedIn = false;
 let userName = '';
 
 // Log initial state
-debug('Initial state:', {
+log(DEBUG_LEVELS.DEBUG, 'Initial state set', {
     currentPage,
     isLoggedIn,
     userName
@@ -49,7 +77,7 @@ debug('Initial state:', {
 //=============================================================================
 
 async function checkLoginStatus() {
-    console.log("Checking login status...");
+    log(DEBUG_LEVELS.DEBUG, 'Checking login status');
     try {
         const response = await fetch(`${LOGIN_API_BASE}/status`, {
             method: "GET",
@@ -65,11 +93,11 @@ async function checkLoginStatus() {
         }
 
         const data = await response.json();
-        console.log("Login status data:", data);
+        log(DEBUG_LEVELS.DEBUG, 'Login status received', data);
 
         isLoggedIn = Boolean(data.loggedIn);
         userName = data.user?.name || '';
-        console.log(`Auth state: logged in = ${isLoggedIn}, user = ${userName}`);
+        log(DEBUG_LEVELS.INFO, 'Authentication state', { isLoggedIn, userName });
 
         if (isLoggedIn) {
             showLoggedInState();
@@ -154,17 +182,18 @@ async function checkLoginStatus() {
     }
 }
 
-// Update the authentication UI
+// Update the authentication UI section
 function updateAuthUI() {
-    console.log("[DEBUG] Updating auth UI, logged in:", isLoggedIn);
+    log(DEBUG_LEVELS.DEBUG, 'Updating authentication UI', { isLoggedIn });
     const authContainer = document.getElementById('authContainer');
 
     if (!authContainer) {
-        console.error("[ERROR] Auth container not found");
+        log(DEBUG_LEVELS.ERROR, 'Auth container not found');
         return;
     }
 
     if (isLoggedIn) {
+        log(DEBUG_LEVELS.INFO, 'Rendering logged-in state', { userName });
         authContainer.innerHTML = `
             <div class="d-flex align-items-center justify-content-between">
                 <span class="me-2">Welcome, ${userName}</span>
@@ -187,6 +216,7 @@ function updateAuthUI() {
             authorName.textContent = userName || 'Anonymous';
         }
     } else {
+        log(DEBUG_LEVELS.INFO, 'Rendering login state');
         authContainer.innerHTML = `
             <div class="d-flex align-items-center">
                 <button id="loginButton" class="btn btn-primary d-flex align-items-center gap-2">
@@ -211,20 +241,22 @@ function updateAuthUI() {
     }
 }
 
+
 // Handle login and logout
 function handleLogin() {
-    console.log("[DEBUG] Initiating Google login...");
+    log(DEBUG_LEVELS.INFO, 'Initiating Google login');
     try {
         const loginUrl = `${LOGIN_API_BASE}/google?t=${Date.now()}`;
-        console.log("[DEBUG] Redirecting to:", loginUrl);
+        log(DEBUG_LEVELS.DEBUG, 'Redirecting to login URL', { url: loginUrl });
         window.location.href = loginUrl;
     } catch (error) {
-        console.error("[ERROR] Login error:", error);
+        log(DEBUG_LEVELS.ERROR, 'Login failed', error);
         showAuthError("Login failed. Please try again.");
     }
 }
 
 async function handleLogout() {
+    log(DEBUG_LEVELS.INFO, 'Processing logout request');
     try {
         const response = await fetch(`${LOGIN_API_BASE}/logout`, {
             method: 'POST',
@@ -240,16 +272,19 @@ async function handleLogout() {
 
         isLoggedIn = false;
         userName = '';
+        log(DEBUG_LEVELS.INFO, 'Logout successful');
         updateAuthUI();
         await loadComments();
     } catch (error) {
-        console.error("[ERROR] Logout error:", error);
+        log(DEBUG_LEVELS.ERROR, 'Logout failed', error);
         showAuthError("Logout failed. Please try again.");
     }
 }
 
 // Show authentication error message
+
 function showAuthError(message) {
+    log(DEBUG_LEVELS.WARN, 'Auth error occurred', { message });
     const authContainer = document.getElementById('authContainer');
     if (authContainer) {
         const errorDiv = document.createElement('div');
@@ -260,16 +295,18 @@ function showAuthError(message) {
     }
 }
 
+
+
 //=============================================================================
 // SECTION 3.1: AUTHENTICATION AND COMMENTS
 //=============================================================================
 
 // Load and display comments
 async function loadComments() {
-    console.log("[DEBUG] Loading comments...");
+    log(DEBUG_LEVELS.INFO, 'Loading comments');
     const commentsContainer = document.getElementById('commentsList');
     if (!commentsContainer) {
-        console.error("[ERROR] Comments container not found");
+        log(DEBUG_LEVELS.ERROR, 'Comments container not found');
         return;
     }
 
@@ -283,35 +320,24 @@ async function loadComments() {
             }
         });
 
-        console.log("[DEBUG] Raw response:", response);
-        console.log("[DEBUG] Response status:", response.status);
-        console.log("[DEBUG] Response type:", response.type);
+        log(DEBUG_LEVELS.DEBUG, 'Comments API response received', {
+            status: response.status,
+            type: response.type
+        });
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const rawData = await response.json();
-        console.log("[DEBUG] Raw data from API:", rawData);
+        const data = await response.json();
+        log(DEBUG_LEVELS.DEBUG, 'Comments data parsed', data);
 
-        // Safely extract comments array
-        let comments;
-        if (rawData && typeof rawData === 'object') {
-            comments = rawData.comments || [];
-        } else {
-            comments = [];
-        }
-
-        // Verify it's an array
-        if (!Array.isArray(comments)) {
-            console.error("[ERROR] Comments is not an array:", comments);
-            comments = [];
-        }
-
-        console.log("[DEBUG] Final comments array:", comments);
+        const comments = Array.isArray(data.comments) ? data.comments : [];
+        log(DEBUG_LEVELS.INFO, 'Comments loaded', { count: comments.length });
+        
         displayComments(comments);
     } catch (error) {
-        console.error("[ERROR] Error loading comments:", error);
+        log(DEBUG_LEVELS.ERROR, 'Error loading comments', error);
         commentsContainer.innerHTML = `
             <div class="alert alert-warning">
                 Error loading comments. Please try again later.
@@ -320,36 +346,27 @@ async function loadComments() {
     }
 }
 
-// Display comments
 function displayComments(commentsArray = []) {
-    console.log("[DEBUG] Starting displayComments with:", commentsArray);
+    log(DEBUG_LEVELS.DEBUG, 'Displaying comments', { count: commentsArray.length });
     const commentsContainer = document.getElementById('commentsList');
     
     if (!commentsContainer) {
-        console.error("[ERROR] Comments container not found");
+        log(DEBUG_LEVELS.ERROR, 'Comments container not found');
         return;
     }
 
-    // Ensure we have an array
-    if (!Array.isArray(commentsArray)) {
-        console.error("[ERROR] Invalid comments data type:", typeof commentsArray);
-        commentsContainer.innerHTML = '<div class="alert alert-warning">Error displaying comments.</div>';
-        return;
-    }
-
-    // Handle empty array
-    if (commentsArray.length === 0) {
-        console.log("[DEBUG] No comments to display");
+    if (!Array.isArray(commentsArray) || commentsArray.length === 0) {
+        log(DEBUG_LEVELS.INFO, 'No comments to display');
         commentsContainer.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
         return;
     }
 
     try {
-        console.log("[DEBUG] Generating HTML for comments");
+        log(DEBUG_LEVELS.DEBUG, 'Generating HTML for comments');
         const commentsHTML = commentsArray
             .filter(comment => comment && typeof comment === 'object')
             .map(comment => {
-                console.log("[DEBUG] Processing comment:", comment);
+                log(DEBUG_LEVELS.DEBUG, 'Processing comment', comment);
                 const timestamp = new Date(comment.timestamp || Date.now());
                 return `
                     <div class="comment mb-3 p-3 border rounded">
@@ -367,40 +384,12 @@ function displayComments(commentsArray = []) {
             })
             .join('');
 
-        console.log("[DEBUG] Final HTML generated:", commentsHTML.substring(0, 100) + '...');
+        log(DEBUG_LEVELS.DEBUG, 'Comments rendered successfully');
         commentsContainer.innerHTML = commentsHTML || '<p class="text-muted">No valid comments to display.</p>';
     } catch (error) {
-        console.error("[ERROR] Error rendering comments:", error);
+        log(DEBUG_LEVELS.ERROR, 'Error rendering comments', error);
         commentsContainer.innerHTML = '<div class="alert alert-warning">Error displaying comments.</div>';
     }
-}
-
-// Helper function to escape HTML
-function escapeHTML(str) {
-    if (!str) return '';
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-}
-
-// Helper function for time formatting
-function getTimeAgo(date) {
-    const now = new Date();
-    const diffInSeconds = Math.floor((now - date) / 1000);
-    const diffInMinutes = Math.floor(diffInSeconds / 60);
-    const diffInHours = Math.floor(diffInMinutes / 60);
-    const diffInDays = Math.floor(diffInHours / 24);
-
-    if (diffInSeconds < 60) return 'Just now';
-    if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
-    if (diffInHours < 24) return `${diffInHours}h ago`;
-    if (diffInDays < 7) return `${diffInDays}d ago`;
-    
-    return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-    });
 }
 
 //=============================================================================
@@ -410,6 +399,7 @@ function getTimeAgo(date) {
 // Handle comment submission
 async function submitComment() {
     if (!isLoggedIn) {
+        log(DEBUG_LEVELS.WARN, 'Comment submission attempted while not logged in');
         showAuthError('Please sign in to post comments');
         return;
     }
@@ -418,10 +408,11 @@ async function submitComment() {
     const text = textElement?.value?.trim();
     
     if (!text) {
-        console.log("[DEBUG] No comment text provided");
+        log(DEBUG_LEVELS.WARN, 'Empty comment submission attempted');
         return;
     }
     
+    log(DEBUG_LEVELS.INFO, 'Submitting comment');
     updateCommentFormState(true);
     const pageIdentifier = document.querySelector('h1')?.dataset.pageName || 'unknown-page';
     
@@ -519,14 +510,14 @@ function getTimeAgo(date) {
 function getImagePath(relativePath, isPlaceholder = false) {
     if (!relativePath || isPlaceholder) {
         const placeholderPath = `${IMAGE_BASE}/placeholder-image.jpg`;
-        console.log('Using placeholder:', placeholderPath);
+        log(DEBUG_LEVELS.DEBUG, 'Using placeholder image', { path: placeholderPath });
         return placeholderPath;
     }
 
     const cleanPath = relativePath.replace(/^images\//, '');
     const normalizedPath = cleanPath.replace(/^Teams\//, 'teams/');
     const fullPath = `${IMAGE_BASE}/${normalizedPath}`;
-    console.log('Constructed path:', fullPath);
+    log(DEBUG_LEVELS.DEBUG, 'Image path constructed', { path: fullPath });
     return fullPath;
 }
 
@@ -585,7 +576,7 @@ function getTimeAgo(date) {
 //=============================================================================
 
 async function initializeRankings() {
-    console.log('Initializing rankings...');
+    log(DEBUG_LEVELS.INFO, 'Starting rankings initialization');
     try {
         updateLoadingState(true);
         const response = await fetch('/static-football-rankings/data/all-time-programs-fifty.json');
@@ -593,25 +584,27 @@ async function initializeRankings() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         programsData = await response.json();
+        log(DEBUG_LEVELS.DEBUG, 'Rankings data loaded', { count: programsData.length });
         
         if (programsData.length > 0) {
             await updateTeamHeader(programsData[0]);
             setupPagination();
             displayCurrentPage();
+            log(DEBUG_LEVELS.INFO, 'Rankings display complete');
         }
         
         updateLoadingState(false);
     } catch (error) {
-        console.error('Error initializing rankings:', error);
+        log(DEBUG_LEVELS.ERROR, 'Rankings initialization failed', error);
         updateLoadingState(false, error.message);
     }
 }
 
 async function updateTeamHeader(program) {
-    console.log('Updating team header for:', program.Team);
+    log(DEBUG_LEVELS.DEBUG, 'Updating team header', { team: program.Team });
     const header = document.querySelector('.team-header');
     if (!header) {
-        console.error('Team header element not found');
+        log(DEBUG_LEVELS.ERROR, 'Team header element not found');
         return;
     }
 
@@ -688,84 +681,32 @@ function displayCurrentPage(data = programsData) {
 
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
-    console.log('Searching for:', searchTerm);
+    log(DEBUG_LEVELS.DEBUG, 'Processing search', { term: searchTerm });
 
     const filteredPrograms = programsData.filter(program =>
         program.Team.toLowerCase().includes(searchTerm) ||
         program.State.toLowerCase().includes(searchTerm)
     );
 
+    log(DEBUG_LEVELS.DEBUG, 'Search results', { 
+        total: programsData.length,
+        filtered: filteredPrograms.length 
+    });
+
     currentPage = 1;
     setupPagination(filteredPrograms);
     displayCurrentPage(filteredPrograms);
 }
 
-function setupPagination(data = programsData) {
-    console.log('Setting up pagination with data length:', data.length);
-    const paginationElement = document.getElementById('pagination');
-    if (!paginationElement) {
-        console.warn('Creating pagination element');
-        const nav = document.createElement('nav');
-        nav.innerHTML = '<ul class="pagination" id="pagination"></ul>';
-        const tableContainer = document.querySelector('.table-responsive');
-        if (tableContainer) {
-            tableContainer.after(nav);
-        }
-        return setupPagination(data);
-    }
-
-    const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
-    paginationElement.innerHTML = '';
-
-    // Add Previous button
-    const prevLi = document.createElement('li');
-    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
-    prevLi.innerHTML = `
-        <button class="page-link" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
-    `;
-    prevLi.addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            displayCurrentPage(data);
-            setupPagination(data);
-        }
-    });
-    paginationElement.appendChild(prevLi);
-
-    // Add page numbers
-    for (let i = 1; i <= totalPages; i++) {
-        const li = document.createElement('li');
-        li.className = `page-item ${currentPage === i ? 'active' : ''}`;
-        li.innerHTML = `<button class="page-link">${i}</button>`;
-        li.addEventListener('click', () => {
-            currentPage = i;
-            displayCurrentPage(data);
-            setupPagination(data);
-        });
-        paginationElement.appendChild(li);
-    }
-
-    // Add Next button
-    const nextLi = document.createElement('li');
-    nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
-    nextLi.innerHTML = `
-        <button class="page-link" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
-    `;
-    nextLi.addEventListener('click', () => {
-        if (currentPage < totalPages) {
-            currentPage++;
-            displayCurrentPage(data);
-            setupPagination(data);
-        }
-    });
-    paginationElement.appendChild(nextLi);
-}
-
 function displayCurrentPage(data = programsData) {
-    console.log('Displaying page:', currentPage);
+    log(DEBUG_LEVELS.DEBUG, 'Displaying page', { 
+        page: currentPage,
+        totalItems: data?.length 
+    });
+
     const tableBody = document.getElementById('programsTableBody');
     if (!tableBody) {
-        console.error('Table body element not found');
+        log(DEBUG_LEVELS.ERROR, 'Table body element not found');
         return;
     }
 
@@ -773,8 +714,13 @@ function displayCurrentPage(data = programsData) {
     const end = start + ITEMS_PER_PAGE;
     const currentData = data.slice(start, end);
 
-    tableBody.innerHTML = '';
+    log(DEBUG_LEVELS.DEBUG, 'Page data prepared', {
+        itemsShown: currentData.length,
+        startIndex: start,
+        endIndex: end
+    });
 
+    tableBody.innerHTML = '';
     currentData.forEach(program => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -794,6 +740,37 @@ function displayCurrentPage(data = programsData) {
         `;
         tableBody.appendChild(row);
     });
+}
+
+function updateLoadingState(isLoading, errorMessage = '') {
+    log(DEBUG_LEVELS.DEBUG, 'Updating loading state', { 
+        isLoading, 
+        hasError: !!errorMessage 
+    });
+
+    const header = document.querySelector('.team-header');
+    if (!header) {
+        log(DEBUG_LEVELS.ERROR, 'Header element not found');
+        return;
+    }
+
+    if (isLoading) {
+        header.innerHTML = `
+            <div class="container">
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p>Loading program data...</p>
+                </div>
+            </div>`;
+    } else if (errorMessage) {
+        log(DEBUG_LEVELS.ERROR, 'Display error message', { message: errorMessage });
+        header.innerHTML = `
+            <div class="container">
+                <div class="alert alert-danger">${errorMessage}</div>
+            </div>`;
+    }
 }
 
 //=============================================================================
