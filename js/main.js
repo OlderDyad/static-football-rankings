@@ -3,20 +3,19 @@
 //=============================================================================
 
 // Debug Configuration
-
 const DEBUG_LEVELS = {
     ERROR: 'ERROR',
     WARN: 'WARN',
     INFO: 'INFO',
     DEBUG: 'DEBUG'
-};
-
-const DEBUG_CONFIG = {
+ };
+ 
+ const DEBUG_CONFIG = {
     enabled: true,
-    level: DEBUG_LEVELS.INFO  // Change to DEBUG_LEVELS.DEBUG for more verbose logging
-};
-
-function log(level, message, data = null) {
+    level: DEBUG_LEVELS.INFO
+ };
+ 
+ function log(level, message, data = null) {
     if (!DEBUG_CONFIG.enabled) return;
     
     const timestamp = new Date().toISOString().split('T')[1].slice(0, -1);
@@ -36,40 +35,39 @@ function log(level, message, data = null) {
             }
             break;
     }
-}
-
-// Repository and Image Paths
-const REPO_BASE = '/static-football-rankings';
-const IMAGE_BASE = `${REPO_BASE}/docs/images`;
-const DEFAULT_PLACEHOLDER = `${IMAGE_BASE}/placeholder-image.jpg`;
-const ITEMS_PER_PAGE = 100;
-
-// API Configuration
-const API_BASE = 'https://static-football-rankings.vercel.app/api';
-const LOGIN_API_BASE = `${API_BASE}/auth`;
-
-// Log initial configuration
-log(DEBUG_LEVELS.INFO, 'Initial state', {
+ }
+ 
+ // Repository and Image Paths
+ const REPO_BASE = '/static-football-rankings';
+ const IMAGE_BASE = `${REPO_BASE}/docs/images`;
+ const DEFAULT_PLACEHOLDER = `${IMAGE_BASE}/placeholder-image.jpg`;
+ const ITEMS_PER_PAGE = 100;
+ 
+ // API Configuration
+ const API_BASE = 'https://static-football-rankings.vercel.app/api';
+ const LOGIN_API_BASE = `${API_BASE}/auth`;
+ 
+ //=============================================================================
+ // SECTION 2: GLOBAL STATE MANAGEMENT
+ //=============================================================================
+ 
+ let currentPage = 1;
+ let programsData = [];
+ let isLoggedIn = false;
+ let userName = '';
+ 
+ // Log configurations and initial state after all variables are declared
+ log(DEBUG_LEVELS.INFO, 'Configuration loaded', {
+    REPO_BASE,
+    API_BASE,
+    LOGIN_API_BASE
+ });
+ 
+ log(DEBUG_LEVELS.INFO, 'Initial state', {
     currentPage,
     isLoggedIn,
     userName
-});
-
-//=============================================================================
-// SECTION 2: GLOBAL STATE MANAGEMENT
-//=============================================================================
-
-let currentPage = 1;
-let programsData = [];
-let isLoggedIn = false;
-let userName = '';
-
-// Log initial state
-log(DEBUG_LEVELS.DEBUG, 'Initial state set', {
-    currentPage,
-    isLoggedIn,
-    userName
-});
+ });
 
 
 //=============================================================================
@@ -77,7 +75,7 @@ log(DEBUG_LEVELS.DEBUG, 'Initial state set', {
 //=============================================================================
 
 async function checkLoginStatus() {
-    log(DEBUG_LEVELS.DEBUG, 'Checking login status');
+    log(DEBUG_LEVELS.INFO, 'Checking login status');
     try {
         const response = await fetch(`${LOGIN_API_BASE}/status`, {
             method: "GET",
@@ -99,82 +97,10 @@ async function checkLoginStatus() {
         userName = data.user?.name || '';
         log(DEBUG_LEVELS.INFO, 'Authentication state', { isLoggedIn, userName });
 
-        if (isLoggedIn) {
-            showLoggedInState();
-        } else {
-            showLoggedOutState();
-        }
-
-        return data;
-    } catch (error) {
-        console.error("Error checking login status:", error);
-        isLoggedIn = false;
-        userName = '';
-        showLoggedOutState();
-        return { loggedIn: false, user: null };
-    }
-}
-
-function showLoggedInState() {
-    console.log('Showing logged in state');
-    const loginArea = document.getElementById('loginArea');
-    const commentForm = document.getElementById('commentForm');
-    const authorName = document.getElementById('authorName');
-
-    if (loginArea) {
-        loginArea.innerHTML = `
-            <div class="d-flex align-items-center justify-content-between">
-                <span class="me-2">Welcome, ${userName}</span>
-                <button id="logoutButton" class="btn btn-outline-secondary btn-sm">Logout</button>
-            </div>
-        `;
-        const logoutButton = document.getElementById('logoutButton');
-        if (logoutButton) {
-            logoutButton.addEventListener('click', handleLogout);
-        }
-    }
-
-    if (commentForm) {
-        commentForm.style.display = 'block';
-    }
-
-    if (authorName) {
-        authorName.textContent = userName || 'Anonymous';
-    }
-}
-
-//=============================================================================
-// SECTION 3.0: AUTHENTICATION UI
-//=============================================================================
-
-// Check login status
-async function checkLoginStatus() {
-    console.log("[DEBUG] Checking login status...");
-    try {
-        const response = await fetch(`${LOGIN_API_BASE}/status`, {
-            method: "GET",
-            credentials: "include",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log("[DEBUG] Login status data:", data);
-
-        isLoggedIn = Boolean(data.loggedIn);
-        userName = data.user?.name || '';
-        console.log(`[DEBUG] Auth state: logged in = ${isLoggedIn}, user = ${userName}`);
-
         updateAuthUI();
         return data;
     } catch (error) {
-        console.error("[ERROR] Error checking login status:", error);
+        log(DEBUG_LEVELS.ERROR, 'Login status check failed', error);
         isLoggedIn = false;
         userName = '';
         updateAuthUI();
@@ -182,7 +108,6 @@ async function checkLoginStatus() {
     }
 }
 
-// Update the authentication UI section
 function updateAuthUI() {
     log(DEBUG_LEVELS.DEBUG, 'Updating authentication UI', { isLoggedIn });
     const authContainer = document.getElementById('authContainer');
@@ -241,8 +166,6 @@ function updateAuthUI() {
     }
 }
 
-
-// Handle login and logout
 function handleLogin() {
     log(DEBUG_LEVELS.INFO, 'Initiating Google login');
     try {
@@ -280,8 +203,6 @@ async function handleLogout() {
         showAuthError("Logout failed. Please try again.");
     }
 }
-
-// Show authentication error message
 
 function showAuthError(message) {
     log(DEBUG_LEVELS.WARN, 'Auth error occurred', { message });
