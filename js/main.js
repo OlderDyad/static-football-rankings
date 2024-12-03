@@ -169,7 +169,8 @@ function updateAuthUI() {
 function handleLogin() {
     log(DEBUG_LEVELS.INFO, 'Initiating Google login');
     try {
-        const loginUrl = `${LOGIN_API_BASE}/google?t=${Date.now()}`;
+        const currentPath = window.location.pathname;
+        const loginUrl = `${LOGIN_API_BASE}/google?t=${Date.now()}&redirect=${encodeURIComponent(currentPath)}`;
         log(DEBUG_LEVELS.DEBUG, 'Redirecting to login URL', { url: loginUrl });
         window.location.href = loginUrl;
     } catch (error) {
@@ -662,6 +663,27 @@ function setupPagination(data = programsData) {
         }
     });
     paginationElement.appendChild(nextLi);
+}
+
+// handle search function
+
+function handleSearch(event) {
+    const searchTerm = event.target.value.toLowerCase();
+    log(DEBUG_LEVELS.DEBUG, 'Processing search', { term: searchTerm });
+
+    const filteredPrograms = programsData.filter(program =>
+        program.Team.toLowerCase().includes(searchTerm) ||
+        program.State.toLowerCase().includes(searchTerm)
+    );
+
+    log(DEBUG_LEVELS.DEBUG, 'Search results', { 
+        total: programsData.length,
+        filtered: filteredPrograms.length 
+    });
+
+    currentPage = 1;
+    setupPagination(filteredPrograms);
+    displayCurrentPage(filteredPrograms);
 }
 
 //=============================================================================
