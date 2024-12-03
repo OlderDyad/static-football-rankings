@@ -77,6 +77,10 @@ const DEBUG_LEVELS = {
 async function checkLoginStatus() {
     log(DEBUG_LEVELS.INFO, 'Checking login status');
     try {
+        // Clear existing state first
+        isLoggedIn = false;
+        userName = '';
+        
         const response = await fetch(`${LOGIN_API_BASE}/status`, {
             method: "GET",
             credentials: "include",
@@ -91,18 +95,20 @@ async function checkLoginStatus() {
         }
 
         const data = await response.json();
-        log(DEBUG_LEVELS.DEBUG, 'Login status received', data);
+        log(DEBUG_LEVELS.DEBUG, 'Login status response', data);
 
-        isLoggedIn = Boolean(data.loggedIn);
-        userName = data.user?.name || '';
-        log(DEBUG_LEVELS.INFO, 'Authentication state', { isLoggedIn, userName });
+        if (data.loggedIn && data.user) {
+            isLoggedIn = true;
+            userName = data.user.name || '';
+            log(DEBUG_LEVELS.INFO, 'User authenticated', { isLoggedIn, userName });
+        } else {
+            log(DEBUG_LEVELS.INFO, 'No valid authentication found');
+        }
 
         updateAuthUI();
         return data;
     } catch (error) {
         log(DEBUG_LEVELS.ERROR, 'Login status check failed', error);
-        isLoggedIn = false;
-        userName = '';
         updateAuthUI();
         return { loggedIn: false, user: null };
     }
@@ -752,20 +758,31 @@ document.addEventListener('DOMContentLoaded', async function() {
     try {
         log(DEBUG_LEVELS.INFO, 'Starting application initialization');
         
-        // Check for auth errors
+        // Check for auth errors from redirect
         const urlParams = new URLSearchParams(window.location.search);
         const error = urlParams.get('error');
         if (error) {
-            log(DEBUG_LEVELS.WARN, 'Auth error detected', { error });
+            log(DEBUG_LEVELS.WARN, 'Auth error from redirect', { error });
             showAuthError(error === 'auth_failed' 
                 ? 'Authentication failed. Please try again.'
                 : 'An error occurred. Please try again.');
         }
 
-        // Initialize components in sequence
-        await checkLoginStatus();
+        // Check auth status first
+        const authStatus = await checkLoginStatus();
+        log(DEBUG_LEVELS.DEBUG, 'Initial auth status', { 
+            isLoggedIn, 
+            userName,
+            authStatus 
+        });
+
+        // Initialize page components
         await initializeRankings();
-        await loadComments();
+        
+        // Load comments only if auth check was successful
+        if (!authStatus.error) {
+            await loadComments();
+        }
 
         // Set up event listeners
         const searchInput = document.getElementById('searchInput');
@@ -778,7 +795,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             submitButton.addEventListener('click', submitComment);
         }
 
-        log(DEBUG_LEVELS.INFO, 'Application initialization complete');
+        log(DEBUG_LEVELS.INFO, 'Application initialization complete', {
+            isLoggedIn,
+            hasComments: !!document.getElementById('commentsList')?.children.length
+        });
     } catch (error) {
         log(DEBUG_LEVELS.ERROR, 'Initialization failed', error);
         showAuthError('Failed to initialize application. Please refresh the page.');
