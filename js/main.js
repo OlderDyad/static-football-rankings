@@ -600,150 +600,81 @@ function displayCurrentPage(data = programsData) {
 // SECTION 6: SEARCH AND PAGINATION FUNCTIONS
 //=============================================================================
 
-function handleSearch(event) {
-    const searchTerm = event.target.value.toLowerCase();
-    log(DEBUG_LEVELS.DEBUG, 'Processing search', { term: searchTerm });
-
-    const filteredPrograms = programsData.filter(program =>
-        program.Team.toLowerCase().includes(searchTerm) ||
-        program.State.toLowerCase().includes(searchTerm)
-    );
-
-    log(DEBUG_LEVELS.DEBUG, 'Search results', { 
-        total: programsData.length,
-        filtered: filteredPrograms.length 
-    });
-
-    currentPage = 1;
-    setupPagination(filteredPrograms);
-    displayCurrentPage(filteredPrograms);
-}
-
-function displayCurrentPage(data = programsData) {
-    log(DEBUG_LEVELS.DEBUG, 'Displaying page', { 
-        page: currentPage,
-        totalItems: data?.length 
-    });
-
-    const tableBody = document.getElementById('programsTableBody');
-    if (!tableBody) {
-        log(DEBUG_LEVELS.ERROR, 'Table body element not found');
-        return;
+function setupPagination(data = programsData) {
+    log(DEBUG_LEVELS.DEBUG, 'Setting up pagination', { totalItems: data.length });
+    const paginationElement = document.getElementById('pagination');
+    if (!paginationElement) {
+        log(DEBUG_LEVELS.DEBUG, 'Creating pagination element');
+        const nav = document.createElement('nav');
+        nav.innerHTML = '<ul class="pagination" id="pagination"></ul>';
+        const tableContainer = document.querySelector('.table-responsive');
+        if (tableContainer) {
+            tableContainer.after(nav);
+            return setupPagination(data);
+        }
     }
 
-    const start = (currentPage - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const currentData = data.slice(start, end);
+    const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
+    paginationElement.innerHTML = '';
 
-    log(DEBUG_LEVELS.DEBUG, 'Page data prepared', {
-        itemsShown: currentData.length,
-        startIndex: start,
-        endIndex: end
+    // Add Previous button
+    const prevLi = document.createElement('li');
+    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+    prevLi.innerHTML = `
+        <button class="page-link" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
+    `;
+    prevLi.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            log(DEBUG_LEVELS.DEBUG, 'Navigating to previous page', { newPage: currentPage });
+            displayCurrentPage(data);
+            setupPagination(data);
+        }
     });
+    paginationElement.appendChild(prevLi);
 
-    tableBody.innerHTML = '';
-    currentData.forEach(program => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${program.Rank}</td>
-            <td>${program.Team}</td>
-            <td>${program.AvgCombined.toFixed(3)}</td>
-            <td>${program.AvgMargin.toFixed(3)}</td>
-            <td>${program.AvgWinLoss.toFixed(3)}</td>
-            <td>${program.AvgOffense.toFixed(3)}</td>
-            <td>${program.AvgDefense.toFixed(3)}</td>
-            <td>${program.State}</td>
-            <td>${program.Seasons}</td>
-            <td>
-                <button onclick="showProgramDetails('${program.Team}')"
-                        class="btn btn-primary btn-sm">View Details</button>
-            </td>
-        `;
-        tableBody.appendChild(row);
-    });
-}
-
-function updateLoadingState(isLoading, errorMessage = '') {
-    log(DEBUG_LEVELS.DEBUG, 'Updating loading state', { 
-        isLoading, 
-        hasError: !!errorMessage 
-    });
-
-    const header = document.querySelector('.team-header');
-    if (!header) {
-        log(DEBUG_LEVELS.ERROR, 'Header element not found');
-        return;
+    // Add page numbers
+    for (let i = 1; i <= totalPages; i++) {
+        const li = document.createElement('li');
+        li.className = `page-item ${currentPage === i ? 'active' : ''}`;
+        li.innerHTML = `<button class="page-link">${i}</button>`;
+        li.addEventListener('click', () => {
+            currentPage = i;
+            log(DEBUG_LEVELS.DEBUG, 'Page selected', { page: i });
+            displayCurrentPage(data);
+            setupPagination(data);
+        });
+        paginationElement.appendChild(li);
     }
 
-    if (isLoading) {
-        header.innerHTML = `
-            <div class="container">
-                <div class="text-center">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <p>Loading program data...</p>
-                </div>
-            </div>`;
-    } else if (errorMessage) {
-        log(DEBUG_LEVELS.ERROR, 'Display error message', { message: errorMessage });
-        header.innerHTML = `
-            <div class="container">
-                <div class="alert alert-danger">${errorMessage}</div>
-            </div>`;
-    }
+    // Add Next button
+    const nextLi = document.createElement('li');
+    nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+    nextLi.innerHTML = `
+        <button class="page-link" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
+    `;
+    nextLi.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            log(DEBUG_LEVELS.DEBUG, 'Navigating to next page', { newPage: currentPage });
+            displayCurrentPage(data);
+            setupPagination(data);
+        }
+    });
+    paginationElement.appendChild(nextLi);
 }
 
 //=============================================================================
 // SECTION 7: COMMENTS SYSTEM
 //=============================================================================
 
-// Display comments handler
-function displayComments(comments = []) {
-    debug('Displaying comments:', comments);
-    const commentsContainer = document.getElementById('commentsList');
-    
-    if (!commentsContainer) {
-        console.error('Comments container not found');
-        return;
-    }
-
-    // Handle empty or invalid data
-    if (comments.length === 0) {
-        commentsContainer.innerHTML = '<p class="text-muted">No comments yet. Be the first to comment!</p>';
-        return;
-    }
-
-    try {
-        const commentHTML = comments.map(comment => {
-            const timestamp = new Date(comment.timestamp || Date.now());
-            return `
-                <div class="comment mb-3 p-3 border rounded">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <strong>${escapeHTML(comment.author || 'Anonymous')}</strong>
-                            <small class="text-muted ms-2">${getTimeAgo(timestamp)}</small>
-                        </div>
-                    </div>
-                    <div class="mt-2">
-                        ${escapeHTML(comment.text || '')}
-                    </div>
-                </div>
-            `;
-        }).join('');
-
-        commentsContainer.innerHTML = commentHTML;
-    } catch (error) {
-        console.error('Error rendering comments:', error);
-        commentsContainer.innerHTML = '<div class="alert alert-warning">Error displaying comments.</div>';
-    }
-}
-
-// Load comments from API
 async function loadComments() {
-    debug('Loading comments...');
+    log(DEBUG_LEVELS.INFO, 'Loading comments');
     const commentsContainer = document.getElementById('commentsList');
-    if (!commentsContainer) return;
+    if (!commentsContainer) {
+        log(DEBUG_LEVELS.ERROR, 'Comments container not found');
+        return;
+    }
 
     try {
         const response = await fetch(`${API_BASE}/comments`, {
@@ -755,7 +686,7 @@ async function loadComments() {
             }
         });
 
-        debug('Comments response:', {
+        log(DEBUG_LEVELS.DEBUG, 'Comments API response received', {
             status: response.status,
             type: response.type
         });
@@ -765,104 +696,20 @@ async function loadComments() {
         }
 
         const data = await response.json();
-        debug('Comments data:', data);
+        log(DEBUG_LEVELS.DEBUG, 'Comments data parsed', data);
 
-        // Extract comments array
         const comments = Array.isArray(data.comments) ? data.comments : [];
+        log(DEBUG_LEVELS.INFO, 'Comments loaded', { count: comments.length });
+        
         displayComments(comments);
     } catch (error) {
-        console.error('Error loading comments:', error);
+        log(DEBUG_LEVELS.ERROR, 'Error loading comments', error);
         commentsContainer.innerHTML = `
             <div class="alert alert-warning">
                 Error loading comments. Please try again later.
             </div>
         `;
     }
-}
-
-// Submit new comment
-async function submitComment() {
-    if (!isLoggedIn) {
-        showAlert('warning', 'Please sign in to post comments');
-        return;
-    }
-
-    const textElement = document.getElementById('commentText');
-    const text = textElement?.value?.trim();
-    
-    if (!text) {
-        debug('No comment text provided');
-        return;
-    }
-    
-    updateCommentFormState(true);
-    const pageIdentifier = document.querySelector('h1')?.dataset.pageName || 'unknown-page';
-    
-    try {
-        const response = await fetch(`${API_BASE}/comments`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                text,
-                author: userName || 'Anonymous',
-                programName: pageIdentifier,
-                timestamp: new Date().toISOString()
-            })
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            debug('Comment submitted successfully');
-            textElement.value = '';
-            showAlert('success', 'Comment posted successfully!');
-            await loadComments();
-        } else {
-            throw new Error(result.error || 'Failed to submit comment');
-        }
-    } catch (error) {
-        console.error('Error submitting comment:', error);
-        showAlert('danger', 'Unable to submit comment. Please try again later.');
-    } finally {
-        updateCommentFormState(false);
-    }
-}
-
-// Helper function to show alerts
-function showAlert(type, message, duration = 3000) {
-    const commentForm = document.getElementById('commentForm');
-    if (commentForm) {
-        const alertDiv = document.createElement('div');
-        alertDiv.className = `alert alert-${type} mt-2`;
-        alertDiv.textContent = message;
-        commentForm.insertBefore(alertDiv, commentForm.firstChild);
-        setTimeout(() => alertDiv.remove(), duration);
-    }
-}
-
-// Update form state during submission
-function updateCommentFormState(isSubmitting) {
-    const submitButton = document.getElementById('submitComment');
-    const textElement = document.getElementById('commentText');
-    
-    if (!submitButton || !textElement) {
-        debug('Comment form elements not found');
-        return;
-    }
-    
-    submitButton.disabled = isSubmitting;
-    submitButton.innerHTML = isSubmitting 
-        ? '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Posting...'
-        : 'Post Comment';
-    textElement.disabled = isSubmitting;
 }
 
 
