@@ -176,7 +176,7 @@ function showAuthError(message) {
     }
 }
 
-async function loadComments() {
+export async function loadComments() {
     log(DEBUG_LEVELS.INFO, 'Loading comments');
     const commentsContainer = document.getElementById('commentsList');
     if (!commentsContainer) {
