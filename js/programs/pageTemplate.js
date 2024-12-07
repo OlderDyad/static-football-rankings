@@ -223,24 +223,51 @@ export function initializePage(pageConfig) {
     // SECTION 7: PAGE INITIALIZATION
     //=============================================================================
     async function initialize() {
+        log(DEBUG_LEVELS.DEBUG, 'Starting page initialization');
+        
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
             searchInput.addEventListener('input', handleSearch);
+            log(DEBUG_LEVELS.DEBUG, 'Search input initialized');
         }
+    
+        // Log DOM element presence
+        log(DEBUG_LEVELS.DEBUG, 'Checking DOM elements', {
+            commentForm: !!document.getElementById('commentForm'),
+            authContainer: !!document.getElementById('authContainer'),
+            submitButton: !!document.getElementById('submitComment'),
+            commentsList: !!document.getElementById('commentsList')
+        });
     
         // Set up comment submit button listener
         const submitButton = document.getElementById('submitComment');
         if (submitButton) {
-            submitButton.addEventListener('click', submitComment);
+            submitButton.addEventListener('click', () => {
+                log(DEBUG_LEVELS.DEBUG, 'Submit button clicked');
+                submitComment();
+            });
             log(DEBUG_LEVELS.DEBUG, 'Comment submit button listener added');
         } else {
             log(DEBUG_LEVELS.ERROR, 'Comment submit button not found');
         }
     
-        // Auth and Comments after data load
-        await checkLoginStatus();
-        await initializeRankings();
-        await loadComments();
+        try {
+            // Auth and Comments after data load
+            log(DEBUG_LEVELS.DEBUG, 'Starting auth check');
+            const authResult = await checkLoginStatus();
+            log(DEBUG_LEVELS.DEBUG, 'Auth check complete', authResult);
+            
+            log(DEBUG_LEVELS.DEBUG, 'Starting rankings initialization');
+            await initializeRankings();
+            log(DEBUG_LEVELS.DEBUG, 'Rankings initialization complete');
+            
+            log(DEBUG_LEVELS.DEBUG, 'Starting to load comments');
+            await loadComments();
+            log(DEBUG_LEVELS.DEBUG, 'Comments loading complete');
+    
+        } catch (error) {
+            log(DEBUG_LEVELS.ERROR, 'Error during initialization:', error);
+        }
     
         log(DEBUG_LEVELS.INFO, 'Page initialization complete');
     }
