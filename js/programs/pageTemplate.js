@@ -1,17 +1,11 @@
 // js/programs/pageTemplate.js
-import { DEBUG_LEVELS, log, checkLoginStatus, loadComments, submitComment } from '../main.js';
+import { DEBUG_LEVELS, log, checkLoginStatus, loadComments } from '../main.js';
 import { teamConfig } from '../config/teamConfig.js';
 
 export function initializePage(pageConfig) {
     const ITEMS_PER_PAGE = 100;
     let programsData = [];
     let currentPage = 1;
-
-    function getImagePath(imageFile) {
-        if (!imageFile) return teamConfig.defaultLogo;
-        const program = programsData[0];
-        return teamConfig.getTeamImagePath(program.State, program.Team, imageFile);
-    }
 
     async function initializeRankings() {
         log(DEBUG_LEVELS.INFO, `Starting ${pageConfig.pageTitle} initialization`);
@@ -22,16 +16,14 @@ export function initializePage(pageConfig) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             programsData = await response.json();
-
+            
             if (programsData.length > 0) {
                 await updateTeamHeader(programsData[0]);
-                setupPagination(programsData);
-                displayCurrentPage(programsData);
+                setupPagination();
+                displayCurrentPage();
                 log(DEBUG_LEVELS.INFO, 'Rankings display complete');
-            } else {
-                updateLoadingState(false, 'No data available');
             }
-
+            
             updateLoadingState(false);
         } catch (error) {
             log(DEBUG_LEVELS.ERROR, 'Rankings initialization failed', error);
@@ -47,48 +39,45 @@ export function initializePage(pageConfig) {
             return;
         }
 
-        function updateTeamHeader(program) {
-            log(DEBUG_LEVELS.DEBUG, 'Updating team header', { team: program.Team });
-            const header = document.querySelector('.team-header');
-            if (!header) {
-                log(DEBUG_LEVELS.ERROR, 'Team header element not found');
-                return;
-            }
-        
-            // Use the stored paths directly from the program data
-            const logoUrl = teamConfig.getTeamImagePath(program.LogoURL);
-            const schoolLogoUrl = teamConfig.getTeamImagePath(program.School_Logo_URL);
-        
-            header.innerHTML = `
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-3">
-                            <img src="${logoUrl}"
-                                 alt="${program.Team} Logo"
-                                 class="img-fluid"
-                                 style="max-height: 100px;"
-                                 onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <h2>${program.Team}</h2>
-                            <p>${program.Mascot || ''}</p>
-                        </div>
-                        <div class="col-md-3 text-right">
-                            <img src="${schoolLogoUrl}"
-                                 alt="${program.Mascot}"
-                                 class="img-fluid"
-                                 style="max-height: 100px;"
-                                 onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
-                        </div>
+        // Use the stored paths directly from the program data
+        const logoUrl = teamConfig.getTeamImagePath(program.LogoURL);
+        const schoolLogoUrl = teamConfig.getTeamImagePath(program.School_Logo_URL);
+
+        header.innerHTML = `
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <img src="${logoUrl}"
+                             alt="${program.Team} Logo"
+                             class="img-fluid"
+                             style="max-height: 100px;"
+                             onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h2>${program.Team}</h2>
+                        <p>${program.Mascot || ''}</p>
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <img src="${schoolLogoUrl}"
+                             alt="${program.Mascot}"
+                             class="img-fluid"
+                             style="max-height: 100px;"
+                             onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
                     </div>
                 </div>
-            `;
-        
-            header.style.backgroundColor = program.PrimaryColor || '#000000';
-            header.style.color = program.SecondaryColor || '#FFFFFF';
-        }
+            </div>
+        `;
+
+        header.style.backgroundColor = program.PrimaryColor || '#000000';
+        header.style.color = program.SecondaryColor || '#FFFFFF';
+    }
 
     function displayCurrentPage(data = programsData) {
+        log(DEBUG_LEVELS.DEBUG, 'Displaying page', { 
+            page: currentPage,
+            totalItems: data?.length 
+        });
+
         const tableBody = document.getElementById('programsTableBody');
         if (!tableBody) {
             log(DEBUG_LEVELS.ERROR, 'Table body element not found');
@@ -113,8 +102,7 @@ export function initializePage(pageConfig) {
                 <td>${program.State}</td>
                 <td>${program.Seasons}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm"
-                            data-team="${program.Team}">View Details</button>
+                    <button class="btn btn-primary btn-sm" data-team="${program.Team}">View Details</button>
                 </td>
             `;
             tableBody.appendChild(row);
@@ -123,6 +111,8 @@ export function initializePage(pageConfig) {
 
     function handleSearch(event) {
         const searchTerm = event.target.value.toLowerCase();
+        log(DEBUG_LEVELS.DEBUG, 'Processing search', { term: searchTerm });
+
         const filteredPrograms = programsData.filter(program =>
             program.Team.toLowerCase().includes(searchTerm) ||
             program.State.toLowerCase().includes(searchTerm)
@@ -135,19 +125,10 @@ export function initializePage(pageConfig) {
 
     function setupPagination(data = programsData) {
         const paginationElement = document.getElementById('pagination');
-        if (!paginationElement) {
-            const nav = document.createElement('nav');
-            nav.innerHTML = '<ul class="pagination" id="pagination"></ul>';
-            const tableContainer = document.querySelector('.table-responsive');
-            if (tableContainer) {
-                tableContainer.after(nav);
-                return setupPagination(data);
-            }
-            return;
-        }
+        if (!paginationElement) return;
 
-        paginationElement.innerHTML = '';
         const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
+        paginationElement.innerHTML = '';
 
         // Previous button
         const prevLi = document.createElement('li');
@@ -232,4 +213,3 @@ function updateLoadingState(isLoading, errorMessage = '') {
             </div>`;
     }
 }
-
