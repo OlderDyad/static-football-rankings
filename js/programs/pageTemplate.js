@@ -1,11 +1,42 @@
-// js/programs/pageTemplate.js
-import { DEBUG_LEVELS, log, checkLoginStatus, loadComments } from '../main.js';
+//=============================================================================
+// SECTION 1: IMPORTS
+//=============================================================================
+import { DEBUG_LEVELS, log, checkLoginStatus, loadComments, submitComment } from '../main.js';
 import { teamConfig } from '../config/teamConfig.js';
 
+//=============================================================================
+// SECTION 2: PAGE INITIALIZATION AND CONFIGURATION
+//=============================================================================
 export function initializePage(pageConfig) {
+    // Constants and state
     const ITEMS_PER_PAGE = 100;
     let programsData = [];
     let currentPage = 1;
+
+    //=============================================================================
+    // SECTION 3: LOADING AND STATE MANAGEMENT
+    //=============================================================================
+    function updateLoadingState(isLoading, errorMessage = '') {
+        const header = document.querySelector('.team-header');
+        if (!header) return;
+
+        if (isLoading) {
+            header.innerHTML = `
+                <div class="container">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p>Loading program data...</p>
+                    </div>
+                </div>`;
+        } else if (errorMessage) {
+            header.innerHTML = `
+                <div class="container">
+                    <div class="alert alert-danger">${errorMessage}</div>
+                </div>`;
+        }
+    }
 
     async function initializeRankings() {
         log(DEBUG_LEVELS.INFO, `Starting ${pageConfig.pageTitle} initialization`);
@@ -31,6 +62,9 @@ export function initializePage(pageConfig) {
         }
     }
 
+    //=============================================================================
+    // SECTION 4: HEADER MANAGEMENT
+    //=============================================================================
     function updateTeamHeader(program) {
         log(DEBUG_LEVELS.DEBUG, 'Updating team header', { 
             team: program.Team,
@@ -44,7 +78,6 @@ export function initializePage(pageConfig) {
             return;
         }
     
-        // Get the image paths and log them
         const logoUrl = teamConfig.getTeamImagePath(program.LogoURL);
         const schoolLogoUrl = teamConfig.getTeamImagePath(program.School_Logo_URL);
         
@@ -82,6 +115,9 @@ export function initializePage(pageConfig) {
         header.style.color = program.SecondaryColor || '#FFFFFF';
     }
 
+    //=============================================================================
+    // SECTION 5: TABLE AND PAGINATION
+    //=============================================================================
     function displayCurrentPage(data = programsData) {
         log(DEBUG_LEVELS.DEBUG, 'Displaying page', { 
             page: currentPage,
@@ -117,20 +153,6 @@ export function initializePage(pageConfig) {
             `;
             tableBody.appendChild(row);
         });
-    }
-
-    function handleSearch(event) {
-        const searchTerm = event.target.value.toLowerCase();
-        log(DEBUG_LEVELS.DEBUG, 'Processing search', { term: searchTerm });
-
-        const filteredPrograms = programsData.filter(program =>
-            program.Team.toLowerCase().includes(searchTerm) ||
-            program.State.toLowerCase().includes(searchTerm)
-        );
-
-        currentPage = 1;
-        setupPagination(filteredPrograms);
-        displayCurrentPage(filteredPrograms);
     }
 
     function setupPagination(data = programsData) {
@@ -180,6 +202,26 @@ export function initializePage(pageConfig) {
         paginationElement.appendChild(nextLi);
     }
 
+    //=============================================================================
+    // SECTION 6: SEARCH FUNCTIONALITY
+    //=============================================================================
+    function handleSearch(event) {
+        const searchTerm = event.target.value.toLowerCase();
+        log(DEBUG_LEVELS.DEBUG, 'Processing search', { term: searchTerm });
+
+        const filteredPrograms = programsData.filter(program =>
+            program.Team.toLowerCase().includes(searchTerm) ||
+            program.State.toLowerCase().includes(searchTerm)
+        );
+
+        currentPage = 1;
+        setupPagination(filteredPrograms);
+        displayCurrentPage(filteredPrograms);
+    }
+
+    //=============================================================================
+    // SECTION 7: PAGE INITIALIZATION
+    //=============================================================================
     async function initialize() {
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
@@ -203,32 +245,13 @@ export function initializePage(pageConfig) {
         log(DEBUG_LEVELS.INFO, 'Page initialization complete');
     }
 
+    //=============================================================================
+    // SECTION 8: EXPORTS
+    //=============================================================================
     return {
         initialize,
         handleSearch,
         updateTeamHeader,
         displayCurrentPage
     };
-} // This closes the initializePage function
-
-function updateLoadingState(isLoading, errorMessage = '') {
-    const header = document.querySelector('.team-header');
-    if (!header) return;
-
-    if (isLoading) {
-        header.innerHTML = `
-            <div class="container">
-                <div class="text-center">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <p>Loading program data...</p>
-                </div>
-            </div>`;
-    } else if (errorMessage) {
-        header.innerHTML = `
-            <div class="container">
-                <div class="alert alert-danger">${errorMessage}</div>
-            </div>`;
-    }
-}
+} // End of initializePage function
