@@ -176,6 +176,14 @@ function showAuthError(message) {
     }
 }
 
+// main.js
+
+// Keep these exports
+export const API_BASE = 'https://static-football-rankings.vercel.app/api';
+export let isLoggedIn = false;
+export let userName = '';
+
+// Keep loadComments with added logging
 export async function loadComments() {
     log(DEBUG_LEVELS.INFO, 'Loading comments');
     const commentsContainer = document.getElementById('commentsList');
@@ -194,11 +202,14 @@ export async function loadComments() {
             }
         });
 
+        log(DEBUG_LEVELS.DEBUG, 'Comments response status:', response.status);
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
+        log(DEBUG_LEVELS.DEBUG, 'Comments data:', data);
         const comments = Array.isArray(data.comments) ? data.comments : [];
         displayComments(comments);
     } catch (error) {
@@ -211,6 +222,71 @@ export async function loadComments() {
     }
 }
 
+// Enhanced submitComment with better logging
+export async function submitComment() {
+    log(DEBUG_LEVELS.INFO, 'Submit comment called');
+    
+    if (!isLoggedIn) {
+        log(DEBUG_LEVELS.WARN, 'Comment attempted while not logged in');
+        showAuthError('Please sign in to post comments');
+        return;
+    }
+
+    const textElement = document.getElementById('commentText');
+    const text = textElement?.value?.trim();
+    
+    if (!text) {
+        log(DEBUG_LEVELS.WARN, 'Empty comment attempted');
+        return;
+    }
+
+    const pageIdentifier = document.querySelector('h1')?.dataset.pageName || 'unknown-page';
+    log(DEBUG_LEVELS.DEBUG, 'Submitting comment for page:', pageIdentifier);
+
+    try {
+        const response = await fetch(`${API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                text,
+                author: userName || 'Anonymous',
+                programName: pageIdentifier,
+                timestamp: new Date().toISOString()
+            })
+        });
+
+        log(DEBUG_LEVELS.DEBUG, 'Comment submission response:', response.status);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        log(DEBUG_LEVELS.DEBUG, 'Comment submission result:', result);
+
+        if (result.success) {
+            textElement.value = '';
+            const successDiv = document.createElement('div');
+            successDiv.className = 'alert alert-success mt-2';
+            successDiv.textContent = 'Comment posted successfully!';
+            textElement.parentNode.insertBefore(successDiv, textElement.nextSibling);
+            setTimeout(() => successDiv.remove(), 3000);
+            
+            await loadComments();
+        } else {
+            throw new Error(result.error || 'Failed to submit comment');
+        }
+    } catch (error) {
+        log(DEBUG_LEVELS.ERROR, 'Comment submission error:', error);
+        showAuthError('Unable to submit comment. Please try again later.');
+    }
+}
+
+// Keep these helper functions
 function displayComments(commentsArray = []) {
     const commentsContainer = document.getElementById('commentsList');
     if (!commentsContainer) return;
@@ -240,50 +316,6 @@ function displayComments(commentsArray = []) {
     commentsContainer.innerHTML = commentsHTML;
 }
 
-async function submitComment() {
-    if (!isLoggedIn) {
-        showAuthError('Please sign in to post comments');
-        return;
-    }
-
-    const textElement = document.getElementById('commentText');
-    const text = textElement?.value?.trim();
-    if (!text) return;
-
-    const pageIdentifier = document.querySelector('h1')?.dataset.pageName || 'unknown-page';
-
-    try {
-        const response = await fetch(`${API_BASE}/comments`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                text,
-                author: userName || 'Anonymous',
-                programName: pageIdentifier,
-                timestamp: new Date().toISOString()
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        if (result.success) {
-            textElement.value = '';
-            await loadComments();
-        } else {
-            throw new Error(result.error || 'Failed to submit comment');
-        }
-    } catch (error) {
-        showAuthError('Unable to submit comment. Please try again later.');
-    }
-}
-
 function escapeHTML(str) {
     const div = document.createElement('div');
     div.textContent = str;
@@ -308,30 +340,3 @@ function getTimeAgo(date) {
         day: 'numeric'
     });
 }
-
-function updateLoadingState(isLoading, errorMessage = '') {
-    const header = document.querySelector('.team-header');
-    if (!header) return;
-
-    if (isLoading) {
-        header.innerHTML = `
-            <div class="container">
-                <div class="text-center">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <p>Loading program data...</p>
-                </div>
-            </div>`;
-    } else if (errorMessage) {
-        header.innerHTML = `
-            <div class="container">
-                <div class="alert alert-danger">${errorMessage}</div>
-            </div>`;
-    }
-}
-
-export { isLoggedIn, userName, submitComment };
-
-
-

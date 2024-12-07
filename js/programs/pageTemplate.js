@@ -185,22 +185,30 @@ export function initializePage(pageConfig) {
         if (searchInput) {
             searchInput.addEventListener('input', handleSearch);
         }
-
+    
+        // Set up comment submit button listener
+        const submitButton = document.getElementById('submitComment');
+        if (submitButton) {
+            submitButton.addEventListener('click', submitComment);
+            log(DEBUG_LEVELS.DEBUG, 'Comment submit button listener added');
+        } else {
+            log(DEBUG_LEVELS.ERROR, 'Comment submit button not found');
+        }
+    
         // Auth and Comments after data load
         await checkLoginStatus();
         await initializeRankings();
         await loadComments();
-
+    
         log(DEBUG_LEVELS.INFO, 'Page initialization complete');
     }
-
+    
     return {
         initialize,
         handleSearch,
         updateTeamHeader,
         displayCurrentPage
     };
-}
 
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
