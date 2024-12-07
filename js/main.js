@@ -1,5 +1,6 @@
-﻿// main.js
-
+﻿//=============================================================================
+// SECTION 1: CONFIGURATION AND CONSTANTS
+//=============================================================================
 export const DEBUG_LEVELS = {
     ERROR: 'ERROR',
     WARN: 'WARN',
@@ -12,6 +13,17 @@ export const DEBUG_CONFIG = {
     level: DEBUG_LEVELS.INFO
 };
 
+export const REPO_BASE = '/static-football-rankings';
+export const API_BASE = 'https://static-football-rankings.vercel.app/api';
+export const LOGIN_API_BASE = `${API_BASE}/auth`;
+
+// Global auth state
+export let isLoggedIn = false;
+export let userName = '';
+
+//=============================================================================
+// SECTION 2: LOGGING
+//=============================================================================
 export function log(level, message, data = null) {
     if (!DEBUG_CONFIG.enabled) return;
 
@@ -34,13 +46,9 @@ export function log(level, message, data = null) {
     }
 }
 
-export const REPO_BASE = '/static-football-rankings';
-export const API_BASE = 'https://static-football-rankings.vercel.app/api';
-export const LOGIN_API_BASE = `${API_BASE}/auth`;
-
-let isLoggedIn = false;
-let userName = '';
-
+//=============================================================================
+// SECTION 3: AUTHENTICATION HANDLERS
+//=============================================================================
 export async function checkLoginStatus() {
     log(DEBUG_LEVELS.INFO, 'Checking login status');
     try {
@@ -176,14 +184,9 @@ function showAuthError(message) {
     }
 }
 
-// main.js
-
-// Keep these exports
-export const API_BASE = 'https://static-football-rankings.vercel.app/api';
-export let isLoggedIn = false;
-export let userName = '';
-
-// Keep loadComments with added logging
+//=============================================================================
+// SECTION 4: COMMENTS SYSTEM
+//=============================================================================
 export async function loadComments() {
     log(DEBUG_LEVELS.INFO, 'Loading comments');
     const commentsContainer = document.getElementById('commentsList');
@@ -222,10 +225,9 @@ export async function loadComments() {
     }
 }
 
-// Enhanced submitComment with better logging
 export async function submitComment() {
     log(DEBUG_LEVELS.INFO, 'Submit comment called');
-    
+
     if (!isLoggedIn) {
         log(DEBUG_LEVELS.WARN, 'Comment attempted while not logged in');
         showAuthError('Please sign in to post comments');
@@ -234,7 +236,7 @@ export async function submitComment() {
 
     const textElement = document.getElementById('commentText');
     const text = textElement?.value?.trim();
-    
+
     if (!text) {
         log(DEBUG_LEVELS.WARN, 'Empty comment attempted');
         return;
@@ -275,7 +277,7 @@ export async function submitComment() {
             successDiv.textContent = 'Comment posted successfully!';
             textElement.parentNode.insertBefore(successDiv, textElement.nextSibling);
             setTimeout(() => successDiv.remove(), 3000);
-            
+
             await loadComments();
         } else {
             throw new Error(result.error || 'Failed to submit comment');
@@ -286,7 +288,9 @@ export async function submitComment() {
     }
 }
 
-// Keep these helper functions
+//=============================================================================
+// SECTION 5: UTILITY FUNCTIONS (Internal Use Only)
+//=============================================================================
 function displayComments(commentsArray = []) {
     const commentsContainer = document.getElementById('commentsList');
     if (!commentsContainer) return;
