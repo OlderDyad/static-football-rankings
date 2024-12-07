@@ -202,13 +202,14 @@ export function initializePage(pageConfig) {
     
         log(DEBUG_LEVELS.INFO, 'Page initialization complete');
     }
-    
+
     return {
         initialize,
         handleSearch,
         updateTeamHeader,
         displayCurrentPage
     };
+} // This closes the initializePage function
 
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
