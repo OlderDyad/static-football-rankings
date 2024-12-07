@@ -32,17 +32,27 @@ export function initializePage(pageConfig) {
     }
 
     function updateTeamHeader(program) {
-        log(DEBUG_LEVELS.DEBUG, 'Updating team header', { team: program.Team });
+        log(DEBUG_LEVELS.DEBUG, 'Updating team header', { 
+            team: program.Team,
+            logoUrl: program.LogoURL,
+            schoolLogoUrl: program.School_Logo_URL
+        });
+    
         const header = document.querySelector('.team-header');
         if (!header) {
             log(DEBUG_LEVELS.ERROR, 'Team header element not found');
             return;
         }
-
-        // Use the stored paths directly from the program data
+    
+        // Get the image paths and log them
         const logoUrl = teamConfig.getTeamImagePath(program.LogoURL);
         const schoolLogoUrl = teamConfig.getTeamImagePath(program.School_Logo_URL);
-
+        
+        log(DEBUG_LEVELS.DEBUG, 'Constructed image paths', {
+            logoUrl,
+            schoolLogoUrl
+        });
+    
         header.innerHTML = `
             <div class="container">
                 <div class="row align-items-center">
@@ -67,7 +77,7 @@ export function initializePage(pageConfig) {
                 </div>
             </div>
         `;
-
+    
         header.style.backgroundColor = program.PrimaryColor || '#000000';
         header.style.color = program.SecondaryColor || '#FFFFFF';
     }
