@@ -47,37 +47,46 @@ export function initializePage(pageConfig) {
             return;
         }
 
-        const logoUrl = getImagePath(program.LogoURL);
-        const sealUrl = getImagePath(program.School_Logo_URL);
-
-        header.innerHTML = `
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-3">
-                        <img src="${logoUrl}"
-                             alt="${program.Team} Logo"
-                             class="img-fluid"
-                             style="max-height: 100px;"
-                             onerror="this.src='${teamConfig.defaultLogo}'" />
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <h2>${program.Team}</h2>
-                        <p>${program.Mascot || ''}</p>
-                    </div>
-                    <div class="col-md-3 text-right">
-                        <img src="${sealUrl}"
-                             alt="${program.Mascot}"
-                             class="img-fluid"
-                             style="max-height: 100px;"
-                             onerror="this.src='${teamConfig.defaultLogo}'" />
+        function updateTeamHeader(program) {
+            log(DEBUG_LEVELS.DEBUG, 'Updating team header', { team: program.Team });
+            const header = document.querySelector('.team-header');
+            if (!header) {
+                log(DEBUG_LEVELS.ERROR, 'Team header element not found');
+                return;
+            }
+        
+            // Use the stored paths directly from the program data
+            const logoUrl = teamConfig.getTeamImagePath(program.LogoURL);
+            const schoolLogoUrl = teamConfig.getTeamImagePath(program.School_Logo_URL);
+        
+            header.innerHTML = `
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <img src="${logoUrl}"
+                                 alt="${program.Team} Logo"
+                                 class="img-fluid"
+                                 style="max-height: 100px;"
+                                 onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <h2>${program.Team}</h2>
+                            <p>${program.Mascot || ''}</p>
+                        </div>
+                        <div class="col-md-3 text-right">
+                            <img src="${schoolLogoUrl}"
+                                 alt="${program.Mascot}"
+                                 class="img-fluid"
+                                 style="max-height: 100px;"
+                                 onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
-
-        header.style.backgroundColor = program.PrimaryColor || '#000000';
-        header.style.color = program.SecondaryColor || '#FFFFFF';
-    }
+            `;
+        
+            header.style.backgroundColor = program.PrimaryColor || '#000000';
+            header.style.color = program.SecondaryColor || '#FFFFFF';
+        }
 
     function displayCurrentPage(data = programsData) {
         const tableBody = document.getElementById('programsTableBody');
