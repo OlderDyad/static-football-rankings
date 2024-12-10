@@ -1,21 +1,49 @@
 //=============================================================================
-// SECTION 1: IMPORTS
+// SECTION 1: IMPORTS AND CONFIG
 //=============================================================================
 import { DEBUG_LEVELS, log, checkLoginStatus, loadComments, submitComment } from '../main.js';
 import { teamConfig } from '../config/teamConfig.js';
 
-//=============================================================================
-// SECTION 2: PAGE INITIALIZATION AND CONFIGURATION
-//=============================================================================
 export function initializePage(pageConfig) {
-    // Constants and state
     const ITEMS_PER_PAGE = 100;
     let programsData = [];
     let currentPage = 1;
 
     //=============================================================================
-    // SECTION 3: LOADING AND STATE MANAGEMENT
+    // SECTION 2: DATA LOADING AND STATE MANAGEMENT
     //=============================================================================
+    async function initializeRankings() {
+        log(DEBUG_LEVELS.INFO, `Starting ${pageConfig.pageTitle} initialization`);
+        try {
+            updateLoadingState(true);
+            const response = await fetch(pageConfig.dataFile);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            programsData = data.programs;
+            
+            if (programsData.length > 0) {
+                // Update timestamp from metadata
+                const lastUpdated = document.getElementById('lastUpdated');
+                if (lastUpdated && data.metadata?.timestamp) {
+                    const date = new Date(data.metadata.timestamp);
+                    lastUpdated.textContent = date.toLocaleDateString('en-US');
+                }
+
+                await updateTeamHeader(data.topProgram);
+                setupPagination();
+                displayCurrentPage();
+                log(DEBUG_LEVELS.INFO, 'Rankings display complete');
+            }
+            
+            updateLoadingState(false);
+        } catch (error) {
+            log(DEBUG_LEVELS.ERROR, 'Rankings initialization failed', error);
+            updateLoadingState(false, error.message);
+        }
+    }
+
     function updateLoadingState(isLoading, errorMessage = '') {
         const header = document.querySelector('.team-header');
         if (!header) return;
@@ -38,71 +66,37 @@ export function initializePage(pageConfig) {
         }
     }
 
-    async function initializeRankings() {
-        log(DEBUG_LEVELS.INFO, `Starting ${pageConfig.pageTitle} initialization`);
-        try {
-            updateLoadingState(true);
-            const response = await fetch(pageConfig.dataFile);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            programsData = await response.json();
-            
-            if (programsData.length > 0) {
-                await updateTeamHeader(programsData[0]);
-                setupPagination();
-                displayCurrentPage();
-                log(DEBUG_LEVELS.INFO, 'Rankings display complete');
-            }
-            
-            updateLoadingState(false);
-        } catch (error) {
-            log(DEBUG_LEVELS.ERROR, 'Rankings initialization failed', error);
-            updateLoadingState(false, error.message);
-        }
-    }
-
     //=============================================================================
-    // SECTION 4: HEADER MANAGEMENT
+    // SECTION 3: UI UPDATES AND DISPLAY
     //=============================================================================
     function updateTeamHeader(program) {
-        log(DEBUG_LEVELS.DEBUG, 'Updating team header', { 
-            team: program.Team,
-            logoUrl: program.LogoURL,
-            schoolLogoUrl: program.School_Logo_URL
-        });
-    
+        log(DEBUG_LEVELS.DEBUG, 'Updating team header', { team: program.team });
         const header = document.querySelector('.team-header');
         if (!header) {
             log(DEBUG_LEVELS.ERROR, 'Team header element not found');
             return;
         }
-    
+
         const logoUrl = teamConfig.getTeamImagePath(program.LogoURL);
         const schoolLogoUrl = teamConfig.getTeamImagePath(program.School_Logo_URL);
-        
-        log(DEBUG_LEVELS.DEBUG, 'Constructed image paths', {
-            logoUrl,
-            schoolLogoUrl
-        });
-    
+
         header.innerHTML = `
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-3">
                         <img src="${logoUrl}"
-                             alt="${program.Team} Logo"
+                             alt="${program.team} Logo"
                              class="img-fluid"
                              style="max-height: 100px;"
                              onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
                     </div>
                     <div class="col-md-6 text-center">
-                        <h2>${program.Team}</h2>
-                        <p>${program.Mascot || ''}</p>
+                        <h2>${program.team}</h2>
+                        <p>${program.mascot || ''}</p>
                     </div>
                     <div class="col-md-3 text-right">
                         <img src="${schoolLogoUrl}"
-                             alt="${program.Mascot}"
+                             alt="${program.mascot}"
                              class="img-fluid"
                              style="max-height: 100px;"
                              onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
@@ -110,14 +104,11 @@ export function initializePage(pageConfig) {
                 </div>
             </div>
         `;
-    
+
         header.style.backgroundColor = program.PrimaryColor || '#000000';
         header.style.color = program.SecondaryColor || '#FFFFFF';
     }
 
-    //=============================================================================
-    // SECTION 5: TABLE AND PAGINATION
-    //=============================================================================
     function displayCurrentPage(data = programsData) {
         log(DEBUG_LEVELS.DEBUG, 'Displaying page', { 
             page: currentPage,
@@ -135,24 +126,42 @@ export function initializePage(pageConfig) {
         const currentData = data.slice(start, end);
 
         tableBody.innerHTML = '';
-        currentData.forEach(program => {
+        currentData.forEach((program, index) => {
+            const displayRank = start + index + 1;  // Calculate display rank
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${program.Rank}</td>
-                <td>${program.Team}</td>
-                <td>${program.AvgCombined.toFixed(3)}</td>
-                <td>${program.AvgMargin.toFixed(3)}</td>
-                <td>${program.AvgWinLoss.toFixed(3)}</td>
-                <td>${program.AvgOffense.toFixed(3)}</td>
-                <td>${program.AvgDefense.toFixed(3)}</td>
-                <td>${program.State}</td>
-                <td>${program.Seasons}</td>
+                <td>${displayRank}</td>
+                <td>${program.team}</td>
+                <td>${program.avgCombined}</td>
+                <td>${program.avgMargin}</td>
+                <td>${program.avgWinLoss}</td>
+                <td>${program.avgOffense}</td>
+                <td>${program.avgDefense}</td>
+                <td>${program.state}</td>
+                <td>${program.seasons}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm" data-team="${program.Team}">View Details</button>
+                    <button class="btn btn-primary btn-sm" data-team="${program.team}">View Details</button>
                 </td>
             `;
             tableBody.appendChild(row);
         });
+    }
+
+    //=============================================================================
+    // SECTION 4: EVENT HANDLERS
+    //=============================================================================
+    function handleSearch(event) {
+        const searchTerm = event.target.value.toLowerCase();
+        log(DEBUG_LEVELS.DEBUG, 'Processing search', { term: searchTerm });
+
+        const filteredPrograms = programsData.filter(program =>
+            program.team.toLowerCase().includes(searchTerm) ||
+            program.state.toLowerCase().includes(searchTerm)
+        );
+
+        currentPage = 1;
+        setupPagination(filteredPrograms);
+        displayCurrentPage(filteredPrograms);
     }
 
     function setupPagination(data = programsData) {
@@ -203,82 +212,33 @@ export function initializePage(pageConfig) {
     }
 
     //=============================================================================
-    // SECTION 6: SEARCH FUNCTIONALITY
-    //=============================================================================
-    function handleSearch(event) {
-        const searchTerm = event.target.value.toLowerCase();
-        log(DEBUG_LEVELS.DEBUG, 'Processing search', { term: searchTerm });
-
-        const filteredPrograms = programsData.filter(program =>
-            program.Team.toLowerCase().includes(searchTerm) ||
-            program.State.toLowerCase().includes(searchTerm)
-        );
-
-        currentPage = 1;
-        setupPagination(filteredPrograms);
-        displayCurrentPage(filteredPrograms);
-    }
-
-    //=============================================================================
-    // SECTION 7: PAGE INITIALIZATION
+    // SECTION 5: INITIALIZATION
     //=============================================================================
     async function initialize() {
-        log(DEBUG_LEVELS.DEBUG, 'Starting page initialization');
-        
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
             searchInput.addEventListener('input', handleSearch);
-            log(DEBUG_LEVELS.DEBUG, 'Search input initialized');
         }
-    
-        // Log DOM element presence
-        log(DEBUG_LEVELS.DEBUG, 'Checking DOM elements', {
-            commentForm: !!document.getElementById('commentForm'),
-            authContainer: !!document.getElementById('authContainer'),
-            submitButton: !!document.getElementById('submitComment'),
-            commentsList: !!document.getElementById('commentsList')
-        });
-    
+
         // Set up comment submit button listener
         const submitButton = document.getElementById('submitComment');
         if (submitButton) {
-            submitButton.addEventListener('click', () => {
-                log(DEBUG_LEVELS.DEBUG, 'Submit button clicked');
-                submitComment();
-            });
+            submitButton.addEventListener('click', submitComment);
             log(DEBUG_LEVELS.DEBUG, 'Comment submit button listener added');
-        } else {
-            log(DEBUG_LEVELS.ERROR, 'Comment submit button not found');
         }
-    
-        try {
-            // Auth and Comments after data load
-            log(DEBUG_LEVELS.DEBUG, 'Starting auth check');
-            const authResult = await checkLoginStatus();
-            log(DEBUG_LEVELS.DEBUG, 'Auth check complete', authResult);
-            
-            log(DEBUG_LEVELS.DEBUG, 'Starting rankings initialization');
-            await initializeRankings();
-            log(DEBUG_LEVELS.DEBUG, 'Rankings initialization complete');
-            
-            log(DEBUG_LEVELS.DEBUG, 'Starting to load comments');
-            await loadComments();
-            log(DEBUG_LEVELS.DEBUG, 'Comments loading complete');
-    
-        } catch (error) {
-            log(DEBUG_LEVELS.ERROR, 'Error during initialization:', error);
-        }
-    
+
+        // Auth and Comments after data load
+        await checkLoginStatus();
+        await initializeRankings();
+        await loadComments();
+
         log(DEBUG_LEVELS.INFO, 'Page initialization complete');
     }
 
-    //=============================================================================
-    // SECTION 8: EXPORTS
-    //=============================================================================
     return {
         initialize,
         handleSearch,
         updateTeamHeader,
         displayCurrentPage
     };
-} // End of initializePage function
+}

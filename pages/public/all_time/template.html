@@ -19,7 +19,7 @@
             class="w-100" />
    </div>
 
-   <!-- Team Header - Will be populated by JavaScript -->
+   <!-- Team Header -->
    <div class="team-header" id="teamHeader"></div>
 
    <!-- Main Content -->
@@ -30,12 +30,17 @@
            <input type="text" class="form-control" id="searchInput" placeholder="Search programs..." />
        </div>
 
+       <!-- Updated last updated timestamp -->
+       <div class="d-flex justify-content-end mb-3">
+           <small class="text-muted">Updated: <span id="lastUpdated"></span></small>
+       </div>
+
        <!-- Table Content -->
        <div class="table-responsive">
            <table class="table table-striped table-hover">
                <thead>
                    <tr>
-                       <th>Rank</th>
+                       <th>Rank</th>  <!-- Added Rank column -->
                        <th>Program</th>
                        <th>Combined</th>
                        <th>Margin</th>
