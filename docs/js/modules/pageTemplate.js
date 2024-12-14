@@ -1,5 +1,6 @@
 // js/programs/pageTemplate.js
-import { DEBUG_LEVELS, log } from '../main.js';
+
+import { DEBUG_LEVELS, log } from './logger.js'; // Correct
 import { teamConfig } from '../config/teamConfig.js';
 
 export function initializePage(pageConfig) {
