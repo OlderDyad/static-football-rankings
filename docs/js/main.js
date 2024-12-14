@@ -1,22 +1,25 @@
-﻿// ============= 1. CORE FUNCTIONALITY =============
+﻿// C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\js\main.js
+
+// ============= 1. CORE FUNCTIONALITY =============
+
+// Add at the top of the file
+import { teamConfig } from '../config/teamConfig.js';
+
+// Configuration
 const ITEMS_PER_PAGE = 100;
 let currentPage = 1;
 let programsData = [];
 const API_BASE_URL = 'https://static-football-rankings.vercel.app';
 
-// Add this to keep track of failed image loads
-const failedImages = new Set();
-
-// Debug messages
+// Debug settings
 const DEBUG = true;
-
 function debugLog(...args) {
     if (DEBUG) {
-        console.log(...args);
+        console.log('[DEBUG]', ...args);
     }
 }
 
-// Add this function at the top level to update the timestamp
+// Timestamp Update
 function updateTimestamp() {
     const today = new Date();
     const formattedDate = today.toLocaleDateString('en-US', {
@@ -24,50 +27,22 @@ function updateTimestamp() {
         day: '2-digit',
         year: 'numeric'
     });
-    document.getElementById('lastUpdated').textContent = formattedDate;
-}
-
-function cleanPath(path) {
-    if (!path) return '';
-    // Remove escaped forward slashes and any double slashes
-    return path.replace(/\\\//g, '/')
-              .replace(/\/\//g, '/');
-}
-
-function getImagePath(relativePath) {
-    if (!relativePath || failedImages.has(relativePath)) {
-        return 'images/placeholder-image.jpg';
-    }
-    
-    try {
-        let imagePath;
-        const cleanedPath = cleanPath(relativePath);
-        
-        // Always prefix with webv2 for consistent path structure
-        imagePath = `webv2/${cleanedPath}`;
-        
-        return imagePath;
-    } catch (error) {
-        console.warn(`Error processing image path: ${relativePath}`, error);
-        return 'images/placeholder-image.jpg';
+    const timestampElement = document.getElementById('lastUpdated');
+    if (timestampElement) {
+        timestampElement.textContent = formattedDate;
+    } else {
+        debugLog('Timestamp element not found');
     }
 }
 
-// Function to handle image errors
-function handleImageError(imgElement, originalSrc) {
-    // Add to failed images set
-    failedImages.add(originalSrc);
-
-    // Set placeholder and prevent further error callbacks
-    imgElement.src = 'images/placeholder-image.jpg';
-    imgElement.onerror = null;
-
-    // Optional: Log failed image loads during development
-    console.debug(`Image failed to load: ${originalSrc}`);
-}
-
+// Loading State Update
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
+    if (!header) {
+        debugLog('Team header element not found for loading state');
+        return;
+    }
+
     if (isLoading) {
         header.innerHTML = `
             <div class="container">
@@ -90,56 +65,146 @@ function updateLoadingState(isLoading, errorMessage = '') {
     }
 }
 
+// ============= 2. PROGRAM DATA HANDLING =============
+
+async function loadProgramData() {
+    debugLog('Loading program data...');
+    try {
+        const response = await fetch('data/all-time-programs-fifty.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        debugLog('Loaded JSON data:', data);
+        
+        if (!data || !data.programs) {
+            throw new Error('Invalid data format: Missing "programs" array');
+        }
+
+        programsData = data.programs;
+        debugLog(`Loaded ${programsData.length} programs`);
+
+        // Handle top program separately
+        if (data.topProgram) {
+            debugLog('Top program data:', data.topProgram);
+            updateTeamHeader(data.topProgram);
+        } else {
+            debugLog('No topProgram found in data');
+        }
+
+        return true;
+    } catch (error) {
+        console.error('Error loading program data:', error);
+        updateLoadingState(false, error.message);
+        return false;
+    }
+}
+
+// ============= 3. UI UPDATE FUNCTIONS =============
+
 function updateTeamHeader(program) {
+    debugLog('Updating team header with program:', program);
+
     const header = document.querySelector('.team-header');
+    if (!header) {
+        console.error('Team header element not found');
+        return;
+    }
+
+    const logoImgSrc = program.LogoURL 
+        ? teamConfig.getTeamImagePath(program.LogoURL)
+        : teamConfig.defaultLogo;
+
+    const schoolLogoImgSrc = program.School_Logo_URL 
+        ? teamConfig.getTeamImagePath(program.School_Logo_URL)
+        : teamConfig.defaultLogo;
+
     const headerContent = `
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3">
-                    <img src="${getImagePath(program.LogoURL)}" 
-                         alt="${program.Team} Logo" 
+                    <img src="${logoImgSrc}" 
+                         alt="${program.team} Logo" 
                          class="img-fluid team-logo" 
                          style="max-height: 100px;" 
-                         onerror="handleImageError(this, '${program.LogoURL}')" />
+                         onerror="this.src='${teamConfig.defaultLogo}'" />
                 </div>
                 <div class="col-md-6 text-center">
-                    <h2 class="team-name">${program.Team}</h2>
-                    <p class="team-mascot">${program.Mascot || ''}</p>
+                    <h2 class="team-name">${program.team}</h2>
+                    <p class="team-mascot">${program.mascot || ''}</p>
                     <div class="team-stats">
-                        <small>Seasons: ${program.Seasons} | Combined Rating: ${program.AvgCombined.toFixed(3)}</small>
+                        <small>Seasons: ${program.seasons} | Combined Rating: ${typeof program.avgCombined === 'number' ? program.avgCombined.toFixed(3) : program.avgCombined}</small>
                     </div>
                 </div>
                 <div class="col-md-3 text-right">
-                    <img src="${getImagePath(program.School_Logo_URL)}" 
-                         alt="${program.Team} School Logo" 
+                    <img src="${schoolLogoImgSrc}" 
+                         alt="${program.team} School Logo" 
                          class="img-fluid school-logo" 
                          style="max-height: 100px;"
-                         onerror="handleImageError(this, '${program.School_Logo_URL}')" />
+                         onerror="this.src='${teamConfig.defaultLogo}'" />
                 </div>
             </div>
         </div>
     `;
-    
+
     header.innerHTML = headerContent;
-    header.style.backgroundColor = program.PrimaryColor || '#000000';
-    header.style.color = program.SecondaryColor || '#FFFFFF';
+    header.style.backgroundColor = program.backgroundColor || '#000000';
+    header.style.color = program.textColor || '#FFFFFF';
+
+    // Debug log
+    debugLog('Header updated with:', {
+        logoUrl: program.LogoURL,
+        schoolLogoUrl: program.School_Logo_URL,
+        backgroundColor: program.backgroundColor,
+        textColor: program.textColor
+    });
 }
 
-function handleSearch(event) {
-    const searchTerm = event.target.value.toLowerCase();
-    const filteredPrograms = programsData.filter(program => 
-        program.Team.toLowerCase().includes(searchTerm) ||
-        program.State.toLowerCase().includes(searchTerm)
-    );
+function displayCurrentPage(data = programsData) {
+    const tableBody = document.getElementById('programsTableBody');
+    if (!tableBody) {
+        console.error('Programs table body element not found');
+        return;
+    }
+
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const currentData = data.slice(start, end);
     
-    currentPage = 1;
-    setupPagination(filteredPrograms);
-    displayCurrentPage(filteredPrograms);
+    tableBody.innerHTML = '';
+    
+    currentData.forEach(program => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${program.rank}</td>
+            <td>${program.team}</td>
+            <td>${typeof program.avgCombined === 'number' ? program.avgCombined.toFixed(3) : program.avgCombined}</td>
+            <td>${typeof program.avgMargin === 'number' ? program.avgMargin.toFixed(3) : program.avgMargin}</td>
+            <td>${typeof program.avgWinLoss === 'number' ? program.avgWinLoss.toFixed(3) : program.avgWinLoss}</td>
+            <td>${typeof program.avgOffense === 'number' ? program.avgOffense.toFixed(3) : program.avgOffense}</td>
+            <td>${typeof program.avgDefense === 'number' ? program.avgDefense.toFixed(3) : program.avgDefense}</td>
+            <td>${program.state}</td>
+            <td>${program.seasons}</td>
+            <td>
+                <a href="/program/${encodeURIComponent(program.team)}" 
+                   class="btn btn-primary btn-sm">View Details</a>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
 }
+
+// setupPagination function
 
 function setupPagination(data = programsData) {
     const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
     const paginationElement = document.getElementById('pagination');
+    
+    if (!paginationElement) {
+        console.error('Pagination element not found');
+        return;
+    }
+    
     paginationElement.innerHTML = '';
     
     for (let i = 1; i <= totalPages; i++) {
@@ -160,38 +225,20 @@ function setupPagination(data = programsData) {
     }
 }
 
-function displayCurrentPage(data = programsData) {
-    const tableBody = document.getElementById('programsTableBody');
-    const start = (currentPage - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const currentData = data.slice(start, end);
+function handleSearch(event) {
+    const searchTerm = event.target.value.toLowerCase();
+    const filteredPrograms = programsData.filter(program => 
+        program.team.toLowerCase().includes(searchTerm) ||
+        program.state.toLowerCase().includes(searchTerm)
+    );
     
-    tableBody.innerHTML = '';
-    
-    currentData.forEach(program => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${program.Rank}</td>
-            <td>${program.Team}</td>
-            <td>${program.AvgCombined.toFixed(3)}</td>
-            <td>${program.AvgMargin.toFixed(3)}</td>
-            <td>${program.AvgWinLoss.toFixed(3)}</td>
-            <td>${program.AvgOffense.toFixed(3)}</td>
-            <td>${program.AvgDefense.toFixed(3)}</td>
-            <td>${program.State}</td>
-            <td>${program.Seasons}</td>
-            <td>
-                <a href="/program/${encodeURIComponent(program.Team)}" 
-                   class="btn btn-primary btn-sm">View Details</a>
-            </td>
-        `;
-        tableBody.appendChild(row);
-    });
+    currentPage = 1;
+    setupPagination(filteredPrograms);
+    displayCurrentPage(filteredPrograms);
 }
 
-// Comments Handling Functions
-// In the loadComments function
-// Find this function in main.js and replace it
+// ============= 4. COMMENTS HANDLING =============
+
 async function loadComments() {
     try {
         console.log('Loading comments...');
@@ -304,40 +351,51 @@ async function submitComment() {
     }
 }
 
-// ============= 3. INITIALIZATION =============
+// ============= 5. INITIALIZATION =============
+
 async function initializeApp() {
+    debugLog('Initializing app...');
+    
     try {
-        debugLog('Initializing app...');
+        // Show loading state
         updateLoadingState(true);
-        const response = await fetch('data/all-time-programs-fifty.json');
-        programsData = await response.json();
         
-        if (programsData.length > 0) {
-            await updateTeamHeader(programsData[0]);
+        // Load and process program data
+        const dataLoaded = await loadProgramData();
+        if (!dataLoaded) {
+            throw new Error('Failed to load program data');
         }
         
+        // Setup UI components
         setupPagination();
         displayCurrentPage();
-        updateLoadingState(false);
         updateTimestamp();
-
-        // Set up event listeners
-        document.getElementById('searchInput').addEventListener('input', handleSearch);
         
-        // Add more detailed logging for comments
-        debugLog('Setting up comment functionality...');
+        // Add event listeners
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', handleSearch);
+        } else {
+            debugLog('Search input element not found');
+        }
+        
+        // Set up comment submission
         const submitButton = document.getElementById('submitComment');
-        debugLog('Submit button found:', !!submitButton);
-        const commentText = document.getElementById('commentText');
-        debugLog('Comment text area found:', !!commentText);
-        const commentEmail = document.getElementById('commentEmail');
-        debugLog('Comment email input found:', !!commentEmail);
-
         if (submitButton) {
             submitButton.addEventListener('click', submitComment);
             debugLog('Comment submit listener added');
+        } else {
+            debugLog('Submit comment button not found');
         }
+        
+        // Load comments
         loadComments();
+        
+        // Hide loading state
+        updateLoadingState(false);
+        
+        debugLog('App initialization complete');
+        
     } catch (error) {
         console.error('Error initializing app:', error);
         updateLoadingState(false, error.message);
