@@ -103,7 +103,7 @@ async function loadProgramData() {
 // ============= 3. UI UPDATE FUNCTIONS =============
 
 function updateTeamHeader(program) {
-    debugLog('Updating team header with program:', program);
+    debugLog('Updating team header with full program data:', program);
 
     const header = document.querySelector('.team-header');
     if (!header) {
@@ -111,23 +111,29 @@ function updateTeamHeader(program) {
         return;
     }
 
-    const logoImgSrc = program.LogoURL 
-        ? teamConfig.getTeamImagePath(program.LogoURL)
-        : teamConfig.defaultLogo;
+    // Debug teamConfig
+    debugLog('teamConfig available:', !!teamConfig);
+    debugLog('teamConfig methods:', {
+        getTeamImagePath: typeof teamConfig?.getTeamImagePath,
+        defaultLogo: teamConfig?.defaultLogo
+    });
 
-    const schoolLogoImgSrc = program.School_Logo_URL 
-        ? teamConfig.getTeamImagePath(program.School_Logo_URL)
-        : teamConfig.defaultLogo;
+    // Debug image URLs before processing
+    debugLog('Original URLs:', {
+        LogoURL: program.LogoURL,
+        School_Logo_URL: program.School_Logo_URL
+    });
 
+    // Since we know these URLs are complete, let's use them directly
     const headerContent = `
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3">
-                    <img src="${logoImgSrc}" 
+                    <img src="${program.LogoURL || '/static-football-rankings/docs/images/placeholder-image.jpg'}" 
                          alt="${program.team} Logo" 
                          class="img-fluid team-logo" 
                          style="max-height: 100px;" 
-                         onerror="this.src='${teamConfig.defaultLogo}'" />
+                         onerror="this.src='/static-football-rankings/docs/images/placeholder-image.jpg'" />
                 </div>
                 <div class="col-md-6 text-center">
                     <h2 class="team-name">${program.team}</h2>
@@ -137,11 +143,11 @@ function updateTeamHeader(program) {
                     </div>
                 </div>
                 <div class="col-md-3 text-right">
-                    <img src="${schoolLogoImgSrc}" 
+                    <img src="${program.School_Logo_URL || '/static-football-rankings/docs/images/placeholder-image.jpg'}" 
                          alt="${program.team} School Logo" 
                          class="img-fluid school-logo" 
                          style="max-height: 100px;"
-                         onerror="this.src='${teamConfig.defaultLogo}'" />
+                         onerror="this.src='/static-football-rankings/docs/images/placeholder-image.jpg'" />
                 </div>
             </div>
         </div>
@@ -151,13 +157,7 @@ function updateTeamHeader(program) {
     header.style.backgroundColor = program.backgroundColor || '#000000';
     header.style.color = program.textColor || '#FFFFFF';
 
-    // Debug log
-    debugLog('Header updated with:', {
-        logoUrl: program.LogoURL,
-        schoolLogoUrl: program.School_Logo_URL,
-        backgroundColor: program.backgroundColor,
-        textColor: program.textColor
-    });
+    debugLog('Header updated with content');
 }
 
 function displayCurrentPage(data = programsData) {
