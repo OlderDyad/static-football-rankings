@@ -10,8 +10,8 @@ export const teamConfig = {
     repoBase: REPO_BASE,
     imageRepoBase: `${GITHUB_PAGES_BASE}/${IMAGES_REPO}`,
     
-    // Image paths
-    imagePath: `${GITHUB_PAGES_BASE}/${IMAGES_REPO}/images/teams`,
+    // Image paths - updated to match case
+    imagePath: `${GITHUB_PAGES_BASE}/${IMAGES_REPO}/images/Teams`,
     defaultLogo: `${REPO_BASE}/docs/images/placeholder-image.jpg`,
     
     /**
@@ -22,7 +22,10 @@ export const teamConfig = {
      * @returns {string} Complete URL to the image
      */
     getTeamImagePath: (state, teamName, imageFile) => {
-        if (!imageFile) return teamConfig.defaultLogo;
+        if (!imageFile) {
+            console.log('No image file provided');
+            return teamConfig.defaultLogo;
+        }
         
         // Clean up state (remove parentheses)
         const cleanState = state.replace(/[()]/g, '');
@@ -30,14 +33,20 @@ export const teamConfig = {
         // Clean up team name (remove state suffix if present)
         const cleanTeamName = teamName.replace(/\s+\([A-Z]{2}\)$/, '');
         
+        // If imageFile is already a full URL, return it
+        if (imageFile.startsWith('https://')) {
+            return imageFile;
+        }
+        
         // Clean up image file path (remove any existing path prefixes)
         const cleanImageFile = imageFile
-            .replace(/^.*images\/Teams\//i, '') // Remove any path prefix up to images/Teams/
-            .replace(/^.*Teams\//i, '')         // Remove any path prefix up to Teams/
-            .replace(/^\//, '');                // Remove leading slash if present
+            .replace(/^.*images\/Teams\//i, '') // Updated case for Teams
+            .replace(/^.*Teams\//i, '')
+            .replace(/^\//, '');
         
         // Construct the full URL
-        return `${teamConfig.imagePath}/${cleanState}/${cleanTeamName}/${cleanImageFile}`;
+        const fullUrl = `${teamConfig.imagePath}/${cleanState}/${cleanTeamName}/${cleanImageFile}`;
+        return fullUrl;
     },
     
     /**
@@ -49,8 +58,8 @@ export const teamConfig = {
         if (!url) return false;
         
         // Check if URL matches either the GitHub Pages pattern or the local pattern
-        const githubPagesPattern = new RegExp(`^${GITHUB_PAGES_BASE}/${IMAGES_REPO}/images/teams/[A-Z]{2}/[^/]+/[^/]+$`);
-        const localPattern = new RegExp(`^${REPO_BASE}/docs/images/teams/[A-Z]{2}/[^/]+/[^/]+$`);
+        const githubPagesPattern = new RegExp(`^${GITHUB_PAGES_BASE}/${IMAGES_REPO}/images/Teams/[A-Z]{2}/[^/]+/[^/]+$`);
+        const localPattern = new RegExp(`^${REPO_BASE}/docs/images/Teams/[A-Z]{2}/[^/]+/[^/]+$`);
         
         return githubPagesPattern.test(url) || localPattern.test(url);
     },
@@ -64,8 +73,8 @@ export const teamConfig = {
         if (!url) return null;
         
         // Try to match either GitHub Pages or local pattern
-        const githubPattern = new RegExp(`${GITHUB_PAGES_BASE}/${IMAGES_REPO}/images/teams/([A-Z]{2})/([^/]+)/`);
-        const localPattern = new RegExp(`${REPO_BASE}/docs/images/teams/([A-Z]{2})/([^/]+)/`);
+        const githubPattern = new RegExp(`${GITHUB_PAGES_BASE}/${IMAGES_REPO}/images/Teams/([A-Z]{2})/([^/]+)/`);
+        const localPattern = new RegExp(`${REPO_BASE}/docs/images/Teams/([A-Z]{2})/([^/]+)/`);
         
         const match = url.match(githubPattern) || url.match(localPattern);
         
