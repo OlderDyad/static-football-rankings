@@ -8,7 +8,7 @@ import { DEBUG_LEVELS, log } from './modules/logger.js'; // Import logging funct
 // Main initialization function
 async function initializeApp() {
     try {
-        log(DEBUG_LEVELS.INFO, 'Initializing app...');
+        log(DEBUG_LEVELS.INFO, `Initializing ${window.location.pathname}...`); // Log the current page
 
         // Get page configuration from HTML
         const h1Element = document.querySelector('h1[data-page-name]');
@@ -17,7 +17,7 @@ async function initializeApp() {
         }
 
         const pageName = h1Element.dataset.pageName;
-        const threshold = pageName.match(/(\d+)\+/)?.[1] || '50'; // Extract threshold from pageName
+        const threshold = pageName.match(/(\d+)\+/)?.[1] || '50';
 
         const pageConfig = {
             pageTitle: `Top High School Football Programs (${threshold}+ seasons)`,
@@ -32,12 +32,11 @@ async function initializeApp() {
 
     } catch (error) {
         log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
-        // Update loading state with error message (assuming updateLoadingState is defined elsewhere)
-        updateLoadingState(false, error.message); 
+        updateLoadingState(false, error.message);
     }
 }
 
-// Update loading state
+// Update loading state (modified to clear loading state on success)
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
     if (!header) return;
@@ -58,8 +57,7 @@ function updateLoadingState(isLoading, errorMessage = '') {
                 <div class="alert alert-danger">${errorMessage}</div>
             </div>`;
     } else {
-        // Clear the loading state (optional)
-        header.innerHTML = ''; 
+        header.innerHTML = ''; // Clear loading state on success
     }
 }
 

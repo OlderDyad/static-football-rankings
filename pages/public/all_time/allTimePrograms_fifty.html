@@ -1,111 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Top High School Football Programs (50+ seasons)</title>
-   
-   <!-- Bootstrap CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-   
-   <!-- Custom CSS -->
-   <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top High School Football Programs (50+ seasons)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
 </head>
 <body>
-   <!-- Top Banner Image -->
-   <div class="header-banner">
-       <img src="/static-football-rankings/docs/images/football-field-top.jpg" 
-            alt="Football Field Header" 
-            class="w-100" />
-   </div>
+    <div class="header-banner">
+        <img src="/static-football-rankings/docs/images/football-field-top.jpg" 
+             alt="Football Field Header" 
+             class="w-100" />
+    </div>
 
-   <!-- Team Header - Will be populated by JavaScript -->
-   <div class="team-header" id="teamHeader"></div>
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/static-football-rankings/index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">50+ Seasons Programs</li>
+            </ol>
+        </nav>
+    </div>
 
-   <!-- Main Content -->
-   <div class="container mt-4">
-       <h1 data-page-name="all-time-programs-fifty">Top High School Football Programs (50+ seasons)</h1>
-       
-       <div class="form-group mb-4">
-           <input type="text" class="form-control" id="searchInput" placeholder="Search programs..." />
-       </div>
+    <!-- Notice the data-page-name attribute -->
+    <h1 data-page-name="50+ seasons">Top High School Football Programs (50+ seasons)</h1>
 
-       <!-- Table Content -->
-       <div class="table-responsive">
-           <table class="table table-striped table-hover">
-               <thead>
-                   <tr>
-                       <th>Rank</th>
-                       <th>Program</th>
-                       <th>Combined</th>
-                       <th>Margin</th>
-                       <th>Win-Loss</th>
-                       <th>Offense</th>
-                       <th>Defense</th>
-                       <th>State</th>
-                       <th>Seasons</th>
-                       <th>Details</th>
-                   </tr>
-               </thead>
-               <tbody id="programsTableBody">
-                   <!-- Data will be populated by JavaScript -->
-               </tbody>
-           </table>
-       </div>
+    <div class="team-header"></div>
 
-       <!-- Comments Section -->
-       <div class="comments-section mt-5">
-           <h3>Comments</h3>
-           
-           <!-- Authentication Container -->
-           <div id="authContainer" class="mb-3">
-               <!-- Auth UI will be populated by JavaScript -->
-           </div>
+    <div class="container mt-4">
+        <div class="form-group mb-4">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search programs..." />
+        </div>
 
-           <!-- Comment Form -->
-           <div id="commentForm" class="mb-4" style="display: none">
-               <div class="card">
-                   <div class="card-body">
-                       <textarea id="commentText" 
-                                class="form-control mb-2" 
-                                rows="3" 
-                                placeholder="Share your thoughts..."></textarea>
-                       <div class="d-flex justify-content-between align-items-center">
-                           <button id="submitComment" class="btn btn-primary">
-                               Post Comment
-                           </button>
-                           <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           
-           <!-- Comments Display -->
-           <div id="commentsList">
-               <!-- Comments will be populated by JavaScript -->
-           </div>
-       </div>
+        <div class="d-flex justify-content-end mb-3">
+            <small class="text-muted">Updated: <span id="lastUpdated"></span></small>
+        </div>
 
-       <!-- Footer -->
-       <footer class="mt-5 mb-3">
-           <div class="text-center">
-               <p>© 2024 McKnight's Football Rankings</p>
-           </div>
-       </footer>
-   </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Program</th>
+                        <th>Combined</th>
+                        <th>Margin</th>
+                        <th>Win-Loss</th>
+                        <th>Offense</th>
+                        <th>Defense</th>
+                        <th>State</th>
+                        <th>Seasons</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody id="programsTableBody"></tbody>
+            </table>
+        </div>
 
-   <!-- Bottom Banner Image -->
-   <div class="footer-banner mt-4">
-       <img src="/static-football-rankings/docs/images/football-field-top.jpg" 
-            alt="Football Field Footer" 
-            class="w-100" />
-   </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
 
-   <!-- Bootstrap Bundle with Popper -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-   
-   <!-- Module Scripts -->
-   <script type="module" src="/static-football-rankings/js/main.js"></script>
-   <script type="module" src="/static-football-rankings/js/programs/fifty.js"></script>
+        <!-- Comments Section -->
+        <div class="comments-section mt-5">
+            <h3>Comments</h3>
+            <div id="commentsList"></div>
+            <div id="commentForm" class="mt-4">
+                <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea>
+                <button id="submitComment" class="btn btn-primary">Post Comment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Notice the correct module path -->
+    <script type="module" src="/static-football-rankings/docs/js/main.js"></script>
 </body>
 </html>
