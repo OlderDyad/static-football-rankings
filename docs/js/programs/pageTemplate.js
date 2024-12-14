@@ -43,45 +43,57 @@ export function initializePage(pageConfig) {
        }
    }
 
-   function updateTeamHeader(program) {
-    log(DEBUG_LEVELS.DEBUG, 'Updating team header', { team: program.team });
+   // Function to be used in both main.js and pageTemplate.js
+function updateTeamHeader(program) {
+    log(DEBUG_LEVELS.DEBUG, 'Updating team header', { 
+        team: program.team,
+        logoUrl: program.LogoURL,
+        schoolLogoUrl: program.School_Logo_URL
+    });
+
     const header = document.querySelector('.team-header');
     if (!header) {
         log(DEBUG_LEVELS.ERROR, 'Team header element not found');
         return;
     }
 
-    // Use the actual image paths from the program data
-    const logoUrl = program.LogoURL;  // This would come from WebV2
-    const schoolLogoUrl = program.School_Logo_URL;  // This would come from WebV2
-
-    header.innerHTML = `
+    const headerContent = `
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3">
-                    <img src="${logoUrl}"
-                         alt="${program.Team} Logo"
-                         class="img-fluid"
+                    <img src="${program.LogoURL || '/static-football-rankings/docs/images/placeholder-image.jpg'}"
+                         alt="${program.team} Logo"
+                         class="img-fluid team-logo"
                          style="max-height: 100px;"
-                         onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
+                         onerror="this.src='/static-football-rankings/docs/images/placeholder-image.jpg'"
+                         onload="console.log('Logo loaded successfully:', this.src)"
+                         onerror="console.log('Logo failed to load:', this.src)" />
                 </div>
                 <div class="col-md-6 text-center">
-                    <h2>${program.Team}</h2>
-                    <p>${program.Mascot || ''}</p>
+                    <h2 class="team-name">${program.team}</h2>
+                    <p class="team-mascot">${program.mascot || ''}</p>
+                    <div class="team-stats">
+                        <small>Seasons: ${program.seasons} | Combined Rating: ${typeof program.avgCombined === 'number' ? program.avgCombined.toFixed(3) : program.avgCombined}</small>
+                    </div>
                 </div>
                 <div class="col-md-3 text-right">
-                    <img src="${schoolLogoUrl}"
-                         alt="${program.Mascot}"
-                         class="img-fluid"
+                    <img src="${program.School_Logo_URL || '/static-football-rankings/docs/images/placeholder-image.jpg'}"
+                         alt="${program.team} School Logo"
+                         class="img-fluid school-logo"
                          style="max-height: 100px;"
-                         onerror="this.onerror=null; this.src='${teamConfig.defaultLogo}';" />
+                         onerror="this.src='/static-football-rankings/docs/images/placeholder-image.jpg'"
+                         onload="console.log('School logo loaded successfully:', this.src)"
+                         onerror="console.log('School logo failed to load:', this.src)" />
                 </div>
             </div>
         </div>
     `;
 
-    header.style.backgroundColor = program.PrimaryColor || '#000000';
-    header.style.color = program.SecondaryColor || '#FFFFFF';
+    header.innerHTML = headerContent;
+    header.style.backgroundColor = program.backgroundColor || '#000000';
+    header.style.color = program.textColor || '#FFFFFF';
+
+    log(DEBUG_LEVELS.DEBUG, 'Header update complete');
 }
 
    // ... rest of the functions (displayCurrentPage, handleSearch, etc.) ...

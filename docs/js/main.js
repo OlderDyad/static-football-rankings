@@ -102,38 +102,31 @@ async function loadProgramData() {
 
 // ============= 3. UI UPDATE FUNCTIONS =============
 
+// Function to be used in both main.js and pageTemplate.js
 function updateTeamHeader(program) {
-    debugLog('Updating team header with full program data:', program);
+    log(DEBUG_LEVELS.DEBUG, 'Updating team header', { 
+        team: program.team,
+        logoUrl: program.LogoURL,
+        schoolLogoUrl: program.School_Logo_URL
+    });
 
     const header = document.querySelector('.team-header');
     if (!header) {
-        console.error('Team header element not found');
+        log(DEBUG_LEVELS.ERROR, 'Team header element not found');
         return;
     }
 
-    // Debug teamConfig
-    debugLog('teamConfig available:', !!teamConfig);
-    debugLog('teamConfig methods:', {
-        getTeamImagePath: typeof teamConfig?.getTeamImagePath,
-        defaultLogo: teamConfig?.defaultLogo
-    });
-
-    // Debug image URLs before processing
-    debugLog('Original URLs:', {
-        LogoURL: program.LogoURL,
-        School_Logo_URL: program.School_Logo_URL
-    });
-
-    // Since we know these URLs are complete, let's use them directly
     const headerContent = `
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3">
-                    <img src="${program.LogoURL || '/static-football-rankings/docs/images/placeholder-image.jpg'}" 
-                         alt="${program.team} Logo" 
-                         class="img-fluid team-logo" 
-                         style="max-height: 100px;" 
-                         onerror="this.src='/static-football-rankings/docs/images/placeholder-image.jpg'" />
+                    <img src="${program.LogoURL || '/static-football-rankings/docs/images/placeholder-image.jpg'}"
+                         alt="${program.team} Logo"
+                         class="img-fluid team-logo"
+                         style="max-height: 100px;"
+                         onerror="this.src='/static-football-rankings/docs/images/placeholder-image.jpg'"
+                         onload="console.log('Logo loaded successfully:', this.src)"
+                         onerror="console.log('Logo failed to load:', this.src)" />
                 </div>
                 <div class="col-md-6 text-center">
                     <h2 class="team-name">${program.team}</h2>
@@ -143,11 +136,13 @@ function updateTeamHeader(program) {
                     </div>
                 </div>
                 <div class="col-md-3 text-right">
-                    <img src="${program.School_Logo_URL || '/static-football-rankings/docs/images/placeholder-image.jpg'}" 
-                         alt="${program.team} School Logo" 
-                         class="img-fluid school-logo" 
+                    <img src="${program.School_Logo_URL || '/static-football-rankings/docs/images/placeholder-image.jpg'}"
+                         alt="${program.team} School Logo"
+                         class="img-fluid school-logo"
                          style="max-height: 100px;"
-                         onerror="this.src='/static-football-rankings/docs/images/placeholder-image.jpg'" />
+                         onerror="this.src='/static-football-rankings/docs/images/placeholder-image.jpg'"
+                         onload="console.log('School logo loaded successfully:', this.src)"
+                         onerror="console.log('School logo failed to load:', this.src)" />
                 </div>
             </div>
         </div>
@@ -157,8 +152,10 @@ function updateTeamHeader(program) {
     header.style.backgroundColor = program.backgroundColor || '#000000';
     header.style.color = program.textColor || '#FFFFFF';
 
-    debugLog('Header updated with content');
+    log(DEBUG_LEVELS.DEBUG, 'Header update complete');
 }
+
+//function displayCurrentPage
 
 function displayCurrentPage(data = programsData) {
     const tableBody = document.getElementById('programsTableBody');
