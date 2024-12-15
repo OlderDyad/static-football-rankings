@@ -7,6 +7,7 @@ import { teamConfig } from './config/teamConfig.js';
 import { checkAuthStatus, updateAuthUI } from './modules/auth.js';
 import { CommentManager } from './modules/comments.js';
 import { formatDate, debounce, escapeHTML } from './modules/utils.js';
+import { config } from './config/config.js';
 
 // Main initialization function
 async function initializeApp() {
@@ -24,7 +25,7 @@ async function initializeApp() {
 
         const pageConfig = {
             pageTitle: `Top High School Football Programs (${threshold}+ seasons)`,
-            dataFile: `/data/all-time-programs-${threshold}.json`  // Remove static-football-rankings prefix
+            dataFile: config.getPath('data', `all-time-programs-${threshold}.json`)
         };
 
         log(DEBUG_LEVELS.INFO, 'Page config:', pageConfig);
