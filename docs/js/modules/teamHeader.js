@@ -1,10 +1,11 @@
 // C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\js\programs\common\teamHeader.js
 
-import teamConfig from '../config/teamConfig.js';
+// docs/js/modules/teamHeader.js
+import { teamConfig } from '../config/teamConfig.js';
+import { DEBUG_LEVELS, log } from './logger.js';
 
 export function createTeamHeader(program) {
-    // Log the entire program object
-    console.log('createTeamHeader received program:', {
+    log(DEBUG_LEVELS.DEBUG, 'createTeamHeader received program:', {
         fullObject: program,
         team: program.team,
         LogoURL: program.LogoURL,
@@ -25,41 +26,37 @@ export function createTeamHeader(program) {
         schoolLogoPath: program.School_Logo_URL // Direct URL from JSON
     };
 
-    // Log the processed details
-    console.log('Processed teamDetails:', teamDetails);
+    log(DEBUG_LEVELS.DEBUG, 'Processed teamDetails:', teamDetails);
 
     // Get image URLs
     const logoUrl = teamDetails.logoPath || teamConfig.defaultLogo;
     const schoolLogoUrl = teamDetails.schoolLogoPath || teamConfig.defaultLogo;
 
-    console.log('Final image URLs:', { logoUrl, schoolLogoUrl });
+    log(DEBUG_LEVELS.DEBUG, 'Final image URLs:', { logoUrl, schoolLogoUrl });
 
-    const headerHtml = `
-        <div class="team-header" style="background-color: ${teamDetails.primaryColor}; color: ${teamDetails.secondaryColor};">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-3">
-                        <img src="${logoUrl}"
-                             alt="${teamDetails.teamName} Logo"
-                             class="img-fluid"
-                             style="max-height: 100px;"
-                             onerror="this.src='${teamConfig.defaultLogo}'" />
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <h2>${teamDetails.teamName}</h2>
-                        <p>${teamDetails.mascot}</p>
-                    </div>
-                    <div class="col-md-3 text-right">
-                        <img src="${schoolLogoUrl}"
-                             alt="${teamDetails.mascot}"
-                             class="img-fluid"
-                             style="max-height: 100px;"
-                             onerror="this.src='${teamConfig.defaultLogo}'" />
-                    </div>
+    // Changed to return inner content only, since container exists in HTML
+    return `
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <img src="${logoUrl}"
+                         alt="${teamDetails.teamName} Logo"
+                         class="img-fluid"
+                         style="max-height: 100px;"
+                         onerror="this.src='${teamConfig.defaultLogo}'" />
+                </div>
+                <div class="col-md-6 text-center">
+                    <h2>${teamDetails.teamName}</h2>
+                    <p>${teamDetails.mascot}</p>
+                </div>
+                <div class="col-md-3 text-right">
+                    <img src="${schoolLogoUrl}"
+                         alt="${teamDetails.mascot}"
+                         class="img-fluid"
+                         style="max-height: 100px;"
+                         onerror="this.src='${teamConfig.defaultLogo}'" />
                 </div>
             </div>
         </div>
     `;
-
-    return headerHtml;
 }

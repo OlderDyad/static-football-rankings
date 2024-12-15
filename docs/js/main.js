@@ -1,14 +1,17 @@
 // docs/js/main.js
 
+import { DEBUG_LEVELS, log } from './modules/logger.js';
 import { initializePage } from './modules/pageTemplate.js';
 import { createTeamHeader } from './modules/teamHeader.js';
 import { teamConfig } from './config/teamConfig.js';
-import { DEBUG_LEVELS, log } from './modules/logger.js'; // Import logging functions
+import { checkAuthStatus, updateAuthUI } from './modules/auth.js';
+import { CommentManager } from './modules/comments.js';
+import { formatDate, debounce, escapeHTML } from './modules/utils.js';
 
 // Main initialization function
 async function initializeApp() {
     try {
-        log(DEBUG_LEVELS.INFO, `Initializing ${window.location.pathname}...`); // Log the current page
+        log(DEBUG_LEVELS.INFO, 'Initializing app...');
 
         // Get page configuration from HTML
         const h1Element = document.querySelector('h1[data-page-name]');
@@ -21,7 +24,7 @@ async function initializeApp() {
 
         const pageConfig = {
             pageTitle: `Top High School Football Programs (${threshold}+ seasons)`,
-            dataFile: `/static-football-rankings/data/all-time-programs-${threshold}.json`
+            dataFile: `/data/all-time-programs-${threshold}.json`  // Remove static-football-rankings prefix
         };
 
         log(DEBUG_LEVELS.INFO, 'Page config:', pageConfig);
@@ -30,13 +33,22 @@ async function initializeApp() {
         const page = initializePage(pageConfig);
         await page.initialize();
 
+        // Initialize auth
+        await checkAuthStatus();
+
+        // Set up comment submission
+        const submitButton = document.getElementById('submitComment');
+        if (submitButton) {
+            submitButton.addEventListener('click', submitComment);
+        }
+
     } catch (error) {
         log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
         updateLoadingState(false, error.message);
     }
 }
 
-// Update loading state (modified to clear loading state on success)
+// Loading state management
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
     if (!header) return;
@@ -56,28 +68,30 @@ function updateLoadingState(isLoading, errorMessage = '') {
             <div class="container">
                 <div class="alert alert-danger">${errorMessage}</div>
             </div>`;
-    } else {
-        header.innerHTML = ''; // Clear loading state on success
     }
 }
 
-// Auth status check
-export async function checkLoginStatus() {
-    try {
-        log(DEBUG_LEVELS.INFO, 'Starting login status check');
-        const response = await fetch('/api/auth/status', {
-            credentials: 'include'
-        });
+// loadProgramData
 
+async function loadProgramData(dataFile) {
+    log(DEBUG_LEVELS.INFO, 'Loading program data from', dataFile);
+    try {
+        const response = await fetch(dataFile);
         if (!response.ok) {
+            log(DEBUG_LEVELS.ERROR, `Failed to load data: ${response.status} ${response.statusText}`);
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-
         const data = await response.json();
-        return data.isLoggedIn;
+
+        if (!data || !data.programs) {
+            log(DEBUG_LEVELS.ERROR, 'Invalid data format:', data);
+            throw new Error('Invalid data format: Missing "programs" array');
+        }
+
+        return data.programs;
     } catch (error) {
-        log(DEBUG_LEVELS.ERROR, 'Login status check failed:', error);
-        return false;
+        log(DEBUG_LEVELS.ERROR, 'Error loading program data:', error);
+        return [];  // Return empty array instead of undefined
     }
 }
 
@@ -111,15 +125,48 @@ function displayComments(comments) {
     commentsList.innerHTML = comments.map(comment => `
         <div class="comment mb-3 p-3 border rounded">
             <div class="d-flex justify-content-between">
-                <strong>${comment.author_email}</strong>
+                <strong>${escapeHTML(comment.author_email)}</strong>
                 <small class="text-muted">${new Date(comment.created_at).toLocaleDateString()}</small>
             </div>
-            <div class="mt-2">${comment.text}</div>
+            <div class="mt-2">${escapeHTML(comment.text)}</div>
         </div>
     `).join('');
 }
 
-// timestamp
+// Comment submission
+export async function submitComment() {
+    const textElement = document.getElementById('commentText');
+    const text = textElement?.value?.trim();
+
+    if (!text) {
+        alert('Please enter a comment');
+        return;
+    }
+
+    try {
+        log(DEBUG_LEVELS.INFO, 'Submitting comment');
+        const response = await fetch('/api/comments', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ text })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        textElement.value = '';
+        await loadComments();
+    } catch (error) {
+        log(DEBUG_LEVELS.ERROR, 'Comment submission failed:', error);
+        alert('Error submitting comment. Please try again.');
+    }
+}
+
+// Utility function for timestamp
 function updateTimestamp(timestamp) {
     const element = document.getElementById('lastUpdated');
     if (element && timestamp) {
@@ -127,10 +174,13 @@ function updateTimestamp(timestamp) {
     }
 }
 
-export async function submitComment() {
-    // ... existing comment submission code ...
-}
-
-// Start the application when DOM is ready
+// Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', initializeApp);
+
+// Exports
+export {
+    updateLoadingState,
+    updateTimestamp,
+    displayComments
+};
 

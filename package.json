@@ -4,5 +4,21 @@
     "express-session": "^1.18.1",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0"
-  }
+  },
+  "name": "static-football-rankings",
+  "version": "1.0.0",
+  "description": "Public repository for McKnight's Football Rankings static website. This project provides historical rankings and statistics for high school football programs.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

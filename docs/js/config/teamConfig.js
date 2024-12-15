@@ -1,31 +1,26 @@
-// js/config/teamConfig.js
-
-const GITHUB_PAGES_BASE = 'https://olderdyad.github.io';
-const REPO_BASE = '/static-football-rankings';
-const IMAGES_REPO = 'hsfootball-images';
-
+// teamConfig.js
 export const teamConfig = {
-    // Base paths
-    repoBase: REPO_BASE,
-    imageRepoBase: `${GITHUB_PAGES_BASE}/${IMAGES_REPO}`,
+    defaultLogo: '/static-football-rankings/docs/images/default-logo.png',
+    baseImagePath: 'https://olderdyad.github.io/hsfootball-images/images/Teams/',
     
-    // Default image path
-    defaultLogo: `${REPO_BASE}/docs/images/placeholder-image.jpg`,
-    
-    /**
-     * Returns the provided image URL or falls back to default logo
-     * @param {string} state - Not used but kept for compatibility
-     * @param {string} teamName - Not used but kept for compatibility
-     * @param {string} imageFile - Full image URL from JSON
-     * @returns {string} Image URL or default logo
-     */
-    getTeamImagePath: (state, teamName, imageFile) => {
-        if (!imageFile) {
-            console.log('No image file provided');
-            return teamConfig.defaultLogo;
-        }
-        return imageFile;
+    getTeamImagePath(relativePath) {
+        if (!relativePath) return this.defaultLogo;
+        if (relativePath.startsWith('http')) return relativePath;
+        return `${this.baseImagePath}${relativePath}`;
+    },
+
+    getStateAbbreviation(state) {
+        const stateMap = {
+            'Texas': 'TX',
+            'Ohio': 'OH',
+            // Add more states as needed
+        };
+        return stateMap[state] || state;
+    },
+
+    defaultColors: {
+        primary: '#000000',
+        secondary: '#FFFFFF',
+        tertiary: '#808080'
     }
 };
-
-export default teamConfig;
