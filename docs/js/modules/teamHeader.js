@@ -4,57 +4,92 @@
 import { teamConfig } from '../config/teamConfig.js';
 import { DEBUG_LEVELS, log } from './logger.js';
 
-export function createTeamHeader(program) {
-    log(DEBUG_LEVELS.DEBUG, 'createTeamHeader received program:', {
-        fullObject: program,
-        team: program.team,
-        LogoURL: program.LogoURL,
-        School_Logo_URL: program.School_Logo_URL,
-        backgroundColor: program.backgroundColor,
-        textColor: program.textColor
-    });
-
-    const teamDetails = {
-        teamName: program.team || 'Unknown Team',
-        city: program.city || '',
-        state: program.state || '',
-        mascot: program.mascot || '',
-        primaryColor: program.backgroundColor || '#000000',
-        secondaryColor: program.textColor || '#FFFFFF',
-        tertiaryColor: program.tertiaryColor || '',
-        logoPath: program.LogoURL,             // Direct URL from JSON
-        schoolLogoPath: program.School_Logo_URL // Direct URL from JSON
+// Image load tracking
+const imageLoadScript = `
+<script>
+    window.imageLoadStats = {
+        attempts: 0,
+        successes: 0,
+        failures: 0
     };
 
-    log(DEBUG_LEVELS.DEBUG, 'Processed teamDetails:', teamDetails);
+    function trackImageLoad(success, src) {
+        window.imageLoadStats.attempts++;
+        if (success) {
+            window.imageLoadStats.successes++;
+        } else {
+            window.imageLoadStats.failures++;
+            console.warn('Image load failed:', src);
+        }
+        console.debug('Image load stats:', window.imageLoadStats);
+    }
+</script>
+`;
 
-    // Get image URLs
-    const logoUrl = teamDetails.logoPath || teamConfig.defaultLogo;
-    const schoolLogoUrl = teamDetails.schoolLogoPath || teamConfig.defaultLogo;
+export function createTeamHeader(program) {
+    log(DEBUG_LEVELS.DEBUG, 'Creating team header with data:', program);
 
-    log(DEBUG_LEVELS.DEBUG, 'Final image URLs:', { logoUrl, schoolLogoUrl });
+    // Default values for missing data
+    const defaultDetails = {
+        teamName: 'Unknown Team',
+        mascot: '',
+        backgroundColor: '#000000',
+        textColor: '#FFFFFF'
+    };
 
-    // Changed to return inner content only, since container exists in HTML
+    // If no program data, return minimal header
+    if (!program) {
+        log(DEBUG_LEVELS.WARN, 'No program data provided for header');
+        return createMinimalHeader(defaultDetails);
+    }
+
+    const teamDetails = {
+        teamName: program.team || defaultDetails.teamName,
+        mascot: program.mascot || defaultDetails.mascot,
+        primaryColor: program.backgroundColor || defaultDetails.backgroundColor,
+        secondaryColor: program.textColor || defaultDetails.textColor,
+        logoPath: program.LogoURL || null,
+        schoolLogoPath: program.School_Logo_URL || null
+    };
+
+    log(DEBUG_LEVELS.DEBUG, 'Processed team details:', teamDetails);
+
+    // Return header HTML with conditionally rendered images
     return `
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3">
-                    <img src="${logoUrl}"
-                         alt="${teamDetails.teamName} Logo"
-                         class="img-fluid"
-                         style="max-height: 100px;"
-                         onerror="this.src='${teamConfig.defaultLogo}'" />
+                    ${teamDetails.logoPath ? 
+                        `<img src="${teamDetails.logoPath}"
+                             alt="${teamDetails.teamName} Logo"
+                             class="img-fluid"
+                             style="max-height: 100px;"
+                             onerror="this.style.display='none'"/>` : ''}
                 </div>
                 <div class="col-md-6 text-center">
                     <h2>${teamDetails.teamName}</h2>
                     <p>${teamDetails.mascot}</p>
                 </div>
                 <div class="col-md-3 text-right">
-                    <img src="${schoolLogoUrl}"
-                         alt="${teamDetails.mascot}"
-                         class="img-fluid"
-                         style="max-height: 100px;"
-                         onerror="this.src='${teamConfig.defaultLogo}'" />
+                    ${teamDetails.schoolLogoPath ? 
+                        `<img src="${teamDetails.schoolLogoPath}"
+                             alt="${teamDetails.mascot}"
+                             class="img-fluid"
+                             style="max-height: 100px;"
+                             onerror="this.style.display='none'"/>` : ''}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function createMinimalHeader(details) {
+    return `
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 text-center">
+                    <h2>${details.teamName}</h2>
+                    <p>${details.mascot}</p>
                 </div>
             </div>
         </div>
