@@ -66,7 +66,7 @@ foreach ($decade in $decades) {
             <div class="card-body">
                 <h5 class="card-title">$($decade.Title)</h5>
                 <p class="card-text">Top teams from $($decade.StartYear) to $($decade.EndYear)</p>
-                <a href="$($decade.Id).html" class="btn btn-primary">View Rankings</a>
+                <a href="/static-football-rankings/pages/public/decades/$($decade.Id).html" class="btn btn-primary">View Rankings</a>
             </div>
         </div>
     </div>
