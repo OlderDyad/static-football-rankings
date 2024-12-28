@@ -1,108 +1,213 @@
-// docs/js/modules/pageTemplate.js
+// ============================================================================
+// docs/js/modules/pageTemplate.js - Program Display Template Logic
+// ============================================================================
+
 import { DEBUG_LEVELS, log } from './logger.js';
 import { createTeamHeader } from './teamHeader.js';
 
 export function initializePage(pageConfig) {
     log(DEBUG_LEVELS.INFO, 'Starting', pageConfig.pageTitle, 'initialization');
 
-    let programsData = [];
+    let itemsData = [];
     let currentPage = 1;
     const ITEMS_PER_PAGE = 100;
 
-    async function initialize() {
+    // Main initialization function
+    async function initialize(data = null) {
         try {
             updateLoadingState(true);
 
-            programsData = await loadProgramData(pageConfig.dataFile);
-            if (!Array.isArray(programsData) || programsData.length === 0) {
-                throw new Error('No program data available');
+            // Use provided data or load from file
+            const validatedData = data || await loadData(pageConfig.dataFile);
+            
+            // Store validated data
+            itemsData = validatedData.items || [];
+            
+            log(DEBUG_LEVELS.INFO, `Loaded ${itemsData.length} items`);
+            
+            if (itemsData.length === 0) {
+                throw new Error('No items available in data');
             }
 
-            // Update page title and breadcrumb
+            // Update page metadata
             document.title = pageConfig.pageTitle;
             updateBreadcrumb(pageConfig.pageTitle);
 
-            // Display initial data and setup pagination
+            // Create header if top item exists
+            if (validatedData.topItem) {
+                createTeamHeader(validatedData.topItem);
+            }
+
+            // Set up display and controls
             displayCurrentPage();
             setupPagination();
-
-            // Add event listeners
             setupEventListeners();
+            
+            // Update timestamp if available
+            if (validatedData.metadata?.timestamp) {
+                updateTimestamp(validatedData.metadata.timestamp);
+            }
 
             updateLoadingState(false);
-            log(DEBUG_LEVELS.INFO, 'Rankings display complete');
+            log(DEBUG_LEVELS.INFO, 'Page initialization complete');
 
         } catch (error) {
             log(DEBUG_LEVELS.ERROR, 'Page initialization failed:', error);
             updateLoadingState(false, error.message);
+            throw error;
         }
     }
 
-    async function loadProgramData(dataFile) {
-        log(DEBUG_LEVELS.INFO, 'Loading program data from', dataFile);
+    // Data loading function
+    async function loadData(dataFile) {
+        log(DEBUG_LEVELS.INFO, 'Loading data from', dataFile);
         try {
             const response = await fetch(dataFile);
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`Failed to load data: ${response.status} ${response.statusText}`);
             }
+            
             const data = await response.json();
-
-            // Validate data structure
-            validateDataStructure(data);
-
-            // Update timestamp if available
-            updateTimestamp(data.metadata?.timestamp);
-
-            // Handle top program
-            if (data.topProgram) {
-                const headerHtml = createTeamHeader(data.topProgram);
-                const headerContainer = document.querySelector('.team-header');
-                if (headerContainer) {
-                    headerContainer.innerHTML = headerHtml;
-                    log(DEBUG_LEVELS.INFO, 'Team header inserted into DOM');
-                } else {
-                    log(DEBUG_LEVELS.ERROR, 'Team header container not found');
-                }
-            }
-
-            return data.programs || [];
+            log(DEBUG_LEVELS.INFO, 'Received data structure:', {
+                hasMetadata: !!data.metadata,
+                hasItems: !!data.items,
+                hasPrograms: !!data.programs,
+                hasTeams: !!data.teams,
+                dataKeys: Object.keys(data)
+            });
+            
+            // Convert and validate data
+            return validateDataStructure(data);
         } catch (error) {
-            log(DEBUG_LEVELS.ERROR, 'Error loading program data:', error);
-            return [];
+            log(DEBUG_LEVELS.ERROR, 'Error loading data:', error);
+            throw error;
         }
     }
 
+    // Data validation function
     function validateDataStructure(data) {
-        if (!data) {
-            throw new Error('No data received');
+        log(DEBUG_LEVELS.INFO, 'Validating data structure:', {
+            hasMetadata: !!data?.metadata,
+            hasItems: !!data?.items,
+            itemsLength: data?.items?.length || 0,
+            dataKeys: Object.keys(data || {})
+        });
+
+        if (!data || typeof data !== 'object') {
+            throw new Error('Invalid data format: Data must be an object');
         }
 
+        if (!data.items || !Array.isArray(data.items)) {
+            // Try to find any available data array
+            if (data.programs && Array.isArray(data.programs)) {
+                data.items = data.programs;
+                delete data.programs;
+                log(DEBUG_LEVELS.INFO, 'Converted programs array to items');
+            } else if (data.teams && Array.isArray(data.teams)) {
+                data.items = data.teams;
+                delete data.teams;
+                log(DEBUG_LEVELS.INFO, 'Converted teams array to items');
+            } else {
+                throw new Error('Invalid data format: Missing items array');
+            }
+        }
+
+        if (data.items.length === 0) {
+            throw new Error('No items found in data');
+        }
+
+        // Log first item structure for debugging
+        const firstItem = data.items[0];
+        log(DEBUG_LEVELS.INFO, 'First item structure:', {
+            hasProgram: 'program' in firstItem,
+            hasTeam: 'team' in firstItem,
+            keys: Object.keys(firstItem)
+        });
+
+        // Ensure metadata exists
         if (!data.metadata) {
-            log(DEBUG_LEVELS.WARN, 'Missing metadata in data structure');
+            data.metadata = {
+                timestamp: new Date().toISOString(),
+                type: 'program' in firstItem ? 'all-time-programs' : 'teams',
+                yearRange: 'all-time',
+                totalItems: data.items.length,
+                description: 'Program rankings'
+            };
+            log(DEBUG_LEVELS.INFO, 'Created default metadata');
         }
 
-        if (!Array.isArray(data.programs)) {
-            throw new Error('Invalid data format: programs must be an array');
-        }
+        return data;
+    }
 
-        // Validate required fields in each program with better error reporting
-    data.programs.forEach((program, index) => {
-        // Skip validation for null/undefined objects
-        if (!program) {
-            log(DEBUG_LEVELS.WARN, `Empty program at index ${index}`);
+    // Display functions
+    function displayCurrentPage(data = itemsData) {
+        const tableBody = document.getElementById('programsTableBody');
+        if (!tableBody) {
+            log(DEBUG_LEVELS.ERROR, 'Table body element not found');
             return;
         }
 
-        const requiredFields = ['team', 'rank', 'state', 'seasons'];
-        const missingFields = requiredFields.filter(field => !program[field]);
-        if (missingFields.length > 0) {
-            // Only log warning for actual data entries
-            if (index < data.programs.length - 1) {
-                log(DEBUG_LEVELS.WARN, `Program at index ${index} missing required fields:`, missingFields);
-            }
+        const start = (currentPage - 1) * ITEMS_PER_PAGE;
+        const end = start + ITEMS_PER_PAGE;
+        const currentData = data.slice(start, end);
+
+        tableBody.innerHTML = currentData.map(item => createTableRow(item)).join('');
+    }
+
+    function createTableRow(item) {
+        const isTeam = 'team' in item;
+
+        if (isTeam) {
+            return `
+                <tr>
+                    <td>${item.rank}</td>
+                    <td>${item.team}</td>
+                    <td>${item.season || ''}</td>
+                    <td>${formatNumber(item.combined)}</td>
+                    <td>${formatNumber(item.margin)}</td>
+                    <td>${formatNumber(item.win_loss)}</td>
+                    <td>${formatNumber(item.offense)}</td>
+                    <td>${formatNumber(item.defense)}</td>
+                    <td>${item.games_played || ''}</td>
+                    <td>${item.state}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" onclick="viewDetails('${encodeURIComponent(item.team)}')">
+                            Details
+                        </button>
+                    </td>
+                </tr>
+            `;
+        } else {
+            return `
+                <tr>
+                    <td>${item.rank}</td>
+                    <td>${item.program}</td>
+                    <td>${item.seasons}</td>
+                    <td>${formatNumber(item.combined)}</td>
+                    <td>${formatNumber(item.margin)}</td>
+                    <td>${formatNumber(item.win_loss)}</td>
+                    <td>${formatNumber(item.offense)}</td>
+                    <td>${formatNumber(item.defense)}</td>
+                    <td>${item.state}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" onclick="viewDetails('${encodeURIComponent(item.program)}')">
+                            Details
+                        </button>
+                    </td>
+                </tr>
+            `;
         }
-    });
-}
+    }
+
+    // Utility functions
+    function formatNumber(value) {
+        if (typeof value === 'number') {
+            return value.toFixed(3);
+        } else if (typeof value === 'string' && !isNaN(parseFloat(value))) {
+            return parseFloat(value).toFixed(3);
+        }
+        return value;
+    }
 
     function updateTimestamp(timestamp) {
         const element = document.getElementById('lastUpdated');
@@ -123,6 +228,29 @@ export function initializePage(pageConfig) {
         }
     }
 
+    function updateLoadingState(isLoading, errorMessage = '') {
+        const loadingElement = document.querySelector('.loading-state');
+        if (!loadingElement) return;
+
+        if (isLoading) {
+            loadingElement.innerHTML = `
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p>Loading data...</p>
+                </div>`;
+            loadingElement.style.display = 'block';
+        } else if (errorMessage) {
+            loadingElement.innerHTML = `
+                <div class="alert alert-danger">${errorMessage}</div>`;
+            loadingElement.style.display = 'block';
+        } else {
+            loadingElement.style.display = 'none';
+        }
+    }
+
+    // Event handlers
     function setupEventListeners() {
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
@@ -132,44 +260,49 @@ export function initializePage(pageConfig) {
 
     function handleSearch(event) {
         const searchTerm = event.target.value.toLowerCase();
-        const filteredPrograms = programsData.filter(program => 
-            program.team.toLowerCase().includes(searchTerm) ||
-            program.state.toLowerCase().includes(searchTerm)
-        );
+        const filteredItems = itemsData.filter(item => {
+            const searchableFields = [
+                item.team || item.program,
+                item.state
+            ].filter(Boolean);
+            
+            return searchableFields.some(field => 
+                field.toLowerCase().includes(searchTerm)
+            );
+        });
 
         currentPage = 1;
-        displayCurrentPage(filteredPrograms);
-        setupPagination(filteredPrograms);
+        displayCurrentPage(filteredItems);
+        setupPagination(filteredItems);
     }
 
-    function setupPagination(data = programsData) {
+    // Pagination functions
+    function setupPagination(data = itemsData) {
         const paginationElement = document.getElementById('pagination');
-        if (!paginationElement) {
-            log(DEBUG_LEVELS.ERROR, 'Pagination element not found');
+        if (!paginationElement) return;
+
+        const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
+        if (totalPages <= 1) {
+            paginationElement.innerHTML = '';
             return;
         }
 
-        const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
-        paginationElement.innerHTML = '';
-
-        if (totalPages <= 1) return;
-
-        // Add pagination controls
         addPaginationControls(paginationElement, totalPages);
     }
 
     function addPaginationControls(element, totalPages) {
-        // Previous button
-        const prevLi = createPaginationButton('Previous', currentPage > 1, () => {
-            if (currentPage > 1) {
-                currentPage--;
-                displayCurrentPage();
-                setupPagination();
-            }
-        });
-        element.appendChild(prevLi);
+        element.innerHTML = '';
 
-        // Page numbers
+        element.appendChild(
+            createPaginationButton('Previous', currentPage > 1, () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayCurrentPage();
+                    setupPagination();
+                }
+            })
+        );
+
         for (let i = 1; i <= totalPages; i++) {
             const li = document.createElement('li');
             li.className = `page-item ${currentPage === i ? 'active' : ''}`;
@@ -182,15 +315,15 @@ export function initializePage(pageConfig) {
             element.appendChild(li);
         }
 
-        // Next button
-        const nextLi = createPaginationButton('Next', currentPage < totalPages, () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-                displayCurrentPage();
-                setupPagination();
-            }
-        });
-        element.appendChild(nextLi);
+        element.appendChild(
+            createPaginationButton('Next', currentPage < totalPages, () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayCurrentPage();
+                    setupPagination();
+                }
+            })
+        );
     }
 
     function createPaginationButton(text, enabled, onClick) {
@@ -206,75 +339,8 @@ export function initializePage(pageConfig) {
         return li;
     }
 
-    function displayCurrentPage(data = programsData) {
-        const tableBody = document.getElementById('programsTableBody');
-        if (!tableBody) {
-            log(DEBUG_LEVELS.ERROR, 'Table body element not found');
-            return;
-        }
-
-        const start = (currentPage - 1) * ITEMS_PER_PAGE;
-        const end = start + ITEMS_PER_PAGE;
-        const currentData = data.slice(start, end);
-
-        tableBody.innerHTML = currentData.map(program => createTableRow(program)).join('');
-    }
-
-    function createTableRow(program) {
-        return `
-            <tr>
-                <td>${program.rank}</td>
-                <td>${program.team}</td>
-                <td>${formatNumber(program.avgCombined)}</td>
-                <td>${formatNumber(program.avgMargin)}</td>
-                <td>${formatNumber(program.avgWinLoss)}</td>
-                <td>${formatNumber(program.avgOffense)}</td>
-                <td>${formatNumber(program.avgDefense)}</td>
-                <td>${program.state}</td>
-                <td>${program.seasons}</td>
-                <td>
-                    <button class="btn btn-primary btn-sm" onclick="viewDetails('${encodeURIComponent(program.team)}')">
-                        View Details
-                    </button>
-                </td>
-            </tr>
-        `;
-    }
-
-    function formatNumber(value) {
-        return typeof value === 'number' ? value.toFixed(3) : value;
-    }
-
-    function updateLoadingState(isLoading, errorMessage = '') {
-        const header = document.querySelector('.team-header');
-        if (!header) return;
-
-        if (isLoading) {
-            header.innerHTML = `
-                <div class="container">
-                    <div class="text-center">
-                        <div class="spinner-border text-primary" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                        <p>Loading program data...</p>
-                    </div>
-                </div>`;
-        } else if (errorMessage) {
-            header.innerHTML = `
-                <div class="container">
-                    <div class="alert alert-danger">${errorMessage}</div>
-                </div>`;
-        }
-    }
-
-    // Initialize and return public interface
+    // Return public interface
     return {
         initialize
     };
 }
-
-// Add to window for onclick handlers
-window.viewDetails = (teamName) => {
-    log(DEBUG_LEVELS.INFO, 'Viewing details for:', decodeURIComponent(teamName));
-    // Implement details view functionality
-};
