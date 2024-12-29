@@ -32,6 +32,8 @@ foreach ($decade in $decades) {
     # Replace placeholders
     $pageContent = $pageContent -replace '<!--DECADE_TITLE-->', $decade.Title
     $pageContent = $pageContent -replace '<!--DECADE_ID-->', $decade.Id
+    $pageContent = $pageContent -replace '<!--DECADE_START-->', $decade.StartYear
+    $pageContent = $pageContent -replace '<!--DECADE_END-->', $decade.EndYear
 
     # Create output file
     $outputPath = Join-Path $outputDir "$($decade.Id).html"
