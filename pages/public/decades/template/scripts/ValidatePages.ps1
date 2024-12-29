@@ -8,11 +8,10 @@ $decades = @(
 $requiredElements = @(
     @{Name = 'Meta charset'; Pattern = '<meta charset="UTF-8">' },
     @{Name = 'Bootstrap CSS'; Pattern = 'bootstrap@5.1.3/dist/css/bootstrap.min.css' },
-    @{Name = 'Custom CSS'; Pattern = '<link href="css/styles.css"' },
-    @{Name = 'Data file meta'; Pattern = 'content="data/decade-teams-' },
-    @{Name = 'Main script'; Pattern = 'src="docs/js/main.js"' },
-    @{Name = 'Loading state'; Pattern = '<div class="loading-state">' },
-    @{Name = 'Base href'; Pattern = '<base href="/static-football-rankings/">' }
+    @{Name = 'Custom CSS'; Pattern = '/static-football-rankings/css/styles.css' },
+    @{Name = 'Data file meta'; Pattern = '/static-football-rankings/data/decade-teams-' },
+    @{Name = 'Main script'; Pattern = '/static-football-rankings/docs/js/main.js' },
+    @{Name = 'Header image'; Pattern = '/static-football-rankings/docs/images/header/football-field-top.jpg' }
 )
 
 Write-Host "Validating pages..."
@@ -24,7 +23,7 @@ if (Test-Path $indexPath) {
     Write-Host "Checking index page..."
     $content = Get-Content $indexPath -Raw
     foreach ($decade in $decades) {
-        if (-not $content.Contains("$decade.html")) {
+        if (-not $content.Contains("/static-football-rankings/pages/public/decades/$decade.html")) {
             $errors += "Index page missing link to $decade.html"
         }
     }
