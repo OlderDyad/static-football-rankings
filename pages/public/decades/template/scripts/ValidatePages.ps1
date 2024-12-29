@@ -8,10 +8,11 @@ $decades = @(
 $requiredElements = @(
     @{Name = 'Meta charset'; Pattern = '<meta charset="UTF-8">' },
     @{Name = 'Bootstrap CSS'; Pattern = 'bootstrap@5.1.3/dist/css/bootstrap.min.css' },
-    @{Name = 'Custom CSS'; Pattern = '/static-football-rankings/css/styles.css' },
-    @{Name = 'Data file meta'; Pattern = '/static-football-rankings/data/decade-teams-' },
-    @{Name = 'Main script'; Pattern = '/static-football-rankings/docs/js/main.js' },
-    @{Name = 'Loading state'; Pattern = '<div class="loading-state">' }
+    @{Name = 'Custom CSS'; Pattern = '<link href="css/styles.css"' },
+    @{Name = 'Data file meta'; Pattern = 'content="data/decade-teams-' },
+    @{Name = 'Main script'; Pattern = 'src="docs/js/main.js"' },
+    @{Name = 'Loading state'; Pattern = '<div class="loading-state">' },
+    @{Name = 'Base href'; Pattern = '<base href="/static-football-rankings/">' }
 )
 
 Write-Host "Validating pages..."

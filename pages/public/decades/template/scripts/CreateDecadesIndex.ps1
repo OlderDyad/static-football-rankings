@@ -5,19 +5,20 @@ $indexTemplate = @'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/static-football-rankings/">
     <title>High School Football Rankings by Decade</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
     <div class="header-banner">
-        <img src="/static-football-rankings/docs/images/header/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+        <img src="docs/images/header/football-field-top.jpg" alt="Football Field Header" class="w-100" />
     </div>
 
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item active">Rankings by Decade</li>
             </ol>
         </nav>
@@ -66,7 +67,7 @@ foreach ($decade in $decades) {
             <div class="card-body">
                 <h5 class="card-title">$($decade.Title)</h5>
                 <p class="card-text">Top teams from $($decade.StartYear) to $($decade.EndYear)</p>
-                <a href="/static-football-rankings/pages/public/decades/$($decade.Id).html" class="btn btn-primary">View Rankings</a>
+                <a href="pages/public/decades/$($decade.Id).html" class="btn btn-primary">View Rankings</a>
             </div>
         </div>
     </div>
