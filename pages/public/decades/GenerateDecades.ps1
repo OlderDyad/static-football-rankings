@@ -1,5 +1,12 @@
 Write-Host 'Generating decade pages and index...'
 
+# Determine the base URL based on environment
+$baseUrl = if ($env:GITHUB_ACTIONS -eq 'true') { 
+    '/static-football-rankings/' # For GitHub Pages
+} else {
+    '/'  # For local testing
+}
+
 try {
     # Define the complete list of decades with full metadata
     $decades = @(
@@ -56,7 +63,11 @@ try {
 
         # Add metadata
         $metadataTag = "<meta name=`"decade-info`" content=`"start-year:$($decade.StartYear),end-year:$($decade.EndYear)`">"
-        $output = $output -replace '(?<=<head>.*?)\n', "`n    $metadataTag`n"
+        $output = $output -replace '(?<=<head>.*?)\n', "`n        $metadataTag`n" 
+
+        # Add the <base> tag with the dynamic URL 
+        $baseTag = "<base href=`"$baseUrl`">"
+        $output = $output -replace '(?<=<head>.*?)\n', "`n        $baseTag`n"
 
         # Construct JSON file path
         $jsonFileName = "decade-teams-$($decade.Name).json"
@@ -79,18 +90,18 @@ try {
                 $tableRows = ""
                 foreach ($rank in $jsonData.items | Select-Object -First 20) {
                     $tableRows += @"
-                <tr>
-                    <td>$($rank.rank)</td>
-                    <td>$($rank.team)</td>
-                    <td>$($rank.state)</td>
-                    <td>$($rank.seasons)</td>
-                    <td>$($rank.combined)</td>
-                    <td>$($rank.margin)</td>
-                    <td>$($rank.win_loss)</td>
-                    <td>$($rank.offense)</td>
-                    <td>$($rank.defense)</td>
-                    <td>$($rank.games_played)</td>
-                </tr>
+        <tr>
+            <td>$($rank.rank)</td>
+            <td>$($rank.team)</td>
+            <td>$($rank.state)</td>
+            <td>$($rank.seasons)</td>
+            <td>$($rank.combined)</td>
+            <td>$($rank.margin)</td>
+            <td>$($rank.win_loss)</td>
+            <td>$($rank.offense)</td>
+            <td>$($rank.defense)</td>
+            <td>$($rank.games_played)</td>
+        </tr>
 "@
                 }
 
@@ -126,7 +137,7 @@ try {
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">$($_.DisplayName)</h5>
                     <p class="card-text">Top teams from $($_.StartYear) to $($_.EndYear)</p>
-                    <a href="$($_.Name).html" class="btn btn-primary mt-auto">View Rankings</a>
+                    <a href="$($_.Name).html" class="btn btn-primary mt-auto">View Rankings</a> 
                 </div>
             </div>
         </div>
