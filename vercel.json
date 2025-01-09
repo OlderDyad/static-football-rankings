@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "https://olderdyad.github.io" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
+        { "key": "Access-Control-Allow-Credentials", "value": "true" }
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/comments", "destination": "/api/comments.js" },
+    { "source": "/api/auth/google", "destination": "/api/auth/google.js" },
+    { "source": "/api/auth/status", "destination": "/api/auth/status.js" },
+    { "source": "/api/auth/callback", "destination": "/api/auth/callback.js" },
+    { "source": "/api/auth/verify-config", "destination": "/api/auth/verify-config.js" }
+  ]
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

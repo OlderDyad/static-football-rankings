@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Test Page</title>
+</head>
+<body>
+    <h1>API Test Page</h1>
+
+    <button onclick="testGetComments()">Test GET /api/comments</button>
+    <button onclick="testPostComments()">Test POST /api/comments</button>
+    <button onclick="testVerifyEmail()">Test POST /api/verify-email</button>
+
+    <script>
+        async function testGetComments() {
+            try {
+                const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const result = await response.json();
+                console.log('GET /api/comments:', result);
+            } catch (error) {
+                console.error('Error with GET Comments:', error);
+            }
+        }
+
+        async function testPostComments() {
+            try {
+                const response = await fetch('https://static-football-rankings.vercel.app/api/comments', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: "Hello, this is a test comment" })
+                });
+                const result = await response.json();
+                console.log('POST /api/comments:', result);
+            } catch (error) {
+                console.error('Error with POST Comments:', error);
+            }
+        }
+
+        async function testVerifyEmail() {
+            try {
+                const response = await fetch('https://static-football-rankings.vercel.app/api/verify-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: "test@example.com" })
+                });
+                const result = await response.json();
+                console.log('POST /api/verify-email:', result);
+            } catch (error) {
+                console.error('Error with Verify Email:', error);
+            }
+        }
+    </script>
+</body>
+</html>
