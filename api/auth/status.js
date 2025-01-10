@@ -1,68 +1,65 @@
-// api/auth/status.js
+import fetch from 'node-fetch';
+
 export default async function handler(req, res) {
-    // Set CORS headers
-    res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
+  // CORS
+  res.setHeader('Access-Control-Allow-Origin', 'https://olderdyad.github.io');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
 
-    // Handle preflight
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  try {
+    const authToken = req.cookies?.auth_token;
+    const userName = req.cookies?.user_name;
+
+    // If no auth_token, user is not logged in
+    if (!authToken) {
+      return res.status(200).json({
+        success: true,
+        loggedIn: false,
+        user: null
+      });
     }
 
-    try {
-        // Get auth token from cookies
-        const authToken = req.cookies?.auth_token;
-        const userName = req.cookies?.user_name;
+    // Verify token with Google
+    const userResponse = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
 
-        if (!authToken) {
-            return res.status(200).json({
-                success: true,
-                loggedIn: false,
-                user: null
-            });
-        }
+    if (!userResponse.ok) {
+      // token is invalid, clear cookies
+      res.setHeader('Set-Cookie', [
+        'auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=None',
+        'user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None',
+        'user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=None'
+      ]);
 
-        // Verify token with Google
-        const userResponse = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
-            headers: {
-                'Authorization': `Bearer ${authToken}`
-            }
-        });
-
-        if (!userResponse.ok) {
-            // Token is invalid, clear cookies
-            res.setHeader('Set-Cookie', [
-                'auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=None',
-                'user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None',
-                'user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=None'
-            ]);
-
-            return res.status(200).json({
-                success: true,
-                loggedIn: false,
-                user: null
-            });
-        }
-
-        const userData = await userResponse.json();
-
-        // Return user info
-        return res.status(200).json({
-            success: true,
-            loggedIn: true,
-            user: {
-                name: userName || userData.name,
-                email: userData.email
-            }
-        });
-    } catch (error) {
-        console.error('Auth status error:', error);
-        return res.status(500).json({
-            success: false,
-            error: 'Internal server error',
-            details: process.env.NODE_ENV === 'development' ? error.message : undefined
-        });
+      return res.status(200).json({
+        success: true,
+        loggedIn: false,
+        user: null
+      });
     }
+
+    const userData = await userResponse.json();
+
+    // Return user info
+    return res.status(200).json({
+      success: true,
+      loggedIn: true,
+      user: {
+        name: userName || userData.name,
+        email: userData.email
+      }
+    });
+  } catch (error) {
+    console.error('Auth status error:', error);
+    return res.status(500).json({
+      success: false,
+      error: 'Internal server error'
+    });
+  }
 }
