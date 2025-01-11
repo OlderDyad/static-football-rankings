@@ -11,9 +11,9 @@ import { initializePage } from './modules/pageTemplate.js';
 import { createTeamHeader } from './modules/teamHeader.js';
 import { teamConfig } from './config/teamConfig.js';  // Keep this one
 import { auth } from './modules/auth.js';
-import { CommentManager } from './modules/comments.js';
+import { CommentManager } from '/static-football-rankings/docs/js/modules/comments.js';
 import { formatDate, debounce, escapeHTML } from './modules/utils.js';
-import { CommentManager } from './modules/comments.js';
+
 
 
 
