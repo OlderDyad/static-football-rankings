@@ -187,22 +187,22 @@ try {
     )
 
     # Define paths
-    $scriptDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\pages\public\decades"
+    $scriptDir = $PSScriptRoot
     $templateDir = $scriptDir
-    $decadeTemplatePath = Join-Path $templateDir "decade-template.html"
+    $templatePath = Join-Path $templateDir "decade-template.html"
     $indexTemplatePath = Join-Path $templateDir "index-template.html"
     $outputDir = $scriptDir
     $jsonBasePath = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\data"
 
     # Check templates
-    if (-not (Test-Path $decadeTemplatePath)) {
-        throw "Decade template file not found at $decadeTemplatePath"
+    if (-not (Test-Path $templatePath)) {
+        throw "Decade template file not found at $templatePath"
     }
     if (-not (Test-Path $indexTemplatePath)) {
         throw "Index template file not found at $indexTemplatePath"
     }
 
-    $decadeTemplate = Get-Content $decadeTemplatePath -Raw
+    $decadeTemplate = Get-Content $templatePath -Raw
     $indexTemplate = Get-Content $indexTemplatePath -Raw
 
     # Ensure output directory exists
@@ -232,10 +232,10 @@ try {
 
         # Process JSON data
         $jsonFileName = "decade-teams-$($decade.Name).json"
-        $jsonFilePath = Join-Path $jsonBasePath "decades/teams/$jsonFileName"
+        $jsonFilePath = Join-Path $jsonBasePath "decades\teams\$jsonFileName"
 
         if (Test-Path $jsonFilePath) {
-            Write-Host "Found JSON for $($decade.Name): $($jsonFilePath)" -ForegroundColor Green
+            Write-Host "Found JSON for $($decade.Name): $jsonFilePath" -ForegroundColor Green
             $jsonData = Get-Content -Path $jsonFilePath -Raw | ConvertFrom-Json
 
             if ($null -ne $jsonData -and $null -ne $jsonData.items -and $jsonData.items -is [System.Array]) {
@@ -305,6 +305,8 @@ try {
     Write-Error "Generation failed: $_"
     exit 1
 }
+
+
 
 
 
