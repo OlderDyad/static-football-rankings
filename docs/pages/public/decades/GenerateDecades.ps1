@@ -6,9 +6,9 @@ Write-Host 'Generating decade pages and index...'
 
 # Determine the base URL based on environment
 $baseUrl = if ($env:GITHUB_ACTIONS -eq 'true') {
-    '/static-football-rankings/' # For GitHub Pages
+    '/static-football-rankings/docs/' # For GitHub Pages
 } else {
-    '/'  # For local testing
+    '/docs/'  # For local testing
 }
 
 # Inline comment/auth snippet using single-quoted Here-String to prevent variable expansion
@@ -28,19 +28,16 @@ async function checkLoginStatus() {
     const data = await res.json();
 
     if (data.success && data.loggedIn) {
-      // Logged in
       document.getElementById('commentForm').style.display = 'block';
       document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
       renderAuthUI(true, data.user);
     } else {
-      // Not logged in
       document.getElementById('commentForm').style.display = 'none';
       document.getElementById('authorName').textContent = 'Anonymous';
       renderAuthUI(false);
     }
   } catch (error) {
     console.error('Login status error:', error);
-    // default to logged-out state
     document.getElementById('commentForm').style.display = 'none';
     document.getElementById('authorName').textContent = 'Anonymous';
     renderAuthUI(false);
@@ -53,7 +50,7 @@ function renderAuthUI(loggedIn, user = null) {
 
   if (loggedIn && user) {
     authContainer.innerHTML = `
-      <p>Welcome, <strong>${user.name}</strong> (${user.email}). 
+      <p>Welcome, <strong>${user.name}</strong> (${user.email}).
          <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
     `;
     document.getElementById('logoutBtn').addEventListener('click', doLogout);
@@ -161,7 +158,7 @@ function getPageId() {
 document.getElementById('submitComment')?.addEventListener('click', submitComment);
 
 (function initPage() {
-  checkLoginStatus(); 
+  checkLoginStatus();
   fetchComments();
 })();
 </script>
@@ -186,23 +183,38 @@ try {
         @{ Name = '2020s'; StartYear = 2020; EndYear = 2029; DisplayName = '2020s' }
     )
 
-    # Define paths
-    $scriptDir = $PSScriptRoot
-    $templateDir = $scriptDir
-    $templatePath = Join-Path $templateDir "decade-template.html"
-    $indexTemplatePath = Join-Path $templateDir "index-template.html"
-    $outputDir = $scriptDir
-    $jsonBasePath = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\data"
+     # Define paths - using absolute paths for clarity
+     $rootDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings"
+     $docsDir = Join-Path $rootDir "docs"
+     $scriptDir = $PSScriptRoot  # Current directory
+     $templateDir = $scriptDir   # Templates in same directory as script
+     $outputDir = $scriptDir     # Output to same directory
+     # Update this line to point to the correct data directory
+     $jsonBasePath = Join-Path $rootDir "data"  # Changed from "docs/data" to "data"
+ 
+     # Debug path information
+     Write-Host "Root Directory: $rootDir"
+     Write-Host "Docs Directory: $docsDir"
+     Write-Host "Script Directory: $scriptDir"
+     Write-Host "Template Directory: $templateDir"
+     Write-Host "Output Directory: $outputDir"
+     Write-Host "JSON Base Path: $jsonBasePath"
 
-    # Check templates
-    if (-not (Test-Path $templatePath)) {
-        throw "Decade template file not found at $templatePath"
+     
+    # Define template paths
+    $decadeTemplatePath = Join-Path $templateDir "decade-template.html"
+    $indexTemplatePath = Join-Path $templateDir "index-template.html"
+
+    # Check templates exist (using decadeTemplatePath consistently)
+    if (-not (Test-Path $decadeTemplatePath)) {
+        throw "Decade template file not found at $decadeTemplatePath"
     }
     if (-not (Test-Path $indexTemplatePath)) {
         throw "Index template file not found at $indexTemplatePath"
     }
 
-    $decadeTemplate = Get-Content $templatePath -Raw
+    # Read templates (using decadeTemplatePath consistently)
+    $decadeTemplate = Get-Content $decadeTemplatePath -Raw
     $indexTemplate = Get-Content $indexTemplatePath -Raw
 
     # Ensure output directory exists
@@ -230,21 +242,21 @@ try {
         $baseTag = "<base href=`"$baseUrl`">"
         $output = $output -replace '(?<=<head>.*?)\n', "`n        $baseTag`n"
 
-        # Process JSON data
-        $jsonFileName = "decade-teams-$($decade.Name).json"
-        $jsonFilePath = Join-Path $jsonBasePath "decades\teams\$jsonFileName"
+       # Process JSON data
+$jsonFileName = "decade-teams-$($decade.Name).json"
+$jsonFilePath = Join-Path $jsonBasePath "decades\teams\$jsonFileName"
 
-        if (Test-Path $jsonFilePath) {
-            Write-Host "Found JSON for $($decade.Name): $jsonFilePath" -ForegroundColor Green
-            $jsonData = Get-Content -Path $jsonFilePath -Raw | ConvertFrom-Json
+if (Test-Path $jsonFilePath) {
+    Write-Host "Found JSON for $($decade.Name): $jsonFilePath" -ForegroundColor Green
+    $jsonData = Get-Content -Path $jsonFilePath -Raw | ConvertFrom-Json
 
-            if ($null -ne $jsonData -and $null -ne $jsonData.items -and $jsonData.items -is [System.Array]) {
-                Write-Host "Rankings for $($decade.DisplayName):" -ForegroundColor Yellow
-                $jsonData.items | Format-Table
+    if ($null -ne $jsonData -and $null -ne $jsonData.items -and $jsonData.items -is [System.Array]) {
+        Write-Host "Rankings for $($decade.DisplayName):" -ForegroundColor Yellow
+        $jsonData.items | Format-Table
 
-                $tableRows = ""
-                foreach ($rank in $jsonData.items | Select-Object -First 20) {
-                    $tableRows += @"
+        $tableRows = ""
+        foreach ($rank in $jsonData.items | Select-Object -First 20) {
+            $tableRows += @"
 <tr>
     <td>$($rank.rank)</td>
     <td>$($rank.team)</td>
@@ -258,14 +270,14 @@ try {
     <td>$($rank.games_played)</td>
 </tr>
 "@
-                }
-                $output = $output -replace 'TABLE_ROWS', $tableRows
-            } else {
-                Write-Warning "Invalid or empty JSON data for $($decade.DisplayName): $jsonFilePath"
-            }
-        } else {
-            Write-Warning "JSON file not found for $($decade.DisplayName): $jsonFilePath"
         }
+        $output = $output -replace 'TABLE_ROWS', $tableRows
+    } else {
+        Write-Warning "Invalid or empty JSON data for $($decade.DisplayName): $jsonFilePath"
+    }
+} else {
+    Write-Warning "JSON file not found for $($decade.DisplayName): $jsonFilePath"
+}
 
         # Add comments script
         $output = $output -replace '<!--COMMENTS_SCRIPT_PLACEHOLDER-->', $commentCode
