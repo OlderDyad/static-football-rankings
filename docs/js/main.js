@@ -9,10 +9,10 @@ import { DEBUG_LEVELS, log } from './modules/logger.js';
 import { initializePage } from './modules/pageTemplate.js';
 import { createTeamHeader } from './modules/teamHeader.js';
 import { teamConfig } from './config/teamConfig.js';
-import { checkAuthStatus, updateAuthUI } from './modules/auth.js';
+import { auth } from './modules/auth.js';  // Modified import
 import { CommentManager } from './modules/comments.js';
 import { formatDate, debounce, escapeHTML } from './modules/utils.js';
-import { config } from './config/config.js';
+import { config } from './config/teamConfig.js';
 
 // ============================================================================
 // MAIN APPLICATION INITIALIZATION
@@ -65,10 +65,43 @@ async function initializeApp() {
         const page = initializePage(pageConfig);
         await page.initialize(data);
 
-        // Setup additional features
-        await checkAuthStatus();
-        await loadComments();
-        setupEventListeners();
+       // Update the auth-related functions
+async function checkAuthStatus() {
+    try {
+        const status = await auth.checkStatus();
+        updateAuthUI(status);
+        return status;
+    } catch (error) {
+        log(DEBUG_LEVELS.ERROR, 'Auth check failed:', error);
+        updateAuthUI({ loggedIn: false, user: null });
+    }
+}
+
+function updateAuthUI(status) {
+    const commentForm = document.getElementById('commentForm');
+    const authContainer = document.getElementById('authContainer');
+    const authorName = document.getElementById('authorName');
+    
+    if (status.loggedIn && status.user) {
+        if (commentForm) commentForm.style.display = 'block';
+        if (authorName) authorName.textContent = status.user.name || 'Anonymous';
+        if (authContainer) {
+            authContainer.innerHTML = `
+                <p>Welcome, <strong>${status.user.name}</strong> 
+                   <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button>
+                </p>`;
+            document.getElementById('logoutBtn')?.addEventListener('click', auth.logout);
+        }
+    } else {
+        if (commentForm) commentForm.style.display = 'none';
+        if (authorName) authorName.textContent = 'Anonymous';
+        if (authContainer) {
+            authContainer.innerHTML = `
+                <button id="loginBtn" class="btn btn-success">Sign in with Google</button>`;
+            document.getElementById('loginBtn')?.addEventListener('click', auth.login);
+        }
+    }
+}
 
     } catch (error) {
         log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
