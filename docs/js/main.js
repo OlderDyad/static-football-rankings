@@ -13,6 +13,9 @@ import { teamConfig } from './config/teamConfig.js';  // Keep this one
 import { auth } from './modules/auth.js';
 import { CommentManager } from './modules/comments.js';
 import { formatDate, debounce, escapeHTML } from './modules/utils.js';
+import { CommentManager } from './modules/comments.js';
+
+
 
 
 // ============================================================================
@@ -65,6 +68,20 @@ async function initializeApp() {
         // Initialize page with data
         const page = initializePage(pageConfig);
         await page.initialize(data);
+
+             // Initialize CommentManager
+             const commentManager = new CommentManager();
+             await commentManager.fetchComments();
+             
+             // Setup additional features
+             await checkAuthStatus();
+             setupEventListeners(commentManager);  // Pass commentManager to event listeners
+     
+         } catch (error) {
+             log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
+             updateLoadingState(false, error.message);
+         }
+     }
 
        // Update the auth-related functions
 async function checkAuthStatus() {
@@ -372,10 +389,27 @@ async function submitComment() {
 // ============================================================================
 // EVENT LISTENERS AND UI UPDATES
 // ============================================================================
-function setupEventListeners() {
+function setupEventListeners(commentManager) {
     const submitButton = document.getElementById('submitComment');
     if (submitButton) {
-        submitButton.addEventListener('click', submitComment);
+        submitButton.addEventListener('click', () => {
+            const textElement = document.getElementById('commentText');
+            const text = textElement?.value?.trim();
+            if (text) {
+                commentManager.addComment(text)
+                    .then(() => {
+                        textElement.value = '';
+                        // Refresh comments display
+                        const commentsListEl = document.getElementById('commentsList');
+                        if (commentsListEl) {
+                            commentManager.renderComments(commentsListEl);
+                        }
+                    })
+                    .catch(error => {
+                        log(DEBUG_LEVELS.ERROR, 'Failed to add comment:', error);
+                    });
+            }
+        });
     }
 
     const searchInput = document.getElementById('searchInput');
@@ -384,9 +418,6 @@ function setupEventListeners() {
     }
 }
 
-function handleSearch(event) {
-    // Implementation moved to pageTemplate.js for better organization
-}
 
 // ============================================================================
 // LOADING STATE MANAGEMENT
@@ -447,9 +478,6 @@ export {
     determineDataFile,
     updateTimestamp,
     viewDetails,
-    loadComments,
-    displayComments,
-    submitComment,
     populateTable
 };
 
