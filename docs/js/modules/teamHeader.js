@@ -1,6 +1,6 @@
 //C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\js\modules\teamHeader.js
 
-import teamConfig from '../config/teamConfig.js'; // Ensure the correct relative path
+import { teamConfig } from '../config/teamConfig.js'; // Ensure the correct relative path
 
 export function createTeamHeader(program) {
     const teamDetails = {
