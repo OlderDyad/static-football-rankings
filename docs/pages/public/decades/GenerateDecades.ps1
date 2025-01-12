@@ -1,17 +1,136 @@
 # GenerateDecades.ps1
-# Generates decade pages from a template, inserts table rows from JSON,
-# and finally injects an inline comments/auth snippet into each .html file using a placeholder.
+# Generates decade pages for both teams and programs from templates
 
+#region Configuration
 Write-Host 'Generating decade pages and index...'
 
-# Determine the base URL based on environment
+# Base URL configuration
 $baseUrl = if ($env:GITHUB_ACTIONS -eq 'true') {
     '/static-football-rankings/docs/' # For GitHub Pages
 } else {
     '/docs/'  # For local testing
 }
 
-# Inline comment/auth snippet using single-quoted Here-String to prevent variable expansion
+# Table controls JavaScript
+$tableControlsScript = @'
+<script>
+const ROWS_PER_PAGE = 100;
+let currentPage = 1;
+let filteredRows = [];
+
+function initializeTable() {
+    const tableBody = document.querySelector('tbody');
+    const rows = Array.from(tableBody.getElementsByTagName('tr'));
+    filteredRows = rows;
+    const totalRows = rows.length;
+    
+    document.getElementById('totalRows').textContent = totalRows;
+    
+    // Initial page display
+    showPage(1);
+    
+    // Setup search
+    const searchInput = document.getElementById('tableSearch');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            filterTable(searchTerm);
+        });
+    }
+}
+
+function filterTable(searchTerm) {
+    const tableBody = document.querySelector('tbody');
+    const rows = Array.from(tableBody.getElementsByTagName('tr'));
+    
+    filteredRows = rows.filter(row => {
+        const text = row.textContent.toLowerCase();
+        return text.includes(searchTerm);
+    });
+    
+    document.getElementById('totalRows').textContent = filteredRows.length;
+    currentPage = 1;
+    showPage(1);
+}
+
+function showPage(pageNum) {
+    currentPage = pageNum;
+    const start = (pageNum - 1) * ROWS_PER_PAGE;
+    const end = Math.min(start + ROWS_PER_PAGE, filteredRows.length);
+    
+    // Hide all rows
+    filteredRows.forEach(row => row.style.display = 'none');
+    
+    // Show rows for current page
+    for (let i = start; i < end; i++) {
+        filteredRows[i].style.display = '';
+    }
+    
+    // Update pagination info
+    document.getElementById('startRow').textContent = filteredRows.length === 0 ? 0 : start + 1;
+    document.getElementById('endRow').textContent = end;
+    
+    updatePaginationControls();
+}
+
+function updatePaginationControls() {
+    const totalPages = Math.ceil(filteredRows.length / ROWS_PER_PAGE);
+    const pagination = document.getElementById('tablePagination');
+    if (!pagination) return;
+    
+    let html = '';
+    
+    // Previous button
+    html += `<li class="page-item \${currentPage === 1 ? 'disabled' : ''}">
+        <a class="page-link" href="#" data-page="prev">&laquo;</a>
+    </li>`;
+    
+    // Page numbers with ellipsis
+    for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+            html += `<li class="page-item \${i === currentPage ? 'active' : ''}">
+                <a class="page-link" href="#" data-page="\${i}">\${i}</a>
+            </li>`;
+        } else if (i === currentPage - 3 || i === currentPage + 3) {
+            html += '<li class="page-item disabled"><a class="page-link">...</a></li>';
+        }
+    }
+    
+    // Next button
+    html += `<li class="page-item \${currentPage === totalPages ? 'disabled' : ''}">
+        <a class="page-link" href="#" data-page="next">&raquo;</a>
+    </li>`;
+    
+    pagination.innerHTML = html;
+}
+
+// Add click handlers for pagination
+document.addEventListener('DOMContentLoaded', () => {
+    initializeTable();
+    
+    const pagination = document.getElementById('tablePagination');
+    if (pagination) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = e.target.closest('a');
+            if (!target || target.parentElement.classList.contains('disabled')) return;
+            
+            const page = target.dataset.page;
+            if (page === 'prev') {
+                showPage(currentPage - 1);
+            } else if (page === 'next') {
+                showPage(currentPage + 1);
+            } else {
+                showPage(parseInt(page));
+            }
+        });
+    }
+});
+</script>
+'@
+
+# Comments script
+# Comments script
 $commentCode = @'
 <script>
 const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
@@ -163,105 +282,108 @@ document.getElementById('submitComment')?.addEventListener('click', submitCommen
 })();
 </script>
 '@
+#endregion
 
+#region Configuration and Setup
+# Define paths
+$rootDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings"
+$docsDir = Join-Path $rootDir "docs"
+$scriptDir = $PSScriptRoot
+$templateDir = Join-Path $scriptDir "templates"
+$outputDir = $scriptDir
+$jsonBasePath = Join-Path $rootDir "data"
+
+# Template paths
+$teamTemplatePath = Join-Path $templateDir "decade-teams-template.html"
+$programTemplatePath = Join-Path $templateDir "decade-programs-template.html"
+$indexTemplatePath = Join-Path $templateDir "index-template.html"
+
+# Define decades list
+$decades = @(
+    @{ Name = 'pre1900'; StartYear = 1877; EndYear = 1899; DisplayName = 'Pre-1900s' }
+    @{ Name = '1900s'; StartYear = 1900; EndYear = 1909; DisplayName = '1900s' }
+    @{ Name = '1910s'; StartYear = 1910; EndYear = 1919; DisplayName = '1910s' }
+    @{ Name = '1920s'; StartYear = 1920; EndYear = 1929; DisplayName = '1920s' }
+    @{ Name = '1930s'; StartYear = 1930; EndYear = 1939; DisplayName = '1930s' }
+    @{ Name = '1940s'; StartYear = 1940; EndYear = 1949; DisplayName = '1940s' }
+    @{ Name = '1950s'; StartYear = 1950; EndYear = 1959; DisplayName = '1950s' }
+    @{ Name = '1960s'; StartYear = 1960; EndYear = 1969; DisplayName = '1960s' }
+    @{ Name = '1970s'; StartYear = 1970; EndYear = 1979; DisplayName = '1970s' }
+    @{ Name = '1980s'; StartYear = 1980; EndYear = 1989; DisplayName = '1980s' }
+    @{ Name = '1990s'; StartYear = 1990; EndYear = 1999; DisplayName = '1990s' }
+    @{ Name = '2000s'; StartYear = 2000; EndYear = 2009; DisplayName = '2000s' }
+    @{ Name = '2010s'; StartYear = 2010; EndYear = 2019; DisplayName = '2010s' }
+    @{ Name = '2020s'; StartYear = 2020; EndYear = 2029; DisplayName = '2020s' }
+)
+#endregion
+
+#region Main Processing
 try {
-    # Define decades list
-    $decades = @(
-        @{ Name = 'pre1900'; StartYear = 1877; EndYear = 1899; DisplayName = 'Pre-1900s' }
-        @{ Name = '1900s'; StartYear = 1900; EndYear = 1909; DisplayName = '1900s' }
-        @{ Name = '1910s'; StartYear = 1910; EndYear = 1919; DisplayName = '1910s' }
-        @{ Name = '1920s'; StartYear = 1920; EndYear = 1929; DisplayName = '1920s' }
-        @{ Name = '1930s'; StartYear = 1930; EndYear = 1939; DisplayName = '1930s' }
-        @{ Name = '1940s'; StartYear = 1940; EndYear = 1949; DisplayName = '1940s' }
-        @{ Name = '1950s'; StartYear = 1950; EndYear = 1959; DisplayName = '1950s' }
-        @{ Name = '1960s'; StartYear = 1960; EndYear = 1969; DisplayName = '1960s' }
-        @{ Name = '1970s'; StartYear = 1970; EndYear = 1979; DisplayName = '1970s' }
-        @{ Name = '1980s'; StartYear = 1980; EndYear = 1989; DisplayName = '1980s' }
-        @{ Name = '1990s'; StartYear = 1990; EndYear = 1999; DisplayName = '1990s' }
-        @{ Name = '2000s'; StartYear = 2000; EndYear = 2009; DisplayName = '2000s' }
-        @{ Name = '2010s'; StartYear = 2010; EndYear = 2019; DisplayName = '2010s' }
-        @{ Name = '2020s'; StartYear = 2020; EndYear = 2029; DisplayName = '2020s' }
-    )
+    # Debug path information
+    Write-Host "Root Directory: $rootDir"
+    Write-Host "Docs Directory: $docsDir"
+    Write-Host "Script Directory: $scriptDir"
+    Write-Host "Template Directory: $templateDir"
+    Write-Host "Output Directory: $outputDir"
+    Write-Host "JSON Base Path: $jsonBasePath"
 
-     # Define paths - using absolute paths for clarity
-     $rootDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings"
-     $docsDir = Join-Path $rootDir "docs"
-     $scriptDir = $PSScriptRoot  # Current directory
-     $templateDir = $scriptDir   # Templates in same directory as script
-     $outputDir = $scriptDir     # Output to same directory
-     # Update this line to point to the correct data directory
-     $jsonBasePath = Join-Path $rootDir "data"  # Changed from "docs/data" to "data"
- 
-     # Debug path information
-     Write-Host "Root Directory: $rootDir"
-     Write-Host "Docs Directory: $docsDir"
-     Write-Host "Script Directory: $scriptDir"
-     Write-Host "Template Directory: $templateDir"
-     Write-Host "Output Directory: $outputDir"
-     Write-Host "JSON Base Path: $jsonBasePath"
-
-     
-    # Define template paths
-    $decadeTemplatePath = Join-Path $templateDir "decade-template.html"
-    $indexTemplatePath = Join-Path $templateDir "index-template.html"
-
-    # Check templates exist (using decadeTemplatePath consistently)
-    if (-not (Test-Path $decadeTemplatePath)) {
-        throw "Decade template file not found at $decadeTemplatePath"
+    # Verify templates exist
+    if (-not (Test-Path $teamTemplatePath)) {
+        throw "Team template file not found at $teamTemplatePath"
+    }
+    if (-not (Test-Path $programTemplatePath)) {
+        throw "Program template file not found at $programTemplatePath"
     }
     if (-not (Test-Path $indexTemplatePath)) {
         throw "Index template file not found at $indexTemplatePath"
     }
 
-    # Read templates (using decadeTemplatePath consistently)
-    $decadeTemplate = Get-Content $decadeTemplatePath -Raw
+    # Load templates
+    $teamTemplate = Get-Content $teamTemplatePath -Raw
+    $programTemplate = Get-Content $programTemplatePath -Raw
     $indexTemplate = Get-Content $indexTemplatePath -Raw
-
-    # Ensure output directory exists
-    if (-not (Test-Path $outputDir)) {
-        New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
-        Write-Host "Created output directory: $outputDir"
-    }
 
     # Process each decade
     foreach ($decade in $decades) {
         Write-Host "`nProcessing $($decade.DisplayName)..."
 
-        $output = $decadeTemplate
-        $output = $output -replace 'DECADE_DISPLAY_NAME', $decade.DisplayName
-        $output = $output -replace 'DECADE_NAME', $decade.Name
-        $output = $output -replace 'DECADE_START', $decade.StartYear
-        $output = $output -replace 'DECADE_END', $decade.EndYear
-        $output = $output -replace 'DECADE_ID', $decade.Name
+        #region Team Processing
+        Write-Host "Processing Teams..."
+        $teamOutput = $teamTemplate
+        $teamOutput = $teamOutput -replace 'DECADE_DISPLAY_NAME', $decade.DisplayName
+        $teamOutput = $teamOutput -replace 'DECADE_NAME', $decade.Name
+        $teamOutput = $teamOutput -replace 'DECADE_START', $decade.StartYear
+        $teamOutput = $teamOutput -replace 'DECADE_END', $decade.EndYear
+        $teamOutput = $teamOutput -replace 'DECADE_ID', "$($decade.Name)-teams"
+        $teamOutput = $teamOutput -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
 
-        # Add metadata
-        $metadataTag = "<meta name=`"decade-info`" content=`"start-year:$($decade.StartYear),end-year:$($decade.EndYear)`">"
-        $output = $output -replace '(?<=<head>.*?)\n', "`n        $metadataTag`n"
+        # Process team JSON
+        $teamJsonFileName = "decade-teams-$($decade.Name).json"
+        $teamJsonFilePath = Join-Path $jsonBasePath "decades\teams\$teamJsonFileName"
 
-        # Add base tag
-        $baseTag = "<base href=`"$baseUrl`">"
-        $output = $output -replace '(?<=<head>.*?)\n', "`n        $baseTag`n"
+        if (Test-Path $teamJsonFilePath) {
+            Write-Host "Found team JSON for $($decade.Name): $teamJsonFilePath" -ForegroundColor Green
+            $teamJsonData = Get-Content -Path $teamJsonFilePath -Raw | ConvertFrom-Json
 
-       # Process JSON data
-$jsonFileName = "decade-teams-$($decade.Name).json"
-$jsonFilePath = Join-Path $jsonBasePath "decades\teams\$jsonFileName"
+            if ($null -ne $teamJsonData -and $null -ne $teamJsonData.items -and $teamJsonData.items -is [System.Array]) {
+                # Process timestamp
+                if ($null -ne $teamJsonData.metadata) {
+                    $timestamp = [DateTime]::Parse($teamJsonData.metadata.timestamp)
+                    $formattedTimestamp = $timestamp.ToString("M/d/yyyy")
+                    $teamOutput = $teamOutput -replace 'TIMESTAMP', $formattedTimestamp
+                } else {
+                    $teamOutput = $teamOutput -replace 'TIMESTAMP', (Get-Date).ToString("M/d/yyyy")
+                }
 
-if (Test-Path $jsonFilePath) {
-    Write-Host "Found JSON for $($decade.Name): $jsonFilePath" -ForegroundColor Green
-    $jsonData = Get-Content -Path $jsonFilePath -Raw | ConvertFrom-Json
-
-    if ($null -ne $jsonData -and $null -ne $jsonData.items -and $jsonData.items -is [System.Array]) {
-        Write-Host "Rankings for $($decade.DisplayName):" -ForegroundColor Yellow
-        $jsonData.items | Format-Table
-
-        $tableRows = ""
-        foreach ($rank in $jsonData.items | Select-Object -First 20) {
-            $tableRows += @"
+                # Process table rows
+                $tableRows = ""
+                foreach ($rank in $teamJsonData.items) {
+                    $tableRows += @"
 <tr>
     <td>$($rank.rank)</td>
     <td>$($rank.team)</td>
     <td>$($rank.state)</td>
-    <td>$($rank.seasons)</td>
+    <td>$($rank.season)</td>
     <td>$($rank.combined)</td>
     <td>$($rank.margin)</td>
     <td>$($rank.win_loss)</td>
@@ -270,37 +392,98 @@ if (Test-Path $jsonFilePath) {
     <td>$($rank.games_played)</td>
 </tr>
 "@
+                }
+                $teamOutput = $teamOutput -replace 'TABLE_ROWS', $tableRows
+            } else {
+                Write-Warning "Invalid or empty team JSON data for $($decade.DisplayName): $teamJsonFilePath"
+            }
+        } else {
+            Write-Warning "Team JSON file not found for $($decade.DisplayName): $teamJsonFilePath"
         }
-        $output = $output -replace 'TABLE_ROWS', $tableRows
-    } else {
-        Write-Warning "Invalid or empty JSON data for $($decade.DisplayName): $jsonFilePath"
-    }
-} else {
-    Write-Warning "JSON file not found for $($decade.DisplayName): $jsonFilePath"
-}
 
         # Add comments script
-        $output = $output -replace '<!--COMMENTS_SCRIPT_PLACEHOLDER-->', $commentCode
+        $teamOutput = $teamOutput -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
 
-        # Save the file
-        $outputPath = Join-Path $outputDir "$($decade.Name).html"
-        Set-Content -Path $outputPath -Value $output -Encoding UTF8
+        # Save team file
+        $teamOutputPath = Join-Path $outputDir "$($decade.Name)-teams.html"
+        Set-Content -Path $teamOutputPath -Value $teamOutput -Encoding UTF8
+        #endregion
 
-        if (-not (Test-Path $outputPath)) {
-            throw "Failed to create $($decade.DisplayName) page"
+        #region Program Processing
+        Write-Host "Processing Programs..."
+        $programOutput = $programTemplate
+        $programOutput = $programOutput -replace 'DECADE_DISPLAY_NAME', $decade.DisplayName
+        $programOutput = $programOutput -replace 'DECADE_NAME', $decade.Name
+        $programOutput = $programOutput -replace 'DECADE_START', $decade.StartYear
+        $programOutput = $programOutput -replace 'DECADE_END', $decade.EndYear
+        $programOutput = $programOutput -replace 'DECADE_ID', "$($decade.Name)-programs"
+        $programOutput = $programOutput -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
+
+        # Process program JSON
+        $programJsonFileName = "decade-programs-$($decade.Name).json"
+        $programJsonFilePath = Join-Path $jsonBasePath "decades\programs\$programJsonFileName"
+
+        if (Test-Path $programJsonFilePath) {
+            Write-Host "Found program JSON for $($decade.Name): $programJsonFilePath" -ForegroundColor Green
+            $programJsonData = Get-Content -Path $programJsonFilePath -Raw | ConvertFrom-Json
+
+            if ($null -ne $programJsonData -and $null -ne $programJsonData.items -and $programJsonData.items -is [System.Array]) {
+                # Process timestamp
+                if ($null -ne $programJsonData.metadata) {
+                    $timestamp = [DateTime]::Parse($programJsonData.metadata.timestamp)
+                    $formattedTimestamp = $timestamp.ToString("M/d/yyyy")
+                    $programOutput = $programOutput -replace 'TIMESTAMP', $formattedTimestamp
+                } else {
+                    $programOutput = $programOutput -replace 'TIMESTAMP', (Get-Date).ToString("M/d/yyyy")
+                }
+
+                # Process table rows
+                $tableRows = ""
+                foreach ($rank in $programJsonData.items) {
+                    $tableRows += @"
+<tr>
+    <td>$($rank.rank)</td>
+    <td>$($rank.program)</td>
+    <td>$($rank.state)</td>
+    <td>$($rank.seasons)</td>
+    <td>$($rank.combined)</td>
+    <td>$($rank.margin)</td>
+    <td>$($rank.win_loss)</td>
+    <td>$($rank.offense)</td>
+    <td>$($rank.defense)</td>
+</tr>
+"@
+                }
+                $programOutput = $programOutput -replace 'TABLE_ROWS', $tableRows
+            } else {
+                Write-Warning "Invalid or empty program JSON data for $($decade.DisplayName): $programJsonFilePath"
+            }
+        } else {
+            Write-Warning "Program JSON file not found for $($decade.DisplayName): $programJsonFilePath"
         }
+
+        # Add comments script
+        $programOutput = $programOutput -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+
+        # Save program file
+        $programOutputPath = Join-Path $outputDir "$($decade.Name)-programs.html"
+        Set-Content -Path $programOutputPath -Value $programOutput -Encoding UTF8
+        #endregion
     }
 
-    # Create index page
+    #region Index Generation
     Write-Host "`nGenerating index page..."
     $decadeCardsHtml = $decades | ForEach-Object {
 @"
-<div class="col-md-4 mb-4">
+<div class="col-md-6 mb-4">
     <div class="card h-100">
         <div class="card-body d-flex flex-column">
             <h5 class="card-title">$($_.DisplayName)</h5>
-            <p class="card-text">Top teams from $($_.StartYear) to $($_.EndYear)</p>
-            <a href="$($_.Name).html" class="btn btn-primary mt-auto">View Rankings</a>
+            <p class="card-text">Top teams and programs from $($_.StartYear) to $($_.EndYear)</p>
+            <div class="mt-auto">
+                <a href="$($_.Name)-teams.html" class="btn btn-primary me-2">Season Rankings</a>
+                <a href="$($_.Name)-programs.html" class="btn btn-outline-primary">Program Rankings</a>
+            </div>
         </div>
     </div>
 </div>
@@ -312,15 +495,8 @@ if (Test-Path $jsonFilePath) {
     Set-Content -Path $indexPath -Value $indexContent -Encoding UTF8
 
     Write-Host "All files generated successfully in: $outputDir"
-
 } catch {
     Write-Error "Generation failed: $_"
     exit 1
 }
-
-
-
-
-
-
-
+#endregion
