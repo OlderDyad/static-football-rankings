@@ -65,23 +65,23 @@ async function initializeApp() {
             createTeamHeader(data.topItem);
         }
 
-        // Initialize page with data
-        const page = initializePage(pageConfig);
-        await page.initialize(data);
-
-             // Initialize CommentManager
-             const commentManager = new CommentManager();
-             await commentManager.fetchComments();
-             
-             // Setup additional features
-             await checkAuthStatus();
-             setupEventListeners(commentManager);  // Pass commentManager to event listeners
-     
-         } catch (error) {
-             log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
-             updateLoadingState(false, error.message);
-         }
-     }
+         // Initialize page with data
+         const page = initializePage(pageConfig);
+         await page.initialize(data);
+ 
+         // Initialize CommentManager
+         const commentManager = new CommentManager();
+         await commentManager.fetchComments();
+ 
+         // Setup additional features
+         await checkAuthStatus();
+         setupEventListeners(commentManager);  // Pass commentManager to event listeners
+ 
+     } catch (error) {
+         log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
+         updateLoadingState(false, error.message);
+     }  // Remove the extra closing brace that was here
+ }
 
        // Update the auth-related functions
 async function checkAuthStatus() {
