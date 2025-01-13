@@ -1,63 +1,60 @@
-//C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\js\modules\teamHeader.js
-
-import { teamConfig } from '../config/teamConfig.js'; // Ensure the correct relative path
+// docs/js/modules/teamHeader.js
+import { teamConfig } from '../config/teamConfig.js';
 
 export function createTeamHeader(program) {
+    if (!program) {
+        console.log('No program data provided for header');
+        return '';
+    }
+
     const teamDetails = {
-        teamName: program.team || 'Unknown Team',
-        city: program.city || '',
-        state: program.state || '',
+        teamName: program.team || program.program || 'Unknown Team',
         mascot: program.mascot || '',
-        primaryColor: program.backgroundColor || '#FFFFFF', // Default to white if not specified
-        secondaryColor: program.textColor || '#000000', // Default to black if not specified
-        tertiaryColor: program.tertiaryColor || '',
-        logoPath: program.LogoURL || '', // Will use defaultLogo if empty
-        schoolLogoPath: program.School_Logo_URL || '', // Will use defaultLogo if empty
-        yearFounded: program.yearFounded || '',
-        conference: program.conference || '',
-        division: program.division || ''
+        primaryColor: program.backgroundColor || '#FFFFFF',
+        secondaryColor: program.textColor || '#000000',
+        logoPath: program.LogoURL || '',
+        schoolLogoPath: program.School_Logo_URL || ''
     };
 
-    // Debugging: Log teamDetails to verify property values
-    console.log('Rendering team header for:', teamDetails.teamName);
-    console.log('LogoURL:', teamDetails.logoPath);
-    console.log('SchoolLogoURL:', teamDetails.schoolLogoPath);
+    console.log('Creating header for:', teamDetails.teamName);
 
-    // Determine image sources using teamConfig
-    const logoImgSrc = teamDetails.logoPath 
-        ? teamConfig.getTeamImagePath(teamDetails.logoPath)
-        : teamConfig.defaultLogo;
+    // Process image paths using teamConfig
+    const logoImgSrc = teamConfig.getTeamImagePath(teamDetails.logoPath);
+    const schoolLogoImgSrc = teamConfig.getTeamImagePath(teamDetails.schoolLogoPath);
 
-    const schoolLogoImgSrc = teamDetails.schoolLogoPath 
-        ? teamConfig.getTeamImagePath(teamDetails.schoolLogoPath)
-        : teamConfig.defaultLogo;
+    console.log('Logo path:', logoImgSrc);
+    console.log('School logo path:', schoolLogoImgSrc);
 
     const headerHtml = `
         <div class="team-header" style="background-color: ${teamDetails.primaryColor}; color: ${teamDetails.secondaryColor};">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-3">
+                    <div class="col-md-3 text-center">
                         <img src="${logoImgSrc}"
                              alt="${teamDetails.teamName} Logo"
-                             class="img-fluid"
-                             style="max-height: 100px;"
-                             onerror="this.src='${teamConfig.defaultLogo}'" />
+                             class="img-fluid team-logo"
+                             onerror="this.src='${teamConfig.defaultLogo}'; this.classList.add('default-logo');" />
                     </div>
                     <div class="col-md-6 text-center">
                         <h2>${teamDetails.teamName}</h2>
-                        <p>${teamDetails.mascot}</p>
+                        ${teamDetails.mascot ? `<p class="mascot-name">${teamDetails.mascot}</p>` : ''}
                     </div>
-                    <div class="col-md-3 text-right">
+                    <div class="col-md-3 text-center">
                         <img src="${schoolLogoImgSrc}"
-                             alt="${teamDetails.mascot}"
-                             class="img-fluid"
-                             style="max-height: 100px;"
-                             onerror="this.src='${teamConfig.defaultLogo}'" />
+                             alt="${teamDetails.teamName} School Logo"
+                             class="img-fluid school-logo"
+                             onerror="this.src='${teamConfig.defaultLogo}'; this.classList.add('default-logo');" />
                     </div>
                 </div>
             </div>
         </div>
     `;
 
-    return headerHtml;
+    // Find the container and insert the header
+    const headerContainer = document.getElementById('teamHeaderContainer');
+    if (headerContainer) {
+        headerContainer.innerHTML = headerHtml;
+    } else {
+        console.warn('Team header container not found');
+    }
 }
