@@ -1,11 +1,14 @@
 // ============================================================================
-// docs/js/main.js - Main Application Entry Point
+/**
+ * docs/js/main.js - Main Application Entry Point
+ */
 // ============================================================================
 
 // ============================================================================
-// IMPORTS
+/**
+ * IMPORTS
+ */
 // ============================================================================
-// docs/js/main.js - Update imports section
 import { DEBUG_LEVELS, log } from './modules/logger.js';
 import { initializePage } from './modules/pageTemplate.js';
 import { createTeamHeader } from './modules/teamHeader.js';
@@ -14,12 +17,10 @@ import { auth } from './modules/auth.js';
 import { CommentManager } from '/static-football-rankings/docs/js/modules/comments.js';
 import { formatDate, debounce, escapeHTML } from './modules/utils.js';
 
-
-
-
-
 // ============================================================================
-// MAIN APPLICATION INITIALIZATION
+/**
+ * MAIN APPLICATION INITIALIZATION
+ */
 // ============================================================================
 async function initializeApp() {
     try {
@@ -65,25 +66,29 @@ async function initializeApp() {
             createTeamHeader(data.topItem);
         }
 
-         // Initialize page with data
-         const page = initializePage(pageConfig);
-         await page.initialize(data);
- 
-         // Initialize CommentManager
-         const commentManager = new CommentManager();
-         await commentManager.fetchComments();
- 
-         // Setup additional features
-         await checkAuthStatus();
-         setupEventListeners(commentManager);  // Pass commentManager to event listeners
- 
-     } catch (error) {
-         log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
-         updateLoadingState(false, error.message);
-     }  // Remove the extra closing brace that was here
- }
+        // Initialize page with data
+        const page = initializePage(pageConfig);
+        await page.initialize(data);
 
-       // Update the auth-related functions
+        // Initialize CommentManager
+        const commentManager = new CommentManager();
+        await commentManager.fetchComments();
+
+        // Setup additional features
+        await checkAuthStatus();
+        setupEventListeners(commentManager);  // Pass commentManager to event listeners
+
+    } catch (error) {
+        log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
+        updateLoadingState(false, error.message);
+    }
+}
+
+// ============================================================================
+/**
+ * AUTH-RELATED FUNCTIONS
+ */
+// ============================================================================
 async function checkAuthStatus() {
     try {
         const status = await auth.checkStatus();
@@ -121,14 +126,10 @@ function updateAuthUI(status) {
     }
 }
 
-    catch (error) {
-        log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
-        updateLoadingState(false, error.message);
-    }
-}
-
 // ============================================================================
-// DATA LOADING AND VALIDATION
+/**
+ * DATA LOADING AND VALIDATION
+ */
 // ============================================================================
 async function loadProgramData(dataFile) {
     if (!dataFile) {
@@ -184,7 +185,9 @@ function validateDataStructure(data) {
 }
 
 // ============================================================================
-// DATA FILE DETERMINATION
+/**
+ * DATA FILE DETERMINATION
+ */
 // ============================================================================
 function determineDataFile(pageName) {
     // Default data directory path
@@ -231,7 +234,9 @@ function determineDataFile(pageName) {
 }
 
 // ============================================================================
-// TABLE POPULATION AND DISPLAY
+/**
+ * TABLE POPULATION AND DISPLAY
+ */
 // ============================================================================
 function populateTable(data) {
     const tableBody = document.getElementById('programsTableBody');
@@ -298,7 +303,9 @@ function createProgramRow(item) {
 }
 
 // ============================================================================
-// COMMENTS FUNCTIONALITY
+/**
+ * COMMENTS FUNCTIONALITY
+ */
 // ============================================================================
 async function loadComments() {
     try {
@@ -387,7 +394,9 @@ async function submitComment() {
 }
 
 // ============================================================================
-// EVENT LISTENERS AND UI UPDATES
+/**
+ * EVENT LISTENERS AND UI UPDATES
+ */
 // ============================================================================
 function setupEventListeners(commentManager) {
     const submitButton = document.getElementById('submitComment');
@@ -420,7 +429,9 @@ function setupEventListeners(commentManager) {
 
 
 // ============================================================================
-// LOADING STATE MANAGEMENT
+/**
+ * LOADING STATE MANAGEMENT
+ */
 // ============================================================================
 function updateLoadingState(isLoading, errorMessage = '') {
     const header = document.querySelector('.team-header');
@@ -445,7 +456,9 @@ function updateLoadingState(isLoading, errorMessage = '') {
 }
 
 // ============================================================================
-// UTILITY FUNCTIONS
+/**
+ * UTILITY FUNCTIONS
+ */
 // ============================================================================
 function formatNumber(value) {
     return typeof value === 'number' ? value.toFixed(3) : value;
@@ -466,7 +479,9 @@ function viewDetails(teamName) {
 }
 
 // ============================================================================
-// INITIALIZATION AND EXPORTS
+/**
+ * INITIALIZATION AND EXPORTS
+ */
 // ============================================================================
 document.addEventListener('DOMContentLoaded', initializeApp);
 
@@ -480,6 +495,7 @@ export {
     viewDetails,
     populateTable
 };
+
 
 
 
