@@ -20,7 +20,7 @@
         <div class="container mt-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
                     <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/decades/index.html">Rankings by Decade</a></li>
                     <li class="breadcrumb-item active" aria-current="page">DECADE_DISPLAY_NAME Teams</li>
                 </ol>
@@ -37,12 +37,12 @@
                 <div class="text-muted">Updated: <span id="lastUpdated">TIMESTAMP</span></div>
             </div>
 
-            <!-- Search Controls -->
-<div class="row mb-3">
+ <!-- Search Controls -->
+ <div class="row mb-3">
     <div class="col-md-6">
         <div class="input-group">
             <span class="input-group-text">Search</span>
-            <input type="text" id="tableSearch" class="form-control" placeholder="Type to search...">
+            <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
         </div>
     </div>
 </div>
@@ -70,18 +70,19 @@
     </table>
 </div>
             <!-- Pagination Controls -->
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="pagination-info">
-                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <nav aria-label="Table navigation">
-                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
-                    </nav>
-                </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="pagination-info">
+                Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
             </div>
+        </div>
+        <div class="col-md-6">
+            <nav aria-label="Table navigation">
+                <ul class="pagination justify-content-end" id="tablePagination"></ul>
+            </nav>
+        </div>
+    </div>
+</div>
 
             <!-- Comments Section -->
             <div class="comments-section mt-5">
