@@ -121,7 +121,7 @@ function updateAuthUI(status) {
     }
 }
 
-    } catch (error) {
+    catch (error) {
         log(DEBUG_LEVELS.ERROR, 'App initialization failed:', error);
         updateLoadingState(false, error.message);
     }
