@@ -2786,135 +2786,142 @@
 <!-- <script type="module" src="/static-football-rankings/js/main.js"></script> -->
         <!-- Table Controls Script -->
         <script>
-    // Namespace our table controls to avoid conflicts
     const TableControls = {
         ROWS_PER_PAGE: 100,
         currentPage: 1,
         filteredRows: [],
 
         init() {
-            this.initializeTable();
-            this.setupEventListeners();
-        },
-
-        initializeTable() {
             const tableBody = document.querySelector('tbody');
-            const rows = Array.from(tableBody.getElementsByTagName('tr'));
-            this.filteredRows = rows;
-            const totalRows = rows.length;
-            
-            document.getElementById('totalRows').textContent = totalRows;
-            this.showPage(1);
+            if (tableBody) {
+                const rows = Array.from(tableBody.getElementsByTagName('tr'));
+                this.filteredRows = rows;
+                const totalRows = rows.length;
+                
+                const totalRowsElement = document.getElementById('totalRows');
+                if (totalRowsElement) {
+                    totalRowsElement.textContent = totalRows;
+                }
+                
+                this.setupEventListeners();
+                this.showPage(1);
+            }
         },
 
         setupEventListeners() {
-            // Search functionality
             const searchInput = document.getElementById('tableSearch');
+            const pagination = document.getElementById('tablePagination');
+
             if (searchInput) {
-                searchInput.value = ''; // Clear any existing search
-                searchInput.addEventListener('keyup', (e) => {
-                    const searchTerm = e.target.value.toLowerCase();
-                    this.filterTable(searchTerm);
+                searchInput.value = '';
+                const self = this;
+                searchInput.addEventListener('input', function(e) {
+                    self.filterTable(e.target.value.toLowerCase());
                 });
             }
 
-            // Pagination
-            const pagination = document.getElementById('tablePagination');
             if (pagination) {
-                pagination.addEventListener('click', (e) => {
+                const self = this;
+                pagination.addEventListener('click', function(e) {
                     const button = e.target.closest('button');
                     if (!button || button.parentElement.classList.contains('disabled')) return;
                     
                     const page = button.dataset.page;
                     if (page === 'prev') {
-                        this.showPage(this.currentPage - 1);
+                        self.showPage(self.currentPage - 1);
                     } else if (page === 'next') {
-                        this.showPage(this.currentPage + 1);
+                        self.showPage(self.currentPage + 1);
                     } else {
-                        this.showPage(parseInt(page));
+                        self.showPage(parseInt(page));
                     }
                 });
             }
         },
 
-        // Updated filterTable function
         filterTable(searchTerm) {
             const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
             const rows = Array.from(tableBody.getElementsByTagName('tr'));
-            
-            if (!searchTerm || searchTerm.trim() === '') {
-                this.filteredRows = rows;
-            } else {
-                this.filteredRows = rows.filter(row => {
-                    const cellsText = Array.from(row.getElementsByTagName('td'))
-                        .map(cell => cell.textContent || cell.innerText)
-                        .join(' ')
-                        .toLowerCase();
-                    return cellsText.includes(searchTerm.toLowerCase());
-                });
-            }
-            
-            document.getElementById('totalRows').textContent = this.filteredRows.length;
-            
-            rows.forEach(row => {
-                row.style.display = this.filteredRows.includes(row) ? '' : 'none';
+            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
+                return Array.from(row.getElementsByTagName('td'))
+                    .some(cell => (cell.textContent || cell.innerText)
+                        .toLowerCase()
+                        .includes(searchTerm));
             });
-            
+
+            const totalRowsElement = document.getElementById('totalRows');
+            if (totalRowsElement) {
+                totalRowsElement.textContent = this.filteredRows.length;
+            }
+
             this.currentPage = 1;
             this.showPage(1);
         },
 
         showPage(pageNum) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
             this.currentPage = pageNum;
             const start = (pageNum - 1) * this.ROWS_PER_PAGE;
             const end = Math.min(start + this.ROWS_PER_PAGE, this.filteredRows.length);
             
-            this.filteredRows.forEach(row => row.style.display = 'none');
+            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
+            allRows.forEach(row => row.style.display = 'none');
             
             for (let i = start; i < end; i++) {
-                this.filteredRows[i].style.display = '';
+                if (this.filteredRows[i]) {
+                    this.filteredRows[i].style.display = '';
+                }
             }
             
-            document.getElementById('startRow').textContent = this.filteredRows.length === 0 ? 0 : start + 1;
-            document.getElementById('endRow').textContent = end;
+            const startRowElement = document.getElementById('startRow');
+            const endRowElement = document.getElementById('endRow');
+            if (startRowElement) startRowElement.textContent = this.filteredRows.length === 0 ? 0 : start + 1;
+            if (endRowElement) endRowElement.textContent = end;
             
             this.updatePaginationControls();
         },
 
         updatePaginationControls() {
-            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
             const pagination = document.getElementById('tablePagination');
             if (!pagination) return;
             
-            let html = '';
+            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
+            let html = [];
             
-            html += `<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
+            // Previous button
+            html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
                 <button class="page-link" data-page="prev">&laquo;</button>
-            </li>`;
+            </li>`);
             
+            // Page numbers
             for (let i = 1; i <= totalPages; i++) {
                 if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
-                    html += `<li class="page-item ${i === this.currentPage ? 'active' : ''}">
+                    html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
                         <button class="page-link" data-page="${i}">${i}</button>
-                    </li>`;
+                    </li>`);
                 } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
-                    html += '<li class="page-item disabled"><span class="page-link">...</span></li>';
+                    html.push('<li class="page-item disabled"><span class="page-link">...</span></li>');
                 }
             }
             
-            html += `<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
+            // Next button
+            html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
                 <button class="page-link" data-page="next">&raquo;</button>
-            </li>`;
+            </li>`);
             
-            pagination.innerHTML = html;
+            pagination.innerHTML = html.join('');
         }
     };
 
-    // Initialize table controls after DOM is loaded and after main.js runs
-    document.addEventListener('DOMContentLoaded', () => {
-        // Wait a brief moment for main.js to complete its initialization
-        setTimeout(() => TableControls.init(), 100);
-    });
+    // Initialize after DOM loads
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => TableControls.init());
+    } else {
+        TableControls.init();
+    }
 </script>
         <!-- Comments Script -->
         <script>
