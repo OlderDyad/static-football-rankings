@@ -26,31 +26,60 @@ function initializeTable() {
     
     document.getElementById('totalRows').textContent = totalRows;
     
-    // Initial page display
-    showPage(1);
-    
-    // Setup search
+    // Setup search with immediate feedback
     const searchInput = document.getElementById('tableSearch');
     if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
+        searchInput.value = ''; // Clear any existing search
+        searchInput.addEventListener('input', debounce((e) => {
             const searchTerm = e.target.value.toLowerCase();
             filterTable(searchTerm);
-        });
+        }, 300)); // Add debounce for better performance
     }
+    
+    // Initial display
+    showPage(1);
+}
+
+// Add debounce helper function
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
 
 function filterTable(searchTerm) {
     const tableBody = document.querySelector('tbody');
     const rows = Array.from(tableBody.getElementsByTagName('tr'));
     
-    filteredRows = rows.filter(row => {
-        const text = row.textContent.toLowerCase();
-        return text.includes(searchTerm);
-    });
+    if (!searchTerm.trim()) {
+        // If search is empty, show all rows
+        filteredRows = rows;
+    } else {
+        // Filter rows based on search term
+        filteredRows = rows.filter(row => {
+            const cells = Array.from(row.getElementsByTagName('td'));
+            return cells.some(cell => {
+                const text = cell.textContent || cell.innerText;
+                return text.toLowerCase().includes(searchTerm);
+            });
+        });
+    }
     
+    // Update display
     document.getElementById('totalRows').textContent = filteredRows.length;
-    currentPage = 1;
-    showPage(1);
+    if (filteredRows.length === 0) {
+        // Show "No results found" message
+        tableBody.innerHTML = '<tr><td colspan="10" class="text-center">No matching results found</td></tr>';
+    } else {
+        currentPage = 1;
+        showPage(1);
+    }
 }
 
 function showPage(pageNum) {
@@ -82,40 +111,38 @@ function updatePaginationControls() {
     
     // Previous button
     html += `<li class="page-item \${currentPage === 1 ? 'disabled' : ''}">
-        <a class="page-link" href="#" data-page="prev">&laquo;</a>
+        <button class="page-link" data-page="prev">&laquo;</button>
     </li>`;
     
     // Page numbers with ellipsis
     for (let i = 1; i <= totalPages; i++) {
         if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
             html += `<li class="page-item \${i === currentPage ? 'active' : ''}">
-                <a class="page-link" href="#" data-page="\${i}">\${i}</a>
+                <button class="page-link" data-page="\${i}">\${i}</button>
             </li>`;
         } else if (i === currentPage - 3 || i === currentPage + 3) {
-            html += '<li class="page-item disabled"><a class="page-link">...</a></li>';
+            html += '<li class="page-item disabled"><span class="page-link">...</span></li>';
         }
     }
     
     // Next button
     html += `<li class="page-item \${currentPage === totalPages ? 'disabled' : ''}">
-        <a class="page-link" href="#" data-page="next">&raquo;</a>
+        <button class="page-link" data-page="next">&raquo;</button>
     </li>`;
     
     pagination.innerHTML = html;
 }
 
-// Add click handlers for pagination
 document.addEventListener('DOMContentLoaded', () => {
     initializeTable();
     
     const pagination = document.getElementById('tablePagination');
     if (pagination) {
         pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = e.target.closest('a');
-            if (!target || target.parentElement.classList.contains('disabled')) return;
+            const button = e.target.closest('button');
+            if (!button || button.parentElement.classList.contains('disabled')) return;
             
-            const page = target.dataset.page;
+            const page = button.dataset.page;
             if (page === 'prev') {
                 showPage(currentPage - 1);
             } else if (page === 'next') {
@@ -129,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 '@
 
-# Comments script
 # Comments script
 $commentCode = @'
 <script>
