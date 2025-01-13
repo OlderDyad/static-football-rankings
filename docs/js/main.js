@@ -9,12 +9,13 @@
  * IMPORTS
  */
 // ============================================================================
+// docs/js/main.js - Update imports section
 import { DEBUG_LEVELS, log } from './modules/logger.js';
 import { initializePage } from './modules/pageTemplate.js';
 import { createTeamHeader } from './modules/teamHeader.js';
 import { teamConfig } from './config/teamConfig.js';  // Keep this one
 import { auth } from './modules/auth.js';
-import { CommentManager } from '/static-football-rankings/docs/js/modules/comments.js';
+import { CommentManager } from './modules/comments.js';  // Fixed path
 import { formatDate, debounce, escapeHTML } from './modules/utils.js';
 
 // ============================================================================
@@ -25,47 +26,49 @@ import { formatDate, debounce, escapeHTML } from './modules/utils.js';
 async function initializeApp() {
     try {
         log(DEBUG_LEVELS.INFO, 'Initializing app...');
-
-        const h1Element = document.querySelector('h1[data-page-name]');
-        if (!h1Element) {
-            throw new Error('Page configuration not found');
-        }
-
-        const pageName = h1Element.dataset.pageName;
-        let pageTitle = h1Element.textContent;
         
-        // Determine data file path based on meta tag or page name
-        const dataFileMeta = document.querySelector('meta[name="data-file"]');
-        let dataFile;
+        // Load data first
+        const jsonData = await loadProgramData(dataFile);
         
-        if (dataFileMeta) {
-            dataFile = dataFileMeta.content;
-            log(DEBUG_LEVELS.INFO, `Loading data from ${dataFile}`);
+        // Debug log to verify topItem
+        console.log('Top Item data:', jsonData.topItem);
+
+        // Create header with topItem if it exists
+        if (jsonData.topItem) {
+            createTeamHeader(jsonData.topItem);
         } else {
-            // Handle different data file types based on page name
-            dataFile = determineDataFile(pageName);
-            log(DEBUG_LEVELS.INFO, `Determined data file: ${dataFile}`);
+            console.warn('No top item found in data');
         }
 
-        const pageConfig = {
-            pageTitle: pageTitle,
-            pageName: pageName,
-            dataFile: dataFile
+        // Rest of initialization...
+    } catch (error) {
+        console.error('Failed to initialize:', error);
+    }
+}
+
+// Update loadProgramData to explicitly return topItem
+async function loadProgramData(dataFile) {
+    if (!dataFile) {
+        throw new Error('No data file specified');
+    }
+
+    try {
+        const response = await fetch(dataFile);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        return {
+            items: data.items,
+            topItem: data.topItem,
+            metadata: data.metadata
         };
-
-        log(DEBUG_LEVELS.INFO, 'Page config:', pageConfig);
-
-        // Load and validate data
-        const data = await loadProgramData(dataFile);
-        if (data.metadata?.timestamp) {
-            updateTimestamp(data.metadata.timestamp);
-        }
-
-        // Create header if top item exists
-        if (data.topItem) {
-            createTeamHeader(data.topItem);
-        }
-
+    } catch (error) {
+        console.error('Error loading data:', error);
+        throw error;
+    }
+}
         // Initialize page with data
         const page = initializePage(pageConfig);
         await page.initialize(data);
