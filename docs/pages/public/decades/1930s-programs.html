@@ -6517,16 +6517,16 @@ const TableControls = {
         this.showPage(1);
     },
 
-    setupEventListeners() {
-        // Search functionality
-        const searchInput = document.getElementById('tableSearch');
-        if (searchInput) {
-            searchInput.value = ''; // Clear any existing search
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                this.filterTable(searchTerm);
-            });
-        }
+   setupEventListeners() {
+    // Search functionality
+    const searchInput = document.getElementById('tableSearch');
+    if (searchInput) {
+        searchInput.value = ''; // Clear any existing search
+        searchInput.addEventListener('keyup', (e) => {  // Changed from 'input' to 'keyup'
+            const searchTerm = e.target.value.toLowerCase();
+            this.filterTable(searchTerm);
+        });
+    }
 
         // Pagination
         const pagination = document.getElementById('tablePagination');
@@ -6547,30 +6547,41 @@ const TableControls = {
         }
     },
 
-    filterTable(searchTerm) {
-        const tableBody = document.querySelector('tbody');
-        const rows = Array.from(tableBody.getElementsByTagName('tr'));
+// Update the filterTable function to be more robust:
+filterTable(searchTerm) {
+    const tableBody = document.querySelector('tbody');
+    const rows = Array.from(tableBody.getElementsByTagName('tr'));
+    
+    if (!searchTerm || searchTerm.length === 0) {
+        this.filteredRows = rows;
+    } else {
+        this.filteredRows = rows.filter(row => {
+            const cellsText = Array.from(row.getElementsByTagName('td'))
+                .map(cell => cell.textContent || cell.innerText)
+                .join(' ')
+                .toLowerCase();
+            return cellsText.includes(searchTerm.toLowerCase());
+        });
+    }
+    
+    document.getElementById('totalRows').textContent = this.filteredRows.length;
+    
+    if (this.filteredRows.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="10" class="text-center">No matching results found</td></tr>';
+    } else {
+        // Restore original rows before showing filtered ones
+        tableBody.innerHTML = '';
+        rows.forEach(row => tableBody.appendChild(row.cloneNode(true)));
         
-        if (!searchTerm.trim()) {
-            this.filteredRows = rows;
-        } else {
-            this.filteredRows = rows.filter(row => {
-                const cells = Array.from(row.getElementsByTagName('td'));
-                return cells.some(cell => {
-                    const text = cell.textContent || cell.innerText;
-                    return text.toLowerCase().includes(searchTerm);
-                });
-            });
-        }
+        // Hide non-matching rows
+        rows.forEach((row, index) => {
+            row.style.display = this.filteredRows.includes(row) ? '' : 'none';
+        });
         
-        document.getElementById('totalRows').textContent = this.filteredRows.length;
-        if (this.filteredRows.length === 0) {
-            tableBody.innerHTML = '<tr><td colspan="10" class="text-center">No matching results found</td></tr>';
-        } else {
-            this.currentPage = 1;
-            this.showPage(1);
-        }
-    },
+        this.currentPage = 1;
+        this.showPage(1);
+    }
+}
 
     showPage(pageNum) {
         this.currentPage = pageNum;
