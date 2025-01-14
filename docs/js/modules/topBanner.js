@@ -36,16 +36,12 @@ export class TopBanner {
         }
     
         try {
+            // Use the path directly, just like main.js does
             const dataPath = dataFileMeta.content;
             
-            // If we're on GitHub Pages, prepend the repo name
-            const fullPath = window.location.hostname === 'olderdyad.github.io' 
-                ? `/static-football-rankings${dataPath}`
-                : dataPath;
+            log(DEBUG_LEVELS.INFO, `Attempting to load data from: ${dataPath}`);
             
-            log(DEBUG_LEVELS.INFO, `Attempting to load data from: ${fullPath}`);
-            
-            const response = await fetch(fullPath);
+            const response = await fetch(dataPath);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
