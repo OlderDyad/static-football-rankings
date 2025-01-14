@@ -13,11 +13,12 @@
         <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
     </head>
     <body>
+        <!-- Static header image -->
         <div class="header-banner">
             <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
         </div>
 
-        <!-- First container with breadcrumbs -->
+        <!-- Breadcrumb navigation -->
         <div class="container mt-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -30,8 +31,8 @@
 
         <!-- Dynamic team banner container -->
         <div id="teamHeaderContainer"></div>
-   
 
+        <!-- Main content -->
         <div class="container mt-4">
             <h1 data-page-name="DECADE_NAME">Top Programs of the DECADE_DISPLAY_NAME</h1>
             
@@ -42,52 +43,51 @@
                 <div class="text-muted">Updated: <span id="lastUpdated">TIMESTAMP</span></div>
             </div>
 
-   <!-- Search Controls -->
-   <div class="row mb-3">
-    <div class="col-md-6">
-        <div class="input-group">
-            <span class="input-group-text">Search</span>
-            <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
-        </div>
-    </div>
-</div
+            <!-- Search Controls -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Search</span>
+                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
 
-<!-- Table -->
-<div class="table-responsive">
-    <table class="table table-striped table-hover">
-        <thead class="sticky-top bg-white">
-            <tr>
-                <th style="min-width: 60px">Rank</th>
-                <th style="min-width: 200px">Program</th>
-                <th style="min-width: 70px">State</th>
-                <th style="min-width: 80px">Seasons</th>
-                <th style="min-width: 90px">Combined</th>
-                <th style="min-width: 90px">Margin</th>
-                <th style="min-width: 90px">Win/Loss</th>
-                <th style="min-width: 90px">Offense</th>
-                <th style="min-width: 90px">Defense</th>
-            </tr>
-        </thead>
-        <tbody id="programsTableBody">
-            TABLE_ROWS
-        </tbody>
-    </table>
-</div>
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="sticky-top bg-white">
+                        <tr>
+                            <th style="min-width: 60px">Rank</th>
+                            <th style="min-width: 200px">Program</th>
+                            <th style="min-width: 70px">State</th>
+                            <th style="min-width: 80px">Seasons</th>
+                            <th style="min-width: 90px">Combined</th>
+                            <th style="min-width: 90px">Margin</th>
+                            <th style="min-width: 90px">Win/Loss</th>
+                            <th style="min-width: 90px">Offense</th>
+                            <th style="min-width: 90px">Defense</th>
+                        </tr>
+                    </thead>
+                    <tbody id="programsTableBody">
+                        TABLE_ROWS
+                    </tbody>
+                </table>
+            </div>
 
-<!-- Pagination Controls -->
-<div class="row mt-4">
-    <div class="col-md-6">
-        <div class="pagination-info">
-            Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
-        </div>
-    </div>
-    <div class="col-md-6">
-        <nav aria-label="Table navigation">
-            <ul class="pagination justify-content-end" id="tablePagination"></ul>
-        </nav>
-    </div>
-</div>
-</div>
+            <!-- Pagination Controls -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="pagination-info">
+                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="Table navigation">
+                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                    </nav>
+                </div>
+            </div>
 
             <!-- Comments Section -->
             <div class="comments-section mt-5">
@@ -114,24 +114,21 @@
             </footer>
         </div>
 
-        <!-- Bootstrap JS Bundle -->
+        <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Main JavaScript -->
-<!-- Temporarily disabled to fix search -->
-<!-- <script type="module" src="/static-football-rankings/js/main.js"></script> -->
+        <!-- <script type="module" src="/static-football-rankings/js/main.js"></script> -->
         <!-- Table Controls Script -->
         TABLE_CONTROLS_SCRIPT
         <!-- Comments Script -->
         COMMENTS_SCRIPT_PLACEHOLDER
-
-       <!-- TopBanner initialization -->
-       <script type="module">
-        import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
-        
-        document.addEventListener('DOMContentLoaded', async () => {
-            const banner = new TopBanner();
-            await banner.initialize();
-        });
-    </script>
-</body>
+        <!-- TopBanner initialization -->
+        <script type="module">
+            import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+            document.addEventListener('DOMContentLoaded', async () => {
+                const banner = new TopBanner();
+                await banner.initialize();
+            });
+        </script>
+    </body>
 </html>

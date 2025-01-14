@@ -1,47 +1,53 @@
-// docs/js/modules/teamHeader.js
 import { teamConfig } from '../config/teamConfig.js';
 
-export function createTeamHeader(program) {
-    if (!program) {
-        console.log('No program data provided for header');
-        return '';
+function verifyImagePath(src, type = 'logo') {
+    const img = new Image();
+    img.onload = () => console.log(`✅ ${type} loaded successfully:`, src);
+    img.onerror = () => console.error(`❌ ${type} failed to load:`, src);
+    img.src = src;
+}
+
+export function createTeamHeader(topItem) {
+    if (!topItem) {
+        console.warn('No top item data provided');
+        return;
     }
 
-    const teamDetails = {
-        teamName: program.team || program.program || 'Unknown Team',
-        mascot: program.mascot || '',
-        primaryColor: program.backgroundColor || '#FFFFFF',
-        secondaryColor: program.textColor || '#000000',
-        logoPath: program.LogoURL || '',
-        schoolLogoPath: program.School_Logo_URL || ''
-    };
+    console.group('Team Header Creation');
+    console.log('Top item data:', topItem);
 
-    console.log('Creating header for:', teamDetails.teamName);
+    const logoPath = teamConfig.getTeamImagePath(topItem.LogoURL);
+    const schoolLogoPath = teamConfig.getTeamImagePath(topItem.School_Logo_URL);
 
-    // Process image paths using teamConfig
-    const logoImgSrc = teamConfig.getTeamImagePath(teamDetails.logoPath);
-    const schoolLogoImgSrc = teamConfig.getTeamImagePath(teamDetails.schoolLogoPath);
+    // Verify both image paths
+    verifyImagePath(logoPath, 'Team logo');
+    verifyImagePath(schoolLogoPath, 'School logo');
 
-    console.log('Logo path:', logoImgSrc);
-    console.log('School logo path:', schoolLogoImgSrc);
+    console.log('Creating header with top item:', topItem);
+
+    const headerContainer = document.getElementById('teamHeaderContainer');
+    if (!headerContainer) {
+        console.warn('Team header container not found');
+        return;
+    }
 
     const headerHtml = `
-        <div class="team-header" style="background-color: ${teamDetails.primaryColor}; color: ${teamDetails.secondaryColor};">
+        <div class="team-header" style="background-color: ${topItem.backgroundColor || '#FFFFFF'}; color: ${topItem.textColor || '#000000'};">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-3 text-center">
-                        <img src="${logoImgSrc}"
-                             alt="${teamDetails.teamName} Logo"
+                        <img src="${teamConfig.getTeamImagePath(topItem.LogoURL)}"
+                             alt="${topItem.program || topItem.team || 'Team'} Logo"
                              class="img-fluid team-logo"
                              onerror="this.src='${teamConfig.defaultLogo}'; this.classList.add('default-logo');" />
                     </div>
                     <div class="col-md-6 text-center">
-                        <h2>${teamDetails.teamName}</h2>
-                        ${teamDetails.mascot ? `<p class="mascot-name">${teamDetails.mascot}</p>` : ''}
+                        <h2>${topItem.program || topItem.team || 'Unknown Team'}</h2>
+                        ${topItem.mascot ? `<p class="mascot-name">${topItem.mascot}</p>` : ''}
                     </div>
                     <div class="col-md-3 text-center">
-                        <img src="${schoolLogoImgSrc}"
-                             alt="${teamDetails.teamName} School Logo"
+                        <img src="${teamConfig.getTeamImagePath(topItem.School_Logo_URL)}"
+                             alt="${topItem.program || topItem.team || 'School'} School Logo"
                              class="img-fluid school-logo"
                              onerror="this.src='${teamConfig.defaultLogo}'; this.classList.add('default-logo');" />
                     </div>
@@ -50,11 +56,6 @@ export function createTeamHeader(program) {
         </div>
     `;
 
-    // Find the container and insert the header
-    const headerContainer = document.getElementById('teamHeaderContainer');
-    if (headerContainer) {
-        headerContainer.innerHTML = headerHtml;
-    } else {
-        console.warn('Team header container not found');
-    }
+    headerContainer.innerHTML = headerHtml;
+    console.log('Header created and inserted');
 }
