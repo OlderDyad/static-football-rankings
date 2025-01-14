@@ -11,6 +11,61 @@ $baseUrl = if ($env:GITHUB_ACTIONS -eq 'true') {
     '/docs/'  # For local testing
 }
 
+# Define function to generate team/program banner
+function Generate-TeamBanner {
+    param (
+        [Parameter(Mandatory=$true)][object]$TopItem
+    )
+
+    if (!$TopItem) {
+        return "<!-- No top item data available for banner -->"
+    }
+
+    # Get image paths with fallback
+    $logoPath = if ($TopItem.LogoURL) { 
+        "/static-football-rankings/images${$TopItem.LogoURL.TrimStart('/')}" 
+    } else { 
+        "/static-football-rankings/images/default-logo.png" 
+    }
+    
+    $schoolLogoPath = if ($TopItem.School_Logo_URL) {
+        "/static-football-rankings/images${$TopItem.School_Logo_URL.TrimStart('/')}"
+    } else {
+        "/static-football-rankings/images/default-logo.png"
+    }
+
+    return @"
+    <div class="team-header" style="background-color: $($TopItem.backgroundColor || '#FFFFFF'); color: $($TopItem.textColor || '#000000');">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center">
+                    <img src="$logoPath"
+                         alt="$($TopItem.program || $TopItem.team || 'Team') Logo"
+                         class="img-fluid team-logo"
+                         onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
+                </div>
+                <div class="col-md-6 text-center">
+                    <h2>$($TopItem.program || $TopItem.team || 'Unknown Team')</h2>
+                    $(if ($TopItem.mascot) { "<p class='mascot-name'>$($TopItem.mascot)</p>" })
+                    <div class="team-stats">
+                        <small>
+                            $(if ($TopItem.seasons) { "Seasons: $($TopItem.seasons)" })
+                            $(if ($TopItem.margin) { "| Margin: $([Math]::Round($TopItem.margin, 1))" })
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="$schoolLogoPath"
+                         alt="$($TopItem.program || $TopItem.team || 'School') School Logo"
+                         class="img-fluid school-logo"
+                         onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
+                </div>
+            </div>
+        </div>
+    </div>
+"@
+}
+
 # Search & Pagination
 $tableControlsScript = @'
 <script>
@@ -72,10 +127,11 @@ $tableControlsScript = @'
 
             const rows = Array.from(tableBody.getElementsByTagName('tr'));
             this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
-                return Array.from(row.getElementsByTagName('td'))
-                    .some(cell => (cell.textContent || cell.innerText)
-                        .toLowerCase()
-                        .includes(searchTerm));
+                const text = Array.from(row.getElementsByTagName('td'))
+                    .map(cell => cell.textContent || cell.innerText)
+                    .join(' ')
+                    .toLowerCase();
+                return text.includes(searchTerm);
             });
 
             const totalRowsElement = document.getElementById('totalRows');
@@ -305,7 +361,6 @@ document.getElementById('submitComment')?.addEventListener('click', submitCommen
 })();
 </script>
 '@
-#endregion
 
 #region Configuration and Setup
 # Define paths
@@ -369,8 +424,8 @@ try {
     # Process each decade
     foreach ($decade in $decades) {
         Write-Host "`nProcessing $($decade.DisplayName)..."
-
-        #region Team Processing
+		
+		#region Team Processing
         Write-Host "Processing Teams..."
         $teamOutput = $teamTemplate
         $teamOutput = $teamOutput -replace 'DECADE_DISPLAY_NAME', $decade.DisplayName
@@ -417,6 +472,12 @@ try {
 "@
                 }
                 $teamOutput = $teamOutput -replace 'TABLE_ROWS', $tableRows
+
+                # Generate and insert team banner
+                if ($teamJsonData.topItem) {
+                    $bannerHtml = Generate-TeamBanner -TopItem $teamJsonData.topItem
+                    $teamOutput = $teamOutput -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+                }
             } else {
                 Write-Warning "Invalid or empty team JSON data for $($decade.DisplayName): $teamJsonFilePath"
             }
@@ -431,8 +492,8 @@ try {
         $teamOutputPath = Join-Path $outputDir "$($decade.Name)-teams.html"
         Set-Content -Path $teamOutputPath -Value $teamOutput -Encoding UTF8
         #endregion
-
-        #region Program Processing
+		
+		#region Program Processing
         Write-Host "Processing Programs..."
         $programOutput = $programTemplate
         $programOutput = $programOutput -replace 'DECADE_DISPLAY_NAME', $decade.DisplayName
@@ -478,6 +539,12 @@ try {
 "@
                 }
                 $programOutput = $programOutput -replace 'TABLE_ROWS', $tableRows
+
+                # Generate and insert program banner
+                if ($programJsonData.topItem) {
+                    $bannerHtml = Generate-TeamBanner -TopItem $programJsonData.topItem
+                    $programOutput = $programOutput -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+                }
             } else {
                 Write-Warning "Invalid or empty program JSON data for $($decade.DisplayName): $programJsonFilePath"
             }
@@ -492,9 +559,8 @@ try {
         $programOutputPath = Join-Path $outputDir "$($decade.Name)-programs.html"
         Set-Content -Path $programOutputPath -Value $programOutput -Encoding UTF8
         #endregion
-    }
-
-    #region Index Generation
+		
+		#region Index Generation
     Write-Host "`nGenerating index page..."
     $decadeCardsHtml = $decades | ForEach-Object {
 @"
