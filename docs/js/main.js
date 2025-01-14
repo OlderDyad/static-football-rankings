@@ -18,26 +18,152 @@ import { auth } from './modules/auth.js';
 import { CommentManager } from './modules/comments.js';  // Fixed path
 import { formatDate, debounce, escapeHTML } from './modules/utils.js';
 
+// Add this to the top of main.js after existing imports
+const BannerDebug = {
+    logLevel: 'DEBUG',
+    
+    init() {
+        console.group('🏈 Banner Creation Debugging');
+        this.log('Initializing banner debug logging');
+        
+        // Check if we're in the correct environment
+        this.log(`Current pathname: ${window.location.pathname}`);
+        this.log(`Base URL: ${window.location.origin}`);
+        
+        // Verify container exists
+        const container = document.getElementById('teamHeaderContainer');
+        this.log(`Header container found: ${!!container}`, container);
+        
+        return this;
+    },
+    
+    checkDataFile() {
+        const meta = document.querySelector('meta[name="data-file"]');
+        if (!meta) {
+            this.error('No data-file meta tag found');
+            return null;
+        }
+        
+        const dataFile = meta.content;
+        this.log(`Data file path: ${dataFile}`);
+        return dataFile;
+    },
+    
+    async verifyDataLoad(dataFile) {
+        try {
+            this.log('Attempting to load data from:', dataFile);
+            const response = await fetch(dataFile);
+            
+            if (!response.ok) {
+                this.error(`Data fetch failed: ${response.status} ${response.statusText}`);
+                return null;
+            }
+            
+            const data = await response.json();
+            this.log('Data loaded successfully:', {
+                hasMetadata: !!data.metadata,
+                hasTopItem: !!data.topItem,
+                topItemKeys: data.topItem ? Object.keys(data.topItem) : []
+            });
+            
+            if (data.topItem) {
+                this.verifyTopItemData(data.topItem);
+            }
+            
+            return data;
+        } catch (error) {
+            this.error('Data load error:', error);
+            return null;
+        }
+    },
+    
+    verifyTopItemData(topItem) {
+        this.log('Verifying top item data structure');
+        
+        // Check required fields
+        const requiredFields = ['program', 'mascot', 'LogoURL', 'School_Logo_URL'];
+        const missingFields = requiredFields.filter(field => !topItem[field]);
+        
+        if (missingFields.length > 0) {
+            this.error('Missing required fields:', missingFields);
+        }
+        
+        // Verify image paths
+        if (topItem.LogoURL) {
+            this.verifyImagePath(topItem.LogoURL, 'Team Logo');
+        }
+        if (topItem.School_Logo_URL) {
+            this.verifyImagePath(topItem.School_Logo_URL, 'School Logo');
+        }
+    },
+    
+    verifyImagePath(path, type) {
+        this.log(`Verifying ${type} path:`, path);
+        
+        // Test image loading
+        const img = new Image();
+        img.onload = () => this.log(`✅ ${type} loaded successfully:`, path);
+        img.onerror = () => this.error(`❌ ${type} failed to load:`, path);
+        img.src = teamConfig.getTeamImagePath(path);
+    },
+    
+    log(...args) {
+        if (this.logLevel === 'DEBUG') {
+            console.log('🔍', ...args);
+        }
+    },
+    
+    error(...args) {
+        console.error('❌', ...args);
+    },
+    
+    finish() {
+        console.groupEnd();
+    }
+};
+
+// Add this to the initialization section in main.js
+async function initializeBanner() {
+    const debug = BannerDebug.init();
+    
+    const dataFile = debug.checkDataFile();
+    if (!dataFile) return;
+    
+    const data = await debug.verifyDataLoad(dataFile);
+    if (!data || !data.topItem) return;
+    
+    try {
+        createTeamHeader(data.topItem);
+        debug.log('Banner creation completed');
+    } catch (error) {
+        debug.error('Banner creation failed:', error);
+    }
+    
+    debug.finish();
+}
+
+
 // ============================================================================
 /**
  * MAIN APPLICATION INITIALIZATION
  */
 // ============================================================================
-async function initializeApp() {
-    try {
-        log(DEBUG_LEVELS.INFO, 'Initializing app...');
-        
-        // Load data first
-        const jsonData = await loadProgramData(dataFile);
-        
-        // Debug log to verify topItem
-        console.log('Top Item data:', jsonData.topItem);
+try {
+    log(DEBUG_LEVELS.INFO, 'Initializing app...');
 
-        // Create header with topItem if it exists
-        if (jsonData.topItem) {
-            createTeamHeader(jsonData.topItem);
+    const dataFileMeta = document.querySelector('meta[name="data-file"]');
+    if (dataFileMeta) {
+        const dataFile = dataFileMeta.content;
+        log(DEBUG_LEVELS.INFO, `Loading data from ${dataFile}`);
+        
+        const data = await loadProgramData(dataFile);
+        
+        // Create header if top item exists
+        if (data.topItem) {
+            log(DEBUG_LEVELS.INFO, 'Creating header with top item:', data.topItem);
+            createTeamHeader(data.topItem);
         } else {
-            console.warn('No top item found in data');
+            log(DEBUG_LEVELS.WARN, 'No top item found in data');
         }
 
         // Rest of initialization...
@@ -499,6 +625,8 @@ export {
     populateTable
 };
 
+// Call this after DOMContentLoaded
+initializeBanner();
 
 
 
