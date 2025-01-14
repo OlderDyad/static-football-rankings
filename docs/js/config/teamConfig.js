@@ -12,21 +12,22 @@ export const teamConfig = {
             return teamConfig.defaultLogo;
         }
 
-        let finalPath;
-        // Handle paths that start with /images/Teams/ or images/Teams/
-        if (imageFile.startsWith('/images/Teams/') || imageFile.startsWith('images/Teams/')) {
-            finalPath = `/static-football-rankings/${imageFile.replace(/^\//, '')}`;
-            console.log('Path with Teams directory:', finalPath);
-        } else if (imageFile.startsWith('/static-football-rankings/')) {
-            finalPath = imageFile;
-            console.log('Already formatted path:', finalPath);
-        } else {
-            finalPath = `/static-football-rankings/images/Teams/${imageFile}`;
-            console.log('Default path construction:', finalPath);
+        // Remove any leading slash
+        const cleanPath = imageFile.replace(/^\//, '');
+
+        // If path starts with 'images/Teams/', prepend our base path
+        if (cleanPath.startsWith('images/Teams/')) {
+            const finalPath = `/static-football-rankings/${cleanPath}`;
+            console.log('Processed path:', finalPath);
+            console.groupEnd();
+            return finalPath;
         }
 
-        console.log('Final image path:', finalPath);
+        // Handle paths that don't start with images/Teams/
+        // This ensures we still try to find the image in our structure
+        const constructedPath = `/static-football-rankings/images/Teams/${cleanPath}`;
+        console.log('Constructed path:', constructedPath);
         console.groupEnd();
-        return finalPath;
+        return constructedPath;
     }
 };

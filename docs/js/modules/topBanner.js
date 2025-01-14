@@ -24,6 +24,7 @@ export class TopBanner {
             }
         } catch (error) {
             log(DEBUG_LEVELS.ERROR, 'TopBanner initialization failed:', error);
+            this.renderError('Failed to load banner data');
         }
     }
 
@@ -39,10 +40,12 @@ export class TopBanner {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            return await response.json();
+            const data = await response.json();
+            log(DEBUG_LEVELS.INFO, 'Top item data loaded:', data);
+            return data;
         } catch (error) {
             log(DEBUG_LEVELS.ERROR, 'Failed to load top item data:', error);
-            return null;
+            throw error;
         }
     }
 
@@ -52,23 +55,37 @@ export class TopBanner {
             return;
         }
 
-        const logoPath = teamConfig.getTeamImagePath(topItem.LogoURL);
-        const schoolLogoPath = teamConfig.getTeamImagePath(topItem.School_Logo_URL);
+        // Get image paths with fallback to default
+        const logoPath = topItem.LogoURL ? teamConfig.getTeamImagePath(topItem.LogoURL) : teamConfig.defaultLogo;
+        const schoolLogoPath = topItem.School_Logo_URL ? teamConfig.getTeamImagePath(topItem.School_Logo_URL) : teamConfig.defaultLogo;
+
+        // Handle styling with fallbacks
+        const backgroundColor = topItem.backgroundColor || '#FFFFFF';
+        const textColor = topItem.textColor || '#000000';
 
         const bannerHTML = `
-            <div class="team-header" style="background-color: ${topItem.backgroundColor || '#FFFFFF'}; color: ${topItem.textColor || '#000000'};">
+            <div class="team-header" style="background-color: ${backgroundColor}; color: ${textColor};">
                 <div class="container">
                     <div class="row align-items-center">
+                        <!-- Team Logo -->
                         <div class="col-md-3 text-center">
                             <img src="${logoPath}"
                                  alt="${topItem.program || 'Team'} Logo"
                                  class="img-fluid team-logo"
                                  onerror="this.src='${teamConfig.defaultLogo}'; this.classList.add('default-logo');" />
                         </div>
+                        <!-- Team/Program Info -->
                         <div class="col-md-6 text-center">
                             <h2>${topItem.program || 'Unknown Team'}</h2>
                             ${topItem.mascot ? `<p class="mascot-name">${topItem.mascot}</p>` : ''}
+                            <div class="team-stats">
+                                <small>
+                                    ${topItem.seasons ? `Seasons: ${topItem.seasons}` : ''}
+                                    ${topItem.margin ? `| Margin: ${parseFloat(topItem.margin).toFixed(1)}` : ''}
+                                </small>
+                            </div>
                         </div>
+                        <!-- School Logo -->
                         <div class="col-md-3 text-center">
                             <img src="${schoolLogoPath}"
                                  alt="${topItem.program || 'School'} School Logo"
@@ -81,5 +98,28 @@ export class TopBanner {
         `;
 
         this.container.innerHTML = bannerHTML;
+        log(DEBUG_LEVELS.INFO, 'Banner rendered successfully');
+    }
+
+    renderError(message) {
+        if (!this.container) return;
+        
+        this.container.innerHTML = `
+            <div class="alert alert-warning m-3" role="alert">
+                ${message}
+            </div>
+        `;
+        log(DEBUG_LEVELS.ERROR, 'Banner error rendered:', message);
+    }
+
+    // Helper method to validate image paths
+    validateImagePath(path) {
+        if (!path) return false;
+        const img = new Image();
+        img.src = path;
+        return new Promise((resolve) => {
+            img.onload = () => resolve(true);
+            img.onerror = () => resolve(false);
+        });
     }
 }
