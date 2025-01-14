@@ -148,51 +148,31 @@ async function initializeBanner() {
  * MAIN APPLICATION INITIALIZATION
  */
 // ============================================================================
-try {
-    log(DEBUG_LEVELS.INFO, 'Initializing app...');
-
-    const dataFileMeta = document.querySelector('meta[name="data-file"]');
-    if (dataFileMeta) {
-        const dataFile = dataFileMeta.content;
-        log(DEBUG_LEVELS.INFO, `Loading data from ${dataFile}`);
-        
-        const data = await loadProgramData(dataFile);
-        
-        // Create header if top item exists
-        if (data.topItem) {
-            log(DEBUG_LEVELS.INFO, 'Creating header with top item:', data.topItem);
-            createTeamHeader(data.topItem);
-        } else {
-            log(DEBUG_LEVELS.WARN, 'No top item found in data');
-        }
-
-        // Rest of initialization...
-    } catch (error) {
-        console.error('Failed to initialize:', error);
-    }
-}
-
-// Update loadProgramData to explicitly return topItem
-async function loadProgramData(dataFile) {
-    if (!dataFile) {
-        throw new Error('No data file specified');
-    }
-
+async function initializeApp() {
     try {
-        const response = await fetch(dataFile);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        log(DEBUG_LEVELS.INFO, 'Initializing app...');
+
+        const dataFileMeta = document.querySelector('meta[name="data-file"]');
+        if (dataFileMeta) {
+            const dataFile = dataFileMeta.content;
+            log(DEBUG_LEVELS.INFO, `Loading data from ${dataFile}`);
+            
+            const data = await loadProgramData(dataFile);
+            
+            // Create header if top item exists
+            if (data.topItem) {
+                log(DEBUG_LEVELS.INFO, 'Creating header with top item:', data.topItem);
+                createTeamHeader(data.topItem);
+            } else {
+                log(DEBUG_LEVELS.WARN, 'No top item found in data');
+            }
+
+            // Initialize page with data
+            const page = initializePage(pageConfig);
+            await page.initialize(data);
         }
-        
-        const data = await response.json();
-        return {
-            items: data.items,
-            topItem: data.topItem,
-            metadata: data.metadata
-        };
     } catch (error) {
-        console.error('Error loading data:', error);
-        throw error;
+        log(DEBUG_LEVELS.ERROR, 'Failed to initialize:', error);
     }
 }
         // Initialize page with data
