@@ -36,10 +36,14 @@ export class TopBanner {
         }
     
         try {
-            // Get the raw path from meta tag
-            const dataPath = dataFileMeta.content;
+            let dataPath = dataFileMeta.content;
             
-            // Log the path we're trying to load
+            // If path doesn't start with /, add the full path prefix
+            if (!dataPath.startsWith('/')) {
+                dataPath = `/static-football-rankings/${dataPath}`;
+            }
+            
+            // Log the final path we're trying to load
             log(DEBUG_LEVELS.INFO, `Attempting to load data from: ${dataPath}`);
             
             const response = await fetch(dataPath);
@@ -55,6 +59,8 @@ export class TopBanner {
         }
     }
 
+    
+//Render TopBanner
     renderBanner(topItem) {
         if (!this.container) {
             log(DEBUG_LEVELS.ERROR, 'Banner container not found');
