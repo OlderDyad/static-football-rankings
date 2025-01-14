@@ -38,12 +38,11 @@ export class TopBanner {
         try {
             let dataPath = dataFileMeta.content;
             
-            // If path doesn't start with /, add the full path prefix
-            if (!dataPath.startsWith('/')) {
-                dataPath = `/static-football-rankings/${dataPath}`;
+            // If we're on GitHub Pages, prepend the repo name
+            if (window.location.hostname === 'olderdyad.github.io') {
+                dataPath = `/static-football-rankings${dataPath}`;
             }
             
-            // Log the final path we're trying to load
             log(DEBUG_LEVELS.INFO, `Attempting to load data from: ${dataPath}`);
             
             const response = await fetch(dataPath);
@@ -51,7 +50,6 @@ export class TopBanner {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            log(DEBUG_LEVELS.INFO, 'Top item data loaded:', data);
             return data;
         } catch (error) {
             log(DEBUG_LEVELS.ERROR, 'Failed to load top item data:', error);
