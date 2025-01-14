@@ -34,9 +34,15 @@ export class TopBanner {
             log(DEBUG_LEVELS.ERROR, 'No data file meta tag found');
             return null;
         }
-
+    
         try {
-            const response = await fetch(dataFileMeta.content);
+            // Get the raw path from meta tag
+            const dataPath = dataFileMeta.content;
+            
+            // Log the path we're trying to load
+            log(DEBUG_LEVELS.INFO, `Attempting to load data from: ${dataPath}`);
+            
+            const response = await fetch(dataPath);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
