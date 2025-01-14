@@ -36,24 +36,20 @@ export class TopBanner {
         }
     
         try {
-            let dataPath = dataFileMeta.content;
+            const dataPath = dataFileMeta.content;
             
-            // If we're on GitHub Pages (olderdyad.github.io), prepend the repo name
-            if (window.location.hostname === 'olderdyad.github.io') {
-                // Remove any leading slash before adding the repo name
-                dataPath = dataPath.replace(/^\//, '');
-                dataPath = `/static-football-rankings/${dataPath}`;
-            }
+            // If we're on GitHub Pages, prepend the repo name
+            const fullPath = window.location.hostname === 'olderdyad.github.io' 
+                ? `/static-football-rankings${dataPath}`
+                : dataPath;
             
-            log(DEBUG_LEVELS.INFO, `Attempting to load data from: ${dataPath}`);
+            log(DEBUG_LEVELS.INFO, `Attempting to load data from: ${fullPath}`);
             
-            const response = await fetch(dataPath);
+            const response = await fetch(fullPath);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
             const data = await response.json();
-            log(DEBUG_LEVELS.INFO, 'Data loaded successfully:', data);
             return data;
         } catch (error) {
             log(DEBUG_LEVELS.ERROR, 'Failed to load top item data:', error);
