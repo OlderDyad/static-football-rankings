@@ -34,18 +34,23 @@ function Generate-TeamBanner {
         "/static-football-rankings/images/default-logo.png"
     }
 
+    # Get text values with fallbacks
+    $backgroundColor = if ($TopItem.backgroundColor) { $TopItem.backgroundColor } else { '#FFFFFF' }
+    $textColor = if ($TopItem.textColor) { $TopItem.textColor } else { '#000000' }
+    $displayName = if ($TopItem.program) { $TopItem.program } elseif ($TopItem.team) { $TopItem.team } else { 'Unknown Team' }
+
     return @"
-    <div class="team-header" style="background-color: $($TopItem.backgroundColor || '#FFFFFF'); color: $($TopItem.textColor || '#000000');">
+    <div class="team-header" style="background-color: $backgroundColor; color: $textColor;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3 text-center">
                     <img src="$logoPath"
-                         alt="$($TopItem.program || $TopItem.team || 'Team') Logo"
+                         alt="$displayName Logo"
                          class="img-fluid team-logo"
                          onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
                 </div>
                 <div class="col-md-6 text-center">
-                    <h2>$($TopItem.program || $TopItem.team || 'Unknown Team')</h2>
+                    <h2>$displayName</h2>
                     $(if ($TopItem.mascot) { "<p class='mascot-name'>$($TopItem.mascot)</p>" })
                     <div class="team-stats">
                         <small>
@@ -56,7 +61,7 @@ function Generate-TeamBanner {
                 </div>
                 <div class="col-md-3 text-center">
                     <img src="$schoolLogoPath"
-                         alt="$($TopItem.program || $TopItem.team || 'School') School Logo"
+                         alt="$displayName School Logo"
                          class="img-fluid school-logo"
                          onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
                 </div>
@@ -65,6 +70,7 @@ function Generate-TeamBanner {
     </div>
 "@
 }
+
 
 # Search & Pagination
 $tableControlsScript = @'
