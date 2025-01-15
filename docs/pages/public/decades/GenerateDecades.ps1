@@ -12,6 +12,7 @@ $baseUrl = if ($env:GITHUB_ACTIONS -eq 'true') {
     '/docs/'  # For local testing
 }
 
+# Generate Top Team Banner
 function Generate-TeamBanner {
     param (
         [Parameter(Mandatory=$true)][object]$TopItem
@@ -21,17 +22,17 @@ function Generate-TeamBanner {
         return "<!-- No top item data available for banner -->"
     }
 
-    # Get image paths with fallback
-    $logoPath = if ($TopItem.LogoURL) { 
+    # Get image paths with better default handling
+    $logoPath = if ($TopItem.LogoURL -and $TopItem.LogoURL.Trim() -ne '') { 
         "/static-football-rankings/images${$TopItem.LogoURL.TrimStart('/')}" 
     } else { 
-        "/static-football-rankings/images/default-logo.png" 
+        $null  # Return null instead of trying to load a default
     }
     
-    $schoolLogoPath = if ($TopItem.School_Logo_URL) {
+    $schoolLogoPath = if ($TopItem.School_Logo_URL -and $TopItem.School_Logo_URL.Trim() -ne '') {
         "/static-football-rankings/images${$TopItem.School_Logo_URL.TrimStart('/')}"
     } else {
-        "/static-football-rankings/images/default-logo.png"
+        $null  # Return null instead of trying to load a default
     }
 
     # Get text values with fallbacks
@@ -39,15 +40,25 @@ function Generate-TeamBanner {
     $textColor = if ($TopItem.textColor) { $TopItem.textColor } else { '#000000' }
     $displayName = if ($TopItem.program) { $TopItem.program } elseif ($TopItem.team) { $TopItem.team } else { 'Unknown Team' }
 
+    # Only include image tags if we have valid paths
+    $logoHtml = if ($logoPath) {
+        "<img src=`"$logoPath`" alt=`"$displayName Logo`" class=`"img-fluid team-logo`" />"
+    } else {
+        "<!-- No team logo available -->"
+    }
+
+    $schoolLogoHtml = if ($schoolLogoPath) {
+        "<img src=`"$schoolLogoPath`" alt=`"$displayName School Logo`" class=`"img-fluid school-logo`" />"
+    } else {
+        "<!-- No school logo available -->"
+    }
+
     return @"
     <div class="team-header" style="background-color: $backgroundColor; color: $textColor;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3 text-center">
-                    <img src="$logoPath"
-                         alt="$displayName Logo"
-                         class="img-fluid team-logo"
-                         onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
+                    $logoHtml
                 </div>
                 <div class="col-md-6 text-center">
                     <h2>$displayName</h2>
@@ -60,10 +71,7 @@ function Generate-TeamBanner {
                     </div>
                 </div>
                 <div class="col-md-3 text-center">
-                    <img src="$schoolLogoPath"
-                         alt="$displayName School Logo"
-                         class="img-fluid school-logo"
-                         onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
+                    $schoolLogoHtml
                 </div>
             </div>
         </div>
