@@ -23,13 +23,13 @@ function Generate-TeamBanner {
     }
 
     # Get image paths with better default handling
-    $logoPath = if ($TopItem.LogoURL -and $TopItem.LogoURL.Trim() -ne '') { 
+    $logoPath = if ($TopItem.LogoURL -and "$($TopItem.LogoURL)".Trim()) { 
         "/static-football-rankings/images${$TopItem.LogoURL.TrimStart('/')}" 
     } else { 
         $null  # Return null instead of trying to load a default
     }
     
-    $schoolLogoPath = if ($TopItem.School_Logo_URL -and $TopItem.School_Logo_URL.Trim() -ne '') {
+    $schoolLogoPath = if ($TopItem.School_Logo_URL -and "$($TopItem.School_Logo_URL)".Trim()) {
         "/static-football-rankings/images${$TopItem.School_Logo_URL.TrimStart('/')}"
     } else {
         $null  # Return null instead of trying to load a default
