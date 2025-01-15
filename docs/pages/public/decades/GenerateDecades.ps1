@@ -1,4 +1,5 @@
 # GenerateDecades.ps1
+# Part 1 - Start of file through Generator function:
 # Generates decade pages for both teams and programs from templates
 
 #region Configuration
@@ -11,7 +12,6 @@ $baseUrl = if ($env:GITHUB_ACTIONS -eq 'true') {
     '/docs/'  # For local testing
 }
 
-# Define function to generate team/program banner
 function Generate-TeamBanner {
     param (
         [Parameter(Mandatory=$true)][object]$TopItem
@@ -71,6 +71,7 @@ function Generate-TeamBanner {
 "@
 }
 
+#Part 2 - Table Controls Script:
 
 # Search & Pagination
 $tableControlsScript = @'
@@ -215,6 +216,8 @@ $tableControlsScript = @'
 </script>
 '@
 
+# Part 3 - Comments Script:
+
 # Comments script
 $commentCode = @'
 <script>
@@ -314,7 +317,12 @@ function displayComments(comments) {
     </div>
   `).join('');
 }
+'@
 
+# Part 4 - Comments Logic Continued and Path Setup:
+
+# Continue comment script
+$commentCode = $commentCode + @'
 async function submitComment() {
   const textEl = document.getElementById('commentText');
   const text = textEl.value.trim();
@@ -401,6 +409,8 @@ $decades = @(
 )
 #endregion
 
+# Part 5 - Beginning of Main Processing Section (with proper try/catch structure):
+
 #region Main Processing
 try {
     # Debug path information
@@ -430,168 +440,177 @@ try {
     # Process each decade
     foreach ($decade in $decades) {
         Write-Host "`nProcessing $($decade.DisplayName)..."
-		
-		#region Team Processing
-        Write-Host "Processing Teams..."
-        $teamOutput = $teamTemplate
-        $teamOutput = $teamOutput -replace 'DECADE_DISPLAY_NAME', $decade.DisplayName
-        $teamOutput = $teamOutput -replace 'DECADE_NAME', $decade.Name
-        $teamOutput = $teamOutput -replace 'DECADE_START', $decade.StartYear
-        $teamOutput = $teamOutput -replace 'DECADE_END', $decade.EndYear
-        $teamOutput = $teamOutput -replace 'DECADE_ID', "$($decade.Name)-teams"
-        $teamOutput = $teamOutput -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
 
-        # Process team JSON
-        $teamJsonFileName = "decade-teams-$($decade.Name).json"
-        $teamJsonFilePath = Join-Path $jsonBasePath "decades\teams\$teamJsonFileName"
+#      Part 6 - Teams Processing Section (inside the try block):
 
-        if (Test-Path $teamJsonFilePath) {
-            Write-Host "Found team JSON for $($decade.Name): $teamJsonFilePath" -ForegroundColor Green
-            $teamJsonData = Get-Content -Path $teamJsonFilePath -Raw | ConvertFrom-Json
+#region Team Processing
+Write-Host "Processing Teams..."
+$teamOutput = $teamTemplate
+$teamOutput = $teamOutput -replace 'DECADE_DISPLAY_NAME', $decade.DisplayName
+$teamOutput = $teamOutput -replace 'DECADE_NAME', $decade.Name
+$teamOutput = $teamOutput -replace 'DECADE_START', $decade.StartYear
+$teamOutput = $teamOutput -replace 'DECADE_END', $decade.EndYear
+$teamOutput = $teamOutput -replace 'DECADE_ID', "$($decade.Name)-teams"
+$teamOutput = $teamOutput -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
 
-            if ($null -ne $teamJsonData -and $null -ne $teamJsonData.items -and $teamJsonData.items -is [System.Array]) {
-                # Process timestamp
-                if ($null -ne $teamJsonData.metadata) {
-                    $timestamp = [DateTime]::Parse($teamJsonData.metadata.timestamp)
-                    $formattedTimestamp = $timestamp.ToString("M/d/yyyy")
-                    $teamOutput = $teamOutput -replace 'TIMESTAMP', $formattedTimestamp
-                } else {
-                    $teamOutput = $teamOutput -replace 'TIMESTAMP', (Get-Date).ToString("M/d/yyyy")
-                }
+# Process team JSON
+$teamJsonFileName = "decade-teams-$($decade.Name).json"
+$teamJsonFilePath = Join-Path $jsonBasePath "decades\teams\$teamJsonFileName"
 
-                # Process table rows
-                $tableRows = ""
-                foreach ($rank in $teamJsonData.items) {
-                    $tableRows += @"
-<tr>
-    <td>$($rank.rank)</td>
-    <td>$($rank.team)</td>
-    <td>$($rank.state)</td>
-    <td>$($rank.season)</td>
-    <td>$($rank.combined)</td>
-    <td>$($rank.margin)</td>
-    <td>$($rank.win_loss)</td>
-    <td>$($rank.offense)</td>
-    <td>$($rank.defense)</td>
-    <td>$($rank.games_played)</td>
-</tr>
-"@
-                }
-                $teamOutput = $teamOutput -replace 'TABLE_ROWS', $tableRows
+if (Test-Path $teamJsonFilePath) {
+    Write-Host "Found team JSON for $($decade.Name): $teamJsonFilePath" -ForegroundColor Green
+    $teamJsonData = Get-Content -Path $teamJsonFilePath -Raw | ConvertFrom-Json
 
-                # Generate and insert team banner
-                if ($teamJsonData.topItem) {
-                    $bannerHtml = Generate-TeamBanner -TopItem $teamJsonData.topItem
-                    $teamOutput = $teamOutput -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                }
-            } else {
-                Write-Warning "Invalid or empty team JSON data for $($decade.DisplayName): $teamJsonFilePath"
-            }
+    if ($null -ne $teamJsonData -and $null -ne $teamJsonData.items -and $teamJsonData.items -is [System.Array]) {
+        # Process timestamp
+        if ($null -ne $teamJsonData.metadata) {
+            $timestamp = [DateTime]::Parse($teamJsonData.metadata.timestamp)
+            $formattedTimestamp = $timestamp.ToString("M/d/yyyy")
+            $teamOutput = $teamOutput -replace 'TIMESTAMP', $formattedTimestamp
         } else {
-            Write-Warning "Team JSON file not found for $($decade.DisplayName): $teamJsonFilePath"
+            $teamOutput = $teamOutput -replace 'TIMESTAMP', (Get-Date).ToString("M/d/yyyy")
         }
 
-        # Add comments script
-        $teamOutput = $teamOutput -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-
-        # Save team file
-        $teamOutputPath = Join-Path $outputDir "$($decade.Name)-teams.html"
-        Set-Content -Path $teamOutputPath -Value $teamOutput -Encoding UTF8
-        #endregion
-		
-		#region Program Processing
-        Write-Host "Processing Programs..."
-        $programOutput = $programTemplate
-        $programOutput = $programOutput -replace 'DECADE_DISPLAY_NAME', $decade.DisplayName
-        $programOutput = $programOutput -replace 'DECADE_NAME', $decade.Name
-        $programOutput = $programOutput -replace 'DECADE_START', $decade.StartYear
-        $programOutput = $programOutput -replace 'DECADE_END', $decade.EndYear
-        $programOutput = $programOutput -replace 'DECADE_ID', "$($decade.Name)-programs"
-        $programOutput = $programOutput -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
-
-        # Process program JSON
-        $programJsonFileName = "decade-programs-$($decade.Name).json"
-        $programJsonFilePath = Join-Path $jsonBasePath "decades\programs\$programJsonFileName"
-
-        if (Test-Path $programJsonFilePath) {
-            Write-Host "Found program JSON for $($decade.Name): $programJsonFilePath" -ForegroundColor Green
-            $programJsonData = Get-Content -Path $programJsonFilePath -Raw | ConvertFrom-Json
-
-            if ($null -ne $programJsonData -and $null -ne $programJsonData.items -and $programJsonData.items -is [System.Array]) {
-                # Process timestamp
-                if ($null -ne $programJsonData.metadata) {
-                    $timestamp = [DateTime]::Parse($programJsonData.metadata.timestamp)
-                    $formattedTimestamp = $timestamp.ToString("M/d/yyyy")
-                    $programOutput = $programOutput -replace 'TIMESTAMP', $formattedTimestamp
-                } else {
-                    $programOutput = $programOutput -replace 'TIMESTAMP', (Get-Date).ToString("M/d/yyyy")
-                }
-
-                # Process table rows
-                $tableRows = ""
-                foreach ($rank in $programJsonData.items) {
-                    $tableRows += @"
+        # Process table rows
+        $tableRows = ""
+        foreach ($rank in $teamJsonData.items) {
+            $tableRows += @"
 <tr>
-    <td>$($rank.rank)</td>
-    <td>$($rank.program)</td>
-    <td>$($rank.state)</td>
-    <td>$($rank.seasons)</td>
-    <td>$($rank.combined)</td>
-    <td>$($rank.margin)</td>
-    <td>$($rank.win_loss)</td>
-    <td>$($rank.offense)</td>
-    <td>$($rank.defense)</td>
+<td>$($rank.rank)</td>
+<td>$($rank.team)</td>
+<td>$($rank.state)</td>
+<td>$($rank.season)</td>
+<td>$($rank.combined)</td>
+<td>$($rank.margin)</td>
+<td>$($rank.win_loss)</td>
+<td>$($rank.offense)</td>
+<td>$($rank.defense)</td>
+<td>$($rank.games_played)</td>
 </tr>
 "@
-                }
-                $programOutput = $programOutput -replace 'TABLE_ROWS', $tableRows
+        }
+        $teamOutput = $teamOutput -replace 'TABLE_ROWS', $tableRows
 
-                # Generate and insert program banner
-                if ($programJsonData.topItem) {
-                    $bannerHtml = Generate-TeamBanner -TopItem $programJsonData.topItem
-                    $programOutput = $programOutput -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                }
-            } else {
-                Write-Warning "Invalid or empty program JSON data for $($decade.DisplayName): $programJsonFilePath"
-            }
+        # Generate and insert team banner
+        if ($teamJsonData.topItem) {
+            $bannerHtml = Generate-TeamBanner -TopItem $teamJsonData.topItem
+            $teamOutput = $teamOutput -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+        }
+    } else {
+        Write-Warning "Invalid or empty team JSON data for $($decade.DisplayName): $teamJsonFilePath"
+    }
+} else {
+    Write-Warning "Team JSON file not found for $($decade.DisplayName): $teamJsonFilePath"
+}
+
+# Add comments script
+$teamOutput = $teamOutput -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+
+# Save team file
+$teamOutputPath = Join-Path $outputDir "$($decade.Name)-teams.html"
+Set-Content -Path $teamOutputPath -Value $teamOutput -Encoding UTF8
+#endregion
+
+# Part 7 - Programs Processing Section (inside the try block):
+
+#region Program Processing
+Write-Host "Processing Programs..."
+$programOutput = $programTemplate
+$programOutput = $programOutput -replace 'DECADE_DISPLAY_NAME', $decade.DisplayName
+$programOutput = $programOutput -replace 'DECADE_NAME', $decade.Name
+$programOutput = $programOutput -replace 'DECADE_START', $decade.StartYear
+$programOutput = $programOutput -replace 'DECADE_END', $decade.EndYear
+$programOutput = $programOutput -replace 'DECADE_ID', "$($decade.Name)-programs"
+$programOutput = $programOutput -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
+
+# Process program JSON
+$programJsonFileName = "decade-programs-$($decade.Name).json"
+$programJsonFilePath = Join-Path $jsonBasePath "decades\programs\$programJsonFileName"
+
+if (Test-Path $programJsonFilePath) {
+    Write-Host "Found program JSON for $($decade.Name): $programJsonFilePath" -ForegroundColor Green
+    $programJsonData = Get-Content -Path $programJsonFilePath -Raw | ConvertFrom-Json
+
+    if ($null -ne $programJsonData -and $null -ne $programJsonData.items -and $programJsonData.items -is [System.Array]) {
+        # Process timestamp
+        if ($null -ne $programJsonData.metadata) {
+            $timestamp = [DateTime]::Parse($programJsonData.metadata.timestamp)
+            $formattedTimestamp = $timestamp.ToString("M/d/yyyy")
+            $programOutput = $programOutput -replace 'TIMESTAMP', $formattedTimestamp
         } else {
-            Write-Warning "Program JSON file not found for $($decade.DisplayName): $programJsonFilePath"
+            $programOutput = $programOutput -replace 'TIMESTAMP', (Get-Date).ToString("M/d/yyyy")
         }
 
-        # Add comments script
-        $programOutput = $programOutput -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+        # Process table rows
+        $tableRows = ""
+        foreach ($rank in $programJsonData.items) {
+            $tableRows += @"
+<tr>
+<td>$($rank.rank)</td>
+<td>$($rank.program)</td>
+<td>$($rank.state)</td>
+<td>$($rank.seasons)</td>
+<td>$($rank.combined)</td>
+<td>$($rank.margin)</td>
+<td>$($rank.win_loss)</td>
+<td>$($rank.offense)</td>
+<td>$($rank.defense)</td>
+</tr>
+"@
+        }
+        $programOutput = $programOutput -replace 'TABLE_ROWS', $tableRows
 
-        # Save program file
-        $programOutputPath = Join-Path $outputDir "$($decade.Name)-programs.html"
-        Set-Content -Path $programOutputPath -Value $programOutput -Encoding UTF8
-        #endregion
-		
-		#region Index Generation
-    Write-Host "`nGenerating index page..."
-    $decadeCardsHtml = $decades | ForEach-Object {
+        # Generate and insert program banner
+        if ($programJsonData.topItem) {
+            $bannerHtml = Generate-TeamBanner -TopItem $programJsonData.topItem
+            $programOutput = $programOutput -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+        }
+    } else {
+        Write-Warning "Invalid or empty program JSON data for $($decade.DisplayName): $programJsonFilePath"
+    }
+} else {
+    Write-Warning "Program JSON file not found for $($decade.DisplayName): $programJsonFilePath"
+}
+
+# Add comments script
+$programOutput = $programOutput -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+
+# Save program file
+$programOutputPath = Join-Path $outputDir "$($decade.Name)-programs.html"
+Set-Content -Path $programOutputPath -Value $programOutput -Encoding UTF8
+#endregion
+
+# Part 8 - Index Generation and Final Section (completing the try/catch block):
+
+} # End of foreach ($decade in $decades)
+
+#region Index Generation
+Write-Host "`nGenerating index page..."
+$decadeCardsHtml = $decades | ForEach-Object {
 @"
 <div class="col-md-6 mb-4">
-    <div class="card h-100">
-        <div class="card-body d-flex flex-column">
-            <h5 class="card-title">$($_.DisplayName)</h5>
-            <p class="card-text">Top teams and programs from $($_.StartYear) to $($_.EndYear)</p>
-            <div class="mt-auto">
-                <a href="$($_.Name)-teams.html" class="btn btn-primary me-2">Season Rankings</a>
-                <a href="$($_.Name)-programs.html" class="btn btn-outline-primary">Program Rankings</a>
-            </div>
+<div class="card h-100">
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">$($_.DisplayName)</h5>
+        <p class="card-text">Top teams and programs from $($_.StartYear) to $($_.EndYear)</p>
+        <div class="mt-auto">
+            <a href="$($_.Name)-teams.html" class="btn btn-primary me-2">Season Rankings</a>
+            <a href="$($_.Name)-programs.html" class="btn btn-outline-primary">Program Rankings</a>
         </div>
     </div>
 </div>
+</div>
 "@
-    }
+}
 
-    $indexPath = Join-Path $outputDir "index.html"
-    $indexContent = $indexTemplate -replace 'DECADE_CARDS', ($decadeCardsHtml -join "`n")
-    Set-Content -Path $indexPath -Value $indexContent -Encoding UTF8
+$indexPath = Join-Path $outputDir "index.html"
+$indexContent = $indexTemplate -replace 'DECADE_CARDS', ($decadeCardsHtml -join "`n")
+Set-Content -Path $indexPath -Value $indexContent -Encoding UTF8
 
-    Write-Host "All files generated successfully in: $outputDir"
+Write-Host "All files generated successfully in: $outputDir"
+
 } catch {
-    Write-Error "Generation failed: $_"
-    exit 1
+Write-Error "Generation failed: $_"
+exit 1
 }
 #endregion

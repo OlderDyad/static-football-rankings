@@ -179,10 +179,11 @@
 
             const rows = Array.from(tableBody.getElementsByTagName('tr'));
             this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
-                return Array.from(row.getElementsByTagName('td'))
-                    .some(cell => (cell.textContent || cell.innerText)
-                        .toLowerCase()
-                        .includes(searchTerm));
+                const text = Array.from(row.getElementsByTagName('td'))
+                    .map(cell => cell.textContent || cell.innerText)
+                    .join(' ')
+                    .toLowerCase();
+                return text.includes(searchTerm);
             });
 
             const totalRowsElement = document.getElementById('totalRows');
@@ -355,9 +356,7 @@ function displayComments(comments) {
       </div>
     </div>
   `).join('');
-}
-
-async function submitComment() {
+}async function submitComment() {
   const textEl = document.getElementById('commentText');
   const text = textEl.value.trim();
   if (!text) return alert('Please enter a comment');
