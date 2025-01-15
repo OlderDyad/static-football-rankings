@@ -36,11 +36,18 @@ function Generate-TeamBanner {
     }
 
     # Get text values with fallbacks
-    $backgroundColor = if ("$($TopItem.backgroundColor)".Trim()) { $TopItem.backgroundColor } else { '#FFFFFF' }
-    $textColor = if ("$($TopItem.textColor)".Trim()) { $TopItem.textColor } else { '#000000' }
-    $displayName = if ($TopItem.program) { $TopItem.program } elseif ($TopItem.team) { $TopItem.team } else { 'Unknown Team' }
+    $backgroundColor = if ($TopItem.backgroundColor -and "$($TopItem.backgroundColor)".Trim()) { $TopItem.backgroundColor } else { '#FFFFFF' }
+    $textColor = if ($TopItem.textColor -and "$($TopItem.textColor)".Trim()) { $TopItem.textColor } else { '#000000' }
+    
+    # Handle display name differently for teams vs programs
+    $displayName = if ($TopItem.season) {
+        # For teams, include season
+        "$($TopItem.season) $($TopItem.team)"
+    } else {
+        # For programs, just use program name
+        $TopItem.program
+    }
 
-    # Only include image tags if we have valid paths
     $logoHtml = if ($logoPath) {
         "<img src=`"$logoPath`" alt=`"$displayName Logo`" class=`"img-fluid team-logo`" />"
     } else {
@@ -65,7 +72,7 @@ function Generate-TeamBanner {
                     $(if ($TopItem.mascot) { "<p class='mascot-name'>$($TopItem.mascot)</p>" })
                     <div class="team-stats">
                         <small>
-                            $(if ($TopItem.seasons) { "Seasons: $($TopItem.seasons)" })
+                            $(if ($TopItem.seasons -and -not $TopItem.season) { "Seasons: $($TopItem.seasons)" })
                         </small>
                     </div>
                 </div>
@@ -550,23 +557,22 @@ if (Test-Path $programJsonFilePath) {
 
         # Process table rows
         $tableRows = ""
-foreach ($rank in $programJsonData.items) {
-    # Fix program name display
-    $programName = if ($rank.program) { $rank.program } else { "Unknown Program" }
-    $tableRows += @"
-<tr>
-    <td>$($rank.rank)</td>
-    <td>$programName</td>
-    <td>$($rank.state)</td>
-    <td>$($rank.seasons)</td>
-    <td>$($rank.combined)</td>
-    <td>$($rank.margin)</td>
-    <td>$($rank.win_loss)</td>
-    <td>$($rank.offense)</td>
-    <td>$($rank.defense)</td>
-</tr>
-"@
-}
+        foreach ($rank in $programJsonData.items) {
+            $tableRows += @"
+        <tr>
+            <td>$($rank.rank)</td>
+            <td>$($rank.program)</td>  # Remove the if-else check, use direct value
+            <td>$($rank.state)</td>
+            <td>$($rank.seasons)</td>
+            <td>$($rank.combined)</td>
+            <td>$($rank.margin)</td>
+            <td>$($rank.win_loss)</td>
+            <td>$($rank.offense)</td>
+            <td>$($rank.defense)</td>
+        </tr>
+        "@
+        }
+        
         $programOutput = $programOutput -replace 'TABLE_ROWS', $tableRows
 
         # Generate and insert program banner
