@@ -26,18 +26,18 @@ function Generate-TeamBanner {
     $logoPath = if ($TopItem.LogoURL -and "$($TopItem.LogoURL)".Trim()) { 
         "/static-football-rankings/images${$TopItem.LogoURL.TrimStart('/')}" 
     } else { 
-        $null  # Return null instead of trying to load a default
+        $null
     }
     
     $schoolLogoPath = if ($TopItem.School_Logo_URL -and "$($TopItem.School_Logo_URL)".Trim()) {
         "/static-football-rankings/images${$TopItem.School_Logo_URL.TrimStart('/')}"
     } else {
-        $null  # Return null instead of trying to load a default
+        $null
     }
 
     # Get text values with fallbacks
-    $backgroundColor = if ($TopItem.backgroundColor) { $TopItem.backgroundColor } else { '#FFFFFF' }
-    $textColor = if ($TopItem.textColor) { $TopItem.textColor } else { '#000000' }
+    $backgroundColor = if ("$($TopItem.backgroundColor)".Trim()) { $TopItem.backgroundColor } else { '#FFFFFF' }
+    $textColor = if ("$($TopItem.textColor)".Trim()) { $TopItem.textColor } else { '#000000' }
     $displayName = if ($TopItem.program) { $TopItem.program } elseif ($TopItem.team) { $TopItem.team } else { 'Unknown Team' }
 
     # Only include image tags if we have valid paths
@@ -66,7 +66,6 @@ function Generate-TeamBanner {
                     <div class="team-stats">
                         <small>
                             $(if ($TopItem.seasons) { "Seasons: $($TopItem.seasons)" })
-                            $(if ($TopItem.margin) { "| Margin: $([Math]::Round($TopItem.margin, 1))" })
                         </small>
                     </div>
                 </div>
@@ -551,21 +550,23 @@ if (Test-Path $programJsonFilePath) {
 
         # Process table rows
         $tableRows = ""
-        foreach ($rank in $programJsonData.items) {
-            $tableRows += @"
+foreach ($rank in $programJsonData.items) {
+    # Fix program name display
+    $programName = if ($rank.program) { $rank.program } else { "Unknown Program" }
+    $tableRows += @"
 <tr>
-<td>$($rank.rank)</td>
-<td>$($rank.program)</td>
-<td>$($rank.state)</td>
-<td>$($rank.seasons)</td>
-<td>$($rank.combined)</td>
-<td>$($rank.margin)</td>
-<td>$($rank.win_loss)</td>
-<td>$($rank.offense)</td>
-<td>$($rank.defense)</td>
+    <td>$($rank.rank)</td>
+    <td>$programName</td>
+    <td>$($rank.state)</td>
+    <td>$($rank.seasons)</td>
+    <td>$($rank.combined)</td>
+    <td>$($rank.margin)</td>
+    <td>$($rank.win_loss)</td>
+    <td>$($rank.offense)</td>
+    <td>$($rank.defense)</td>
 </tr>
 "@
-        }
+}
         $programOutput = $programOutput -replace 'TABLE_ROWS', $tableRows
 
         # Generate and insert program banner
