@@ -559,18 +559,18 @@ if (Test-Path $programJsonFilePath) {
         $tableRows = ""
         foreach ($rank in $programJsonData.items) {
             $tableRows += @"
-        <tr>
-            <td>$($rank.rank)</td>
-            <td>$($rank.program)</td>  # Remove the if-else check, use direct value
-            <td>$($rank.state)</td>
-            <td>$($rank.seasons)</td>
-            <td>$($rank.combined)</td>
-            <td>$($rank.margin)</td>
-            <td>$($rank.win_loss)</td>
-            <td>$($rank.offense)</td>
-            <td>$($rank.defense)</td>
-        </tr>
-        "@
+<tr>
+    <td>$($rank.rank)</td>
+    <td>$($rank.program)</td>
+    <td>$($rank.state)</td>
+    <td>$($rank.seasons)</td>
+    <td>$($rank.combined)</td>
+    <td>$($rank.margin)</td>
+    <td>$($rank.win_loss)</td>
+    <td>$($rank.offense)</td>
+    <td>$($rank.defense)</td>
+</tr>
+"@
         }
         
         $programOutput = $programOutput -replace 'TABLE_ROWS', $tableRows
@@ -595,8 +595,6 @@ $programOutputPath = Join-Path $outputDir "$($decade.Name)-programs.html"
 Set-Content -Path $programOutputPath -Value $programOutput -Encoding UTF8
 #endregion
 
-# Part 8 - Index Generation and Final Section (completing the try/catch block):
-
 } # End of foreach ($decade in $decades)
 
 #region Index Generation
@@ -604,16 +602,16 @@ Write-Host "`nGenerating index page..."
 $decadeCardsHtml = $decades | ForEach-Object {
 @"
 <div class="col-md-6 mb-4">
-<div class="card h-100">
-    <div class="card-body d-flex flex-column">
-        <h5 class="card-title">$($_.DisplayName)</h5>
-        <p class="card-text">Top teams and programs from $($_.StartYear) to $($_.EndYear)</p>
-        <div class="mt-auto">
-            <a href="$($_.Name)-teams.html" class="btn btn-primary me-2">Season Rankings</a>
-            <a href="$($_.Name)-programs.html" class="btn btn-outline-primary">Program Rankings</a>
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">$($_.DisplayName)</h5>
+            <p class="card-text">Top teams and programs from $($_.StartYear) to $($_.EndYear)</p>
+            <div class="mt-auto">
+                <a href="$($_.Name)-teams.html" class="btn btn-primary me-2">Season Rankings</a>
+                <a href="$($_.Name)-programs.html" class="btn btn-outline-primary">Program Rankings</a>
+            </div>
         </div>
     </div>
-</div>
 </div>
 "@
 }
@@ -625,7 +623,7 @@ Set-Content -Path $indexPath -Value $indexContent -Encoding UTF8
 Write-Host "All files generated successfully in: $outputDir"
 
 } catch {
-Write-Error "Generation failed: $_"
-exit 1
+    Write-Error "Generation failed: $_"
+    exit 1
 }
 #endregion
