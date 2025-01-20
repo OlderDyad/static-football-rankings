@@ -36,10 +36,8 @@ export class TopBanner {
         }
     
         try {
-            // Use the path directly, just like main.js does
             const dataPath = dataFileMeta.content;
-            
-            log(DEBUG_LEVELS.INFO, `Attempting to load data from: ${dataPath}`);
+            log(DEBUG_LEVELS.INFO, `Loading data from: ${dataPath}`);
             
             const response = await fetch(dataPath);
             if (!response.ok) {
@@ -53,8 +51,6 @@ export class TopBanner {
         }
     }
 
-    
-//Render TopBanner
     renderBanner(topItem) {
         if (!this.container) {
             log(DEBUG_LEVELS.ERROR, 'Banner container not found');
@@ -118,7 +114,6 @@ export class TopBanner {
         log(DEBUG_LEVELS.ERROR, 'Banner error rendered:', message);
     }
 
-    // Helper method to validate image paths
     validateImagePath(path) {
         if (!path) return false;
         const img = new Image();
