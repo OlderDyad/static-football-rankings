@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE_TITLE - McKnight's American Football</title>
+    <meta name="description" content="View top high school football programs.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
+
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/all-time/index.html">All-Time Rankings</a></li>
+                <li class="breadcrumb-item active" aria-current="page">PAGE_TITLE</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Team Header Container -->
+    <div id="teamHeaderContainer"></div>
+
+    <div class="container mt-4">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>PAGE_TITLE</h1>
+                    <small>Last Updated: <span id="lastUpdated">TIMESTAMP</span></small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Controls -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search programs..." aria-label="Search programs">
+                </div>
+            </div>
+            <div class="col-md-6 text-end">
+                <span class="align-middle">
+                    Showing <span id="startRow">1</span> - <span id="endRow">100</span> of <span id="totalRows">0</span> programs
+                </span>
+            </div>
+        </div>
+
+        <!-- Programs Table -->
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Team</th>
+                        <th>Season</th>
+                        <th>Combined</th>
+                        <th>Margin</th>
+                        <th>Win-Loss</th>
+                        <th>Offense</th>
+                        <th>Defense</th>
+                        <th>Games</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody id="teamsTableBody">
+                    TABLE_ROWS
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Table navigation">
+            <ul class="pagination justify-content-center" id="tablePagination">
+            </ul>
+        </nav>
+
+        <!-- Comments Section -->
+        <div class="comments-section mt-5">
+            <h3>Comments</h3>
+            <div id="authContainer"></div>
+            <div id="commentForm" style="display: none;">
+                <div class="mb-3">
+                    <label for="commentText" class="form-label">Add a comment as <span id="authorName">Anonymous</span></label>
+                    <textarea class="form-control" id="commentText" rows="3"></textarea>
+                </div>
+                <button id="submitComment" class="btn btn-primary">Submit Comment</button>
+            </div>
+            <div id="commentsList" class="mt-4">
+                <!-- Comments will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 mb-3">
+        <div class="text-center">
+            <p>© 2025 McKnight's Football Rankings</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Table Controls Script -->
+    TABLE_CONTROLS_SCRIPT
+
+    <!-- Comments Script -->
+    COMMENTS_SCRIPT_PLACEHOLDER
+
+    <!-- Main JavaScript Module -->
+    <script type="module" src="/static-football-rankings/js/main.js"></script>
+</body>
+</html>
