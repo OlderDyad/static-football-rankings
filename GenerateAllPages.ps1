@@ -243,57 +243,41 @@ function Generate-TableRows {
         [Parameter(Mandatory=$true)][string]$Type  # "team" or "program"
     )
 
-    $tableRows = ""
-    foreach ($item in $Items) {
+    $tableRows = $Items | ForEach-Object {
         if ($Type -eq "team") {
-            $tableRows += @"
-<tr>
-    <td>$($item.rank)</td>
-    <td>$($item.team)</td>
-    <td>$($item.season)</td>
-    <td>$($item.combined)</td>
-    <td>$($item.margin)</td>
-    <td>$($item.win_loss)</td>
-    <td>$($item.offense)</td>
-    <td>$($item.defense)</td>
-    <td>$($item.games_played)</td>
-    <td>$($item.state)</td>
-</tr>
+            # Team rows - includes Season and Games columns
+            @"
+            <tr>
+                <td>$($_.rank)</td>
+                <td>$($_.team)</td>
+                <td>$($_.season)</td>         # Single season
+                <td>$($_.combined)</td>
+                <td>$($_.margin)</td>
+                <td>$($_.win_loss)</td>
+                <td>$($_.offense)</td>
+                <td>$($_.defense)</td>
+                <td>$($_.games_played)</td>   # Games column
+                <td>$($_.state)</td>
+            </tr>
 "@
         } else {
-            $tableRows += @"
-<tr>
-    <td>$($item.rank)</td>
-    <td>$($item.program)</td>
-    <td>$($item.seasons)</td>
-    <td>$($item.combined)</td>
-    <td>$($item.margin)</td>
-    <td>$($item.win_loss)</td>
-    <td>$($item.offense)</td>
-    <td>$($item.defense)</td>
-    <td>$($item.state)</td>
-</tr>
+            # Program rows - includes Seasons column, no Games column
+            @"
+            <tr>
+                <td>$($_.rank)</td>
+                <td>$($_.program)</td>
+                <td>$($_.seasons)</td>        # Multiple seasons
+                <td>$($_.combined)</td>
+                <td>$($_.margin)</td>
+                <td>$($_.win_loss)</td>
+                <td>$($_.offense)</td>
+                <td>$($_.defense)</td>
+                <td>$($_.state)</td>
+            </tr>
 "@
         }
     }
-    return $tableRows
-}
-
-function Create-Navigation {
-    param (
-        [string]$CurrentPage,
-        [string]$Section
-    )
-
-@"
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/$Section/index.html">$Section</a></li>
-        <li class="breadcrumb-item active" aria-current="page">$CurrentPage</li>
-    </ol>
-</nav>
-"@
+    return $tableRows -join "`n"
 }
 
 function Generate-ComingSoonPage {
@@ -651,6 +635,7 @@ document.getElementById('submitComment')?.addEventListener('click', submitCommen
 #endregion Template Scripts
 
 #region Processing Functions
+# In Process-DecadeData function, update the table rows generation:
 function Process-DecadeData {
     param (
         [string]$DecadeName,
@@ -661,14 +646,14 @@ function Process-DecadeData {
 
     Write-Host "Processing $DisplayName..."
 
-    # -- TEAMS --
-    $teamJsonPath = Join-Path $dataDir "decades\teams\decade-teams-$DecadeName.json"
-    if (Test-Path $teamJsonPath) {
+    # Process programs for this decade
+    $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
+    if (Test-Path $programJsonPath) {
         try {
-            $teamData   = Get-Content $teamJsonPath -Raw | ConvertFrom-Json
-            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-teams.html"
+            $programData = Get-Content $programJsonPath -Raw | ConvertFrom-Json
+            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
 
-            $templatePath = Join-Path $templateBaseDir "decade-teams-template.html"
+            $templatePath = Join-Path $templateBaseDir "decade-programs-template.html"
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
 
@@ -677,27 +662,33 @@ function Process-DecadeData {
                 $template = $template -replace 'DECADE_NAME', $DecadeName
                 $template = $template -replace 'DECADE_START', $StartYear
                 $template = $template -replace 'DECADE_END', $EndYear
-                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
-                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
 
-                # Banner
-                if ($teamData.topItem) {
-                    $bannerHtml = Generate-TeamBanner -TopItem $teamData.topItem -Type "team"
-                    $template   = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+                # Generate table rows
+                $tableRows = $programData.items | ForEach-Object {
+                    @"
+                    <tr>
+                        <td>$($_.rank)</td>
+                        <td>$($_.program)</td>
+                        <td>$($_.seasons)</td>
+                        <td>$($_.combined)</td>
+                        <td>$($_.margin)</td>
+                        <td>$($_.win_loss)</td>
+                        <td>$($_.offense)</td>
+                        <td>$($_.defense)</td>
+                        <td>$($_.state)</td>
+                    </tr>
+"@
                 }
-
-                # Table rows
-                $tableRows = Generate-TableRows -Items $teamData.items -Type "team"
-                $template  = $template -replace 'TABLE_ROWS', $tableRows
+                $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
 
                 Set-Content -Path $outputPath -Value $template -Encoding UTF8
-                Write-Host "Generated: $DecadeName-teams.html"
+                Write-Host "Generated: $DecadeName-programs.html"
             }
-        }
-        catch {
-            Write-Error "Error processing $DecadeName teams: $_"
+        } catch {
+            Write-Error "Error processing $DecadeName programs: $_"
         }
     }
+}
 
     # -- PROGRAMS --
     $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
@@ -736,7 +727,7 @@ function Process-DecadeData {
             Write-Error "Error processing $DecadeName programs: $_"
         }
     }
-}
+
 
 function Process-StateData {
     param (
