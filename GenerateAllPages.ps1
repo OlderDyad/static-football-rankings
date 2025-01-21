@@ -188,20 +188,22 @@ function Generate-TeamBanner {
         return "<!-- No top item data available for banner -->"
     }
 
-    # Safely handle Logo URLs
-    $logoPath = if ($TopItem.LogoURL -and "$($TopItem.LogoURL)".Trim()) {
-        "/static-football-rankings/images${($TopItem.LogoURL).TrimStart('/')}"
+    # Handle Logo URLs from JSON
+    $logoHtml = if ($TopItem.logoURL -and "$($TopItem.logoURL)".Trim()) {
+        $logoPath = "/static-football-rankings/$($TopItem.logoURL.TrimStart('/'))"
+        "<img src=`"$logoPath`" alt=`"Logo`" class=`"img-fluid team-logo`" onerror=`"this.style.display='none'`" />"
     } else {
-        "/static-football-rankings/images/default-logo.png"
+        "<!-- No logo available -->"
     }
 
-    $schoolLogoPath = if ($TopItem.School_Logo_URL -and "$($TopItem.School_Logo_URL)".Trim()) {
-        "/static-football-rankings/images${($TopItem.School_Logo_URL).TrimStart('/')}"
+    $schoolLogoHtml = if ($TopItem.schoolLogoURL -and "$($TopItem.schoolLogoURL)".Trim()) {
+        $schoolPath = "/static-football-rankings/$($TopItem.schoolLogoURL.TrimStart('/'))"
+        "<img src=`"$schoolPath`" alt=`"School Logo`" class=`"img-fluid school-logo`" onerror=`"this.style.display='none'`" />"
     } else {
-        "/static-football-rankings/images/default-school-logo.png"
+        "<!-- No school logo available -->"
     }
 
-    # Color fallbacks
+    # Color handling
     $backgroundColor = if ($TopItem.backgroundColor -and "$($TopItem.backgroundColor)".Trim()) {
         $TopItem.backgroundColor
     } else {
@@ -221,19 +223,22 @@ function Generate-TeamBanner {
         $TopItem.program
     }
 
+    $mascot = if ($TopItem.mascot) {
+        "<p class='mascot-name'>$($TopItem.mascot)</p>"
+    } else {
+        ""
+    }
+
 @"
 <div class="team-header" style="background-color: $backgroundColor; color: $textColor;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-3 text-center">
-                <img src="$logoPath"
-                     alt="$displayName Logo"
-                     class="img-fluid team-logo"
-                     onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
+                $logoHtml
             </div>
             <div class="col-md-6 text-center">
                 <h2>$displayName</h2>
-                $(if ($TopItem.mascot) { "<p class='mascot-name'>$($TopItem.mascot)</p>" })
+                $mascot
                 <div class="team-stats">
                     <small>
                         $(if ($Type -eq "program") { "Seasons: $($TopItem.seasons)" })
@@ -241,10 +246,7 @@ function Generate-TeamBanner {
                 </div>
             </div>
             <div class="col-md-3 text-center">
-                <img src="$schoolLogoPath"
-                     alt="$displayName School Logo"
-                     class="img-fluid school-logo"
-                     onerror="this.src='/static-football-rankings/images/default-school-logo.png'; this.classList.add('default-logo');" />
+                $schoolLogoHtml
             </div>
         </div>
     </div>

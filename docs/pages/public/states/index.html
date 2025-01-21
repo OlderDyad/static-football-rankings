@@ -1,0 +1,643 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Rankings - McKnight's American Football</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Static header image -->
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
+
+    <!-- Breadcrumb navigation -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Rankings by State</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main content -->
+    <div class="container mt-4">
+        <h1>High School Football Rankings by State</h1>
+        <p class="lead">Browse rankings for teams and programs across all states.</p>
+        
+        <!-- States grid -->
+        <div class="row mt-4" id="statesGrid">
+            <div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">AB</h5>
+            <div class="mt-auto">
+                <a href="AB-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="AB-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">AK</h5>
+            <div class="mt-auto">
+                <a href="AK-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="AK-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">AL</h5>
+            <div class="mt-auto">
+                <a href="AL-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="AL-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">AR</h5>
+            <div class="mt-auto">
+                <a href="AR-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="AR-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">AZ</h5>
+            <div class="mt-auto">
+                <a href="AZ-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="AZ-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">BC</h5>
+            <div class="mt-auto">
+                <a href="BC-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="BC-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">CA</h5>
+            <div class="mt-auto">
+                <a href="CA-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="CA-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">CO</h5>
+            <div class="mt-auto">
+                <a href="CO-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="CO-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">CT</h5>
+            <div class="mt-auto">
+                <a href="CT-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="CT-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">DE</h5>
+            <div class="mt-auto">
+                <a href="DE-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="DE-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">FL</h5>
+            <div class="mt-auto">
+                <a href="FL-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="FL-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">GA</h5>
+            <div class="mt-auto">
+                <a href="GA-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="GA-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">HI</h5>
+            <div class="mt-auto">
+                <a href="HI-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="HI-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">IA</h5>
+            <div class="mt-auto">
+                <a href="IA-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="IA-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">ID</h5>
+            <div class="mt-auto">
+                <a href="ID-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="ID-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">IL</h5>
+            <div class="mt-auto">
+                <a href="IL-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="IL-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">IN</h5>
+            <div class="mt-auto">
+                <a href="IN-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="IN-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">KS</h5>
+            <div class="mt-auto">
+                <a href="KS-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="KS-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">KY</h5>
+            <div class="mt-auto">
+                <a href="KY-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="KY-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">LA</h5>
+            <div class="mt-auto">
+                <a href="LA-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="LA-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MA</h5>
+            <div class="mt-auto">
+                <a href="MA-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="MA-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MB</h5>
+            <div class="mt-auto">
+                <a href="MB-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="MB-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MD</h5>
+            <div class="mt-auto">
+                <a href="MD-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="MD-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">ME</h5>
+            <div class="mt-auto">
+                <a href="ME-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="ME-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MI</h5>
+            <div class="mt-auto">
+                <a href="MI-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="MI-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MN</h5>
+            <div class="mt-auto">
+                <a href="MN-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="MN-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MO</h5>
+            <div class="mt-auto">
+                <a href="MO-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="MO-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MS</h5>
+            <div class="mt-auto">
+                <a href="MS-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="MS-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MT</h5>
+            <div class="mt-auto">
+                <a href="MT-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="MT-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">NC</h5>
+            <div class="mt-auto">
+                <a href="NC-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="NC-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">ND</h5>
+            <div class="mt-auto">
+                <a href="ND-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="ND-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">NE</h5>
+            <div class="mt-auto">
+                <a href="NE-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="NE-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">NH</h5>
+            <div class="mt-auto">
+                <a href="NH-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="NH-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">NJ</h5>
+            <div class="mt-auto">
+                <a href="NJ-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="NJ-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">NM</h5>
+            <div class="mt-auto">
+                <a href="NM-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="NM-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">NS</h5>
+            <div class="mt-auto">
+                <a href="NS-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="NS-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">NV</h5>
+            <div class="mt-auto">
+                <a href="NV-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="NV-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">NY</h5>
+            <div class="mt-auto">
+                <a href="NY-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="NY-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">OH</h5>
+            <div class="mt-auto">
+                <a href="OH-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="OH-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">OK</h5>
+            <div class="mt-auto">
+                <a href="OK-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="OK-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">OR</h5>
+            <div class="mt-auto">
+                <a href="OR-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="OR-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">PA</h5>
+            <div class="mt-auto">
+                <a href="PA-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="PA-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">RI</h5>
+            <div class="mt-auto">
+                <a href="RI-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="RI-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">SC</h5>
+            <div class="mt-auto">
+                <a href="SC-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="SC-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">SD</h5>
+            <div class="mt-auto">
+                <a href="SD-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="SD-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">TN</h5>
+            <div class="mt-auto">
+                <a href="TN-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="TN-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">TX</h5>
+            <div class="mt-auto">
+                <a href="TX-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="TX-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">UT</h5>
+            <div class="mt-auto">
+                <a href="UT-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="UT-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">VA</h5>
+            <div class="mt-auto">
+                <a href="VA-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="VA-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">VT</h5>
+            <div class="mt-auto">
+                <a href="VT-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="VT-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">WA</h5>
+            <div class="mt-auto">
+                <a href="WA-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="WA-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">WI</h5>
+            <div class="mt-auto">
+                <a href="WI-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="WI-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">WV</h5>
+            <div class="mt-auto">
+                <a href="WV-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="WV-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">WY</h5>
+            <div class="mt-auto">
+                <a href="WY-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="WY-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+
+        <footer class="mt-5 mb-3">
+            <div class="text-center">
+                <p>Â© 2025 McKnight's Football Rankings</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
