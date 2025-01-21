@@ -711,8 +711,12 @@ function Process-DecadeData {
             if (Test-Path $templatePath) {
                 Write-Host "`nProcessing template..." -ForegroundColor Yellow
                 $template = Get-Content $templatePath -Raw
-
-                # Replace placeholders
+            
+                # First, update the data-file path with the correct structure
+                $template = $template -replace 'content="/data/decade-(teams|programs)-DECADE_NAME.json"', 
+                                     'content="/static-football-rankings/data/decades/$1/decade-$1-DECADE_NAME.json"'
+            
+                # Then handle other replacements
                 $template = $template -replace 'DECADE_DISPLAY_NAME', $DisplayName
                 $template = $template -replace 'DECADE_NAME', $DecadeName
                 $template = $template -replace 'DECADE_START', $StartYear
