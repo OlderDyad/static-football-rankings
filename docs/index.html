@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="0; url=/static-football-rankings/">
+    <script>window.location.replace('/static-football-rankings/');</script>
     <title>McKnight's Football Rankings - Redirecting</title>
     <style>
         body {
@@ -14,6 +15,11 @@
             height: 100vh;
             margin: 0;
             background-color: #f8f9fa;
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .message {
             text-align: center;
@@ -36,5 +42,9 @@
         <h1>Redirecting...</h1>
         <p>If you are not redirected automatically, please <a href="/static-football-rankings/">click here</a>.</p>
     </div>
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=/static-football-rankings/">
+        If you are not redirected automatically, follow <a href="/static-football-rankings/">this link</a>.
+    </noscript>
 </body>
 </html>

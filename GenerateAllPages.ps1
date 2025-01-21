@@ -941,6 +941,59 @@ function Process-LatestSeasonData {
                                -Message "Latest season rankings are being compiled. Please check back soon!"
     }
 }
+
+function Process-NationalChampions {
+    Write-Host "Processing national champions data..." -ForegroundColor Yellow
+
+    $jsonPath = Join-Path $dataDir "national-champions\national-champions.json"
+    if (Test-Path $jsonPath) {
+        try {
+            Write-Host "Loading national champions data..."
+            $championsData = Get-Content $jsonPath -Raw | ConvertFrom-Json
+            $outputPath = Join-Path $outputBaseDir "national-champions.html"
+
+            $templatePath = Join-Path $templateBaseDir "national-champions-template.html"
+            if (Test-Path $templatePath) {
+                $template = Get-Content $templatePath -Raw
+
+                # Replace placeholders
+                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
+                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+
+                # Generate table rows
+                $tableRows = $championsData | ForEach-Object {
+                    @"
+                    <tr>
+                        <td>$($_.year)</td>
+                        <td>$($_.team)</td>
+                        <td>$($_.state)</td>
+                        <td>$($_.source)</td>
+                        <td>$($_.record)</td>
+                        <td>$($_.rating)</td>
+                    </tr>
+"@
+                }
+                $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
+
+                Set-Content -Path $outputPath -Value $template -Encoding UTF8
+                Write-Host "Generated national-champions.html" -ForegroundColor Green
+            } else {
+                Write-Error "National champions template not found: $templatePath"
+            }
+        } catch {
+            Write-Error "Error processing national champions data: $_"
+            Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "national-champions.html") `
+                                  -Title "Media National Champions" `
+                                  -Message "National champions data is being compiled. Please check back soon!"
+        }
+    } else {
+        Write-Warning "National champions data not found: $jsonPath"
+        Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "national-champions.html") `
+                               -Title "Media National Champions" `
+                               -Message "National champions data is being compiled. Please check back soon!"
+    }
+}
 #endregion Processing Functions
 
 #region Main Script Execution
