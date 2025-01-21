@@ -46,61 +46,63 @@ if (-not (Test-Path $templateBaseDir)) {
 }
 #endregion Configuration
 
+# Add this after the Configuration region and before Helper Functions
+
 #region Template Verification
 function Test-RequiredTemplates {
     $requiredTemplates = @(
         # Decade templates
         @{
-            Path = Join-Path $templateBaseDir "decades\decade-teams-template.html"
+            Path = Join-Path $templateBaseDir "decade-teams-template.html"
             Description = "Decade Teams Template"
             Critical = $true
         },
         @{
-            Path = Join-Path $templateBaseDir "decades\decade-programs-template.html"
+            Path = Join-Path $templateBaseDir "decade-programs-template.html"
             Description = "Decade Programs Template"
             Critical = $true
         },
         # State templates
         @{
-            Path = Join-Path $templateBaseDir "states\state-teams-template.html"
+            Path = Join-Path $templateBaseDir "state-teams-template.html"
             Description = "State Teams Template"
             Critical = $true
         },
         @{
-            Path = Join-Path $templateBaseDir "states\state-programs-template.html"
+            Path = Join-Path $templateBaseDir "state-programs-template.html"
             Description = "State Programs Template"
             Critical = $true
         },
         # All-time templates
         @{
-            Path = Join-Path $templateBaseDir "all-time\all-time-teams-template.html"
+            Path = Join-Path $templateBaseDir "all-time-teams-template.html"
             Description = "All-Time Teams Template"
             Critical = $false
         },
         @{
-            Path = Join-Path $templateBaseDir "all-time\all-time-programs-template.html"
+            Path = Join-Path $templateBaseDir "all-time-programs-template.html"
             Description = "All-Time Programs Template"
             Critical = $false
         },
         # Latest season template
         @{
-            Path = Join-Path $templateBaseDir "latest-season\latest-season-template.html"
+            Path = Join-Path $templateBaseDir "latest-season-template.html"
             Description = "Latest Season Template"
             Critical = $false
         },
         # Index templates
         @{
-            Path = Join-Path $templateBaseDir "index\decades-index-template.html"
+            Path = Join-Path $templateBaseDir "decades-index-template.html"
             Description = "Decades Index Template"
             Critical = $true
         },
         @{
-            Path = Join-Path $templateBaseDir "index\states-index-template.html"
+            Path = Join-Path $templateBaseDir "states-index-template.html"
             Description = "States Index Template"
             Critical = $true
         },
         @{
-            Path = Join-Path $templateBaseDir "index\all-time-index-template.html"
+            Path = Join-Path $templateBaseDir "all-time-index-template.html"
             Description = "All-Time Index Template"
             Critical = $false
         }
@@ -110,22 +112,6 @@ function Test-RequiredTemplates {
     $missingCritical = $false
 
     Write-Host "Verifying required templates..." -ForegroundColor Yellow
-    
-    # First ensure template base directory exists
-    if (-not (Test-Path $templateBaseDir)) {
-        Write-Host "Creating template base directory: $templateBaseDir" -ForegroundColor Yellow
-        New-Item -ItemType Directory -Path $templateBaseDir -Force | Out-Null
-    }
-
-    # Ensure subdirectories exist
-    @("decades", "states", "all-time", "latest-season", "index") | ForEach-Object {
-        $subDir = Join-Path $templateBaseDir $_
-        if (-not (Test-Path $subDir)) {
-            Write-Host "Creating template subdirectory: $subDir" -ForegroundColor Yellow
-            New-Item -ItemType Directory -Path $subDir -Force | Out-Null
-        }
-    }
-
     foreach ($template in $requiredTemplates) {
         if (-not (Test-Path $template.Path)) {
             $status = if ($template.Critical) { "CRITICAL" } else { "WARNING" }
@@ -142,8 +128,7 @@ function Test-RequiredTemplates {
     }
 
     if ($missingCritical) {
-        Write-Warning "Critical templates are missing. Please ensure all required templates are in place."
-        return $false
+        throw "Critical templates are missing. Please ensure all required templates are in place before proceeding."
     }
 
     if ($missingTemplates.Count -gt 0) {
@@ -155,7 +140,7 @@ function Test-RequiredTemplates {
     return $true
 }
 
-# Helper function to check individual templates
+# Add template verification to the error handling section
 function Test-TemplateExists {
     param (
         [string]$TemplatePath,
@@ -705,7 +690,7 @@ function Process-DecadeData {
             }
 
             $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
-            $templatePath = Join-Path $templateBaseDir "decades\decade-programs-template.html"
+            $templatePath = Join-Path $templateBaseDir "decade-programs-template.html"
             
             if (Test-Path $templatePath) {
                 Write-Host "`nProcessing template..." -ForegroundColor Yellow
@@ -746,6 +731,46 @@ function Process-DecadeData {
     }
 }
 
+
+    # -- PROGRAMS --
+    $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
+    if (Test-Path $programJsonPath) {
+        try {
+            $programData = Get-Content $programJsonPath -Raw | ConvertFrom-Json
+            $outputPath  = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
+
+            $templatePath = Join-Path $templateBaseDir "decade-programs-template.html"
+            if (Test-Path $templatePath) {
+                $template = Get-Content $templatePath -Raw
+
+                # Replace placeholders
+                $template = $template -replace 'DECADE_DISPLAY_NAME', $DisplayName
+                $template = $template -replace 'DECADE_NAME', $DecadeName
+                $template = $template -replace 'DECADE_START', $StartYear
+                $template = $template -replace 'DECADE_END', $EndYear
+                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
+                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+
+                # Banner
+                if ($programData.topItem) {
+                    $bannerHtml = Generate-TeamBanner -TopItem $programData.topItem -Type "program"
+                    $template   = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+                }
+
+                # Table rows
+                $tableRows = Generate-TableRows -Items $programData.items -Type "program"
+                $template  = $template -replace 'TABLE_ROWS', $tableRows
+
+                Set-Content -Path $outputPath -Value $template -Encoding UTF8
+                Write-Host "Generated: $DecadeName-programs.html"
+            }
+        }
+        catch {
+            Write-Error "Error processing $DecadeName programs: $_"
+        }
+    }
+
+
 function Process-StateData {
     param (
         [string]$StateCode
@@ -760,14 +785,13 @@ function Process-StateData {
             $teamData = Get-Content $teamJsonPath -Raw | ConvertFrom-Json
             $outputPath = Join-Path $outputBaseDir "states\$StateCode-teams.html"
 
-            $templatePath = Join-Path $templateBaseDir "states\state-teams-template.html"
+            $templatePath = Join-Path $templateBaseDir "state-teams-template.html"
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
 
                 $template = $template -replace 'STATE_CODE', $StateCode
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 if ($teamData.topItem) {
                     $bannerHtml = Generate-TeamBanner -TopItem $teamData.topItem -Type "team"
@@ -792,14 +816,13 @@ function Process-StateData {
             $programData = Get-Content $programJsonPath -Raw | ConvertFrom-Json
             $outputPath = Join-Path $outputBaseDir "states\$StateCode-programs.html"
 
-            $templatePath = Join-Path $templateBaseDir "states\state-programs-template.html"
+            $templatePath = Join-Path $templateBaseDir "state-programs-template.html"
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
 
                 $template = $template -replace 'STATE_CODE', $StateCode
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 if ($programData.topItem) {
                     $bannerHtml = Generate-TeamBanner -TopItem $programData.topItem -Type "program"
@@ -841,15 +864,16 @@ function Process-AllTimeData {
     Write-Host "Looking for JSON file: $jsonPath"
 
     if (Test-Path $jsonPath) {
+        Write-Host "Found JSON file: $jsonFileName"
         try {
             $jsonData = Get-Content $jsonPath -Raw | ConvertFrom-Json
-            
+
             $templateName = if ($Category -eq "teams") {
                 "all-time-teams-template.html"
             } else {
                 "all-time-programs-template.html"
             }
-            $templatePath = Join-Path $templateBaseDir "all-time\$templateName"
+            $templatePath = Join-Path $templateBaseDir $templateName
 
             if (Test-Path $templatePath) {
                 Write-Host "Using template: $templateName"
@@ -872,7 +896,6 @@ function Process-AllTimeData {
                 $template = $template -replace 'PAGE_TITLE', $pageTitle
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 # Banner
                 if ($jsonData.topItem) {
@@ -906,14 +929,13 @@ function Process-LatestSeasonData {
             $jsonData = Get-Content $jsonPath -Raw | ConvertFrom-Json
             $outputPath = Join-Path $outputBaseDir "latest-season\index.html"
 
-            $templatePath = Join-Path $templateBaseDir "latest-season\latest-season-template.html"
+            $templatePath = Join-Path $templateBaseDir "latest-season-template.html"
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
 
                 # Insert scripts
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 if ($jsonData.topItem) {
                     $bannerHtml = Generate-TeamBanner -TopItem $jsonData.topItem -Type "team"
@@ -940,6 +962,10 @@ function Process-LatestSeasonData {
     }
 }
 #endregion Processing Functions
+
+###############################################################################
+# MAIN SCRIPT EXECUTION
+###############################################################################
 
 #region Main Script Execution
 try {
@@ -983,7 +1009,7 @@ try {
     }
 
     # Process States
-    Write-Host "Processing state rankings..." -ForegroundColor Yellow
+    Write-Host "Processing state rankings..."
     $stateTeamsDir = Join-Path $dataDir "states\teams"
     if (Test-Path $stateTeamsDir) {
         $stateFiles = Get-ChildItem $stateTeamsDir -Filter "state-teams-*.json"
@@ -999,10 +1025,10 @@ try {
     }
 
     # Process All-Time Rankings
-    Write-Host "Processing all-time rankings..." -ForegroundColor Yellow
+    Write-Host "Processing all-time rankings..."
     
     # Process all-time teams
-    Write-Host "Processing all-time teams" -ForegroundColor Cyan
+    Write-Host "Processing all-time teams"
     $allTimeTeamsPath = Join-Path $dataDir "all-time\all-time-teams.json"
     if (Test-Path $allTimeTeamsPath) {
         Process-AllTimeData -Category "teams"
@@ -1014,22 +1040,22 @@ try {
     }
     
     # Process all-time programs
-    Write-Host "Processing all-time programs" -ForegroundColor Cyan
+    Write-Host "Processing all-time programs"
     @("25", "50", "100") | ForEach-Object {
-        Write-Host "Processing all-time programs ($_ seasons)" -ForegroundColor Yellow
+        Write-Host "Processing all-time programs ($_ seasons)"
         Process-AllTimeData -Category "programs" -Threshold $_
     }
 
     # Process Latest Season
-    Write-Host "Processing latest season rankings..." -ForegroundColor Yellow
+    Write-Host "Processing latest season rankings..."
     Process-LatestSeasonData
 
     # Generate Index Pages
-    Write-Host "Generating index pages..." -ForegroundColor Yellow
+    Write-Host "Generating index pages..."
 
     # Decades index
     $decadeIndexPath = Join-Path $outputBaseDir "decades\index.html"
-    $decadeIndexTemplatePath = Join-Path $templateBaseDir "index\decades-index-template.html"
+    $decadeIndexTemplatePath = Join-Path $templateBaseDir "decades-index-template.html"
     if (Test-Path $decadeIndexTemplatePath) {
         $decadeIndexTemplate = Get-Content $decadeIndexTemplatePath -Raw
         $decadeCards = $decades | ForEach-Object {
@@ -1050,21 +1076,21 @@ try {
         }
         $decadeIndexContent = $decadeIndexTemplate -replace 'DECADE_CARDS', ($decadeCards -join "`n")
         Set-Content -Path $decadeIndexPath -Value $decadeIndexContent -Encoding UTF8
-        Write-Host "Generated decades index page" -ForegroundColor Green
+        Write-Host "Generated decades index page"
     }
 
     # All-time index
     $allTimeIndexPath = Join-Path $outputBaseDir "all-time\index.html"
-    $allTimeIndexTemplatePath = Join-Path $templateBaseDir "index\all-time-index-template.html"
+    $allTimeIndexTemplatePath = Join-Path $templateBaseDir "all-time-index-template.html"
     if (Test-Path $allTimeIndexTemplatePath) {
         $allTimeIndexTemplate = Get-Content $allTimeIndexTemplatePath -Raw
         Set-Content -Path $allTimeIndexPath -Value $allTimeIndexTemplate -Encoding UTF8
-        Write-Host "Generated all-time rankings index page" -ForegroundColor Green
+        Write-Host "Generated all-time rankings index page"
     }
 
     # States index
     $statesIndexPath = Join-Path $outputBaseDir "states\index.html"
-    $statesIndexTemplatePath = Join-Path $templateBaseDir "index\states-index-template.html"
+    $statesIndexTemplatePath = Join-Path $templateBaseDir "states-index-template.html"
     if (Test-Path $statesIndexTemplatePath) {
         $statesIndexTemplate = Get-Content $statesIndexTemplatePath -Raw
         if ($stateCodes) {
@@ -1088,10 +1114,10 @@ try {
             $statesIndexContent = $statesIndexTemplate -replace 'STATE_CARDS', '<!-- No state data found -->'
         }
         Set-Content -Path $statesIndexPath -Value $statesIndexContent -Encoding UTF8
-        Write-Host "Generated states index page" -ForegroundColor Green
+        Write-Host "Generated states index page"
     }
 
-    Write-Host "Page generation completed successfully!" -ForegroundColor Green
+    Write-Host "Page generation completed successfully!"
 } catch {
     Write-Error "Generation failed: $_"
     exit 1

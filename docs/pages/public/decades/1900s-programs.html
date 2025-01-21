@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>1900s Programs - McKnight's American Football</title>
         <meta name="decade-info" content="start-year:1900,end-year:1909">
-        <meta name="data-file" content="/data/decade-programs-1900s.json">
+        <meta name="data-file" content="/static-football-rankings/docs/data/decades/programs/decade-programs-1900s.json">
+
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,27 +31,33 @@
         </div>
 
         <!-- Dynamic team banner container -->
-            <div class="team-header" style="background-color: #FFFFFF; color: #000000;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 text-center">
-                    <!-- No team logo available -->
+        <div class="team-header" style="background-color: Navy; color: White;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-3 text-center">
+                <img src="/static-football-rankings/images/default-logo.png"
+                     alt="Pottstown Hill School (PA) Logo"
+                     class="img-fluid team-logo"
+                     onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
+            </div>
+            <div class="col-md-6 text-center">
+                <h2>Pottstown Hill School (PA)</h2>
+                
+                <div class="team-stats">
+                    <small>
+                        Seasons: 7
+                    </small>
                 </div>
-                <div class="col-md-6 text-center">
-                    <h2></h2>
-                    
-                    <div class="team-stats">
-                        <small>
-                            Seasons: 7
-                        </small>
-                    </div>
-                </div>
-                <div class="col-md-3 text-center">
-                    <!-- No school logo available -->
-                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/static-football-rankings/images/default-school-logo.png"
+                     alt="Pottstown Hill School (PA) School Logo"
+                     class="img-fluid school-logo"
+                     onerror="this.src='/static-football-rankings/images/default-school-logo.png'; this.classList.add('default-logo');" />
             </div>
         </div>
     </div>
+</div>
 
         <!-- Main content -->
         <div class="container mt-4">
@@ -60,7 +67,7 @@
                 <div>
                     <a href="1900s-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
                 </div>
-                <div class="text-muted">Updated: <span id="lastUpdated">1/14/2025</span></div>
+                <div class="text-muted">Updated: <span id="lastUpdated">1/21/2025</span></div>
             </div>
 
             <!-- Search Controls -->
@@ -90,167 +97,182 @@
                         </tr>
                     </thead>
                     <tbody id="programsTableBody">
-                        <tr>
-    <td>1</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>50.435</td>
-    <td>59.727</td>
-    <td>2.354</td>
-    <td>42.223</td>
-    <td>-7.204</td>
-</tr><tr>
-    <td>2</td>
-    <td></td>
-    <td>(??)</td>
-    <td>8</td>
-    <td>46.744</td>
-    <td>56.112</td>
-    <td>1.678</td>
-    <td>44.972</td>
-    <td>-3.015</td>
-</tr><tr>
-    <td>3</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>36.226</td>
-    <td>42.456</td>
-    <td>1.583</td>
-    <td>34.997</td>
-    <td>-0.240</td>
-</tr><tr>
-    <td>4</td>
-    <td></td>
-    <td>(??)</td>
-    <td>8</td>
-    <td>33.671</td>
-    <td>39.612</td>
-    <td>1.282</td>
-    <td>33.866</td>
-    <td>0.601</td>
-</tr><tr>
-    <td>5</td>
-    <td></td>
-    <td>(??)</td>
-    <td>9</td>
-    <td>31.181</td>
-    <td>37.748</td>
-    <td>1.268</td>
-    <td>33.184</td>
-    <td>3.130</td>
-</tr><tr>
-    <td>6</td>
-    <td></td>
-    <td>(??)</td>
-    <td>8</td>
-    <td>30.005</td>
-    <td>35.375</td>
-    <td>1.365</td>
-    <td>31.544</td>
-    <td>2.857</td>
-</tr><tr>
-    <td>7</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>28.427</td>
-    <td>34.804</td>
-    <td>0.954</td>
-    <td>31.444</td>
-    <td>-0.997</td>
-</tr><tr>
-    <td>8</td>
-    <td></td>
-    <td>(??)</td>
-    <td>8</td>
-    <td>28.372</td>
-    <td>33.362</td>
-    <td>1.165</td>
-    <td>30.936</td>
-    <td>3.944</td>
-</tr><tr>
-    <td>9</td>
-    <td></td>
-    <td>(??)</td>
-    <td>9</td>
-    <td>26.490</td>
-    <td>29.567</td>
-    <td>1.440</td>
-    <td>27.870</td>
-    <td>4.543</td>
-</tr><tr>
-    <td>10</td>
-    <td></td>
-    <td>(??)</td>
-    <td>9</td>
-    <td>20.892</td>
-    <td>24.377</td>
-    <td>0.862</td>
-    <td>29.548</td>
-    <td>10.099</td>
-</tr><tr>
-    <td>11</td>
-    <td></td>
-    <td>(??)</td>
-    <td>10</td>
-    <td>18.867</td>
-    <td>21.904</td>
-    <td>0.846</td>
-    <td>25.260</td>
-    <td>9.010</td>
-</tr><tr>
-    <td>12</td>
-    <td></td>
-    <td>(??)</td>
-    <td>8</td>
-    <td>18.057</td>
-    <td>20.615</td>
-    <td>0.838</td>
-    <td>21.534</td>
-    <td>9.471</td>
-</tr><tr>
-    <td>13</td>
-    <td></td>
-    <td>(??)</td>
-    <td>9</td>
-    <td>17.923</td>
-    <td>22.406</td>
-    <td>0.434</td>
-    <td>28.564</td>
-    <td>7.537</td>
-</tr><tr>
-    <td>14</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>17.143</td>
-    <td>20.226</td>
-    <td>0.813</td>
-    <td>22.806</td>
-    <td>10.770</td>
-</tr><tr>
-    <td>15</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>17.052</td>
-    <td>20.404</td>
-    <td>0.681</td>
-    <td>23.331</td>
-    <td>14.699</td>
-</tr><tr>
-    <td>16</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>14.001</td>
-    <td>17.703</td>
-    <td>0.179</td>
-    <td>22.121</td>
-    <td>8.260</td>
-</tr>
+                                    <tr>
+                <td>1</td>
+                <td>Pottstown Hill School (PA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>50.435</td>
+                <td>59.727</td>
+                <td>2.354</td>
+                <td>42.223</td>
+                <td>-7.204</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Mercersburg Academy (PA)</td>
+                <td>8</td>        # Multiple seasons
+                <td>46.744</td>
+                <td>56.112</td>
+                <td>1.678</td>
+                <td>44.972</td>
+                <td>-3.015</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Philadelphia Central (PA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>36.226</td>
+                <td>42.456</td>
+                <td>1.583</td>
+                <td>34.997</td>
+                <td>-0.240</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Swarthmore Prep (PA)</td>
+                <td>8</td>        # Multiple seasons
+                <td>33.671</td>
+                <td>39.612</td>
+                <td>1.282</td>
+                <td>33.866</td>
+                <td>0.601</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Philadelphia William Penn Charter (PA)</td>
+                <td>9</td>        # Multiple seasons
+                <td>31.181</td>
+                <td>37.748</td>
+                <td>1.268</td>
+                <td>33.184</td>
+                <td>3.130</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Newark Barringer (NJ)</td>
+                <td>8</td>        # Multiple seasons
+                <td>30.005</td>
+                <td>35.375</td>
+                <td>1.365</td>
+                <td>31.544</td>
+                <td>2.857</td>
+                <td>(NJ)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Everett (MA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>28.427</td>
+                <td>34.804</td>
+                <td>0.954</td>
+                <td>31.444</td>
+                <td>-0.997</td>
+                <td>(MA)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Fort Washington Germantown Academy (PA)</td>
+                <td>8</td>        # Multiple seasons
+                <td>28.372</td>
+                <td>33.362</td>
+                <td>1.165</td>
+                <td>30.936</td>
+                <td>3.944</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>East Orange (NJ)</td>
+                <td>9</td>        # Multiple seasons
+                <td>26.490</td>
+                <td>29.567</td>
+                <td>1.440</td>
+                <td>27.870</td>
+                <td>4.543</td>
+                <td>(NJ)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Easton Area (PA)</td>
+                <td>9</td>        # Multiple seasons
+                <td>20.892</td>
+                <td>24.377</td>
+                <td>0.862</td>
+                <td>29.548</td>
+                <td>10.099</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Steelton-Highspire (PA)</td>
+                <td>10</td>        # Multiple seasons
+                <td>18.867</td>
+                <td>21.904</td>
+                <td>0.846</td>
+                <td>25.260</td>
+                <td>9.010</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Akron Central (OH)</td>
+                <td>8</td>        # Multiple seasons
+                <td>18.057</td>
+                <td>20.615</td>
+                <td>0.838</td>
+                <td>21.534</td>
+                <td>9.471</td>
+                <td>(OH)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Brockton (MA)</td>
+                <td>9</td>        # Multiple seasons
+                <td>17.923</td>
+                <td>22.406</td>
+                <td>0.434</td>
+                <td>28.564</td>
+                <td>7.537</td>
+                <td>(MA)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Canton McKinley (OH)</td>
+                <td>7</td>        # Multiple seasons
+                <td>17.143</td>
+                <td>20.226</td>
+                <td>0.813</td>
+                <td>22.806</td>
+                <td>10.770</td>
+                <td>(OH)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Louisville Male (KY)</td>
+                <td>7</td>        # Multiple seasons
+                <td>17.052</td>
+                <td>20.404</td>
+                <td>0.681</td>
+                <td>23.331</td>
+                <td>14.699</td>
+                <td>(KY)</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Camden (NJ)</td>
+                <td>7</td>        # Multiple seasons
+                <td>14.001</td>
+                <td>17.703</td>
+                <td>0.179</td>
+                <td>22.121</td>
+                <td>8.260</td>
+                <td>(NJ)</td>
+            </tr>
                     </tbody>
                 </table>
             </div>
@@ -406,12 +428,10 @@
             const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
             let html = [];
             
-            // Previous button
             html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
                 <button class="page-link" data-page="prev">&laquo;</button>
             </li>`);
             
-            // Page numbers
             for (let i = 1; i <= totalPages; i++) {
                 if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
                     html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
@@ -422,7 +442,6 @@
                 }
             }
             
-            // Next button
             html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
                 <button class="page-link" data-page="next">&raquo;</button>
             </li>`);
@@ -431,7 +450,6 @@
         }
     };
 
-    // Initialize after DOM loads
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => TableControls.init());
     } else {
@@ -446,144 +464,144 @@ const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
  * AUTH / LOGIN LOGIC
  **********************************************************/
 async function checkLoginStatus() {
-  try {
-    const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
-      method: 'GET',
-      credentials: 'include'
-    });
-    const data = await res.json();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
 
-    if (data.success && data.loggedIn) {
-      document.getElementById('commentForm').style.display = 'block';
-      document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
-      renderAuthUI(true, data.user);
-    } else {
-      document.getElementById('commentForm').style.display = 'none';
-      document.getElementById('authorName').textContent = 'Anonymous';
-      renderAuthUI(false);
+        if (data.success && data.loggedIn) {
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
+            renderAuthUI(true, data.user);
+        } else {
+            document.getElementById('commentForm').style.display = 'none';
+            document.getElementById('authorName').textContent = 'Anonymous';
+            renderAuthUI(false);
+        }
+    } catch (error) {
+        console.error('Login status error:', error);
+        document.getElementById('commentForm').style.display = 'none';
+        document.getElementById('authorName').textContent = 'Anonymous';
+        renderAuthUI(false);
     }
-  } catch (error) {
-    console.error('Login status error:', error);
-    document.getElementById('commentForm').style.display = 'none';
-    document.getElementById('authorName').textContent = 'Anonymous';
-    renderAuthUI(false);
-  }
 }
 
 function renderAuthUI(loggedIn, user = null) {
-  const authContainer = document.getElementById('authContainer');
-  if (!authContainer) return;
+    const authContainer = document.getElementById('authContainer');
+    if (!authContainer) return;
 
-  if (loggedIn && user) {
-    authContainer.innerHTML = `
-      <p>Welcome, <strong>${user.name}</strong> (${user.email}).
-         <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
-    `;
-    document.getElementById('logoutBtn').addEventListener('click', doLogout);
-  } else {
-    authContainer.innerHTML = `
-      <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
-    `;
-    document.getElementById('loginBtn').addEventListener('click', doLogin);
-  }
+    if (loggedIn && user) {
+        authContainer.innerHTML = `
+            <p>Welcome, <strong>${user.name}</strong> (${user.email})
+               <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
+        `;
+        document.getElementById('logoutBtn').addEventListener('click', doLogout);
+    } else {
+        authContainer.innerHTML = `
+            <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
+        `;
+        document.getElementById('loginBtn').addEventListener('click', doLogin);
+    }
 }
 
 function doLogin() {
-  window.location.href = `${VERCEL_API_BASE}/auth/google`;
+    window.location.href = `${VERCEL_API_BASE}/auth/google`;
 }
 
 function doLogout() {
-  document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
-  document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
-  document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
-  window.location.reload();
+    document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    window.location.reload();
 }
 
 /**********************************************************
  * COMMENTS LOGIC
  **********************************************************/
 async function fetchComments() {
-  const pageId = getPageId();
-  try {
-    const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
-      method: 'GET',
-      credentials: 'include'
-    });
-    const data = await res.json();
-    if (data.success) {
-      displayComments(data.comments);
+    const pageId = getPageId();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
+        if (data.success) {
+            displayComments(data.comments);
+        }
+    } catch (err) {
+        console.error('Error fetching comments:', err);
     }
-  } catch (err) {
-    console.error('Error fetching comments:', err);
-  }
 }
 
 function displayComments(comments) {
-  const list = document.getElementById('commentsList');
-  if (!list) return;
-  if (!Array.isArray(comments) || comments.length === 0) {
-    list.innerHTML = '<p class="text-muted">No comments yet</p>';
-    return;
-  }
-  list.innerHTML = comments.map(c => `
-    <div class="card mb-2">
-      <div class="card-body">
-        <p class="mb-1">${escapeHTML(c.text)}</p>
-        <small class="text-muted">
-          by ${escapeHTML(c.author)} on ${new Date(c.timestamp).toLocaleString()}
-        </small>
-      </div>
-    </div>
-  `).join('');
-}async function submitComment() {
-  const textEl = document.getElementById('commentText');
-  const text = textEl.value.trim();
-  if (!text) return alert('Please enter a comment');
-
-  const pageId = getPageId();
-
-  try {
-    const res = await fetch(`${VERCEL_API_BASE}/comments`, {
-      method: 'POST',
-      credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text, pageId })
-    });
-    const data = await res.json();
-    if (data.success) {
-      textEl.value = '';
-      fetchComments();
-    } else {
-      alert('Error posting comment: ' + (data.error || 'Unknown'));
+    const list = document.getElementById('commentsList');
+    if (!list) return;
+    if (!Array.isArray(comments) || comments.length === 0) {
+        list.innerHTML = '<p class="text-muted">No comments yet</p>';
+        return;
     }
-  } catch (err) {
-    console.error('Error posting comment:', err);
-    alert('Failed to post comment');
-  }
+    list.innerHTML = comments.map(c => `
+        <div class="card mb-2">
+            <div class="card-body">
+                <p class="mb-1">${escapeHTML(c.text)}</p>
+                <small class="text-muted">
+                    by ${escapeHTML(c.author)} on ${new Date(c.1/21/2025).toLocaleString()}
+                </small>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textEl = document.getElementById('commentText');
+    const text = textEl.value.trim();
+    if (!text) return alert('Please enter a comment');
+
+    const pageId = getPageId();
+
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, pageId })
+        });
+        const data = await res.json();
+        if (data.success) {
+            textEl.value = '';
+            fetchComments();
+        } else {
+            alert('Error posting comment: ' + (data.error || 'Unknown'));
+        }
+    } catch (err) {
+        console.error('Error posting comment:', err);
+        alert('Failed to post comment');
+    }
 }
 
 function escapeHTML(str) {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
 function getPageId() {
-  const el = document.querySelector('[data-page-name]');
-  return el ? el.getAttribute('data-page-name') : 'unknown';
+    const el = document.querySelector('[data-page-name]');
+    return el ? el.getAttribute('data-page-name') : 'unknown';
 }
 
-/**********************************************************
- * INIT
- **********************************************************/
+// Initialize
 document.getElementById('submitComment')?.addEventListener('click', submitComment);
 
 (function initPage() {
-  checkLoginStatus();
-  fetchComments();
+    checkLoginStatus();
+    fetchComments();
 })();
 </script>
         <!-- TopBanner initialization -->

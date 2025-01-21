@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>1980s Programs - McKnight's American Football</title>
         <meta name="decade-info" content="start-year:1980,end-year:1989">
-        <meta name="data-file" content="/data/decade-programs-1980s.json">
+        <meta name="data-file" content="/static-football-rankings/docs/data/decades/programs/decade-programs-1980s.json">
+
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,27 +31,33 @@
         </div>
 
         <!-- Dynamic team banner container -->
-            <div class="team-header" style="background-color: #FFFFFF; color: #000000;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 text-center">
-                    <!-- No team logo available -->
+        <div class="team-header" style="background-color: Navy; color: White;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-3 text-center">
+                <img src="/static-football-rankings/images/default-logo.png"
+                     alt="Aliquippa (PA) Logo"
+                     class="img-fluid team-logo"
+                     onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
+            </div>
+            <div class="col-md-6 text-center">
+                <h2>Aliquippa (PA)</h2>
+                
+                <div class="team-stats">
+                    <small>
+                        Seasons: 9
+                    </small>
                 </div>
-                <div class="col-md-6 text-center">
-                    <h2></h2>
-                    
-                    <div class="team-stats">
-                        <small>
-                            Seasons: 9
-                        </small>
-                    </div>
-                </div>
-                <div class="col-md-3 text-center">
-                    <!-- No school logo available -->
-                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/static-football-rankings/images/default-school-logo.png"
+                     alt="Aliquippa (PA) School Logo"
+                     class="img-fluid school-logo"
+                     onerror="this.src='/static-football-rankings/images/default-school-logo.png'; this.classList.add('default-logo');" />
             </div>
         </div>
     </div>
+</div>
 
         <!-- Main content -->
         <div class="container mt-4">
@@ -60,7 +67,7 @@
                 <div>
                     <a href="1980s-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
                 </div>
-                <div class="text-muted">Updated: <span id="lastUpdated">1/14/2025</span></div>
+                <div class="text-muted">Updated: <span id="lastUpdated">1/21/2025</span></div>
             </div>
 
             <!-- Search Controls -->
@@ -90,477 +97,523 @@
                         </tr>
                     </thead>
                     <tbody id="programsTableBody">
-                        <tr>
-    <td>1</td>
-    <td></td>
-    <td>(??)</td>
-    <td>9</td>
-    <td>30.335</td>
-    <td>36.637</td>
-    <td>1.078</td>
-    <td>31.162</td>
-    <td>0.163</td>
-</tr><tr>
-    <td>2</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>29.410</td>
-    <td>35.230</td>
-    <td>0.991</td>
-    <td>31.010</td>
-    <td>1.120</td>
-</tr><tr>
-    <td>3</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>28.770</td>
-    <td>34.863</td>
-    <td>0.956</td>
-    <td>32.069</td>
-    <td>-1.674</td>
-</tr><tr>
-    <td>4</td>
-    <td></td>
-    <td>(??)</td>
-    <td>8</td>
-    <td>28.452</td>
-    <td>33.612</td>
-    <td>1.059</td>
-    <td>32.438</td>
-    <td>-0.259</td>
-</tr><tr>
-    <td>5</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>28.435</td>
-    <td>34.631</td>
-    <td>0.781</td>
-    <td>31.790</td>
-    <td>0.971</td>
-</tr><tr>
-    <td>6</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>27.643</td>
-    <td>33.486</td>
-    <td>0.844</td>
-    <td>31.187</td>
-    <td>1.696</td>
-</tr><tr>
-    <td>7</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>27.523</td>
-    <td>33.591</td>
-    <td>0.913</td>
-    <td>31.053</td>
-    <td>2.453</td>
-</tr><tr>
-    <td>8</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>27.392</td>
-    <td>32.769</td>
-    <td>0.851</td>
-    <td>29.879</td>
-    <td>0.250</td>
-</tr><tr>
-    <td>9</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>27.117</td>
-    <td>33.544</td>
-    <td>0.764</td>
-    <td>33.901</td>
-    <td>3.907</td>
-</tr><tr>
-    <td>10</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>26.710</td>
-    <td>31.726</td>
-    <td>0.671</td>
-    <td>34.289</td>
-    <td>1.070</td>
-</tr><tr>
-    <td>11</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>26.300</td>
-    <td>32.046</td>
-    <td>0.654</td>
-    <td>34.733</td>
-    <td>5.650</td>
-</tr><tr>
-    <td>12</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>26.273</td>
-    <td>30.626</td>
-    <td>0.980</td>
-    <td>28.994</td>
-    <td>2.674</td>
-</tr><tr>
-    <td>13</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>26.151</td>
-    <td>32.210</td>
-    <td>0.786</td>
-    <td>30.567</td>
-    <td>3.137</td>
-</tr><tr>
-    <td>14</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>23.384</td>
-    <td>28.673</td>
-    <td>0.710</td>
-    <td>26.330</td>
-    <td>2.251</td>
-</tr><tr>
-    <td>15</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>22.347</td>
-    <td>27.023</td>
-    <td>0.556</td>
-    <td>28.190</td>
-    <td>2.103</td>
-</tr><tr>
-    <td>16</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>21.638</td>
-    <td>24.654</td>
-    <td>0.753</td>
-    <td>27.266</td>
-    <td>5.684</td>
-</tr><tr>
-    <td>17</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>21.150</td>
-    <td>26.399</td>
-    <td>0.354</td>
-    <td>28.087</td>
-    <td>4.367</td>
-</tr><tr>
-    <td>18</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>20.667</td>
-    <td>24.347</td>
-    <td>0.531</td>
-    <td>26.840</td>
-    <td>4.574</td>
-</tr><tr>
-    <td>19</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>19.782</td>
-    <td>23.724</td>
-    <td>0.760</td>
-    <td>33.100</td>
-    <td>13.420</td>
-</tr><tr>
-    <td>20</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>19.461</td>
-    <td>23.977</td>
-    <td>0.681</td>
-    <td>23.497</td>
-    <td>4.386</td>
-</tr><tr>
-    <td>21</td>
-    <td></td>
-    <td>(??)</td>
-    <td>9</td>
-    <td>17.461</td>
-    <td>20.124</td>
-    <td>0.507</td>
-    <td>25.459</td>
-    <td>6.053</td>
-</tr><tr>
-    <td>22</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>17.299</td>
-    <td>21.811</td>
-    <td>0.201</td>
-    <td>27.501</td>
-    <td>5.243</td>
-</tr><tr>
-    <td>23</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>17.295</td>
-    <td>21.439</td>
-    <td>0.398</td>
-    <td>26.679</td>
-    <td>8.579</td>
-</tr><tr>
-    <td>24</td>
-    <td></td>
-    <td>(??)</td>
-    <td>10</td>
-    <td>15.875</td>
-    <td>20.071</td>
-    <td>0.222</td>
-    <td>24.610</td>
-    <td>5.010</td>
-</tr><tr>
-    <td>25</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>15.755</td>
-    <td>19.709</td>
-    <td>0.214</td>
-    <td>26.334</td>
-    <td>7.029</td>
-</tr><tr>
-    <td>26</td>
-    <td></td>
-    <td>(??)</td>
-    <td>8</td>
-    <td>15.380</td>
-    <td>20.454</td>
-    <td>-0.088</td>
-    <td>33.156</td>
-    <td>13.867</td>
-</tr><tr>
-    <td>27</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>14.838</td>
-    <td>17.557</td>
-    <td>0.240</td>
-    <td>23.226</td>
-    <td>6.839</td>
-</tr><tr>
-    <td>28</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>14.383</td>
-    <td>17.869</td>
-    <td>0.239</td>
-    <td>23.556</td>
-    <td>7.551</td>
-</tr><tr>
-    <td>29</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>14.323</td>
-    <td>18.586</td>
-    <td>0.189</td>
-    <td>25.819</td>
-    <td>8.370</td>
-</tr><tr>
-    <td>30</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>14.065</td>
-    <td>17.593</td>
-    <td>0.353</td>
-    <td>23.291</td>
-    <td>9.406</td>
-</tr><tr>
-    <td>31</td>
-    <td></td>
-    <td>(??)</td>
-    <td>9</td>
-    <td>13.711</td>
-    <td>16.406</td>
-    <td>0.371</td>
-    <td>24.394</td>
-    <td>10.256</td>
-</tr><tr>
-    <td>32</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>13.198</td>
-    <td>16.157</td>
-    <td>0.044</td>
-    <td>22.870</td>
-    <td>6.059</td>
-</tr><tr>
-    <td>33</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>13.158</td>
-    <td>16.881</td>
-    <td>0.320</td>
-    <td>20.626</td>
-    <td>6.636</td>
-</tr><tr>
-    <td>34</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>12.952</td>
-    <td>16.296</td>
-    <td>-0.074</td>
-    <td>25.494</td>
-    <td>9.784</td>
-</tr><tr>
-    <td>35</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>12.686</td>
-    <td>14.249</td>
-    <td>-0.017</td>
-    <td>23.627</td>
-    <td>5.560</td>
-</tr><tr>
-    <td>36</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>10.442</td>
-    <td>13.219</td>
-    <td>0.046</td>
-    <td>23.321</td>
-    <td>11.409</td>
-</tr><tr>
-    <td>37</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>9.913</td>
-    <td>12.537</td>
-    <td>-0.246</td>
-    <td>21.956</td>
-    <td>7.454</td>
-</tr><tr>
-    <td>38</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>9.688</td>
-    <td>10.930</td>
-    <td>0.153</td>
-    <td>19.833</td>
-    <td>8.637</td>
-</tr><tr>
-    <td>39</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>8.670</td>
-    <td>9.019</td>
-    <td>0.019</td>
-    <td>19.196</td>
-    <td>9.409</td>
-</tr><tr>
-    <td>40</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>6.664</td>
-    <td>8.981</td>
-    <td>-0.094</td>
-    <td>22.226</td>
-    <td>14.394</td>
-</tr><tr>
-    <td>41</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>6.211</td>
-    <td>8.693</td>
-    <td>-0.270</td>
-    <td>19.174</td>
-    <td>9.329</td>
-</tr><tr>
-    <td>42</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>4.056</td>
-    <td>4.437</td>
-    <td>-0.413</td>
-    <td>20.333</td>
-    <td>13.429</td>
-</tr><tr>
-    <td>43</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>3.708</td>
-    <td>6.461</td>
-    <td>-0.316</td>
-    <td>20.291</td>
-    <td>15.673</td>
-</tr><tr>
-    <td>44</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>3.438</td>
-    <td>4.297</td>
-    <td>-0.427</td>
-    <td>20.940</td>
-    <td>14.266</td>
-</tr><tr>
-    <td>45</td>
-    <td></td>
-    <td>(??)</td>
-    <td>8</td>
-    <td>-2.643</td>
-    <td>-3.394</td>
-    <td>-0.675</td>
-    <td>14.721</td>
-    <td>15.986</td>
-</tr><tr>
-    <td>46</td>
-    <td></td>
-    <td>(??)</td>
-    <td>9</td>
-    <td>-5.922</td>
-    <td>-7.139</td>
-    <td>-0.876</td>
-    <td>10.254</td>
-    <td>13.881</td>
-</tr><tr>
-    <td>47</td>
-    <td></td>
-    <td>(??)</td>
-    <td>7</td>
-    <td>-7.787</td>
-    <td>-10.301</td>
-    <td>-0.984</td>
-    <td>13.297</td>
-    <td>19.659</td>
-</tr>
+                                    <tr>
+                <td>1</td>
+                <td>Aliquippa (PA)</td>
+                <td>9</td>        # Multiple seasons
+                <td>30.335</td>
+                <td>36.637</td>
+                <td>1.078</td>
+                <td>31.162</td>
+                <td>0.163</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Archbald Valley View (PA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>29.410</td>
+                <td>35.230</td>
+                <td>0.991</td>
+                <td>31.010</td>
+                <td>1.120</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Fairhope (AL)</td>
+                <td>7</td>        # Multiple seasons
+                <td>28.770</td>
+                <td>34.863</td>
+                <td>0.956</td>
+                <td>32.069</td>
+                <td>-1.674</td>
+                <td>(AL)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Atlanta Marist (GA)</td>
+                <td>8</td>        # Multiple seasons
+                <td>28.452</td>
+                <td>33.612</td>
+                <td>1.059</td>
+                <td>32.438</td>
+                <td>-0.259</td>
+                <td>(GA)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Hobart (IN)</td>
+                <td>7</td>        # Multiple seasons
+                <td>28.435</td>
+                <td>34.631</td>
+                <td>0.781</td>
+                <td>31.790</td>
+                <td>0.971</td>
+                <td>(IN)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Carmel (IN)</td>
+                <td>7</td>        # Multiple seasons
+                <td>27.643</td>
+                <td>33.486</td>
+                <td>0.844</td>
+                <td>31.187</td>
+                <td>1.696</td>
+                <td>(IN)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Dandridge Jefferson County (TN)</td>
+                <td>7</td>        # Multiple seasons
+                <td>27.523</td>
+                <td>33.591</td>
+                <td>0.913</td>
+                <td>31.053</td>
+                <td>2.453</td>
+                <td>(TN)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Fontana (CA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>27.392</td>
+                <td>32.769</td>
+                <td>0.851</td>
+                <td>29.879</td>
+                <td>0.250</td>
+                <td>(CA)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Carson (CA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>27.117</td>
+                <td>33.544</td>
+                <td>0.764</td>
+                <td>33.901</td>
+                <td>3.907</td>
+                <td>(CA)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Durham Northern (NC)</td>
+                <td>7</td>        # Multiple seasons
+                <td>26.710</td>
+                <td>31.726</td>
+                <td>0.671</td>
+                <td>34.289</td>
+                <td>1.070</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Concord De La Salle (CA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>26.300</td>
+                <td>32.046</td>
+                <td>0.654</td>
+                <td>34.733</td>
+                <td>5.650</td>
+                <td>(CA)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Dunmore (PA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>26.273</td>
+                <td>30.626</td>
+                <td>0.980</td>
+                <td>28.994</td>
+                <td>2.674</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Doylestown Central Bucks West (PA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>26.151</td>
+                <td>32.210</td>
+                <td>0.786</td>
+                <td>30.567</td>
+                <td>3.137</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Centerville (OH)</td>
+                <td>7</td>        # Multiple seasons
+                <td>23.384</td>
+                <td>28.673</td>
+                <td>0.710</td>
+                <td>26.330</td>
+                <td>2.251</td>
+                <td>(OH)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Atlanta Lovett (GA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>22.347</td>
+                <td>27.023</td>
+                <td>0.556</td>
+                <td>28.190</td>
+                <td>2.103</td>
+                <td>(GA)</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Folsom Ridley (PA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>21.638</td>
+                <td>24.654</td>
+                <td>0.753</td>
+                <td>27.266</td>
+                <td>5.684</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Emmetsburg (IA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>21.150</td>
+                <td>26.399</td>
+                <td>0.354</td>
+                <td>28.087</td>
+                <td>4.367</td>
+                <td>(IA)</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Haynesville (LA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>20.667</td>
+                <td>24.347</td>
+                <td>0.531</td>
+                <td>26.840</td>
+                <td>4.574</td>
+                <td>(LA)</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Brockton (MA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>19.782</td>
+                <td>23.724</td>
+                <td>0.760</td>
+                <td>33.100</td>
+                <td>13.420</td>
+                <td>(MA)</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Hollidaysburg (PA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>19.461</td>
+                <td>23.977</td>
+                <td>0.681</td>
+                <td>23.497</td>
+                <td>4.386</td>
+                <td>(PA)</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Arvada Pomona (CO)</td>
+                <td>9</td>        # Multiple seasons
+                <td>17.461</td>
+                <td>20.124</td>
+                <td>0.507</td>
+                <td>25.459</td>
+                <td>6.053</td>
+                <td>(CO)</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Greenville J.H. Rose (NC)</td>
+                <td>7</td>        # Multiple seasons
+                <td>17.299</td>
+                <td>21.811</td>
+                <td>0.201</td>
+                <td>27.501</td>
+                <td>5.243</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Albany (MN)</td>
+                <td>7</td>        # Multiple seasons
+                <td>17.295</td>
+                <td>21.439</td>
+                <td>0.398</td>
+                <td>26.679</td>
+                <td>8.579</td>
+                <td>(MN)</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Ada (OK)</td>
+                <td>10</td>        # Multiple seasons
+                <td>15.875</td>
+                <td>20.071</td>
+                <td>0.222</td>
+                <td>24.610</td>
+                <td>5.010</td>
+                <td>(OK)</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>El Campo (TX)</td>
+                <td>7</td>        # Multiple seasons
+                <td>15.755</td>
+                <td>19.709</td>
+                <td>0.214</td>
+                <td>26.334</td>
+                <td>7.029</td>
+                <td>(TX)</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Almena Northern Valley (KS)</td>
+                <td>8</td>        # Multiple seasons
+                <td>15.380</td>
+                <td>20.454</td>
+                <td>-0.088</td>
+                <td>33.156</td>
+                <td>13.867</td>
+                <td>(KS)</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Geneseo (IL)</td>
+                <td>7</td>        # Multiple seasons
+                <td>14.838</td>
+                <td>17.557</td>
+                <td>0.240</td>
+                <td>23.226</td>
+                <td>6.839</td>
+                <td>(IL)</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Deerfield (IL)</td>
+                <td>7</td>        # Multiple seasons
+                <td>14.383</td>
+                <td>17.869</td>
+                <td>0.239</td>
+                <td>23.556</td>
+                <td>7.551</td>
+                <td>(IL)</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Durango (CO)</td>
+                <td>7</td>        # Multiple seasons
+                <td>14.323</td>
+                <td>18.586</td>
+                <td>0.189</td>
+                <td>25.819</td>
+                <td>8.370</td>
+                <td>(CO)</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Avon Lake (OH)</td>
+                <td>7</td>        # Multiple seasons
+                <td>14.065</td>
+                <td>17.593</td>
+                <td>0.353</td>
+                <td>23.291</td>
+                <td>9.406</td>
+                <td>(OH)</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Atascadero (CA)</td>
+                <td>9</td>        # Multiple seasons
+                <td>13.711</td>
+                <td>16.406</td>
+                <td>0.371</td>
+                <td>24.394</td>
+                <td>10.256</td>
+                <td>(CA)</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Havelock (NC)</td>
+                <td>7</td>        # Multiple seasons
+                <td>13.198</td>
+                <td>16.157</td>
+                <td>0.044</td>
+                <td>22.870</td>
+                <td>6.059</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Corning (CA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>13.158</td>
+                <td>16.881</td>
+                <td>0.320</td>
+                <td>20.626</td>
+                <td>6.636</td>
+                <td>(CA)</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Arlington (OH)</td>
+                <td>7</td>        # Multiple seasons
+                <td>12.952</td>
+                <td>16.296</td>
+                <td>-0.074</td>
+                <td>25.494</td>
+                <td>9.784</td>
+                <td>(OH)</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Brevard (NC)</td>
+                <td>7</td>        # Multiple seasons
+                <td>12.686</td>
+                <td>14.249</td>
+                <td>-0.017</td>
+                <td>23.627</td>
+                <td>5.560</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Hilmar (CA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>10.442</td>
+                <td>13.219</td>
+                <td>0.046</td>
+                <td>23.321</td>
+                <td>11.409</td>
+                <td>(CA)</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Canton Pisgah (NC)</td>
+                <td>7</td>        # Multiple seasons
+                <td>9.913</td>
+                <td>12.537</td>
+                <td>-0.246</td>
+                <td>21.956</td>
+                <td>7.454</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Decatur (AL)</td>
+                <td>7</td>        # Multiple seasons
+                <td>9.688</td>
+                <td>10.930</td>
+                <td>0.153</td>
+                <td>19.833</td>
+                <td>8.637</td>
+                <td>(AL)</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>Arkansas City (KS)</td>
+                <td>7</td>        # Multiple seasons
+                <td>8.670</td>
+                <td>9.019</td>
+                <td>0.019</td>
+                <td>19.196</td>
+                <td>9.409</td>
+                <td>(KS)</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Carbondale Santa Fe Trail (KS)</td>
+                <td>7</td>        # Multiple seasons
+                <td>6.664</td>
+                <td>8.981</td>
+                <td>-0.094</td>
+                <td>22.226</td>
+                <td>14.394</td>
+                <td>(KS)</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Chapel Hill (NC)</td>
+                <td>7</td>        # Multiple seasons
+                <td>6.211</td>
+                <td>8.693</td>
+                <td>-0.270</td>
+                <td>19.174</td>
+                <td>9.329</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Durham Southern (NC)</td>
+                <td>7</td>        # Multiple seasons
+                <td>4.056</td>
+                <td>4.437</td>
+                <td>-0.413</td>
+                <td>20.333</td>
+                <td>13.429</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>El Cajon Valley (CA)</td>
+                <td>7</td>        # Multiple seasons
+                <td>3.708</td>
+                <td>6.461</td>
+                <td>-0.316</td>
+                <td>20.291</td>
+                <td>15.673</td>
+                <td>(CA)</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Boonville Starmount (NC)</td>
+                <td>7</td>        # Multiple seasons
+                <td>3.438</td>
+                <td>4.297</td>
+                <td>-0.427</td>
+                <td>20.940</td>
+                <td>14.266</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>Bakersville Mitchell (NC)</td>
+                <td>8</td>        # Multiple seasons
+                <td>-2.643</td>
+                <td>-3.394</td>
+                <td>-0.675</td>
+                <td>14.721</td>
+                <td>15.986</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Albemarle (NC)</td>
+                <td>9</td>        # Multiple seasons
+                <td>-5.922</td>
+                <td>-7.139</td>
+                <td>-0.876</td>
+                <td>10.254</td>
+                <td>13.881</td>
+                <td>(NC)</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Cameron Union Pines (NC)</td>
+                <td>7</td>        # Multiple seasons
+                <td>-7.787</td>
+                <td>-10.301</td>
+                <td>-0.984</td>
+                <td>13.297</td>
+                <td>19.659</td>
+                <td>(NC)</td>
+            </tr>
                     </tbody>
                 </table>
             </div>
@@ -716,12 +769,10 @@
             const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
             let html = [];
             
-            // Previous button
             html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
                 <button class="page-link" data-page="prev">&laquo;</button>
             </li>`);
             
-            // Page numbers
             for (let i = 1; i <= totalPages; i++) {
                 if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
                     html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
@@ -732,7 +783,6 @@
                 }
             }
             
-            // Next button
             html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
                 <button class="page-link" data-page="next">&raquo;</button>
             </li>`);
@@ -741,7 +791,6 @@
         }
     };
 
-    // Initialize after DOM loads
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => TableControls.init());
     } else {
@@ -756,144 +805,144 @@ const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
  * AUTH / LOGIN LOGIC
  **********************************************************/
 async function checkLoginStatus() {
-  try {
-    const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
-      method: 'GET',
-      credentials: 'include'
-    });
-    const data = await res.json();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
 
-    if (data.success && data.loggedIn) {
-      document.getElementById('commentForm').style.display = 'block';
-      document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
-      renderAuthUI(true, data.user);
-    } else {
-      document.getElementById('commentForm').style.display = 'none';
-      document.getElementById('authorName').textContent = 'Anonymous';
-      renderAuthUI(false);
+        if (data.success && data.loggedIn) {
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
+            renderAuthUI(true, data.user);
+        } else {
+            document.getElementById('commentForm').style.display = 'none';
+            document.getElementById('authorName').textContent = 'Anonymous';
+            renderAuthUI(false);
+        }
+    } catch (error) {
+        console.error('Login status error:', error);
+        document.getElementById('commentForm').style.display = 'none';
+        document.getElementById('authorName').textContent = 'Anonymous';
+        renderAuthUI(false);
     }
-  } catch (error) {
-    console.error('Login status error:', error);
-    document.getElementById('commentForm').style.display = 'none';
-    document.getElementById('authorName').textContent = 'Anonymous';
-    renderAuthUI(false);
-  }
 }
 
 function renderAuthUI(loggedIn, user = null) {
-  const authContainer = document.getElementById('authContainer');
-  if (!authContainer) return;
+    const authContainer = document.getElementById('authContainer');
+    if (!authContainer) return;
 
-  if (loggedIn && user) {
-    authContainer.innerHTML = `
-      <p>Welcome, <strong>${user.name}</strong> (${user.email}).
-         <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
-    `;
-    document.getElementById('logoutBtn').addEventListener('click', doLogout);
-  } else {
-    authContainer.innerHTML = `
-      <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
-    `;
-    document.getElementById('loginBtn').addEventListener('click', doLogin);
-  }
+    if (loggedIn && user) {
+        authContainer.innerHTML = `
+            <p>Welcome, <strong>${user.name}</strong> (${user.email})
+               <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
+        `;
+        document.getElementById('logoutBtn').addEventListener('click', doLogout);
+    } else {
+        authContainer.innerHTML = `
+            <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
+        `;
+        document.getElementById('loginBtn').addEventListener('click', doLogin);
+    }
 }
 
 function doLogin() {
-  window.location.href = `${VERCEL_API_BASE}/auth/google`;
+    window.location.href = `${VERCEL_API_BASE}/auth/google`;
 }
 
 function doLogout() {
-  document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
-  document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
-  document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
-  window.location.reload();
+    document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    window.location.reload();
 }
 
 /**********************************************************
  * COMMENTS LOGIC
  **********************************************************/
 async function fetchComments() {
-  const pageId = getPageId();
-  try {
-    const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
-      method: 'GET',
-      credentials: 'include'
-    });
-    const data = await res.json();
-    if (data.success) {
-      displayComments(data.comments);
+    const pageId = getPageId();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
+        if (data.success) {
+            displayComments(data.comments);
+        }
+    } catch (err) {
+        console.error('Error fetching comments:', err);
     }
-  } catch (err) {
-    console.error('Error fetching comments:', err);
-  }
 }
 
 function displayComments(comments) {
-  const list = document.getElementById('commentsList');
-  if (!list) return;
-  if (!Array.isArray(comments) || comments.length === 0) {
-    list.innerHTML = '<p class="text-muted">No comments yet</p>';
-    return;
-  }
-  list.innerHTML = comments.map(c => `
-    <div class="card mb-2">
-      <div class="card-body">
-        <p class="mb-1">${escapeHTML(c.text)}</p>
-        <small class="text-muted">
-          by ${escapeHTML(c.author)} on ${new Date(c.timestamp).toLocaleString()}
-        </small>
-      </div>
-    </div>
-  `).join('');
-}async function submitComment() {
-  const textEl = document.getElementById('commentText');
-  const text = textEl.value.trim();
-  if (!text) return alert('Please enter a comment');
-
-  const pageId = getPageId();
-
-  try {
-    const res = await fetch(`${VERCEL_API_BASE}/comments`, {
-      method: 'POST',
-      credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text, pageId })
-    });
-    const data = await res.json();
-    if (data.success) {
-      textEl.value = '';
-      fetchComments();
-    } else {
-      alert('Error posting comment: ' + (data.error || 'Unknown'));
+    const list = document.getElementById('commentsList');
+    if (!list) return;
+    if (!Array.isArray(comments) || comments.length === 0) {
+        list.innerHTML = '<p class="text-muted">No comments yet</p>';
+        return;
     }
-  } catch (err) {
-    console.error('Error posting comment:', err);
-    alert('Failed to post comment');
-  }
+    list.innerHTML = comments.map(c => `
+        <div class="card mb-2">
+            <div class="card-body">
+                <p class="mb-1">${escapeHTML(c.text)}</p>
+                <small class="text-muted">
+                    by ${escapeHTML(c.author)} on ${new Date(c.1/21/2025).toLocaleString()}
+                </small>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textEl = document.getElementById('commentText');
+    const text = textEl.value.trim();
+    if (!text) return alert('Please enter a comment');
+
+    const pageId = getPageId();
+
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, pageId })
+        });
+        const data = await res.json();
+        if (data.success) {
+            textEl.value = '';
+            fetchComments();
+        } else {
+            alert('Error posting comment: ' + (data.error || 'Unknown'));
+        }
+    } catch (err) {
+        console.error('Error posting comment:', err);
+        alert('Failed to post comment');
+    }
 }
 
 function escapeHTML(str) {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
 function getPageId() {
-  const el = document.querySelector('[data-page-name]');
-  return el ? el.getAttribute('data-page-name') : 'unknown';
+    const el = document.querySelector('[data-page-name]');
+    return el ? el.getAttribute('data-page-name') : 'unknown';
 }
 
-/**********************************************************
- * INIT
- **********************************************************/
+// Initialize
 document.getElementById('submitComment')?.addEventListener('click', submitComment);
 
 (function initPage() {
-  checkLoginStatus();
-  fetchComments();
+    checkLoginStatus();
+    fetchComments();
 })();
 </script>
         <!-- TopBanner initialization -->
