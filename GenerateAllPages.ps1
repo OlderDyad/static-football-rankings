@@ -651,44 +651,61 @@ function Process-DecadeData {
     if (Test-Path $programJsonPath) {
         try {
             $programData = Get-Content $programJsonPath -Raw | ConvertFrom-Json
-            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
-
-            $templatePath = Join-Path $templateBaseDir "decade-programs-template.html"
-            if (Test-Path $templatePath) {
-                $template = Get-Content $templatePath -Raw
-
-                # Replace placeholders
-                $template = $template -replace 'DECADE_DISPLAY_NAME', $DisplayName
-                $template = $template -replace 'DECADE_NAME', $DecadeName
-                $template = $template -replace 'DECADE_START', $StartYear
-                $template = $template -replace 'DECADE_END', $EndYear
-
-                # Generate table rows
-                $tableRows = $programData.items | ForEach-Object {
-                    @"
-                    <tr>
-                        <td>$($_.rank)</td>
-                        <td>$($_.program)</td>
-                        <td>$($_.seasons)</td>
-                        <td>$($_.combined)</td>
-                        <td>$($_.margin)</td>
-                        <td>$($_.win_loss)</td>
-                        <td>$($_.offense)</td>
-                        <td>$($_.defense)</td>
-                        <td>$($_.state)</td>
-                    </tr>
-"@
+            if ($programData) {
+                Write-Host "Successfully loaded JSON for $DecadeName" -ForegroundColor Green
+                Write-Host "Top Item: $($programData.topItem | Out-String)"
+                Write-Host "Items Count: $($programData.items.Count)"
+                foreach ($item in $programData.items) {
+                    Write-Host "Item Program: $($item.program), Rank: $($item.rank)" -ForegroundColor Cyan
                 }
-                $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
 
-                Set-Content -Path $outputPath -Value $template -Encoding UTF8
-                Write-Host "Generated: $DecadeName-programs.html"
+                # Generate HTML
+                $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
+                $templatePath = Join-Path $templateBaseDir "decade-programs-template.html"
+                if (Test-Path $templatePath) {
+                    $template = Get-Content $templatePath -Raw
+
+                    # Replace placeholders
+                    $template = $template -replace 'DECADE_DISPLAY_NAME', $DisplayName
+                    $template = $template -replace 'DECADE_NAME', $DecadeName
+                    $template = $template -replace 'DECADE_START', $StartYear
+                    $template = $template -replace 'DECADE_END', $EndYear
+
+                    # Generate table rows
+                    $tableRows = $programData.items | ForEach-Object {
+                        @"
+                        <tr>
+                            <td>$($_.rank)</td>
+                            <td>$($_.program)</td>
+                            <td>$($_.seasons)</td>
+                            <td>$($_.combined)</td>
+                            <td>$($_.margin)</td>
+                            <td>$($_.win_loss)</td>
+                            <td>$($_.offense)</td>
+                            <td>$($_.defense)</td>
+                            <td>$($_.state)</td>
+                        </tr>
+"@
+                    }
+                    $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
+
+                    Set-Content -Path $outputPath -Value $template -Encoding UTF8
+                    Write-Host "Generated: $DecadeName-programs.html"
+                } else {
+                    Write-Warning "Template not found: $templatePath"
+                }
+            } else {
+                Write-Warning "No data found in $programJsonPath"
             }
         } catch {
             Write-Error "Error processing $DecadeName programs: $_"
         }
+    } else {
+        Write-Error "JSON file not found: $programJsonPath"
     }
 }
+
+
 
     # -- PROGRAMS --
     $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
