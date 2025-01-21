@@ -179,6 +179,7 @@ function Test-TemplateExists {
 
 #region Helper Functions
 function Generate-TeamBanner {
+
     param (
         [Parameter(Mandatory=$true)][object]$TopItem,
         [string]$Type = "team" # "team" or "program"
@@ -262,28 +263,26 @@ function Generate-TableRows {
 
     $tableRows = $Items | ForEach-Object {
         if ($Type -eq "team") {
-            # Team rows - includes Season and Games columns
             @"
             <tr>
                 <td>$($_.rank)</td>
                 <td>$($_.team)</td>
-                <td>$($_.season)</td>         # Single season
+                <td>$($_.season)</td>
                 <td>$($_.combined)</td>
                 <td>$($_.margin)</td>
                 <td>$($_.win_loss)</td>
                 <td>$($_.offense)</td>
                 <td>$($_.defense)</td>
-                <td>$($_.games_played)</td>   # Games column
+                <td>$($_.games_played)</td>
                 <td>$($_.state)</td>
             </tr>
 "@
         } else {
-            # Program rows - includes Seasons column, no Games column
             @"
             <tr>
                 <td>$($_.rank)</td>
                 <td>$($_.program)</td>
-                <td>$($_.seasons)</td>        # Multiple seasons
+                <td>$($_.seasons)</td>
                 <td>$($_.combined)</td>
                 <td>$($_.margin)</td>
                 <td>$($_.win_loss)</td>
