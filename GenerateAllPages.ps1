@@ -660,37 +660,51 @@ function Process-DecadeData {
     )
 
     Write-Host "`n========== Processing $DisplayName Programs ==========" -ForegroundColor Cyan
-    
-    # Process programs for this decade
+
+    # Process both teams and programs for this decade
     $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
+    $teamJsonPath = Join-Path $dataDir "decades\teams\decade-teams-$DecadeName.json"
     
-    Write-Host "`nPaths:" -ForegroundColor Yellow
+    # Process Programs
+    Write-Host "`nProcessing Programs" -ForegroundColor Yellow
     Write-Host "  JSON Path: $programJsonPath"
     
     if (Test-Path $programJsonPath) {
         try {
-            # ... [previous JSON loading code remains the same]
+            Write-Host "`nReading Programs JSON data..." -ForegroundColor Yellow
+            $jsonContent = Get-Content $programJsonPath -Raw
+            Write-Host "  Raw JSON length: $($jsonContent.Length) characters"
+            
+            $programData = $null
+            try {
+                $programData = $jsonContent | ConvertFrom-Json
+                Write-Host "  JSON successfully parsed" -ForegroundColor Green
+            }
+            catch {
+                Write-Error "Programs JSON parsing failed: $_"
+                return
+            }
 
             $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
             $templatePath = Join-Path $templateBaseDir "decades\decade-programs-template.html"
             
             if (Test-Path $templatePath) {
-                Write-Host "`nProcessing template..." -ForegroundColor Yellow
+                Write-Host "`nProcessing programs template..." -ForegroundColor Yellow
                 $template = Get-Content $templatePath -Raw
 
-                # Replace data file path first
+                # Replace data file path
                 $template = $template -replace 'content="/data/decade-(teams|programs)-DECADE_NAME.json"', 
                                      'content="/static-football-rankings/data/decades/$1/decade-$1-DECADE_NAME.json"'
 
-                # Replace decade-specific placeholders
+                # Replace placeholders
                 $template = $template -replace 'DECADE_DISPLAY_NAME', $DisplayName
                 $template = $template -replace 'DECADE_NAME', $DecadeName
                 $template = $template -replace 'DECADE_START', $StartYear
                 $template = $template -replace 'DECADE_END', $EndYear
 
-                # More specific timestamp replacement
+                # Specific timestamp replacement
                 $currentDate = Get-Date -Format "M/d/yyyy"
-                $template = $template -replace '(<span id="lastUpdated">)TIMESTAMP(</span>)', "`${1}$currentDate`${2}"
+                $template = $template -replace '(<span id="lastUpdated">)[^<]*(</span>)', "`${1}$currentDate`${2}"
 
                 # Replace scripts
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
@@ -704,21 +718,83 @@ function Process-DecadeData {
                 }
 
                 # Table rows
-                Write-Host "  Generating table rows..." -ForegroundColor Yellow
+                Write-Host "  Generating program table rows..." -ForegroundColor Yellow
                 $tableRows = Generate-TableRows -Items $programData.items -Type "program"
-                Write-Host "  Generated $($programData.items.Count) table rows"
+                Write-Host "  Generated $($programData.items.Count) program rows"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
 
                 Set-Content -Path $outputPath -Value $template -Encoding UTF8
                 Write-Host "`nGenerated: $DecadeName-programs.html" -ForegroundColor Green
-            } else {
-                Write-Error "Template not found: $templatePath"
             }
         } catch {
             Write-Error "Error processing $DecadeName programs: $_"
         }
-    } else {
-        Write-Error "JSON file not found: $programJsonPath"
+    }
+
+    # Process Teams
+    Write-Host "`nProcessing Teams" -ForegroundColor Yellow
+    Write-Host "  JSON Path: $teamJsonPath"
+    
+    if (Test-Path $teamJsonPath) {
+        try {
+            Write-Host "`nReading Teams JSON data..." -ForegroundColor Yellow
+            $jsonContent = Get-Content $teamJsonPath -Raw
+            Write-Host "  Raw JSON length: $($jsonContent.Length) characters"
+            
+            $teamData = $null
+            try {
+                $teamData = $jsonContent | ConvertFrom-Json
+                Write-Host "  JSON successfully parsed" -ForegroundColor Green
+            }
+            catch {
+                Write-Error "Teams JSON parsing failed: $_"
+                return
+            }
+
+            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-teams.html"
+            $templatePath = Join-Path $templateBaseDir "decades\decade-teams-template.html"
+            
+            if (Test-Path $templatePath) {
+                Write-Host "`nProcessing teams template..." -ForegroundColor Yellow
+                $template = Get-Content $templatePath -Raw
+
+                # Replace data file path
+                $template = $template -replace 'content="/data/decade-(teams|programs)-DECADE_NAME.json"', 
+                                     'content="/static-football-rankings/data/decades/$1/decade-$1-DECADE_NAME.json"'
+
+                # Replace placeholders
+                $template = $template -replace 'DECADE_DISPLAY_NAME', $DisplayName
+                $template = $template -replace 'DECADE_NAME', $DecadeName
+                $template = $template -replace 'DECADE_START', $StartYear
+                $template = $template -replace 'DECADE_END', $EndYear
+
+                # Specific timestamp replacement
+                $currentDate = Get-Date -Format "M/d/yyyy"
+                $template = $template -replace '(<span id="lastUpdated">)[^<]*(</span>)', "`${1}$currentDate`${2}"
+
+                # Replace scripts
+                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
+                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+
+                # Banner
+                if ($teamData.topItem) {
+                    Write-Host "  Generating banner for top team: $($teamData.topItem.team)" -ForegroundColor Yellow
+                    $bannerHtml = Generate-TeamBanner -TopItem $teamData.topItem -Type "team"
+                    $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+                }
+
+                # Table rows
+                Write-Host "  Generating team table rows..." -ForegroundColor Yellow
+                $tableRows = Generate-TableRows -Items $teamData.items -Type "team"
+                Write-Host "  Generated $($teamData.items.Count) team rows"
+                $template = $template -replace 'TABLE_ROWS', $tableRows
+
+                Set-Content -Path $outputPath -Value $template -Encoding UTF8
+                Write-Host "`nGenerated: $DecadeName-teams.html" -ForegroundColor Green
+            }
+        } catch {
+            Write-Error "Error processing $DecadeName teams: $_"
+        }
     }
 }
 
@@ -990,21 +1066,22 @@ try {
     }
 
     # Process Decades
+    Write-Host "`nProcessing decades..." -ForegroundColor Green
     $decades = @(
-        @{ Name = "pre1900"; StartYear = 1877; EndYear = 1899; DisplayName = "Pre-1900s" },
-        @{ Name = "1900s"; StartYear = 1900; EndYear = 1909; DisplayName = "1900s" },
-        @{ Name = "1910s"; StartYear = 1910; EndYear = 1919; DisplayName = "1910s" },
-        @{ Name = "1920s"; StartYear = 1920; EndYear = 1929; DisplayName = "1920s" },
-        @{ Name = "1930s"; StartYear = 1930; EndYear = 1939; DisplayName = "1930s" },
-        @{ Name = "1940s"; StartYear = 1940; EndYear = 1949; DisplayName = "1940s" },
-        @{ Name = "1950s"; StartYear = 1950; EndYear = 1959; DisplayName = "1950s" },
-        @{ Name = "1960s"; StartYear = 1960; EndYear = 1969; DisplayName = "1960s" },
-        @{ Name = "1970s"; StartYear = 1970; EndYear = 1979; DisplayName = "1970s" },
-        @{ Name = "1980s"; StartYear = 1980; EndYear = 1989; DisplayName = "1980s" },
-        @{ Name = "1990s"; StartYear = 1990; EndYear = 1999; DisplayName = "1990s" },
-        @{ Name = "2000s"; StartYear = 2000; EndYear = 2009; DisplayName = "2000s" },
-        @{ Name = "2010s"; StartYear = 2010; EndYear = 2019; DisplayName = "2010s" },
-        @{ Name = "2020s"; StartYear = 2020; EndYear = 2029; DisplayName = "2020s" }
+        [ordered]@{ Name = "pre1900"; StartYear = 1877; EndYear = 1899; DisplayName = "Pre-1900s" },
+        [ordered]@{ Name = "1900s"; StartYear = 1900; EndYear = 1909; DisplayName = "1900s" },
+        [ordered]@{ Name = "1910s"; StartYear = 1910; EndYear = 1919; DisplayName = "1910s" },
+        [ordered]@{ Name = "1920s"; StartYear = 1920; EndYear = 1929; DisplayName = "1920s" },
+        [ordered]@{ Name = "1930s"; StartYear = 1930; EndYear = 1939; DisplayName = "1930s" },
+        [ordered]@{ Name = "1940s"; StartYear = 1940; EndYear = 1949; DisplayName = "1940s" },
+        [ordered]@{ Name = "1950s"; StartYear = 1950; EndYear = 1959; DisplayName = "1950s" },
+        [ordered]@{ Name = "1960s"; StartYear = 1960; EndYear = 1969; DisplayName = "1960s" },
+        [ordered]@{ Name = "1970s"; StartYear = 1970; EndYear = 1979; DisplayName = "1970s" },
+        [ordered]@{ Name = "1980s"; StartYear = 1980; EndYear = 1989; DisplayName = "1980s" },
+        [ordered]@{ Name = "1990s"; StartYear = 1990; EndYear = 1999; DisplayName = "1990s" },
+        [ordered]@{ Name = "2000s"; StartYear = 2000; EndYear = 2009; DisplayName = "2000s" },
+        [ordered]@{ Name = "2010s"; StartYear = 2010; EndYear = 2019; DisplayName = "2010s" },
+        [ordered]@{ Name = "2020s"; StartYear = 2020; EndYear = 2029; DisplayName = "2020s" }
     )
 
     foreach ($decade in $decades) {
@@ -1012,7 +1089,7 @@ try {
     }
 
     # Process States
-    Write-Host "Processing state rankings..." -ForegroundColor Yellow
+    Write-Host "`nProcessing state rankings..." -ForegroundColor Green
     $stateTeamsDir = Join-Path $dataDir "states\teams"
     if (Test-Path $stateTeamsDir) {
         $stateFiles = Get-ChildItem $stateTeamsDir -Filter "state-teams-*.json"
@@ -1028,10 +1105,10 @@ try {
     }
 
     # Process All-Time Rankings
-    Write-Host "Processing all-time rankings..." -ForegroundColor Yellow
+    Write-Host "`nProcessing all-time rankings..." -ForegroundColor Green
     
     # Process all-time teams
-    Write-Host "Processing all-time teams" -ForegroundColor Cyan
+    Write-Host "Processing all-time teams..." -ForegroundColor Cyan
     $allTimeTeamsPath = Join-Path $dataDir "all-time\all-time-teams.json"
     if (Test-Path $allTimeTeamsPath) {
         Process-AllTimeData -Category "teams"
@@ -1043,22 +1120,25 @@ try {
     }
     
     # Process all-time programs
-    Write-Host "Processing all-time programs" -ForegroundColor Cyan
+    Write-Host "Processing all-time programs..." -ForegroundColor Cyan
     @("25", "50", "100") | ForEach-Object {
-        Write-Host "Processing all-time programs ($_ seasons)" -ForegroundColor Yellow
+        Write-Host "Processing all-time programs ($_ seasons)..." -ForegroundColor Yellow
         Process-AllTimeData -Category "programs" -Threshold $_
     }
 
     # Process Latest Season
-    Write-Host "Processing latest season rankings..." -ForegroundColor Yellow
+    Write-Host "`nProcessing latest season rankings..." -ForegroundColor Green
     Process-LatestSeasonData
 
     # Generate Index Pages
-    Write-Host "Generating index pages..." -ForegroundColor Yellow
+    Write-Host "`nGenerating index pages..." -ForegroundColor Green
 
     # Decades index
+    Write-Host "Generating decades index..." -ForegroundColor Yellow
     $decadeIndexPath = Join-Path $outputBaseDir "decades\index.html"
+    Write-Host "Output path: $decadeIndexPath" -ForegroundColor Cyan
     $decadeIndexTemplatePath = Join-Path $templateBaseDir "index\decades-index-template.html"
+    Write-Host "Template path: $decadeIndexTemplatePath" -ForegroundColor Cyan
 
     if (Test-Path $decadeIndexTemplatePath) {
         $decadeIndexTemplate = Get-Content $decadeIndexTemplatePath -Raw
@@ -1084,6 +1164,7 @@ try {
     }
 
     # All-time index
+    Write-Host "Generating all-time index..." -ForegroundColor Yellow
     $allTimeIndexPath = Join-Path $outputBaseDir "all-time\index.html"
     $allTimeIndexTemplatePath = Join-Path $templateBaseDir "index\all-time-index-template.html"
     if (Test-Path $allTimeIndexTemplatePath) {
@@ -1093,6 +1174,7 @@ try {
     }
 
     # States index
+    Write-Host "Generating states index..." -ForegroundColor Yellow
     $statesIndexPath = Join-Path $outputBaseDir "states\index.html"
     $statesIndexTemplatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     if (Test-Path $statesIndexTemplatePath) {
@@ -1121,7 +1203,7 @@ try {
         Write-Host "Generated states index page" -ForegroundColor Green
     }
 
-    Write-Host "Page generation completed successfully!" -ForegroundColor Green
+    Write-Host "`nPage generation completed successfully!" -ForegroundColor Green
 } catch {
     Write-Error "Generation failed: $_"
     exit 1

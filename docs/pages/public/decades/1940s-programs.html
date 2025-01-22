@@ -7,11 +7,23 @@
         <meta name="decade-info" content="start-year:1940,end-year:1949">
         <meta name="data-file" content="/static-football-rankings/data/decades/programs/decade-programs-1940s.json">
 
-
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom Stylesheet -->
         <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+        
+        <style>
+            /* Prevent FOUC and white screen during load */
+            body {
+                visibility: visible;
+                opacity: 1;
+                transition: opacity 0.3s ease-in;
+            }
+            .page-content {
+                opacity: 1;
+                transition: opacity 0.3s ease-in;
+            }
+        </style>
     </head>
     <body>
         <!-- Static header image -->
@@ -19,19 +31,20 @@
             <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
         </div>
 
-        <!-- Breadcrumb navigation -->
-        <div class="container mt-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/decades/index.html">Rankings by Decade</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">1940s</li>
-                </ol>
-            </nav>
-        </div>
+        <div class="page-content">
+            <!-- Breadcrumb navigation -->
+            <div class="container mt-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/decades/index.html">Rankings by Decade</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">1940s</li>
+                    </ol>
+                </nav>
+            </div>
 
-        <!-- Dynamic team banner container -->
-        <div class="team-header" style="background-color: Navy; color: White;">
+            <!-- Dynamic team banner container -->
+            <div class="team-header" style="background-color: Navy; color: White;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-3 text-center">
@@ -53,45 +66,45 @@
     </div>
 </div>
 
-        <!-- Main content -->
-        <div class="container mt-4">
-            <h1 data-page-name="1940s">Top Programs of the 1940s</h1>
-            
-            <div class="d-flex justify-content-between mb-3">
-                <div>
-                    <a href="1940s-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
+            <!-- Main content -->
+            <div class="container mt-4">
+                <h1 data-page-name="1940s">Top Programs of the 1940s</h1>
+                
+                <div class="d-flex justify-content-between mb-3">
+                    <div>
+                        <a href="1940s-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
+                    </div>
+                    <div class="text-muted">Updated: <span id="lastUpdated">1/22/2025</span></div>
                 </div>
-                <div class="text-muted">Updated: <span id="lastUpdated">1/22/2025</span></div>
-            </div>
 
-            <!-- Search Controls -->
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Search</span>
-                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                <!-- Search Controls -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text">Search</span>
+                            <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Table -->
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="sticky-top bg-white">
-                        <tr>
-                            <th style="min-width: 60px">Rank</th>
-                            <th style="min-width: 200px">Program</th>
-                            <th style="min-width: 70px">State</th>
-                            <th style="min-width: 80px">Seasons</th>
-                            <th style="min-width: 90px">Combined</th>
-                            <th style="min-width: 90px">Margin</th>
-                            <th style="min-width: 90px">Win/Loss</th>
-                            <th style="min-width: 90px">Offense</th>
-                            <th style="min-width: 90px">Defense</th>
-                        </tr>
-                    </thead>
-                    <tbody id="programsTableBody">
-                                    <tr>
+                <!-- Table -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="sticky-top bg-white">
+                            <tr>
+                                <th style="min-width: 60px">Rank</th>
+                                <th style="min-width: 200px">Program</th>
+                                <th style="min-width: 70px">State</th>
+                                <th style="min-width: 80px">Seasons</th>
+                                <th style="min-width: 90px">Combined</th>
+                                <th style="min-width: 90px">Margin</th>
+                                <th style="min-width: 90px">Win/Loss</th>
+                                <th style="min-width: 90px">Offense</th>
+                                <th style="min-width: 90px">Defense</th>
+                            </tr>
+                        </thead>
+                        <tbody id="programsTableBody">
+                                        <tr>
                 <td>1</td>
                 <td>Canton McKinley (OH)</td>
                 <td>10</td>
@@ -1873,53 +1886,53 @@
                 <td>26.682</td>
                 <td>(AL)</td>
             </tr>
-                    </tbody>
-                </table>
-            </div>
+                        </tbody>
+                    </table>
+                </div>
 
-            <!-- Pagination Controls -->
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="pagination-info">
-                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                <!-- Pagination Controls -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="pagination-info">
+                            Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <nav aria-label="Table navigation">
+                            <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                        </nav>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <nav aria-label="Table navigation">
-                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
-                    </nav>
-                </div>
-            </div>
 
-            <!-- Comments Section -->
-            <div class="comments-section mt-5">
-                <h3>Comments</h3>
-                <div id="authContainer" class="mb-3"></div>
-                <div id="commentForm" class="mb-4" style="display: none">
-                    <div class="card">
-                        <div class="card-body">
-                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
-                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                <!-- Comments Section -->
+                <div class="comments-section mt-5">
+                    <h3>Comments</h3>
+                    <div id="authContainer" class="mb-3"></div>
+                    <div id="commentForm" class="mb-4" style="display: none">
+                        <div class="card">
+                            <div class="card-body">
+                                <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                                    <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div id="commentsList"></div>
                 </div>
-                <div id="commentsList"></div>
-            </div>
 
-            <footer class="mt-5 mb-3">
-                <div class="text-center">
-                    <p>Â© 2025 McKnight's Football Rankings</p>
-                </div>
-            </footer>
+                <footer class="mt-5 mb-3">
+                    <div class="text-center">
+                        <p>Â© 2025 McKnight's Football Rankings</p>
+                    </div>
+                </footer>
+            </div>
         </div>
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Main JavaScript -->
-        <!-- <script type="module" src="/static-football-rankings/js/main.js"></script> -->
+        
         <!-- Table Controls Script -->
         <script>
     const TableControls = {
@@ -2056,6 +2069,7 @@
         TableControls.init();
     }
 </script>
+        
         <!-- Comments Script -->
         <script>
 const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
@@ -2148,7 +2162,7 @@ function displayComments(comments) {
             <div class="card-body">
                 <p class="mb-1">${escapeHTML(c.text)}</p>
                 <small class="text-muted">
-                    by ${escapeHTML(c.author)} on ${new Date(c.1/22/2025).toLocaleString()}
+                    by ${escapeHTML(c.author)} on ${new Date(c.timestamp).toLocaleString()}
                 </small>
             </div>
         </div>
@@ -2204,25 +2218,20 @@ document.getElementById('submitComment')?.addEventListener('click', submitCommen
     fetchComments();
 })();
 </script>
+        
         <!-- TopBanner initialization -->
-<script type="module">
-    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
-    document.addEventListener('DOMContentLoaded', async () => {
-        try {
-            const banner = new TopBanner();
-            await banner.initialize();
-        } catch (error) {
-            console.warn('Banner initialization failed, will retry once in 5 seconds:', error);
-            setTimeout(async () => {
+        <script type="module">
+            import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+            document.addEventListener('DOMContentLoaded', async () => {
                 try {
                     const banner = new TopBanner();
                     await banner.initialize();
-                } catch (retryError) {
-                    console.error('Banner retry failed:', retryError);
+                } catch (error) {
+                    console.warn('Banner initialization failed:', error);
+                    // Continue with page rendering even if banner fails
+                    document.body.style.display = 'block';
                 }
-            }, 5000);
-        }
-    });
-</script>
+            });
+        </script>
     </body>
 </html>
