@@ -1020,19 +1020,19 @@ try {
 
     # Process Decades
     $decades = @(
-        @{ Name = "pre1900"; StartYear = 1877; EndYear = 1899; DisplayName = "Pre-1900s" }
-        @{ Name = "1900s"; StartYear = 1900; EndYear = 1909; DisplayName = "1900s" }
-        @{ Name = "1910s"; StartYear = 1910; EndYear = 1919; DisplayName = "1910s" }
-        @{ Name = "1920s"; StartYear = 1920; EndYear = 1929; DisplayName = "1920s" }
-        @{ Name = "1930s"; StartYear = 1930; EndYear = 1939; DisplayName = "1930s" }
-        @{ Name = "1940s"; StartYear = 1940; EndYear = 1949; DisplayName = "1940s" }
-        @{ Name = "1950s"; StartYear = 1950; EndYear = 1959; DisplayName = "1950s" }
-        @{ Name = "1960s"; StartYear = 1960; EndYear = 1969; DisplayName = "1960s" }
-        @{ Name = "1970s"; StartYear = 1970; EndYear = 1979; DisplayName = "1970s" }
-        @{ Name = "1980s"; StartYear = 1980; EndYear = 1989; DisplayName = "1980s" }
-        @{ Name = "1990s"; StartYear = 1990; EndYear = 1999; DisplayName = "1990s" }
-        @{ Name = "2000s"; StartYear = 2000; EndYear = 2009; DisplayName = "2000s" }
-        @{ Name = "2010s"; StartYear = 2010; EndYear = 2019; DisplayName = "2010s" }
+        @{ Name = "pre1900"; StartYear = 1877; EndYear = 1899; DisplayName = "Pre-1900s" },
+        @{ Name = "1900s"; StartYear = 1900; EndYear = 1909; DisplayName = "1900s" },
+        @{ Name = "1910s"; StartYear = 1910; EndYear = 1919; DisplayName = "1910s" },
+        @{ Name = "1920s"; StartYear = 1920; EndYear = 1929; DisplayName = "1920s" },
+        @{ Name = "1930s"; StartYear = 1930; EndYear = 1939; DisplayName = "1930s" },
+        @{ Name = "1940s"; StartYear = 1940; EndYear = 1949; DisplayName = "1940s" },
+        @{ Name = "1950s"; StartYear = 1950; EndYear = 1959; DisplayName = "1950s" },
+        @{ Name = "1960s"; StartYear = 1960; EndYear = 1969; DisplayName = "1960s" },
+        @{ Name = "1970s"; StartYear = 1970; EndYear = 1979; DisplayName = "1970s" },
+        @{ Name = "1980s"; StartYear = 1980; EndYear = 1989; DisplayName = "1980s" },
+        @{ Name = "1990s"; StartYear = 1990; EndYear = 1999; DisplayName = "1990s" },
+        @{ Name = "2000s"; StartYear = 2000; EndYear = 2009; DisplayName = "2000s" },
+        @{ Name = "2010s"; StartYear = 2010; EndYear = 2019; DisplayName = "2010s" },
         @{ Name = "2020s"; StartYear = 2020; EndYear = 2029; DisplayName = "2020s" }
     )
 
@@ -1083,21 +1083,12 @@ try {
     Process-LatestSeasonData
 
     # Generate Index Pages
-Write-Host "Generating index pages..." -ForegroundColor Yellow
-
-# Decades index
-Write-Host "Generating decades index..." -ForegroundColor Yellow
-$decadeIndexPath = Join-Path $outputBaseDir "decades\index.html"
-Write-Host "Output path: $decadeIndexPath" -ForegroundColor Cyan
-$decadeIndexTemplatePath = Join-Path $templateBaseDir "index\decades-index-template.html"
-Write-Host "Template path: $decadeIndexTemplatePath" -ForegroundColor Cyan
-
-if (Test-Path $decadeIndexTemplatePath) {
-    $decadeIndexTemplate = Get-Content $decadeIndexTemplatePath -Raw
+    Write-Host "Generating index pages..." -ForegroundColor Yellow
 
     # Decades index
     $decadeIndexPath = Join-Path $outputBaseDir "decades\index.html"
     $decadeIndexTemplatePath = Join-Path $templateBaseDir "index\decades-index-template.html"
+
     if (Test-Path $decadeIndexTemplatePath) {
         $decadeIndexTemplate = Get-Content $decadeIndexTemplatePath -Raw
         $decadeCards = $decades | ForEach-Object {
