@@ -660,14 +660,7 @@ function Process-DecadeData {
     )
 
     Write-Host "`n========== Processing $DisplayName Programs ==========" -ForegroundColor Cyan
-
-    # Debug: Show input parameters
-    Write-Host "Parameters:" -ForegroundColor Yellow
-    Write-Host "  DecadeName: $DecadeName"
-    Write-Host "  StartYear: $StartYear"
-    Write-Host "  EndYear: $EndYear"
-    Write-Host "  DisplayName: $DisplayName"
-
+    
     # Process programs for this decade
     $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
     
@@ -676,34 +669,7 @@ function Process-DecadeData {
     
     if (Test-Path $programJsonPath) {
         try {
-            Write-Host "`nReading JSON data..." -ForegroundColor Yellow
-            $jsonContent = Get-Content $programJsonPath -Raw
-            Write-Host "  Raw JSON length: $($jsonContent.Length) characters"
-            
-            $programData = $null
-            try {
-                $programData = $jsonContent | ConvertFrom-Json
-                Write-Host "  JSON successfully parsed" -ForegroundColor Green
-            }
-            catch {
-                Write-Error "JSON parsing failed: $_"
-                Write-Host "  First 500 characters of JSON:" -ForegroundColor Red
-                Write-Host ($jsonContent.Substring(0, [Math]::Min(500, $jsonContent.Length)))
-                return
-            }
-
-            # Debug: Check program data structure
-            if ($programData.items) {
-                Write-Host "`nProgram Data:" -ForegroundColor Yellow
-                Write-Host "  Total Items: $($programData.items.Count)"
-                Write-Host "`nFirst item details:" -ForegroundColor Yellow
-                $firstItem = $programData.items[0]
-                Write-Host "  Rank: $($firstItem.rank)"
-                Write-Host "  Program: $($firstItem.program)"
-                Write-Host "  State: $($firstItem.state)"
-            } else {
-                Write-Warning "No items found in program data"
-            }
+            # ... [previous JSON loading code remains the same]
 
             $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
             $templatePath = Join-Path $templateBaseDir "decades\decade-programs-template.html"
@@ -711,19 +677,24 @@ function Process-DecadeData {
             if (Test-Path $templatePath) {
                 Write-Host "`nProcessing template..." -ForegroundColor Yellow
                 $template = Get-Content $templatePath -Raw
-            
-                # First, update the data-file path with the correct structure
+
+                # Replace data file path first
                 $template = $template -replace 'content="/data/decade-(teams|programs)-DECADE_NAME.json"', 
                                      'content="/static-football-rankings/data/decades/$1/decade-$1-DECADE_NAME.json"'
-            
-                # Then handle other replacements
+
+                # Replace decade-specific placeholders
                 $template = $template -replace 'DECADE_DISPLAY_NAME', $DisplayName
                 $template = $template -replace 'DECADE_NAME', $DecadeName
                 $template = $template -replace 'DECADE_START', $StartYear
                 $template = $template -replace 'DECADE_END', $EndYear
+
+                # More specific timestamp replacement
+                $currentDate = Get-Date -Format "M/d/yyyy"
+                $template = $template -replace '(<span id="lastUpdated">)TIMESTAMP(</span>)', "`${1}$currentDate`${2}"
+
+                # Replace scripts
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 # Banner
                 if ($programData.topItem) {
