@@ -1083,7 +1083,17 @@ try {
     Process-LatestSeasonData
 
     # Generate Index Pages
-    Write-Host "Generating index pages..." -ForegroundColor Yellow
+Write-Host "Generating index pages..." -ForegroundColor Yellow
+
+# Decades index
+Write-Host "Generating decades index..." -ForegroundColor Yellow
+$decadeIndexPath = Join-Path $outputBaseDir "decades\index.html"
+Write-Host "Output path: $decadeIndexPath" -ForegroundColor Cyan
+$decadeIndexTemplatePath = Join-Path $templateBaseDir "index\decades-index-template.html"
+Write-Host "Template path: $decadeIndexTemplatePath" -ForegroundColor Cyan
+
+if (Test-Path $decadeIndexTemplatePath) {
+    $decadeIndexTemplate = Get-Content $decadeIndexTemplatePath -Raw
 
     # Decades index
     $decadeIndexPath = Join-Path $outputBaseDir "decades\index.html"
