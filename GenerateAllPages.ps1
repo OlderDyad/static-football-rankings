@@ -524,7 +524,7 @@ async function checkLoginStatus() {
             renderAuthUI(false);
         }
     } catch (error) {
-        console.error('Login status error:', error);
+        console.warn('Login status error:', error);
         document.getElementById('commentForm').style.display = 'none';
         document.getElementById('authorName').textContent = 'Anonymous';
         renderAuthUI(false);
@@ -537,15 +537,15 @@ function renderAuthUI(loggedIn, user = null) {
 
     if (loggedIn && user) {
         authContainer.innerHTML = `
-            <p>Welcome, <strong>${user.name}</strong> (${user.email})
+            <p>Welcome, <strong>${escapeHTML(user.name)}</strong> (${escapeHTML(user.email)})
                <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
         `;
-        document.getElementById('logoutBtn').addEventListener('click', doLogout);
+        document.getElementById('logoutBtn')?.addEventListener('click', doLogout);
     } else {
         authContainer.innerHTML = `
             <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
         `;
-        document.getElementById('loginBtn').addEventListener('click', doLogin);
+        document.getElementById('loginBtn')?.addEventListener('click', doLogin);
     }
 }
 
@@ -570,12 +570,14 @@ async function fetchComments() {
             method: 'GET',
             credentials: 'include'
         });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const data = await res.json();
         if (data.success) {
             displayComments(data.comments);
         }
     } catch (err) {
         console.error('Error fetching comments:', err);
+        document.getElementById('commentsList').innerHTML = '<div class="alert alert-warning">Unable to load comments at this time.</div>';
     }
 }
 
@@ -612,21 +614,24 @@ async function submitComment() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text, pageId })
         });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const data = await res.json();
         if (data.success) {
             textEl.value = '';
-            fetchComments();
+            await fetchComments();
         } else {
-            alert('Error posting comment: ' + (data.error || 'Unknown'));
+            alert('Error posting comment: ' + (data.error || 'Unknown error'));
         }
     } catch (err) {
         console.error('Error posting comment:', err);
-        alert('Failed to post comment');
+        alert('Failed to post comment. Please try again later.');
     }
 }
 
 function escapeHTML(str) {
+    if (!str) return '';
     return str
+        .toString()
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
@@ -642,15 +647,86 @@ function getPageId() {
 // Initialize
 document.getElementById('submitComment')?.addEventListener('click', submitComment);
 
-(function initPage() {
-    checkLoginStatus();
-    fetchComments();
+(async function initPage() {
+    try {
+        await Promise.all([
+            checkLoginStatus(),
+            fetchComments()
+        ]);
+    } catch (error) {
+        console.warn('Page initialization error:', error);
+    }
 })();
 </script>
 '@
 #endregion Template Scripts
 
 #region Processing Functions
+
+#region Processing Functions
+function Process-Template {
+    param (
+        [Parameter(Mandatory=$true)][string]$TemplatePath,
+        [Parameter(Mandatory=$true)][hashtable]$Replacements,
+        [Parameter(Mandatory=$true)][object]$Data,
+        [Parameter(Mandatory=$true)][string]$Type
+    )
+
+    Write-Host "`nProcessing template: $TemplatePath" -ForegroundColor Yellow
+    
+    try {
+        $template = Get-Content $TemplatePath -Raw
+        
+        # Clean up any userStyle tags that might be present in the template
+        $template = $template -replace '<userStyle>Normal</userStyle>', ''
+
+        # Handle data file path if present
+        if ($Replacements.ContainsKey('DataFilePath')) {
+            $pattern = $Replacements.DataFilePath.Pattern
+            $replacement = $Replacements.DataFilePath.Replacement
+            Write-Host "  Updating data file path..." -ForegroundColor Yellow
+            $template = $template -replace $pattern, $replacement
+        }
+
+        # Handle timestamp replacement
+        $currentDate = Get-Date -Format "M/d/yyyy"
+        $template = $template -replace '(<span id="lastUpdated">)[^<]*(</span>)', "`${1}$currentDate`${2}"
+
+        # Handle all other replacements
+        foreach ($key in $Replacements.Keys) {
+            if ($key -ne 'DataFilePath' -and $Replacements[$key]) {
+                Write-Host "  Replacing: $key" -ForegroundColor Yellow
+                $template = $template -replace $key, $Replacements[$key]
+            }
+        }
+
+        # Handle scripts (ensure they're clean of userStyle tags)
+        $cleanTableControls = $tableControlsScript -replace '<userStyle>Normal</userStyle>', ''
+        $cleanComments = $commentCode -replace '<userStyle>Normal</userStyle>', ''
+        
+        $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $cleanTableControls
+        $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $cleanComments
+
+        # Handle banner if data present
+        if ($Data.topItem) {
+            Write-Host "  Generating banner for top $Type..." -ForegroundColor Yellow
+            $bannerHtml = Generate-TeamBanner -TopItem $Data.topItem -Type $Type
+            $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+        }
+
+        # Handle table rows
+        Write-Host "  Generating table rows..." -ForegroundColor Yellow
+        $tableRows = Generate-TableRows -Items $Data.items -Type $Type
+        Write-Host "  Generated $($Data.items.Count) rows"
+        $template = $template -replace 'TABLE_ROWS', $tableRows
+
+        return $template
+    }
+    catch {
+        Write-Error "Error processing template: $_"
+        throw
+    }
+}
 function Process-DecadeData {
     param (
         [string]$DecadeName,
@@ -661,138 +737,66 @@ function Process-DecadeData {
 
     Write-Host "`n========== Processing $DisplayName Programs ==========" -ForegroundColor Cyan
 
-    # Process both teams and programs for this decade
-    $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
-    $teamJsonPath = Join-Path $dataDir "decades\teams\decade-teams-$DecadeName.json"
-    
+    # Define common replacements
+    $commonReplacements = @{
+        'DataFilePath' = @{
+            Pattern = 'content="/data/decade-(teams|programs)-DECADE_NAME.json"'
+            Replacement = 'content="/static-football-rankings/data/decades/$1/decade-$1-DECADE_NAME.json"'
+        }
+        'DECADE_DISPLAY_NAME' = $DisplayName
+        'DECADE_NAME' = $DecadeName
+        'DECADE_START' = $StartYear
+        'DECADE_END' = $EndYear
+    }
+
     # Process Programs
+    $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
     Write-Host "`nProcessing Programs" -ForegroundColor Yellow
     Write-Host "  JSON Path: $programJsonPath"
     
     if (Test-Path $programJsonPath) {
         try {
-            Write-Host "`nReading Programs JSON data..." -ForegroundColor Yellow
-            $jsonContent = Get-Content $programJsonPath -Raw
-            Write-Host "  Raw JSON length: $($jsonContent.Length) characters"
-            
-            $programData = $null
-            try {
-                $programData = $jsonContent | ConvertFrom-Json
-                Write-Host "  JSON successfully parsed" -ForegroundColor Green
-            }
-            catch {
-                Write-Error "Programs JSON parsing failed: $_"
-                return
-            }
-
-            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
+            $jsonContent = Get-Content $programJsonPath -Raw | ConvertFrom-Json
             $templatePath = Join-Path $templateBaseDir "decades\decade-programs-template.html"
-            
+            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
+
             if (Test-Path $templatePath) {
-                Write-Host "`nProcessing programs template..." -ForegroundColor Yellow
-                $template = Get-Content $templatePath -Raw
-
-                # Replace data file path
-                $template = $template -replace 'content="/data/decade-(teams|programs)-DECADE_NAME.json"', 
-                                     'content="/static-football-rankings/data/decades/$1/decade-$1-DECADE_NAME.json"'
-
-                # Replace placeholders
-                $template = $template -replace 'DECADE_DISPLAY_NAME', $DisplayName
-                $template = $template -replace 'DECADE_NAME', $DecadeName
-                $template = $template -replace 'DECADE_START', $StartYear
-                $template = $template -replace 'DECADE_END', $EndYear
-
-                # Specific timestamp replacement
-                $currentDate = Get-Date -Format "M/d/yyyy"
-                $template = $template -replace '(<span id="lastUpdated">)[^<]*(</span>)', "`${1}$currentDate`${2}"
-
-                # Replace scripts
-                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
-                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-
-                # Banner
-                if ($programData.topItem) {
-                    Write-Host "  Generating banner for top program: $($programData.topItem.program)" -ForegroundColor Yellow
-                    $bannerHtml = Generate-TeamBanner -TopItem $programData.topItem -Type "program"
-                    $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                }
-
-                # Table rows
-                Write-Host "  Generating program table rows..." -ForegroundColor Yellow
-                $tableRows = Generate-TableRows -Items $programData.items -Type "program"
-                Write-Host "  Generated $($programData.items.Count) program rows"
-                $template = $template -replace 'TABLE_ROWS', $tableRows
-
-                Set-Content -Path $outputPath -Value $template -Encoding UTF8
+                $processedTemplate = Process-Template -TemplatePath $templatePath `
+                                                    -Replacements $commonReplacements `
+                                                    -Data $jsonContent `
+                                                    -Type "program"
+                
+                Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
                 Write-Host "`nGenerated: $DecadeName-programs.html" -ForegroundColor Green
             }
-        } catch {
+        }
+        catch {
             Write-Error "Error processing $DecadeName programs: $_"
         }
     }
 
     # Process Teams
+    $teamJsonPath = Join-Path $dataDir "decades\teams\decade-teams-$DecadeName.json"
     Write-Host "`nProcessing Teams" -ForegroundColor Yellow
     Write-Host "  JSON Path: $teamJsonPath"
     
     if (Test-Path $teamJsonPath) {
         try {
-            Write-Host "`nReading Teams JSON data..." -ForegroundColor Yellow
-            $jsonContent = Get-Content $teamJsonPath -Raw
-            Write-Host "  Raw JSON length: $($jsonContent.Length) characters"
-            
-            $teamData = $null
-            try {
-                $teamData = $jsonContent | ConvertFrom-Json
-                Write-Host "  JSON successfully parsed" -ForegroundColor Green
-            }
-            catch {
-                Write-Error "Teams JSON parsing failed: $_"
-                return
-            }
-
-            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-teams.html"
+            $jsonContent = Get-Content $teamJsonPath -Raw | ConvertFrom-Json
             $templatePath = Join-Path $templateBaseDir "decades\decade-teams-template.html"
-            
+            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-teams.html"
+
             if (Test-Path $templatePath) {
-                Write-Host "`nProcessing teams template..." -ForegroundColor Yellow
-                $template = Get-Content $templatePath -Raw
-
-                # Replace data file path
-                $template = $template -replace 'content="/data/decade-(teams|programs)-DECADE_NAME.json"', 
-                                     'content="/static-football-rankings/data/decades/$1/decade-$1-DECADE_NAME.json"'
-
-                # Replace placeholders
-                $template = $template -replace 'DECADE_DISPLAY_NAME', $DisplayName
-                $template = $template -replace 'DECADE_NAME', $DecadeName
-                $template = $template -replace 'DECADE_START', $StartYear
-                $template = $template -replace 'DECADE_END', $EndYear
-
-                # Specific timestamp replacement
-                $currentDate = Get-Date -Format "M/d/yyyy"
-                $template = $template -replace '(<span id="lastUpdated">)[^<]*(</span>)', "`${1}$currentDate`${2}"
-
-                # Replace scripts
-                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
-                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-
-                # Banner
-                if ($teamData.topItem) {
-                    Write-Host "  Generating banner for top team: $($teamData.topItem.team)" -ForegroundColor Yellow
-                    $bannerHtml = Generate-TeamBanner -TopItem $teamData.topItem -Type "team"
-                    $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                }
-
-                # Table rows
-                Write-Host "  Generating team table rows..." -ForegroundColor Yellow
-                $tableRows = Generate-TableRows -Items $teamData.items -Type "team"
-                Write-Host "  Generated $($teamData.items.Count) team rows"
-                $template = $template -replace 'TABLE_ROWS', $tableRows
-
-                Set-Content -Path $outputPath -Value $template -Encoding UTF8
+                $processedTemplate = Process-Template -TemplatePath $templatePath `
+                                                    -Replacements $commonReplacements `
+                                                    -Data $jsonContent `
+                                                    -Type "team"
+                
+                Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
                 Write-Host "`nGenerated: $DecadeName-teams.html" -ForegroundColor Green
             }
-        } catch {
+        }
+        catch {
             Write-Error "Error processing $DecadeName teams: $_"
         }
     }
