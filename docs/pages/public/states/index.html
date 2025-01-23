@@ -55,7 +55,7 @@ function Process-StateIndexPage {
 </div>
 "@
 
-        # Replace placeholders
+        # Replace placeholders in the template
         $template = $template -replace 'REGION_CARDS', $regionHtml
         $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
         $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
@@ -67,6 +67,7 @@ function Process-StateIndexPage {
         Write-Error "State index template not found: $templatePath"
     }
 }
+
 
 
 
