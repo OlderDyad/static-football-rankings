@@ -425,14 +425,15 @@ function Process-StateIndexPage {
     $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
     
-    Write-Host "Using template: $templatePath" -ForegroundColor Yellow
-    Write-Host "Output path: $outputPath" -ForegroundColor Yellow
-    
     if (Test-Path $templatePath) {
         try {
             $template = Get-Content $templatePath -Raw
             
-            # Build HTML for all regions
+            # DEBUG - Check template
+            Write-Host "Template content before:" -ForegroundColor Red
+            Write-Host $template -ForegroundColor Red
+            
+            # Generate HTML for all regions
             $allRegionsHtml = ""
             
             foreach ($region in $stateRegions.GetEnumerator()) {
@@ -471,14 +472,24 @@ function Process-StateIndexPage {
 "@
             }
             
-            Write-Host "Generated HTML for $($stateRegions.Count) regions" -ForegroundColor Green
+            # DEBUG - Check generated HTML
+            Write-Host "Generated HTML:" -ForegroundColor Red
+            Write-Host $allRegionsHtml -ForegroundColor Red
             
-            # Replace placeholder with generated HTML
-            $newContent = $template -replace 'REGION_CARDS', $allRegionsHtml
+            # Replace placeholder
+            $newContent = $template.Replace('REGION_CARDS', $allRegionsHtml)
+            
+            # DEBUG - Check final content
+            Write-Host "Final content:" -ForegroundColor Red
+            Write-Host $newContent -ForegroundColor Red
             
             # Write the file
             [System.IO.File]::WriteAllText($outputPath, $newContent, [System.Text.Encoding]::UTF8)
-            Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
+            
+            # DEBUG - Verify output file
+            $outputContent = Get-Content $outputPath -Raw
+            Write-Host "Output file content:" -ForegroundColor Red
+            Write-Host $outputContent -ForegroundColor Red
             
         } catch {
             Write-Error "Error processing state index page: $_"
