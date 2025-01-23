@@ -425,23 +425,23 @@ function Process-StateIndexPage {
     $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
     
+    Write-Host "Using template: $templatePath" -ForegroundColor Yellow
+    Write-Host "Output path: $outputPath" -ForegroundColor Yellow
+    
     if (Test-Path $templatePath) {
         try {
-            Write-Host "Reading template from: $templatePath" -ForegroundColor Yellow
             $template = Get-Content $templatePath -Raw
             
-            # Generate HTML for each region
+            # Build HTML for all regions
             $allRegionsHtml = ""
             
-            # Process each region
             foreach ($region in $stateRegions.GetEnumerator()) {
                 Write-Host "Processing region: $($region.Value.Name)" -ForegroundColor Cyan
                 
-                # Generate HTML for all states in this region
                 $statesHtml = ""
                 foreach ($stateCode in $region.Value.States | Sort-Object) {
                     $stateName = Get-StateFullName -StateCode $stateCode
-                    Write-Host "  Processing state: $stateName ($stateCode)" -ForegroundColor Gray
+                    Write-Host "  Adding state: $stateName ($stateCode)" -ForegroundColor Gray
                     
                     $statesHtml += @"
                     <div class="col-lg-4 col-md-6 mb-4">
@@ -461,7 +461,6 @@ function Process-StateIndexPage {
 "@
                 }
                 
-                # Add region container with its states
                 $allRegionsHtml += @"
                 <div class="region-section mb-5">
                     <h2 class="region-title $($region.Value.Color)">$($region.Value.Title)</h2>
@@ -472,12 +471,14 @@ function Process-StateIndexPage {
 "@
             }
             
-            Write-Host "Replacing REGION_CARDS placeholder..." -ForegroundColor Yellow
+            Write-Host "Generated HTML for $($stateRegions.Count) regions" -ForegroundColor Green
+            
+            # Replace placeholder with generated HTML
             $newContent = $template -replace 'REGION_CARDS', $allRegionsHtml
             
-            Write-Host "Writing output to: $outputPath" -ForegroundColor Yellow
+            # Write the file
             [System.IO.File]::WriteAllText($outputPath, $newContent, [System.Text.Encoding]::UTF8)
-            Write-Host "State index page generated successfully!" -ForegroundColor Green
+            Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
             
         } catch {
             Write-Error "Error processing state index page: $_"
