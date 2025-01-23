@@ -156,6 +156,8 @@ function Test-RequiredTemplates {
 }
 
 # Helper function to check individual templates
+
+
 function Test-TemplateExists {
     param (
         [string]$TemplatePath,
@@ -355,6 +357,123 @@ function Generate-ComingSoonPage {
 
     Set-Content -Path $OutputPath -Value $comingSoonHtml -Encoding UTF8
     Write-Host "Generated coming soon page: $OutputPath"
+}
+
+# Define regions and states
+$stateRegions = @{
+    "Northeast" = @{
+        Name = "Northeast"
+        States = @("CT", "ME", "MA", "NH", "RI", "VT", "NJ", "NY", "PA")
+        Color = "region-northeast"
+        Title = "Northeast States"
+    }
+    "South" = @{
+        Name = "South"
+        States = @("AL", "AR", "DE", "FL", "GA", "KY", "LA", "MD", "MS", "NC", "SC", "TN", "VA", "WV")
+        Color = "region-south"
+        Title = "Southern States"
+    }
+    "Midwest" = @{
+        Name = "Midwest"
+        States = @("IL", "IN", "IA", "KS", "MI", "MN", "MO", "NE", "ND", "OH", "SD", "WI")
+        Color = "region-midwest"
+        Title = "Midwestern States"
+    }
+    "West" = @{
+        Name = "West"
+        States = @("AK", "AZ", "CA", "CO", "HI", "ID", "MT", "NV", "NM", "OR", "UT", "WA", "WY")
+        Color = "region-west"
+        Title = "Western States"
+    }
+    "Canada" = @{
+        Name = "Canada"
+        States = @("AB", "BC", "SK", "MB", "NS", "QB", "NB")
+        Color = "region-canada"
+        Title = "Canadian Provinces"
+    }
+}
+
+function Get-StateFullName {
+    param([string]$StateCode)
+    
+    $stateNames = @{
+        # US States
+        "AL" = "Alabama"; "AK" = "Alaska"; "AZ" = "Arizona"; "AR" = "Arkansas"
+        "CA" = "California"; "CO" = "Colorado"; "CT" = "Connecticut"; "DE" = "Delaware"
+        "FL" = "Florida"; "GA" = "Georgia"; "HI" = "Hawaii"; "ID" = "Idaho"
+        "IL" = "Illinois"; "IN" = "Indiana"; "IA" = "Iowa"; "KS" = "Kansas"
+        "KY" = "Kentucky"; "LA" = "Louisiana"; "ME" = "Maine"; "MD" = "Maryland"
+        "MA" = "Massachusetts"; "MI" = "Michigan"; "MN" = "Minnesota"; "MS" = "Mississippi"
+        "MO" = "Missouri"; "MT" = "Montana"; "NE" = "Nebraska"; "NV" = "Nevada"
+        "NH" = "New Hampshire"; "NJ" = "New Jersey"; "NM" = "New Mexico"; "NY" = "New York"
+        "NC" = "North Carolina"; "ND" = "North Dakota"; "OH" = "Ohio"; "OK" = "Oklahoma"
+        "OR" = "Oregon"; "PA" = "Pennsylvania"; "RI" = "Rhode Island"; "SC" = "South Carolina"
+        "SD" = "South Dakota"; "TN" = "Tennessee"; "TX" = "Texas"; "UT" = "Utah"
+        "VT" = "Vermont"; "VA" = "Virginia"; "WA" = "Washington"; "WV" = "West Virginia"
+        "WI" = "Wisconsin"; "WY" = "Wyoming"
+        # Canadian Provinces
+        "AB" = "Alberta"; "BC" = "British Columbia"; "MB" = "Manitoba"; "NB" = "New Brunswick"
+        "NS" = "Nova Scotia"; "QB" = "Quebec"; "SK" = "Saskatchewan"
+    }
+    
+    return $stateNames[$StateCode]
+}
+
+function Process-StateIndexPage {
+    Write-Host "Generating state index page..." -ForegroundColor Yellow
+    
+    $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
+    $outputPath = Join-Path $outputBaseDir "states\index.html"
+    
+    if (Test-Path $templatePath) {
+        $template = Get-Content $templatePath -Raw
+        
+        # Generate region cards
+        $regionCardsHtml = $stateRegions.GetEnumerator() | Sort-Object { $_.Value.Name } | ForEach-Object {
+            $region = $_.Value
+            $regionStates = $region.States | Sort-Object | ForEach-Object {
+                $stateCode = $_
+                $stateName = Get-StateFullName -StateCode $stateCode
+                
+                @"
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 state-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">$stateName</h5>
+                            <p class="card-text">($stateCode)</p>
+                            <div class="mt-auto">
+                                <a href="/static-football-rankings/pages/public/states/$stateCode-teams.html" 
+                                   class="btn btn-primary me-2">Teams</a>
+                                <a href="/static-football-rankings/pages/public/states/$stateCode-programs.html" 
+                                   class="btn btn-outline-primary">Programs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+"@
+            }
+
+            @"
+            <div class="region-section mb-5">
+                <h2 class="region-title ${region.Color}">${region.Title}</h2>
+                <div class="row">
+                    $regionStates
+                </div>
+            </div>
+"@
+        }
+
+        # Replace placeholders
+        $template = $template -replace 'REGION_CARDS', $regionCardsHtml
+        $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+        $template = $template -replace '<userStyle>Normal</userStyle>', ''
+
+        # Save the file
+        Set-Content -Path $outputPath -Value $template -Encoding UTF8
+        Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
+    } else {
+        Write-Error "State index template not found: $templatePath"
+    }
 }
 #endregion Helper Functions
 
@@ -1091,6 +1210,41 @@ try {
     foreach ($decade in $decades) {
         Process-DecadeData -DecadeName $decade.Name -StartYear $decade.StartYear -EndYear $decade.EndYear -DisplayName $decade.DisplayName
     }
+
+    # Define regions and states
+$stateRegions = @{
+    "Northeast" = @{
+        Name = "Northeast"
+        States = @("CT", "ME", "MA", "NH", "RI", "VT", "NJ", "NY", "PA")
+        Color = "region-northeast"
+        Title = "Northeast States"
+    }
+    "South" = @{
+        Name = "South"
+        States = @("AL", "AR", "DE", "FL", "GA", "KY", "LA", "MD", "MS", "NC", "SC", "TN", "VA", "WV")
+        Color = "region-south"
+        Title = "Southern States"
+    }
+    "Midwest" = @{
+        Name = "Midwest"
+        States = @("IL", "IN", "IA", "KS", "MI", "MN", "MO", "NE", "ND", "OH", "SD", "WI")
+        Color = "region-midwest"
+        Title = "Midwestern States"
+    }
+    "West" = @{
+        Name = "West"
+        States = @("AK", "AZ", "CA", "CO", "HI", "ID", "MT", "NV", "NM", "OR", "UT", "WA", "WY")
+        Color = "region-west"
+        Title = "Western States"
+    }
+    "Canada" = @{
+        Name = "Canada"
+        States = @("AB", "BC", "SK", "MB", "NS", "QB", "NB")
+        Color = "region-canada"
+        Title = "Canadian Provinces"
+    }
+}
+
 
     # Process States
     Write-Host "`nProcessing state rankings..." -ForegroundColor Green

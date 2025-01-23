@@ -1,45 +1,42 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100+ Seasons All-Time Programs - McKnight's American Football</title>
-    <meta name="description" content="View top high school football programs.">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Custom Stylesheet -->
-    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-</head>
-<body>
-    <div class="header-banner">
-        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PROGRAM_THRESHOLD+ Season Programs - McKnight's American Football</title>
+        <meta name="data-file" content="/static-football-rankings/data/all-time/all-time-programs-PROGRAM_THRESHOLD.json">
 
-    <div class="container mt-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/all-time/index.html">All-Time Rankings</a></li>
-                <li class="breadcrumb-item active" aria-current="page">100+ Seasons All-Time Programs</li>
-            </ol>
-        </nav>
-    </div>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+        </div>
 
-    <!-- Team Header Container -->
-    <div class="team-header" style="background-color: Black; color: Gold;">
+        <!-- Breadcrumb navigation -->
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/all-time/index.html">All-Time Rankings</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">PROGRAM_THRESHOLD+ Season Programs</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Dynamic team banner container -->
+        <div class="team-header" style="background-color: #FFFFFF; color: #000000;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-3 text-center">
-                <img src="/static-football-rankings/images"
-                     alt="Abilene (TX) Logo"
-                     class="img-fluid team-logo"
-                     onerror="this.src='/static-football-rankings/images/default-logo.png'; this.classList.add('default-logo');" />
+                <!-- No logo available -->
             </div>
             <div class="col-md-6 text-center">
-                <h2>Abilene (TX)</h2>
-                <p class='mascot-name'>Eagles</p>
+                <h2></h2>
+                
                 <div class="team-stats">
                     <small>
                         
@@ -47,2036 +44,2237 @@
                 </div>
             </div>
             <div class="col-md-3 text-center">
-                <img src="/static-football-rankings/images/default-school-logo.png"
-                     alt="Abilene (TX) School Logo"
-                     class="img-fluid school-logo"
-                     onerror="this.src='/static-football-rankings/images/default-school-logo.png'; this.classList.add('default-logo');" />
+                <!-- No school logo available -->
             </div>
         </div>
     </div>
 </div>
 
-    <div class="container mt-4">
-        <div class="row mb-4">
-            <div class="col">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h1>100+ Seasons All-Time Programs</h1>
-                    <small>Last Updated: <span id="lastUpdated">TIMESTAMP</span></small>
+        <!-- Main content -->
+        <div class="container mt-4">
+            <h1 data-page-name="all-time-programs-PROGRAM_THRESHOLD">PROGRAM_THRESHOLD+ Season All-Time Programs</h1>
+            
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <div class="btn-group">
+                        <a href="teams.html" class="btn btn-outline-primary">Greatest Teams</a>
+                        <a href="programs-25-plus.html" class="btn btn-outline-primary">25+ Seasons</a>
+                        <a href="programs-50-plus.html" class="btn btn-outline-primary">50+ Seasons</a>
+                        <a href="programs-100-plus.html" class="btn btn-outline-primary">100+ Seasons</a>
+                    </div>
+                </div>
+                <div class="text-muted">Updated: <span id="lastUpdated">1/22/2025</span></div>
+            </div>
+
+            <!-- Search Controls -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Search</span>
+                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Search Controls -->
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <input type="text" id="searchInput" class="form-control" placeholder="Search programs..." aria-label="Search programs">
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="sticky-top bg-white">
+                        <tr>
+                            <th style="min-width: 60px">Rank</th>
+                            <th style="min-width: 200px">Program</th>
+                            <th style="min-width: 80px">Seasons</th>
+                            <th style="min-width: 90px">Combined</th>
+                            <th style="min-width: 90px">Margin</th>
+                            <th style="min-width: 90px">Win/Loss</th>
+                            <th style="min-width: 90px">Offense</th>
+                            <th style="min-width: 90px">Defense</th>
+                            <th style="min-width: 70px">State</th>
+                        </tr>
+                    </thead>
+                    <tbody id="programsTableBody">
+                                    <tr>
+                <td>1</td>
+                <td></td>
+                <td>114</td>
+                <td>30.721</td>
+                <td>36.965</td>
+                <td>1.012</td>
+                <td>32.142</td>
+                <td>-2.368</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td></td>
+                <td>107</td>
+                <td>30.247</td>
+                <td>36.893</td>
+                <td>1.027</td>
+                <td>31.304</td>
+                <td>-2.112</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+                <td>123</td>
+                <td>30.223</td>
+                <td>36.364</td>
+                <td>0.986</td>
+                <td>31.255</td>
+                <td>-0.196</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td></td>
+                <td>100</td>
+                <td>24.836</td>
+                <td>29.565</td>
+                <td>0.840</td>
+                <td>27.645</td>
+                <td>2.354</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td></td>
+                <td>139</td>
+                <td>24.378</td>
+                <td>29.573</td>
+                <td>0.787</td>
+                <td>25.393</td>
+                <td>-0.397</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td></td>
+                <td>112</td>
+                <td>24.283</td>
+                <td>29.128</td>
+                <td>0.852</td>
+                <td>26.345</td>
+                <td>2.661</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td></td>
+                <td>103</td>
+                <td>23.832</td>
+                <td>28.745</td>
+                <td>0.750</td>
+                <td>27.462</td>
+                <td>2.326</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td></td>
+                <td>108</td>
+                <td>23.697</td>
+                <td>28.863</td>
+                <td>0.713</td>
+                <td>28.268</td>
+                <td>3.201</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td></td>
+                <td>115</td>
+                <td>23.280</td>
+                <td>28.229</td>
+                <td>0.654</td>
+                <td>27.939</td>
+                <td>3.130</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td></td>
+                <td>110</td>
+                <td>23.191</td>
+                <td>27.875</td>
+                <td>0.733</td>
+                <td>25.375</td>
+                <td>2.678</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td></td>
+                <td>105</td>
+                <td>22.692</td>
+                <td>27.882</td>
+                <td>0.657</td>
+                <td>26.190</td>
+                <td>2.364</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td></td>
+                <td>109</td>
+                <td>22.011</td>
+                <td>26.722</td>
+                <td>0.669</td>
+                <td>24.888</td>
+                <td>2.931</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td></td>
+                <td>104</td>
+                <td>21.356</td>
+                <td>25.818</td>
+                <td>0.701</td>
+                <td>25.500</td>
+                <td>3.314</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td></td>
+                <td>108</td>
+                <td>21.182</td>
+                <td>25.825</td>
+                <td>0.650</td>
+                <td>25.055</td>
+                <td>3.290</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td></td>
+                <td>108</td>
+                <td>20.775</td>
+                <td>25.084</td>
+                <td>0.613</td>
+                <td>24.187</td>
+                <td>2.208</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td></td>
+                <td>112</td>
+                <td>20.436</td>
+                <td>24.682</td>
+                <td>0.654</td>
+                <td>23.865</td>
+                <td>4.372</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td></td>
+                <td>103</td>
+                <td>20.370</td>
+                <td>24.800</td>
+                <td>0.582</td>
+                <td>26.574</td>
+                <td>5.232</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td></td>
+                <td>101</td>
+                <td>20.316</td>
+                <td>24.490</td>
+                <td>0.566</td>
+                <td>24.587</td>
+                <td>3.211</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td></td>
+                <td>108</td>
+                <td>20.107</td>
+                <td>24.497</td>
+                <td>0.525</td>
+                <td>24.324</td>
+                <td>3.194</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td></td>
+                <td>120</td>
+                <td>19.413</td>
+                <td>23.632</td>
+                <td>0.619</td>
+                <td>24.138</td>
+                <td>5.219</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td></td>
+                <td>111</td>
+                <td>18.606</td>
+                <td>22.906</td>
+                <td>0.558</td>
+                <td>24.390</td>
+                <td>6.383</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td></td>
+                <td>107</td>
+                <td>18.548</td>
+                <td>22.648</td>
+                <td>0.538</td>
+                <td>24.789</td>
+                <td>6.585</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td></td>
+                <td>114</td>
+                <td>18.502</td>
+                <td>22.003</td>
+                <td>0.620</td>
+                <td>22.776</td>
+                <td>5.908</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td></td>
+                <td>103</td>
+                <td>18.189</td>
+                <td>22.051</td>
+                <td>0.560</td>
+                <td>22.728</td>
+                <td>5.733</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td></td>
+                <td>112</td>
+                <td>18.109</td>
+                <td>22.102</td>
+                <td>0.610</td>
+                <td>21.576</td>
+                <td>5.244</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td></td>
+                <td>115</td>
+                <td>17.837</td>
+                <td>21.319</td>
+                <td>0.609</td>
+                <td>22.858</td>
+                <td>6.700</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td></td>
+                <td>102</td>
+                <td>17.572</td>
+                <td>21.339</td>
+                <td>0.505</td>
+                <td>22.004</td>
+                <td>5.267</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td></td>
+                <td>118</td>
+                <td>17.456</td>
+                <td>21.306</td>
+                <td>0.495</td>
+                <td>24.482</td>
+                <td>7.996</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td></td>
+                <td>101</td>
+                <td>17.239</td>
+                <td>21.431</td>
+                <td>0.428</td>
+                <td>23.914</td>
+                <td>6.601</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td></td>
+                <td>102</td>
+                <td>16.908</td>
+                <td>20.517</td>
+                <td>0.526</td>
+                <td>22.952</td>
+                <td>7.051</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td></td>
+                <td>104</td>
+                <td>16.726</td>
+                <td>19.711</td>
+                <td>0.441</td>
+                <td>25.838</td>
+                <td>8.273</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td></td>
+                <td>115</td>
+                <td>16.328</td>
+                <td>19.444</td>
+                <td>0.478</td>
+                <td>22.361</td>
+                <td>7.575</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td></td>
+                <td>101</td>
+                <td>16.129</td>
+                <td>19.791</td>
+                <td>0.393</td>
+                <td>23.121</td>
+                <td>6.119</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td></td>
+                <td>109</td>
+                <td>15.541</td>
+                <td>19.416</td>
+                <td>0.322</td>
+                <td>22.456</td>
+                <td>7.342</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td></td>
+                <td>105</td>
+                <td>15.406</td>
+                <td>18.813</td>
+                <td>0.297</td>
+                <td>22.996</td>
+                <td>5.969</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td></td>
+                <td>102</td>
+                <td>15.114</td>
+                <td>18.325</td>
+                <td>0.368</td>
+                <td>23.134</td>
+                <td>7.991</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td></td>
+                <td>109</td>
+                <td>14.928</td>
+                <td>18.269</td>
+                <td>0.367</td>
+                <td>21.931</td>
+                <td>8.199</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td></td>
+                <td>100</td>
+                <td>14.753</td>
+                <td>18.242</td>
+                <td>0.315</td>
+                <td>21.796</td>
+                <td>6.601</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td></td>
+                <td>121</td>
+                <td>14.745</td>
+                <td>18.099</td>
+                <td>0.402</td>
+                <td>21.317</td>
+                <td>8.208</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td></td>
+                <td>110</td>
+                <td>14.734</td>
+                <td>17.646</td>
+                <td>0.428</td>
+                <td>21.334</td>
+                <td>8.215</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td></td>
+                <td>106</td>
+                <td>14.716</td>
+                <td>18.341</td>
+                <td>0.306</td>
+                <td>21.702</td>
+                <td>8.037</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td></td>
+                <td>107</td>
+                <td>14.696</td>
+                <td>17.817</td>
+                <td>0.437</td>
+                <td>20.608</td>
+                <td>7.431</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td></td>
+                <td>104</td>
+                <td>14.580</td>
+                <td>18.124</td>
+                <td>0.310</td>
+                <td>21.379</td>
+                <td>7.263</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td></td>
+                <td>102</td>
+                <td>14.571</td>
+                <td>17.841</td>
+                <td>0.364</td>
+                <td>21.879</td>
+                <td>7.842</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td></td>
+                <td>103</td>
+                <td>14.521</td>
+                <td>17.655</td>
+                <td>0.359</td>
+                <td>21.088</td>
+                <td>6.437</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td></td>
+                <td>105</td>
+                <td>14.344</td>
+                <td>17.610</td>
+                <td>0.367</td>
+                <td>23.102</td>
+                <td>8.931</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td></td>
+                <td>114</td>
+                <td>13.724</td>
+                <td>16.677</td>
+                <td>0.302</td>
+                <td>20.563</td>
+                <td>7.524</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td></td>
+                <td>107</td>
+                <td>13.627</td>
+                <td>17.013</td>
+                <td>0.256</td>
+                <td>20.573</td>
+                <td>8.484</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td></td>
+                <td>115</td>
+                <td>13.619</td>
+                <td>16.633</td>
+                <td>0.345</td>
+                <td>21.048</td>
+                <td>7.188</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td></td>
+                <td>116</td>
+                <td>13.133</td>
+                <td>16.446</td>
+                <td>0.280</td>
+                <td>21.503</td>
+                <td>9.748</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td></td>
+                <td>125</td>
+                <td>13.129</td>
+                <td>16.052</td>
+                <td>0.398</td>
+                <td>18.957</td>
+                <td>7.594</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td></td>
+                <td>110</td>
+                <td>13.091</td>
+                <td>16.549</td>
+                <td>0.236</td>
+                <td>19.813</td>
+                <td>7.615</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td></td>
+                <td>109</td>
+                <td>13.033</td>
+                <td>15.709</td>
+                <td>0.348</td>
+                <td>21.421</td>
+                <td>9.941</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td></td>
+                <td>102</td>
+                <td>13.025</td>
+                <td>15.967</td>
+                <td>0.388</td>
+                <td>19.696</td>
+                <td>8.800</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td></td>
+                <td>106</td>
+                <td>12.931</td>
+                <td>15.394</td>
+                <td>0.392</td>
+                <td>20.619</td>
+                <td>9.945</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td></td>
+                <td>106</td>
+                <td>12.728</td>
+                <td>15.732</td>
+                <td>0.247</td>
+                <td>19.693</td>
+                <td>7.370</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td></td>
+                <td>108</td>
+                <td>12.519</td>
+                <td>15.157</td>
+                <td>0.357</td>
+                <td>19.632</td>
+                <td>9.364</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td></td>
+                <td>102</td>
+                <td>12.484</td>
+                <td>14.659</td>
+                <td>0.528</td>
+                <td>25.785</td>
+                <td>16.076</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td></td>
+                <td>107</td>
+                <td>12.396</td>
+                <td>15.344</td>
+                <td>0.245</td>
+                <td>21.266</td>
+                <td>9.616</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td></td>
+                <td>101</td>
+                <td>12.295</td>
+                <td>15.177</td>
+                <td>0.283</td>
+                <td>21.361</td>
+                <td>9.160</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td></td>
+                <td>118</td>
+                <td>12.201</td>
+                <td>15.047</td>
+                <td>0.345</td>
+                <td>18.857</td>
+                <td>9.015</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td></td>
+                <td>109</td>
+                <td>12.082</td>
+                <td>14.852</td>
+                <td>0.300</td>
+                <td>19.748</td>
+                <td>9.501</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td></td>
+                <td>101</td>
+                <td>11.931</td>
+                <td>14.957</td>
+                <td>0.182</td>
+                <td>20.560</td>
+                <td>8.784</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td></td>
+                <td>101</td>
+                <td>11.924</td>
+                <td>14.842</td>
+                <td>0.261</td>
+                <td>18.866</td>
+                <td>8.390</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td></td>
+                <td>120</td>
+                <td>11.894</td>
+                <td>14.834</td>
+                <td>0.185</td>
+                <td>21.528</td>
+                <td>10.511</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td></td>
+                <td>102</td>
+                <td>11.852</td>
+                <td>13.917</td>
+                <td>0.352</td>
+                <td>19.399</td>
+                <td>9.261</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td></td>
+                <td>117</td>
+                <td>11.847</td>
+                <td>14.484</td>
+                <td>0.317</td>
+                <td>18.643</td>
+                <td>9.126</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td></td>
+                <td>102</td>
+                <td>11.701</td>
+                <td>14.693</td>
+                <td>0.255</td>
+                <td>19.206</td>
+                <td>9.102</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td></td>
+                <td>117</td>
+                <td>11.685</td>
+                <td>14.472</td>
+                <td>0.281</td>
+                <td>18.950</td>
+                <td>9.063</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td></td>
+                <td>111</td>
+                <td>11.684</td>
+                <td>14.366</td>
+                <td>0.233</td>
+                <td>19.740</td>
+                <td>8.671</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td></td>
+                <td>108</td>
+                <td>11.215</td>
+                <td>14.089</td>
+                <td>0.150</td>
+                <td>21.093</td>
+                <td>9.795</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td></td>
+                <td>108</td>
+                <td>11.179</td>
+                <td>14.014</td>
+                <td>0.267</td>
+                <td>20.726</td>
+                <td>10.310</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td></td>
+                <td>118</td>
+                <td>11.070</td>
+                <td>13.449</td>
+                <td>0.250</td>
+                <td>17.646</td>
+                <td>8.655</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td></td>
+                <td>101</td>
+                <td>11.005</td>
+                <td>13.689</td>
+                <td>0.252</td>
+                <td>20.255</td>
+                <td>11.296</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td></td>
+                <td>101</td>
+                <td>10.866</td>
+                <td>13.477</td>
+                <td>0.250</td>
+                <td>18.702</td>
+                <td>9.675</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td></td>
+                <td>104</td>
+                <td>10.834</td>
+                <td>13.764</td>
+                <td>0.155</td>
+                <td>20.390</td>
+                <td>10.181</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td></td>
+                <td>121</td>
+                <td>10.352</td>
+                <td>12.537</td>
+                <td>0.272</td>
+                <td>18.332</td>
+                <td>10.857</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td></td>
+                <td>105</td>
+                <td>10.281</td>
+                <td>12.296</td>
+                <td>0.200</td>
+                <td>18.479</td>
+                <td>9.329</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td></td>
+                <td>126</td>
+                <td>10.206</td>
+                <td>12.424</td>
+                <td>0.272</td>
+                <td>18.538</td>
+                <td>11.139</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>80</td>
+                <td></td>
+                <td>108</td>
+                <td>10.055</td>
+                <td>12.707</td>
+                <td>0.091</td>
+                <td>19.509</td>
+                <td>10.394</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>81</td>
+                <td></td>
+                <td>106</td>
+                <td>9.856</td>
+                <td>12.869</td>
+                <td>0.042</td>
+                <td>19.930</td>
+                <td>11.317</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td></td>
+                <td>104</td>
+                <td>9.803</td>
+                <td>12.054</td>
+                <td>0.210</td>
+                <td>18.658</td>
+                <td>11.134</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>83</td>
+                <td></td>
+                <td>103</td>
+                <td>9.802</td>
+                <td>12.258</td>
+                <td>0.133</td>
+                <td>19.274</td>
+                <td>10.279</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>84</td>
+                <td></td>
+                <td>101</td>
+                <td>9.762</td>
+                <td>11.750</td>
+                <td>0.168</td>
+                <td>18.816</td>
+                <td>10.136</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>85</td>
+                <td></td>
+                <td>101</td>
+                <td>9.759</td>
+                <td>12.097</td>
+                <td>0.271</td>
+                <td>18.682</td>
+                <td>10.037</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>86</td>
+                <td></td>
+                <td>100</td>
+                <td>9.723</td>
+                <td>11.906</td>
+                <td>0.159</td>
+                <td>18.866</td>
+                <td>10.082</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>87</td>
+                <td></td>
+                <td>123</td>
+                <td>9.666</td>
+                <td>11.861</td>
+                <td>0.223</td>
+                <td>17.124</td>
+                <td>9.645</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>88</td>
+                <td></td>
+                <td>117</td>
+                <td>9.437</td>
+                <td>11.785</td>
+                <td>0.182</td>
+                <td>17.445</td>
+                <td>10.336</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>89</td>
+                <td></td>
+                <td>103</td>
+                <td>9.412</td>
+                <td>11.593</td>
+                <td>0.319</td>
+                <td>18.758</td>
+                <td>7.779</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>90</td>
+                <td></td>
+                <td>100</td>
+                <td>9.199</td>
+                <td>11.730</td>
+                <td>0.141</td>
+                <td>17.679</td>
+                <td>10.006</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>91</td>
+                <td></td>
+                <td>105</td>
+                <td>9.194</td>
+                <td>11.176</td>
+                <td>0.219</td>
+                <td>17.263</td>
+                <td>10.852</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>92</td>
+                <td></td>
+                <td>105</td>
+                <td>9.194</td>
+                <td>11.017</td>
+                <td>0.250</td>
+                <td>18.502</td>
+                <td>10.122</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>93</td>
+                <td></td>
+                <td>107</td>
+                <td>9.098</td>
+                <td>11.313</td>
+                <td>0.176</td>
+                <td>19.122</td>
+                <td>11.190</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>94</td>
+                <td></td>
+                <td>118</td>
+                <td>9.042</td>
+                <td>10.887</td>
+                <td>0.204</td>
+                <td>17.060</td>
+                <td>10.440</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>95</td>
+                <td></td>
+                <td>101</td>
+                <td>8.847</td>
+                <td>10.858</td>
+                <td>0.244</td>
+                <td>15.769</td>
+                <td>9.792</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>96</td>
+                <td></td>
+                <td>102</td>
+                <td>8.688</td>
+                <td>10.853</td>
+                <td>0.120</td>
+                <td>18.729</td>
+                <td>11.164</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>97</td>
+                <td></td>
+                <td>113</td>
+                <td>8.676</td>
+                <td>10.992</td>
+                <td>0.068</td>
+                <td>17.783</td>
+                <td>9.758</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>98</td>
+                <td></td>
+                <td>107</td>
+                <td>8.661</td>
+                <td>10.849</td>
+                <td>0.066</td>
+                <td>19.782</td>
+                <td>12.794</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>99</td>
+                <td></td>
+                <td>101</td>
+                <td>8.543</td>
+                <td>10.342</td>
+                <td>0.077</td>
+                <td>17.863</td>
+                <td>10.627</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td></td>
+                <td>101</td>
+                <td>8.412</td>
+                <td>10.546</td>
+                <td>0.132</td>
+                <td>17.257</td>
+                <td>10.577</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td></td>
+                <td>101</td>
+                <td>8.353</td>
+                <td>10.948</td>
+                <td>0.014</td>
+                <td>17.698</td>
+                <td>10.471</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td></td>
+                <td>100</td>
+                <td>8.292</td>
+                <td>10.306</td>
+                <td>0.104</td>
+                <td>15.647</td>
+                <td>9.479</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td></td>
+                <td>102</td>
+                <td>8.180</td>
+                <td>10.050</td>
+                <td>0.112</td>
+                <td>18.087</td>
+                <td>11.741</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td></td>
+                <td>102</td>
+                <td>8.062</td>
+                <td>10.442</td>
+                <td>0.035</td>
+                <td>17.712</td>
+                <td>10.879</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td></td>
+                <td>115</td>
+                <td>7.886</td>
+                <td>9.750</td>
+                <td>0.016</td>
+                <td>18.125</td>
+                <td>11.214</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>106</td>
+                <td></td>
+                <td>106</td>
+                <td>7.728</td>
+                <td>9.746</td>
+                <td>0.120</td>
+                <td>17.230</td>
+                <td>10.529</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td></td>
+                <td>102</td>
+                <td>7.667</td>
+                <td>10.022</td>
+                <td>0.098</td>
+                <td>16.149</td>
+                <td>11.193</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>108</td>
+                <td></td>
+                <td>100</td>
+                <td>7.599</td>
+                <td>9.473</td>
+                <td>0.067</td>
+                <td>17.927</td>
+                <td>11.989</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>109</td>
+                <td></td>
+                <td>105</td>
+                <td>7.549</td>
+                <td>9.365</td>
+                <td>0.146</td>
+                <td>17.218</td>
+                <td>10.477</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>110</td>
+                <td></td>
+                <td>105</td>
+                <td>7.418</td>
+                <td>9.202</td>
+                <td>0.079</td>
+                <td>18.165</td>
+                <td>12.954</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td></td>
+                <td>102</td>
+                <td>7.349</td>
+                <td>9.462</td>
+                <td>-0.047</td>
+                <td>17.023</td>
+                <td>10.045</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>112</td>
+                <td></td>
+                <td>102</td>
+                <td>7.176</td>
+                <td>9.656</td>
+                <td>-0.098</td>
+                <td>18.600</td>
+                <td>11.210</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>113</td>
+                <td></td>
+                <td>105</td>
+                <td>7.114</td>
+                <td>9.343</td>
+                <td>0.011</td>
+                <td>17.361</td>
+                <td>11.710</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>114</td>
+                <td></td>
+                <td>101</td>
+                <td>6.657</td>
+                <td>8.653</td>
+                <td>-0.020</td>
+                <td>16.897</td>
+                <td>11.539</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>115</td>
+                <td></td>
+                <td>108</td>
+                <td>6.598</td>
+                <td>9.020</td>
+                <td>-0.076</td>
+                <td>19.472</td>
+                <td>11.720</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>116</td>
+                <td></td>
+                <td>109</td>
+                <td>6.556</td>
+                <td>8.627</td>
+                <td>-0.064</td>
+                <td>17.828</td>
+                <td>11.565</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>117</td>
+                <td></td>
+                <td>102</td>
+                <td>6.482</td>
+                <td>8.315</td>
+                <td>-0.038</td>
+                <td>17.104</td>
+                <td>11.521</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>118</td>
+                <td></td>
+                <td>103</td>
+                <td>6.107</td>
+                <td>7.845</td>
+                <td>-0.080</td>
+                <td>16.665</td>
+                <td>11.127</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>119</td>
+                <td></td>
+                <td>107</td>
+                <td>5.884</td>
+                <td>7.056</td>
+                <td>0.056</td>
+                <td>16.382</td>
+                <td>12.879</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>120</td>
+                <td></td>
+                <td>123</td>
+                <td>5.734</td>
+                <td>7.382</td>
+                <td>0.052</td>
+                <td>15.201</td>
+                <td>12.259</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>121</td>
+                <td></td>
+                <td>101</td>
+                <td>5.563</td>
+                <td>7.180</td>
+                <td>0.071</td>
+                <td>17.030</td>
+                <td>12.627</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>122</td>
+                <td></td>
+                <td>123</td>
+                <td>5.385</td>
+                <td>6.948</td>
+                <td>0.088</td>
+                <td>14.887</td>
+                <td>12.681</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td></td>
+                <td>115</td>
+                <td>4.890</td>
+                <td>6.971</td>
+                <td>-0.137</td>
+                <td>16.048</td>
+                <td>11.799</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>124</td>
+                <td></td>
+                <td>102</td>
+                <td>4.883</td>
+                <td>6.135</td>
+                <td>-0.027</td>
+                <td>15.819</td>
+                <td>13.112</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>125</td>
+                <td></td>
+                <td>123</td>
+                <td>4.865</td>
+                <td>6.628</td>
+                <td>-0.064</td>
+                <td>13.820</td>
+                <td>11.502</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>126</td>
+                <td></td>
+                <td>100</td>
+                <td>4.622</td>
+                <td>5.943</td>
+                <td>-0.057</td>
+                <td>16.412</td>
+                <td>14.473</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>127</td>
+                <td></td>
+                <td>118</td>
+                <td>4.521</td>
+                <td>5.205</td>
+                <td>0.114</td>
+                <td>16.841</td>
+                <td>14.341</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>128</td>
+                <td></td>
+                <td>108</td>
+                <td>4.502</td>
+                <td>5.662</td>
+                <td>-0.032</td>
+                <td>15.941</td>
+                <td>14.155</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>129</td>
+                <td></td>
+                <td>120</td>
+                <td>4.492</td>
+                <td>5.891</td>
+                <td>-0.048</td>
+                <td>14.824</td>
+                <td>13.145</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>130</td>
+                <td></td>
+                <td>100</td>
+                <td>4.208</td>
+                <td>5.705</td>
+                <td>-0.128</td>
+                <td>17.382</td>
+                <td>14.170</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>131</td>
+                <td></td>
+                <td>101</td>
+                <td>4.154</td>
+                <td>5.607</td>
+                <td>-0.027</td>
+                <td>15.879</td>
+                <td>13.878</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>132</td>
+                <td></td>
+                <td>116</td>
+                <td>4.047</td>
+                <td>5.288</td>
+                <td>-0.147</td>
+                <td>15.766</td>
+                <td>13.650</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>133</td>
+                <td></td>
+                <td>104</td>
+                <td>3.950</td>
+                <td>5.015</td>
+                <td>-0.003</td>
+                <td>15.086</td>
+                <td>13.660</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>134</td>
+                <td></td>
+                <td>104</td>
+                <td>3.911</td>
+                <td>4.593</td>
+                <td>0.159</td>
+                <td>14.733</td>
+                <td>13.140</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>135</td>
+                <td></td>
+                <td>101</td>
+                <td>3.519</td>
+                <td>5.042</td>
+                <td>-0.117</td>
+                <td>13.673</td>
+                <td>12.652</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>136</td>
+                <td></td>
+                <td>125</td>
+                <td>3.502</td>
+                <td>4.262</td>
+                <td>-0.017</td>
+                <td>15.398</td>
+                <td>15.104</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>137</td>
+                <td></td>
+                <td>103</td>
+                <td>3.257</td>
+                <td>4.506</td>
+                <td>-0.073</td>
+                <td>15.190</td>
+                <td>14.766</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>138</td>
+                <td></td>
+                <td>108</td>
+                <td>3.200</td>
+                <td>3.910</td>
+                <td>-0.006</td>
+                <td>15.865</td>
+                <td>13.695</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>139</td>
+                <td></td>
+                <td>105</td>
+                <td>2.559</td>
+                <td>4.413</td>
+                <td>-0.280</td>
+                <td>15.292</td>
+                <td>13.511</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>140</td>
+                <td></td>
+                <td>105</td>
+                <td>2.090</td>
+                <td>3.520</td>
+                <td>-0.214</td>
+                <td>13.518</td>
+                <td>13.615</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>141</td>
+                <td></td>
+                <td>111</td>
+                <td>1.973</td>
+                <td>3.042</td>
+                <td>-0.295</td>
+                <td>15.050</td>
+                <td>13.902</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>142</td>
+                <td></td>
+                <td>110</td>
+                <td>1.802</td>
+                <td>2.918</td>
+                <td>-0.194</td>
+                <td>14.607</td>
+                <td>14.294</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>143</td>
+                <td></td>
+                <td>107</td>
+                <td>1.751</td>
+                <td>2.329</td>
+                <td>-0.142</td>
+                <td>15.345</td>
+                <td>16.968</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>144</td>
+                <td></td>
+                <td>104</td>
+                <td>1.699</td>
+                <td>3.018</td>
+                <td>-0.188</td>
+                <td>14.664</td>
+                <td>15.586</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>145</td>
+                <td></td>
+                <td>103</td>
+                <td>1.646</td>
+                <td>2.574</td>
+                <td>-0.194</td>
+                <td>14.357</td>
+                <td>15.777</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>146</td>
+                <td></td>
+                <td>106</td>
+                <td>1.492</td>
+                <td>2.962</td>
+                <td>-0.337</td>
+                <td>15.028</td>
+                <td>14.252</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>147</td>
+                <td></td>
+                <td>111</td>
+                <td>1.474</td>
+                <td>2.253</td>
+                <td>-0.175</td>
+                <td>12.540</td>
+                <td>14.019</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>148</td>
+                <td></td>
+                <td>101</td>
+                <td>1.468</td>
+                <td>2.361</td>
+                <td>-0.224</td>
+                <td>14.746</td>
+                <td>13.850</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>149</td>
+                <td></td>
+                <td>104</td>
+                <td>1.245</td>
+                <td>1.972</td>
+                <td>-0.139</td>
+                <td>12.488</td>
+                <td>14.530</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>150</td>
+                <td></td>
+                <td>116</td>
+                <td>1.138</td>
+                <td>1.954</td>
+                <td>-0.168</td>
+                <td>12.578</td>
+                <td>14.697</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>151</td>
+                <td></td>
+                <td>117</td>
+                <td>1.057</td>
+                <td>1.598</td>
+                <td>-0.214</td>
+                <td>13.583</td>
+                <td>15.264</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>152</td>
+                <td></td>
+                <td>108</td>
+                <td>1.017</td>
+                <td>1.557</td>
+                <td>-0.191</td>
+                <td>13.072</td>
+                <td>14.658</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>153</td>
+                <td></td>
+                <td>103</td>
+                <td>0.683</td>
+                <td>1.288</td>
+                <td>-0.150</td>
+                <td>12.296</td>
+                <td>14.211</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>154</td>
+                <td></td>
+                <td>100</td>
+                <td>0.661</td>
+                <td>1.284</td>
+                <td>-0.174</td>
+                <td>11.157</td>
+                <td>13.723</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>155</td>
+                <td></td>
+                <td>104</td>
+                <td>0.637</td>
+                <td>1.622</td>
+                <td>-0.278</td>
+                <td>13.603</td>
+                <td>14.412</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>156</td>
+                <td></td>
+                <td>107</td>
+                <td>0.619</td>
+                <td>0.997</td>
+                <td>-0.105</td>
+                <td>13.923</td>
+                <td>15.280</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>157</td>
+                <td></td>
+                <td>100</td>
+                <td>0.617</td>
+                <td>1.025</td>
+                <td>-0.260</td>
+                <td>13.206</td>
+                <td>14.702</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>158</td>
+                <td></td>
+                <td>119</td>
+                <td>-0.042</td>
+                <td>0.583</td>
+                <td>-0.215</td>
+                <td>13.177</td>
+                <td>14.732</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>159</td>
+                <td></td>
+                <td>102</td>
+                <td>-0.398</td>
+                <td>0.029</td>
+                <td>-0.253</td>
+                <td>14.070</td>
+                <td>17.581</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>160</td>
+                <td></td>
+                <td>105</td>
+                <td>-0.701</td>
+                <td>-0.282</td>
+                <td>-0.236</td>
+                <td>11.520</td>
+                <td>15.562</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>161</td>
+                <td></td>
+                <td>110</td>
+                <td>-0.858</td>
+                <td>-0.317</td>
+                <td>-0.307</td>
+                <td>14.016</td>
+                <td>16.507</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>162</td>
+                <td></td>
+                <td>101</td>
+                <td>-1.114</td>
+                <td>-0.590</td>
+                <td>-0.323</td>
+                <td>12.641</td>
+                <td>16.324</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>163</td>
+                <td></td>
+                <td>113</td>
+                <td>-1.497</td>
+                <td>-1.089</td>
+                <td>-0.294</td>
+                <td>12.347</td>
+                <td>15.397</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>164</td>
+                <td></td>
+                <td>106</td>
+                <td>-1.555</td>
+                <td>-0.840</td>
+                <td>-0.369</td>
+                <td>12.886</td>
+                <td>15.998</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>165</td>
+                <td></td>
+                <td>101</td>
+                <td>-1.708</td>
+                <td>-1.336</td>
+                <td>-0.367</td>
+                <td>13.126</td>
+                <td>16.373</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>166</td>
+                <td></td>
+                <td>104</td>
+                <td>-2.051</td>
+                <td>-1.825</td>
+                <td>-0.321</td>
+                <td>11.466</td>
+                <td>17.088</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>167</td>
+                <td></td>
+                <td>113</td>
+                <td>-2.276</td>
+                <td>-1.917</td>
+                <td>-0.374</td>
+                <td>11.370</td>
+                <td>16.413</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>168</td>
+                <td></td>
+                <td>112</td>
+                <td>-2.374</td>
+                <td>-2.071</td>
+                <td>-0.360</td>
+                <td>11.147</td>
+                <td>16.633</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>169</td>
+                <td></td>
+                <td>103</td>
+                <td>-2.490</td>
+                <td>-2.382</td>
+                <td>-0.351</td>
+                <td>10.450</td>
+                <td>16.303</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>170</td>
+                <td></td>
+                <td>102</td>
+                <td>-2.924</td>
+                <td>-3.082</td>
+                <td>-0.277</td>
+                <td>11.343</td>
+                <td>17.092</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>171</td>
+                <td></td>
+                <td>104</td>
+                <td>-3.286</td>
+                <td>-3.459</td>
+                <td>-0.275</td>
+                <td>11.665</td>
+                <td>17.608</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>172</td>
+                <td></td>
+                <td>107</td>
+                <td>-3.351</td>
+                <td>-3.209</td>
+                <td>-0.330</td>
+                <td>10.401</td>
+                <td>17.367</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>173</td>
+                <td></td>
+                <td>104</td>
+                <td>-3.453</td>
+                <td>-4.006</td>
+                <td>-0.256</td>
+                <td>11.876</td>
+                <td>19.122</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>174</td>
+                <td></td>
+                <td>123</td>
+                <td>-3.597</td>
+                <td>-3.385</td>
+                <td>-0.274</td>
+                <td>10.845</td>
+                <td>17.289</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>175</td>
+                <td></td>
+                <td>111</td>
+                <td>-4.069</td>
+                <td>-4.026</td>
+                <td>-0.459</td>
+                <td>10.593</td>
+                <td>19.007</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>176</td>
+                <td></td>
+                <td>100</td>
+                <td>-4.768</td>
+                <td>-4.954</td>
+                <td>-0.478</td>
+                <td>9.720</td>
+                <td>17.601</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>177</td>
+                <td></td>
+                <td>100</td>
+                <td>-5.268</td>
+                <td>-5.719</td>
+                <td>-0.394</td>
+                <td>11.779</td>
+                <td>19.184</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>178</td>
+                <td></td>
+                <td>102</td>
+                <td>-5.768</td>
+                <td>-6.521</td>
+                <td>-0.522</td>
+                <td>8.772</td>
+                <td>18.355</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>179</td>
+                <td></td>
+                <td>103</td>
+                <td>-6.248</td>
+                <td>-7.007</td>
+                <td>-0.413</td>
+                <td>9.966</td>
+                <td>20.694</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>180</td>
+                <td></td>
+                <td>106</td>
+                <td>-6.566</td>
+                <td>-6.868</td>
+                <td>-0.609</td>
+                <td>9.413</td>
+                <td>18.005</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>181</td>
+                <td></td>
+                <td>104</td>
+                <td>-7.291</td>
+                <td>-7.816</td>
+                <td>-0.625</td>
+                <td>9.725</td>
+                <td>18.688</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>182</td>
+                <td></td>
+                <td>104</td>
+                <td>-8.019</td>
+                <td>-9.018</td>
+                <td>-0.590</td>
+                <td>8.898</td>
+                <td>20.151</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>183</td>
+                <td></td>
+                <td>104</td>
+                <td>-8.221</td>
+                <td>-9.218</td>
+                <td>-0.659</td>
+                <td>9.124</td>
+                <td>19.461</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>184</td>
+                <td></td>
+                <td>112</td>
+                <td>-8.374</td>
+                <td>-9.061</td>
+                <td>-0.595</td>
+                <td>7.382</td>
+                <td>19.665</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>185</td>
+                <td></td>
+                <td>104</td>
+                <td>-8.670</td>
+                <td>-9.815</td>
+                <td>-0.578</td>
+                <td>7.531</td>
+                <td>19.772</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>186</td>
+                <td></td>
+                <td>101</td>
+                <td>-8.826</td>
+                <td>-9.735</td>
+                <td>-0.731</td>
+                <td>8.265</td>
+                <td>18.699</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>187</td>
+                <td></td>
+                <td>100</td>
+                <td>-11.123</td>
+                <td>-12.793</td>
+                <td>-0.703</td>
+                <td>6.341</td>
+                <td>21.281</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>188</td>
+                <td></td>
+                <td>108</td>
+                <td>-11.859</td>
+                <td>-13.370</td>
+                <td>-0.705</td>
+                <td>6.154</td>
+                <td>23.500</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>189</td>
+                <td></td>
+                <td>101</td>
+                <td>-11.995</td>
+                <td>-13.517</td>
+                <td>-0.730</td>
+                <td>5.883</td>
+                <td>21.628</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>190</td>
+                <td></td>
+                <td>110</td>
+                <td>-12.723</td>
+                <td>-14.624</td>
+                <td>-0.788</td>
+                <td>5.644</td>
+                <td>22.118</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>191</td>
+                <td></td>
+                <td>107</td>
+                <td>-14.378</td>
+                <td>-16.716</td>
+                <td>-0.731</td>
+                <td>4.360</td>
+                <td>25.714</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>192</td>
+                <td></td>
+                <td>100</td>
+                <td>-14.775</td>
+                <td>-16.945</td>
+                <td>-0.854</td>
+                <td>5.815</td>
+                <td>23.717</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>193</td>
+                <td></td>
+                <td>107</td>
+                <td>-19.438</td>
+                <td>-22.817</td>
+                <td>-0.994</td>
+                <td>2.554</td>
+                <td>29.157</td>
+                <td>(??)</td>
+            </tr>
+            <tr>
+                <td>194</td>
+                <td></td>
+                <td>106</td>
+                <td>-24.525</td>
+                <td>-28.498</td>
+                <td>-1.315</td>
+                <td>-0.778</td>
+                <td>30.062</td>
+                <td>(??)</td>
+            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="pagination-info">
+                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="Table navigation">
+                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                    </nav>
                 </div>
             </div>
-            <div class="col-md-6 text-end">
-                <span class="align-middle">
-                    Showing <span id="startRow">1</span> - <span id="endRow">100</span> of <span id="totalRows">0</span> programs
-                </span>
-            </div>
-        </div>
 
-        <!-- Programs Table -->
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Program</th>
-                        <th>Seasons</th>
-                        <th>Combined</th>
-                        <th>Margin</th>
-                        <th>Win-Loss</th>
-                        <th>Offense</th>
-                        <th>Defense</th>
-                        <th>State</th>
-                    </tr>
-                </thead>
-                <tbody id="programsTableBody">
-                    <tr>
-    <td>1</td>
-    <td>Abilene (TX)</td>
-    <td>114</td>
-    <td>30.721</td>
-    <td>36.965</td>
-    <td>1.012</td>
-    <td>32.142</td>
-    <td>-2.368</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>2</td>
-    <td>Amarillo (TX)</td>
-    <td>107</td>
-    <td>30.247</td>
-    <td>36.893</td>
-    <td>1.027</td>
-    <td>31.304</td>
-    <td>-2.112</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>3</td>
-    <td>Canton McKinley (OH)</td>
-    <td>123</td>
-    <td>30.223</td>
-    <td>36.364</td>
-    <td>0.986</td>
-    <td>31.255</td>
-    <td>-0.196</td>
-    <td>(OH)</td>
-</tr><tr>
-    <td>4</td>
-    <td>Cleveland Saint Ignatius (OH)</td>
-    <td>100</td>
-    <td>24.836</td>
-    <td>29.565</td>
-    <td>0.840</td>
-    <td>27.645</td>
-    <td>2.354</td>
-    <td>(OH)</td>
-</tr><tr>
-    <td>5</td>
-    <td>Andover Phillips Academy (MA)</td>
-    <td>139</td>
-    <td>24.378</td>
-    <td>29.573</td>
-    <td>0.787</td>
-    <td>25.393</td>
-    <td>-0.397</td>
-    <td>(MA)</td>
-</tr><tr>
-    <td>6</td>
-    <td>Easton Area (PA)</td>
-    <td>112</td>
-    <td>24.283</td>
-    <td>29.128</td>
-    <td>0.852</td>
-    <td>26.345</td>
-    <td>2.661</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>7</td>
-    <td>Corsicana (TX)</td>
-    <td>103</td>
-    <td>23.832</td>
-    <td>28.745</td>
-    <td>0.750</td>
-    <td>27.462</td>
-    <td>2.326</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>8</td>
-    <td>Brownwood (TX)</td>
-    <td>108</td>
-    <td>23.697</td>
-    <td>28.863</td>
-    <td>0.713</td>
-    <td>28.268</td>
-    <td>3.201</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>9</td>
-    <td>Austin (TX)</td>
-    <td>115</td>
-    <td>23.280</td>
-    <td>28.229</td>
-    <td>0.654</td>
-    <td>27.939</td>
-    <td>3.130</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>10</td>
-    <td>Chattanooga Baylor (TN)</td>
-    <td>110</td>
-    <td>23.191</td>
-    <td>27.875</td>
-    <td>0.733</td>
-    <td>25.375</td>
-    <td>2.678</td>
-    <td>(TN)</td>
-</tr><tr>
-    <td>11</td>
-    <td>Bryan (TX)</td>
-    <td>105</td>
-    <td>22.692</td>
-    <td>27.882</td>
-    <td>0.657</td>
-    <td>26.190</td>
-    <td>2.364</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>12</td>
-    <td>Chattanooga McCallie (TN)</td>
-    <td>109</td>
-    <td>22.011</td>
-    <td>26.722</td>
-    <td>0.669</td>
-    <td>24.888</td>
-    <td>2.931</td>
-    <td>(TN)</td>
-</tr><tr>
-    <td>13</td>
-    <td>Everett (MA)</td>
-    <td>104</td>
-    <td>21.356</td>
-    <td>25.818</td>
-    <td>0.701</td>
-    <td>25.500</td>
-    <td>3.314</td>
-    <td>(MA)</td>
-</tr><tr>
-    <td>14</td>
-    <td>Atlanta Marist (GA)</td>
-    <td>108</td>
-    <td>21.182</td>
-    <td>25.825</td>
-    <td>0.650</td>
-    <td>25.055</td>
-    <td>3.290</td>
-    <td>(GA)</td>
-</tr><tr>
-    <td>15</td>
-    <td>Bessemer City Jess Lanier (AL)</td>
-    <td>108</td>
-    <td>20.775</td>
-    <td>25.084</td>
-    <td>0.613</td>
-    <td>24.187</td>
-    <td>2.208</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>16</td>
-    <td>Aliquippa (PA)</td>
-    <td>112</td>
-    <td>20.436</td>
-    <td>24.682</td>
-    <td>0.654</td>
-    <td>23.865</td>
-    <td>4.372</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>17</td>
-    <td>Cleburne (TX)</td>
-    <td>103</td>
-    <td>20.370</td>
-    <td>24.800</td>
-    <td>0.582</td>
-    <td>26.574</td>
-    <td>5.232</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>18</td>
-    <td>Biloxi (MS)</td>
-    <td>101</td>
-    <td>20.316</td>
-    <td>24.490</td>
-    <td>0.566</td>
-    <td>24.587</td>
-    <td>3.211</td>
-    <td>(MS)</td>
-</tr><tr>
-    <td>19</td>
-    <td>College Park Woodward Academy (GA)</td>
-    <td>108</td>
-    <td>20.107</td>
-    <td>24.497</td>
-    <td>0.525</td>
-    <td>24.324</td>
-    <td>3.194</td>
-    <td>(GA)</td>
-</tr><tr>
-    <td>20</td>
-    <td>Brockton (MA)</td>
-    <td>120</td>
-    <td>19.413</td>
-    <td>23.632</td>
-    <td>0.619</td>
-    <td>24.138</td>
-    <td>5.219</td>
-    <td>(MA)</td>
-</tr><tr>
-    <td>21</td>
-    <td>Ann Arbor Pioneer (MI)</td>
-    <td>111</td>
-    <td>18.606</td>
-    <td>22.906</td>
-    <td>0.558</td>
-    <td>24.390</td>
-    <td>6.383</td>
-    <td>(MI)</td>
-</tr><tr>
-    <td>22</td>
-    <td>Arlington (TX)</td>
-    <td>107</td>
-    <td>18.548</td>
-    <td>22.648</td>
-    <td>0.538</td>
-    <td>24.789</td>
-    <td>6.585</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>23</td>
-    <td>Beaver Falls (PA)</td>
-    <td>114</td>
-    <td>18.502</td>
-    <td>22.003</td>
-    <td>0.620</td>
-    <td>22.776</td>
-    <td>5.908</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>24</td>
-    <td>Bethlehem Liberty (PA)</td>
-    <td>103</td>
-    <td>18.189</td>
-    <td>22.051</td>
-    <td>0.560</td>
-    <td>22.728</td>
-    <td>5.733</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>25</td>
-    <td>Butler (PA)</td>
-    <td>112</td>
-    <td>18.109</td>
-    <td>22.102</td>
-    <td>0.610</td>
-    <td>21.576</td>
-    <td>5.244</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>26</td>
-    <td>Altoona (PA)</td>
-    <td>115</td>
-    <td>17.837</td>
-    <td>21.319</td>
-    <td>0.609</td>
-    <td>22.858</td>
-    <td>6.700</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>27</td>
-    <td>Hightstown The Peddie School (NJ)</td>
-    <td>102</td>
-    <td>17.572</td>
-    <td>21.339</td>
-    <td>0.505</td>
-    <td>22.004</td>
-    <td>5.267</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>28</td>
-    <td>Alliance (OH)</td>
-    <td>118</td>
-    <td>17.456</td>
-    <td>21.306</td>
-    <td>0.495</td>
-    <td>24.482</td>
-    <td>7.996</td>
-    <td>(OH)</td>
-</tr><tr>
-    <td>29</td>
-    <td>Elkhart Central (IN)</td>
-    <td>101</td>
-    <td>17.239</td>
-    <td>21.431</td>
-    <td>0.428</td>
-    <td>23.914</td>
-    <td>6.601</td>
-    <td>(IN)</td>
-</tr><tr>
-    <td>30</td>
-    <td>Haverford School (PA)</td>
-    <td>102</td>
-    <td>16.908</td>
-    <td>20.517</td>
-    <td>0.526</td>
-    <td>22.952</td>
-    <td>7.051</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>31</td>
-    <td>Ansonia (CT)</td>
-    <td>104</td>
-    <td>16.726</td>
-    <td>19.711</td>
-    <td>0.441</td>
-    <td>25.838</td>
-    <td>8.273</td>
-    <td>(CT)</td>
-</tr><tr>
-    <td>32</td>
-    <td>Berwick (PA)</td>
-    <td>115</td>
-    <td>16.328</td>
-    <td>19.444</td>
-    <td>0.478</td>
-    <td>22.361</td>
-    <td>7.575</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>33</td>
-    <td>Alexander City Benjamin Russell (AL)</td>
-    <td>101</td>
-    <td>16.129</td>
-    <td>19.791</td>
-    <td>0.393</td>
-    <td>23.121</td>
-    <td>6.119</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>34</td>
-    <td>Belton (TX)</td>
-    <td>109</td>
-    <td>15.541</td>
-    <td>19.416</td>
-    <td>0.322</td>
-    <td>22.456</td>
-    <td>7.342</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>35</td>
-    <td>Ada (OK)</td>
-    <td>105</td>
-    <td>15.406</td>
-    <td>18.813</td>
-    <td>0.297</td>
-    <td>22.996</td>
-    <td>5.969</td>
-    <td>(OK)</td>
-</tr><tr>
-    <td>36</td>
-    <td>Asheville (NC)</td>
-    <td>102</td>
-    <td>15.114</td>
-    <td>18.325</td>
-    <td>0.368</td>
-    <td>23.134</td>
-    <td>7.991</td>
-    <td>(NC)</td>
-</tr><tr>
-    <td>37</td>
-    <td>Barberton (OH)</td>
-    <td>109</td>
-    <td>14.928</td>
-    <td>18.269</td>
-    <td>0.367</td>
-    <td>21.931</td>
-    <td>8.199</td>
-    <td>(OH)</td>
-</tr><tr>
-    <td>38</td>
-    <td>Bartlesville (OK)</td>
-    <td>100</td>
-    <td>14.753</td>
-    <td>18.242</td>
-    <td>0.315</td>
-    <td>21.796</td>
-    <td>6.601</td>
-    <td>(OK)</td>
-</tr><tr>
-    <td>39</td>
-    <td>Blairstown Blair Academy (NJ)</td>
-    <td>121</td>
-    <td>14.745</td>
-    <td>18.099</td>
-    <td>0.402</td>
-    <td>21.317</td>
-    <td>8.208</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>40</td>
-    <td>Coatesville (PA)</td>
-    <td>110</td>
-    <td>14.734</td>
-    <td>17.646</td>
-    <td>0.428</td>
-    <td>21.334</td>
-    <td>8.215</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>41</td>
-    <td>Brenham (TX)</td>
-    <td>106</td>
-    <td>14.716</td>
-    <td>18.341</td>
-    <td>0.306</td>
-    <td>21.702</td>
-    <td>8.037</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>42</td>
-    <td>Elizabeth (NJ)</td>
-    <td>107</td>
-    <td>14.696</td>
-    <td>17.817</td>
-    <td>0.437</td>
-    <td>20.608</td>
-    <td>7.431</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>43</td>
-    <td>Bay City (TX)</td>
-    <td>104</td>
-    <td>14.580</td>
-    <td>18.124</td>
-    <td>0.310</td>
-    <td>21.379</td>
-    <td>7.263</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>44</td>
-    <td>Altus (OK)</td>
-    <td>102</td>
-    <td>14.571</td>
-    <td>17.841</td>
-    <td>0.364</td>
-    <td>21.879</td>
-    <td>7.842</td>
-    <td>(OK)</td>
-</tr><tr>
-    <td>45</td>
-    <td>Anniston (AL)</td>
-    <td>103</td>
-    <td>14.521</td>
-    <td>17.655</td>
-    <td>0.359</td>
-    <td>21.088</td>
-    <td>6.437</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>46</td>
-    <td>Big Spring (TX)</td>
-    <td>105</td>
-    <td>14.344</td>
-    <td>17.610</td>
-    <td>0.367</td>
-    <td>23.102</td>
-    <td>8.931</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>47</td>
-    <td>Bellaire (OH)</td>
-    <td>114</td>
-    <td>13.724</td>
-    <td>16.677</td>
-    <td>0.302</td>
-    <td>20.563</td>
-    <td>7.524</td>
-    <td>(OH)</td>
-</tr><tr>
-    <td>48</td>
-    <td>Cameron C.H. Yoe (TX)</td>
-    <td>107</td>
-    <td>13.627</td>
-    <td>17.013</td>
-    <td>0.256</td>
-    <td>20.573</td>
-    <td>8.484</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>49</td>
-    <td>Augusta Academy of Richmond County (GA)</td>
-    <td>115</td>
-    <td>13.619</td>
-    <td>16.633</td>
-    <td>0.345</td>
-    <td>21.048</td>
-    <td>7.188</td>
-    <td>(GA)</td>
-</tr><tr>
-    <td>50</td>
-    <td>Battle Creek Central (MI)</td>
-    <td>116</td>
-    <td>13.133</td>
-    <td>16.446</td>
-    <td>0.280</td>
-    <td>21.503</td>
-    <td>9.748</td>
-    <td>(MI)</td>
-</tr><tr>
-    <td>51</td>
-    <td>Atlantic City (NJ)</td>
-    <td>125</td>
-    <td>13.129</td>
-    <td>16.052</td>
-    <td>0.398</td>
-    <td>18.957</td>
-    <td>7.594</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>52</td>
-    <td>Butte (MT)</td>
-    <td>110</td>
-    <td>13.091</td>
-    <td>16.549</td>
-    <td>0.236</td>
-    <td>19.813</td>
-    <td>7.615</td>
-    <td>(MT)</td>
-</tr><tr>
-    <td>53</td>
-    <td>Fort Washington Germantown Academy (PA)</td>
-    <td>109</td>
-    <td>13.033</td>
-    <td>15.709</td>
-    <td>0.348</td>
-    <td>21.421</td>
-    <td>9.941</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>54</td>
-    <td>Ambridge (PA)</td>
-    <td>102</td>
-    <td>13.025</td>
-    <td>15.967</td>
-    <td>0.388</td>
-    <td>19.696</td>
-    <td>8.800</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>55</td>
-    <td>Connellsville (PA)</td>
-    <td>106</td>
-    <td>12.931</td>
-    <td>15.394</td>
-    <td>0.392</td>
-    <td>20.619</td>
-    <td>9.945</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>56</td>
-    <td>Auburn (AL)</td>
-    <td>106</td>
-    <td>12.728</td>
-    <td>15.732</td>
-    <td>0.247</td>
-    <td>19.693</td>
-    <td>7.370</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>57</td>
-    <td>Carlisle (PA)</td>
-    <td>108</td>
-    <td>12.519</td>
-    <td>15.157</td>
-    <td>0.357</td>
-    <td>19.632</td>
-    <td>9.364</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>58</td>
-    <td>Andover (MA)</td>
-    <td>102</td>
-    <td>12.484</td>
-    <td>14.659</td>
-    <td>0.528</td>
-    <td>25.785</td>
-    <td>16.076</td>
-    <td>(MA)</td>
-</tr><tr>
-    <td>59</td>
-    <td>Athens (TX)</td>
-    <td>107</td>
-    <td>12.396</td>
-    <td>15.344</td>
-    <td>0.245</td>
-    <td>21.266</td>
-    <td>9.616</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>60</td>
-    <td>Bluefield (WV)</td>
-    <td>101</td>
-    <td>12.295</td>
-    <td>15.177</td>
-    <td>0.283</td>
-    <td>21.361</td>
-    <td>9.160</td>
-    <td>(WV)</td>
-</tr><tr>
-    <td>61</td>
-    <td>Bloomfield (NJ)</td>
-    <td>118</td>
-    <td>12.201</td>
-    <td>15.047</td>
-    <td>0.345</td>
-    <td>18.857</td>
-    <td>9.015</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>62</td>
-    <td>Abington (PA)</td>
-    <td>109</td>
-    <td>12.082</td>
-    <td>14.852</td>
-    <td>0.300</td>
-    <td>19.748</td>
-    <td>9.501</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>63</td>
-    <td>Cartersville (GA)</td>
-    <td>101</td>
-    <td>11.931</td>
-    <td>14.957</td>
-    <td>0.182</td>
-    <td>20.560</td>
-    <td>8.784</td>
-    <td>(GA)</td>
-</tr><tr>
-    <td>64</td>
-    <td>Baltimore Calvert Hall (MD)</td>
-    <td>101</td>
-    <td>11.924</td>
-    <td>14.842</td>
-    <td>0.261</td>
-    <td>18.866</td>
-    <td>8.390</td>
-    <td>(MD)</td>
-</tr><tr>
-    <td>65</td>
-    <td>Ashland Blazer (KY)</td>
-    <td>120</td>
-    <td>11.894</td>
-    <td>14.834</td>
-    <td>0.185</td>
-    <td>21.528</td>
-    <td>10.511</td>
-    <td>(KY)</td>
-</tr><tr>
-    <td>66</td>
-    <td>Baltimore Gilman (MD)</td>
-    <td>102</td>
-    <td>11.852</td>
-    <td>13.917</td>
-    <td>0.352</td>
-    <td>19.399</td>
-    <td>9.261</td>
-    <td>(MD)</td>
-</tr><tr>
-    <td>67</td>
-    <td>Coal Township Shamokin Area (PA)</td>
-    <td>117</td>
-    <td>11.847</td>
-    <td>14.484</td>
-    <td>0.317</td>
-    <td>18.643</td>
-    <td>9.126</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>68</td>
-    <td>Canonsburg Canon-McMillan (PA)</td>
-    <td>102</td>
-    <td>11.701</td>
-    <td>14.693</td>
-    <td>0.255</td>
-    <td>19.206</td>
-    <td>9.102</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>69</td>
-    <td>Beaver Area (PA)</td>
-    <td>117</td>
-    <td>11.685</td>
-    <td>14.472</td>
-    <td>0.281</td>
-    <td>18.950</td>
-    <td>9.063</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>70</td>
-    <td>Attalla Etowah (AL)</td>
-    <td>111</td>
-    <td>11.684</td>
-    <td>14.366</td>
-    <td>0.233</td>
-    <td>19.740</td>
-    <td>8.671</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>71</td>
-    <td>Billings Senior (MT)</td>
-    <td>108</td>
-    <td>11.215</td>
-    <td>14.089</td>
-    <td>0.150</td>
-    <td>21.093</td>
-    <td>9.795</td>
-    <td>(MT)</td>
-</tr><tr>
-    <td>72</td>
-    <td>Boise (ID)</td>
-    <td>108</td>
-    <td>11.179</td>
-    <td>14.014</td>
-    <td>0.267</td>
-    <td>20.726</td>
-    <td>10.310</td>
-    <td>(ID)</td>
-</tr><tr>
-    <td>73</td>
-    <td>Camden (NJ)</td>
-    <td>118</td>
-    <td>11.070</td>
-    <td>13.449</td>
-    <td>0.250</td>
-    <td>17.646</td>
-    <td>8.655</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>74</td>
-    <td>DuBois (PA)</td>
-    <td>101</td>
-    <td>11.005</td>
-    <td>13.689</td>
-    <td>0.252</td>
-    <td>20.255</td>
-    <td>11.296</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>75</td>
-    <td>Bristol Tennessee (TN)</td>
-    <td>101</td>
-    <td>10.866</td>
-    <td>13.477</td>
-    <td>0.250</td>
-    <td>18.702</td>
-    <td>9.675</td>
-    <td>(TN)</td>
-</tr><tr>
-    <td>76</td>
-    <td>Benton Harbor (MI)</td>
-    <td>104</td>
-    <td>10.834</td>
-    <td>13.764</td>
-    <td>0.155</td>
-    <td>20.390</td>
-    <td>10.181</td>
-    <td>(MI)</td>
-</tr><tr>
-    <td>77</td>
-    <td>Ardmore Lower Merion (PA)</td>
-    <td>121</td>
-    <td>10.352</td>
-    <td>12.537</td>
-    <td>0.272</td>
-    <td>18.332</td>
-    <td>10.857</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>78</td>
-    <td>Bainbridge (GA)</td>
-    <td>105</td>
-    <td>10.281</td>
-    <td>12.296</td>
-    <td>0.200</td>
-    <td>18.479</td>
-    <td>9.329</td>
-    <td>(GA)</td>
-</tr><tr>
-    <td>79</td>
-    <td>Allentown William Allen (PA)</td>
-    <td>126</td>
-    <td>10.206</td>
-    <td>12.424</td>
-    <td>0.272</td>
-    <td>18.538</td>
-    <td>11.139</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>80</td>
-    <td>Athens (AL)</td>
-    <td>108</td>
-    <td>10.055</td>
-    <td>12.707</td>
-    <td>0.091</td>
-    <td>19.509</td>
-    <td>10.394</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>81</td>
-    <td>Brownsville Haywood (TN)</td>
-    <td>106</td>
-    <td>9.856</td>
-    <td>12.869</td>
-    <td>0.042</td>
-    <td>19.930</td>
-    <td>11.317</td>
-    <td>(TN)</td>
-</tr><tr>
-    <td>82</td>
-    <td>Chambersburg (PA)</td>
-    <td>104</td>
-    <td>9.803</td>
-    <td>12.054</td>
-    <td>0.210</td>
-    <td>18.658</td>
-    <td>11.134</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>83</td>
-    <td>Columbus (GA)</td>
-    <td>103</td>
-    <td>9.802</td>
-    <td>12.258</td>
-    <td>0.133</td>
-    <td>19.274</td>
-    <td>10.279</td>
-    <td>(GA)</td>
-</tr><tr>
-    <td>84</td>
-    <td>Albany (GA)</td>
-    <td>101</td>
-    <td>9.762</td>
-    <td>11.750</td>
-    <td>0.168</td>
-    <td>18.816</td>
-    <td>10.136</td>
-    <td>(GA)</td>
-</tr><tr>
-    <td>85</td>
-    <td>Coos Bay Marshfield (OR)</td>
-    <td>101</td>
-    <td>9.759</td>
-    <td>12.097</td>
-    <td>0.271</td>
-    <td>18.682</td>
-    <td>10.037</td>
-    <td>(OR)</td>
-</tr><tr>
-    <td>86</td>
-    <td>Beckley Woodrow Wilson (WV)</td>
-    <td>100</td>
-    <td>9.723</td>
-    <td>11.906</td>
-    <td>0.159</td>
-    <td>18.866</td>
-    <td>10.082</td>
-    <td>(WV)</td>
-</tr><tr>
-    <td>87</td>
-    <td>Chester (PA)</td>
-    <td>123</td>
-    <td>9.666</td>
-    <td>11.861</td>
-    <td>0.223</td>
-    <td>17.124</td>
-    <td>9.645</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>88</td>
-    <td>Asbury Park (NJ)</td>
-    <td>117</td>
-    <td>9.437</td>
-    <td>11.785</td>
-    <td>0.182</td>
-    <td>17.445</td>
-    <td>10.336</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>89</td>
-    <td>Exeter (NH)</td>
-    <td>103</td>
-    <td>9.412</td>
-    <td>11.593</td>
-    <td>0.319</td>
-    <td>18.758</td>
-    <td>7.779</td>
-    <td>(NH)</td>
-</tr><tr>
-    <td>90</td>
-    <td>Absecon Holy Spirit (NJ)</td>
-    <td>100</td>
-    <td>9.199</td>
-    <td>11.730</td>
-    <td>0.141</td>
-    <td>17.679</td>
-    <td>10.006</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>91</td>
-    <td>Charleroi (PA)</td>
-    <td>105</td>
-    <td>9.194</td>
-    <td>11.176</td>
-    <td>0.219</td>
-    <td>17.263</td>
-    <td>10.852</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>92</td>
-    <td>Berkeley (CA)</td>
-    <td>105</td>
-    <td>9.194</td>
-    <td>11.017</td>
-    <td>0.250</td>
-    <td>18.502</td>
-    <td>10.122</td>
-    <td>(CA)</td>
-</tr><tr>
-    <td>93</td>
-    <td>Alexandria Bolton (LA)</td>
-    <td>107</td>
-    <td>9.098</td>
-    <td>11.313</td>
-    <td>0.176</td>
-    <td>19.122</td>
-    <td>11.190</td>
-    <td>(LA)</td>
-</tr><tr>
-    <td>94</td>
-    <td>Berwyn Conestoga (PA)</td>
-    <td>118</td>
-    <td>9.042</td>
-    <td>10.887</td>
-    <td>0.204</td>
-    <td>17.060</td>
-    <td>10.440</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>95</td>
-    <td>Collingswood (NJ)</td>
-    <td>101</td>
-    <td>8.847</td>
-    <td>10.858</td>
-    <td>0.244</td>
-    <td>15.769</td>
-    <td>9.792</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>96</td>
-    <td>Atlanta (TX)</td>
-    <td>102</td>
-    <td>8.688</td>
-    <td>10.853</td>
-    <td>0.120</td>
-    <td>18.729</td>
-    <td>11.164</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>97</td>
-    <td>Arkansas City (KS)</td>
-    <td>113</td>
-    <td>8.676</td>
-    <td>10.992</td>
-    <td>0.068</td>
-    <td>17.783</td>
-    <td>9.758</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>98</td>
-    <td>Alice (TX)</td>
-    <td>107</td>
-    <td>8.661</td>
-    <td>10.849</td>
-    <td>0.066</td>
-    <td>19.782</td>
-    <td>12.794</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>99</td>
-    <td>Adamsville Minor (AL)</td>
-    <td>101</td>
-    <td>8.543</td>
-    <td>10.342</td>
-    <td>0.077</td>
-    <td>17.863</td>
-    <td>10.627</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>100</td>
-    <td>Alvin (TX)</td>
-    <td>101</td>
-    <td>8.412</td>
-    <td>10.546</td>
-    <td>0.132</td>
-    <td>17.257</td>
-    <td>10.577</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>101</td>
-    <td>Clinton (IA)</td>
-    <td>101</td>
-    <td>8.353</td>
-    <td>10.948</td>
-    <td>0.014</td>
-    <td>17.698</td>
-    <td>10.471</td>
-    <td>(IA)</td>
-</tr><tr>
-    <td>102</td>
-    <td>Chester Dale (VA)</td>
-    <td>100</td>
-    <td>8.292</td>
-    <td>10.306</td>
-    <td>0.104</td>
-    <td>15.647</td>
-    <td>9.479</td>
-    <td>(VA)</td>
-</tr><tr>
-    <td>103</td>
-    <td>East Liverpool (OH)</td>
-    <td>102</td>
-    <td>8.180</td>
-    <td>10.050</td>
-    <td>0.112</td>
-    <td>18.087</td>
-    <td>11.741</td>
-    <td>(OH)</td>
-</tr><tr>
-    <td>104</td>
-    <td>Antigo (WI)</td>
-    <td>102</td>
-    <td>8.062</td>
-    <td>10.442</td>
-    <td>0.035</td>
-    <td>17.712</td>
-    <td>10.879</td>
-    <td>(WI)</td>
-</tr><tr>
-    <td>105</td>
-    <td>Albertville (AL)</td>
-    <td>115</td>
-    <td>7.886</td>
-    <td>9.750</td>
-    <td>0.016</td>
-    <td>18.125</td>
-    <td>11.214</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>106</td>
-    <td>Austin (MN)</td>
-    <td>106</td>
-    <td>7.728</td>
-    <td>9.746</td>
-    <td>0.120</td>
-    <td>17.230</td>
-    <td>10.529</td>
-    <td>(MN)</td>
-</tr><tr>
-    <td>107</td>
-    <td>Brookline (MA)</td>
-    <td>102</td>
-    <td>7.667</td>
-    <td>10.022</td>
-    <td>0.098</td>
-    <td>16.149</td>
-    <td>11.193</td>
-    <td>(MA)</td>
-</tr><tr>
-    <td>108</td>
-    <td>Alexandria (AL)</td>
-    <td>100</td>
-    <td>7.599</td>
-    <td>9.473</td>
-    <td>0.067</td>
-    <td>17.927</td>
-    <td>11.989</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>109</td>
-    <td>Aberdeen-Weatherwax (WA)</td>
-    <td>105</td>
-    <td>7.549</td>
-    <td>9.365</td>
-    <td>0.146</td>
-    <td>17.218</td>
-    <td>10.477</td>
-    <td>(WA)</td>
-</tr><tr>
-    <td>110</td>
-    <td>Clearfield (PA)</td>
-    <td>105</td>
-    <td>7.418</td>
-    <td>9.202</td>
-    <td>0.079</td>
-    <td>18.165</td>
-    <td>12.954</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>111</td>
-    <td>Alton (IL)</td>
-    <td>102</td>
-    <td>7.349</td>
-    <td>9.462</td>
-    <td>-0.047</td>
-    <td>17.023</td>
-    <td>10.045</td>
-    <td>(IL)</td>
-</tr><tr>
-    <td>112</td>
-    <td>Carthage (MO)</td>
-    <td>102</td>
-    <td>7.176</td>
-    <td>9.656</td>
-    <td>-0.098</td>
-    <td>18.600</td>
-    <td>11.210</td>
-    <td>(MO)</td>
-</tr><tr>
-    <td>113</td>
-    <td>Atmore Escambia County (AL)</td>
-    <td>105</td>
-    <td>7.114</td>
-    <td>9.343</td>
-    <td>0.011</td>
-    <td>17.361</td>
-    <td>11.710</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>114</td>
-    <td>Adrian (MI)</td>
-    <td>101</td>
-    <td>6.657</td>
-    <td>8.653</td>
-    <td>-0.020</td>
-    <td>16.897</td>
-    <td>11.539</td>
-    <td>(MI)</td>
-</tr><tr>
-    <td>115</td>
-    <td>Chicago Englewood (IL)</td>
-    <td>108</td>
-    <td>6.598</td>
-    <td>9.020</td>
-    <td>-0.076</td>
-    <td>19.472</td>
-    <td>11.720</td>
-    <td>(IL)</td>
-</tr><tr>
-    <td>116</td>
-    <td>Beloit (KS)</td>
-    <td>109</td>
-    <td>6.556</td>
-    <td>8.627</td>
-    <td>-0.064</td>
-    <td>17.828</td>
-    <td>11.565</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>117</td>
-    <td>Bismarck (ND)</td>
-    <td>102</td>
-    <td>6.482</td>
-    <td>8.315</td>
-    <td>-0.038</td>
-    <td>17.104</td>
-    <td>11.521</td>
-    <td>(ND)</td>
-</tr><tr>
-    <td>118</td>
-    <td>Clay Center (KS)</td>
-    <td>103</td>
-    <td>6.107</td>
-    <td>7.845</td>
-    <td>-0.080</td>
-    <td>16.665</td>
-    <td>11.127</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>119</td>
-    <td>Ballinger (TX)</td>
-    <td>107</td>
-    <td>5.884</td>
-    <td>7.056</td>
-    <td>0.056</td>
-    <td>16.382</td>
-    <td>12.879</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>120</td>
-    <td>Bridgeton (NJ)</td>
-    <td>123</td>
-    <td>5.734</td>
-    <td>7.382</td>
-    <td>0.052</td>
-    <td>15.201</td>
-    <td>12.259</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>121</td>
-    <td>Corvallis (OR)</td>
-    <td>101</td>
-    <td>5.563</td>
-    <td>7.180</td>
-    <td>0.071</td>
-    <td>17.030</td>
-    <td>12.627</td>
-    <td>(OR)</td>
-</tr><tr>
-    <td>122</td>
-    <td>Bangor (ME)</td>
-    <td>123</td>
-    <td>5.385</td>
-    <td>6.948</td>
-    <td>0.088</td>
-    <td>14.887</td>
-    <td>12.681</td>
-    <td>(ME)</td>
-</tr><tr>
-    <td>123</td>
-    <td>Abilene (KS)</td>
-    <td>115</td>
-    <td>4.890</td>
-    <td>6.971</td>
-    <td>-0.137</td>
-    <td>16.048</td>
-    <td>11.799</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>124</td>
-    <td>Aberdeen (MS)</td>
-    <td>102</td>
-    <td>4.883</td>
-    <td>6.135</td>
-    <td>-0.027</td>
-    <td>15.819</td>
-    <td>13.112</td>
-    <td>(MS)</td>
-</tr><tr>
-    <td>125</td>
-    <td>Chicago Hyde Park (IL)</td>
-    <td>123</td>
-    <td>4.865</td>
-    <td>6.628</td>
-    <td>-0.064</td>
-    <td>13.820</td>
-    <td>11.502</td>
-    <td>(IL)</td>
-</tr><tr>
-    <td>126</td>
-    <td>Brady (TX)</td>
-    <td>100</td>
-    <td>4.622</td>
-    <td>5.943</td>
-    <td>-0.057</td>
-    <td>16.412</td>
-    <td>14.473</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>127</td>
-    <td>Ashland (OR)</td>
-    <td>118</td>
-    <td>4.521</td>
-    <td>5.205</td>
-    <td>0.114</td>
-    <td>16.841</td>
-    <td>14.341</td>
-    <td>(OR)</td>
-</tr><tr>
-    <td>128</td>
-    <td>Bonham (TX)</td>
-    <td>108</td>
-    <td>4.502</td>
-    <td>5.662</td>
-    <td>-0.032</td>
-    <td>15.941</td>
-    <td>14.155</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>129</td>
-    <td>Bellefonte (PA)</td>
-    <td>120</td>
-    <td>4.492</td>
-    <td>5.891</td>
-    <td>-0.048</td>
-    <td>14.824</td>
-    <td>13.145</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>130</td>
-    <td>Coffeyville Field Kindley (KS)</td>
-    <td>100</td>
-    <td>4.208</td>
-    <td>5.705</td>
-    <td>-0.128</td>
-    <td>17.382</td>
-    <td>14.170</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>131</td>
-    <td>Comanche (TX)</td>
-    <td>101</td>
-    <td>4.154</td>
-    <td>5.607</td>
-    <td>-0.027</td>
-    <td>15.879</td>
-    <td>13.878</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>132</td>
-    <td>Abington (MA)</td>
-    <td>116</td>
-    <td>4.047</td>
-    <td>5.288</td>
-    <td>-0.147</td>
-    <td>15.766</td>
-    <td>13.650</td>
-    <td>(MA)</td>
-</tr><tr>
-    <td>133</td>
-    <td>Cranford (NJ)</td>
-    <td>104</td>
-    <td>3.950</td>
-    <td>5.015</td>
-    <td>-0.003</td>
-    <td>15.086</td>
-    <td>13.660</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>134</td>
-    <td>Biddeford (ME)</td>
-    <td>104</td>
-    <td>3.911</td>
-    <td>4.593</td>
-    <td>0.159</td>
-    <td>14.733</td>
-    <td>13.140</td>
-    <td>(ME)</td>
-</tr><tr>
-    <td>135</td>
-    <td>Blacksburg (VA)</td>
-    <td>101</td>
-    <td>3.519</td>
-    <td>5.042</td>
-    <td>-0.117</td>
-    <td>13.673</td>
-    <td>12.652</td>
-    <td>(VA)</td>
-</tr><tr>
-    <td>136</td>
-    <td>Bradford (PA)</td>
-    <td>125</td>
-    <td>3.502</td>
-    <td>4.262</td>
-    <td>-0.017</td>
-    <td>15.398</td>
-    <td>15.104</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>137</td>
-    <td>Bedford (PA)</td>
-    <td>103</td>
-    <td>3.257</td>
-    <td>4.506</td>
-    <td>-0.073</td>
-    <td>15.190</td>
-    <td>14.766</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>138</td>
-    <td>Bend (OR)</td>
-    <td>108</td>
-    <td>3.200</td>
-    <td>3.910</td>
-    <td>-0.006</td>
-    <td>15.865</td>
-    <td>13.695</td>
-    <td>(OR)</td>
-</tr><tr>
-    <td>139</td>
-    <td>Chapman (KS)</td>
-    <td>105</td>
-    <td>2.559</td>
-    <td>4.413</td>
-    <td>-0.280</td>
-    <td>15.292</td>
-    <td>13.511</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>140</td>
-    <td>Carneys Point Penns Grove (NJ)</td>
-    <td>105</td>
-    <td>2.090</td>
-    <td>3.520</td>
-    <td>-0.214</td>
-    <td>13.518</td>
-    <td>13.615</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>141</td>
-    <td>Chanute (KS)</td>
-    <td>111</td>
-    <td>1.973</td>
-    <td>3.042</td>
-    <td>-0.295</td>
-    <td>15.050</td>
-    <td>13.902</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>142</td>
-    <td>Cheyenne Central (WY)</td>
-    <td>110</td>
-    <td>1.802</td>
-    <td>2.918</td>
-    <td>-0.194</td>
-    <td>14.607</td>
-    <td>14.294</td>
-    <td>(WY)</td>
-</tr><tr>
-    <td>143</td>
-    <td>Bastrop (TX)</td>
-    <td>107</td>
-    <td>1.751</td>
-    <td>2.329</td>
-    <td>-0.142</td>
-    <td>15.345</td>
-    <td>16.968</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>144</td>
-    <td>Ambler Wissahickon (PA)</td>
-    <td>104</td>
-    <td>1.699</td>
-    <td>3.018</td>
-    <td>-0.188</td>
-    <td>14.664</td>
-    <td>15.586</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>145</td>
-    <td>Bristol Virginia (VA)</td>
-    <td>103</td>
-    <td>1.646</td>
-    <td>2.574</td>
-    <td>-0.194</td>
-    <td>14.357</td>
-    <td>15.777</td>
-    <td>(VA)</td>
-</tr><tr>
-    <td>146</td>
-    <td>Colby (KS)</td>
-    <td>106</td>
-    <td>1.492</td>
-    <td>2.962</td>
-    <td>-0.337</td>
-    <td>15.028</td>
-    <td>14.252</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>147</td>
-    <td>Burlington City (NJ)</td>
-    <td>111</td>
-    <td>1.474</td>
-    <td>2.253</td>
-    <td>-0.175</td>
-    <td>12.540</td>
-    <td>14.019</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>148</td>
-    <td>Camas (WA)</td>
-    <td>101</td>
-    <td>1.468</td>
-    <td>2.361</td>
-    <td>-0.224</td>
-    <td>14.746</td>
-    <td>13.850</td>
-    <td>(WA)</td>
-</tr><tr>
-    <td>149</td>
-    <td>Bowie (TX)</td>
-    <td>104</td>
-    <td>1.245</td>
-    <td>1.972</td>
-    <td>-0.139</td>
-    <td>12.488</td>
-    <td>14.530</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>150</td>
-    <td>Athens (PA)</td>
-    <td>116</td>
-    <td>1.138</td>
-    <td>1.954</td>
-    <td>-0.168</td>
-    <td>12.578</td>
-    <td>14.697</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>151</td>
-    <td>Bloomsburg (PA)</td>
-    <td>117</td>
-    <td>1.057</td>
-    <td>1.598</td>
-    <td>-0.214</td>
-    <td>13.583</td>
-    <td>15.264</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>152</td>
-    <td>Buckhannon-Upshur (WV)</td>
-    <td>108</td>
-    <td>1.017</td>
-    <td>1.557</td>
-    <td>-0.191</td>
-    <td>13.072</td>
-    <td>14.658</td>
-    <td>(WV)</td>
-</tr><tr>
-    <td>153</td>
-    <td>Albert Lea (MN)</td>
-    <td>103</td>
-    <td>0.683</td>
-    <td>1.288</td>
-    <td>-0.150</td>
-    <td>12.296</td>
-    <td>14.211</td>
-    <td>(MN)</td>
-</tr><tr>
-    <td>154</td>
-    <td>Bangor (PA)</td>
-    <td>100</td>
-    <td>0.661</td>
-    <td>1.284</td>
-    <td>-0.174</td>
-    <td>11.157</td>
-    <td>13.723</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>155</td>
-    <td>Alhambra (CA)</td>
-    <td>104</td>
-    <td>0.637</td>
-    <td>1.622</td>
-    <td>-0.278</td>
-    <td>13.603</td>
-    <td>14.412</td>
-    <td>(CA)</td>
-</tr><tr>
-    <td>156</td>
-    <td>Alameda (CA)</td>
-    <td>107</td>
-    <td>0.619</td>
-    <td>0.997</td>
-    <td>-0.105</td>
-    <td>13.923</td>
-    <td>15.280</td>
-    <td>(CA)</td>
-</tr><tr>
-    <td>157</td>
-    <td>Birmingham Tarrant (AL)</td>
-    <td>100</td>
-    <td>0.617</td>
-    <td>1.025</td>
-    <td>-0.260</td>
-    <td>13.206</td>
-    <td>14.702</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>158</td>
-    <td>Baker (OR)</td>
-    <td>119</td>
-    <td>-0.042</td>
-    <td>0.583</td>
-    <td>-0.215</td>
-    <td>13.177</td>
-    <td>14.732</td>
-    <td>(OR)</td>
-</tr><tr>
-    <td>159</td>
-    <td>Columbia (PA)</td>
-    <td>102</td>
-    <td>-0.398</td>
-    <td>0.029</td>
-    <td>-0.253</td>
-    <td>14.070</td>
-    <td>17.581</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>160</td>
-    <td>Burgettstown (PA)</td>
-    <td>105</td>
-    <td>-0.701</td>
-    <td>-0.282</td>
-    <td>-0.236</td>
-    <td>11.520</td>
-    <td>15.562</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>161</td>
-    <td>Atchison (KS)</td>
-    <td>110</td>
-    <td>-0.858</td>
-    <td>-0.317</td>
-    <td>-0.307</td>
-    <td>14.016</td>
-    <td>16.507</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>162</td>
-    <td>Burnet (TX)</td>
-    <td>101</td>
-    <td>-1.114</td>
-    <td>-0.590</td>
-    <td>-0.323</td>
-    <td>12.641</td>
-    <td>16.324</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>163</td>
-    <td>Astoria (OR)</td>
-    <td>113</td>
-    <td>-1.497</td>
-    <td>-1.089</td>
-    <td>-0.294</td>
-    <td>12.347</td>
-    <td>15.397</td>
-    <td>(OR)</td>
-</tr><tr>
-    <td>164</td>
-    <td>Augusta (KS)</td>
-    <td>106</td>
-    <td>-1.555</td>
-    <td>-0.840</td>
-    <td>-0.369</td>
-    <td>12.886</td>
-    <td>15.998</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>165</td>
-    <td>Columbus (KS)</td>
-    <td>101</td>
-    <td>-1.708</td>
-    <td>-1.336</td>
-    <td>-0.367</td>
-    <td>13.126</td>
-    <td>16.373</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>166</td>
-    <td>Blairsville (PA)</td>
-    <td>104</td>
-    <td>-2.051</td>
-    <td>-1.825</td>
-    <td>-0.321</td>
-    <td>11.466</td>
-    <td>17.088</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>167</td>
-    <td>Bernardsville Bernards (NJ)</td>
-    <td>113</td>
-    <td>-2.276</td>
-    <td>-1.917</td>
-    <td>-0.374</td>
-    <td>11.370</td>
-    <td>16.413</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>168</td>
-    <td>Bryn Athyn Academy of the New Church (PA)</td>
-    <td>112</td>
-    <td>-2.374</td>
-    <td>-2.071</td>
-    <td>-0.360</td>
-    <td>11.147</td>
-    <td>16.633</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>169</td>
-    <td>Abingdon (VA)</td>
-    <td>103</td>
-    <td>-2.490</td>
-    <td>-2.382</td>
-    <td>-0.351</td>
-    <td>10.450</td>
-    <td>16.303</td>
-    <td>(VA)</td>
-</tr><tr>
-    <td>170</td>
-    <td>Anson (TX)</td>
-    <td>102</td>
-    <td>-2.924</td>
-    <td>-3.082</td>
-    <td>-0.277</td>
-    <td>11.343</td>
-    <td>17.092</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>171</td>
-    <td>Arcata (CA)</td>
-    <td>104</td>
-    <td>-3.286</td>
-    <td>-3.459</td>
-    <td>-0.275</td>
-    <td>11.665</td>
-    <td>17.608</td>
-    <td>(CA)</td>
-</tr><tr>
-    <td>172</td>
-    <td>Bound Brook (NJ)</td>
-    <td>107</td>
-    <td>-3.351</td>
-    <td>-3.209</td>
-    <td>-0.330</td>
-    <td>10.401</td>
-    <td>17.367</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>173</td>
-    <td>Corry (PA)</td>
-    <td>104</td>
-    <td>-3.453</td>
-    <td>-4.006</td>
-    <td>-0.256</td>
-    <td>11.876</td>
-    <td>19.122</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>174</td>
-    <td>Augusta Cony (ME)</td>
-    <td>123</td>
-    <td>-3.597</td>
-    <td>-3.385</td>
-    <td>-0.274</td>
-    <td>10.845</td>
-    <td>17.289</td>
-    <td>(ME)</td>
-</tr><tr>
-    <td>175</td>
-    <td>Boonville (IN)</td>
-    <td>111</td>
-    <td>-4.069</td>
-    <td>-4.026</td>
-    <td>-0.459</td>
-    <td>10.593</td>
-    <td>19.007</td>
-    <td>(IN)</td>
-</tr><tr>
-    <td>176</td>
-    <td>Cape May Court House Middle Township (NJ)</td>
-    <td>100</td>
-    <td>-4.768</td>
-    <td>-4.954</td>
-    <td>-0.478</td>
-    <td>9.720</td>
-    <td>17.601</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>177</td>
-    <td>Cottage Grove (OR)</td>
-    <td>100</td>
-    <td>-5.268</td>
-    <td>-5.719</td>
-    <td>-0.394</td>
-    <td>11.779</td>
-    <td>19.184</td>
-    <td>(OR)</td>
-</tr><tr>
-    <td>178</td>
-    <td>Blountsville Pennington (AL)</td>
-    <td>102</td>
-    <td>-5.768</td>
-    <td>-6.521</td>
-    <td>-0.522</td>
-    <td>8.772</td>
-    <td>18.355</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>179</td>
-    <td>Bridgeport (OH)</td>
-    <td>103</td>
-    <td>-6.248</td>
-    <td>-7.007</td>
-    <td>-0.413</td>
-    <td>9.966</td>
-    <td>20.694</td>
-    <td>(OH)</td>
-</tr><tr>
-    <td>180</td>
-    <td>Altamont Labette County (KS)</td>
-    <td>106</td>
-    <td>-6.566</td>
-    <td>-6.868</td>
-    <td>-0.609</td>
-    <td>9.413</td>
-    <td>18.005</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>181</td>
-    <td>Bonner Springs (KS)</td>
-    <td>104</td>
-    <td>-7.291</td>
-    <td>-7.816</td>
-    <td>-0.625</td>
-    <td>9.725</td>
-    <td>18.688</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>182</td>
-    <td>Carbondale (PA)</td>
-    <td>104</td>
-    <td>-8.019</td>
-    <td>-9.018</td>
-    <td>-0.590</td>
-    <td>8.898</td>
-    <td>20.151</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>183</td>
-    <td>Burlington (KS)</td>
-    <td>104</td>
-    <td>-8.221</td>
-    <td>-9.218</td>
-    <td>-0.659</td>
-    <td>9.124</td>
-    <td>19.461</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>184</td>
-    <td>Bordentown (NJ)</td>
-    <td>112</td>
-    <td>-8.374</td>
-    <td>-9.061</td>
-    <td>-0.595</td>
-    <td>7.382</td>
-    <td>19.665</td>
-    <td>(NJ)</td>
-</tr><tr>
-    <td>185</td>
-    <td>Albion Northwestern (PA)</td>
-    <td>104</td>
-    <td>-8.670</td>
-    <td>-9.815</td>
-    <td>-0.578</td>
-    <td>7.531</td>
-    <td>19.772</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>186</td>
-    <td>Caney Valley (KS)</td>
-    <td>101</td>
-    <td>-8.826</td>
-    <td>-9.735</td>
-    <td>-0.731</td>
-    <td>8.265</td>
-    <td>18.699</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>187</td>
-    <td>Coudersport (PA)</td>
-    <td>100</td>
-    <td>-11.123</td>
-    <td>-12.793</td>
-    <td>-0.703</td>
-    <td>6.341</td>
-    <td>21.281</td>
-    <td>(PA)</td>
-</tr><tr>
-    <td>188</td>
-    <td>Cameron (WV)</td>
-    <td>108</td>
-    <td>-11.859</td>
-    <td>-13.370</td>
-    <td>-0.705</td>
-    <td>6.154</td>
-    <td>23.500</td>
-    <td>(WV)</td>
-</tr><tr>
-    <td>189</td>
-    <td>Buffalo (WY)</td>
-    <td>101</td>
-    <td>-11.995</td>
-    <td>-13.517</td>
-    <td>-0.730</td>
-    <td>5.883</td>
-    <td>21.628</td>
-    <td>(WY)</td>
-</tr><tr>
-    <td>190</td>
-    <td>Bisbee (AZ)</td>
-    <td>110</td>
-    <td>-12.723</td>
-    <td>-14.624</td>
-    <td>-0.788</td>
-    <td>5.644</td>
-    <td>22.118</td>
-    <td>(AZ)</td>
-</tr><tr>
-    <td>191</td>
-    <td>Bartlett (TX)</td>
-    <td>107</td>
-    <td>-14.378</td>
-    <td>-16.716</td>
-    <td>-0.731</td>
-    <td>4.360</td>
-    <td>25.714</td>
-    <td>(TX)</td>
-</tr><tr>
-    <td>192</td>
-    <td>Cherryvale (KS)</td>
-    <td>100</td>
-    <td>-14.775</td>
-    <td>-16.945</td>
-    <td>-0.854</td>
-    <td>5.815</td>
-    <td>23.717</td>
-    <td>(KS)</td>
-</tr><tr>
-    <td>193</td>
-    <td>Alabama School for the Deaf (AL)</td>
-    <td>107</td>
-    <td>-19.438</td>
-    <td>-22.817</td>
-    <td>-0.994</td>
-    <td>2.554</td>
-    <td>29.157</td>
-    <td>(AL)</td>
-</tr><tr>
-    <td>194</td>
-    <td>Carlsbad Army & Navy Academy (CA)</td>
-    <td>106</td>
-    <td>-24.525</td>
-    <td>-28.498</td>
-    <td>-1.315</td>
-    <td>-0.778</td>
-    <td>30.062</td>
-    <td>(CA)</td>
-</tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Pagination -->
-        <nav aria-label="Table navigation">
-            <ul class="pagination justify-content-center" id="tablePagination">
-            </ul>
-        </nav>
-
-        <!-- Comments Section -->
-        <div class="comments-section mt-5">
-            <h3>Comments</h3>
-            <div id="authContainer"></div>
-            <div id="commentForm" style="display: none;">
-                <div class="mb-3">
-                    <label for="commentText" class="form-label">Add a comment as <span id="authorName">Anonymous</span></label>
-                    <textarea class="form-control" id="commentText" rows="3"></textarea>
+            <!-- Comments Section -->
+            <div class="comments-section mt-5">
+                <h3>Comments</h3>
+                <div id="authContainer" class="mb-3"></div>
+                <div id="commentForm" class="mb-4" style="display: none">
+                    <div class="card">
+                        <div class="card-body">
+                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button id="submitComment" class="btn btn-primary">Submit Comment</button>
+                <div id="commentsList"></div>
             </div>
-            <div id="commentsList" class="mt-4">
-                <!-- Comments will be loaded here -->
-            </div>
-        </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="mt-5 mb-3">
-        <div class="text-center">
-            <p>Â© 2025 McKnight's Football Rankings</p>
+            <footer class="mt-5 mb-3">
+                <div class="text-center">
+                    <p>Â© 2025 McKnight's Football Rankings</p>
+                </div>
+            </footer>
         </div>
-    </footer>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Table Controls Script -->
-    <script>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Table Controls Script -->
+        <script>
     const TableControls = {
         ROWS_PER_PAGE: 100,
         currentPage: 1,
@@ -2183,12 +2381,10 @@
             const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
             let html = [];
             
-            // Previous button
             html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
                 <button class="page-link" data-page="prev">&laquo;</button>
             </li>`);
             
-            // Page numbers
             for (let i = 1; i <= totalPages; i++) {
                 if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
                     html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
@@ -2199,7 +2395,6 @@
                 }
             }
             
-            // Next button
             html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
                 <button class="page-link" data-page="next">&raquo;</button>
             </li>`);
@@ -2214,9 +2409,9 @@
         TableControls.init();
     }
 </script>
-
-    <!-- Comments Script -->
-    <script>
+        
+        <!-- Comments Script -->
+        <script>
 const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
 
 /**********************************************************
@@ -2240,7 +2435,7 @@ async function checkLoginStatus() {
             renderAuthUI(false);
         }
     } catch (error) {
-        console.error('Login status error:', error);
+        console.warn('Login status error:', error);
         document.getElementById('commentForm').style.display = 'none';
         document.getElementById('authorName').textContent = 'Anonymous';
         renderAuthUI(false);
@@ -2253,15 +2448,15 @@ function renderAuthUI(loggedIn, user = null) {
 
     if (loggedIn && user) {
         authContainer.innerHTML = `
-            <p>Welcome, <strong>${user.name}</strong> (${user.email})
+            <p>Welcome, <strong>${escapeHTML(user.name)}</strong> (${escapeHTML(user.email)})
                <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
         `;
-        document.getElementById('logoutBtn').addEventListener('click', doLogout);
+        document.getElementById('logoutBtn')?.addEventListener('click', doLogout);
     } else {
         authContainer.innerHTML = `
             <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
         `;
-        document.getElementById('loginBtn').addEventListener('click', doLogin);
+        document.getElementById('loginBtn')?.addEventListener('click', doLogin);
     }
 }
 
@@ -2286,12 +2481,14 @@ async function fetchComments() {
             method: 'GET',
             credentials: 'include'
         });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const data = await res.json();
         if (data.success) {
             displayComments(data.comments);
         }
     } catch (err) {
         console.error('Error fetching comments:', err);
+        document.getElementById('commentsList').innerHTML = '<div class="alert alert-warning">Unable to load comments at this time.</div>';
     }
 }
 
@@ -2307,7 +2504,7 @@ function displayComments(comments) {
             <div class="card-body">
                 <p class="mb-1">${escapeHTML(c.text)}</p>
                 <small class="text-muted">
-                    by ${escapeHTML(c.author)} on ${new Date(c.timestamp).toLocaleString()}
+                    by ${escapeHTML(c.author)} on ${new Date(c.1/22/2025).toLocaleString()}
                 </small>
             </div>
         </div>
@@ -2328,21 +2525,24 @@ async function submitComment() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text, pageId })
         });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const data = await res.json();
         if (data.success) {
             textEl.value = '';
-            fetchComments();
+            await fetchComments();
         } else {
-            alert('Error posting comment: ' + (data.error || 'Unknown'));
+            alert('Error posting comment: ' + (data.error || 'Unknown error'));
         }
     } catch (err) {
         console.error('Error posting comment:', err);
-        alert('Failed to post comment');
+        alert('Failed to post comment. Please try again later.');
     }
 }
 
 function escapeHTML(str) {
+    if (!str) return '';
     return str
+        .toString()
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
@@ -2355,16 +2555,33 @@ function getPageId() {
     return el ? el.getAttribute('data-page-name') : 'unknown';
 }
 
-// Attach comment submit handler
+// Initialize
 document.getElementById('submitComment')?.addEventListener('click', submitComment);
 
-(function initPage() {
-    checkLoginStatus();
-    fetchComments();
+(async function initPage() {
+    try {
+        await Promise.all([
+            checkLoginStatus(),
+            fetchComments()
+        ]);
+    } catch (error) {
+        console.warn('Page initialization error:', error);
+    }
 })();
 </script>
-
-    <!-- Main JavaScript Module -->
-    <script type="module" src="/static-football-rankings/js/main.js"></script>
-</body>
+        
+        <!-- TopBanner initialization -->
+        <script type="module">
+            import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+            document.addEventListener('DOMContentLoaded', async () => {
+                try {
+                    const banner = new TopBanner();
+                    await banner.initialize();
+                } catch (error) {
+                    console.warn('Banner initialization failed:', error);
+                    document.body.style.display = 'block';
+                }
+            });
+        </script>
+    </body>
 </html>
