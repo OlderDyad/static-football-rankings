@@ -893,17 +893,22 @@ function Process-StateData {
     Write-Host "Processing state: $StateCode"
 
     # Process teams for this state
-    $teamJsonPath = Join-Path $dataDir "states\teams\state-teams-$StateCode.json"
-    if (Test-Path $teamJsonPath) {
-        try {
-            $teamData = Get-Content $teamJsonPath -Raw | ConvertFrom-Json
-            $outputPath = Join-Path $outputBaseDir "states\$StateCode-teams.html"
+$jsonPath = Join-Path $dataDir "states\teams\state-teams-$StateCode.json"
+if (Test-Path $jsonPath) {
+    try {
+        # Get the full state name
+        $stateName = Get-StateFullName -StateCode $StateCode
+        
+        $teamData = Get-Content $jsonPath -Raw | ConvertFrom-Json
+        $outputPath = Join-Path $outputBaseDir "states\$StateCode-teams.html"
 
-            $templatePath = Join-Path $templateBaseDir "states\state-teams-template.html"
-            if (Test-Path $templatePath) {
-                $template = Get-Content $templatePath -Raw
-
-                $template = $template -replace 'STATE_CODE', $StateCode
+        $templatePath = Join-Path $templateBaseDir "states\state-teams-template.html"
+        if (Test-Path $templatePath) {
+            $template = Get-Content $templatePath -Raw
+            
+            # Replace state code and name
+            $template = $template -replace 'STATE_CODE', $StateCode
+            $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
@@ -924,18 +929,23 @@ function Process-StateData {
         }
     }
 
-    # Process programs for this state
-    $programJsonPath = Join-Path $dataDir "states\programs\state-programs-$StateCode.json"
-    if (Test-Path $programJsonPath) {
-        try {
-            $programData = Get-Content $programJsonPath -Raw | ConvertFrom-Json
-            $outputPath = Join-Path $outputBaseDir "states\$StateCode-programs.html"
+    # Process programs
+$programJsonPath = Join-Path $dataDir "states\programs\state-programs-$StateCode.json"
+if (Test-Path $programJsonPath) {
+    try {
+        # Get the full state name
+        $stateName = Get-StateFullName -StateCode $StateCode
+        
+        $programData = Get-Content $programJsonPath -Raw | ConvertFrom-Json
+        $outputPath = Join-Path $outputBaseDir "states\$StateCode-programs.html"
 
-            $templatePath = Join-Path $templateBaseDir "states\state-programs-template.html"
-            if (Test-Path $templatePath) {
-                $template = Get-Content $templatePath -Raw
-
-                $template = $template -replace 'STATE_CODE', $StateCode
+        $templatePath = Join-Path $templateBaseDir "states\state-programs-template.html"
+        if (Test-Path $templatePath) {
+            $template = Get-Content $templatePath -Raw
+            
+            # Replace state code and name
+            $template = $template -replace 'STATE_CODE', $StateCode
+            $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
