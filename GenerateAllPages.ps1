@@ -422,11 +422,14 @@ function Get-StateFullName {
 function Process-StateIndexPage {
     Write-Host "Generating state index page..." -ForegroundColor Yellow
     
-    $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
+    $templatePath = Join-Join $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
     
     if (Test-Path $templatePath) {
         $template = Get-Content $templatePath -Raw
+        
+        # First remove any userStyle tags
+        $template = $template -replace '<userStyle>.*?</userStyle>', ''
         
         # Generate region cards
         $regionCardsHtml = $stateRegions.GetEnumerator() | Sort-Object { $_.Value.Name } | ForEach-Object {
@@ -465,11 +468,11 @@ function Process-StateIndexPage {
 
         # Replace placeholders
         $template = $template -replace 'REGION_CARDS', $regionCardsHtml
+        $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
         $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-        $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
-        # Save the file
-        Set-Content -Path $outputPath -Value $template -Encoding UTF8
+        # Write with UTF8 encoding to handle special characters
+        [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
         Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
     } else {
         Write-Error "State index template not found: $templatePath"
@@ -1076,7 +1079,7 @@ function Process-LatestSeasonData {
     Write-Host "Processing latest season data..."
 
     # Updated path to match actual directory structure
-    $jsonPath = Join-Path $dataDir "latest\latest-season-teams.json"
+    $jsonPath = Join-Path $dataDir "latest\latest-season-teams.json"  
     if (Test-Path $jsonPath) {
         try {
             $jsonData = Get-Content $jsonPath -Raw | ConvertFrom-Json
