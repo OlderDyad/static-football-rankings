@@ -427,84 +427,11 @@ function Process-StateIndexPage {
     
     if (Test-Path $templatePath) {
         try {
-            # Read the template content
-            $templateContent = Get-Content $templatePath -Raw
-            
-            # Debug the template content
-            Write-Host "Template content length: $($templateContent.Length)" -ForegroundColor Yellow
-            Write-Host "Template contains REGION_CARDS: $($templateContent.Contains('REGION_CARDS'))" -ForegroundColor Yellow
-            
-            # Build the regions HTML
-            $regionsHtml = ""
-            
-            # Process each region
-            $stateRegions.GetEnumerator() | Sort-Object { $_.Key } | ForEach-Object {
-                $region = $_.Value
-                Write-Host "Processing region: $($region.Name)" -ForegroundColor Cyan
-                
-                $statesHtml = ""
-                # Process states in this region
-                $region.States | Sort-Object | ForEach-Object {
-                    $stateCode = $_
-                    $stateName = Get-StateFullName -StateCode $stateCode
-                    Write-Host "  Adding state: $stateName ($stateCode)" -ForegroundColor Gray
-                    
-                    $stateHtml = @"
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 state-card">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">$stateName</h5>
-                                <p class="card-text">($stateCode)</p>
-                                <div class="mt-auto">
-                                    <a href="/static-football-rankings/pages/public/states/$stateCode-teams.html" class="btn btn-primary me-2">Teams</a>
-                                    <a href="/static-football-rankings/pages/public/states/$stateCode-programs.html" class="btn btn-outline-primary">Programs</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-"@
-                    $statesHtml += $stateHtml
-                }
-                
-                # Add the region container
-                $regionHtml = @"
-                <div class="region-section mb-5">
-                    <h2 class="region-title $($region.Color)">$($region.Title)</h2>
-                    <div class="row">
-                        $statesHtml
-                    </div>
-                </div>
-"@
-                $regionsHtml += $regionHtml
-            }
-            
-            Write-Host "Generated regions HTML length: $($regionsHtml.Length)" -ForegroundColor Yellow
-            
-            # Perform the replacement
-            $finalContent = $templateContent -replace 'REGION_CARDS', $regionsHtml
-            
-            # Remove any userStyle blocks
-            $finalContent = $finalContent -replace '(?s)<userStyle>.*?</userStyle>', ''
-            
-            Write-Host "Final content length: $($finalContent.Length)" -ForegroundColor Yellow
-            Write-Host "Final content contains REGION_CARDS: $($finalContent.Contains('REGION_CARDS'))" -ForegroundColor Yellow
-            
-            # Write to file with UTF8 encoding
-            [System.IO.File]::WriteAllText($outputPath, $finalContent, [System.Text.Encoding]::UTF8)
-            
-            # Verify the output
-            $outputContent = Get-Content $outputPath -Raw
-            if ($outputContent.Contains('REGION_CARDS')) {
-                Write-Warning "WARNING: Output file still contains REGION_CARDS placeholder"
-            }
-            if ($outputContent.Contains('<userStyle>')) {
-                Write-Warning "WARNING: Output file contains userStyle tags"
-            }
-            
+            # Simply copy the template to the output location
+            Copy-Item -Path $templatePath -Destination $outputPath -Force
             Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
-            
         } catch {
-            Write-Error "Error processing state index page: $_"
+            Write-Error "Error copying state index page: $_"
             throw
         }
     } else {
