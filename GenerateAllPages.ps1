@@ -420,86 +420,83 @@ function Get-StateFullName {
 }
 
 function Process-StateIndexPage {
-    Write-Host "Generating state index page..." -ForegroundColor Yellow
-
-    # Define paths for template and output
+    Write-Host "Generating state index page for the West Region..." -ForegroundColor Yellow
+    
     $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
-
-    # Check if the template exists
+    
     if (Test-Path $templatePath) {
-        # Load template content
+        # Get the template content
         $template = Get-Content $templatePath -Raw
-        Write-Host "Loaded template content successfully." -ForegroundColor Green
 
-        # Debug: Display template before processing
-        Write-Host "Template content (before processing):" -ForegroundColor Cyan
-        Write-Host ($template.Substring(0, 500) + "...")  # Display the first 500 characters
+        # Define the West Region states
+        $westStates = @(
+            @{ Code = "AK"; Name = "Alaska" },
+            @{ Code = "AZ"; Name = "Arizona" },
+            @{ Code = "CA"; Name = "California" },
+            @{ Code = "CO"; Name = "Colorado" },
+            @{ Code = "HI"; Name = "Hawaii" },
+            @{ Code = "ID"; Name = "Idaho" },
+            @{ Code = "MT"; Name = "Montana" },
+            @{ Code = "NV"; Name = "Nevada" },
+            @{ Code = "NM"; Name = "New Mexico" },
+            @{ Code = "OR"; Name = "Oregon" },
+            @{ Code = "UT"; Name = "Utah" },
+            @{ Code = "WA"; Name = "Washington" },
+            @{ Code = "WY"; Name = "Wyoming" }
+        )
 
-        # Generate region cards
-        Write-Host "Generating region cards..." -ForegroundColor Yellow
-        $regionCardsHtml = $stateRegions.GetEnumerator() | Sort-Object { $_.Value.Name } | ForEach-Object {
-            $region = $_.Value
-            Write-Host "Processing region: $($region.Title)" -ForegroundColor Green
+        # Generate the region cards for the West Region
+        $regionHtml = @"
+<div class="region-section mb-5">
+    <h2 class="region-title text-primary">West Region</h2>
+    <div class="row">
+"@
 
-            # Generate cards for states in the region
-            $regionStatesHtml = $region.States | Sort-Object | ForEach-Object {
-                $stateCode = $_
-                $stateName = Get-StateFullName -StateCode $stateCode
-                Write-Host "Generating card for state: $stateName ($stateCode)" -ForegroundColor Cyan
-
-                @"
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 state-card">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">$stateName</h5>
-                            <p class="card-text">($stateCode)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/states/$stateCode-teams.html" 
-                                   class="btn btn-primary me-2">Teams</a>
-                                <a href="/static-football-rankings/pages/public/states/$stateCode-programs.html" 
-                                   class="btn btn-outline-primary">Programs</a>
-                            </div>
+        foreach ($state in $westStates) {
+            $regionHtml += @"
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 state-card">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">$($state.Name)</h5>
+                        <p class="card-text">($($state.Code))</p>
+                        <div class="mt-auto">
+                            <a href="/static-football-rankings/pages/public/states/$($state.Code)-teams.html" class="btn btn-primary me-2">View Teams</a>
+                            <a href="/static-football-rankings/pages/public/states/$($state.Code)-programs.html" class="btn btn-outline-primary">View Programs</a>
                         </div>
                     </div>
                 </div>
-"@
-            }
-
-            # Wrap region states in a region section
-            @"
-            <div class="region-section mb-5">
-                <h2 class="region-title ${region.Color}">${region.Title}</h2>
-                <div class="row">
-                    $regionStatesHtml
-                </div>
             </div>
 "@
-        } -join "`n"
+        }
 
-        # Debug: Display the generated region cards HTML
-        Write-Host "Generated REGION_CARDS content (first 500 characters):" -ForegroundColor Cyan
-        Write-Host ($regionCardsHtml.Substring(0, [Math]::Min(500, $regionCardsHtml.Length)) + "...")
+        # Close the HTML for the region section
+        $regionHtml += @"
+    </div>
+</div>
+"@
+
+        # Log the generated region HTML for debugging
+        Write-Host "Generated Region HTML:" -ForegroundColor Cyan
+        Write-Host $regionHtml
 
         # Replace placeholders in the template
-        $template = $template -replace 'REGION_CARDS', $regionCardsHtml
-        Write-Host "Replaced REGION_CARDS placeholder." -ForegroundColor Green
-
+        $template = $template -replace 'REGION_CARDS', $regionHtml
         $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-        Write-Host "Replaced COMMENTS_SCRIPT_PLACEHOLDER placeholder." -ForegroundColor Green
-
-        # Add a timestamp
         $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-        Write-Host "Replaced TIMESTAMP placeholder with the current date." -ForegroundColor Green
 
-        # Write the final content to the output path
+        # Log the full template content for debugging
+        Write-Host "Final Template Content:" -ForegroundColor Cyan
+        Write-Host $template
+
+        # Write the updated file
         [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
-        Write-Host "State index page generated successfully: $outputPath" -ForegroundColor Green
+        Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
     } else {
-        # Handle missing template
         Write-Error "State index template not found: $templatePath"
     }
 }
+
 
 
 
