@@ -427,69 +427,63 @@ function Process-StateIndexPage {
     
     if (Test-Path $templatePath) {
         try {
-            $template = Get-Content $templatePath -Raw
+            # Read template and clean any userStyle tags
+            $template = (Get-Content $templatePath -Raw) -replace '<userStyle>.*?</userStyle>', ''
             
-            # DEBUG - Check template
-            Write-Host "Template content before:" -ForegroundColor Red
-            Write-Host $template -ForegroundColor Red
-            
-            # Generate HTML for all regions
+            # Build HTML for all regions
             $allRegionsHtml = ""
             
-            foreach ($region in $stateRegions.GetEnumerator()) {
-                Write-Host "Processing region: $($region.Value.Name)" -ForegroundColor Cyan
-                
-                $statesHtml = ""
-                foreach ($stateCode in $region.Value.States | Sort-Object) {
-                    $stateName = Get-StateFullName -StateCode $stateCode
-                    Write-Host "  Adding state: $stateName ($stateCode)" -ForegroundColor Gray
-                    
-                    $statesHtml += @"
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 state-card">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">$stateName</h5>
-                                <p class="card-text">($stateCode)</p>
-                                <div class="mt-auto">
-                                    <a href="/static-football-rankings/pages/public/states/$stateCode-teams.html" 
-                                       class="btn btn-primary me-2">Teams</a>
-                                    <a href="/static-football-rankings/pages/public/states/$stateCode-programs.html" 
-                                       class="btn btn-outline-primary">Programs</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-"@
-                }
-                
-                $allRegionsHtml += @"
+            foreach ($region in $stateRegions.GetEnumerator() | Sort-Object { $_.Key }) {
+                $regionHtml = @"
                 <div class="region-section mb-5">
                     <h2 class="region-title $($region.Value.Color)">$($region.Value.Title)</h2>
                     <div class="row">
-                        $statesHtml
+"@
+                
+                foreach ($stateCode in $region.Value.States | Sort-Object) {
+                    $stateName = Get-StateFullName -StateCode $stateCode
+                    $regionHtml += @"
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100 state-card">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">$stateName</h5>
+                                    <p class="card-text">($stateCode)</p>
+                                    <div class="mt-auto">
+                                        <a href="/static-football-rankings/pages/public/states/$stateCode-teams.html" 
+                                           class="btn btn-primary me-2">Teams</a>
+                                        <a href="/static-football-rankings/pages/public/states/$stateCode-programs.html" 
+                                           class="btn btn-outline-primary">Programs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+"@
+                }
+                
+                $regionHtml += @"
                     </div>
                 </div>
 "@
+                
+                $allRegionsHtml += $regionHtml
             }
             
-            # DEBUG - Check generated HTML
-            Write-Host "Generated HTML:" -ForegroundColor Red
-            Write-Host $allRegionsHtml -ForegroundColor Red
+            # Replace placeholder and clean any remaining userStyle tags
+            $newContent = $template -replace 'REGION_CARDS', $allRegionsHtml
+            $newContent = $newContent -replace '<userStyle>.*?</userStyle>', ''
             
-            # Replace placeholder
-            $newContent = $template.Replace('REGION_CARDS', $allRegionsHtml)
-            
-            # DEBUG - Check final content
-            Write-Host "Final content:" -ForegroundColor Red
-            Write-Host $newContent -ForegroundColor Red
-            
-            # Write the file
+            # Write the cleaned content
             [System.IO.File]::WriteAllText($outputPath, $newContent, [System.Text.Encoding]::UTF8)
+            Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
             
-            # DEBUG - Verify output file
+            # Verify output doesn't contain userStyle or unreplaced REGION_CARDS
             $outputContent = Get-Content $outputPath -Raw
-            Write-Host "Output file content:" -ForegroundColor Red
-            Write-Host $outputContent -ForegroundColor Red
+            if ($outputContent -match 'REGION_CARDS') {
+                Write-Warning "Warning: Output still contains REGION_CARDS placeholder!"
+            }
+            if ($outputContent -match '<userStyle>') {
+                Write-Warning "Warning: Output still contains userStyle tags!"
+            }
             
         } catch {
             Write-Error "Error processing state index page: $_"
