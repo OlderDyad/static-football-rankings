@@ -420,76 +420,73 @@ function Get-StateFullName {
 }
 
 function Process-StateIndexPage {
-    Write-Host "Generating state index page for the West Region..." -ForegroundColor Yellow
-
+    Write-Host "Generating state index page..." -ForegroundColor Yellow
+    
     $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
-
-    if (-not (Test-Path $templatePath)) {
-        Write-Error "Template file not found: $templatePath"
-        return
-    }
-
-    # Get the template content
-    $template = Get-Content $templatePath -Raw
-
-    # Define the West Region states
-    $westStates = @(
-        @{ Code = "CA"; Name = "California" },
-        @{ Code = "NV"; Name = "Nevada" },
-        @{ Code = "OR"; Name = "Oregon" },
-        @{ Code = "WA"; Name = "Washington" }
-    )
-
-    # Generate the region cards for the West Region
-    $regionHtml = @"
-<div class="region-section mb-5">
-    <h2 class="region-title text-primary">West Region</h2>
-    <div class="row">
-"@
-
-    foreach ($state in $westStates) {
-        $regionHtml += @"
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 state-card">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">$($state.Name)</h5>
-                    <p class="card-text">($($state.Code))</p>
-                    <div class="mt-auto">
-                        <a href="/static-football-rankings/pages/public/states/$($state.Code)-teams.html" class="btn btn-primary me-2">View Teams</a>
-                        <a href="/static-football-rankings/pages/public/states/$($state.Code)-programs.html" class="btn btn-outline-primary">View Programs</a>
+    
+    if (Test-Path $templatePath) {
+        # Get template content
+        $template = Get-Content $templatePath -Raw
+        
+        # Debug what's happening
+        Write-Host "Template before processing:" -ForegroundColor Yellow
+        Write-Host ($template | Select-String "<userStyle>" -Context 0,1)
+        
+        # Clean the template first
+        $template = $template -replace '<userStyle>.*?</userStyle>', ''
+        
+        Write-Host "Generating region cards..." -ForegroundColor Yellow
+        
+        # Generate region cards
+        $regionCardsHtml = $stateRegions.GetEnumerator() | Sort-Object { $_.Value.Name } | ForEach-Object {
+            $region = $_.Value
+            $regionStates = $region.States | Sort-Object | ForEach-Object {
+                $stateCode = $_
+                $stateName = Get-StateFullName -StateCode $stateCode
+                
+                @"
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 state-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">$stateName</h5>
+                            <p class="card-text">($stateCode)</p>
+                            <div class="mt-auto">
+                                <a href="/static-football-rankings/pages/public/states/$stateCode-teams.html" 
+                                   class="btn btn-primary me-2">Teams</a>
+                                <a href="/static-football-rankings/pages/public/states/$stateCode-programs.html" 
+                                   class="btn btn-outline-primary">Programs</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+"@
+            }
+
+            @"
+            <div class="region-section mb-5">
+                <h2 class="region-title ${region.Color}">${region.Title}</h2>
+                <div class="row">
+                    $regionStates
+                </div>
             </div>
-        </div>
 "@
+        }
+        
+        Write-Host "Region cards HTML length: $($regionCardsHtml.Length)" -ForegroundColor Yellow
+
+        # Replace placeholders
+        $template = $template -replace 'REGION_CARDS', $regionCardsHtml
+        $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+        $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+
+        # Write with UTF8 encoding for proper character handling
+        [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
+        Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
+    } else {
+        Write-Error "State index template not found: $templatePath"
     }
-
-    # Close the region section
-    $regionHtml += @"
-    </div>
-</div>
-"@
-
-    # Debug generated region HTML
-    Write-Host "Generated REGION_CARDS HTML:" -ForegroundColor Cyan
-    Write-Host $regionHtml
-
-    # Replace placeholders in the template
-    $template = $template -replace 'REGION_CARDS', $regionHtml
-    $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-    $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-
-    # Debug final template
-    Write-Host "Template after REGION_CARDS replacement:" -ForegroundColor Cyan
-    Write-Host $template
-
-    # Write the updated file
-    [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
-    Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
 }
-
-
 
 #endregion Helper Functions
 
