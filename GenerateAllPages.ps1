@@ -421,83 +421,82 @@ function Get-StateFullName {
 
 function Process-StateIndexPage {
     Write-Host "Generating state index page for the West Region..." -ForegroundColor Yellow
-    
+
     $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
-    
-    if (Test-Path $templatePath) {
-        # Get the template content
-        $template = Get-Content $templatePath -Raw
 
-        # Define the West Region states
-        $westStates = @(
-            @{ Code = "AK"; Name = "Alaska" },
-            @{ Code = "AZ"; Name = "Arizona" },
-            @{ Code = "CA"; Name = "California" },
-            @{ Code = "CO"; Name = "Colorado" },
-            @{ Code = "HI"; Name = "Hawaii" },
-            @{ Code = "ID"; Name = "Idaho" },
-            @{ Code = "MT"; Name = "Montana" },
-            @{ Code = "NV"; Name = "Nevada" },
-            @{ Code = "NM"; Name = "New Mexico" },
-            @{ Code = "OR"; Name = "Oregon" },
-            @{ Code = "UT"; Name = "Utah" },
-            @{ Code = "WA"; Name = "Washington" },
-            @{ Code = "WY"; Name = "Wyoming" }
-        )
+    if (-not (Test-Path $templatePath)) {
+        Write-Error "Template file not found: $templatePath"
+        return
+    }
 
-        # Generate the region cards for the West Region
-        $regionHtml = @"
+    # Get the template content
+    $template = Get-Content $templatePath -Raw
+
+    # Define the West Region states
+    $westStates = @(
+        @{ Code = "AK"; Name = "Alaska" },
+        @{ Code = "AZ"; Name = "Arizona" },
+        @{ Code = "CA"; Name = "California" },
+        @{ Code = "CO"; Name = "Colorado" },
+        @{ Code = "HI"; Name = "Hawaii" },
+        @{ Code = "ID"; Name = "Idaho" },
+        @{ Code = "MT"; Name = "Montana" },
+        @{ Code = "NV"; Name = "Nevada" },
+        @{ Code = "NM"; Name = "New Mexico" },
+        @{ Code = "OR"; Name = "Oregon" },
+        @{ Code = "UT"; Name = "Utah" },
+        @{ Code = "WA"; Name = "Washington" },
+        @{ Code = "WY"; Name = "Wyoming" }
+    )
+
+    # Generate the region cards for the West Region
+    $regionHtml = @"
 <div class="region-section mb-5">
     <h2 class="region-title text-primary">West Region</h2>
     <div class="row">
 "@
 
-        foreach ($state in $westStates) {
-            $regionHtml += @"
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100 state-card">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">$($state.Name)</h5>
-                        <p class="card-text">($($state.Code))</p>
-                        <div class="mt-auto">
-                            <a href="/static-football-rankings/pages/public/states/$($state.Code)-teams.html" class="btn btn-primary me-2">View Teams</a>
-                            <a href="/static-football-rankings/pages/public/states/$($state.Code)-programs.html" class="btn btn-outline-primary">View Programs</a>
-                        </div>
+    foreach ($state in $westStates) {
+        $regionHtml += @"
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 state-card">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">$($state.Name)</h5>
+                    <p class="card-text">($($state.Code))</p>
+                    <div class="mt-auto">
+                        <a href="/static-football-rankings/pages/public/states/$($state.Code)-teams.html" class="btn btn-primary me-2">View Teams</a>
+                        <a href="/static-football-rankings/pages/public/states/$($state.Code)-programs.html" class="btn btn-outline-primary">View Programs</a>
                     </div>
                 </div>
             </div>
+        </div>
 "@
-        }
+    }
 
-        # Close the HTML for the region section
-        $regionHtml += @"
+    # Close the region section
+    $regionHtml += @"
     </div>
 </div>
 "@
 
-        # Log the generated region HTML for debugging
-        Write-Host "Generated Region HTML:" -ForegroundColor Cyan
-        Write-Host $regionHtml
+    # Debug generated HTML
+    Write-Host "Generated Region HTML:" -ForegroundColor Cyan
+    Write-Host $regionHtml
 
-        # Replace placeholders in the template
-        $template = $template -replace 'REGION_CARDS', $regionHtml
-        $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-        $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+    # Replace placeholders in the template
+    $template = $template -replace 'REGION_CARDS', $regionHtml
+    $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+    $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
-        # Log the full template content for debugging
-        Write-Host "Final Template Content:" -ForegroundColor Cyan
-        Write-Host $template
+    # Debug final template
+    Write-Host "Final Template Content:" -ForegroundColor Cyan
+    Write-Host $template
 
-        # Write the updated file
-        [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
-        Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
-    } else {
-        Write-Error "State index template not found: $templatePath"
-    }
+    # Write the updated file
+    [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
+    Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
 }
-
-
 
 
 #endregion Helper Functions
