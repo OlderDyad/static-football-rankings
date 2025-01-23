@@ -1,101 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rankings by State - McKnight's American Football</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Header Banner -->
-    <div class="header-banner">
-        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100">
-    </div>
+function Process-StateIndexPage {
+    Write-Host "Generating state index page for the West Region..." -ForegroundColor Yellow
+    
+    $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
+    $outputPath = Join-Path $outputBaseDir "states\index.html"
+    
+    if (Test-Path $templatePath) {
+        # Get the template content
+        $template = Get-Content $templatePath -Raw
 
-    <!-- Breadcrumb Navigation -->
-    <div class="container mt-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Rankings by State</li>
-            </ol>
-        </nav>
-    </div>
+        # Define the West Region states
+        $westStates = @(
+            @{ Code = "AK"; Name = "Alaska" },
+            @{ Code = "AZ"; Name = "Arizona" },
+            @{ Code = "CA"; Name = "California" },
+            @{ Code = "CO"; Name = "Colorado" },
+            @{ Code = "HI"; Name = "Hawaii" },
+            @{ Code = "ID"; Name = "Idaho" },
+            @{ Code = "MT"; Name = "Montana" },
+            @{ Code = "NV"; Name = "Nevada" },
+            @{ Code = "NM"; Name = "New Mexico" },
+            @{ Code = "OR"; Name = "Oregon" },
+            @{ Code = "UT"; Name = "Utah" },
+            @{ Code = "WA"; Name = "Washington" },
+            @{ Code = "WY"; Name = "Wyoming" }
+        )
 
-    <!-- Main Content -->
-    <div class="container mt-4">
-        <h1 class="mb-4">High School Football Rankings by State</h1>
+        # Generate the region cards for the West Region
+        $regionHtml = @"
+<div class="region-section mb-5">
+    <h2 class="region-title text-primary">West Region</h2>
+    <div class="row">
+"@
 
-        <!-- Search Bar -->
-        <div class="mb-4">
-            <input type="text" id="stateSearch" class="form-control" placeholder="Search for a state...">
-        </div>
-
-        <!-- Region Sections -->
-        <div id="regions">
-            <!-- Example Region: West -->
-            <div class="region-section mb-5">
-                <h2 class="region-title text-primary">West</h2>
-                <div class="row">
-                    <!-- State Card -->
-                    <div class="col-lg-4 col-md-6 mb-4 state-card" data-state="California (CA)">
-                        <div class="card h-100">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">California</h5>
-                                <p class="card-text">(CA)</p>
-                                <div class="mt-auto">
-                                    <a href="/static-football-rankings/pages/public/states/CA-teams.html" class="btn btn-primary me-2">Teams</a>
-                                    <a href="/static-football-rankings/pages/public/states/CA-programs.html" class="btn btn-outline-primary">Programs</a>
-                                </div>
-                            </div>
+        foreach ($state in $westStates) {
+            $regionHtml += @"
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 state-card">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">$($state.Name)</h5>
+                        <p class="card-text">($($state.Code))</p>
+                        <div class="mt-auto">
+                            <a href="/static-football-rankings/pages/public/states/$($state.Code)-teams.html" class="btn btn-primary me-2">View Teams</a>
+                            <a href="/static-football-rankings/pages/public/states/$($state.Code)-programs.html" class="btn btn-outline-primary">View Programs</a>
                         </div>
                     </div>
-                    <!-- Add more state cards dynamically -->
                 </div>
             </div>
-        </div>
+"@
+        }
+
+        # Close the HTML for the region section
+        $regionHtml += @"
     </div>
+</div>
+"@
 
-    <!-- Comments Section -->
-    <div class="container mt-5">
-        <h3>Comments</h3>
-        <div id="authContainer" class="mb-3"></div>
-        <div id="commentForm" class="mb-4" style="display: none">
-            <div class="card">
-                <div class="card-body">
-                    <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
-                    <div class="d-flex justify-content-between align-items-center">
-                        <button id="submitComment" class="btn btn-primary">Post Comment</button>
-                        <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="commentsList"></div>
-    </div>
+        # Replace placeholders
+        $template = $template -replace 'REGION_CARDS', $regionHtml
+        $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+        $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
-    <!-- Footer -->
-    <footer class="mt-5 mb-3">
-        <div class="text-center">
-            <p>© 2025 McKnight's Football Rankings</p>
-        </div>
-    </footer>
+        # Write the updated file
+        [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
+        Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
+    } else {
+        Write-Error "State index template not found: $templatePath"
+    }
+}
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- State Search Script -->
-    <script>
-        document.getElementById('stateSearch').addEventListener('input', function (e) {
-            const searchTerm = e.target.value.toLowerCase();
-            document.querySelectorAll('.state-card').forEach(card => {
-                const state = card.dataset.state.toLowerCase();
-                card.style.display = state.includes(searchTerm) ? '' : 'none';
-            });
-        });
-    </script>
-</body>
-</html>
 
 
