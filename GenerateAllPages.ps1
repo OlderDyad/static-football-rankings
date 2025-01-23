@@ -422,21 +422,31 @@ function Get-StateFullName {
 function Process-StateIndexPage {
     Write-Host "Generating state index page..." -ForegroundColor Yellow
 
+    # Define paths for template and output
     $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
 
+    # Check if the template exists
     if (Test-Path $templatePath) {
-        # Get template content
+        # Load template content
         $template = Get-Content $templatePath -Raw
+        Write-Host "Loaded template content successfully." -ForegroundColor Green
+
+        # Debug: Display template before processing
+        Write-Host "Template content (before processing):" -ForegroundColor Cyan
+        Write-Host ($template.Substring(0, 500) + "...")  # Display the first 500 characters
 
         # Generate region cards
         Write-Host "Generating region cards..." -ForegroundColor Yellow
-
         $regionCardsHtml = $stateRegions.GetEnumerator() | Sort-Object { $_.Value.Name } | ForEach-Object {
             $region = $_.Value
-            $regionStates = $region.States | Sort-Object | ForEach-Object {
+            Write-Host "Processing region: $($region.Title)" -ForegroundColor Green
+
+            # Generate cards for states in the region
+            $regionStatesHtml = $region.States | Sort-Object | ForEach-Object {
                 $stateCode = $_
                 $stateName = Get-StateFullName -StateCode $stateCode
+                Write-Host "Generating card for state: $stateName ($stateCode)" -ForegroundColor Cyan
 
                 @"
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -456,32 +466,41 @@ function Process-StateIndexPage {
 "@
             }
 
+            # Wrap region states in a region section
             @"
             <div class="region-section mb-5">
                 <h2 class="region-title ${region.Color}">${region.Title}</h2>
                 <div class="row">
-                    $regionStates
+                    $regionStatesHtml
                 </div>
             </div>
 "@
-        }
+        } -join "`n"
 
-        # Debug output for region cards
-        Write-Host "Region Cards HTML:" -ForegroundColor Yellow
-        Write-Host $regionCardsHtml
+        # Debug: Display the generated region cards HTML
+        Write-Host "Generated REGION_CARDS content (first 500 characters):" -ForegroundColor Cyan
+        Write-Host ($regionCardsHtml.Substring(0, [Math]::Min(500, $regionCardsHtml.Length)) + "...")
 
-        # Replace placeholders
-        $template = $template -replace 'REGION_CARDS', ($regionCardsHtml -join "`n")
+        # Replace placeholders in the template
+        $template = $template -replace 'REGION_CARDS', $regionCardsHtml
+        Write-Host "Replaced REGION_CARDS placeholder." -ForegroundColor Green
+
         $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-        $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+        Write-Host "Replaced COMMENTS_SCRIPT_PLACEHOLDER placeholder." -ForegroundColor Green
 
-        # Write with UTF-8 encoding for proper character handling
+        # Add a timestamp
+        $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+        Write-Host "Replaced TIMESTAMP placeholder with the current date." -ForegroundColor Green
+
+        # Write the final content to the output path
         [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
-        Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
+        Write-Host "State index page generated successfully: $outputPath" -ForegroundColor Green
     } else {
+        # Handle missing template
         Write-Error "State index template not found: $templatePath"
     }
 }
+
 
 
 #endregion Helper Functions
