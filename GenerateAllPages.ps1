@@ -435,19 +435,10 @@ function Process-StateIndexPage {
 
     # Define the West Region states
     $westStates = @(
-        @{ Code = "AK"; Name = "Alaska" },
-        @{ Code = "AZ"; Name = "Arizona" },
         @{ Code = "CA"; Name = "California" },
-        @{ Code = "CO"; Name = "Colorado" },
-        @{ Code = "HI"; Name = "Hawaii" },
-        @{ Code = "ID"; Name = "Idaho" },
-        @{ Code = "MT"; Name = "Montana" },
         @{ Code = "NV"; Name = "Nevada" },
-        @{ Code = "NM"; Name = "New Mexico" },
         @{ Code = "OR"; Name = "Oregon" },
-        @{ Code = "UT"; Name = "Utah" },
-        @{ Code = "WA"; Name = "Washington" },
-        @{ Code = "WY"; Name = "Wyoming" }
+        @{ Code = "WA"; Name = "Washington" }
     )
 
     # Generate the region cards for the West Region
@@ -479,6 +470,25 @@ function Process-StateIndexPage {
     </div>
 </div>
 "@
+
+    # Debug generated region HTML
+    Write-Host "Generated REGION_CARDS HTML:" -ForegroundColor Cyan
+    Write-Host $regionHtml
+
+    # Replace placeholders in the template
+    $template = $template -replace 'REGION_CARDS', $regionHtml
+    $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+    $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+
+    # Debug final template
+    Write-Host "Template after REGION_CARDS replacement:" -ForegroundColor Cyan
+    Write-Host $template
+
+    # Write the updated file
+    [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
+    Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
+}
+
 
     # Debug generated HTML
     Write-Host "Generated Region HTML:" -ForegroundColor Cyan
