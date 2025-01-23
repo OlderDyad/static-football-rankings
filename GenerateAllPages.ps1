@@ -1047,14 +1047,17 @@ function Process-AllTimeData {
 }
 
 function Process-LatestSeasonData {
-    Write-Host "Processing latest season data..."
-
-    # Updated path to match actual directory structure
-    $jsonPath = Join-Path $dataDir "latest\latest-season-teams.json"  
+    Write-Host "Processing latest season data..." -ForegroundColor Yellow
+    
+    $jsonPath = Join-Path $dataDir "latest\latest-season-teams.json"
+    Write-Host "Looking for file at: $jsonPath" -ForegroundColor Yellow
+    
     if (Test-Path $jsonPath) {
+        Write-Host "Found JSON file" -ForegroundColor Green
         try {
-            $jsonData = Get-Content $jsonPath -Raw | ConvertFrom-Json
-            $outputPath = Join-Path $outputBaseDir "latest-season\index.html"
+            $jsonContent = Get-Content $jsonPath -Raw
+            Write-Host "JSON content length: $($jsonContent.Length)" -ForegroundColor Yellow
+            $jsonData = $jsonContent | ConvertFrom-Json
 
             $templatePath = Join-Path $templateBaseDir "latest-season\latest-season-template.html"
             if (Test-Path $templatePath) {
