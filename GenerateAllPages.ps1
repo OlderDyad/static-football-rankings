@@ -422,14 +422,21 @@ function Get-StateFullName {
 function Process-StateIndexPage {
     Write-Host "Generating state index page..." -ForegroundColor Yellow
     
-    $templatePath = Join-Join $templateBaseDir "index\states-index-template.html"
+    $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
     
     if (Test-Path $templatePath) {
+        # Get template content
         $template = Get-Content $templatePath -Raw
         
-        # First remove any userStyle tags
+        # Debug what's happening
+        Write-Host "Template before processing:" -ForegroundColor Yellow
+        Write-Host ($template | Select-String "<userStyle>" -Context 0,1)
+        
+        # Clean the template first
         $template = $template -replace '<userStyle>.*?</userStyle>', ''
+        
+        Write-Host "Generating region cards..." -ForegroundColor Yellow
         
         # Generate region cards
         $regionCardsHtml = $stateRegions.GetEnumerator() | Sort-Object { $_.Value.Name } | ForEach-Object {
@@ -465,19 +472,22 @@ function Process-StateIndexPage {
             </div>
 "@
         }
+        
+        Write-Host "Region cards HTML length: $($regionCardsHtml.Length)" -ForegroundColor Yellow
 
         # Replace placeholders
         $template = $template -replace 'REGION_CARDS', $regionCardsHtml
         $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
         $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
-        # Write with UTF8 encoding to handle special characters
+        # Write with UTF8 encoding for proper character handling
         [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
         Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
     } else {
         Write-Error "State index template not found: $templatePath"
     }
 }
+
 #endregion Helper Functions
 
 #region Template Scripts
