@@ -490,24 +490,6 @@ function Process-StateIndexPage {
 }
 
 
-    # Debug generated HTML
-    Write-Host "Generated Region HTML:" -ForegroundColor Cyan
-    Write-Host $regionHtml
-
-    # Replace placeholders in the template
-    $template = $template -replace 'REGION_CARDS', $regionHtml
-    $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-    $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-
-    # Debug final template
-    Write-Host "Final Template Content:" -ForegroundColor Cyan
-    Write-Host $template
-
-    # Write the updated file
-    [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
-    Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
-}
-
 
 #endregion Helper Functions
 
