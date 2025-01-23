@@ -1075,7 +1075,8 @@ function Process-AllTimeData {
 function Process-LatestSeasonData {
     Write-Host "Processing latest season data..."
 
-    $jsonPath = Join-Path $dataDir "latest-season\latest-season-teams.json"
+    # Updated path to match actual directory structure
+    $jsonPath = Join-Path $dataDir "latest\latest-season-teams.json"
     if (Test-Path $jsonPath) {
         try {
             $jsonData = Get-Content $jsonPath -Raw | ConvertFrom-Json
@@ -1085,7 +1086,10 @@ function Process-LatestSeasonData {
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
 
-                # Insert scripts
+                # Clean any userStyle tags
+                $template = $template -replace '<userStyle>.*?</userStyle>', ''
+                
+                # Insert scripts and update timestamp
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
@@ -1098,7 +1102,8 @@ function Process-LatestSeasonData {
                 $tableRows = Generate-TableRows -Items $jsonData.items -Type "team"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
 
-                Set-Content -Path $outputPath -Value $template -Encoding UTF8
+                # Write with UTF8 encoding to handle special characters
+                [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
                 Write-Host "Generated: latest-season/index.html"
             }
         } catch {

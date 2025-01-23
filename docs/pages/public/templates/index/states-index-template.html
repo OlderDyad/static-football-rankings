@@ -4,64 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>State Rankings - McKnight's American Football</title>
+    <meta name="description" content="View top high school football teams by state.">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-    <style>
-        .region-title {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            border-radius: 0.25rem;
-        }
-        .region-northeast { background-color: #EBF5FF; }  /* Light blue */
-        .region-south { background-color: #F0FFF4; }      /* Light green */
-        .region-midwest { background-color: #FFFFF0; }    /* Light yellow */
-        .region-west { background-color: #FFF5F5; }       /* Light red */
-        .region-canada { background-color: #FAF5FF; }     /* Light purple */
-        
-        .state-card {
-            transition: transform 0.2s;
-        }
-        .state-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
 <body>
-    <!-- Header Banner -->
     <div class="header-banner">
         <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
     </div>
 
-    <!-- Breadcrumb navigation -->
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Rankings by State</li>
             </ol>
         </nav>
     </div>
 
     <div class="container mt-4">
-        <h1 class="mb-4">High School Football Rankings by State</h1>
-        
-        <!-- Region Cards -->
-        <div id="regionContainer">
-            REGION_CARDS
+        <h1>Rankings by State</h1>
+
+        <!-- Region cards will be inserted here -->
+        REGION_CARDS
+
+        <!-- Comments Section -->
+        <div class="comments-section mt-5">
+            <h3>Comments</h3>
+            <div id="authContainer" class="mb-3"></div>
+            <div id="commentForm" class="mb-4" style="display: none">
+                <div class="card">
+                    <div class="card-body">
+                        <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                            <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="commentsList"></div>
         </div>
 
         <footer class="mt-5 mb-3">
             <div class="text-center">
-                <p>© 2025 McKnight's Football Rankings</p>
-                <p>Last Updated: <span id="lastUpdated">TIMESTAMP</span></p>
+                <p>&copy; 2025 McKnight's Football Rankings</p>
             </div>
         </footer>
     </div>
 
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Comments Script -->
+    COMMENTS_SCRIPT_PLACEHOLDER
 </body>
 </html>
