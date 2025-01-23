@@ -427,9 +427,6 @@ function Process-StateIndexPage {
     
     if (Test-Path $templatePath) {
         try {
-            # Read template and clean any userStyle tags
-            $template = (Get-Content $templatePath -Raw) -replace '<userStyle>.*?</userStyle>', ''
-            
             # Build HTML for all regions
             $allRegionsHtml = ""
             
@@ -468,22 +465,17 @@ function Process-StateIndexPage {
                 $allRegionsHtml += $regionHtml
             }
             
-            # Replace placeholder and clean any remaining userStyle tags
-            $newContent = $template -replace 'REGION_CARDS', $allRegionsHtml
-            $newContent = $newContent -replace '<userStyle>.*?</userStyle>', ''
+            # Use the shared template processor
+            $replacements = @{
+                'REGION_CARDS' = $allRegionsHtml
+            }
             
-            # Write the cleaned content
-            [System.IO.File]::WriteAllText($outputPath, $newContent, [System.Text.Encoding]::UTF8)
+            Write-Host "Processing template with replacements..."
+            $processedContent = Process-Template -TemplatePath $templatePath -Replacements $replacements -Data @{} -Type "index"
+            
+            # Write the processed content
+            [System.IO.File]::WriteAllText($outputPath, $processedContent, [System.Text.Encoding]::UTF8)
             Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
-            
-            # Verify output doesn't contain userStyle or unreplaced REGION_CARDS
-            $outputContent = Get-Content $outputPath -Raw
-            if ($outputContent -match 'REGION_CARDS') {
-                Write-Warning "Warning: Output still contains REGION_CARDS placeholder!"
-            }
-            if ($outputContent -match '<userStyle>') {
-                Write-Warning "Warning: Output still contains userStyle tags!"
-            }
             
         } catch {
             Write-Error "Error processing state index page: $_"
