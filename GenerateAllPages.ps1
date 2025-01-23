@@ -421,30 +421,23 @@ function Get-StateFullName {
 
 function Process-StateIndexPage {
     Write-Host "Generating state index page..." -ForegroundColor Yellow
-    
+
     $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
-    
+
     if (Test-Path $templatePath) {
         # Get template content
         $template = Get-Content $templatePath -Raw
-        
-        # Debug what's happening
-        Write-Host "Template before processing:" -ForegroundColor Yellow
-        Write-Host ($template | Select-String "<userStyle>" -Context 0,1)
-        
-        # Clean the template first
-        $template = $template -replace '<userStyle>.*?</userStyle>', ''
-        
-        Write-Host "Generating region cards..." -ForegroundColor Yellow
-        
+
         # Generate region cards
+        Write-Host "Generating region cards..." -ForegroundColor Yellow
+
         $regionCardsHtml = $stateRegions.GetEnumerator() | Sort-Object { $_.Value.Name } | ForEach-Object {
             $region = $_.Value
             $regionStates = $region.States | Sort-Object | ForEach-Object {
                 $stateCode = $_
                 $stateName = Get-StateFullName -StateCode $stateCode
-                
+
                 @"
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 state-card">
@@ -472,21 +465,24 @@ function Process-StateIndexPage {
             </div>
 "@
         }
-        
-        Write-Host "Region cards HTML length: $($regionCardsHtml.Length)" -ForegroundColor Yellow
+
+        # Debug output for region cards
+        Write-Host "Region Cards HTML:" -ForegroundColor Yellow
+        Write-Host $regionCardsHtml
 
         # Replace placeholders
-        $template = $template -replace 'REGION_CARDS', $regionCardsHtml
+        $template = $template -replace 'REGION_CARDS', ($regionCardsHtml -join "`n")
         $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
         $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
-        # Write with UTF8 encoding for proper character handling
+        # Write with UTF-8 encoding for proper character handling
         [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
         Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
     } else {
         Write-Error "State index template not found: $templatePath"
     }
 }
+
 
 #endregion Helper Functions
 
