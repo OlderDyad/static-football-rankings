@@ -1,15 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>State Rankings - McKnight's American Football</title>
-    <meta name="description" content="View top high school football teams by state.">
-    
-    <!-- Bootstrap CSS -->
+    <title>Rankings by State - McKnight's Football Rankings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Custom Stylesheet -->
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
 </head>
 <body>
@@ -18,7 +13,7 @@
         <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
     </div>
 
-    <!-- Breadcrumb with updated home link -->
+    <!-- Breadcrumb Navigation -->
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -28,43 +23,26 @@
         </nav>
     </div>
 
+    <!-- Main Content -->
     <div class="container mt-4">
-        <h1>Rankings by State</h1>
-        
-        <!-- State rankings section -->
-        <div class="state-rankings">
-            REGION_CARDS
-        </div>
-
-        <!-- Comments Section -->
-        <div class="comments-section mt-5">
-            <h3>Comments</h3>
-            <div id="authContainer" class="mb-3"></div>
-            <div id="commentForm" class="mb-4" style="display: none">
-                <div class="card">
-                    <div class="card-body">
-                        <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button id="submitComment" class="btn btn-primary">Post Comment</button>
-                            <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
-                        </div>
-                    </div>
-                </div>
+        <h1 class="mb-4">High School Football Rankings by State</h1>
+        <p>This is a placeholder page for Rankings by State.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Example State</h2>
+                <p><a href="#">View Teams</a> | <a href="#">View Programs</a></p>
             </div>
-            <div id="commentsList"></div>
         </div>
-
-        <footer class="mt-5 mb-3">
-            <div class="text-center">
-                <p>&copy; 2025 McKnight's Football Rankings</p>
-            </div>
-        </footer>
     </div>
 
-    <!-- Bootstrap JS Bundle -->
+    <!-- Footer -->
+    <footer class="mt-5 mb-3">
+        <div class="text-center">
+            <p>© 2025 McKnight's Football Rankings</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Comments Script -->
-    COMMENTS_SCRIPT_PLACEHOLDER
 </body>
 </html>
