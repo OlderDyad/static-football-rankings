@@ -420,43 +420,30 @@ function Get-StateFullName {
 }
 
 function Process-StateIndexPage {
-    Write-Host "`n========== Processing State Index Page ==========" -ForegroundColor Cyan
+    Write-Host "Generating state index page..." -ForegroundColor Yellow
     
     $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
     $outputPath = Join-Path $outputBaseDir "states\index.html"
     
-    Write-Host "Template Path: $templatePath" -ForegroundColor Yellow
-    Write-Host "Output Path: $outputPath" -ForegroundColor Yellow
-    
-    # Debug state regions data
-    Write-Host "`nVerifying State Regions Data:" -ForegroundColor Yellow
-    $stateRegions.Keys | ForEach-Object {
-        $region = $stateRegions[$_]
-        Write-Host "Region: $_ (${$($region.States.Count)} states)" -ForegroundColor Cyan
-        Write-Host "  Title: $($region.Title)" -ForegroundColor Gray
-        Write-Host "  Color: $($region.Color)" -ForegroundColor Gray
-        Write-Host "  States: $($region.States -join ', ')" -ForegroundColor Gray
-    }
-    
     if (Test-Path $templatePath) {
         try {
-            Write-Host "`nReading template..." -ForegroundColor Yellow
+            Write-Host "Reading template from: $templatePath" -ForegroundColor Yellow
             $template = Get-Content $templatePath -Raw
             
-            Write-Host "Generating region cards..." -ForegroundColor Yellow
+            # Generate HTML for each region
+            $allRegionsHtml = ""
             
-            $regionCardsHtml = ""
-            $stateRegions.GetEnumerator() | Sort-Object { $_.Value.Name } | ForEach-Object {
-                $region = $_.Value
-                Write-Host "`nProcessing region: $($region.Name)" -ForegroundColor Cyan
+            # Process each region
+            foreach ($region in $stateRegions.GetEnumerator()) {
+                Write-Host "Processing region: $($region.Value.Name)" -ForegroundColor Cyan
                 
-                $regionStatesHtml = ""
-                $region.States | Sort-Object | ForEach-Object {
-                    $stateCode = $_
+                # Generate HTML for all states in this region
+                $statesHtml = ""
+                foreach ($stateCode in $region.Value.States | Sort-Object) {
                     $stateName = Get-StateFullName -StateCode $stateCode
-                    Write-Host "  Adding state: $stateName ($stateCode)" -ForegroundColor Gray
+                    Write-Host "  Processing state: $stateName ($stateCode)" -ForegroundColor Gray
                     
-                    $regionStatesHtml += @"
+                    $statesHtml += @"
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 state-card">
                             <div class="card-body d-flex flex-column">
@@ -473,27 +460,24 @@ function Process-StateIndexPage {
                     </div>
 "@
                 }
-
-                $regionCardsHtml += @"
+                
+                # Add region container with its states
+                $allRegionsHtml += @"
                 <div class="region-section mb-5">
-                    <h2 class="region-title ${region.Color}">${region.Title}</h2>
+                    <h2 class="region-title $($region.Value.Color)">$($region.Value.Title)</h2>
                     <div class="row">
-                        $regionStatesHtml
+                        $statesHtml
                     </div>
                 </div>
 "@
             }
-
-            Write-Host "`nVerifying generated HTML:" -ForegroundColor Yellow
-            Write-Host "HTML Length: $($regionCardsHtml.Length) characters" -ForegroundColor Cyan
             
             Write-Host "Replacing REGION_CARDS placeholder..." -ForegroundColor Yellow
-            $template = $template -replace 'REGION_CARDS', $regionCardsHtml
+            $newContent = $template -replace 'REGION_CARDS', $allRegionsHtml
             
-            Write-Host "Writing output file..." -ForegroundColor Yellow
-            [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
-            
-            Write-Host "`nState index page generated successfully!" -ForegroundColor Green
+            Write-Host "Writing output to: $outputPath" -ForegroundColor Yellow
+            [System.IO.File]::WriteAllText($outputPath, $newContent, [System.Text.Encoding]::UTF8)
+            Write-Host "State index page generated successfully!" -ForegroundColor Green
             
         } catch {
             Write-Error "Error processing state index page: $_"
