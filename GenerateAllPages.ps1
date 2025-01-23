@@ -427,54 +427,80 @@ function Process-StateIndexPage {
     
     if (Test-Path $templatePath) {
         try {
-            # Build HTML for all regions
-            $allRegionsHtml = ""
+            # Read the template content
+            $templateContent = Get-Content $templatePath -Raw
             
-            foreach ($region in $stateRegions.GetEnumerator() | Sort-Object { $_.Key }) {
-                $regionHtml = @"
-                <div class="region-section mb-5">
-                    <h2 class="region-title $($region.Value.Color)">$($region.Value.Title)</h2>
-                    <div class="row">
-"@
+            # Debug the template content
+            Write-Host "Template content length: $($templateContent.Length)" -ForegroundColor Yellow
+            Write-Host "Template contains REGION_CARDS: $($templateContent.Contains('REGION_CARDS'))" -ForegroundColor Yellow
+            
+            # Build the regions HTML
+            $regionsHtml = ""
+            
+            # Process each region
+            $stateRegions.GetEnumerator() | Sort-Object { $_.Key } | ForEach-Object {
+                $region = $_.Value
+                Write-Host "Processing region: $($region.Name)" -ForegroundColor Cyan
                 
-                foreach ($stateCode in $region.Value.States | Sort-Object) {
+                $statesHtml = ""
+                # Process states in this region
+                $region.States | Sort-Object | ForEach-Object {
+                    $stateCode = $_
                     $stateName = Get-StateFullName -StateCode $stateCode
-                    $regionHtml += @"
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100 state-card">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">$stateName</h5>
-                                    <p class="card-text">($stateCode)</p>
-                                    <div class="mt-auto">
-                                        <a href="/static-football-rankings/pages/public/states/$stateCode-teams.html" 
-                                           class="btn btn-primary me-2">Teams</a>
-                                        <a href="/static-football-rankings/pages/public/states/$stateCode-programs.html" 
-                                           class="btn btn-outline-primary">Programs</a>
-                                    </div>
+                    Write-Host "  Adding state: $stateName ($stateCode)" -ForegroundColor Gray
+                    
+                    $stateHtml = @"
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 state-card">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">$stateName</h5>
+                                <p class="card-text">($stateCode)</p>
+                                <div class="mt-auto">
+                                    <a href="/static-football-rankings/pages/public/states/$stateCode-teams.html" class="btn btn-primary me-2">Teams</a>
+                                    <a href="/static-football-rankings/pages/public/states/$stateCode-programs.html" class="btn btn-outline-primary">Programs</a>
                                 </div>
                             </div>
                         </div>
+                    </div>
 "@
+                    $statesHtml += $stateHtml
                 }
                 
-                $regionHtml += @"
+                # Add the region container
+                $regionHtml = @"
+                <div class="region-section mb-5">
+                    <h2 class="region-title $($region.Color)">$($region.Title)</h2>
+                    <div class="row">
+                        $statesHtml
                     </div>
                 </div>
 "@
-                
-                $allRegionsHtml += $regionHtml
+                $regionsHtml += $regionHtml
             }
             
-            # Use the shared template processor
-            $replacements = @{
-                'REGION_CARDS' = $allRegionsHtml
+            Write-Host "Generated regions HTML length: $($regionsHtml.Length)" -ForegroundColor Yellow
+            
+            # Perform the replacement
+            $finalContent = $templateContent -replace 'REGION_CARDS', $regionsHtml
+            
+            # Remove any userStyle blocks
+            $finalContent = $finalContent -replace '(?s)<userStyle>.*?</userStyle>', ''
+            
+            Write-Host "Final content length: $($finalContent.Length)" -ForegroundColor Yellow
+            Write-Host "Final content contains REGION_CARDS: $($finalContent.Contains('REGION_CARDS'))" -ForegroundColor Yellow
+            
+            # Write to file with UTF8 encoding
+            [System.IO.File]::WriteAllText($outputPath, $finalContent, [System.Text.Encoding]::UTF8)
+            
+            # Verify the output
+            $outputContent = Get-Content $outputPath -Raw
+            if ($outputContent.Contains('REGION_CARDS')) {
+                Write-Warning "WARNING: Output file still contains REGION_CARDS placeholder"
+            }
+            if ($outputContent.Contains('<userStyle>')) {
+                Write-Warning "WARNING: Output file contains userStyle tags"
             }
             
-            Write-Host "Processing template with replacements..."
-            $processedContent = Process-Template -TemplatePath $templatePath -Replacements $replacements -Data @{} -Type "index"
-            
-            # Write the processed content
-            [System.IO.File]::WriteAllText($outputPath, $processedContent, [System.Text.Encoding]::UTF8)
             Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
             
         } catch {
