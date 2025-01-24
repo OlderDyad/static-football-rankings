@@ -363,13 +363,13 @@ function Generate-ComingSoonPage {
 $stateRegions = @{
     "Northeast" = @{
         Name = "Northeast"
-        States = @("CT", "ME", "MA", "NH", "RI", "VT", "NJ", "NY", "PA")
+        States = @("CT", "DE", "ME", "MA", "NH", "RI", "VT", "NJ", "NY", "PA")
         Color = "region-northeast"
         Title = "Northeast States"
     }
     "South" = @{
         Name = "South"
-        States = @("AL", "AR", "DE", "FL", "GA", "KY", "LA", "MD", "MS", "NC", "SC", "TN", "VA", "WV")
+        States = @("AL", "AR", "FL", "GA", "KY", "LA", "MD", "MS", "NC", "OK","SC", "TN", "TX","VA", "WV")
         Color = "region-south"
         Title = "Southern States"
     }
@@ -1197,13 +1197,13 @@ try {
 $stateRegions = @{
     "Northeast" = @{
         Name = "Northeast"
-        States = @("CT", "ME", "MA", "NH", "RI", "VT", "NJ", "NY", "PA")
+        States = @("CT", "DC", "DE", "ME", "MA", "NH", "RI", "VT", "NJ", "NY", "PA")
         Color = "region-northeast"
         Title = "Northeast States"
     }
     "South" = @{
         Name = "South"
-        States = @("AL", "AR", "DE", "FL", "GA", "KY", "LA", "MD", "MS", "NC", "SC", "TN", "VA", "WV")
+        States = @("AL", "AR", "FL", "GA", "KY", "LA", "MD", "MS", "NC", "SC", "TN", "VA", "WV")
         Color = "region-south"
         Title = "Southern States"
     }
