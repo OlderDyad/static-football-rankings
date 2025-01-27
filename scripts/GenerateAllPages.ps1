@@ -298,6 +298,35 @@ function Generate-TableRows {
     return $tableRows -join "`n"
 }
 
+function Generate-StandardizedJson {
+    param (
+        [string]$Type,
+        [array]$Items,
+        [object]$TopItem,
+        [string]$Description,
+        [string]$YearRange,
+        [string]$OutputPath
+    )
+
+    Write-Host "Generating standardized JSON for $Type..." -ForegroundColor Yellow
+
+    $standardizedData = @{
+        topItem = $TopItem
+        items = $Items
+        metadata = @{
+            timestamp = (Get-Date).ToString("o")
+            type = $Type
+            yearRange = $YearRange
+            totalItems = $Items.Count
+            description = $Description
+        }
+    }
+
+    $jsonContent = $standardizedData | ConvertTo-Json -Depth 10
+    [System.IO.File]::WriteAllText($OutputPath, $jsonContent, [System.Text.Encoding]::UTF8)
+    Write-Host "Generated JSON file: $OutputPath" -ForegroundColor Green
+}
+
 function Generate-ComingSoonPage {
     param (
         [string]$OutputPath,
@@ -993,6 +1022,24 @@ function Process-AllTimeData {
         try {
             $jsonData = Get-Content $jsonPath -Raw | ConvertFrom-Json
             
+            # Generate the standardized JSON file
+            if ($Category -eq "teams") {
+                Generate-StandardizedJson -Type "all-time-teams" `
+                                       -Items $jsonData.items `
+                                       -TopItem $jsonData.topItem `
+                                       -Description "All-Time Greatest Teams" `
+                                       -YearRange "all-time" `
+                                       -OutputPath $jsonPath
+            } else {
+                Generate-StandardizedJson -Type "all-time-programs" `
+                                       -Items $jsonData.items `
+                                       -TopItem $jsonData.topItem `
+                                       -Description "All-Time Programs $Threshold+ Seasons" `
+                                       -YearRange "all-time" `
+                                       -OutputPath $jsonPath
+            }
+
+            # Process template
             $templateName = if ($Category -eq "teams") {
                 "all-time-teams-template.html"
             } else {
@@ -1016,7 +1063,7 @@ function Process-AllTimeData {
                 $pageTitle = if ($Category -eq "teams") {
                     "All-Time Greatest Teams"
                 } else {
-                    "$Threshold+ Seasons All-Time Programs"
+                    "All-Time Programs $Threshold+ Seasons"
                 }
                 $template = $template -replace 'PAGE_TITLE', $pageTitle
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
