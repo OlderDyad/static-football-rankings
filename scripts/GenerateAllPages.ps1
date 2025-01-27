@@ -855,6 +855,11 @@ $commonReplacements = @{
         Pattern = 'content="/data/decade-(teams|programs)-DECADE_NAME.json"'
         Replacement = 'content="/static-football-rankings/data/decades/$1/$1-$($DecadeName).json"'
     }
+    # Add a new replacement for the meta tag
+    'MetaDataFile' = @{
+        Pattern = '<meta name="data-file" content="[^"]*">'
+        Replacement = '<meta name="data-file" content="/static-football-rankings/data/decades/$Type/$Type-$DecadeName.json">'
+    }
     'DECADE_DISPLAY_NAME' = $DisplayName
     'DECADE_NAME' = $DecadeName
     'DECADE_START' = $StartYear
