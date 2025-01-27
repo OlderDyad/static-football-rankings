@@ -849,11 +849,11 @@ function Process-DecadeData {
 
     Write-Host "`n========== Processing $DisplayName Programs ==========" -ForegroundColor Cyan
 
-    # Define common replacements
+   # Define common replacements
 $commonReplacements = @{
     'DataFilePath' = @{
         Pattern = 'content="/data/decade-(teams|programs)-DECADE_NAME.json"'
-        Replacement = 'content="/static-football-rankings/data/decades/$1/decade-$1-$($DecadeName).json"'
+        Replacement = 'content="/static-football-rankings/data/decades/$1/$1-$($DecadeName).json"'
     }
     'DECADE_DISPLAY_NAME' = $DisplayName
     'DECADE_NAME' = $DecadeName
@@ -862,7 +862,7 @@ $commonReplacements = @{
 }
 
     # Process Programs
-    $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
+    $programJsonPath = Join-Path $dataDir "decades\programs\programs-$DecadeName.json"
     Write-Host "`nProcessing Programs" -ForegroundColor Yellow
     Write-Host "  JSON Path: $programJsonPath"
     
@@ -897,7 +897,7 @@ $commonReplacements = @{
     }
 
     # Process Teams
-    $teamJsonPath = Join-Path $dataDir "decades\teams\decade-teams-$DecadeName.json"
+    $teamJsonPath = Join-Path $dataDir "decades\teams\teams-$DecadeName.json"
     Write-Host "`nProcessing Teams" -ForegroundColor Yellow
     Write-Host "  JSON Path: $teamJsonPath"
     
