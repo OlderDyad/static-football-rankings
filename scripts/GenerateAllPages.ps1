@@ -1066,6 +1066,12 @@ function Process-AllTimeData {
                     "All-Time Programs $Threshold+ Seasons"
                 }
                 $template = $template -replace 'PAGE_TITLE', $pageTitle
+                
+                # Add this new section right after the page title replacement
+                if ($Category -eq "programs") {
+                    $template = $template -replace 'PROGRAM_THRESHOLD', $Threshold
+                }
+                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
