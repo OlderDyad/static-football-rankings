@@ -932,33 +932,6 @@ function Process-DecadeData {
     }
 }
 
-    # Process Teams
-    $teamJsonPath = Join-Path $dataDir "decades\teams\decade-teams-$DecadeName.json"
-    Write-Host "`nProcessing Teams" -ForegroundColor Yellow
-    Write-Host "  JSON Path: $teamJsonPath"
-    
-    if (Test-Path $teamJsonPath) {
-        try {
-            $jsonContent = Get-Content $teamJsonPath -Raw | ConvertFrom-Json
-            $templatePath = Join-Path $templateBaseDir "decades\decade-teams-template.html"
-            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-teams.html"
-
-            if (Test-Path $templatePath) {
-                $processedTemplate = Process-Template -TemplatePath $templatePath `
-                                                    -Replacements $commonReplacements `
-                                                    -Data $jsonContent `
-                                                    -Type "team"
-                
-                Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
-                Write-Host "`nGenerated: $DecadeName-teams.html" -ForegroundColor Green
-            }
-        }
-        catch {
-            Write-Error "Error processing $DecadeName teams: $_"
-        }
-    }
-}
-
 function Process-StateData {
     param (
         [string]$StateCode
