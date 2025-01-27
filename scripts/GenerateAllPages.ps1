@@ -1102,7 +1102,8 @@ function Process-AllTimeData {
 function Process-LatestSeasonData {
     Write-Host "Processing latest season data..." -ForegroundColor Yellow
     
-    $jsonPath = Join-Path $dataDir "latest\latest-season-teams.json"
+    # Update the path to match the correct file name
+    $jsonPath = Join-Path $dataDir "latest\latest-teams.json"
     Write-Host "Looking for file at: $jsonPath" -ForegroundColor Yellow
     
     if (Test-Path $jsonPath) {
@@ -1112,13 +1113,21 @@ function Process-LatestSeasonData {
             Write-Host "JSON content length: $($jsonContent.Length)" -ForegroundColor Yellow
             $jsonData = $jsonContent | ConvertFrom-Json
 
+            # Generate the standardized JSON file (like we do for other categories)
+            Generate-StandardizedJson -Type "latest-teams" `
+                                   -Items $jsonData.items `
+                                   -TopItem $jsonData.topItem `
+                                   -Description "Latest Season Rankings" `
+                                   -YearRange "latest" `
+                                   -OutputPath $jsonPath
+
             $templatePath = Join-Path $templateBaseDir "latest-season\latest-season-template.html"
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
-
-                # Clean any userStyle tags
-                $template = $template -replace '<userStyle>.*?</userStyle>', ''
                 
+                # Define output path (this was missing in original)
+                $outputPath = Join-Path $outputBaseDir "latest-season\index.html"
+
                 # Insert scripts and update timestamp
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
@@ -1134,13 +1143,18 @@ function Process-LatestSeasonData {
 
                 # Write with UTF8 encoding to handle special characters
                 [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
-                Write-Host "Generated: latest-season/index.html"
+                Write-Host "Generated: latest-season/index.html" -ForegroundColor Green
+            } else {
+                Write-Error "Template not found: $templatePath"
+                Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "latest-season\index.html") `
+                                      -Title "Latest Season Rankings" `
+                                      -Message "Template file missing. Please check back soon!"
             }
         } catch {
             Write-Error "Error processing latest season data: $_"
             Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "latest-season\index.html") `
                                   -Title "Latest Season Rankings" `
-                                  -Message "Latest season rankings are being compiled. Please check back soon!"
+                                  -Message "Error processing latest season data. Please check back soon!"
         }
     } else {
         Write-Warning "Latest season JSON file not found: $jsonPath"
