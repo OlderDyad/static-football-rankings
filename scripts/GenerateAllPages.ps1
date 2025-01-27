@@ -869,6 +869,15 @@ function Process-DecadeData {
     if (Test-Path $programJsonPath) {
         try {
             $jsonContent = Get-Content $programJsonPath -Raw | ConvertFrom-Json
+            
+            # Add standardization step
+            Generate-StandardizedJson -Type "decade-programs" `
+                                   -Items $jsonContent.items `
+                                   -TopItem $jsonContent.topItem `
+                                   -Description "$DisplayName Programs" `
+                                   -YearRange "$StartYear-$EndYear" `
+                                   -OutputPath $programJsonPath
+
             $templatePath = Join-Path $templateBaseDir "decades\decade-programs-template.html"
             $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
 
@@ -886,6 +895,42 @@ function Process-DecadeData {
             Write-Error "Error processing $DecadeName programs: $_"
         }
     }
+
+    # Process Teams
+    $teamJsonPath = Join-Path $dataDir "decades\teams\decade-teams-$DecadeName.json"
+    Write-Host "`nProcessing Teams" -ForegroundColor Yellow
+    Write-Host "  JSON Path: $teamJsonPath"
+    
+    if (Test-Path $teamJsonPath) {
+        try {
+            $jsonContent = Get-Content $teamJsonPath -Raw | ConvertFrom-Json
+            
+            # Add standardization step
+            Generate-StandardizedJson -Type "decade-teams" `
+                                   -Items $jsonContent.items `
+                                   -TopItem $jsonContent.topItem `
+                                   -Description "$DisplayName Teams" `
+                                   -YearRange "$StartYear-$EndYear" `
+                                   -OutputPath $teamJsonPath
+
+            $templatePath = Join-Path $templateBaseDir "decades\decade-teams-template.html"
+            $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-teams.html"
+
+            if (Test-Path $templatePath) {
+                $processedTemplate = Process-Template -TemplatePath $templatePath `
+                                                    -Replacements $commonReplacements `
+                                                    -Data $jsonContent `
+                                                    -Type "team"
+                
+                Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
+                Write-Host "`nGenerated: $DecadeName-teams.html" -ForegroundColor Green
+            }
+        }
+        catch {
+            Write-Error "Error processing $DecadeName teams: $_"
+        }
+    }
+}
 
     # Process Teams
     $teamJsonPath = Join-Path $dataDir "decades\teams\decade-teams-$DecadeName.json"
