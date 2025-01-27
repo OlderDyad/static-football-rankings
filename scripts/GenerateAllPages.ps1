@@ -1077,7 +1077,7 @@ function Process-AllTimeData {
                 }
 
                 # Table rows
-                $tableRows = Generate-TableRows -Items $jsonData.items -Type $Category
+                $tableRows = Generate-TableRows -Items $jsonData.items -Type $(if ($Category -eq "teams") { "team" } else { "program" })
                 $template = $template -replace 'TABLE_ROWS', $tableRows
 
                 Set-Content -Path $outputPath -Value $template -Encoding UTF8
