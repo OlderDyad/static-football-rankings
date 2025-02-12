@@ -1,4 +1,4 @@
-# generate-all-json-files.ps1
+# .\generate-all-json-files.ps1
 
 $scriptsDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json"
 

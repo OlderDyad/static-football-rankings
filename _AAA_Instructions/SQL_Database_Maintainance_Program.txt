@@ -1,0 +1,99 @@
+-- 1. Create size monitoring procedure
+CREATE OR ALTER PROCEDURE [dbo].[MonitorDatabaseSize]
+    @ProcessName VARCHAR(100),
+    @StepName VARCHAR(100)
+AS
+BEGIN
+    INSERT INTO dbo.DatabaseSizeLog (
+        ProcessName,
+        StepName,
+        DatabaseName,
+        FileName,
+        FileSizeMB,
+        SpaceUsedMB,
+        CaptureTime
+    )
+    SELECT 
+        @ProcessName,
+        @StepName,
+        DB_NAME(),
+        name,
+        CAST(size * 8.0 / 1024 AS DECIMAL(10,2)) as FileSizeMB,
+        CAST(FILEPROPERTY(name, 'SpaceUsed') * 8.0 / 1024 AS DECIMAL(10,2)) as SpaceUsedMB,
+        GETDATE()
+    FROM sys.database_files;
+END;
+GO
+
+-- 2. Create table to log size changes
+IF NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = 'DatabaseSizeLog')
+CREATE TABLE DatabaseSizeLog (
+    LogID INT IDENTITY(1,1) PRIMARY KEY,
+    ProcessName VARCHAR(100),
+    StepName VARCHAR(100),
+    DatabaseName VARCHAR(100),
+    FileName VARCHAR(100),
+    FileSizeMB DECIMAL(10,2),
+    SpaceUsedMB DECIMAL(10,2),
+    CaptureTime DATETIME
+);
+GO
+
+-- 3. Modified import workflow with size monitoring
+-- Example of how to use in your workflow:
+/*
+-- Before import
+EXEC dbo.MonitorDatabaseSize 'DataImport', 'BeforeImport';
+
+-- Your existing import steps
+TRUNCATE TABLE dbo.HS_Scores_Staging;
+EXEC dbo.ImportToStaging @FilePath = '...';
+
+-- After staging import
+EXEC dbo.MonitorDatabaseSize 'DataImport', 'AfterStagingImport';
+
+-- Transform and import
+EXEC dbo.TransformStagingToScores @Season = 2024;
+
+-- After final import
+EXEC dbo.MonitorDatabaseSize 'DataImport', 'AfterFinalImport';
+*/
+
+-- 4. Query to analyze temporary objects during import
+SELECT 
+    t.name AS TableName,
+    t.create_date,
+    CAST(SUM(a.total_pages * 8.0 / 1024) AS DECIMAL(10,2)) AS SizeMB
+FROM sys.tables t
+INNER JOIN sys.indexes i ON t.object_id = i.object_id
+INNER JOIN sys.partitions p ON i.object_id = p.object_id AND i.index_id = p.index_id
+INNER JOIN sys.allocation_units a ON p.partition_id = a.container_id
+WHERE t.name LIKE '%Staging%'
+   OR t.name LIKE '%Temp%'
+   OR t.name LIKE '%Import%'
+GROUP BY t.name, t.create_date
+ORDER BY t.create_date DESC;
+
+-- 5. Size change analysis query
+WITH SizeChanges AS (
+    SELECT 
+        ProcessName,
+        StepName,
+        FileName,
+        FileSizeMB,
+        SpaceUsedMB,
+        CaptureTime,
+        LAG(FileSizeMB) OVER (PARTITION BY FileName ORDER BY CaptureTime) as PrevFileSizeMB
+    FROM DatabaseSizeLog
+)
+SELECT 
+    ProcessName,
+    StepName,
+    FileName,
+    FileSizeMB,
+    SpaceUsedMB,
+    ISNULL(FileSizeMB - PrevFileSizeMB, 0) as SizeIncreaseMB,
+    CaptureTime
+FROM SizeChanges
+WHERE ISNULL(FileSizeMB - PrevFileSizeMB, 0) <> 0
+ORDER BY CaptureTime DESC;

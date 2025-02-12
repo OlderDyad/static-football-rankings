@@ -1,0 +1,60 @@
+Step 1: Open Your Terminal & Activate Python Virtual Environment
+Open Windows PowerShell or Command Prompt.
+Navigate to your Python script folder:
+
+cd "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts"
+Activate your Python virtual environment:
+
+.\venv\Scripts\Activate
+(If using Command Prompt instead of PowerShell, use venv\Scripts\activate.bat.)
+Step 2: Run the Python Script
+Run the script to open the MHSAA website:
+
+
+python MHSAA_WebScrapper.py
+The script will launch Google Chrome and load the MHSAA Scores page.
+
+Step 3: Manually Set Filters in the Browser
+Set these filters manually:
+
+Sport: Select Football.
+Start Date: Enter the first date you want to collect.
+End Date: Enter the last date you want to collect.
+Level: Select Varsity.
+Click the ‘Search’ button manually.
+
+Step 4: Resume Script & Save Varsity Scores
+After applying the filters and clicking ‘Search’, return to the terminal.
+Press Enter in the terminal to resume the script.
+The script will scrape the scores and prompt you:
+
+Do you want to append to the existing CSV file (a) or overwrite it (w)? [a/w]:
+Enter w (overwrite) to create a new CSV file for this session.
+The script will process the data and save it in:
+
+
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\mhsaa_schedules.csv
+Wait for the script to finish. You will see a message like:
+
+
+🎉 Done! Wrote 1500 rows to mhsaa_schedules.csv
+Step 5: Run Again for 8-Man Scores
+Run the script again:
+
+python MHSAA_WebScrapper.py
+When the page opens, change the Level filter to 8-Man.
+Click ‘Search’ manually.
+Return to the terminal and press Enter to resume.
+This time, when prompted:
+
+Do you want to append to the existing CSV file (a) or overwrite it (w)? [a/w]:
+Enter a (append) to add 8-Man scores to the same CSV file.
+Wait for the script to finish. You will see a message like:
+
+🎉 Done! Wrote 2300 rows to mhsaa_schedules.csv
+Step 6: Verify & Open CSV File
+Go to the folder:
+
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+Open mhsaa_schedules.csv in Excel or a text editor.
+Confirm that both Varsity and 8-Man scores are present.

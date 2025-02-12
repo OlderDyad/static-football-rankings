@@ -1,0 +1,31 @@
+-- Step 1: Clear staging (essential step)
+TRUNCATE TABLE dbo.HS_Scores_Staging;
+
+-- Step 2: Bulk insert CO_DE data
+EXEC dbo.ImportToStaging 
+          @FilePath = 'C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules_MI_MI.csv';
+		  
+	-- Step 3: Add new URL mappings
+EXEC [dbo].[AddNewURLMappings];
+
+	-- Step 4: Transform and Import
+INSERT INTO dbo.HS_Scores (
+    [Date], Season, Home, Visitor, Neutral, Location, 
+    Location2, Line, Future_Game, Source, Date_Added, 
+    OT, Forfeit, ID, Visitor_Score, Home_Score, 
+    Margin, Access_ID
+)
+EXEC dbo.TransformStagingToScores @Season = 2024;
+
+  -- Step 5: Verify import by state distribution
+SELECT 
+    SUBSTRING(Home, 
+             CHARINDEX('(', Home) + 1,
+             CHARINDEX(')', Home) - CHARINDEX('(', Home) - 1) as State,
+    COUNT(*) as Games
+FROM HS_Scores 
+WHERE Season = 2024
+GROUP BY SUBSTRING(Home, 
+                  CHARINDEX('(', Home) + 1,
+                  CHARINDEX(')', Home) - CHARINDEX('(', Home) - 1)
+ORDER BY Games DESC;

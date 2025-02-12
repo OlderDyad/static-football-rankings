@@ -1,0 +1,282 @@
+-- Step 0: Pre-Import Cleanup
+EXEC [dbo].[CleanupBeforeImport];
+
+-- Step 1: Import to staging (previous truncate step not needed anymore)
+EXEC dbo.ImportToStaging 
+    @FilePath = 'C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules_v4.csv';
+
+-- Step 2: Add new URL mappings
+EXEC [dbo].[AddNewURLMappings];
+
+-- Step 3: Transform and Import
+INSERT INTO dbo.HS_Scores (
+    [Date], Season, Home, Visitor, Neutral, Location, 
+    Location2, Line, Future_Game, Source, Date_Added, 
+    OT, Forfeit, ID, Visitor_Score, Home_Score, 
+    Margin, Access_ID
+)
+EXEC dbo.TransformStagingToScores @Season = 2024;
+
+_____________________________________________
+Documentation: CSV Import to Final HS_Scores Records
+Step 1: Initial Setup
+Create Required Tables and Procedures:
+
+Staging Table (HS_Scores_Staging):
+Holds raw CSV data.
+URL Mapping Table (URL_ProperName_Mapping):
+Maps raw URLs to standardized team names.
+Manual Review Table (UnmappedURL_Log & Manual_Review_Games):
+Logs records with unmapped or ambiguous URL data for manual review.
+Transformation Procedure (TransformStagingToScores):
+Converts raw staging data into a format matching HS_Scores.
+Duplicate Removal Procedure (RemoveDuplicateGames):
+Identifies and deletes duplicate game records based on key game fields.
+(Optional) Create Alias/Mapping Tables:
+
+TeamName_Alias & TeamName_Mapping:
+To capture and resolve ambiguous team names (e.g., those with "[TBD]-" prefixes).
+(We used these to verify that the proper names were being identified.)
+Step 2: Data Import into Staging and Preliminary Cleaning
+Load the CSV File into HS_Scores_Staging:
+
+sql
+Copy
+TRUNCATE TABLE dbo.HS_Scores_Staging;
+BULK INSERT dbo.HS_Scores_Staging
+FROM 'C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules.csv'
+WITH (
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    CODEPAGE = '65001'
+);
+GO
+Identify Ambiguous Records for Manual Review:
+
+Execute a script (e.g., 4_IdentifyManualReviewCases.sql) that inserts records with missing or placeholder OpponentURL values into UnmappedURL_Log or Manual_Review_Games.
+
+For example:
+
+sql
+Copy
+INSERT INTO UnmappedURL_Log (TeamName, Opponent, TeamURL, OpponentURL, GameDate)
+SELECT DISTINCT 
+    s.TeamName,
+    s.Opponent,
+    s.URL,
+    s.OpponentURL,
+    s.[Date]
+FROM dbo.HS_Scores_Staging s
+LEFT JOIN URL_ProperName_Mapping m1 ON s.URL = m1.URL
+LEFT JOIN URL_ProperName_Mapping m2 ON s.OpponentURL + 'schedule/' = m2.URL
+WHERE s.Status = 'Processed'
+    AND (m1.ProperName IS NULL OR m2.ProperName IS NULL)
+    AND s.OpponentURL <> 'https://www.maxpreps.com/utility/about_pseudo_schools.aspx';
+GO
+Review the manual review tables to determine if any data corrections are needed.
+
+Step 3: Data Transformation Using TransformStagingToScores
+Transform Data:
+
+The procedure TransformStagingToScores:
+
+Rebuilds the game date using the CSV's [Date] field.
+
+Maps team names by joining to URL_ProperName_Mapping.
+
+Uses the Location field and WL (win/loss) flag to determine:
+
+Which team is Home and which is Visitor.
+How to parse the Score string (e.g., "35-30") so that if WL = 'L', then TeamName’s score is the lower number, and if WL = 'W', it’s the higher number.
+Returns exactly 18 columns that match the HS_Scores table definition:
+
+Columns Returned:
+
+[Date]
+Season
+Home
+Visitor
+Neutral
+Location
+Location2
+Line
+Future_Game
+Source
+Date_Added
+OT
+Forfeit
+ID
+Visitor_Score
+Home_Score
+Margin
+Access_ID
+Testing the Procedure:
+
+sql
+Copy
+EXEC TransformStagingToScores @Season = 2024;
+GO
+This returned 22,729 records, indicating the transformation is working.
+
+Review the Transformed Output:
+
+Verify that the procedure correctly assigns:
+Home_Score and Visitor_Score based on:
+The WL field (determining if TeamName’s score is the higher or lower number).
+The Location field (determining whether TeamName is home or visitor).
+Margin calculated as Home_Score minus Visitor_Score.
+Step 4: Final Import into HS_Scores
+Clear Existing 2024 Data (Specific to MaxPreps Source):
+
+We avoid deleting all 2024 data because multiple sources exist, but for testing we decided to clear out the incorrect 2024 data before re-importing:
+
+sql
+Copy
+DELETE FROM HS_Scores
+WHERE Season = 2024
+  AND Source LIKE '%maxpreps.com%';
+GO
+Insert Transformed Data into HS_Scores:
+
+sql
+Copy
+INSERT INTO HS_Scores (
+    [Date],
+    Season,
+    Home,
+    Visitor,
+    Neutral,
+    Location,
+    Location2,
+    Line,
+    Future_Game,
+    Source,
+    Date_Added,
+    OT,
+    Forfeit,
+    ID,
+    Visitor_Score,
+    Home_Score,
+    Margin,
+    Access_ID
+)
+EXEC TransformStagingToScores @Season = 2024;
+GO
+Verify the Import:
+
+sql
+Copy
+SELECT TOP 100 *
+FROM HS_Scores
+WHERE Season = 2024
+ORDER BY [Date], Home;
+GO
+Step 5: Duplicate Detection and Removal
+Detect Duplicates:
+
+Run the following query to identify duplicate game records for 2024:
+
+sql
+Copy
+WITH DuplicateGames AS (
+    SELECT 
+        ID,
+        ROW_NUMBER() OVER (
+            PARTITION BY [Date], Home, Home_Score, Visitor, Visitor_Score
+            ORDER BY Date_Added ASC
+        ) AS rn
+    FROM HS_Scores
+    WHERE Season = 2024
+)
+SELECT 
+    s.ID,
+    s.[Date],
+    s.Home,
+    s.Home_Score,
+    s.Visitor,
+    s.Visitor_Score,
+    s.Date_Added,
+    d.rn
+FROM DuplicateGames d
+INNER JOIN HS_Scores s ON d.ID = s.ID
+WHERE d.rn > 1
+ORDER BY s.[Date], s.Home, s.Visitor;
+GO
+In our tests, this returned about 10,000 duplicates (expected due to the CSV containing each game twice).
+
+Remove Duplicates:
+
+To keep only the earliest record per duplicate group, run:
+
+sql
+Copy
+WITH DuplicateGames AS (
+    SELECT 
+        ID,
+        ROW_NUMBER() OVER (
+            PARTITION BY [Date], Home, Home_Score, Visitor, Visitor_Score
+            ORDER BY Date_Added ASC
+        ) AS rn
+    FROM HS_Scores
+    WHERE Season = 2024
+)
+DELETE FROM HS_Scores
+WHERE ID IN (
+    SELECT ID 
+    FROM DuplicateGames 
+    WHERE rn > 1
+);
+GO
+Verify Duplicate Removal:
+
+sql
+Copy
+SELECT *
+FROM HS_Scores
+WHERE Season = 2024
+ORDER BY [Date], Home;
+GO
+Step 6: Quality Checks and Final Review
+Review Unmapped URL Log:
+Check the UnmappedURL_Log for any remaining issues.
+
+Manual Review:
+Confirm that any records in Manual_Review_Games have been addressed.
+
+Validation:
+Run any validation procedures (like ValidateGameData) and review the ValidationResults tables.
+
+Random Sampling:
+Execute a query to sample the imported data and ensure all game records are correctly formatted:
+
+sql
+Copy
+SELECT TOP 100 *
+FROM HS_Scores
+WHERE Season = 2024
+ORDER BY [Date], Home;
+GO
+Summary
+Initial Setup:
+
+Created staging, URL mapping, and manual review tables; set up transformation and duplicate removal procedures.
+Data Import & Preliminary Cleaning:
+
+Loaded CSV into HS_Scores_Staging.
+Logged ambiguous/unmapped URL records for manual review.
+Data Transformation:
+
+Executed TransformStagingToScores to convert staging data into the format required by HS_Scores, using the proper name identification and score parsing logic (with WL and Location considered).
+Final Import:
+
+
+Inserted the transformed 2024 records into HS_Scores.
+Duplicate Removal:
+
+Identified duplicate game records using a CTE and removed extra records (keeping the earliest entry per duplicate group).
+Quality Checks:
+
+Reviewed the final imported data, unmapped logs, and manual review tables to ensure data quality.
+This completes the end-to-end process for importing and cleaning the CSV data into HS_Scores.
+

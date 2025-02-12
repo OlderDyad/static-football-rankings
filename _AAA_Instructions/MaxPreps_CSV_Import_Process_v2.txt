@@ -1,0 +1,311 @@
+example:
+-- Step 1: Clear staging (essential step)
+TRUNCATE TABLE dbo.HS_Scores_Staging;
+
+-- Step 2: Bulk insert CO_DE data
+BULK INSERT dbo.HS_Scores_Staging
+FROM 'C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules_CO_DE.csv'
+WITH (
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    CODEPAGE = '65001'
+);
+
+****NOTE***** Example error handling
+
+
+-- Step 3: Add new URL mappings
+EXEC [dbo].[AddNewURLMappings];
+
+-- Step 4: Transform and Import
+INSERT INTO dbo.HS_Scores (
+    [Date], Season, Home, Visitor, Neutral, Location, 
+    Location2, Line, Future_Game, Source, Date_Added, 
+    OT, Forfeit, ID, Visitor_Score, Home_Score, 
+    Margin, Access_ID
+)
+EXEC dbo.TransformStagingToScores @Season = 2024;
+
+-- Step 5: Verify import by state distribution
+SELECT 
+    SUBSTRING(Home, 
+             CHARINDEX('(', Home) + 1,
+             CHARINDEX(')', Home) - CHARINDEX('(', Home) - 1) as State,
+    COUNT(*) as Games
+FROM HS_Scores 
+WHERE Season = 2024
+GROUP BY SUBSTRING(Home, 
+                  CHARINDEX('(', Home) + 1,
+                  CHARINDEX(')', Home) - CHARINDEX('(', Home) - 1)
+ORDER BY Games DESC;
+
+
+-- Step 6: Clear staging (free up memmory)
+TRUNCATE TABLE dbo.HS_Scores_Staging;
+
+
+Below is an example of how you’d follow your newly established process to import the file all_schedules_OH_SD.csv. The steps assume you’ve already got everything set up (tables, mappings, stored procedures, etc.), and all you need to do is run the standard sequence of commands.
+
+1. Truncate the Staging Table
+Remove any leftover data from previous loads:
+
+sql
+Copy
+Edit
+TRUNCATE TABLE dbo.HS_Scores_Staging;
+2. Bulk Insert the New CSV
+Load all_schedules_OH_SD.csv into HS_Scores_Staging. Adjust the path if necessary:
+
+
+EXEC dbo.ProcessMaxPrepsData 
+    'C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules_NH_NY.csv',
+    2024;
+
+
+BULK INSERT dbo.HS_Scores_Staging
+FROM 'C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules_OH_SD.csv'
+WITH (
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    CODEPAGE = '65001'
+);
+(You can do a quick SELECT COUNT(*) FROM dbo.HS_Scores_Staging; afterwards to confirm the row count.)
+
+3. Insert Unmapped URLs (Optional/If Not Already Handled in Transform)
+If you have a separate script to detect new URLs and populate UnmappedURL_Log, run that now:
+
+sql
+Copy
+Edit
+INSERT INTO UnmappedURL_Log (TeamName, Opponent, TeamURL, OpponentURL, GameDate)
+SELECT DISTINCT 
+    s.TeamName,
+    s.Opponent,
+    s.URL,
+    s.OpponentURL,
+    s.[Date]
+FROM dbo.HS_Scores_Staging s
+LEFT JOIN URL_ProperName_Mapping m1 ON s.URL = m1.URL
+LEFT JOIN URL_ProperName_Mapping m2 ON s.OpponentURL + 'schedule/' = m2.URL
+WHERE s.Status = 'Processed'
+  AND (m1.ProperName IS NULL OR m2.ProperName IS NULL)
+  AND s.OpponentURL != 'https://www.maxpreps.com/utility/about_pseudo_schools.aspx';
+(If your TransformStagingToScores procedure already logs unmapped URLs internally, you can skip this step.)
+
+4. Transform and Insert into HS_Scores
+Now run your transform procedure (which handles date parsing, scoring logic, etc.) and insert directly into HS_Scores. Example:
+
+sql
+Copy
+Edit
+INSERT INTO dbo.HS_Scores
+(
+    [Date],
+    Season,
+    Home,
+    Visitor,
+    Neutral,
+    Location,
+    Location2,
+    Line,
+    Future_Game,
+    Source,
+    Date_Added,
+    OT,
+    Forfeit,
+    ID,
+    Visitor_Score,
+    Home_Score,
+    Margin,
+    Access_ID
+)
+EXEC dbo.TransformStagingToScores @Season = 2024;
+5. Remove Duplicates (Optional Now or After All Imports)
+If you prefer to remove duplicates after each CSV, do:
+
+sql
+Copy
+Edit
+WITH DuplicateGames AS
+(
+    SELECT
+        ID,
+        ROW_NUMBER() OVER
+        (
+            PARTITION BY [Date], Home, Home_Score, Visitor, Visitor_Score
+            ORDER BY Date_Added ASC
+        ) AS rn
+    FROM dbo.HS_Scores
+    WHERE Season = 2024
+)
+DELETE FROM dbo.HS_Scores
+WHERE ID IN
+(
+    SELECT ID 
+    FROM DuplicateGames
+    WHERE rn > 1
+);
+(Or wait until after you load all CSVs, then remove duplicates once at the end.)
+
+6. Verify and Check Logs
+Check if any new URLs landed in UnmappedURL_Log.
+Look in HS_Scores_Staging or HS_Scores for suspicious rows.
+Sample the final data:
+sql
+Copy
+Edit
+SELECT TOP 100 *
+FROM dbo.HS_Scores
+WHERE Season = 2024
+ORDER BY [Date];
+That’s it! You’ve now imported Ohio and South Dakota (OH/SD) data into HS_Scores using the same pipeline. Repeat the same steps for each additional CSV file as you build them (all_schedules_IN_NE.csv, all_schedules_TN_TX.csv, etc.) until you’ve loaded all states.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Below is a recommended end‐to‐end approach for bringing in multiple CSV files (one per group of states) into your HS_Scores table—using the same overall logic you’ve used successfully for single‐file imports. The key difference is that you’ll just repeat certain steps for each file, with a final duplicate removal and quality checks once all states are loaded.
+
+1. Prepare or Rebuild the CSV Files
+You already have several CSVs (like all_schedules_FL_IL.csv, all_schedules_IN_NE.csv, etc.), plus more you plan to create.
+Ensure each CSV has the same column format used by HS_Scores_Staging.
+2. Loop Through Each File (One by One)
+Truncate HS_Scores_Staging.
+Bulk Insert from the CSV file.
+Log any unmapped URLs (so you can see if the new file has new team URLs).
+Run TransformStagingToScores to see the result set.
+Insert that result set into HS_Scores.
+This is effectively your ProcessMaxPrepsData routine, repeated for each CSV. For example:
+
+sql
+Copy
+Edit
+-- For each file:
+TRUNCATE TABLE dbo.HS_Scores_Staging;
+
+BULK INSERT dbo.HS_Scores_Staging
+FROM 'C:\Path\all_schedules_FL_IL.csv'
+WITH (
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    CODEPAGE = '65001'
+);
+
+-- Insert unmapped logs (already part of TransformStagingToScores or a separate step)
+-- Possibly run a separate script if that’s your standard.
+
+-- Insert final data
+INSERT INTO dbo.HS_Scores
+(
+  [Date], Season, Home, Visitor, Neutral, 
+  Location, Location2, Line, Future_Game, Source, 
+  Date_Added, OT, Forfeit, ID, 
+  Visitor_Score, Home_Score, Margin, Access_ID
+)
+EXEC dbo.TransformStagingToScores @Season = 2024;
+Repeat for all_schedules_IN_NE.csv, all_schedules_NH_NY.csv, etc.
+
+3. (Optional) Populate or Update URL_ProperName_Mapping
+If a CSV has brand‐new URLs, you may need to ensure they’re mapped. You can run a quick script:
+
+sql
+Copy
+Edit
+WITH UniqueURLs AS (
+    SELECT DISTINCT 
+        s.URL,
+        s.TeamName AS ProperName
+    FROM dbo.HS_Scores_Staging s
+    WHERE s.Status = 'Processed'
+)
+INSERT INTO dbo.URL_ProperName_Mapping (URL, ProperName)
+SELECT u.URL, u.ProperName
+FROM UniqueURLs u
+LEFT JOIN dbo.URL_ProperName_Mapping m 
+    ON u.URL = m.URL
+WHERE m.URL IS NULL;  -- only new ones
+Do a similar step for OpponentURL + 'schedule/'. That way you don’t have unmapped records. But it depends on your workflow (some do it automatically, others do it manually).
+
+4. After All Files Are Loaded
+Once you’ve processed all CSVs:
+
+Remove Duplicates for the season:
+
+sql
+Copy
+Edit
+WITH DuplicateGames AS (
+    SELECT 
+        ID,
+        ROW_NUMBER() OVER (
+            PARTITION BY [Date], Home, Home_Score, Visitor, Visitor_Score
+            ORDER BY Date_Added ASC
+        ) AS rn
+    FROM HS_Scores
+    WHERE Season = 2024
+)
+DELETE FROM HS_Scores
+WHERE ID IN (
+    SELECT ID 
+    FROM DuplicateGames 
+    WHERE rn > 1
+);
+Check for “two games on the same day” anomalies:
+
+sql
+Copy
+Edit
+SELECT
+    [Date],
+    Home,
+    COUNT(*) AS GamesPerHomeOneDay
+FROM HS_Scores
+WHERE Season = 2024
+GROUP BY [Date], Home
+HAVING COUNT(*) > 1
+ORDER BY [Date], Home;
+If you see any suspicious results, investigate them in HS_Scores or the staging data.
+Review UnmappedURL_Log:
+
+If it has new entries for these other states, see whether you need to fill in new ProperName mappings or fix the CSV data.
+Do Additional Quality Checks:
+
+For instance, verifying every team has around 10 games, or checking for improbable scores (like 999–0).
+5. Maintain This as a Standard Workflow
+Since you’ll likely do this for multiple seasons:
+
+Keep a single ProcessMaxPrepsData or ImportCSV procedure that does:
+Truncate staging
+Bulk insert
+Transform + Insert
+Log unmapped
+Possibly remove duplicates (although you might prefer to remove them after all CSVs).
+Follow the same steps each time.
+Summary
+Import each CSV file separately, using your standard staging + transform approach.
+Append all those rows into HS_Scores for the same season.
+Remove duplicates after all CSVs are loaded.
+Check for multi‐game same‐day anomalies.
+Review logs for unmapped URLs or manual corrections.
+This ensures you have a clean, repeatable pipeline for all states—and for future seasons as well.
