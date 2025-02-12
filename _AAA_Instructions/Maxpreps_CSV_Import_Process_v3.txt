@@ -315,21 +315,28 @@ Generate All .json files
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
 .\GenerateAllPages.ps1
 
-
 _______________________________
 -- Step 12: Push static-football-rankings changes to GitHub
 Generate .json files group by group
 Push changes to GitHub
 
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+git add -u
+git commit -m "Updated templates and scripts - new generate html script v86"
+
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
-## Add all changes to the staging area
-n
+Manually Stage Only Tracked File Changes
+If you prefer more control, you can stage only modifications (and deletions) to tracked files by using:
 
-# Commit the changes with a descriptive message
-git commit -m "Updated templates and scripts-new generate html script v84"
+git add -u
+Then commit with:
 
-# Push the changes to the main branch on GitHub
-git push origin main
+
+git commit -m "Updated templates and scripts - new generate html script v85"
+
+
+The -u option tells Git to update the index with modifications and removals for files that are already tracked, leaving untracked files alone.
+
 
 ______________________________
