@@ -284,19 +284,12 @@ C:\Users\demck\SQLData\hs_football_database
 -- Step 10: Calculate updated rankings
 Run in SQL to update rankings:
 
-EXEC [dbo].[CalculateRankings_v4]
-    @LeagueType = 1,      -- Assuming '1' for high school
-    @BeginSeason = 2024,     -- Starting season
-    @EndSeason = 2024,       -- Ending season
-    @Week = 52,              -- Week number
-    @MaxLoops = 2048;        -- Optional, can be omitted to use default
-
-EXEC [dbo].[CalculateRankings]
-    @LeagueType = 1,      -- Assuming '1' for high school
-    @BeginSeason = 2024,     -- Starting season
-    @EndSeason = 2024,       -- Ending season
-    @Week = 52,              -- Week number
-    @MaxLoops = 2048;        -- Optional, can be omitted to use default
+EXEC [dbo].[RunRankingsWithCleanup]
+    @LeagueType = 1,
+    @BeginSeason = 2019,
+    @EndSeason = 2004,
+    @Week = 52,
+    @MaxLoops = 2048;
 ___________________________
 Query latest season rankings
 
@@ -331,10 +324,10 @@ Push changes to GitHub
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
 ## Add all changes to the staging area
-git add .
+n
 
 # Commit the changes with a descriptive message
-git commit -m "Updated templates and scripts-new generate html script v83"
+git commit -m "Updated templates and scripts-new generate html script v84"
 
 # Push the changes to the main branch on GitHub
 git push origin main

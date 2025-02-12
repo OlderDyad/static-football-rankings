@@ -38,3 +38,14 @@ Thumbs.db
 .vercel
 .env*.local
 .env
+
+
+## SQL Data
+Data/SQL/*.mdf
+Data/SQL/*.ldf
+Data/SQL/*.ndf
+
+# Ignore SQL database files
+Data/SQL/*.mdf
+Data/SQL/*.ldf
+Data/SQL/*.ndf
