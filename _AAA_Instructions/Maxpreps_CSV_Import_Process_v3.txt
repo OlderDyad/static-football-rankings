@@ -48,6 +48,7 @@ python maxpreps_excel_loop_bak.py
 2. DATA IMPORT PROCESS:
    A. Clear Staging:
       TRUNCATE TABLE dbo.HS_Scores_Staging;
+      
 
       -- Step 0: Pre-Import Cleanup
 EXEC [dbo].[CleanupBeforeImport];
@@ -322,7 +323,8 @@ Push changes to GitHub
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
 git add -u
-git commit -m "Updated templates and scripts - new generate html script v86"
+git commit -m "Updated templates and scripts - new generate html script v88"
+git push origin main
 
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings

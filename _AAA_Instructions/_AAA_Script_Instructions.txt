@@ -137,14 +137,11 @@ _______________________________
 Push changes to GitHub
 
 
-cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
-## Add all changes to the staging area
-git add .
+Or, if you want to stage all modified tracked files:
 
-# Commit the changes with a descriptive message
-git commit -m "Updated templates and scripts-new generate html script v83"
 
-# Push the changes to the main branch on GitHub
+git add -u
+git commit -m "Update latest season template with corrected JSON path and rebuild HTML"
 git push origin main
 
 ______________________________
