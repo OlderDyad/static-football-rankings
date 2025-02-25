@@ -1,6 +1,6 @@
 # Paths and connection string
-$logFile = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\logs\state-programs.log"
-$outputDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\states\programs"
+$logFile = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\logs\state-teams.log"
+$outputDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\states\teams"
 $connectionString = "Server=MCKNIGHTS-PC\SQLEXPRESS01;Database=hs_football_database;Trusted_Connection=True;TrustServerCertificate=True"
 
 # Ensure directories exist
@@ -9,7 +9,7 @@ New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
 
 # Start logging
 Get-Date | Out-File $logFile
-"Starting state programs generation" | Tee-Object -FilePath $logFile -Append
+"Starting state teams generation" | Tee-Object -FilePath $logFile -Append
 
 # Import common functions and constants
 . ".\common-functions.ps1"
@@ -17,8 +17,7 @@ Get-Date | Out-File $logFile
 
 # Default parameters
 $pageNumber = 1
-$pageSize = 2000  # Increased to 2000 as requested
-$minSeasons = 25   # Added minimum seasons parameter
+$pageSize = 1000
 $searchTerm = [DBNull]::Value
 
 # Loop through states
@@ -30,32 +29,33 @@ foreach ($state in $regions) {
         $connection = Connect-Database
         Write-Host "Database connection established"
 
-        # Get programs for state
+        # Get teams for state
         $parameters = @(
             (New-SqlParameter -ParameterName "@State" -SqlType NVarChar -Value $stateFormatted),
-            (New-SqlParameter -ParameterName "@MinSeasons" -SqlType Int -Value $minSeasons),
             (New-SqlParameter -ParameterName "@PageNumber" -SqlType Int -Value $pageNumber),
             (New-SqlParameter -ParameterName "@PageSize" -SqlType Int -Value $pageSize),
             (New-SqlParameter -ParameterName "@SearchTerm" -SqlType NVarChar -Value $searchTerm)
         )
 
-        $command = New-Object System.Data.SqlClient.SqlCommand("EXEC GetProgramsByState @State, @MinSeasons, @PageNumber, @PageSize, @SearchTerm", $connection)
+        $command = New-Object System.Data.SqlClient.SqlCommand("EXEC GetTeamsByState @State, @PageNumber, @PageSize, @SearchTerm", $connection)
         foreach ($param in $parameters) {
             $command.Parameters.Add($param) | Out-Null
         }
 
         $adapter = New-Object System.Data.SqlClient.SqlDataAdapter($command)
         $dataset = New-Object System.Data.DataSet
-        $adapter.Fill($dataset) | Out-Null
+        $adapter.Fill($dataset)
 
         if ($dataset.Tables.Count -gt 0 -and $dataset.Tables[0].Rows.Count -gt 0) {
-            $programsTable = $dataset.Tables[0]
-            $topProgramName = $programsTable.Rows[0].program
-            Write-Host "Getting metadata for: $topProgramName"
+            $teamsTable = $dataset.Tables[0]
             
-            $metadata = Get-TeamMetadata -connection $connection -TeamName $topProgramName -isProgram $true
+            # Get metadata for the top team
+            $topTeamName = $teamsTable.Rows[0].Team
+            Write-Host "Getting metadata for: $topTeamName"
+            
+            $metadata = Get-TeamMetadata -connection $connection -TeamName $topTeamName -isProgram $false
             if (-not $metadata) {
-                Write-Host "Warning: No metadata found for $topProgramName" -ForegroundColor Yellow
+                Write-Host "Warning: No metadata found for $topTeamName" -ForegroundColor Yellow
                 $metadata = @{
                     Mascot = ""
                     backgroundColor = "Navy"
@@ -66,11 +66,13 @@ foreach ($state in $regions) {
             }
 
             # Format and save data
-            $jsonData = Format-ProgramData -programs $programsTable `
-                                         -metadata $metadata `
-                                         -description "Top programs for state: $stateFormatted"
+            $jsonData = Format-TeamData -teams $teamsTable `
+                                      -metadata $metadata `
+                                      -description "Top teams for state: $stateFormatted" `
+                                      -yearRange "All-Time" `
+                                      -stateFormatted $stateFormatted
 
-            $outputPath = Join-Path $outputDir "state-programs-$state.json"
+            $outputPath = Join-Path $outputDir "state-teams-$state.json"
             $jsonData | ConvertTo-Json -Depth 10 | Set-Content -Path $outputPath
             Write-Host "File written: $outputPath"
             "File generated: $outputPath" | Tee-Object -FilePath $logFile -Append
@@ -91,4 +93,4 @@ foreach ($state in $regions) {
     }
 }
 
-"State programs generation complete" | Tee-Object -FilePath $logFile -Append
+"State teams generation complete" | Tee-Object -FilePath $logFile -Append
