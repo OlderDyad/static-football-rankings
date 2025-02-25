@@ -84,11 +84,31 @@ function Format-ProgramData {
     Write-Host "Formatting program data with $($programs.Rows.Count) rows"
     
     try {
-        # Safe toString function for null values
+        # Improved SafeToString function with explicit array handling
         function SafeToString($value, $defaultValue = "0") {
             if ($null -eq $value -or [DBNull]::Value.Equals($value)) {
                 return $defaultValue
             }
+            
+            # Handle array type explicitly
+            if ($value -is [Array]) {
+                Write-Host "Converting array value for program data"
+                if ($value.Length -gt 0) {
+                    $firstVal = $value[0]
+                    if ($firstVal -is [System.Double] -or $firstVal -is [System.Decimal]) {
+                        return [double]::Parse($firstVal.ToString()).ToString("0.000")
+                    }
+                    return $firstVal.ToString()
+                }
+                return $defaultValue
+            }
+            
+            # Handle numeric types
+            if ($value -is [System.Double] -or $value -is [System.Decimal]) {
+                return [double]::Parse($value.ToString()).ToString("0.000")
+            }
+            
+            # Default string conversion
             return $value.ToString()
         }
         
@@ -104,11 +124,11 @@ function Format-ProgramData {
                 rank = [int]$programs.Rows[0].rank
                 program = $programs.Rows[0].program
                 seasons = [int]$programs.Rows[0].seasons
-                combined = SafeToString([double]$programs.Rows[0].combined, "0.000")
-                margin = SafeToString([double]$programs.Rows[0].margin, "0.000")
-                win_loss = SafeToString([double]$programs.Rows[0].win_loss, "0.000")
-                offense = SafeToString([double]$programs.Rows[0].offense, "0.000")
-                defense = SafeToString([double]$programs.Rows[0].defense, "0.000")
+                combined = SafeToString($programs.Rows[0].combined, "0.000")
+                margin = SafeToString($programs.Rows[0].margin, "0.000")
+                win_loss = SafeToString($programs.Rows[0].win_loss, "0.000")
+                offense = SafeToString($programs.Rows[0].offense, "0.000")
+                defense = SafeToString($programs.Rows[0].defense, "0.000")
                 state = SafeToString($programs.Rows[0].state)
                 mascot = if ($metadata) { $metadata.Mascot } else { "" }
                 backgroundColor = if ($metadata) { $metadata.backgroundColor } else { "Navy" }
@@ -121,11 +141,11 @@ function Format-ProgramData {
                     rank = [int]$_.rank
                     program = $_.program
                     seasons = [int]$_.seasons
-                    combined = SafeToString([double]$_.combined, "0.000")
-                    margin = SafeToString([double]$_.margin, "0.000")
-                    win_loss = SafeToString([double]$_.win_loss, "0.000")
-                    offense = SafeToString([double]$_.offense, "0.000")
-                    defense = SafeToString([double]$_.defense, "0.000")
+                    combined = SafeToString($_.combined, "0.000")
+                    margin = SafeToString($_.margin, "0.000")
+                    win_loss = SafeToString($_.win_loss, "0.000")
+                    offense = SafeToString($_.offense, "0.000")
+                    defense = SafeToString($_.defense, "0.000")
                     state = SafeToString($_.state)
                 }
             })
