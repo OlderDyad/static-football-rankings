@@ -148,11 +148,30 @@ function Format-TeamData {
     Write-Host "Formatting team data with $($teams.Rows.Count) rows"
     
     try {
-        # Safe toString function for null values
+        # Improved SafeToString function with explicit array handling
         function SafeToString($value, $defaultValue = "0") {
             if ($null -eq $value -or [DBNull]::Value.Equals($value)) {
                 return $defaultValue
             }
+            
+            # Handle array type explicitly (this is likely the issue)
+            if ($value -is [Array]) {
+                if ($value.Length -gt 0) {
+                    $firstVal = $value[0]
+                    if ($firstVal -is [System.Double] -or $firstVal -is [System.Decimal]) {
+                        return [double]::Parse($firstVal.ToString()).ToString("0.000")
+                    }
+                    return $firstVal.ToString()
+                }
+                return $defaultValue
+            }
+            
+            # Handle numeric types
+            if ($value -is [System.Double] -or $value -is [System.Decimal]) {
+                return [double]::Parse($value.ToString()).ToString("0.000")
+            }
+            
+            # Default string conversion
             return $value.ToString()
         }
         
@@ -175,11 +194,12 @@ function Format-TeamData {
                 rank = [int]$teams.Rows[0].Rank
                 team = $teams.Rows[0].Team
                 season = [int]$teams.Rows[0].Season 
-                combined = SafeToString([double]$teams.Rows[0].Combined, "0.000")
-                margin = SafeToString([double]$teams.Rows[0].Margin, "0.000")
-                win_loss = SafeToString([double]$teams.Rows[0].Win_Loss, "0.000")
-                offense = SafeToString([double]$teams.Rows[0].Offense, "0.000")
-                defense = SafeToString([double]$teams.Rows[0].Defense, "0.000")
+                # Use SafeToString to handle arrays
+                combined = SafeToString($teams.Rows[0].Combined, "0.000")
+                margin = SafeToString($teams.Rows[0].Margin, "0.000")
+                win_loss = SafeToString($teams.Rows[0].Win_Loss, "0.000")
+                offense = SafeToString($teams.Rows[0].Offense, "0.000")
+                defense = SafeToString($teams.Rows[0].Defense, "0.000")
                 state = $stateToUse
                 games_played = [int]$teams.Rows[0].Games_Played
                 mascot = if ($metadata) { $metadata.Mascot } else { "" }
@@ -199,11 +219,12 @@ function Format-TeamData {
                     rank = [int]$_.Rank
                     team = $_.Team
                     season = [int]$_.Season
-                    combined = SafeToString([double]$_.Combined, "0.000")
-                    margin = SafeToString([double]$_.Margin, "0.000")
-                    win_loss = SafeToString([double]$_.Win_Loss, "0.000")
-                    offense = SafeToString([double]$_.Offense, "0.000")
-                    defense = SafeToString([double]$_.Defense, "0.000")
+                    # Use SafeToString to handle arrays
+                    combined = SafeToString($_.Combined, "0.000")
+                    margin = SafeToString($_.Margin, "0.000")
+                    win_loss = SafeToString($_.Win_Loss, "0.000")
+                    offense = SafeToString($_.Offense, "0.000")
+                    defense = SafeToString($_.Defense, "0.000")
                     state = $itemState
                     games_played = [int]$_.Games_Played
                 }
@@ -219,6 +240,7 @@ function Format-TeamData {
         throw
     }
 }
+
 
  function New-SqlParameter {
     param (
@@ -244,15 +266,34 @@ function Format-StateTeamData {
         $metadata, 
         $description, 
         $yearRange,
-        $stateFormatted  # Added parameter for state
+        $stateFormatted
     )
     
     try {
-        # Safe toString function for null values
+        # Improved SafeToString function with explicit array handling
         function SafeToString($value, $defaultValue = "0") {
             if ($null -eq $value -or [DBNull]::Value.Equals($value)) {
                 return $defaultValue
             }
+            
+            # Handle array type explicitly
+            if ($value -is [Array]) {
+                if ($value.Length -gt 0) {
+                    $firstVal = $value[0]
+                    if ($firstVal -is [System.Double] -or $firstVal -is [System.Decimal]) {
+                        return [double]::Parse($firstVal.ToString()).ToString("0.000")
+                    }
+                    return $firstVal.ToString()
+                }
+                return $defaultValue
+            }
+            
+            # Handle numeric types
+            if ($value -is [System.Double] -or $value -is [System.Decimal]) {
+                return [double]::Parse($value.ToString()).ToString("0.000")
+            }
+            
+            # Default string conversion
             return $value.ToString()
         }
         
@@ -270,11 +311,11 @@ function Format-StateTeamData {
                 rank = [int]$teams.Rows[0].Rank
                 team = $teams.Rows[0].Team
                 season = [int]$teams.Rows[0].Season
-                combined = SafeToString([double]$teams.Rows[0].Combined, "0.000")
-                margin = SafeToString([double]$teams.Rows[0].Margin, "0.000")
-                win_loss = SafeToString([double]$teams.Rows[0].Win_Loss, "0.000")
-                offense = SafeToString([double]$teams.Rows[0].Offense, "0.000")
-                defense = SafeToString([double]$teams.Rows[0].Defense, "0.000")
+                combined = SafeToString($teams.Rows[0].Combined, "0.000")
+                margin = SafeToString($teams.Rows[0].Margin, "0.000")
+                win_loss = SafeToString($teams.Rows[0].Win_Loss, "0.000")
+                offense = SafeToString($teams.Rows[0].Offense, "0.000")
+                defense = SafeToString($teams.Rows[0].Defense, "0.000")
                 state = $stateFormatted
                 games_played = [int]$teams.Rows[0].Games_Played
                 mascot = if ($metadata) { $metadata.Mascot } else { "" }
@@ -288,11 +329,11 @@ function Format-StateTeamData {
                     rank = [int]$_.Rank
                     team = $_.Team
                     season = [int]$_.Season
-                    combined = SafeToString([double]$_.Combined, "0.000")
-                    margin = SafeToString([double]$_.Margin, "0.000")
-                    win_loss = SafeToString([double]$_.Win_Loss, "0.000")
-                    offense = SafeToString([double]$_.Offense, "0.000")
-                    defense = SafeToString([double]$_.Defense, "0.000")
+                    combined = SafeToString($_.Combined, "0.000")
+                    margin = SafeToString($_.Margin, "0.000")
+                    win_loss = SafeToString($_.Win_Loss, "0.000")
+                    offense = SafeToString($_.Offense, "0.000")
+                    defense = SafeToString($_.Defense, "0.000")
                     state = $stateFormatted
                     games_played = [int]$_.Games_Played
                 }
