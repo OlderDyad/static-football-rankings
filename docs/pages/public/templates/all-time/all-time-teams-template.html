@@ -131,9 +131,6 @@
     import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
     document.addEventListener('DOMContentLoaded', async () => {
         try {
-            console.log('Starting banner initialization');
-            const container = document.getElementById('teamHeaderContainer');
-            console.log('Container found:', container);
             const banner = new TopBanner();
             await banner.initialize();
         } catch (error) {

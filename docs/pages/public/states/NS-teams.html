@@ -448,18 +448,18 @@ document.getElementById('submitComment')?.addEventListener('click', submitCommen
 })();
 </script>
         
-        <!-- TopBanner initialization -->
-        <script type="module">
-            import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
-            document.addEventListener('DOMContentLoaded', async () => {
-                try {
-                    const banner = new TopBanner();
-                    await banner.initialize();
-                } catch (error) {
-                    console.warn('Banner initialization failed:', error);
-                    document.body.style.display = 'block';
-                }
-            });
-        </script>
+<!-- TopBanner initialization -->
+<script type="module">
+    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const banner = new TopBanner();
+            await banner.initialize();
+        } catch (error) {
+            console.warn('Banner initialization failed:', error);
+            document.body.style.display = 'block';
+        }
+    });
+</script>
     </body>
 </html>
