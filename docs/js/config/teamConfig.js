@@ -1,33 +1,42 @@
-// docs/js/config/teamConfig.js
+// teamConfig.js - improved version with more robust path handling
 export const teamConfig = {
+    // Default values - use absolute path
     defaultLogo: '/static-football-rankings/images/default-logo.png',
     
-    getTeamImagePath: (imageFile) => {
-        console.group('Team Image Path Processing');
-        console.log('Input image path:', imageFile);
-
-        if (!imageFile) {
-            console.log('No image file provided, using default');
-            console.groupEnd();
-            return teamConfig.defaultLogo;
+    // Get the correct path for team images with better handling
+    getTeamImagePath: function(path) {
+        if (!path) return this.defaultLogo;
+        
+        try {
+            console.debug("Original path:", path);
+            
+            // Remove any leading/trailing whitespace
+            let cleanPath = path.trim();
+            
+            // If it already has the full prefix, return as is
+            if (cleanPath.startsWith('/static-football-rankings/')) {
+                return cleanPath;
+            }
+            
+            // Build the absolute path
+            let fullPath;
+            if (cleanPath.startsWith('/')) {
+                fullPath = '/static-football-rankings' + cleanPath;
+            } 
+            else {
+                fullPath = '/static-football-rankings/' + cleanPath;
+            }
+            
+            console.debug(`Processed image path: ${path} → ${fullPath}`);
+            return fullPath;
+        } catch (error) {
+            console.error("Error processing image path:", error);
+            return this.defaultLogo;
         }
-
-        // Remove any leading slash
-        const cleanPath = imageFile.replace(/^\//, '');
-
-        // If path starts with 'images/Teams/', prepend our base path
-        if (cleanPath.startsWith('images/Teams/')) {
-            const finalPath = `/static-football-rankings/${cleanPath}`;
-            console.log('Processed path:', finalPath);
-            console.groupEnd();
-            return finalPath;
-        }
-
-        // Handle paths that don't start with images/Teams/
-        // This ensures we still try to find the image in our structure
-        const constructedPath = `/static-football-rankings/images/Teams/${cleanPath}`;
-        console.log('Constructed path:', constructedPath);
-        console.groupEnd();
-        return constructedPath;
+    },
+    
+    normalizeTeamName: function(name) {
+        if (!name) return '';
+        return name.trim();
     }
 };

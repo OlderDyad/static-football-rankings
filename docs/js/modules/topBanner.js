@@ -2,9 +2,23 @@
 import { teamConfig } from '../config/teamConfig.js';
 import { log, DEBUG_LEVELS } from './logger.js';
 
+// Function to fix image paths with spaces and special characters
+function fixImagePath(path) {
+    if (!path) return '';
+    
+    // Handle URL encoding for spaces and special characters
+    const parts = path.split('/');
+    const filename = parts.pop();
+    const encodedFilename = encodeURIComponent(filename);
+    parts.push(encodedFilename);
+    
+    return parts.join('/');
+}
+
 export class TopBanner {
     constructor() {
         this.container = document.getElementById('teamHeaderContainer');
+        this.imageRetryCount = {}; // Track retry counts for images
     }
 
     async initialize() {
@@ -20,6 +34,7 @@ export class TopBanner {
 
             const data = await this.loadTopItemData();
             if (data && data.topItem) {
+                log(DEBUG_LEVELS.DEBUG, 'Loaded topItem data:', JSON.stringify(data.topItem));
                 this.renderBanner(data.topItem);
             }
         } catch (error) {
@@ -56,14 +71,46 @@ export class TopBanner {
             log(DEBUG_LEVELS.ERROR, 'Banner container not found');
             return;
         }
-
-        // Get image paths with fallback to default
-        const logoPath = topItem.LogoURL ? teamConfig.getTeamImagePath(topItem.LogoURL) : teamConfig.defaultLogo;
-        const schoolLogoPath = topItem.School_Logo_URL ? teamConfig.getTeamImagePath(topItem.School_Logo_URL) : teamConfig.defaultLogo;
-
+    
+        // Detailed logging of the topItem object
+        log(DEBUG_LEVELS.DEBUG, 'Full topItem data:', topItem);
+        log(DEBUG_LEVELS.DEBUG, 'LogoURL (uppercase):', topItem.LogoURL);
+        log(DEBUG_LEVELS.DEBUG, 'logoURL (lowercase):', topItem.logoURL);
+        log(DEBUG_LEVELS.DEBUG, 'School_Logo_URL:', topItem.School_Logo_URL);
+        log(DEBUG_LEVELS.DEBUG, 'schoolLogoURL:', topItem.schoolLogoURL);
+    
+        // Support both property naming conventions
+        const logoURL = topItem.logoURL || topItem.LogoURL;
+        const schoolLogoURL = topItem.schoolLogoURL || topItem.School_Logo_URL;
+    
+        // More logging for the resolved URLs
+        log(DEBUG_LEVELS.DEBUG, 'Resolved logoURL:', logoURL);
+        log(DEBUG_LEVELS.DEBUG, 'Resolved schoolLogoURL:', schoolLogoURL);
+    
+        // Fix #1: Better team/program name handling with explicit null checking
+        const teamName = topItem.team || topItem.program || 'Unknown Team';
+        const mascot = topItem.mascot || '';
+    
+        // Fix #2: Handle image paths better - stop endless loops
+        const logoPath = logoURL ? 
+            teamConfig.getTeamImagePath(fixImagePath(logoURL)) : 
+            teamConfig.defaultLogo;
+            
+        const schoolLogoPath = schoolLogoURL ? 
+            teamConfig.getTeamImagePath(fixImagePath(schoolLogoURL)) : 
+            teamConfig.defaultLogo;
+    
         // Handle styling with fallbacks
         const backgroundColor = topItem.backgroundColor || '#FFFFFF';
         const textColor = topItem.textColor || '#000000';
+    
+        // Fix #3: Better stats display with proper null handling
+        const seasonsText = topItem.seasons ? `Seasons: ${topItem.seasons}` : '';
+        const marginText = topItem.margin ? `Margin: ${parseFloat(topItem.margin).toFixed(1)}` : '';
+        const seasonText = topItem.season ? `Season: ${topItem.season}` : '';
+        const statsText = [seasonsText, marginText, seasonText].filter(Boolean).join(' | ');
+    
+        // The rest of your method remains unchanged...
 
         const bannerHTML = `
             <div class="team-header" style="background-color: ${backgroundColor}; color: ${textColor};">
@@ -72,27 +119,26 @@ export class TopBanner {
                         <!-- Team Logo -->
                         <div class="col-md-3 text-center">
                             <img src="${logoPath}"
-                                 alt="${topItem.program || 'Team'} Logo"
+                                 alt="${teamName} Logo"
                                  class="img-fluid team-logo"
-                                 onerror="this.src='${teamConfig.defaultLogo}'; this.classList.add('default-logo');" />
+                                 data-default-shown="false"
+                                 onerror="if(!this.dataset.defaultShown){this.src='${teamConfig.defaultLogo}'; this.dataset.defaultShown='true';}" />
                         </div>
                         <!-- Team/Program Info -->
                         <div class="col-md-6 text-center">
-                            <h2>${topItem.program || 'Unknown Team'}</h2>
-                            ${topItem.mascot ? `<p class="mascot-name">${topItem.mascot}</p>` : ''}
+                            <h2>${teamName}</h2>
+                            ${mascot ? `<p class="mascot-name">${mascot}</p>` : ''}
                             <div class="team-stats">
-                                <small>
-                                    ${topItem.seasons ? `Seasons: ${topItem.seasons}` : ''}
-                                    ${topItem.margin ? `| Margin: ${parseFloat(topItem.margin).toFixed(1)}` : ''}
-                                </small>
+                                <small>${statsText}</small>
                             </div>
                         </div>
                         <!-- School Logo -->
                         <div class="col-md-3 text-center">
                             <img src="${schoolLogoPath}"
-                                 alt="${topItem.program || 'School'} School Logo"
+                                 alt="${teamName} School Logo"
                                  class="img-fluid school-logo"
-                                 onerror="this.src='${teamConfig.defaultLogo}'; this.classList.add('default-logo');" />
+                                 data-default-shown="false"
+                                 onerror="if(!this.dataset.defaultShown){this.src='${teamConfig.defaultLogo}'; this.dataset.defaultShown='true';}" />
                         </div>
                     </div>
                 </div>
@@ -112,15 +158,5 @@ export class TopBanner {
             </div>
         `;
         log(DEBUG_LEVELS.ERROR, 'Banner error rendered:', message);
-    }
-
-    validateImagePath(path) {
-        if (!path) return false;
-        const img = new Image();
-        img.src = path;
-        return new Promise((resolve) => {
-            img.onload = () => resolve(true);
-            img.onerror = () => resolve(false);
-        });
     }
 }

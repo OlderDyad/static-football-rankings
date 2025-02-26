@@ -1,0 +1,83 @@
+-- 1. Create a table to track name standardization
+CREATE TABLE TeamNames_Standardization (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    OriginalName VARCHAR(255),
+    StandardizedName VARCHAR(255),
+    State VARCHAR(10),
+    Status VARCHAR(20), -- 'Pending', 'Reviewed', 'Approved'
+    Notes VARCHAR(500),
+    DateAdded DATETIME DEFAULT GETDATE(),
+    DateUpdated DATETIME
+);
+
+-- 2. Find similar names using SOUNDEX and state grouping
+WITH TeamBase AS (
+    SELECT DISTINCT 
+        Team_Name,
+        CASE 
+            WHEN Team_Name LIKE '%(__)%' 
+            THEN SUBSTRING(Team_Name, CHARINDEX('(', Team_Name) + 1, 2)
+            ELSE NULL 
+        END as State,
+        SUBSTRING(Team_Name, 1, CASE 
+            WHEN CHARINDEX('(', Team_Name) > 0 
+            THEN CHARINDEX('(', Team_Name) - 1
+            ELSE LEN(Team_Name)
+        END) as NameWithoutState
+    FROM HS_Team_Names
+)
+SELECT 
+    t1.Team_Name as Name1,
+    t2.Team_Name as Name2,
+    t1.State,
+    DIFFERENCE(t1.NameWithoutState, t2.NameWithoutState) as SimilarityScore
+FROM TeamBase t1
+JOIN TeamBase t2 ON t1.State = t2.State 
+    AND t1.Team_Name < t2.Team_Name
+    AND DIFFERENCE(t1.NameWithoutState, t2.NameWithoutState) >= 3
+ORDER BY t1.State, t1.NameWithoutState;
+
+-- 3. Find names with double quotes to fix
+SELECT Team_Name
+FROM HS_Team_Names
+WHERE Team_Name LIKE '%""%'
+ORDER BY Team_Name;
+
+-- 4. Example update statement for standardizing names
+-- (To be used after manual review and approval)
+/*
+UPDATE HS_Team_Names
+SET Team_Name = ts.StandardizedName
+FROM HS_Team_Names tn
+JOIN TeamNames_Standardization ts 
+    ON tn.Team_Name = ts.OriginalName
+WHERE ts.Status = 'Approved';
+
+UPDATE HS_Scores
+SET Home = ts.StandardizedName
+FROM HS_Scores s
+JOIN TeamNames_Standardization ts 
+    ON s.Home = ts.OriginalName
+WHERE ts.Status = 'Approved';
+
+UPDATE HS_Scores
+SET Visitor = ts.StandardizedName
+FROM HS_Scores s
+JOIN TeamNames_Standardization ts 
+    ON s.Visitor = ts.OriginalName
+WHERE ts.Status = 'Approved';
+*/
+
+-- 5. Query to find duplicate teams after standardization
+WITH StandardizedNames AS (
+    SELECT 
+        Team_Name,
+        COUNT(*) as NameCount
+    FROM HS_Team_Names
+    GROUP BY Team_Name
+    HAVING COUNT(*) > 1
+)
+SELECT tn.* 
+FROM HS_Team_Names tn
+JOIN StandardizedNames sn ON tn.Team_Name = sn.Team_Name
+ORDER BY tn.Team_Name;

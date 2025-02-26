@@ -99,6 +99,14 @@ Verify name standardization worked
 Sample data validation
 Check for unusual scores or patterns
 
+_________________________________
+Sync Sql HS_Team_Names with excel HS_Team_Names:
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\HS_Team_Names.xltm
+
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
+.\sync_HS_Team_Names.ps1
+
 
 ___________________________________
 
@@ -126,22 +134,29 @@ cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\import
 
 ______________________________
 
-Generate All .json files
+Generate All .html files
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
 .\GenerateAllPages.ps1
 
 
+**note C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\common-functions.ps1
+is a key file for html "top/dynamic" header creation.
 _______________________________
 
 Push changes to GitHub
 
+# Navigate to repository
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
 
-Or, if you want to stage all modified tracked files:
+# Add all updated files
+git add docs/data/*.json
+git add docs/pages/public/**/*.html
 
+# Commit with descriptive message
+git commit -m "Update json data and regenerate all HTML pages 2024b"
 
-git add -u
-git commit -m "Update latest season template with corrected JSON path and rebuild HTML"
+# Push to GitHub
 git push origin main
 
 ______________________________
