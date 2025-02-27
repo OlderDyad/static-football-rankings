@@ -105,9 +105,25 @@ C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\HS_Te
 
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
+.\fix-image-filenames.ps1
+
+-- Review the generated SQL script:
+-- C:\Users\demck\OneDrive\Football_2024\fix-image-paths.sql
+
+-- Then execute it against your SQL Server database
+-- You can use SQL Server Management Studio or:
+sqlcmd -S MCKNIGHTS-PC\SQLEXPRESS01 -d hs_football_database -i "C:\Users\demck\OneDrive\Football_2024\fix-image-paths.sql"
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
 .\sync_HS_Team_Names.ps1
 
+______________________________
+make edits to HS_Team_Names
+ie:
 
+UPDATE HS_Team_Names
+SET PrimaryColor = 'Crimson'
+WHERE Team_Name = 'Muskegon (MI)';
 ___________________________________
 
 Run in SQL to update rankings:
@@ -154,7 +170,7 @@ git add docs/data/*.json
 git add docs/pages/public/**/*.html
 
 # Commit with descriptive message
-git commit -m "Update json data and regenerate all HTML pages 2024b"
+git commit -m "Update json data and regenerate all HTML pages 2024c"
 
 # Push to GitHub
 git push origin main

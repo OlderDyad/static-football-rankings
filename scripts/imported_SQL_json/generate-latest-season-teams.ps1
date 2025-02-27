@@ -76,7 +76,6 @@ finally {
     }
 }
 
-"Latest season teams generation complete" | Tee-Object -FilePath $logFile -Append
 
 
 

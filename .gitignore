@@ -49,3 +49,20 @@ Data/SQL/*.ndf
 Data/SQL/*.mdf
 Data/SQL/*.ldf
 Data/SQL/*.ndf
+
+# Python virtual environments
+venv/
+env/
+ENV/
+.env
+.venv
+
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/

@@ -61,4 +61,4 @@ finally {
     }
 }
 
-"All-time teams generation complete" | Tee-Object -FilePath $logFile -Append
+
