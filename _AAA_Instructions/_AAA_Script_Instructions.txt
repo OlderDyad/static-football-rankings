@@ -170,9 +170,26 @@ git add docs/data/*.json
 git add docs/pages/public/**/*.html
 
 # Commit with descriptive message
-git commit -m "Update json data and regenerate all HTML pages 2024c"
+git commit -m "Update json data and regenerate all HTML pages 2025a"
 
 # Push to GitHub
 git push origin main
 
+___________________________________
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+
+# Add all changed files to the staging area
+git add .
+
+# Commit the changes with a descriptive message
+git commit -m "Fix banner image loading issues and standardize TopBanner implementation v5"
+
+# Push the changes to your remote repository (GitHub)
+git push origin main
+
 ______________________________
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+git add .
+git commit -m "Fix data-file paths and remove userStyle tags"
+git push origin main
