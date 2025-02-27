@@ -156,6 +156,8 @@ function Test-RequiredTemplates {
 }
 
 # Helper function to check individual templates
+
+
 function Test-TemplateExists {
     param (
         [string]$TemplatePath,
@@ -296,6 +298,35 @@ function Generate-TableRows {
     return $tableRows -join "`n"
 }
 
+function Generate-StandardizedJson {
+    param (
+        [string]$Type,
+        [array]$Items,
+        [object]$TopItem,
+        [string]$Description,
+        [string]$YearRange,
+        [string]$OutputPath
+    )
+
+    Write-Host "Generating standardized JSON for $Type..." -ForegroundColor Yellow
+
+    $standardizedData = @{
+        topItem = $TopItem
+        items = $Items
+        metadata = @{
+            timestamp = (Get-Date).ToString("o")
+            type = $Type
+            yearRange = $YearRange
+            totalItems = $Items.Count
+            description = $Description
+        }
+    }
+
+    $jsonContent = $standardizedData | ConvertTo-Json -Depth 10
+    [System.IO.File]::WriteAllText($OutputPath, $jsonContent, [System.Text.Encoding]::UTF8)
+    Write-Host "Generated JSON file: $OutputPath" -ForegroundColor Green
+}
+
 function Generate-ComingSoonPage {
     param (
         [string]$OutputPath,
@@ -356,6 +387,87 @@ function Generate-ComingSoonPage {
     Set-Content -Path $OutputPath -Value $comingSoonHtml -Encoding UTF8
     Write-Host "Generated coming soon page: $OutputPath"
 }
+
+# Define regions and states
+$stateRegions = @{
+    "Northeast" = @{
+        Name = "Northeast"
+        States = @("CT", "DE", "ME", "MA", "NH", "RI", "VT", "NJ", "NY", "PA")
+        Color = "region-northeast"
+        Title = "Northeast States"
+    }
+    "South" = @{
+        Name = "South"
+        States = @("AL", "AR", "FL", "GA", "KY", "LA", "MD", "MS", "NC", "OK","SC", "TN", "TX","VA", "WV")
+        Color = "region-south"
+        Title = "Southern States"
+    }
+    "Midwest" = @{
+        Name = "Midwest"
+        States = @("IL", "IN", "IA", "KS", "MI", "MN", "MO", "NE", "ND", "OH", "SD", "WI")
+        Color = "region-midwest"
+        Title = "Midwestern States"
+    }
+    "West" = @{
+        Name = "West"
+        States = @("AK", "AZ", "CA", "CO", "HI", "ID", "MT", "NV", "NM", "OR", "UT", "WA", "WY")
+        Color = "region-west"
+        Title = "Western States"
+    }
+    "Canada" = @{
+        Name = "Canada"
+        States = @("AB", "BC", "SK", "MB", "NS", "QB", "NB")
+        Color = "region-canada"
+        Title = "Canadian Provinces"
+    }
+}
+
+function Get-StateFullName {
+    param([string]$StateCode)
+    
+    $stateNames = @{
+        # US States
+        "AL" = "Alabama"; "AK" = "Alaska"; "AZ" = "Arizona"; "AR" = "Arkansas"
+        "CA" = "California"; "CO" = "Colorado"; "CT" = "Connecticut"; "DE" = "Delaware"
+        "FL" = "Florida"; "GA" = "Georgia"; "HI" = "Hawaii"; "ID" = "Idaho"
+        "IL" = "Illinois"; "IN" = "Indiana"; "IA" = "Iowa"; "KS" = "Kansas"
+        "KY" = "Kentucky"; "LA" = "Louisiana"; "ME" = "Maine"; "MD" = "Maryland"
+        "MA" = "Massachusetts"; "MI" = "Michigan"; "MN" = "Minnesota"; "MS" = "Mississippi"
+        "MO" = "Missouri"; "MT" = "Montana"; "NE" = "Nebraska"; "NV" = "Nevada"
+        "NH" = "New Hampshire"; "NJ" = "New Jersey"; "NM" = "New Mexico"; "NY" = "New York"
+        "NC" = "North Carolina"; "ND" = "North Dakota"; "OH" = "Ohio"; "OK" = "Oklahoma"
+        "OR" = "Oregon"; "PA" = "Pennsylvania"; "RI" = "Rhode Island"; "SC" = "South Carolina"
+        "SD" = "South Dakota"; "TN" = "Tennessee"; "TX" = "Texas"; "UT" = "Utah"
+        "VT" = "Vermont"; "VA" = "Virginia"; "WA" = "Washington"; "WV" = "West Virginia"
+        "WI" = "Wisconsin"; "WY" = "Wyoming"
+        # Canadian Provinces
+        "AB" = "Alberta"; "BC" = "British Columbia"; "MB" = "Manitoba"; "NB" = "New Brunswick"
+        "NS" = "Nova Scotia"; "QB" = "Quebec"; "SK" = "Saskatchewan"
+    }
+    
+    return $stateNames[$StateCode]
+}
+
+function Process-StateIndexPage {
+    Write-Host "Generating state index page..." -ForegroundColor Yellow
+    
+    $templatePath = Join-Path $templateBaseDir "index\states-index-template.html"
+    $outputPath = Join-Path $outputBaseDir "states\index.html"
+    
+    if (Test-Path $templatePath) {
+        try {
+            # Simply copy the template to the output location
+            Copy-Item -Path $templatePath -Destination $outputPath -Force
+            Write-Host "Generated state index page: $outputPath" -ForegroundColor Green
+        } catch {
+            Write-Error "Error copying state index page: $_"
+            throw
+        }
+    } else {
+        Write-Error "State index template not found: $templatePath"
+    }
+}
+
 #endregion Helper Functions
 
 #region Template Scripts
@@ -678,7 +790,7 @@ function Process-Template {
         $template = Get-Content $TemplatePath -Raw
         
         # Clean up any userStyle tags that might be present in the template
-        $template = $template -replace '', ''
+        $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
         # Handle data file path if present
         if ($Replacements.ContainsKey('DataFilePath')) {
@@ -701,18 +813,18 @@ function Process-Template {
         }
 
         # Handle scripts (ensure they're clean of userStyle tags)
-        $cleanTableControls = $tableControlsScript -replace '', ''
-        $cleanComments = $commentCode -replace '', ''
+        $cleanTableControls = $tableControlsScript -replace '<userStyle>Normal</userStyle>', ''
+        $cleanComments = $commentCode -replace '<userStyle>Normal</userStyle>', ''
         
         $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $cleanTableControls
         $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $cleanComments
 
-        # Handle banner if data present
-        if ($Data.topItem) {
-            Write-Host "  Generating banner for top $Type..." -ForegroundColor Yellow
-            $bannerHtml = Generate-TeamBanner -TopItem $Data.topItem -Type $Type
-            $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-        }
+        # IMPORTANT: Remove this block to prevent static banner generation
+        # if ($Data.topItem) {
+        #     Write-Host "  Generating banner for top $Type..." -ForegroundColor Yellow
+        #     $bannerHtml = Generate-TeamBanner -TopItem $Data.topItem -Type $Type
+        #     $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+        # }
 
         # Handle table rows
         Write-Host "  Generating table rows..." -ForegroundColor Yellow
@@ -727,6 +839,7 @@ function Process-Template {
         throw
     }
 }
+# Update this in the Process-DecadeData function (around line 850-960)
 function Process-DecadeData {
     param (
         [string]$DecadeName,
@@ -737,12 +850,8 @@ function Process-DecadeData {
 
     Write-Host "`n========== Processing $DisplayName Programs ==========" -ForegroundColor Cyan
 
-    # Define common replacements
+    # Define common replacements with CORRECTED paths
     $commonReplacements = @{
-        'DataFilePath' = @{
-            Pattern = 'content="/data/decade-(teams|programs)-DECADE_NAME.json"'
-            Replacement = 'content="/static-football-rankings/data/decades/$1/decade-$1-DECADE_NAME.json"'
-        }
         'DECADE_DISPLAY_NAME' = $DisplayName
         'DECADE_NAME' = $DecadeName
         'DECADE_START' = $StartYear
@@ -750,21 +859,42 @@ function Process-DecadeData {
     }
 
     # Process Programs
-    $programJsonPath = Join-Path $dataDir "decades\programs\decade-programs-$DecadeName.json"
+    $programJsonPath = Join-Path $dataDir "decades\programs\programs-$DecadeName.json"
     Write-Host "`nProcessing Programs" -ForegroundColor Yellow
     Write-Host "  JSON Path: $programJsonPath"
     
     if (Test-Path $programJsonPath) {
         try {
             $jsonContent = Get-Content $programJsonPath -Raw | ConvertFrom-Json
+            
+            # Add standardization step
+            Generate-StandardizedJson -Type "decade-programs" `
+                                   -Items $jsonContent.items `
+                                   -TopItem $jsonContent.topItem `
+                                   -Description "$DisplayName Programs" `
+                                   -YearRange "$StartYear-$EndYear" `
+                                   -OutputPath $programJsonPath
+
             $templatePath = Join-Path $templateBaseDir "decades\decade-programs-template.html"
             $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-programs.html"
 
             if (Test-Path $templatePath) {
+                # Create a template with the CORRECT data-file meta tag
+                $template = Get-Content $templatePath -Raw
+                
+                # Fix meta tag for programs - CRITICAL FIX HERE
+                $template = $template -replace '<meta name="data-file" content="[^"]*">', 
+                                      "<meta name=`"data-file`" content=`"/static-football-rankings/data/decades/programs/programs-$DecadeName.json`">"
+                
+                # Process the rest of the template
                 $processedTemplate = Process-Template -TemplatePath $templatePath `
                                                     -Replacements $commonReplacements `
                                                     -Data $jsonContent `
                                                     -Type "program"
+                
+                # Make sure the meta tag fix is preserved
+                $processedTemplate = $processedTemplate -replace '<meta name="data-file" content="[^"]*">', 
+                                                      "<meta name=`"data-file`" content=`"/static-football-rankings/data/decades/programs/programs-$DecadeName.json`">"
                 
                 Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
                 Write-Host "`nGenerated: $DecadeName-programs.html" -ForegroundColor Green
@@ -775,22 +905,43 @@ function Process-DecadeData {
         }
     }
 
+    
     # Process Teams
-    $teamJsonPath = Join-Path $dataDir "decades\teams\decade-teams-$DecadeName.json"
+    $teamJsonPath = Join-Path $dataDir "decades\teams\teams-$DecadeName.json"
     Write-Host "`nProcessing Teams" -ForegroundColor Yellow
     Write-Host "  JSON Path: $teamJsonPath"
     
     if (Test-Path $teamJsonPath) {
         try {
             $jsonContent = Get-Content $teamJsonPath -Raw | ConvertFrom-Json
+            
+            # Add standardization step
+            Generate-StandardizedJson -Type "decade-teams" `
+                                   -Items $jsonContent.items `
+                                   -TopItem $jsonContent.topItem `
+                                   -Description "$DisplayName Teams" `
+                                   -YearRange "$StartYear-$EndYear" `
+                                   -OutputPath $teamJsonPath
+
             $templatePath = Join-Path $templateBaseDir "decades\decade-teams-template.html"
             $outputPath = Join-Path $outputBaseDir "decades\$DecadeName-teams.html"
 
             if (Test-Path $templatePath) {
+                # Create a template with the CORRECT data-file meta tag
+                $template = Get-Content $templatePath -Raw
+                
+                # Fix meta tag for teams - CRITICAL FIX HERE
+                $template = $template -replace '<meta name="data-file" content="[^"]*">', 
+                                      "<meta name=`"data-file`" content=`"/static-football-rankings/data/decades/teams/teams-$DecadeName.json`">"
+                
                 $processedTemplate = Process-Template -TemplatePath $templatePath `
                                                     -Replacements $commonReplacements `
                                                     -Data $jsonContent `
                                                     -Type "team"
+                
+                # Make sure the meta tag fix is preserved
+                $processedTemplate = $processedTemplate -replace '<meta name="data-file" content="[^"]*">', 
+                                                      "<meta name=`"data-file`" content=`"/static-football-rankings/data/decades/teams/teams-$DecadeName.json`">"
                 
                 Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
                 Write-Host "`nGenerated: $DecadeName-teams.html" -ForegroundColor Green
@@ -810,25 +961,31 @@ function Process-StateData {
     Write-Host "Processing state: $StateCode"
 
     # Process teams for this state
-    $teamJsonPath = Join-Path $dataDir "states\teams\state-teams-$StateCode.json"
-    if (Test-Path $teamJsonPath) {
+    $jsonPath = Join-Path $dataDir "states\teams\state-teams-$StateCode.json"
+    if (Test-Path $jsonPath) {
         try {
-            $teamData = Get-Content $teamJsonPath -Raw | ConvertFrom-Json
+            # Get the full state name
+            $stateName = Get-StateFullName -StateCode $StateCode
+            
+            $teamData = Get-Content $jsonPath -Raw | ConvertFrom-Json
             $outputPath = Join-Path $outputBaseDir "states\$StateCode-teams.html"
 
             $templatePath = Join-Path $templateBaseDir "states\state-teams-template.html"
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
-
+                
+                # Replace state code and name
                 $template = $template -replace 'STATE_CODE', $StateCode
+                $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
-                if ($teamData.topItem) {
-                    $bannerHtml = Generate-TeamBanner -TopItem $teamData.topItem -Type "team"
-                    $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                }
+                # IMPORTANT: Comment out banner generation to prevent 404 errors
+                # if ($teamData.topItem) {
+                #     $bannerHtml = Generate-TeamBanner -TopItem $teamData.topItem -Type "team"
+                #     $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+                # }
 
                 $tableRows = Generate-TableRows -Items $teamData.items -Type "team"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
@@ -841,26 +998,32 @@ function Process-StateData {
         }
     }
 
-    # Process programs for this state
+    # Process programs
     $programJsonPath = Join-Path $dataDir "states\programs\state-programs-$StateCode.json"
     if (Test-Path $programJsonPath) {
         try {
+            # Get the full state name
+            $stateName = Get-StateFullName -StateCode $StateCode
+            
             $programData = Get-Content $programJsonPath -Raw | ConvertFrom-Json
             $outputPath = Join-Path $outputBaseDir "states\$StateCode-programs.html"
 
             $templatePath = Join-Path $templateBaseDir "states\state-programs-template.html"
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
-
+                
+                # Replace state code and name
                 $template = $template -replace 'STATE_CODE', $StateCode
+                $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
-                if ($programData.topItem) {
-                    $bannerHtml = Generate-TeamBanner -TopItem $programData.topItem -Type "program"
-                    $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                }
+                # IMPORTANT: Comment out banner generation to prevent 404 errors
+                # if ($programData.topItem) {
+                #     $bannerHtml = Generate-TeamBanner -TopItem $programData.topItem -Type "program"
+                #     $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+                # }
 
                 $tableRows = Generate-TableRows -Items $programData.items -Type "program"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
@@ -900,6 +1063,24 @@ function Process-AllTimeData {
         try {
             $jsonData = Get-Content $jsonPath -Raw | ConvertFrom-Json
             
+            # Generate the standardized JSON file
+            if ($Category -eq "teams") {
+                Generate-StandardizedJson -Type "all-time-teams" `
+                                       -Items $jsonData.items `
+                                       -TopItem $jsonData.topItem `
+                                       -Description "All-Time Greatest Teams" `
+                                       -YearRange "all-time" `
+                                       -OutputPath $jsonPath
+            } else {
+                Generate-StandardizedJson -Type "all-time-programs" `
+                                       -Items $jsonData.items `
+                                       -TopItem $jsonData.topItem `
+                                       -Description "All-Time Programs $Threshold+ Seasons" `
+                                       -YearRange "all-time" `
+                                       -OutputPath $jsonPath
+            }
+
+            # Process template
             $templateName = if ($Category -eq "teams") {
                 "all-time-teams-template.html"
             } else {
@@ -923,21 +1104,28 @@ function Process-AllTimeData {
                 $pageTitle = if ($Category -eq "teams") {
                     "All-Time Greatest Teams"
                 } else {
-                    "$Threshold+ Seasons All-Time Programs"
+                    "All-Time Programs $Threshold+ Seasons"
                 }
                 $template = $template -replace 'PAGE_TITLE', $pageTitle
+                
+                # Add this new section right after the page title replacement
+                if ($Category -eq "programs") {
+                    $template = $template -replace 'PROGRAM_THRESHOLD', $Threshold
+                }
+                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
-                # Banner
-                if ($jsonData.topItem) {
-                    $headerHtml = Generate-TeamBanner -TopItem $jsonData.topItem -Type $Category
-                    $template = $template -replace '<div id="teamHeaderContainer"></div>', $headerHtml
-                }
+# Comment out or delete these lines:
+# Banner
+# if ($jsonData.topItem) {
+#     $headerHtml = Generate-TeamBanner -TopItem $jsonData.topItem -Type $Category
+#     $template = $template -replace '<div id="teamHeaderContainer"></div>', $headerHtml
+# }
 
                 # Table rows
-                $tableRows = Generate-TableRows -Items $jsonData.items -Type $Category
+                $tableRows = Generate-TableRows -Items $jsonData.items -Type $(if ($Category -eq "teams") { "team" } else { "program" })
                 $template = $template -replace 'TABLE_ROWS', $tableRows
 
                 Set-Content -Path $outputPath -Value $template -Encoding UTF8
@@ -954,39 +1142,62 @@ function Process-AllTimeData {
 }
 
 function Process-LatestSeasonData {
-    Write-Host "Processing latest season data..."
-
-    $jsonPath = Join-Path $dataDir "latest-season\latest-season-teams.json"
+    Write-Host "Processing latest season data..." -ForegroundColor Yellow
+    
+    # Update the path to match the correct file name
+    $jsonPath = Join-Path $dataDir "latest\latest-teams.json"
+    Write-Host "Looking for file at: $jsonPath" -ForegroundColor Yellow
+    
     if (Test-Path $jsonPath) {
+        Write-Host "Found JSON file" -ForegroundColor Green
         try {
-            $jsonData = Get-Content $jsonPath -Raw | ConvertFrom-Json
-            $outputPath = Join-Path $outputBaseDir "latest-season\index.html"
+            $jsonContent = Get-Content $jsonPath -Raw
+            Write-Host "JSON content length: $($jsonContent.Length)" -ForegroundColor Yellow
+            $jsonData = $jsonContent | ConvertFrom-Json
+
+            # Generate the standardized JSON file (like we do for other categories)
+            Generate-StandardizedJson -Type "latest-teams" `
+                                   -Items $jsonData.items `
+                                   -TopItem $jsonData.topItem `
+                                   -Description "Latest Season Rankings" `
+                                   -YearRange "latest" `
+                                   -OutputPath $jsonPath
 
             $templatePath = Join-Path $templateBaseDir "latest-season\latest-season-template.html"
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
+                
+                # Define output path (this was missing in original)
+                $outputPath = Join-Path $outputBaseDir "latest-season\index.html"
 
-                # Insert scripts
+                # Insert scripts and update timestamp
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
-                if ($jsonData.topItem) {
-                    $bannerHtml = Generate-TeamBanner -TopItem $jsonData.topItem -Type "team"
-                    $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                }
+                # IMPORTANT: Comment out banner generation to prevent 404 errors
+                # if ($jsonData.topItem) {
+                #     $bannerHtml = Generate-TeamBanner -TopItem $jsonData.topItem -Type "team"
+                #     $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
+                # }
 
                 $tableRows = Generate-TableRows -Items $jsonData.items -Type "team"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
 
-                Set-Content -Path $outputPath -Value $template -Encoding UTF8
-                Write-Host "Generated: latest-season/index.html"
+                # Write with UTF8 encoding to handle special characters
+                [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.Encoding]::UTF8)
+                Write-Host "Generated: latest-season/index.html" -ForegroundColor Green
+            } else {
+                Write-Error "Template not found: $templatePath"
+                Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "latest-season\index.html") `
+                                      -Title "Latest Season Rankings" `
+                                      -Message "Template file missing. Please check back soon!"
             }
         } catch {
             Write-Error "Error processing latest season data: $_"
             Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "latest-season\index.html") `
                                   -Title "Latest Season Rankings" `
-                                  -Message "Latest season rankings are being compiled. Please check back soon!"
+                                  -Message "Error processing latest season data. Please check back soon!"
         }
     } else {
         Write-Warning "Latest season JSON file not found: $jsonPath"
@@ -1091,6 +1302,41 @@ try {
     foreach ($decade in $decades) {
         Process-DecadeData -DecadeName $decade.Name -StartYear $decade.StartYear -EndYear $decade.EndYear -DisplayName $decade.DisplayName
     }
+
+    # Define regions and states
+$stateRegions = @{
+    "Northeast" = @{
+        Name = "Northeast"
+        States = @("CT", "DC", "DE", "ME", "MA", "NH", "RI", "VT", "NJ", "NY", "PA")
+        Color = "region-northeast"
+        Title = "Northeast States"
+    }
+    "South" = @{
+        Name = "South"
+        States = @("AL", "AR", "FL", "GA", "KY", "LA", "MD", "MS", "NC", "SC", "TN", "VA", "WV")
+        Color = "region-south"
+        Title = "Southern States"
+    }
+    "Midwest" = @{
+        Name = "Midwest"
+        States = @("IL", "IN", "IA", "KS", "MI", "MN", "MO", "NE", "ND", "OH", "SD", "WI")
+        Color = "region-midwest"
+        Title = "Midwestern States"
+    }
+    "West" = @{
+        Name = "West"
+        States = @("AK", "AZ", "CA", "CO", "HI", "ID", "MT", "NV", "NM", "OR", "UT", "WA", "WY")
+        Color = "region-west"
+        Title = "Western States"
+    }
+    "Canada" = @{
+        Name = "Canada"
+        States = @("AB", "BC", "SK", "MB", "NS", "QB", "NB")
+        Color = "region-canada"
+        Title = "Canadian Provinces"
+    }
+}
+
 
     # Process States
     Write-Host "`nProcessing state rankings..." -ForegroundColor Green
@@ -1215,4 +1461,3 @@ try {
     Write-Host "Script execution completed." -ForegroundColor Green
 }
 #endregion Main Script Execution
-

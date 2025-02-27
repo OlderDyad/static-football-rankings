@@ -790,7 +790,7 @@ function Process-Template {
         $template = Get-Content $TemplatePath -Raw
         
         # Clean up any userStyle tags that might be present in the template
-        $template = $template -replace '<userStyle>Normal</userStyle>', ''
+        $template = $template -replace '', ''
 
         # Handle data file path if present
         if ($Replacements.ContainsKey('DataFilePath')) {
@@ -813,8 +813,8 @@ function Process-Template {
         }
 
         # Handle scripts (ensure they're clean of userStyle tags)
-        $cleanTableControls = $tableControlsScript -replace '<userStyle>Normal</userStyle>', ''
-        $cleanComments = $commentCode -replace '<userStyle>Normal</userStyle>', ''
+        $cleanTableControls = $tableControlsScript -replace '', ''
+        $cleanComments = $commentCode -replace '', ''
         
         $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $cleanTableControls
         $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $cleanComments

@@ -1,0 +1,29 @@
+# Remove-UserStyleTags.ps1
+$rootDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings"
+
+# First, find all files with the tag
+Write-Host "Finding files with <userStyle>Normal</userStyle> tags..." -ForegroundColor Yellow
+$files = Get-ChildItem -Path $rootDir -Recurse -Include "*.ps1","*.html","*.json" | 
+         Select-String -Pattern "<userStyle>Normal</userStyle>" | 
+         Select-Object -ExpandProperty Path -Unique
+
+# Then, remove the tag from each file
+foreach ($file in $files) {
+    Write-Host "Processing file: $file" -ForegroundColor Cyan
+    
+    # Create backup
+    Copy-Item -Path $file -Destination "$file.bak" -Force
+    Write-Host "  Created backup: $file.bak" -ForegroundColor Green
+    
+    # Remove the tag
+    $content = Get-Content -Path $file -Raw
+    $newContent = $content -replace "<userStyle>Normal</userStyle>", ""
+    Set-Content -Path $file -Value $newContent -Force
+    Write-Host "  Removed tags from file" -ForegroundColor Green
+}
+
+if ($files.Count -eq 0) {
+    Write-Host "No files with <userStyle>Normal</userStyle> tags found." -ForegroundColor Green
+} else {
+    Write-Host "Processed $($files.Count) files and removed <userStyle>Normal</userStyle> tags." -ForegroundColor Green
+}
