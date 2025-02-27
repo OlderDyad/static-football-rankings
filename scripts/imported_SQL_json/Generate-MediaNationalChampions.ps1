@@ -135,34 +135,43 @@ try {
         # Sort by combined score (descending)
         $champions = $champions | Sort-Object combined -Descending
 
-        # Process the topChampion as a PSObject
-        $topChampionObj = [PSCustomObject]@{
-            year = $topChampion["year"]
-            team = $topChampion["team"] 
-            state = $topChampion["state"]
-            combined = Parse-DecimalSafe -Value $topChampion["combined"]
-            margin = Parse-DecimalSafe -Value $topChampion["margin"]
-            win_loss = Parse-DecimalSafe -Value $topChampion["win_loss"]
-            offense = Parse-DecimalSafe -Value $topChampion["offense"]
-            defense = Parse-DecimalSafe -Value $topChampion["defense"]
-            games_played = Parse-IntSafe -Value $topChampion["games_played"]
-            source = $topChampion["source"]
-            record = $topChampion["record"]
-            logoURL = $topChampion["logoURL"]
-            schoolLogoURL = $topChampion["schoolLogoURL"]
-            backgroundColor = $topChampion["backgroundColor"] -or "Navy"
-            textColor = $topChampion["textColor"] -or "White"
-            mascot = $topChampion["mascot"]
-        }
-        
-        # Merge metadata with top champion data if available
-        if ($metadata) {
-            foreach ($prop in $metadata.PSObject.Properties) {
-                if (-not $topChampionObj.PSObject.Properties[$prop.Name]) {
-                    $topChampionObj | Add-Member -MemberType NoteProperty -Name $prop.Name -Value $prop.Value
-                }
-            }
-        }
+
+# In Generate-MediaNationalChampions.ps1, replace the topChampionObj creation with this:
+$topChampionObj = [PSCustomObject]@{
+    year = $topChampion["year"]
+    team = $topChampion["team"] 
+    state = $topChampion["state"]
+    combined = Parse-DecimalSafe -Value $topChampion["combined"]
+    margin = Parse-DecimalSafe -Value $topChampion["margin"]
+    win_loss = Parse-DecimalSafe -Value $topChampion["win_loss"]
+    offense = Parse-DecimalSafe -Value $topChampion["offense"]
+    defense = Parse-DecimalSafe -Value $topChampion["defense"]
+    games_played = Parse-IntSafe -Value $topChampion["games_played"]
+    source = $topChampion["source"]
+    record = $topChampion["record"]
+    logoURL = $topChampion["logoURL"]
+    schoolLogoURL = $topChampion["schoolLogoURL"]
+    backgroundColor = $topChampion["backgroundColor"] 
+    textColor = $topChampion["textColor"]
+    mascot = $topChampion["mascot"]
+}
+
+# Instead of trying to merge metadata, directly set key values:
+if ($metadata -and $metadata.PrimaryColor) {
+    $topChampionObj.backgroundColor = $metadata.PrimaryColor
+}
+if ($metadata -and $metadata.SecondaryColor) {
+    $topChampionObj.textColor = $metadata.SecondaryColor
+}
+if ($metadata -and $metadata.LogoURL) {
+    $topChampionObj.logoURL = $metadata.LogoURL
+}
+if ($metadata -and $metadata.School_Logo_URL) {
+    $topChampionObj.schoolLogoURL = $metadata.School_Logo_URL
+}
+if ($metadata -and $metadata.Mascot) {
+    $topChampionObj.mascot = $metadata.Mascot
+}
 
         # Create JSON structure
         $jsonData = @{

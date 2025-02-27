@@ -1212,6 +1212,8 @@ function Process-MediaNationalChampions {
     Write-Host "Processing Media National Champions data..." -ForegroundColor Yellow
 
     $jsonPath = Join-Path $dataDir "media-national-champions\media-national-champions.json"
+    Write-Host "Looking for data file: $jsonPath"
+    
     if (Test-Path $jsonPath) {
         try {
             Write-Host "Loading Media National Champions data..." -ForegroundColor Yellow
@@ -1222,44 +1224,68 @@ function Process-MediaNationalChampions {
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
 
+                # Fix data-file meta tag to ensure correct path
+                $template = $template -replace '<meta name="data-file" content="[^"]*">', 
+                    '<meta name="data-file" content="/static-football-rankings/data/media-national-champions/media-national-champions.json">'
+
                 # Replace placeholders
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                
+                # Remove any userStyle tags
+                $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
-                # Generate table rows
-                $tableRows = $championsData | ForEach-Object {
+                # Generate table rows with improved value handling
+                $tableRows = $championsData.items | ForEach-Object {
+                    # Clean up the source/notes to make it more readable
+                    $source = if ($_.source) { 
+                        ($_.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim() 
+                    } else { 
+                        "N/A" 
+                    }
+                    
+                    # Format decimal values to fixed precision
+                    $combined = if ($null -ne $_.combined) { [math]::Round([double]$_.combined, 3) } else { "" }
+                    $margin = if ($null -ne $_.margin) { [math]::Round([double]$_.margin, 3) } else { "" }
+                    $winLoss = if ($null -ne $_.win_loss) { [math]::Round([double]$_.win_loss, 3) } else { "" }
+                    $offense = if ($null -ne $_.offense) { [math]::Round([double]$_.offense, 3) } else { "" }
+                    $defense = if ($null -ne $_.defense) { [math]::Round([double]$_.defense, 3) } else { "" }
+                    
                     @"
-                    <tr>
-                        <td>$($_.year)</td>
-                        <td>$($_.team)</td>
-                        <td>$($_.state)</td>
-                        <td>$($_.source)</td>
-                        <td>$($_.record)</td>
-                        <td>$($_.rating)</td>
-                    </tr>
+    <tr>
+        <td>$($_.year)</td>
+        <td>$($_.team)</td>
+        <td>$($_.state)</td>
+        <td>$combined</td>
+        <td>$margin</td>
+        <td>$winLoss</td>
+        <td>$offense</td>
+        <td>$defense</td>
+        <td>$($_.games_played)</td>
+        <td>$source</td>
+    </tr>
 "@
                 }
+                
                 $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
 
                 Set-Content -Path $outputPath -Value $template -Encoding UTF8
-                Write-Host "Generated national-champions.html" -ForegroundColor Green
+                Write-Host "Generated: media-national-champions.html" -ForegroundColor Green
             } else {
-                Write-Error "National champions template not found: $templatePath"
+                Write-Error "Media National Champions template not found: $templatePath"
+                Generate-ComingSoonPage -OutputPath $outputPath -Title "Media National Champions" -Message "Coming soon!"
             }
         } catch {
-            Write-Error "Error processing national champions data: $_"
-            Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "national-champions.html") `
-                                  -Title "Media National Champions" `
-                                  -Message "National champions data is being compiled. Please check back soon!"
+            Write-Error "Error processing Media National Champions data: $_"
+            Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "media-national-champions.html") -Title "Media National Champions" -Message "Coming soon!"
         }
     } else {
-        Write-Warning "National champions data not found: $jsonPath"
-        Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "national-champions.html") `
-                               -Title "Media National Champions" `
-                               -Message "National champions data is being compiled. Please check back soon!"
+        Write-Warning "Media National Champions data not found: $jsonPath"
+        Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "media-national-champions.html") -Title "Media National Champions" -Message "Coming soon!"
     }
 }
+
 #endregion Processing Functions
 
 #region Main Script Execution
