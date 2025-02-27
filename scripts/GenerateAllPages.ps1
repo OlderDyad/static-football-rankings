@@ -1520,10 +1520,17 @@ function Process-MediaNationalChampions {
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
                 
-                # Sort items by combined score (highest to lowest)
-                $sortedItems = $championsData.items | Sort-Object { 
-                    if ($null -eq $_.combined) { 0 } else { [double]$_.combined } 
-                } -Descending
+                # More explicit sorting approach
+                $sortedItems = @($championsData.items | ForEach-Object {
+                # Ensure combined is a numeric value
+                $combinedValue = if ($null -eq $_.combined) { 0 } else { 
+                try { [double]$_.combined } catch { 0 }
+                }
+    
+    # Add the combined value as a sortable property
+    $_ | Add-Member -MemberType NoteProperty -Name "SortableValue" -Value $combinedValue -Force
+    $_
+} | Sort-Object -Property SortableValue -Descending)
 
                 # Generate table rows with improved value handling
                 $tableRows = $sortedItems | ForEach-Object {
