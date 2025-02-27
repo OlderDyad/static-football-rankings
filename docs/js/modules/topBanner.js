@@ -43,28 +43,30 @@ export class TopBanner {
         }
     }
 
-    async loadTopItemData() {
-        const dataFileMeta = document.querySelector('meta[name="data-file"]');
-        if (!dataFileMeta) {
-            log(DEBUG_LEVELS.ERROR, 'No data file meta tag found');
-            return null;
-        }
-    
-        try {
-            const dataPath = dataFileMeta.content;
-            log(DEBUG_LEVELS.INFO, `Loading data from: ${dataPath}`);
-            
-            const response = await fetch(dataPath);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            log(DEBUG_LEVELS.ERROR, 'Failed to load top item data:', error);
-            throw error;
-        }
+async loadTopItemData() {
+    const dataFileMeta = document.querySelector('meta[name="data-file"]');
+    if (!dataFileMeta) {
+        console.error('No data file meta tag found');
+        return null;
     }
+
+    try {
+        const dataPath = dataFileMeta.content;
+        console.log(`Attempting to fetch from: ${dataPath}`);
+        console.log(`Full URL: ${window.location.origin}${dataPath}`);
+        
+        const response = await fetch(dataPath);
+        if (!response.ok) {
+            console.error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Failed to load top item data:', error);
+        throw error;
+    }
+}
 
     renderBanner(topItem) {
         if (!this.container) {
