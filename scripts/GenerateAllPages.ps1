@@ -20,6 +20,7 @@ Write-Host "Data Directory: $dataDir"
 Write-Host "Template Directory: $templateBaseDir"
 Write-Host "Output Directory: $outputBaseDir"
 
+
 # Create necessary directories
 $directories = @(
     (Join-Path $outputBaseDir "decades"),
@@ -1207,17 +1208,17 @@ function Process-LatestSeasonData {
     }
 }
 
-function Process-NationalChampions {
-    Write-Host "Processing national champions data..." -ForegroundColor Yellow
+function Process-MediaNationalChampions {
+    Write-Host "Processing Media National Champions data..." -ForegroundColor Yellow
 
-    $jsonPath = Join-Path $dataDir "national-champions\national-champions.json"
+    $jsonPath = Join-Path $dataDir "media-national-champions\media-national-champions.json"
     if (Test-Path $jsonPath) {
         try {
-            Write-Host "Loading national champions data..."
+            Write-Host "Loading Media National Champions data..." -ForegroundColor Yellow
             $championsData = Get-Content $jsonPath -Raw | ConvertFrom-Json
-            $outputPath = Join-Path $outputBaseDir "national-champions.html"
+            $outputPath = Join-Path $outputBaseDir "media-national-champions.html"
 
-            $templatePath = Join-Path $templateBaseDir "national-champions-template.html"
+            $templatePath = Join-Path $templateBaseDir "media-national-champions-template.html"
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
 
@@ -1380,6 +1381,10 @@ $stateRegions = @{
     Write-Host "`nProcessing latest season rankings..." -ForegroundColor Green
     Process-LatestSeasonData
 
+    # Process Media National Champions data
+    Write-Host "`nProcessing Media National Champions data..." -ForegroundColor Green
+    Process-MediaNationalChampions
+
     # Generate Index Pages
     Write-Host "`nGenerating index pages..." -ForegroundColor Green
 
@@ -1460,4 +1465,82 @@ $stateRegions = @{
 } finally {
     Write-Host "Script execution completed." -ForegroundColor Green
 }
+
+function Process-MediaNationalChampions {
+    Write-Host "Processing Media National Champions data..." -ForegroundColor Yellow
+
+    $jsonPath = Join-Path $dataDir "media-national-champions\media-national-champions.json"
+    Write-Host "Looking for data file: $jsonPath"
+    
+    if (Test-Path $jsonPath) {
+        try {
+            Write-Host "Loading Media National Champions data..."
+            $championsContent = Get-Content $jsonPath -Raw
+            # Remove any userStyle tags
+            $championsContent = $championsContent -replace '<userStyle>Normal</userStyle>', ''
+            $championsData = $championsContent | ConvertFrom-Json
+            
+            $outputPath = Join-Path $outputBaseDir "media-national-champions.html"
+            $templatePath = Join-Path $templateBaseDir "media-national-champions-template.html"
+            
+            if (Test-Path $templatePath) {
+                $template = Get-Content $templatePath -Raw
+                
+                # Fix data-file meta tag to ensure correct path
+                $template = $template -replace '<meta name="data-file" content="[^"]*">', 
+                    '<meta name="data-file" content="/static-football-rankings/data/media-national-champions/media-national-champions.json">'
+
+                # Replace placeholders
+                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
+                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                
+                # Remove any userStyle tags
+                $template = $template -replace '<userStyle>Normal</userStyle>', ''
+
+                # Generate table rows with consistent column order
+                $tableRows = $championsData.items | ForEach-Object {
+                    # Clean up the source/notes to make it more readable
+                    $source = $_.source -replace '\[\d+\]', '' -replace ',\s*', ', '
+                    
+                    # Format decimal values to fixed precision
+                    $combined = if ($_.combined) { [math]::Round($_.combined, 3) } else { "" }
+                    $margin = if ($_.margin) { [math]::Round($_.margin, 3) } else { "" }
+                    $winLoss = if ($_.win_loss) { [math]::Round($_.win_loss, 3) } else { "" }
+                    $offense = if ($_.offense) { [math]::Round($_.offense, 3) } else { "" }
+                    $defense = if ($_.defense) { [math]::Round($_.defense, 3) } else { "" }
+                    
+                    @"
+                    <tr>
+                        <td>$($_.year)</td>
+                        <td>$($_.team)</td>
+                        <td>$($_.state)</td>
+                        <td>$combined</td>
+                        <td>$margin</td>
+                        <td>$winLoss</td>
+                        <td>$offense</td>
+                        <td>$defense</td>
+                        <td>$($_.games_played)</td>
+                        <td>$source</td>
+                    </tr>
+"@
+                }
+                $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
+
+                Set-Content -Path $outputPath -Value $template -Encoding UTF8
+                Write-Host "Generated: media-national-champions.html" -ForegroundColor Green
+            } else {
+                Write-Error "Media National Champions template not found: $templatePath"
+                Generate-ComingSoonPage -OutputPath $outputPath -Title "Media National Champions" -Message "Coming soon!"
+            }
+        } catch {
+            Write-Error "Error processing Media National Champions data: $_"
+            Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "media-national-champions.html") -Title "Media National Champions" -Message "Coming soon!"
+        }
+    } else {
+        Write-Warning "Media National Champions data not found: $jsonPath"
+        Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "media-national-champions.html") -Title "Media National Champions" -Message "Coming soon!"
+    }
+}
+
 #endregion Main Script Execution
