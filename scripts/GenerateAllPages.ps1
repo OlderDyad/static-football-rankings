@@ -1500,18 +1500,14 @@ function Process-MediaNationalChampions {
     
     if (Test-Path $jsonPath) {
         try {
-            Write-Host "Loading Media National Champions data..."
-            $championsContent = Get-Content $jsonPath -Raw
-            # Remove any userStyle tags
-            $championsContent = $championsContent -replace '<userStyle>Normal</userStyle>', ''
-            $championsData = $championsContent | ConvertFrom-Json
-            
+            Write-Host "Loading Media National Champions data..." -ForegroundColor Yellow
+            $championsData = Get-Content $jsonPath -Raw | ConvertFrom-Json
             $outputPath = Join-Path $outputBaseDir "media-national-champions.html"
+
             $templatePath = Join-Path $templateBaseDir "media-national-champions-template.html"
-            
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
-                
+
                 # Fix data-file meta tag to ensure correct path
                 $template = $template -replace '<meta name="data-file" content="[^"]*">', 
                     '<meta name="data-file" content="/static-football-rankings/data/media-national-champions/media-national-champions.json">'
@@ -1523,35 +1519,48 @@ function Process-MediaNationalChampions {
                 
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
+                
+                # Sort items by combined score (highest to lowest)
+                $sortedItems = $championsData.items | Sort-Object { 
+                    if ($null -eq $_.combined) { 0 } else { [double]$_.combined } 
+                } -Descending
 
-                # Generate table rows with consistent column order
-                $tableRows = $championsData.items | ForEach-Object {
+                # Generate table rows with improved value handling
+                $tableRows = $sortedItems | ForEach-Object {
                     # Clean up the source/notes to make it more readable
-                    $source = $_.source -replace '\[\d+\]', '' -replace ',\s*', ', '
+                    $source = if ($_.source) { 
+                        ($_.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim() 
+                    } else { 
+                        "N/A" 
+                    }
                     
                     # Format decimal values to fixed precision
-                    $combined = if ($_.combined) { [math]::Round($_.combined, 3) } else { "" }
-                    $margin = if ($_.margin) { [math]::Round($_.margin, 3) } else { "" }
-                    $winLoss = if ($_.win_loss) { [math]::Round($_.win_loss, 3) } else { "" }
-                    $offense = if ($_.offense) { [math]::Round($_.offense, 3) } else { "" }
-                    $defense = if ($_.defense) { [math]::Round($_.defense, 3) } else { "" }
+                    $combined = if ($null -ne $_.combined) { [math]::Round([double]$_.combined, 3) } else { "" }
+                    $margin = if ($null -ne $_.margin) { [math]::Round([double]$_.margin, 3) } else { "" }
+                    $winLoss = if ($null -ne $_.win_loss) { [math]::Round([double]$_.win_loss, 3) } else { "" }
+                    $offense = if ($null -ne $_.offense) { [math]::Round([double]$_.offense, 3) } else { "" }
+                    $defense = if ($null -ne $_.defense) { [math]::Round([double]$_.defense, 3) } else { "" }
                     
                     @"
-                    <tr>
-                        <td>$($_.year)</td>
-                        <td>$($_.team)</td>
-                        <td>$($_.state)</td>
-                        <td>$combined</td>
-                        <td>$margin</td>
-                        <td>$winLoss</td>
-                        <td>$offense</td>
-                        <td>$defense</td>
-                        <td>$($_.games_played)</td>
-                        <td>$source</td>
-                    </tr>
+    <tr>
+        <td>$($_.year)</td>
+        <td>$($_.team)</td>
+        <td>$($_.state)</td>
+        <td>$combined</td>
+        <td>$margin</td>
+        <td>$winLoss</td>
+        <td>$offense</td>
+        <td>$defense</td>
+        <td>$($_.games_played)</td>
+        <td>$source</td>
+    </tr>
 "@
                 }
+                
                 $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
+                
+                # Remove pagination controls - display all teams on one page
+                $template = $template -replace '<div class="row mt-4">.*?<div class="col-md-6">.*?<div class="pagination-info">.*?</div>.*?</div>.*?<div class="col-md-6">.*?<nav.*?</nav>.*?</div>.*?</div>', ''
 
                 Set-Content -Path $outputPath -Value $template -Encoding UTF8
                 Write-Host "Generated: media-national-champions.html" -ForegroundColor Green
