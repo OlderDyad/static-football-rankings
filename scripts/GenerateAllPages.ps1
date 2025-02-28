@@ -1501,10 +1501,13 @@ function Process-MediaNationalChampions {
     if (Test-Path $jsonPath) {
         try {
             Write-Host "Loading Media National Champions data..." -ForegroundColor Yellow
-            $championsData = Get-Content $jsonPath -Raw | ConvertFrom-Json
+            $championsContent = Get-Content $jsonPath -Raw
+            $championsContent = $championsContent -replace '<userStyle>Normal</userStyle>', ''
+            $championsData = $championsContent | ConvertFrom-Json
+            
             $outputPath = Join-Path $outputBaseDir "media-national-champions.html"
-
             $templatePath = Join-Path $templateBaseDir "media-national-champions-template.html"
+            
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
 
@@ -1520,46 +1523,64 @@ function Process-MediaNationalChampions {
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
                 
-                # More explicit sorting approach
-                $sortedItems = @($championsData.items | ForEach-Object {
-                # Ensure combined is a numeric value
-                $combinedValue = if ($null -eq $_.combined) { 0 } else { 
-                try { [double]$_.combined } catch { 0 }
-                }
-    
-    # Add the combined value as a sortable property
-    $_ | Add-Member -MemberType NoteProperty -Name "SortableValue" -Value $combinedValue -Force
-    $_
-} | Sort-Object -Property SortableValue -Descending)
-
-                # Generate table rows with improved value handling
-                $tableRows = $sortedItems | ForEach-Object {
-                    # Clean up the source/notes to make it more readable
-                    $source = if ($_.source) { 
-                        ($_.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim() 
-                    } else { 
-                        "N/A" 
+                # Create a sorted array of champions
+                $champions = @()
+                foreach ($item in $championsData.items) {
+                    # Convert combined to a numeric value
+                    $combinedValue = 0
+                    if ($null -ne $item.combined) {
+                        if ($item.combined -is [string]) {
+                            if ([double]::TryParse($item.combined, [ref]$null)) {
+                                $combinedValue = [double]::Parse($item.combined)
+                            }
+                        } else {
+                            $combinedValue = [double]$item.combined
+                        }
                     }
                     
-                    # Format decimal values to fixed precision
-                    $combined = if ($null -ne $_.combined) { [math]::Round([double]$_.combined, 3) } else { "" }
-                    $margin = if ($null -ne $_.margin) { [math]::Round([double]$_.margin, 3) } else { "" }
-                    $winLoss = if ($null -ne $_.win_loss) { [math]::Round([double]$_.win_loss, 3) } else { "" }
-                    $offense = if ($null -ne $_.offense) { [math]::Round([double]$_.offense, 3) } else { "" }
-                    $defense = if ($null -ne $_.defense) { [math]::Round([double]$_.defense, 3) } else { "" }
-                    
+                    $champions += [PSCustomObject]@{
+                        Year = $item.year
+                        Team = $item.team
+                        State = $item.state
+                        Combined = $combinedValue
+                        CombinedDisplay = if ($null -ne $item.combined) { [math]::Round($combinedValue, 3) } else { "" }
+                        Margin = if ($null -ne $item.margin) { [math]::Round([double]$item.margin, 3) } else { "" }
+                        WinLoss = if ($null -ne $item.win_loss) { [math]::Round([double]$item.win_loss, 3) } else { "" }
+                        Offense = if ($null -ne $item.offense) { [math]::Round([double]$item.offense, 3) } else { "" }
+                        Defense = if ($null -ne $item.defense) { [math]::Round([double]$item.defense, 3) } else { "" }
+                        GamesPlayed = $item.games_played
+                        Source = if ($item.source) { 
+                            ($item.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim() 
+                        } else { 
+                            "N/A" 
+                        }
+                    }
+                }
+                
+                # Sort by Combined (highest to lowest)
+                $sortedChampions = $champions | Sort-Object -Property Combined -Descending
+                
+                Write-Host "Original count: $($championsData.items.Count)"
+                Write-Host "Sorted count: $($sortedChampions.Count)"
+                
+                # First team should have highest combined value
+                Write-Host "First combined value: $($sortedChampions[0].Combined)"
+                Write-Host "Last combined value: $($sortedChampions[-1].Combined)"
+                
+                # Generate table rows from sorted list
+                $tableRows = $sortedChampions | ForEach-Object {
                     @"
     <tr>
-        <td>$($_.year)</td>
-        <td>$($_.team)</td>
-        <td>$($_.state)</td>
-        <td>$combined</td>
-        <td>$margin</td>
-        <td>$winLoss</td>
-        <td>$offense</td>
-        <td>$defense</td>
-        <td>$($_.games_played)</td>
-        <td>$source</td>
+        <td>$($_.Year)</td>
+        <td>$($_.Team)</td>
+        <td>$($_.State)</td>
+        <td>$($_.CombinedDisplay)</td>
+        <td>$($_.Margin)</td>
+        <td>$($_.WinLoss)</td>
+        <td>$($_.Offense)</td>
+        <td>$($_.Defense)</td>
+        <td>$($_.GamesPlayed)</td>
+        <td>$($_.Source)</td>
     </tr>
 "@
                 }
