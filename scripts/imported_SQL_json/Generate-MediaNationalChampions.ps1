@@ -64,54 +64,17 @@ try {
     Write-Host "Processing Media National Champions..."
     $command = New-Object System.Data.SqlClient.SqlCommand("EXEC Get_Media_National_Champions", $connection)
     $adapter = New-Object System.Data.SqlClient.SqlDataAdapter($command)
-    $championsDataset = New-Object System.Data.DataSet
-    $adapter.Fill($championsDataset)
+    $dataset = New-Object System.Data.DataSet
+    $adapter.Fill($dataset)
 
-    if ($championsDataset.Tables.Count -gt 0 -and $championsDataset.Tables[0].Rows.Count -gt 0) {
-        $championsTable = $championsDataset.Tables[0]
-        Write-Host $championsTable.Rows.Count
+    if ($dataset.Tables.Count -gt 0 -and $dataset.Tables[0].Rows.Count -gt 0) {
+        $championsTable = $dataset.Tables[0]
         Write-Host "Retrieved $($championsTable.Rows.Count) Media National Champions"
 
-        # Sort champions by combined score (descending) if available
-        $sortedChampions = @($championsTable.Rows)
-        
-        # Create a sorted list with NULL combined scores last
-        $sortedChampions = $sortedChampions | Sort-Object {
-            if ($null -eq $_.combined -or [string]::IsNullOrWhiteSpace($_.combined)) {
-                [decimal]::MinValue  # Put rows with no combined score at the end
-            } else {
-                try {
-                    [decimal]::Parse("$($_.combined)")
-                } catch {
-                    [decimal]::MinValue
-                }
-            }
-        } -Descending
-
-        # Get the top champion by combined score for the banner
-        $topChampion = $null
-        foreach ($row in $sortedChampions) {
-            if ($null -ne $row["combined"] -and -not [string]::IsNullOrWhiteSpace($row["combined"])) {
-                $topChampion = $row
-                break
-            }
-        }
-
-        # If no champion has a combined score, use the most recent one
-        if ($null -eq $topChampion) {
-            $topChampion = ($championsTable.Rows | Sort-Object -Property year -Descending)[0]
-        }
-
-        # Get metadata for the top champion
-        Write-Host "Fetching metadata for: $($topChampion["team"])"
-        $topTeamName = $topChampion["team"]
-        $metadata = Get-TeamMetadata -connection $connection -TeamName $topTeamName -isProgram $false
-        Write-Host "Metadata fetched for: $topTeamName"
-        
-        # Convert DataTable to array of objects
+        # Convert DataTable to array of objects and ensure proper data types
         $champions = @()
         foreach ($row in $championsTable.Rows) {
-            $champion = [ordered]@{
+            $champion = [PSCustomObject]@{
                 year = $row["year"]
                 team = $row["team"]
                 state = $row["state"]
@@ -132,63 +95,55 @@ try {
             $champions += $champion
         }
         
-        # Sort by combined score (descending)
-        $champions = $champions | Sort-Object combined -Descending
+        # Explicitly sort by combined score (highest to lowest)
+        $sortedChampions = $champions | Sort-Object -Property combined -Descending
+        
+        # Verify the sort worked correctly
+        "First team combined score: $($sortedChampions[0].combined)" | Tee-Object -FilePath $logFile -Append
+        "Last team combined score: $($sortedChampions[-1].combined)" | Tee-Object -FilePath $logFile -Append
+        
+        # Get the champion with the highest combined score for the topItem
+        $topChampion = $sortedChampions[0]
+        
+        # Ensure the topChampion has the correct background and text colors
+        $topTeamName = $topChampion.team
+        $metadata = Get-TeamMetadata -connection $connection -TeamName $topTeamName -isProgram $false
+        
+        # Update top champion with metadata if available
+        if ($metadata -and $metadata.PrimaryColor) {
+            $topChampion.backgroundColor = $metadata.PrimaryColor
+        }
+        if ($metadata -and $metadata.SecondaryColor) {
+            $topChampion.textColor = $metadata.SecondaryColor
+        }
+        if ($metadata -and $metadata.LogoURL) {
+            $topChampion.logoURL = $metadata.LogoURL
+        }
+        if ($metadata -and $metadata.School_Logo_URL) {
+            $topChampion.schoolLogoURL = $metadata.School_Logo_URL
+        }
+        if ($metadata -and $metadata.Mascot) {
+            $topChampion.mascot = $metadata.Mascot
+        }
 
-
-# In Generate-MediaNationalChampions.ps1, replace the topChampionObj creation with this:
-$topChampionObj = [PSCustomObject]@{
-    year = $topChampion["year"]
-    team = $topChampion["team"] 
-    state = $topChampion["state"]
-    combined = Parse-DecimalSafe -Value $topChampion["combined"]
-    margin = Parse-DecimalSafe -Value $topChampion["margin"]
-    win_loss = Parse-DecimalSafe -Value $topChampion["win_loss"]
-    offense = Parse-DecimalSafe -Value $topChampion["offense"]
-    defense = Parse-DecimalSafe -Value $topChampion["defense"]
-    games_played = Parse-IntSafe -Value $topChampion["games_played"]
-    source = $topChampion["source"]
-    record = $topChampion["record"]
-    logoURL = $topChampion["logoURL"]
-    schoolLogoURL = $topChampion["schoolLogoURL"]
-    backgroundColor = $topChampion["backgroundColor"] 
-    textColor = $topChampion["textColor"]
-    mascot = $topChampion["mascot"]
-}
-
-# Instead of trying to merge metadata, directly set key values:
-if ($metadata -and $metadata.PrimaryColor) {
-    $topChampionObj.backgroundColor = $metadata.PrimaryColor
-}
-if ($metadata -and $metadata.SecondaryColor) {
-    $topChampionObj.textColor = $metadata.SecondaryColor
-}
-if ($metadata -and $metadata.LogoURL) {
-    $topChampionObj.logoURL = $metadata.LogoURL
-}
-if ($metadata -and $metadata.School_Logo_URL) {
-    $topChampionObj.schoolLogoURL = $metadata.School_Logo_URL
-}
-if ($metadata -and $metadata.Mascot) {
-    $topChampionObj.mascot = $metadata.Mascot
-}
-
-        # Create JSON structure
+        # Create JSON structure with sorted champions
         $jsonData = @{
-            topItem = $topChampionObj
-            items = $champions
+            topItem = $topChampion
+            items = $sortedChampions
             metadata = @{
                 timestamp = (Get-Date).ToString("o")
                 type = "media-national-champions"
                 yearRange = "all-time"
-                totalItems = $champions.Count
+                totalItems = $sortedChampions.Count
                 description = "Media National Champions"
             }
         }
 
         # Write JSON data to file
         $outputPath = Join-Path $outputDir "media-national-champions.json"
-        $jsonData | ConvertTo-Json -Depth 10 | Set-Content -Path $outputPath -Force
+        $jsonString = ConvertTo-Json -InputObject $jsonData -Depth 10
+        Set-Content -Path $outputPath -Value $jsonString -Encoding UTF8
+        
         Write-Host "File written: $outputPath"
         Write-Host "File last modified: $(Get-Item $outputPath).LastWriteTime"
 
