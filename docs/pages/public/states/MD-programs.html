@@ -1,0 +1,2100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Maryland High School Football Programs - McKnight's American Football</title>
+        <meta name="data-file" content="/static-football-rankings/data/states/programs/state-programs-MD.json">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+        </div>
+
+        <!-- Breadcrumb navigation -->
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Maryland Programs</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Dynamic team banner container -->
+        <div id="teamHeaderContainer"></div>
+
+        <!-- Main content -->
+        <div class="container mt-4">
+            <h1 data-page-name="MD">Maryland High School Football Programs</h1>
+            
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <a href="MD-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
+                </div>
+                <div class="text-muted">Updated: <span id="lastUpdated">10/22/2025</span></div>
+            </div>
+
+            <!-- Search Controls -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Search</span>
+                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="sticky-top bg-white">
+                        <tr>
+                            <th style="min-width: 60px">Rank</th>
+                            <th style="min-width: 200px">Program</th>
+                            <th style="min-width: 80px">Seasons</th>
+                            <th style="min-width: 90px">Combined</th>
+                            <th style="min-width: 90px">Margin</th>
+                            <th style="min-width: 90px">Win/Loss</th>
+                            <th style="min-width: 90px">Offense</th>
+                            <th style="min-width: 90px">Defense</th>
+                            <th style="min-width: 70px">State</th>
+                        </tr>
+                    </thead>
+                    <tbody id="programsTableBody">
+                                    <tr>
+                <td>1</td>
+                <td>Severn Archbishop Spalding (MD)</td>
+                <td>25</td>
+                <td>31.928</td>
+                <td>31.524</td>
+                <td>1.036</td>
+                <td>27.358</td>
+                <td>-4.371</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Hyattsville DeMatha Catholic (MD)</td>
+                <td>75</td>
+                <td>30.380</td>
+                <td>30.340</td>
+                <td>0.924</td>
+                <td>21.075</td>
+                <td>-7.485</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Damascus (MD)</td>
+                <td>25</td>
+                <td>29.071</td>
+                <td>29.080</td>
+                <td>0.964</td>
+                <td>23.840</td>
+                <td>-3.784</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Frederick Linganore (MD)</td>
+                <td>27</td>
+                <td>28.847</td>
+                <td>28.763</td>
+                <td>0.842</td>
+                <td>23.893</td>
+                <td>-4.598</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Olney Our Lady of Good Counsel (MD)</td>
+                <td>56</td>
+                <td>26.736</td>
+                <td>26.764</td>
+                <td>0.663</td>
+                <td>18.619</td>
+                <td>-7.352</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Port Deposit Tome School for Boys (MD)</td>
+                <td>36</td>
+                <td>25.489</td>
+                <td>25.518</td>
+                <td>0.842</td>
+                <td>13.371</td>
+                <td>-7.563</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Germantown Seneca Valley (MD)</td>
+                <td>25</td>
+                <td>23.361</td>
+                <td>23.435</td>
+                <td>0.828</td>
+                <td>19.715</td>
+                <td>-2.604</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Cumberland Fort Hill (MD)</td>
+                <td>90</td>
+                <td>22.882</td>
+                <td>22.781</td>
+                <td>0.588</td>
+                <td>18.176</td>
+                <td>-2.608</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Forestville Bishop McNamara (MD)</td>
+                <td>56</td>
+                <td>20.806</td>
+                <td>21.076</td>
+                <td>0.543</td>
+                <td>16.940</td>
+                <td>-3.211</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Owings Mills McDonogh (MD)</td>
+                <td>108</td>
+                <td>17.143</td>
+                <td>17.531</td>
+                <td>0.530</td>
+                <td>12.313</td>
+                <td>-2.696</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Upper Marlboro Douglass (MD)</td>
+                <td>41</td>
+                <td>15.785</td>
+                <td>15.942</td>
+                <td>0.304</td>
+                <td>14.081</td>
+                <td>-1.024</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Greenbelt Eleanor Roosevelt (MD)</td>
+                <td>41</td>
+                <td>15.783</td>
+                <td>16.159</td>
+                <td>0.195</td>
+                <td>15.991</td>
+                <td>-0.283</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>North Bethesda Georgetown Prep (MD)</td>
+                <td>81</td>
+                <td>15.424</td>
+                <td>15.392</td>
+                <td>0.372</td>
+                <td>12.599</td>
+                <td>-1.289</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Towson Loyola Blakefield (MD)</td>
+                <td>105</td>
+                <td>15.174</td>
+                <td>15.310</td>
+                <td>0.459</td>
+                <td>11.778</td>
+                <td>-1.192</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Millersville Old Mill (MD)</td>
+                <td>46</td>
+                <td>15.138</td>
+                <td>14.801</td>
+                <td>0.332</td>
+                <td>15.363</td>
+                <td>0.395</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Gambrills Arundel (MD)</td>
+                <td>56</td>
+                <td>14.696</td>
+                <td>14.621</td>
+                <td>0.276</td>
+                <td>15.599</td>
+                <td>1.562</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Baltimore Calvert Hall (MD)</td>
+                <td>105</td>
+                <td>14.320</td>
+                <td>14.425</td>
+                <td>0.362</td>
+                <td>11.765</td>
+                <td>-1.118</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Baltimore Mount Saint Joseph (MD)</td>
+                <td>100</td>
+                <td>14.238</td>
+                <td>14.077</td>
+                <td>0.350</td>
+                <td>12.052</td>
+                <td>-0.457</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Baltimore Poly (MD)</td>
+                <td>98</td>
+                <td>14.156</td>
+                <td>14.096</td>
+                <td>0.459</td>
+                <td>9.999</td>
+                <td>-1.700</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Annapolis Broadneck (MD)</td>
+                <td>36</td>
+                <td>14.090</td>
+                <td>14.504</td>
+                <td>0.435</td>
+                <td>15.752</td>
+                <td>1.615</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Baltimore Gilman (MD)</td>
+                <td>109</td>
+                <td>13.630</td>
+                <td>13.123</td>
+                <td>0.424</td>
+                <td>11.670</td>
+                <td>-0.420</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Sandy Spring Sherwood (MD)</td>
+                <td>34</td>
+                <td>13.521</td>
+                <td>13.587</td>
+                <td>0.298</td>
+                <td>15.892</td>
+                <td>3.168</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Columbia Wilde Lake (MD)</td>
+                <td>29</td>
+                <td>12.200</td>
+                <td>12.448</td>
+                <td>0.235</td>
+                <td>11.297</td>
+                <td>-0.061</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Parkton Hereford (MD)</td>
+                <td>27</td>
+                <td>12.189</td>
+                <td>12.531</td>
+                <td>0.329</td>
+                <td>17.379</td>
+                <td>5.262</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Cumberland Allegany (MD)</td>
+                <td>108</td>
+                <td>12.003</td>
+                <td>11.768</td>
+                <td>0.320</td>
+                <td>12.124</td>
+                <td>2.062</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Glenelg (MD)</td>
+                <td>27</td>
+                <td>11.731</td>
+                <td>10.901</td>
+                <td>0.436</td>
+                <td>14.464</td>
+                <td>3.258</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Fort Washington Friendly (MD)</td>
+                <td>42</td>
+                <td>11.539</td>
+                <td>11.642</td>
+                <td>0.347</td>
+                <td>13.471</td>
+                <td>2.956</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Indian Head Lackey (MD)</td>
+                <td>36</td>
+                <td>11.029</td>
+                <td>10.569</td>
+                <td>0.161</td>
+                <td>12.851</td>
+                <td>1.980</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Westminster (MD)</td>
+                <td>68</td>
+                <td>10.809</td>
+                <td>10.439</td>
+                <td>0.176</td>
+                <td>13.701</td>
+                <td>4.263</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Ellicott City Howard (MD)</td>
+                <td>28</td>
+                <td>10.654</td>
+                <td>10.877</td>
+                <td>0.321</td>
+                <td>12.725</td>
+                <td>2.491</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Baltimore Dunbar (MD)</td>
+                <td>61</td>
+                <td>10.271</td>
+                <td>10.426</td>
+                <td>0.005</td>
+                <td>11.468</td>
+                <td>1.482</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Bowie (MD)</td>
+                <td>50</td>
+                <td>10.150</td>
+                <td>10.450</td>
+                <td>0.085</td>
+                <td>12.024</td>
+                <td>2.582</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Oxon Hill Potomac (MD)</td>
+                <td>43</td>
+                <td>10.063</td>
+                <td>10.344</td>
+                <td>-0.031</td>
+                <td>12.090</td>
+                <td>1.788</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Bethesda Landon (MD)</td>
+                <td>82</td>
+                <td>9.911</td>
+                <td>10.210</td>
+                <td>0.180</td>
+                <td>9.105</td>
+                <td>0.331</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Baltimore City College (MD)</td>
+                <td>93</td>
+                <td>9.564</td>
+                <td>9.408</td>
+                <td>0.196</td>
+                <td>9.790</td>
+                <td>2.086</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Baltimore Patterson Park (MD)</td>
+                <td>26</td>
+                <td>9.529</td>
+                <td>9.529</td>
+                <td>0.050</td>
+                <td>5.165</td>
+                <td>-1.923</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Baltimore Perry Hall (MD)</td>
+                <td>29</td>
+                <td>9.164</td>
+                <td>9.058</td>
+                <td>0.257</td>
+                <td>16.541</td>
+                <td>7.224</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Rockville Georgetown Prep (MD)</td>
+                <td>38</td>
+                <td>8.438</td>
+                <td>8.438</td>
+                <td>0.106</td>
+                <td>8.133</td>
+                <td>1.731</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>Frederick Governor Thomas Johnson (MD)</td>
+                <td>52</td>
+                <td>8.264</td>
+                <td>8.371</td>
+                <td>-0.018</td>
+                <td>11.081</td>
+                <td>3.689</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Brandywine Gwynn Park (MD)</td>
+                <td>40</td>
+                <td>7.671</td>
+                <td>7.321</td>
+                <td>0.026</td>
+                <td>10.464</td>
+                <td>2.459</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Pomfret McDonough (MD)</td>
+                <td>29</td>
+                <td>7.596</td>
+                <td>7.776</td>
+                <td>0.271</td>
+                <td>12.780</td>
+                <td>5.338</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Oxon Hill (MD)</td>
+                <td>58</td>
+                <td>7.576</td>
+                <td>7.064</td>
+                <td>0.065</td>
+                <td>10.479</td>
+                <td>3.939</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>Edgewater South River (MD)</td>
+                <td>33</td>
+                <td>7.183</td>
+                <td>7.071</td>
+                <td>0.332</td>
+                <td>11.761</td>
+                <td>5.049</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Baltimore Edmondson-Westside (MD)</td>
+                <td>52</td>
+                <td>7.111</td>
+                <td>7.353</td>
+                <td>0.044</td>
+                <td>8.476</td>
+                <td>1.922</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>Columbia Atholton (MD)</td>
+                <td>27</td>
+                <td>6.727</td>
+                <td>6.277</td>
+                <td>0.117</td>
+                <td>10.221</td>
+                <td>3.927</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Morganza Chopticon (MD)</td>
+                <td>29</td>
+                <td>6.723</td>
+                <td>6.374</td>
+                <td>0.197</td>
+                <td>11.817</td>
+                <td>5.579</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Gaithersburg (MD)</td>
+                <td>45</td>
+                <td>6.377</td>
+                <td>6.840</td>
+                <td>0.040</td>
+                <td>8.266</td>
+                <td>2.838</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>Baltimore Patterson (MD)</td>
+                <td>65</td>
+                <td>5.980</td>
+                <td>6.068</td>
+                <td>0.064</td>
+                <td>8.761</td>
+                <td>3.896</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>Silver Spring Blair (MD)</td>
+                <td>40</td>
+                <td>5.930</td>
+                <td>6.199</td>
+                <td>0.134</td>
+                <td>9.094</td>
+                <td>4.314</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>Upper Marlboro Largo (MD)</td>
+                <td>46</td>
+                <td>5.685</td>
+                <td>5.892</td>
+                <td>0.047</td>
+                <td>8.145</td>
+                <td>3.203</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>Potomac Bullis (MD)</td>
+                <td>79</td>
+                <td>5.639</td>
+                <td>5.340</td>
+                <td>0.036</td>
+                <td>9.229</td>
+                <td>4.240</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>Waldorf Stone (MD)</td>
+                <td>27</td>
+                <td>5.621</td>
+                <td>6.031</td>
+                <td>0.054</td>
+                <td>12.087</td>
+                <td>6.699</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td>Annapolis (MD)</td>
+                <td>68</td>
+                <td>5.576</td>
+                <td>5.509</td>
+                <td>-0.004</td>
+                <td>9.309</td>
+                <td>4.689</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>Bel Air (MD)</td>
+                <td>46</td>
+                <td>5.534</td>
+                <td>5.502</td>
+                <td>-0.084</td>
+                <td>8.641</td>
+                <td>3.926</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td>Centreville Queen Anne's County (MD)</td>
+                <td>25</td>
+                <td>5.241</td>
+                <td>4.983</td>
+                <td>-0.047</td>
+                <td>12.728</td>
+                <td>6.733</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td>Fort Meade Meade (MD)</td>
+                <td>44</td>
+                <td>4.895</td>
+                <td>5.286</td>
+                <td>-0.089</td>
+                <td>11.308</td>
+                <td>6.071</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>Sykesville Liberty (MD)</td>
+                <td>29</td>
+                <td>4.754</td>
+                <td>4.311</td>
+                <td>0.046</td>
+                <td>13.168</td>
+                <td>8.441</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td>Forestville Suitland (MD)</td>
+                <td>64</td>
+                <td>4.548</td>
+                <td>4.504</td>
+                <td>-0.149</td>
+                <td>6.240</td>
+                <td>2.235</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td>Severna Park (MD)</td>
+                <td>56</td>
+                <td>4.306</td>
+                <td>4.174</td>
+                <td>-0.120</td>
+                <td>10.717</td>
+                <td>6.437</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>Columbia Oakland Mills (MD)</td>
+                <td>28</td>
+                <td>4.208</td>
+                <td>4.198</td>
+                <td>0.065</td>
+                <td>12.260</td>
+                <td>8.478</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td>Lanham DuVal (MD)</td>
+                <td>48</td>
+                <td>3.978</td>
+                <td>3.792</td>
+                <td>-0.054</td>
+                <td>7.795</td>
+                <td>4.514</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td>Bel Air John Carroll (MD)</td>
+                <td>30</td>
+                <td>3.926</td>
+                <td>4.068</td>
+                <td>-0.079</td>
+                <td>11.199</td>
+                <td>6.804</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td>Baltimore Archbishop Curley (MD)</td>
+                <td>52</td>
+                <td>3.922</td>
+                <td>3.998</td>
+                <td>-0.040</td>
+                <td>9.908</td>
+                <td>5.939</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>Silver Spring Springbrook (MD)</td>
+                <td>25</td>
+                <td>3.910</td>
+                <td>3.728</td>
+                <td>0.216</td>
+                <td>8.325</td>
+                <td>5.151</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>Prince Frederick Calvert (MD)</td>
+                <td>28</td>
+                <td>3.059</td>
+                <td>3.360</td>
+                <td>-0.123</td>
+                <td>10.799</td>
+                <td>7.800</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td>Laurel Pallotti (MD)</td>
+                <td>33</td>
+                <td>2.999</td>
+                <td>2.645</td>
+                <td>-0.035</td>
+                <td>9.720</td>
+                <td>6.306</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td>Sykesville South Carroll (MD)</td>
+                <td>43</td>
+                <td>2.792</td>
+                <td>2.874</td>
+                <td>-0.015</td>
+                <td>9.346</td>
+                <td>7.175</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>Edgewood (MD)</td>
+                <td>27</td>
+                <td>2.711</td>
+                <td>1.889</td>
+                <td>0.007</td>
+                <td>10.496</td>
+                <td>7.925</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td>Bethesda-Chevy Chase (MD)</td>
+                <td>38</td>
+                <td>2.212</td>
+                <td>2.431</td>
+                <td>0.124</td>
+                <td>7.343</td>
+                <td>6.545</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td>Berlin Decatur (MD)</td>
+                <td>30</td>
+                <td>1.988</td>
+                <td>2.061</td>
+                <td>-0.079</td>
+                <td>11.641</td>
+                <td>9.204</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td>Baltimore Cardinal Gibbons (MD)</td>
+                <td>35</td>
+                <td>1.909</td>
+                <td>1.833</td>
+                <td>-0.129</td>
+                <td>6.545</td>
+                <td>5.079</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>South Hagerstown (MD)</td>
+                <td>63</td>
+                <td>1.695</td>
+                <td>1.668</td>
+                <td>-0.204</td>
+                <td>7.774</td>
+                <td>7.008</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td>Riverdale Parkdale (MD)</td>
+                <td>45</td>
+                <td>1.626</td>
+                <td>1.476</td>
+                <td>-0.099</td>
+                <td>5.388</td>
+                <td>4.589</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td>Hagerstown (MD)</td>
+                <td>40</td>
+                <td>1.487</td>
+                <td>1.345</td>
+                <td>0.143</td>
+                <td>2.039</td>
+                <td>3.424</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>Bethesda Walter Johnson (MD)</td>
+                <td>25</td>
+                <td>1.459</td>
+                <td>1.149</td>
+                <td>0.189</td>
+                <td>9.761</td>
+                <td>9.289</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td>Salisbury Wicomico (MD)</td>
+                <td>56</td>
+                <td>1.109</td>
+                <td>1.285</td>
+                <td>-0.149</td>
+                <td>6.017</td>
+                <td>6.014</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td>Baltimore Woodlawn (MD)</td>
+                <td>35</td>
+                <td>1.107</td>
+                <td>1.294</td>
+                <td>0.035</td>
+                <td>7.051</td>
+                <td>6.755</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td>Hagerstown North Hagerstown (MD)</td>
+                <td>56</td>
+                <td>0.648</td>
+                <td>0.626</td>
+                <td>-0.234</td>
+                <td>7.034</td>
+                <td>7.596</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td>Baltimore Catonsville (MD)</td>
+                <td>25</td>
+                <td>0.549</td>
+                <td>-0.051</td>
+                <td>0.088</td>
+                <td>9.955</td>
+                <td>9.286</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>80</td>
+                <td>Upper Marlboro Riverdale Baptist (MD)</td>
+                <td>35</td>
+                <td>0.521</td>
+                <td>0.472</td>
+                <td>-0.157</td>
+                <td>9.097</td>
+                <td>8.198</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>81</td>
+                <td>Brooklandville St. Paul's (MD)</td>
+                <td>65</td>
+                <td>0.183</td>
+                <td>0.231</td>
+                <td>-0.233</td>
+                <td>6.269</td>
+                <td>6.572</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td>Temple Hills Crossland (MD)</td>
+                <td>48</td>
+                <td>0.005</td>
+                <td>0.141</td>
+                <td>-0.267</td>
+                <td>6.145</td>
+                <td>6.533</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>83</td>
+                <td>Elkton (MD)</td>
+                <td>52</td>
+                <td>-0.088</td>
+                <td>-0.075</td>
+                <td>-0.240</td>
+                <td>7.242</td>
+                <td>7.410</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>84</td>
+                <td>La Plata (MD)</td>
+                <td>32</td>
+                <td>-0.116</td>
+                <td>-0.420</td>
+                <td>-0.286</td>
+                <td>8.451</td>
+                <td>8.570</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>85</td>
+                <td>Frederick (MD)</td>
+                <td>78</td>
+                <td>-0.128</td>
+                <td>-0.086</td>
+                <td>-0.175</td>
+                <td>6.721</td>
+                <td>8.265</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>86</td>
+                <td>Laurel (MD)</td>
+                <td>45</td>
+                <td>-0.281</td>
+                <td>-0.278</td>
+                <td>-0.205</td>
+                <td>6.792</td>
+                <td>7.719</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>87</td>
+                <td>Hyattsville Northwestern (MD)</td>
+                <td>65</td>
+                <td>-0.282</td>
+                <td>-0.067</td>
+                <td>-0.174</td>
+                <td>6.126</td>
+                <td>7.314</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>88</td>
+                <td>Rockville Richard Montgomery (MD)</td>
+                <td>32</td>
+                <td>-0.542</td>
+                <td>-0.304</td>
+                <td>-0.101</td>
+                <td>8.938</td>
+                <td>9.419</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>89</td>
+                <td>Annapolis St. Mary's (MD)</td>
+                <td>52</td>
+                <td>-0.962</td>
+                <td>-1.185</td>
+                <td>-0.254</td>
+                <td>6.450</td>
+                <td>7.385</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>90</td>
+                <td>Aberdeen (MD)</td>
+                <td>28</td>
+                <td>-1.282</td>
+                <td>-1.098</td>
+                <td>-0.181</td>
+                <td>5.884</td>
+                <td>7.196</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>91</td>
+                <td>Randallstown (MD)</td>
+                <td>28</td>
+                <td>-1.560</td>
+                <td>-1.384</td>
+                <td>-0.133</td>
+                <td>6.378</td>
+                <td>8.172</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>92</td>
+                <td>Pylesville North Harford (MD)</td>
+                <td>28</td>
+                <td>-1.567</td>
+                <td>-1.481</td>
+                <td>-0.110</td>
+                <td>7.652</td>
+                <td>8.835</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>93</td>
+                <td>Leonardtown (MD)</td>
+                <td>26</td>
+                <td>-1.981</td>
+                <td>-1.788</td>
+                <td>-0.179</td>
+                <td>8.611</td>
+                <td>10.108</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>94</td>
+                <td>Easton (MD)</td>
+                <td>27</td>
+                <td>-2.018</td>
+                <td>-2.233</td>
+                <td>-0.221</td>
+                <td>10.986</td>
+                <td>13.270</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>95</td>
+                <td>Severna Park Severn (MD)</td>
+                <td>72</td>
+                <td>-2.164</td>
+                <td>-2.122</td>
+                <td>-0.237</td>
+                <td>5.278</td>
+                <td>7.993</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>96</td>
+                <td>Havre de Grace (MD)</td>
+                <td>29</td>
+                <td>-2.404</td>
+                <td>-2.048</td>
+                <td>-0.251</td>
+                <td>8.384</td>
+                <td>10.673</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>97</td>
+                <td>Capitol Heights Fairmont Heights (MD)</td>
+                <td>46</td>
+                <td>-2.405</td>
+                <td>-1.989</td>
+                <td>-0.190</td>
+                <td>5.878</td>
+                <td>8.962</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>98</td>
+                <td>Baltimore Boys Latin (MD)</td>
+                <td>55</td>
+                <td>-2.415</td>
+                <td>-2.560</td>
+                <td>-0.174</td>
+                <td>5.318</td>
+                <td>7.702</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>99</td>
+                <td>Cumberland LaSalle (MD)</td>
+                <td>38</td>
+                <td>-2.427</td>
+                <td>-2.301</td>
+                <td>-0.262</td>
+                <td>1.771</td>
+                <td>6.306</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>Beltsville High Point (MD)</td>
+                <td>59</td>
+                <td>-2.661</td>
+                <td>-2.464</td>
+                <td>-0.096</td>
+                <td>4.580</td>
+                <td>8.550</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Great Mills (MD)</td>
+                <td>31</td>
+                <td>-3.004</td>
+                <td>-3.146</td>
+                <td>-0.217</td>
+                <td>8.505</td>
+                <td>11.351</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Baltimore Forest Park (MD)</td>
+                <td>82</td>
+                <td>-3.108</td>
+                <td>-3.223</td>
+                <td>-0.281</td>
+                <td>2.657</td>
+                <td>6.359</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Thurmont Catoctin (MD)</td>
+                <td>26</td>
+                <td>-3.130</td>
+                <td>-3.316</td>
+                <td>-0.235</td>
+                <td>9.556</td>
+                <td>12.377</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Frostburg Beall (MD)</td>
+                <td>67</td>
+                <td>-3.138</td>
+                <td>-2.846</td>
+                <td>-0.354</td>
+                <td>2.787</td>
+                <td>7.177</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>Cambridge-South Dorchester (MD)</td>
+                <td>36</td>
+                <td>-3.413</td>
+                <td>-3.807</td>
+                <td>-0.257</td>
+                <td>6.369</td>
+                <td>10.059</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>106</td>
+                <td>Baltimore Douglass (MD)</td>
+                <td>53</td>
+                <td>-3.663</td>
+                <td>-3.745</td>
+                <td>-0.438</td>
+                <td>3.539</td>
+                <td>6.880</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td>Rockville (MD)</td>
+                <td>28</td>
+                <td>-3.829</td>
+                <td>-3.557</td>
+                <td>-0.151</td>
+                <td>6.807</td>
+                <td>10.917</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>108</td>
+                <td>Glen Burnie (MD)</td>
+                <td>54</td>
+                <td>-3.832</td>
+                <td>-3.833</td>
+                <td>-0.386</td>
+                <td>7.466</td>
+                <td>10.951</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>109</td>
+                <td>Boonsboro (MD)</td>
+                <td>48</td>
+                <td>-3.935</td>
+                <td>-3.964</td>
+                <td>-0.307</td>
+                <td>5.057</td>
+                <td>10.097</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>110</td>
+                <td>Joppa Joppatowne (MD)</td>
+                <td>25</td>
+                <td>-3.943</td>
+                <td>-3.654</td>
+                <td>-0.087</td>
+                <td>7.455</td>
+                <td>12.202</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td>Ridgely North Caroline (MD)</td>
+                <td>34</td>
+                <td>-4.150</td>
+                <td>-4.250</td>
+                <td>-0.462</td>
+                <td>8.320</td>
+                <td>12.579</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>112</td>
+                <td>Baltimore Southern (MD)</td>
+                <td>59</td>
+                <td>-4.351</td>
+                <td>-4.354</td>
+                <td>-0.460</td>
+                <td>3.448</td>
+                <td>8.317</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>113</td>
+                <td>Bladensburg (MD)</td>
+                <td>57</td>
+                <td>-4.387</td>
+                <td>-4.353</td>
+                <td>-0.372</td>
+                <td>4.563</td>
+                <td>9.269</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>114</td>
+                <td>Glen Burnie North County (MD)</td>
+                <td>33</td>
+                <td>-4.451</td>
+                <td>-4.446</td>
+                <td>-0.226</td>
+                <td>9.534</td>
+                <td>13.443</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>115</td>
+                <td>Clinton Surrattsville (MD)</td>
+                <td>48</td>
+                <td>-4.599</td>
+                <td>-4.449</td>
+                <td>-0.321</td>
+                <td>4.296</td>
+                <td>8.906</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>116</td>
+                <td>Ellicott City Mt. Hebron (MD)</td>
+                <td>27</td>
+                <td>-4.795</td>
+                <td>-3.997</td>
+                <td>-0.305</td>
+                <td>6.973</td>
+                <td>11.991</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>117</td>
+                <td>Columbia Hammond (MD)</td>
+                <td>25</td>
+                <td>-5.379</td>
+                <td>-5.290</td>
+                <td>-0.273</td>
+                <td>7.790</td>
+                <td>13.040</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>118</td>
+                <td>Baltimore Carver (MD)</td>
+                <td>30</td>
+                <td>-5.506</td>
+                <td>-5.563</td>
+                <td>-0.675</td>
+                <td>-0.007</td>
+                <td>5.501</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>119</td>
+                <td>Baltimore Northwestern (MD)</td>
+                <td>30</td>
+                <td>-5.510</td>
+                <td>-5.554</td>
+                <td>-0.276</td>
+                <td>4.797</td>
+                <td>10.548</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>120</td>
+                <td>Salisbury Bennett (MD)</td>
+                <td>40</td>
+                <td>-5.803</td>
+                <td>-5.948</td>
+                <td>-0.229</td>
+                <td>7.437</td>
+                <td>13.277</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>121</td>
+                <td>Smithsburg (MD)</td>
+                <td>39</td>
+                <td>-6.852</td>
+                <td>-6.801</td>
+                <td>-0.435</td>
+                <td>3.342</td>
+                <td>10.887</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>122</td>
+                <td>Silver Spring Wheaton (MD)</td>
+                <td>28</td>
+                <td>-6.978</td>
+                <td>-7.146</td>
+                <td>-0.057</td>
+                <td>2.677</td>
+                <td>10.441</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>Baltimore Mergenthaler Vocational Tech (MD)</td>
+                <td>28</td>
+                <td>-7.542</td>
+                <td>-7.573</td>
+                <td>-0.613</td>
+                <td>-0.940</td>
+                <td>6.059</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>124</td>
+                <td>Cumberland Bishop Walsh (MD)</td>
+                <td>47</td>
+                <td>-8.264</td>
+                <td>-8.420</td>
+                <td>-0.503</td>
+                <td>2.139</td>
+                <td>10.876</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>125</td>
+                <td>Perryville (MD)</td>
+                <td>34</td>
+                <td>-8.319</td>
+                <td>-8.538</td>
+                <td>-0.439</td>
+                <td>4.603</td>
+                <td>12.316</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>126</td>
+                <td>Salisbury Parkside (MD)</td>
+                <td>31</td>
+                <td>-8.379</td>
+                <td>-7.892</td>
+                <td>-0.463</td>
+                <td>4.705</td>
+                <td>12.604</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>127</td>
+                <td>Oakland Southern (MD)</td>
+                <td>70</td>
+                <td>-10.098</td>
+                <td>-9.865</td>
+                <td>-0.544</td>
+                <td>1.040</td>
+                <td>12.081</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>128</td>
+                <td>Poolesville (MD)</td>
+                <td>32</td>
+                <td>-10.554</td>
+                <td>-10.589</td>
+                <td>-0.395</td>
+                <td>2.026</td>
+                <td>12.395</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>129</td>
+                <td>Capitol Heights Central (MD)</td>
+                <td>47</td>
+                <td>-10.887</td>
+                <td>-10.923</td>
+                <td>-0.409</td>
+                <td>1.415</td>
+                <td>13.642</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>130</td>
+                <td>Timonium Dulaney (MD)</td>
+                <td>30</td>
+                <td>-10.944</td>
+                <td>-11.306</td>
+                <td>-0.351</td>
+                <td>4.326</td>
+                <td>14.855</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>131</td>
+                <td>Williamsport (MD)</td>
+                <td>33</td>
+                <td>-11.065</td>
+                <td>-10.881</td>
+                <td>-0.615</td>
+                <td>2.440</td>
+                <td>13.866</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>132</td>
+                <td>St. James (MD)</td>
+                <td>68</td>
+                <td>-11.201</td>
+                <td>-11.173</td>
+                <td>-0.557</td>
+                <td>1.187</td>
+                <td>13.155</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>133</td>
+                <td>Chesapeake City Bohemia Manor (MD)</td>
+                <td>36</td>
+                <td>-11.684</td>
+                <td>-11.801</td>
+                <td>-0.592</td>
+                <td>1.215</td>
+                <td>12.118</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>134</td>
+                <td>Baltimore Lake Clifton (MD)</td>
+                <td>34</td>
+                <td>-11.758</td>
+                <td>-11.574</td>
+                <td>-0.440</td>
+                <td>-1.203</td>
+                <td>9.606</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>135</td>
+                <td>Brunswick (MD)</td>
+                <td>36</td>
+                <td>-13.069</td>
+                <td>-13.206</td>
+                <td>-0.689</td>
+                <td>2.649</td>
+                <td>16.133</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>136</td>
+                <td>Accident Northern (MD)</td>
+                <td>70</td>
+                <td>-13.086</td>
+                <td>-12.910</td>
+                <td>-0.805</td>
+                <td>-0.523</td>
+                <td>12.846</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>137</td>
+                <td>North East (MD)</td>
+                <td>52</td>
+                <td>-13.132</td>
+                <td>-13.175</td>
+                <td>-0.567</td>
+                <td>2.460</td>
+                <td>15.525</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>138</td>
+                <td>North East Rising Sun (MD)</td>
+                <td>47</td>
+                <td>-14.286</td>
+                <td>-14.085</td>
+                <td>-0.721</td>
+                <td>1.469</td>
+                <td>14.429</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>139</td>
+                <td>Baltimore Chesapeake (MD)</td>
+                <td>41</td>
+                <td>-14.319</td>
+                <td>-14.869</td>
+                <td>-0.810</td>
+                <td>-0.005</td>
+                <td>13.163</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>140</td>
+                <td>Lonaconing Valley (MD)</td>
+                <td>26</td>
+                <td>-15.086</td>
+                <td>-14.808</td>
+                <td>-1.026</td>
+                <td>-2.982</td>
+                <td>13.487</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>141</td>
+                <td>Silver Spring Northwood (MD)</td>
+                <td>27</td>
+                <td>-16.034</td>
+                <td>-15.394</td>
+                <td>-0.462</td>
+                <td>1.942</td>
+                <td>18.451</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>142</td>
+                <td>Westernport Bruce (MD)</td>
+                <td>25</td>
+                <td>-18.864</td>
+                <td>-18.489</td>
+                <td>-0.955</td>
+                <td>-5.309</td>
+                <td>15.394</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>143</td>
+                <td>Snow Hill (MD)</td>
+                <td>32</td>
+                <td>-19.533</td>
+                <td>-18.855</td>
+                <td>-0.675</td>
+                <td>0.691</td>
+                <td>19.622</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>144</td>
+                <td>Baltimore Southwestern (MD)</td>
+                <td>34</td>
+                <td>-19.748</td>
+                <td>-19.239</td>
+                <td>-0.815</td>
+                <td>-1.848</td>
+                <td>16.620</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>145</td>
+                <td>Baltimore Patapsco (MD)</td>
+                <td>25</td>
+                <td>-19.893</td>
+                <td>-19.571</td>
+                <td>-0.536</td>
+                <td>-2.523</td>
+                <td>18.197</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>146</td>
+                <td>Maryland School for the Deaf (MD)</td>
+                <td>46</td>
+                <td>-22.013</td>
+                <td>-22.599</td>
+                <td>-0.948</td>
+                <td>-1.106</td>
+                <td>20.802</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>147</td>
+                <td>Baltimore Friends (MD)</td>
+                <td>45</td>
+                <td>-22.300</td>
+                <td>-22.053</td>
+                <td>-0.952</td>
+                <td>-5.723</td>
+                <td>16.777</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>148</td>
+                <td>Towson Loch Raven (MD)</td>
+                <td>25</td>
+                <td>-22.652</td>
+                <td>-21.474</td>
+                <td>-0.615</td>
+                <td>-1.983</td>
+                <td>20.939</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>149</td>
+                <td>Colora West Nottingham Academy (MD)</td>
+                <td>70</td>
+                <td>-23.133</td>
+                <td>-23.170</td>
+                <td>-1.046</td>
+                <td>-4.948</td>
+                <td>17.343</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>150</td>
+                <td>Federalsburg Colonel Richardson (MD)</td>
+                <td>41</td>
+                <td>-28.017</td>
+                <td>-28.208</td>
+                <td>-1.236</td>
+                <td>-5.634</td>
+                <td>21.796</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>151</td>
+                <td>Princess Anne Washington (MD)</td>
+                <td>29</td>
+                <td>-35.459</td>
+                <td>-34.306</td>
+                <td>-1.196</td>
+                <td>-6.016</td>
+                <td>29.279</td>
+                <td>(MD)</td>
+            </tr>
+            <tr>
+                <td>152</td>
+                <td>Hancock (MD)</td>
+                <td>67</td>
+                <td>-39.176</td>
+                <td>-38.816</td>
+                <td>-1.487</td>
+                <td>-12.430</td>
+                <td>26.968</td>
+                <td>(MD)</td>
+            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="pagination-info">
+                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="Table navigation">
+                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section mt-5">
+                <h3>Comments</h3>
+                <div id="authContainer" class="mb-3"></div>
+                <div id="commentForm" class="mb-4" style="display: none">
+                    <div class="card">
+                        <div class="card-body">
+                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="commentsList"></div>
+            </div>
+
+            <footer class="mt-5 mb-3">
+                <div class="text-center">
+                    <p>Â© 2025 McKnight's Football Rankings</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Table Controls Script -->
+        <script>
+    const TableControls = {
+        ROWS_PER_PAGE: 100,
+        currentPage: 1,
+        filteredRows: [],
+
+        init() {
+            const tableBody = document.querySelector('tbody');
+            if (tableBody) {
+                const rows = Array.from(tableBody.getElementsByTagName('tr'));
+                this.filteredRows = rows;
+                const totalRows = rows.length;
+                
+                const totalRowsElement = document.getElementById('totalRows');
+                if (totalRowsElement) {
+                    totalRowsElement.textContent = totalRows;
+                }
+                
+                this.setupEventListeners();
+                this.showPage(1);
+            }
+        },
+
+        setupEventListeners() {
+            const searchInput = document.getElementById('tableSearch');
+            const pagination = document.getElementById('tablePagination');
+
+            if (searchInput) {
+                searchInput.value = '';
+                const self = this;
+                searchInput.addEventListener('input', function(e) {
+                    self.filterTable(e.target.value.toLowerCase());
+                });
+            }
+
+            if (pagination) {
+                const self = this;
+                pagination.addEventListener('click', function(e) {
+                    const button = e.target.closest('button');
+                    if (!button || button.parentElement.classList.contains('disabled')) return;
+                    
+                    const page = button.dataset.page;
+                    if (page === 'prev') {
+                        self.showPage(self.currentPage - 1);
+                    } else if (page === 'next') {
+                        self.showPage(self.currentPage + 1);
+                    } else {
+                        self.showPage(parseInt(page));
+                    }
+                });
+            }
+        },
+
+        filterTable(searchTerm) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
+                const text = Array.from(row.getElementsByTagName('td'))
+                    .map(cell => cell.textContent || cell.innerText)
+                    .join(' ')
+                    .toLowerCase();
+                return text.includes(searchTerm);
+            });
+
+            const totalRowsElement = document.getElementById('totalRows');
+            if (totalRowsElement) {
+                totalRowsElement.textContent = this.filteredRows.length;
+            }
+
+            this.currentPage = 1;
+            this.showPage(1);
+        },
+
+        showPage(pageNum) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            this.currentPage = pageNum;
+            const start = (pageNum - 1) * this.ROWS_PER_PAGE;
+            const end = Math.min(start + this.ROWS_PER_PAGE, this.filteredRows.length);
+            
+            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
+            allRows.forEach(row => row.style.display = 'none');
+            
+            for (let i = start; i < end; i++) {
+                if (this.filteredRows[i]) {
+                    this.filteredRows[i].style.display = '';
+                }
+            }
+            
+            const startRowElement = document.getElementById('startRow');
+            const endRowElement = document.getElementById('endRow');
+            if (startRowElement) startRowElement.textContent = this.filteredRows.length === 0 ? 0 : start + 1;
+            if (endRowElement) endRowElement.textContent = end;
+            
+            this.updatePaginationControls();
+        },
+
+        updatePaginationControls() {
+            const pagination = document.getElementById('tablePagination');
+            if (!pagination) return;
+            
+            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
+            let html = [];
+            
+            html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
+                <button class="page-link" data-page="prev">&laquo;</button>
+            </li>`);
+            
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
+                    html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
+                        <button class="page-link" data-page="${i}">${i}</button>
+                    </li>`);
+                } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
+                    html.push('<li class="page-item disabled"><span class="page-link">...</span></li>');
+                }
+            }
+            
+            html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
+                <button class="page-link" data-page="next">&raquo;</button>
+            </li>`);
+            
+            pagination.innerHTML = html.join('');
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => TableControls.init());
+    } else {
+        TableControls.init();
+    }
+</script>
+        
+        <!-- Comments Script -->
+        <script>
+const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
+
+/**********************************************************
+ * AUTH / LOGIN LOGIC
+ **********************************************************/
+async function checkLoginStatus() {
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
+
+        if (data.success && data.loggedIn) {
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
+            renderAuthUI(true, data.user);
+        } else {
+            document.getElementById('commentForm').style.display = 'none';
+            document.getElementById('authorName').textContent = 'Anonymous';
+            renderAuthUI(false);
+        }
+    } catch (error) {
+        console.warn('Login status error:', error);
+        document.getElementById('commentForm').style.display = 'none';
+        document.getElementById('authorName').textContent = 'Anonymous';
+        renderAuthUI(false);
+    }
+}
+
+function renderAuthUI(loggedIn, user = null) {
+    const authContainer = document.getElementById('authContainer');
+    if (!authContainer) return;
+
+    if (loggedIn && user) {
+        authContainer.innerHTML = `
+            <p>Welcome, <strong>${escapeHTML(user.name)}</strong> (${escapeHTML(user.email)})
+               <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
+        `;
+        document.getElementById('logoutBtn')?.addEventListener('click', doLogout);
+    } else {
+        authContainer.innerHTML = `
+            <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
+        `;
+        document.getElementById('loginBtn')?.addEventListener('click', doLogin);
+    }
+}
+
+function doLogin() {
+    window.location.href = `${VERCEL_API_BASE}/auth/google`;
+}
+
+function doLogout() {
+    document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    window.location.reload();
+}
+
+/**********************************************************
+ * COMMENTS LOGIC
+ **********************************************************/
+async function fetchComments() {
+    const pageId = getPageId();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            displayComments(data.comments);
+        }
+    } catch (err) {
+        console.error('Error fetching comments:', err);
+        document.getElementById('commentsList').innerHTML = '<div class="alert alert-warning">Unable to load comments at this time.</div>';
+    }
+}
+
+function displayComments(comments) {
+    const list = document.getElementById('commentsList');
+    if (!list) return;
+    if (!Array.isArray(comments) || comments.length === 0) {
+        list.innerHTML = '<p class="text-muted">No comments yet</p>';
+        return;
+    }
+    list.innerHTML = comments.map(c => `
+        <div class="card mb-2">
+            <div class="card-body">
+                <p class="mb-1">${escapeHTML(c.text)}</p>
+                <small class="text-muted">
+                    by ${escapeHTML(c.author)} on ${new Date(c.10/22/2025).toLocaleString()}
+                </small>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textEl = document.getElementById('commentText');
+    const text = textEl.value.trim();
+    if (!text) return alert('Please enter a comment');
+
+    const pageId = getPageId();
+
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, pageId })
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            textEl.value = '';
+            await fetchComments();
+        } else {
+            alert('Error posting comment: ' + (data.error || 'Unknown error'));
+        }
+    } catch (err) {
+        console.error('Error posting comment:', err);
+        alert('Failed to post comment. Please try again later.');
+    }
+}
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function getPageId() {
+    const el = document.querySelector('[data-page-name]');
+    return el ? el.getAttribute('data-page-name') : 'unknown';
+}
+
+// Initialize
+document.getElementById('submitComment')?.addEventListener('click', submitComment);
+
+(async function initPage() {
+    try {
+        await Promise.all([
+            checkLoginStatus(),
+            fetchComments()
+        ]);
+    } catch (error) {
+        console.warn('Page initialization error:', error);
+    }
+})();
+</script>
+        
+<!-- TopBanner initialization -->
+<script type="module">
+    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const banner = new TopBanner();
+            await banner.initialize();
+        } catch (error) {
+            console.warn('Banner initialization failed:', error);
+            document.body.style.display = 'block';
+        }
+    });
+</script>
+    </body>
+</html>

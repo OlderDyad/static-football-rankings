@@ -1,0 +1,1353 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Brunswick High School Football Teams - McKnight's American Football</title>
+        <meta name="data-file" content="/static-football-rankings/data/states/teams/state-teams-NB.json">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+        </div>
+
+        <!-- Breadcrumb navigation -->
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">New Brunswick Teams</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Dynamic team banner container -->
+        <div id="teamHeaderContainer"></div>
+
+        <!-- Main content -->
+        <div class="container mt-4">
+            <h1 data-page-name="NB">New Brunswick High School Football Teams</h1>
+            
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <a href="NB-programs.html" class="btn btn-outline-primary">View Program Rankings</a>
+                </div>
+                <div class="text-muted">Updated: <span id="lastUpdated">10/22/2025</span></div>
+            </div>
+
+            <!-- Search Controls -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Search</span>
+                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="sticky-top bg-white">
+                        <tr>
+                            <th style="min-width: 60px">Rank</th>
+                            <th style="min-width: 200px">Team</th>
+                            <th style="min-width: 70px">Year</th>
+                            <th style="min-width: 90px">Combined</th>
+                            <th style="min-width: 90px">Margin</th>
+                            <th style="min-width: 90px">Win/Loss</th>
+                            <th style="min-width: 90px">Offense</th>
+                            <th style="min-width: 90px">Defense</th>
+                            <th style="min-width: 70px">Games</th>
+                            <th style="min-width: 70px">State</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teamsTableBody">
+                                    <tr>
+                <td>1</td>
+                <td>Sackville Tantramar Regional (NB)</td>
+                <td>2016</td>
+                <td>32.479</td>
+                <td>37.244</td>
+                <td>1.203</td>
+                <td>28.327</td>
+                <td>-11.002</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sackville Tantramar Regional (NB)</td>
+                <td>2015</td>
+                <td>26.826</td>
+                <td>30.507</td>
+                <td>1.185</td>
+                <td>24.814</td>
+                <td>-6.888</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Riverview (NB)</td>
+                <td>2015</td>
+                <td>24.130</td>
+                <td>31.496</td>
+                <td>0.772</td>
+                <td>27.077</td>
+                <td>-3.158</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Fredericton Leo Hayes (NB)</td>
+                <td>2016</td>
+                <td>23.983</td>
+                <td>29.360</td>
+                <td>0.868</td>
+                <td>26.622</td>
+                <td>-1.752</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Fredericton (NB)</td>
+                <td>2013</td>
+                <td>23.773</td>
+                <td>30.101</td>
+                <td>0.925</td>
+                <td>35.384</td>
+                <td>6.622</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Moncton (NB)</td>
+                <td>2014</td>
+                <td>23.482</td>
+                <td>29.704</td>
+                <td>0.991</td>
+                <td>27.965</td>
+                <td>0.061</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Moncton (NB)</td>
+                <td>2012</td>
+                <td>19.893</td>
+                <td>21.320</td>
+                <td>0.995</td>
+                <td>23.718</td>
+                <td>-0.150</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Moncton cole L'Odysse (NB)</td>
+                <td>2014</td>
+                <td>19.562</td>
+                <td>24.623</td>
+                <td>0.388</td>
+                <td>37.572</td>
+                <td>13.493</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Moncton Bernice MacNaughton (NB)</td>
+                <td>2010</td>
+                <td>19.077</td>
+                <td>24.530</td>
+                <td>0.818</td>
+                <td>23.205</td>
+                <td>0.218</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Riverview (NB)</td>
+                <td>2013</td>
+                <td>18.733</td>
+                <td>20.674</td>
+                <td>0.857</td>
+                <td>28.646</td>
+                <td>6.616</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Fredericton Leo Hayes (NB)</td>
+                <td>2015</td>
+                <td>18.700</td>
+                <td>23.516</td>
+                <td>0.750</td>
+                <td>24.064</td>
+                <td>2.756</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Riverview (NB)</td>
+                <td>2016</td>
+                <td>17.420</td>
+                <td>20.306</td>
+                <td>0.456</td>
+                <td>21.290</td>
+                <td>-1.053</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Moncton Bernice MacNaughton (NB)</td>
+                <td>2012</td>
+                <td>17.297</td>
+                <td>19.194</td>
+                <td>0.809</td>
+                <td>14.453</td>
+                <td>-6.685</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Fredericton (NB)</td>
+                <td>2010</td>
+                <td>17.185</td>
+                <td>20.722</td>
+                <td>0.857</td>
+                <td>24.167</td>
+                <td>2.322</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Fredericton (NB)</td>
+                <td>2012</td>
+                <td>16.969</td>
+                <td>21.194</td>
+                <td>0.718</td>
+                <td>20.009</td>
+                <td>-0.568</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Saint John (NB)</td>
+                <td>2014</td>
+                <td>16.221</td>
+                <td>19.426</td>
+                <td>0.788</td>
+                <td>24.195</td>
+                <td>5.006</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Sackville Tantramar Regional (NB)</td>
+                <td>2011</td>
+                <td>15.046</td>
+                <td>20.666</td>
+                <td>0.600</td>
+                <td>22.875</td>
+                <td>4.842</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Fredericton (NB)</td>
+                <td>2014</td>
+                <td>13.501</td>
+                <td>17.037</td>
+                <td>0.325</td>
+                <td>21.650</td>
+                <td>4.944</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Odyssee (NB)</td>
+                <td>2016</td>
+                <td>12.331</td>
+                <td>12.716</td>
+                <td>0.609</td>
+                <td>19.305</td>
+                <td>3.323</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Sackville Tantramar Regional (NB)</td>
+                <td>2014</td>
+                <td>12.148</td>
+                <td>13.439</td>
+                <td>0.276</td>
+                <td>11.667</td>
+                <td>-3.974</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Moncton Harrison Trimble (NB)</td>
+                <td>2012</td>
+                <td>11.112</td>
+                <td>15.144</td>
+                <td>0.464</td>
+                <td>21.956</td>
+                <td>6.837</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Moncton Bernice MacNaughton (NB)</td>
+                <td>2011</td>
+                <td>11.097</td>
+                <td>11.000</td>
+                <td>0.662</td>
+                <td>12.757</td>
+                <td>-1.413</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Fredericton (NB)</td>
+                <td>2011</td>
+                <td>9.954</td>
+                <td>6.827</td>
+                <td>0.591</td>
+                <td>26.249</td>
+                <td>13.654</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Moncton (NB)</td>
+                <td>2015</td>
+                <td>9.851</td>
+                <td>11.765</td>
+                <td>0.238</td>
+                <td>16.518</td>
+                <td>3.489</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>St. Stephen (NB)</td>
+                <td>2016</td>
+                <td>9.198</td>
+                <td>9.964</td>
+                <td>0.142</td>
+                <td>24.249</td>
+                <td>13.300</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Oromocto (NB)</td>
+                <td>2010</td>
+                <td>8.147</td>
+                <td>10.308</td>
+                <td>0.508</td>
+                <td>13.779</td>
+                <td>3.727</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Fredericton (NB)</td>
+                <td>2015</td>
+                <td>8.078</td>
+                <td>9.609</td>
+                <td>0.295</td>
+                <td>11.231</td>
+                <td>2.661</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Riverview (NB)</td>
+                <td>2014</td>
+                <td>5.914</td>
+                <td>7.001</td>
+                <td>0.558</td>
+                <td>12.657</td>
+                <td>5.239</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Moncton Harrison Trimble (NB)</td>
+                <td>2016</td>
+                <td>4.862</td>
+                <td>5.610</td>
+                <td>0.351</td>
+                <td>10.227</td>
+                <td>3.654</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Hampton (NB)</td>
+                <td>2013</td>
+                <td>4.829</td>
+                <td>7.976</td>
+                <td>0.291</td>
+                <td>18.564</td>
+                <td>13.565</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Oromocto (NB)</td>
+                <td>2016</td>
+                <td>4.786</td>
+                <td>9.180</td>
+                <td>0.300</td>
+                <td>11.790</td>
+                <td>6.688</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Moncton (NB)</td>
+                <td>2013</td>
+                <td>4.559</td>
+                <td>6.247</td>
+                <td>0.259</td>
+                <td>6.863</td>
+                <td>-0.413</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Saint John (NB)</td>
+                <td>2010</td>
+                <td>3.884</td>
+                <td>5.641</td>
+                <td>0.388</td>
+                <td>12.093</td>
+                <td>7.525</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Saint John (NB)</td>
+                <td>2012</td>
+                <td>3.718</td>
+                <td>4.753</td>
+                <td>0.200</td>
+                <td>20.975</td>
+                <td>15.692</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Moncton Bernice MacNaughton (NB)</td>
+                <td>2013</td>
+                <td>3.679</td>
+                <td>1.064</td>
+                <td>0.250</td>
+                <td>15.536</td>
+                <td>9.950</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Fredericton Leo Hayes (NB)</td>
+                <td>2013</td>
+                <td>2.876</td>
+                <td>2.016</td>
+                <td>0.296</td>
+                <td>10.849</td>
+                <td>6.956</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Dieppe cole Mathieu-Martin (NB)</td>
+                <td>2013</td>
+                <td>2.485</td>
+                <td>0.288</td>
+                <td>0.365</td>
+                <td>12.128</td>
+                <td>8.718</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Moncton Harrison Trimble (NB)</td>
+                <td>2010</td>
+                <td>1.992</td>
+                <td>-1.126</td>
+                <td>0.322</td>
+                <td>19.786</td>
+                <td>16.800</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>Quispamsis Kennebecasis Valley (NB)</td>
+                <td>2011</td>
+                <td>1.421</td>
+                <td>0.929</td>
+                <td>0.400</td>
+                <td>19.935</td>
+                <td>19.217</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Saint John (NB)</td>
+                <td>2015</td>
+                <td>0.999</td>
+                <td>-0.737</td>
+                <td>0.171</td>
+                <td>7.555</td>
+                <td>6.040</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Sackville Tantramar Regional (NB)</td>
+                <td>2012</td>
+                <td>-0.326</td>
+                <td>1.277</td>
+                <td>0.005</td>
+                <td>12.866</td>
+                <td>11.441</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Saint John (NB)</td>
+                <td>2016</td>
+                <td>-0.623</td>
+                <td>-0.947</td>
+                <td>0.060</td>
+                <td>6.227</td>
+                <td>7.382</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>Saint John St. Malachy's (NB)</td>
+                <td>2016</td>
+                <td>-2.188</td>
+                <td>-5.157</td>
+                <td>0.286</td>
+                <td>4.101</td>
+                <td>9.245</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Odyssee (NB)</td>
+                <td>2015</td>
+                <td>-2.839</td>
+                <td>-9.491</td>
+                <td>0.143</td>
+                <td>9.221</td>
+                <td>11.946</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>Saint John (NB)</td>
+                <td>2013</td>
+                <td>-3.175</td>
+                <td>-4.970</td>
+                <td>-0.117</td>
+                <td>12.611</td>
+                <td>16.084</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Moncton Bernice MacNaughton (NB)</td>
+                <td>2014</td>
+                <td>-3.251</td>
+                <td>-8.520</td>
+                <td>-0.014</td>
+                <td>3.180</td>
+                <td>6.790</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Quispamsis Kennebecasis Valley (NB)</td>
+                <td>2010</td>
+                <td>-4.248</td>
+                <td>-9.501</td>
+                <td>0.101</td>
+                <td>15.225</td>
+                <td>20.971</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>Fredericton Leo Hayes (NB)</td>
+                <td>2012</td>
+                <td>-4.597</td>
+                <td>-5.367</td>
+                <td>-0.488</td>
+                <td>13.384</td>
+                <td>17.233</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>St. Stephen (NB)</td>
+                <td>2015</td>
+                <td>-4.806</td>
+                <td>-7.206</td>
+                <td>0.021</td>
+                <td>5.661</td>
+                <td>14.649</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>Hampton (NB)</td>
+                <td>2016</td>
+                <td>-5.354</td>
+                <td>-8.529</td>
+                <td>-0.098</td>
+                <td>1.090</td>
+                <td>8.130</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>Quispamsis Kennebecasis Valley (NB)</td>
+                <td>2015</td>
+                <td>-5.362</td>
+                <td>-8.357</td>
+                <td>-0.193</td>
+                <td>4.119</td>
+                <td>10.826</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>Oromocto (NB)</td>
+                <td>2014</td>
+                <td>-5.454</td>
+                <td>-6.746</td>
+                <td>-0.299</td>
+                <td>7.581</td>
+                <td>12.873</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td>Hampton (NB)</td>
+                <td>2012</td>
+                <td>-5.807</td>
+                <td>-7.374</td>
+                <td>0.091</td>
+                <td>10.285</td>
+                <td>17.902</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>Dieppe cole Mathieu-Martin (NB)</td>
+                <td>2011</td>
+                <td>-8.052</td>
+                <td>-13.479</td>
+                <td>0.016</td>
+                <td>7.412</td>
+                <td>17.407</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td>Moncton cole L'Odysse (NB)</td>
+                <td>2013</td>
+                <td>-8.737</td>
+                <td>-17.210</td>
+                <td>-0.068</td>
+                <td>11.473</td>
+                <td>22.771</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td>Dieppe cole Mathieu-Martin (NB)</td>
+                <td>2012</td>
+                <td>-9.449</td>
+                <td>-16.196</td>
+                <td>-0.201</td>
+                <td>6.423</td>
+                <td>17.439</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>Saint John St. Malachy's (NB)</td>
+                <td>2014</td>
+                <td>-9.698</td>
+                <td>-19.909</td>
+                <td>-0.311</td>
+                <td>-2.395</td>
+                <td>9.617</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td>St. Stephen (NB)</td>
+                <td>2011</td>
+                <td>-10.501</td>
+                <td>-11.702</td>
+                <td>-0.154</td>
+                <td>2.640</td>
+                <td>15.940</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td>Quispamsis Kennebecasis Valley (NB)</td>
+                <td>2012</td>
+                <td>-11.544</td>
+                <td>-14.265</td>
+                <td>-0.399</td>
+                <td>7.932</td>
+                <td>21.162</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>Rothesay (NB)</td>
+                <td>2010</td>
+                <td>-11.546</td>
+                <td>-12.476</td>
+                <td>-0.188</td>
+                <td>7.314</td>
+                <td>20.821</td>
+                <td>10</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td>Sussex Regional (NB)</td>
+                <td>2010</td>
+                <td>-13.232</td>
+                <td>-14.736</td>
+                <td>-0.661</td>
+                <td>1.675</td>
+                <td>16.263</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td>Fredericton Leo Hayes (NB)</td>
+                <td>2014</td>
+                <td>-13.846</td>
+                <td>-17.031</td>
+                <td>-0.489</td>
+                <td>0.025</td>
+                <td>16.479</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td>Moncton cole L'Odysse (NB)</td>
+                <td>2011</td>
+                <td>-14.607</td>
+                <td>-20.871</td>
+                <td>-0.478</td>
+                <td>6.790</td>
+                <td>24.543</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>Saint John St. Malachy's (NB)</td>
+                <td>2011</td>
+                <td>-14.793</td>
+                <td>-15.896</td>
+                <td>-0.477</td>
+                <td>0.226</td>
+                <td>17.180</td>
+                <td>9</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>Fredericton (NB)</td>
+                <td>2016</td>
+                <td>-16.279</td>
+                <td>-18.358</td>
+                <td>-0.400</td>
+                <td>-3.284</td>
+                <td>17.093</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td>Hampton (NB)</td>
+                <td>2015</td>
+                <td>-18.326</td>
+                <td>-22.206</td>
+                <td>-0.018</td>
+                <td>4.713</td>
+                <td>30.005</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td>Quispamsis Kennebecasis Valley (NB)</td>
+                <td>2013</td>
+                <td>-19.312</td>
+                <td>-23.199</td>
+                <td>-0.412</td>
+                <td>2.656</td>
+                <td>26.235</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>Saint John St. Malachy's (NB)</td>
+                <td>2013</td>
+                <td>-20.205</td>
+                <td>-23.343</td>
+                <td>-0.396</td>
+                <td>-5.184</td>
+                <td>20.057</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td>Saint John Simonds (NB)</td>
+                <td>2015</td>
+                <td>-24.431</td>
+                <td>-28.619</td>
+                <td>-0.686</td>
+                <td>-4.644</td>
+                <td>25.428</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td>Saint John St. Malachy's (NB)</td>
+                <td>2015</td>
+                <td>-24.431</td>
+                <td>-28.122</td>
+                <td>-0.686</td>
+                <td>-13.638</td>
+                <td>19.184</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td>Hampton (NB)</td>
+                <td>2014</td>
+                <td>-25.386</td>
+                <td>-31.100</td>
+                <td>-0.594</td>
+                <td>-8.073</td>
+                <td>24.062</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>Rothesay (NB)</td>
+                <td>2011</td>
+                <td>-26.325</td>
+                <td>-35.374</td>
+                <td>-0.674</td>
+                <td>-7.864</td>
+                <td>23.343</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td>Saint John Harbour View (NB)</td>
+                <td>2012</td>
+                <td>-27.261</td>
+                <td>-32.884</td>
+                <td>-0.939</td>
+                <td>-4.863</td>
+                <td>27.038</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td>St. Stephen (NB)</td>
+                <td>2013</td>
+                <td>-30.482</td>
+                <td>-37.362</td>
+                <td>-0.806</td>
+                <td>-5.598</td>
+                <td>32.172</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>Hampton (NB)</td>
+                <td>2011</td>
+                <td>-30.607</td>
+                <td>-38.731</td>
+                <td>-0.927</td>
+                <td>-3.601</td>
+                <td>32.533</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td>Saint John Harbour View (NB)</td>
+                <td>2011</td>
+                <td>-30.711</td>
+                <td>-36.964</td>
+                <td>-0.997</td>
+                <td>-9.396</td>
+                <td>26.890</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td>Moncton cole L'Odysse (NB)</td>
+                <td>2010</td>
+                <td>-31.562</td>
+                <td>-32.534</td>
+                <td>-0.814</td>
+                <td>-11.795</td>
+                <td>25.663</td>
+                <td>8</td>
+                <td>(NB)</td>
+            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="pagination-info">
+                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="Table navigation">
+                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section mt-5">
+                <h3>Comments</h3>
+                <div id="authContainer" class="mb-3"></div>
+                <div id="commentForm" class="mb-4" style="display: none">
+                    <div class="card">
+                        <div class="card-body">
+                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="commentsList"></div>
+            </div>
+
+            <footer class="mt-5 mb-3">
+                <div class="text-center">
+                    <p>Â© 2025 McKnight's Football Rankings</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Table Controls Script -->
+        <script>
+    const TableControls = {
+        ROWS_PER_PAGE: 100,
+        currentPage: 1,
+        filteredRows: [],
+
+        init() {
+            const tableBody = document.querySelector('tbody');
+            if (tableBody) {
+                const rows = Array.from(tableBody.getElementsByTagName('tr'));
+                this.filteredRows = rows;
+                const totalRows = rows.length;
+                
+                const totalRowsElement = document.getElementById('totalRows');
+                if (totalRowsElement) {
+                    totalRowsElement.textContent = totalRows;
+                }
+                
+                this.setupEventListeners();
+                this.showPage(1);
+            }
+        },
+
+        setupEventListeners() {
+            const searchInput = document.getElementById('tableSearch');
+            const pagination = document.getElementById('tablePagination');
+
+            if (searchInput) {
+                searchInput.value = '';
+                const self = this;
+                searchInput.addEventListener('input', function(e) {
+                    self.filterTable(e.target.value.toLowerCase());
+                });
+            }
+
+            if (pagination) {
+                const self = this;
+                pagination.addEventListener('click', function(e) {
+                    const button = e.target.closest('button');
+                    if (!button || button.parentElement.classList.contains('disabled')) return;
+                    
+                    const page = button.dataset.page;
+                    if (page === 'prev') {
+                        self.showPage(self.currentPage - 1);
+                    } else if (page === 'next') {
+                        self.showPage(self.currentPage + 1);
+                    } else {
+                        self.showPage(parseInt(page));
+                    }
+                });
+            }
+        },
+
+        filterTable(searchTerm) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
+                const text = Array.from(row.getElementsByTagName('td'))
+                    .map(cell => cell.textContent || cell.innerText)
+                    .join(' ')
+                    .toLowerCase();
+                return text.includes(searchTerm);
+            });
+
+            const totalRowsElement = document.getElementById('totalRows');
+            if (totalRowsElement) {
+                totalRowsElement.textContent = this.filteredRows.length;
+            }
+
+            this.currentPage = 1;
+            this.showPage(1);
+        },
+
+        showPage(pageNum) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            this.currentPage = pageNum;
+            const start = (pageNum - 1) * this.ROWS_PER_PAGE;
+            const end = Math.min(start + this.ROWS_PER_PAGE, this.filteredRows.length);
+            
+            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
+            allRows.forEach(row => row.style.display = 'none');
+            
+            for (let i = start; i < end; i++) {
+                if (this.filteredRows[i]) {
+                    this.filteredRows[i].style.display = '';
+                }
+            }
+            
+            const startRowElement = document.getElementById('startRow');
+            const endRowElement = document.getElementById('endRow');
+            if (startRowElement) startRowElement.textContent = this.filteredRows.length === 0 ? 0 : start + 1;
+            if (endRowElement) endRowElement.textContent = end;
+            
+            this.updatePaginationControls();
+        },
+
+        updatePaginationControls() {
+            const pagination = document.getElementById('tablePagination');
+            if (!pagination) return;
+            
+            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
+            let html = [];
+            
+            html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
+                <button class="page-link" data-page="prev">&laquo;</button>
+            </li>`);
+            
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
+                    html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
+                        <button class="page-link" data-page="${i}">${i}</button>
+                    </li>`);
+                } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
+                    html.push('<li class="page-item disabled"><span class="page-link">...</span></li>');
+                }
+            }
+            
+            html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
+                <button class="page-link" data-page="next">&raquo;</button>
+            </li>`);
+            
+            pagination.innerHTML = html.join('');
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => TableControls.init());
+    } else {
+        TableControls.init();
+    }
+</script>
+        
+        <!-- Comments Script -->
+        <script>
+const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
+
+/**********************************************************
+ * AUTH / LOGIN LOGIC
+ **********************************************************/
+async function checkLoginStatus() {
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
+
+        if (data.success && data.loggedIn) {
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
+            renderAuthUI(true, data.user);
+        } else {
+            document.getElementById('commentForm').style.display = 'none';
+            document.getElementById('authorName').textContent = 'Anonymous';
+            renderAuthUI(false);
+        }
+    } catch (error) {
+        console.warn('Login status error:', error);
+        document.getElementById('commentForm').style.display = 'none';
+        document.getElementById('authorName').textContent = 'Anonymous';
+        renderAuthUI(false);
+    }
+}
+
+function renderAuthUI(loggedIn, user = null) {
+    const authContainer = document.getElementById('authContainer');
+    if (!authContainer) return;
+
+    if (loggedIn && user) {
+        authContainer.innerHTML = `
+            <p>Welcome, <strong>${escapeHTML(user.name)}</strong> (${escapeHTML(user.email)})
+               <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
+        `;
+        document.getElementById('logoutBtn')?.addEventListener('click', doLogout);
+    } else {
+        authContainer.innerHTML = `
+            <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
+        `;
+        document.getElementById('loginBtn')?.addEventListener('click', doLogin);
+    }
+}
+
+function doLogin() {
+    window.location.href = `${VERCEL_API_BASE}/auth/google`;
+}
+
+function doLogout() {
+    document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    window.location.reload();
+}
+
+/**********************************************************
+ * COMMENTS LOGIC
+ **********************************************************/
+async function fetchComments() {
+    const pageId = getPageId();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            displayComments(data.comments);
+        }
+    } catch (err) {
+        console.error('Error fetching comments:', err);
+        document.getElementById('commentsList').innerHTML = '<div class="alert alert-warning">Unable to load comments at this time.</div>';
+    }
+}
+
+function displayComments(comments) {
+    const list = document.getElementById('commentsList');
+    if (!list) return;
+    if (!Array.isArray(comments) || comments.length === 0) {
+        list.innerHTML = '<p class="text-muted">No comments yet</p>';
+        return;
+    }
+    list.innerHTML = comments.map(c => `
+        <div class="card mb-2">
+            <div class="card-body">
+                <p class="mb-1">${escapeHTML(c.text)}</p>
+                <small class="text-muted">
+                    by ${escapeHTML(c.author)} on ${new Date(c.10/22/2025).toLocaleString()}
+                </small>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textEl = document.getElementById('commentText');
+    const text = textEl.value.trim();
+    if (!text) return alert('Please enter a comment');
+
+    const pageId = getPageId();
+
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, pageId })
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            textEl.value = '';
+            await fetchComments();
+        } else {
+            alert('Error posting comment: ' + (data.error || 'Unknown error'));
+        }
+    } catch (err) {
+        console.error('Error posting comment:', err);
+        alert('Failed to post comment. Please try again later.');
+    }
+}
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function getPageId() {
+    const el = document.querySelector('[data-page-name]');
+    return el ? el.getAttribute('data-page-name') : 'unknown';
+}
+
+// Initialize
+document.getElementById('submitComment')?.addEventListener('click', submitComment);
+
+(async function initPage() {
+    try {
+        await Promise.all([
+            checkLoginStatus(),
+            fetchComments()
+        ]);
+    } catch (error) {
+        console.warn('Page initialization error:', error);
+    }
+})();
+</script>
+        
+<!-- TopBanner initialization -->
+<script type="module">
+    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const banner = new TopBanner();
+            await banner.initialize();
+        } catch (error) {
+            console.warn('Banner initialization failed:', error);
+            document.body.style.display = 'block';
+        }
+    });
+</script>
+    </body>
+</html>

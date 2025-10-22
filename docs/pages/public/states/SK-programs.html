@@ -1,0 +1,1814 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Saskatchewan High School Football Programs - McKnight's American Football</title>
+        <meta name="data-file" content="/static-football-rankings/data/states/programs/state-programs-SK.json">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+        </div>
+
+        <!-- Breadcrumb navigation -->
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Saskatchewan Programs</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Dynamic team banner container -->
+        <div id="teamHeaderContainer"></div>
+
+        <!-- Main content -->
+        <div class="container mt-4">
+            <h1 data-page-name="SK">Saskatchewan High School Football Programs</h1>
+            
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <a href="SK-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
+                </div>
+                <div class="text-muted">Updated: <span id="lastUpdated">10/22/2025</span></div>
+            </div>
+
+            <!-- Search Controls -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Search</span>
+                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="sticky-top bg-white">
+                        <tr>
+                            <th style="min-width: 60px">Rank</th>
+                            <th style="min-width: 200px">Program</th>
+                            <th style="min-width: 80px">Seasons</th>
+                            <th style="min-width: 90px">Combined</th>
+                            <th style="min-width: 90px">Margin</th>
+                            <th style="min-width: 90px">Win/Loss</th>
+                            <th style="min-width: 90px">Offense</th>
+                            <th style="min-width: 90px">Defense</th>
+                            <th style="min-width: 70px">State</th>
+                        </tr>
+                    </thead>
+                    <tbody id="programsTableBody">
+                                    <tr>
+                <td>1</td>
+                <td>Ituna (SK)</td>
+                <td>1</td>
+                <td>56.370</td>
+                <td>56.370</td>
+                <td>0.600</td>
+                <td>62.510</td>
+                <td>6.990</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Canora (SK)</td>
+                <td>1</td>
+                <td>53.960</td>
+                <td>53.960</td>
+                <td>-0.080</td>
+                <td>39.770</td>
+                <td>5.080</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Delisle (SK)</td>
+                <td>3</td>
+                <td>46.683</td>
+                <td>46.493</td>
+                <td>1.400</td>
+                <td>43.310</td>
+                <td>-3.403</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Regina Dr. Martin Leboldus (SK)</td>
+                <td>8</td>
+                <td>43.489</td>
+                <td>43.428</td>
+                <td>1.939</td>
+                <td>40.864</td>
+                <td>-5.101</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Rosetown (SK)</td>
+                <td>2</td>
+                <td>42.310</td>
+                <td>42.310</td>
+                <td>0.820</td>
+                <td>37.565</td>
+                <td>-11.635</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Lumsden (SK)</td>
+                <td>2</td>
+                <td>41.165</td>
+                <td>38.330</td>
+                <td>0.890</td>
+                <td>33.175</td>
+                <td>-8.180</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Campbell (SK)</td>
+                <td>8</td>
+                <td>31.989</td>
+                <td>31.559</td>
+                <td>1.661</td>
+                <td>32.248</td>
+                <td>-2.362</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Saskatoon Holy Cross (SK)</td>
+                <td>8</td>
+                <td>31.288</td>
+                <td>32.184</td>
+                <td>1.199</td>
+                <td>33.367</td>
+                <td>-0.841</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Melfort (SK)</td>
+                <td>4</td>
+                <td>30.420</td>
+                <td>29.740</td>
+                <td>1.105</td>
+                <td>29.767</td>
+                <td>-1.573</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Regina Campbell Collegiate (SK)</td>
+                <td>1</td>
+                <td>30.340</td>
+                <td>32.910</td>
+                <td>2.200</td>
+                <td>22.870</td>
+                <td>-5.300</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Rosthern (SK)</td>
+                <td>3</td>
+                <td>28.253</td>
+                <td>28.253</td>
+                <td>0.650</td>
+                <td>26.220</td>
+                <td>-12.360</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Humboldt (SK)</td>
+                <td>4</td>
+                <td>28.160</td>
+                <td>28.222</td>
+                <td>0.845</td>
+                <td>18.870</td>
+                <td>-2.837</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Calvert (SK)</td>
+                <td>1</td>
+                <td>27.680</td>
+                <td>27.680</td>
+                <td>1.020</td>
+                <td>8.480</td>
+                <td>0.210</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Dalmeny (SK)</td>
+                <td>1</td>
+                <td>27.230</td>
+                <td>27.230</td>
+                <td>0.770</td>
+                <td>30.400</td>
+                <td>-5.620</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Watrous (SK)</td>
+                <td>5</td>
+                <td>25.168</td>
+                <td>25.168</td>
+                <td>0.798</td>
+                <td>48.980</td>
+                <td>6.082</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Clavet (SK)</td>
+                <td>4</td>
+                <td>24.090</td>
+                <td>23.815</td>
+                <td>0.848</td>
+                <td>26.565</td>
+                <td>9.290</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Lemberg Eagles (SK)</td>
+                <td>1</td>
+                <td>22.780</td>
+                <td>22.780</td>
+                <td>0.380</td>
+                <td>49.120</td>
+                <td>19.070</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Centennial (SK)</td>
+                <td>7</td>
+                <td>22.213</td>
+                <td>21.183</td>
+                <td>0.836</td>
+                <td>27.267</td>
+                <td>2.137</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Cupar (SK)</td>
+                <td>1</td>
+                <td>20.010</td>
+                <td>20.010</td>
+                <td>-0.270</td>
+                <td>18.570</td>
+                <td>7.210</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Rostherm (SK)</td>
+                <td>1</td>
+                <td>19.030</td>
+                <td>19.030</td>
+                <td>0.960</td>
+                <td>8.480</td>
+                <td>0.210</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Indian Head (SK)</td>
+                <td>2</td>
+                <td>18.485</td>
+                <td>24.000</td>
+                <td>0.735</td>
+                <td>21.330</td>
+                <td>4.270</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Regina Riffel (SK)</td>
+                <td>9</td>
+                <td>18.376</td>
+                <td>18.899</td>
+                <td>1.177</td>
+                <td>25.520</td>
+                <td>5.647</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Bishop Mahoney (SK)</td>
+                <td>8</td>
+                <td>18.053</td>
+                <td>18.611</td>
+                <td>0.739</td>
+                <td>26.133</td>
+                <td>4.029</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Yorkton (SK)</td>
+                <td>2</td>
+                <td>17.625</td>
+                <td>17.175</td>
+                <td>0.610</td>
+                <td>27.860</td>
+                <td>7.445</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Saskatoon Aden Bowman (SK)</td>
+                <td>8</td>
+                <td>17.473</td>
+                <td>17.710</td>
+                <td>0.781</td>
+                <td>22.915</td>
+                <td>2.466</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Raymore (SK)</td>
+                <td>3</td>
+                <td>15.627</td>
+                <td>15.627</td>
+                <td>1.177</td>
+                <td>20.387</td>
+                <td>15.563</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Outlook (SK)</td>
+                <td>1</td>
+                <td>14.550</td>
+                <td>14.550</td>
+                <td>-1.350</td>
+                <td>49.380</td>
+                <td>10.990</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Foam Lake (SK)</td>
+                <td>3</td>
+                <td>12.890</td>
+                <td>11.493</td>
+                <td>0.427</td>
+                <td>16.037</td>
+                <td>8.250</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Kindersley (SK)</td>
+                <td>3</td>
+                <td>12.753</td>
+                <td>13.233</td>
+                <td>0.923</td>
+                <td>21.670</td>
+                <td>8.887</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Carrot River (SK)</td>
+                <td>2</td>
+                <td>11.145</td>
+                <td>11.145</td>
+                <td>2.045</td>
+                <td>31.485</td>
+                <td>23.150</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Saskatoon Centennial Collegiate (SK)</td>
+                <td>1</td>
+                <td>10.550</td>
+                <td>14.480</td>
+                <td>1.660</td>
+                <td>24.450</td>
+                <td>10.780</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Plenty (SK)</td>
+                <td>2</td>
+                <td>10.485</td>
+                <td>10.485</td>
+                <td>0.920</td>
+                <td>12.475</td>
+                <td>-1.120</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Hanley (SK)</td>
+                <td>3</td>
+                <td>10.380</td>
+                <td>10.380</td>
+                <td>-0.320</td>
+                <td>18.563</td>
+                <td>6.057</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Hague (SK)</td>
+                <td>1</td>
+                <td>9.970</td>
+                <td>9.970</td>
+                <td>0.540</td>
+                <td>42.870</td>
+                <td>34.540</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Kamsack (SK)</td>
+                <td>1</td>
+                <td>9.200</td>
+                <td>8.580</td>
+                <td>0.480</td>
+                <td>-3.760</td>
+                <td>-10.180</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Yorkton Sacred Heart (SK)</td>
+                <td>3</td>
+                <td>8.617</td>
+                <td>8.290</td>
+                <td>0.117</td>
+                <td>7.827</td>
+                <td>1.780</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Regina Winston Knoll (SK)</td>
+                <td>8</td>
+                <td>8.581</td>
+                <td>8.891</td>
+                <td>0.905</td>
+                <td>18.878</td>
+                <td>8.098</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Saskatoon Walter (SK)</td>
+                <td>7</td>
+                <td>8.403</td>
+                <td>8.467</td>
+                <td>0.209</td>
+                <td>16.543</td>
+                <td>5.259</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>St. Joseph (SK)</td>
+                <td>7</td>
+                <td>7.557</td>
+                <td>7.640</td>
+                <td>0.357</td>
+                <td>18.230</td>
+                <td>7.777</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Marion Graham (SK)</td>
+                <td>7</td>
+                <td>6.860</td>
+                <td>7.306</td>
+                <td>0.130</td>
+                <td>18.544</td>
+                <td>7.470</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Biggar (SK)</td>
+                <td>1</td>
+                <td>6.790</td>
+                <td>6.790</td>
+                <td>0.120</td>
+                <td>33.630</td>
+                <td>11.590</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Wynyard (SK)</td>
+                <td>3</td>
+                <td>6.690</td>
+                <td>6.690</td>
+                <td>-0.190</td>
+                <td>18.227</td>
+                <td>25.333</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>Moose Jaw Peacock (SK)</td>
+                <td>6</td>
+                <td>6.555</td>
+                <td>6.203</td>
+                <td>0.493</td>
+                <td>22.597</td>
+                <td>12.640</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Regina Archbishop M.C. O'Neill Catholic (SK)</td>
+                <td>7</td>
+                <td>6.523</td>
+                <td>5.027</td>
+                <td>0.666</td>
+                <td>17.533</td>
+                <td>8.930</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>Outlook Lutheran Collegiate Bible Institute (SK)</td>
+                <td>2</td>
+                <td>5.980</td>
+                <td>5.980</td>
+                <td>0.990</td>
+                <td>21.890</td>
+                <td>30.655</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Regina Balfour (SK)</td>
+                <td>7</td>
+                <td>5.931</td>
+                <td>5.079</td>
+                <td>0.410</td>
+                <td>15.930</td>
+                <td>6.320</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Saskatoon Bishop James Mahoney (SK)</td>
+                <td>1</td>
+                <td>5.810</td>
+                <td>6.070</td>
+                <td>0.680</td>
+                <td>25.360</td>
+                <td>16.780</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>Melville (SK)</td>
+                <td>2</td>
+                <td>5.355</td>
+                <td>6.745</td>
+                <td>-0.185</td>
+                <td>17.510</td>
+                <td>14.065</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>Shaunavon (SK)</td>
+                <td>2</td>
+                <td>4.775</td>
+                <td>2.895</td>
+                <td>0.485</td>
+                <td>11.115</td>
+                <td>7.920</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>Saskatoon St. Joseph (SK)</td>
+                <td>1</td>
+                <td>4.550</td>
+                <td>4.680</td>
+                <td>0.730</td>
+                <td>14.200</td>
+                <td>6.870</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>Unity (SK)</td>
+                <td>2</td>
+                <td>4.385</td>
+                <td>5.500</td>
+                <td>0.740</td>
+                <td>11.825</td>
+                <td>8.943</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>Meadow Lake Carpenter (SK)</td>
+                <td>2</td>
+                <td>3.900</td>
+                <td>3.635</td>
+                <td>0.595</td>
+                <td>18.730</td>
+                <td>16.120</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td>Regina Sheldon Williams (SK)</td>
+                <td>7</td>
+                <td>3.873</td>
+                <td>5.589</td>
+                <td>0.437</td>
+                <td>18.756</td>
+                <td>12.004</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>Maple Creek Composite (SK)</td>
+                <td>1</td>
+                <td>3.120</td>
+                <td>5.300</td>
+                <td>0.320</td>
+                <td>17.880</td>
+                <td>17.850</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td>Regina Sheldon-Williams Collegiate (SK)</td>
+                <td>1</td>
+                <td>2.850</td>
+                <td>3.240</td>
+                <td>-1.550</td>
+                <td>20.940</td>
+                <td>10.290</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td>Caronport (SK)</td>
+                <td>1</td>
+                <td>2.010</td>
+                <td>2.010</td>
+                <td>-0.270</td>
+                <td>19.570</td>
+                <td>26.210</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>Spiritwood (SK)</td>
+                <td>2</td>
+                <td>1.875</td>
+                <td>1.875</td>
+                <td>0.500</td>
+                <td>31.695</td>
+                <td>42.935</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td>Regina Archbishop M.C. O'Neill (SK)</td>
+                <td>1</td>
+                <td>1.090</td>
+                <td>0.370</td>
+                <td>0.880</td>
+                <td>12.610</td>
+                <td>13.070</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td>Assiniboia (SK)</td>
+                <td>2</td>
+                <td>0.505</td>
+                <td>-2.060</td>
+                <td>0.245</td>
+                <td>15.820</td>
+                <td>22.925</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>Prince Albert St. Mary's (SK)</td>
+                <td>7</td>
+                <td>0.429</td>
+                <td>0.180</td>
+                <td>0.141</td>
+                <td>14.880</td>
+                <td>12.089</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td>Central Butte (SK)</td>
+                <td>1</td>
+                <td>0.360</td>
+                <td>0.360</td>
+                <td>1.400</td>
+                <td>30.950</td>
+                <td>28.500</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td>Esterhazy (SK)</td>
+                <td>2</td>
+                <td>-0.415</td>
+                <td>-0.575</td>
+                <td>-0.120</td>
+                <td>14.475</td>
+                <td>16.585</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td>Kerrobert (SK)</td>
+                <td>3</td>
+                <td>-0.473</td>
+                <td>-0.473</td>
+                <td>0.143</td>
+                <td>28.347</td>
+                <td>37.177</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>Regina Miller (SK)</td>
+                <td>8</td>
+                <td>-1.301</td>
+                <td>-2.021</td>
+                <td>0.331</td>
+                <td>15.337</td>
+                <td>14.760</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>Rosthern Junior College (SK)</td>
+                <td>1</td>
+                <td>-2.020</td>
+                <td>-2.020</td>
+                <td>0.540</td>
+                <td>11.870</td>
+                <td>15.540</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td>Warman (SK)</td>
+                <td>3</td>
+                <td>-2.103</td>
+                <td>-2.123</td>
+                <td>0.183</td>
+                <td>20.483</td>
+                <td>25.837</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td>Cumberland House Charlebois (SK)</td>
+                <td>1</td>
+                <td>-2.360</td>
+                <td>-2.360</td>
+                <td>-0.300</td>
+                <td>8.480</td>
+                <td>0.210</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>Evan (SK)</td>
+                <td>7</td>
+                <td>-3.000</td>
+                <td>-3.006</td>
+                <td>-0.070</td>
+                <td>14.150</td>
+                <td>12.949</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td>Saskatoon Tommy Douglas (SK)</td>
+                <td>8</td>
+                <td>-3.018</td>
+                <td>-3.567</td>
+                <td>-0.067</td>
+                <td>15.959</td>
+                <td>15.580</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td>Nipawin (SK)</td>
+                <td>2</td>
+                <td>-3.680</td>
+                <td>-4.690</td>
+                <td>-0.100</td>
+                <td>11.190</td>
+                <td>15.065</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td>Yorkton Regional (SK)</td>
+                <td>6</td>
+                <td>-3.943</td>
+                <td>-4.408</td>
+                <td>-0.352</td>
+                <td>15.368</td>
+                <td>16.092</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>Kelliher (SK)</td>
+                <td>2</td>
+                <td>-4.055</td>
+                <td>-4.055</td>
+                <td>0.910</td>
+                <td>23.280</td>
+                <td>23.140</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td>Swan Valley (SK)</td>
+                <td>1</td>
+                <td>-4.280</td>
+                <td>-4.930</td>
+                <td>-0.060</td>
+                <td>10.190</td>
+                <td>16.510</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td>Porcupine Plain (SK)</td>
+                <td>1</td>
+                <td>-7.810</td>
+                <td>-7.810</td>
+                <td>-1.310</td>
+                <td>0.780</td>
+                <td>9.220</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>Saskatoon Bethlehem (SK)</td>
+                <td>8</td>
+                <td>-7.993</td>
+                <td>-7.511</td>
+                <td>-0.045</td>
+                <td>9.288</td>
+                <td>14.451</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td>Luther (SK)</td>
+                <td>7</td>
+                <td>-8.774</td>
+                <td>-10.026</td>
+                <td>0.047</td>
+                <td>10.140</td>
+                <td>16.463</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td>Regina (SK)</td>
+                <td>1</td>
+                <td>-9.720</td>
+                <td>-9.720</td>
+                <td>-0.790</td>
+                <td>17.490</td>
+                <td>27.160</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td>Regina Thom (SK)</td>
+                <td>8</td>
+                <td>-9.804</td>
+                <td>-8.343</td>
+                <td>-0.034</td>
+                <td>13.071</td>
+                <td>19.601</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td>Prince Albert Carlton (SK)</td>
+                <td>7</td>
+                <td>-9.869</td>
+                <td>-10.611</td>
+                <td>-0.340</td>
+                <td>10.183</td>
+                <td>17.556</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>80</td>
+                <td>La Ronge Churchill (SK)</td>
+                <td>1</td>
+                <td>-10.080</td>
+                <td>-10.480</td>
+                <td>-0.370</td>
+                <td>3.110</td>
+                <td>13.490</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>81</td>
+                <td>Balfour Bears (SK)</td>
+                <td>2</td>
+                <td>-10.225</td>
+                <td>-11.010</td>
+                <td>0.775</td>
+                <td>12.635</td>
+                <td>20.710</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td>Martensville (SK)</td>
+                <td>2</td>
+                <td>-11.075</td>
+                <td>-10.795</td>
+                <td>0.300</td>
+                <td>1.290</td>
+                <td>13.710</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>83</td>
+                <td>Balgonie Greenall (SK)</td>
+                <td>8</td>
+                <td>-11.260</td>
+                <td>-10.827</td>
+                <td>0.003</td>
+                <td>9.169</td>
+                <td>16.915</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>84</td>
+                <td>Viscount (SK)</td>
+                <td>1</td>
+                <td>-11.380</td>
+                <td>-11.380</td>
+                <td>0.440</td>
+                <td>26.000</td>
+                <td>33.250</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>85</td>
+                <td>North Battleford (SK)</td>
+                <td>8</td>
+                <td>-12.391</td>
+                <td>-12.702</td>
+                <td>-0.244</td>
+                <td>8.330</td>
+                <td>17.091</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>86</td>
+                <td>North Battleford John Paul II (SK)</td>
+                <td>2</td>
+                <td>-12.430</td>
+                <td>-14.365</td>
+                <td>0.160</td>
+                <td>4.080</td>
+                <td>18.390</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>87</td>
+                <td>Maple Creek (SK)</td>
+                <td>2</td>
+                <td>-12.550</td>
+                <td>-12.550</td>
+                <td>-0.500</td>
+                <td>18.150</td>
+                <td>26.715</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>88</td>
+                <td>Saskatoon Warman (SK)</td>
+                <td>1</td>
+                <td>-12.640</td>
+                <td>-7.500</td>
+                <td>-0.010</td>
+                <td>5.890</td>
+                <td>16.190</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>89</td>
+                <td>Wakaw (SK)</td>
+                <td>2</td>
+                <td>-13.025</td>
+                <td>-13.025</td>
+                <td>-0.670</td>
+                <td>-13.975</td>
+                <td>13.125</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>90</td>
+                <td>Saskatoon Evan Hardy Collegiate (SK)</td>
+                <td>1</td>
+                <td>-13.780</td>
+                <td>-13.460</td>
+                <td>0.260</td>
+                <td>13.180</td>
+                <td>24.130</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>91</td>
+                <td>Hudson Bay (SK)</td>
+                <td>4</td>
+                <td>-14.130</td>
+                <td>-14.130</td>
+                <td>-0.440</td>
+                <td>16.205</td>
+                <td>31.925</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>92</td>
+                <td>Saskatoon Marion M. Graham Collegiate (SK)</td>
+                <td>1</td>
+                <td>-15.520</td>
+                <td>-14.870</td>
+                <td>0.050</td>
+                <td>6.090</td>
+                <td>18.580</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>93</td>
+                <td>SWC (SK)</td>
+                <td>1</td>
+                <td>-15.690</td>
+                <td>-18.040</td>
+                <td>0.200</td>
+                <td>22.720</td>
+                <td>35.070</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>94</td>
+                <td>Fort Qu' Appelle Bert Fox (SK)</td>
+                <td>1</td>
+                <td>-15.900</td>
+                <td>-17.260</td>
+                <td>0.230</td>
+                <td>6.100</td>
+                <td>22.620</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>95</td>
+                <td>Moose Jaw Central (SK)</td>
+                <td>6</td>
+                <td>-16.943</td>
+                <td>-16.620</td>
+                <td>-0.233</td>
+                <td>8.508</td>
+                <td>21.552</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>96</td>
+                <td>Tisdale (SK)</td>
+                <td>2</td>
+                <td>-16.975</td>
+                <td>-14.965</td>
+                <td>-0.400</td>
+                <td>4.235</td>
+                <td>22.440</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>97</td>
+                <td>Swift Current (SK)</td>
+                <td>6</td>
+                <td>-17.638</td>
+                <td>-17.940</td>
+                <td>-0.350</td>
+                <td>8.965</td>
+                <td>23.462</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>98</td>
+                <td>Fort Qu'Appelle Bert Fox (SK)</td>
+                <td>1</td>
+                <td>-17.730</td>
+                <td>-17.960</td>
+                <td>-0.630</td>
+                <td>3.510</td>
+                <td>23.760</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>99</td>
+                <td>Creighton (SK)</td>
+                <td>1</td>
+                <td>-17.760</td>
+                <td>-17.760</td>
+                <td>-1.220</td>
+                <td>22.400</td>
+                <td>31.370</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>Broadview (SK)</td>
+                <td>1</td>
+                <td>-18.180</td>
+                <td>-15.700</td>
+                <td>-0.870</td>
+                <td>-5.030</td>
+                <td>13.930</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Wilcox Athol Murray College of Notre Dame (SK)</td>
+                <td>7</td>
+                <td>-18.221</td>
+                <td>-18.726</td>
+                <td>-0.309</td>
+                <td>5.054</td>
+                <td>21.571</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Saskatoon Walter Murray Collegiate (SK)</td>
+                <td>1</td>
+                <td>-21.110</td>
+                <td>-21.110</td>
+                <td>-0.670</td>
+                <td>-11.190</td>
+                <td>9.530</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Weyburn (SK)</td>
+                <td>8</td>
+                <td>-21.119</td>
+                <td>-21.250</td>
+                <td>-0.594</td>
+                <td>2.874</td>
+                <td>21.076</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Saskatoon Walter Murray (SK)</td>
+                <td>1</td>
+                <td>-22.460</td>
+                <td>-22.560</td>
+                <td>0.200</td>
+                <td>3.520</td>
+                <td>22.850</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>Bjorkdale (SK)</td>
+                <td>2</td>
+                <td>-23.370</td>
+                <td>-23.370</td>
+                <td>-0.590</td>
+                <td>24.420</td>
+                <td>43.145</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>106</td>
+                <td>Saskatoon St. Mary (SK)</td>
+                <td>1</td>
+                <td>-23.890</td>
+                <td>-24.360</td>
+                <td>-0.170</td>
+                <td>3.000</td>
+                <td>24.480</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td>Regina Johnson (SK)</td>
+                <td>8</td>
+                <td>-24.946</td>
+                <td>-24.677</td>
+                <td>-0.787</td>
+                <td>2.380</td>
+                <td>24.714</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>108</td>
+                <td>Milestone (SK)</td>
+                <td>1</td>
+                <td>-25.230</td>
+                <td>-25.230</td>
+                <td>-0.800</td>
+                <td>4.510</td>
+                <td>24.880</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>109</td>
+                <td>Moose Jaw Vanier (SK)</td>
+                <td>6</td>
+                <td>-26.022</td>
+                <td>-25.067</td>
+                <td>-0.643</td>
+                <td>2.750</td>
+                <td>25.693</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>110</td>
+                <td>Gull Lake (SK)</td>
+                <td>2</td>
+                <td>-26.595</td>
+                <td>-26.595</td>
+                <td>-0.945</td>
+                <td>1.690</td>
+                <td>33.690</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td>Regina Notre Dame (SK)</td>
+                <td>1</td>
+                <td>-29.740</td>
+                <td>-29.130</td>
+                <td>-2.500</td>
+                <td>-0.020</td>
+                <td>21.260</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>112</td>
+                <td>Saskatoon Bedford Road (SK)</td>
+                <td>5</td>
+                <td>-31.576</td>
+                <td>-31.332</td>
+                <td>-0.858</td>
+                <td>-1.438</td>
+                <td>26.222</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>113</td>
+                <td>Saskatoon Carlton Comprehensive (SK)</td>
+                <td>1</td>
+                <td>-36.510</td>
+                <td>-37.800</td>
+                <td>-0.560</td>
+                <td>-1.660</td>
+                <td>32.180</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>114</td>
+                <td>Bedford Road Redhawks (SK)</td>
+                <td>2</td>
+                <td>-36.510</td>
+                <td>-35.240</td>
+                <td>-1.185</td>
+                <td>-4.220</td>
+                <td>28.780</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>115</td>
+                <td>Regina Martin (SK)</td>
+                <td>4</td>
+                <td>-40.788</td>
+                <td>-39.002</td>
+                <td>-1.800</td>
+                <td>-3.190</td>
+                <td>33.892</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>116</td>
+                <td>Moose Jaw Albert E. Peacock Collegiate (SK)</td>
+                <td>1</td>
+                <td>-41.210</td>
+                <td>-41.210</td>
+                <td>-0.980</td>
+                <td>-3.350</td>
+                <td>30.470</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>117</td>
+                <td>Estevan (SK)</td>
+                <td>6</td>
+                <td>-41.692</td>
+                <td>-40.608</td>
+                <td>-1.060</td>
+                <td>1.093</td>
+                <td>39.328</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>118</td>
+                <td>Moose Jaw Vanier Collegiate (SK)</td>
+                <td>1</td>
+                <td>-44.670</td>
+                <td>-44.670</td>
+                <td>-1.580</td>
+                <td>-7.760</td>
+                <td>30.020</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>119</td>
+                <td>Saskatoon Mount Royal (SK)</td>
+                <td>8</td>
+                <td>-49.446</td>
+                <td>-50.049</td>
+                <td>-1.221</td>
+                <td>-5.536</td>
+                <td>40.102</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>120</td>
+                <td>Regina Luther (SK)</td>
+                <td>1</td>
+                <td>-52.060</td>
+                <td>-52.360</td>
+                <td>-2.770</td>
+                <td>-4.510</td>
+                <td>38.770</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>121</td>
+                <td>Regina Luther College (SK)</td>
+                <td>1</td>
+                <td>-57.130</td>
+                <td>-57.130</td>
+                <td>-1.430</td>
+                <td>1.660</td>
+                <td>57.330</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>122</td>
+                <td>Loreburn (SK)</td>
+                <td>1</td>
+                <td>-58.880</td>
+                <td>-58.880</td>
+                <td>-0.850</td>
+                <td>-28.760</td>
+                <td>41.960</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>Shellbrook W.P. Sandin (SK)</td>
+                <td>1</td>
+                <td>-59.820</td>
+                <td>-59.820</td>
+                <td>-0.040</td>
+                <td>-14.290</td>
+                <td>48.750</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>124</td>
+                <td>Macklin (SK)</td>
+                <td>1</td>
+                <td>-60.480</td>
+                <td>-60.480</td>
+                <td>-1.570</td>
+                <td>-27.380</td>
+                <td>26.780</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>125</td>
+                <td>Tisdale Bjorkdale (SK)</td>
+                <td>1</td>
+                <td>-62.300</td>
+                <td>-62.300</td>
+                <td>-3.210</td>
+                <td>-17.250</td>
+                <td>36.470</td>
+                <td>(SK)</td>
+            </tr>
+            <tr>
+                <td>126</td>
+                <td>Eatonia (SK)</td>
+                <td>2</td>
+                <td>-69.440</td>
+                <td>-69.440</td>
+                <td>-1.515</td>
+                <td>-8.460</td>
+                <td>60.510</td>
+                <td>(SK)</td>
+            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="pagination-info">
+                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="Table navigation">
+                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section mt-5">
+                <h3>Comments</h3>
+                <div id="authContainer" class="mb-3"></div>
+                <div id="commentForm" class="mb-4" style="display: none">
+                    <div class="card">
+                        <div class="card-body">
+                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="commentsList"></div>
+            </div>
+
+            <footer class="mt-5 mb-3">
+                <div class="text-center">
+                    <p>Â© 2025 McKnight's Football Rankings</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Table Controls Script -->
+        <script>
+    const TableControls = {
+        ROWS_PER_PAGE: 100,
+        currentPage: 1,
+        filteredRows: [],
+
+        init() {
+            const tableBody = document.querySelector('tbody');
+            if (tableBody) {
+                const rows = Array.from(tableBody.getElementsByTagName('tr'));
+                this.filteredRows = rows;
+                const totalRows = rows.length;
+                
+                const totalRowsElement = document.getElementById('totalRows');
+                if (totalRowsElement) {
+                    totalRowsElement.textContent = totalRows;
+                }
+                
+                this.setupEventListeners();
+                this.showPage(1);
+            }
+        },
+
+        setupEventListeners() {
+            const searchInput = document.getElementById('tableSearch');
+            const pagination = document.getElementById('tablePagination');
+
+            if (searchInput) {
+                searchInput.value = '';
+                const self = this;
+                searchInput.addEventListener('input', function(e) {
+                    self.filterTable(e.target.value.toLowerCase());
+                });
+            }
+
+            if (pagination) {
+                const self = this;
+                pagination.addEventListener('click', function(e) {
+                    const button = e.target.closest('button');
+                    if (!button || button.parentElement.classList.contains('disabled')) return;
+                    
+                    const page = button.dataset.page;
+                    if (page === 'prev') {
+                        self.showPage(self.currentPage - 1);
+                    } else if (page === 'next') {
+                        self.showPage(self.currentPage + 1);
+                    } else {
+                        self.showPage(parseInt(page));
+                    }
+                });
+            }
+        },
+
+        filterTable(searchTerm) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
+                const text = Array.from(row.getElementsByTagName('td'))
+                    .map(cell => cell.textContent || cell.innerText)
+                    .join(' ')
+                    .toLowerCase();
+                return text.includes(searchTerm);
+            });
+
+            const totalRowsElement = document.getElementById('totalRows');
+            if (totalRowsElement) {
+                totalRowsElement.textContent = this.filteredRows.length;
+            }
+
+            this.currentPage = 1;
+            this.showPage(1);
+        },
+
+        showPage(pageNum) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            this.currentPage = pageNum;
+            const start = (pageNum - 1) * this.ROWS_PER_PAGE;
+            const end = Math.min(start + this.ROWS_PER_PAGE, this.filteredRows.length);
+            
+            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
+            allRows.forEach(row => row.style.display = 'none');
+            
+            for (let i = start; i < end; i++) {
+                if (this.filteredRows[i]) {
+                    this.filteredRows[i].style.display = '';
+                }
+            }
+            
+            const startRowElement = document.getElementById('startRow');
+            const endRowElement = document.getElementById('endRow');
+            if (startRowElement) startRowElement.textContent = this.filteredRows.length === 0 ? 0 : start + 1;
+            if (endRowElement) endRowElement.textContent = end;
+            
+            this.updatePaginationControls();
+        },
+
+        updatePaginationControls() {
+            const pagination = document.getElementById('tablePagination');
+            if (!pagination) return;
+            
+            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
+            let html = [];
+            
+            html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
+                <button class="page-link" data-page="prev">&laquo;</button>
+            </li>`);
+            
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
+                    html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
+                        <button class="page-link" data-page="${i}">${i}</button>
+                    </li>`);
+                } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
+                    html.push('<li class="page-item disabled"><span class="page-link">...</span></li>');
+                }
+            }
+            
+            html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
+                <button class="page-link" data-page="next">&raquo;</button>
+            </li>`);
+            
+            pagination.innerHTML = html.join('');
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => TableControls.init());
+    } else {
+        TableControls.init();
+    }
+</script>
+        
+        <!-- Comments Script -->
+        <script>
+const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
+
+/**********************************************************
+ * AUTH / LOGIN LOGIC
+ **********************************************************/
+async function checkLoginStatus() {
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
+
+        if (data.success && data.loggedIn) {
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
+            renderAuthUI(true, data.user);
+        } else {
+            document.getElementById('commentForm').style.display = 'none';
+            document.getElementById('authorName').textContent = 'Anonymous';
+            renderAuthUI(false);
+        }
+    } catch (error) {
+        console.warn('Login status error:', error);
+        document.getElementById('commentForm').style.display = 'none';
+        document.getElementById('authorName').textContent = 'Anonymous';
+        renderAuthUI(false);
+    }
+}
+
+function renderAuthUI(loggedIn, user = null) {
+    const authContainer = document.getElementById('authContainer');
+    if (!authContainer) return;
+
+    if (loggedIn && user) {
+        authContainer.innerHTML = `
+            <p>Welcome, <strong>${escapeHTML(user.name)}</strong> (${escapeHTML(user.email)})
+               <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
+        `;
+        document.getElementById('logoutBtn')?.addEventListener('click', doLogout);
+    } else {
+        authContainer.innerHTML = `
+            <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
+        `;
+        document.getElementById('loginBtn')?.addEventListener('click', doLogin);
+    }
+}
+
+function doLogin() {
+    window.location.href = `${VERCEL_API_BASE}/auth/google`;
+}
+
+function doLogout() {
+    document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    window.location.reload();
+}
+
+/**********************************************************
+ * COMMENTS LOGIC
+ **********************************************************/
+async function fetchComments() {
+    const pageId = getPageId();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            displayComments(data.comments);
+        }
+    } catch (err) {
+        console.error('Error fetching comments:', err);
+        document.getElementById('commentsList').innerHTML = '<div class="alert alert-warning">Unable to load comments at this time.</div>';
+    }
+}
+
+function displayComments(comments) {
+    const list = document.getElementById('commentsList');
+    if (!list) return;
+    if (!Array.isArray(comments) || comments.length === 0) {
+        list.innerHTML = '<p class="text-muted">No comments yet</p>';
+        return;
+    }
+    list.innerHTML = comments.map(c => `
+        <div class="card mb-2">
+            <div class="card-body">
+                <p class="mb-1">${escapeHTML(c.text)}</p>
+                <small class="text-muted">
+                    by ${escapeHTML(c.author)} on ${new Date(c.10/22/2025).toLocaleString()}
+                </small>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textEl = document.getElementById('commentText');
+    const text = textEl.value.trim();
+    if (!text) return alert('Please enter a comment');
+
+    const pageId = getPageId();
+
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, pageId })
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            textEl.value = '';
+            await fetchComments();
+        } else {
+            alert('Error posting comment: ' + (data.error || 'Unknown error'));
+        }
+    } catch (err) {
+        console.error('Error posting comment:', err);
+        alert('Failed to post comment. Please try again later.');
+    }
+}
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function getPageId() {
+    const el = document.querySelector('[data-page-name]');
+    return el ? el.getAttribute('data-page-name') : 'unknown';
+}
+
+// Initialize
+document.getElementById('submitComment')?.addEventListener('click', submitComment);
+
+(async function initPage() {
+    try {
+        await Promise.all([
+            checkLoginStatus(),
+            fetchComments()
+        ]);
+    } catch (error) {
+        console.warn('Page initialization error:', error);
+    }
+})();
+</script>
+        
+<!-- TopBanner initialization -->
+<script type="module">
+    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const banner = new TopBanner();
+            await banner.initialize();
+        } catch (error) {
+            console.warn('Banner initialization failed:', error);
+            document.body.style.display = 'block';
+        }
+    });
+</script>
+    </body>
+</html>

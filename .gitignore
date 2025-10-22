@@ -1,0 +1,116 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Mac files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Vercel
+.vercel
+
+## SQL Data
+Data/SQL/*.mdf
+Data/SQL/*.ldf
+Data/SQL/*.ndf
+
+# Python virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Excel files (often large)
+*.xlsx
+*.xlsm
+*.xls
+*.xlsb
+
+# Database files
+*.mdb
+*.accdb
+*.db
+*.sqlite
+*.sqlite3
+
+# Large image files (keep only optimized versions in repo)
+*.psd
+*.ai
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# Video files
+*.mp4
+*.avi
+*.mov
+*.wmv
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# OCR processing folders with large files
+python_scripts/Newspapers/Staged/*.jpg
+python_scripts/Newspapers/Staged/*.jpeg
+python_scripts/Newspapers/Staged/*.png
+python_scripts/Newspapers/Processed/*.jpg
+python_scripts/Newspapers/Processed/*.jpeg
+python_scripts/Newspapers/Processed/*.png
+
+# CSV files (can regenerate from database)
+python_scripts/Newspapers/Staged/*.csv
+
+# Keep only essential text files from OCR
+# Uncomment if you want to exclude processed OCR files too
+# python_scripts/Newspapers/Staged/*.txt
+# python_scripts/Newspapers/Processed/*.txt

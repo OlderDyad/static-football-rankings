@@ -1,0 +1,2518 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Arizona High School Football Programs - McKnight's American Football</title>
+        <meta name="data-file" content="/static-football-rankings/data/states/programs/state-programs-AZ.json">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+        </div>
+
+        <!-- Breadcrumb navigation -->
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Arizona Programs</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Dynamic team banner container -->
+        <div id="teamHeaderContainer"></div>
+
+        <!-- Main content -->
+        <div class="container mt-4">
+            <h1 data-page-name="AZ">Arizona High School Football Programs</h1>
+            
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <a href="AZ-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
+                </div>
+                <div class="text-muted">Updated: <span id="lastUpdated">10/22/2025</span></div>
+            </div>
+
+            <!-- Search Controls -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Search</span>
+                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="sticky-top bg-white">
+                        <tr>
+                            <th style="min-width: 60px">Rank</th>
+                            <th style="min-width: 200px">Program</th>
+                            <th style="min-width: 80px">Seasons</th>
+                            <th style="min-width: 90px">Combined</th>
+                            <th style="min-width: 90px">Margin</th>
+                            <th style="min-width: 90px">Win/Loss</th>
+                            <th style="min-width: 90px">Offense</th>
+                            <th style="min-width: 90px">Defense</th>
+                            <th style="min-width: 70px">State</th>
+                        </tr>
+                    </thead>
+                    <tbody id="programsTableBody">
+                                    <tr>
+                <td>1</td>
+                <td>Chandler Hamilton (AZ)</td>
+                <td>27</td>
+                <td>51.258</td>
+                <td>50.754</td>
+                <td>1.580</td>
+                <td>37.620</td>
+                <td>-12.504</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Mesa Mountain View Toros (AZ)</td>
+                <td>28</td>
+                <td>40.781</td>
+                <td>40.747</td>
+                <td>1.232</td>
+                <td>24.043</td>
+                <td>-12.535</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Peoria Centennial (AZ)</td>
+                <td>33</td>
+                <td>35.915</td>
+                <td>35.457</td>
+                <td>0.898</td>
+                <td>28.540</td>
+                <td>-6.787</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Phoenix Mountain Pointe (AZ)</td>
+                <td>33</td>
+                <td>34.489</td>
+                <td>34.976</td>
+                <td>0.946</td>
+                <td>28.341</td>
+                <td>-4.901</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Mesa Red Mountain (AZ)</td>
+                <td>37</td>
+                <td>33.952</td>
+                <td>34.070</td>
+                <td>0.920</td>
+                <td>26.321</td>
+                <td>-6.523</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Phoenix Desert Vista (AZ)</td>
+                <td>28</td>
+                <td>32.942</td>
+                <td>33.289</td>
+                <td>0.914</td>
+                <td>28.315</td>
+                <td>-3.782</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Gilbert Highland (AZ)</td>
+                <td>32</td>
+                <td>30.789</td>
+                <td>31.126</td>
+                <td>0.879</td>
+                <td>24.196</td>
+                <td>-5.822</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Phoenix Pinnacle (AZ)</td>
+                <td>25</td>
+                <td>28.240</td>
+                <td>27.722</td>
+                <td>0.820</td>
+                <td>27.354</td>
+                <td>-0.924</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Scottsdale Saguaro (AZ)</td>
+                <td>59</td>
+                <td>27.590</td>
+                <td>27.519</td>
+                <td>0.636</td>
+                <td>22.517</td>
+                <td>-3.808</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Scottsdale Horizon (AZ)</td>
+                <td>45</td>
+                <td>26.943</td>
+                <td>27.481</td>
+                <td>0.683</td>
+                <td>22.961</td>
+                <td>-2.647</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Scottsdale Chaparral (AZ)</td>
+                <td>52</td>
+                <td>24.795</td>
+                <td>25.332</td>
+                <td>0.523</td>
+                <td>22.617</td>
+                <td>-1.643</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Glendale Cactus (AZ)</td>
+                <td>47</td>
+                <td>23.241</td>
+                <td>23.433</td>
+                <td>0.605</td>
+                <td>23.350</td>
+                <td>1.034</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Mesa Westwood (AZ)</td>
+                <td>63</td>
+                <td>22.329</td>
+                <td>22.140</td>
+                <td>0.587</td>
+                <td>18.611</td>
+                <td>-1.336</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Phoenix Brophy College Prep (AZ)</td>
+                <td>73</td>
+                <td>21.368</td>
+                <td>21.440</td>
+                <td>0.465</td>
+                <td>15.827</td>
+                <td>-3.814</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Mesa (AZ)</td>
+                <td>99</td>
+                <td>21.224</td>
+                <td>21.066</td>
+                <td>0.562</td>
+                <td>16.635</td>
+                <td>-1.776</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Tempe Corona del Sol (AZ)</td>
+                <td>52</td>
+                <td>19.275</td>
+                <td>18.924</td>
+                <td>0.378</td>
+                <td>17.737</td>
+                <td>-0.538</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Glendale Mountain Ridge (AZ)</td>
+                <td>29</td>
+                <td>18.762</td>
+                <td>18.946</td>
+                <td>0.519</td>
+                <td>20.421</td>
+                <td>2.321</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Tempe McClintock (AZ)</td>
+                <td>60</td>
+                <td>18.440</td>
+                <td>17.992</td>
+                <td>0.473</td>
+                <td>16.977</td>
+                <td>0.486</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Phoenix (AZ)</td>
+                <td>41</td>
+                <td>18.245</td>
+                <td>18.245</td>
+                <td>0.591</td>
+                <td>13.359</td>
+                <td>0.235</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Tucson Salpointe Catholic (AZ)</td>
+                <td>73</td>
+                <td>18.217</td>
+                <td>18.012</td>
+                <td>0.443</td>
+                <td>15.516</td>
+                <td>-0.918</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Tempe Marcos de Niza (AZ)</td>
+                <td>53</td>
+                <td>17.571</td>
+                <td>17.418</td>
+                <td>0.349</td>
+                <td>17.143</td>
+                <td>0.476</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Tucson Sabino (AZ)</td>
+                <td>52</td>
+                <td>17.118</td>
+                <td>16.702</td>
+                <td>0.260</td>
+                <td>17.752</td>
+                <td>1.179</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Chandler (AZ)</td>
+                <td>89</td>
+                <td>16.715</td>
+                <td>16.772</td>
+                <td>0.321</td>
+                <td>14.652</td>
+                <td>-0.697</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Phoenix Union (AZ)</td>
+                <td>33</td>
+                <td>16.510</td>
+                <td>16.464</td>
+                <td>0.467</td>
+                <td>11.682</td>
+                <td>-0.292</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Goodyear Millenium (AZ)</td>
+                <td>25</td>
+                <td>16.112</td>
+                <td>15.528</td>
+                <td>0.431</td>
+                <td>18.381</td>
+                <td>2.065</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Scottsdale Desert Mountain (AZ)</td>
+                <td>29</td>
+                <td>15.622</td>
+                <td>16.209</td>
+                <td>0.419</td>
+                <td>19.815</td>
+                <td>4.635</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Gilbert Mesquite (AZ)</td>
+                <td>26</td>
+                <td>15.553</td>
+                <td>15.606</td>
+                <td>0.436</td>
+                <td>17.903</td>
+                <td>2.603</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Phoenix St. Mary's (AZ)</td>
+                <td>80</td>
+                <td>15.539</td>
+                <td>15.121</td>
+                <td>0.398</td>
+                <td>13.480</td>
+                <td>0.490</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Avondale Westview (AZ)</td>
+                <td>34</td>
+                <td>15.496</td>
+                <td>15.877</td>
+                <td>0.376</td>
+                <td>19.671</td>
+                <td>4.768</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Tucson Canyon del Oro (AZ)</td>
+                <td>58</td>
+                <td>13.558</td>
+                <td>13.513</td>
+                <td>0.305</td>
+                <td>14.421</td>
+                <td>1.648</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Mesa Dobson (AZ)</td>
+                <td>44</td>
+                <td>12.426</td>
+                <td>12.803</td>
+                <td>0.297</td>
+                <td>14.777</td>
+                <td>3.481</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Phoenix Canyon del Oro (AZ)</td>
+                <td>46</td>
+                <td>12.309</td>
+                <td>12.196</td>
+                <td>0.214</td>
+                <td>12.948</td>
+                <td>1.358</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Tucson Mountain View (AZ)</td>
+                <td>37</td>
+                <td>11.797</td>
+                <td>11.546</td>
+                <td>0.209</td>
+                <td>15.763</td>
+                <td>4.316</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Peoria Sunrise Mountain (AZ)</td>
+                <td>28</td>
+                <td>11.725</td>
+                <td>11.546</td>
+                <td>0.258</td>
+                <td>18.984</td>
+                <td>7.261</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Tucson Sunnyside (AZ)</td>
+                <td>69</td>
+                <td>11.024</td>
+                <td>11.117</td>
+                <td>0.176</td>
+                <td>11.963</td>
+                <td>2.215</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Tucson Sahuaro (AZ)</td>
+                <td>57</td>
+                <td>9.889</td>
+                <td>10.027</td>
+                <td>0.100</td>
+                <td>13.784</td>
+                <td>4.695</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Glendale Apollo (AZ)</td>
+                <td>55</td>
+                <td>9.185</td>
+                <td>9.246</td>
+                <td>0.094</td>
+                <td>13.899</td>
+                <td>5.160</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Gilbert (AZ)</td>
+                <td>69</td>
+                <td>8.948</td>
+                <td>8.949</td>
+                <td>0.136</td>
+                <td>10.652</td>
+                <td>2.763</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>Tucson High Magnet School (AZ)</td>
+                <td>107</td>
+                <td>8.697</td>
+                <td>8.662</td>
+                <td>0.179</td>
+                <td>8.826</td>
+                <td>1.796</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Mesa Skyline (AZ)</td>
+                <td>26</td>
+                <td>7.232</td>
+                <td>6.849</td>
+                <td>0.162</td>
+                <td>14.893</td>
+                <td>7.713</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Glendale Ironwood (AZ)</td>
+                <td>37</td>
+                <td>7.182</td>
+                <td>7.444</td>
+                <td>0.129</td>
+                <td>13.613</td>
+                <td>6.712</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Glendale Deer Valley (AZ)</td>
+                <td>44</td>
+                <td>7.075</td>
+                <td>6.719</td>
+                <td>0.031</td>
+                <td>12.825</td>
+                <td>6.092</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>Tucson Amphitheater (AZ)</td>
+                <td>82</td>
+                <td>7.049</td>
+                <td>6.661</td>
+                <td>0.163</td>
+                <td>10.868</td>
+                <td>5.656</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Queen Creek (AZ)</td>
+                <td>38</td>
+                <td>6.500</td>
+                <td>6.449</td>
+                <td>0.062</td>
+                <td>13.137</td>
+                <td>5.581</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>Phoenix South Mountain (AZ)</td>
+                <td>71</td>
+                <td>6.318</td>
+                <td>6.230</td>
+                <td>0.034</td>
+                <td>10.055</td>
+                <td>5.549</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Phoenix Greenway (AZ)</td>
+                <td>51</td>
+                <td>5.704</td>
+                <td>5.621</td>
+                <td>-0.016</td>
+                <td>13.382</td>
+                <td>7.931</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Phoenix Thunderbird (AZ)</td>
+                <td>53</td>
+                <td>5.688</td>
+                <td>5.213</td>
+                <td>-0.004</td>
+                <td>11.388</td>
+                <td>5.988</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>Phoenix Moon Valley (AZ)</td>
+                <td>60</td>
+                <td>5.677</td>
+                <td>5.685</td>
+                <td>0.045</td>
+                <td>10.670</td>
+                <td>5.995</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>Phoenix Paradise Valley (AZ)</td>
+                <td>63</td>
+                <td>5.271</td>
+                <td>5.512</td>
+                <td>-0.023</td>
+                <td>11.906</td>
+                <td>7.205</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>Phoenix Maryvale (AZ)</td>
+                <td>62</td>
+                <td>4.946</td>
+                <td>5.192</td>
+                <td>0.094</td>
+                <td>10.244</td>
+                <td>7.303</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>Phoenix West (AZ)</td>
+                <td>33</td>
+                <td>4.942</td>
+                <td>4.777</td>
+                <td>-0.060</td>
+                <td>5.759</td>
+                <td>3.667</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>Avondale Agua Fria (AZ)</td>
+                <td>66</td>
+                <td>4.319</td>
+                <td>4.702</td>
+                <td>-0.064</td>
+                <td>9.832</td>
+                <td>6.524</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td>Tempe (AZ)</td>
+                <td>91</td>
+                <td>3.373</td>
+                <td>3.318</td>
+                <td>0.047</td>
+                <td>6.567</td>
+                <td>5.004</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>Phoenix North Canyon (AZ)</td>
+                <td>32</td>
+                <td>2.787</td>
+                <td>2.820</td>
+                <td>-0.013</td>
+                <td>12.785</td>
+                <td>10.311</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td>Peoria (AZ)</td>
+                <td>80</td>
+                <td>2.492</td>
+                <td>2.426</td>
+                <td>-0.042</td>
+                <td>8.026</td>
+                <td>6.471</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td>Phoenix Sunnyslope (AZ)</td>
+                <td>71</td>
+                <td>2.271</td>
+                <td>2.035</td>
+                <td>-0.135</td>
+                <td>7.995</td>
+                <td>6.420</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>Lakeside Blue Ridge (AZ)</td>
+                <td>59</td>
+                <td>2.264</td>
+                <td>2.151</td>
+                <td>-0.250</td>
+                <td>9.515</td>
+                <td>7.139</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td>Tucson Catalina Foothills (AZ)</td>
+                <td>31</td>
+                <td>2.194</td>
+                <td>2.282</td>
+                <td>-0.038</td>
+                <td>11.276</td>
+                <td>8.554</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td>Phoenix Arcadia (AZ)</td>
+                <td>66</td>
+                <td>1.871</td>
+                <td>2.020</td>
+                <td>-0.110</td>
+                <td>9.003</td>
+                <td>7.718</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>Phoenix Camelback (AZ)</td>
+                <td>71</td>
+                <td>1.418</td>
+                <td>1.462</td>
+                <td>-0.117</td>
+                <td>6.953</td>
+                <td>7.202</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td>Sierra Vista Buena (AZ)</td>
+                <td>61</td>
+                <td>0.917</td>
+                <td>1.348</td>
+                <td>-0.142</td>
+                <td>9.508</td>
+                <td>9.119</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td>Glendale Cortez (AZ)</td>
+                <td>44</td>
+                <td>0.816</td>
+                <td>0.589</td>
+                <td>-0.274</td>
+                <td>6.302</td>
+                <td>6.464</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td>Phoenix Browne (AZ)</td>
+                <td>53</td>
+                <td>0.737</td>
+                <td>0.517</td>
+                <td>-0.110</td>
+                <td>9.945</td>
+                <td>10.140</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>Heber Mogollon (AZ)</td>
+                <td>36</td>
+                <td>0.623</td>
+                <td>0.403</td>
+                <td>-0.173</td>
+                <td>13.609</td>
+                <td>12.582</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>Prescott (AZ)</td>
+                <td>103</td>
+                <td>0.113</td>
+                <td>0.010</td>
+                <td>-0.150</td>
+                <td>5.904</td>
+                <td>7.094</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td>Scottsdale Arcadia (AZ)</td>
+                <td>47</td>
+                <td>0.080</td>
+                <td>0.003</td>
+                <td>-0.241</td>
+                <td>6.095</td>
+                <td>7.280</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td>Phoenix Northwest Christian (AZ)</td>
+                <td>39</td>
+                <td>-0.235</td>
+                <td>-0.373</td>
+                <td>-0.102</td>
+                <td>10.545</td>
+                <td>10.052</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>Cave Creek Cactus Shadows (AZ)</td>
+                <td>41</td>
+                <td>-0.437</td>
+                <td>-0.505</td>
+                <td>-0.297</td>
+                <td>11.676</td>
+                <td>11.097</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td>Scottsdale Coronado (AZ)</td>
+                <td>64</td>
+                <td>-0.785</td>
+                <td>-0.912</td>
+                <td>-0.076</td>
+                <td>6.463</td>
+                <td>8.625</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td>Phoenix Shadow Mountain (AZ)</td>
+                <td>50</td>
+                <td>-0.838</td>
+                <td>-0.949</td>
+                <td>-0.224</td>
+                <td>7.877</td>
+                <td>8.946</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td>Tucson Flowing Wells (AZ)</td>
+                <td>65</td>
+                <td>-1.169</td>
+                <td>-0.924</td>
+                <td>-0.178</td>
+                <td>7.627</td>
+                <td>9.423</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>St. Johns (AZ)</td>
+                <td>36</td>
+                <td>-1.546</td>
+                <td>-1.759</td>
+                <td>-0.323</td>
+                <td>9.760</td>
+                <td>10.831</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td>Phoenix Washington (AZ)</td>
+                <td>69</td>
+                <td>-1.680</td>
+                <td>-1.388</td>
+                <td>-0.245</td>
+                <td>6.000</td>
+                <td>8.713</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td>Tucson Pueblo (AZ)</td>
+                <td>69</td>
+                <td>-2.093</td>
+                <td>-1.771</td>
+                <td>-0.278</td>
+                <td>6.748</td>
+                <td>9.582</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>Scottsdale (AZ)</td>
+                <td>37</td>
+                <td>-2.127</td>
+                <td>-2.174</td>
+                <td>-0.289</td>
+                <td>1.104</td>
+                <td>5.300</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td>Safford (AZ)</td>
+                <td>89</td>
+                <td>-2.138</td>
+                <td>-2.105</td>
+                <td>-0.242</td>
+                <td>4.569</td>
+                <td>7.724</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td>Flagstaff (AZ)</td>
+                <td>102</td>
+                <td>-2.873</td>
+                <td>-2.948</td>
+                <td>-0.266</td>
+                <td>3.544</td>
+                <td>7.958</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td>Phoenix North (AZ)</td>
+                <td>80</td>
+                <td>-2.878</td>
+                <td>-3.112</td>
+                <td>-0.198</td>
+                <td>5.576</td>
+                <td>9.740</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td>Phoenix Central (AZ)</td>
+                <td>67</td>
+                <td>-2.900</td>
+                <td>-2.761</td>
+                <td>-0.239</td>
+                <td>5.900</td>
+                <td>9.690</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>80</td>
+                <td>Phoenix Goldwater (AZ)</td>
+                <td>38</td>
+                <td>-3.330</td>
+                <td>-3.082</td>
+                <td>-0.271</td>
+                <td>9.612</td>
+                <td>12.717</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>81</td>
+                <td>Yuma (AZ)</td>
+                <td>92</td>
+                <td>-3.343</td>
+                <td>-3.087</td>
+                <td>-0.291</td>
+                <td>4.631</td>
+                <td>9.027</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td>Flagstaff Coconino (AZ)</td>
+                <td>58</td>
+                <td>-3.645</td>
+                <td>-3.467</td>
+                <td>-0.331</td>
+                <td>5.161</td>
+                <td>8.968</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>83</td>
+                <td>Show Low (AZ)</td>
+                <td>52</td>
+                <td>-3.670</td>
+                <td>-3.436</td>
+                <td>-0.417</td>
+                <td>8.651</td>
+                <td>11.568</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>84</td>
+                <td>Glendale (AZ)</td>
+                <td>94</td>
+                <td>-3.686</td>
+                <td>-3.906</td>
+                <td>-0.235</td>
+                <td>4.441</td>
+                <td>9.312</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>85</td>
+                <td>Yuma Cibola (AZ)</td>
+                <td>36</td>
+                <td>-3.902</td>
+                <td>-4.037</td>
+                <td>-0.171</td>
+                <td>8.538</td>
+                <td>12.379</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>86</td>
+                <td>Cottonwood Mingus (AZ)</td>
+                <td>63</td>
+                <td>-4.040</td>
+                <td>-4.439</td>
+                <td>-0.460</td>
+                <td>6.898</td>
+                <td>10.782</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>87</td>
+                <td>Casa Grande (AZ)</td>
+                <td>93</td>
+                <td>-4.306</td>
+                <td>-4.497</td>
+                <td>-0.328</td>
+                <td>5.715</td>
+                <td>11.549</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>88</td>
+                <td>Lake Havasu City (AZ)</td>
+                <td>56</td>
+                <td>-4.417</td>
+                <td>-4.494</td>
+                <td>-0.390</td>
+                <td>6.531</td>
+                <td>11.047</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>89</td>
+                <td>Snowflake (AZ)</td>
+                <td>96</td>
+                <td>-4.504</td>
+                <td>-4.739</td>
+                <td>-0.393</td>
+                <td>3.723</td>
+                <td>8.754</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>90</td>
+                <td>Phoenix Alhambra (AZ)</td>
+                <td>64</td>
+                <td>-4.694</td>
+                <td>-4.108</td>
+                <td>-0.300</td>
+                <td>6.246</td>
+                <td>11.961</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>91</td>
+                <td>Eager Round Valley (AZ)</td>
+                <td>42</td>
+                <td>-4.824</td>
+                <td>-4.648</td>
+                <td>-0.565</td>
+                <td>4.007</td>
+                <td>8.948</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>92</td>
+                <td>Tucson Marana (AZ)</td>
+                <td>62</td>
+                <td>-4.849</td>
+                <td>-4.708</td>
+                <td>-0.441</td>
+                <td>6.424</td>
+                <td>10.857</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>93</td>
+                <td>Saint Johns (AZ)</td>
+                <td>27</td>
+                <td>-5.374</td>
+                <td>-5.228</td>
+                <td>-0.519</td>
+                <td>5.225</td>
+                <td>10.290</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>94</td>
+                <td>Tolleson (AZ)</td>
+                <td>73</td>
+                <td>-5.581</td>
+                <td>-5.429</td>
+                <td>-0.399</td>
+                <td>5.121</td>
+                <td>11.193</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>95</td>
+                <td>Thatcher (AZ)</td>
+                <td>64</td>
+                <td>-6.050</td>
+                <td>-6.166</td>
+                <td>-0.498</td>
+                <td>3.359</td>
+                <td>8.970</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>96</td>
+                <td>Coolidge (AZ)</td>
+                <td>87</td>
+                <td>-7.059</td>
+                <td>-6.999</td>
+                <td>-0.500</td>
+                <td>4.519</td>
+                <td>11.618</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>97</td>
+                <td>Douglas (AZ)</td>
+                <td>118</td>
+                <td>-7.579</td>
+                <td>-7.329</td>
+                <td>-0.387</td>
+                <td>3.063</td>
+                <td>11.974</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>98</td>
+                <td>Buckeye (AZ)</td>
+                <td>82</td>
+                <td>-8.107</td>
+                <td>-8.006</td>
+                <td>-0.461</td>
+                <td>2.361</td>
+                <td>10.510</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>99</td>
+                <td>Chandler Valley Christian (AZ)</td>
+                <td>38</td>
+                <td>-8.237</td>
+                <td>-8.658</td>
+                <td>-0.407</td>
+                <td>7.807</td>
+                <td>15.233</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>Eagar Round Valley (AZ)</td>
+                <td>84</td>
+                <td>-8.474</td>
+                <td>-8.455</td>
+                <td>-0.647</td>
+                <td>2.120</td>
+                <td>10.079</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Jerome (AZ)</td>
+                <td>29</td>
+                <td>-8.759</td>
+                <td>-8.784</td>
+                <td>-0.490</td>
+                <td>-3.868</td>
+                <td>4.310</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Eloy Santa Cruz Valley (AZ)</td>
+                <td>76</td>
+                <td>-8.984</td>
+                <td>-9.443</td>
+                <td>-0.430</td>
+                <td>2.494</td>
+                <td>12.201</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Tucson Palo Verde (AZ)</td>
+                <td>62</td>
+                <td>-8.993</td>
+                <td>-8.832</td>
+                <td>-0.439</td>
+                <td>2.659</td>
+                <td>11.815</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Winslow (AZ)</td>
+                <td>105</td>
+                <td>-9.013</td>
+                <td>-9.055</td>
+                <td>-0.457</td>
+                <td>1.335</td>
+                <td>10.577</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>Yuma Kofa (AZ)</td>
+                <td>65</td>
+                <td>-9.851</td>
+                <td>-9.718</td>
+                <td>-0.430</td>
+                <td>3.504</td>
+                <td>14.109</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>106</td>
+                <td>Tucson Rincon (AZ)</td>
+                <td>64</td>
+                <td>-9.972</td>
+                <td>-10.081</td>
+                <td>-0.519</td>
+                <td>2.416</td>
+                <td>12.435</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td>Phoenix Gerard (AZ)</td>
+                <td>25</td>
+                <td>-10.062</td>
+                <td>-9.496</td>
+                <td>-0.682</td>
+                <td>-1.962</td>
+                <td>8.506</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>108</td>
+                <td>Prescott Valley Bradshaw Mountain (AZ)</td>
+                <td>50</td>
+                <td>-10.486</td>
+                <td>-10.872</td>
+                <td>-0.625</td>
+                <td>5.378</td>
+                <td>14.269</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>109</td>
+                <td>Nogales (AZ)</td>
+                <td>101</td>
+                <td>-10.681</td>
+                <td>-10.591</td>
+                <td>-0.558</td>
+                <td>0.765</td>
+                <td>11.281</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>110</td>
+                <td>Tucson Desert View (AZ)</td>
+                <td>40</td>
+                <td>-10.849</td>
+                <td>-10.974</td>
+                <td>-0.507</td>
+                <td>4.427</td>
+                <td>14.249</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td>Glendale Independence (AZ)</td>
+                <td>47</td>
+                <td>-11.060</td>
+                <td>-10.740</td>
+                <td>-0.579</td>
+                <td>4.294</td>
+                <td>14.672</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>112</td>
+                <td>Page Sand (AZ)</td>
+                <td>39</td>
+                <td>-11.837</td>
+                <td>-11.738</td>
+                <td>-0.773</td>
+                <td>2.302</td>
+                <td>13.470</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>113</td>
+                <td>Apache Junction (AZ)</td>
+                <td>60</td>
+                <td>-12.063</td>
+                <td>-12.209</td>
+                <td>-0.648</td>
+                <td>3.414</td>
+                <td>14.621</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>114</td>
+                <td>Clarkdale (AZ)</td>
+                <td>27</td>
+                <td>-12.170</td>
+                <td>-12.170</td>
+                <td>-0.585</td>
+                <td>-6.651</td>
+                <td>5.613</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>115</td>
+                <td>Phoenix Carl Hayden (AZ)</td>
+                <td>52</td>
+                <td>-12.408</td>
+                <td>-11.986</td>
+                <td>-0.618</td>
+                <td>1.236</td>
+                <td>13.951</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>116</td>
+                <td>Phoenix Christian (AZ)</td>
+                <td>65</td>
+                <td>-12.743</td>
+                <td>-12.963</td>
+                <td>-0.692</td>
+                <td>1.225</td>
+                <td>13.566</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>117</td>
+                <td>Phoenix Cortez (AZ)</td>
+                <td>64</td>
+                <td>-12.940</td>
+                <td>-13.207</td>
+                <td>-0.523</td>
+                <td>1.620</td>
+                <td>15.072</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>118</td>
+                <td>Mohave Valley River Valley (AZ)</td>
+                <td>33</td>
+                <td>-13.359</td>
+                <td>-13.576</td>
+                <td>-0.558</td>
+                <td>4.252</td>
+                <td>16.276</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>119</td>
+                <td>Bisbee (AZ)</td>
+                <td>117</td>
+                <td>-13.630</td>
+                <td>-13.615</td>
+                <td>-0.633</td>
+                <td>-1.818</td>
+                <td>11.866</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>120</td>
+                <td>Payson (AZ)</td>
+                <td>60</td>
+                <td>-13.847</td>
+                <td>-14.271</td>
+                <td>-0.775</td>
+                <td>1.278</td>
+                <td>14.176</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>121</td>
+                <td>Fountain Hills (AZ)</td>
+                <td>32</td>
+                <td>-13.891</td>
+                <td>-14.153</td>
+                <td>-0.497</td>
+                <td>3.387</td>
+                <td>16.441</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>122</td>
+                <td>St David (AZ)</td>
+                <td>26</td>
+                <td>-14.166</td>
+                <td>-14.181</td>
+                <td>-0.723</td>
+                <td>2.917</td>
+                <td>11.099</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>Morenci (AZ)</td>
+                <td>65</td>
+                <td>-14.193</td>
+                <td>-14.251</td>
+                <td>-0.735</td>
+                <td>-0.139</td>
+                <td>13.468</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>124</td>
+                <td>Florence (AZ)</td>
+                <td>81</td>
+                <td>-14.335</td>
+                <td>-14.313</td>
+                <td>-0.706</td>
+                <td>-0.375</td>
+                <td>13.176</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>125</td>
+                <td>Pima (AZ)</td>
+                <td>48</td>
+                <td>-14.623</td>
+                <td>-14.758</td>
+                <td>-0.705</td>
+                <td>3.391</td>
+                <td>15.295</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>126</td>
+                <td>Kingman (AZ)</td>
+                <td>92</td>
+                <td>-15.229</td>
+                <td>-14.867</td>
+                <td>-0.590</td>
+                <td>-0.975</td>
+                <td>14.596</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>127</td>
+                <td>St Johns (AZ)</td>
+                <td>72</td>
+                <td>-15.500</td>
+                <td>-15.524</td>
+                <td>-0.756</td>
+                <td>-3.578</td>
+                <td>11.375</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>128</td>
+                <td>Tucson Santa Rita (AZ)</td>
+                <td>56</td>
+                <td>-15.518</td>
+                <td>-15.144</td>
+                <td>-0.637</td>
+                <td>1.001</td>
+                <td>16.247</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>129</td>
+                <td>Wickenburg (AZ)</td>
+                <td>61</td>
+                <td>-15.909</td>
+                <td>-16.403</td>
+                <td>-0.809</td>
+                <td>-0.303</td>
+                <td>14.673</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>130</td>
+                <td>Phoenix Arizona Lutheran Academy (AZ)</td>
+                <td>35</td>
+                <td>-16.080</td>
+                <td>-16.263</td>
+                <td>-0.649</td>
+                <td>5.861</td>
+                <td>20.358</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>131</td>
+                <td>Tucson Cholla (AZ)</td>
+                <td>56</td>
+                <td>-16.468</td>
+                <td>-16.246</td>
+                <td>-0.743</td>
+                <td>0.504</td>
+                <td>16.384</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>132</td>
+                <td>Globe (AZ)</td>
+                <td>77</td>
+                <td>-16.493</td>
+                <td>-16.514</td>
+                <td>-0.645</td>
+                <td>-0.581</td>
+                <td>16.298</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>133</td>
+                <td>Tucson Catalina (AZ)</td>
+                <td>69</td>
+                <td>-16.800</td>
+                <td>-17.024</td>
+                <td>-0.648</td>
+                <td>-0.869</td>
+                <td>16.131</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>134</td>
+                <td>Willcox (AZ)</td>
+                <td>69</td>
+                <td>-17.055</td>
+                <td>-17.443</td>
+                <td>-0.871</td>
+                <td>-2.095</td>
+                <td>14.032</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>135</td>
+                <td>Parker (AZ)</td>
+                <td>64</td>
+                <td>-17.589</td>
+                <td>-17.388</td>
+                <td>-0.746</td>
+                <td>1.158</td>
+                <td>18.443</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>136</td>
+                <td>Sahuarita (AZ)</td>
+                <td>58</td>
+                <td>-17.660</td>
+                <td>-17.823</td>
+                <td>-0.853</td>
+                <td>-0.587</td>
+                <td>15.779</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>137</td>
+                <td>Benson (AZ)</td>
+                <td>61</td>
+                <td>-17.684</td>
+                <td>-17.624</td>
+                <td>-0.822</td>
+                <td>-0.979</td>
+                <td>15.785</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>138</td>
+                <td>Bullhead City Mohave Accelerated (AZ)</td>
+                <td>56</td>
+                <td>-18.019</td>
+                <td>-18.079</td>
+                <td>-0.827</td>
+                <td>-0.002</td>
+                <td>16.455</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>139</td>
+                <td>Phoenix Scottsdale Christian Academy (AZ)</td>
+                <td>45</td>
+                <td>-18.791</td>
+                <td>-18.475</td>
+                <td>-0.718</td>
+                <td>2.225</td>
+                <td>19.420</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>140</td>
+                <td>Page (AZ)</td>
+                <td>61</td>
+                <td>-19.086</td>
+                <td>-18.840</td>
+                <td>-0.821</td>
+                <td>0.394</td>
+                <td>18.488</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>141</td>
+                <td>San Manuel (AZ)</td>
+                <td>67</td>
+                <td>-19.183</td>
+                <td>-19.117</td>
+                <td>-0.812</td>
+                <td>-1.880</td>
+                <td>16.933</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>142</td>
+                <td>Williams (AZ)</td>
+                <td>88</td>
+                <td>-19.692</td>
+                <td>-19.598</td>
+                <td>-0.917</td>
+                <td>-1.885</td>
+                <td>16.664</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>143</td>
+                <td>Chandler Seton Catholic (AZ)</td>
+                <td>56</td>
+                <td>-20.047</td>
+                <td>-20.448</td>
+                <td>-0.829</td>
+                <td>0.333</td>
+                <td>18.927</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>144</td>
+                <td>Miami (AZ)</td>
+                <td>72</td>
+                <td>-20.620</td>
+                <td>-20.419</td>
+                <td>-0.850</td>
+                <td>-1.793</td>
+                <td>18.411</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>145</td>
+                <td>El Mirage Dysart (AZ)</td>
+                <td>61</td>
+                <td>-21.154</td>
+                <td>-20.958</td>
+                <td>-0.933</td>
+                <td>-1.692</td>
+                <td>18.382</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>146</td>
+                <td>Winkelman Hayden (AZ)</td>
+                <td>64</td>
+                <td>-21.222</td>
+                <td>-21.289</td>
+                <td>-0.993</td>
+                <td>-3.509</td>
+                <td>16.572</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>147</td>
+                <td>Superior (AZ)</td>
+                <td>78</td>
+                <td>-21.789</td>
+                <td>-21.796</td>
+                <td>-0.971</td>
+                <td>-3.483</td>
+                <td>17.165</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>148</td>
+                <td>Kearny Ray (AZ)</td>
+                <td>61</td>
+                <td>-23.426</td>
+                <td>-23.290</td>
+                <td>-0.930</td>
+                <td>-3.152</td>
+                <td>19.472</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>149</td>
+                <td>Phoenix Bourgade Catholic (AZ)</td>
+                <td>61</td>
+                <td>-24.433</td>
+                <td>-23.937</td>
+                <td>-0.979</td>
+                <td>-3.224</td>
+                <td>20.264</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>150</td>
+                <td>Holbrook (AZ)</td>
+                <td>95</td>
+                <td>-25.485</td>
+                <td>-25.343</td>
+                <td>-1.069</td>
+                <td>-5.114</td>
+                <td>19.421</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>151</td>
+                <td>Joseph City (AZ)</td>
+                <td>42</td>
+                <td>-26.122</td>
+                <td>-26.597</td>
+                <td>-0.863</td>
+                <td>0.872</td>
+                <td>23.613</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>152</td>
+                <td>Mayer (AZ)</td>
+                <td>50</td>
+                <td>-26.851</td>
+                <td>-26.638</td>
+                <td>-0.975</td>
+                <td>-1.665</td>
+                <td>25.934</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>153</td>
+                <td>Salome (AZ)</td>
+                <td>48</td>
+                <td>-27.350</td>
+                <td>-27.696</td>
+                <td>-1.004</td>
+                <td>-0.436</td>
+                <td>23.715</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>154</td>
+                <td>Bagdad (AZ)</td>
+                <td>57</td>
+                <td>-27.498</td>
+                <td>-27.622</td>
+                <td>-1.112</td>
+                <td>-2.064</td>
+                <td>23.657</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>155</td>
+                <td>Maricopa (AZ)</td>
+                <td>61</td>
+                <td>-28.155</td>
+                <td>-28.203</td>
+                <td>-1.174</td>
+                <td>-4.329</td>
+                <td>23.188</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>156</td>
+                <td>Clifton (AZ)</td>
+                <td>45</td>
+                <td>-29.864</td>
+                <td>-29.816</td>
+                <td>-1.081</td>
+                <td>-7.982</td>
+                <td>20.500</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>157</td>
+                <td>Elfrida (AZ)</td>
+                <td>30</td>
+                <td>-30.632</td>
+                <td>-30.713</td>
+                <td>-1.240</td>
+                <td>-4.668</td>
+                <td>22.137</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>158</td>
+                <td>Ajo (AZ)</td>
+                <td>74</td>
+                <td>-30.705</td>
+                <td>-30.554</td>
+                <td>-1.035</td>
+                <td>-8.657</td>
+                <td>21.581</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>159</td>
+                <td>Duncan (AZ)</td>
+                <td>63</td>
+                <td>-30.871</td>
+                <td>-31.240</td>
+                <td>-1.255</td>
+                <td>-7.746</td>
+                <td>21.527</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>160</td>
+                <td>Queen Creek Canyon State Academy (AZ)</td>
+                <td>30</td>
+                <td>-31.202</td>
+                <td>-31.450</td>
+                <td>-0.911</td>
+                <td>-2.498</td>
+                <td>27.529</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>161</td>
+                <td>Phoenix Carl Hayden Community (AZ)</td>
+                <td>26</td>
+                <td>-31.409</td>
+                <td>-31.045</td>
+                <td>-0.971</td>
+                <td>-2.956</td>
+                <td>27.527</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>162</td>
+                <td>Chino Valley (AZ)</td>
+                <td>35</td>
+                <td>-32.466</td>
+                <td>-32.477</td>
+                <td>-1.114</td>
+                <td>-5.446</td>
+                <td>25.510</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>163</td>
+                <td>Mayer Orme (AZ)</td>
+                <td>49</td>
+                <td>-32.529</td>
+                <td>-32.511</td>
+                <td>-1.058</td>
+                <td>-4.818</td>
+                <td>25.928</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>164</td>
+                <td>Tombstone (AZ)</td>
+                <td>75</td>
+                <td>-32.555</td>
+                <td>-32.511</td>
+                <td>-1.341</td>
+                <td>-6.631</td>
+                <td>23.889</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>165</td>
+                <td>Camp Verde (AZ)</td>
+                <td>55</td>
+                <td>-33.029</td>
+                <td>-33.292</td>
+                <td>-1.257</td>
+                <td>-7.368</td>
+                <td>23.755</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>166</td>
+                <td>Kayenta Monument Valley (AZ)</td>
+                <td>55</td>
+                <td>-33.052</td>
+                <td>-33.353</td>
+                <td>-1.143</td>
+                <td>-4.913</td>
+                <td>26.385</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>167</td>
+                <td>Wellton Antelope (AZ)</td>
+                <td>62</td>
+                <td>-33.453</td>
+                <td>-33.568</td>
+                <td>-1.230</td>
+                <td>-8.832</td>
+                <td>23.434</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>168</td>
+                <td>Rio Rico (AZ)</td>
+                <td>28</td>
+                <td>-36.190</td>
+                <td>-36.259</td>
+                <td>-1.034</td>
+                <td>-5.093</td>
+                <td>29.807</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>169</td>
+                <td>Ganado (AZ)</td>
+                <td>58</td>
+                <td>-37.419</td>
+                <td>-37.447</td>
+                <td>-1.273</td>
+                <td>-8.365</td>
+                <td>27.251</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>170</td>
+                <td>Fort Thomas (AZ)</td>
+                <td>35</td>
+                <td>-38.667</td>
+                <td>-38.802</td>
+                <td>-1.234</td>
+                <td>-4.470</td>
+                <td>32.168</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>171</td>
+                <td>Fort Defiance Window Rock (AZ)</td>
+                <td>63</td>
+                <td>-39.078</td>
+                <td>-39.071</td>
+                <td>-1.405</td>
+                <td>-8.944</td>
+                <td>28.412</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>172</td>
+                <td>Patagonia (AZ)</td>
+                <td>30</td>
+                <td>-39.231</td>
+                <td>-39.019</td>
+                <td>-1.290</td>
+                <td>-5.954</td>
+                <td>28.246</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>173</td>
+                <td>Whiteriver Alchesay (AZ)</td>
+                <td>58</td>
+                <td>-40.032</td>
+                <td>-40.525</td>
+                <td>-1.374</td>
+                <td>-7.840</td>
+                <td>30.047</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>174</td>
+                <td>Sedona Red Rock (AZ)</td>
+                <td>25</td>
+                <td>-40.141</td>
+                <td>-40.301</td>
+                <td>-1.198</td>
+                <td>-7.250</td>
+                <td>31.598</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>175</td>
+                <td>Phoenix Indian (AZ)</td>
+                <td>31</td>
+                <td>-40.599</td>
+                <td>-40.516</td>
+                <td>-1.703</td>
+                <td>-10.428</td>
+                <td>28.114</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>176</td>
+                <td>Chinle (AZ)</td>
+                <td>59</td>
+                <td>-40.641</td>
+                <td>-40.437</td>
+                <td>-1.368</td>
+                <td>-9.477</td>
+                <td>29.348</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>177</td>
+                <td>Tuba City (AZ)</td>
+                <td>61</td>
+                <td>-40.777</td>
+                <td>-41.043</td>
+                <td>-1.475</td>
+                <td>-10.206</td>
+                <td>28.652</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>178</td>
+                <td>Fredonia (AZ)</td>
+                <td>43</td>
+                <td>-42.487</td>
+                <td>-42.365</td>
+                <td>-1.234</td>
+                <td>-8.666</td>
+                <td>30.767</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>179</td>
+                <td>San Pasqual (AZ)</td>
+                <td>25</td>
+                <td>-46.456</td>
+                <td>-46.228</td>
+                <td>-1.731</td>
+                <td>-12.342</td>
+                <td>30.703</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>180</td>
+                <td>Seligman (AZ)</td>
+                <td>26</td>
+                <td>-47.287</td>
+                <td>-47.379</td>
+                <td>-1.552</td>
+                <td>-8.170</td>
+                <td>31.480</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>181</td>
+                <td>Phoenix Valley Lutheran (AZ)</td>
+                <td>26</td>
+                <td>-47.909</td>
+                <td>-48.016</td>
+                <td>-1.348</td>
+                <td>-8.478</td>
+                <td>38.324</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>182</td>
+                <td>Teec Nos Pos Red Mesa (AZ)</td>
+                <td>48</td>
+                <td>-51.740</td>
+                <td>-52.017</td>
+                <td>-1.622</td>
+                <td>-13.999</td>
+                <td>35.161</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>183</td>
+                <td>Gila Bend (AZ)</td>
+                <td>57</td>
+                <td>-52.878</td>
+                <td>-52.805</td>
+                <td>-1.826</td>
+                <td>-16.133</td>
+                <td>33.196</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>184</td>
+                <td>Sells Baboquivari (AZ)</td>
+                <td>43</td>
+                <td>-53.266</td>
+                <td>-53.757</td>
+                <td>-1.694</td>
+                <td>-12.935</td>
+                <td>38.247</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>185</td>
+                <td>Sanders (AZ)</td>
+                <td>30</td>
+                <td>-56.254</td>
+                <td>-56.216</td>
+                <td>-1.787</td>
+                <td>-16.685</td>
+                <td>36.083</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>186</td>
+                <td>Keams Canyon Hopi (AZ)</td>
+                <td>38</td>
+                <td>-59.558</td>
+                <td>-59.943</td>
+                <td>-1.650</td>
+                <td>-17.224</td>
+                <td>39.957</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>187</td>
+                <td>San Carlos (AZ)</td>
+                <td>33</td>
+                <td>-67.561</td>
+                <td>-67.397</td>
+                <td>-1.844</td>
+                <td>-19.764</td>
+                <td>45.894</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>188</td>
+                <td>Many Farms (AZ)</td>
+                <td>49</td>
+                <td>-68.450</td>
+                <td>-68.212</td>
+                <td>-1.932</td>
+                <td>-23.575</td>
+                <td>42.159</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>189</td>
+                <td>Tuba City Greyhills Academy (AZ)</td>
+                <td>32</td>
+                <td>-74.952</td>
+                <td>-74.488</td>
+                <td>-1.848</td>
+                <td>-22.484</td>
+                <td>50.243</td>
+                <td>(AZ)</td>
+            </tr>
+            <tr>
+                <td>190</td>
+                <td>Pinon (AZ)</td>
+                <td>28</td>
+                <td>-75.400</td>
+                <td>-75.487</td>
+                <td>-1.749</td>
+                <td>-23.974</td>
+                <td>49.874</td>
+                <td>(AZ)</td>
+            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="pagination-info">
+                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="Table navigation">
+                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section mt-5">
+                <h3>Comments</h3>
+                <div id="authContainer" class="mb-3"></div>
+                <div id="commentForm" class="mb-4" style="display: none">
+                    <div class="card">
+                        <div class="card-body">
+                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="commentsList"></div>
+            </div>
+
+            <footer class="mt-5 mb-3">
+                <div class="text-center">
+                    <p>Â© 2025 McKnight's Football Rankings</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Table Controls Script -->
+        <script>
+    const TableControls = {
+        ROWS_PER_PAGE: 100,
+        currentPage: 1,
+        filteredRows: [],
+
+        init() {
+            const tableBody = document.querySelector('tbody');
+            if (tableBody) {
+                const rows = Array.from(tableBody.getElementsByTagName('tr'));
+                this.filteredRows = rows;
+                const totalRows = rows.length;
+                
+                const totalRowsElement = document.getElementById('totalRows');
+                if (totalRowsElement) {
+                    totalRowsElement.textContent = totalRows;
+                }
+                
+                this.setupEventListeners();
+                this.showPage(1);
+            }
+        },
+
+        setupEventListeners() {
+            const searchInput = document.getElementById('tableSearch');
+            const pagination = document.getElementById('tablePagination');
+
+            if (searchInput) {
+                searchInput.value = '';
+                const self = this;
+                searchInput.addEventListener('input', function(e) {
+                    self.filterTable(e.target.value.toLowerCase());
+                });
+            }
+
+            if (pagination) {
+                const self = this;
+                pagination.addEventListener('click', function(e) {
+                    const button = e.target.closest('button');
+                    if (!button || button.parentElement.classList.contains('disabled')) return;
+                    
+                    const page = button.dataset.page;
+                    if (page === 'prev') {
+                        self.showPage(self.currentPage - 1);
+                    } else if (page === 'next') {
+                        self.showPage(self.currentPage + 1);
+                    } else {
+                        self.showPage(parseInt(page));
+                    }
+                });
+            }
+        },
+
+        filterTable(searchTerm) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
+                const text = Array.from(row.getElementsByTagName('td'))
+                    .map(cell => cell.textContent || cell.innerText)
+                    .join(' ')
+                    .toLowerCase();
+                return text.includes(searchTerm);
+            });
+
+            const totalRowsElement = document.getElementById('totalRows');
+            if (totalRowsElement) {
+                totalRowsElement.textContent = this.filteredRows.length;
+            }
+
+            this.currentPage = 1;
+            this.showPage(1);
+        },
+
+        showPage(pageNum) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            this.currentPage = pageNum;
+            const start = (pageNum - 1) * this.ROWS_PER_PAGE;
+            const end = Math.min(start + this.ROWS_PER_PAGE, this.filteredRows.length);
+            
+            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
+            allRows.forEach(row => row.style.display = 'none');
+            
+            for (let i = start; i < end; i++) {
+                if (this.filteredRows[i]) {
+                    this.filteredRows[i].style.display = '';
+                }
+            }
+            
+            const startRowElement = document.getElementById('startRow');
+            const endRowElement = document.getElementById('endRow');
+            if (startRowElement) startRowElement.textContent = this.filteredRows.length === 0 ? 0 : start + 1;
+            if (endRowElement) endRowElement.textContent = end;
+            
+            this.updatePaginationControls();
+        },
+
+        updatePaginationControls() {
+            const pagination = document.getElementById('tablePagination');
+            if (!pagination) return;
+            
+            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
+            let html = [];
+            
+            html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
+                <button class="page-link" data-page="prev">&laquo;</button>
+            </li>`);
+            
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
+                    html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
+                        <button class="page-link" data-page="${i}">${i}</button>
+                    </li>`);
+                } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
+                    html.push('<li class="page-item disabled"><span class="page-link">...</span></li>');
+                }
+            }
+            
+            html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
+                <button class="page-link" data-page="next">&raquo;</button>
+            </li>`);
+            
+            pagination.innerHTML = html.join('');
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => TableControls.init());
+    } else {
+        TableControls.init();
+    }
+</script>
+        
+        <!-- Comments Script -->
+        <script>
+const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
+
+/**********************************************************
+ * AUTH / LOGIN LOGIC
+ **********************************************************/
+async function checkLoginStatus() {
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
+
+        if (data.success && data.loggedIn) {
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
+            renderAuthUI(true, data.user);
+        } else {
+            document.getElementById('commentForm').style.display = 'none';
+            document.getElementById('authorName').textContent = 'Anonymous';
+            renderAuthUI(false);
+        }
+    } catch (error) {
+        console.warn('Login status error:', error);
+        document.getElementById('commentForm').style.display = 'none';
+        document.getElementById('authorName').textContent = 'Anonymous';
+        renderAuthUI(false);
+    }
+}
+
+function renderAuthUI(loggedIn, user = null) {
+    const authContainer = document.getElementById('authContainer');
+    if (!authContainer) return;
+
+    if (loggedIn && user) {
+        authContainer.innerHTML = `
+            <p>Welcome, <strong>${escapeHTML(user.name)}</strong> (${escapeHTML(user.email)})
+               <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
+        `;
+        document.getElementById('logoutBtn')?.addEventListener('click', doLogout);
+    } else {
+        authContainer.innerHTML = `
+            <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
+        `;
+        document.getElementById('loginBtn')?.addEventListener('click', doLogin);
+    }
+}
+
+function doLogin() {
+    window.location.href = `${VERCEL_API_BASE}/auth/google`;
+}
+
+function doLogout() {
+    document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    window.location.reload();
+}
+
+/**********************************************************
+ * COMMENTS LOGIC
+ **********************************************************/
+async function fetchComments() {
+    const pageId = getPageId();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            displayComments(data.comments);
+        }
+    } catch (err) {
+        console.error('Error fetching comments:', err);
+        document.getElementById('commentsList').innerHTML = '<div class="alert alert-warning">Unable to load comments at this time.</div>';
+    }
+}
+
+function displayComments(comments) {
+    const list = document.getElementById('commentsList');
+    if (!list) return;
+    if (!Array.isArray(comments) || comments.length === 0) {
+        list.innerHTML = '<p class="text-muted">No comments yet</p>';
+        return;
+    }
+    list.innerHTML = comments.map(c => `
+        <div class="card mb-2">
+            <div class="card-body">
+                <p class="mb-1">${escapeHTML(c.text)}</p>
+                <small class="text-muted">
+                    by ${escapeHTML(c.author)} on ${new Date(c.10/22/2025).toLocaleString()}
+                </small>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textEl = document.getElementById('commentText');
+    const text = textEl.value.trim();
+    if (!text) return alert('Please enter a comment');
+
+    const pageId = getPageId();
+
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, pageId })
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            textEl.value = '';
+            await fetchComments();
+        } else {
+            alert('Error posting comment: ' + (data.error || 'Unknown error'));
+        }
+    } catch (err) {
+        console.error('Error posting comment:', err);
+        alert('Failed to post comment. Please try again later.');
+    }
+}
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function getPageId() {
+    const el = document.querySelector('[data-page-name]');
+    return el ? el.getAttribute('data-page-name') : 'unknown';
+}
+
+// Initialize
+document.getElementById('submitComment')?.addEventListener('click', submitComment);
+
+(async function initPage() {
+    try {
+        await Promise.all([
+            checkLoginStatus(),
+            fetchComments()
+        ]);
+    } catch (error) {
+        console.warn('Page initialization error:', error);
+    }
+})();
+</script>
+        
+<!-- TopBanner initialization -->
+<script type="module">
+    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const banner = new TopBanner();
+            await banner.initialize();
+        } catch (error) {
+            console.warn('Banner initialization failed:', error);
+            document.body.style.display = 'block';
+        }
+    });
+</script>
+    </body>
+</html>

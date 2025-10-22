@@ -1,0 +1,1440 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Utah High School Football Programs - McKnight's American Football</title>
+        <meta name="data-file" content="/static-football-rankings/data/states/programs/state-programs-UT.json">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+        </div>
+
+        <!-- Breadcrumb navigation -->
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Utah Programs</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Dynamic team banner container -->
+        <div id="teamHeaderContainer"></div>
+
+        <!-- Main content -->
+        <div class="container mt-4">
+            <h1 data-page-name="UT">Utah High School Football Programs</h1>
+            
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <a href="UT-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
+                </div>
+                <div class="text-muted">Updated: <span id="lastUpdated">10/22/2025</span></div>
+            </div>
+
+            <!-- Search Controls -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Search</span>
+                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="sticky-top bg-white">
+                        <tr>
+                            <th style="min-width: 60px">Rank</th>
+                            <th style="min-width: 200px">Program</th>
+                            <th style="min-width: 80px">Seasons</th>
+                            <th style="min-width: 90px">Combined</th>
+                            <th style="min-width: 90px">Margin</th>
+                            <th style="min-width: 90px">Win/Loss</th>
+                            <th style="min-width: 90px">Offense</th>
+                            <th style="min-width: 90px">Defense</th>
+                            <th style="min-width: 70px">State</th>
+                        </tr>
+                    </thead>
+                    <tbody id="programsTableBody">
+                                    <tr>
+                <td>1</td>
+                <td>Highland Lone Peak (UT)</td>
+                <td>28</td>
+                <td>48.485</td>
+                <td>47.999</td>
+                <td>1.621</td>
+                <td>32.770</td>
+                <td>-14.406</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Provo Timpview (UT)</td>
+                <td>48</td>
+                <td>40.767</td>
+                <td>40.916</td>
+                <td>1.207</td>
+                <td>29.316</td>
+                <td>-9.486</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sandy Alta (UT)</td>
+                <td>47</td>
+                <td>38.836</td>
+                <td>38.740</td>
+                <td>1.126</td>
+                <td>28.709</td>
+                <td>-8.230</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Plain City Fremont (UT)</td>
+                <td>31</td>
+                <td>35.688</td>
+                <td>35.770</td>
+                <td>1.151</td>
+                <td>26.689</td>
+                <td>-7.604</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Salt Lake City Brighton (UT)</td>
+                <td>56</td>
+                <td>34.369</td>
+                <td>34.081</td>
+                <td>1.056</td>
+                <td>23.256</td>
+                <td>-8.690</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Riverton (UT)</td>
+                <td>26</td>
+                <td>32.483</td>
+                <td>32.549</td>
+                <td>0.995</td>
+                <td>28.112</td>
+                <td>-3.931</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>West Valley City Hunter (UT)</td>
+                <td>35</td>
+                <td>31.772</td>
+                <td>32.081</td>
+                <td>0.977</td>
+                <td>24.823</td>
+                <td>-5.344</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Salt Lake City Skyline (UT)</td>
+                <td>63</td>
+                <td>31.760</td>
+                <td>32.019</td>
+                <td>1.012</td>
+                <td>22.994</td>
+                <td>-5.485</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Layton Northridge (UT)</td>
+                <td>33</td>
+                <td>30.950</td>
+                <td>30.811</td>
+                <td>0.946</td>
+                <td>27.004</td>
+                <td>-2.772</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Hyrum Mountain Crest (UT)</td>
+                <td>42</td>
+                <td>30.694</td>
+                <td>30.833</td>
+                <td>0.937</td>
+                <td>23.279</td>
+                <td>-5.774</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Salt Lake City Highland (UT)</td>
+                <td>68</td>
+                <td>28.333</td>
+                <td>28.288</td>
+                <td>0.879</td>
+                <td>19.934</td>
+                <td>-5.334</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>South Jordan Bingham (UT)</td>
+                <td>71</td>
+                <td>27.472</td>
+                <td>27.309</td>
+                <td>0.752</td>
+                <td>19.174</td>
+                <td>-6.575</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Orem (UT)</td>
+                <td>67</td>
+                <td>27.178</td>
+                <td>27.227</td>
+                <td>0.774</td>
+                <td>19.430</td>
+                <td>-5.127</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Salt Lake City East (UT)</td>
+                <td>101</td>
+                <td>26.720</td>
+                <td>26.667</td>
+                <td>0.771</td>
+                <td>17.211</td>
+                <td>-6.195</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Layton (UT)</td>
+                <td>57</td>
+                <td>26.504</td>
+                <td>26.522</td>
+                <td>0.693</td>
+                <td>19.869</td>
+                <td>-4.660</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Salt Lake City Olympus (UT)</td>
+                <td>72</td>
+                <td>25.307</td>
+                <td>25.215</td>
+                <td>0.753</td>
+                <td>17.885</td>
+                <td>-4.519</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Bountiful (UT)</td>
+                <td>70</td>
+                <td>25.009</td>
+                <td>25.249</td>
+                <td>0.781</td>
+                <td>17.010</td>
+                <td>-5.194</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>American Fork (UT)</td>
+                <td>83</td>
+                <td>24.877</td>
+                <td>25.161</td>
+                <td>0.651</td>
+                <td>20.260</td>
+                <td>-2.774</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>West Jordan (UT)</td>
+                <td>44</td>
+                <td>24.577</td>
+                <td>24.837</td>
+                <td>0.678</td>
+                <td>21.969</td>
+                <td>-1.444</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Saint George Snow Canyon (UT)</td>
+                <td>31</td>
+                <td>24.418</td>
+                <td>24.342</td>
+                <td>0.658</td>
+                <td>21.902</td>
+                <td>-1.487</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Smithfield Sky View (UT)</td>
+                <td>61</td>
+                <td>24.119</td>
+                <td>24.081</td>
+                <td>0.593</td>
+                <td>19.531</td>
+                <td>-2.980</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Kaysville Davis (UT)</td>
+                <td>90</td>
+                <td>23.760</td>
+                <td>23.581</td>
+                <td>0.825</td>
+                <td>16.903</td>
+                <td>-4.450</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Washington Terrace Bonneville (UT)</td>
+                <td>65</td>
+                <td>23.219</td>
+                <td>23.468</td>
+                <td>0.639</td>
+                <td>17.121</td>
+                <td>-3.500</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Saint George Pine View (UT)</td>
+                <td>42</td>
+                <td>23.013</td>
+                <td>22.750</td>
+                <td>0.575</td>
+                <td>22.825</td>
+                <td>0.434</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Bountiful Viewmont (UT)</td>
+                <td>61</td>
+                <td>22.241</td>
+                <td>22.551</td>
+                <td>0.582</td>
+                <td>17.424</td>
+                <td>-2.834</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Woods Cross (UT)</td>
+                <td>49</td>
+                <td>22.168</td>
+                <td>22.243</td>
+                <td>0.494</td>
+                <td>18.897</td>
+                <td>-2.151</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Roy (UT)</td>
+                <td>60</td>
+                <td>21.054</td>
+                <td>20.833</td>
+                <td>0.587</td>
+                <td>18.113</td>
+                <td>-1.032</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Brigham City Box Elder (UT)</td>
+                <td>80</td>
+                <td>20.548</td>
+                <td>20.334</td>
+                <td>0.593</td>
+                <td>16.178</td>
+                <td>-2.113</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Salt Lake City West (UT)</td>
+                <td>99</td>
+                <td>20.115</td>
+                <td>20.048</td>
+                <td>0.558</td>
+                <td>13.243</td>
+                <td>-3.159</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Orem Mountain View (UT)</td>
+                <td>45</td>
+                <td>19.537</td>
+                <td>19.375</td>
+                <td>0.527</td>
+                <td>18.368</td>
+                <td>0.408</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Clearfield (UT)</td>
+                <td>63</td>
+                <td>19.177</td>
+                <td>19.083</td>
+                <td>0.492</td>
+                <td>15.032</td>
+                <td>-1.892</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Sandy Jordan (UT)</td>
+                <td>96</td>
+                <td>18.229</td>
+                <td>18.247</td>
+                <td>0.590</td>
+                <td>15.305</td>
+                <td>-0.687</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Orem Timpanogos (UT)</td>
+                <td>29</td>
+                <td>17.549</td>
+                <td>17.215</td>
+                <td>0.548</td>
+                <td>21.337</td>
+                <td>4.529</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Logan (UT)</td>
+                <td>86</td>
+                <td>16.662</td>
+                <td>16.684</td>
+                <td>0.399</td>
+                <td>14.205</td>
+                <td>-1.022</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Saint George Dixie (UT)</td>
+                <td>62</td>
+                <td>16.152</td>
+                <td>16.087</td>
+                <td>0.363</td>
+                <td>15.486</td>
+                <td>0.567</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>West Valley City Granger (UT)</td>
+                <td>63</td>
+                <td>16.008</td>
+                <td>15.971</td>
+                <td>0.353</td>
+                <td>15.366</td>
+                <td>1.217</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Springville (UT)</td>
+                <td>78</td>
+                <td>15.790</td>
+                <td>15.972</td>
+                <td>0.369</td>
+                <td>15.108</td>
+                <td>0.867</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Provo (UT)</td>
+                <td>87</td>
+                <td>15.212</td>
+                <td>15.405</td>
+                <td>0.389</td>
+                <td>13.575</td>
+                <td>0.311</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>Salt Lake City Cottonwood (UT)</td>
+                <td>55</td>
+                <td>15.131</td>
+                <td>14.929</td>
+                <td>0.384</td>
+                <td>16.174</td>
+                <td>2.237</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Pleasant Grove (UT)</td>
+                <td>82</td>
+                <td>15.094</td>
+                <td>15.134</td>
+                <td>0.312</td>
+                <td>12.729</td>
+                <td>-1.145</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Kearns (UT)</td>
+                <td>57</td>
+                <td>15.017</td>
+                <td>15.116</td>
+                <td>0.394</td>
+                <td>15.872</td>
+                <td>2.146</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Cedar City (UT)</td>
+                <td>57</td>
+                <td>14.078</td>
+                <td>14.037</td>
+                <td>0.199</td>
+                <td>14.432</td>
+                <td>1.312</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>Pleasant View Weber (UT)</td>
+                <td>83</td>
+                <td>13.578</td>
+                <td>13.467</td>
+                <td>0.249</td>
+                <td>12.341</td>
+                <td>0.150</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Taylorsville (UT)</td>
+                <td>44</td>
+                <td>12.478</td>
+                <td>12.344</td>
+                <td>0.340</td>
+                <td>14.860</td>
+                <td>3.505</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>Spanish Fork (UT)</td>
+                <td>82</td>
+                <td>12.344</td>
+                <td>12.118</td>
+                <td>0.164</td>
+                <td>12.379</td>
+                <td>1.378</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Lehi (UT)</td>
+                <td>83</td>
+                <td>12.131</td>
+                <td>11.991</td>
+                <td>0.112</td>
+                <td>11.716</td>
+                <td>0.622</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Midvale Hillcrest (UT)</td>
+                <td>62</td>
+                <td>11.652</td>
+                <td>11.720</td>
+                <td>0.271</td>
+                <td>12.580</td>
+                <td>2.821</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>Heber City Wasatch County (UT)</td>
+                <td>60</td>
+                <td>11.512</td>
+                <td>11.551</td>
+                <td>0.160</td>
+                <td>13.125</td>
+                <td>2.151</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>West Jordan Copper Hills (UT)</td>
+                <td>30</td>
+                <td>11.055</td>
+                <td>10.878</td>
+                <td>0.350</td>
+                <td>16.628</td>
+                <td>6.240</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>Delta (UT)</td>
+                <td>59</td>
+                <td>10.511</td>
+                <td>10.595</td>
+                <td>0.166</td>
+                <td>12.346</td>
+                <td>3.171</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>Magna Cyprus (UT)</td>
+                <td>67</td>
+                <td>10.506</td>
+                <td>10.459</td>
+                <td>0.177</td>
+                <td>12.070</td>
+                <td>3.097</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>Garland Bear River (UT)</td>
+                <td>78</td>
+                <td>10.035</td>
+                <td>10.079</td>
+                <td>0.152</td>
+                <td>12.039</td>
+                <td>3.315</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td>Salt Lake City South (UT)</td>
+                <td>51</td>
+                <td>9.726</td>
+                <td>9.815</td>
+                <td>0.136</td>
+                <td>6.328</td>
+                <td>-0.298</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>Murray (UT)</td>
+                <td>73</td>
+                <td>9.427</td>
+                <td>9.420</td>
+                <td>0.168</td>
+                <td>10.931</td>
+                <td>2.153</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td>Morgan (UT)</td>
+                <td>68</td>
+                <td>8.699</td>
+                <td>8.664</td>
+                <td>0.003</td>
+                <td>10.841</td>
+                <td>3.045</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td>Beaver (UT)</td>
+                <td>58</td>
+                <td>8.371</td>
+                <td>8.204</td>
+                <td>0.049</td>
+                <td>11.718</td>
+                <td>4.199</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>Salt Lake City Granite (UT)</td>
+                <td>71</td>
+                <td>7.469</td>
+                <td>7.474</td>
+                <td>0.111</td>
+                <td>7.585</td>
+                <td>1.983</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td>Tooele (UT)</td>
+                <td>70</td>
+                <td>7.468</td>
+                <td>7.655</td>
+                <td>0.060</td>
+                <td>10.476</td>
+                <td>4.132</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td>Salt Lake City Judge Memorial Catholic (UT)</td>
+                <td>60</td>
+                <td>7.119</td>
+                <td>7.330</td>
+                <td>0.144</td>
+                <td>10.677</td>
+                <td>4.965</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>Fillmore Millard County (UT)</td>
+                <td>58</td>
+                <td>6.626</td>
+                <td>6.304</td>
+                <td>0.034</td>
+                <td>10.696</td>
+                <td>4.678</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td>Payson (UT)</td>
+                <td>77</td>
+                <td>5.568</td>
+                <td>5.455</td>
+                <td>-0.026</td>
+                <td>9.069</td>
+                <td>3.942</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td>Kamas South Summit (UT)</td>
+                <td>56</td>
+                <td>4.769</td>
+                <td>4.910</td>
+                <td>-0.118</td>
+                <td>8.733</td>
+                <td>4.027</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td>Ogden (UT)</td>
+                <td>89</td>
+                <td>4.255</td>
+                <td>4.365</td>
+                <td>0.086</td>
+                <td>8.379</td>
+                <td>5.013</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>Park City (UT)</td>
+                <td>64</td>
+                <td>3.226</td>
+                <td>2.964</td>
+                <td>-0.117</td>
+                <td>8.942</td>
+                <td>5.740</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>Hurricane (UT)</td>
+                <td>58</td>
+                <td>2.703</td>
+                <td>2.462</td>
+                <td>-0.115</td>
+                <td>10.863</td>
+                <td>8.383</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td>Blanding San Juan County (UT)</td>
+                <td>59</td>
+                <td>2.604</td>
+                <td>2.740</td>
+                <td>-0.129</td>
+                <td>9.596</td>
+                <td>7.389</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td>Grantsville (UT)</td>
+                <td>64</td>
+                <td>2.543</td>
+                <td>2.451</td>
+                <td>-0.108</td>
+                <td>8.029</td>
+                <td>5.967</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>Kanab (UT)</td>
+                <td>56</td>
+                <td>2.518</td>
+                <td>2.114</td>
+                <td>-0.159</td>
+                <td>9.201</td>
+                <td>7.080</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td>Cedar City Canyon View (UT)</td>
+                <td>28</td>
+                <td>0.247</td>
+                <td>0.512</td>
+                <td>-0.055</td>
+                <td>12.337</td>
+                <td>12.271</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td>Ogden Ben Lomond (UT)</td>
+                <td>69</td>
+                <td>-1.096</td>
+                <td>-1.045</td>
+                <td>-0.214</td>
+                <td>6.247</td>
+                <td>8.480</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td>Mount Pleasant North Sanpete (UT)</td>
+                <td>63</td>
+                <td>-1.161</td>
+                <td>-1.044</td>
+                <td>-0.349</td>
+                <td>6.853</td>
+                <td>8.638</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>Vernal Uintah County (UT)</td>
+                <td>63</td>
+                <td>-1.441</td>
+                <td>-1.285</td>
+                <td>-0.335</td>
+                <td>6.508</td>
+                <td>8.383</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td>Richfield (UT)</td>
+                <td>59</td>
+                <td>-1.613</td>
+                <td>-1.571</td>
+                <td>-0.253</td>
+                <td>7.037</td>
+                <td>7.751</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td>Manti (UT)</td>
+                <td>56</td>
+                <td>-1.782</td>
+                <td>-2.069</td>
+                <td>-0.280</td>
+                <td>7.519</td>
+                <td>8.967</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>Coalville North Summit (UT)</td>
+                <td>59</td>
+                <td>-1.952</td>
+                <td>-2.390</td>
+                <td>-0.342</td>
+                <td>6.149</td>
+                <td>8.082</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td>Castle Dale Emery County (UT)</td>
+                <td>56</td>
+                <td>-2.849</td>
+                <td>-2.899</td>
+                <td>-0.352</td>
+                <td>7.208</td>
+                <td>9.969</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td>Price Carbon County (UT)</td>
+                <td>92</td>
+                <td>-2.903</td>
+                <td>-2.763</td>
+                <td>-0.242</td>
+                <td>4.275</td>
+                <td>9.146</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td>Nephi Juab County (UT)</td>
+                <td>60</td>
+                <td>-3.626</td>
+                <td>-3.826</td>
+                <td>-0.343</td>
+                <td>6.672</td>
+                <td>9.841</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td>Roosevelt Union (UT)</td>
+                <td>61</td>
+                <td>-3.869</td>
+                <td>-4.019</td>
+                <td>-0.412</td>
+                <td>7.011</td>
+                <td>10.909</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>80</td>
+                <td>Enterprise (UT)</td>
+                <td>28</td>
+                <td>-7.822</td>
+                <td>-8.027</td>
+                <td>-0.284</td>
+                <td>5.164</td>
+                <td>12.779</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>81</td>
+                <td>Moab Grand County (UT)</td>
+                <td>89</td>
+                <td>-10.813</td>
+                <td>-11.384</td>
+                <td>-0.689</td>
+                <td>0.568</td>
+                <td>11.641</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td>Monticello (UT)</td>
+                <td>56</td>
+                <td>-14.978</td>
+                <td>-15.235</td>
+                <td>-0.682</td>
+                <td>1.095</td>
+                <td>15.549</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>83</td>
+                <td>Duchesne (UT)</td>
+                <td>54</td>
+                <td>-15.932</td>
+                <td>-16.336</td>
+                <td>-0.714</td>
+                <td>-0.103</td>
+                <td>14.530</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>84</td>
+                <td>Monroe South Sevier County (UT)</td>
+                <td>54</td>
+                <td>-15.949</td>
+                <td>-15.587</td>
+                <td>-0.717</td>
+                <td>0.529</td>
+                <td>15.629</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>85</td>
+                <td>Gunnison Valley (UT)</td>
+                <td>35</td>
+                <td>-18.467</td>
+                <td>-18.478</td>
+                <td>-0.680</td>
+                <td>2.248</td>
+                <td>19.997</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>86</td>
+                <td>Milford (UT)</td>
+                <td>56</td>
+                <td>-19.494</td>
+                <td>-19.407</td>
+                <td>-0.871</td>
+                <td>-0.133</td>
+                <td>18.280</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>87</td>
+                <td>Salina North Sevier County (UT)</td>
+                <td>54</td>
+                <td>-20.142</td>
+                <td>-19.773</td>
+                <td>-0.856</td>
+                <td>-0.653</td>
+                <td>17.308</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>88</td>
+                <td>Dugway (UT)</td>
+                <td>26</td>
+                <td>-24.247</td>
+                <td>-23.702</td>
+                <td>-1.260</td>
+                <td>-4.735</td>
+                <td>17.459</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>89</td>
+                <td>Parowan (UT)</td>
+                <td>58</td>
+                <td>-24.877</td>
+                <td>-24.783</td>
+                <td>-1.043</td>
+                <td>-3.561</td>
+                <td>19.609</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>90</td>
+                <td>Altamont (UT)</td>
+                <td>50</td>
+                <td>-30.754</td>
+                <td>-30.555</td>
+                <td>-1.236</td>
+                <td>-6.902</td>
+                <td>22.124</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>91</td>
+                <td>Montezuma Creek Whitehorse (UT)</td>
+                <td>44</td>
+                <td>-56.041</td>
+                <td>-55.438</td>
+                <td>-1.772</td>
+                <td>-16.743</td>
+                <td>37.068</td>
+                <td>(UT)</td>
+            </tr>
+            <tr>
+                <td>92</td>
+                <td>Monument Valley (UT)</td>
+                <td>37</td>
+                <td>-62.669</td>
+                <td>-61.858</td>
+                <td>-1.807</td>
+                <td>-19.349</td>
+                <td>40.951</td>
+                <td>(UT)</td>
+            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="pagination-info">
+                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="Table navigation">
+                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section mt-5">
+                <h3>Comments</h3>
+                <div id="authContainer" class="mb-3"></div>
+                <div id="commentForm" class="mb-4" style="display: none">
+                    <div class="card">
+                        <div class="card-body">
+                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="commentsList"></div>
+            </div>
+
+            <footer class="mt-5 mb-3">
+                <div class="text-center">
+                    <p>Â© 2025 McKnight's Football Rankings</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Table Controls Script -->
+        <script>
+    const TableControls = {
+        ROWS_PER_PAGE: 100,
+        currentPage: 1,
+        filteredRows: [],
+
+        init() {
+            const tableBody = document.querySelector('tbody');
+            if (tableBody) {
+                const rows = Array.from(tableBody.getElementsByTagName('tr'));
+                this.filteredRows = rows;
+                const totalRows = rows.length;
+                
+                const totalRowsElement = document.getElementById('totalRows');
+                if (totalRowsElement) {
+                    totalRowsElement.textContent = totalRows;
+                }
+                
+                this.setupEventListeners();
+                this.showPage(1);
+            }
+        },
+
+        setupEventListeners() {
+            const searchInput = document.getElementById('tableSearch');
+            const pagination = document.getElementById('tablePagination');
+
+            if (searchInput) {
+                searchInput.value = '';
+                const self = this;
+                searchInput.addEventListener('input', function(e) {
+                    self.filterTable(e.target.value.toLowerCase());
+                });
+            }
+
+            if (pagination) {
+                const self = this;
+                pagination.addEventListener('click', function(e) {
+                    const button = e.target.closest('button');
+                    if (!button || button.parentElement.classList.contains('disabled')) return;
+                    
+                    const page = button.dataset.page;
+                    if (page === 'prev') {
+                        self.showPage(self.currentPage - 1);
+                    } else if (page === 'next') {
+                        self.showPage(self.currentPage + 1);
+                    } else {
+                        self.showPage(parseInt(page));
+                    }
+                });
+            }
+        },
+
+        filterTable(searchTerm) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
+                const text = Array.from(row.getElementsByTagName('td'))
+                    .map(cell => cell.textContent || cell.innerText)
+                    .join(' ')
+                    .toLowerCase();
+                return text.includes(searchTerm);
+            });
+
+            const totalRowsElement = document.getElementById('totalRows');
+            if (totalRowsElement) {
+                totalRowsElement.textContent = this.filteredRows.length;
+            }
+
+            this.currentPage = 1;
+            this.showPage(1);
+        },
+
+        showPage(pageNum) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            this.currentPage = pageNum;
+            const start = (pageNum - 1) * this.ROWS_PER_PAGE;
+            const end = Math.min(start + this.ROWS_PER_PAGE, this.filteredRows.length);
+            
+            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
+            allRows.forEach(row => row.style.display = 'none');
+            
+            for (let i = start; i < end; i++) {
+                if (this.filteredRows[i]) {
+                    this.filteredRows[i].style.display = '';
+                }
+            }
+            
+            const startRowElement = document.getElementById('startRow');
+            const endRowElement = document.getElementById('endRow');
+            if (startRowElement) startRowElement.textContent = this.filteredRows.length === 0 ? 0 : start + 1;
+            if (endRowElement) endRowElement.textContent = end;
+            
+            this.updatePaginationControls();
+        },
+
+        updatePaginationControls() {
+            const pagination = document.getElementById('tablePagination');
+            if (!pagination) return;
+            
+            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
+            let html = [];
+            
+            html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
+                <button class="page-link" data-page="prev">&laquo;</button>
+            </li>`);
+            
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
+                    html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
+                        <button class="page-link" data-page="${i}">${i}</button>
+                    </li>`);
+                } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
+                    html.push('<li class="page-item disabled"><span class="page-link">...</span></li>');
+                }
+            }
+            
+            html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
+                <button class="page-link" data-page="next">&raquo;</button>
+            </li>`);
+            
+            pagination.innerHTML = html.join('');
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => TableControls.init());
+    } else {
+        TableControls.init();
+    }
+</script>
+        
+        <!-- Comments Script -->
+        <script>
+const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
+
+/**********************************************************
+ * AUTH / LOGIN LOGIC
+ **********************************************************/
+async function checkLoginStatus() {
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
+
+        if (data.success && data.loggedIn) {
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
+            renderAuthUI(true, data.user);
+        } else {
+            document.getElementById('commentForm').style.display = 'none';
+            document.getElementById('authorName').textContent = 'Anonymous';
+            renderAuthUI(false);
+        }
+    } catch (error) {
+        console.warn('Login status error:', error);
+        document.getElementById('commentForm').style.display = 'none';
+        document.getElementById('authorName').textContent = 'Anonymous';
+        renderAuthUI(false);
+    }
+}
+
+function renderAuthUI(loggedIn, user = null) {
+    const authContainer = document.getElementById('authContainer');
+    if (!authContainer) return;
+
+    if (loggedIn && user) {
+        authContainer.innerHTML = `
+            <p>Welcome, <strong>${escapeHTML(user.name)}</strong> (${escapeHTML(user.email)})
+               <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
+        `;
+        document.getElementById('logoutBtn')?.addEventListener('click', doLogout);
+    } else {
+        authContainer.innerHTML = `
+            <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
+        `;
+        document.getElementById('loginBtn')?.addEventListener('click', doLogin);
+    }
+}
+
+function doLogin() {
+    window.location.href = `${VERCEL_API_BASE}/auth/google`;
+}
+
+function doLogout() {
+    document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    window.location.reload();
+}
+
+/**********************************************************
+ * COMMENTS LOGIC
+ **********************************************************/
+async function fetchComments() {
+    const pageId = getPageId();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            displayComments(data.comments);
+        }
+    } catch (err) {
+        console.error('Error fetching comments:', err);
+        document.getElementById('commentsList').innerHTML = '<div class="alert alert-warning">Unable to load comments at this time.</div>';
+    }
+}
+
+function displayComments(comments) {
+    const list = document.getElementById('commentsList');
+    if (!list) return;
+    if (!Array.isArray(comments) || comments.length === 0) {
+        list.innerHTML = '<p class="text-muted">No comments yet</p>';
+        return;
+    }
+    list.innerHTML = comments.map(c => `
+        <div class="card mb-2">
+            <div class="card-body">
+                <p class="mb-1">${escapeHTML(c.text)}</p>
+                <small class="text-muted">
+                    by ${escapeHTML(c.author)} on ${new Date(c.10/22/2025).toLocaleString()}
+                </small>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textEl = document.getElementById('commentText');
+    const text = textEl.value.trim();
+    if (!text) return alert('Please enter a comment');
+
+    const pageId = getPageId();
+
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, pageId })
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            textEl.value = '';
+            await fetchComments();
+        } else {
+            alert('Error posting comment: ' + (data.error || 'Unknown error'));
+        }
+    } catch (err) {
+        console.error('Error posting comment:', err);
+        alert('Failed to post comment. Please try again later.');
+    }
+}
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function getPageId() {
+    const el = document.querySelector('[data-page-name]');
+    return el ? el.getAttribute('data-page-name') : 'unknown';
+}
+
+// Initialize
+document.getElementById('submitComment')?.addEventListener('click', submitComment);
+
+(async function initPage() {
+    try {
+        await Promise.all([
+            checkLoginStatus(),
+            fetchComments()
+        ]);
+    } catch (error) {
+        console.warn('Page initialization error:', error);
+    }
+})();
+</script>
+        
+<!-- TopBanner initialization -->
+<script type="module">
+    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const banner = new TopBanner();
+            await banner.initialize();
+        } catch (error) {
+            console.warn('Banner initialization failed:', error);
+            document.body.style.display = 'block';
+        }
+    });
+</script>
+    </body>
+</html>

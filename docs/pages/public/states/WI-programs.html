@@ -1,0 +1,5389 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wisconsin High School Football Programs - McKnight's American Football</title>
+        <meta name="data-file" content="/static-football-rankings/data/states/programs/state-programs-WI.json">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+        </div>
+
+        <!-- Breadcrumb navigation -->
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Wisconsin Programs</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Dynamic team banner container -->
+        <div id="teamHeaderContainer"></div>
+
+        <!-- Main content -->
+        <div class="container mt-4">
+            <h1 data-page-name="WI">Wisconsin High School Football Programs</h1>
+            
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <a href="WI-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
+                </div>
+                <div class="text-muted">Updated: <span id="lastUpdated">10/22/2025</span></div>
+            </div>
+
+            <!-- Search Controls -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">Search</span>
+                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="sticky-top bg-white">
+                        <tr>
+                            <th style="min-width: 60px">Rank</th>
+                            <th style="min-width: 200px">Program</th>
+                            <th style="min-width: 80px">Seasons</th>
+                            <th style="min-width: 90px">Combined</th>
+                            <th style="min-width: 90px">Margin</th>
+                            <th style="min-width: 90px">Win/Loss</th>
+                            <th style="min-width: 90px">Offense</th>
+                            <th style="min-width: 90px">Defense</th>
+                            <th style="min-width: 70px">State</th>
+                        </tr>
+                    </thead>
+                    <tbody id="programsTableBody">
+                                    <tr>
+                <td>1</td>
+                <td>Appleton North (WI)</td>
+                <td>30</td>
+                <td>31.094</td>
+                <td>30.898</td>
+                <td>0.769</td>
+                <td>22.948</td>
+                <td>-7.570</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Waukesha West (WI)</td>
+                <td>33</td>
+                <td>25.371</td>
+                <td>25.294</td>
+                <td>0.734</td>
+                <td>22.157</td>
+                <td>-2.682</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Schofield D.C. Everest (WI)</td>
+                <td>71</td>
+                <td>24.421</td>
+                <td>24.551</td>
+                <td>0.621</td>
+                <td>19.578</td>
+                <td>-1.924</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Fond du Lac Saint Mary's Springs (WI)</td>
+                <td>59</td>
+                <td>23.663</td>
+                <td>23.746</td>
+                <td>0.626</td>
+                <td>17.883</td>
+                <td>-3.653</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Waunakee (WI)</td>
+                <td>64</td>
+                <td>21.911</td>
+                <td>21.627</td>
+                <td>0.453</td>
+                <td>17.882</td>
+                <td>-2.523</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Waukesha Catholic Memorial (WI)</td>
+                <td>71</td>
+                <td>20.664</td>
+                <td>20.640</td>
+                <td>0.488</td>
+                <td>14.816</td>
+                <td>-3.388</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Sun Prairie (WI)</td>
+                <td>61</td>
+                <td>20.315</td>
+                <td>20.180</td>
+                <td>0.501</td>
+                <td>16.439</td>
+                <td>-1.638</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Kimberly (WI)</td>
+                <td>76</td>
+                <td>19.999</td>
+                <td>19.874</td>
+                <td>0.369</td>
+                <td>15.494</td>
+                <td>-2.433</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Monona Grove (WI)</td>
+                <td>63</td>
+                <td>19.859</td>
+                <td>19.801</td>
+                <td>0.517</td>
+                <td>16.790</td>
+                <td>-1.271</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>West De Pere (WI)</td>
+                <td>74</td>
+                <td>18.684</td>
+                <td>18.706</td>
+                <td>0.417</td>
+                <td>13.766</td>
+                <td>-1.884</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Menomonie (WI)</td>
+                <td>75</td>
+                <td>18.377</td>
+                <td>18.176</td>
+                <td>0.449</td>
+                <td>15.915</td>
+                <td>-0.339</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Middleton (WI)</td>
+                <td>64</td>
+                <td>18.031</td>
+                <td>17.727</td>
+                <td>0.442</td>
+                <td>14.311</td>
+                <td>-1.380</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Wausau (WI)</td>
+                <td>61</td>
+                <td>17.875</td>
+                <td>17.790</td>
+                <td>0.460</td>
+                <td>12.253</td>
+                <td>-3.082</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Germantown (WI)</td>
+                <td>58</td>
+                <td>17.866</td>
+                <td>18.249</td>
+                <td>0.369</td>
+                <td>15.073</td>
+                <td>-1.271</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Mequon Homestead (WI)</td>
+                <td>63</td>
+                <td>17.801</td>
+                <td>17.550</td>
+                <td>0.375</td>
+                <td>15.410</td>
+                <td>-0.931</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Edgar (WI)</td>
+                <td>59</td>
+                <td>17.409</td>
+                <td>17.185</td>
+                <td>0.294</td>
+                <td>14.563</td>
+                <td>-1.639</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Oshkosh (WI)</td>
+                <td>53</td>
+                <td>17.398</td>
+                <td>17.443</td>
+                <td>0.537</td>
+                <td>8.480</td>
+                <td>-5.294</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Hartland Arrowhead (WI)</td>
+                <td>69</td>
+                <td>16.989</td>
+                <td>16.701</td>
+                <td>0.404</td>
+                <td>14.386</td>
+                <td>-1.020</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Green Bay Bay Port (WI)</td>
+                <td>58</td>
+                <td>16.439</td>
+                <td>16.471</td>
+                <td>0.329</td>
+                <td>15.979</td>
+                <td>0.789</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Fond du Lac (WI)</td>
+                <td>101</td>
+                <td>16.178</td>
+                <td>16.036</td>
+                <td>0.382</td>
+                <td>12.629</td>
+                <td>-0.692</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Eau Claire Memorial (WI)</td>
+                <td>109</td>
+                <td>16.101</td>
+                <td>15.845</td>
+                <td>0.310</td>
+                <td>11.565</td>
+                <td>-2.475</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Stratford (WI)</td>
+                <td>58</td>
+                <td>15.922</td>
+                <td>15.691</td>
+                <td>0.263</td>
+                <td>14.103</td>
+                <td>-0.480</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Neenah (WI)</td>
+                <td>87</td>
+                <td>15.569</td>
+                <td>15.405</td>
+                <td>0.226</td>
+                <td>11.639</td>
+                <td>-1.815</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Sussex Hamilton (WI)</td>
+                <td>56</td>
+                <td>15.545</td>
+                <td>14.715</td>
+                <td>0.375</td>
+                <td>15.525</td>
+                <td>1.557</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Kaukauna (WI)</td>
+                <td>85</td>
+                <td>15.090</td>
+                <td>15.179</td>
+                <td>0.257</td>
+                <td>10.900</td>
+                <td>-1.947</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Green Bay Ashwaubenon (WI)</td>
+                <td>56</td>
+                <td>14.982</td>
+                <td>14.965</td>
+                <td>0.371</td>
+                <td>15.163</td>
+                <td>1.699</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Appleton (WI)</td>
+                <td>44</td>
+                <td>14.840</td>
+                <td>14.925</td>
+                <td>0.539</td>
+                <td>7.718</td>
+                <td>-2.720</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Superior Central (WI)</td>
+                <td>107</td>
+                <td>14.564</td>
+                <td>14.385</td>
+                <td>0.418</td>
+                <td>11.788</td>
+                <td>-0.314</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Milwaukee Marquette University High (WI)</td>
+                <td>99</td>
+                <td>14.513</td>
+                <td>14.002</td>
+                <td>0.341</td>
+                <td>11.224</td>
+                <td>-1.040</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>DeForest (WI)</td>
+                <td>67</td>
+                <td>14.470</td>
+                <td>14.372</td>
+                <td>0.160</td>
+                <td>13.980</td>
+                <td>0.207</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Oshkosh North (WI)</td>
+                <td>53</td>
+                <td>13.870</td>
+                <td>13.949</td>
+                <td>0.175</td>
+                <td>14.183</td>
+                <td>1.501</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Wausau West (WI)</td>
+                <td>55</td>
+                <td>13.675</td>
+                <td>13.416</td>
+                <td>0.224</td>
+                <td>13.034</td>
+                <td>0.725</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Stevens Point (WI)</td>
+                <td>112</td>
+                <td>13.456</td>
+                <td>13.442</td>
+                <td>0.262</td>
+                <td>11.816</td>
+                <td>-0.375</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Madison Memorial (WI)</td>
+                <td>57</td>
+                <td>13.409</td>
+                <td>13.470</td>
+                <td>0.278</td>
+                <td>13.158</td>
+                <td>1.497</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>De Pere Abbot Pennings (WI)</td>
+                <td>25</td>
+                <td>13.279</td>
+                <td>13.430</td>
+                <td>0.410</td>
+                <td>9.134</td>
+                <td>-0.289</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Muskego (WI)</td>
+                <td>66</td>
+                <td>13.251</td>
+                <td>13.270</td>
+                <td>0.135</td>
+                <td>13.266</td>
+                <td>1.239</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Wisconsin Rapids Lincoln (WI)</td>
+                <td>104</td>
+                <td>13.180</td>
+                <td>13.219</td>
+                <td>0.180</td>
+                <td>11.632</td>
+                <td>0.251</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Marinette (WI)</td>
+                <td>113</td>
+                <td>13.063</td>
+                <td>13.100</td>
+                <td>0.337</td>
+                <td>11.759</td>
+                <td>0.843</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>Green Bay Notre Dame Academy (WI)</td>
+                <td>73</td>
+                <td>12.995</td>
+                <td>13.042</td>
+                <td>0.311</td>
+                <td>11.639</td>
+                <td>0.980</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Madison Central (WI)</td>
+                <td>26</td>
+                <td>12.961</td>
+                <td>12.963</td>
+                <td>-0.044</td>
+                <td>6.803</td>
+                <td>-4.171</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Janesville Craig (WI)</td>
+                <td>58</td>
+                <td>12.940</td>
+                <td>13.068</td>
+                <td>0.221</td>
+                <td>13.086</td>
+                <td>1.598</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Oak Creek (WI)</td>
+                <td>66</td>
+                <td>12.749</td>
+                <td>13.160</td>
+                <td>-0.037</td>
+                <td>12.370</td>
+                <td>0.591</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>Menasha (WI)</td>
+                <td>86</td>
+                <td>12.592</td>
+                <td>12.792</td>
+                <td>0.097</td>
+                <td>11.613</td>
+                <td>0.435</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Pulaski (WI)</td>
+                <td>68</td>
+                <td>12.553</td>
+                <td>12.327</td>
+                <td>0.269</td>
+                <td>10.988</td>
+                <td>0.007</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>River Falls (WI)</td>
+                <td>64</td>
+                <td>12.531</td>
+                <td>12.320</td>
+                <td>0.287</td>
+                <td>11.967</td>
+                <td>0.741</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Rice Lake (WI)</td>
+                <td>66</td>
+                <td>12.526</td>
+                <td>12.300</td>
+                <td>0.150</td>
+                <td>15.064</td>
+                <td>3.334</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Appleton East (WI)</td>
+                <td>59</td>
+                <td>12.438</td>
+                <td>12.419</td>
+                <td>0.167</td>
+                <td>11.380</td>
+                <td>0.538</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>Kenosha Tremper (WI)</td>
+                <td>59</td>
+                <td>12.437</td>
+                <td>12.173</td>
+                <td>0.242</td>
+                <td>12.500</td>
+                <td>1.751</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>Green Bay Preble (WI)</td>
+                <td>68</td>
+                <td>12.427</td>
+                <td>12.122</td>
+                <td>0.254</td>
+                <td>11.565</td>
+                <td>1.549</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>Oconomowoc (WI)</td>
+                <td>94</td>
+                <td>12.320</td>
+                <td>12.252</td>
+                <td>0.190</td>
+                <td>11.001</td>
+                <td>0.389</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>Manitowoc Lincoln (WI)</td>
+                <td>97</td>
+                <td>12.309</td>
+                <td>12.344</td>
+                <td>0.296</td>
+                <td>10.289</td>
+                <td>0.064</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>Green Bay East (WI)</td>
+                <td>95</td>
+                <td>12.262</td>
+                <td>12.229</td>
+                <td>0.324</td>
+                <td>9.740</td>
+                <td>0.566</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td>Mukwonago (WI)</td>
+                <td>82</td>
+                <td>12.185</td>
+                <td>11.893</td>
+                <td>0.166</td>
+                <td>10.130</td>
+                <td>0.781</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>Eau Claire Regis (WI)</td>
+                <td>66</td>
+                <td>12.013</td>
+                <td>11.711</td>
+                <td>0.334</td>
+                <td>10.634</td>
+                <td>0.712</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td>Madison La Follette (WI)</td>
+                <td>56</td>
+                <td>11.887</td>
+                <td>11.576</td>
+                <td>0.199</td>
+                <td>12.938</td>
+                <td>2.530</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td>La Crosse Central (WI)</td>
+                <td>107</td>
+                <td>11.877</td>
+                <td>11.878</td>
+                <td>0.166</td>
+                <td>11.171</td>
+                <td>0.849</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>Racine Washington Park (WI)</td>
+                <td>76</td>
+                <td>11.861</td>
+                <td>11.629</td>
+                <td>0.159</td>
+                <td>12.688</td>
+                <td>2.981</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td>Antigo (WI)</td>
+                <td>114</td>
+                <td>11.804</td>
+                <td>11.928</td>
+                <td>0.214</td>
+                <td>9.745</td>
+                <td>-0.398</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td>Madison West (WI)</td>
+                <td>75</td>
+                <td>11.694</td>
+                <td>11.809</td>
+                <td>0.193</td>
+                <td>11.280</td>
+                <td>1.716</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>Plymouth (WI)</td>
+                <td>77</td>
+                <td>11.633</td>
+                <td>11.588</td>
+                <td>0.080</td>
+                <td>11.437</td>
+                <td>1.577</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td>La Crosse Aquinas (WI)</td>
+                <td>81</td>
+                <td>11.599</td>
+                <td>11.552</td>
+                <td>0.157</td>
+                <td>11.991</td>
+                <td>2.201</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td>Appleton Xavier (WI)</td>
+                <td>58</td>
+                <td>11.588</td>
+                <td>11.505</td>
+                <td>0.108</td>
+                <td>12.003</td>
+                <td>1.418</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td>Kenosha Bradford (WI)</td>
+                <td>59</td>
+                <td>11.383</td>
+                <td>11.583</td>
+                <td>0.077</td>
+                <td>11.474</td>
+                <td>2.180</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>Racine Horlick (WI)</td>
+                <td>77</td>
+                <td>11.360</td>
+                <td>11.630</td>
+                <td>0.127</td>
+                <td>12.061</td>
+                <td>2.225</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>Madison Edgewood (WI)</td>
+                <td>77</td>
+                <td>11.308</td>
+                <td>11.157</td>
+                <td>0.161</td>
+                <td>10.712</td>
+                <td>1.040</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td>Oshkosh West (WI)</td>
+                <td>55</td>
+                <td>11.265</td>
+                <td>11.241</td>
+                <td>0.037</td>
+                <td>11.933</td>
+                <td>1.546</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td>Mosinee (WI)</td>
+                <td>61</td>
+                <td>11.043</td>
+                <td>10.871</td>
+                <td>0.124</td>
+                <td>13.387</td>
+                <td>3.706</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>Chippewa Falls (WI)</td>
+                <td>85</td>
+                <td>10.830</td>
+                <td>10.782</td>
+                <td>0.112</td>
+                <td>10.836</td>
+                <td>1.567</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td>Brodhead-Juda (WI)</td>
+                <td>43</td>
+                <td>10.720</td>
+                <td>10.744</td>
+                <td>0.135</td>
+                <td>14.275</td>
+                <td>4.154</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td>Mount Horeb-Barneveld (WI)</td>
+                <td>34</td>
+                <td>10.662</td>
+                <td>10.999</td>
+                <td>0.271</td>
+                <td>16.243</td>
+                <td>5.528</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td>Monroe (WI)</td>
+                <td>70</td>
+                <td>10.572</td>
+                <td>10.566</td>
+                <td>0.204</td>
+                <td>9.745</td>
+                <td>1.071</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>Kewaunee (WI)</td>
+                <td>73</td>
+                <td>10.550</td>
+                <td>10.428</td>
+                <td>0.274</td>
+                <td>10.784</td>
+                <td>0.848</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td>Port Washington (WI)</td>
+                <td>86</td>
+                <td>10.384</td>
+                <td>10.205</td>
+                <td>0.105</td>
+                <td>9.875</td>
+                <td>0.863</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td>Hartford (WI)</td>
+                <td>85</td>
+                <td>10.376</td>
+                <td>10.516</td>
+                <td>0.117</td>
+                <td>9.973</td>
+                <td>1.336</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>Little Chute (WI)</td>
+                <td>64</td>
+                <td>10.369</td>
+                <td>10.336</td>
+                <td>0.018</td>
+                <td>9.855</td>
+                <td>0.600</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td>Oregon (WI)</td>
+                <td>68</td>
+                <td>10.235</td>
+                <td>10.223</td>
+                <td>0.071</td>
+                <td>11.457</td>
+                <td>2.375</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td>Stanley-Boyd (WI)</td>
+                <td>59</td>
+                <td>10.223</td>
+                <td>10.025</td>
+                <td>0.182</td>
+                <td>11.144</td>
+                <td>2.151</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td>Brookfield Central (WI)</td>
+                <td>66</td>
+                <td>10.157</td>
+                <td>9.873</td>
+                <td>0.112</td>
+                <td>10.777</td>
+                <td>2.130</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td>New Berlin Eisenhower (WI)</td>
+                <td>55</td>
+                <td>10.071</td>
+                <td>9.338</td>
+                <td>0.159</td>
+                <td>10.690</td>
+                <td>1.676</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>80</td>
+                <td>Janesville Parker (WI)</td>
+                <td>57</td>
+                <td>10.010</td>
+                <td>9.947</td>
+                <td>0.073</td>
+                <td>10.939</td>
+                <td>2.009</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>81</td>
+                <td>Appleton West (WI)</td>
+                <td>58</td>
+                <td>9.960</td>
+                <td>10.114</td>
+                <td>0.184</td>
+                <td>12.056</td>
+                <td>3.803</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td>Lancaster (WI)</td>
+                <td>66</td>
+                <td>9.923</td>
+                <td>9.659</td>
+                <td>0.234</td>
+                <td>14.046</td>
+                <td>5.643</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>83</td>
+                <td>De Pere (WI)</td>
+                <td>59</td>
+                <td>9.772</td>
+                <td>9.687</td>
+                <td>0.210</td>
+                <td>10.883</td>
+                <td>2.327</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>84</td>
+                <td>Franklin (WI)</td>
+                <td>62</td>
+                <td>9.693</td>
+                <td>9.908</td>
+                <td>-0.047</td>
+                <td>12.720</td>
+                <td>3.430</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>85</td>
+                <td>Waukesha (WI)</td>
+                <td>55</td>
+                <td>9.504</td>
+                <td>9.454</td>
+                <td>0.333</td>
+                <td>5.529</td>
+                <td>-2.266</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>86</td>
+                <td>Burlington (WI)</td>
+                <td>72</td>
+                <td>9.487</td>
+                <td>9.185</td>
+                <td>0.158</td>
+                <td>12.306</td>
+                <td>4.044</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>87</td>
+                <td>Whitefish Bay (WI)</td>
+                <td>90</td>
+                <td>9.448</td>
+                <td>9.419</td>
+                <td>0.226</td>
+                <td>8.892</td>
+                <td>0.835</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>88</td>
+                <td>Marshfield Columbus Catholic (WI)</td>
+                <td>32</td>
+                <td>9.421</td>
+                <td>9.484</td>
+                <td>-0.005</td>
+                <td>7.388</td>
+                <td>-0.105</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>89</td>
+                <td>Darlington (WI)</td>
+                <td>67</td>
+                <td>9.326</td>
+                <td>9.223</td>
+                <td>0.159</td>
+                <td>11.555</td>
+                <td>3.433</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>90</td>
+                <td>Seymour (WI)</td>
+                <td>68</td>
+                <td>9.289</td>
+                <td>9.672</td>
+                <td>0.141</td>
+                <td>11.605</td>
+                <td>2.969</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>91</td>
+                <td>Waupaca (WI)</td>
+                <td>56</td>
+                <td>9.282</td>
+                <td>9.572</td>
+                <td>0.049</td>
+                <td>11.104</td>
+                <td>2.658</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>92</td>
+                <td>Green Bay Southwest (WI)</td>
+                <td>61</td>
+                <td>9.275</td>
+                <td>9.332</td>
+                <td>0.075</td>
+                <td>10.936</td>
+                <td>3.066</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>93</td>
+                <td>Luxemburg-Casco (WI)</td>
+                <td>56</td>
+                <td>9.239</td>
+                <td>8.865</td>
+                <td>0.060</td>
+                <td>11.041</td>
+                <td>2.652</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>94</td>
+                <td>Colby (WI)</td>
+                <td>64</td>
+                <td>9.223</td>
+                <td>9.244</td>
+                <td>0.148</td>
+                <td>10.944</td>
+                <td>2.814</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>95</td>
+                <td>Madison East (WI)</td>
+                <td>78</td>
+                <td>9.118</td>
+                <td>8.916</td>
+                <td>0.056</td>
+                <td>11.781</td>
+                <td>4.678</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>96</td>
+                <td>Milton (WI)</td>
+                <td>78</td>
+                <td>9.104</td>
+                <td>8.744</td>
+                <td>0.072</td>
+                <td>11.263</td>
+                <td>4.147</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>97</td>
+                <td>Menomonee Falls (WI)</td>
+                <td>69</td>
+                <td>8.948</td>
+                <td>8.793</td>
+                <td>0.085</td>
+                <td>9.341</td>
+                <td>1.455</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>98</td>
+                <td>Milwaukee Don Bosco (WI)</td>
+                <td>26</td>
+                <td>8.628</td>
+                <td>8.481</td>
+                <td>0.270</td>
+                <td>4.626</td>
+                <td>0.763</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>99</td>
+                <td>Wausau East (WI)</td>
+                <td>64</td>
+                <td>8.428</td>
+                <td>8.438</td>
+                <td>0.063</td>
+                <td>9.105</td>
+                <td>2.369</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>Cedarburg (WI)</td>
+                <td>72</td>
+                <td>8.424</td>
+                <td>8.407</td>
+                <td>-0.008</td>
+                <td>10.448</td>
+                <td>2.959</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Platteville (WI)</td>
+                <td>62</td>
+                <td>8.348</td>
+                <td>8.165</td>
+                <td>0.231</td>
+                <td>12.321</td>
+                <td>5.285</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Beaver Dam (WI)</td>
+                <td>101</td>
+                <td>8.133</td>
+                <td>8.138</td>
+                <td>0.093</td>
+                <td>7.252</td>
+                <td>0.750</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Milwaukee Wisconsin Lutheran (WI)</td>
+                <td>63</td>
+                <td>8.094</td>
+                <td>7.429</td>
+                <td>0.104</td>
+                <td>13.950</td>
+                <td>7.103</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Verona (WI)</td>
+                <td>63</td>
+                <td>8.064</td>
+                <td>8.051</td>
+                <td>-0.072</td>
+                <td>10.659</td>
+                <td>2.953</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>Watertown (WI)</td>
+                <td>95</td>
+                <td>7.894</td>
+                <td>7.874</td>
+                <td>0.112</td>
+                <td>8.923</td>
+                <td>2.887</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>106</td>
+                <td>La Crosse Logan (WI)</td>
+                <td>96</td>
+                <td>7.855</td>
+                <td>7.788</td>
+                <td>0.036</td>
+                <td>8.196</td>
+                <td>2.141</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td>Wales Kettle Moraine (WI)</td>
+                <td>58</td>
+                <td>7.606</td>
+                <td>7.134</td>
+                <td>-0.023</td>
+                <td>10.017</td>
+                <td>2.955</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>108</td>
+                <td>Grafton (WI)</td>
+                <td>57</td>
+                <td>7.517</td>
+                <td>7.579</td>
+                <td>0.079</td>
+                <td>9.904</td>
+                <td>3.661</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>109</td>
+                <td>Waukesha North (WI)</td>
+                <td>51</td>
+                <td>7.444</td>
+                <td>7.529</td>
+                <td>-0.013</td>
+                <td>13.015</td>
+                <td>6.218</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>110</td>
+                <td>Onalaska (WI)</td>
+                <td>64</td>
+                <td>7.360</td>
+                <td>7.165</td>
+                <td>0.062</td>
+                <td>10.696</td>
+                <td>3.144</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td>Hudson (WI)</td>
+                <td>72</td>
+                <td>7.354</td>
+                <td>7.301</td>
+                <td>-0.013</td>
+                <td>9.102</td>
+                <td>2.683</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>112</td>
+                <td>Sheboygan Falls (WI)</td>
+                <td>71</td>
+                <td>7.248</td>
+                <td>7.225</td>
+                <td>-0.042</td>
+                <td>7.933</td>
+                <td>1.740</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>113</td>
+                <td>Black River Falls (WI)</td>
+                <td>57</td>
+                <td>7.141</td>
+                <td>7.431</td>
+                <td>0.078</td>
+                <td>11.506</td>
+                <td>5.663</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>114</td>
+                <td>Marshfield (WI)</td>
+                <td>110</td>
+                <td>7.004</td>
+                <td>6.737</td>
+                <td>0.039</td>
+                <td>7.522</td>
+                <td>0.985</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>115</td>
+                <td>Green Bay West (WI)</td>
+                <td>106</td>
+                <td>6.821</td>
+                <td>6.661</td>
+                <td>0.155</td>
+                <td>7.672</td>
+                <td>3.617</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>116</td>
+                <td>Prairie Du Chien Campion Jesuit (WI)</td>
+                <td>32</td>
+                <td>6.773</td>
+                <td>6.682</td>
+                <td>-0.099</td>
+                <td>5.500</td>
+                <td>1.725</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>117</td>
+                <td>Waukesha South (WI)</td>
+                <td>51</td>
+                <td>6.687</td>
+                <td>6.887</td>
+                <td>-0.001</td>
+                <td>11.084</td>
+                <td>5.293</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>118</td>
+                <td>Racine Saint Catherine's (WI)</td>
+                <td>88</td>
+                <td>6.673</td>
+                <td>6.561</td>
+                <td>0.075</td>
+                <td>8.433</td>
+                <td>3.510</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>119</td>
+                <td>Fort Atkinson (WI)</td>
+                <td>75</td>
+                <td>6.638</td>
+                <td>6.517</td>
+                <td>0.045</td>
+                <td>8.932</td>
+                <td>3.494</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>120</td>
+                <td>Baldwin-Woodville (WI)</td>
+                <td>56</td>
+                <td>6.499</td>
+                <td>6.592</td>
+                <td>0.051</td>
+                <td>9.764</td>
+                <td>4.431</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>121</td>
+                <td>Prairie du Sac Sauk (WI)</td>
+                <td>56</td>
+                <td>6.444</td>
+                <td>6.290</td>
+                <td>-0.013</td>
+                <td>10.084</td>
+                <td>4.687</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>122</td>
+                <td>Medford (WI)</td>
+                <td>73</td>
+                <td>6.442</td>
+                <td>6.348</td>
+                <td>-0.136</td>
+                <td>9.689</td>
+                <td>3.997</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>Stoughton (WI)</td>
+                <td>72</td>
+                <td>6.399</td>
+                <td>6.195</td>
+                <td>0.005</td>
+                <td>8.740</td>
+                <td>3.703</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>124</td>
+                <td>Denmark (WI)</td>
+                <td>60</td>
+                <td>6.371</td>
+                <td>6.396</td>
+                <td>0.024</td>
+                <td>8.912</td>
+                <td>3.389</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>125</td>
+                <td>Durand (WI)</td>
+                <td>61</td>
+                <td>6.300</td>
+                <td>6.172</td>
+                <td>-0.010</td>
+                <td>10.456</td>
+                <td>4.470</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>126</td>
+                <td>Watertown Luther Prep (WI)</td>
+                <td>30</td>
+                <td>6.254</td>
+                <td>6.301</td>
+                <td>0.135</td>
+                <td>12.179</td>
+                <td>6.708</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>127</td>
+                <td>Mayville (WI)</td>
+                <td>97</td>
+                <td>6.226</td>
+                <td>6.289</td>
+                <td>0.067</td>
+                <td>7.154</td>
+                <td>2.898</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>128</td>
+                <td>Hortonville (WI)</td>
+                <td>56</td>
+                <td>6.054</td>
+                <td>6.023</td>
+                <td>-0.109</td>
+                <td>10.053</td>
+                <td>4.292</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>129</td>
+                <td>Mondovi (WI)</td>
+                <td>61</td>
+                <td>5.999</td>
+                <td>6.128</td>
+                <td>0.017</td>
+                <td>9.722</td>
+                <td>4.753</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>130</td>
+                <td>Reedsburg (WI)</td>
+                <td>62</td>
+                <td>5.921</td>
+                <td>6.004</td>
+                <td>-0.009</td>
+                <td>10.260</td>
+                <td>5.258</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>131</td>
+                <td>Westby (WI)</td>
+                <td>55</td>
+                <td>5.665</td>
+                <td>5.532</td>
+                <td>0.014</td>
+                <td>11.099</td>
+                <td>6.531</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>132</td>
+                <td>Tomah (WI)</td>
+                <td>65</td>
+                <td>5.625</td>
+                <td>5.835</td>
+                <td>-0.027</td>
+                <td>8.810</td>
+                <td>3.687</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>133</td>
+                <td>New Richmond (WI)</td>
+                <td>70</td>
+                <td>5.613</td>
+                <td>5.152</td>
+                <td>0.038</td>
+                <td>7.968</td>
+                <td>3.154</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>134</td>
+                <td>Beloit Memorial (WI)</td>
+                <td>76</td>
+                <td>5.592</td>
+                <td>5.699</td>
+                <td>-0.055</td>
+                <td>8.123</td>
+                <td>4.534</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>135</td>
+                <td>Lake Geneva Badger (WI)</td>
+                <td>72</td>
+                <td>5.554</td>
+                <td>5.748</td>
+                <td>-0.041</td>
+                <td>9.853</td>
+                <td>5.245</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>136</td>
+                <td>Eau Claire North (WI)</td>
+                <td>62</td>
+                <td>5.507</td>
+                <td>5.643</td>
+                <td>-0.014</td>
+                <td>11.050</td>
+                <td>6.994</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>137</td>
+                <td>Kewaskum (WI)</td>
+                <td>60</td>
+                <td>5.506</td>
+                <td>5.448</td>
+                <td>-0.085</td>
+                <td>8.651</td>
+                <td>3.852</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>138</td>
+                <td>Racine Case (WI)</td>
+                <td>58</td>
+                <td>5.249</td>
+                <td>5.391</td>
+                <td>-0.062</td>
+                <td>10.310</td>
+                <td>6.056</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>139</td>
+                <td>Hilbert (WI)</td>
+                <td>54</td>
+                <td>5.243</td>
+                <td>5.477</td>
+                <td>-0.116</td>
+                <td>9.333</td>
+                <td>4.778</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>140</td>
+                <td>Maple Northwestern (WI)</td>
+                <td>59</td>
+                <td>5.215</td>
+                <td>5.425</td>
+                <td>-0.096</td>
+                <td>10.829</td>
+                <td>6.341</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>141</td>
+                <td>Jefferson (WI)</td>
+                <td>69</td>
+                <td>5.186</td>
+                <td>5.195</td>
+                <td>-0.067</td>
+                <td>9.152</td>
+                <td>4.648</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>142</td>
+                <td>Stevens Point Pacelli (WI)</td>
+                <td>56</td>
+                <td>5.121</td>
+                <td>4.935</td>
+                <td>0.072</td>
+                <td>10.171</td>
+                <td>6.426</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>143</td>
+                <td>Brookfield East (WI)</td>
+                <td>62</td>
+                <td>5.110</td>
+                <td>5.110</td>
+                <td>-0.059</td>
+                <td>9.446</td>
+                <td>5.352</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>144</td>
+                <td>Greendale (WI)</td>
+                <td>75</td>
+                <td>5.085</td>
+                <td>5.129</td>
+                <td>-0.086</td>
+                <td>9.237</td>
+                <td>5.040</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>145</td>
+                <td>Wrightstown (WI)</td>
+                <td>57</td>
+                <td>5.077</td>
+                <td>5.320</td>
+                <td>-0.132</td>
+                <td>9.762</td>
+                <td>4.713</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>146</td>
+                <td>Holmen (WI)</td>
+                <td>64</td>
+                <td>4.763</td>
+                <td>4.852</td>
+                <td>-0.033</td>
+                <td>9.791</td>
+                <td>5.518</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>147</td>
+                <td>Galesville Gale-Ettrick-Trempealeau (WI)</td>
+                <td>54</td>
+                <td>4.609</td>
+                <td>4.303</td>
+                <td>-0.184</td>
+                <td>10.611</td>
+                <td>6.255</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>148</td>
+                <td>Clintonville (WI)</td>
+                <td>82</td>
+                <td>4.548</td>
+                <td>4.803</td>
+                <td>-0.108</td>
+                <td>8.436</td>
+                <td>5.649</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>149</td>
+                <td>Milwaukee Pius XI (WI)</td>
+                <td>79</td>
+                <td>4.526</td>
+                <td>4.623</td>
+                <td>-0.009</td>
+                <td>7.078</td>
+                <td>4.257</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>150</td>
+                <td>Appleton Fox Valley Lutheran (WI)</td>
+                <td>54</td>
+                <td>4.438</td>
+                <td>4.101</td>
+                <td>-0.101</td>
+                <td>9.766</td>
+                <td>6.049</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>151</td>
+                <td>Merrill (WI)</td>
+                <td>119</td>
+                <td>4.425</td>
+                <td>4.301</td>
+                <td>-0.043</td>
+                <td>7.352</td>
+                <td>4.508</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>152</td>
+                <td>Two Rivers (WI)</td>
+                <td>99</td>
+                <td>4.381</td>
+                <td>4.330</td>
+                <td>-0.114</td>
+                <td>7.597</td>
+                <td>4.971</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>153</td>
+                <td>West Bend East (WI)</td>
+                <td>54</td>
+                <td>4.225</td>
+                <td>4.427</td>
+                <td>-0.160</td>
+                <td>9.292</td>
+                <td>5.609</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>154</td>
+                <td>Arcadia (WI)</td>
+                <td>61</td>
+                <td>4.165</td>
+                <td>4.254</td>
+                <td>-0.127</td>
+                <td>9.490</td>
+                <td>5.540</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>155</td>
+                <td>West Bend (WI)</td>
+                <td>46</td>
+                <td>4.087</td>
+                <td>4.066</td>
+                <td>-0.055</td>
+                <td>4.393</td>
+                <td>2.498</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>156</td>
+                <td>Bloomer (WI)</td>
+                <td>66</td>
+                <td>4.049</td>
+                <td>3.929</td>
+                <td>-0.090</td>
+                <td>9.321</td>
+                <td>6.404</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>157</td>
+                <td>Prairie du Chien (WI)</td>
+                <td>62</td>
+                <td>3.860</td>
+                <td>4.355</td>
+                <td>0.003</td>
+                <td>9.533</td>
+                <td>6.711</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>158</td>
+                <td>Spring Green River Valley (WI)</td>
+                <td>57</td>
+                <td>3.409</td>
+                <td>3.342</td>
+                <td>-0.135</td>
+                <td>7.274</td>
+                <td>4.524</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>159</td>
+                <td>Baraboo (WI)</td>
+                <td>62</td>
+                <td>3.281</td>
+                <td>3.202</td>
+                <td>-0.116</td>
+                <td>7.732</td>
+                <td>5.150</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>160</td>
+                <td>New Berlin West (WI)</td>
+                <td>56</td>
+                <td>3.082</td>
+                <td>2.945</td>
+                <td>-0.166</td>
+                <td>7.906</td>
+                <td>5.348</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>161</td>
+                <td>Milwaukee Messmer (WI)</td>
+                <td>52</td>
+                <td>3.033</td>
+                <td>3.355</td>
+                <td>-0.103</td>
+                <td>2.725</td>
+                <td>2.112</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>162</td>
+                <td>Slinger (WI)</td>
+                <td>64</td>
+                <td>2.989</td>
+                <td>2.741</td>
+                <td>-0.132</td>
+                <td>8.139</td>
+                <td>5.482</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>163</td>
+                <td>Kenosha Saint Joseph (WI)</td>
+                <td>66</td>
+                <td>2.953</td>
+                <td>3.084</td>
+                <td>-0.009</td>
+                <td>8.568</td>
+                <td>7.223</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>164</td>
+                <td>Milwaukee Bradley Tech (WI)</td>
+                <td>49</td>
+                <td>2.745</td>
+                <td>2.424</td>
+                <td>-0.072</td>
+                <td>9.846</td>
+                <td>7.488</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>165</td>
+                <td>Elkhorn (WI)</td>
+                <td>70</td>
+                <td>2.523</td>
+                <td>2.523</td>
+                <td>-0.115</td>
+                <td>7.578</td>
+                <td>6.153</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>166</td>
+                <td>Freedom (WI)</td>
+                <td>55</td>
+                <td>2.519</td>
+                <td>2.386</td>
+                <td>-0.206</td>
+                <td>8.564</td>
+                <td>6.288</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>167</td>
+                <td>Ellsworth (WI)</td>
+                <td>57</td>
+                <td>2.410</td>
+                <td>2.213</td>
+                <td>-0.161</td>
+                <td>7.539</td>
+                <td>5.379</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>168</td>
+                <td>Campbellsport (WI)</td>
+                <td>57</td>
+                <td>2.400</td>
+                <td>2.547</td>
+                <td>-0.176</td>
+                <td>7.028</td>
+                <td>5.038</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>169</td>
+                <td>Nekoosa (WI)</td>
+                <td>73</td>
+                <td>2.312</td>
+                <td>2.395</td>
+                <td>-0.194</td>
+                <td>7.954</td>
+                <td>6.130</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>170</td>
+                <td>Fall Creek (WI)</td>
+                <td>57</td>
+                <td>2.169</td>
+                <td>2.522</td>
+                <td>-0.180</td>
+                <td>8.799</td>
+                <td>7.305</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>171</td>
+                <td>South Milwaukee (WI)</td>
+                <td>95</td>
+                <td>2.168</td>
+                <td>2.125</td>
+                <td>-0.002</td>
+                <td>5.912</td>
+                <td>4.681</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>172</td>
+                <td>Cudahy (WI)</td>
+                <td>96</td>
+                <td>2.075</td>
+                <td>1.973</td>
+                <td>-0.066</td>
+                <td>6.004</td>
+                <td>5.014</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>173</td>
+                <td>New London (WI)</td>
+                <td>84</td>
+                <td>1.979</td>
+                <td>2.003</td>
+                <td>-0.241</td>
+                <td>6.831</td>
+                <td>5.697</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>174</td>
+                <td>Berlin (WI)</td>
+                <td>96</td>
+                <td>1.867</td>
+                <td>1.763</td>
+                <td>-0.244</td>
+                <td>5.335</td>
+                <td>4.495</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>175</td>
+                <td>Lodi (WI)</td>
+                <td>63</td>
+                <td>1.842</td>
+                <td>1.649</td>
+                <td>-0.328</td>
+                <td>7.823</td>
+                <td>5.751</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>176</td>
+                <td>Sheboygan North (WI)</td>
+                <td>84</td>
+                <td>1.828</td>
+                <td>1.846</td>
+                <td>-0.178</td>
+                <td>7.033</td>
+                <td>6.934</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>177</td>
+                <td>Wauwatosa (WI)</td>
+                <td>36</td>
+                <td>1.800</td>
+                <td>1.744</td>
+                <td>0.276</td>
+                <td>2.310</td>
+                <td>2.576</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>178</td>
+                <td>Ashland (WI)</td>
+                <td>86</td>
+                <td>1.721</td>
+                <td>1.711</td>
+                <td>-0.196</td>
+                <td>7.178</td>
+                <td>7.025</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>179</td>
+                <td>Pewaukee (WI)</td>
+                <td>60</td>
+                <td>1.715</td>
+                <td>1.575</td>
+                <td>-0.205</td>
+                <td>8.900</td>
+                <td>7.072</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>180</td>
+                <td>Algoma (WI)</td>
+                <td>68</td>
+                <td>1.552</td>
+                <td>1.519</td>
+                <td>-0.164</td>
+                <td>6.670</td>
+                <td>6.143</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>181</td>
+                <td>Portage (WI)</td>
+                <td>64</td>
+                <td>1.493</td>
+                <td>1.460</td>
+                <td>-0.197</td>
+                <td>8.105</td>
+                <td>7.636</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>182</td>
+                <td>Bonduel (WI)</td>
+                <td>68</td>
+                <td>1.411</td>
+                <td>1.215</td>
+                <td>-0.108</td>
+                <td>7.564</td>
+                <td>6.451</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>183</td>
+                <td>Hammond Saint Croix Central (WI)</td>
+                <td>61</td>
+                <td>1.360</td>
+                <td>1.073</td>
+                <td>-0.242</td>
+                <td>7.075</td>
+                <td>5.128</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>184</td>
+                <td>Edgerton (WI)</td>
+                <td>73</td>
+                <td>1.352</td>
+                <td>1.296</td>
+                <td>-0.191</td>
+                <td>7.305</td>
+                <td>6.767</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>185</td>
+                <td>Sparta (WI)</td>
+                <td>69</td>
+                <td>1.327</td>
+                <td>1.308</td>
+                <td>-0.227</td>
+                <td>6.349</td>
+                <td>5.093</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>186</td>
+                <td>McFarland (WI)</td>
+                <td>61</td>
+                <td>1.306</td>
+                <td>1.246</td>
+                <td>-0.206</td>
+                <td>7.387</td>
+                <td>6.695</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>187</td>
+                <td>Cuba City (WI)</td>
+                <td>65</td>
+                <td>1.218</td>
+                <td>1.269</td>
+                <td>-0.140</td>
+                <td>6.421</td>
+                <td>5.434</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>188</td>
+                <td>Delavan-Darien (WI)</td>
+                <td>66</td>
+                <td>1.166</td>
+                <td>1.192</td>
+                <td>-0.181</td>
+                <td>5.872</td>
+                <td>5.363</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>189</td>
+                <td>Auburndale (WI)</td>
+                <td>59</td>
+                <td>0.940</td>
+                <td>1.030</td>
+                <td>-0.231</td>
+                <td>7.221</td>
+                <td>7.078</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>190</td>
+                <td>Milwaukee Lutheran (WI)</td>
+                <td>65</td>
+                <td>0.847</td>
+                <td>1.064</td>
+                <td>-0.144</td>
+                <td>10.812</td>
+                <td>10.996</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>191</td>
+                <td>Somerset (WI)</td>
+                <td>65</td>
+                <td>0.825</td>
+                <td>0.493</td>
+                <td>-0.256</td>
+                <td>7.702</td>
+                <td>7.510</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>192</td>
+                <td>Oconto Falls (WI)</td>
+                <td>68</td>
+                <td>0.795</td>
+                <td>0.920</td>
+                <td>-0.149</td>
+                <td>6.309</td>
+                <td>6.342</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>193</td>
+                <td>Osceola (WI)</td>
+                <td>55</td>
+                <td>0.779</td>
+                <td>1.300</td>
+                <td>-0.273</td>
+                <td>8.129</td>
+                <td>7.565</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>194</td>
+                <td>Blanchardville Pecatonica-Argyle (WI)</td>
+                <td>33</td>
+                <td>0.762</td>
+                <td>0.233</td>
+                <td>-0.126</td>
+                <td>9.077</td>
+                <td>8.767</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>195</td>
+                <td>Wauwatosa West (WI)</td>
+                <td>63</td>
+                <td>0.690</td>
+                <td>1.207</td>
+                <td>-0.251</td>
+                <td>6.841</td>
+                <td>6.252</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>196</td>
+                <td>Sheboygan South (WI)</td>
+                <td>65</td>
+                <td>0.580</td>
+                <td>0.772</td>
+                <td>-0.124</td>
+                <td>7.399</td>
+                <td>8.115</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>197</td>
+                <td>Evansville-Albany (WI)</td>
+                <td>74</td>
+                <td>0.514</td>
+                <td>0.689</td>
+                <td>-0.290</td>
+                <td>7.042</td>
+                <td>6.580</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>198</td>
+                <td>Winneconne (WI)</td>
+                <td>55</td>
+                <td>0.512</td>
+                <td>0.948</td>
+                <td>-0.287</td>
+                <td>7.500</td>
+                <td>7.124</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>199</td>
+                <td>Osseo-Fairchild (WI)</td>
+                <td>56</td>
+                <td>0.463</td>
+                <td>-0.014</td>
+                <td>-0.163</td>
+                <td>8.086</td>
+                <td>8.380</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>200</td>
+                <td>Ripon (WI)</td>
+                <td>100</td>
+                <td>0.391</td>
+                <td>0.348</td>
+                <td>-0.195</td>
+                <td>5.229</td>
+                <td>5.887</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>201</td>
+                <td>West Allis Central (WI)</td>
+                <td>96</td>
+                <td>0.375</td>
+                <td>0.448</td>
+                <td>-0.102</td>
+                <td>5.538</td>
+                <td>5.956</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>202</td>
+                <td>Manitowoc Roncalli (WI)</td>
+                <td>56</td>
+                <td>0.353</td>
+                <td>0.183</td>
+                <td>-0.199</td>
+                <td>8.126</td>
+                <td>8.449</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>203</td>
+                <td>Chilton (WI)</td>
+                <td>76</td>
+                <td>0.197</td>
+                <td>0.185</td>
+                <td>-0.304</td>
+                <td>4.666</td>
+                <td>4.907</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>204</td>
+                <td>Manawa Little Wolf (WI)</td>
+                <td>56</td>
+                <td>-0.041</td>
+                <td>0.225</td>
+                <td>-0.161</td>
+                <td>6.875</td>
+                <td>7.802</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>205</td>
+                <td>Rhinelander (WI)</td>
+                <td>108</td>
+                <td>-0.092</td>
+                <td>0.118</td>
+                <td>-0.189</td>
+                <td>4.943</td>
+                <td>5.936</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>206</td>
+                <td>West Bend West (WI)</td>
+                <td>55</td>
+                <td>-0.110</td>
+                <td>-0.261</td>
+                <td>-0.255</td>
+                <td>6.531</td>
+                <td>7.171</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>207</td>
+                <td>Peshtigo (WI)</td>
+                <td>57</td>
+                <td>-0.133</td>
+                <td>-0.176</td>
+                <td>-0.171</td>
+                <td>7.002</td>
+                <td>7.853</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>208</td>
+                <td>Wauwatosa East (WI)</td>
+                <td>62</td>
+                <td>-0.139</td>
+                <td>-0.260</td>
+                <td>-0.179</td>
+                <td>7.554</td>
+                <td>8.302</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>209</td>
+                <td>Greenfield Whitnall (WI)</td>
+                <td>64</td>
+                <td>-0.192</td>
+                <td>0.075</td>
+                <td>-0.451</td>
+                <td>6.972</td>
+                <td>7.335</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>210</td>
+                <td>Shawano Community (WI)</td>
+                <td>78</td>
+                <td>-0.197</td>
+                <td>-0.261</td>
+                <td>-0.354</td>
+                <td>5.967</td>
+                <td>7.333</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>211</td>
+                <td>Greenfield (WI)</td>
+                <td>64</td>
+                <td>-0.301</td>
+                <td>-0.384</td>
+                <td>-0.390</td>
+                <td>5.826</td>
+                <td>6.545</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>212</td>
+                <td>West Salem (WI)</td>
+                <td>64</td>
+                <td>-0.415</td>
+                <td>-0.264</td>
+                <td>-0.289</td>
+                <td>6.089</td>
+                <td>5.299</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>213</td>
+                <td>Omro (WI)</td>
+                <td>57</td>
+                <td>-0.422</td>
+                <td>-0.863</td>
+                <td>-0.259</td>
+                <td>8.077</td>
+                <td>8.575</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>214</td>
+                <td>Minocqua Lakeland (WI)</td>
+                <td>56</td>
+                <td>-0.443</td>
+                <td>-0.043</td>
+                <td>-0.256</td>
+                <td>7.100</td>
+                <td>7.966</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>215</td>
+                <td>Prescott (WI)</td>
+                <td>62</td>
+                <td>-0.475</td>
+                <td>0.179</td>
+                <td>-0.286</td>
+                <td>6.541</td>
+                <td>6.958</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>216</td>
+                <td>Columbus (WI)</td>
+                <td>94</td>
+                <td>-0.477</td>
+                <td>-0.308</td>
+                <td>-0.255</td>
+                <td>5.264</td>
+                <td>6.391</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>217</td>
+                <td>Superior East (WI)</td>
+                <td>33</td>
+                <td>-0.521</td>
+                <td>-0.373</td>
+                <td>-0.049</td>
+                <td>2.516</td>
+                <td>6.264</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>218</td>
+                <td>Sturgeon Bay (WI)</td>
+                <td>72</td>
+                <td>-0.539</td>
+                <td>-0.379</td>
+                <td>-0.137</td>
+                <td>4.912</td>
+                <td>6.350</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>219</td>
+                <td>Greenwood (WI)</td>
+                <td>62</td>
+                <td>-0.619</td>
+                <td>-0.932</td>
+                <td>-0.267</td>
+                <td>6.699</td>
+                <td>8.161</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>220</td>
+                <td>Marathon (WI)</td>
+                <td>55</td>
+                <td>-0.659</td>
+                <td>-0.603</td>
+                <td>-0.246</td>
+                <td>6.961</td>
+                <td>8.015</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>221</td>
+                <td>Wilmot (WI)</td>
+                <td>75</td>
+                <td>-0.717</td>
+                <td>-0.583</td>
+                <td>-0.238</td>
+                <td>5.537</td>
+                <td>6.308</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>222</td>
+                <td>Brown Deer (WI)</td>
+                <td>58</td>
+                <td>-0.772</td>
+                <td>-0.701</td>
+                <td>-0.200</td>
+                <td>6.607</td>
+                <td>8.100</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>223</td>
+                <td>Coleman (WI)</td>
+                <td>57</td>
+                <td>-0.861</td>
+                <td>-0.823</td>
+                <td>-0.363</td>
+                <td>8.257</td>
+                <td>9.025</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>224</td>
+                <td>Poynette (WI)</td>
+                <td>64</td>
+                <td>-0.865</td>
+                <td>-0.773</td>
+                <td>-0.368</td>
+                <td>6.346</td>
+                <td>7.574</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>225</td>
+                <td>Lake Mills Lakeside Lutheran (WI)</td>
+                <td>56</td>
+                <td>-0.891</td>
+                <td>-0.995</td>
+                <td>-0.252</td>
+                <td>7.777</td>
+                <td>8.670</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>226</td>
+                <td>Neillsville (WI)</td>
+                <td>56</td>
+                <td>-0.942</td>
+                <td>-0.548</td>
+                <td>-0.361</td>
+                <td>4.377</td>
+                <td>5.911</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>227</td>
+                <td>Milwaukee Saint Thomas More (WI)</td>
+                <td>53</td>
+                <td>-1.201</td>
+                <td>-1.177</td>
+                <td>-0.138</td>
+                <td>6.944</td>
+                <td>8.940</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>228</td>
+                <td>Amery (WI)</td>
+                <td>56</td>
+                <td>-1.253</td>
+                <td>-0.958</td>
+                <td>-0.243</td>
+                <td>6.640</td>
+                <td>8.625</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>229</td>
+                <td>Kiel (WI)</td>
+                <td>76</td>
+                <td>-1.419</td>
+                <td>-1.604</td>
+                <td>-0.324</td>
+                <td>5.011</td>
+                <td>6.759</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>230</td>
+                <td>Waterford (WI)</td>
+                <td>69</td>
+                <td>-1.721</td>
+                <td>-1.272</td>
+                <td>-0.325</td>
+                <td>4.674</td>
+                <td>5.872</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>231</td>
+                <td>Chippewa Falls McDonell (WI)</td>
+                <td>53</td>
+                <td>-1.734</td>
+                <td>-1.793</td>
+                <td>-0.241</td>
+                <td>8.110</td>
+                <td>10.129</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>232</td>
+                <td>Oconto (WI)</td>
+                <td>74</td>
+                <td>-1.777</td>
+                <td>-1.746</td>
+                <td>-0.148</td>
+                <td>3.194</td>
+                <td>6.158</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>233</td>
+                <td>Gilman (WI)</td>
+                <td>60</td>
+                <td>-1.787</td>
+                <td>-2.220</td>
+                <td>-0.409</td>
+                <td>6.573</td>
+                <td>8.417</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>234</td>
+                <td>Thorp (WI)</td>
+                <td>63</td>
+                <td>-1.908</td>
+                <td>-2.027</td>
+                <td>-0.296</td>
+                <td>5.720</td>
+                <td>8.415</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>235</td>
+                <td>Elk Mound (WI)</td>
+                <td>61</td>
+                <td>-1.979</td>
+                <td>-2.182</td>
+                <td>-0.294</td>
+                <td>6.274</td>
+                <td>8.024</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>236</td>
+                <td>Cambridge (WI)</td>
+                <td>60</td>
+                <td>-1.987</td>
+                <td>-2.197</td>
+                <td>-0.268</td>
+                <td>7.013</td>
+                <td>9.318</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>237</td>
+                <td>Brussels Southern Door (WI)</td>
+                <td>74</td>
+                <td>-2.013</td>
+                <td>-1.897</td>
+                <td>-0.264</td>
+                <td>5.351</td>
+                <td>7.124</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>238</td>
+                <td>Wisconsin Dells (WI)</td>
+                <td>61</td>
+                <td>-2.071</td>
+                <td>-1.803</td>
+                <td>-0.261</td>
+                <td>4.903</td>
+                <td>8.276</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>239</td>
+                <td>Whitewater (WI)</td>
+                <td>73</td>
+                <td>-2.419</td>
+                <td>-2.073</td>
+                <td>-0.318</td>
+                <td>5.033</td>
+                <td>7.603</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>240</td>
+                <td>Spring Valley (WI)</td>
+                <td>56</td>
+                <td>-2.467</td>
+                <td>-2.637</td>
+                <td>-0.289</td>
+                <td>5.435</td>
+                <td>8.188</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>241</td>
+                <td>De Soto (WI)</td>
+                <td>55</td>
+                <td>-2.530</td>
+                <td>-3.098</td>
+                <td>-0.431</td>
+                <td>7.442</td>
+                <td>10.350</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>242</td>
+                <td>Saint Francis (WI)</td>
+                <td>68</td>
+                <td>-2.554</td>
+                <td>-2.471</td>
+                <td>-0.335</td>
+                <td>6.453</td>
+                <td>9.630</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>243</td>
+                <td>Spooner (WI)</td>
+                <td>63</td>
+                <td>-2.693</td>
+                <td>-2.957</td>
+                <td>-0.379</td>
+                <td>4.697</td>
+                <td>7.804</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>244</td>
+                <td>New Holstein (WI)</td>
+                <td>67</td>
+                <td>-2.798</td>
+                <td>-2.358</td>
+                <td>-0.369</td>
+                <td>4.695</td>
+                <td>7.455</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>245</td>
+                <td>Greendale Martin Luther Prep (WI)</td>
+                <td>51</td>
+                <td>-2.828</td>
+                <td>-2.580</td>
+                <td>-0.321</td>
+                <td>7.020</td>
+                <td>9.913</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>246</td>
+                <td>West Allis Hale (WI)</td>
+                <td>81</td>
+                <td>-2.913</td>
+                <td>-2.755</td>
+                <td>-0.291</td>
+                <td>4.097</td>
+                <td>7.329</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>247</td>
+                <td>Glendale Nicolet (WI)</td>
+                <td>66</td>
+                <td>-2.945</td>
+                <td>-2.557</td>
+                <td>-0.380</td>
+                <td>4.742</td>
+                <td>8.261</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>248</td>
+                <td>Fond du Lac Winnebago Lutheran Academy (WI)</td>
+                <td>50</td>
+                <td>-2.952</td>
+                <td>-2.982</td>
+                <td>-0.388</td>
+                <td>6.556</td>
+                <td>8.782</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>249</td>
+                <td>Waupun (WI)</td>
+                <td>102</td>
+                <td>-2.985</td>
+                <td>-2.611</td>
+                <td>-0.255</td>
+                <td>3.339</td>
+                <td>7.424</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>250</td>
+                <td>Wittenberg-Birnamwood (WI)</td>
+                <td>54</td>
+                <td>-3.025</td>
+                <td>-3.085</td>
+                <td>-0.356</td>
+                <td>6.969</td>
+                <td>10.263</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>251</td>
+                <td>Salem Westosha Central (WI)</td>
+                <td>36</td>
+                <td>-3.063</td>
+                <td>-3.161</td>
+                <td>-0.197</td>
+                <td>8.828</td>
+                <td>11.754</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>252</td>
+                <td>Brillion (WI)</td>
+                <td>63</td>
+                <td>-3.227</td>
+                <td>-3.260</td>
+                <td>-0.327</td>
+                <td>4.862</td>
+                <td>8.057</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>253</td>
+                <td>Richland Center (WI)</td>
+                <td>65</td>
+                <td>-3.282</td>
+                <td>-3.245</td>
+                <td>-0.347</td>
+                <td>4.464</td>
+                <td>8.241</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>254</td>
+                <td>Lomira (WI)</td>
+                <td>55</td>
+                <td>-3.618</td>
+                <td>-3.543</td>
+                <td>-0.374</td>
+                <td>4.360</td>
+                <td>8.188</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>255</td>
+                <td>Owen-Withee (WI)</td>
+                <td>63</td>
+                <td>-3.619</td>
+                <td>-3.792</td>
+                <td>-0.432</td>
+                <td>5.567</td>
+                <td>9.500</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>256</td>
+                <td>New Glarus-Monticello (WI)</td>
+                <td>30</td>
+                <td>-3.729</td>
+                <td>-4.008</td>
+                <td>-0.173</td>
+                <td>7.904</td>
+                <td>11.480</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>257</td>
+                <td>Mauston (WI)</td>
+                <td>57</td>
+                <td>-3.818</td>
+                <td>-4.171</td>
+                <td>-0.379</td>
+                <td>5.537</td>
+                <td>9.764</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>258</td>
+                <td>Shiocton (WI)</td>
+                <td>55</td>
+                <td>-3.864</td>
+                <td>-3.971</td>
+                <td>-0.454</td>
+                <td>4.364</td>
+                <td>7.899</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>259</td>
+                <td>Rosendale Laconia (WI)</td>
+                <td>55</td>
+                <td>-3.930</td>
+                <td>-4.002</td>
+                <td>-0.387</td>
+                <td>5.605</td>
+                <td>9.386</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>260</td>
+                <td>Wausau Newman Catholic (WI)</td>
+                <td>46</td>
+                <td>-4.341</td>
+                <td>-4.273</td>
+                <td>-0.397</td>
+                <td>7.638</td>
+                <td>11.864</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>261</td>
+                <td>Cumberland (WI)</td>
+                <td>64</td>
+                <td>-4.521</td>
+                <td>-4.344</td>
+                <td>-0.415</td>
+                <td>5.681</td>
+                <td>10.963</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>262</td>
+                <td>Glenwood City (WI)</td>
+                <td>57</td>
+                <td>-4.548</td>
+                <td>-4.682</td>
+                <td>-0.393</td>
+                <td>5.221</td>
+                <td>9.882</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>263</td>
+                <td>Shorewood (WI)</td>
+                <td>72</td>
+                <td>-4.679</td>
+                <td>-4.807</td>
+                <td>-0.199</td>
+                <td>2.828</td>
+                <td>8.523</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>264</td>
+                <td>Milwaukee Rufus King (WI)</td>
+                <td>59</td>
+                <td>-4.734</td>
+                <td>-4.176</td>
+                <td>-0.360</td>
+                <td>4.441</td>
+                <td>9.051</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>265</td>
+                <td>Bloomington (WI)</td>
+                <td>26</td>
+                <td>-4.880</td>
+                <td>-5.112</td>
+                <td>-0.659</td>
+                <td>4.058</td>
+                <td>9.399</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>266</td>
+                <td>Livingston Iowa-Grant (WI)</td>
+                <td>55</td>
+                <td>-4.894</td>
+                <td>-4.735</td>
+                <td>-0.274</td>
+                <td>3.552</td>
+                <td>8.961</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>267</td>
+                <td>Reedsville (WI)</td>
+                <td>55</td>
+                <td>-4.918</td>
+                <td>-4.562</td>
+                <td>-0.370</td>
+                <td>3.589</td>
+                <td>8.669</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>268</td>
+                <td>Washington-Milwaukee Academy of Science-CEO Leadership Academy (WI)</td>
+                <td>47</td>
+                <td>-5.026</td>
+                <td>-4.791</td>
+                <td>-0.265</td>
+                <td>4.908</td>
+                <td>10.879</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>269</td>
+                <td>Valders (WI)</td>
+                <td>67</td>
+                <td>-5.031</td>
+                <td>-5.168</td>
+                <td>-0.528</td>
+                <td>2.827</td>
+                <td>7.638</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>270</td>
+                <td>Mount Horeb (WI)</td>
+                <td>35</td>
+                <td>-5.130</td>
+                <td>-4.763</td>
+                <td>-0.432</td>
+                <td>0.804</td>
+                <td>5.976</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>271</td>
+                <td>Lake Mills (WI)</td>
+                <td>71</td>
+                <td>-5.147</td>
+                <td>-5.023</td>
+                <td>-0.445</td>
+                <td>4.015</td>
+                <td>8.922</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>272</td>
+                <td>Fennimore (WI)</td>
+                <td>64</td>
+                <td>-5.387</td>
+                <td>-5.635</td>
+                <td>-0.284</td>
+                <td>4.008</td>
+                <td>9.407</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>273</td>
+                <td>Iola-Scandinavia (WI)</td>
+                <td>54</td>
+                <td>-5.425</td>
+                <td>-5.322</td>
+                <td>-0.494</td>
+                <td>6.334</td>
+                <td>11.411</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>274</td>
+                <td>Mineral Point (WI)</td>
+                <td>62</td>
+                <td>-5.618</td>
+                <td>-5.872</td>
+                <td>-0.274</td>
+                <td>3.657</td>
+                <td>9.525</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>275</td>
+                <td>Milwaukee Hamilton (WI)</td>
+                <td>53</td>
+                <td>-5.805</td>
+                <td>-5.453</td>
+                <td>-0.361</td>
+                <td>4.708</td>
+                <td>11.143</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>276</td>
+                <td>South Wayne Black Hawk (WI)</td>
+                <td>49</td>
+                <td>-5.962</td>
+                <td>-6.200</td>
+                <td>-0.515</td>
+                <td>4.117</td>
+                <td>9.935</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>277</td>
+                <td>Elmwood (WI)</td>
+                <td>49</td>
+                <td>-6.069</td>
+                <td>-6.239</td>
+                <td>-0.526</td>
+                <td>4.658</td>
+                <td>9.846</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>278</td>
+                <td>Cadott (WI)</td>
+                <td>59</td>
+                <td>-6.073</td>
+                <td>-5.971</td>
+                <td>-0.419</td>
+                <td>2.982</td>
+                <td>9.386</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>279</td>
+                <td>Waterloo (WI)</td>
+                <td>67</td>
+                <td>-6.413</td>
+                <td>-6.887</td>
+                <td>-0.444</td>
+                <td>3.320</td>
+                <td>9.915</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>280</td>
+                <td>Wisconsin Rapids Assumption (WI)</td>
+                <td>50</td>
+                <td>-6.416</td>
+                <td>-6.357</td>
+                <td>-0.384</td>
+                <td>4.249</td>
+                <td>10.974</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>281</td>
+                <td>Milwaukee St. John's Cathedral (WI)</td>
+                <td>46</td>
+                <td>-6.748</td>
+                <td>-6.776</td>
+                <td>-0.379</td>
+                <td>0.495</td>
+                <td>8.438</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>282</td>
+                <td>Grantsburg (WI)</td>
+                <td>56</td>
+                <td>-6.760</td>
+                <td>-7.466</td>
+                <td>-0.503</td>
+                <td>5.487</td>
+                <td>11.851</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>283</td>
+                <td>Walworth Big Foot (WI)</td>
+                <td>62</td>
+                <td>-6.771</td>
+                <td>-6.830</td>
+                <td>-0.549</td>
+                <td>4.056</td>
+                <td>10.119</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>284</td>
+                <td>Amherst (WI)</td>
+                <td>55</td>
+                <td>-7.251</td>
+                <td>-7.315</td>
+                <td>-0.580</td>
+                <td>4.151</td>
+                <td>10.638</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>285</td>
+                <td>Pittsville (WI)</td>
+                <td>57</td>
+                <td>-7.421</td>
+                <td>-7.038</td>
+                <td>-0.424</td>
+                <td>3.493</td>
+                <td>11.051</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>286</td>
+                <td>Markesan (WI)</td>
+                <td>55</td>
+                <td>-7.538</td>
+                <td>-7.822</td>
+                <td>-0.544</td>
+                <td>4.067</td>
+                <td>11.601</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>287</td>
+                <td>Mishicot (WI)</td>
+                <td>73</td>
+                <td>-7.553</td>
+                <td>-7.666</td>
+                <td>-0.474</td>
+                <td>1.408</td>
+                <td>8.354</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>288</td>
+                <td>Patch Grove River Ridge (WI)</td>
+                <td>30</td>
+                <td>-7.605</td>
+                <td>-7.523</td>
+                <td>-0.429</td>
+                <td>8.078</td>
+                <td>15.735</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>289</td>
+                <td>Milwaukee Marshall-School of Languages (WI)</td>
+                <td>50</td>
+                <td>-7.941</td>
+                <td>-8.419</td>
+                <td>-0.480</td>
+                <td>4.288</td>
+                <td>12.129</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>290</td>
+                <td>Spencer (WI)</td>
+                <td>38</td>
+                <td>-8.027</td>
+                <td>-8.447</td>
+                <td>-0.635</td>
+                <td>1.470</td>
+                <td>9.440</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>291</td>
+                <td>Racine Lutheran (WI)</td>
+                <td>49</td>
+                <td>-8.085</td>
+                <td>-8.546</td>
+                <td>-0.334</td>
+                <td>6.189</td>
+                <td>14.231</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>292</td>
+                <td>Union Grove (WI)</td>
+                <td>67</td>
+                <td>-8.096</td>
+                <td>-8.250</td>
+                <td>-0.438</td>
+                <td>4.605</td>
+                <td>12.364</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>293</td>
+                <td>Hurley (WI)</td>
+                <td>72</td>
+                <td>-8.204</td>
+                <td>-8.308</td>
+                <td>-0.521</td>
+                <td>3.396</td>
+                <td>11.817</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>294</td>
+                <td>Manitowoc Lutheran (WI)</td>
+                <td>56</td>
+                <td>-8.253</td>
+                <td>-8.216</td>
+                <td>-0.506</td>
+                <td>4.482</td>
+                <td>12.611</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>295</td>
+                <td>Independence (WI)</td>
+                <td>36</td>
+                <td>-8.309</td>
+                <td>-8.838</td>
+                <td>-0.668</td>
+                <td>1.224</td>
+                <td>9.361</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>296</td>
+                <td>Altoona (WI)</td>
+                <td>54</td>
+                <td>-8.456</td>
+                <td>-8.444</td>
+                <td>-0.516</td>
+                <td>4.073</td>
+                <td>12.473</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>297</td>
+                <td>Viroqua (WI)</td>
+                <td>56</td>
+                <td>-8.763</td>
+                <td>-9.122</td>
+                <td>-0.515</td>
+                <td>3.541</td>
+                <td>12.776</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>298</td>
+                <td>Horicon (WI)</td>
+                <td>89</td>
+                <td>-8.883</td>
+                <td>-8.850</td>
+                <td>-0.525</td>
+                <td>2.717</td>
+                <td>11.811</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>299</td>
+                <td>Weyauwega-Fremont (WI)</td>
+                <td>44</td>
+                <td>-8.902</td>
+                <td>-9.348</td>
+                <td>-0.521</td>
+                <td>6.134</td>
+                <td>14.665</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>300</td>
+                <td>Athens (WI)</td>
+                <td>55</td>
+                <td>-8.920</td>
+                <td>-8.725</td>
+                <td>-0.558</td>
+                <td>3.324</td>
+                <td>12.069</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>301</td>
+                <td>Hayward-Lac Courte Oreilles (WI)</td>
+                <td>61</td>
+                <td>-8.936</td>
+                <td>-9.062</td>
+                <td>-0.598</td>
+                <td>3.408</td>
+                <td>12.628</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>302</td>
+                <td>Milwaukee University School (WI)</td>
+                <td>29</td>
+                <td>-8.964</td>
+                <td>-8.925</td>
+                <td>-0.431</td>
+                <td>-0.498</td>
+                <td>9.480</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>303</td>
+                <td>Pardeeville (WI)</td>
+                <td>55</td>
+                <td>-8.994</td>
+                <td>-9.139</td>
+                <td>-0.610</td>
+                <td>2.983</td>
+                <td>11.669</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>304</td>
+                <td>Milwaukee Vincent-Destiny (WI)</td>
+                <td>42</td>
+                <td>-9.198</td>
+                <td>-9.150</td>
+                <td>-0.447</td>
+                <td>3.688</td>
+                <td>12.636</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>305</td>
+                <td>Mazomanie Wisconsin Heights (WI)</td>
+                <td>64</td>
+                <td>-9.327</td>
+                <td>-9.187</td>
+                <td>-0.681</td>
+                <td>3.519</td>
+                <td>12.294</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>306</td>
+                <td>Abbotsford (WI)</td>
+                <td>58</td>
+                <td>-9.446</td>
+                <td>-10.024</td>
+                <td>-0.537</td>
+                <td>2.962</td>
+                <td>12.219</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>307</td>
+                <td>Clinton (WI)</td>
+                <td>60</td>
+                <td>-9.448</td>
+                <td>-8.949</td>
+                <td>-0.608</td>
+                <td>3.274</td>
+                <td>12.468</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>308</td>
+                <td>Superior Cathedral (WI)</td>
+                <td>28</td>
+                <td>-9.547</td>
+                <td>-9.515</td>
+                <td>-0.538</td>
+                <td>-1.399</td>
+                <td>11.116</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>309</td>
+                <td>Dodgeville (WI)</td>
+                <td>64</td>
+                <td>-9.606</td>
+                <td>-9.327</td>
+                <td>-0.464</td>
+                <td>1.601</td>
+                <td>11.166</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>310</td>
+                <td>Milwaukee Riverside University (WI)</td>
+                <td>50</td>
+                <td>-9.680</td>
+                <td>-9.327</td>
+                <td>-0.575</td>
+                <td>3.299</td>
+                <td>11.536</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>311</td>
+                <td>Burlington Catholic Central (WI)</td>
+                <td>61</td>
+                <td>-9.827</td>
+                <td>-9.545</td>
+                <td>-0.492</td>
+                <td>2.339</td>
+                <td>11.776</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>312</td>
+                <td>Luck (WI)</td>
+                <td>54</td>
+                <td>-9.869</td>
+                <td>-9.861</td>
+                <td>-0.655</td>
+                <td>5.539</td>
+                <td>14.767</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>313</td>
+                <td>Oshkosh Lourdes Academy (WI)</td>
+                <td>48</td>
+                <td>-9.914</td>
+                <td>-9.947</td>
+                <td>-0.379</td>
+                <td>2.935</td>
+                <td>12.949</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>314</td>
+                <td>Florence (WI)</td>
+                <td>64</td>
+                <td>-9.945</td>
+                <td>-10.033</td>
+                <td>-0.586</td>
+                <td>0.569</td>
+                <td>10.645</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>315</td>
+                <td>Milwaukee Custer (WI)</td>
+                <td>40</td>
+                <td>-9.949</td>
+                <td>-9.707</td>
+                <td>-0.548</td>
+                <td>0.299</td>
+                <td>10.261</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>316</td>
+                <td>Ladysmith (WI)</td>
+                <td>64</td>
+                <td>-10.133</td>
+                <td>-9.846</td>
+                <td>-0.580</td>
+                <td>2.271</td>
+                <td>12.946</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>317</td>
+                <td>Eagle River Northland Pines-Phelps (WI)</td>
+                <td>50</td>
+                <td>-10.189</td>
+                <td>-9.932</td>
+                <td>-0.453</td>
+                <td>4.206</td>
+                <td>14.576</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>318</td>
+                <td>Milwaukee Bay View-Conservatory of Lifelong Learning (WI)</td>
+                <td>57</td>
+                <td>-10.352</td>
+                <td>-10.561</td>
+                <td>-0.544</td>
+                <td>1.733</td>
+                <td>12.104</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>319</td>
+                <td>Howards Grove (WI)</td>
+                <td>57</td>
+                <td>-10.402</td>
+                <td>-10.225</td>
+                <td>-0.604</td>
+                <td>2.030</td>
+                <td>12.156</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>320</td>
+                <td>Randolph (WI)</td>
+                <td>55</td>
+                <td>-10.482</td>
+                <td>-10.481</td>
+                <td>-0.603</td>
+                <td>2.129</td>
+                <td>12.568</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>321</td>
+                <td>Whitefish Bay Dominican (WI)</td>
+                <td>71</td>
+                <td>-10.491</td>
+                <td>-10.198</td>
+                <td>-0.458</td>
+                <td>3.290</td>
+                <td>14.616</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>322</td>
+                <td>East Troy (WI)</td>
+                <td>77</td>
+                <td>-10.582</td>
+                <td>-10.390</td>
+                <td>-0.601</td>
+                <td>1.377</td>
+                <td>11.402</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>323</td>
+                <td>Augusta (WI)</td>
+                <td>56</td>
+                <td>-10.682</td>
+                <td>-10.178</td>
+                <td>-0.569</td>
+                <td>1.932</td>
+                <td>13.095</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>324</td>
+                <td>Westfield Area (WI)</td>
+                <td>54</td>
+                <td>-10.836</td>
+                <td>-10.759</td>
+                <td>-0.716</td>
+                <td>2.866</td>
+                <td>13.548</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>325</td>
+                <td>Balsam Lake Unity (WI)</td>
+                <td>57</td>
+                <td>-10.872</td>
+                <td>-10.622</td>
+                <td>-0.561</td>
+                <td>2.075</td>
+                <td>12.742</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>326</td>
+                <td>Oostburg (WI)</td>
+                <td>60</td>
+                <td>-10.939</td>
+                <td>-10.828</td>
+                <td>-0.659</td>
+                <td>1.539</td>
+                <td>12.174</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>327</td>
+                <td>Park Falls (WI)</td>
+                <td>36</td>
+                <td>-10.988</td>
+                <td>-10.811</td>
+                <td>-0.754</td>
+                <td>1.279</td>
+                <td>11.724</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>328</td>
+                <td>Menasha St. Mary Central (WI)</td>
+                <td>37</td>
+                <td>-11.004</td>
+                <td>-10.882</td>
+                <td>-0.647</td>
+                <td>2.053</td>
+                <td>12.957</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>329</td>
+                <td>Cashton (WI)</td>
+                <td>55</td>
+                <td>-11.130</td>
+                <td>-11.295</td>
+                <td>-0.607</td>
+                <td>1.858</td>
+                <td>13.247</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>330</td>
+                <td>Tomahawk (WI)</td>
+                <td>75</td>
+                <td>-11.178</td>
+                <td>-11.427</td>
+                <td>-0.575</td>
+                <td>1.171</td>
+                <td>12.396</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>331</td>
+                <td>Chetek (WI)</td>
+                <td>43</td>
+                <td>-11.209</td>
+                <td>-11.250</td>
+                <td>-0.791</td>
+                <td>1.631</td>
+                <td>11.992</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>332</td>
+                <td>Loyal (WI)</td>
+                <td>59</td>
+                <td>-11.268</td>
+                <td>-10.986</td>
+                <td>-0.636</td>
+                <td>1.080</td>
+                <td>12.241</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>333</td>
+                <td>Crivitz (WI)</td>
+                <td>56</td>
+                <td>-11.366</td>
+                <td>-11.665</td>
+                <td>-0.470</td>
+                <td>0.536</td>
+                <td>12.000</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>334</td>
+                <td>Hazel Green Southwestern (WI)</td>
+                <td>51</td>
+                <td>-11.386</td>
+                <td>-11.201</td>
+                <td>-0.581</td>
+                <td>2.197</td>
+                <td>13.686</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>335</td>
+                <td>Eleva-Strum (WI)</td>
+                <td>54</td>
+                <td>-11.428</td>
+                <td>-11.360</td>
+                <td>-0.622</td>
+                <td>2.107</td>
+                <td>13.487</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>336</td>
+                <td>Sturgeon Bay Sevastopol (WI)</td>
+                <td>56</td>
+                <td>-11.494</td>
+                <td>-11.462</td>
+                <td>-0.614</td>
+                <td>0.990</td>
+                <td>11.619</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>337</td>
+                <td>Saint Croix Falls (WI)</td>
+                <td>54</td>
+                <td>-11.656</td>
+                <td>-11.944</td>
+                <td>-0.668</td>
+                <td>2.495</td>
+                <td>13.558</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>338</td>
+                <td>Clear Lake (WI)</td>
+                <td>55</td>
+                <td>-11.723</td>
+                <td>-12.101</td>
+                <td>-0.663</td>
+                <td>2.381</td>
+                <td>13.699</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>339</td>
+                <td>Northern Elite [Niagara-Goodman-Pembine] (WI)</td>
+                <td>69</td>
+                <td>-11.835</td>
+                <td>-12.185</td>
+                <td>-0.621</td>
+                <td>1.239</td>
+                <td>13.160</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>340</td>
+                <td>Beloit Turner Memorial (WI)</td>
+                <td>58</td>
+                <td>-11.879</td>
+                <td>-11.993</td>
+                <td>-0.599</td>
+                <td>2.796</td>
+                <td>14.732</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>341</td>
+                <td>Adams-Friendship (WI)</td>
+                <td>55</td>
+                <td>-11.882</td>
+                <td>-11.607</td>
+                <td>-0.636</td>
+                <td>2.652</td>
+                <td>14.290</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>342</td>
+                <td>Shullsburg (WI)</td>
+                <td>50</td>
+                <td>-11.939</td>
+                <td>-11.820</td>
+                <td>-0.654</td>
+                <td>2.344</td>
+                <td>14.476</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>343</td>
+                <td>Potosi (WI)</td>
+                <td>51</td>
+                <td>-11.947</td>
+                <td>-11.856</td>
+                <td>-0.704</td>
+                <td>1.722</td>
+                <td>13.435</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>344</td>
+                <td>Somers Shoreland Lutheran (WI)</td>
+                <td>26</td>
+                <td>-12.014</td>
+                <td>-10.841</td>
+                <td>-0.330</td>
+                <td>7.746</td>
+                <td>19.368</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>345</td>
+                <td>Cambria-Friesland (WI)</td>
+                <td>52</td>
+                <td>-12.219</td>
+                <td>-11.990</td>
+                <td>-0.680</td>
+                <td>2.208</td>
+                <td>14.061</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>346</td>
+                <td>North Fond du Lac Horace Mann (WI)</td>
+                <td>46</td>
+                <td>-12.438</td>
+                <td>-12.356</td>
+                <td>-0.590</td>
+                <td>0.722</td>
+                <td>13.389</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>347</td>
+                <td>Barron (WI)</td>
+                <td>63</td>
+                <td>-12.535</td>
+                <td>-12.393</td>
+                <td>-0.687</td>
+                <td>1.882</td>
+                <td>14.606</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>348</td>
+                <td>Palmyra-Eagle (WI)</td>
+                <td>45</td>
+                <td>-12.561</td>
+                <td>-12.662</td>
+                <td>-0.599</td>
+                <td>1.881</td>
+                <td>14.033</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>349</td>
+                <td>Boyceville (WI)</td>
+                <td>62</td>
+                <td>-12.583</td>
+                <td>-12.704</td>
+                <td>-0.631</td>
+                <td>-0.388</td>
+                <td>11.307</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>350</td>
+                <td>Cassville (WI)</td>
+                <td>50</td>
+                <td>-12.717</td>
+                <td>-12.356</td>
+                <td>-0.779</td>
+                <td>-0.847</td>
+                <td>12.368</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>351</td>
+                <td>Milwaukee Madison University-Northwest (WI)</td>
+                <td>42</td>
+                <td>-12.737</td>
+                <td>-12.750</td>
+                <td>-0.558</td>
+                <td>-0.444</td>
+                <td>12.485</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>352</td>
+                <td>Random Lake (WI)</td>
+                <td>55</td>
+                <td>-12.783</td>
+                <td>-12.900</td>
+                <td>-0.681</td>
+                <td>0.705</td>
+                <td>13.113</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>353</td>
+                <td>Wautoma (WI)</td>
+                <td>46</td>
+                <td>-12.865</td>
+                <td>-12.663</td>
+                <td>-0.700</td>
+                <td>1.746</td>
+                <td>14.214</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>354</td>
+                <td>Phillips (WI)</td>
+                <td>58</td>
+                <td>-12.892</td>
+                <td>-12.569</td>
+                <td>-0.674</td>
+                <td>2.915</td>
+                <td>15.494</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>355</td>
+                <td>North Fond du Lac (WI)</td>
+                <td>49</td>
+                <td>-13.063</td>
+                <td>-12.947</td>
+                <td>-0.685</td>
+                <td>1.180</td>
+                <td>13.891</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>356</td>
+                <td>Wabeno-Laona (WI)</td>
+                <td>36</td>
+                <td>-13.122</td>
+                <td>-13.248</td>
+                <td>-0.569</td>
+                <td>2.387</td>
+                <td>14.870</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>357</td>
+                <td>Elkhart Lake-Glenbeulah (WI)</td>
+                <td>29</td>
+                <td>-13.533</td>
+                <td>-12.942</td>
+                <td>-0.655</td>
+                <td>2.861</td>
+                <td>15.633</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>358</td>
+                <td>Melrose-Mindoro (WI)</td>
+                <td>63</td>
+                <td>-13.676</td>
+                <td>-13.345</td>
+                <td>-0.676</td>
+                <td>0.451</td>
+                <td>12.720</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>359</td>
+                <td>Fredonia Ozaukee (WI)</td>
+                <td>55</td>
+                <td>-13.790</td>
+                <td>-13.952</td>
+                <td>-0.711</td>
+                <td>-0.076</td>
+                <td>13.121</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>360</td>
+                <td>Cochrane-Fountain City (WI)</td>
+                <td>55</td>
+                <td>-13.911</td>
+                <td>-13.788</td>
+                <td>-0.730</td>
+                <td>1.765</td>
+                <td>15.374</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>361</td>
+                <td>Kohler (WI)</td>
+                <td>39</td>
+                <td>-14.029</td>
+                <td>-13.815</td>
+                <td>-0.933</td>
+                <td>0.819</td>
+                <td>13.992</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>362</td>
+                <td>Belleville-Albany (WI)</td>
+                <td>49</td>
+                <td>-14.059</td>
+                <td>-13.912</td>
+                <td>-0.693</td>
+                <td>0.318</td>
+                <td>13.893</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>363</td>
+                <td>West Milwaukee (WI)</td>
+                <td>57</td>
+                <td>-14.308</td>
+                <td>-14.221</td>
+                <td>-0.555</td>
+                <td>-2.730</td>
+                <td>11.371</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>364</td>
+                <td>Pulaski-Milwaukee Arts-Reagan Prep (WI)</td>
+                <td>43</td>
+                <td>-14.636</td>
+                <td>-14.678</td>
+                <td>-0.707</td>
+                <td>1.137</td>
+                <td>15.898</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>365</td>
+                <td>Whitehall (WI)</td>
+                <td>57</td>
+                <td>-14.650</td>
+                <td>-14.531</td>
+                <td>-0.759</td>
+                <td>-0.755</td>
+                <td>13.493</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>366</td>
+                <td>Montello (WI)</td>
+                <td>39</td>
+                <td>-14.667</td>
+                <td>-14.740</td>
+                <td>-0.993</td>
+                <td>-0.493</td>
+                <td>13.273</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>367</td>
+                <td>Belmont (WI)</td>
+                <td>56</td>
+                <td>-14.678</td>
+                <td>-14.574</td>
+                <td>-0.807</td>
+                <td>-0.784</td>
+                <td>13.662</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>368</td>
+                <td>Turtle Lake (WI)</td>
+                <td>54</td>
+                <td>-14.695</td>
+                <td>-15.043</td>
+                <td>-0.689</td>
+                <td>0.197</td>
+                <td>14.451</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>369</td>
+                <td>Colfax (WI)</td>
+                <td>61</td>
+                <td>-14.836</td>
+                <td>-14.507</td>
+                <td>-0.729</td>
+                <td>0.186</td>
+                <td>14.657</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>370</td>
+                <td>Milwaukee South (WI)</td>
+                <td>56</td>
+                <td>-14.838</td>
+                <td>-14.183</td>
+                <td>-0.635</td>
+                <td>0.921</td>
+                <td>15.688</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>371</td>
+                <td>Fish Creek Gibraltar (WI)</td>
+                <td>51</td>
+                <td>-14.857</td>
+                <td>-14.436</td>
+                <td>-0.682</td>
+                <td>4.499</td>
+                <td>17.464</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>372</td>
+                <td>Wausaukee (WI)</td>
+                <td>55</td>
+                <td>-15.129</td>
+                <td>-15.082</td>
+                <td>-0.743</td>
+                <td>1.414</td>
+                <td>16.316</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>373</td>
+                <td>Shell Lake (WI)</td>
+                <td>56</td>
+                <td>-15.221</td>
+                <td>-15.116</td>
+                <td>-0.791</td>
+                <td>1.454</td>
+                <td>15.878</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>374</td>
+                <td>Bangor (WI)</td>
+                <td>64</td>
+                <td>-15.316</td>
+                <td>-14.867</td>
+                <td>-0.779</td>
+                <td>2.411</td>
+                <td>15.745</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>375</td>
+                <td>Tony Flambeau (WI)</td>
+                <td>55</td>
+                <td>-15.423</td>
+                <td>-15.367</td>
+                <td>-0.817</td>
+                <td>0.415</td>
+                <td>15.311</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>376</td>
+                <td>Onalaska Luther (WI)</td>
+                <td>56</td>
+                <td>-15.693</td>
+                <td>-15.695</td>
+                <td>-0.791</td>
+                <td>-0.432</td>
+                <td>14.866</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>377</td>
+                <td>Highland (WI)</td>
+                <td>55</td>
+                <td>-16.391</td>
+                <td>-16.570</td>
+                <td>-0.841</td>
+                <td>-1.663</td>
+                <td>14.207</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>378</td>
+                <td>Rib Lake-Prentice (WI)</td>
+                <td>35</td>
+                <td>-16.948</td>
+                <td>-17.347</td>
+                <td>-0.607</td>
+                <td>1.956</td>
+                <td>18.095</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>379</td>
+                <td>Oakfield (WI)</td>
+                <td>55</td>
+                <td>-17.144</td>
+                <td>-17.028</td>
+                <td>-0.769</td>
+                <td>1.558</td>
+                <td>17.954</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>380</td>
+                <td>Orfordville Parkview (WI)</td>
+                <td>50</td>
+                <td>-17.248</td>
+                <td>-16.928</td>
+                <td>-0.849</td>
+                <td>-1.505</td>
+                <td>15.139</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>381</td>
+                <td>Lena (WI)</td>
+                <td>36</td>
+                <td>-17.381</td>
+                <td>-17.061</td>
+                <td>-0.892</td>
+                <td>-4.134</td>
+                <td>12.588</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>382</td>
+                <td>Prairie Farm (WI)</td>
+                <td>57</td>
+                <td>-17.560</td>
+                <td>-17.853</td>
+                <td>-0.904</td>
+                <td>0.994</td>
+                <td>17.363</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>383</td>
+                <td>Marion (WI)</td>
+                <td>43</td>
+                <td>-17.561</td>
+                <td>-17.858</td>
+                <td>-0.839</td>
+                <td>-1.442</td>
+                <td>15.399</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>384</td>
+                <td>Johnson Creek (WI)</td>
+                <td>57</td>
+                <td>-17.654</td>
+                <td>-17.393</td>
+                <td>-0.738</td>
+                <td>-0.623</td>
+                <td>16.767</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>385</td>
+                <td>Madison Holy Name Seminary (WI)</td>
+                <td>25</td>
+                <td>-17.724</td>
+                <td>-17.692</td>
+                <td>-1.028</td>
+                <td>-1.274</td>
+                <td>15.769</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>386</td>
+                <td>Three Lakes (WI)</td>
+                <td>47</td>
+                <td>-17.744</td>
+                <td>-17.729</td>
+                <td>-0.798</td>
+                <td>-0.124</td>
+                <td>17.135</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>387</td>
+                <td>Elroy Royall (WI)</td>
+                <td>55</td>
+                <td>-17.932</td>
+                <td>-17.801</td>
+                <td>-0.867</td>
+                <td>-2.028</td>
+                <td>15.751</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>388</td>
+                <td>Plum City (WI)</td>
+                <td>46</td>
+                <td>-18.014</td>
+                <td>-17.909</td>
+                <td>-0.897</td>
+                <td>-2.497</td>
+                <td>13.564</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>389</td>
+                <td>Frederic (WI)</td>
+                <td>54</td>
+                <td>-18.104</td>
+                <td>-18.034</td>
+                <td>-0.850</td>
+                <td>-0.416</td>
+                <td>16.876</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>390</td>
+                <td>Gillett (WI)</td>
+                <td>55</td>
+                <td>-18.301</td>
+                <td>-18.592</td>
+                <td>-0.784</td>
+                <td>-0.529</td>
+                <td>17.706</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>391</td>
+                <td>Delafield Saint John's Northwestern Military Academy (WI)</td>
+                <td>72</td>
+                <td>-18.315</td>
+                <td>-18.394</td>
+                <td>-0.682</td>
+                <td>-1.675</td>
+                <td>16.374</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>392</td>
+                <td>Richland Center Ithaca (WI)</td>
+                <td>55</td>
+                <td>-18.359</td>
+                <td>-18.190</td>
+                <td>-0.833</td>
+                <td>-0.169</td>
+                <td>17.656</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>393</td>
+                <td>Wild Rose (WI)</td>
+                <td>55</td>
+                <td>-18.561</td>
+                <td>-18.548</td>
+                <td>-0.861</td>
+                <td>-0.710</td>
+                <td>17.075</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>394</td>
+                <td>New Lisbon (WI)</td>
+                <td>56</td>
+                <td>-18.638</td>
+                <td>-18.481</td>
+                <td>-0.851</td>
+                <td>-1.301</td>
+                <td>16.866</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>395</td>
+                <td>Lake Holcombe (WI)</td>
+                <td>50</td>
+                <td>-18.715</td>
+                <td>-18.945</td>
+                <td>-0.949</td>
+                <td>-3.926</td>
+                <td>13.850</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>396</td>
+                <td>Suring (WI)</td>
+                <td>55</td>
+                <td>-18.949</td>
+                <td>-19.211</td>
+                <td>-0.880</td>
+                <td>-2.503</td>
+                <td>15.768</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>397</td>
+                <td>Juneau Dodgeland (WI)</td>
+                <td>68</td>
+                <td>-19.042</td>
+                <td>-19.226</td>
+                <td>-0.835</td>
+                <td>-1.574</td>
+                <td>16.823</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>398</td>
+                <td>Princeton (WI)</td>
+                <td>37</td>
+                <td>-19.078</td>
+                <td>-18.793</td>
+                <td>-1.043</td>
+                <td>-2.710</td>
+                <td>15.146</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>399</td>
+                <td>Cedar Grove (WI)</td>
+                <td>33</td>
+                <td>-19.098</td>
+                <td>-18.931</td>
+                <td>-1.168</td>
+                <td>-2.409</td>
+                <td>15.068</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>Boscobel (WI)</td>
+                <td>62</td>
+                <td>-19.180</td>
+                <td>-19.064</td>
+                <td>-0.808</td>
+                <td>-2.893</td>
+                <td>16.090</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>401</td>
+                <td>Blair-Taylor (WI)</td>
+                <td>57</td>
+                <td>-19.586</td>
+                <td>-19.120</td>
+                <td>-0.910</td>
+                <td>-1.651</td>
+                <td>16.901</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>402</td>
+                <td>Brookfield Academy (WI)</td>
+                <td>39</td>
+                <td>-19.715</td>
+                <td>-18.818</td>
+                <td>-0.873</td>
+                <td>-0.293</td>
+                <td>19.061</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>403</td>
+                <td>Elkhart Lake (WI)</td>
+                <td>34</td>
+                <td>-20.134</td>
+                <td>-19.894</td>
+                <td>-1.136</td>
+                <td>-4.519</td>
+                <td>14.205</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>404</td>
+                <td>Minong Northwood-Solon Springs (WI)</td>
+                <td>25</td>
+                <td>-20.284</td>
+                <td>-20.432</td>
+                <td>-0.761</td>
+                <td>3.099</td>
+                <td>22.464</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>405</td>
+                <td>Crandon (WI)</td>
+                <td>54</td>
+                <td>-20.396</td>
+                <td>-20.244</td>
+                <td>-0.906</td>
+                <td>-2.499</td>
+                <td>17.511</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>406</td>
+                <td>Cornell (WI)</td>
+                <td>52</td>
+                <td>-20.471</td>
+                <td>-20.120</td>
+                <td>-0.923</td>
+                <td>-1.940</td>
+                <td>18.055</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>407</td>
+                <td>Viola Kickapoo (WI)</td>
+                <td>34</td>
+                <td>-20.673</td>
+                <td>-20.704</td>
+                <td>-1.035</td>
+                <td>-3.726</td>
+                <td>15.714</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>408</td>
+                <td>Cameron (WI)</td>
+                <td>55</td>
+                <td>-20.681</td>
+                <td>-20.139</td>
+                <td>-0.924</td>
+                <td>-2.157</td>
+                <td>17.424</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>409</td>
+                <td>Beloit Catholic (WI)</td>
+                <td>41</td>
+                <td>-20.955</td>
+                <td>-20.979</td>
+                <td>-1.079</td>
+                <td>-5.683</td>
+                <td>15.002</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>410</td>
+                <td>Rosholt (WI)</td>
+                <td>55</td>
+                <td>-20.987</td>
+                <td>-20.844</td>
+                <td>-0.862</td>
+                <td>-2.863</td>
+                <td>17.661</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>411</td>
+                <td>Port Edwards (WI)</td>
+                <td>55</td>
+                <td>-21.005</td>
+                <td>-20.492</td>
+                <td>-0.957</td>
+                <td>-1.208</td>
+                <td>18.894</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>412</td>
+                <td>Rio (WI)</td>
+                <td>38</td>
+                <td>-21.041</td>
+                <td>-20.634</td>
+                <td>-0.975</td>
+                <td>-2.834</td>
+                <td>17.590</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>413</td>
+                <td>Bruce (WI)</td>
+                <td>55</td>
+                <td>-21.474</td>
+                <td>-20.991</td>
+                <td>-1.011</td>
+                <td>-1.027</td>
+                <td>19.320</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>414</td>
+                <td>Muscoda Riverdale (WI)</td>
+                <td>55</td>
+                <td>-21.647</td>
+                <td>-21.236</td>
+                <td>-0.996</td>
+                <td>-3.063</td>
+                <td>18.032</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>415</td>
+                <td>Clayton (WI)</td>
+                <td>55</td>
+                <td>-21.809</td>
+                <td>-21.553</td>
+                <td>-0.997</td>
+                <td>-0.706</td>
+                <td>19.761</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>416</td>
+                <td>Deerfield (WI)</td>
+                <td>56</td>
+                <td>-22.118</td>
+                <td>-21.977</td>
+                <td>-0.988</td>
+                <td>-2.950</td>
+                <td>18.147</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>417</td>
+                <td>Hillsboro (WI)</td>
+                <td>55</td>
+                <td>-22.459</td>
+                <td>-22.830</td>
+                <td>-0.968</td>
+                <td>-2.743</td>
+                <td>18.752</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>418</td>
+                <td>Marinette Catholic Central (WI)</td>
+                <td>38</td>
+                <td>-22.867</td>
+                <td>-22.580</td>
+                <td>-1.029</td>
+                <td>-3.854</td>
+                <td>18.048</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>419</td>
+                <td>Benton (WI)</td>
+                <td>31</td>
+                <td>-22.963</td>
+                <td>-22.738</td>
+                <td>-1.156</td>
+                <td>-3.531</td>
+                <td>17.995</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>420</td>
+                <td>Siren (WI)</td>
+                <td>57</td>
+                <td>-23.143</td>
+                <td>-23.086</td>
+                <td>-1.001</td>
+                <td>-1.491</td>
+                <td>20.473</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>421</td>
+                <td>Cazenovia Weston (WI)</td>
+                <td>47</td>
+                <td>-23.199</td>
+                <td>-22.929</td>
+                <td>-1.048</td>
+                <td>-4.099</td>
+                <td>18.294</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>422</td>
+                <td>Seneca (WI)</td>
+                <td>45</td>
+                <td>-23.505</td>
+                <td>-24.081</td>
+                <td>-1.091</td>
+                <td>-3.958</td>
+                <td>18.388</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>423</td>
+                <td>Necedah (WI)</td>
+                <td>49</td>
+                <td>-23.522</td>
+                <td>-22.897</td>
+                <td>-0.973</td>
+                <td>-1.676</td>
+                <td>20.629</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>424</td>
+                <td>Williams Bay (WI)</td>
+                <td>54</td>
+                <td>-23.804</td>
+                <td>-23.950</td>
+                <td>-1.024</td>
+                <td>-3.472</td>
+                <td>20.375</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>425</td>
+                <td>Hustisford (WI)</td>
+                <td>45</td>
+                <td>-24.089</td>
+                <td>-24.302</td>
+                <td>-1.043</td>
+                <td>-5.176</td>
+                <td>17.864</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>426</td>
+                <td>Webster (WI)</td>
+                <td>56</td>
+                <td>-24.314</td>
+                <td>-23.978</td>
+                <td>-0.996</td>
+                <td>-4.157</td>
+                <td>19.146</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>427</td>
+                <td>Almond-Bancroft (WI)</td>
+                <td>55</td>
+                <td>-24.366</td>
+                <td>-24.298</td>
+                <td>-1.056</td>
+                <td>-3.787</td>
+                <td>19.332</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>428</td>
+                <td>Alma Center Lincoln (WI)</td>
+                <td>51</td>
+                <td>-25.537</td>
+                <td>-25.725</td>
+                <td>-1.181</td>
+                <td>-3.259</td>
+                <td>21.042</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>429</td>
+                <td>Milwaukee North (WI)</td>
+                <td>52</td>
+                <td>-25.576</td>
+                <td>-25.302</td>
+                <td>-1.016</td>
+                <td>-3.891</td>
+                <td>20.384</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>430</td>
+                <td>Soldiers Grove North Crawford (WI)</td>
+                <td>55</td>
+                <td>-26.067</td>
+                <td>-26.694</td>
+                <td>-1.052</td>
+                <td>-3.872</td>
+                <td>21.599</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>431</td>
+                <td>Beaver Dam Wayland Academy (WI)</td>
+                <td>50</td>
+                <td>-26.586</td>
+                <td>-26.148</td>
+                <td>-0.863</td>
+                <td>-3.830</td>
+                <td>21.925</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>432</td>
+                <td>Watertown Maranatha Baptist (WI)</td>
+                <td>41</td>
+                <td>-27.455</td>
+                <td>-27.230</td>
+                <td>-1.114</td>
+                <td>-4.094</td>
+                <td>21.386</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>433</td>
+                <td>New Auburn (WI)</td>
+                <td>54</td>
+                <td>-27.561</td>
+                <td>-27.248</td>
+                <td>-1.238</td>
+                <td>-5.199</td>
+                <td>20.821</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>434</td>
+                <td>Pepin (WI)</td>
+                <td>35</td>
+                <td>-28.098</td>
+                <td>-27.853</td>
+                <td>-1.250</td>
+                <td>-5.027</td>
+                <td>20.288</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>435</td>
+                <td>Ontario Brookwood (WI)</td>
+                <td>54</td>
+                <td>-29.164</td>
+                <td>-28.989</td>
+                <td>-1.137</td>
+                <td>-6.619</td>
+                <td>21.399</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>436</td>
+                <td>Wonewoc-Center (WI)</td>
+                <td>46</td>
+                <td>-29.400</td>
+                <td>-29.067</td>
+                <td>-1.311</td>
+                <td>-6.079</td>
+                <td>21.824</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>437</td>
+                <td>Washburn-Bayfield-Solon Springs (WI)</td>
+                <td>46</td>
+                <td>-29.426</td>
+                <td>-28.626</td>
+                <td>-1.133</td>
+                <td>-5.286</td>
+                <td>23.000</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>438</td>
+                <td>Fall River (WI)</td>
+                <td>37</td>
+                <td>-29.602</td>
+                <td>-29.986</td>
+                <td>-1.239</td>
+                <td>-5.659</td>
+                <td>22.977</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>439</td>
+                <td>Plainfield Tri-County (WI)</td>
+                <td>54</td>
+                <td>-29.772</td>
+                <td>-29.525</td>
+                <td>-1.148</td>
+                <td>-5.835</td>
+                <td>22.738</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>440</td>
+                <td>Weyerhaeuser-Birchwood (WI)</td>
+                <td>34</td>
+                <td>-30.036</td>
+                <td>-29.961</td>
+                <td>-1.536</td>
+                <td>-5.985</td>
+                <td>21.110</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>441</td>
+                <td>Milwaukee Juneau (WI)</td>
+                <td>34</td>
+                <td>-30.059</td>
+                <td>-29.971</td>
+                <td>-1.324</td>
+                <td>-7.788</td>
+                <td>20.122</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>442</td>
+                <td>Tigerton (WI)</td>
+                <td>42</td>
+                <td>-31.038</td>
+                <td>-31.143</td>
+                <td>-1.403</td>
+                <td>-6.733</td>
+                <td>22.255</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>443</td>
+                <td>Green Lake (WI)</td>
+                <td>38</td>
+                <td>-31.208</td>
+                <td>-31.091</td>
+                <td>-1.456</td>
+                <td>-6.384</td>
+                <td>22.300</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>444</td>
+                <td>Lake Geneva Northwestern Military & Naval Academy (WI)</td>
+                <td>35</td>
+                <td>-31.335</td>
+                <td>-31.432</td>
+                <td>-1.508</td>
+                <td>-7.651</td>
+                <td>23.176</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>445</td>
+                <td>La Farge (WI)</td>
+                <td>34</td>
+                <td>-33.494</td>
+                <td>-33.787</td>
+                <td>-1.547</td>
+                <td>-9.310</td>
+                <td>21.532</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>446</td>
+                <td>Wisconsin School for the Deaf (WI)</td>
+                <td>77</td>
+                <td>-33.768</td>
+                <td>-33.246</td>
+                <td>-1.314</td>
+                <td>-8.005</td>
+                <td>24.688</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>447</td>
+                <td>Wauzeka (WI)</td>
+                <td>33</td>
+                <td>-36.819</td>
+                <td>-36.902</td>
+                <td>-1.665</td>
+                <td>-10.361</td>
+                <td>23.491</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>448</td>
+                <td>Delafield Ethan Allen Schoolfor Boys (WI)</td>
+                <td>32</td>
+                <td>-38.475</td>
+                <td>-38.191</td>
+                <td>-1.787</td>
+                <td>-8.961</td>
+                <td>25.988</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>449</td>
+                <td>Elcho-White Lake (WI)</td>
+                <td>27</td>
+                <td>-39.198</td>
+                <td>-38.460</td>
+                <td>-1.164</td>
+                <td>-7.891</td>
+                <td>30.894</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>450</td>
+                <td>Bowler (WI)</td>
+                <td>36</td>
+                <td>-39.709</td>
+                <td>-40.011</td>
+                <td>-1.669</td>
+                <td>-11.339</td>
+                <td>25.665</td>
+                <td>(WI)</td>
+            </tr>
+            <tr>
+                <td>451</td>
+                <td>Keshena Menominee Indian (WI)</td>
+                <td>27</td>
+                <td>-46.981</td>
+                <td>-47.354</td>
+                <td>-1.345</td>
+                <td>-9.131</td>
+                <td>36.763</td>
+                <td>(WI)</td>
+            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="pagination-info">
+                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="Table navigation">
+                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section mt-5">
+                <h3>Comments</h3>
+                <div id="authContainer" class="mb-3"></div>
+                <div id="commentForm" class="mb-4" style="display: none">
+                    <div class="card">
+                        <div class="card-body">
+                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="commentsList"></div>
+            </div>
+
+            <footer class="mt-5 mb-3">
+                <div class="text-center">
+                    <p>Â© 2025 McKnight's Football Rankings</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Table Controls Script -->
+        <script>
+    const TableControls = {
+        ROWS_PER_PAGE: 100,
+        currentPage: 1,
+        filteredRows: [],
+
+        init() {
+            const tableBody = document.querySelector('tbody');
+            if (tableBody) {
+                const rows = Array.from(tableBody.getElementsByTagName('tr'));
+                this.filteredRows = rows;
+                const totalRows = rows.length;
+                
+                const totalRowsElement = document.getElementById('totalRows');
+                if (totalRowsElement) {
+                    totalRowsElement.textContent = totalRows;
+                }
+                
+                this.setupEventListeners();
+                this.showPage(1);
+            }
+        },
+
+        setupEventListeners() {
+            const searchInput = document.getElementById('tableSearch');
+            const pagination = document.getElementById('tablePagination');
+
+            if (searchInput) {
+                searchInput.value = '';
+                const self = this;
+                searchInput.addEventListener('input', function(e) {
+                    self.filterTable(e.target.value.toLowerCase());
+                });
+            }
+
+            if (pagination) {
+                const self = this;
+                pagination.addEventListener('click', function(e) {
+                    const button = e.target.closest('button');
+                    if (!button || button.parentElement.classList.contains('disabled')) return;
+                    
+                    const page = button.dataset.page;
+                    if (page === 'prev') {
+                        self.showPage(self.currentPage - 1);
+                    } else if (page === 'next') {
+                        self.showPage(self.currentPage + 1);
+                    } else {
+                        self.showPage(parseInt(page));
+                    }
+                });
+            }
+        },
+
+        filterTable(searchTerm) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
+                const text = Array.from(row.getElementsByTagName('td'))
+                    .map(cell => cell.textContent || cell.innerText)
+                    .join(' ')
+                    .toLowerCase();
+                return text.includes(searchTerm);
+            });
+
+            const totalRowsElement = document.getElementById('totalRows');
+            if (totalRowsElement) {
+                totalRowsElement.textContent = this.filteredRows.length;
+            }
+
+            this.currentPage = 1;
+            this.showPage(1);
+        },
+
+        showPage(pageNum) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+
+            this.currentPage = pageNum;
+            const start = (pageNum - 1) * this.ROWS_PER_PAGE;
+            const end = Math.min(start + this.ROWS_PER_PAGE, this.filteredRows.length);
+            
+            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
+            allRows.forEach(row => row.style.display = 'none');
+            
+            for (let i = start; i < end; i++) {
+                if (this.filteredRows[i]) {
+                    this.filteredRows[i].style.display = '';
+                }
+            }
+            
+            const startRowElement = document.getElementById('startRow');
+            const endRowElement = document.getElementById('endRow');
+            if (startRowElement) startRowElement.textContent = this.filteredRows.length === 0 ? 0 : start + 1;
+            if (endRowElement) endRowElement.textContent = end;
+            
+            this.updatePaginationControls();
+        },
+
+        updatePaginationControls() {
+            const pagination = document.getElementById('tablePagination');
+            if (!pagination) return;
+            
+            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
+            let html = [];
+            
+            html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
+                <button class="page-link" data-page="prev">&laquo;</button>
+            </li>`);
+            
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
+                    html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
+                        <button class="page-link" data-page="${i}">${i}</button>
+                    </li>`);
+                } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
+                    html.push('<li class="page-item disabled"><span class="page-link">...</span></li>');
+                }
+            }
+            
+            html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
+                <button class="page-link" data-page="next">&raquo;</button>
+            </li>`);
+            
+            pagination.innerHTML = html.join('');
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => TableControls.init());
+    } else {
+        TableControls.init();
+    }
+</script>
+        
+        <!-- Comments Script -->
+        <script>
+const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
+
+/**********************************************************
+ * AUTH / LOGIN LOGIC
+ **********************************************************/
+async function checkLoginStatus() {
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        const data = await res.json();
+
+        if (data.success && data.loggedIn) {
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
+            renderAuthUI(true, data.user);
+        } else {
+            document.getElementById('commentForm').style.display = 'none';
+            document.getElementById('authorName').textContent = 'Anonymous';
+            renderAuthUI(false);
+        }
+    } catch (error) {
+        console.warn('Login status error:', error);
+        document.getElementById('commentForm').style.display = 'none';
+        document.getElementById('authorName').textContent = 'Anonymous';
+        renderAuthUI(false);
+    }
+}
+
+function renderAuthUI(loggedIn, user = null) {
+    const authContainer = document.getElementById('authContainer');
+    if (!authContainer) return;
+
+    if (loggedIn && user) {
+        authContainer.innerHTML = `
+            <p>Welcome, <strong>${escapeHTML(user.name)}</strong> (${escapeHTML(user.email)})
+               <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
+        `;
+        document.getElementById('logoutBtn')?.addEventListener('click', doLogout);
+    } else {
+        authContainer.innerHTML = `
+            <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
+        `;
+        document.getElementById('loginBtn')?.addEventListener('click', doLogin);
+    }
+}
+
+function doLogin() {
+    window.location.href = `${VERCEL_API_BASE}/auth/google`;
+}
+
+function doLogout() {
+    document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
+    window.location.reload();
+}
+
+/**********************************************************
+ * COMMENTS LOGIC
+ **********************************************************/
+async function fetchComments() {
+    const pageId = getPageId();
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
+            method: 'GET',
+            credentials: 'include'
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            displayComments(data.comments);
+        }
+    } catch (err) {
+        console.error('Error fetching comments:', err);
+        document.getElementById('commentsList').innerHTML = '<div class="alert alert-warning">Unable to load comments at this time.</div>';
+    }
+}
+
+function displayComments(comments) {
+    const list = document.getElementById('commentsList');
+    if (!list) return;
+    if (!Array.isArray(comments) || comments.length === 0) {
+        list.innerHTML = '<p class="text-muted">No comments yet</p>';
+        return;
+    }
+    list.innerHTML = comments.map(c => `
+        <div class="card mb-2">
+            <div class="card-body">
+                <p class="mb-1">${escapeHTML(c.text)}</p>
+                <small class="text-muted">
+                    by ${escapeHTML(c.author)} on ${new Date(c.10/22/2025).toLocaleString()}
+                </small>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function submitComment() {
+    const textEl = document.getElementById('commentText');
+    const text = textEl.value.trim();
+    if (!text) return alert('Please enter a comment');
+
+    const pageId = getPageId();
+
+    try {
+        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, pageId })
+        });
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        if (data.success) {
+            textEl.value = '';
+            await fetchComments();
+        } else {
+            alert('Error posting comment: ' + (data.error || 'Unknown error'));
+        }
+    } catch (err) {
+        console.error('Error posting comment:', err);
+        alert('Failed to post comment. Please try again later.');
+    }
+}
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function getPageId() {
+    const el = document.querySelector('[data-page-name]');
+    return el ? el.getAttribute('data-page-name') : 'unknown';
+}
+
+// Initialize
+document.getElementById('submitComment')?.addEventListener('click', submitComment);
+
+(async function initPage() {
+    try {
+        await Promise.all([
+            checkLoginStatus(),
+            fetchComments()
+        ]);
+    } catch (error) {
+        console.warn('Page initialization error:', error);
+    }
+})();
+</script>
+        
+<!-- TopBanner initialization -->
+<script type="module">
+    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const banner = new TopBanner();
+            await banner.initialize();
+        } catch (error) {
+            console.warn('Banner initialization failed:', error);
+            document.body.style.display = 'block';
+        }
+    });
+</script>
+    </body>
+</html>
