@@ -114,3 +114,19 @@ python_scripts/Newspapers/Staged/*.csv
 # Uncomment if you want to exclude processed OCR files too
 # python_scripts/Newspapers/Staged/*.txt
 # python_scripts/Newspapers/Processed/*.txt
+
+# Python virtual environment (CRITICAL - never commit this!)
+python_scripts/venv/
+python_scripts/env/
+**/venv/
+**/.venv/
+
+# Large CSV files (can be regenerated)
+python_scripts/*.csv
+python_scripts/**/*.csv
+
+# Git backups
+*.git/
+
+# Debug/temp files
+**/debug_images/
