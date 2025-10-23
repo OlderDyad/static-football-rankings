@@ -213,12 +213,15 @@ Write-Host "`n📄 Copying HTML page to website..." -ForegroundColor Yellow
 $htmlSource = Join-Path $PSScriptRoot "database_statistics.html"
 $htmlDest = Join-Path $pageOutputDir "database-statistics.html"
 
-# If the HTML template doesn't exist in current directory, create it
+# Check if the HTML template file exists in the scripts folder
 if (-not (Test-Path $htmlSource)) {
-    Write-Host "Creating HTML page..." -ForegroundColor Yellow
-    # The HTML content would be inserted here
-    # For now, we'll just note that it needs to be created
-    Write-Host "⚠️  Please ensure database_statistics.html is in the output directory" -ForegroundColor Yellow
+    Write-Host "⚠️  WARNING: Template file not found at $htmlSource" -ForegroundColor Yellow
+    Write-Host "   This file is expected to exist alongside your script." -ForegroundColor Yellow
+    Write-Host "   Skipping copy. The page will NOT be updated." -ForegroundColor Yellow
+} else {
+    # Template file exists, so copy it
+    Copy-Item -Path $htmlSource -Destination $htmlDest -Force
+    Write-Host "✅ Copied '$($htmlSource | Split-Path -Leaf)' to $pageOutputDir" -ForegroundColor Green
 }
 
 # Step 6: Verify output files
