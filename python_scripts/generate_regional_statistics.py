@@ -1,4 +1,4 @@
-"""
+﻿"""
 Generate regional games coverage visualizations for McKnight's Football Rankings
 This script creates charts showing game coverage by state within each region
 """
@@ -10,6 +10,10 @@ import plotly.express as px
 from datetime import datetime
 import json
 import os
+import warnings
+
+# Suppress pandas warning about pyodbc
+warnings.filterwarnings("ignore", category=UserWarning, message='.*pandas only supports SQLAlchemy.*')
 
 # Database connection
 conn_str = "DRIVER={ODBC Driver 17 for SQL Server};SERVER=MCKNIGHTS-PC\\SQLEXPRESS01;DATABASE=hs_football_database;Trusted_Connection=yes;"
@@ -139,9 +143,9 @@ def create_region_chart(df, region_name, color_scheme):
             mode='lines',
             line=dict(width=2, color=colors[idx]),
             hovertemplate='<b>%{fullData.name}</b><br>' +
-                         'Season: %{x}<br>' +
-                         'Games: %{y:,.0f}<br>' +
-                         '<extra></extra>'
+                          'Season: %{x}<br>' +
+                          'Games: %{y:,.0f}<br>' +
+                          '<extra></extra>'
         ))
     
     # Update layout
@@ -190,9 +194,8 @@ def create_region_chart(df, region_name, color_scheme):
     return fig
 
 def create_region_stacked_chart(df, region_name, color_scheme):
-    """Create stacked area chart showing cumulative state contributions"""
+    """Create stacked area chart for a region"""
     
-    # Pivot data
     pivot_df = df.pivot_table(
         index='Season',
         columns='State',
@@ -200,14 +203,12 @@ def create_region_stacked_chart(df, region_name, color_scheme):
         fill_value=0
     )
     
-    # Get color palette
     colors = getattr(px.colors.sequential, color_scheme)
     if len(colors) < len(pivot_df.columns):
         colors = colors * (len(pivot_df.columns) // len(colors) + 1)
     
     fig = go.Figure()
     
-    # Add stacked area for each state
     for idx, state in enumerate(sorted(pivot_df.columns)):
         fig.add_trace(go.Scatter(
             x=pivot_df.index,
@@ -218,20 +219,20 @@ def create_region_stacked_chart(df, region_name, color_scheme):
             fillcolor=colors[idx],
             line=dict(width=0.5, color=colors[idx]),
             hovertemplate='<b>%{fullData.name}</b><br>' +
-                         'Season: %{x}<br>' +
-                         'Games: %{y:,.0f}<br>' +
-                         '<extra></extra>'
+                          'Season: %{x}<br>' +
+                          'Games: %{y:,.0f}<br>' +
+                          '<extra></extra>'
         ))
     
     fig.update_layout(
         title={
-            'text': f'{region_name} Region - Total Games (Stacked)',
+            'text': f'{region_name} Region - Cumulative Games by State',
             'x': 0.5,
             'xanchor': 'center',
             'font': {'size': 24, 'family': 'Arial, sans-serif'}
         },
         xaxis_title='Season',
-        yaxis_title='Number of Games',
+        yaxis_title='Number of Games (Cumulative)',
         hovermode='x unified',
         plot_bgcolor='white',
         paper_bgcolor='white',
@@ -270,22 +271,27 @@ def create_region_stacked_chart(df, region_name, color_scheme):
 def create_region_bar_chart(df, region_name, color_scheme):
     """Create bar chart showing total games by state"""
     
-    # Sum games by state across all seasons
-    state_totals = df.groupby('State')['Games'].sum().reset_index()
-    state_totals = state_totals.sort_values('Games', ascending=False)
+    # Sum up all games by state
+    state_totals = df.groupby('State')['Games'].sum().sort_values(ascending=True)
     
-    # Get color palette
     colors = getattr(px.colors.sequential, color_scheme)
+    if len(colors) < len(state_totals):
+        colors = colors * (len(state_totals) // len(colors) + 1)
     
     fig = go.Figure()
     
     fig.add_trace(go.Bar(
-        x=state_totals['State'],
-        y=state_totals['Games'],
-        marker_color=colors[-3],  # Use a darker shade from the palette
-        hovertemplate='<b>%{x}</b><br>' +
-                     'Total Games: %{y:,.0f}<br>' +
-                     '<extra></extra>'
+        y=state_totals.index,
+        x=state_totals.values,
+        orientation='h',
+        marker=dict(
+            color=state_totals.values,
+            colorscale=color_scheme,
+            showscale=False
+        ),
+        hovertemplate='<b>%{y}</b><br>' +
+                      'Total Games: %{x:,.0f}<br>' +
+                      '<extra></extra>'
     ))
     
     fig.update_layout(
@@ -293,44 +299,42 @@ def create_region_bar_chart(df, region_name, color_scheme):
             'text': f'{region_name} Region - Total Games by State',
             'x': 0.5,
             'xanchor': 'center',
-            'font': {'size': 20, 'family': 'Arial, sans-serif'}
+            'font': {'size': 24, 'family': 'Arial, sans-serif'}
         },
-        xaxis_title='State',
-        yaxis_title='Total Games',
+        xaxis_title='Total Games',
+        yaxis_title='State',
         plot_bgcolor='white',
         paper_bgcolor='white',
         font=dict(family='Arial, sans-serif', size=12),
-        height=400,
+        height=max(400, len(state_totals) * 30),
         xaxis=dict(
-            gridcolor='lightgray',
-            showline=True,
-            linecolor='black',
-            mirror=True
-        ),
-        yaxis=dict(
             gridcolor='lightgray',
             showline=True,
             linecolor='black',
             mirror=True,
             tickformat=',d'
+        ),
+        yaxis=dict(
+            showline=True,
+            linecolor='black',
+            mirror=True
         )
     )
     
     return fig
 
 def save_region_data(region_key, region_info, output_dir):
-    """Generate and save all charts for a region"""
-    
-    print(f"\nProcessing {region_info['name']} region...")
+    """Process and save data for a single region"""
+    print(f"\nProcessing {region_info['name']}...")
     
     # Get data
     df = get_regional_games_data(region_info['states'])
     
     if df.empty:
-        print(f"  ⚠️  No data found for {region_info['name']}")
+        print(f"   No data found for {region_info['name']}")
         return None
     
-    print(f"  Found {len(df)} season/state combinations")
+    print(f"   Found {len(df)} season/state combinations")
     
     # Get summary
     summary_df = get_region_summary(region_info['states'])
@@ -340,7 +344,7 @@ def save_region_data(region_key, region_info, output_dir):
     os.makedirs(region_dir, exist_ok=True)
     
     # Create charts
-    print(f"  Creating line chart...")
+    print(f"   Creating line chart...")
     line_chart = create_region_chart(df, region_info['name'], region_info['color_scheme'])
     line_chart.write_html(
         os.path.join(region_dir, 'games_by_state.html'),
@@ -348,7 +352,7 @@ def save_region_data(region_key, region_info, output_dir):
         config={'displayModeBar': True, 'displaylogo': False}
     )
     
-    print(f"  Creating stacked area chart...")
+    print(f"   Creating stacked area chart...")
     stacked_chart = create_region_stacked_chart(df, region_info['name'], region_info['color_scheme'])
     stacked_chart.write_html(
         os.path.join(region_dir, 'games_stacked.html'),
@@ -356,7 +360,7 @@ def save_region_data(region_key, region_info, output_dir):
         config={'displayModeBar': True, 'displaylogo': False}
     )
     
-    print(f"  Creating bar chart...")
+    print(f"   Creating bar chart...")
     bar_chart = create_region_bar_chart(df, region_info['name'], region_info['color_scheme'])
     bar_chart.write_html(
         os.path.join(region_dir, 'total_by_state.html'),
@@ -379,7 +383,7 @@ def save_region_data(region_key, region_info, output_dir):
     with open(os.path.join(region_dir, 'summary.json'), 'w') as f:
         json.dump(summary_dict, f, indent=2)
     
-    print(f"  ✅ Saved charts and data for {region_info['name']}")
+    print(f"   Saved charts and data for {region_info['name']}")
     
     return summary_dict
 
@@ -435,9 +439,9 @@ def create_all_regions_comparison():
             mode='lines',
             line=dict(width=3, color=color_map.get(region, '#000000')),
             hovertemplate='<b>%{fullData.name}</b><br>' +
-                         'Season: %{x}<br>' +
-                         'Games: %{y:,.0f}<br>' +
-                         '<extra></extra>'
+                          'Season: %{x}<br>' +
+                          'Games: %{y:,.0f}<br>' +
+                          '<extra></extra>'
         ))
     
     fig.update_layout(
@@ -485,7 +489,7 @@ def create_all_regions_comparison():
 
 def main():
     print("=" * 80)
-    print("🏈 Generating Regional Games Coverage Visualizations")
+    print("Generating Regional Games Coverage Visualizations")
     print("=" * 80)
     
     output_dir = "C:/Users/demck/OneDrive/Football_2024/static-football-rankings/docs/data/regional-statistics"
@@ -512,30 +516,30 @@ def main():
         json.dump(all_summaries, f, indent=2)
     
     print("\n" + "=" * 80)
-    print("✅ Regional Statistics Generation Complete!")
+    print("Regional Statistics Generation Complete!")
     print("=" * 80)
     print(f"\nOutput directory: {output_dir}")
     print("\nGenerated files:")
     for region_key in REGIONS.keys():
         region_lower = region_key.lower()
         print(f"\n{REGIONS[region_key]['name']}:")
-        print(f"  - {region_lower}/games_by_state.html")
-        print(f"  - {region_lower}/games_stacked.html")
-        print(f"  - {region_lower}/total_by_state.html")
-        print(f"  - {region_lower}/summary.json")
+        print(f"   - {region_lower}/games_by_state.html")
+        print(f"   - {region_lower}/games_stacked.html")
+        print(f"   - {region_lower}/total_by_state.html")
+        print(f"   - {region_lower}/summary.json")
     print(f"\nRegional Comparison:")
-    print(f"  - regional_comparison.html")
-    print(f"  - all_regions_summary.json")
+    print(f"   - regional_comparison.html")
+    print(f"   - all_regions_summary.json")
     
     # Print summary statistics
     print("\n" + "=" * 80)
-    print("📊 Regional Summary Statistics")
+    print("Regional Summary Statistics")
     print("=" * 80)
     for region_key, summary in all_summaries.items():
         print(f"\n{summary['region']}:")
-        print(f"  Total Games: {summary['total_games']:,}")
-        print(f"  Seasons: {summary['earliest_season']}-{summary['latest_season']}")
-        print(f"  States with Data: {summary['states_with_data']}/{len(summary['states'])}")
+        print(f"   Total Games: {summary['total_games']:,}")
+        print(f"   Seasons: {summary['earliest_season']}-{summary['latest_season']}")
+        print(f"   States with Data: {summary['states_with_data']}/{len(summary['states'])}")
 
 if __name__ == "__main__":
     main()
