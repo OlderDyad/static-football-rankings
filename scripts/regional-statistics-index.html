@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regional Statistics - McKnight's American Football</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
+
+    <!-- Breadcrumb navigation -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Regional Statistics</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Regional Statistics</h1>
+        
+        <p class="lead">
+            Explore game coverage statistics by region and state. View trends over time and compare regional differences.
+        </p>
+
+        <!-- Regional Comparison -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Regional Comparison</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted">Compare game coverage across all regions over time.</p>
+                        <a href="/static-football-rankings/pages/public/regional-statistics/comparison.html" 
+                           class="btn btn-primary">View Regional Comparison</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Individual Regions -->
+        <div class="row mb-4">
+            <!-- Northeast -->
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Northeast Region</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>States:</strong> CT, DC, DE, ME, MA, NH, NJ, NY, PA, RI, VT
+                        </p>
+                        <div id="northeast-summary" class="mb-3">
+                            <p class="text-muted">Loading statistics...</p>
+                        </div>
+                        <a href="/static-football-rankings/pages/public/regional-statistics/northeast.html" 
+                           class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Southeast -->
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-success">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Southeast Region</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>States:</strong> AL, AR, FL, GA, KY, LA, MD, MS, NC, SC, TN, VA, WV
+                        </p>
+                        <div id="southeast-summary" class="mb-3">
+                            <p class="text-muted">Loading statistics...</p>
+                        </div>
+                        <a href="/static-football-rankings/pages/public/regional-statistics/southeast.html" 
+                           class="btn btn-success">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Midwest -->
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-warning">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">Midwest Region</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>States:</strong> IL, IN, IA, KS, MI, MN, MO, NE, ND, OH, SD, WI
+                        </p>
+                        <div id="midwest-summary" class="mb-3">
+                            <p class="text-muted">Loading statistics...</p>
+                        </div>
+                        <a href="/static-football-rankings/pages/public/regional-statistics/midwest.html" 
+                           class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Southwest -->
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-danger">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="mb-0">Southwest Region</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>States:</strong> AZ, NM, OK, TX
+                        </p>
+                        <div id="southwest-summary" class="mb-3">
+                            <p class="text-muted">Loading statistics...</p>
+                        </div>
+                        <a href="/static-football-rankings/pages/public/regional-statistics/southwest.html" 
+                           class="btn btn-danger">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- West -->
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-secondary">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">West Region</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>States:</strong> AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY
+                        </p>
+                        <div id="west-summary" class="mb-3">
+                            <p class="text-muted">Loading statistics...</p>
+                        </div>
+                        <a href="/static-football-rankings/pages/public/regional-statistics/west.html" 
+                           class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canada -->
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-info">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Canada</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Provinces:</strong> AB, BC, MB, NB, NS, QB, SK
+                        </p>
+                        <div id="canada-summary" class="mb-3">
+                            <p class="text-muted">Loading statistics...</p>
+                        </div>
+                        <a href="/static-football-rankings/pages/public/regional-statistics/canada.html" 
+                           class="btn btn-info">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 mb-3">
+        <div class="text-center">
+            <p>&copy; 2025 McKnight's Football Rankings</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load regional summaries -->
+    <script>
+        // Load all regions summary
+        fetch('/static-football-rankings/data/regional-statistics/all_regions_summary.json')
+            .then(response => response.json())
+            .then(data => {
+                // Update each region's summary
+                const regions = {
+                    'Northeast': 'northeast-summary',
+                    'Southeast': 'southeast-summary',
+                    'Midwest': 'midwest-summary',
+                    'Southwest': 'southwest-summary',
+                    'West': 'west-summary',
+                    'Canada': 'canada-summary'
+                };
+
+                Object.keys(regions).forEach(regionKey => {
+                    const regionData = data[regionKey];
+                    if (regionData) {
+                        const summaryHtml = `
+                            <p class="mb-1"><strong>Total Games:</strong> ${regionData.total_games.toLocaleString()}</p>
+                            <p class="mb-1"><strong>Season Range:</strong> ${regionData.earliest_season}-${regionData.latest_season}</p>
+                            <p class="mb-0"><strong>States with Data:</strong> ${regionData.states_with_data}/${regionData.states.length}</p>
+                        `;
+                        document.getElementById(regions[regionKey]).innerHTML = summaryHtml;
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading summaries:', error);
+            });
+    </script>
+
+    <style>
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</body>
+</html>
