@@ -1,0 +1,41 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250711195724
+Username: MCKNIGHTS-PC\demck
+RunAs User: MCKNIGHTS-PC\demck
+Configuration Name: 
+Machine: MCKNIGHTS-PC (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\demck\.vscode\extensions\ms-vscode.powershell-2025.2.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.2.0' -BundledModulesPath 'c:\Users\demck\.vscode\extensions\ms-vscode.powershell-2025.2.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.2.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\demck\AppData\Roaming\Code\logs\20250710T061852\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\demck\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-35428-960028.json' -FeatureFlags @() 
+Process ID: 8824
+PSVersion: 5.1.26100.4652
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.4652
+BuildVersion: 10.0.26100.4652
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\logs\alias_import_log_20250711_195724.txt
+Starting Alias Names Import at 07/11/2025 19:57:24
+Source file: C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\MA_Alais_Proper.csv
+State filter: (MA)
+Reading alias CSV file...
+Filtered from 280 to 280 aliases for state (MA)
+Checking for duplicate aliases in CSV file...
+No duplicate aliases found in source file.
+Connecting to SQL Server...
+Importing aliases...
+Imported 280 new aliases successfully
+
+Alias import process completed!
+Database connection closed.
+**********************
+Windows PowerShell transcript end
+End time: 20250711195724
+**********************

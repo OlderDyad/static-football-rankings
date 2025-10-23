@@ -1,0 +1,500 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250620085616
+Username: MCKNIGHTS-PC\demck
+RunAs User: MCKNIGHTS-PC\demck
+Configuration Name: 
+Machine: MCKNIGHTS-PC (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\demck\.vscode\extensions\ms-vscode.powershell-2025.0.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.0.0' -BundledModulesPath 'c:\Users\demck\.vscode\extensions\ms-vscode.powershell-2025.0.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.0.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\demck\AppData\Roaming\Code\logs\20250619T085750\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\demck\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-22548-377511.json' -FeatureFlags @() 
+Process ID: 18216
+PSVersion: 5.1.26100.4202
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.4202
+BuildVersion: 10.0.26100.4202
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\logs\alias_import_log.txt
+Starting Alias Names Import at 06/20/2025 08:56:16
+Source file: C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\Alias_Names_List.csv
+Reading alias CSV file...
+Checking for duplicate aliases in CSV file...
+No duplicate aliases found - proceeding with import.
+Connecting to SQL Server...
+-1
+Clearing all existing alias data...
+-1
+Importing aliases...
+
+
+CompareInfo                     : None
+XmlSchemaCollectionDatabase     :
+XmlSchemaCollectionOwningSchema :
+XmlSchemaCollectionName         :
+ForceColumnEncryption           : False
+DbType                          : String
+LocaleId                        : 0
+ParameterName                   : @Alias
+Precision                       : 0
+Scale                           : 0
+SqlDbType                       : NVarChar
+SqlValue                        :
+UdtTypeName                     :
+TypeName                        :
+Value                           :
+Direction                       : Input
+IsNullable                      : False
+Offset                          : 0
+Size                            : 255
+SourceColumn                    :
+SourceColumnNullMapping         : False
+SourceVersion                   : Current
+
+CompareInfo                     : None
+XmlSchemaCollectionDatabase     :
+XmlSchemaCollectionOwningSchema :
+XmlSchemaCollectionName         :
+ForceColumnEncryption           : False
+DbType                          : String
+LocaleId                        : 0
+ParameterName                   : @ProperName
+Precision                       : 0
+Scale                           : 0
+SqlDbType                       : NVarChar
+SqlValue                        :
+UdtTypeName                     :
+TypeName                        :
+Value                           :
+Direction                       : Input
+IsNullable                      : False
+Offset                          : 0
+Size                            : 255
+SourceColumn                    :
+SourceColumnNullMapping         : False
+SourceVersion                   : Current
+
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+Imported 166 aliases successfully
+Updating Home team names...
+Updated 111 Home team records
+Updating Visitor team names...
+Updated 119 Visitor team records
+Total records updated: 230
+Generating report of potentially problematic team names...
+
+Potentially problematic team names still in database:
+
+
+
+TeamName                                                      OccurrenceCount
+--------                                                      ---------------
+Benton-Scales Mound (IL)-Shullsburg (WI)                                   21
+Black Hawk-Warren (IL)-South Wayne (WI)                                    19
+? St. Joseph (OH)                                                          14
+Richmond Armstrong (Kennedy) (VA)                                          13
+Houston Washington? (TX)                                                   11
+MMCRU (CO-OP) (IA)                                                         10
+AlWood-Cambridge) (Woodhull Ridgewood (ge)                                 10
+South Wayne (WI)-Warren (IL)                                               10
+SALKSCC (CO-OP) (WI)                                                       10
+WBND (CO-OP) (IA)                                                           9
+NWLONPA (CO-OP) (WI)                                                        9
+Montbello) (Denver Warriors (lo)                                            9
+ACGC (CO-OP) (IA)                                                           9
+BFAL (CO-OP) (VT)                                                           9
+?Dallas Pinkston (TX)                                                       9
+Columbus) (Columbus Youthbuild (us)                                         9
+HRJG (CO-OP) (MT)                                                           8
+MPCGFS (CO-OP) (ND)                                                         8
+?Bushnell-Prairie City (IL)                                                 8
+MVAOCOU (CO-OP) (IA)                                                        8
+Red Deer ?cole Secondaire Notre Dame (AB)                                   8
+Naples Golden Gate? (FL)                                                    7
+New Rochelle Area Opp Roosevelt  (NY)                                       7
+WMAHD (CO-OP) (ME)                                                          7
+FMFA (CO-OP) (SD)                                                           7
+Englewood  (NJ)                                                             6
+DSGG (CO-OP) (MT)                                                           6
+LHMBSZ (CO-OP) (ND)                                                         6
+Los Angeles? Wilson (CA)                                                    6
+Phoenix Union (AZ) (AZ)                                                     6
+NB (CO-OP) (ND)                                                             5
+NRSM (CO-OP) (ND)                                                           5
+Wheeling Linsly Military Institute (WV) (OH)                                5
+VGDA (CO-OP) (ND)                                                           5
+Warner Robins) J Northside (GA)                                             5
+KC (CO-OP) (ND)                                                             5
+MCSTNJMSL (CO-OP) (WI)                                                      5
+GCCM (CO-OP) (ND)                                                           5
+?Port Arthur Lincoln (TX)                                                   5
+CBMHS (CO-OP) (WI)                                                          5
+BTMA (CO-OP) (WI)                                                           5
+Asheville School (Independent) (NC)                                         4
+BC (CO-OP) (ND)                                                             4
+Charlotte Got Kids? Academy (NC)                                            4
+El Paso (NE) Christian (TX)                                                 4
+WFCA (CO-OP) (WI)                                                           4
+Towns County (GA) (TN)                                                      4
+NS (CO-OP) (ND)                                                             4
+PCSTSCSTS (CO-OP) (WI)                                                      4
+Saint Clair (PA) (PA)                                                       3
+NC (CO-OP) (ND)                                                             3
+Waco Jefferson Moore? (TX)                                                  3
+WPFLC (CO-OP) (MT)                                                          3
+CEBTT (CO-OP) (SD)                                                          3
+ESSA (CO-OP) (ME)                                                           3
+Fredericksburg James Monroe Opp ""?""(VA)                                   3
+MFKW (CO-OP) (ME)                                                           3
+?Northside (TX)                                                             3
+?Orangefield (TX)                                                           2
+?Jasper (TX)                                                                2
+?Kirbyville (TX)                                                            2
+?West Orange-Stark (TX)                                                     2
+?Woodville (TX)                                                             2
+?Copley (OH)                                                                2
+? Central Baptist (LA)                                                      2
+?Beaumont Ozen (TX)                                                         2
+CEBTT (CO-OP) (ND)                                                          2
+?Buna (TX)                                                                  2
+Atlanta) J Westminster (GA)                                                 2
+Miami Somerset Academy (Silver Palms) (FL)                                  2
+Knoxville (JV) (TN)                                                         2
+Mt. Hood Parkdale (OR) (OR)                                                 2
+Gatey? (CA)                                                                 2
+Memphis East (playoffs) (TN)                                                2
+Houston Sterling? (TX)                                                      2
+Magnolia Heights (MS) (TN)                                                  2
+Fairburn) J Campbell (GA)                                                   2
+El Centro Southwest CA) (MI)                                                2
+Grand? (NE)                                                                 2
+Great Neck?South (NY)                                                       2
+West Hazleton (PA) (PA)                                                     2
+Woodberry Forest  Opp ""McDonough"" (VA)                                    2
+Turrell (AR) (TN)                                                           2
+Scottsboro Christian (AL) (TN)                                              2
+New Madrid County (MO) (TN)                                                 2
+North Delta (MS) (TN)                                                       2
+Ohio School for the Deaf (OH) (OH)                                          2
+NP (CO-OP) (ND)                                                             2
+Saint Mary's? (MO)                                                          1
+Ridgeland (MS) (TN)                                                         1
+RM BRAN? (VA)                                                               1
+Rutland Mt. St. Joseph Academy  Opp ""LaSalle"" (CT)                        1
+Rutland Mt. St. Joseph Academy  Opp ""St. John's"" (CT)                     1
+Rutland Mt. St. Joseph Academy Opp ""St. John's""  (VT)                     1
+Saint Catharines  Ridley College (ON)                                       1
+Pennsylvania Institute fort the Deaf (PA) (OH)                              1
+Philadelphia Frankford  Opp ""W City"" (PA)                                 1
+O??e (OH)                                                                   1
+Potomac Bullis (MD) (MI)                                                    1
+Powell Valley (VA) (TN)                                                     1
+Quincy Notre Dame? (IL)                                                     1
+Onley Nandua (VA) (MI)                                                      1
+Opelousas ? Academy (LA)                                                    1
+Pasadena South Houston ? (TX)                                               1
+Northern St Mary (Pickering) (Ont)                                          1
+Northern St. Mary (Pickering) (ON)                                          1
+New Rochelle Area Opp  St. Mary's (NY)                                      1
+New York?City?Textile (NY)                                                  1
+Moro Sherman County Union  Opp ""St. Mary's"" (OR)                          1
+South Doyle (OT) (TN)                                                       1
+South Hill Park View Opp""? - (NC)""                                        1
+South Hill Park View Opp""?"" (VA)                                          1
+St. Mary's (MO)?                                                            1
+Syracuse  Area Opp Hopkinson (NY)                                           1
+th) (CA)                                                                    1
+TN) J Copper Basin (GA)                                                     1
+Twin Springs (VA) (TN)                                                      1
+Tyler John Tyler ? (TX)                                                     1
+San Diego h Columbia) 35 San Diego Jewish Academy (CA)                      1
+Trezevant (playoffs) (TN)                                                   1
+Troy La Salle Institute?(NY)                                                1
+Tunica Institute (MS) (TN)                                                  1
+Whitehall Opp ""Florida""  (PA)                                             1
+Webb City (MO) (TN)                                                         1
+West Albany Town Team? (OR)                                                 1
+Wallingford ChoateRosemary Hall  Opp ""Hill"" (CT)                          1
+Vicksburg ""Unknown"" Opp  (MS)                                             1
+Warren  Opp ""Hilltop Wolves"" (PA)                                         1
+Warren  Opp ""St. Marys"" (PA)                                              1
+Washington St. John's  Opp ""La Salle"" (MD)                                1
+Wayne Montgomery Local (OH) (OH)                                            1
+Guntersville ? (AL)                                                         1
+Highland Springs Opp ""?""(VA)                                              1
+Houston Davis? (TX)                                                         1
+Houston Kashmere? (TX)                                                      1
+Houston Lee? (TX)                                                           1
+Houston Reagan? (TX)                                                        1
+Houston Sam Houston? (TX)                                                   1
+Houston Scarborough? (TX)                                                   1
+Humble Kingwood ? (TX)                                                      1
+Humble? (TX)                                                                1
+Hyattsville DeMatha Catholic  Opp ""Jefferson Co"" (MD)                     1
+Hyattsville DeMatha Catholic  Opp ""Stonewall Jackson"" (MD)                1
+Hyattsville DeMatha Catholic  Opp ""Valley Central"" (MD)                   1
+Hyland? (CA)                                                                1
+Iowa City Regina  Opp ""Notre Dame"" (IA)                                   1
+Ithaca  Opp ""George Jr"" (NY)                                              1
+Jackson North Side (4OT) (TN)                                               1
+Jonesboro) J Mount Zion (GA)                                                1
+Kapa?a (HI)                                                                 1
+Katy Cinco Ranch ? (TX)                                                     1
+Katy Taylor ? (TX)                                                          1
+Elmira Heights  (NY)                                                        1
+Dublin Opp ""? Athletic Club"" (VA)                                         1
+El Centro Central (CA) (MI)                                                 1
+Cornerstone ? (MS)                                                          1
+Craigmont (OT) (playoffs) (TN)                                              1
+Erie ? (PA)                                                                 1
+Gainesville) J Johnson (GA)                                                 1
+Fort Wayne Catholic Central IN) (OH)                                        1
+Franktown ? (VA)                                                            1
+Maine-Endwell  Opp ""CF"" (NY)                                              1
+Maine-Endwell  Opp ""North B"" (NY)                                         1
+Little Rock Christian (AR) (TN)                                             1
+Little Rock Faith (AR) (TN)                                                 1
+Living Word (AL) (TN)                                                       1
+Houston Waltrip? (TX)                                                       1
+Houston Yates? (TX)                                                         1
+Kennesaw Mountain (GA) (TN)                                                 1
+Kennett (MO) (TN)                                                           1
+Kingston Bishop O?Reilly (PA)                                               1
+Monroe County (KY) (TN)                                                     1
+Mullan (ID)-Saint Regis (MT)                                                1
+Mullan (ID)-St. Regis (MT)                                                  1
+Muskogee (OK) Opp ""Dallas"" (TX)                                           1
+Lancaster (VA) (MI)                                                         1
+Lawrenceville Brunswick Opp ""?"" (VA)                                      1
+Memphis ? (TN)                                                              1
+Middletown St. Andrew's ( (DE)                                              1
+Milford Caroline Opp ""?"" (VA)                                             1
+Millington (OT) (TN)                                                        1
+Milw.  Marq OPP ""Memorial"" (WI)                                           1
+Austin Johnston ? (TX)                                                      1
+Bay Springs MS? (CO)                                                        1
+Bayfield? (FL)                                                              1
+Ardmore (AL) (TN)                                                           1
+Blackstone Opp ""?"" (VA)                                                   1
+Bolles (FL) (TN)                                                            1
+Brandywine PA? (NY)                                                         1
+Brawley (CA) (MI)                                                           1
+Bronx Evander?Childs (NY)                                                   1
+Bronxville Concordia Prep (NY) (NY)                                         1
+Bruce (MS) (TN)                                                             1
+Clearweather/water? (KS)                                                    1
+Clintonville Au Sable Valley?(NY)                                           1
+Colonial Beach (VA) (MI)                                                    1
+Becrectour? (SC)                                                            1
+Ashland Fairview (KY) Opp ""East"" (OH)                                     1
+Burgard-Buffalo Academy for Visual & Performing Arts) (NY)                  1
+Bushnell South Sumter  Opp ""Central"" (FL)                                 1
+Calexico (CA) (MI)                                                          1
+?Bridge City (TX)                                                           1
+?Brookville (OH)                                                            1
+? Academy (TX)                                                              1
+??????????????????????????????????????????????Agua Dulce (TX)               1
+??????????????????????????????????????????????AguaDulce(TX)                 1
+????gum (OK)                                                                1
+???arkana (AR)                                                              1
+?Aledo (TX)                                                                 1
+?Alto (TX)                                                                  1
+?Corrigan-Camden (TX)                                                       1
+?Crockett (TX)                                                              1
+?Crooksville (OH)                                                           1
+?Dallas Kimball (TX)                                                        1
+?Carlisle (OH)                                                              1
+?Christian Academy (LA)                                                     1
+?Cleveland (TX)                                                             1
+?Eastern (NC)                                                               1
+?Port Neches-Groves (TX)                                                    1
+?Silsbee (TX)                                                               1
+?Tinona (OH)                                                                1
+?Kountze (TX)                                                               1
+?Lioana (OH)                                                                1
+?New Diana (TX)                                                             1
+?Newton (TX)                                                                1
+?Ortonville (OH)                                                            1
+?Pine Manor College-PMC Frosh (MA)                                          1
+?Port Arthur Jefferson (TX)                                                 1
+
+
+Exported problematic teams to: C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\Problematic_Teams_20250620.csv
+
+Alias import and database update completed successfully!
+Database connection closed.
+**********************
+Windows PowerShell transcript end
+End time: 20250620085631
+**********************

@@ -1,0 +1,2056 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250620085506
+Username: MCKNIGHTS-PC\demck
+RunAs User: MCKNIGHTS-PC\demck
+Configuration Name: 
+Machine: MCKNIGHTS-PC (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\demck\.vscode\extensions\ms-vscode.powershell-2025.0.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.0.0' -BundledModulesPath 'c:\Users\demck\.vscode\extensions\ms-vscode.powershell-2025.0.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.0.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\demck\AppData\Roaming\Code\logs\20250619T085750\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\demck\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-22548-377511.json' -FeatureFlags @() 
+Process ID: 18216
+PSVersion: 5.1.26100.4202
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.4202
+BuildVersion: 10.0.26100.4202
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\logs\yearbook_import_log.txt
+Starting Yearbook Scores CSV import at 06/20/2025 08:55:06
+Source file: C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\Yearbook_Scores.csv
+Importing CSV data...
+Found 166 records in CSV.
+Sample data (first record):
+
+
+ID            :
+Date          : 9/11/1976
+Season        : 1976
+Visitor       : Greenwich (NY)
+Visitor Score : 0
+Home          : Whitehall (NY)
+Home Score    : 24
+Margin        : 24
+Nuetral       : TRUE
+Location      : Unknown
+Location2     :
+Line          :
+Future Game   :
+Source        : https://www.classmates.com/siteui/yearbooks/14865?page=128
+Date Added    : 6/20/2025 8:53
+OT            :
+Forfeit       :
+
+
+
+Connecting to SQL Server...
+Beginning data import...
+
+Processing record 1
+Date: 9/11/1976
+Season: 1976
+Home: Whitehall (NY)
+Home Score: 24
+Visitor: Greenwich (NY)
+Visitor Score: 0
+Margin: 24
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/14865?page=128
+Record 1 - 1976-09-11 - Whitehall (NY) vs Greenwich (NY) - Successfully imported
+
+Processing record 2
+Date: 9/18/1976
+Season: 1976
+Home: Glens Falls St. Mary's-St. Alphonsus Regional Catholic (NY)
+Home Score: 8
+Visitor: Greenwich (NY)
+Visitor Score: 6
+Margin: 2
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/14865?page=128
+Record 2 - 1976-09-18 - Glens Falls St. Mary's-St. Alphonsus Regional Catholic (NY) vs Greenwich (NY) - Successfully imported
+
+Processing record 3
+Date: 9/25/1976
+Season: 1976
+Home: Greenwich (NY)
+Home Score: 32
+Visitor: Granville (NY)
+Visitor Score: 8
+Margin: 24
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/14865?page=128
+Record 3 - 1976-09-25 - Greenwich (NY) vs Granville (NY) - Successfully imported
+
+Processing record 4
+Date: 10/2/1976
+Season: 1976
+Home: Hoosick Falls (NY)
+Home Score: 35
+Visitor: Greenwich (NY)
+Visitor Score: 20
+Margin: 15
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/14865?page=128
+Record 4 - 1976-10-02 - Hoosick Falls (NY) vs Greenwich (NY) - Successfully imported
+
+Processing record 5
+Date: 10/9/1976
+Season: 1976
+Home: Lake George (NY)
+Home Score: 12
+Visitor: Greenwich (NY)
+Visitor Score: 0
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/14865?page=128
+Record 5 - 1976-10-09 - Lake George (NY) vs Greenwich (NY) - Successfully imported
+
+Processing record 6
+Date: 10/16/1976
+Season: 1976
+Home: Greenwich (NY)
+Home Score: 30
+Visitor: Stillwater (NY)
+Visitor Score: 0
+Margin: 30
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/14865?page=128
+Record 6 - 1976-10-16 - Greenwich (NY) vs Stillwater (NY) - Successfully imported
+
+Processing record 7
+Date: 10/23/1976
+Season: 1976
+Home: Greenwich (NY)
+Home Score: 28
+Visitor: Schuylerville (NY)
+Visitor Score: 8
+Margin: 20
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/14865?page=128
+Record 7 - 1976-10-23 - Greenwich (NY) vs Schuylerville (NY) - Successfully imported
+
+Processing record 8
+Date: 10/30/1976
+Season: 1976
+Home: Greenwich (NY)
+Home Score: 16
+Visitor: Cambridge (NY)
+Visitor Score: 0
+Margin: 16
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/14865?page=128
+Record 8 - 1976-10-30 - Greenwich (NY) vs Cambridge (NY) - Successfully imported
+
+Processing record 9
+Date: 9/10/1977
+Season: 1977
+Home: Hoosick Falls (NY)
+Home Score: 15
+Visitor: Greenwich (NY)
+Visitor Score: 2
+Margin: 13
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/16279?page=70
+Record 9 - 1977-09-10 - Hoosick Falls (NY) vs Greenwich (NY) - Successfully imported
+
+Processing record 10
+Date: 9/17/1977
+Season: 1977
+Home: Hoosick Falls (NY)
+Home Score: 22
+Visitor: Glens Falls St. Mary's-St. Alphonsus Regional Catholic (NY)
+Visitor Score: 18
+Margin: 4
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/16279?page=70
+Record 10 - 1977-09-17 - Hoosick Falls (NY) vs Glens Falls St. Mary's-St. Alphonsus Regional Catholic (NY) - Successfully imported
+
+Processing record 11
+Date: 9/24/1977
+Season: 1977
+Home: Lake George (NY)
+Home Score: 12
+Visitor: Hoosick Falls (NY)
+Visitor Score: 7
+Margin: 5
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/16279?page=70
+Record 11 - 1977-09-24 - Lake George (NY) vs Hoosick Falls (NY) - Successfully imported
+
+Processing record 12
+Date: 10/1/1977
+Season: 1977
+Home: Hoosick Falls (NY)
+Home Score: 22
+Visitor: Schuylerville (NY)
+Visitor Score: 14
+Margin: 8
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/16279?page=70
+Record 12 - 1977-10-01 - Hoosick Falls (NY) vs Schuylerville (NY) - Successfully imported
+
+Processing record 13
+Date: 10/8/1977
+Season: 1977
+Home: Whitehall (NY)
+Home Score: 42
+Visitor: Hoosick Falls (NY)
+Visitor Score: 7
+Margin: 35
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/16279?page=70
+Record 13 - 1977-10-08 - Whitehall (NY) vs Hoosick Falls (NY) - Successfully imported
+
+Processing record 14
+Date: 10/15/1977
+Season: 1977
+Home: Hoosick Falls (NY)
+Home Score: 32
+Visitor: Fort Edward (NY)
+Visitor Score: 0
+Margin: 32
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/16279?page=70
+Record 14 - 1977-10-15 - Hoosick Falls (NY) vs Fort Edward (NY) - Successfully imported
+
+Processing record 15
+Date: 10/22/1977
+Season: 1977
+Home: Granville (NY)
+Home Score: 6
+Visitor: Hoosick Falls (NY)
+Visitor Score: 3
+Margin: 3
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/16279?page=70
+Record 15 - 1977-10-22 - Granville (NY) vs Hoosick Falls (NY) - Successfully imported
+
+Processing record 16
+Date: 10/29/1977
+Season: 1977
+Home: East Syracuse Bishop Grimes (NY)
+Home Score: 37
+Visitor: Hoosick Falls (NY)
+Visitor Score: 0
+Margin: 37
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/16279?page=70
+Record 16 - 1977-10-29 - East Syracuse Bishop Grimes (NY) vs Hoosick Falls (NY) - Successfully imported
+
+Processing record 17
+Date: 9/11/1976
+Season: 1976
+Home: Port Jefferson Station Comsewogue (NY)
+Home Score: 32
+Visitor: Centereach (NY)
+Visitor Score: 0
+Margin: 32
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/252205?page=164
+Record 17 - 1976-09-11 - Port Jefferson Station Comsewogue (NY) vs Centereach (NY) - Successfully imported
+
+Processing record 18
+Date: 9/18/1976
+Season: 1976
+Home: Port Jefferson Station Comsewogue (NY)
+Home Score: 38
+Visitor: Islip (NY)
+Visitor Score: 6
+Margin: 32
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/252205?page=164
+Record 18 - 1976-09-18 - Port Jefferson Station Comsewogue (NY) vs Islip (NY) - Successfully imported
+
+Processing record 19
+Date: 9/25/1976
+Season: 1976
+Home: Port Jefferson Station Comsewogue (NY)
+Home Score: 50
+Visitor: Kings Park (NY)
+Visitor Score: 8
+Margin: 42
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/252205?page=164
+Record 19 - 1976-09-25 - Port Jefferson Station Comsewogue (NY) vs Kings Park (NY) - Successfully imported
+
+Processing record 20
+Date: 10/2/1976
+Season: 1976
+Home: Port Jefferson Station Comsewogue (NY)
+Home Score: 22
+Visitor: West Babylon (NY)
+Visitor Score: 6
+Margin: 16
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/252205?page=164
+Record 20 - 1976-10-02 - Port Jefferson Station Comsewogue (NY) vs West Babylon (NY) - Successfully imported
+
+Processing record 21
+Date: 10/9/1976
+Season: 1976
+Home: Port Jefferson Station Comsewogue (NY)
+Home Score: 30
+Visitor: Greenlawn Harborfields (NY)
+Visitor Score: 8
+Margin: 22
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/252205?page=164
+Record 21 - 1976-10-09 - Port Jefferson Station Comsewogue (NY) vs Greenlawn Harborfields (NY) - Successfully imported
+
+Processing record 22
+Date: 10/16/1976
+Season: 1976
+Home: Copiague (NY)
+Home Score: 38
+Visitor: Port Jefferson Station Comsewogue (NY)
+Visitor Score: 30
+Margin: 8
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/252205?page=164
+Record 22 - 1976-10-16 - Copiague (NY) vs Port Jefferson Station Comsewogue (NY) - Successfully imported
+
+Processing record 23
+Date: 10/23/1976
+Season: 1976
+Home: Port Jefferson Station Comsewogue (NY)
+Home Score: 43
+Visitor: Sayville (NY)
+Visitor Score: 12
+Margin: 31
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/252205?page=164
+Record 23 - 1976-10-23 - Port Jefferson Station Comsewogue (NY) vs Sayville (NY) - Successfully imported
+
+Processing record 24
+Date: 10/30/1976
+Season: 1976
+Home: Port Jefferson Station Comsewogue (NY)
+Home Score: 20
+Visitor: Bay Shore (NY)
+Visitor Score: 8
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/252205?page=164
+Record 24 - 1976-10-30 - Port Jefferson Station Comsewogue (NY) vs Bay Shore (NY) - Successfully imported
+
+Processing record 25
+Date: 9/20/1969
+Season: 1969
+Home: East Syracuse Bishop Grimes (NY)
+Home Score: 14
+Visitor: Syracuse Corcoran (NY)
+Visitor Score: 12
+Margin: 2
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/91013?page=112
+Record 25 - 1969-09-20 - East Syracuse Bishop Grimes (NY) vs Syracuse Corcoran (NY) - Successfully imported
+
+Processing record 26
+Date: 9/27/1969
+Season: 1969
+Home: East Syracuse Bishop Grimes (NY)
+Home Score: 33
+Visitor: Cortland (NY)
+Visitor Score: 6
+Margin: 27
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/91013?page=112
+Record 26 - 1969-09-27 - East Syracuse Bishop Grimes (NY) vs Cortland (NY) - Successfully imported
+
+Processing record 27
+Date: 10/4/1969
+Season: 1969
+Home: East Syracuse Bishop Grimes (NY)
+Home Score: 33
+Visitor: Oswego (NY)
+Visitor Score: 0
+Margin: 33
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/91013?page=112
+Record 27 - 1969-10-04 - East Syracuse Bishop Grimes (NY) vs Oswego (NY) - Successfully imported
+
+Processing record 28
+Date: 10/11/1969
+Season: 1969
+Home: East Syracuse Bishop Grimes (NY)
+Home Score: 46
+Visitor: Watertown (NY)
+Visitor Score: 6
+Margin: 40
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/91013?page=112
+Record 28 - 1969-10-11 - East Syracuse Bishop Grimes (NY) vs Watertown (NY) - Successfully imported
+
+Processing record 29
+Date: 10/18/1969
+Season: 1969
+Home: East Syracuse Bishop Grimes (NY)
+Home Score: 16
+Visitor: Syracuse Christian Brothers Academy (NY)
+Visitor Score: 0
+Margin: 16
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/91013?page=112
+Record 29 - 1969-10-18 - East Syracuse Bishop Grimes (NY) vs Syracuse Christian Brothers Academy (NY) - Successfully imported
+
+Processing record 30
+Date: 10/25/1969
+Season: 1969
+Home: East Syracuse Bishop Grimes (NY)
+Home Score: 29
+Visitor: Syracuse Bishop Ludden (NY)
+Visitor Score: 0
+Margin: 29
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/91013?page=112
+Record 30 - 1969-10-25 - East Syracuse Bishop Grimes (NY) vs Syracuse Bishop Ludden (NY) - Successfully imported
+
+Processing record 31
+Date: 11/1/1969
+Season: 1969
+Home: East Syracuse Bishop Grimes (NY)
+Home Score: 31
+Visitor: Syracuse Nottingham (NY)
+Visitor Score: 14
+Margin: 17
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/91013?page=112
+Record 31 - 1969-11-01 - East Syracuse Bishop Grimes (NY) vs Syracuse Nottingham (NY) - Successfully imported
+
+Processing record 32
+Date: 11/8/1969
+Season: 1969
+Home: Fulton (NY)
+Home Score: 12
+Visitor: East Syracuse Bishop Grimes (NY)
+Visitor Score: 6
+Margin: 6
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/91013?page=112
+Record 32 - 1969-11-08 - Fulton (NY) vs East Syracuse Bishop Grimes (NY) - Successfully imported
+
+Processing record 33
+Date: 9/18/1971
+Season: 1971
+Home: Dolgeville (NY)
+Home Score: 14
+Visitor: Little Falls (NY)
+Visitor Score: 0
+Margin: 14
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182863524?page=98
+Record 33 - 1971-09-18 - Dolgeville (NY) vs Little Falls (NY) - Successfully imported
+
+Processing record 34
+Date: 9/25/1971
+Season: 1971
+Home: Dolgeville (NY)
+Home Score: 18
+Visitor: Sandy Creek (NY)
+Visitor Score: 0
+Margin: 18
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182863524?page=98
+Record 34 - 1971-09-25 - Dolgeville (NY) vs Sandy Creek (NY) - Successfully imported
+
+Processing record 35
+Date: 10/2/1971
+Season: 1971
+Home: Oriskany (NY)
+Home Score: 12
+Visitor: Dolgeville (NY)
+Visitor Score: 6
+Margin: 6
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182863524?page=98
+Record 35 - 1971-10-02 - Oriskany (NY) vs Dolgeville (NY) - Successfully imported
+
+Processing record 36
+Date: 10/9/1971
+Season: 1971
+Home: Dolgeville (NY)
+Home Score: 6
+Visitor: Madison Central (NY)
+Visitor Score: 6
+Margin: 0
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182863524?page=98
+Record 36 - 1971-10-09 - Dolgeville (NY) vs Madison Central (NY) - Successfully imported
+
+Processing record 37
+Date: 10/16/1971
+Season: 1971
+Home: Dolgeville (NY)
+Home Score: 13
+Visitor: Boonville Adirondack (NY)
+Visitor Score: 6
+Margin: 7
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182863524?page=98
+Record 37 - 1971-10-16 - Dolgeville (NY) vs Boonville Adirondack (NY) - Successfully imported
+
+Processing record 38
+Date: 10/23/1971
+Season: 1971
+Home: Dolgeville (NY)
+Home Score: 26
+Visitor: Munnsville Stockbridge Valley Central (NY)
+Visitor Score: 0
+Margin: 26
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182863524?page=98
+Record 38 - 1971-10-23 - Dolgeville (NY) vs Munnsville Stockbridge Valley Central (NY) - Successfully imported
+
+Processing record 39
+Date: 10/30/1971
+Season: 1971
+Home: Dolgeville (NY)
+Home Score: 35
+Visitor: Westmoreland (NY)
+Visitor Score: 13
+Margin: 22
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182863524?page=98
+Record 39 - 1971-10-30 - Dolgeville (NY) vs Westmoreland (NY) - Successfully imported
+
+Processing record 40
+Date: 11/6/1971
+Season: 1971
+Home: Dolgeville (NY)
+Home Score: 53
+Visitor: Newport West Canada Valley (NY)
+Visitor Score: 6
+Margin: 47
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182863524?page=98
+Record 40 - 1971-11-06 - Dolgeville (NY) vs Newport West Canada Valley (NY) - Successfully imported
+
+Processing record 41
+Date: 9/20/1975
+Season: 1975
+Home: Plattsburgh St. John's Academy (NY)
+Home Score: 35
+Visitor: Clintonville AuSable Valley (NY)
+Visitor Score: 18
+Margin: 17
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/1300334306?page=59
+Record 41 - 1975-09-20 - Plattsburgh St. John's Academy (NY) vs Clintonville AuSable Valley (NY) - Successfully imported
+
+Processing record 42
+Date: 9/27/1975
+Season: 1975
+Home: Plattsburgh St. John's Academy (NY)
+Home Score: 21
+Visitor: Plattsburgh Mt. Assumption Institute (NY)
+Visitor Score: 6
+Margin: 15
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/1300334306?page=59
+Record 42 - 1975-09-27 - Plattsburgh St. John's Academy (NY) vs Plattsburgh Mt. Assumption Institute (NY) - Successfully imported
+
+Processing record 43
+Date: 10/4/1975
+Season: 1975
+Home: Plattsburgh St. John's Academy (NY)
+Home Score: 32
+Visitor: Saranac Lake (NY)
+Visitor Score: 6
+Margin: 26
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/1300334306?page=59
+Record 43 - 1975-10-04 - Plattsburgh St. John's Academy (NY) vs Saranac Lake (NY) - Successfully imported
+
+Processing record 44
+Date: 10/11/1975
+Season: 1975
+Home: Plattsburgh St. John's Academy (NY)
+Home Score: 8
+Visitor: Ticonderoga (NY)
+Visitor Score: 7
+Margin: 1
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/1300334306?page=59
+Record 44 - 1975-10-11 - Plattsburgh St. John's Academy (NY) vs Ticonderoga (NY) - Successfully imported
+
+Processing record 45
+Date: 10/18/1975
+Season: 1975
+Home: Plattsburgh St. John's Academy (NY)
+Home Score: 21
+Visitor: Plattsburgh Beekmantown (NY)
+Visitor Score: 20
+Margin: 1
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/1300334306?page=59
+Record 45 - 1975-10-18 - Plattsburgh St. John's Academy (NY) vs Plattsburgh Beekmantown (NY) - Successfully imported
+
+Processing record 46
+Date: 10/25/1975
+Season: 1975
+Home: Plattsburgh (NY)
+Home Score: 12
+Visitor: Plattsburgh St. John's Academy (NY)
+Visitor Score: 7
+Margin: 5
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/1300334306?page=59
+Record 46 - 1975-10-25 - Plattsburgh (NY) vs Plattsburgh St. John's Academy (NY) - Successfully imported
+
+Processing record 47
+Date: 11/1/1975
+Season: 1975
+Home: Port Henry Moriah (NY)
+Home Score: 28
+Visitor: Plattsburgh St. John's Academy (NY)
+Visitor Score: 12
+Margin: 16
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/1300334306?page=59
+Record 47 - 1975-11-01 - Port Henry Moriah (NY) vs Plattsburgh St. John's Academy (NY) - Successfully imported
+
+Processing record 48
+Date: 11/8/1975
+Season: 1975
+Home: Peru (NY)
+Home Score: 12
+Visitor: Plattsburgh St. John's Academy (NY)
+Visitor Score: 0
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/1300334306?page=59
+Record 48 - 1975-11-08 - Peru (NY) vs Plattsburgh St. John's Academy (NY) - Successfully imported
+
+Processing record 49
+Date: 9/11/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 19
+Visitor: Clifton Park Shenendehowa (NY)
+Visitor Score: 18
+Margin: 1
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/231037?page=54
+Record 49 - 1976-09-11 - Albany Christian Brothers Academy (NY) vs Clifton Park Shenendehowa (NY) - Successfully imported
+
+Processing record 50
+Date: 9/18/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 33
+Visitor: Saratoga Springs (NY)
+Visitor Score: 0
+Margin: 33
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/231037?page=54
+Record 50 - 1976-09-18 - Albany Christian Brothers Academy (NY) vs Saratoga Springs (NY) - Successfully imported
+
+Processing record 51
+Date: 9/25/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 12
+Visitor: Binghamton Seton Catholic Central (NY)
+Visitor Score: 7
+Margin: 5
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/231037?page=54
+Record 51 - 1976-09-25 - Albany Christian Brothers Academy (NY) vs Binghamton Seton Catholic Central (NY) - Successfully imported
+
+Processing record 52
+Date: 10/2/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 36
+Visitor: Albany Vincentian Institute (NY)
+Visitor Score: 0
+Margin: 36
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/231037?page=54
+Record 52 - 1976-10-02 - Albany Christian Brothers Academy (NY) vs Albany Vincentian Institute (NY) - Successfully imported
+
+Processing record 53
+Date: 10/9/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 40
+Visitor: Schenectady Notre Dame Bishop Gibbons (NY)
+Visitor Score: 10
+Margin: 30
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/231037?page=54
+Record 53 - 1976-10-09 - Albany Christian Brothers Academy (NY) vs Schenectady Notre Dame Bishop Gibbons (NY) - Successfully imported
+
+Processing record 54
+Date: 10/16/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 27
+Visitor: Albany Cardinal McCloskey (NY)
+Visitor Score: 0
+Margin: 27
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/231037?page=54
+Record 54 - 1976-10-16 - Albany Christian Brothers Academy (NY) vs Albany Cardinal McCloskey (NY) - Successfully imported
+
+Processing record 55
+Date: 10/23/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 47
+Visitor: Troy La Salle Institute (NY)
+Visitor Score: 0
+Margin: 47
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/231037?page=54
+Record 55 - 1976-10-23 - Albany Christian Brothers Academy (NY) vs Troy La Salle Institute (NY) - Successfully imported
+
+Processing record 56
+Date: 10/30/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 24
+Visitor: Amsterdam (NY)
+Visitor Score: 6
+Margin: 18
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/231037?page=54
+Record 56 - 1976-10-30 - Albany Christian Brothers Academy (NY) vs Amsterdam (NY) - Successfully imported
+
+Processing record 57
+Date: 11/6/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 14
+Visitor: Schenectady Mt. Pleasant (NY)
+Visitor Score: 0
+Margin: 14
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/231037?page=54
+Record 57 - 1976-11-06 - Albany Christian Brothers Academy (NY) vs Schenectady Mt. Pleasant (NY) - Successfully imported
+
+Processing record 58
+Date: 9/20/1975
+Season: 1975
+Home: Saranac Lake (NY)
+Home Score: 15
+Visitor: Massena (NY)
+Visitor Score: 6
+Margin: 9
+Forfeit: 0
+Source: https://nyheritage.contentdm.oclc.org/digital/collection/sllboces/id/32031
+Record 58 - 1975-09-20 - Saranac Lake (NY) vs Massena (NY) - Successfully imported
+
+Processing record 59
+Date: 9/27/1975
+Season: 1975
+Home: Massena (NY)
+Home Score: 28
+Visitor: Tupper Lake (NY)
+Visitor Score: 12
+Margin: 16
+Forfeit: 0
+Source: https://nyheritage.contentdm.oclc.org/digital/collection/sllboces/id/32031
+Record 59 - 1975-09-27 - Massena (NY) vs Tupper Lake (NY) - Successfully imported
+
+Processing record 60
+Date: 10/4/1975
+Season: 1975
+Home: Massena (NY)
+Home Score: 29
+Visitor: Malone�Franklin Academy (NY)
+Visitor Score: 0
+Margin: 29
+Forfeit: 0
+Source: https://nyheritage.contentdm.oclc.org/digital/collection/sllboces/id/32031
+Record 60 - 1975-10-04 - Massena (NY) vs Malone�Franklin Academy (NY) - Successfully imported
+
+Processing record 61
+Date: 10/11/1975
+Season: 1975
+Home: Canton (NY)
+Home Score: 8
+Visitor: Massena (NY)
+Visitor Score: 6
+Margin: 2
+Forfeit: 0
+Source: https://nyheritage.contentdm.oclc.org/digital/collection/sllboces/id/32031
+Record 61 - 1975-10-11 - Canton (NY) vs Massena (NY) - Successfully imported
+
+Processing record 62
+Date: 10/18/1975
+Season: 1975
+Home: Massena (NY)
+Home Score: 42
+Visitor: Potsdam (NY)
+Visitor Score: 8
+Margin: 34
+Forfeit: 0
+Source: https://nyheritage.contentdm.oclc.org/digital/collection/sllboces/id/32031
+Record 62 - 1975-10-18 - Massena (NY) vs Potsdam (NY) - Successfully imported
+
+Processing record 63
+Date: 10/25/1975
+Season: 1975
+Home: Massena (NY)
+Home Score: 32
+Visitor: Brasher Falls St. Lawrence Central (NY)
+Visitor Score: 8
+Margin: 24
+Forfeit: 0
+Source: https://nyheritage.contentdm.oclc.org/digital/collection/sllboces/id/32031
+Record 63 - 1975-10-25 - Massena (NY) vs Brasher Falls St. Lawrence Central (NY) - Successfully imported
+
+Processing record 64
+Date: 11/1/1975
+Season: 1975
+Home: Massena (NY)
+Home Score: 42
+Visitor: Star Lake Clifton-Fine (NY)
+Visitor Score: 0
+Margin: 42
+Forfeit: 0
+Source: https://nyheritage.contentdm.oclc.org/digital/collection/sllboces/id/32031
+Record 64 - 1975-11-01 - Massena (NY) vs Star Lake Clifton-Fine (NY) - Successfully imported
+
+Processing record 65
+Forfeit detected - combined score equals 1
+Date: 11/8/1975
+Season: 1975
+Home: Massena (NY)
+Home Score: 1
+Visitor: Ogdensburg Free Academy (NY)
+Visitor Score: 0
+Margin: 1
+Forfeit: 1
+Source: https://nyheritage.contentdm.oclc.org/digital/collection/sllboces/id/32031
+Record 65 - 1975-11-08 - Massena (NY) vs Ogdensburg Free Academy (NY) - Successfully imported
+
+Processing record 66
+Date: 11/15/1975
+Season: 1975
+Home: Massena (NY)
+Home Score: 35
+Visitor: Saranac Central (NY)
+Visitor Score: 0
+Margin: 35
+Forfeit: 0
+Source: https://nyheritage.contentdm.oclc.org/digital/collection/sllboces/id/32031
+Record 66 - 1975-11-15 - Massena (NY) vs Saranac Central (NY) - Successfully imported
+
+Processing record 67
+Date: 9/13/1975
+Season: 1975
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 19
+Visitor: Schenectady Mont Pleasant (NY)
+Visitor Score: 7
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182867580?page=128
+Record 67 - 1975-09-13 - Albany Christian Brothers Academy (NY) vs Schenectady Mont Pleasant (NY) - Successfully imported
+
+Processing record 68
+Date: 9/20/1975
+Season: 1975
+Home: Schenectady Mont Pleasant (NY)
+Home Score: 49
+Visitor: Schenectady Notre Dame Bishop Gibbons (NY)
+Visitor Score: 12
+Margin: 37
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182867580?page=128
+Record 68 - 1975-09-20 - Schenectady Mont Pleasant (NY) vs Schenectady Notre Dame Bishop Gibbons (NY) - Successfully imported
+
+Processing record 69
+Date: 9/27/1975
+Season: 1975
+Home: Newburgh Free Academy (NY)
+Home Score: 19
+Visitor: Schenectady Mont Pleasant (NY)
+Visitor Score: 18
+Margin: 1
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182867580?page=128
+Record 69 - 1975-09-27 - Newburgh Free Academy (NY) vs Schenectady Mont Pleasant (NY) - Successfully imported
+
+Processing record 70
+Date: 10/4/1975
+Season: 1975
+Home: Schenectady Mont Pleasant (NY)
+Home Score: 26
+Visitor: Albany (NY)
+Visitor Score: 14
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182867580?page=128
+Record 70 - 1975-10-04 - Schenectady Mont Pleasant (NY) vs Albany (NY) - Successfully imported
+
+Processing record 71
+Date: 10/11/1975
+Season: 1975
+Home: Schenectady Mont Pleasant (NY)
+Home Score: 48
+Visitor: Troy (NY)
+Visitor Score: 20
+Margin: 28
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182867580?page=128
+Record 71 - 1975-10-11 - Schenectady Mont Pleasant (NY) vs Troy (NY) - Successfully imported
+
+Processing record 72
+Date: 10/18/1975
+Season: 1975
+Home: Schenectady Mont Pleasant (NY)
+Home Score: 12
+Visitor: Amsterdam (NY)
+Visitor Score: 7
+Margin: 5
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182867580?page=128
+Record 72 - 1975-10-18 - Schenectady Mont Pleasant (NY) vs Amsterdam (NY) - Successfully imported
+
+Processing record 73
+Date: 10/25/1975
+Season: 1975
+Home: Schenectady Mont Pleasant (NY)
+Home Score: 13
+Visitor: Saratoga Springs (NY)
+Visitor Score: 9
+Margin: 4
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182867580?page=128
+Record 73 - 1975-10-25 - Schenectady Mont Pleasant (NY) vs Saratoga Springs (NY) - Successfully imported
+
+Processing record 74
+Date: 11/1/1975
+Season: 1975
+Home: Schenectady Linton (NY)
+Home Score: 3
+Visitor: Schenectady Mont Pleasant (NY)
+Visitor Score: 0
+Margin: 3
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182867580?page=128
+Record 74 - 1975-11-01 - Schenectady Linton (NY) vs Schenectady Mont Pleasant (NY) - Successfully imported
+
+Processing record 75
+Date: 11/8/1975
+Season: 1975
+Home: Clifton Park Shenendehowa (NY)
+Home Score: 32
+Visitor: Schenectady Mont Pleasant (NY)
+Visitor Score: 8
+Margin: 24
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182867580?page=128
+Record 75 - 1975-11-08 - Clifton Park Shenendehowa (NY) vs Schenectady Mont Pleasant (NY) - Successfully imported
+
+Processing record 76
+Date: 9/20/1975
+Season: 1975
+Home: Le Roy (NY)
+Home Score: 26
+Visitor: Retsof York (NY)
+Visitor Score: 14
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881901?page=95
+Record 76 - 1975-09-20 - Le Roy (NY) vs Retsof York (NY) - Successfully imported
+
+Processing record 77
+Date: 9/27/1975
+Season: 1975
+Home: Le Roy (NY)
+Home Score: 42
+Visitor: Warsaw (NY)
+Visitor Score: 0
+Margin: 42
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881901?page=95
+Record 77 - 1975-09-27 - Le Roy (NY) vs Warsaw (NY) - Successfully imported
+
+Processing record 78
+Date: 10/4/1975
+Season: 1975
+Home: Le Roy (NY)
+Home Score: 46
+Visitor: Gainesville Letchworth (NY)
+Visitor Score: 0
+Margin: 46
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881901?page=95
+Record 78 - 1975-10-04 - Le Roy (NY) vs Gainesville Letchworth (NY) - Successfully imported
+
+Processing record 79
+Date: 10/11/1975
+Season: 1975
+Home: Le Roy (NY)
+Home Score: 14
+Visitor: Dansville (NY)
+Visitor Score: 12
+Margin: 2
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881901?page=95
+Record 79 - 1975-10-11 - Le Roy (NY) vs Dansville (NY) - Successfully imported
+
+Processing record 80
+Date: 10/18/1975
+Season: 1975
+Home: Le Roy (NY)
+Home Score: 42
+Visitor: Perry (NY)
+Visitor Score: 8
+Margin: 34
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881901?page=95
+Record 80 - 1975-10-18 - Le Roy (NY) vs Perry (NY) - Successfully imported
+
+Processing record 81
+Date: 10/25/1975
+Season: 1975
+Home: Canisteo (NY)
+Home Score: 14
+Visitor: Le Roy (NY)
+Visitor Score: 6
+Margin: 8
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881901?page=95
+Record 81 - 1975-10-25 - Canisteo (NY) vs Le Roy (NY) - Successfully imported
+
+Processing record 82
+Date: 11/1/1975
+Season: 1975
+Home: Le Roy (NY)
+Home Score: 8
+Visitor: Attica (NY)
+Visitor Score: 8
+Margin: 0
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881901?page=95
+Record 82 - 1975-11-01 - Le Roy (NY) vs Attica (NY) - Successfully imported
+
+Processing record 83
+Date: 11/8/1975
+Season: 1975
+Home: Caledonia-Mumford Central (NY)
+Home Score: 22
+Visitor: Le Roy (NY)
+Visitor Score: 6
+Margin: 16
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881901?page=95
+Record 83 - 1975-11-08 - Caledonia-Mumford Central (NY) vs Le Roy (NY) - Successfully imported
+
+Processing record 84
+Date: 11/15/1975
+Season: 1975
+Home: Batavia Notre Dame (NY)
+Home Score: 17
+Visitor: Le Roy (NY)
+Visitor Score: 0
+Margin: 17
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881901?page=95
+Record 84 - 1975-11-15 - Batavia Notre Dame (NY) vs Le Roy (NY) - Successfully imported
+
+Processing record 85
+Date: 9/18/1976
+Season: 1976
+Home: Canisteo (NY)
+Home Score: 7
+Visitor: Le Roy (NY)
+Visitor Score: 6
+Margin: 1
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881908?page=98
+Record 85 - 1976-09-18 - Canisteo (NY) vs Le Roy (NY) - Successfully imported
+
+Processing record 86
+Date: 9/25/1976
+Season: 1976
+Home: Le Roy (NY)
+Home Score: 28
+Visitor: Caledonia-Mumford Central (NY)
+Visitor Score: 7
+Margin: 21
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881908?page=98
+Record 86 - 1976-09-25 - Le Roy (NY) vs Caledonia-Mumford Central (NY) - Successfully imported
+
+Processing record 87
+Date: 10/2/1976
+Season: 1976
+Home: Le Roy (NY)
+Home Score: 12
+Visitor: Honeoye Falls-Lima (NY)
+Visitor Score: 0
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881908?page=98
+Record 87 - 1976-10-02 - Le Roy (NY) vs Honeoye Falls-Lima (NY) - Successfully imported
+
+Processing record 88
+Date: 10/9/1976
+Season: 1976
+Home: Le Roy (NY)
+Home Score: 13
+Visitor: Geneseo (NY)
+Visitor Score: 12
+Margin: 1
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881908?page=98
+Record 88 - 1976-10-09 - Le Roy (NY) vs Geneseo (NY) - Successfully imported
+
+Processing record 89
+Date: 10/16/1976
+Season: 1976
+Home: Le Roy (NY)
+Home Score: 31
+Visitor: Perry (NY)
+Visitor Score: 14
+Margin: 17
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881908?page=98
+Record 89 - 1976-10-16 - Le Roy (NY) vs Perry (NY) - Successfully imported
+
+Processing record 90
+Date: 10/23/1976
+Season: 1976
+Home: Livonia (NY)
+Home Score: 29
+Visitor: Le Roy (NY)
+Visitor Score: 6
+Margin: 23
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881908?page=98
+Record 90 - 1976-10-23 - Livonia (NY) vs Le Roy (NY) - Successfully imported
+
+Processing record 91
+Date: 10/30/1976
+Season: 1976
+Home: Le Roy (NY)
+Home Score: 21
+Visitor: Avon (NY)
+Visitor Score: 0
+Margin: 21
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881908?page=98
+Record 91 - 1976-10-30 - Le Roy (NY) vs Avon (NY) - Successfully imported
+
+Processing record 92
+Date: 11/6/1976
+Season: 1976
+Home: Le Roy (NY)
+Home Score: 21
+Visitor: Dansville (NY)
+Visitor Score: 14
+Margin: 7
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881908?page=98
+Record 92 - 1976-11-06 - Le Roy (NY) vs Dansville (NY) - Successfully imported
+
+Processing record 93
+Date: 11/13/1976
+Season: 1976
+Home: Le Roy (NY)
+Home Score: 26
+Visitor: Batavia Notre Dame (NY)
+Visitor Score: 0
+Margin: 26
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182881908?page=98
+Record 93 - 1976-11-13 - Le Roy (NY) vs Batavia Notre Dame (NY) - Successfully imported
+
+Processing record 94
+Date: 9/18/1976
+Season: 1976
+Home: Penn Yan Academy (NY)
+Home Score: 21
+Visitor: Seneca Falls Mynderse Academy (NY)
+Visitor Score: 0
+Margin: 21
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/76593?page=125
+Record 94 - 1976-09-18 - Penn Yan Academy (NY) vs Seneca Falls Mynderse Academy (NY) - Successfully imported
+
+Processing record 95
+Date: 9/25/1976
+Season: 1976
+Home: Seneca Falls Mynderse Academy (NY)
+Home Score: 43
+Visitor: Geneva (NY)
+Visitor Score: 14
+Margin: 29
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/76593?page=125
+Record 95 - 1976-09-25 - Seneca Falls Mynderse Academy (NY) vs Geneva (NY) - Successfully imported
+
+Processing record 96
+Date: 10/2/1976
+Season: 1976
+Home: Clyde Savannah (NY)
+Home Score: 14
+Visitor: Seneca Falls Mynderse Academy (NY)
+Visitor Score: 3
+Margin: 11
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/76593?page=125
+Record 96 - 1976-10-02 - Clyde Savannah (NY) vs Seneca Falls Mynderse Academy (NY) - Successfully imported
+
+Processing record 97
+Date: 10/9/1976
+Season: 1976
+Home: Seneca Falls Mynderse Academy (NY)
+Home Score: 12
+Visitor: Canandaigua Academy (NY)
+Visitor Score: 6
+Margin: 6
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/76593?page=125
+Record 97 - 1976-10-09 - Seneca Falls Mynderse Academy (NY) vs Canandaigua Academy (NY) - Successfully imported
+
+Processing record 98
+Date: 10/16/1976
+Season: 1976
+Home: Seneca Falls Mynderse Academy (NY)
+Home Score: 7
+Visitor: Newark (NY)
+Visitor Score: 7
+Margin: 0
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/76593?page=125
+Record 98 - 1976-10-16 - Seneca Falls Mynderse Academy (NY) vs Newark (NY) - Successfully imported
+
+Processing record 99
+Date: 10/23/1976
+Season: 1976
+Home: Seneca Falls Mynderse Academy (NY)
+Home Score: 39
+Visitor: Palmyra-Macedon (NY)
+Visitor Score: 0
+Margin: 39
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/76593?page=125
+Record 99 - 1976-10-23 - Seneca Falls Mynderse Academy (NY) vs Palmyra-Macedon (NY) - Successfully imported
+
+Processing record 100
+Date: 10/30/1976
+Season: 1976
+Home: Seneca Falls Mynderse Academy (NY)
+Home Score: 14
+Visitor: Norwich (NY)
+Visitor Score: 9
+Margin: 5
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/76593?page=125
+Record 100 - 1976-10-30 - Seneca Falls Mynderse Academy (NY) vs Norwich (NY) - Successfully imported
+
+Processing record 101
+Date: 11/6/1976
+Season: 1976
+Home: Seneca Falls Mynderse Academy (NY)
+Home Score: 35
+Visitor: Victor (NY)
+Visitor Score: 6
+Margin: 29
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/76593?page=125
+Record 101 - 1976-11-06 - Seneca Falls Mynderse Academy (NY) vs Victor (NY) - Successfully imported
+
+Processing record 102
+Date: 11/13/1976
+Season: 1976
+Home: Seneca Falls Mynderse Academy (NY)
+Home Score: 14
+Visitor: Waterloo (NY)
+Visitor Score: 6
+Margin: 8
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/76593?page=125
+Record 102 - 1976-11-13 - Seneca Falls Mynderse Academy (NY) vs Waterloo (NY) - Successfully imported
+
+Processing record 103
+Date: 9/20/1975
+Season: 1975
+Home: Livonia (NY)
+Home Score: 38
+Visitor: Dansville (NY)
+Visitor Score: 8
+Margin: 30
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/218475?page=84
+Record 103 - 1975-09-20 - Livonia (NY) vs Dansville (NY) - Successfully imported
+
+Processing record 104
+Date: 9/27/1975
+Season: 1975
+Home: Canisteo (NY)
+Home Score: 19
+Visitor: Dansville (NY)
+Visitor Score: 8
+Margin: 11
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/218475?page=84
+Record 104 - 1975-09-27 - Canisteo (NY) vs Dansville (NY) - Successfully imported
+
+Processing record 105
+Date: 10/4/1975
+Season: 1975
+Home: Dansville (NY)
+Home Score: 28
+Visitor: Perry (NY)
+Visitor Score: 0
+Margin: 28
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/218475?page=84
+Record 105 - 1975-10-04 - Dansville (NY) vs Perry (NY) - Successfully imported
+
+Processing record 106
+Date: 10/11/1975
+Season: 1975
+Home: Le Roy (NY)
+Home Score: 14
+Visitor: Dansville (NY)
+Visitor Score: 12
+Margin: 2
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/218475?page=84
+Record 106 - 1975-10-11 - Le Roy (NY) vs Dansville (NY) - Successfully imported
+
+Processing record 107
+Date: 10/18/1975
+Season: 1975
+Home: Dansville (NY)
+Home Score: 12
+Visitor: Warsaw (NY)
+Visitor Score: 8
+Margin: 4
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/218475?page=84
+Record 107 - 1975-10-18 - Dansville (NY) vs Warsaw (NY) - Successfully imported
+
+Processing record 108
+Date: 10/25/1975
+Season: 1975
+Home: Dansville (NY)
+Home Score: 22
+Visitor: Gainesville Letchworth (NY)
+Visitor Score: 0
+Margin: 22
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/218475?page=84
+Record 108 - 1975-10-25 - Dansville (NY) vs Gainesville Letchworth (NY) - Successfully imported
+
+Processing record 109
+Date: 11/1/1975
+Season: 1975
+Home: Dansville (NY)
+Home Score: 28
+Visitor: Retsof York (NY)
+Visitor Score: 16
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/218475?page=84
+Record 109 - 1975-11-01 - Dansville (NY) vs Retsof York (NY) - Successfully imported
+
+Processing record 110
+Date: 11/8/1975
+Season: 1975
+Home: Wellsville (NY)
+Home Score: 46
+Visitor: Dansville (NY)
+Visitor Score: 20
+Margin: 26
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/218475?page=84
+Record 110 - 1975-11-08 - Wellsville (NY) vs Dansville (NY) - Successfully imported
+
+Processing record 111
+Date: 11/15/1975
+Season: 1975
+Home: Caledonia-Mumford Central (NY)
+Home Score: 24
+Visitor: Dansville (NY)
+Visitor Score: 6
+Margin: 18
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/218475?page=84
+Record 111 - 1975-11-15 - Caledonia-Mumford Central (NY) vs Dansville (NY) - Successfully imported
+
+Processing record 112
+Date: 9/25/1976
+Season: 1976
+Home: Islip Terrace East Islip (NY)
+Home Score: 36
+Visitor: Amityville Memorial (NY)
+Visitor Score: 28
+Margin: 8
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/135227?page=92
+Record 112 - 1976-09-25 - Islip Terrace East Islip (NY) vs Amityville Memorial (NY) - Successfully imported
+
+Processing record 113
+Date: 10/2/1976
+Season: 1976
+Home: Babylon (NY)
+Home Score: 6
+Visitor: Amityville Memorial (NY)
+Visitor Score: 0
+Margin: 6
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/135227?page=92
+Record 113 - 1976-10-02 - Babylon (NY) vs Amityville Memorial (NY) - Successfully imported
+
+Processing record 114
+Date: 10/9/1976
+Season: 1976
+Home: Amityville Memorial (NY)
+Home Score: 37
+Visitor: Port Jefferson (NY)
+Visitor Score: 0
+Margin: 37
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/135227?page=92
+Record 114 - 1976-10-09 - Amityville Memorial (NY) vs Port Jefferson (NY) - Successfully imported
+
+Processing record 115
+Date: 10/16/1976
+Season: 1976
+Home: Elwood John Glenn (NY)
+Home Score: 19
+Visitor: Amityville Memorial (NY)
+Visitor Score: 18
+Margin: 1
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/135227?page=92
+Record 115 - 1976-10-16 - Elwood John Glenn (NY) vs Amityville Memorial (NY) - Successfully imported
+
+Processing record 116
+Date: 10/23/1976
+Season: 1976
+Home: Amityville Memorial (NY)
+Home Score: 22
+Visitor: East Hampton (NY)
+Visitor Score: 0
+Margin: 22
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/135227?page=92
+Record 116 - 1976-10-23 - Amityville Memorial (NY) vs East Hampton (NY) - Successfully imported
+
+Processing record 117
+Date: 10/30/1976
+Season: 1976
+Home: Amityville Memorial (NY)
+Home Score: 24
+Visitor: Riverhead (NY)
+Visitor Score: 0
+Margin: 24
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/135227?page=92
+Record 117 - 1976-10-30 - Amityville Memorial (NY) vs Riverhead (NY) - Successfully imported
+
+Processing record 118
+Date: 11/6/1976
+Season: 1976
+Home: Amityville Memorial (NY)
+Home Score: 46
+Visitor: Bayport-Blue Point (NY)
+Visitor Score: 8
+Margin: 38
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/135227?page=92
+Record 118 - 1976-11-06 - Amityville Memorial (NY) vs Bayport-Blue Point (NY) - Successfully imported
+
+Processing record 119
+Date: 11/13/1976
+Season: 1976
+Home: Amityville Memorial (NY)
+Home Score: 38
+Visitor: Brookhaven Bellport (NY)
+Visitor Score: 12
+Margin: 26
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/135227?page=92
+Record 119 - 1976-11-13 - Amityville Memorial (NY) vs Brookhaven Bellport (NY) - Successfully imported
+
+Processing record 120
+Date: 9/18/1976
+Season: 1976
+Home: Binghamton Seton Catholic Central (NY)
+Home Score: 21
+Visitor: Schenectady Linton (NY)
+Visitor Score: 6
+Margin: 15
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/103140?page=127
+Record 120 - 1976-09-18 - Binghamton Seton Catholic Central (NY) vs Schenectady Linton (NY) - Successfully imported
+
+Processing record 121
+Date: 9/25/1976
+Season: 1976
+Home: Amsterdam (NY)
+Home Score: 18
+Visitor: Schenectady Linton (NY)
+Visitor Score: 8
+Margin: 10
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/103140?page=127
+Record 121 - 1976-09-25 - Amsterdam (NY) vs Schenectady Linton (NY) - Successfully imported
+
+Processing record 122
+Date: 10/2/1976
+Season: 1976
+Home: Schenectady Linton (NY)
+Home Score: 24
+Visitor: Troy (NY)
+Visitor Score: 6
+Margin: 18
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/103140?page=127
+Record 122 - 1976-10-02 - Schenectady Linton (NY) vs Troy (NY) - Successfully imported
+
+Processing record 123
+Date: 10/9/1976
+Season: 1976
+Home: Schenectady Linton (NY)
+Home Score: 13
+Visitor: Saratoga Springs (NY)
+Visitor Score: 0
+Margin: 13
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/103140?page=127
+Record 123 - 1976-10-09 - Schenectady Linton (NY) vs Saratoga Springs (NY) - Successfully imported
+
+Processing record 124
+Date: 10/16/1976
+Season: 1976
+Home: Albany (NY)
+Home Score: 7
+Visitor: Schenectady Linton (NY)
+Visitor Score: 3
+Margin: 4
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/103140?page=127
+Record 124 - 1976-10-16 - Albany (NY) vs Schenectady Linton (NY) - Successfully imported
+
+Processing record 125
+Date: 10/23/1976
+Season: 1976
+Home: Schenectady Linton (NY)
+Home Score: 40
+Visitor: Cohoes (NY)
+Visitor Score: 0
+Margin: 40
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/103140?page=127
+Record 125 - 1976-10-23 - Schenectady Linton (NY) vs Cohoes (NY) - Successfully imported
+
+Processing record 126
+Date: 10/30/1976
+Season: 1976
+Home: Schenectady Mt. Pleasant (NY)
+Home Score: 14
+Visitor: Schenectady Linton (NY)
+Visitor Score: 8
+Margin: 6
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/103140?page=127
+Record 126 - 1976-10-30 - Schenectady Mt. Pleasant (NY) vs Schenectady Linton (NY) - Successfully imported
+
+Processing record 127
+Date: 11/6/1976
+Season: 1976
+Home: Schenectady Notre Dame Bishop Gibbons (NY)
+Home Score: 3
+Visitor: Schenectady Linton (NY)
+Visitor Score: 0
+Margin: 3
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/103140?page=127
+Record 127 - 1976-11-06 - Schenectady Notre Dame Bishop Gibbons (NY) vs Schenectady Linton (NY) - Successfully imported
+
+Processing record 128
+Date: 9/18/1976
+Season: 1976
+Home: Schenectady Mont Pleasant (NY)
+Home Score: 20
+Visitor: Saratoga Springs (NY)
+Visitor Score: 8
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/126451?page=133
+Record 128 - 1976-09-18 - Schenectady Mont Pleasant (NY) vs Saratoga Springs (NY) - Successfully imported
+
+Processing record 129
+Date: 9/25/1976
+Season: 1976
+Home: Schenectady Mont Pleasant (NY)
+Home Score: 22
+Visitor: Bainbridge-Guilford (NY)
+Visitor Score: 14
+Margin: 8
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/126451?page=133
+Record 129 - 1976-09-25 - Schenectady Mont Pleasant (NY) vs Bainbridge-Guilford (NY) - Successfully imported
+
+Processing record 130
+Date: 10/2/1976
+Season: 1976
+Home: Albany (NY)
+Home Score: 7
+Visitor: Schenectady Mont Pleasant (NY)
+Visitor Score: 3
+Margin: 4
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/126451?page=133
+Record 130 - 1976-10-02 - Albany (NY) vs Schenectady Mont Pleasant (NY) - Successfully imported
+
+Processing record 131
+Date: 10/9/1976
+Season: 1976
+Home: Schenectady Mont Pleasant (NY)
+Home Score: 27
+Visitor: Troy (NY)
+Visitor Score: 8
+Margin: 19
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/126451?page=133
+Record 131 - 1976-10-09 - Schenectady Mont Pleasant (NY) vs Troy (NY) - Successfully imported
+
+Processing record 132
+Date: 10/16/1976
+Season: 1976
+Home: Amsterdam (NY)
+Home Score: 9
+Visitor: Schenectady Mont Pleasant (NY)
+Visitor Score: 7
+Margin: 2
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/126451?page=133
+Record 132 - 1976-10-16 - Amsterdam (NY) vs Schenectady Mont Pleasant (NY) - Successfully imported
+
+Processing record 133
+Date: 10/23/1976
+Season: 1976
+Home: Newburgh Free Academy (NY)
+Home Score: 38
+Visitor: Schenectady Mont Pleasant (NY)
+Visitor Score: 6
+Margin: 32
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/126451?page=133
+Record 133 - 1976-10-23 - Newburgh Free Academy (NY) vs Schenectady Mont Pleasant (NY) - Successfully imported
+
+Processing record 134
+Date: 10/30/1976
+Season: 1976
+Home: Schenectady Mont Pleasant (NY)
+Home Score: 14
+Visitor: Schenectady Linton (NY)
+Visitor Score: 8
+Margin: 6
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/126451?page=133
+Record 134 - 1976-10-30 - Schenectady Mont Pleasant (NY) vs Schenectady Linton (NY) - Successfully imported
+
+Processing record 135
+Date: 11/6/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 14
+Visitor: Schenectady Mont Pleasant (NY)
+Visitor Score: 0
+Margin: 14
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/126451?page=133
+Record 135 - 1976-11-06 - Albany Christian Brothers Academy (NY) vs Schenectady Mont Pleasant (NY) - Successfully imported
+
+Processing record 136
+Date: 9/11/1976
+Season: 1976
+Home: Dolgeville (NY)
+Home Score: 22
+Visitor: Little Falls (NY)
+Visitor Score: 0
+Margin: 22
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182866220?page=154
+Record 136 - 1976-09-11 - Dolgeville (NY) vs Little Falls (NY) - Successfully imported
+
+Processing record 137
+Date: 9/18/1976
+Season: 1976
+Home: Dolgeville (NY)
+Home Score: 34
+Visitor: Carthage (NY)
+Visitor Score: 7
+Margin: 27
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182866220?page=154
+Record 137 - 1976-09-18 - Dolgeville (NY) vs Carthage (NY) - Successfully imported
+
+Processing record 138
+Date: 9/25/1976
+Season: 1976
+Home: Dolgeville (NY)
+Home Score: 38
+Visitor: Westmoreland (NY)
+Visitor Score: 0
+Margin: 38
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182866220?page=154
+Record 138 - 1976-09-25 - Dolgeville (NY) vs Westmoreland (NY) - Successfully imported
+
+Processing record 139
+Date: 10/2/1976
+Season: 1976
+Home: Dolgeville (NY)
+Home Score: 30
+Visitor: Turin South Lewis (NY)
+Visitor Score: 0
+Margin: 30
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182866220?page=154
+Record 139 - 1976-10-02 - Dolgeville (NY) vs Turin South Lewis (NY) - Successfully imported
+
+Processing record 140
+Date: 10/9/1976
+Season: 1976
+Home: Dolgeville (NY)
+Home Score: 48
+Visitor: Oriskany (NY)
+Visitor Score: 0
+Margin: 48
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182866220?page=154
+Record 140 - 1976-10-09 - Dolgeville (NY) vs Oriskany (NY) - Successfully imported
+
+Processing record 141
+Date: 10/16/1976
+Season: 1976
+Home: Dolgeville (NY)
+Home Score: 42
+Visitor: Rome Catholic (NY)
+Visitor Score: 18
+Margin: 24
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182866220?page=154
+Record 141 - 1976-10-16 - Dolgeville (NY) vs Rome Catholic (NY) - Successfully imported
+
+Processing record 142
+Date: 10/23/1976
+Season: 1976
+Home: Dolgeville (NY)
+Home Score: 54
+Visitor: Boonville Adirondack (NY)
+Visitor Score: 16
+Margin: 38
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182866220?page=154
+Record 142 - 1976-10-23 - Dolgeville (NY) vs Boonville Adirondack (NY) - Successfully imported
+
+Processing record 143
+Date: 9/18/1976
+Season: 1976
+Home: Hudson Falls (NY)
+Home Score: 48
+Visitor: Craryville Taconic Hills (NY)
+Visitor Score: 0
+Margin: 48
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182759581?page=113
+Record 143 - 1976-09-18 - Hudson Falls (NY) vs Craryville Taconic Hills (NY) - Successfully imported
+
+Processing record 144
+Date: 9/25/1976
+Season: 1976
+Home: Queensbury (NY)
+Home Score: 39
+Visitor: Hudson Falls (NY)
+Visitor Score: 0
+Margin: 39
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182759581?page=113
+Record 144 - 1976-09-25 - Queensbury (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 145
+Date: 10/2/1976
+Season: 1976
+Home: Saratoga Springs (NY)
+Home Score: 35
+Visitor: Hudson Falls (NY)
+Visitor Score: 13
+Margin: 22
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182759581?page=113
+Record 145 - 1976-10-02 - Saratoga Springs (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 146
+Date: 10/9/1976
+Season: 1976
+Home: Hudson Falls (NY)
+Home Score: 14
+Visitor: Queensbury (NY)
+Visitor Score: 7
+Margin: 7
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182759581?page=113
+Record 146 - 1976-10-09 - Hudson Falls (NY) vs Queensbury (NY) - Successfully imported
+
+Processing record 147
+Date: 10/16/1976
+Season: 1976
+Home: Hudson Falls (NY)
+Home Score: 40
+Visitor: Glens Falls (NY)
+Visitor Score: 14
+Margin: 26
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182759581?page=113
+Record 147 - 1976-10-16 - Hudson Falls (NY) vs Glens Falls (NY) - Successfully imported
+
+Processing record 148
+Date: 10/23/1976
+Season: 1976
+Home: South Glens Falls (NY)
+Home Score: 35
+Visitor: Hudson Falls (NY)
+Visitor Score: 0
+Margin: 35
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182759581?page=113
+Record 148 - 1976-10-23 - South Glens Falls (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 149
+Date: 10/30/1976
+Season: 1976
+Home: Gloversville (NY)
+Home Score: 38
+Visitor: Hudson Falls (NY)
+Visitor Score: 0
+Margin: 38
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182759581?page=113
+Record 149 - 1976-10-30 - Gloversville (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 150
+Date: 9/13/1975
+Season: 1975
+Home: Troy Catholic Central (NY)
+Home Score: 26
+Visitor: Hudson Falls (NY)
+Visitor Score: 0
+Margin: 26
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182778842?page=114
+Record 150 - 1975-09-13 - Troy Catholic Central (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 151
+Date: 9/20/1975
+Season: 1975
+Home: Hudson Falls (NY)
+Home Score: 40
+Visitor: Schenectady Mohonasen (NY)
+Visitor Score: 0
+Margin: 40
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182778842?page=114
+Record 151 - 1975-09-20 - Hudson Falls (NY) vs Schenectady Mohonasen (NY) - Successfully imported
+
+Processing record 152
+Date: 9/27/1975
+Season: 1975
+Home: Hudson Falls (NY)
+Home Score: 58
+Visitor: Ravena-Coeymans-Selkirk (NY)
+Visitor Score: 0
+Margin: 58
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182778842?page=114
+Record 152 - 1975-09-27 - Hudson Falls (NY) vs Ravena-Coeymans-Selkirk (NY) - Successfully imported
+
+Processing record 153
+Date: 10/4/1975
+Season: 1975
+Home: Hudson Falls (NY)
+Home Score: 54
+Visitor: Schenectady Schalmont (NY)
+Visitor Score: 0
+Margin: 54
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182778842?page=114
+Record 153 - 1975-10-04 - Hudson Falls (NY) vs Schenectady Schalmont (NY) - Successfully imported
+
+Processing record 154
+Date: 10/11/1975
+Season: 1975
+Home: Saratoga Springs (NY)
+Home Score: 34
+Visitor: Hudson Falls (NY)
+Visitor Score: 14
+Margin: 20
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182778842?page=114
+Record 154 - 1975-10-11 - Saratoga Springs (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 155
+Date: 10/18/1975
+Season: 1975
+Home: Hudson (NY)
+Home Score: 20
+Visitor: Hudson Falls (NY)
+Visitor Score: 0
+Margin: 20
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182778842?page=114
+Record 155 - 1975-10-18 - Hudson (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 156
+Date: 10/25/1975
+Season: 1975
+Home: Glens Falls (NY)
+Home Score: 19
+Visitor: Hudson Falls (NY)
+Visitor Score: 16
+Margin: 3
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182778842?page=114
+Record 156 - 1975-10-25 - Glens Falls (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 157
+Date: 11/1/1975
+Season: 1975
+Home: Hudson Falls (NY)
+Home Score: 20
+Visitor: South Glens Falls (NY)
+Visitor Score: 18
+Margin: 2
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182778842?page=114
+Record 157 - 1975-11-01 - Hudson Falls (NY) vs South Glens Falls (NY) - Successfully imported
+
+Processing record 158
+Date: 11/8/1975
+Season: 1975
+Home: Gloversville (NY)
+Home Score: 32
+Visitor: Hudson Falls (NY)
+Visitor Score: 14
+Margin: 18
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/4182778842?page=114
+Record 158 - 1975-11-08 - Gloversville (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 159
+Date: 9/18/1976
+Season: 1976
+Home: Schenectady Mt. Pleasant (NY)
+Home Score: 20
+Visitor: Saratoga Springs (NY)
+Visitor Score: 8
+Margin: 12
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/3205?page=146
+Record 159 - 1976-09-18 - Schenectady Mt. Pleasant (NY) vs Saratoga Springs (NY) - Successfully imported
+
+Processing record 160
+Date: 9/25/1976
+Season: 1976
+Home: Albany Christian Brothers Academy (NY)
+Home Score: 33
+Visitor: Saratoga Springs (NY)
+Visitor Score: 0
+Margin: 33
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/3205?page=146
+Record 160 - 1976-09-25 - Albany Christian Brothers Academy (NY) vs Saratoga Springs (NY) - Successfully imported
+
+Processing record 161
+Date: 10/2/1976
+Season: 1976
+Home: Saratoga Springs (NY)
+Home Score: 34
+Visitor: Hudson Falls (NY)
+Visitor Score: 13
+Margin: 21
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/3205?page=146
+Record 161 - 1976-10-02 - Saratoga Springs (NY) vs Hudson Falls (NY) - Successfully imported
+
+Processing record 162
+Date: 10/9/1976
+Season: 1976
+Home: Schenectady Linton (NY)
+Home Score: 13
+Visitor: Saratoga Springs (NY)
+Visitor Score: 0
+Margin: 13
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/3205?page=146
+Record 162 - 1976-10-09 - Schenectady Linton (NY) vs Saratoga Springs (NY) - Successfully imported
+
+Processing record 163
+Date: 10/16/1976
+Season: 1976
+Home: Gloversville (NY)
+Home Score: 20
+Visitor: Saratoga Springs (NY)
+Visitor Score: 14
+Margin: 6
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/3205?page=146
+Record 163 - 1976-10-16 - Gloversville (NY) vs Saratoga Springs (NY) - Successfully imported
+
+Processing record 164
+Date: 10/23/1976
+Season: 1976
+Home: Saratoga Springs (NY)
+Home Score: 20
+Visitor: Queensbury (NY)
+Visitor Score: 16
+Margin: 4
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/3205?page=146
+Record 164 - 1976-10-23 - Saratoga Springs (NY) vs Queensbury (NY) - Successfully imported
+
+Processing record 165
+Date: 10/30/1976
+Season: 1976
+Home: Saratoga Springs (NY)
+Home Score: 22
+Visitor: Glens Falls (NY)
+Visitor Score: 15
+Margin: 7
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/3205?page=146
+Record 165 - 1976-10-30 - Saratoga Springs (NY) vs Glens Falls (NY) - Successfully imported
+
+Processing record 166
+Date: 11/6/1976
+Season: 1976
+Home: South Glens Falls (NY)
+Home Score: 28
+Visitor: Saratoga Springs (NY)
+Visitor Score: 24
+Margin: 4
+Forfeit: 0
+Source: https://www.classmates.com/siteui/yearbooks/3205?page=146
+Record 166 - 1976-11-06 - South Glens Falls (NY) vs Saratoga Springs (NY) - Successfully imported
+
+Import Summary:
+Total records processed: 166
+Successfully imported: 166
+Errors: 0
+Database connection closed.
+**********************
+Windows PowerShell transcript end
+End time: 20250620085508
+**********************
