@@ -18,7 +18,7 @@ $repoRoot = (Resolve-Path (Join-Path $scriptRoot "..")).Path
 $jsonScriptDir = Join-Path $scriptRoot "imported_SQL_json"
 
 # --- 1. Generate JSON Files ---
-Write-Host "`n[Step 1/4] Generating JSON data files..." -ForegroundColor Yellow
+Write-Host "`n[Step 1/5] Generating JSON data files..." -ForegroundColor Yellow
 Set-Location $jsonScriptDir
 & .\generate-all-time-programs.ps1
 & .\generate-all-time-teams.ps1
@@ -29,22 +29,28 @@ Set-Location $jsonScriptDir
 & .\generate-state-teams.ps1
 & .\Generate-MediaNationalChampions.ps1
 & .\Generate-McKnightNationalChampions.ps1
-Write-Host "JSON data generation complete." -ForegroundColor Green
+Write-Host "✅ JSON data generation complete." -ForegroundColor Green
 
-# --- 2. Generate Statistics ---
-Write-Host "`n[Step 2/4] Generating database statistics..." -ForegroundColor Yellow
+# --- 2. Generate Database Statistics ---
+Write-Host "`n[Step 2/5] Generating database statistics..." -ForegroundColor Yellow
 Set-Location $scriptRoot # Go back up to the main 'scripts' folder
 & .\Generate-DatabaseStatistics.ps1
-Write-Host "Statistics generation complete." -ForegroundColor Green
+Write-Host "✅ Database statistics generation complete." -ForegroundColor Green
 
-# --- 3. Generate All HTML Pages ---
-Write-Host "`n[Step 3/4] Building all HTML pages..." -ForegroundColor Yellow
+# --- 3. Generate Regional Statistics ---
+Write-Host "`n[Step 3/5] Generating regional statistics..." -ForegroundColor Yellow
+Set-Location $scriptRoot
+& .\Generate-RegionalStatistics.ps1
+Write-Host "✅ Regional statistics generation complete." -ForegroundColor Green
+
+# --- 4. Generate All HTML Pages ---
+Write-Host "`n[Step 4/5] Building all HTML pages..." -ForegroundColor Yellow
 Set-Location $scriptRoot
 & .\GenerateAllPages.ps1
-Write-Host "HTML build complete." -ForegroundColor Green
+Write-Host "✅ HTML build complete." -ForegroundColor Green
 
-# --- 4. Push to GitHub ---
-Write-Host "`n[Step 4/4] Deploying to GitHub..." -ForegroundColor Yellow
+# --- 5. Push to GitHub ---
+Write-Host "`n[Step 5/5] Deploying to GitHub..." -ForegroundColor Yellow
 Set-Location $repoRoot # Go to the top-level folder for Git
 
 # Get a commit message from the user
