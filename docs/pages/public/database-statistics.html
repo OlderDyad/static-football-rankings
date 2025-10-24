@@ -6,7 +6,48 @@
     <title>Database Statistics - McKnight's American Football</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-    <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
+    <style>
+        .chart-container {
+            margin: 30px 0;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .chart-header {
+            background-color: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .chart-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #333;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .stat-box h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+        .stat-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Banner -->
@@ -24,10 +65,10 @@
         </nav>
     </div>
 
-    <div class="container mt-4">
+    <div class="container mt-4 mb-5">
         <h1 class="mb-4">Database Statistics</h1>
-
-        <!-- Summary Statistics -->
+        
+        <!-- Database Overview Section -->
         <div class="row mb-4">
             <div class="col-md-12">
                 <div class="card">
@@ -44,35 +85,24 @@
         </div>
 
         <!-- Cumulative Games Chart -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Cumulative Games by Season</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="cumulative-chart-container">
-                            <p class="text-muted">Loading chart...</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3>Cumulative Games by Season</h3>
             </div>
+            <iframe src="/static-football-rankings/data/statistics/cumulative_games.html" title="Cumulative Games Chart"></iframe>
         </div>
 
         <!-- Annual Additions Chart -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Games Added by Year</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="annual-chart-container">
-                            <p class="text-muted">Loading chart...</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3>Games Added by Year</h3>
             </div>
+            <iframe src="/static-football-rankings/data/statistics/annual_additions.html" title="Annual Additions Chart"></iframe>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="text-center mt-5">
+            <a href="/static-football-rankings/" class="btn btn-primary">Return to Home</a>
         </div>
     </div>
 
@@ -82,13 +112,12 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    
     <!-- Statistics Loading Script -->
     <script>
         // Load summary statistics
-        fetch('/static-football-rankings/data/statistics/statistics_summary.json')
+        fetch('/static-football-rankings/data/statistics/summary.json')
             .then(response => response.json())
             .then(data => {
                 const summaryHtml = `
@@ -113,14 +142,14 @@
                         </div>
                         <div class="col-md-3">
                             <div class="stat-box">
-                                <h3>${data.years_adding_data}</h3>
+                                <h3>${data.years_of_data}</h3>
                                 <p class="text-muted">Years of Data Collection</p>
                             </div>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12">
-                            <p class="text-muted small">Last updated: ${new Date(data.last_updated).toLocaleString()}</p>
+                            <p class="text-muted small mb-0">Last updated: ${new Date(data.last_updated).toLocaleString()}</p>
                         </div>
                     </div>
                 `;
@@ -131,74 +160,6 @@
                 document.getElementById('statistics-summary').innerHTML = 
                     '<p class="text-danger">Error loading statistics. Please try again later.</p>';
             });
-
-        // Load cumulative games chart
-        fetch('/static-football-rankings/data/statistics/cumulative_games.html')
-            .then(response => response.text())
-            .then(html => {
-                // Extract just the plot div from the full HTML
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const plotDiv = doc.querySelector('.plotly-graph-div');
-                
-                if (plotDiv) {
-                    document.getElementById('cumulative-chart-container').innerHTML = '';
-                    document.getElementById('cumulative-chart-container').appendChild(plotDiv);
-                } else {
-                    // If can't extract, just load the whole thing in an iframe
-                    document.getElementById('cumulative-chart-container').innerHTML = 
-                        '<iframe src="/static-football-rankings/data/statistics/cumulative_games.html" width="100%" height="600" frameborder="0"></iframe>';
-                }
-            })
-            .catch(error => {
-                console.error('Error loading cumulative chart:', error);
-                document.getElementById('cumulative-chart-container').innerHTML = 
-                    '<p class="text-danger">Error loading chart. Please try again later.</p>';
-            });
-
-        // Load annual additions chart
-        fetch('/static-football-rankings/data/statistics/annual_additions.html')
-            .then(response => response.text())
-            .then(html => {
-                // Extract just the plot div from the full HTML
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const plotDiv = doc.querySelector('.plotly-graph-div');
-                
-                if (plotDiv) {
-                    document.getElementById('annual-chart-container').innerHTML = '';
-                    document.getElementById('annual-chart-container').appendChild(plotDiv);
-                } else {
-                    // If can't extract, just load the whole thing in an iframe
-                    document.getElementById('annual-chart-container').innerHTML = 
-                        '<iframe src="/static-football-rankings/data/statistics/annual_additions.html" width="100%" height="400" frameborder="0"></iframe>';
-                }
-            })
-            .catch(error => {
-                console.error('Error loading annual chart:', error);
-                document.getElementById('annual-chart-container').innerHTML = 
-                    '<p class="text-danger">Error loading chart. Please try again later.</p>';
-            });
     </script>
-
-    <style>
-        .stat-box {
-            text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .stat-box h3 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 5px;
-        }
-        .stat-box p {
-            margin-bottom: 0;
-            font-size: 0.9rem;
-        }
-    </style>
 </body>
 </html>
