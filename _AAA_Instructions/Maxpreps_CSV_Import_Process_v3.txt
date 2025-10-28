@@ -1,0 +1,344 @@
+/*
+MAXPREPS DATA IMPORT WORKFLOW
+Last Updated: 2025-02-08
+
+1. SCRAPING PROCESS:
+   - Location: C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\maxpreps_excel_loop_v4.py
+   - Output: C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules_v4.csv
+   - Key Features:
+     * Uses Selenium for web scraping
+     * Clean field handling with proper quoting
+     * Consistent date formats (M/D)
+     * Truncated field values (opponent names <= 100 chars)
+     * UTF-8 encoding
+     * Double-quoted CSV output
+
+     Get Maxpreps scores
+
+list of URLS:
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\MaxPreps_Export.xlsx
+
+Step 1: Open Your Terminal & Activate Python Virtual Environment
+Open Windows PowerShell or Command Prompt.
+Navigate to your Python script folder:
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+Activate your Python virtual environment:
+
+.\venv\Scripts\Activate
+(If using Command Prompt instead of PowerShell, use venv\Scripts\activate.bat.)
+Step 2: Run the Python Script
+Run the script to open the chrome & Maxpreps:
+
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\.venv\Scripts\Activate
+pip install selenium
+pip install pandas
+pip install openpyxl
+python maxpreps_excel_loop_v4.py
+
+python maxpreps_excel_loop.py
+python maxpreps_excel_loop_v4.py
+
+The script will launch Google Chrome and load the Maxpreps Scores page.
+
+python maxpreps_excel_loop_bak.py
+
+
+
+2. DATA IMPORT PROCESS:
+   A. Clear Staging:
+      TRUNCATE TABLE dbo.HS_Scores_Staging;
+      
+
+      -- Step 0: Pre-Import Cleanup
+EXEC [dbo].[CleanupBeforeImport];
+
+   B. Import to Staging:
+      EXEC dbo.ImportToStaging 
+          @FilePath = 'C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules_v4.csv';
+
+   B2. -- Step 3: Add new URL mappings
+EXEC [dbo].[AddNewURLMappings];
+
+   C. Transform and Import to Final Table:
+      INSERT INTO dbo.HS_Scores (
+          [Date], Season, Home, Visitor, Neutral, Location, 
+          Location2, Line, Future_Game, Source, Date_Added, 
+          OT, Forfeit, ID, Visitor_Score, Home_Score, 
+          Margin, Access_ID
+      )
+      EXEC dbo.TransformStagingToScores @Season = 2024;
+
+   D. Verify Import:
+      -- Check state distribution
+      SELECT 
+          SUBSTRING(Home, 
+                   CHARINDEX('(', Home) + 1,
+                   CHARINDEX(')', Home) - CHARINDEX('(', Home) - 1) as State,
+          COUNT(*) as Games
+      FROM HS_Scores 
+      WHERE Season = 2024
+      GROUP BY SUBSTRING(Home, 
+                        CHARINDEX('(', Home) + 1,
+                        CHARINDEX(')', Home) - CHARINDEX('(', Home) - 1)
+      ORDER BY Games DESC;
+
+3. KEY CHANGES FROM PREVIOUS VERSION:
+   - New scraper output format with proper CSV quoting
+   - Improved date handling in staging import
+   - Better NULL value handling
+   - Opponent name length truncation
+   - More robust CSV parsing with quote handling
+   - File naming convention updated to include version (_v4)
+
+4. STORED PROCEDURES:
+   - dbo.ImportToStaging: Handles CSV import with quote handling
+   - dbo.ValidateStagingImport: Validates imported staging data
+   - dbo.TransformStagingToScores: Maps staging data to final format
+   - dbo.AddNewURLMappings: Updates URL mappings (if needed)
+
+5. ERROR HANDLING AND VALIDATION:
+   A. CSV Format Checks:
+      - Proper quoting
+      - Consistent date format
+      - Field length limits
+      - UTF-8 encoding
+
+   B. Data Validation:
+      - NULL handling
+      - Duplicate detection
+      - Score format validation
+      - URL mapping verification
+
+6. BEST PRACTICES:
+   - Always clear staging before import
+   - Verify row counts after each step
+   - Check state distribution after import
+   - Monitor URL mapping updates
+   - Keep staging table clean (truncate after successful import)
+
+7. TROUBLESHOOTING:
+   A. Common Issues:
+      - Quote handling in CSV
+      - Date format inconsistencies
+      - NULL vs empty string handling
+      - Field length truncation
+
+   B. Verification Queries:
+      - Row counts
+      - State distribution
+      - Score patterns
+      - Date ranges
+
+8. NEXT STEPS:
+   - Monitor performance with larger datasets
+   - Consider batch processing for very large files
+   - Regular URL mapping maintenance
+   - Documentation updates as needed
+*/
+
+-- Example complete import sequence:
+/*
+-- Step 1: Clear staging
+
+TRUNCATE TABLE dbo.HS_Scores_Staging;
+      -- Step 0: Pre-Import Cleanup
+EXEC [dbo].[CleanupBeforeImport];
+
+-- Step 2: Import to staging
+
+EXEC dbo.ImportToStaging 
+    @FilePath = 'C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules_v4.csv';
+
+-- Step 3: Validate staging data
+
+EXEC dbo.ValidateStagingImport;
+
+-- Step 4: Transform and import to final table
+
+INSERT INTO dbo.HS_Scores (
+    [Date], Season, Home, Visitor, Neutral, Location, 
+    Location2, Line, Future_Game, Source, Date_Added, 
+    OT, Forfeit, ID, Visitor_Score, Home_Score, 
+    Margin, Access_ID
+)
+EXEC dbo.TransformStagingToScores @Season = 2024;
+
+-- Step 5: Verify state distribution
+
+-- Verify import by state distribution with error handling
+WITH StateExtraction AS (
+    SELECT 
+        Home,
+        CASE 
+            WHEN CHARINDEX('(', Home) > 0 
+                 AND CHARINDEX(')', Home) > CHARINDEX('(', Home) 
+            THEN SUBSTRING(Home, 
+                          CHARINDEX('(', Home) + 1,
+                          CHARINDEX(')', Home) - CHARINDEX('(', Home) - 1)
+            ELSE 'Unknown'
+        END as State
+    FROM HS_Scores 
+    WHERE Season = 2024
+)
+SELECT 
+    State,
+    COUNT(*) as Games
+FROM StateExtraction
+GROUP BY State
+ORDER BY Games DESC;
+
+-- Let's also look at any problematic team names
+SELECT DISTINCT Home
+FROM HS_Scores
+WHERE Season = 2024
+    AND (CHARINDEX('(', Home) = 0 
+         OR CHARINDEX(')', Home) = 0
+         OR CHARINDEX(')', Home) <= CHARINDEX('(', Home));
+
+  Step 6: Data Quality Checks
+
+EXEC dbo.CheckDataQuality @Season = 2024;
+GO       
+
+-- Step 7: Clean up staging
+
+TRUNCATE TABLE dbo.HS_Scores_Staging;
+
+
+-- Step 8: Remove Duplicates
+
+EXEC dbo.BackupHSScores
+GO
+
+EXEC dbo.RemoveDuplicateGames
+GO
+
+Remove unneeded HS_Scores Backups
+
+__________________________________________
+
+-- First, let's identify all PreImport and PostImport tables and their creation dates
+WITH ImportTables AS (
+    SELECT 
+        name,
+        create_date,
+        CASE 
+            WHEN name LIKE '%PreImport%' THEN 'Pre'
+            WHEN name LIKE '%PostImport%' THEN 'Post'
+        END as import_type,
+        ROW_NUMBER() OVER (
+            PARTITION BY 
+                CASE 
+                    WHEN name LIKE '%PreImport%' THEN 'Pre'
+                    WHEN name LIKE '%PostImport%' THEN 'Post'
+                END 
+            ORDER BY create_date DESC
+        ) as rn
+    FROM sys.tables
+    WHERE name LIKE '%HS_Scores_PreImport%'
+        OR name LIKE '%HS_Scores_PostImport%'
+)
+-- Generate DROP statements for all but the most recent of each type
+SELECT 
+    name as table_to_drop,
+    create_date,
+    import_type,
+    'DROP TABLE [dbo].[' + name + '];' as drop_statement
+FROM ImportTables
+WHERE rn > 1
+ORDER BY import_type, create_date DESC;
+
+_____________________________________________________________
+
+-- Drop older PostImport tables
+DROP TABLE [dbo].[HS_Scores_PostImport_20250206112604];
+DROP TABLE [dbo].[HS_Scores_PostImport_20250206104425];
+DROP TABLE [dbo].[HS_Scores_PostImport_20250205044755];
+DROP TABLE [dbo].[HS_Scores_PostImport_20250204191203];
+
+-- Drop older PreImport tables
+DROP TABLE [dbo].[HS_Scores_PreImport_20250206104515];
+DROP TABLE [dbo].[HS_Scores_PreImport_20250206104421];
+DROP TABLE [dbo].[HS_Scores_PreImport_20250205044746];
+
+-- Verify the drops (run this after executing the drops)
+SELECT name, create_date
+FROM sys.tables
+WHERE name LIKE '%HS_Scores_PreImport%'
+   OR name LIKE '%HS_Scores_PostImport%'
+ORDER BY create_date DESC;
+
+___________________________________________________________
+
+-- Step 9: Backup Database Periodicly
+
+EXEC dbo.BackupDatabase_Timestamp
+GO
+
+Manually check backup files and remove unneeded
+c:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS01\MSSQL\Backup
+
+C:\Users\demck\SQLData\hs_football_database
+
+
+-- Step 10: Calculate updated rankings
+Run in SQL to update rankings:
+
+EXEC [dbo].[RunRankingsWithCleanup]
+    @LeagueType = 1,
+    @BeginSeason = 2019,
+    @EndSeason = 2004,
+    @Week = 52,
+    @MaxLoops = 2048;
+___________________________
+Query latest season rankings
+
+EXEC [dbo].[GetLatestSeasonTeams]
+___________________________
+
+-- Step 11: Create .json files
+Generate .json files group by group
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json
+.\generate-all-time-programs.ps1
+.\generate-all-time-teams.ps1
+.\generate-decade-programs.ps1
+.\generate-decade-teams.ps1
+.\generate-latest-season-teams.ps1
+.\generate-state-programs.ps1
+.\generate-state-teams.ps1
+
+______________________________
+
+Generate All .json files
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
+.\GenerateAllPages.ps1
+
+_______________________________
+-- Step 12: Push static-football-rankings changes to GitHub
+Generate .json files group by group
+Push changes to GitHub
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+git add -u
+git commit -m "Updated templates and scripts - new generate html script v88"
+git push origin main
+
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+Manually Stage Only Tracked File Changes
+If you prefer more control, you can stage only modifications (and deletions) to tracked files by using:
+
+git add -u
+Then commit with:
+
+
+git commit -m "Updated templates and scripts - new generate html script v85"
+
+
+The -u option tells Git to update the index with modifications and removals for files that are already tracked, leaving untracked files alone.
+
+
+______________________________

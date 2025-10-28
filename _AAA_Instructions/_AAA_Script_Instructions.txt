@@ -1,0 +1,195 @@
+Get Maxpreps scores
+
+list of URLS:
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\MaxPreps_Export.xlsx
+
+Step 1: Open Your Terminal & Activate Python Virtual Environment
+Open Windows PowerShell or Command Prompt.
+Navigate to your Python script folder:
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+Activate your Python virtual environment:
+
+.\venv\Scripts\Activate
+(If using Command Prompt instead of PowerShell, use venv\Scripts\activate.bat.)
+Step 2: Run the Python Script
+Run the script to open the chrome & Maxpreps:
+
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\.venv\Scripts\Activate
+
+
+pip install selenium
+pip install pandas
+pip install openpyxl
+
+python maxpreps_excel_loop.py
+The script will launch Google Chrome and load the Maxpreps Scores page.
+
+python maxpreps_excel_loop_bak.py
+
+
+
+_________________________________
+MaxPreps Data Import Process 2025
+Step 1: Initial Setup & Tables
+
+Ensure required tables exist:
+
+HS_Scores_Staging (raw CSV data)
+TeamName_Alias_Mapping (name standardization)
+URL_ProperName_Mapping (URL to name mapping)
+UnmappedURL_Log (tracking problematic URLs)
+Manual_Review_Games (tracking records needing review)
+
+
+
+Step 2: Data Import to Staging
+sqlCopyTRUNCATE TABLE dbo.HS_Scores_Staging;
+BULK INSERT dbo.HS_Scores_Staging
+FROM 'C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\all_schedules.csv'
+WITH (
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    CODEPAGE = '65001'
+);
+Step 3: Name Standardization
+
+Check for new name variations:
+
+sqlCopy-- Find URLs with multiple team names
+SELECT URL, 
+       STRING_AGG(TeamName, ' | ') as TeamNameVariations,
+       COUNT(*) as VariationCount
+FROM (SELECT DISTINCT URL, TeamName
+      FROM HS_Scores_Staging
+      WHERE Status = 'Processed') x
+GROUP BY URL
+HAVING COUNT(*) > 1;
+
+Update TeamName_Alias_Mapping with new variations
+
+Step 4: Transform and Load
+
+
+Run transform procedure:
+
+sqlCopyEXEC TransformStagingToScores @Season = 2024;
+Step 5: Duplicate Detection
+sqlCopyWITH DuplicateGames AS (
+    SELECT 
+        ID,
+        ROW_NUMBER() OVER (
+            PARTITION BY [Date], Home, Home_Score, Visitor, Visitor_Score
+            ORDER BY Date_Added ASC
+        ) AS rn
+    FROM HS_Scores
+    WHERE Season = 2024
+)
+DELETE FROM HS_Scores
+WHERE ID IN (
+    SELECT ID 
+    FROM DuplicateGames 
+    WHERE rn > 1
+);
+Step 6: Quality Checks
+
+Check UnmappedURL_Log for new issues
+Verify name standardization worked
+Sample data validation
+Check for unusual scores or patterns
+
+_________________________________
+Sync Sql HS_Team_Names with excel HS_Team_Names:
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\HS_Team_Names.xltm
+
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
+.\fix-image-filenames.ps1
+
+-- Review the generated SQL script:
+-- C:\Users\demck\OneDrive\Football_2024\fix-image-paths.sql
+
+-- Then execute it against your SQL Server database
+-- You can use SQL Server Management Studio or:
+sqlcmd -S MCKNIGHTS-PC\SQLEXPRESS01 -d hs_football_database -i "C:\Users\demck\OneDrive\Football_2024\fix-image-paths.sql"
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
+.\sync_HS_Team_Names.ps1
+
+______________________________
+make edits to HS_Team_Names
+ie:
+
+UPDATE HS_Team_Names
+SET PrimaryColor = 'Crimson'
+WHERE Team_Name = 'Muskegon (MI)';
+___________________________________
+
+Run in SQL to update rankings:
+
+EXEC [dbo].[CalculateRankings]
+    @LeagueType = 1,      -- Assuming '1' for high school
+    @BeginSeason = 2024,     -- Starting season
+    @EndSeason = 2024,       -- Ending season
+    @Week = 52,              -- Week number
+    @MaxLoops = 2048;        -- Optional, can be omitted to use default
+
+______________________________
+
+Generate .json files group by group
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json
+.\generate-all-time-programs.ps1
+.\generate-all-time-teams.ps1
+.\generate-decade-programs.ps1
+.\generate-decade-teams.ps1
+.\generate-latest-season-teams.ps1
+.\generate-state-programs.ps1
+.\generate-state-teams.ps1
+
+______________________________
+
+Generate All .html files
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
+.\GenerateAllPages.ps1
+
+
+**note C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\common-functions.ps1
+is a key file for html "top/dynamic" header creation.
+_______________________________
+
+Push changes to GitHub
+
+# Navigate to repository
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+
+# Add all updated files
+git add docs/data/*.json
+git add docs/pages/public/**/*.html
+
+# Commit with descriptive message
+git commit -m "Update json data and regenerate all HTML pages 2025a"
+
+# Push to GitHub
+git push origin main
+
+___________________________________
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+
+# Add all changed files to the staging area
+git add .
+
+# Commit the changes with a descriptive message
+git commit -m "Fix banner image loading issues and standardize TopBanner implementation v5"
+
+# Push the changes to your remote repository (GitHub)
+git push origin main
+
+______________________________
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+git add .
+git commit -m "Fix data-file paths and remove userStyle tags"
+git push origin main
