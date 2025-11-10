@@ -15,13 +15,17 @@ PROCESSOR_CONFIGS = {
         "description": "Bar-Separated Format",
         "raw_dir": r"J:\Users\demck\Google Drive\Documents\Football\HSF\Newspapers\Next_Images_Bar_Format",
         "completed_dir": r"C:\Users\demck\Google Drive\Documents\Football\HSF\Newspapers\Completed\Processed_IMAGES_Bar_Format",
-        "processor_id": "97f459082e74cedd"
+        # --- FIX ---
+        # PASTE YOUR "BAR" PROCESSOR'S FULL NAME HERE
+        "processor_version_name": "projects/static-football-rankings/locations/us/processors/97f459082e74cedd/processorVersions/pretrained-foundation-model-v1.5-2025-05-05"
     },
     'c': {
         "description": "Comma-Separated Format",
         "raw_dir": r"J:\Users\demck\Google Drive\Documents\Football\HSF\Newspapers\Next_Images_Comma_Format",
         "completed_dir": r"C:\Users\demck\Google Drive\Documents\Football\HSF\Newspapers\Completed\Processed_IMAGES_Comma_Format",
-        "processor_id": "4ee5cab6a5ec631e"
+        # --- FIX ---
+        # This is the "comma" processor's name we found before
+        "processor_version_name": "projects/static-football-rankings/locations/us/processors/4ee5cab6a5ec631e/processorVersions/f8f903268834a6d9"
     }
 }
 
@@ -43,7 +47,7 @@ def process_custom_image(file_path, processor_id):
     try:
         opts = {"api_endpoint": f"{LOCATION}-documentai.googleapis.com"}
         client = documentai.DocumentProcessorServiceClient(client_options=opts)
-        name = f"projects/{PROJECT_ID}/locations/{LOCATION}/processors/{processor_id}"
+        name = f"projects/static-football-rankings/locations/us/processors/4ee5cab6a5ec631e/processorVersions/f8f903268834a6d9"
 
         with open(file_path, "rb") as image:
             image_content = image.read()

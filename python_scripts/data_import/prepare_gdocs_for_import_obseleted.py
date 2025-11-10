@@ -1,4 +1,4 @@
-# prepare_gdocs_for_import.py (Corrected Version)
+# prepare_gdocs_for_import.py (Corrected Version 6 - Final)
 
 import os
 import google.generativeai as genai
@@ -7,9 +7,12 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-import json # <--- CHANGED: Use the standard json library
+import json
 import logging
 from collections import defaultdict
+import time
+import re
+import shutil
 
 # === CONFIGURATION ===
 # --- Paths ---
@@ -32,10 +35,8 @@ logger = logging.getLogger(__name__)
 # ========================
 
 def get_gdrive_service():
-    """Authenticates with Google and returns a service object for the Drive API."""
     creds = None
     token_path = 'token.json'
-    # The INFO log message you saw about "file_cache" comes from this section. It is harmless and can be ignored.
     if os.path.exists(token_path):
         creds = Credentials.from_authorized_user_file(token_path, SCOPES)
     if not creds or not creds.valid:
@@ -49,12 +50,11 @@ def get_gdrive_service():
     return build('docs', 'v1', credentials=creds)
 
 def get_doc_content(service, doc_id):
-    """Fetches all text from a Google Doc."""
     try:
         document = service.documents().get(documentId=doc_id).execute()
         content = document.get('body').get('content')
         text = ''
-        if content: # Check if content is not None
+        if content:
             for value in content:
                 if 'paragraph' in value:
                     elements = value.get('paragraph').get('elements')
@@ -65,67 +65,58 @@ def get_doc_content(service, doc_id):
         logger.error(f"Could not fetch content for doc ID {doc_id}: {err}")
         return None
 
-def ai_clean_and_format_text(raw_text, template_name='default'):
+# --- NEW FUNCTION: PYTHON PRE-PROCESSOR ---
+def pre_process_ocr_text(text):
     """
-    Uses the Gemini AI to clean the raw OCR text based on a selected template.
+    Performs simple, high-confidence text replacements to fix common OCR errors
+    before sending the text to the AI.
     """
+    logger.info("Performing initial OCR cleanup...")
+    # Fix a score of 8 or 6 being read as '&'. We replace ' & ' with ' 8 ' 
+    # as 8 is a more common final digit in scores than 6.
+    text = text.replace(" & ", " 8 ")
+    
+    # Fix a comma being read as a period between a score and the next team.
+    # e.g., "TeamA 21. TeamB 7" becomes "TeamA 21, TeamB 7"
+    text = re.sub(r'(\d+)\.\s+([A-Za-z])', r'\1, \2', text)
+    
+    return text
+# --- END OF NEW FUNCTION ---
+
+def ai_clean_and_format_text(raw_text):
+    """Uses the Gemini AI to clean the raw OCR text."""
     if not raw_text.strip():
         logger.warning("Skipping AI call for empty raw text.")
         return ""
         
-    logger.info(f"Sending text to AI for cleaning using '{template_name}' template...")
+    logger.info("Sending text to AI for cleaning and formatting...")
     
     try:
         genai.configure(api_key=GEMINI_API_KEY)
-        # This line uses the correct, current model name
-        model = genai.GenerativeModel('gemini-1.5-flash-latest') 
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
     except Exception as e:
         logger.fatal(f"Failed to configure AI model. Check your API key. Error: {e}")
         return None
 
-    # --- TEMPLATE SELECTION ---
-    if template_name == 'boston_globe':
-        # --- NEW, SPECIALIZED PROMPT FOR COMPLEX FORMATS ---
-        prompt = f"""
-        You are an expert sports data extraction assistant. Your task is to analyze raw OCR text from a newspaper that uses complex formats and extract only the final game scores.
+    # --- NEW, UPGRADED AI PROMPT ---
+    prompt = f"""
+    You are an expert sports data extraction assistant.
+    Your task is to analyze the raw OCR text from a newspaper's sports section below and extract only the high school football game scores.
 
-        **Primary Goal: Extract ONLY the main summary score line.**
+    The raw text may contain content from multiple files or newspaper columns, which are separated by markers like '--- START OF TEXT FROM FILE: ... ---'.
+    Treat all the text between these markers as a single, continuous document. Your job is to find and extract ALL valid game scores from the entire combined text.
 
-        **Parsing Rules for this Format:**
+    **Error Correction and Parsing Rules:**
 
-        1.  **Find the Main Score:** The primary score line might be separated by a comma (',') or a long series of dots ('.........'). Your first job is to identify this main line (e.g., 'Everett 49 .................. Revere 0').
-        2.  **IGNORE Detailed Breakdowns:** Immediately following the main score line, there is often a detailed breakdown with individual stats, scoring plays, or quarter-by-quarter scores. **YOU MUST IGNORE THIS ENTIRE DETAILED SECTION.** Your only output should be the final score.
-        3.  **Example:** If the input is 'Central Catholic 14, St. John's 6' followed by a box score showing individual touchdown runs, your one and only output for that game must be `Central Catholic 14, St. John's 6`.
-        4.  **Handle 'Bar' Separators:** Treat a long series of dots ('....') or underscores ('____') as a simple comma separator.
+    1.  **Handle Corrupted Lines:** Some lines may contain OCR errors (e.g., 'TeamA 42, TeamB &'). If a line is corrupted, do not merge it with the next line. Attempt to fix it using the rules below. If it cannot be fixed, discard the single corrupted line and continue processing the next line.
+    2.  **Aggressively Split Lines:** If a single line of text appears to contain more than one game (e.g., 'TeamA 21, TeamB 7 TeamC 14, TeamD 0'), you MUST split this into multiple, separate output lines.
+    3.  **Fix Common OCR Errors:** The letter 'O' in a score should always be the number '0'. A period '.' separating a score from a team name should be a comma ','.
+    4.  **The Winner-First Rule:** This is a critical rule. In 99.9% of cases, the winning team is listed first. If your initial parsing of a line results in a losing team being listed first, it's highly likely your parsing is wrong. Re-evaluate the text to find the correct team boundaries.
 
-        **Formatting Rules:**
+    **Formatting Rules:**
 
-        1.  Format each game score onto a new line in the format: `Team A Name ScoreA, Team B Name ScoreB`.
-        2.  Ignore all headers ('DIVISION 1', 'NON-LEAGUE', etc.) and all text that is not a final score line.
-
-        Here is the raw text:
-        ---
-        {raw_text}
-        ---
-
-        Cleaned Scores:
-        """
-    else: # 'default' template
-        # --- THIS IS THE EXISTING, TRUSTED PROMPT ---
-        prompt = f"""
-# In the ai_clean_and_format_text() function of prepare_gdocs_for_import_v2.py
-# ... inside the 'else: # default template' block
-prompt = f"""
-    You are a data processing robot. Your only job is to extract game scores from raw text.
-
-    **Primary Directive:** Your highest priority is to correctly identify games that are split across two lines.
-    -   **Rule 1:** If you see a line that ends with `TeamA ScoreA,` you MUST look at the very next line.
-    -   **Rule 2:** The entire content of that next line IS the opponent's score. Treat it as a number and combine the two lines into a single output: `TeamA ScoreA, OpponentB ScoreB`. Do not change the number you see on the second line.
-
-    **Secondary Directives:**
-    - If a line contains a full game `TeamA ScoreA, TeamB ScoreB`, format it as-is.
-    - If a line is garbled or unreadable, ignore it completely to prevent errors.
-    - Ignore all headers and other non-score text.
+    1.  Format each game score onto a new line in the format: `Team A Name ScoreA, Team B Name ScoreB`.
+    2.  Ignore all other text, including headers, section titles, reporter names, commentary, player stats, advertisements, and the file separator markers themselves.
 
     Here is the raw text:
     ---
@@ -133,7 +124,8 @@ prompt = f"""
     ---
 
     Cleaned Scores:
-"""
+    """
+    # --- END OF NEW PROMPT ---
 
     # Add retry logic for quota errors
     for attempt in range(3):
@@ -153,6 +145,8 @@ prompt = f"""
     
     logger.error("Failed to get response from AI after multiple retries due to quota limits.")
     return None
+
+
 def main():
     """Main execution function to process documents."""
     logger.info("--- Starting Automated Document Preprocessing ---")
@@ -189,11 +183,6 @@ def main():
 
     for base_name, file_list in grouped_files.items():
         logger.info(f"Processing group: {base_name}")
-        
-        template_to_use = 'default'
-        if 'boston_globe' in base_name.lower():
-            template_to_use = 'boston_globe'
-        
         logger.info(f"Combining text from {len(file_list)} file(s) for this group.")
 
         combined_text = ""
@@ -221,10 +210,11 @@ def main():
             logger.warning(f"No content extracted for group {base_name}. Skipping.")
             continue
         
-        # This function is missing from your provided script but should be there
-        # pre_processed_text = pre_process_ocr_text(combined_text) 
+        # --- CALL THE NEW PRE-PROCESSOR ---
+        pre_processed_text = pre_process_ocr_text(combined_text)
+        # --- END OF CALL ---
         
-        cleaned_data = ai_clean_and_format_text(combined_text, template_name=template_to_use)
+        cleaned_data = ai_clean_and_format_text(pre_processed_text)
 
         if cleaned_data is None:
             logger.error(f"AI processing failed for group {base_name}. No output file will be generated.")
@@ -241,7 +231,7 @@ def main():
             for file_name in file_list:
                 src = os.path.join(RAW_DOCS_DIR, file_name)
                 dest = os.path.join(processed_gdocs_dir, file_name)
-                os.rename(src, dest)
+                shutil.move(src, dest)
             logger.info(f"Moved {len(file_list)} processed .gdoc files to '{processed_gdocs_dir}'.")
 
         except Exception as e:
