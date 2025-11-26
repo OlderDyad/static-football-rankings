@@ -10,7 +10,9 @@ from datetime import datetime
 SERVER = 'McKnights-PC\\SQLEXPRESS01'
 DATABASE = 'hs_football_database'
 DRIVER = 'ODBC Driver 17 for SQL Server'
-OUTPUT_DIR = r"C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\states\teams"
+
+# Base Docs Directory
+DOCS_ROOT = r"C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\states"
 
 # ==========================================
 # COLOR TRANSLATOR
@@ -53,160 +55,184 @@ def fix_image_path(path):
     return path.replace('\\', '/').lstrip('/')
 
 # ==========================================
-# MAIN LOGIC
+# CORE GENERATOR LOGIC
 # ==========================================
-def generate_state_files():
-    start_time = time.time()
-    print("Starting Web File Generation...")
-    
-    if not os.path.exists(OUTPUT_DIR):
-        os.makedirs(OUTPUT_DIR)
+def process_state_data(cursor, state, mode):
+    """
+    mode: 'teams' or 'programs'
+    """
+    # 1. Determine Stored Procedure & Output Folder
+    if mode == 'teams':
+        sp_name = "GetTeamsByState"
+        sub_folder = "teams"
+        file_prefix = "state-teams"
+    else:
+        sp_name = "GetProgramsByState"
+        sub_folder = "programs"
+        file_prefix = "state-programs"
 
+    # 2. Call Stored Procedure
+    try:
+        # Smart Retry Logic for State Param "(CT)" vs "CT"
+        # CRITICAL FIX: Programs SP requires @MinSeasons parameter
+        if mode == 'programs':
+            sql_exec = f"EXEC {sp_name} @State=?, @PageNumber=?, @PageSize=?, @SearchTerm=?, @MinSeasons=?"
+            params_parens = (f"({state})", 1, 1000, None, 0)
+            params_raw = (state, 1, 1000, None, 0)
+        else:
+            sql_exec = f"EXEC {sp_name} @State=?, @PageNumber=?, @PageSize=?, @SearchTerm=?"
+            params_parens = (f"({state})", 1, 1000, None)
+            params_raw = (state, 1, 1000, None)
+        
+        # Attempt 1: With Parens "(CT)"
+        cursor.execute(sql_exec, params_parens)
+        ranking_rows = cursor.fetchall()
+        
+        # Attempt 2: Raw "CT" if first attempt failed
+        if not ranking_rows:
+            cursor.execute(sql_exec, params_raw)
+            ranking_rows = cursor.fetchall()
+
+        if not ranking_rows:
+            return 0 # No data
+
+        columns = [column[0] for column in cursor.description]
+        rankings = [dict(zip(columns, row)) for row in ranking_rows]
+
+    except Exception as e:
+        print(f"   Error calling {sp_name} for {state}: {e}")
+        return 0
+
+    # 3. Fetch Visual Metadata (Common for both)
+    meta_query = """
+        SELECT Team_Name, City, Mascot, PrimaryColor, SecondaryColor, 
+               LogoURL, School_Logo_URL, Website, ID, PhotoUrl
+        FROM HS_Team_Names WHERE State = ?
+    """
+    cursor.execute(meta_query, (state,))
+    meta_rows = cursor.fetchall()
+    
+    meta_lookup = {}
+    for m in meta_rows:
+        data_pkg = {
+            "mascot": m[2], "bg_color_raw": m[3], 
+            "logo": m[5], "school_logo": m[6], 
+            "website": m[7], "helmet": m[9]
+        }
+        if m[8]: meta_lookup[str(m[8])] = data_pkg
+        meta_lookup[m[0].lower()] = data_pkg
+
+    # 4. Merge & Build JSON
+    final_items = []
+    
+    # Check for ID column
+    id_col = next((col for col in ['ID', 'TeamID'] if col in columns), None)
+    
+    # Determine Name Key ('Team' or 'Program')
+    name_key = 'Program' if 'Program' in columns else 'Team'
+
+    for rank_row in rankings:
+        meta = None
+        entity_name = rank_row.get(name_key, 'Unknown')
+        
+        # Match Logic
+        if id_col and str(rank_row[id_col]) in meta_lookup:
+            meta = meta_lookup[str(rank_row[id_col])]
+        elif entity_name.lower() in meta_lookup:
+            meta = meta_lookup[entity_name.lower()]
+        else:
+            # Fuzzy match (strip state suffix)
+            clean = entity_name.lower().replace(f"({state.lower()})", "").strip()
+            if clean in meta_lookup:
+                meta = meta_lookup[clean]
+
+        # Visuals
+        mascot = meta['mascot'] if meta else ""
+        bg_color = get_hex_color(meta['bg_color_raw'] if meta else "")
+        text_color = determine_text_color(bg_color)
+        logo_url = fix_image_path(meta['logo']) if meta else ""
+        school_logo = fix_image_path(meta['school_logo']) if meta else ""
+        website = meta['website'] if meta else ""
+
+        # Common Item Structure
+        item = {
+            "rank": rank_row.get('Rank'),
+            name_key.lower(): entity_name, # 'team' or 'program'
+            "combined": float(rank_row.get('Combined_Score', 0) or 0),
+            "margin": float(rank_row.get('Margin', 0) or 0),
+            "win_loss": float(rank_row.get('Win_Loss_Pct', 0) or 0),
+            "offense": float(rank_row.get('Offense_Score', 0) or 0),
+            "defense": float(rank_row.get('Defense_Score', 0) or 0),
+            "state": state,
+            # Visuals
+            "mascot": mascot,
+            "backgroundColor": bg_color,
+            "textColor": text_color,
+            "logoURL": logo_url,
+            "schoolLogoURL": school_logo,
+            "website": website
+        }
+        
+        # Specific Fields
+        if mode == 'teams':
+            item['season'] = rank_row.get('Year', 'All-Time')
+            item['games_played'] = rank_row.get('Games_Played', 0)
+        else:
+            item['seasons'] = rank_row.get('Seasons', 0)
+
+        final_items.append(item)
+
+    if not final_items: return 0
+
+    # 5. Save File
+    top_item = final_items[0]
+    json_data = {
+        "metadata": {
+            "timestamp": datetime.now().isoformat(),
+            "type": mode,
+            "yearRange": "All-Time",
+            "totalItems": len(final_items),
+            "description": f"Top {mode} for state: ({state})"
+        },
+        "topItem": top_item,
+        "items": final_items
+    }
+
+    out_path = os.path.join(DOCS_ROOT, sub_folder)
+    if not os.path.exists(out_path): os.makedirs(out_path)
+    
+    full_path = os.path.join(out_path, f"{file_prefix}-{state}.json")
+    
+    with open(full_path, 'w', encoding='utf-8') as f:
+        json.dump(json_data, f, indent=4)
+
+    return len(final_items)
+
+# ==========================================
+# MAIN EXECUTION
+# ==========================================
+if __name__ == "__main__":
+    start_time = time.time()
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    print("Fetching list of states...")
+    print("Fetching states...")
     cursor.execute("SELECT DISTINCT [State] FROM [HS_Team_Names] WHERE [State] IS NOT NULL AND LEN([State]) = 2 ORDER BY [State]")
     states = [row[0] for row in cursor.fetchall()]
-    print(f"Found {len(states)} states to process.")
+    
+    print(f"Processing {len(states)} states...")
+
+    total_teams = 0
+    total_programs = 0
 
     for state in states:
-        # -------------------------------------------------------------
-        # A. GET RANKINGS (Smart Retry Logic)
-        # -------------------------------------------------------------
-        ranking_rows = []
-        columns = []
+        print(f"Processing {state}...", end=" ", flush=True)
+        t_count = process_state_data(cursor, state, 'teams')
+        p_count = process_state_data(cursor, state, 'programs')
+        print(f"[Teams: {t_count} | Programs: {p_count}]")
         
-        try:
-            # Attempt 1: Try with parens "(CT)" - Most likely for SP
-            sql_exec = "EXEC GetTeamsByState @State=?, @PageNumber=?, @PageSize=?, @SearchTerm=?"
-            params = (f"({state})", 1, 1000, None)
-            cursor.execute(sql_exec, params)
-            ranking_rows = cursor.fetchall()
-            
-            if not ranking_rows:
-                # Attempt 2: Try RAW state "CT" - Fallback
-                # Only run this if the first attempt returned 0 rows
-                params = (state, 1, 1000, None)
-                cursor.execute(sql_exec, params)
-                ranking_rows = cursor.fetchall()
-
-            if not ranking_rows:
-                print(f"Skipping {state} (No data returned).")
-                continue
-                
-            print(f"Processing {state}... ({len(ranking_rows)} teams)")
-            columns = [column[0] for column in cursor.description]
-            rankings = [dict(zip(columns, row)) for row in ranking_rows]
-
-        except Exception as e:
-            print(f"Error calling SP for {state}: {e}")
-            continue
-
-        # -------------------------------------------------------------
-        # B. GET METADATA & BUILD LOOKUP
-        # -------------------------------------------------------------
-        meta_query = """
-            SELECT Team_Name, City, Mascot, PrimaryColor, SecondaryColor, 
-                   LogoURL, School_Logo_URL, Website, ID, PhotoUrl
-            FROM HS_Team_Names 
-            WHERE State = ?
-        """
-        cursor.execute(meta_query, (state,))
-        meta_rows = cursor.fetchall()
-        
-        meta_lookup = {}
-        for m in meta_rows:
-            data_pkg = {
-                "mascot": m[2], "bg_color_raw": m[3], 
-                "logo": m[5], "school_logo": m[6], 
-                "website": m[7], "helmet": m[9]
-            }
-            if m[8]: meta_lookup[str(m[8])] = data_pkg
-            meta_lookup[m[0].lower()] = data_pkg # Exact name match
-
-        # -------------------------------------------------------------
-        # C. MERGE DATA
-        # -------------------------------------------------------------
-        final_items = []
-        
-        # Check for ID column in rankings
-        id_col = next((col for col in ['ID', 'TeamID'] if col in columns), None)
-
-        for rank_row in rankings:
-            meta = None
-            
-            # 1. Try ID Match
-            if id_col and str(rank_row[id_col]) in meta_lookup:
-                meta = meta_lookup[str(rank_row[id_col])]
-            
-            # 2. Try Name Match
-            if not meta:
-                rank_team_lower = rank_row['Team'].lower()
-                if rank_team_lower in meta_lookup:
-                    meta = meta_lookup[rank_team_lower]
-                else:
-                    # 3. Try Fuzzy Match (Strip State Suffix)
-                    # "New Britain (CT)" -> "new britain"
-                    clean_name = rank_team_lower.replace(f"({state.lower()})", "").strip()
-                    if clean_name in meta_lookup:
-                        meta = meta_lookup[clean_name]
-
-            # Defaults
-            mascot = meta['mascot'] if meta else ""
-            bg_color = get_hex_color(meta['bg_color_raw'] if meta else "")
-            text_color = determine_text_color(bg_color)
-            logo_url = fix_image_path(meta['logo']) if meta else ""
-            school_logo = fix_image_path(meta['school_logo']) if meta else ""
-            website = meta['website'] if meta else ""
-
-            item = {
-                "rank": rank_row.get('Rank'),
-                "team": rank_row.get('Team'),
-                "season": rank_row.get('Year', 'All-Time'),
-                "combined": float(rank_row.get('Combined_Score', 0) or 0),
-                "margin": float(rank_row.get('Margin', 0) or 0),
-                "win_loss": float(rank_row.get('Win_Loss_Pct', 0) or 0),
-                "offense": float(rank_row.get('Offense_Score', 0) or 0),
-                "defense": float(rank_row.get('Defense_Score', 0) or 0),
-                "games_played": rank_row.get('Games_Played', 0),
-                "state": state,
-                "mascot": mascot,
-                "backgroundColor": bg_color,
-                "textColor": text_color,
-                "logoURL": logo_url,
-                "schoolLogoURL": school_logo,
-                "website": website
-            }
-            final_items.append(item)
-
-        if not final_items: continue
-
-        # -------------------------------------------------------------
-        # D. SAVE JSON
-        # -------------------------------------------------------------
-        top_item = final_items[0]
-        json_data = {
-            "metadata": {
-                "timestamp": datetime.now().isoformat(),
-                "type": "teams",
-                "yearRange": "All-Time",
-                "totalItems": len(final_items),
-                "description": f"Top teams for state: ({state})"
-            },
-            "topItem": top_item,
-            "items": final_items
-        }
-
-        filename = f"state-teams-{state}.json"
-        full_path = os.path.join(OUTPUT_DIR, filename)
-        
-        with open(full_path, 'w', encoding='utf-8') as f:
-            json.dump(json_data, f, indent=4)
+        total_teams += t_count
+        total_programs += p_count
 
     conn.close()
-    duration = time.time() - start_time
-    print(f"\nSUCCESS: Generation complete in {duration:.2f} seconds.")
-
-if __name__ == "__main__":
-    generate_state_files()
+    print(f"\nDONE. Generated {total_teams} Teams and {total_programs} Programs.")
