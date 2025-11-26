@@ -18,6 +18,7 @@ PROCESSOR_CONFIGS = {
         # --- FIX ---
         # PASTE YOUR "BAR" PROCESSOR'S FULL NAME HERE
         "processor_version_name": "projects/static-football-rankings/locations/us/processors/97f459082e74cedd/processorVersions/pretrained-foundation-model-v1.5-2025-05-05"
+        
     },
     'c': {
         "description": "Comma-Separated Format",
@@ -25,7 +26,8 @@ PROCESSOR_CONFIGS = {
         "completed_dir": r"C:\Users\demck\Google Drive\Documents\Football\HSF\Newspapers\Completed\Processed_IMAGES_Comma_Format",
         # --- FIX ---
         # This is the "comma" processor's name we found before
-        "processor_version_name": "projects/static-football-rankings/locations/us/processors/4ee5cab6a5ec631e/processorVersions/f8f903268834a6d9"
+        #"processor_version_name": "projects/static-football-rankings/locations/us/processors/4ee5cab6a5ec631e/processorVersions/f8f903268834a6d9"
+        "processor_version_name": "projects/static-football-rankings/locations/us/processors/4ee5cab6a5ec631e/processorVersions/pretrained-foundation-model-v1.5-pro-2025-06-20"
     }
 }
 
@@ -47,7 +49,7 @@ def process_custom_image(file_path, processor_id):
     try:
         opts = {"api_endpoint": f"{LOCATION}-documentai.googleapis.com"}
         client = documentai.DocumentProcessorServiceClient(client_options=opts)
-        name = f"projects/static-football-rankings/locations/us/processors/4ee5cab6a5ec631e/processorVersions/f8f903268834a6d9"
+        name = processor_id # <-- FIX: Use the variable passed to the function
 
         with open(file_path, "rb") as image:
             image_content = image.read()
@@ -113,7 +115,7 @@ def main():
     logger.info(f"--- Starting Custom Extractor for '{config['description']}' ---")
     
     RAW_IMAGE_DIR = config['raw_dir']
-    PROCESSOR_ID = config['processor_id']
+    PROCESSOR_ID = config['processor_version_name']
     processed_images_dir = config['completed_dir']
     
     if not os.path.exists(processed_images_dir):
