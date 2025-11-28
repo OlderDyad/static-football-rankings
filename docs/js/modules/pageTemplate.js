@@ -62,7 +62,10 @@ export function initializePage(pageConfig) {
     async function loadData(dataFile) {
         log(DEBUG_LEVELS.INFO, 'Loading data from', dataFile);
         try {
-            const response = await fetch(dataFile);
+            // Add a timestamp query parameter to bypass cache
+            const cacheBuster = `?t=${new Date().getTime()}`;
+            const response = await fetch(dataFile + cacheBuster);
+            
             if (!response.ok) {
                 throw new Error(`Failed to load data: ${response.status} ${response.statusText}`);
             }
