@@ -141,11 +141,19 @@ export function initializePage(pageConfig) {
 
     // Display functions
     function displayCurrentPage(data = itemsData) {
-        const tableBody = document.getElementById('programsTableBody');
+        // FIX: Check for EITHER table ID to support both Teams and Programs pages
+        let tableBody = document.getElementById('programsTableBody');
         if (!tableBody) {
-            log(DEBUG_LEVELS.ERROR, 'Table body element not found');
+            tableBody = document.getElementById('teamsTableBody');
+        }
+
+        if (!tableBody) {
+            log(DEBUG_LEVELS.ERROR, 'Table body element not found (checked programsTableBody and teamsTableBody)');
             return;
         }
+
+        // Clear existing static content immediately
+        tableBody.innerHTML = '';
 
         const start = (currentPage - 1) * ITEMS_PER_PAGE;
         const end = start + ITEMS_PER_PAGE;

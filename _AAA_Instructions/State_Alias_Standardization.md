@@ -1,81 +1,116 @@
-📜 SOP: New State Alias StandardizationThis document outlines the standard procedure for identifying, aliasing, and retroactively correcting team names after a new state's data (e.g., South Dakota) has been imported.Phase 1: Generate Alias WorksheetObjective: To extract all new, un-aliased team names from the database, count their frequency, and export them to a CSV file for manual processing.Action:Set the @StartSeason variable to the first season of your new data import.Run the following SQL query in SQL Server Management Studio (SSMS).Right-click the results grid and select "Save Results As..." to create your CSV worksheet (e.g., sd_alias_worksheet.csv).SQL/*
--- =============================================
--- Script: Generate_New_Alias_Worksheet
--- Description: Finds all un-aliased team names from a recent
--- import, counts their frequency, and provides
--- a blank column for the new canonical name.
--- =============================================
-*/
+📜 SOP: State Alias Consolidation Workflow
+This document outlines the standard procedure for identifying, aliasing, and retroactively correcting team names using the consolidation_workflow.py script.
 
--- 1. Set the first season of your new data import
-DECLARE @StartSeason INT = 2023; -- (Example: set to your new data's start)
+File Location: All alias files (e.g., IA_Alias_Rules.csv) will be created and read from this folder: C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\State_Aliases_ProperNames
 
--- 2. CTE to gather all team names (Home and Visitor)
-WITH RawTeamList AS (
-    SELECT Home AS TeamName FROM dbo.HS_Scores WHERE Season >= @StartSeason
-    UNION ALL
-    SELECT Visitor AS TeamName FROM dbo.HS_Scores WHERE Season >= @StartSeason
-)
--- 3. Group, count, and filter
-SELECT
-    TeamName AS Raw_Name,
-    COUNT(*) AS Frequency,
-    '' AS Proper_Name  -- Blank column for you to fill in
-FROM
-    RawTeamList
-WHERE
-    -- Filter out names that are already standardized (e.g., end in '(NY)')
-    RIGHT(TeamName, 4) NOT LIKE '(%)'
-    -- Filter out names that are already in your master alias table
-    AND TeamName NOT IN (SELECT Alias_Name FROM dbo.HS_Team_Name_Alias)
-GROUP BY
-    TeamName
-ORDER BY
-    Frequency DESC,
-    Raw_Name;
-Phase 2: Manual Processing (The CSV)Objective: To use your research to fill in the correct canonical name for each raw name.Action:Open the exported sd_alias_worksheet.csv file in Excel or another editor.Go row by row and fill in the Proper_Name column with the correct, full canonical name (e.g., Sioux Falls O'Gorman (SD)).Example Worksheet:Raw_NameFrequencyProper_NameO'Gorman22Sioux Falls O'Gorman (SD)Tri-Valley18Tri-Valley (SD)Platte14Platte-Geddes (SD)Lincoln21Sioux Falls Lincoln (SD)Washington20Sioux Falls Washington (SD).........Phase 3: Commit New AliasesObjective: To add your new, verified aliases to the master dbo.HS_Team_Name_Alias table.Action:Copy the new, completed alias rows from your worksheet.Paste them into your master Alias_Names_List.csv file.Run your PowerShell import script to update the database table.PowerShell# From your PowerShell terminal:
-.\Import_Alias_Names.ps1
-Result: Your dbo.HS_Team_Name_Alias table is now "aware" of all the new South Dakota teams and their proper names. The dbo.HS_Scores table, however, still contains the raw names.Phase 4: Retroactive Data CorrectionObjective: To "clean up" the dbo.HS_Scores table by replacing all raw names with their newly-aliased proper names.Action:Run the following SQL script. It joins the HS_Scores table against your newly populated HS_Team_Name_Alias table and updates the Home and Visitor columns in place.SQL/*
--- =============================================
--- Script: Retroactive_Alias_Correction
--- Description: Updates the HS_Scores table by replacing
--- raw team names with their standardized names
--- from the HS_Team_Name_Alias table.
--- =============================================
-*/
+This workflow is a two-step process, both handled by the same Python script.
 
--- Set the same start season used in Phase 1
-DECLARE @StartSeason INT = 2023; -- (Example: set to your new data's start)
+Phase 1: Generate Alias Worksheet
+Objective: To find all new, un-aliased team names for a state and create a CSV file (your "to-do list").
 
-BEGIN TRANSACTION;
+Open your terminal:
 
-PRINT 'Retroactively updating HS_Scores with new aliases...';
+Navigate to your script directory: 
 
--- Update the Home column
-UPDATE s
-SET
-    s.Home = a.Standardized_Name
-FROM
-    dbo.HS_Scores s
-JOIN
-    dbo.HS_Team_Name_Alias a ON s.Home = a.Alias_Name
-WHERE
-    s.Season >= @StartSeason; -- Only process new seasons
 
-PRINT CAST(@@ROWCOUNT AS VARCHAR) + ' Home team records updated.';
 
--- Update the Visitor column
-UPDATE s
-SET
-    s.Visitor = a.Standardized_Name
-FROM
-    dbo.HS_Scores s
-JOIN
-    dbo.HS_Team_Name_Alias a ON s.Visitor = a.Alias_Name
-WHERE
-    s.Season >= @StartSeason; -- Only process new seasons
+Activate your virtual environment (if needed): 
 
-PRINT CAST(@@ROWCOUNT AS VARCHAR) + ' Visitor team records updated.';
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
 
-COMMIT;
-PRINT 'Retroactive update complete.';
+..\venv\Scripts\Activate
+
+Run the script:
+
+**CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\**
+
+**python consolidation_workflow.py**
+
+for latin letters names
+**python consolidation_workflow_latin.py**
+
+===========================================
+Workflow for finding Long & Lat or non conforming names
+
+CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+
+**python consolidation_workflow_w_geo.py**
+
+To create new LL_alias file use option #3.
+
+To update names in HS_Scores table
+Use option #2, then use **LL** for state code.
+
+**python geo_locator.py**
+
+This will look for long-Lat for each team in the "LL" file.
+
+============================================
+
+python push_HS_Names_export_to_sheets.py
+
+Enter the State Code:
+
+When prompted, type IA and press Enter.
+
+Select the Action:
+
+The script will ask for your choice. Type 1 and press Enter.
+
+Script action: 1: Generate or Update the correction file for this state.
+
+What Happens Now:
+
+The script runs the dbo.sp_CreateStateCleanupList procedure in SQL Server for Iowa (IA).
+
+It finds all un-aliased names and their game counts.
+
+It creates a new file named IA_Alias_Rules.csv in the ...excel_files\State_Aliases_ProperNames folder.
+
+This file will have three columns: Alias_Name, GameCount, and Standardized_Name.
+
+Phase 2: Manual Processing (The CSV)
+Objective: To use your research to fill in the correct canonical name for each raw name.
+
+Find the File:
+
+Go to the ...excel_files\State_Aliases_ProperNames folder.
+
+Open IA_Alias_Rules.csv with Excel.
+
+Fill in the Blanks:
+
+Go row by row and fill in the Standardized_Name column with the correct, full canonical name (e.g., Des Moines Roosevelt (IA), Cedar Rapids Washington (IA)).
+
+Save and close the file.
+
+Phase 3: Consolidate & Clean Up Data
+Objective: To apply your corrections to the dbo.HS_Scores table, retroactively cleaning up all the data.
+
+Run the script again:
+
+From the same terminal, execute the script: 
+
+**python consolidation_workflow.py**
+
+Enter the State Code:
+
+When prompted, type IA and press Enter.
+
+Select the Action:
+
+This time, type 2 and press Enter.
+
+Script action: 2: Run the consolidation using the completed correction file for this state.
+
+What Happens Now:
+
+The script reads your completed IA_Alias_Rules.csv.
+
+It uploads the Alias_Name and Standardized_Name columns to a temporary staging table in SQL Server.
+
+It runs the dbo.sp_ConsolidateNames_FromStaging procedure.
+
+This procedure automatically updates both dbo.HS_Team_Name_Alias (your master list) and dbo.HS_Scores (the historical game data), replacing all raw names with their proper canonical names.
+
+This new workflow is a complete, self-contained loop. You can now start by running Phase 1 to create your IA_Alias_Rules.csv file.

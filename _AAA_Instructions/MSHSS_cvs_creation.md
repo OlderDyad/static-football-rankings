@@ -1,3 +1,28 @@
+Quick Steps:
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+
+**.\venv\Scripts\Activate**
+
+**python MHSAA_WebScrapper.py**
+
+Sport: Select Football.
+Start Date: Enter the first date you want to collect.
+End Date: Enter the last date you want to collect.
+Level: Select Varsity.
+Click the ‘Search’ button manually.
+
+Do you want to append to the existing CSV file (a) or overwrite it (w)? [a/w]:
+Enter w (overwrite) to create a new CSV file for this session.
+
+Step 5: Run Again for 8-Man Scores
+Run the script again:
+
+python MHSAA_WebScrapper.py
+When the page opens, change the Level filter to 8-Man.
+
+
+
 Step 1: Open Your Terminal & Activate Python Virtual Environment
 Open Windows PowerShell or Command Prompt.
 Navigate to your Python script folder:
@@ -5,7 +30,8 @@ Navigate to your Python script folder:
 cd "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts"
 Activate your Python virtual environment:
 
-.\venv\Scripts\Activate
+**.\venv\Scripts\Activate**
+
 (If using Command Prompt instead of PowerShell, use venv\Scripts\activate.bat.)
 Step 2: Run the Python Script
 Run the script to open the MHSAA website:

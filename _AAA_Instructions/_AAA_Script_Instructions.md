@@ -135,8 +135,26 @@ EXEC [dbo].[CalculateRankings]
     @Week = 52,              -- Week number
     @MaxLoops = 2048;        -- Optional, can be omitted to use default
 
-______________________________
+===========================================
+Current workflow - est: 11/27/2025:
 
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\
+python generate_site_data.py
+
+# 1. Move to the main folder
+cd ..
+
+# 2. Add the updated JSON files
+git add docs/data/states
+
+# 3. Commit the changes
+git commit -m "Updated Site Data: Teams and Programs now fully synchronized no:2"
+
+# 4. Push to GitHub
+git push origin main
+============================================
+
+Old workflow 1:
 Generate .json files group by group
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json
@@ -147,6 +165,8 @@ cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\import
 .\generate-latest-season-teams.ps1
 .\generate-state-programs.ps1
 .\generate-state-teams.ps1
+==============================================
+
 
 ______________________________
 
@@ -170,7 +190,7 @@ git add docs/data/*.json
 git add docs/pages/public/**/*.html
 
 # Commit with descriptive message
-git commit -m "Update json data and regenerate all HTML pages 2025a"
+git commit -m "Update json data and regenerate all HTML pages 2025d"
 
 # Push to GitHub
 git push origin main
