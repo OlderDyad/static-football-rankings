@@ -1,0 +1,259 @@
+import json
+import pyodbc
+import os
+import time
+from datetime import datetime
+
+# ==========================================
+# CONFIGURATION
+# ==========================================
+SERVER = 'McKnights-PC\\SQLEXPRESS01'
+DATABASE = 'hs_football_database'
+DRIVER = 'ODBC Driver 17 for SQL Server'
+
+# Base Docs Directory
+DOCS_ROOT = r"C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\states"
+
+# REPO PREFIX (Required for GitHub Pages)
+REPO_PREFIX = "/static-football-rankings"
+
+# MINIMUM SEASONS FOR PROGRAMS
+MIN_SEASONS_PROGRAMS = 25
+
+# ==========================================
+# COLOR TRANSLATOR
+# ==========================================
+STANDARD_COLORS = {
+    'Maroon': '#800000', 'Gold': '#FFD700', 'Navy': '#000080', 'Blue': '#0000FF',
+    'Red': '#FF0000', 'Black': '#000000', 'White': '#FFFFFF', 'Green': '#008000',
+    'Forest Green': '#228B22', 'Purple': '#800080', 'Orange': '#FFA500', 'Yellow': '#FFFF00',
+    'Silver': '#C0C0C0', 'Grey': '#808080', 'Gray': '#808080', 'Royal Blue': '#4169E1',
+    'Cardinal': '#C41E3A', 'Kelly Green': '#4CBB17', 'Old Gold': '#CFB53B',
+    'Vegas Gold': '#C5B358', 'Midnight Blue': '#191970', 'Brown': '#A52A2A',
+    'Columbia Blue': '#9BDDFF', 'Teal': '#008080', 'Crimson': '#DC143C',
+    'Scarlet': '#FF2400', 'Hunter Green': '#355E3B', 'Burnt Orange': '#CC5500'
+}
+
+# ==========================================
+# HELPER FUNCTIONS
+# ==========================================
+def get_db_connection():
+    conn_str = f'DRIVER={DRIVER};SERVER={SERVER};DATABASE={DATABASE};Trusted_Connection=yes;'
+    return pyodbc.connect(conn_str)
+
+def get_hex_color(color_input):
+    if not color_input: return '#333333'
+    clean_val = str(color_input).strip()
+    if clean_val.startswith('#'): return clean_val
+    return STANDARD_COLORS.get(clean_val.title(), '#333333')
+
+def determine_text_color(hex_color):
+    if not hex_color or not hex_color.startswith('#'): return '#FFFFFF'
+    try:
+        h = hex_color.lstrip('#')
+        rgb = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+        brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000
+        return '#000000' if brightness > 125 else '#FFFFFF'
+    except:
+        return '#FFFFFF'
+
+def fix_image_path(path):
+    if not path: return ""
+    clean = str(path).replace('\\', '/').lstrip('/')
+    if clean.startswith(REPO_PREFIX.strip('/')):
+        if not clean.startswith('/'): return f"/{clean}"
+        return clean
+    return f"{REPO_PREFIX}/{clean}"
+
+def get_stat_value(row, keys):
+    for k in keys:
+        key_lower = k.lower()
+        if key_lower in row and row[key_lower] is not None:
+            try:
+                val = float(row[key_lower])
+                return round(val, 3)
+            except (ValueError, TypeError):
+                continue
+    return 0.0
+
+def get_int_value(row, keys, default=0):
+    for k in keys:
+        key_lower = k.lower()
+        if key_lower in row and row[key_lower] is not None:
+            try:
+                return int(row[key_lower])
+            except (ValueError, TypeError):
+                continue
+    return default
+
+def get_string_value(row, keys, default=''):
+    for k in keys:
+        key_lower = k.lower()
+        if key_lower in row and row[key_lower] is not None:
+            return str(row[key_lower])
+    return default
+
+# ==========================================
+# CORE GENERATOR LOGIC
+# ==========================================
+def process_state_data(cursor, state, mode):
+    if mode == 'teams':
+        sp_name = "GetTeamsByState"
+        sub_folder = "teams"
+        file_prefix = "state-teams"
+        sql_exec = f"EXEC {sp_name} @State=?, @PageNumber=?, @PageSize=?, @SearchTerm=?"
+        params_parens = (f"({state})", 1, 2000, None)
+        params_raw = (state, 1, 2000, None)
+    else:
+        sp_name = "GetProgramsByState"
+        sub_folder = "programs"
+        file_prefix = "state-programs"
+        sql_exec = f"EXEC {sp_name} @State=?, @PageNumber=?, @PageSize=?, @SearchTerm=?, @MinSeasons=?"
+        params_parens = (f"({state})", 1, 5000, None, MIN_SEASONS_PROGRAMS)
+        params_raw = (state, 1, 5000, None, MIN_SEASONS_PROGRAMS)
+
+    try:
+        cursor.execute(sql_exec, params_parens)
+        ranking_rows = cursor.fetchall()
+        
+        if not ranking_rows:
+            cursor.execute(sql_exec, params_raw)
+            ranking_rows = cursor.fetchall()
+
+        if not ranking_rows: return 0
+
+        columns = [column[0].lower() for column in cursor.description]
+        rankings = [dict(zip(columns, row)) for row in ranking_rows]
+
+    except Exception as e:
+        print(f"   Error calling {sp_name} for {state}: {e}")
+        return 0
+
+    meta_query = """
+        SELECT Team_Name, City, Mascot, PrimaryColor, SecondaryColor, 
+               LogoURL, School_Logo_URL, Website, ID, PhotoUrl
+        FROM HS_Team_Names WHERE State = ?
+    """
+    cursor.execute(meta_query, (state,))
+    meta_rows = cursor.fetchall()
+    
+    meta_lookup = {}
+    for m in meta_rows:
+        data_pkg = {
+            "mascot": m[2] if m[2] else "",
+            "bg_color_raw": m[3] if m[3] else "",
+            "logo": m[5] if m[5] else "",
+            "school_logo": m[6] if m[6] else "",
+            "website": m[7] if m[7] else "",
+            "helmet": m[9] if m[9] else ""
+        }
+        if m[8]: meta_lookup[str(m[8])] = data_pkg
+        if m[0]: meta_lookup[m[0].lower()] = data_pkg
+
+    final_items = []
+    id_col = 'id' if 'id' in columns else ('teamid' if 'teamid' in columns else None)
+    sql_name_key = 'program' if 'program' in columns else 'team'
+    json_name_key = 'program' if mode == 'programs' else 'team'
+
+    for rank_row in rankings:
+        meta = None
+        entity_name = get_string_value(rank_row, [sql_name_key], 'Unknown')
+        
+        if id_col and str(rank_row.get(id_col, '')) in meta_lookup:
+            meta = meta_lookup[str(rank_row.get(id_col))]
+        elif entity_name.lower() in meta_lookup:
+            meta = meta_lookup[entity_name.lower()]
+        else:
+            clean = entity_name.lower().replace(f"({state.lower()})", "").strip()
+            if clean in meta_lookup:
+                meta = meta_lookup[clean]
+
+        mascot = meta['mascot'] if meta else ""
+        bg_color = get_hex_color(meta['bg_color_raw'] if meta else "")
+        text_color = determine_text_color(bg_color)
+        logo_url = fix_image_path(meta['logo']) if meta else ""
+        school_logo = fix_image_path(meta['school_logo']) if meta else ""
+        website = meta['website'] if meta else ""
+
+        item = {
+            "rank": get_int_value(rank_row, ['rank']),
+            json_name_key: entity_name,
+            "combined": get_stat_value(rank_row, ['combined', 'combined_score']),
+            "margin": get_stat_value(rank_row, ['margin', 'avg_of_avg_of_home_modified_score', 'max_min_margin']),
+            "win_loss": get_stat_value(rank_row, ['win_loss', 'win_loss_pct', 'winloss', 'avg_of_avg_of_home_modified_score_win_loss']),
+            "offense": get_stat_value(rank_row, ['offense', 'offense_score']),
+            "defense": get_stat_value(rank_row, ['defense', 'defense_score']),
+            "state": state,
+            "mascot": mascot,
+            "backgroundColor": bg_color,
+            "textColor": text_color,
+            "logoURL": logo_url,
+            "schoolLogoURL": school_logo,
+            "website": website
+        }
+        
+        if mode == 'teams':
+            item['season'] = get_int_value(rank_row, ['season', 'year'], 0)
+            item['games_played'] = get_int_value(rank_row, ['games_played', 'gamesplayed'], 0)
+        else:
+            item['seasons'] = get_int_value(rank_row, ['seasons'], 0)
+
+        final_items.append(item)
+
+    if not final_items: return 0
+
+    top_item = final_items[0]
+    
+    json_data = {
+        "metadata": {
+            "timestamp": datetime.now().isoformat(),
+            "type": mode,
+            "yearRange": "All-Time",
+            "totalItems": len(final_items),
+            "description": f"Top {mode} for state: ({state})"
+        },
+        "topItem": top_item,
+        "items": final_items
+    }
+
+    out_path = os.path.join(DOCS_ROOT, sub_folder)
+    if not os.path.exists(out_path): os.makedirs(out_path)
+    
+    full_path = os.path.join(out_path, f"{file_prefix}-{state}.json")
+    
+    with open(full_path, 'w', encoding='utf-8') as f:
+        json.dump(json_data, f, indent=4)
+
+    return len(final_items)
+
+# ==========================================
+# MAIN EXECUTION
+# ==========================================
+if __name__ == "__main__":
+    start_time = time.time()
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+    except Exception as e:
+        print(f"Failed to connect to database: {e}")
+        exit(1)
+
+    print("Fetching states...")
+    cursor.execute("SELECT DISTINCT [State] FROM [HS_Team_Names] WHERE [State] IS NOT NULL AND LEN([State]) = 2 ORDER BY [State]")
+    states = [row[0] for row in cursor.fetchall()]
+    
+    print(f"Processing {len(states)} states...")
+
+    total_t = 0
+    total_p = 0
+
+    for state in states:
+        print(f"Processing {state}...", end=" ", flush=True)
+        t = process_state_data(cursor, state, 'teams')
+        p = process_state_data(cursor, state, 'programs')
+        print(f"[Teams: {t} | Programs: {p}]")
+        total_t += t
+        total_p += p
+
+    conn.close()
+    print(f"\nDONE. Teams: {total_t}, Programs: {total_p}. Duration: {time.time()-start_time:.2f}s")
