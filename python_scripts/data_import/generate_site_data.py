@@ -14,7 +14,7 @@ DRIVER = 'ODBC Driver 17 for SQL Server'
 # Base Docs Directory
 DOCS_ROOT = r"C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\states"
 
-# REPO PREFIX (Required for GitHub Pages)
+# REPO PREFIX (CRITICAL FIX for GitHub Pages 404s)
 REPO_PREFIX = "/static-football-rankings"
 
 # MINIMUM SEASONS FOR PROGRAMS
@@ -66,6 +66,7 @@ def fix_image_path(path):
     return f"{REPO_PREFIX}/{clean}"
 
 def get_stat_value(row, keys):
+    """Safely extract numeric stat value from row."""
     for k in keys:
         key_lower = k.lower()
         if key_lower in row and row[key_lower] is not None:
@@ -77,6 +78,7 @@ def get_stat_value(row, keys):
     return 0.0
 
 def get_int_value(row, keys, default=0):
+    """Safely extract integer value from row"""
     for k in keys:
         key_lower = k.lower()
         if key_lower in row and row[key_lower] is not None:
@@ -87,6 +89,7 @@ def get_int_value(row, keys, default=0):
     return default
 
 def get_string_value(row, keys, default=''):
+    """Safely extract string value from row"""
     for k in keys:
         key_lower = k.lower()
         if key_lower in row and row[key_lower] is not None:
@@ -97,6 +100,7 @@ def get_string_value(row, keys, default=''):
 # CORE GENERATOR LOGIC
 # ==========================================
 def process_state_data(cursor, state, mode):
+    # 1. Determine Settings
     if mode == 'teams':
         sp_name = "GetTeamsByState"
         sub_folder = "teams"
@@ -108,10 +112,12 @@ def process_state_data(cursor, state, mode):
         sp_name = "GetProgramsByState"
         sub_folder = "programs"
         file_prefix = "state-programs"
+        # UPDATED: MinSeasons now uses configured value
         sql_exec = f"EXEC {sp_name} @State=?, @PageNumber=?, @PageSize=?, @SearchTerm=?, @MinSeasons=?"
         params_parens = (f"({state})", 1, 5000, None, MIN_SEASONS_PROGRAMS)
         params_raw = (state, 1, 5000, None, MIN_SEASONS_PROGRAMS)
 
+    # 2. Call Stored Procedure
     try:
         cursor.execute(sql_exec, params_parens)
         ranking_rows = cursor.fetchall()
@@ -122,6 +128,7 @@ def process_state_data(cursor, state, mode):
 
         if not ranking_rows: return 0
 
+        # Force lowercase columns for consistent matching
         columns = [column[0].lower() for column in cursor.description]
         rankings = [dict(zip(columns, row)) for row in ranking_rows]
 
@@ -129,6 +136,7 @@ def process_state_data(cursor, state, mode):
         print(f"   Error calling {sp_name} for {state}: {e}")
         return 0
 
+    # 3. Fetch Visual Metadata
     meta_query = """
         SELECT Team_Name, City, Mascot, PrimaryColor, SecondaryColor, 
                LogoURL, School_Logo_URL, Website, ID, PhotoUrl
@@ -150,7 +158,9 @@ def process_state_data(cursor, state, mode):
         if m[8]: meta_lookup[str(m[8])] = data_pkg
         if m[0]: meta_lookup[m[0].lower()] = data_pkg
 
+    # 4. Merge & Build JSON
     final_items = []
+    
     id_col = 'id' if 'id' in columns else ('teamid' if 'teamid' in columns else None)
     sql_name_key = 'program' if 'program' in columns else 'team'
     json_name_key = 'program' if mode == 'programs' else 'team'
@@ -159,6 +169,7 @@ def process_state_data(cursor, state, mode):
         meta = None
         entity_name = get_string_value(rank_row, [sql_name_key], 'Unknown')
         
+        # Match Logic
         if id_col and str(rank_row.get(id_col, '')) in meta_lookup:
             meta = meta_lookup[str(rank_row.get(id_col))]
         elif entity_name.lower() in meta_lookup:
@@ -168,6 +179,7 @@ def process_state_data(cursor, state, mode):
             if clean in meta_lookup:
                 meta = meta_lookup[clean]
 
+        # Visuals
         mascot = meta['mascot'] if meta else ""
         bg_color = get_hex_color(meta['bg_color_raw'] if meta else "")
         text_color = determine_text_color(bg_color)
@@ -175,14 +187,34 @@ def process_state_data(cursor, state, mode):
         school_logo = fix_image_path(meta['school_logo']) if meta else ""
         website = meta['website'] if meta else ""
 
+        # --- COLUMN MAPPING LOGIC ---
+        # NOTE: Based on your observation, columns are swapped in the SP output for Programs
+        # We manually swap them here to correct the JSON output
+        
+        if mode == 'programs':
+             # SWAPPED MAPPING FOR PROGRAMS
+             combined_val = get_stat_value(rank_row, ['combined', 'combined_score'])
+             margin_val   = get_stat_value(rank_row, ['win_loss', 'win_loss_pct']) # Win/Loss -> Margin
+             win_loss_val = get_stat_value(rank_row, ['margin'])                   # Margin -> Win/Loss
+             offense_val  = get_stat_value(rank_row, ['defense', 'defense_score']) # Defense -> Offense
+             defense_val  = get_stat_value(rank_row, ['offense', 'offense_score']) # Offense -> Defense
+        else:
+             # STANDARD MAPPING FOR TEAMS
+             combined_val = get_stat_value(rank_row, ['combined', 'combined_score'])
+             margin_val   = get_stat_value(rank_row, ['margin'])
+             win_loss_val = get_stat_value(rank_row, ['win_loss', 'win_loss_pct'])
+             offense_val  = get_stat_value(rank_row, ['offense', 'offense_score'])
+             defense_val  = get_stat_value(rank_row, ['defense', 'defense_score'])
+
+        # Build item
         item = {
             "rank": get_int_value(rank_row, ['rank']),
             json_name_key: entity_name,
-            "combined": get_stat_value(rank_row, ['combined', 'combined_score']),
-            "margin": get_stat_value(rank_row, ['margin', 'avg_of_avg_of_home_modified_score', 'max_min_margin']),
-            "win_loss": get_stat_value(rank_row, ['win_loss', 'win_loss_pct', 'winloss', 'avg_of_avg_of_home_modified_score_win_loss']),
-            "offense": get_stat_value(rank_row, ['offense', 'offense_score']),
-            "defense": get_stat_value(rank_row, ['defense', 'defense_score']),
+            "combined": combined_val,
+            "margin": margin_val,
+            "win_loss": win_loss_val,
+            "offense": offense_val,
+            "defense": defense_val,
             "state": state,
             "mascot": mascot,
             "backgroundColor": bg_color,
@@ -202,6 +234,10 @@ def process_state_data(cursor, state, mode):
 
     if not final_items: return 0
 
+    # 5. Save
+    # Explicitly sort by Rank to ensure consistency
+    final_items.sort(key=lambda x: x.get('rank', 9999))
+    
     top_item = final_items[0]
     
     json_data = {
@@ -231,29 +267,51 @@ def process_state_data(cursor, state, mode):
 # ==========================================
 if __name__ == "__main__":
     start_time = time.time()
+    
+    print("=" * 60)
+    print("State Teams & Programs JSON Generator (Mapped Fix)")
+    print("=" * 60)
+    
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
+        print("✓ Database connection established")
     except Exception as e:
-        print(f"Failed to connect to database: {e}")
+        print(f"✗ Failed to connect to database: {e}")
         exit(1)
 
-    print("Fetching states...")
-    cursor.execute("SELECT DISTINCT [State] FROM [HS_Team_Names] WHERE [State] IS NOT NULL AND LEN([State]) = 2 ORDER BY [State]")
+    print("\nFetching states...")
+    cursor.execute("""
+        SELECT DISTINCT [State] 
+        FROM [HS_Team_Names] 
+        WHERE [State] IS NOT NULL 
+          AND LEN([State]) = 2 
+        ORDER BY [State]
+    """)
     states = [row[0] for row in cursor.fetchall()]
     
-    print(f"Processing {len(states)} states...")
+    print(f"Found {len(states)} states to process\n")
 
-    total_t = 0
-    total_p = 0
+    total_teams = 0
+    total_programs = 0
+    errors = []
 
     for state in states:
         print(f"Processing {state}...", end=" ", flush=True)
-        t = process_state_data(cursor, state, 'teams')
-        p = process_state_data(cursor, state, 'programs')
-        print(f"[Teams: {t} | Programs: {p}]")
-        total_t += t
-        total_p += p
+        try:
+            t = process_state_data(cursor, state, 'teams')
+            p = process_state_data(cursor, state, 'programs')
+            print(f"[Teams: {t} | Programs: {p}]")
+            total_teams += t
+            total_programs += p
+        except Exception as e:
+            print(f"[ERROR: {e}]")
+            errors.append((state, str(e)))
 
     conn.close()
-    print(f"\nDONE. Teams: {total_t}, Programs: {total_p}. Duration: {time.time()-start_time:.2f}s")
+    
+    print("\n" + "=" * 60)
+    print(f"DONE. Teams: {total_teams:,}, Programs: {total_programs:,}")
+    print(f"Duration: {time.time()-start_time:.2f}s")
+    print(f"Output: {DOCS_ROOT}")
+    print("=" * 60)
