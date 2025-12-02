@@ -3,11 +3,16 @@
 export class CommentManager {
     constructor() {
         this.comments = [];
+        // Note: This URL needs to point to your actual backend/firebase function
+        // Since GitHub Pages is static, this path usually implies a proxy or external API.
         this.baseUrl = '/static-football-rankings/api';
     }
 
     async fetchComments() {
         try {
+            // Check if API is reachable (or mock for static demo)
+            // If on GitHub Pages without a backend, this fetch will 404.
+            // We wrap it to prevent crashing the whole page.
             const response = await fetch(`${this.baseUrl}/comments`, {
                 credentials: 'include'
             });
@@ -20,8 +25,8 @@ export class CommentManager {
             this.comments = data.comments || [];
             return this.comments;
         } catch (error) {
-            console.error('Error fetching comments:', error);
-            throw error;
+            console.warn('Comment system unavailable (API unreachable):', error);
+            return [];
         }
     }
 
