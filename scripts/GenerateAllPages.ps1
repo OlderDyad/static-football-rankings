@@ -1,4 +1,4 @@
-###############################################################################
+﻿###############################################################################
 # GenerateAllPages.ps1
 # Comprehensive static page generator for McKnight's American Football Rankings
 ###############################################################################
@@ -369,7 +369,7 @@ function Generate-ComingSoonPage {
 
     <footer class="mt-5 mb-3">
         <div class="text-center">
-            <p>© 2025 McKnight's Football Rankings</p>
+            <p>Â© 2025 McKnight's Football Rankings</p>
         </div>
     </footer>
 
@@ -867,7 +867,7 @@ function Process-McKnightNationalChampions {
                 # Replace placeholders
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
                 
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
@@ -1054,7 +1054,7 @@ function Process-StateData {
                 $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 # IMPORTANT: Comment out banner generation to prevent 404 errors
                 # if ($teamData.topItem) {
@@ -1092,7 +1092,7 @@ function Process-StateData {
                 $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 # IMPORTANT: Comment out banner generation to prevent 404 errors
                 # if ($programData.topItem) {
@@ -1190,7 +1190,7 @@ function Process-AllTimeData {
                 
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
 # Comment out or delete these lines:
 # Banner
@@ -1248,7 +1248,7 @@ function Process-LatestSeasonData {
                 # Insert scripts and update timestamp
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 # IMPORTANT: Comment out banner generation to prevent 404 errors
                 # if ($jsonData.topItem) {
@@ -1305,7 +1305,7 @@ function Process-MediaNationalChampions {
                 # Replace placeholders
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
                 
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
@@ -1597,7 +1597,7 @@ function Process-MediaNationalChampions {
                 # Replace placeholders
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
                 
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
@@ -1687,3 +1687,4 @@ function Process-MediaNationalChampions {
 
 
 #endregion Main Script Execution
+
