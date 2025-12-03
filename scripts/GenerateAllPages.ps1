@@ -612,6 +612,78 @@ $tableControlsScript = @'
 '@
 
 # Comments functionality
+$tableColorScript = @"
+<script>
+(function(){
+    function hexToRgba(hex, opacity) {
+        hex = hex.replace('#', '');
+        // Handle 3-digit hex (e.g. #FFF)
+        if(hex.length === 3) {
+            hex = hex[0]+hex[0] + hex[1]+hex[1] + hex[2]+hex[2];
+        }
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+        return 'rgba(' + r + ',' + g + ',' + b + ',' + opacity + ')';
+    }
+    
+    function applyColors(bg, text) {
+        if (!bg) return;
+        const style = document.createElement('style');
+        style.textContent = 
+            'thead th, thead tr, .sticky-top.bg-white {' +
+            '  background-color: ' + bg + ' !important;' +
+            '  color: ' + text + ' !important;' +
+            '}' +
+            '.table-striped > tbody > tr:nth-of-type(odd) > * {' +
+            '  --bs-table-accent-bg: ' + hexToRgba(bg, 0.08) + ' !important;' +
+            '}' +
+            '.table-striped > tbody > tr:nth-of-type(even) > * {' +
+            '  --bs-table-accent-bg: #ffffff !important;' +
+            '}' +
+            '.table-hover > tbody > tr:hover > * {' +
+            '  --bs-table-accent-bg: ' + hexToRgba(bg, 0.18) + ' !important;' +
+            '}' +
+            '.btn-primary {' +
+            '  background-color: ' + bg + ' !important;' +
+            '  border-color: ' + bg + ' !important;' +
+            '}' +
+            '.btn-outline-primary {' +
+            '  color: ' + bg + ' !important;' +
+            '  border-color: ' + bg + ' !important;' +
+            '}' +
+            '.btn-outline-primary:hover {' +
+            '  background-color: ' + bg + ' !important;' +
+            '  color: ' + text + ' !important;' +
+            '}';
+        document.head.appendChild(style);
+    }
+    
+    async function init() {
+        try {
+            const meta = document.querySelector('meta[name="data-file"]');
+            if (!meta) return;
+            // Add cache buster to ensure we get fresh color data
+            const resp = await fetch(meta.getAttribute('content') + '?t=' + new Date().getTime());
+            if (!resp.ok) return;
+            const data = await resp.json();
+            if (data.topItem && data.topItem.backgroundColor) {
+                applyColors(data.topItem.backgroundColor, data.topItem.textColor || '#FFFFFF');
+            }
+        } catch (e) {
+            console.warn('Table color init:', e);
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+"@
+
 $commentCode = @'
 <script>
 const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
@@ -868,6 +940,7 @@ function Process-McKnightNationalChampions {
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -replace '</body>', "$tableColorScript`n</body>"
                 
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
@@ -1055,6 +1128,7 @@ function Process-StateData {
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -replace '</body>', "$tableColorScript`n</body>"
 
                 # IMPORTANT: Comment out banner generation to prevent 404 errors
                 # if ($teamData.topItem) {
@@ -1093,6 +1167,7 @@ function Process-StateData {
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -replace '</body>', "$tableColorScript`n</body>"
 
                 # IMPORTANT: Comment out banner generation to prevent 404 errors
                 # if ($programData.topItem) {
@@ -1191,6 +1266,7 @@ function Process-AllTimeData {
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -replace '</body>', "$tableColorScript`n</body>"
 
 # Comment out or delete these lines:
 # Banner
@@ -1249,6 +1325,7 @@ function Process-LatestSeasonData {
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -replace '</body>', "$tableColorScript`n</body>"
 
                 # IMPORTANT: Comment out banner generation to prevent 404 errors
                 # if ($jsonData.topItem) {
@@ -1306,6 +1383,7 @@ function Process-MediaNationalChampions {
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -replace '</body>', "$tableColorScript`n</body>"
                 
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
@@ -1598,6 +1676,7 @@ function Process-MediaNationalChampions {
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -replace '</body>', "$tableColorScript`n</body>"
                 
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
@@ -1687,4 +1766,5 @@ function Process-MediaNationalChampions {
 
 
 #endregion Main Script Execution
+
 
