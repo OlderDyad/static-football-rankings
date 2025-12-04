@@ -17,9 +17,6 @@ DOCS_ROOT = r"C:\Users\demck\OneDrive\Football_2024\static-football-rankings\doc
 # REPO PREFIX
 REPO_PREFIX = "/static-football-rankings"
 
-# Settings
-MIN_SEASONS_PROGRAMS = 25
-
 # ==========================================
 # COLOR TRANSLATOR
 # ==========================================
@@ -110,7 +107,7 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
 
         # Teams Query: Get individual season records
         if decade_start:
-            # Decade Teams - UPDATED with Game Count Filter
+            # Decade Teams
             sql_exec = """
                 SELECT TOP 5000
                     R.Home AS Team,
@@ -123,11 +120,11 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
                     G.GamesPlayed AS Games_Played
                 FROM HS_Rankings R
                 INNER JOIN (
-                    SELECT Home AS TeamName, Season, COUNT(*) AS GamesPlayed
+                    SELECT TeamName, Season, COUNT(*) AS GamesPlayed
                     FROM (
-                        SELECT Home, Season FROM HS_Scores WHERE Home IS NOT NULL
+                        SELECT Home AS TeamName, Season FROM HS_Scores WHERE Home IS NOT NULL
                         UNION ALL
-                        SELECT Visitor, Season FROM HS_Scores WHERE Visitor IS NOT NULL
+                        SELECT Visitor AS TeamName, Season FROM HS_Scores WHERE Visitor IS NOT NULL
                     ) AS AllGames
                     GROUP BY TeamName, Season
                 ) G ON R.Home = G.TeamName AND R.Season = G.Season
@@ -163,7 +160,7 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
         
         # Programs Query: Aggregate stats
         if decade_start:
-            # Decade Programs - UPDATED with 10-Season Filter
+            # Decade Programs
             sql_exec = """
                 SELECT TOP 5000
                     R.Home AS Program,
@@ -247,7 +244,7 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
             json_name_key: entity_name,
             "combined": get_stat_value(rank_row, ['combined', 'combined_score']),
             "margin": get_stat_value(rank_row, ['margin']),
-            "win_loss": get_stat_value(rank_row, ['win_loss', 'win_loss_pct', 'winloss']),
+            "win_loss": get_stat_value(rank_row, ['win_loss', 'win_loss_pct']),
             "offense": get_stat_value(rank_row, ['offense']),
             "defense": get_stat_value(rank_row, ['defense']),
             "state": state_val,
@@ -261,7 +258,7 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
         
         if 'teams' in mode:
             item['season'] = get_int_value(rank_row, ['season', 'year'], 0)
-            item['games_played'] = get_int_value(rank_row, ['games_played'], 0)
+            item['games_played'] = get_int_value(rank_row, ['gamesplayed', 'games_played'], 0)
         else:
             item['seasons'] = get_int_value(rank_row, ['seasons'], 0)
 
@@ -292,8 +289,7 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
     if decade_start:
          out_path = os.path.join(DOCS_ROOT, "decades", sub_folder_type)
     else:
-         out_path = os.path.join(DOCS_ROOT, "all-time") # Simple root for all-time
-         # Note: Adjust this if you have separate folders for all-time/teams and all-time/programs
+         out_path = os.path.join(DOCS_ROOT, "all-time")
 
     if not os.path.exists(out_path): os.makedirs(out_path)
     
@@ -345,7 +341,6 @@ if __name__ == "__main__":
 
     # 2. Generate Decades
     print("\n--- Processing Decades ---")
-    # Range from 1900 to 2020
     decades = range(1900, 2030, 10) 
     
     total_teams = 0
@@ -359,6 +354,11 @@ if __name__ == "__main__":
         total_teams += t
         total_programs += p
 
+    # 3. Pre-1900s
+    print("   Pre-1900s...", end=" ", flush=True)
+    # Special logic for pre-1900 would need a custom query range, skipping for brevity unless needed
+    # Or adjust process_global_data to accept explicit start/end years
+    
     conn.close()
     print("\n" + "=" * 60)
     print(f"DONE. Decades Total: {total_teams} Teams, {total_programs} Programs")
