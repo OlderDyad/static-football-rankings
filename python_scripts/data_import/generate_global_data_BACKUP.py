@@ -6,7 +6,6 @@ Generates JSON files for All-Time and Decade rankings (Teams and Programs).
 FIXES APPLIED:
 1. State code extracted from team name suffix (XX) instead of unreliable HS_Team_Names.State
 2. Proper column mapping for margin/win_loss and offense/defense
-3. FIXED: Decade programs now require 7+ seasons (70% of decade) - was incorrectly set to 1
 """
 
 import json
@@ -29,9 +28,8 @@ DOCS_ROOT = r"C:\Users\demck\OneDrive\Football_2024\static-football-rankings\doc
 # REPO PREFIX
 REPO_PREFIX = "/static-football-rankings"
 
-# Min seasons for programs
-MIN_SEASONS_PROGRAMS = 25          # All-Time lists: 25+ seasons
-MIN_SEASONS_DECADE_PROGRAMS = 7    # Decade lists: 7+ seasons (70% of decade)
+# Min seasons for programs (All-Time lists only)
+MIN_SEASONS_PROGRAMS = 25
 
 # ==========================================
 # COLOR TRANSLATOR
@@ -121,24 +119,6 @@ def get_string_value(row, keys, default=''):
             return str(row[key_lower])
     return default
 
-def get_min_seasons_for_decade(decade_start):
-    """
-    Calculate minimum seasons required for a decade.
-    For completed decades: 7 seasons (70% of 10 years)
-    For current/incomplete decade: 70% of available years
-    """
-    current_year = datetime.now().year
-    decade_end = decade_start + 9
-    
-    if current_year <= decade_end:
-        # Incomplete decade - calculate available years
-        available_years = current_year - decade_start + 1
-        min_seasons = max(1, int(available_years * 0.7))
-        return min_seasons
-    else:
-        # Completed decade - require 7 seasons
-        return MIN_SEASONS_DECADE_PROGRAMS
-
 # ==========================================
 # DATA PROCESSING LOGIC
 # ==========================================
@@ -225,10 +205,8 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
         
         # Programs Query: Aggregate stats
         if decade_start:
-            # Decade Programs - FIXED: Now uses dynamic min seasons calculation
-            min_seasons = get_min_seasons_for_decade(decade_start)
-            
-            sql_exec = f"""
+            # Decade Programs - direct query instead of SP for better control
+            sql_exec = """
                 SELECT TOP 5000
                     R.Home AS Program,
                     COUNT(DISTINCT R.Season) AS Seasons,
@@ -255,7 +233,7 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
                   AND R.Week = 52
                   AND ((R.Season < 1950 AND G.GamesPlayed >= 5) OR (R.Season >= 1950 AND G.GamesPlayed >= 8))
                 GROUP BY R.Home
-                HAVING COUNT(DISTINCT R.Season) >= {min_seasons}
+                HAVING COUNT(DISTINCT R.Season) >= 1
                 ORDER BY Combined DESC
             """
             params = (decade_start, decade_start + 9)
@@ -447,6 +425,11 @@ if __name__ == "__main__":
     # 2. Generate Decades (including pre-1900)
     print("\n--- Processing Decades ---")
     
+    # Pre-1900s special case
+    print("   Pre-1900s...", end=" ", flush=True)
+    # For pre-1900, we need to modify the decade_start to work with special range
+    # The query uses decade_start to decade_start+9, so we'll use a custom approach
+    
     total_teams = 0
     total_programs = 0
     
@@ -454,8 +437,7 @@ if __name__ == "__main__":
     decades = list(range(1900, 2030, 10))
     
     for d in decades:
-        min_seasons = get_min_seasons_for_decade(d)
-        print(f"   {d}s (min {min_seasons} seasons)...", end=" ", flush=True)
+        print(f"   {d}s...", end=" ", flush=True)
         t = process_global_data(cursor, meta_lookup, 'decade-teams', d)
         p = process_global_data(cursor, meta_lookup, 'decade-programs', d)
         print(f"[Teams: {t} | Programs: {p}]")
