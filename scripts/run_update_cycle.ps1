@@ -1,8 +1,8 @@
 # ========================================================
-#  MASTER UPDATE CYCLE (Corrected v2)
+#  MASTER UPDATE CYCLE (Corrected v3)
 #  1. Syncs Google Sheets & Images to SQL (Python)
-#  2. Generates Web JSONs (Python for States - CRITICAL CHANGE)
-#  3. Rebuilds HTML (PowerShell - UNCOMMENTED)
+#  2. Generates Web JSONs (Python for States AND Global)
+#  3. Rebuilds HTML (PowerShell)
 #  4. Publishes to GitHub
 # ========================================================
 
@@ -14,7 +14,6 @@ $htmlScriptsDir = "$repoRoot\scripts"
 # ---------------------------------------------------------
 # STEP 1: DATA INPUT (The Source of Truth)
 # ---------------------------------------------------------
-Write-Host "--------------------------------" -ForegroundColor Cyan
 Write-Host "STEP 1: Syncing Data from Sheets & Images..." -ForegroundColor Cyan
 Set-Location $pythonDir
 
@@ -27,36 +26,32 @@ python ingest_images_by_id.py
 # ---------------------------------------------------------
 # STEP 2: GENERATE STATE DATA (PYTHON)
 # ---------------------------------------------------------
-Write-Host "--------------------------------" -ForegroundColor Cyan
-Write-Host "STEP 2: Generating State JSON Data (Python)..." -ForegroundColor Cyan
+Write-Host "STEP 2: Generating State JSON Data..." -ForegroundColor Cyan
 
-# CRITICAL FIX: Use the Python generator, NOT the old PowerShell scripts.
-# The Python script has the 25-season filter, color translator, and image path fixes.
+# 1. Generate State Teams & Programs (CT, TX, etc.)
 python generate_site_data.py
 
 # ---------------------------------------------------------
-# STEP 3: GENERATE GLOBAL LISTS (POWERSHELL LEGACY)
+# STEP 3: GENERATE GLOBAL DATA (PYTHON)
 # ---------------------------------------------------------
-# Write-Host "STEP 3: Generating Global Rankings (PowerShell)..." -ForegroundColor Cyan
-# Set-Location $psScriptsDir
-# Only uncomment if you need to update All-Time/Decade lists
-# .\generate-all-time-programs.ps1
-# .\generate-all-time-teams.ps1
+Write-Host "STEP 3: Generating Global & Decade JSON Data..." -ForegroundColor Cyan
+
+# 2. Generate All-Time & Decade Lists (1980s, 1990s, etc.)
+# This uses your new script to apply colors/logos to global lists
+python generate_global_data.py
 
 # ---------------------------------------------------------
-# STEP 4: REBUILD HTML SHELL (THE FIX FOR STALE TABLES)
+# STEP 4: REBUILD HTML SHELL
 # ---------------------------------------------------------
-Write-Host "--------------------------------" -ForegroundColor Cyan
 Write-Host "STEP 4: Rebuilding HTML Pages..." -ForegroundColor Cyan
 Set-Location $htmlScriptsDir
 
-# UNCOMMENTED: This forces the HTML tables to match your new JSON data
+# This forces the HTML tables to match your new JSON data
 .\GenerateAllPages.ps1
 
 # ---------------------------------------------------------
 # STEP 5: PUBLISH
 # ---------------------------------------------------------
-Write-Host "--------------------------------" -ForegroundColor Cyan
 Write-Host "STEP 5: Pushing to GitHub..." -ForegroundColor Cyan
 Set-Location $repoRoot
 
@@ -65,7 +60,7 @@ git add .
 
 # Commit
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm"
-git commit -m "Master Cycle Update: Synced Sheets, Images, JSON, and HTML ($timestamp)"
+git commit -m "Master Cycle Update: Synced Sheets, Images, State, and Global Data ($timestamp)"
 
 # Push
 git push origin main
