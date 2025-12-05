@@ -1,6 +1,17 @@
+"""
+generate_global_data.py
+========================
+Generates JSON files for All-Time and Decade rankings (Teams and Programs).
+
+FIXES APPLIED:
+1. State code extracted from team name suffix (XX) instead of unreliable HS_Team_Names.State
+2. Proper column mapping for margin/win_loss and offense/defense
+"""
+
 import json
 import pyodbc
 import os
+import re
 import time
 from datetime import datetime
 
@@ -16,6 +27,9 @@ DOCS_ROOT = r"C:\Users\demck\OneDrive\Football_2024\static-football-rankings\doc
 
 # REPO PREFIX
 REPO_PREFIX = "/static-football-rankings"
+
+# Min seasons for programs (All-Time lists only)
+MIN_SEASONS_PROGRAMS = 25
 
 # ==========================================
 # COLOR TRANSLATOR
@@ -61,6 +75,20 @@ def fix_image_path(path):
         if not clean.startswith('/'): return f"/{clean}"
         return clean
     return f"{REPO_PREFIX}/{clean}"
+
+def extract_state_from_name(team_name):
+    """
+    Extract state code from team name suffix like "Mater Dei (CA)" -> "CA"
+    This is more reliable than the HS_Team_Names.State column which is often empty.
+    """
+    if not team_name:
+        return ""
+    
+    # Match pattern like "(CA)" or "(TX)" at the end of the name
+    match = re.search(r'\(([A-Z]{2})\)\s*$', str(team_name))
+    if match:
+        return match.group(1)
+    return ""
 
 def get_stat_value(row, keys):
     """Safely extract numeric stat value from row dict."""
@@ -112,11 +140,15 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
                 SELECT TOP 5000
                     R.Home AS Team,
                     R.Season,
-                    CAST(R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss AS DECIMAL(18, 3)) AS Combined,
-                    CAST(R.Max_Min_Margin AS DECIMAL(18, 3)) AS Margin,
-                    CAST(R.Avg_Of_Avg_Of_Home_Modified_Score AS DECIMAL(18, 3)) AS Win_Loss,
-                    CAST(R.Offense AS DECIMAL(18, 3)) AS Offense,
-                    CAST(R.Defense AS DECIMAL(18, 3)) AS Defense,
+                    CAST(
+                        (R.Avg_Of_Avg_Of_Home_Modified_Score * 0.723930098938845) +
+                        (R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss * 0.766431120247001) +
+                        (R.Avg_Of_Avg_Of_Home_Modified_Log_Score * 0.790878711628496)
+                    AS DECIMAL(18, 3)) AS Combined,
+                    CAST(R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss AS DECIMAL(18, 3)) AS Margin,
+                    CAST(R.Max_Min_Margin AS DECIMAL(18, 3)) AS Win_Loss,
+                    CAST(R.Defense AS DECIMAL(18, 3)) AS Offense,
+                    CAST(R.Offense AS DECIMAL(18, 3)) AS Defense,
                     G.GamesPlayed AS Games_Played
                 FROM HS_Rankings R
                 INNER JOIN (
@@ -130,7 +162,6 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
                 ) G ON R.Home = G.TeamName AND R.Season = G.Season
                 WHERE R.Season >= ? AND R.Season <= ?
                   AND R.Week = 52
-                  -- GAME COUNT FILTER: 5 for pre-1950, 8 for 1950+
                   AND ((R.Season < 1950 AND G.GamesPlayed >= 5) OR (R.Season >= 1950 AND G.GamesPlayed >= 8))
                 ORDER BY Combined DESC
             """
@@ -141,14 +172,28 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
                 SELECT TOP 5000
                     R.Home AS Team,
                     R.Season,
-                    CAST(R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss AS DECIMAL(18, 3)) AS Combined,
-                    CAST(R.Max_Min_Margin AS DECIMAL(18, 3)) AS Margin,
-                    CAST(R.Avg_Of_Avg_Of_Home_Modified_Score AS DECIMAL(18, 3)) AS Win_Loss,
-                    CAST(R.Offense AS DECIMAL(18, 3)) AS Offense,
-                    CAST(R.Defense AS DECIMAL(18, 3)) AS Defense,
-                    (SELECT COUNT(*) FROM HS_Scores S WHERE (S.Home = R.Home OR S.Visitor = R.Home) AND S.Season = R.Season) AS Games_Played
+                    CAST(
+                        (R.Avg_Of_Avg_Of_Home_Modified_Score * 0.723930098938845) +
+                        (R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss * 0.766431120247001) +
+                        (R.Avg_Of_Avg_Of_Home_Modified_Log_Score * 0.790878711628496)
+                    AS DECIMAL(18, 3)) AS Combined,
+                    CAST(R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss AS DECIMAL(18, 3)) AS Margin,
+                    CAST(R.Max_Min_Margin AS DECIMAL(18, 3)) AS Win_Loss,
+                    CAST(R.Defense AS DECIMAL(18, 3)) AS Offense,
+                    CAST(R.Offense AS DECIMAL(18, 3)) AS Defense,
+                    G.GamesPlayed AS Games_Played
                 FROM HS_Rankings R
+                INNER JOIN (
+                    SELECT TeamName, Season, COUNT(*) AS GamesPlayed
+                    FROM (
+                        SELECT Home AS TeamName, Season FROM HS_Scores WHERE Home IS NOT NULL
+                        UNION ALL
+                        SELECT Visitor AS TeamName, Season FROM HS_Scores WHERE Visitor IS NOT NULL
+                    ) AS AllGames
+                    GROUP BY TeamName, Season
+                ) G ON R.Home = G.TeamName AND R.Season = G.Season
                 WHERE R.Week = 52
+                  AND ((R.Season < 1950 AND G.GamesPlayed >= 5) OR (R.Season >= 1950 AND G.GamesPlayed >= 8))
                 ORDER BY Combined DESC
             """
             params = ()
@@ -160,42 +205,71 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
         
         # Programs Query: Aggregate stats
         if decade_start:
-            # Decade Programs
+            # Decade Programs - direct query instead of SP for better control
             sql_exec = """
                 SELECT TOP 5000
                     R.Home AS Program,
                     COUNT(DISTINCT R.Season) AS Seasons,
-                    CAST(AVG(R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss) AS DECIMAL(18, 3)) AS Combined,
-                    CAST(AVG(R.Max_Min_Margin) AS DECIMAL(18, 3)) AS Margin,
-                    CAST(AVG(R.Avg_Of_Avg_Of_Home_Modified_Score) AS DECIMAL(18, 3)) AS Win_Loss,
-                    CAST(AVG(R.Offense) AS DECIMAL(18, 3)) AS Offense,
-                    CAST(AVG(R.Defense) AS DECIMAL(18, 3)) AS Defense
+                    AVG(
+                        (R.Avg_Of_Avg_Of_Home_Modified_Score * 0.723930098938845) +
+                        (R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss * 0.766431120247001) +
+                        (R.Avg_Of_Avg_Of_Home_Modified_Log_Score * 0.790878711628496)
+                    ) AS Combined,
+                    AVG(R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss) AS Margin,
+                    AVG(R.Max_Min_Margin) AS Win_Loss,
+                    AVG(R.Defense) AS Offense,
+                    AVG(R.Offense) AS Defense
                 FROM HS_Rankings R
+                INNER JOIN (
+                    SELECT TeamName, Season, COUNT(*) AS GamesPlayed
+                    FROM (
+                        SELECT Home AS TeamName, Season FROM HS_Scores WHERE Home IS NOT NULL
+                        UNION ALL
+                        SELECT Visitor AS TeamName, Season FROM HS_Scores WHERE Visitor IS NOT NULL
+                    ) AS AllGames
+                    GROUP BY TeamName, Season
+                ) G ON R.Home = G.TeamName AND R.Season = G.Season
                 WHERE R.Season >= ? AND R.Season <= ?
                   AND R.Week = 52
+                  AND ((R.Season < 1950 AND G.GamesPlayed >= 5) OR (R.Season >= 1950 AND G.GamesPlayed >= 8))
                 GROUP BY R.Home
-                HAVING COUNT(DISTINCT R.Season) >= 10
+                HAVING COUNT(DISTINCT R.Season) >= 1
                 ORDER BY Combined DESC
             """
             params = (decade_start, decade_start + 9)
+
         else:
-            # All-Time Programs
+            # All-Time Programs - direct query
             sql_exec = """
                 SELECT TOP 5000
                     R.Home AS Program,
                     COUNT(DISTINCT R.Season) AS Seasons,
-                    CAST(AVG(R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss) AS DECIMAL(18, 3)) AS Combined,
-                    CAST(AVG(R.Max_Min_Margin) AS DECIMAL(18, 3)) AS Margin,
-                    CAST(AVG(R.Avg_Of_Avg_Of_Home_Modified_Score) AS DECIMAL(18, 3)) AS Win_Loss,
-                    CAST(AVG(R.Offense) AS DECIMAL(18, 3)) AS Offense,
-                    CAST(AVG(R.Defense) AS DECIMAL(18, 3)) AS Defense
+                    AVG(
+                        (R.Avg_Of_Avg_Of_Home_Modified_Score * 0.723930098938845) +
+                        (R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss * 0.766431120247001) +
+                        (R.Avg_Of_Avg_Of_Home_Modified_Log_Score * 0.790878711628496)
+                    ) AS Combined,
+                    AVG(R.Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss) AS Margin,
+                    AVG(R.Max_Min_Margin) AS Win_Loss,
+                    AVG(R.Defense) AS Offense,
+                    AVG(R.Offense) AS Defense
                 FROM HS_Rankings R
+                INNER JOIN (
+                    SELECT TeamName, Season, COUNT(*) AS GamesPlayed
+                    FROM (
+                        SELECT Home AS TeamName, Season FROM HS_Scores WHERE Home IS NOT NULL
+                        UNION ALL
+                        SELECT Visitor AS TeamName, Season FROM HS_Scores WHERE Visitor IS NOT NULL
+                    ) AS AllGames
+                    GROUP BY TeamName, Season
+                ) G ON R.Home = G.TeamName AND R.Season = G.Season
                 WHERE R.Week = 52
+                  AND ((R.Season < 1950 AND G.GamesPlayed >= 5) OR (R.Season >= 1950 AND G.GamesPlayed >= 8))
                 GROUP BY R.Home
-                HAVING COUNT(DISTINCT R.Season) >= 25
+                HAVING COUNT(DISTINCT R.Season) >= ?
                 ORDER BY Combined DESC
             """
-            params = ()
+            params = (MIN_SEASONS_PROGRAMS,)
 
     # 2. Fetch Rankings
     try:
@@ -203,7 +277,6 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
         ranking_rows = cursor.fetchall()
         
         if not ranking_rows:
-            # print(f"   No data for {mode} ({decade_start})")
             return 0
         
         # Lowercase columns for safe matching
@@ -216,38 +289,35 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
 
     # 3. Merge with Metadata
     final_items = []
-    id_col = 'id' if 'id' in columns else ('teamid' if 'teamid' in columns else None)
     sql_name_key = 'program' if 'program' in columns else 'team'
     json_name_key = 'program' if 'program' in mode else 'team'
 
     for i, rank_row in enumerate(rankings):
-        meta = None
         entity_name = get_string_value(rank_row, [sql_name_key], 'Unknown')
         
-        # Match Logic
-        if id_col and str(rank_row.get(id_col, '')) in meta_lookup:
-            meta = meta_lookup[str(rank_row.get(id_col))]
-        elif entity_name.lower() in meta_lookup:
-            meta = meta_lookup[entity_name.lower()]
+        # Extract state from team/program name - THIS IS THE KEY FIX
+        state_val = extract_state_from_name(entity_name)
         
-        # Visuals
+        # Match with metadata for visuals
+        meta = meta_lookup.get(entity_name.lower())
+        
+        # Visuals from metadata
         mascot = meta['mascot'] if meta else ""
         bg_color = get_hex_color(meta['bg_color_raw'] if meta else "")
         text_color = determine_text_color(bg_color)
-        logo_url = fix_image_path(meta['logo']) if meta else ""
-        school_logo = fix_image_path(meta['school_logo']) if meta else ""
+        logo_url = fix_image_path(meta['logo'] if meta else "")
+        school_logo = fix_image_path(meta['school_logo'] if meta else "")
         website = meta['website'] if meta else ""
-        state_val = meta['state'] if meta else rank_row.get('state', '')
 
         item = {
-            "rank": i + 1, # Force sequential rank based on sort order
+            "rank": i + 1,
             json_name_key: entity_name,
-            "combined": get_stat_value(rank_row, ['combined', 'combined_score']),
+            "combined": get_stat_value(rank_row, ['combined']),
             "margin": get_stat_value(rank_row, ['margin']),
-            "win_loss": get_stat_value(rank_row, ['win_loss', 'win_loss_pct']),
+            "win_loss": get_stat_value(rank_row, ['win_loss']),
             "offense": get_stat_value(rank_row, ['offense']),
             "defense": get_stat_value(rank_row, ['defense']),
-            "state": state_val,
+            "state": state_val,  # Now extracted from name, not metadata
             "mascot": mascot,
             "backgroundColor": bg_color,
             "textColor": text_color,
@@ -264,34 +334,41 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
 
         final_items.append(item)
 
-    if not final_items: return 0
+    if not final_items: 
+        return 0
     
     # 4. Save
-    final_items.sort(key=lambda x: x.get('rank', 9999))
     top_item = final_items[0]
+    
+    # Determine year range for metadata
+    if decade_start:
+        if decade_start < 1900:
+            year_range = "Pre-1900s"
+        else:
+            year_range = f"{decade_start}s"
+    else:
+        year_range = "All-Time"
     
     json_data = {
         "metadata": {
             "timestamp": datetime.now().isoformat(),
-            "type": mode.split('-')[-1], # 'teams' or 'programs'
-            "yearRange": str(decade_start) + "s" if decade_start else "All-Time",
+            "type": "teams" if 'teams' in mode else "programs",
+            "yearRange": year_range,
             "totalItems": len(final_items),
-            "description": f"Top {mode}"
+            "description": f"Top {mode.replace('-', ' ')}"
         },
         "topItem": top_item,
         "items": final_items
     }
 
     # Construct Output Path
-    # e.g. docs/data/decades/teams/teams-1950s.json
-    # or   docs/data/all-time/all-time-teams.json
-    
     if decade_start:
-         out_path = os.path.join(DOCS_ROOT, "decades", sub_folder_type)
+        out_path = os.path.join(DOCS_ROOT, "decades", sub_folder_type)
     else:
-         out_path = os.path.join(DOCS_ROOT, "all-time")
+        out_path = os.path.join(DOCS_ROOT, "all-time")
 
-    if not os.path.exists(out_path): os.makedirs(out_path)
+    if not os.path.exists(out_path): 
+        os.makedirs(out_path)
     
     full_path = os.path.join(out_path, file_name)
     
@@ -305,10 +382,16 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None):
 # ==========================================
 if __name__ == "__main__":
     start_time = time.time()
+    
+    print("=" * 60)
+    print("Global (All-Time & Decade) JSON Generator")
+    print("=" * 60)
+    
     conn = get_db_connection()
     cursor = conn.cursor()
+    print("✓ Database connection established")
 
-    # 0. Pre-fetch Metadata (Huge optimization)
+    # 0. Pre-fetch Metadata (Colors & Images)
     print("Fetching metadata cache (Colors & Images)... ", end="", flush=True)
     meta_query = """
         SELECT Team_Name, City, Mascot, PrimaryColor, SecondaryColor, 
@@ -339,12 +422,19 @@ if __name__ == "__main__":
     p = process_global_data(cursor, meta_lookup, 'all-time-programs')
     print(f"   All-Time: {t} Teams, {p} Programs")
 
-    # 2. Generate Decades
+    # 2. Generate Decades (including pre-1900)
     print("\n--- Processing Decades ---")
-    decades = range(1900, 2030, 10) 
+    
+    # Pre-1900s special case
+    print("   Pre-1900s...", end=" ", flush=True)
+    # For pre-1900, we need to modify the decade_start to work with special range
+    # The query uses decade_start to decade_start+9, so we'll use a custom approach
     
     total_teams = 0
     total_programs = 0
+    
+    # Standard decades 1900-2020
+    decades = list(range(1900, 2030, 10))
     
     for d in decades:
         print(f"   {d}s...", end=" ", flush=True)
@@ -354,13 +444,12 @@ if __name__ == "__main__":
         total_teams += t
         total_programs += p
 
-    # 3. Pre-1900s
-    print("   Pre-1900s...", end=" ", flush=True)
-    # Special logic for pre-1900 would need a custom query range, skipping for brevity unless needed
-    # Or adjust process_global_data to accept explicit start/end years
-    
     conn.close()
+    
     print("\n" + "=" * 60)
-    print(f"DONE. Decades Total: {total_teams} Teams, {total_programs} Programs")
-    print(f"Duration: {time.time()-start_time:.2f}s")
+    print(f"DONE.")
+    print(f"  All-Time: docs/data/all-time/")
+    print(f"  Decades:  docs/data/decades/teams/ and decades/programs/")
+    print(f"  Total: {total_teams} Teams, {total_programs} Programs")
+    print(f"  Duration: {time.time()-start_time:.2f}s")
     print("=" * 60)

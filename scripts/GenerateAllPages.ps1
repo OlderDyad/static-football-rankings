@@ -1043,7 +1043,8 @@ function Process-DecadeData {
                 # Make sure the meta tag fix is preserved
                 $processedTemplate = $processedTemplate -replace '<meta name="data-file" content="[^"]*">', 
                                                       "<meta name=`"data-file`" content=`"/static-football-rankings/data/decades/programs/programs-$DecadeName.json`">"
-                
+                $processedTemplate = $processedTemplate -replace '</body>', "$tableColorScript`n</body>"
+
                 Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
                 Write-Host "`nGenerated: $DecadeName-programs.html" -ForegroundColor Green
             }
@@ -1090,7 +1091,7 @@ function Process-DecadeData {
                 # Make sure the meta tag fix is preserved
                 $processedTemplate = $processedTemplate -replace '<meta name="data-file" content="[^"]*">', 
                                                       "<meta name=`"data-file`" content=`"/static-football-rankings/data/decades/teams/teams-$DecadeName.json`">"
-                
+                $processedTemplate = $processedTemplate -replace '</body>', "$tableColorScript`n</body>"
                 Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
                 Write-Host "`nGenerated: $DecadeName-teams.html" -ForegroundColor Green
             }
