@@ -7,7 +7,6 @@ FIXES APPLIED:
 1. State code extracted from team name suffix (XX) instead of unreliable HS_Team_Names.State
 2. Proper column mapping for margin/win_loss and offense/defense
 3. FIXED: Decade programs now require 7+ seasons (70% of decade) - was incorrectly set to 1
-4. ADDED: Generates all-time-programs-25.json, all-time-programs-50.json, all-time-programs-100.json
 """
 
 import json
@@ -31,10 +30,8 @@ DOCS_ROOT = r"C:\Users\demck\OneDrive\Football_2024\static-football-rankings\doc
 REPO_PREFIX = "/static-football-rankings"
 
 # Min seasons for programs
+MIN_SEASONS_PROGRAMS = 25          # All-Time lists: 25+ seasons
 MIN_SEASONS_DECADE_PROGRAMS = 7    # Decade lists: 7+ seasons (70% of decade)
-
-# All-Time Programs thresholds (generates separate files for each)
-ALL_TIME_PROGRAM_THRESHOLDS = [25, 50, 100]
 
 # ==========================================
 # COLOR TRANSLATOR
@@ -145,10 +142,9 @@ def get_min_seasons_for_decade(decade_start):
 # ==========================================
 # DATA PROCESSING LOGIC
 # ==========================================
-def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_seasons_override=None):
+def process_global_data(cursor, meta_lookup, mode, decade_start=None):
     """
     mode: 'all-time-teams', 'all-time-programs', 'decade-teams', 'decade-programs'
-    min_seasons_override: For all-time programs, allows generating 25/50/100 variants
     """
     
     # 1. Configure Query based on mode
@@ -224,17 +220,8 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_season
              
     else: # Programs
         sub_folder_type = "programs"
-        
-        # Determine file name based on mode and min_seasons
-        if decade_start:
-            file_name = f"programs-{decade_start}s.json"
-            out_subdir = f"decades/programs"
-        elif min_seasons_override:
-            file_name = f"all-time-programs-{min_seasons_override}.json"
-            out_subdir = "all-time"
-        else:
-            file_name = "all-time-programs.json"
-            out_subdir = "all-time"
+        file_name = f"programs-{decade_start}s.json" if decade_start else "all-time-programs.json"
+        out_subdir = f"decades/programs" if decade_start else "all-time"
         
         # Programs Query: Aggregate stats
         if decade_start:
@@ -274,10 +261,8 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_season
             params = (decade_start, decade_start + 9)
 
         else:
-            # All-Time Programs - use override if provided, else default
-            min_seasons = min_seasons_override if min_seasons_override else 25
-            
-            sql_exec = f"""
+            # All-Time Programs - direct query
+            sql_exec = """
                 SELECT TOP 5000
                     R.Home AS Program,
                     COUNT(DISTINCT R.Season) AS Seasons,
@@ -303,10 +288,10 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_season
                 WHERE R.Week = 52
                   AND ((R.Season < 1950 AND G.GamesPlayed >= 5) OR (R.Season >= 1950 AND G.GamesPlayed >= 8))
                 GROUP BY R.Home
-                HAVING COUNT(DISTINCT R.Season) >= {min_seasons}
+                HAVING COUNT(DISTINCT R.Season) >= ?
                 ORDER BY Combined DESC
             """
-            params = ()
+            params = (MIN_SEASONS_PROGRAMS,)
 
     # 2. Fetch Rankings
     try:
@@ -386,21 +371,13 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_season
     else:
         year_range = "All-Time"
     
-    # Description
-    if min_seasons_override:
-        description = f"All-time top programs ({min_seasons_override}+ seasons)"
-    elif decade_start:
-        description = f"Top {mode.replace('-', ' ')} of the {decade_start}s"
-    else:
-        description = f"Top {mode.replace('-', ' ')}"
-    
     json_data = {
         "metadata": {
             "timestamp": datetime.now().isoformat(),
             "type": "teams" if 'teams' in mode else "programs",
             "yearRange": year_range,
             "totalItems": len(final_items),
-            "description": description
+            "description": f"Top {mode.replace('-', ' ')}"
         },
         "topItem": top_item,
         "items": final_items
@@ -461,17 +438,13 @@ if __name__ == "__main__":
         if m[0]: meta_lookup[m[0].lower()] = data_pkg
     print(f"Done. ({len(meta_lookup)} items)")
 
-    # 1. Generate All-Time Teams
+    # 1. Generate All-Time Lists
     print("\n--- Processing All-Time Lists ---")
     t = process_global_data(cursor, meta_lookup, 'all-time-teams')
-    print(f"   All-Time Teams: {t}")
+    p = process_global_data(cursor, meta_lookup, 'all-time-programs')
+    print(f"   All-Time: {t} Teams, {p} Programs")
 
-    # 2. Generate All-Time Programs (25+, 50+, 100+ seasons)
-    for threshold in ALL_TIME_PROGRAM_THRESHOLDS:
-        p = process_global_data(cursor, meta_lookup, 'all-time-programs', min_seasons_override=threshold)
-        print(f"   All-Time Programs ({threshold}+ seasons): {p}")
-
-    # 3. Generate Decades
+    # 2. Generate Decades (including pre-1900)
     print("\n--- Processing Decades ---")
     
     total_teams = 0
@@ -482,7 +455,7 @@ if __name__ == "__main__":
     
     for d in decades:
         min_seasons = get_min_seasons_for_decade(d)
-        print(f"   {d}s (min {min_seasons} seasons for programs)...", end=" ", flush=True)
+        print(f"   {d}s (min {min_seasons} seasons)...", end=" ", flush=True)
         t = process_global_data(cursor, meta_lookup, 'decade-teams', d)
         p = process_global_data(cursor, meta_lookup, 'decade-programs', d)
         print(f"[Teams: {t} | Programs: {p}]")
@@ -494,10 +467,7 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print(f"DONE.")
     print(f"  All-Time: docs/data/all-time/")
-    print(f"    - all-time-teams.json")
-    for threshold in ALL_TIME_PROGRAM_THRESHOLDS:
-        print(f"    - all-time-programs-{threshold}.json")
     print(f"  Decades:  docs/data/decades/teams/ and decades/programs/")
-    print(f"  Total Decades: {total_teams} Teams, {total_programs} Programs")
+    print(f"  Total: {total_teams} Teams, {total_programs} Programs")
     print(f"  Duration: {time.time()-start_time:.2f}s")
     print("=" * 60)
