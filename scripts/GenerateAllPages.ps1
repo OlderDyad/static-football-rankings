@@ -1390,11 +1390,12 @@ function Process-AllTimeData {
     }
 }
 
+
 function Process-LatestSeasonData {
     Write-Host "Processing latest season data..." -ForegroundColor Yellow
     
-    # Update the path to match the correct file name
-    $jsonPath = Join-Path $dataDir "latest\latest-teams.json"
+    # FIXED: Correct path to match actual JSON file location
+    $jsonPath = Join-Path $dataDir "latest-season\latest-season-teams.json"
     Write-Host "Looking for file at: $jsonPath" -ForegroundColor Yellow
     
     if (Test-Path $jsonPath) {
@@ -1404,33 +1405,26 @@ function Process-LatestSeasonData {
             Write-Host "JSON content length: $($jsonContent.Length)" -ForegroundColor Yellow
             $jsonData = $jsonContent | ConvertFrom-Json
 
-            # Generate the standardized JSON file (like we do for other categories)
-            Generate-StandardizedJson -Type "latest-teams" `
-                                   -Items $jsonData.items `
-                                   -TopItem $jsonData.topItem `
-                                   -Description "Latest Season Rankings" `
-                                   -YearRange "latest" `
-                                   -OutputPath $jsonPath
-
             $templatePath = Join-Path $templateBaseDir "latest-season\latest-season-template.html"
+            $outputPath = Join-Path $outputBaseDir "latest-season\index.html"
+            
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
-                
-                # Define output path (this was missing in original)
-                $outputPath = Join-Path $outputBaseDir "latest-season\index.html"
+
+                # FIXED: Ensure data-file meta tag points to correct location
+                $template = $template -replace '<meta name="data-file" content="[^"]*">', 
+                    '<meta name="data-file" content="/static-football-rankings/data/latest-season/latest-season-teams.json">'
 
                 # Insert scripts and update timestamp
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-                $template = $template -replace '</body>', "$tableColorScript`n</body>"
+                
+                # FIXED: Use case-insensitive replacement for TIMESTAMP
+                $currentDate = Get-Date -Format "M/d/yyyy"
+                $template = $template -creplace 'TIMESTAMP', $currentDate
+                $template = $template -replace '(<span id="lastUpdated">)[^<]*(</span>)', "`${1}$currentDate`${2}"
 
-                # IMPORTANT: Comment out banner generation to prevent 404 errors
-                # if ($jsonData.topItem) {
-                #     $bannerHtml = Generate-TeamBanner -TopItem $jsonData.topItem -Type "team"
-                #     $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                # }
-
+                # Generate table rows
                 $tableRows = Generate-TableRows -Items $jsonData.items -Type "team"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
 
@@ -1439,7 +1433,7 @@ function Process-LatestSeasonData {
                 Write-Host "Generated: latest-season/index.html" -ForegroundColor Green
             } else {
                 Write-Error "Template not found: $templatePath"
-                Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "latest-season\index.html") `
+                Generate-ComingSoonPage -OutputPath $outputPath `
                                       -Title "Latest Season Rankings" `
                                       -Message "Template file missing. Please check back soon!"
             }

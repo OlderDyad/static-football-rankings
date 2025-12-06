@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
 def scrape_mhsaa_schedule(url):
     print("Launching Chrome WebDriver...")
@@ -15,8 +16,8 @@ def scrape_mhsaa_schedule(url):
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
     chrome_options.add_experimental_option("useAutomationExtension", False)
 
-    driver_path = r"C:\\Users\\demck\\AppData\\Local\\SeleniumBasic\\chromedriver.exe"
-    service = Service(driver_path)
+# Use ChromeDriverManager to automatically install the matching driver
+    service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
     driver.get(url)
