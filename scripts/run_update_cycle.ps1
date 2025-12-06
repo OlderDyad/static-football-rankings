@@ -39,6 +39,7 @@ Write-Host "STEP 3: Generating Global & Decade JSON Data..." -ForegroundColor Cy
 # 2. Generate All-Time & Decade Lists (1980s, 1990s, etc.)
 # This uses your new script to apply colors/logos to global lists
 python generate_global_data.py
+python generate_latest_season.py
 
 # ---------------------------------------------------------
 # STEP 4: REBUILD HTML SHELL
