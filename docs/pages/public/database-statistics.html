@@ -6,7 +6,6 @@
     <title>Database Statistics - McKnight's American Football</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-    <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
 </head>
 <body>
     <!-- Header Banner -->
@@ -50,9 +49,18 @@
                     <div class="card-header">
                         <h5 class="mb-0">Cumulative Games by Season</h5>
                     </div>
-                    <div class="card-body">
-                        <div id="cumulative-chart-container">
-                            <p class="text-muted">Loading chart...</p>
+                    <div class="card-body p-0">
+                        <div id="cumulative-chart-container" style="min-height: 500px;">
+                            <iframe 
+                                id="cumulative-iframe"
+                                src="/static-football-rankings/data/statistics/cumulative_games.html" 
+                                width="100%" 
+                                height="500" 
+                                frameborder="0"
+                                style="border: none; display: block;"
+                                onload="this.style.opacity='1';"
+                                onerror="handleChartError('cumulative-chart-container', 'cumulative games')"
+                            ></iframe>
                         </div>
                     </div>
                 </div>
@@ -66,9 +74,18 @@
                     <div class="card-header">
                         <h5 class="mb-0">Games Added by Year</h5>
                     </div>
-                    <div class="card-body">
-                        <div id="annual-chart-container">
-                            <p class="text-muted">Loading chart...</p>
+                    <div class="card-body p-0">
+                        <div id="annual-chart-container" style="min-height: 400px;">
+                            <iframe 
+                                id="annual-iframe"
+                                src="/static-football-rankings/data/statistics/annual_additions.html" 
+                                width="100%" 
+                                height="400" 
+                                frameborder="0"
+                                style="border: none; display: block;"
+                                onload="this.style.opacity='1';"
+                                onerror="handleChartError('annual-chart-container', 'annual additions')"
+                            ></iframe>
                         </div>
                     </div>
                 </div>
@@ -87,40 +104,54 @@
 
     <!-- Statistics Loading Script -->
     <script>
+        // Error handler for chart loading
+        function handleChartError(containerId, chartName) {
+            document.getElementById(containerId).innerHTML = 
+                `<div class="alert alert-warning m-3">
+                    <p>Unable to load ${chartName} chart.</p>
+                    <p class="small text-muted mb-0">The chart file may not exist or there was a loading error.</p>
+                </div>`;
+        }
+
         // Load summary statistics
         fetch('/static-football-rankings/data/statistics/statistics_summary.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 const summaryHtml = `
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-sm-6">
                             <div class="stat-box">
-                                <h3>${data.total_games.toLocaleString()}</h3>
+                                <h3>${data.total_games ? data.total_games.toLocaleString() : 'N/A'}</h3>
                                 <p class="text-muted">Total Games</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-sm-6">
                             <div class="stat-box">
-                                <h3>${data.total_seasons.toLocaleString()}</h3>
+                                <h3>${data.total_seasons ? data.total_seasons.toLocaleString() : 'N/A'}</h3>
                                 <p class="text-muted">Total Seasons</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-sm-6">
                             <div class="stat-box">
-                                <h3>${data.earliest_season} - ${data.latest_season}</h3>
+                                <h3>${data.earliest_season || '?'} - ${data.latest_season || '?'}</h3>
                                 <p class="text-muted">Season Range</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-sm-6">
                             <div class="stat-box">
-                                <h3>${data.years_adding_data}</h3>
+                                <h3>${data.years_adding_data || 'N/A'}</h3>
                                 <p class="text-muted">Years of Data Collection</p>
                             </div>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12">
-                            <p class="text-muted small">Last updated: ${new Date(data.last_updated).toLocaleString()}</p>
+                            <p class="text-muted small">Last updated: ${data.last_updated ? new Date(data.last_updated).toLocaleString() : 'Unknown'}</p>
                         </div>
                     </div>
                 `;
@@ -128,57 +159,41 @@
             })
             .catch(error => {
                 console.error('Error loading statistics:', error);
-                document.getElementById('statistics-summary').innerHTML = 
-                    '<p class="text-danger">Error loading statistics. Please try again later.</p>';
+                document.getElementById('statistics-summary').innerHTML = `
+                    <div class="alert alert-warning">
+                        <p class="mb-1"><strong>Statistics data not available</strong></p>
+                        <p class="small text-muted mb-0">The statistics summary file could not be loaded. Please ensure the data files have been generated.</p>
+                    </div>
+                `;
             });
 
-        // Load cumulative games chart
-        fetch('/static-football-rankings/data/statistics/cumulative_games.html')
-            .then(response => response.text())
-            .then(html => {
-                // Extract just the plot div from the full HTML
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const plotDiv = doc.querySelector('.plotly-graph-div');
-                
-                if (plotDiv) {
-                    document.getElementById('cumulative-chart-container').innerHTML = '';
-                    document.getElementById('cumulative-chart-container').appendChild(plotDiv);
-                } else {
-                    // If can't extract, just load the whole thing in an iframe
-                    document.getElementById('cumulative-chart-container').innerHTML = 
-                        '<iframe src="/static-football-rankings/data/statistics/cumulative_games.html" width="100%" height="600" frameborder="0"></iframe>';
+        // Check if iframes loaded successfully after a delay
+        setTimeout(function() {
+            const cumulativeIframe = document.getElementById('cumulative-iframe');
+            const annualIframe = document.getElementById('annual-iframe');
+            
+            // Check cumulative chart
+            try {
+                if (cumulativeIframe && (!cumulativeIframe.contentDocument || 
+                    cumulativeIframe.contentDocument.body.innerHTML.trim() === '')) {
+                    handleChartError('cumulative-chart-container', 'cumulative games');
                 }
-            })
-            .catch(error => {
-                console.error('Error loading cumulative chart:', error);
-                document.getElementById('cumulative-chart-container').innerHTML = 
-                    '<p class="text-danger">Error loading chart. Please try again later.</p>';
-            });
-
-        // Load annual additions chart
-        fetch('/static-football-rankings/data/statistics/annual_additions.html')
-            .then(response => response.text())
-            .then(html => {
-                // Extract just the plot div from the full HTML
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const plotDiv = doc.querySelector('.plotly-graph-div');
-                
-                if (plotDiv) {
-                    document.getElementById('annual-chart-container').innerHTML = '';
-                    document.getElementById('annual-chart-container').appendChild(plotDiv);
-                } else {
-                    // If can't extract, just load the whole thing in an iframe
-                    document.getElementById('annual-chart-container').innerHTML = 
-                        '<iframe src="/static-football-rankings/data/statistics/annual_additions.html" width="100%" height="400" frameborder="0"></iframe>';
+            } catch (e) {
+                // Cross-origin error means it loaded from a different domain (which is fine)
+                console.log('Cumulative chart loaded (cross-origin)');
+            }
+            
+            // Check annual chart
+            try {
+                if (annualIframe && (!annualIframe.contentDocument || 
+                    annualIframe.contentDocument.body.innerHTML.trim() === '')) {
+                    handleChartError('annual-chart-container', 'annual additions');
                 }
-            })
-            .catch(error => {
-                console.error('Error loading annual chart:', error);
-                document.getElementById('annual-chart-container').innerHTML = 
-                    '<p class="text-danger">Error loading chart. Please try again later.</p>';
-            });
+            } catch (e) {
+                // Cross-origin error means it loaded from a different domain (which is fine)
+                console.log('Annual chart loaded (cross-origin)');
+            }
+        }, 3000);
     </script>
 
     <style>
@@ -190,7 +205,7 @@
             margin-bottom: 10px;
         }
         .stat-box h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #007bff;
             margin-bottom: 5px;
@@ -198,6 +213,22 @@
         .stat-box p {
             margin-bottom: 0;
             font-size: 0.9rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .stat-box h3 {
+                font-size: 1.4rem;
+            }
+            .stat-box {
+                padding: 15px;
+            }
+        }
+        
+        /* Iframe styling */
+        iframe {
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
         }
     </style>
 </body>
