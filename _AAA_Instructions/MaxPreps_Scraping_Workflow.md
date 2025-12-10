@@ -3,7 +3,7 @@ MaxPreps Scraping Workflow
 Summery Steps:
 CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
 
-python maxpreps_scraper_db.py
+**python maxpreps_scraper_db.py**
 
 
 This process uses a Python script for scraping and a SQL stored procedure for data processing.
@@ -13,7 +13,7 @@ Execute the maxpreps_scraper_db.py script from your terminal:
 
 Bash
 
-python maxpreps_scraper_db.py
+**python maxpreps_scraper_db.py**
 What it does:
 
 Connects to the hs_football_database.
@@ -93,3 +93,53 @@ The procedure will now recognize the previously unmatched teams and move those g
 
 6. Repeat
 Run the Python scraper again to process the next set of URLs in the batch or to start a new batch if the current one is complete.
+==============================================================================================================
+
+Late December Playoff Games Workflow
+Overview
+At season's end, 99% of games are complete but a small number of teams (primarily GA, TX, LA, CA) have playoff games extending into late December. This two-phase approach captures all completed games immediately while efficiently handling remaining playoffs after Christmas.
+Phase 1: Initial Season Scrape (Run Immediately - ~December 10)
+Step 1: Run Full Season Scrape
+bashcd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
+python maxpreps_scraper_db.py
+What happens:
+
+Scrapes all teams' complete schedule pages
+Completed games (with scores) → staged for HS_Scores
+Playoff games (no scores yet) → staged for Future_Games
+Returns a batch ID (note this for next step)
+
+Step 2: Process the Batch
+sql-- Use the batch ID returned by the Python script
+EXEC dbo.FinalizeMaxPrepsData @BatchID = [your_batch_id];
+What happens:
+
+Parses raw game data
+Completed games → inserted into HS_Scores
+Future playoff games → inserted into Future_Games
+Unrecognized teams → inserted into Unmatched_Games
+
+Step 3: Verify Playoff Games Were Captured
+sql-- View playoff games awaiting completion
+SELECT FG.*, T.State
+FROM Future_Games FG
+JOIN HS_Team_Names T ON (FG.Home = T.Team_Name OR FG.Visitor = T.Team_Name)
+WHERE T.State IN ('GA', 'TX', 'LA', 'CA')
+ORDER BY FG.Date;
+Expected results: Should show ~40-60 games scheduled for December 12-20
+Step 4: Handle Unmatched Games (If Any)
+sql-- Check for teams needing alias mapping
+SELECT * FROM dbo.Unmatched_Games 
+WHERE BatchID = [your_batch_id] AND Status = 'pending';
+If results found:
+
+Identify missing team names
+Add aliases to HS_Team_Name_Alias table (see main workflow)
+Re-run: EXEC dbo.FinalizeMaxPrepsData @BatchID = [your_batch_id];
+
+Step 5: Generate Rankings
+At this point, 99% of games are in the system. You can proceed with:
+
+Running CalculateRankings stored procedure
+Generating JSON files
+Publishing updated rankings

@@ -13,7 +13,8 @@ Enter your commit message when prompted.
 PowerShell
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
-.\Publish-Website.ps1
+
+**.\Publish-Website.ps1**
 
 Your Master Workflow Script (Publish-Website.ps1)
 Here is the full, working code you can save and use:

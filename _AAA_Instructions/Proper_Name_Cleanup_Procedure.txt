@@ -81,3 +81,4 @@ SELECT tn.*
 FROM HS_Team_Names tn
 JOIN StandardizedNames sn ON tn.Team_Name = sn.Team_Name
 ORDER BY tn.Team_Name;
+

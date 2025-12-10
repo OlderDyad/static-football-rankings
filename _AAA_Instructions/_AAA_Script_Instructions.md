@@ -1,3 +1,150 @@
+High School Football Database Workflow (2025)
+
+1. **.\run_update_cycle.ps1** (The "Daily Master Switch")
+When to use: Every time you make changes to Google Sheets or Add New Images. What it does:
+
+Syncs your Google Sheet edits to SQL.
+
+Moves images from your Desktop to the project folder.
+
+Generates new JSON data files (with updated colors/logos).
+
+Calls .\GenerateAllPages.ps1 automatically (Step 4 in the script).
+
+Commits and Pushes everything to GitHub.
+
+Use Case: "I just updated New Britain's colors in Google Sheets and saved their logo to my desktop. I want the website to update."
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
+
+2. **.\GenerateAllPages.ps1** (The "Template Refresher")
+When to use: Only when you change the HTML structure or JavaScript logic (like the color theming patch we just discussed). What it does:
+
+Rebuilds every .html file in your project based on your templates.
+
+Updates the "Last Updated" timestamp in the HTML.
+
+Injects new script tags (like the Table Color Theming script).
+
+Use Case: "I just ran Add-TableColorTheming.ps1 to inject new code into my page generator. Now I need to rebuild all the HTML pages so they include this new code."
+
+PART A: SCORES & RANKINGS (The "Stats" Engine)
+
+Run this when game scores need to be updated.
+
+1. Scrape Scores (MaxPreps)
+
+Tool: Python / Selenium
+
+Location: python_scripts/
+
+Command: **python maxpreps_excel_loop.py**
+
+Output: Populates Excel/CSV files with raw game data.
+
+2. Import & Transform (SQL)
+
+Location: SQL Server Management Studio (SSMS)
+
+Step 2.1 (Import): Bulk Insert CSV to HS_Scores_Staging.
+
+Step 2.2 (Clean): Check TeamName_Alias_Mapping for new variations.
+
+Step 2.3 (Transform): Run EXEC TransformStagingToScores @Season = 2024.
+
+Step 2.4 (Dedupe): Run Duplicate Detection query to remove double-entries.
+
+3. Calculate Rankings (SQL)
+
+Action: Recalculates the math (Win/Loss, Margin, Ratings) for all teams.
+
+SQL Command:
+
+EXEC [dbo].[CalculateRankings_v4_Optimized]
+    @LeagueType = '1',
+    @BeginSeason = 2024,
+    @EndSeason = 2024,
+    @Week = 52;
+
+
+PART B: TEAM IDENTITY (The "Visuals" Engine)
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
+**.\run_update_cycle.ps1**
+
+What this script does for you automatically:
+
+Runs pull_sheets_to_sql.py: Saves your Google Sheet changes to SQL.
+
+Runs ingest_images_by_id.py: Moves your images and links them in SQL.
+
+Runs generate_site_data.py: Updates the JSON files with the new data.
+
+Runs GenerateAllPages.ps1: Updates the HTML tables.
+
+Git Push: Publishes everything to the live site.
+
+Summary: Just run .\run_update_cycle.ps1. It handles everything safely.
+
+Part B2:
+To update Google Sheets, you need to run the "push" script. This script fetches the current data from your HS_Team_Names SQL table (including the new image paths and colors you just generated) and uploads it to your Google Sheet.
+
+Here is the command to run in your terminal:
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
+**python push_HS_Names_export_to_sheets.py**
+
+
+2. Add Images
+
+Action: Save images to Desktop\HS_Image_Drop.
+
+Naming: ID_TeamName_Type.png (e.g., 1405_NewBritain_Helmet.png).
+
+Ingest Command:
+
+**python ingest_images_by_id.py**
+
+
+3. Reset Google Sheet (Optional)
+
+Use only if: You want to refresh the sheet with the latest SQL data.
+
+Command: **python push_HS_Names_export_to_sheets.py**
+
+PART C: WEBSITE PUBLISHING (The "Build" Engine)
+
+Run this to push changes to the live internet.
+
+The "One-Click" Master Script
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
+File: **.\run_update_cycle.ps1**
+Location: ...\scripts\
+
+What it does:
+
+Syncs Text: Runs pull_sheets_to_sql.py.
+
+Syncs Images: Runs ingest_images_by_id.py.
+
+Generates State Data: Runs generate_site_data.py (Python).
+
+Note: Creates both state-teams-*.json and state-programs-*.json.
+
+Note: Applies Color Translation and Image Path fixing.
+
+Rebuilds HTML: Runs GenerateAllPages.ps1 (PowerShell).
+
+Publishes: Commits and Pushes to GitHub Main.
+
+Manual Generation (If needed for debugging)
+
+State JSONs: python generate_site_data.py
+
+Global JSONs (All-Time/Decade): Run specific .ps1 scripts in scripts/imported_SQL_json/.
+
+============================================OLD WORKFLOW=======================================
 Get Maxpreps scores
 
 list of URLS:
@@ -148,7 +295,7 @@ cd ..
 git add docs/data/states
 
 # 3. Commit the changes
-git commit -m "Updated Site Data: Teams and Programs now fully synchronized no:2"
+git commit -m "Updated Site Data: Teams and Programs now fully synchronized no:10"
 
 # 4. Push to GitHub
 git push origin main

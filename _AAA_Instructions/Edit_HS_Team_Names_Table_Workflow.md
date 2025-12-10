@@ -28,10 +28,18 @@ python python pull_sheets_to_sql.py
     ```powershell
     python pull_sheets_to_sql.py
     ```
-
+**STEP 3: Push Changes**
 -----
+# 1. Add all changed files to the staging area
+git add .
 
-**STEP 3: PROCESS IMAGES**
+# 2. Commit the changes with a message (Change the quote text if you want)
+git commit -m "Update workflow: Refreshed data and processed new images"
+
+# 3. Push the changes to GitHub
+git push origin main
+
+**STEP 4: PROCESS IMAGES**
 
   * **Where:** VS Code Terminal
   * **What it does:** Moves files from Desktop folder to Storage and links them in SQL.

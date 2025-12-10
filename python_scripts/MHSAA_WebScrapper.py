@@ -5,8 +5,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 def scrape_mhsaa_schedule(url):
@@ -16,7 +14,7 @@ def scrape_mhsaa_schedule(url):
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
     chrome_options.add_experimental_option("useAutomationExtension", False)
 
-# Use ChromeDriverManager to automatically install the matching driver
+    # Use ChromeDriverManager to automatically install the matching driver
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
@@ -24,7 +22,8 @@ def scrape_mhsaa_schedule(url):
     print("Page loaded successfully!")
     time.sleep(3)
 
-    schedule_data = []  # ✅ Ensures it's initialized
+    schedule_data = []
+    current_date_header = None  # Stores the last seen "Header Date" (e.g., "OCTOBER 3")
 
     try:
         print("\n🔹 **Manually set all filters on the webpage.**")
@@ -32,46 +31,69 @@ def scrape_mhsaa_schedule(url):
         print("👉 Click the 'Search' button **manually**.")
         print("👉 After clicking search, return here and press `Enter` to continue scraping.")
 
-        # **Pause execution until user manually presses Enter**
+        # Pause execution until user manually presses Enter
         input("\n⏳ Waiting for user... Press Enter AFTER setting filters and clicking search.")
 
         print("\n✅ User confirmed filters are set. Proceeding with scraping...")
-        time.sleep(5)  # Additional wait for results to load
+        time.sleep(5) 
 
         rows = driver.find_elements(By.CSS_SELECTOR, "table tbody tr")
         print(f"Total rows found: {len(rows)}")
 
         for row in rows:
             tds = row.find_elements(By.TAG_NAME, "td")
+            
+            # --- SCENARIO 1: It's a Date Header Row (e.g., "OCTOBER 3") ---
+            # These rows usually have fewer columns or special classes
+            if len(tds) <= 1 or "date-header" in row.get_attribute("class"):
+                header_text = row.text.strip()
+                # Basic check: if it has a digit, treat it as a date header
+                if any(char.isdigit() for char in header_text):
+                    current_date_header = header_text
+                    print(f"📅 Found Date Header: {current_date_header}")
+                continue # Skip to next row, don't try to parse as a game
+
+            # --- SCENARIO 2: It's a Game Row ---
+            # We need at least 6 columns now due to the new Icon column
             if len(tds) < 6:
-                continue  # Skip rows that don't have enough data
+                continue 
 
             try:
-                # Extract standard fields
-                sport = tds[0].text.strip()
-                home_team = tds[1].text.strip()
-                away_team = tds[2].text.strip()
-                date_time = tds[3].text.strip()
+                # NEW COLUMN MAPPING (Shifted +1 because of Icon at index 0)
+                # td[0] is the Green Icon -> SKIP IT
+                sport = tds[1].text.strip()      # Was 0
+                home_team = tds[2].text.strip()  # Was 1
+                away_team = tds[3].text.strip()  # Was 2
+                date_time_col = tds[4].text.strip() # Was 3
+                
+                # Handling Score (It might be in col 5 or 6 depending on layout, usually 5 now)
+                score = ""
+                if len(tds) > 5:
+                    score = tds[5].text.strip()
 
-                # Handle Score Extraction
-                try:
-                    score_td = tds[5]  # Score is in the 6th <td>
-                    score_span = score_td.find_element(By.TAG_NAME, "span")  # Get <span> inside <td>
-                    score = score_span.text.strip()  # Extract only score text
-                except:
-                    score = ""  # If score is not found, leave it blank
+                # --- DATE LOGIC ---
+                # 1. Use the specific row time/date if available
+                final_date = date_time_col
+                
+                # 2. If the row only has time (no slash) and we have a header, combine them
+                if "/" not in date_time_col and current_date_header:
+                    final_date = f"{current_date_header} - {date_time_col}"
+                
+                # 3. If the row date is empty but we have a header, use the header
+                elif not date_time_col and current_date_header:
+                    final_date = current_date_header
 
                 game_info = {
                     "Sport": sport,
                     "Home": home_team,
                     "Away": away_team,
-                    "Date/Time": date_time,
-                    "Score": score,  # Now correctly extracting score
+                    "Date/Time": final_date,
+                    "Score": score,
                     "Status": "Processed",
                     "ScrapedAt": datetime.now().isoformat()
                 }
 
-                print(f"✅ Scraped row: {game_info}")
+                print(f"✅ Scraped: {home_team} vs {away_team} ({final_date})")
                 schedule_data.append(game_info)
 
             except Exception as e:
@@ -83,7 +105,7 @@ def scrape_mhsaa_schedule(url):
     finally:
         driver.quit()
 
-    return schedule_data  # ✅ Ensures function always returns a value
+    return schedule_data
 
 
 if __name__ == "__main__":
@@ -103,11 +125,10 @@ if __name__ == "__main__":
     with open(out_csv, mode, newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         if mode == 'w':
-            writer.writeheader()  # Only write headers if overwriting
+            writer.writeheader() 
         writer.writerows(scraped_games)
 
     print(f"\n🎉 Done! Wrote {len(scraped_games)} rows to {out_csv}")
-
 
 
 
