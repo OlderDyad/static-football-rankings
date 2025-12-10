@@ -27,7 +27,7 @@
         <h1 class="mb-4">Regional Statistics</h1>
         
         <p class="lead mb-4">
-            Explore game coverage statistics by region and state. View trends over time and compare regional differences.
+            Explore game coverage statistics by region. View trends over time and compare regional differences.
         </p>
 
         <!-- Regional Comparison Card -->
@@ -44,861 +44,98 @@
             </div>
         </div>
 
-        <!-- Northeast Region -->
-        <section class="region-section mb-5">
-            <h2 class="h3 mb-4 p-2 bg-light border-start border-4 border-primary">Northeast States</h2>
-            <div class="row g-4">
-                <!-- Connecticut -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">Connecticut</h5>
-                            <p class="card-text text-muted">(CT)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/CT.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
+        <!-- Regional Cards - matching States Index color scheme -->
+        <div class="row g-4">
+            <!-- Northeast Region - Blue (Primary) -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">Northeast Region</h5>
+                        <p class="card-text text-muted mb-2">11 States</p>
+                        <p class="card-text small">CT, DE, DC, ME, MA, NH, NJ, NY, PA, RI, VT</p>
+                        <div id="northeast-stats" class="mb-3">
+                            <small class="text-muted">Loading statistics...</small>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Delaware -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">Delaware</h5>
-                            <p class="card-text text-muted">(DE)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/DE.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- District of Columbia -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">District of Columbia</h5>
-                            <p class="card-text text-muted">(DC)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/DC.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Maine -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">Maine</h5>
-                            <p class="card-text text-muted">(ME)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/ME.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Massachusetts -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">Massachusetts</h5>
-                            <p class="card-text text-muted">(MA)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/MA.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- New Hampshire -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">New Hampshire</h5>
-                            <p class="card-text text-muted">(NH)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/NH.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- New Jersey -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">New Jersey</h5>
-                            <p class="card-text text-muted">(NJ)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/NJ.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- New York -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">New York</h5>
-                            <p class="card-text text-muted">(NY)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/NY.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pennsylvania -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">Pennsylvania</h5>
-                            <p class="card-text text-muted">(PA)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/PA.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Rhode Island -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">Rhode Island</h5>
-                            <p class="card-text text-muted">(RI)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/RI.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vermont -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-primary">Vermont</h5>
-                            <p class="card-text text-muted">(VT)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/VT.html" 
-                                   class="btn btn-primary">View Statistics</a>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="/static-football-rankings/pages/public/regional-statistics/northeast.html" 
+                               class="btn btn-primary">View Northeast Statistics</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Southern Region -->
-        <section class="region-section mb-5">
-            <h2 class="h3 mb-4 p-2 bg-light border-start border-4 border-success">Southern States</h2>
-            <div class="row g-4">
-                <!-- Alabama -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Alabama</h5>
-                            <p class="card-text text-muted">(AL)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/AL.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
+            <!-- Southern Region - Green (Success) -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-success">Southern Region</h5>
+                        <p class="card-text text-muted mb-2">15 States</p>
+                        <p class="card-text small">AL, AR, FL, GA, KY, LA, MD, MS, NC, OK, SC, TN, TX, VA, WV</p>
+                        <div id="southeast-stats" class="mb-3">
+                            <small class="text-muted">Loading statistics...</small>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Arkansas -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Arkansas</h5>
-                            <p class="card-text text-muted">(AR)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/AR.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Florida -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Florida</h5>
-                            <p class="card-text text-muted">(FL)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/FL.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Georgia -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Georgia</h5>
-                            <p class="card-text text-muted">(GA)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/GA.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kentucky -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Kentucky</h5>
-                            <p class="card-text text-muted">(KY)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/KY.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Louisiana -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Louisiana</h5>
-                            <p class="card-text text-muted">(LA)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/LA.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Maryland -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Maryland</h5>
-                            <p class="card-text text-muted">(MD)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/MD.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mississippi -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Mississippi</h5>
-                            <p class="card-text text-muted">(MS)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/MS.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- North Carolina -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">North Carolina</h5>
-                            <p class="card-text text-muted">(NC)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/NC.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Oklahoma -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Oklahoma</h5>
-                            <p class="card-text text-muted">(OK)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/OK.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- South Carolina -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">South Carolina</h5>
-                            <p class="card-text text-muted">(SC)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/SC.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tennessee -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Tennessee</h5>
-                            <p class="card-text text-muted">(TN)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/TN.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Texas -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Texas</h5>
-                            <p class="card-text text-muted">(TX)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/TX.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Virginia -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">Virginia</h5>
-                            <p class="card-text text-muted">(VA)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/VA.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- West Virginia -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-success">West Virginia</h5>
-                            <p class="card-text text-muted">(WV)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/WV.html" 
-                                   class="btn btn-success">View Statistics</a>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="/static-football-rankings/pages/public/regional-statistics/southeast.html" 
+                               class="btn btn-success">View Southern Statistics</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Midwestern Region -->
-        <section class="region-section mb-5">
-            <h2 class="h3 mb-4 p-2 bg-light border-start border-4 border-warning">Midwestern States</h2>
-            <div class="row g-4">
-                <!-- Illinois -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Illinois</h5>
-                            <p class="card-text text-muted">(IL)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/IL.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
+            <!-- Midwest Region - Yellow (Warning) -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-warning">Midwest Region</h5>
+                        <p class="card-text text-muted mb-2">12 States</p>
+                        <p class="card-text small">IL, IN, IA, KS, MI, MN, MO, NE, ND, OH, SD, WI</p>
+                        <div id="midwest-stats" class="mb-3">
+                            <small class="text-muted">Loading statistics...</small>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Indiana -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Indiana</h5>
-                            <p class="card-text text-muted">(IN)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/IN.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Iowa -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Iowa</h5>
-                            <p class="card-text text-muted">(IA)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/IA.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kansas -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Kansas</h5>
-                            <p class="card-text text-muted">(KS)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/KS.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Michigan -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Michigan</h5>
-                            <p class="card-text text-muted">(MI)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/MI.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Minnesota -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Minnesota</h5>
-                            <p class="card-text text-muted">(MN)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/MN.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Missouri -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Missouri</h5>
-                            <p class="card-text text-muted">(MO)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/MO.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Nebraska -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Nebraska</h5>
-                            <p class="card-text text-muted">(NE)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/NE.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- North Dakota -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">North Dakota</h5>
-                            <p class="card-text text-muted">(ND)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/ND.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ohio -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Ohio</h5>
-                            <p class="card-text text-muted">(OH)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/OH.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- South Dakota -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">South Dakota</h5>
-                            <p class="card-text text-muted">(SD)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/SD.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wisconsin -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-warning">Wisconsin</h5>
-                            <p class="card-text text-muted">(WI)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/WI.html" 
-                                   class="btn btn-warning">View Statistics</a>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="/static-football-rankings/pages/public/regional-statistics/midwest.html" 
+                               class="btn btn-warning">View Midwest Statistics</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Western Region -->
-        <section class="region-section mb-5">
-            <h2 class="h3 mb-4 p-2 bg-light border-start border-4 border-danger">Western States</h2>
-            <div class="row g-4">
-                <!-- Alaska -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Alaska</h5>
-                            <p class="card-text text-muted">(AK)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/AK.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
+            <!-- Western Region - Red (Danger) -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-danger">Western Region</h5>
+                        <p class="card-text text-muted mb-2">13 States</p>
+                        <p class="card-text small">AK, AZ, CA, CO, HI, ID, MT, NV, NM, OR, UT, WA, WY</p>
+                        <div id="west-stats" class="mb-3">
+                            <small class="text-muted">Loading statistics...</small>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Arizona -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Arizona</h5>
-                            <p class="card-text text-muted">(AZ)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/AZ.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- California -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">California</h5>
-                            <p class="card-text text-muted">(CA)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/CA.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Colorado -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Colorado</h5>
-                            <p class="card-text text-muted">(CO)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/CO.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hawaii -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Hawaii</h5>
-                            <p class="card-text text-muted">(HI)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/HI.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Idaho -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Idaho</h5>
-                            <p class="card-text text-muted">(ID)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/ID.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Montana -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Montana</h5>
-                            <p class="card-text text-muted">(MT)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/MT.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Nevada -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Nevada</h5>
-                            <p class="card-text text-muted">(NV)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/NV.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- New Mexico -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">New Mexico</h5>
-                            <p class="card-text text-muted">(NM)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/NM.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Oregon -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Oregon</h5>
-                            <p class="card-text text-muted">(OR)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/OR.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Utah -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Utah</h5>
-                            <p class="card-text text-muted">(UT)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/UT.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Washington -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Washington</h5>
-                            <p class="card-text text-muted">(WA)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/WA.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wyoming -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-danger">Wyoming</h5>
-                            <p class="card-text text-muted">(WY)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/WY.html" 
-                                   class="btn btn-danger">View Statistics</a>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="/static-football-rankings/pages/public/regional-statistics/west.html" 
+                               class="btn btn-danger">View Western Statistics</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Canadian Provinces -->
-        <section class="region-section mb-5">
-            <h2 class="h3 mb-4 p-2 bg-light border-start border-4 border-info">Canadian Provinces</h2>
-            <div class="row g-4">
-                <!-- Alberta -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-info">Alberta</h5>
-                            <p class="card-text text-muted">(AB)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/AB.html" 
-                                   class="btn btn-info">View Statistics</a>
-                            </div>
+            <!-- Canada Region - Cyan (Info) -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-info">Canadian Provinces</h5>
+                        <p class="card-text text-muted mb-2">8 Provinces</p>
+                        <p class="card-text small">AB, BC, MB, NB, NS, ON, QC, SK</p>
+                        <div id="canada-stats" class="mb-3">
+                            <small class="text-muted">Loading statistics...</small>
                         </div>
-                    </div>
-                </div>
-
-                <!-- British Columbia -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-info">British Columbia</h5>
-                            <p class="card-text text-muted">(BC)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/BC.html" 
-                                   class="btn btn-info">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Manitoba -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-info">Manitoba</h5>
-                            <p class="card-text text-muted">(MB)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/MB.html" 
-                                   class="btn btn-info">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- New Brunswick -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-info">New Brunswick</h5>
-                            <p class="card-text text-muted">(NB)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/NB.html" 
-                                   class="btn btn-info">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Nova Scotia -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-info">Nova Scotia</h5>
-                            <p class="card-text text-muted">(NS)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/NS.html" 
-                                   class="btn btn-info">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ontario -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-info">Ontario</h5>
-                            <p class="card-text text-muted">(ON)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/ON.html" 
-                                   class="btn btn-info">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quebec -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-info">Quebec</h5>
-                            <p class="card-text text-muted">(QC)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/QC.html" 
-                                   class="btn btn-info">View Statistics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Saskatchewan -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-info">Saskatchewan</h5>
-                            <p class="card-text text-muted">(SK)</p>
-                            <div class="mt-auto">
-                                <a href="/static-football-rankings/pages/public/regional-statistics/states/SK.html" 
-                                   class="btn btn-info">View Statistics</a>
-                            </div>
+                        <div class="mt-auto">
+                            <a href="/static-football-rankings/pages/public/regional-statistics/canada.html" 
+                               class="btn btn-info">View Canada Statistics</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <footer class="mt-5 mb-3">
             <div class="text-center">
@@ -909,5 +146,68 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load regional summaries -->
+    <script>
+        // Load all regions summary
+        fetch('/static-football-rankings/data/regional-statistics/all_regions_summary.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Summary data not available');
+                return response.json();
+            })
+            .then(data => {
+                // Map JSON region names to element IDs
+                // Note: JSON uses "Southeast" but we display as "Southern", 
+                // and JSON uses "Southwest" which we've merged into other regions
+                const regionMapping = {
+                    'Northeast': 'northeast-stats',
+                    'Southeast': 'southeast-stats',  // Maps to Southern display
+                    'Midwest': 'midwest-stats',
+                    'West': 'west-stats',
+                    'Canada': 'canada-stats'
+                };
+
+                Object.keys(regionMapping).forEach(jsonKey => {
+                    const elementId = regionMapping[jsonKey];
+                    const regionData = data[jsonKey];
+                    const element = document.getElementById(elementId);
+                    
+                    if (regionData && element) {
+                        element.innerHTML = `
+                            <small>
+                                <strong>${regionData.total_games ? regionData.total_games.toLocaleString() : 'N/A'}</strong> games | 
+                                <strong>${regionData.earliest_season || '?'}-${regionData.latest_season || '?'}</strong>
+                            </small>
+                        `;
+                    } else if (element) {
+                        element.innerHTML = '<small class="text-muted">Statistics available on detail page</small>';
+                    }
+                });
+
+                // Handle Southwest data - add to Southern if present
+                if (data['Southwest']) {
+                    const southeastElement = document.getElementById('southeast-stats');
+                    const seData = data['Southeast'];
+                    const swData = data['Southwest'];
+                    if (southeastElement && seData && swData) {
+                        const combinedGames = (seData.total_games || 0) + (swData.total_games || 0);
+                        const earliestSeason = Math.min(seData.earliest_season || 9999, swData.earliest_season || 9999);
+                        const latestSeason = Math.max(seData.latest_season || 0, swData.latest_season || 0);
+                        southeastElement.innerHTML = `
+                            <small>
+                                <strong>${combinedGames.toLocaleString()}</strong> games | 
+                                <strong>${earliestSeason}-${latestSeason}</strong>
+                            </small>
+                        `;
+                    }
+                }
+            })
+            .catch(error => {
+                console.log('Regional summary data not available:', error);
+                document.querySelectorAll('[id$="-stats"]').forEach(el => {
+                    el.innerHTML = '<small class="text-muted">View details for statistics</small>';
+                });
+            });
+    </script>
 </body>
 </html>
