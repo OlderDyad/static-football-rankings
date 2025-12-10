@@ -1,4 +1,8 @@
 # Workflow: HS Football Data Cleaning
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+
+**.\venv\Scripts\Activate**
+
 CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
 python python pull_sheets_to_sql.py
 
@@ -28,18 +32,8 @@ python python pull_sheets_to_sql.py
     ```powershell
     python pull_sheets_to_sql.py
     ```
-**STEP 3: Push Changes**
------
-# 1. Add all changed files to the staging area
-git add .
 
-# 2. Commit the changes with a message (Change the quote text if you want)
-git commit -m "Update workflow: Refreshed data and processed new images"
-
-# 3. Push the changes to GitHub
-git push origin main
-
-**STEP 4: PROCESS IMAGES**
+**STEP 3: PROCESS IMAGES**
 
   * **Where:** VS Code Terminal
   * **What it does:** Moves files from Desktop folder to Storage and links them in SQL.
@@ -48,7 +42,19 @@ git push origin main
     python ingest_images_by_id.py
     ```
     ```
+**STEP 4: Push Changes**
+-----
+# 0. Change directory to main project
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
 
+# 1. Add all changed files to the staging area
+git add .
+
+# 2. Commit the changes with a message (Change the quote text if you want)
+git commit -m "Update workflow: Refreshed data and processed new images"
+
+# 3. Push the changes to GitHub
+git push origin main
 -----
 ### **Detailed Workflow Steps**
 
