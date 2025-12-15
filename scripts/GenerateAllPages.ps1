@@ -1703,35 +1703,8 @@ $stateRegions = @{
         Write-Host "Generated all-time rankings index page" -ForegroundColor Green
     }
 
-    # States index
-    Write-Host "Generating states index..." -ForegroundColor Yellow
-    $statesIndexPath = Join-Path $outputBaseDir "states\index.html"
-    $statesIndexTemplatePath = Join-Path $templateBaseDir "index\states-index-template.html"
-    if (Test-Path $statesIndexTemplatePath) {
-        $statesIndexTemplate = Get-Content $statesIndexTemplatePath -Raw
-        if ($stateCodes) {
-            $stateCards = $stateCodes | ForEach-Object {
-                @"
-<div class="col-md-4 mb-4">
-    <div class="card h-100">
-        <div class="card-body d-flex flex-column">
-            <h5 class="card-title">$_</h5>
-            <div class="mt-auto">
-                <a href="$_-teams.html" class="btn btn-primary me-2">Teams</a>
-                <a href="$_-programs.html" class="btn btn-outline-primary">Programs</a>
-            </div>
-        </div>
-    </div>
-</div>
-"@
-            }
-            $statesIndexContent = $statesIndexTemplate -replace 'STATE_CARDS', ($stateCards -join "`n")
-        } else {
-            $statesIndexContent = $statesIndexTemplate -replace 'STATE_CARDS', '<!-- No state data found -->'
-        }
-        Set-Content -Path $statesIndexPath -Value $statesIndexContent -Encoding UTF8
-        Write-Host "Generated states index page" -ForegroundColor Green
-    }
+# States index - DISABLED: Using manually maintained static version
+    Write-Host "Skipping states index generation (using static version)" -ForegroundColor Cyan
 
     Write-Host "`nPage generation completed successfully!" -ForegroundColor Green
 } catch {
@@ -1858,5 +1831,6 @@ function Process-MediaNationalChampions {
 
 
 #endregion Main Script Execution
+
 
 
