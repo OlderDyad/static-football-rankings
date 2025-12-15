@@ -1,5 +1,8 @@
 High School Football Database Workflow (2025)
 
+0. 
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
+
 1. **.\run_update_cycle.ps1** (The "Daily Master Switch")
 When to use: Every time you make changes to Google Sheets or Add New Images. What it does:
 
