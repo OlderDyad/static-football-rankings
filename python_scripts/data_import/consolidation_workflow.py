@@ -1,10 +1,11 @@
-# consolidation_workflow.py (v2 - Staging Table Method)
+# consolidation_workflow.py (v3 - Added US Batch Processing)
 import pandas as pd
 import pyodbc
 import logging
 import os
 import sys
 from sqlalchemy import create_engine
+import glob
 
 # --- CONFIGURATION ---
 SERVER_NAME = "McKnights-PC\\SQLEXPRESS01"
@@ -16,13 +17,27 @@ STAGING_TABLE_NAME = "ConsolidationRules_Staging"
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def get_state_code():
-    """Prompts the user to enter a valid state code."""
+    """Prompts the user to enter a valid state code or 'US' for all states."""
     while True:
-        state_abbr = input("Please enter the 2-letter state abbreviation (e.g., MD, MA): ").upper()
-        if len(state_abbr) == 2 and state_abbr.isalpha():
+        state_abbr = input("Please enter the 2-letter state abbreviation (e.g., MD, MA) or 'US' for all states: ").upper()
+        if state_abbr == "US":
+            return "US"
+        elif len(state_abbr) == 2 and state_abbr.isalpha():
             return f"({state_abbr})"
         else:
-            print("Invalid input. Please enter a 2-letter abbreviation.")
+            print("Invalid input. Please enter a 2-letter abbreviation or 'US'.")
+
+def get_all_alias_files():
+    """Returns a list of all *_Alias_Rules.csv files in the rules folder."""
+    pattern = os.path.join(RULES_FOLDER, "*_Alias_Rules.csv")
+    files = glob.glob(pattern)
+    return files
+
+def extract_state_code_from_filename(file_path):
+    """Extracts the state code from a filename like 'MD_Alias_Rules.csv' and returns '(MD)'."""
+    filename = os.path.basename(file_path)
+    state_abbr = filename.split('_')[0]
+    return f"({state_abbr})"
 
 def generate_and_update_correction_file(state_code, file_path):
     """Calls the SQL procedure to get the list of problems and updates the CSV file."""
@@ -83,8 +98,8 @@ def run_consolidation_from_staging(state_code, file_path):
         df_to_upload = df[required_columns].rename(columns={'Alias_Name': 'OldName', 'Standardized_Name': 'NewName'})
         
         if df_to_upload.empty:
-            logging.warning("No completed rules found in the correction file. Nothing to process.")
-            return
+            logging.warning(f"No completed rules found in {file_path}. Skipping this state.")
+            return False
 
         engine = create_engine(f'mssql+pyodbc://{SERVER_NAME}/{DATABASE_NAME}?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes')
         
@@ -98,10 +113,49 @@ def run_consolidation_from_staging(state_code, file_path):
             with conn.cursor() as cursor:
                 logging.info("Executing dbo.sp_ConsolidateNames_FromStaging...")
                 cursor.execute("EXEC dbo.sp_ConsolidateNames_FromStaging @StateCode = ?", state_code)
-                logging.info("SUCCESS: Consolidation from staging table is complete.")
+                logging.info(f"SUCCESS: Consolidation for {state_code} complete.")
+        
+        return True
 
     except Exception:
-        logging.exception("An error occurred during the consolidation process.")
+        logging.exception(f"An error occurred during consolidation for {state_code}.")
+        return False
+
+def run_all_states_consolidation():
+    """Processes all *_Alias_Rules.csv files found in the rules folder."""
+    alias_files = get_all_alias_files()
+    
+    if not alias_files:
+        logging.warning(f"No alias files found in {RULES_FOLDER}")
+        return
+    
+    logging.info(f"Found {len(alias_files)} alias files to process.")
+    
+    success_count = 0
+    skip_count = 0
+    error_count = 0
+    
+    for file_path in sorted(alias_files):
+        state_code = extract_state_code_from_filename(file_path)
+        logging.info(f"\n{'='*60}")
+        logging.info(f"Processing: {os.path.basename(file_path)} [{state_code}]")
+        logging.info(f"{'='*60}")
+        
+        result = run_consolidation_from_staging(state_code, file_path)
+        
+        if result is True:
+            success_count += 1
+        elif result is False:
+            skip_count += 1
+        else:
+            error_count += 1
+    
+    logging.info(f"\n{'='*60}")
+    logging.info(f"BATCH PROCESSING COMPLETE")
+    logging.info(f"{'='*60}")
+    logging.info(f"Successfully processed: {success_count} states")
+    logging.info(f"Skipped (no rules): {skip_count} states")
+    logging.info(f"Errors: {error_count} states")
 
 if __name__ == "__main__":
     # Main Workflow Logic
@@ -109,24 +163,37 @@ if __name__ == "__main__":
         os.makedirs(RULES_FOLDER)
 
     state_code = get_state_code()
-    file_name = f"{state_code.strip('()')}_Alias_Rules.csv"
-    correction_file_path = os.path.join(RULES_FOLDER, file_name)
-
-    print("\nSelect an action:")
-    print("1: Generate or Update the correction file for this state.")
-    print("2: Run the consolidation using the completed correction file for this state.")
     
-    while True:
-        action = input("Enter your choice (1 or 2): ")
-        if action in ['1', '2']:
-            break
-        else:
-            print("Invalid choice.")
+    # If US selected, only allow option 2
+    if state_code == "US":
+        print("\n'US' selected - will process all state alias files.")
+        print("This will run consolidation (step 2) for all states.")
+        confirm = input("Continue? (y/n): ").lower()
+        if confirm != 'y':
+            logging.info("Operation cancelled by user.")
+            sys.exit(0)
+        
+        run_all_states_consolidation()
+    else:
+        # Single state processing
+        file_name = f"{state_code.strip('()')}_Alias_Rules.csv"
+        correction_file_path = os.path.join(RULES_FOLDER, file_name)
 
-    if action == '1':
-        generate_and_update_correction_file(state_code, correction_file_path)
-    elif action == '2':
-        if not os.path.exists(correction_file_path):
-            logging.error(f"Correction file not found at {correction_file_path}. Please run option 1 first.")
-        else:
-            run_consolidation_from_staging(state_code, correction_file_path)
+        print("\nSelect an action:")
+        print("1: Generate or Update the correction file for this state.")
+        print("2: Run the consolidation using the completed correction file for this state.")
+        
+        while True:
+            action = input("Enter your choice (1 or 2): ")
+            if action in ['1', '2']:
+                break
+            else:
+                print("Invalid choice.")
+
+        if action == '1':
+            generate_and_update_correction_file(state_code, correction_file_path)
+        elif action == '2':
+            if not os.path.exists(correction_file_path):
+                logging.error(f"Correction file not found at {correction_file_path}. Please run option 1 first.")
+            else:
+                run_consolidation_from_staging(state_code, correction_file_path)
