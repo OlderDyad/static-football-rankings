@@ -1,0 +1,752 @@
+# End of Season MaxPreps Workflow
+## Two-Phase Approach for Capturing Regular Season + Playoff Games
+
+---
+
+## Overview
+
+At the end of each football season, 99% of games are complete by mid-December, but a small number of teams (primarily in GA, TX, LA, CA, CT) have playoff games extending into late December. This workflow uses a two-phase approach:
+
+1. **Phase 1 (Mid-December)**: Scrape all teams to capture completed regular season games
+2. **Phase 2 (Post-Christmas)**: Targeted scrape of playoff states to capture championship games
+
+**Key Benefits:**
+- ✅ Get 99% of season data immediately for early rankings
+- ✅ Efficient targeted updates for remaining playoff games
+- ✅ No re-scraping 16,000+ teams unnecessarily
+- ✅ Playoff games automatically identified via `Future_Games` table
+
+---
+
+## Timeline Reference
+
+**Regular Season Ends:** ~December 1-10 (most states)  
+**Playoffs Continue Through:**
+- Louisiana: December 12-13 (finals)
+- California: December 12-13 (finals)
+- Connecticut: December 13 (finals)
+- Georgia: December 15-16 (finals)
+- Texas: December 17-20 (finals, including 6-man)
+
+**Recommended Workflow Dates:**
+- **Phase 1:** December 10-12 (after most regular seasons end)
+- **Phase 2:** December 26+ (after all playoffs complete)
+
+---
+
+## PHASE 1: Full Season Scrape (Mid-December)
+
+### Timing
+Run this around **December 10-12** when regular seasons are complete but before most playoff finals.
+
+### Step 1.1: Close Any Previous Batches
+
+```sql
+-- Mark any old running batches as completed
+UPDATE scraping_batches 
+SET status = 'completed'
+WHERE status = 'running';
+
+-- Verify no running batches remain
+SELECT * FROM scraping_batches WHERE status = 'running';
+-- Should return 0 rows
+```
+
+### Step 1.2: Run Full Season Scrape
+
+```bash
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+.\.venv\Scripts\Activate
+python maxpreps_scraper_db.py
+```
+
+**What happens:**
+- Creates new batch (e.g., Batch 11, 12, etc.)
+- Scrapes all 16,000+ teams from `HS_Team_MaxPreps` table
+- Saves raw game data to `games_raw` table
+- Takes 8-12 hours for full run
+- **Completed games** (with scores) → will go to `HS_Scores`
+- **Future games** (no scores yet) → will go to `Future_Games`
+
+**Expected output:**
+```
+Starting batch 11: 16332 teams to process
+[1/16332] Processing Team ID 1: https://...
+✓ Saved 12 raw games for Team ID 1
+[2/16332] Processing Team ID 2: https://...
+...
+==================================================
+  SCRAPE COMPLETE. To finalize the data, run:
+  EXEC dbo.FinalizeMaxPrepsData @BatchID = 11;
+==================================================
+```
+
+**Note the BatchID** - you'll need it for the next step!
+
+### Step 1.3: Process the Batch
+
+```sql
+-- Use the BatchID from the Python script output
+EXEC dbo.FinalizeMaxPrepsData @BatchID = 11;
+```
+
+**What happens:**
+- Reads all rows from `games_raw` for batch 11
+- Parses team names, dates, scores
+- Uses `HS_Team_Name_Alias` to standardize names
+- Sorts games into three tables:
+  - **HS_Scores**: Completed games (both teams recognized, scores present)
+  - **Future_Games**: Scheduled games (both teams recognized, no scores)
+  - **Unmatched_Games**: Games where one or both teams weren't recognized
+
+**Expected output:**
+```
+Processing MaxPreps Batch: 11
+✓ Matched games: 245,678
+✓ Future games: 1,234
+⚠ Unmatched games: 3,456
+```
+
+### Step 1.4: Check for Unmatched Games
+
+```sql
+-- View unmatched games requiring aliases
+SELECT 
+    RawHomeTeam,
+    RawAwayTeam,
+    GameDate,
+    BatchID,
+    Status
+FROM Unmatched_Games
+WHERE BatchID = 11 
+  AND Status = 'pending'
+ORDER BY GameDate;
+
+-- Count by team name to prioritize
+SELECT 
+    RawHomeTeam,
+    COUNT(*) as GameCount
+FROM Unmatched_Games
+WHERE BatchID = 11
+GROUP BY RawHomeTeam
+ORDER BY COUNT(*) DESC;
+```
+
+### Step 1.5: Add Missing Aliases (If Needed)
+
+If unmatched games exist, add aliases for the team names:
+
+```sql
+-- Check if team exists in HS_Team_Names
+SELECT Team_Name 
+FROM HS_Team_Names 
+WHERE Team_Name LIKE '%[search term]%';
+
+-- If team doesn't exist, add it first
+INSERT INTO HS_Team_Names (Team_Name, State, City)
+VALUES ('Proper Team Name (ST)', 'ST', 'City');
+
+-- Add alias mapping
+INSERT INTO HS_Team_Name_Alias (Alias_Name, Standardized_Name, Newspaper_Region)
+VALUES 
+    ('Raw MaxPreps Name', 'Proper Team Name (ST)', 'MaxPreps'),
+    ('Another Raw Name', 'Another Proper Name (ST)', 'MaxPreps');
+
+-- Re-run finalization to process newly aliased teams
+EXEC dbo.FinalizeMaxPrepsData @BatchID = 11;
+```
+
+**Repeat until:**
+```sql
+SELECT COUNT(*) FROM Unmatched_Games WHERE BatchID = 11 AND Status = 'pending';
+-- Returns 0 or acceptably low number
+```
+
+### Step 1.6: Verify Playoff Games Were Captured
+
+This is the key check - verify future games are waiting in `Future_Games`:
+
+```sql
+-- Check for playoff games in key states
+SELECT 
+    FG.Date,
+    FG.Home,
+    FG.Visitor,
+    T.State,
+    FG.Source
+FROM Future_Games FG
+JOIN HS_Team_Names T ON (FG.Home = T.Team_Name OR FG.Visitor = T.Team_Name)
+WHERE T.State IN ('GA', 'TX', 'LA', 'CA', 'CT')
+  AND FG.Date >= '2024-12-10'  -- Adjust year as needed
+ORDER BY FG.Date, T.State;
+
+-- Count by state
+SELECT 
+    T.State,
+    COUNT(*) as FuturePlayoffGames
+FROM Future_Games FG
+JOIN HS_Team_Names T ON (FG.Home = T.Team_Name OR FG.Visitor = T.Team_Name)
+WHERE T.State IN ('GA', 'TX', 'LA', 'CA', 'CT')
+  AND FG.Date >= '2024-12-10'
+GROUP BY T.State
+ORDER BY T.State;
+```
+
+**Expected results:**
+```
+State  FuturePlayoffGames
+-----  ------------------
+CA     40-60
+CT     5-10
+GA     20-30
+LA     15-20
+TX     60-80
+```
+
+### Step 1.7: Mark Batch as Complete
+
+```sql
+-- Mark batch 11 as completed
+UPDATE scraping_batches 
+SET status = 'completed'
+WHERE batch_id = 11;
+```
+
+### Step 1.8: Generate Preliminary Rankings
+
+At this point, you have 99% of the season's games. Generate rankings:
+
+```sql
+-- Calculate 2024 rankings with complete data
+EXEC [dbo].[CalculateRankings]
+    @LeagueType = 1,
+    @BeginSeason = 2024,
+    @EndSeason = 2024,
+    @Week = 52,
+    @MaxLoops = 2048;
+```
+
+### Step 1.9: Publish Preliminary Website
+
+```powershell
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
+.\run_update_cycle.ps1
+```
+
+**What happens:**
+- Generates JSON files from database
+- Builds HTML pages
+- Deploys to GitHub Pages
+- Website shows 99% complete season rankings
+
+**Add note to website:** "Rankings current through [date]. Championship games will be added after December 26."
+
+---
+
+## PHASE 2: Playoff Update (Post-Christmas)
+
+### Timing
+Run this around **December 26+** when all playoff games are complete.
+
+### Step 2.1: Verify Playoff Games Are Complete
+
+Check MaxPreps or state association websites to confirm all finals are done:
+- Louisiana: Finals complete by 12/13
+- California: Finals complete by 12/13
+- Connecticut: Finals complete by 12/13
+- Georgia: Finals complete by 12/16
+- Texas: Finals complete by 12/20
+
+### Step 2.2: Create Targeted Playoff Batch
+
+Instead of re-scraping all 16,000+ teams, create a batch with only playoff state teams:
+
+```sql
+-- Create new playoff-only batch
+DECLARE @PlayoffBatchID INT;
+
+INSERT INTO scraping_batches (batch_name, created_date, total_teams, status)
+VALUES ('MaxPreps Playoffs 2024 - Final Update', GETDATE(), 0, 'running');
+
+SET @PlayoffBatchID = SCOPE_IDENTITY();
+
+-- Add only teams from playoff states to this batch
+INSERT INTO dbo.team_scraping_status (team_id, batch_id, status)
+SELECT DISTINCT T.Team_ID, @PlayoffBatchID, 'pending'
+FROM dbo.HS_Team_Names AS T
+JOIN dbo.URL_ProperName_Mapping AS M ON T.Team_ID = M.Team_ID
+WHERE T.State IN ('GA', 'TX', 'LA', 'CA', 'CT');
+
+-- Update total_teams count
+UPDATE scraping_batches 
+SET total_teams = (SELECT COUNT(*) FROM team_scraping_status WHERE batch_id = @PlayoffBatchID)
+WHERE batch_id = @PlayoffBatchID;
+
+-- Display the new batch ID
+SELECT 
+    @PlayoffBatchID AS PlayoffBatchID,
+    COUNT(*) AS TeamsToScrape
+FROM team_scraping_status
+WHERE batch_id = @PlayoffBatchID;
+```
+
+**Expected output:**
+```
+PlayoffBatchID  TeamsToScrape
+--------------  -------------
+12              ~1,500-2,000
+```
+
+### Step 2.3: Run Targeted Playoff Scrape
+
+```bash
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+.\.venv\Scripts\Activate
+python maxpreps_scraper_db.py
+```
+
+**What happens:**
+- Script detects the new 'running' batch (batch 12)
+- Only scrapes ~1,500-2,000 teams from playoff states
+- Much faster: 2-3 hours instead of 8-12 hours
+- Games that were "future" now have scores
+
+**Expected output:**
+```
+Resuming existing 'running' batch with ID: 12
+Starting batch 12: 1,847 teams to process
+[1/1847] Processing Team ID 5001: Carrollton (GA)
+✓ Saved 14 raw games for Team ID 5001
+...
+==================================================
+  SCRAPE COMPLETE. To finalize the data, run:
+  EXEC dbo.FinalizeMaxPrepsData @BatchID = 12;
+==================================================
+```
+
+### Step 2.4: Process Playoff Batch
+
+```sql
+-- Process the playoff batch
+EXEC dbo.FinalizeMaxPrepsData @BatchID = 12;
+```
+
+**What happens:**
+- Games that were in `Future_Games` now have scores
+- Should automatically move from `Future_Games` to `HS_Scores`
+- New playoff games are added
+
+**Important:** Verify your `FinalizeMaxPrepsData` procedure includes logic to:
+1. Delete from `Future_Games` when inserting to `HS_Scores` (prevents duplicates)
+2. Handle games that appear in multiple batches
+
+### Step 2.5: Handle Unmatched Games
+
+```sql
+-- Check for unmatched playoff games
+SELECT *
+FROM Unmatched_Games
+WHERE BatchID = 12
+  AND Status = 'pending';
+```
+
+Add any needed aliases and re-run:
+```sql
+EXEC dbo.FinalizeMaxPrepsData @BatchID = 12;
+```
+
+### Step 2.6: Verify Playoff Games Were Updated
+
+```sql
+-- Check that playoff games now have scores
+SELECT 
+    S.Date,
+    S.Home,
+    S.Home_Score,
+    S.Visitor,
+    S.Visitor_Score,
+    T.State,
+    S.BatchID
+FROM HS_Scores S
+JOIN HS_Team_Names T ON S.Home = T.Team_Name
+WHERE T.State IN ('GA', 'TX', 'LA', 'CA', 'CT')
+  AND S.Date >= '2024-12-12'  -- Playoff dates
+  AND S.BatchID = 12  -- From playoff batch
+ORDER BY S.Date, T.State;
+
+-- Check that Future_Games is now empty for past playoff dates
+SELECT 
+    FG.Date,
+    FG.Home,
+    FG.Visitor,
+    T.State
+FROM Future_Games FG
+JOIN HS_Team_Names T ON (FG.Home = T.Team_Name OR FG.Visitor = T.Team_Name)
+WHERE T.State IN ('GA', 'TX', 'LA', 'CA', 'CT')
+  AND FG.Date < GETDATE()  -- Past dates should be cleared
+ORDER BY FG.Date;
+-- Should return 0 rows (or only games that haven't been played)
+```
+
+### Step 2.7: Mark Playoff Batch Complete
+
+```sql
+-- Close out the playoff batch
+UPDATE scraping_batches 
+SET status = 'completed'
+WHERE batch_id = 12;
+
+-- Verify batch status
+SELECT 
+    batch_id,
+    batch_name,
+    status,
+    created_date,
+    total_teams
+FROM scraping_batches
+WHERE batch_id IN (11, 12)
+ORDER BY batch_id;
+```
+
+### Step 2.8: Recalculate Final Rankings
+
+```sql
+-- Recalculate with complete playoff results
+EXEC [dbo].[CalculateRankings]
+    @LeagueType = 1,
+    @BeginSeason = 2024,
+    @EndSeason = 2024,
+    @Week = 52,
+    @MaxLoops = 2048;
+```
+
+### Step 2.9: Publish Final Rankings
+
+```powershell
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
+.\run_update_cycle.ps1
+```
+
+**Update website note:** "Rankings complete through [final playoff date]. All championship games included."
+
+---
+
+## Special Cases & Troubleshooting
+
+### Issue: FinalizeMaxPrepsData Doesn't Process Games
+
+**Symptoms:**
+- Games remain in `games_raw`
+- 0 games in `HS_Scores` from batch
+- 0 games in `Unmatched_Games`
+
+**Causes:**
+1. Missing aliases for team names
+2. Date format issues
+3. Stored procedure logic error
+
+**Solution - Manual Insert:**
+
+```sql
+-- Step 1: View raw games
+SELECT 
+    primary_team_name,
+    opponent_name_raw,
+    result_text,
+    game_date,
+    batch_id
+FROM games_raw
+WHERE batch_id = [YourBatchID]
+  AND primary_team_name = '[Team Name]'
+ORDER BY game_date;
+
+-- Step 2: Manually insert games (example)
+INSERT INTO HS_Scores (
+    ID, Date, Season, Home, Visitor, 
+    Home_Score, Visitor_Score, Neutral, 
+    Source, BatchID, Date_Added
+)
+VALUES
+(NEWID(), '2024-12-15', 2024, 
+ 'Home Team Standardized Name (ST)', 
+ 'Visitor Team Standardized Name (ST)', 
+ 42, 21, 0, 
+ 'MaxPreps Batch [X]', [BatchID], GETDATE());
+
+-- Step 3: Mark raw games as processed (if using status column)
+-- This depends on your games_raw table structure
+```
+
+### Issue: Duplicate Games After Playoff Update
+
+**Symptoms:**
+- Same game appears twice with different sources
+- One from Phase 1 (as "future"), one from Phase 2 (with score)
+
+**Solution:**
+
+```sql
+-- Find duplicates
+SELECT 
+    Date, Home, Visitor, 
+    COUNT(*) as GameCount
+FROM HS_Scores
+WHERE Season = 2024
+GROUP BY Date, Home, Visitor
+HAVING COUNT(*) > 1;
+
+-- Delete specific duplicate (keep most recent)
+DELETE FROM HS_Scores
+WHERE ID IN (
+    SELECT MIN(ID)
+    FROM HS_Scores
+    WHERE Date = '[duplicate_date]'
+      AND Home = '[home_team]'
+      AND Visitor = '[visitor_team]'
+    GROUP BY Date, Home, Visitor
+    HAVING COUNT(*) > 1
+);
+
+-- OR use your duplicate removal procedure
+EXEC dbo.RemoveDuplicateGames;
+```
+
+### Issue: New Teams in Playoff Games
+
+**Symptoms:**
+- Team not in `HS_Team_Names`
+- Games go to `Unmatched_Games`
+
+**Solution:**
+
+```sql
+-- Add new team
+INSERT INTO HS_Team_Names (Team_Name, State, City)
+VALUES ('New Team Name (ST)', 'ST', 'City Name');
+
+-- Add MaxPreps alias
+INSERT INTO HS_Team_Name_Alias (Alias_Name, Standardized_Name, Newspaper_Region)
+VALUES ('Raw MaxPreps Name', 'New Team Name (ST)', 'MaxPreps');
+
+-- Re-process batch
+EXEC dbo.FinalizeMaxPrepsData @BatchID = [YourBatchID];
+```
+
+### Issue: Ambiguous Team Names (e.g., "Varsity Opponent")
+
+**Symptoms:**
+- MaxPreps uses placeholder name like "V Varsity Opponent"
+- Can't create generic alias (ambiguous)
+
+**Solution - Targeted Fix:**
+
+```sql
+-- Find the specific game in games_raw
+SELECT 
+    primary_team_name,
+    opponent_name_raw,
+    result_text,
+    game_date,
+    opponent_maxpreps_url,
+    batch_id
+FROM games_raw
+WHERE opponent_name_raw LIKE '%Varsity%'
+  AND primary_team_name = '[Your Team Name]'
+  AND batch_id = [YourBatchID];
+
+-- Manually insert with correct opponent (use MaxPreps URL to identify)
+INSERT INTO HS_Scores (
+    ID, Date, Season, Home, Visitor, 
+    Home_Score, Visitor_Score, Neutral, 
+    Source, BatchID, Date_Added
+)
+VALUES
+(NEWID(), '[game_date]', 2024, 
+ '[Home Team]', 
+ '[Actual Opponent Name Based on URL]',  -- Look up from MaxPreps URL
+ [home_score], [visitor_score], 0, 
+ 'MaxPreps Batch [X] - Manual', [BatchID], GETDATE());
+```
+
+---
+
+## Verification Queries
+
+### Check Season Completeness
+
+```sql
+-- Total games by month (should see December spike for playoffs)
+SELECT 
+    MONTH(Date) as Month,
+    COUNT(*) as Games
+FROM HS_Scores
+WHERE Season = 2024
+GROUP BY MONTH(Date)
+ORDER BY MONTH(Date);
+
+-- Games by state (verify playoff states updated)
+SELECT 
+    T.State,
+    COUNT(*) as TotalGames,
+    COUNT(CASE WHEN S.Date >= '2024-12-12' THEN 1 END) as PlayoffGames
+FROM HS_Scores S
+JOIN HS_Team_Names T ON (S.Home = T.Team_Name OR S.Visitor = T.Team_Name)
+WHERE S.Season = 2024
+GROUP BY T.State
+ORDER BY T.State;
+```
+
+### Check Batch Summary
+
+```sql
+-- Summary of all batches
+SELECT 
+    batch_id,
+    batch_name,
+    created_date,
+    status,
+    total_teams,
+    (SELECT COUNT(*) FROM team_scraping_status 
+     WHERE batch_id = sb.batch_id AND status = 'completed') as completed_teams,
+    (SELECT COUNT(*) FROM team_scraping_status 
+     WHERE batch_id = sb.batch_id AND status = 'failed') as failed_teams
+FROM scraping_batches sb
+WHERE batch_name LIKE '%MaxPreps%2024%'
+ORDER BY batch_id;
+```
+
+### Check Future_Games Status
+
+```sql
+-- Should be empty after Phase 2
+SELECT 
+    Date,
+    Home,
+    Visitor,
+    Source
+FROM Future_Games
+WHERE Date < GETDATE()
+ORDER BY Date;
+-- Should return 0 rows
+```
+
+---
+
+## Timeline Example (2024 Season)
+
+| Date | Action | Details |
+|------|--------|---------|
+| Dec 10 | Phase 1: Full scrape | Capture all completed games + identify playoff games |
+| Dec 11 | Process Batch 11 | ~245,000 games to HS_Scores, ~1,200 to Future_Games |
+| Dec 11 | Fix unmatched | Add aliases, re-process |
+| Dec 11 | Publish preliminary | Website shows 99% complete rankings |
+| Dec 12-20 | Wait | Playoff games complete |
+| Dec 26 | Phase 2: Create playoff batch | ~1,800 teams from GA, TX, LA, CA, CT |
+| Dec 26 | Targeted scrape | 2-3 hours to scrape playoff states |
+| Dec 26 | Process Batch 12 | Playoff games move to HS_Scores |
+| Dec 26 | Recalculate rankings | Final complete rankings |
+| Dec 26 | Publish final | Website shows 100% complete season |
+
+---
+
+## Best Practices
+
+### Timing
+- ✅ Run Phase 1 as early as safe (~Dec 10) to get most data
+- ✅ Wait until Dec 26+ for Phase 2 to avoid multiple updates
+- ❌ Don't run Phase 2 too early (games still being played)
+
+### Batch Management
+- ✅ Always close previous 'running' batches before starting new ones
+- ✅ Use descriptive batch names with dates
+- ✅ Keep batch IDs documented for reference
+
+### Alias Management
+- ✅ Add common aliases proactively (before scraping)
+- ✅ Review unmatched games after each batch
+- ✅ Use MaxPreps URLs to verify correct team identity
+- ❌ Don't create ambiguous generic aliases (like "Varsity Opponent")
+
+### Data Quality
+- ✅ Always verify Future_Games captured playoff matchups
+- ✅ Check for duplicates after playoff updates
+- ✅ Verify state-by-state game counts make sense
+- ✅ Spot-check championship game scores match official results
+
+### Website Updates
+- ✅ Add note about preliminary rankings after Phase 1
+- ✅ Update note to "complete" after Phase 2
+- ✅ Consider highlighting state champions on homepage
+
+---
+
+## Success Metrics
+
+After completing both phases:
+
+- [ ] Batch 11 (full season) processed successfully
+- [ ] Batch 12 (playoffs) processed successfully
+- [ ] Both batches marked 'completed'
+- [ ] Unmatched_Games < 1% of total games
+- [ ] Future_Games empty for past dates
+- [ ] No duplicate games in HS_Scores
+- [ ] All state championship games present
+- [ ] Rankings recalculated with complete data
+- [ ] Website published with final rankings
+
+---
+
+## Files Reference
+
+**Python Scripts:**
+- `maxpreps_scraper_db.py` - Main scraping script
+
+**SQL Procedures:**
+- `FinalizeMaxPrepsData` - Process raw games into HS_Scores
+- `CalculateRankings` - Generate team rankings
+- `RemoveDuplicateGames` - Clean up duplicates (if exists)
+
+**PowerShell Scripts:**
+- `run_update_cycle.ps1` - Full website build and deploy
+
+**Database Tables:**
+- `scraping_batches` - Batch tracking
+- `team_scraping_status` - Per-team scraping status
+- `games_raw` - Raw scraped game data
+- `HS_Scores` - Production game data
+- `Future_Games` - Scheduled future games
+- `Unmatched_Games` - Games needing alias mapping
+- `HS_Team_Names` - Master team list
+- `HS_Team_Name_Alias` - Team name standardization
+
+---
+
+## Next Season Preparation
+
+Before next season:
+
+1. Archive this season's batches:
+```sql
+-- Mark old batches as archived
+UPDATE scraping_batches 
+SET status = 'archived'
+WHERE batch_name LIKE '%2024%';
+```
+
+2. Clean up test data:
+```sql
+-- Remove any incomplete test batches
+DELETE FROM team_scraping_status WHERE batch_id IN (
+    SELECT batch_id FROM scraping_batches WHERE status = 'failed'
+);
+DELETE FROM scraping_batches WHERE status = 'failed';
+```
+
+3. Review and update playoff state list if classifications change
+
+4. Update date references in this document for new season
+
+---
+
+*Last Updated: December 2024*
+*For 2024 High School Football Season*
