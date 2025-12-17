@@ -1,7 +1,7 @@
 # LoneStarFootball.net Scraping Workflow
 ## Texas High School Football Historical Data (Pre-2004)
 
----
+---cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
 python lonestar_raw_collector.py
 
 This workflow scrapes historical Texas high school football data from LoneStarFootball.net, focusing on pre-2004 seasons to fill gaps in your MaxPreps data. The system uses a two-phase approach similar to your Ontario/Quebec scrapers:
@@ -90,7 +90,7 @@ C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\da
 ### Step 2: Run Team Discovery (One-Time)
 
 ```bash
-python lonestar_scraper.py
+python lonestar_raw_collector.py
 # Select: 1 (Discover all teams)
 ```
 
