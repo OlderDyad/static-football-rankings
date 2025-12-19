@@ -284,10 +284,15 @@ def main():
         # Setup browser
         driver = setup_driver()
         
+        # Track team ID range
+        team_ids = [team.team_id for team in teams]
+        min_team_id = min(team_ids)
+        max_team_id = max(team_ids)
+        
         # Process each team
         total_schedules = 0
         for i, team in enumerate(teams, 1):
-            logger.info(f"\n[{i}/{len(teams)}] {team.team_name}")
+            logger.info(f"\n[{i}/{len(teams)}] {team.team_name} (ID: {team.team_id})")
             
             schedules = scrape_team_seasons(
                 driver, 
@@ -303,18 +308,31 @@ def main():
                 time.sleep(random.uniform(3, 6))
         
         logger.info(f"\n{'='*60}")
-        logger.info(f"Collection Complete!")
-        logger.info(f"Collected {total_schedules} schedules from {len(teams)} teams")
+        logger.info(f"BATCH COMPLETE!")
+        logger.info(f"{'='*60}")
+        logger.info(f"Teams processed: {len(teams)}")
+        logger.info(f"Team ID range: {min_team_id} - {max_team_id}")
+        logger.info(f"Schedules collected: {total_schedules}")
         logger.info(f"{'='*60}")
         
-        # Export to CSV
-        export_to_csv(cursor, OUTPUT_CSV)
+        # Get overall progress
+        cursor.execute("SELECT COUNT(DISTINCT team_id) FROM lonestar_raw_schedules")
+        total_teams_completed = cursor.fetchone()[0]
         
-        logger.info(f"\n📄 Next steps:")
-        logger.info(f"1. Open {OUTPUT_CSV} in Excel")
-        logger.info(f"2. Apply your existing formulas to parse games")
-        logger.info(f"3. Export cleaned data")
-        logger.info(f"4. Import to HS_Scores table")
+        cursor.execute("SELECT COUNT(*) FROM lonestar_teams")
+        total_teams_discovered = cursor.fetchone()[0]
+        
+        logger.info(f"\n📊 OVERALL PROGRESS:")
+        logger.info(f"Total teams completed: {total_teams_completed}/{total_teams_discovered}")
+        logger.info(f"Remaining teams: {total_teams_discovered - total_teams_completed}")
+        logger.info(f"Percent complete: {total_teams_completed * 100.0 / total_teams_discovered:.1f}%")
+        
+        logger.info(f"\n📄 NEXT STEPS:")
+        logger.info(f"1. Note the Team ID range: {min_team_id} - {max_team_id}")
+        logger.info(f"2. Export this batch to Excel using team ID range")
+        logger.info(f"3. Apply formulas and import to SQL")
+        logger.info(f"4. Run scraper again for next batch")
+        logger.info(f"{'='*60}")
         
     except Exception as e:
         logger.error(f"Error in main: {e}", exc_info=True)

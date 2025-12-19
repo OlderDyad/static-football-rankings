@@ -1,238 +1,248 @@
 #!/usr/bin/env python3
 """
-LoneStar Schedule Prep for Excel
-=================================
+LoneStar Database to Excel Importer
+====================================
 
-Converts the raw CSV (one row per season) into Excel-ready format (one row per game).
+Reads raw schedules from lonestar_raw_schedules table,
+splits them into individual game rows,
+and writes directly to Excel workbook.
 
-Input:  lonestar_raw_schedules.csv (raw_schedule_text in one cell)
-Output: lonestar_ready_for_excel.csv (each game as separate row)
-
-Output format matches your screenshot:
-- Column A: team_id (for reference)
-- Column B: team_name (for reference)
-- Column C: season (e.g., "2003")
-- Column D: week (e.g., "10")
-- Column E: Team 1 (with prefix like "nSan Angelo Centralv")
-- Column F: Score 1
-- Column G: Team 2 (with prefix like "LAmarillod")
-- Column H: Score 2
-- Column I: Notes (D, B, etc.)
-
-Then you can apply your Excel formulas to clean the team names.
+Target: C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\HSF Texas 2025.xlsx
+Sheet: Lonestar
+Columns: A-H (team_id, team_name, season, season_url, raw_schedule_text, score1, team2_raw, score2)
 """
 
-import csv
+import pyodbc
+import openpyxl
+from openpyxl import load_workbook
 import re
-import logging
+from datetime import datetime
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+# ============================================================================
+# CONFIGURATION
+# ============================================================================
 
-INPUT_FILE = "lonestar_raw_schedules.csv"
-OUTPUT_FILE = "lonestar_ready_for_excel.csv"
+DB_CONNECTION_STRING = (
+    "DRIVER={ODBC Driver 17 for SQL Server};"
+    "SERVER=McKnights-PC\\SQLEXPRESS01;"
+    "DATABASE=hs_football_database;"
+    "Trusted_Connection=yes;"
+)
 
-def split_game_line(line: str, season: str):
-    """
-    Parse a game line like:
-    "POdessa Permianv 28 LAmarillo3 21"
-    OR with date: "11/20  LAmarillov 33 7 El Paso Irvin..."
-    
-    Note: We IGNORE any week/date info from LoneStar (unreliable).
-    Week numbers are auto-generated starting at 35.
-    
-    Returns: (team1, score1, team2, score2, notes)
-    """
-    line = line.strip()
-    if not line:
-        return None
-    
-    # Remove any leading date or week number
-    # Patterns: "11/20  " or "10  " or "WK 10  "
-    line = re.sub(r'^\d{1,2}(/\d{1,2})?\s+', '', line)
-    line = re.sub(r'^WK\s+\d{1,2}\s+', '', line)
-    rest = line.strip()
-    
-    if not rest:
-        return None
-    
-    # Find all digit sequences
-    all_digits = list(re.finditer(r'\d+', rest))
-    
-    if len(all_digits) < 2:
-        return None
-    
-    # High school football scores are typically 0-70 (1-2 digits)
-    # Multi-digit sequences (3+) are likely to be misread compressed text
-    
-    # Strategy: Find the rightmost pair of 1-2 digit numbers as scores
-    # If we have "v103", that's "v 10 3" where v=separator, 10=score, 3=junk
-    
-    # Split long digit sequences (3+) into smaller chunks
-    split_digits = []
-    for match in all_digits:
-        digits = match.group()
-        pos = match.start()
-        
-        if len(digits) >= 3:
-            # Split into chunks: "103" -> ["10", "3"]
-            # Try to parse as [2-digit][1-digit] or [1-digit][2-digit]
-            if len(digits) == 3:
-                # Could be 10,3 or 1,03 - assume 2+1
-                split_digits.append((pos, digits[:2]))
-                split_digits.append((pos + 2, digits[2:]))
-            elif len(digits) == 4:
-                # Could be 10,31 or 35,21 - assume 2+2
-                split_digits.append((pos, digits[:2]))
-                split_digits.append((pos + 2, digits[2:]))
-            else:
-                # Just take first 2 digits as score
-                split_digits.append((pos, digits[:2]))
-        else:
-            split_digits.append((pos, digits))
-    
-    if len(split_digits) < 2:
-        return None
-    
-    # Now find the last two reasonable scores (1-2 digits, value 0-70)
-    score_candidates = [(pos, val) for pos, val in split_digits if 0 <= int(val) <= 99]
-    
-    if len(score_candidates) < 2:
-        return None
-    
-    # NEW LOGIC: For compressed formats like "v103", we want 10 and the NEXT score
-    # Not the last two digits (3, 7)
-    # 
-    # Strategy: Look for a pattern where we have multiple consecutive candidates
-    # If we find [10, 3, ...7], take 10 and 7 (skip the middle junk digit)
-    
-    # Check if we have 3+ candidates with a suspicious single-digit in position 2
-    if len(score_candidates) >= 3:
-        # Check if candidate[1] is a single digit 0-9 (likely junk)
-        # and candidate[0] and candidate[2] are reasonable scores
-        _, val1 = score_candidates[0]
-        _, val2 = score_candidates[1]  
-        
-        if len(val2) == 1 and int(val2) < 10:  # Middle value is single digit (junk)
-            # Use first and third as scores, skip the middle
-            score1_pos, score1 = score_candidates[0]
-            score2_pos, score2 = score_candidates[2]
-        else:
-            # Normal case: take last two
-            score1_pos, score1 = score_candidates[-2]
-            score2_pos, score2 = score_candidates[-1]
-    else:
-        # Only 2 candidates, use them
-        score1_pos, score1 = score_candidates[-2]
-        score2_pos, score2 = score_candidates[-1]
-    
-    # Calculate where scores are in original string
-    score1_len = len(score1)
-    score2_len = len(score2)
-    
-    # Team1 is everything before score1
-    team1 = rest[:score1_pos].strip()
-    
-    # Team2 is between score1 and score2
-    team2_start = score1_pos + score1_len
-    team2 = rest[team2_start:score2_pos].strip()
-    
-    # Notes are after score2
-    notes = rest[score2_pos + score2_len:].strip()
-    
-    # Validate: team names should be at least 2 chars
-    if len(team1) < 2 or len(team2) < 2:
-        return None
-    
-    return (team1, score1, team2, score2, notes)
+EXCEL_FILE = r"C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\HSF Texas 2025.xlsx"
+SHEET_NAME = "Lonestar"
 
-def process_schedule(raw_text: str, team_id: str, team_name: str, season: str):
+# Column mapping (0-based)
+COL_TEAM_ID = 0          # A
+COL_TEAM_NAME = 1        # B
+COL_SEASON = 2           # C
+COL_SEASON_URL = 3       # D
+COL_RAW_SCHEDULE = 4     # E
+COL_SCORE1 = 5           # F
+COL_TEAM2_RAW = 6        # G
+COL_SCORE2 = 7           # H
+
+# ============================================================================
+# GAME PARSING
+# ============================================================================
+
+def parse_schedule_to_games(raw_text: str, team_name: str, season: int) -> list:
     """
-    Process a raw schedule text block and yield individual games.
-    Auto-generates week numbers starting at 35 (late August).
-    Ignores any week/date info from LoneStar (unreliable).
+    Parse raw schedule text into individual game rows
+    Each game becomes: [score1, team2_raw, score2]
+    
+    Example input line:
+    "1  LFort Elliottv 42 3Hedleyy 0"
+    
+    Returns: [(42, "3Hedley", 0), ...]
     """
+    
+    games = []
+    
+    if not raw_text or not raw_text.strip():
+        return games
+    
     lines = raw_text.split('\n')
     
-    # Start week numbering at 35 (late August)
-    auto_week = 35
-    
     for line in lines:
-        # Skip header lines
-        if 'Record:' in line or 'WK Team SC' in line or not line.strip():
+        line = line.strip()
+        
+        # Skip header lines, empty lines
+        if not line or 'Record:' in line or 'WK' in line or 'Team SC' in line:
             continue
         
-        game = split_game_line(line, season)
-        if game:
-            team1, score1, team2, score2, notes = game
+        # Skip lines that don't have scores (no numbers)
+        if not any(char.isdigit() for char in line):
+            continue
+        
+        try:
+            # Pattern: <stuff> <team1> <score1> <team2> <score2> <flags>
+            # We need to extract the two scores and team2 name
             
-            yield {
-                'team_id': team_id,
-                'team_name': team_name,
-                'season': season,
-                'week': str(auto_week),
-                'team1_raw': team1,
-                'score1': score1,
-                'team2_raw': team2,
-                'score2': score2,
-                'notes': notes
-            }
+            # Find all numbers in the line (these are scores)
+            numbers = re.findall(r'\d+', line)
             
-            # Increment week for next game
-            auto_week += 1
+            if len(numbers) < 2:
+                continue  # Need at least 2 scores
+            
+            # The last 2 numbers are usually the scores
+            score1_str = numbers[-2]
+            score2_str = numbers[-1]
+            
+            score1 = int(score1_str)
+            score2 = int(score2_str)
+            
+            # Extract team2 name (the opponent)
+            # Remove week number at start if present
+            cleaned_line = re.sub(r'^\d+/?\d*\s+', '', line)
+            
+            # Split by scores to isolate team names
+            parts = re.split(r'\s+\d+\s+', cleaned_line)
+            
+            if len(parts) >= 2:
+                # Second part should have the opponent name
+                team2_part = parts[1]
+                
+                # Remove trailing flags (letters at end like 'y', 'v', 'D', etc.)
+                team2_raw = re.sub(r'[a-zA-Z\$\#\*\@]+$', '', team2_part).strip()
+                
+                # If we got something reasonable
+                if team2_raw and len(team2_raw) > 2:
+                    games.append((score1, team2_raw, score2))
+            
+        except Exception as e:
+            # Skip malformed lines
+            continue
+    
+    return games
+
+# ============================================================================
+# MAIN IMPORT
+# ============================================================================
 
 def main():
-    logger.info("="*60)
-    logger.info("LoneStar Schedule Prep")
-    logger.info("="*60)
+    print("="*80)
+    print("LoneStar Database → Excel Importer")
+    print("="*80)
+    print()
     
-    total_schedules = 0
-    total_games = 0
+    # Connect to database
+    print("Connecting to database...")
+    conn = pyodbc.connect(DB_CONNECTION_STRING)
+    cursor = conn.cursor()
     
-    output_rows = []
+    # Get all raw schedules
+    print("Fetching raw schedules...")
+    sql = """
+        SELECT team_id, team_name, season, season_url, raw_schedule_text
+        FROM lonestar_raw_schedules
+        ORDER BY team_id, season DESC
+    """
     
-    # Read input CSV
-    with open(INPUT_FILE, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
+    cursor.execute(sql)
+    rows = cursor.fetchall()
+    
+    print(f"✓ Found {len(rows)} schedules")
+    print()
+    
+    if not rows:
+        print("No data to import!")
+        return
+    
+    # Load Excel workbook
+    print(f"Opening Excel file: {EXCEL_FILE}")
+    try:
+        wb = load_workbook(EXCEL_FILE)
+    except FileNotFoundError:
+        print(f"ERROR: Excel file not found!")
+        print(f"Please create: {EXCEL_FILE}")
+        return
+    
+    # Get or create sheet
+    if SHEET_NAME in wb.sheetnames:
+        ws = wb[SHEET_NAME]
+        print(f"✓ Found sheet '{SHEET_NAME}'")
+        # Clear existing data (keep headers)
+        if ws.max_row > 1:
+            print(f"  Clearing {ws.max_row - 1} existing rows...")
+            ws.delete_rows(2, ws.max_row)
+    else:
+        ws = wb.create_sheet(SHEET_NAME)
+        print(f"✓ Created sheet '{SHEET_NAME}'")
         
-        for row in reader:
-            team_id = row['team_id']
-            team_name = row['team_name']
-            season = row['season']
-            raw_text = row['raw_schedule_text']
-            
-            total_schedules += 1
-            
-            # Process this schedule
-            games = list(process_schedule(raw_text, team_id, team_name, season))
-            total_games += len(games)
-            output_rows.extend(games)
-            
-            if total_schedules % 100 == 0:
-                logger.info(f"Processed {total_schedules} schedules, {total_games} games so far...")
+        # Write headers
+        headers = ['team_id', 'team_name', 'season', 'season_url', 'raw_schedule_text', 
+                   'score1', 'team2_raw', 'score2']
+        for col_idx, header in enumerate(headers, start=1):
+            ws.cell(row=1, column=col_idx, value=header)
     
-    # Write output CSV
-    logger.info(f"Writing {len(output_rows)} games to {OUTPUT_FILE}...")
+    # Process each schedule and write games
+    print()
+    print("Processing schedules and writing to Excel...")
     
-    with open(OUTPUT_FILE, 'w', newline='', encoding='utf-8') as f:
-        fieldnames = ['team_id', 'team_name', 'season', 'week', 'team1_raw', 'score1', 
-                      'team2_raw', 'score2', 'notes']
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(output_rows)
+    current_row = 2  # Start after header
+    total_games = 0
+    schedules_processed = 0
     
-    logger.info("="*60)
-    logger.info(f"COMPLETE!")
-    logger.info(f"  Input:  {total_schedules} schedules")
-    logger.info(f"  Output: {total_games} individual games")
-    logger.info(f"  File:   {OUTPUT_FILE}")
-    logger.info("="*60)
-    logger.info("")
-    logger.info("📄 Next steps:")
-    logger.info("1. Open lonestar_ready_for_excel.csv in Excel")
-    logger.info("2. Apply formulas to clean team1_raw and team2_raw columns")
-    logger.info("3. Export cleaned data")
-    logger.info("4. Import to HS_Scores")
+    for schedule in rows:
+        team_id, team_name, season, season_url, raw_text = schedule
+        
+        # Parse schedule into individual games
+        games = parse_schedule_to_games(raw_text, team_name, season)
+        
+        if not games:
+            # No games found, but still write the raw schedule row
+            ws.cell(row=current_row, column=COL_TEAM_ID + 1, value=team_id)
+            ws.cell(row=current_row, column=COL_TEAM_NAME + 1, value=team_name)
+            ws.cell(row=current_row, column=COL_SEASON + 1, value=season)
+            ws.cell(row=current_row, column=COL_SEASON_URL + 1, value=season_url)
+            ws.cell(row=current_row, column=COL_RAW_SCHEDULE + 1, value=raw_text)
+            current_row += 1
+            continue
+        
+        # Write each game as a separate row
+        for score1, team2_raw, score2 in games:
+            ws.cell(row=current_row, column=COL_TEAM_ID + 1, value=team_id)
+            ws.cell(row=current_row, column=COL_TEAM_NAME + 1, value=team_name)
+            ws.cell(row=current_row, column=COL_SEASON + 1, value=season)
+            ws.cell(row=current_row, column=COL_SEASON_URL + 1, value=season_url)
+            ws.cell(row=current_row, column=COL_RAW_SCHEDULE + 1, value=raw_text)
+            ws.cell(row=current_row, column=COL_SCORE1 + 1, value=score1)
+            ws.cell(row=current_row, column=COL_TEAM2_RAW + 1, value=team2_raw)
+            ws.cell(row=current_row, column=COL_SCORE2 + 1, value=score2)
+            current_row += 1
+            total_games += 1
+        
+        schedules_processed += 1
+        
+        # Progress indicator
+        if schedules_processed % 100 == 0:
+            print(f"  Processed {schedules_processed}/{len(rows)} schedules, {total_games} games...")
+    
+    print(f"✓ Processed {schedules_processed} schedules")
+    print(f"✓ Extracted {total_games} individual games")
+    print()
+    
+    # Save workbook
+    print("Saving Excel file...")
+    wb.save(EXCEL_FILE)
+    print(f"✓ Saved to: {EXCEL_FILE}")
+    
+    print()
+    print("="*80)
+    print("IMPORT COMPLETE")
+    print("="*80)
+    print(f"Sheet: {SHEET_NAME}")
+    print(f"Rows: {current_row - 1} (excluding header)")
+    print(f"Games: {total_games}")
+    print()
+    print("Next steps:")
+    print("1. Open Excel file and verify data")
+    print("2. Apply your formulas to parse team names and standardize")
+    print("3. Run the Python import to SQL")
+    print("="*80)
+    
+    conn.close()
 
 if __name__ == "__main__":
     main()
