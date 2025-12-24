@@ -43,7 +43,7 @@ DB_CONNECTION_STRING = (
 )
 
 OUTPUT_CSV = "lonestar_raw_schedules.csv"
-BATCH_SIZE = 1000  # Teams to process per run
+BATCH_SIZE = 2000 # Teams to process per run
 EARLIEST_SEASON = 1869
 LATEST_SEASON = 2003
 

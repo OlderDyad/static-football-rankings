@@ -4588,3 +4588,25 @@ Symbols not available. Dumping unresolved backtrace:
 2025-12-15 09:53:56,262 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000183C8204D50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/e482cbaed1dc02572282e66b8a54a9e8
 2025-12-15 09:54:00,317 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000183C8225DD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/e482cbaed1dc02572282e66b8a54a9e8
 2025-12-15 09:54:04,358 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000183C8227A10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/e482cbaed1dc02572282e66b8a54a9e8
+2025-12-22 10:16:04,265 - INFO - Starting sequential scan from 1802 to 2801...
+2025-12-22 10:16:04,354 - INFO - Database tables verified/created
+2025-12-22 10:16:05,890 - INFO - Starting sequential ID scan from 1802 to 2801...
+2025-12-22 10:17:40,893 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)': /session/7f5728fcb0aee51a29417e04ab40c49c
+2025-12-22 10:17:44,931 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DA1D056910>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/7f5728fcb0aee51a29417e04ab40c49c
+2025-12-22 10:17:48,977 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DA1D060550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/7f5728fcb0aee51a29417e04ab40c49c
+2025-12-22 10:18:17,846 - INFO - Starting batch scraping (1000 teams)...
+2025-12-22 10:18:17,926 - INFO - Database tables verified/created
+2025-12-22 10:18:17,930 - INFO - Resuming batch 1
+2025-12-22 10:18:17,941 - INFO - Starting batch 1: 1000 teams to process
+2025-12-22 10:18:19,089 - INFO - [1/1000] Processing: Lorenzo Hornets (ID: 11)
+2025-12-22 10:18:26,167 - INFO - Found 57 seasons to scrape for team 11
+2025-12-22 10:18:34,586 - INFO - Scraped 0 games for season 2003, team 11
+2025-12-22 10:18:44,353 - INFO - Scraped 0 games for season 2002, team 11
+2025-12-22 10:18:53,939 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029F50A197D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/c0ac2348226ed7bd4c9ca265857b3b60
+2025-12-22 10:42:32,384 - INFO - Starting sequential scan from 1802 to 1901...
+2025-12-22 10:42:32,471 - INFO - Database tables verified/created
+2025-12-22 10:42:33,653 - INFO - Starting sequential ID scan from 1802 to 1901...
+2025-12-22 10:44:20,046 - INFO - Progress: 50 teams found (checked 50 IDs)
+2025-12-22 10:45:59,735 - INFO - Progress: 100 teams found (checked 100 IDs)
+2025-12-22 10:45:59,735 - INFO - Sequential scan complete: 100 teams found (checked 100 IDs)
+2025-12-22 10:45:59,736 - INFO - Sequential discovery complete: 100 teams added to database

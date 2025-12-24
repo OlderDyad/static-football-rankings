@@ -31,7 +31,7 @@ BASE_URL = "https://lonestarfootball.net/"
 SEARCH_URL = "https://lonestarfootball.net/search.asp"
 
 # Scraping limits
-TEAMS_PER_BATCH = 50
+TEAMS_PER_BATCH = 1000
 EARLIEST_SEASON = 1869  # Start of your historical data
 LATEST_SEASON = 2003    # Only scrape pre-2004
 WAIT_TIMEOUT = 15

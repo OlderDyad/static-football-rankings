@@ -71,11 +71,11 @@
                         <h5 class="card-title text-success">Southern Region</h5>
                         <p class="card-text text-muted mb-2">15 States</p>
                         <p class="card-text small">AL, AR, FL, GA, KY, LA, MD, MS, NC, OK, SC, TN, TX, VA, WV</p>
-                        <div id="southeast-stats" class="mb-3">
+                        <div id="southern-stats" class="mb-3">
                             <small class="text-muted">Loading statistics...</small>
                         </div>
                         <div class="mt-auto">
-                            <a href="/static-football-rankings/pages/public/regional-statistics/southeast.html" 
+                            <a href="/static-football-rankings/pages/public/regional-statistics/southern.html" 
                                class="btn btn-success">View Southern Statistics</a>
                         </div>
                     </div>
@@ -107,11 +107,11 @@
                         <h5 class="card-title text-danger">Western Region</h5>
                         <p class="card-text text-muted mb-2">13 States</p>
                         <p class="card-text small">AK, AZ, CA, CO, HI, ID, MT, NV, NM, OR, UT, WA, WY</p>
-                        <div id="west-stats" class="mb-3">
+                        <div id="western-stats" class="mb-3">
                             <small class="text-muted">Loading statistics...</small>
                         </div>
                         <div class="mt-auto">
-                            <a href="/static-football-rankings/pages/public/regional-statistics/west.html" 
+                            <a href="/static-football-rankings/pages/public/regional-statistics/western.html" 
                                class="btn btn-danger">View Western Statistics</a>
                         </div>
                     </div>
@@ -157,13 +157,11 @@
             })
             .then(data => {
                 // Map JSON region names to element IDs
-                // Note: JSON uses "Southeast" but we display as "Southern", 
-                // and JSON uses "Southwest" which we've merged into other regions
                 const regionMapping = {
                     'Northeast': 'northeast-stats',
-                    'Southeast': 'southeast-stats',  // Maps to Southern display
+                    'Southern': 'southern-stats',
                     'Midwest': 'midwest-stats',
-                    'West': 'west-stats',
+                    'Western': 'western-stats',
                     'Canada': 'canada-stats'
                 };
 
@@ -183,24 +181,6 @@
                         element.innerHTML = '<small class="text-muted">Statistics available on detail page</small>';
                     }
                 });
-
-                // Handle Southwest data - add to Southern if present
-                if (data['Southwest']) {
-                    const southeastElement = document.getElementById('southeast-stats');
-                    const seData = data['Southeast'];
-                    const swData = data['Southwest'];
-                    if (southeastElement && seData && swData) {
-                        const combinedGames = (seData.total_games || 0) + (swData.total_games || 0);
-                        const earliestSeason = Math.min(seData.earliest_season || 9999, swData.earliest_season || 9999);
-                        const latestSeason = Math.max(seData.latest_season || 0, swData.latest_season || 0);
-                        southeastElement.innerHTML = `
-                            <small>
-                                <strong>${combinedGames.toLocaleString()}</strong> games | 
-                                <strong>${earliestSeason}-${latestSeason}</strong>
-                            </small>
-                        `;
-                    }
-                }
             })
             .catch(error => {
                 console.log('Regional summary data not available:', error);

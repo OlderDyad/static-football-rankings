@@ -5,6 +5,9 @@ CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
 
 **python maxpreps_scraper_db.py**
 
+sql
+EXEC dbo.FinalizeMaxPrepsData @BatchID = [Your_Batch_ID];
+
 
 This process uses a Python script for scraping and a SQL stored procedure for data processing.
 
@@ -93,6 +96,21 @@ The procedure will now recognize the previously unmatched teams and move those g
 
 6. Repeat
 Run the Python scraper again to process the next set of URLs in the batch or to start a new batch if the current one is complete.
+
+(.venv) PS C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import> python maxpreps_scraper_db.py
+2025-12-22 14:35:51,924 - INFO - === Starting Simplified DB-Driven MaxPreps Scraper ===
+2025-12-22 14:35:51,956 - INFO - Connected to database successfully.
+2025-12-22 14:35:51,957 - INFO - Resuming existing 'running' batch with ID: 13
+2025-12-22 14:35:51,957 - INFO - Fetching up to 2000 teams for batch 13.
+2025-12-22 14:35:51,965 - INFO - No more teams to process for this batch.
+2025-12-22 14:35:51,965 - INFO - No more teams to process for this batch. Marking as complete.
+2025-12-22 14:35:51,965 - INFO - Database connection closed.
+
+SQL
+UPDATE scraping_batches 
+SET status = 'completed'
+WHERE batch_id = 13;
+
 ==============================================================================================================
 
 Late December Playoff Games Workflow
