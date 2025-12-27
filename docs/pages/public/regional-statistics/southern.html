@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southern Region Statistics - McKnight's American Football</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    <style>
+        .region-header {
+            background: linear-gradient(135deg, #70AD47 0%, #5A9A35 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 4px solid #70AD47;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #70AD47;
+        }
+        .stat-label {
+            color: #666;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .chart-card h5 {
+            border-bottom: 2px solid #70AD47;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .state-list {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/regional-statistics/">Regional Statistics</a></li>
+                <li class="breadcrumb-item active">Southern Region</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container mt-4 mb-5">
+        <!-- Region Header -->
+        <div class="region-header">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1>Southern Region</h1>
+                    <p class="mb-0">15 States: AL, AR, FL, GA, KY, LA, MD, MS, NC, OK, SC, TN, TX, VA, WV</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="/static-football-rankings/pages/public/regional-statistics/" class="btn btn-light">← Back to All Regions</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-games">Loading...</div>
+                    <div class="stat-label">Total Games</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-value" id="season-range">Loading...</div>
+                    <div class="stat-label">Season Range</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-value" id="states-coverage">Loading...</div>
+                    <div class="stat-label">States with Data</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="chart-card">
+            <h5>Games by State Over Time</h5>
+            <iframe 
+                src="/static-football-rankings/data/regional-statistics/southern/games_by_state.html" 
+                width="100%" 
+                height="600" 
+                frameborder="0"
+                style="border: none;">
+            </iframe>
+        </div>
+
+        <div class="chart-card">
+            <h5>Total Games by State (Stacked)</h5>
+            <iframe 
+                src="/static-football-rankings/data/regional-statistics/southern/games_stacked.html" 
+                width="100%" 
+                height="600" 
+                frameborder="0"
+                style="border: none;">
+            </iframe>
+        </div>
+
+        <div class="chart-card">
+            <h5>Total Games by State</h5>
+            <iframe 
+                src="/static-football-rankings/data/regional-statistics/southern/total_by_state.html" 
+                width="100%" 
+                height="500" 
+                frameborder="0"
+                style="border: none;">
+            </iframe>
+        </div>
+
+        <!-- State Links -->
+        <div class="state-list">
+            <h5>View Rankings by State:</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="/static-football-rankings/pages/public/states/AL-teams.html" class="btn btn-outline-success btn-sm m-1">Alabama</a>
+                    <a href="/static-football-rankings/pages/public/states/AR-teams.html" class="btn btn-outline-success btn-sm m-1">Arkansas</a>
+                    <a href="/static-football-rankings/pages/public/states/FL-teams.html" class="btn btn-outline-success btn-sm m-1">Florida</a>
+                    <a href="/static-football-rankings/pages/public/states/GA-teams.html" class="btn btn-outline-success btn-sm m-1">Georgia</a>
+                    <a href="/static-football-rankings/pages/public/states/KY-teams.html" class="btn btn-outline-success btn-sm m-1">Kentucky</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/static-football-rankings/pages/public/states/LA-teams.html" class="btn btn-outline-success btn-sm m-1">Louisiana</a>
+                    <a href="/static-football-rankings/pages/public/states/MD-teams.html" class="btn btn-outline-success btn-sm m-1">Maryland</a>
+                    <a href="/static-football-rankings/pages/public/states/MS-teams.html" class="btn btn-outline-success btn-sm m-1">Mississippi</a>
+                    <a href="/static-football-rankings/pages/public/states/NC-teams.html" class="btn btn-outline-success btn-sm m-1">North Carolina</a>
+                    <a href="/static-football-rankings/pages/public/states/OK-teams.html" class="btn btn-outline-success btn-sm m-1">Oklahoma</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/static-football-rankings/pages/public/states/SC-teams.html" class="btn btn-outline-success btn-sm m-1">South Carolina</a>
+                    <a href="/static-football-rankings/pages/public/states/TN-teams.html" class="btn btn-outline-success btn-sm m-1">Tennessee</a>
+                    <a href="/static-football-rankings/pages/public/states/TX-teams.html" class="btn btn-outline-success btn-sm m-1">Texas</a>
+                    <a href="/static-football-rankings/pages/public/states/VA-teams.html" class="btn btn-outline-success btn-sm m-1">Virginia</a>
+                    <a href="/static-football-rankings/pages/public/states/WV-teams.html" class="btn btn-outline-success btn-sm m-1">West Virginia</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 mb-3">
+        <div class="container text-center">
+            <p>&copy; 2025 McKnight's Football Rankings</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load statistics
+        fetch('/static-football-rankings/data/regional-statistics/southern/summary.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('total-games').textContent = data.total_games.toLocaleString();
+                document.getElementById('season-range').textContent = `${data.earliest_season}-${data.latest_season}`;
+                document.getElementById('states-coverage').textContent = `${data.states_with_data}/${data.states.length}`;
+            })
+            .catch(error => {
+                console.error('Error loading statistics:', error);
+                document.getElementById('total-games').textContent = 'N/A';
+                document.getElementById('season-range').textContent = 'N/A';
+                document.getElementById('states-coverage').textContent = 'N/A';
+            });
+    </script>
+</body>
+</html>

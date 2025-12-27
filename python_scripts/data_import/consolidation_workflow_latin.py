@@ -1,4 +1,4 @@
-# consolidation_workflow.py (v2 - Staging Table Method)
+# consolidation_workflow.py (v3 - With GameCount Updates and Filtering)
 import pandas as pd
 import pyodbc
 import logging
@@ -25,20 +25,20 @@ def get_state_code():
             print("Invalid input. Please enter a 2-letter abbreviation.")
 
 def generate_and_update_correction_file(state_code, file_path):
-    """Calls the SQL procedure to get the list of problems and updates the CSV file."""
+    """Calls the SQL procedure to get the list of problems and updates the CSV file with current GameCounts."""
     logging.info(f"Generating diagnostic list for state {state_code}...")
     
-    existing_aliases = set()
+    # Step 1: Load existing file if it exists
+    existing_df = None
     if os.path.exists(file_path):
         try:
-            df_existing = pd.read_csv(file_path)
-            if 'Alias_Name' in df_existing.columns:
-                existing_aliases = set(df_existing['Alias_Name'])
-                logging.info(f"Loaded {len(existing_aliases)} existing aliases from {file_path}")
+            existing_df = pd.read_csv(file_path, encoding='latin1')
+            logging.info(f"Loaded existing file with {len(existing_df)} rows from {file_path}")
         except Exception:
             logging.warning(f"Could not read existing file at {file_path}. A new file will be created.")
 
-    new_problem_rows = []
+    # Step 2: Get current game counts from database
+    current_counts = {}
     try:
         conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER_NAME};DATABASE={DATABASE_NAME};Trusted_Connection=yes;'
         with pyodbc.connect(conn_str) as conn:
@@ -48,24 +48,55 @@ def generate_and_update_correction_file(state_code, file_path):
                 
                 rows = cursor.fetchall()
                 for row in rows:
-                    if row.TeamName not in existing_aliases:
-                        # Append the name and the game count
-                        new_problem_rows.append({'Alias_Name': row.TeamName, 'GameCount': row.GameCount, 'Standardized_Name': ''})
+                    current_counts[row.TeamName] = row.GameCount
+                
+                logging.info(f"Retrieved current game counts for {len(current_counts)} team names from database.")
     except Exception:
         logging.exception("Failed to run diagnostic procedure.")
         return False
 
-    if new_problem_rows:
-        logging.info(f"Found {len(new_problem_rows)} new problematic names to add to the correction file.")
-        new_rows_df = pd.DataFrame(new_problem_rows)
+    # Step 3: Process the data
+    if existing_df is not None:
+        # Update existing GameCount values
+        existing_df['GameCount'] = existing_df['Alias_Name'].map(current_counts).fillna(0).astype(int)
         
-        # Append to existing file or create a new one with the correct 3 columns
-        new_rows_df.to_csv(file_path, mode='a', header=not os.path.exists(file_path), index=False)
-        logging.info(f"SUCCESS: The file '{file_path}' has been created/updated with a 'GameCount' column.")
-        logging.info("Please open the file, fill in the 'Standardized_Name' column, and save it.")
+        # Add any new names that aren't in the existing file
+        existing_aliases = set(existing_df['Alias_Name'])
+        new_aliases = set(current_counts.keys()) - existing_aliases
+        
+        if new_aliases:
+            new_rows = [{'Alias_Name': alias, 'GameCount': current_counts[alias], 'Standardized_Name': ''} 
+                       for alias in new_aliases]
+            new_rows_df = pd.DataFrame(new_rows)
+            existing_df = pd.concat([existing_df, new_rows_df], ignore_index=True)
+            logging.info(f"Added {len(new_aliases)} new aliases to the file.")
+        
+        # Filter out rows where GameCount is 0 (alias has been fully replaced)
+        original_count = len(existing_df)
+        existing_df = existing_df[existing_df['GameCount'] > 0]
+        filtered_count = original_count - len(existing_df)
+        
+        if filtered_count > 0:
+            logging.info(f"Filtered out {filtered_count} aliases with GameCount = 0 (no longer in use).")
+        
+        # Sort by GameCount (descending) for easier review
+        existing_df = existing_df.sort_values('GameCount', ascending=False)
+        
+        # Save the updated file
+        existing_df.to_csv(file_path, index=False, encoding='latin1')
+        logging.info(f"SUCCESS: Updated '{file_path}' with current GameCount values.")
+        logging.info(f"File now contains {len(existing_df)} active aliases (GameCount > 0).")
+        
     else:
-        logging.info("No new problematic names found. Your correction file is up to date.")
+        # Create new file from scratch
+        new_rows = [{'Alias_Name': alias, 'GameCount': count, 'Standardized_Name': ''} 
+                   for alias, count in current_counts.items()]
+        new_df = pd.DataFrame(new_rows)
+        new_df = new_df.sort_values('GameCount', ascending=False)
+        new_df.to_csv(file_path, index=False, encoding='latin1')
+        logging.info(f"SUCCESS: Created new file '{file_path}' with {len(new_df)} aliases.")
     
+    logging.info("Please open the file, fill in the 'Standardized_Name' column for any names you want to consolidate, and save it.")
     return True
 
 def run_consolidation_from_staging(state_code, file_path):
@@ -74,9 +105,10 @@ def run_consolidation_from_staging(state_code, file_path):
     
     try:
         # Step 1: Upload CSV to a staging table
-        # FIX: Added encoding='latin1' to handle French characters and manual file edits.
         df = pd.read_csv(file_path, encoding='latin1') 
         required_columns = ['Alias_Name', 'Standardized_Name']
+        
+        # Only process rows where Standardized_Name is filled in
         df.dropna(subset=required_columns, inplace=True)
         df = df[df['Standardized_Name'].str.strip() != '']
         
@@ -100,6 +132,7 @@ def run_consolidation_from_staging(state_code, file_path):
                 logging.info("Executing dbo.sp_ConsolidateNames_FromStaging...")
                 cursor.execute("EXEC dbo.sp_ConsolidateNames_FromStaging @StateCode = ?", state_code)
                 logging.info("SUCCESS: Consolidation from staging table is complete.")
+                logging.info("TIP: Run option 1 again to refresh GameCount values and see which aliases remain.")
 
     except Exception:
         logging.exception("An error occurred during the consolidation process.")
@@ -114,7 +147,7 @@ if __name__ == "__main__":
     correction_file_path = os.path.join(RULES_FOLDER, file_name)
 
     print("\nSelect an action:")
-    print("1: Generate or Update the correction file for this state.")
+    print("1: Generate or Update the correction file for this state (refreshes GameCount, filters out unused aliases).")
     print("2: Run the consolidation using the completed correction file for this state.")
     
     while True:

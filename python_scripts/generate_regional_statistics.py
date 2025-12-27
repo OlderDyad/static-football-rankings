@@ -1,4 +1,4 @@
-﻿"""
+"""
 Generate regional games coverage visualizations for McKnight's Football Rankings
 This script creates charts showing game coverage by state within each region
 

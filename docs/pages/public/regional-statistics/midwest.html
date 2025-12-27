@@ -1,12 +1,56 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midwest Statistics - McKnight's American Football</title>
+    <title>Midwest Region Statistics - McKnight's American Football</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-    <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
+    <style>
+        .region-header {
+            background: linear-gradient(135deg, #FFC000 0%, #E6AC00 100%);
+            color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 4px solid #FFC000;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #B38600;
+        }
+        .stat-label {
+            color: #666;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .chart-card h5 {
+            border-bottom: 2px solid #FFC000;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .state-list {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Banner -->
@@ -14,214 +58,135 @@
         <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
     </div>
 
-    <!-- Breadcrumb navigation -->
+    <!-- Breadcrumb -->
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
                 <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/regional-statistics/">Regional Statistics</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Midwest</li>
+                <li class="breadcrumb-item active">Midwest Region</li>
             </ol>
         </nav>
     </div>
 
-    <div class="container mt-4">
-        <h1 class="mb-4">Midwest Region Statistics</h1>
-
-        <!-- Summary Statistics -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Region Overview</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="statistics-summary">
-                            <p class="text-muted">Loading statistics...</p>
-                        </div>
-                    </div>
+    <div class="container mt-4 mb-5">
+        <!-- Region Header -->
+        <div class="region-header">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1>Midwest Region</h1>
+                    <p class="mb-0">12 States: IL, IN, IA, KS, MI, MN, MO, NE, ND, OH, SD, WI</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="/static-football-rankings/pages/public/regional-statistics/" class="btn btn-dark">← Back to All Regions</a>
                 </div>
             </div>
         </div>
 
-        <!-- Games by State (Line Chart) -->
+        <!-- Statistics Cards -->
         <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Games by State Over Time</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="line-chart-container">
-                            <p class="text-muted">Loading chart...</p>
-                        </div>
-                    </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-games">Loading...</div>
+                    <div class="stat-label">Total Games</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-value" id="season-range">Loading...</div>
+                    <div class="stat-label">Season Range</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-value" id="states-coverage">Loading...</div>
+                    <div class="stat-label">States with Data</div>
                 </div>
             </div>
         </div>
 
-        <!-- Stacked Area Chart -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Cumulative Coverage by State</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="stacked-chart-container">
-                            <p class="text-muted">Loading chart...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Charts -->
+        <div class="chart-card">
+            <h5>Games by State Over Time</h5>
+            <iframe 
+                src="/static-football-rankings/data/regional-statistics/midwest/games_by_state.html" 
+                width="100%" 
+                height="600" 
+                frameborder="0"
+                style="border: none;">
+            </iframe>
         </div>
 
-        <!-- Total Games by State (Bar Chart) -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Total Games by State</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="bar-chart-container">
-                            <p class="text-muted">Loading chart...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="chart-card">
+            <h5>Total Games by State (Stacked)</h5>
+            <iframe 
+                src="/static-football-rankings/data/regional-statistics/midwest/games_stacked.html" 
+                width="100%" 
+                height="600" 
+                frameborder="0"
+                style="border: none;">
+            </iframe>
         </div>
 
-        <!-- Back Button -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <a href="/static-football-rankings/pages/public/regional-statistics/" 
-                   class="btn btn-secondary">â† Back to All Regions</a>
+        <div class="chart-card">
+            <h5>Total Games by State</h5>
+            <iframe 
+                src="/static-football-rankings/data/regional-statistics/midwest/total_by_state.html" 
+                width="100%" 
+                height="500" 
+                frameborder="0"
+                style="border: none;">
+            </iframe>
+        </div>
+
+        <!-- State Links -->
+        <div class="state-list">
+            <h5>View Rankings by State:</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="/static-football-rankings/pages/public/states/IL-teams.html" class="btn btn-outline-warning btn-sm m-1">Illinois</a>
+                    <a href="/static-football-rankings/pages/public/states/IN-teams.html" class="btn btn-outline-warning btn-sm m-1">Indiana</a>
+                    <a href="/static-football-rankings/pages/public/states/IA-teams.html" class="btn btn-outline-warning btn-sm m-1">Iowa</a>
+                    <a href="/static-football-rankings/pages/public/states/KS-teams.html" class="btn btn-outline-warning btn-sm m-1">Kansas</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/static-football-rankings/pages/public/states/MI-teams.html" class="btn btn-outline-warning btn-sm m-1">Michigan</a>
+                    <a href="/static-football-rankings/pages/public/states/MN-teams.html" class="btn btn-outline-warning btn-sm m-1">Minnesota</a>
+                    <a href="/static-football-rankings/pages/public/states/MO-teams.html" class="btn btn-outline-warning btn-sm m-1">Missouri</a>
+                    <a href="/static-football-rankings/pages/public/states/NE-teams.html" class="btn btn-outline-warning btn-sm m-1">Nebraska</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/static-football-rankings/pages/public/states/ND-teams.html" class="btn btn-outline-warning btn-sm m-1">North Dakota</a>
+                    <a href="/static-football-rankings/pages/public/states/OH-teams.html" class="btn btn-outline-warning btn-sm m-1">Ohio</a>
+                    <a href="/static-football-rankings/pages/public/states/SD-teams.html" class="btn btn-outline-warning btn-sm m-1">South Dakota</a>
+                    <a href="/static-football-rankings/pages/public/states/WI-teams.html" class="btn btn-outline-warning btn-sm m-1">Wisconsin</a>
+                </div>
             </div>
         </div>
     </div>
 
     <footer class="mt-5 mb-3">
-        <div class="text-center">
+        <div class="container text-center">
             <p>&copy; 2025 McKnight's Football Rankings</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Statistics Loading Script -->
     <script>
-        const regionKey = 'midwest'; // Will be replaced during generation
-        
-        // Load summary statistics
-        fetch(`/static-football-rankings/data/regional-statistics/${regionKey}/summary.json`)
+        // Load statistics
+        fetch('/static-football-rankings/data/regional-statistics/midwest/summary.json')
             .then(response => response.json())
             .then(data => {
-                const summaryHtml = `
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="stat-box">
-                                <h3>${data.total_games.toLocaleString()}</h3>
-                                <p class="text-muted">Total Games</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="stat-box">
-                                <h3>${data.total_seasons.toLocaleString()}</h3>
-                                <p class="text-muted">Seasons</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="stat-box">
-                                <h3>${data.earliest_season} - ${data.latest_season}</h3>
-                                <p class="text-muted">Season Range</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="stat-box">
-                                <h3>${data.states_with_data}/${data.states.length}</h3>
-                                <p class="text-muted">States with Data</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            <p class="mb-1"><strong>States/Provinces:</strong> ${data.states.join(', ')}</p>
-                            <p class="text-muted small mb-0">Last updated: ${new Date(data.last_updated).toLocaleString()}</p>
-                        </div>
-                    </div>
-                `;
-                document.getElementById('statistics-summary').innerHTML = summaryHtml;
+                document.getElementById('total-games').textContent = data.total_games.toLocaleString();
+                document.getElementById('season-range').textContent = `${data.earliest_season}-${data.latest_season}`;
+                document.getElementById('states-coverage').textContent = `${data.states_with_data}/${data.states.length}`;
             })
             .catch(error => {
                 console.error('Error loading statistics:', error);
-                document.getElementById('statistics-summary').innerHTML = 
-                    '<p class="text-danger">Error loading statistics. Please try again later.</p>';
-            });
-
-        // Load line chart
-        fetch(`/static-football-rankings/data/regional-statistics/${regionKey}/games_by_state.html`)
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('line-chart-container').innerHTML = 
-                    `<iframe src="/static-football-rankings/data/regional-statistics/${regionKey}/games_by_state.html" 
-                             width="100%" height="600" frameborder="0"></iframe>`;
-            })
-            .catch(error => {
-                console.error('Error loading line chart:', error);
-                document.getElementById('line-chart-container').innerHTML = 
-                    '<p class="text-danger">Error loading chart. Please try again later.</p>';
-            });
-
-        // Load stacked chart
-        fetch(`/static-football-rankings/data/regional-statistics/${regionKey}/games_stacked.html`)
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('stacked-chart-container').innerHTML = 
-                    `<iframe src="/static-football-rankings/data/regional-statistics/${regionKey}/games_stacked.html" 
-                             width="100%" height="600" frameborder="0"></iframe>`;
-            })
-            .catch(error => {
-                console.error('Error loading stacked chart:', error);
-                document.getElementById('stacked-chart-container').innerHTML = 
-                    '<p class="text-danger">Error loading chart. Please try again later.</p>';
-            });
-
-        // Load bar chart
-        fetch(`/static-football-rankings/data/regional-statistics/${regionKey}/total_by_state.html`)
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('bar-chart-container').innerHTML = 
-                    `<iframe src="/static-football-rankings/data/regional-statistics/${regionKey}/total_by_state.html" 
-                             width="100%" height="500" frameborder="0"></iframe>`;
-            })
-            .catch(error => {
-                console.error('Error loading bar chart:', error);
-                document.getElementById('bar-chart-container').innerHTML = 
-                    '<p class="text-danger">Error loading chart. Please try again later.</p>';
+                document.getElementById('total-games').textContent = 'N/A';
+                document.getElementById('season-range').textContent = 'N/A';
+                document.getElementById('states-coverage').textContent = 'N/A';
             });
     </script>
-
-    <style>
-        .stat-box {
-            text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .stat-box h3 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 5px;
-        }
-        .stat-box p {
-            margin-bottom: 0;
-            font-size: 0.9rem;
-        }
-    </style>
 </body>
 </html>
-
