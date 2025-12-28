@@ -4,8 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Statistics - McKnight's American Football</title>
+    <meta name="description" content="Statistics about the McKnight's American Football Rankings database, including games collected and data coverage.">
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    
+    <style>
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card h3 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 3px;
+            border-radius: 2px;
+        }
+        
+        .legend-bar {
+            width: 20px;
+            height: 12px;
+            border-radius: 2px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Banner -->
@@ -23,78 +92,171 @@
         </nav>
     </div>
 
-    <div class="container mt-4">
-        <h1 class="mb-4">Database Statistics</h1>
+    <div class="container mt-4 mb-5">
+        <h1 class="text-center mb-4">Database Statistics</h1>
+        
+        <div class="alert alert-info" role="alert">
+            <strong>About This Data:</strong> These statistics show the growth and coverage of the McKnight's American Football Rankings database. 
+            The database contains historical high school football game results dating back to 1877, collected from various sources including 
+            newspapers, official records, and historical archives.
+        </div>
 
-        <!-- Summary Statistics -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Database Overview</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="statistics-summary">
-                            <p class="text-muted">Loading statistics...</p>
-                        </div>
-                    </div>
+        <!-- Summary Statistics Cards -->
+        <h2 class="section-title">Database Overview</h2>
+        <div class="row" id="statsCards">
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <h3 id="totalGames">Loading...</h3>
+                    <p>Total Games</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <h3 id="totalSeasons">Loading...</h3>
+                    <p>Seasons Covered</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <h3 id="seasonRange">Loading...</h3>
+                    <p>Year Range</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <h3 id="yearsAdding">Loading...</h3>
+                    <p>Years Collecting</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Season Overview Chart (NEW - at top) -->
+        <h2 class="section-title">Season Overview: Games & Ratings</h2>
+        <div class="chart-container">
+            <p class="text-muted mb-3">
+                This chart shows the total number of games played each season (bars, left axis) alongside team rating statistics 
+                (lines, right axis). The average, maximum, and minimum ratings help illustrate the spread of team performance 
+                across different eras. Note how the number of games has grown dramatically since the early 1900s.
+            </p>
+            <iframe 
+                id="seasonOverviewFrame"
+                src="/static-football-rankings/data/statistics/season_overview.html" 
+                width="100%" 
+                height="580" 
+                frameborder="0"
+                style="border: none;">
+            </iframe>
+            <div class="chart-legend">
+                <div class="legend-item">
+                    <div class="legend-bar" style="background: rgba(55, 128, 191, 0.7);"></div>
+                    <span>Total Games (Left Axis)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FF6B35;"></div>
+                    <span>Avg Rating</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2ECC71;"></div>
+                    <span>Max Rating</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #E74C3C;"></div>
+                    <span>Min Rating</span>
                 </div>
             </div>
         </div>
 
         <!-- Cumulative Games Chart -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Cumulative Games by Season</h5>
-                    </div>
-                    <div class="card-body p-0">
-                        <div id="cumulative-chart-container" style="min-height: 500px;">
-                            <iframe 
-                                id="cumulative-iframe"
-                                src="/static-football-rankings/data/statistics/cumulative_games.html" 
-                                width="100%" 
-                                height="500" 
-                                frameborder="0"
-                                style="border: none; display: block;"
-                                onload="this.style.opacity='1';"
-                                onerror="handleChartError('cumulative-chart-container', 'cumulative games')"
-                            ></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <h2 class="section-title">Cumulative Game Collection Progress</h2>
+        <div class="chart-container">
+            <p class="text-muted mb-3">
+                This chart shows the cumulative growth of games in the database, with each color representing games added in different years. 
+                The stacked areas illustrate how historical data has been gradually collected and added to the database over time.
+            </p>
+            <iframe 
+                id="cumulativeFrame"
+                src="/static-football-rankings/data/statistics/cumulative_games.html" 
+                width="100%" 
+                height="620" 
+                frameborder="0"
+                style="border: none;">
+            </iframe>
         </div>
 
         <!-- Annual Additions Chart -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Games Added by Year</h5>
+        <h2 class="section-title">Annual Data Collection Activity</h2>
+        <div class="chart-container">
+            <p class="text-muted mb-3">
+                This chart displays the number of games added to the database each year, showing periods of active data collection 
+                and research. Note that NULL date_added values are attributed to 2012.
+            </p>
+            <iframe 
+                id="annualFrame"
+                src="/static-football-rankings/data/statistics/annual_additions.html" 
+                width="100%" 
+                height="420" 
+                frameborder="0"
+                style="border: none;">
+            </iframe>
+        </div>
+
+        <!-- Additional Information -->
+        <h2 class="section-title">About the Database</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Sources</h5>
+                        <p class="card-text">
+                            Game data has been collected from various sources including:
+                        </p>
+                        <ul>
+                            <li>Historical newspaper archives (Newspapers.com)</li>
+                            <li>State athletic association records</li>
+                            <li>MaxPreps and other sports databases</li>
+                            <li>Historical society archives</li>
+                            <li>School and program records</li>
+                            <li>LoneStarFootball.net (Texas historical)</li>
+                        </ul>
                     </div>
-                    <div class="card-body p-0">
-                        <div id="annual-chart-container" style="min-height: 400px;">
-                            <iframe 
-                                id="annual-iframe"
-                                src="/static-football-rankings/data/statistics/annual_additions.html" 
-                                width="100%" 
-                                height="400" 
-                                frameborder="0"
-                                style="border: none; display: block;"
-                                onload="this.style.opacity='1';"
-                                onerror="handleChartError('annual-chart-container', 'annual additions')"
-                            ></iframe>
-                        </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Quality</h5>
+                        <p class="card-text">
+                            All game results undergo standardization and verification:
+                        </p>
+                        <ul>
+                            <li>Team names are standardized using an alias mapping system</li>
+                            <li>Duplicate games are identified and removed</li>
+                            <li>OCR results are manually reviewed for accuracy</li>
+                            <li>Sources are documented for each game</li>
+                            <li>Rankings recalculated after each data update</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Regional Statistics Link -->
+        <div class="text-center mt-4 mb-4">
+            <a href="/static-football-rankings/pages/public/regional-statistics/" class="btn btn-primary btn-lg">
+                View Regional Statistics →
+            </a>
+        </div>
+
+        <div class="text-center mt-4">
+            <p class="text-muted">
+                <small>Last Updated: <span id="lastUpdated">Loading...</span></small>
+            </p>
+        </div>
     </div>
 
+    <!-- Footer -->
     <footer class="mt-5 mb-3">
-        <div class="text-center">
+        <div class="container text-center">
             <p>&copy; 2025 McKnight's Football Rankings</p>
         </div>
     </footer>
@@ -102,134 +264,34 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Statistics Loading Script -->
+    <!-- Load and display statistics -->
     <script>
-        // Error handler for chart loading
-        function handleChartError(containerId, chartName) {
-            document.getElementById(containerId).innerHTML = 
-                `<div class="alert alert-warning m-3">
-                    <p>Unable to load ${chartName} chart.</p>
-                    <p class="small text-muted mb-0">The chart file may not exist or there was a loading error.</p>
-                </div>`;
-        }
-
-        // Load summary statistics
+        // Load statistics summary
         fetch('/static-football-rankings/data/statistics/statistics_summary.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                const summaryHtml = `
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="stat-box">
-                                <h3>${data.total_games ? data.total_games.toLocaleString() : 'N/A'}</h3>
-                                <p class="text-muted">Total Games</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="stat-box">
-                                <h3>${data.total_seasons ? data.total_seasons.toLocaleString() : 'N/A'}</h3>
-                                <p class="text-muted">Total Seasons</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="stat-box">
-                                <h3>${data.earliest_season || '?'} - ${data.latest_season || '?'}</h3>
-                                <p class="text-muted">Season Range</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="stat-box">
-                                <h3>${data.years_adding_data || 'N/A'}</h3>
-                                <p class="text-muted">Years of Data Collection</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            <p class="text-muted small">Last updated: ${data.last_updated ? new Date(data.last_updated).toLocaleString() : 'Unknown'}</p>
-                        </div>
-                    </div>
-                `;
-                document.getElementById('statistics-summary').innerHTML = summaryHtml;
+                // Update stat cards
+                document.getElementById('totalGames').textContent = data.total_games.toLocaleString();
+                document.getElementById('totalSeasons').textContent = data.total_seasons.toLocaleString();
+                document.getElementById('seasonRange').textContent = `${data.earliest_season}-${data.latest_season}`;
+                document.getElementById('yearsAdding').textContent = data.years_adding_data;
+                document.getElementById('lastUpdated').textContent = new Date(data.last_updated).toLocaleString();
             })
             .catch(error => {
                 console.error('Error loading statistics:', error);
-                document.getElementById('statistics-summary').innerHTML = `
-                    <div class="alert alert-warning">
-                        <p class="mb-1"><strong>Statistics data not available</strong></p>
-                        <p class="small text-muted mb-0">The statistics summary file could not be loaded. Please ensure the data files have been generated.</p>
-                    </div>
-                `;
+                document.getElementById('totalGames').textContent = 'Error';
+                document.getElementById('totalSeasons').textContent = 'Error';
+                document.getElementById('seasonRange').textContent = 'Error';
+                document.getElementById('yearsAdding').textContent = 'Error';
+                document.getElementById('lastUpdated').textContent = 'Error loading data';
             });
 
-        // Check if iframes loaded successfully after a delay
-        setTimeout(function() {
-            const cumulativeIframe = document.getElementById('cumulative-iframe');
-            const annualIframe = document.getElementById('annual-iframe');
-            
-            // Check cumulative chart
-            try {
-                if (cumulativeIframe && (!cumulativeIframe.contentDocument || 
-                    cumulativeIframe.contentDocument.body.innerHTML.trim() === '')) {
-                    handleChartError('cumulative-chart-container', 'cumulative games');
-                }
-            } catch (e) {
-                // Cross-origin error means it loaded from a different domain (which is fine)
-                console.log('Cumulative chart loaded (cross-origin)');
-            }
-            
-            // Check annual chart
-            try {
-                if (annualIframe && (!annualIframe.contentDocument || 
-                    annualIframe.contentDocument.body.innerHTML.trim() === '')) {
-                    handleChartError('annual-chart-container', 'annual additions');
-                }
-            } catch (e) {
-                // Cross-origin error means it loaded from a different domain (which is fine)
-                console.log('Annual chart loaded (cross-origin)');
-            }
-        }, 3000);
+        // Handle iframe load errors gracefully
+        document.querySelectorAll('iframe').forEach(iframe => {
+            iframe.onerror = function() {
+                this.parentElement.innerHTML = '<p class="text-danger text-center py-5">Error loading chart. Please try refreshing the page.</p>';
+            };
+        });
     </script>
-
-    <style>
-        .stat-box {
-            text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .stat-box h3 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 5px;
-        }
-        .stat-box p {
-            margin-bottom: 0;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .stat-box h3 {
-                font-size: 1.4rem;
-            }
-            .stat-box {
-                padding: 15px;
-            }
-        }
-        
-        /* Iframe styling */
-        iframe {
-            opacity: 0.5;
-            transition: opacity 0.3s ease;
-        }
-    </style>
 </body>
 </html>
