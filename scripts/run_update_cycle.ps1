@@ -1,5 +1,5 @@
 # ========================================================
-#  MASTER UPDATE CYCLE (v4 - Updated December 2025)
+#  MASTER UPDATE CYCLE (v5 - Updated December 2025)
 #  1. Syncs Google Sheets & Images to SQL (Python)
 #  2. Generates Web JSONs (Python for States AND Global)
 #  3. Generates Statistics (Database & Regional)
@@ -43,6 +43,10 @@ Write-Host "STEP 3: Generating Global & Decade JSON Data..." -ForegroundColor Cy
 python generate_global_data.py
 python generate_latest_season.py
 
+# 3. Generate Media National Champions JSON (NEW!)
+Write-Host "  - Generating Media National Champions..." -ForegroundColor Yellow
+python generate_media_champions_json.py
+
 # ---------------------------------------------------------
 # STEP 4: GENERATE STATISTICS (PYTHON)
 # ---------------------------------------------------------
@@ -78,7 +82,7 @@ git add .
 
 # Commit
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm"
-git commit -m "Master Cycle Update: Synced Sheets, Images, State, Global, and Statistics Data ($timestamp)"
+git commit -m "Master Cycle Update: Synced Sheets, Images, State, Global, Media NC, and Statistics Data ($timestamp)"
 
 # Push
 git push origin main
@@ -91,6 +95,7 @@ Write-Host "Generated:" -ForegroundColor White
 Write-Host "  - State Teams & Programs JSON" -ForegroundColor Gray
 Write-Host "  - All-Time & Decade JSON" -ForegroundColor Gray
 Write-Host "  - Latest Season JSON" -ForegroundColor Gray
+Write-Host "  - Media National Champions JSON (NEW!)" -ForegroundColor Gray
 Write-Host "  - Database Statistics (cumulative/annual charts)" -ForegroundColor Gray
 Write-Host "  - Regional Statistics (5 regions)" -ForegroundColor Gray
 Write-Host "  - All HTML Pages" -ForegroundColor Gray

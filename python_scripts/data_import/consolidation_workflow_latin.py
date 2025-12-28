@@ -71,21 +71,30 @@ def generate_and_update_correction_file(state_code, file_path):
             existing_df = pd.concat([existing_df, new_rows_df], ignore_index=True)
             logging.info(f"Added {len(new_aliases)} new aliases to the file.")
         
-        # Filter out rows where GameCount is 0 (alias has been fully replaced)
-        original_count = len(existing_df)
-        existing_df = existing_df[existing_df['GameCount'] > 0]
-        filtered_count = original_count - len(existing_df)
+        # Count how many have zero occurrences
+        zero_count = len(existing_df[existing_df['GameCount'] == 0])
+        active_count = len(existing_df[existing_df['GameCount'] > 0])
         
-        if filtered_count > 0:
-            logging.info(f"Filtered out {filtered_count} aliases with GameCount = 0 (no longer in use).")
+        if zero_count > 0:
+            logging.info(f"Found {zero_count} aliases with GameCount = 0 (already replaced, kept for future imports).")
         
-        # Sort by GameCount (descending) for easier review
-        existing_df = existing_df.sort_values('GameCount', ascending=False)
+        # Sort: Active aliases first (by GameCount descending), then zero-count aliases at bottom
+        existing_df = existing_df.sort_values(['GameCount'], ascending=[False])
         
-        # Save the updated file
+        # Save the FULL file (including zero-count rows)
         existing_df.to_csv(file_path, index=False, encoding='latin1')
         logging.info(f"SUCCESS: Updated '{file_path}' with current GameCount values.")
-        logging.info(f"File now contains {len(existing_df)} active aliases (GameCount > 0).")
+        logging.info(f"Full file contains {len(existing_df)} total aliases:")
+        logging.info(f"  - {active_count} active aliases (GameCount > 0)")
+        logging.info(f"  - {zero_count} inactive aliases (GameCount = 0, ready for future imports)")
+        
+        # Create a filtered "working" file for easier review
+        if active_count > 0:
+            base_name = file_path.rsplit('.', 1)[0]
+            working_file = f"{base_name}_ACTIVE.csv"
+            active_df = existing_df[existing_df['GameCount'] > 0].copy()
+            active_df.to_csv(working_file, index=False, encoding='latin1')
+            logging.info(f"ALSO CREATED: '{working_file}' with only active aliases for easier review.")
         
     else:
         # Create new file from scratch

@@ -1,4 +1,8 @@
-# consolidation_workflow.py (v2 - Staging Table Method)
+# geocoding_consolidation_workflow.py
+"""
+Special workflow for updating team names that are missing latitude/longitude data.
+This uses the (LL) state code to manage geocoding cleanup.
+"""
 import pandas as pd
 import pyodbc
 import logging
@@ -11,127 +15,35 @@ SERVER_NAME = "McKnights-PC\\SQLEXPRESS01"
 DATABASE_NAME = "hs_football_database"
 RULES_FOLDER = "C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames"
 STAGING_TABLE_NAME = "ConsolidationRules_Staging"
+GEOCODING_FILE = "LL_Alias_Rules.csv"
 # --- END CONFIGURATION ---
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def get_state_code():
-    """Prompts the user to enter a valid state code."""
-    while True:
-        state_abbr = input("Please enter the 2-letter state abbreviation (e.g., MD, MA): ").upper()
-        if len(state_abbr) == 2 and state_abbr.isalpha():
-            return f"({state_abbr})"
-        else:
-            print("Invalid input. Please enter a 2-letter abbreviation.")
-
-def generate_and_update_correction_file(state_code, file_path):
-    """Calls the SQL procedure to get the list of problems and updates the CSV file."""
-    logging.info(f"Generating diagnostic list for state {state_code}...")
-    
-    existing_aliases = set()
-    if os.path.exists(file_path):
-        try:
-            df_existing = pd.read_csv(file_path)
-            if 'Alias_Name' in df_existing.columns:
-                existing_aliases = set(df_existing['Alias_Name'])
-                logging.info(f"Loaded {len(existing_aliases)} existing aliases from {file_path}")
-        except Exception:
-            logging.warning(f"Could not read existing file at {file_path}. A new file will be created.")
-
-    new_problem_rows = []
-    try:
-        conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER_NAME};DATABASE={DATABASE_NAME};Trusted_Connection=yes;'
-        with pyodbc.connect(conn_str) as conn:
-            with conn.cursor() as cursor:
-                cursor.execute("EXEC dbo.sp_CreateStateCleanupList @StateCode = ?", state_code)
-                cursor.nextset() # Skip SOUNDEX results
-                
-                rows = cursor.fetchall()
-                for row in rows:
-                    if row.TeamName not in existing_aliases:
-                        # Append the name and the game count
-                        new_problem_rows.append({'Alias_Name': row.TeamName, 'GameCount': row.GameCount, 'Standardized_Name': ''})
-    except Exception:
-        logging.exception("Failed to run diagnostic procedure.")
-        return False
-
-    if new_problem_rows:
-        logging.info(f"Found {len(new_problem_rows)} new problematic names to add to the correction file.")
-        new_rows_df = pd.DataFrame(new_problem_rows)
-        
-        # Append to existing file or create a new one with the correct 3 columns
-        new_rows_df.to_csv(file_path, mode='a', header=not os.path.exists(file_path), index=False)
-        logging.info(f"SUCCESS: The file '{file_path}' has been created/updated with a 'GameCount' column.")
-        logging.info("Please open the file, fill in the 'Standardized_Name' column, and save it.")
-    else:
-        logging.info("No new problematic names found. Your correction file is up to date.")
-    
-    return True
-
-def run_consolidation_from_staging(state_code, file_path):
-    """Uploads rules to a staging table and then executes the consolidation procedure."""
-    logging.info(f"Starting consolidation for state: {state_code} using staging table method.")
-    
-    try:
-        # Step 1: Upload CSV to a staging table
-        # FIX: Added encoding='latin1' to handle manual file edits.
-        df = pd.read_csv(file_path, encoding='latin1') 
-        required_columns = ['Alias_Name', 'Standardized_Name']
-        df.dropna(subset=required_columns, inplace=True)
-        df = df[df['Standardized_Name'].str.strip() != '']
-        
-        # Prepare dataframe for upload
-        df_to_upload = df[required_columns].rename(columns={'Alias_Name': 'OldName', 'Standardized_Name': 'NewName'})
-        
-        if df_to_upload.empty:
-            logging.warning("No completed rules found in the correction file. Nothing to process.")
-            return
-
-        engine = create_engine(f'mssql+pyodbc://{SERVER_NAME}/{DATABASE_NAME}?driver=ODBC+Driver+17+for+SQL Server&trusted_connection=yes')
-        
-        logging.info(f"Uploading {len(df_to_upload)} rules to staging table: {STAGING_TABLE_NAME}...")
-        df_to_upload.to_sql(STAGING_TABLE_NAME, con=engine, if_exists='replace', index=False)
-        logging.info("Upload to staging table complete.")
-
-        # Step 2: Execute the stored procedure that uses the staging table
-        conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER_NAME};DATABASE={DATABASE_NAME};Trusted_Connection=yes;'
-        with pyodbc.connect(conn_str, autocommit=True) as conn:
-            with conn.cursor() as cursor:
-                logging.info("Executing dbo.sp_ConsolidateNames_FromStaging...")
-                # Note: This executes the name change AND clears the geocodes for the old names.
-                cursor.execute("EXEC dbo.sp_ConsolidateNames_FromStaging @StateCode = ?", state_code) 
-                logging.info("SUCCESS: Consolidation from staging table is complete.")
-
-    except Exception:
-        logging.exception("An error occurred during the consolidation process.")
-
-        # Step 2: Execute the stored procedure that uses the staging table
-        conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER_NAME};DATABASE={DATABASE_NAME};Trusted_Connection=yes;'
-        with pyodbc.connect(conn_str, autocommit=True) as conn:
-            with conn.cursor() as cursor:
-                logging.info("Executing dbo.sp_ConsolidateNames_FromStaging...")
-                cursor.execute("EXEC dbo.sp_ConsolidateNames_FromStaging @StateCode = ?", state_code)
-                logging.info("SUCCESS: Consolidation from staging table is complete.")
-
-    except Exception:
-        logging.exception("An error occurred during the consolidation process.")
-
-# --- ADDED: Dual-purpose function (handles global list without SP) ---
 def generate_global_cleanup_file(file_path):
     """
-    Generates a list of all names where Latitude IS NULL (Global Geocoding List)
-    with a true GameCount.
+    Generates a list of all team names where Latitude IS NULL (Global Geocoding List)
+    with actual GameCount from HS_Scores table.
     """
     logging.info("Generating global geocoding cleanup list...")
     
+    # Step 1: Load existing file if it exists
+    existing_df = None
+    if os.path.exists(file_path):
+        try:
+            existing_df = pd.read_csv(file_path, encoding='latin1')
+            logging.info(f"Loaded existing file with {len(existing_df)} rows from {file_path}")
+        except Exception:
+            logging.warning(f"Could not read existing file at {file_path}. A new file will be created.")
+    
+    # Step 2: Get current game counts from database for teams missing geocodes
     try:
         conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER_NAME};DATABASE={DATABASE_NAME};Trusted_Connection=yes;'
         with pyodbc.connect(conn_str) as conn:
-            
-            # The corrected query using [ID], [Home], and [Visitor]
+            # Query for teams missing latitude with their game counts
             query = """
             SELECT
-                t.[Team_Name],
+                t.[Team_Name] AS Alias_Name,
                 COUNT(s.[ID]) AS GameCount
             FROM
                 [dbo].[HS_Team_Names] t
@@ -146,69 +58,134 @@ def generate_global_cleanup_file(file_path):
             """
             
             df_problems = pd.read_sql(query, conn)
+            logging.info(f"Retrieved {len(df_problems)} teams missing geocodes from database.")
             
     except Exception:
         logging.exception("Failed to run global diagnostic query.")
         return False
 
-    if not df_problems.empty:
-        # Check if the dataframe contains the GameCount column before renaming
-        if 'GameCount' not in df_problems.columns:
-             logging.error("Query failed to return 'GameCount' column. Check SQL column names.")
-             return False
-             
-        df_problems.rename(columns={'Team_Name': 'Alias_Name'}, inplace=True)
-        df_problems['Standardized_Name'] = ''
-        
-        # Save the new list
-        # Note: The original file creation logic is preserved here.
-        df_problems.to_csv(file_path, index=False)
-        logging.info(f"SUCCESS: The global file '{file_path}' has been created with {len(df_problems)} problematic names.")
-        logging.info("Please open the file, fill in the 'Standardized_Name' column, and save it.")
-    else:
+    if df_problems.empty:
         logging.info("No missing geolocations found. Database is fully geocoded!")
+        return True
     
+    # Step 3: Process the data
+    if existing_df is not None:
+        # Update existing GameCount values
+        existing_df['GameCount'] = existing_df['Alias_Name'].map(
+            dict(zip(df_problems['Alias_Name'], df_problems['GameCount']))
+        ).fillna(0).astype(int)
+        
+        # Add any new names that aren't in the existing file
+        existing_aliases = set(existing_df['Alias_Name'])
+        new_aliases = set(df_problems['Alias_Name']) - existing_aliases
+        
+        if new_aliases:
+            new_rows = df_problems[df_problems['Alias_Name'].isin(new_aliases)].copy()
+            new_rows['Standardized_Name'] = ''
+            existing_df = pd.concat([existing_df, new_rows], ignore_index=True)
+            logging.info(f"Added {len(new_aliases)} new teams to the file.")
+        
+        # Count active vs inactive
+        zero_count = len(existing_df[existing_df['GameCount'] == 0])
+        active_count = len(existing_df[existing_df['GameCount'] > 0])
+        
+        if zero_count > 0:
+            logging.info(f"Found {zero_count} teams with GameCount = 0 (already geocoded, kept for reference).")
+        
+        # Sort by GameCount (descending)
+        existing_df = existing_df.sort_values(['GameCount'], ascending=[False])
+        
+        # Save the FULL file
+        existing_df.to_csv(file_path, index=False, encoding='latin1')
+        logging.info(f"SUCCESS: Updated '{file_path}' with current GameCount values.")
+        logging.info(f"Full file contains {len(existing_df)} total teams:")
+        logging.info(f"  - {active_count} teams missing geocodes (GameCount > 0)")
+        logging.info(f"  - {zero_count} teams already geocoded (GameCount = 0)")
+        
+        # Create filtered "active" file
+        if active_count > 0:
+            base_name = file_path.rsplit('.', 1)[0]
+            working_file = f"{base_name}_ACTIVE.csv"
+            active_df = existing_df[existing_df['GameCount'] > 0].copy()
+            active_df.to_csv(working_file, index=False, encoding='latin1')
+            logging.info(f"ALSO CREATED: '{working_file}' with only teams needing geocodes for easier review.")
+    else:
+        # Create new file from scratch
+        df_problems['Standardized_Name'] = ''
+        df_problems.to_csv(file_path, index=False, encoding='latin1')
+        logging.info(f"SUCCESS: Created new file '{file_path}' with {len(df_problems)} teams missing geocodes.")
+    
+    logging.info("Please open the file, fill in the 'Standardized_Name' column for teams to consolidate, and save it.")
     return True
 
-if __name__ == "__main__":
-    # Main Workflow Logic
-    # ... (code for RULES_FOLDER check remains unchanged) ...
+def run_consolidation_from_staging(file_path):
+    """Uploads rules to staging table and executes the consolidation procedure for geocoding cleanup."""
+    logging.info("Starting geocoding consolidation using staging table method.")
+    
+    try:
+        # Step 1: Upload CSV to staging table
+        df = pd.read_csv(file_path, encoding='latin1')
+        required_columns = ['Alias_Name', 'Standardized_Name']
+        
+        # Convert to string to avoid .str accessor errors
+        df['Standardized_Name'] = df['Standardized_Name'].astype(str)
+        df['Alias_Name'] = df['Alias_Name'].astype(str)
+        
+        # Only process rows where Standardized_Name is filled in
+        df = df.dropna(subset=required_columns)
+        df = df[df['Standardized_Name'].str.strip() != '']
+        
+        # Prepare dataframe for upload
+        df_to_upload = df[required_columns].rename(columns={'Alias_Name': 'OldName', 'Standardized_Name': 'NewName'})
+        
+        if df_to_upload.empty:
+            logging.warning("No completed rules found in the correction file. Nothing to process.")
+            return False
 
+        engine = create_engine(f'mssql+pyodbc://{SERVER_NAME}/{DATABASE_NAME}?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes')
+        
+        logging.info(f"Uploading {len(df_to_upload)} rules to staging table: {STAGING_TABLE_NAME}...")
+        df_to_upload.to_sql(STAGING_TABLE_NAME, con=engine, if_exists='replace', index=False)
+        logging.info("Upload to staging table complete.")
+
+        # Step 2: Execute the stored procedure (uses (LL) as state code)
+        conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER_NAME};DATABASE={DATABASE_NAME};Trusted_Connection=yes;'
+        with pyodbc.connect(conn_str, autocommit=True) as conn:
+            with conn.cursor() as cursor:
+                logging.info("Executing dbo.sp_ConsolidateNames_FromStaging with state code (LL)...")
+                cursor.execute("EXEC dbo.sp_ConsolidateNames_FromStaging @StateCode = ?", "(LL)")
+                logging.info("SUCCESS: Geocoding consolidation complete.")
+                logging.info("Note: This clears geocodes for old names - they will need to be re-geocoded.")
+        
+        return True
+
+    except Exception:
+        logging.exception("An error occurred during the geocoding consolidation process.")
+        return False
+
+if __name__ == "__main__":
+    if not os.path.exists(RULES_FOLDER):
+        os.makedirs(RULES_FOLDER)
+
+    correction_file_path = os.path.join(RULES_FOLDER, GEOCODING_FILE)
+
+    print("\n=== GEOCODING CONSOLIDATION WORKFLOW ===")
+    print("This workflow manages team names that are missing latitude/longitude data.")
     print("\nSelect an action:")
-    print("1: Generate/Update correction file for a specific STATE (uses SP).")
-    print("2: Run consolidation for a specific STATE (uses staging table).")
-    print("3: Generate GLOBAL correction file (Missing Latitudes).")
+    print("1: Generate or Update the geocoding correction file (LL_Alias_Rules.csv).")
+    print("2: Run the consolidation using the completed correction file.")
     
     while True:
-        action = input("Enter your choice (1, 2, or 3): ")
-        if action in ['1', '2', '3']:
+        action = input("Enter your choice (1 or 2): ")
+        if action in ['1', '2']:
             break
         else:
             print("Invalid choice.")
-    
-    # --- GET CODE/DEFINE PATH BASED ON ACTION ---
-    if action in ['1', '2']:
-        state_code_display = get_state_code() # Prompts for state code (e.g., "(TX)")
-        file_name = f"{state_code_display.strip('()')}_Alias_Rules.csv"
-    elif action == '3':
-        # --- AUTOMATICALLY SET STATE CODE FOR GLOBAL GEOLOCATION ---
-        state_code_display = "(LL)" # Sets the code to (LL)
-        file_name = "LL_Alias_Rules.csv" # Forces the filename to LL_Alias_Rules.csv
 
-    correction_file_path = os.path.join(RULES_FOLDER, file_name)
-
-    # --- EXECUTE ACTIONS ---
     if action == '1':
-        # Executes the original state-specific stored procedure (SP) logic
-        generate_and_update_correction_file(state_code_display, correction_file_path)
-    
-    elif action == '2':
-        # Executes the original state-specific consolidation logic
-        if not os.path.exists(correction_file_path):
-            logging.error(f"Correction file not found at {correction_file_path}. Please run option 1 or 3 first.")
-        else:
-            run_consolidation_from_staging(state_code_display, correction_file_path)
-    
-    elif action == '3':
-        # Executes the new global geocoding cleanup logic
         generate_global_cleanup_file(correction_file_path)
+    elif action == '2':
+        if not os.path.exists(correction_file_path):
+            logging.error(f"Correction file not found at {correction_file_path}. Please run option 1 first.")
+        else:
+            run_consolidation_from_staging(correction_file_path)
