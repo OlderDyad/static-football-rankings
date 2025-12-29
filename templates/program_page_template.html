@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ team_name }} Football Program History</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .program-header {
+            background: linear-gradient(135deg, {{ primary_color }} 0%, {{ secondary_color }} 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        .stat-box {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            margin: 0.5rem;
+        }
+        .stat-box h3 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .stat-box p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .season-row:hover {
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
+        .championship-badge {
+            background: gold;
+            color: #000;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .rating-excellent { color: #28a745; font-weight: bold; }
+        .rating-good { color: #17a2b8; }
+        .rating-average { color: #6c757d; }
+        .nav-tabs .nav-link.active {
+            background-color: {{ primary_color }};
+            color: white;
+            border-color: {{ primary_color }};
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/media-national-champions.html">Media Champions</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ team_name }} Program</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Program Header -->
+    <header class="program-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                    {% if logo_url %}
+                    <img src="{{ logo_url }}" alt="{{ team_name }} logo" class="img-fluid" style="max-width: 120px;">
+                    {% else %}
+                    <div style="width:120px; height:120px; background:white; border-radius:50%; margin:auto; display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-football-ball fa-3x" style="color: {{ primary_color }};"></i>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-7">
+                    <h1 class="display-3 mb-0">{{ team_name }}</h1>
+                    <p class="lead mb-0">{{ mascot }} | {{ city }}, {{ state }}</p>
+                    {% if stadium %}
+                    <p class="mb-0"><i class="fas fa-map-marker-alt"></i> {{ stadium }}</p>
+                    {% endif %}
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>{{ national_championships }}</h3>
+                                <p>National Titles</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>#{{ all_time_rank }}</h3>
+                                <p>All-Time Rank</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="stat-box">
+                                <h3>{{ total_seasons }}</h3>
+                                <p>Seasons ({{ first_season }}-{{ last_season }})</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs mb-4" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#seasons" type="button">
+                    <i class="fas fa-calendar-alt"></i> All Seasons
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#championships" type="button">
+                    <i class="fas fa-trophy"></i> Championships
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#coaches" type="button">
+                    <i class="fas fa-user-tie"></i> Coaches
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#decades" type="button">
+                    <i class="fas fa-chart-line"></i> By Decade
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            
+            <!-- All Seasons Tab -->
+            <div class="tab-pane fade show active" id="seasons" role="tabpanel">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">Season-by-Season History</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Season</th>
+                                        <th>Record</th>
+                                        <th>Rating</th>
+                                        <th>Rank</th>
+                                        <th>Championships</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for season in seasons %}
+                                    <tr class="season-row">
+                                        <td><strong>{{ season.year }}</strong></td>
+                                        <td>{{ season.record }}</td>
+                                        <td class="{{ season.rating_class }}">{{ season.rating }}</td>
+                                        <td>{{ season.rank }}</td>
+                                        <td>
+                                            {% if season.is_national_champion %}
+                                            <span class="championship-badge">🏆 National</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if season.has_page %}
+                                            <a href="season/{{ season.year }}.html" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-arrow-right"></i> View Season
+                                            </a>
+                                            {% else %}
+                                            <span class="text-muted">Coming Soon</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Championships Tab -->
+            <div class="tab-pane fade" id="championships" role="tabpanel">
+                <div class="row">
+                    {% for championship in championships %}
+                    <div class="col-md-6 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header" style="background: gold; color: #000;">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-trophy"></i> {{ championship.season }} National Championship
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Record:</strong> {{ championship.record }}</p>
+                                {% if championship.coach %}
+                                <p><strong>Coach:</strong> {{ championship.coach }}</p>
+                                {% endif %}
+                                <p><strong>Source:</strong> {{ championship.source }}</p>
+                                {% if championship.has_season_page %}
+                                <a href="season/{{ championship.season }}.html" class="btn btn-primary">
+                                    View Championship Season <i class="fas fa-arrow-right"></i>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Coaches Tab -->
+            <div class="tab-pane fade" id="coaches" role="tabpanel">
+                {% if coaches %}
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">Coaching History</h5>
+                    </div>
+                    <div class="card-body">
+                        {% for coach in coaches %}
+                        <div class="border-bottom pb-3 mb-3">
+                            <h5>{{ coach.name }}</h5>
+                            <p class="mb-1"><strong>Years:</strong> {{ coach.start_year }}-{{ coach.end_year or 'Present' }}</p>
+                            {% if coach.record %}
+                            <p class="mb-1"><strong>Record:</strong> {{ coach.record }}</p>
+                            {% endif %}
+                            {% if coach.championships %}
+                            <p class="mb-1"><strong>Championships:</strong> {{ coach.championships }}</p>
+                            {% endif %}
+                            {% if coach.notes %}
+                            <p class="text-muted mb-0">{{ coach.notes }}</p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% else %}
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> Coaching history data coming soon.
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- By Decade Tab -->
+            <div class="tab-pane fade" id="decades" role="tabpanel">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">Performance by Decade</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Decade</th>
+                                        <th>Seasons</th>
+                                        <th>Avg Rating</th>
+                                        <th>Best Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for decade in decades %}
+                                    <tr>
+                                        <td><strong>{{ decade.decade }}s</strong></td>
+                                        <td>{{ decade.seasons }}</td>
+                                        <td>{{ decade.avg_rating }}</td>
+                                        <td class="rating-excellent">{{ decade.best_rating }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 py-4 text-center text-muted bg-light">
+        <div class="container">
+            <p class="mb-0">
+                Generated by McKnight's American Football Rankings | 
+                <a href="/static-football-rankings/pages/public/media-national-champions.html">Back to Media Champions</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # Define paths and connection string
 $logFile = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\logs\mcknight-national-champions.log"
 $outputDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\mcknight-national-champions"
-$connectionString = "Server=MCKNIGHTS-PC\SQLEXPRESS01;Database=hs_football_database;Trusted_Connection=True;TrustServerCertificate=True"
+# $connectionString is handled by Connect-Database in common-functions
 
 # Ensure directories exist and clear old files
 New-Item -ItemType Directory -Force -Path (Split-Path $logFile) | Out-Null
@@ -22,7 +22,7 @@ function Parse-DecimalSafe {
         [object]$Value,
         [decimal]$DefaultValue = 0
     )
-    
+
     try {
         if ($null -eq $Value -or [string]::IsNullOrWhiteSpace("$Value")) {
             return $DefaultValue
@@ -42,7 +42,7 @@ function Parse-IntSafe {
         [object]$Value,
         [int]$DefaultValue = 0
     )
-    
+
     try {
         if ($null -eq $Value -or [string]::IsNullOrWhiteSpace("$Value")) {
             return $DefaultValue
@@ -59,7 +59,7 @@ try {
     # Connect to the database
     $connection = Connect-Database
     Write-Host "Database connection established"
-    
+
     # Execute SQL query to get McKnight national champions
     Write-Host "Processing McKnight National Champions..."
     $command = New-Object System.Data.SqlClient.SqlCommand("EXEC dbo.Get_McKnight_National_Champions", $connection)
@@ -74,29 +74,50 @@ try {
         # Convert DataTable to array of objects and ensure proper data types
         $champions = @()
         foreach ($row in $championsTable.Rows) {
+            
+            # --- PHASE 4: LINK GENERATION LOGIC ---
+            $linkHtml = ""
+            
+            # Check if Has_Team_Page column exists (in case SQL wasn't updated yet)
+            if ($championsTable.Columns.Contains("Has_Team_Page") -and $row["Has_Team_Page"] -eq 1 -and -not [string]::IsNullOrEmpty($row["Team_Page_URL"])) {
+                # Page Exists: Blue Link Icon
+                $url = $row["Team_Page_URL"]
+                $linkHtml = "<a href='$url' class='team-link icon-only' title='View Team Page'><i class='fas fa-external-link-alt'></i></a>"
+            } else {
+                # No Page: Gray Square
+                $linkHtml = "<span class='no-page-icon' title='Page coming soon'>□</span>"
+            }
+            # --------------------------------------
+
             $champion = [PSCustomObject]@{
                 year = $row["year"]
                 team = $row["team"]
                 state = $row["state"]
+                record = $row["Record"] # Explicitly adding Record
+                sources = $row["Sources"] # Explicitly adding Sources
                 combined = Parse-DecimalSafe -Value $row["combined"]
                 margin = Parse-DecimalSafe -Value $row["margin"]
                 win_loss = Parse-DecimalSafe -Value $row["win_loss"]
                 offense = Parse-DecimalSafe -Value $row["offense"]
                 defense = Parse-DecimalSafe -Value $row["defense"]
                 games_played = Parse-IntSafe -Value $row["games_played"]
+                
                 logoURL = $row["logoURL"]
                 schoolLogoURL = $row["schoolLogoURL"]
                 backgroundColor = $row["backgroundColor"]
                 textColor = $row["textColor"]
                 mascot = $row["mascot"]
+                
+                # Add the generated HTML to the JSON object
+                teamLinkHtml = $linkHtml
             }
             $champions += $champion
         }
-        
+
         # Get most recent champion for the topItem
         $mostRecentYear = ($champions | Sort-Object -Property year -Descending)[0].year
         $topChampion = $champions | Where-Object { $_.year -eq $mostRecentYear }
-        
+
         # Create JSON structure with champions sorted by year
         $jsonData = @{
             topItem = $topChampion
@@ -112,9 +133,10 @@ try {
 
         # Write JSON data to file
         $outputPath = Join-Path $outputDir "mcknight-national-champions.json"
-        $jsonString = ConvertTo-Json -InputObject $jsonData -Depth 10
+        # Increased depth to ensure objects serialize correctly
+        $jsonString = ConvertTo-Json -InputObject $jsonData -Depth 10 
         Set-Content -Path $outputPath -Value $jsonString -Encoding UTF8
-        
+
         Write-Host "File written: $outputPath"
         Write-Host "File last modified: $(Get-Item $outputPath).LastWriteTime"
 
