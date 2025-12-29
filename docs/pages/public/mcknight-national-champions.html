@@ -1791,62 +1791,281 @@ async function submitComment() {
     const textEl = document.getElementById('commentText');
     const text = textEl.value.trim();
     if (!text) return alert('Please enter a comment');
-
-    const pageId = getPageId();
-
-    try {
-        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text, pageId })
-        });
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        const data = await res.json();
-        if (data.success) {
-            textEl.value = '';
-            await fetchComments();
-        } else {
-            alert('Error posting comment: ' + (data.error || 'Unknown error'));
-        }
-    } catch (err) {
-        console.error('Error posting comment:', err);
-        alert('Failed to post comment. Please try again later.');
-    }
-}
-
-function escapeHTML(str) {
-    if (!str) return '';
-    return str
-        .toString()
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
-function getPageId() {
-    const el = document.querySelector('[data-page-name]');
-    return el ? el.getAttribute('data-page-name') : 'unknown';
-}
-
-// Initialize
-document.getElementById('submitComment')?.addEventListener('click', submitComment);
-
-(async function initPage() {
-    try {
-        await Promise.all([
-            checkLoginStatus(),
-            fetchComments()
-        ]);
-    } catch (error) {
-        console.warn('Page initialization error:', error);
-    }
-})();
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McKnight National Champions | HS Football Database</title>
     
-    <!-- TopBanner initialization -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    
+    <meta name="data-file" content="/static-football-rankings/data/mcknight_national_champions.json">
+    
+    <div data-page-name="mcknight-national-champions" style="display:none;"></div>
+
+    <style>
+        /* Team Link Styling */
+        .team-link {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .team-link:hover {
+            color: #003366;
+            text-decoration: underline;
+        }
+        .icon-only {
+            font-size: 1.1em;
+            padding: 5px;
+        }
+        .no-page-icon {
+            color: #ddd;
+            font-size: 1.1em;
+            cursor: help;
+        }
+        /* Center the link column */
+        th.text-center, td.text-center {
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        /* Loading State */
+        #loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top-banner-container"></div>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">McKnight National Champions</h1>
+        <p class="lead">
+            Historical National Champions as recognized by the McKnight publication system.
+        </p>
+
+        <div id="loading">
+            <i class="fas fa-spinner fa-spin fa-2x"></i><br>
+            Loading data...
+        </div>
+
+        <div class="table-responsive">
+            <table id="rankingsTable" class="table table-striped table-hover" style="display:none;">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Year</th>
+                        <th>Team</th>
+                        <th>State</th>
+                        <th>Record</th>
+                        <th>Combined</th>
+                        <th>Margin</th>
+                        <th>W/L</th>
+                        <th>Off</th>
+                        <th>Def</th>
+                        <th>Sources</th>
+                        <th class="text-center">Link</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="mt-5 mb-5">
+            <h3>Discussion</h3>
+            <div id="comments-section">
+                </div>
+            
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5>Leave a Comment</h5>
+                    <textarea id="commentText" class="form-control mb-3" rows="3" placeholder="Join the discussion..."></textarea>
+                    <button id="submitComment" class="btn btn-primary">Post Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableBody = document.getElementById('tableBody');
+            const loading = document.getElementById('loading');
+            const table = document.getElementById('rankingsTable');
+            const dataFile = document.querySelector('meta[name="data-file"]').content;
+
+            // Fetch and Render Table
+            fetch(dataFile + '?t=' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading, show table
+                    loading.style.display = 'none';
+                    table.style.display = 'table';
+                    
+                    // Access the array inside the JSON structure (adjust based on your actual JSON structure)
+                    // Assuming data is an array or data.data is the array
+                    const records = Array.isArray(data) ? data : (data.data || []);
+
+                    records.forEach(item => {
+                        const row = document.createElement('tr');
+                        
+                        // UPDATED: Row generation with the new Link column
+                        row.innerHTML = `
+                            <td>${item.year || ''}</td>
+                            <td style="font-weight:600;">${item.team || ''}</td>
+                            <td>${item.state || ''}</td>
+                            <td>${item.record || ''}</td>
+                            <td>${item.combined || ''}</td>
+                            <td>${item.margin || ''}</td>
+                            <td>${item.winLoss || ''}</td>
+                            <td>${item.offense || ''}</td>
+                            <td>${item.defense || ''}</td>
+                            <td>${item.sources || ''}</td>
+                            <td class="text-center">
+                                ${item.teamLinkHtml || '<span class="no-page-icon" title="Page coming soon">□</span>'}
+                            </td>
+                        `;
+                        
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading data:', error);
+                    loading.innerHTML = '<div class="alert alert-danger">Failed to load data. Please try again later.</div>';
+                });
+        });
+    </script>
+
+    <script type="module">
+        // Import Config
+        import { VERCEL_API_BASE } from '/static-football-rankings/js/config.js';
+        
+        // --- Authentication & Comments Logic ---
+        async function checkLoginStatus() {
+            try {
+                const res = await fetch(`${VERCEL_API_BASE}/auth/status`, { credentials: 'include' });
+                const data = await res.json();
+                const btn = document.getElementById('submitComment');
+                const box = document.getElementById('commentText');
+                
+                if (!data.loggedIn) {
+                    if (box) {
+                        box.placeholder = 'Please log in to comment';
+                        box.disabled = true;
+                    }
+                    if (btn) {
+                        btn.textContent = 'Log In to Comment';
+                        btn.onclick = () => window.location.href = '/login.html?redirect=' + encodeURIComponent(window.location.pathname);
+                    }
+                } else {
+                    if (btn) btn.disabled = false;
+                    if (box) box.disabled = false;
+                }
+            } catch (e) {
+                console.error('Auth check failed:', e);
+            }
+        }
+
+        async function fetchComments() {
+            const pageId = getPageId();
+            const container = document.getElementById('comments-section');
+            if(!container) return;
+            
+            container.innerHTML = '<p class="text-muted">Loading comments...</p>';
+            
+            try {
+                const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${pageId}`);
+                const comments = await res.json();
+                
+                if (comments.length === 0) {
+                    container.innerHTML = '<p class="text-muted">No comments yet. Be the first!</p>';
+                    return;
+                }
+                
+                container.innerHTML = comments.map(c => `
+                    <div class="card mb-2">
+                        <div class="card-body py-2">
+                            <div class="d-flex justify-content-between">
+                                <strong class="small">${escapeHTML(c.username)}</strong>
+                                <small class="text-muted">${new Date(c.created_at).toLocaleDateString()}</small>
+                            </div>
+                            <p class="mb-0 mt-1">${escapeHTML(c.text)}</p>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (err) {
+                container.innerHTML = '<p class="text-danger">Failed to load comments.</p>';
+            }
+        }
+
+        async function submitComment() {
+            const textEl = document.getElementById('commentText');
+            const text = textEl.value.trim();
+            if (!text) return;
+            
+            const pageId = getPageId();
+
+            try {
+                const res = await fetch(`${VERCEL_API_BASE}/comments`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text, pageId })
+                });
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                const data = await res.json();
+                if (data.success) {
+                    textEl.value = '';
+                    await fetchComments();
+                } else {
+                    alert('Error posting comment: ' + (data.error || 'Unknown error'));
+                }
+            } catch (err) {
+                console.error('Error posting comment:', err);
+                alert('Failed to post comment. Please try again later.');
+            }
+        }
+
+        function escapeHTML(str) {
+            if (!str) return '';
+            return str
+                .toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function getPageId() {
+            const el = document.querySelector('[data-page-name]');
+            return el ? el.getAttribute('data-page-name') : 'unknown';
+        }
+
+        // Initialize Comments
+        const submitBtn = document.getElementById('submitComment');
+        if(submitBtn) submitBtn.addEventListener('click', submitComment);
+
+        // Run Init
+        (async function initPage() {
+            try {
+                await Promise.all([
+                    checkLoginStatus(),
+                    fetchComments()
+                ]);
+            } catch (error) {
+                console.warn('Page initialization error:', error);
+            }
+        })();
+    </script>
+    
     <script type="module">
         import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
         document.addEventListener('DOMContentLoaded', async () => {
@@ -1859,170 +2078,164 @@ document.getElementById('submitComment')?.addEventListener('click', submitCommen
             }
         });
     </script>
-<script>
-(function(){
-    // Color name to hex lookup table
-    const colorNameToHex = {
-        'aliceblue':'#f0f8ff','antiquewhite':'#faebd7','aqua':'#00ffff','aquamarine':'#7fffd4',
-        'azure':'#f0ffff','beige':'#f5f5dc','bisque':'#ffe4c4','black':'#000000',
-        'blanchedalmond':'#ffebcd','blue':'#0000ff','blueviolet':'#8a2be2','brown':'#a52a2a',
-        'burlywood':'#deb887','cadetblue':'#5f9ea0','chartreuse':'#7fff00','chocolate':'#d2691e',
-        'coral':'#ff7f50','cornflowerblue':'#6495ed','cornsilk':'#fff8dc','crimson':'#dc143c',
-        'cyan':'#00ffff','darkblue':'#00008b','darkcyan':'#008b8b','darkgoldenrod':'#b8860b',
-        'darkgray':'#a9a9a9','darkgreen':'#006400','darkkhaki':'#bdb76b','darkmagenta':'#8b008b',
-        'darkolivegreen':'#556b2f','darkorange':'#ff8c00','darkorchid':'#9932cc','darkred':'#8b0000',
-        'darksalmon':'#e9967a','darkseagreen':'#8fbc8f','darkslateblue':'#483d8b','darkslategray':'#2f4f4f',
-        'darkturquoise':'#00ced1','darkviolet':'#9400d3','deeppink':'#ff1493','deepskyblue':'#00bfff',
-        'dimgray':'#696969','dodgerblue':'#1e90ff','firebrick':'#b22222','floralwhite':'#fffaf0',
-        'forestgreen':'#228b22','fuchsia':'#ff00ff','gainsboro':'#dcdcdc','ghostwhite':'#f8f8ff',
-        'gold':'#ffd700','goldenrod':'#daa520','gray':'#808080','green':'#008000',
-        'greenyellow':'#adff2f','honeydew':'#f0fff0','hotpink':'#ff69b4','indianred':'#cd5c5c',
-        'indigo':'#4b0082','ivory':'#fffff0','khaki':'#f0e68c','lavender':'#e6e6fa',
-        'lavenderblush':'#fff0f5','lawngreen':'#7cfc00','lemonchiffon':'#fffacd','lightblue':'#add8e6',
-        'lightcoral':'#f08080','lightcyan':'#e0ffff','lightgoldenrodyellow':'#fafad2','lightgray':'#d3d3d3',
-        'lightgreen':'#90ee90','lightpink':'#ffb6c1','lightsalmon':'#ffa07a','lightseagreen':'#20b2aa',
-        'lightskyblue':'#87cefa','lightslategray':'#778899','lightsteelblue':'#b0c4de','lightyellow':'#ffffe0',
-        'lime':'#00ff00','limegreen':'#32cd32','linen':'#faf0e6','magenta':'#ff00ff',
-        'maroon':'#800000','mediumaquamarine':'#66cdaa','mediumblue':'#0000cd','mediumorchid':'#ba55d3',
-        'mediumpurple':'#9370db','mediumseagreen':'#3cb371','mediumslateblue':'#7b68ee','mediumspringgreen':'#00fa9a',
-        'mediumturquoise':'#48d1cc','mediumvioletred':'#c71585','midnightblue':'#191970','mintcream':'#f5fffa',
-        'mistyrose':'#ffe4e1','moccasin':'#ffe4b5','navajowhite':'#ffdead','navy':'#000080',
-        'oldlace':'#fdf5e6','olive':'#808000','olivedrab':'#6b8e23','orange':'#ffa500',
-        'orangered':'#ff4500','orchid':'#da70d6','palegoldenrod':'#eee8aa','palegreen':'#98fb98',
-        'paleturquoise':'#afeeee','palevioletred':'#db7093','papayawhip':'#ffefd5','peachpuff':'#ffdab9',
-        'peru':'#cd853f','pink':'#ffc0cb','plum':'#dda0dd','powderblue':'#b0e0e6',
-        'purple':'#800080','rebeccapurple':'#663399','red':'#ff0000','rosybrown':'#bc8f8f',
-        'royalblue':'#4169e1','saddlebrown':'#8b4513','salmon':'#fa8072','sandybrown':'#f4a460',
-        'seagreen':'#2e8b57','seashell':'#fff5ee','sienna':'#a0522d','silver':'#c0c0c0',
-        'skyblue':'#87ceeb','slateblue':'#6a5acd','slategray':'#708090','snow':'#fffafa',
-        'springgreen':'#00ff7f','steelblue':'#4682b4','tan':'#d2b48c','teal':'#008080',
-        'thistle':'#d8bfd8','tomato':'#ff6347','turquoise':'#40e0d0','violet':'#ee82ee',
-        'wheat':'#f5deb3','white':'#ffffff','whitesmoke':'#f5f5f5','yellow':'#ffff00','yellowgreen':'#9acd32',
-        // Common school colors
-        'cardinal':'#c41e3a','scarlet':'#ff2400','vegas gold':'#c5b358','columbia blue':'#9bddff',
-        'burnt orange':'#cc5500','kelly green':'#4cbb17'
-    };
 
-    function normalizeColor(color) {
-        if (!color) return null;
-        color = color.trim();
-        // Already a hex code
-        if (color.startsWith('#')) return color;
-        // Look up named color
-        const hex = colorNameToHex[color.toLowerCase()];
-        if (hex) return hex;
-        // Try as-is (browser might handle it)
-        return color;
-    }
+    <script>
+    (function(){
+        // Color name to hex lookup table
+        const colorNameToHex = {
+            'aliceblue':'#f0f8ff','antiquewhite':'#faebd7','aqua':'#00ffff','aquamarine':'#7fffd4',
+            'azure':'#f0ffff','beige':'#f5f5dc','bisque':'#ffe4c4','black':'#000000',
+            'blanchedalmond':'#ffebcd','blue':'#0000ff','blueviolet':'#8a2be2','brown':'#a52a2a',
+            'burlywood':'#deb887','cadetblue':'#5f9ea0','chartreuse':'#7fff00','chocolate':'#d2691e',
+            'coral':'#ff7f50','cornflowerblue':'#6495ed','cornsilk':'#fff8dc','crimson':'#dc143c',
+            'cyan':'#00ffff','darkblue':'#00008b','darkcyan':'#008b8b','darkgoldenrod':'#b8860b',
+            'darkgray':'#a9a9a9','darkgreen':'#006400','darkkhaki':'#bdb76b','darkmagenta':'#8b008b',
+            'darkolivegreen':'#556b2f','darkorange':'#ff8c00','darkorchid':'#9932cc','darkred':'#8b0000',
+            'darksalmon':'#e9967a','darkseagreen':'#8fbc8f','darkslateblue':'#483d8b','darkslategray':'#2f4f4f',
+            'darkturquoise':'#00ced1','darkviolet':'#9400d3','deeppink':'#ff1493','deepskyblue':'#00bfff',
+            'dimgray':'#696969','dodgerblue':'#1e90ff','firebrick':'#b22222','floralwhite':'#fffaf0',
+            'forestgreen':'#228b22','fuchsia':'#ff00ff','gainsboro':'#dcdcdc','ghostwhite':'#f8f8ff',
+            'gold':'#ffd700','goldenrod':'#daa520','gray':'#808080','green':'#008000',
+            'greenyellow':'#adff2f','honeydew':'#f0fff0','hotpink':'#ff69b4','indianred':'#cd5c5c',
+            'indigo':'#4b0082','ivory':'#fffff0','khaki':'#f0e68c','lavender':'#e6e6fa',
+            'lavenderblush':'#fff0f5','lawngreen':'#7cfc00','lemonchiffon':'#fffacd','lightblue':'#add8e6',
+            'lightcoral':'#f08080','lightcyan':'#e0ffff','lightgoldenrodyellow':'#fafad2','lightgray':'#d3d3d3',
+            'lightgreen':'#90ee90','lightpink':'#ffb6c1','lightsalmon':'#ffa07a','lightseagreen':'#20b2aa',
+            'lightskyblue':'#87cefa','lightslategray':'#778899','lightsteelblue':'#b0c4de','lightyellow':'#ffffe0',
+            'lime':'#00ff00','limegreen':'#32cd32','linen':'#faf0e6','magenta':'#ff00ff',
+            'maroon':'#800000','mediumaquamarine':'#66cdaa','mediumblue':'#0000cd','mediumorchid':'#ba55d3',
+            'mediumpurple':'#9370db','mediumseagreen':'#3cb371','mediumslateblue':'#7b68ee','mediumspringgreen':'#00fa9a',
+            'mediumturquoise':'#48d1cc','mediumvioletred':'#c71585','midnightblue':'#191970','mintcream':'#f5fffa',
+            'mistyrose':'#ffe4e1','moccasin':'#ffe4b5','navajowhite':'#ffdead','navy':'#000080',
+            'oldlace':'#fdf5e6','olive':'#808000','olivedrab':'#6b8e23','orange':'#ffa500',
+            'orangered':'#ff4500','orchid':'#da70d6','palegoldenrod':'#eee8aa','palegreen':'#98fb98',
+            'paleturquoise':'#afeeee','palevioletred':'#db7093','papayawhip':'#ffefd5','peachpuff':'#ffdab9',
+            'peru':'#cd853f','pink':'#ffc0cb','plum':'#dda0dd','powderblue':'#b0e0e6',
+            'purple':'#800080','rebeccapurple':'#663399','red':'#ff0000','rosybrown':'#bc8f8f',
+            'royalblue':'#4169e1','saddlebrown':'#8b4513','salmon':'#fa8072','sandybrown':'#f4a460',
+            'seagreen':'#2e8b57','seashell':'#fff5ee','sienna':'#a0522d','silver':'#c0c0c0',
+            'skyblue':'#87ceeb','slateblue':'#6a5acd','slategray':'#708090','snow':'#fffafa',
+            'springgreen':'#00ff7f','steelblue':'#4682b4','tan':'#d2b48c','teal':'#008080',
+            'thistle':'#d8bfd8','tomato':'#ff6347','turquoise':'#40e0d0','violet':'#ee82ee',
+            'wheat':'#f5deb3','white':'#ffffff','whitesmoke':'#f5f5f5','yellow':'#ffff00','yellowgreen':'#9acd32',
+            // Common school colors
+            'cardinal':'#c41e3a','scarlet':'#ff2400','vegas gold':'#c5b358','columbia blue':'#9bddff',
+            'burnt orange':'#cc5500','kelly green':'#4cbb17'
+        };
 
-    function hexToRgba(hex, opacity) {
-        if (!hex) return null;
-        hex = normalizeColor(hex);
-        if (!hex || !hex.startsWith('#')) return null;
-        
-        hex = hex.replace('#', '');
-        if(hex.length === 3) {
-            hex = hex[0]+hex[0] + hex[1]+hex[1] + hex[2]+hex[2];
+        function normalizeColor(color) {
+            if (!color) return null;
+            color = color.trim();
+            if (color.startsWith('#')) return color;
+            const hex = colorNameToHex[color.toLowerCase()];
+            if (hex) return hex;
+            return color;
         }
-        if(hex.length !== 6) return null;
-        
-        const r = parseInt(hex.substring(0, 2), 16);
-        const g = parseInt(hex.substring(2, 4), 16);
-        const b = parseInt(hex.substring(4, 6), 16);
-        if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
-        return 'rgba(' + r + ',' + g + ',' + b + ',' + opacity + ')';
-    }
-    
-    function applyColors(bg, text) {
-        // Normalize colors (convert names to hex)
-        bg = normalizeColor(bg);
-        text = normalizeColor(text) || '#ffffff';
-        
-        if (!bg) {
-            console.warn('Could not normalize background color');
-            return;
-        }
-        
-        // Create rgba versions
-        const bgLight = hexToRgba(bg, 0.08) || 'rgba(52, 58, 64, 0.08)';
-        const bgHover = hexToRgba(bg, 0.18) || 'rgba(52, 58, 64, 0.18)';
-        
-        // Set CSS variables on :root (works with styles.css)
-        document.documentElement.style.setProperty('--team-primary', bg);
-        document.documentElement.style.setProperty('--team-text', text);
-        document.documentElement.style.setProperty('--team-primary-light', bgLight);
-        
-        // Inject direct styles as backup
-        const style = document.createElement('style');
-        style.id = 'dynamic-team-colors';
-        style.textContent = 
-            'thead th, thead tr, .table thead, .table thead th {' +
-            '  background-color: ' + bg + ' !important;' +
-            '  color: ' + text + ' !important;' +
-            '}' +
-            '.table-striped > tbody > tr:nth-of-type(odd) > * {' +
-            '  --bs-table-accent-bg: ' + bgLight + ' !important;' +
-            '  background-color: ' + bgLight + ' !important;' +
-            '}' +
-            '.table-striped > tbody > tr:nth-of-type(even) > * {' +
-            '  --bs-table-accent-bg: #ffffff !important;' +
-            '}' +
-            '.table-hover > tbody > tr:hover > * {' +
-            '  --bs-table-accent-bg: ' + bgHover + ' !important;' +
-            '  background-color: ' + bgHover + ' !important;' +
-            '}' +
-            '.btn-primary {' +
-            '  background-color: ' + bg + ' !important;' +
-            '  border-color: ' + bg + ' !important;' +
-            '  color: ' + text + ' !important;' +
-            '}' +
-            '.btn-outline-primary {' +
-            '  color: ' + bg + ' !important;' +
-            '  border-color: ' + bg + ' !important;' +
-            '}' +
-            '.btn-outline-primary:hover {' +
-            '  background-color: ' + bg + ' !important;' +
-            '  color: ' + text + ' !important;' +
-            '}' +
-            '.page-item.active .page-link {' +
-            '  background-color: ' + bg + ' !important;' +
-            '  border-color: ' + bg + ' !important;' +
-            '  color: ' + text + ' !important;' +
-            '}' +
-            '.page-link {' +
-            '  color: ' + bg + ' !important;' +
-            '}';
-        
-        const existing = document.getElementById('dynamic-team-colors');
-        if (existing) existing.remove();
-        
-        document.head.appendChild(style);
-        console.log('Applied team colors:', bg, text);
-    }
-    
-    async function init() {
-        try {
-            const meta = document.querySelector('meta[name="data-file"]');
-            if (!meta) return;
+
+        function hexToRgba(hex, opacity) {
+            if (!hex) return null;
+            hex = normalizeColor(hex);
+            if (!hex || !hex.startsWith('#')) return null;
             
-            const resp = await fetch(meta.getAttribute('content') + '?t=' + new Date().getTime());
-            if (!resp.ok) return;
-            const data = await resp.json();
-            
-            if (data.topItem && data.topItem.backgroundColor) {
-                applyColors(data.topItem.backgroundColor, data.topItem.textColor);
+            hex = hex.replace('#', '');
+            if(hex.length === 3) {
+                hex = hex[0]+hex[0] + hex[1]+hex[1] + hex[2]+hex[2];
             }
-        } catch (e) {
-            console.warn('Table color init:', e);
+            if(hex.length !== 6) return null;
+            
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
+            return 'rgba(' + r + ',' + g + ',' + b + ',' + opacity + ')';
         }
-    }
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
-})();
-</script>
+        
+        function applyColors(bg, text) {
+            bg = normalizeColor(bg);
+            text = normalizeColor(text) || '#ffffff';
+            
+            if (!bg) {
+                console.warn('Could not normalize background color');
+                return;
+            }
+            
+            const bgLight = hexToRgba(bg, 0.08) || 'rgba(52, 58, 64, 0.08)';
+            const bgHover = hexToRgba(bg, 0.18) || 'rgba(52, 58, 64, 0.18)';
+            
+            document.documentElement.style.setProperty('--team-primary', bg);
+            document.documentElement.style.setProperty('--team-text', text);
+            document.documentElement.style.setProperty('--team-primary-light', bgLight);
+            
+            const style = document.createElement('style');
+            style.id = 'dynamic-team-colors';
+            style.textContent = 
+                'thead th, thead tr, .table thead, .table thead th {' +
+                '  background-color: ' + bg + ' !important;' +
+                '  color: ' + text + ' !important;' +
+                '}' +
+                '.table-striped > tbody > tr:nth-of-type(odd) > * {' +
+                '  --bs-table-accent-bg: ' + bgLight + ' !important;' +
+                '  background-color: ' + bgLight + ' !important;' +
+                '}' +
+                '.table-striped > tbody > tr:nth-of-type(even) > * {' +
+                '  --bs-table-accent-bg: #ffffff !important;' +
+                '}' +
+                '.table-hover > tbody > tr:hover > * {' +
+                '  --bs-table-accent-bg: ' + bgHover + ' !important;' +
+                '  background-color: ' + bgHover + ' !important;' +
+                '}' +
+                '.btn-primary {' +
+                '  background-color: ' + bg + ' !important;' +
+                '  border-color: ' + bg + ' !important;' +
+                '  color: ' + text + ' !important;' +
+                '}' +
+                '.btn-outline-primary {' +
+                '  color: ' + bg + ' !important;' +
+                '  border-color: ' + bg + ' !important;' +
+                '}' +
+                '.btn-outline-primary:hover {' +
+                '  background-color: ' + bg + ' !important;' +
+                '  color: ' + text + ' !important;' +
+                '}' +
+                '.page-item.active .page-link {' +
+                '  background-color: ' + bg + ' !important;' +
+                '  border-color: ' + bg + ' !important;' +
+                '  color: ' + text + ' !important;' +
+                '}' +
+                '.page-link {' +
+                '  color: ' + bg + ' !important;' +
+                '}';
+            
+            const existing = document.getElementById('dynamic-team-colors');
+            if (existing) existing.remove();
+            
+            document.head.appendChild(style);
+            console.log('Applied team colors:', bg, text);
+        }
+        
+        async function init() {
+            try {
+                const meta = document.querySelector('meta[name="data-file"]');
+                if (!meta) return;
+                
+                const resp = await fetch(meta.getAttribute('content') + '?t=' + new Date().getTime());
+                if (!resp.ok) return;
+                const data = await resp.json();
+                
+                if (data.topItem && data.topItem.backgroundColor) {
+                    applyColors(data.topItem.backgroundColor, data.topItem.textColor);
+                }
+            } catch (e) {
+                console.warn('Table color init:', e);
+            }
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
 </body>
 </html>
