@@ -13,7 +13,6 @@ Open your terminal:
 Navigate to your script directory: 
 
 
-
 Activate your virtual environment (if needed): 
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
@@ -24,7 +23,11 @@ Run the script:
 
 **CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\**
 
-**python consolidation_workflow.py**
+**python consolidation_workflow_v3.py**
+
+**python update_media_national_champions.py**
+
+**python ambiguous_names_cleanup.py**
 
 for latin letters names
 **python consolidation_workflow_latin.py**

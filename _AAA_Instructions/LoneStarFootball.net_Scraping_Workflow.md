@@ -1,9 +1,9 @@
 # LoneStar Football Pre-2004 Data Import Workflow
 
 ## 📋 VERY QUICK START GUIDE
-python lonestar_raw_collector.py 1941 2940
-python export_team_range_to_excel.py 1941 2940
-python import_lonestar_universal.py "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\HSF Texas 2025_teams_1941-2940_v1.xlsx"
+python lonestar_raw_collector.py 2486 2685
+python export_team_range_to_excel.py 2486 2685
+python import_lonestar_universal.py "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\HSF Texas 2025_teams_2487-3643_v1.xlsx"
 
 
 
