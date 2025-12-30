@@ -1062,6 +1062,7 @@ function Process-McKnightNationalChampions {
         <td>$offense</td>
         <td>$defense</td>
         <td>$($_.games_played)</td>
+        <td class="text-center">$($_.teamLinkHtml)</td>
     </tr>
 "@
                 }
@@ -1508,6 +1509,7 @@ function Process-MediaNationalChampions {
         <td>$defense</td>
         <td>$($_.games_played)</td>
         <td>$source</td>
+        <td class="text-center">$($_.teamLinkHtml)</td>
     </tr>
 "@
                 }
