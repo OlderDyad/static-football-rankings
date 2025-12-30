@@ -1482,7 +1482,7 @@ function Process-MediaNationalChampions {
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
                 # Generate table rows with improved value handling
-                $tableRows = $championsData.items | ForEach-Object {
+                $tableRows = $championsData | ForEach-Object {
                     # Clean up the source/notes to make it more readable
                     $source = if ($_.source) { 
                         ($_.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim() 
@@ -1750,7 +1750,7 @@ function Process-MediaNationalChampions {
                 
                 # Create a sorted array of champions
                 $champions = @()
-                foreach ($item in $championsData.items) {
+                foreach ($item in $championsData) {
                     # Convert combined to a numeric value
                     $combinedValue = 0
                     if ($null -ne $item.combined) {
@@ -1775,7 +1775,8 @@ function Process-MediaNationalChampions {
                         Defense = if ($null -ne $item.defense) { [math]::Round([double]$item.defense, 3) } else { "" }
                         GamesPlayed = $item.games_played
                         Source = if ($item.source) { 
-                            ($item.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim() 
+                            ($item.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim()
+                        teamLinkHtml = $item.teamLinkHtml                         
                         } else { 
                             "N/A" 
                         }
@@ -1785,7 +1786,7 @@ function Process-MediaNationalChampions {
                 # Sort by Combined (highest to lowest)
                 $sortedChampions = $champions | Sort-Object -Property Combined -Descending
                 
-                Write-Host "Original count: $($championsData.items.Count)"
+                Write-Host "Original count: $($championsData.Count)"
                 Write-Host "Sorted count: $($sortedChampions.Count)"
                 
                 # First team should have highest combined value
@@ -1806,6 +1807,7 @@ function Process-MediaNationalChampions {
         <td>$($_.Defense)</td>
         <td>$($_.GamesPlayed)</td>
         <td>$($_.Source)</td>
+        <td class="text-center">$($_.teamLinkHtml)</td>
     </tr>
 "@
                 }
