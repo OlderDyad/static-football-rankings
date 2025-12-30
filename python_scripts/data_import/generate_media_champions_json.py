@@ -1,7 +1,7 @@
 # generate_media_champions_json.py
 """
 Generate Media National Champions JSON with team page links
-Updated to include link icons for teams with program pages
+CORRECTED OUTPUT PATH
 """
 
 import pyodbc
@@ -14,7 +14,8 @@ from decimal import Decimal
 # --- CONFIGURATION ---
 SERVER_NAME = "McKnights-PC\\SQLEXPRESS01"
 DATABASE_NAME = "hs_football_database"
-OUTPUT_FILE = "C:/Users/demck/OneDrive/Football_2024/static-football-rankings/docs/pages/public/data/media-national-champions.json"
+# CORRECTED PATH - matches existing structure
+OUTPUT_FILE = "C:/Users/demck/OneDrive/Football_2024/static-football-rankings/docs/data/media-national-champions/media-national-champions.json"
 # --- END CONFIGURATION ---
 
 logging.basicConfig(
@@ -74,16 +75,15 @@ def generate_json():
                 # Generate link HTML based on hasProgramPage flag
                 if champion.get('hasProgramPage') and champion.get('programPageUrl'):
                     # Team has a program page - show link icon
-                    champion['teamLinkHtml'] = f'<a href="{champion["programPageUrl"]}" class="team-link" title="View {champion["team"]} program page" target="_blank"><i class="fas fa-external-link-alt"></i></a>'
-                else:
+                    champion['teamLinkHtml'] = '<span class="no-page-icon" style="color:#ddd;" title="Page coming soon">&#9633;</span>'
                     # No program page yet - show placeholder
-                    champion['teamLinkHtml'] = '<span class="no-page-icon" style="color:#ddd;" title="Page coming soon">□</span>'
+                    champion['teamLinkHtml'] = '<span class="no-page-icon" style="color:#ddd;" title="Page coming soon">&#9633</span>'
                 
                 champions.append(champion)
             
             # Create output directory if needed
             os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-            logging.info(f"Creating output directory: {os.path.dirname(OUTPUT_FILE)}")
+            logging.info(f"Output directory: {os.path.dirname(OUTPUT_FILE)}")
             
             # Write JSON file
             logging.info(f"Writing JSON to: {OUTPUT_FILE}")
@@ -120,7 +120,7 @@ def generate_json():
             logging.info("=" * 60)
             logging.info("")
             
-            # Show sample of 2025 champions
+            # Show sample
             logging.info("2025 Champions:")
             for c in champions:
                 if c['year'] == 2025:
@@ -130,6 +130,7 @@ def generate_json():
             
             logging.info("")
             logging.info("✓ JSON generation complete!")
+            logging.info(f"✓ File location: {OUTPUT_FILE}")
             
             return True
             

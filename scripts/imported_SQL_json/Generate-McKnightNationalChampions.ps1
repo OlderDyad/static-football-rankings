@@ -85,7 +85,7 @@ try {
                 $linkHtml = "<a href='$url' class='team-link icon-only' title='View Team Page'><i class='fas fa-external-link-alt'></i></a>"
             } else {
                 # No Page: Gray Square
-                $linkHtml = "<span class='no-page-icon' title='Page coming soon'>□</span>"
+                $linkHtml = "<span class='no-page-icon' title='Page coming soon'>&#9633;</span>"
             }
             # --------------------------------------
 
@@ -135,7 +135,7 @@ try {
         $outputPath = Join-Path $outputDir "mcknight-national-champions.json"
         # Increased depth to ensure objects serialize correctly
         $jsonString = ConvertTo-Json -InputObject $jsonData -Depth 10 
-        Set-Content -Path $outputPath -Value $jsonString -Encoding UTF8
+        [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.UTF8Encoding]::new($false))
 
         Write-Host "File written: $outputPath"
         Write-Host "File last modified: $(Get-Item $outputPath).LastWriteTime"
