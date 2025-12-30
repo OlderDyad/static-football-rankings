@@ -1,7 +1,10 @@
+# Generate-McKnightNationalChampions.ps1
+# UPDATED: Uses new stored procedure with HS_Rating_Rankings
+# Generates JSON with same structure as All-Time Programs
+
 # Define paths and connection string
 $logFile = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\logs\mcknight-national-champions.log"
 $outputDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\mcknight-national-champions"
-# $connectionString is handled by Connect-Database in common-functions
 
 # Ensure directories exist and clear old files
 New-Item -ItemType Directory -Force -Path (Split-Path $logFile) | Out-Null
@@ -10,7 +13,7 @@ Remove-Item "$outputDir\mcknight-national-champions.json" -ErrorAction SilentlyC
 
 # Start logging
 Get-Date | Out-File $logFile
-"Starting McKnight National Champions generation" | Tee-Object -FilePath $logFile -Append
+"Starting McKnight National Champions generation (NEW VERSION)" | Tee-Object -FilePath $logFile -Append
 
 # Import common functions
 . ".\common-functions.ps1"
@@ -22,7 +25,6 @@ function Parse-DecimalSafe {
         [object]$Value,
         [decimal]$DefaultValue = 0
     )
-
     try {
         if ($null -eq $Value -or [string]::IsNullOrWhiteSpace("$Value")) {
             return $DefaultValue
@@ -35,34 +37,14 @@ function Parse-DecimalSafe {
     }
 }
 
-# Helper function to safely parse integer values
-function Parse-IntSafe {
-    param (
-        [Parameter(Mandatory=$false)]
-        [object]$Value,
-        [int]$DefaultValue = 0
-    )
-
-    try {
-        if ($null -eq $Value -or [string]::IsNullOrWhiteSpace("$Value")) {
-            return $DefaultValue
-        }
-        return [int]::Parse("$Value")
-    }
-    catch {
-        "Warning: Could not parse value '$Value' to integer, using default value $DefaultValue" | Tee-Object -FilePath $logFile -Append
-        return $DefaultValue
-    }
-}
-
 try {
     # Connect to the database
     $connection = Connect-Database
     Write-Host "Database connection established"
 
-    # Execute SQL query to get McKnight national champions
-    Write-Host "Processing McKnight National Champions..."
-    $command = New-Object System.Data.SqlClient.SqlCommand("EXEC dbo.Get_McKnight_National_Champions", $connection)
+    # Execute NEW stored procedure
+    Write-Host "Processing McKnight National Champions (Rating-based)..."
+    $command = New-Object System.Data.SqlClient.SqlCommand("EXEC dbo.sp_Get_McKnight_National_Champions", $connection)
     $adapter = New-Object System.Data.SqlClient.SqlDataAdapter($command)
     $dataset = New-Object System.Data.DataSet
     $adapter.Fill($dataset)
@@ -71,36 +53,35 @@ try {
         $championsTable = $dataset.Tables[0]
         Write-Host "Retrieved $($championsTable.Rows.Count) McKnight National Champions"
 
-        # Convert DataTable to array of objects and ensure proper data types
+        # Convert DataTable to array of objects
         $champions = @()
         foreach ($row in $championsTable.Rows) {
             
-            # --- PHASE 4: LINK GENERATION LOGIC ---
+            # Generate link HTML
             $linkHtml = ""
-            
-            # Check if Has_Team_Page column exists (in case SQL wasn't updated yet)
-            if ($championsTable.Columns.Contains("Has_Team_Page") -and $row["Has_Team_Page"] -eq 1 -and -not [string]::IsNullOrEmpty($row["Team_Page_URL"])) {
-                # Page Exists: Blue Link Icon
-                $url = $row["Team_Page_URL"]
-                $linkHtml = "<a href='$url' class='team-link icon-only' title='View Team Page'><i class='fas fa-external-link-alt'></i></a>"
+            if ($row["hasProgramPage"] -eq 1 -and -not [string]::IsNullOrEmpty($row["programPageUrl"])) {
+                # Page Exists: Link icon
+                $url = $row["programPageUrl"]
+                $linkHtml = "<a href='$url' class='team-link' title='View Team Page'><i class='fas fa-external-link-alt'></i></a>"
             } else {
-                # No Page: Gray Square
-                $linkHtml = "<span class='no-page-icon' title='Page coming soon'>&#9633;</span>"
+                # No Page: HTML entity square
+                $linkHtml = "<span class='no-page-icon' style='color:#ddd;' title='Page coming soon'>&#9633;</span>"
             }
-            # --------------------------------------
-
+            
             $champion = [PSCustomObject]@{
                 year = $row["year"]
                 team = $row["team"]
                 state = $row["state"]
-                record = $row["Record"] # Explicitly adding Record
-                sources = $row["Sources"] # Explicitly adding Sources
+                record = $row["record"]
+                wins = $row["wins"]
+                losses = $row["losses"]
+                ties = $row["ties"]
                 combined = Parse-DecimalSafe -Value $row["combined"]
                 margin = Parse-DecimalSafe -Value $row["margin"]
-                win_loss = Parse-DecimalSafe -Value $row["win_loss"]
+                winLoss = Parse-DecimalSafe -Value $row["winLoss"]
                 offense = Parse-DecimalSafe -Value $row["offense"]
                 defense = Parse-DecimalSafe -Value $row["defense"]
-                games_played = Parse-IntSafe -Value $row["games_played"]
+                gamesPlayed = $row["gamesPlayed"]
                 
                 logoURL = $row["logoURL"]
                 schoolLogoURL = $row["schoolLogoURL"]
@@ -108,43 +89,43 @@ try {
                 textColor = $row["textColor"]
                 mascot = $row["mascot"]
                 
-                # Add the generated HTML to the JSON object
+                teamId = $row["teamId"]
+                hasProgramPage = [bool]$row["hasProgramPage"]
+                programPageUrl = $row["programPageUrl"]
                 teamLinkHtml = $linkHtml
             }
             $champions += $champion
         }
 
-        # Get most recent champion for the topItem
+        # Get most recent champion for topItem
         $mostRecentYear = ($champions | Sort-Object -Property year -Descending)[0].year
         $topChampion = $champions | Where-Object { $_.year -eq $mostRecentYear }
 
-        # Create JSON structure with champions sorted by year
+        # Create JSON structure (matches All-Time Programs format)
         $jsonData = @{
             topItem = $topChampion
             items = $champions
             metadata = @{
                 timestamp = (Get-Date).ToString("o")
                 type = "mcknight-national-champions"
-                yearRange = "all-time"
+                description = "McKnight's National Champions (Rating-Based)"
                 totalItems = $champions.Count
-                description = "McKnight's American Football National Champions"
+                source = "HS_Rating_Rankings"
             }
         }
 
         # Write JSON data to file
         $outputPath = Join-Path $outputDir "mcknight-national-champions.json"
-        # Increased depth to ensure objects serialize correctly
         $jsonString = ConvertTo-Json -InputObject $jsonData -Depth 10 
-        [System.IO.File]::WriteAllText($outputPath, $template, [System.Text.UTF8Encoding]::new($false))
+        Set-Content -Path $outputPath -Value $jsonString -Encoding UTF8
 
         Write-Host "File written: $outputPath"
-        Write-Host "File last modified: $(Get-Item $outputPath).LastWriteTime"
-
-        # Log success
+        Write-Host "Total champions: $($champions.Count)"
         "File generated: $outputPath" | Tee-Object -FilePath $logFile -Append
+        "Total champions: $($champions.Count)" | Tee-Object -FilePath $logFile -Append
     } else {
-        Write-Host "No McKnight National Champions data available in the dataset" -ForegroundColor Yellow
-        "No McKnight National Champions data available in the dataset" | Tee-Object -FilePath $logFile -Append
+        Write-Host "No McKnight National Champions data available" -ForegroundColor Yellow
+        "No data available" | Tee-Object -FilePath $logFile -Append
     }
 }
 catch {
