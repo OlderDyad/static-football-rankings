@@ -1,5 +1,5 @@
 # ========================================================
-#  MASTER UPDATE CYCLE (v5 - Updated December 2025)
+#  MASTER UPDATE CYCLE (v6 - Updated December 31, 2025)
 #  1. Syncs Google Sheets & Images to SQL (Python)
 #  2. Generates Web JSONs (Python for States AND Global)
 #  3. Generates Statistics (Database & Regional)
@@ -34,18 +34,22 @@ Write-Host "STEP 2: Generating State JSON Data..." -ForegroundColor Cyan
 python generate_site_data.py
 
 # ---------------------------------------------------------
-# STEP 3: GENERATE GLOBAL DATA (PYTHON)
+# STEP 3: GENERATE GLOBAL DATA (PYTHON & POWERSHELL)
 # ---------------------------------------------------------
 Write-Host "STEP 3: Generating Global & Decade JSON Data..." -ForegroundColor Cyan
 
 # 2. Generate All-Time & Decade Lists (1980s, 1990s, etc.)
-# This uses your new script to apply colors/logos to global lists
 python generate_global_data.py
 python generate_latest_season.py
 
-# 3. Generate Media National Champions JSON (NEW!)
+# 3. Generate National Champions JSON
 Write-Host "  - Generating Media National Champions..." -ForegroundColor Yellow
 python generate_media_champions_json.py
+
+Write-Host "  - Generating McKnight National Champions..." -ForegroundColor Yellow
+Set-Location $psScriptsDir
+.\Generate-McKnightNationalChampions.ps1
+Set-Location $pythonDir
 
 # ---------------------------------------------------------
 # STEP 4: GENERATE STATISTICS (PYTHON)
@@ -82,7 +86,7 @@ git add .
 
 # Commit
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm"
-git commit -m "Master Cycle Update: Synced Sheets, Images, State, Global, Media NC, and Statistics Data ($timestamp)"
+git commit -m "Master Cycle Update: Synced Sheets, Images, State, Global, Media & McKnight NC, and Statistics Data ($timestamp)"
 
 # Push
 git push origin main
@@ -95,7 +99,8 @@ Write-Host "Generated:" -ForegroundColor White
 Write-Host "  - State Teams & Programs JSON" -ForegroundColor Gray
 Write-Host "  - All-Time & Decade JSON" -ForegroundColor Gray
 Write-Host "  - Latest Season JSON" -ForegroundColor Gray
-Write-Host "  - Media National Champions JSON (NEW!)" -ForegroundColor Gray
+Write-Host "  - Media National Champions JSON" -ForegroundColor Gray
+Write-Host "  - McKnight National Champions JSON" -ForegroundColor Gray
 Write-Host "  - Database Statistics (cumulative/annual charts)" -ForegroundColor Gray
 Write-Host "  - Regional Statistics (5 regions)" -ForegroundColor Gray
 Write-Host "  - All HTML Pages" -ForegroundColor Gray
