@@ -1482,9 +1482,9 @@ function Process-MediaNationalChampions {
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
                 # Generate table rows with improved value handling
-                $tableRows = $championsData | ForEach-Object {
+                $tableRows = $championsData.items | ForEach-Object {
                     # Clean up the source/notes to make it more readable
-                    $source = if ($_.source) { 
+                    $source = if ($_.sources) { 
                         ($_.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim() 
                     } else { 
                         "N/A" 
