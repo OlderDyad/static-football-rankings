@@ -1,7 +1,7 @@
 # generate_media_champions_json.py
 """
 Generate Media National Champions JSON
-Uses sp_Get_Media_National_Champions procedure
+Focus: Championship recognition details (not rating breakdowns)
 """
 
 import pyodbc
@@ -49,7 +49,7 @@ def generate_json():
             rows = cursor.fetchall()
             logging.info(f"Retrieved {len(rows)} champions from database")
             
-            # Convert to list of dictionaries with snake_case
+            # Convert to list of dictionaries
             champions = []
             for row in rows:
                 champion = {}
@@ -78,6 +78,16 @@ def generate_json():
                 else:
                     # No program page yet - show placeholder with HTML entity
                     champion['teamLinkHtml'] = '<span class="no-page-icon" style="color:#ddd;" title="Page coming soon">&#9633;</span>'
+                
+                # Clean up source display
+                if champion.get('source_full'):
+                    # Use full source if available
+                    champion['sources_display'] = champion['source_full']
+                elif champion.get('source_code'):
+                    # Fall back to code
+                    champion['sources_display'] = champion['source_code']
+                else:
+                    champion['sources_display'] = 'N/A'
                 
                 champions.append(champion)
             
@@ -120,9 +130,11 @@ def generate_json():
             total = len(champions)
             with_ratings = sum(1 for c in champions if c.get('combined') and c.get('combined') > 0)
             with_page = sum(1 for c in champions if c.get('hasProgramPage'))
+            with_coach = sum(1 for c in champions if c.get('coach'))
             
             logging.info(f"Total champions: {total}")
             logging.info(f"With ratings: {with_ratings} ({100*with_ratings//total if total > 0 else 0}%)")
+            logging.info(f"With coach names: {with_coach} ({100*with_coach//total if total > 0 else 0}%)")
             logging.info(f"With program pages: {with_page}")
             
             # Year range
@@ -140,8 +152,9 @@ def generate_json():
             for c in champions:
                 if c['year'] == current_year:
                     rating = f"{c['combined']:.3f}" if c.get('combined') else 'N/A'
+                    coach = c.get('coach') or 'Unknown'
                     has_page = "✓ Has Page" if c.get('hasProgramPage') else ""
-                    logging.info(f"  - {c['team']}: {c.get('record', 'N/A')} (Rating: {rating}) {has_page}")
+                    logging.info(f"  - {c['team']}: {c.get('record', 'N/A')} - Coach: {coach} (Rating: {rating}) {has_page}")
             
             logging.info("")
             logging.info("✓ JSON generation complete!")
