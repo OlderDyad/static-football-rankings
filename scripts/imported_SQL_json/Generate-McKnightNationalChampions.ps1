@@ -1,6 +1,5 @@
 # Generate-McKnightNationalChampions.ps1
-# UPDATED: Uses new stored procedure with HS_Rating_Rankings
-# Generates JSON with same structure as All-Time Programs
+# UPDATED: Uses snake_case field names to match All-Time Teams
 
 # Define paths and connection string
 $logFile = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\logs\mcknight-national-champions.log"
@@ -13,7 +12,7 @@ Remove-Item "$outputDir\mcknight-national-champions.json" -ErrorAction SilentlyC
 
 # Start logging
 Get-Date | Out-File $logFile
-"Starting McKnight National Champions generation (NEW VERSION)" | Tee-Object -FilePath $logFile -Append
+"Starting McKnight National Champions generation (SNAKE_CASE VERSION)" | Tee-Object -FilePath $logFile -Append
 
 # Import common functions
 . ".\common-functions.ps1"
@@ -42,7 +41,7 @@ try {
     $connection = Connect-Database
     Write-Host "Database connection established"
 
-    # Execute NEW stored procedure
+    # Execute stored procedure
     Write-Host "Processing McKnight National Champions (Rating-based)..."
     $command = New-Object System.Data.SqlClient.SqlCommand("EXEC dbo.sp_Get_McKnight_National_Champions", $connection)
     $adapter = New-Object System.Data.SqlClient.SqlDataAdapter($command)
@@ -60,14 +59,13 @@ try {
             # Generate link HTML
             $linkHtml = ""
             if ($row["hasProgramPage"] -eq 1 -and -not [string]::IsNullOrEmpty($row["programPageUrl"])) {
-                # Page Exists: Link icon
                 $url = $row["programPageUrl"]
                 $linkHtml = "<a href='$url' class='team-link' title='View Team Page'><i class='fas fa-external-link-alt'></i></a>"
             } else {
-                # No Page: HTML entity square
                 $linkHtml = "<span class='no-page-icon' style='color:#ddd;' title='Page coming soon'>&#9633;</span>"
             }
             
+            # CRITICAL: Use SNAKE_CASE to match All-Time Teams JSON structure
             $champion = [PSCustomObject]@{
                 year = $row["year"]
                 team = $row["team"]
@@ -78,10 +76,10 @@ try {
                 ties = $row["ties"]
                 combined = Parse-DecimalSafe -Value $row["combined"]
                 margin = Parse-DecimalSafe -Value $row["margin"]
-                winLoss = Parse-DecimalSafe -Value $row["winLoss"]
+                win_loss = Parse-DecimalSafe -Value $row["win_loss"]      # SNAKE_CASE!
                 offense = Parse-DecimalSafe -Value $row["offense"]
                 defense = Parse-DecimalSafe -Value $row["defense"]
-                gamesPlayed = $row["gamesPlayed"]
+                games_played = $row["games_played"]                       # SNAKE_CASE!
                 
                 logoURL = $row["logoURL"]
                 schoolLogoURL = $row["schoolLogoURL"]
@@ -101,7 +99,7 @@ try {
         $mostRecentYear = ($champions | Sort-Object -Property year -Descending)[0].year
         $topChampion = $champions | Where-Object { $_.year -eq $mostRecentYear }
 
-        # Create JSON structure (matches All-Time Programs format)
+        # Create JSON structure
         $jsonData = @{
             topItem = $topChampion
             items = $champions
@@ -110,7 +108,7 @@ try {
                 type = "mcknight-national-champions"
                 description = "McKnight's National Champions (Rating-Based)"
                 totalItems = $champions.Count
-                source = "HS_Rating_Rankings"
+                source = "HS_Rankings"
             }
         }
 
