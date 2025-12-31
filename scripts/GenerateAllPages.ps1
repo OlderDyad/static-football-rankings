@@ -1149,8 +1149,53 @@ function Process-MediaNationalChampions {
                 # Fix data-file meta tag
                 $template = $template -replace '<meta name="data-file" content="[^"]*">', 
                     '<meta name="data-file" content="/static-football-rankings/data/media-national-champions/media-national-champions.json">'
+                
+                # Use no-pagination script for Media NC (show all 140 champions)
+                $noPaginationScript = @'
+<script>
+    const TableControls = {
+        filteredRows: [],
+        init() {
+            const tableBody = document.querySelector('tbody');
+            if (tableBody) {
+                const rows = Array.from(tableBody.getElementsByTagName('tr'));
+                this.filteredRows = rows;
+                this.setupEventListeners();
+                this.showAllRows();
+            }
+        },
+        setupEventListeners() {
+            const searchInput = document.getElementById('tableSearch');
+            if (searchInput) {
+                searchInput.value = '';
+                searchInput.addEventListener('input', (e) => this.filterTable(e.target.value.toLowerCase()));
+            }
+        },
+        filterTable(searchTerm) {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
+                const text = Array.from(row.getElementsByTagName('td')).map(cell => cell.textContent).join(' ').toLowerCase();
+                return text.includes(searchTerm);
+            });
+            this.showAllRows();
+        },
+        showAllRows() {
+            const tableBody = document.querySelector('tbody');
+            if (!tableBody) return;
+            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
+            allRows.forEach(row => row.style.display = 'none');
+            this.filteredRows.forEach(row => { row.style.display = ''; });
+        }
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => TableControls.init());
+    else TableControls.init();
+</script>
+'@
+                
                 # Replace placeholders
-                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
+                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $noPaginationScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
                 
