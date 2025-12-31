@@ -20,7 +20,6 @@ Write-Host "Data Directory: $dataDir"
 Write-Host "Template Directory: $templateBaseDir"
 Write-Host "Output Directory: $outputBaseDir"
 
-
 # Create necessary directories
 $directories = @(
     (Join-Path $outputBaseDir "decades"),
@@ -156,9 +155,6 @@ function Test-RequiredTemplates {
     return $true
 }
 
-# Helper function to check individual templates
-
-
 function Test-TemplateExists {
     param (
         [string]$TemplatePath,
@@ -189,7 +185,7 @@ function Generate-TeamBanner {
     )
 
     if (!$TopItem) {
-        return "<!-- No top item data available for banner -->"
+        return ""
     }
 
     # Handle Logo URLs from JSON
@@ -197,14 +193,14 @@ function Generate-TeamBanner {
         $logoPath = "/static-football-rankings/$($TopItem.logoURL.TrimStart('/'))"
         "<img src=`"$logoPath`" alt=`"Logo`" class=`"img-fluid team-logo`" onerror=`"this.style.display='none'`" />"
     } else {
-        "<!-- No logo available -->"
+        ""
     }
 
     $schoolLogoHtml = if ($TopItem.schoolLogoURL -and "$($TopItem.schoolLogoURL)".Trim()) {
         $schoolPath = "/static-football-rankings/$($TopItem.schoolLogoURL.TrimStart('/'))"
         "<img src=`"$schoolPath`" alt=`"School Logo`" class=`"img-fluid school-logo`" onerror=`"this.style.display='none'`" />"
     } else {
-        "<!-- No school logo available -->"
+        ""
     }
 
     # Color handling
@@ -343,10 +339,8 @@ function Generate-ComingSoonPage {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$Title - McKnight's American Football</title>
     
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Custom Stylesheet -->
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
 </head>
 <body>
@@ -369,11 +363,10 @@ function Generate-ComingSoonPage {
 
     <footer class="mt-5 mb-3">
         <div class="text-center">
-            <p>Â© 2025 McKnight's Football Rankings</p>
+            <p>© 2025 McKnight's Football Rankings</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
@@ -387,40 +380,6 @@ function Generate-ComingSoonPage {
 
     Set-Content -Path $OutputPath -Value $comingSoonHtml -Encoding UTF8
     Write-Host "Generated coming soon page: $OutputPath"
-}
-
-# Define regions and states
-$stateRegions = @{
-    "Northeast" = @{
-        Name = "Northeast"
-        States = @("CT", "DE", "ME", "MA", "NH", "RI", "VT", "NJ", "NY", "PA")
-        Color = "region-northeast"
-        Title = "Northeast States"
-    }
-    "South" = @{
-        Name = "South"
-        States = @("AL", "AR", "FL", "GA", "KY", "LA", "MD", "MS", "NC", "OK","SC", "TN", "TX","VA", "WV")
-        Color = "region-south"
-        Title = "Southern States"
-    }
-    "Midwest" = @{
-        Name = "Midwest"
-        States = @("IL", "IN", "IA", "KS", "MI", "MN", "MO", "NE", "ND", "OH", "SD", "WI")
-        Color = "region-midwest"
-        Title = "Midwestern States"
-    }
-    "West" = @{
-        Name = "West"
-        States = @("AK", "AZ", "CA", "CO", "HI", "ID", "MT", "NV", "NM", "OR", "UT", "WA", "WY")
-        Color = "region-west"
-        Title = "Western States"
-    }
-    "Canada" = @{
-        Name = "Canada"
-        States = @("AB", "BC", "SK", "MB", "NS", "QB", "NB")
-        Color = "region-canada"
-        Title = "Canadian Provinces"
-    }
 }
 
 function Get-StateFullName {
@@ -468,7 +427,6 @@ function Process-StateIndexPage {
         Write-Error "State index template not found: $templatePath"
     }
 }
-
 #endregion Helper Functions
 
 #region Template Scripts
@@ -612,175 +570,6 @@ $tableControlsScript = @'
 '@
 
 # Comments functionality
-$tableColorScript = @"
-<script>
-(function(){
-    // Color name to hex lookup table
-    const colorNameToHex = {
-        'aliceblue':'#f0f8ff','antiquewhite':'#faebd7','aqua':'#00ffff','aquamarine':'#7fffd4',
-        'azure':'#f0ffff','beige':'#f5f5dc','bisque':'#ffe4c4','black':'#000000',
-        'blanchedalmond':'#ffebcd','blue':'#0000ff','blueviolet':'#8a2be2','brown':'#a52a2a',
-        'burlywood':'#deb887','cadetblue':'#5f9ea0','chartreuse':'#7fff00','chocolate':'#d2691e',
-        'coral':'#ff7f50','cornflowerblue':'#6495ed','cornsilk':'#fff8dc','crimson':'#dc143c',
-        'cyan':'#00ffff','darkblue':'#00008b','darkcyan':'#008b8b','darkgoldenrod':'#b8860b',
-        'darkgray':'#a9a9a9','darkgreen':'#006400','darkkhaki':'#bdb76b','darkmagenta':'#8b008b',
-        'darkolivegreen':'#556b2f','darkorange':'#ff8c00','darkorchid':'#9932cc','darkred':'#8b0000',
-        'darksalmon':'#e9967a','darkseagreen':'#8fbc8f','darkslateblue':'#483d8b','darkslategray':'#2f4f4f',
-        'darkturquoise':'#00ced1','darkviolet':'#9400d3','deeppink':'#ff1493','deepskyblue':'#00bfff',
-        'dimgray':'#696969','dodgerblue':'#1e90ff','firebrick':'#b22222','floralwhite':'#fffaf0',
-        'forestgreen':'#228b22','fuchsia':'#ff00ff','gainsboro':'#dcdcdc','ghostwhite':'#f8f8ff',
-        'gold':'#ffd700','goldenrod':'#daa520','gray':'#808080','green':'#008000',
-        'greenyellow':'#adff2f','honeydew':'#f0fff0','hotpink':'#ff69b4','indianred':'#cd5c5c',
-        'indigo':'#4b0082','ivory':'#fffff0','khaki':'#f0e68c','lavender':'#e6e6fa',
-        'lavenderblush':'#fff0f5','lawngreen':'#7cfc00','lemonchiffon':'#fffacd','lightblue':'#add8e6',
-        'lightcoral':'#f08080','lightcyan':'#e0ffff','lightgoldenrodyellow':'#fafad2','lightgray':'#d3d3d3',
-        'lightgreen':'#90ee90','lightpink':'#ffb6c1','lightsalmon':'#ffa07a','lightseagreen':'#20b2aa',
-        'lightskyblue':'#87cefa','lightslategray':'#778899','lightsteelblue':'#b0c4de','lightyellow':'#ffffe0',
-        'lime':'#00ff00','limegreen':'#32cd32','linen':'#faf0e6','magenta':'#ff00ff',
-        'maroon':'#800000','mediumaquamarine':'#66cdaa','mediumblue':'#0000cd','mediumorchid':'#ba55d3',
-        'mediumpurple':'#9370db','mediumseagreen':'#3cb371','mediumslateblue':'#7b68ee','mediumspringgreen':'#00fa9a',
-        'mediumturquoise':'#48d1cc','mediumvioletred':'#c71585','midnightblue':'#191970','mintcream':'#f5fffa',
-        'mistyrose':'#ffe4e1','moccasin':'#ffe4b5','navajowhite':'#ffdead','navy':'#000080',
-        'oldlace':'#fdf5e6','olive':'#808000','olivedrab':'#6b8e23','orange':'#ffa500',
-        'orangered':'#ff4500','orchid':'#da70d6','palegoldenrod':'#eee8aa','palegreen':'#98fb98',
-        'paleturquoise':'#afeeee','palevioletred':'#db7093','papayawhip':'#ffefd5','peachpuff':'#ffdab9',
-        'peru':'#cd853f','pink':'#ffc0cb','plum':'#dda0dd','powderblue':'#b0e0e6',
-        'purple':'#800080','rebeccapurple':'#663399','red':'#ff0000','rosybrown':'#bc8f8f',
-        'royalblue':'#4169e1','saddlebrown':'#8b4513','salmon':'#fa8072','sandybrown':'#f4a460',
-        'seagreen':'#2e8b57','seashell':'#fff5ee','sienna':'#a0522d','silver':'#c0c0c0',
-        'skyblue':'#87ceeb','slateblue':'#6a5acd','slategray':'#708090','snow':'#fffafa',
-        'springgreen':'#00ff7f','steelblue':'#4682b4','tan':'#d2b48c','teal':'#008080',
-        'thistle':'#d8bfd8','tomato':'#ff6347','turquoise':'#40e0d0','violet':'#ee82ee',
-        'wheat':'#f5deb3','white':'#ffffff','whitesmoke':'#f5f5f5','yellow':'#ffff00','yellowgreen':'#9acd32',
-        // Common school colors
-        'cardinal':'#c41e3a','scarlet':'#ff2400','vegas gold':'#c5b358','columbia blue':'#9bddff',
-        'burnt orange':'#cc5500','kelly green':'#4cbb17'
-    };
-
-    function normalizeColor(color) {
-        if (!color) return null;
-        color = color.trim();
-        // Already a hex code
-        if (color.startsWith('#')) return color;
-        // Look up named color
-        const hex = colorNameToHex[color.toLowerCase()];
-        if (hex) return hex;
-        // Try as-is (browser might handle it)
-        return color;
-    }
-
-    function hexToRgba(hex, opacity) {
-        if (!hex) return null;
-        hex = normalizeColor(hex);
-        if (!hex || !hex.startsWith('#')) return null;
-        
-        hex = hex.replace('#', '');
-        if(hex.length === 3) {
-            hex = hex[0]+hex[0] + hex[1]+hex[1] + hex[2]+hex[2];
-        }
-        if(hex.length !== 6) return null;
-        
-        const r = parseInt(hex.substring(0, 2), 16);
-        const g = parseInt(hex.substring(2, 4), 16);
-        const b = parseInt(hex.substring(4, 6), 16);
-        if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
-        return 'rgba(' + r + ',' + g + ',' + b + ',' + opacity + ')';
-    }
-    
-    function applyColors(bg, text) {
-        // Normalize colors (convert names to hex)
-        bg = normalizeColor(bg);
-        text = normalizeColor(text) || '#ffffff';
-        
-        if (!bg) {
-            console.warn('Could not normalize background color');
-            return;
-        }
-        
-        // Create rgba versions
-        const bgLight = hexToRgba(bg, 0.08) || 'rgba(52, 58, 64, 0.08)';
-        const bgHover = hexToRgba(bg, 0.18) || 'rgba(52, 58, 64, 0.18)';
-        
-        // Set CSS variables on :root (works with styles.css)
-        document.documentElement.style.setProperty('--team-primary', bg);
-        document.documentElement.style.setProperty('--team-text', text);
-        document.documentElement.style.setProperty('--team-primary-light', bgLight);
-        
-        // Inject direct styles as backup
-        const style = document.createElement('style');
-        style.id = 'dynamic-team-colors';
-        style.textContent = 
-            'thead th, thead tr, .table thead, .table thead th {' +
-            '  background-color: ' + bg + ' !important;' +
-            '  color: ' + text + ' !important;' +
-            '}' +
-            '.table-striped > tbody > tr:nth-of-type(odd) > * {' +
-            '  --bs-table-accent-bg: ' + bgLight + ' !important;' +
-            '  background-color: ' + bgLight + ' !important;' +
-            '}' +
-            '.table-striped > tbody > tr:nth-of-type(even) > * {' +
-            '  --bs-table-accent-bg: #ffffff !important;' +
-            '}' +
-            '.table-hover > tbody > tr:hover > * {' +
-            '  --bs-table-accent-bg: ' + bgHover + ' !important;' +
-            '  background-color: ' + bgHover + ' !important;' +
-            '}' +
-            '.btn-primary {' +
-            '  background-color: ' + bg + ' !important;' +
-            '  border-color: ' + bg + ' !important;' +
-            '  color: ' + text + ' !important;' +
-            '}' +
-            '.btn-outline-primary {' +
-            '  color: ' + bg + ' !important;' +
-            '  border-color: ' + bg + ' !important;' +
-            '}' +
-            '.btn-outline-primary:hover {' +
-            '  background-color: ' + bg + ' !important;' +
-            '  color: ' + text + ' !important;' +
-            '}' +
-            '.page-item.active .page-link {' +
-            '  background-color: ' + bg + ' !important;' +
-            '  border-color: ' + bg + ' !important;' +
-            '  color: ' + text + ' !important;' +
-            '}' +
-            '.page-link {' +
-            '  color: ' + bg + ' !important;' +
-            '}';
-        
-        const existing = document.getElementById('dynamic-team-colors');
-        if (existing) existing.remove();
-        
-        document.head.appendChild(style);
-        console.log('Applied team colors:', bg, text);
-    }
-    
-    async function init() {
-        try {
-            const meta = document.querySelector('meta[name="data-file"]');
-            if (!meta) return;
-            
-            const resp = await fetch(meta.getAttribute('content') + '?t=' + new Date().getTime());
-            if (!resp.ok) return;
-            const data = await resp.json();
-            
-            if (data.topItem && data.topItem.backgroundColor) {
-                applyColors(data.topItem.backgroundColor, data.topItem.textColor);
-            }
-        } catch (e) {
-            console.warn('Table color init:', e);
-        }
-    }
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
-})();
-</script>
-"@
-
-
 $commentCode = @'
 <script>
 const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
@@ -944,8 +733,6 @@ document.getElementById('submitComment')?.addEventListener('click', submitCommen
 #endregion Template Scripts
 
 #region Processing Functions
-
-#region Processing Functions
 function Process-Template {
     param (
         [Parameter(Mandatory=$true)][string]$TemplatePath,
@@ -960,7 +747,7 @@ function Process-Template {
         $template = Get-Content $TemplatePath -Raw
         
         # Clean up any userStyle tags that might be present in the template
-        $template = $template -replace '', ''
+        $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
         # Handle data file path if present
         if ($Replacements.ContainsKey('DataFilePath')) {
@@ -983,18 +770,11 @@ function Process-Template {
         }
 
         # Handle scripts (ensure they're clean of userStyle tags)
-        $cleanTableControls = $tableControlsScript -replace '', ''
-        $cleanComments = $commentCode -replace '', ''
+        $cleanTableControls = $tableControlsScript -replace '<userStyle>Normal</userStyle>', ''
+        $cleanComments = $commentCode -replace '<userStyle>Normal</userStyle>', ''
         
         $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $cleanTableControls
         $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $cleanComments
-
-        # IMPORTANT: Remove this block to prevent static banner generation
-        # if ($Data.topItem) {
-        #     Write-Host "  Generating banner for top $Type..." -ForegroundColor Yellow
-        #     $bannerHtml = Generate-TeamBanner -TopItem $Data.topItem -Type $Type
-        #     $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-        # }
 
         # Handle table rows
         Write-Host "  Generating table rows..." -ForegroundColor Yellow
@@ -1010,82 +790,6 @@ function Process-Template {
     }
 }
 
-function Process-McKnightNationalChampions {
-    Write-Host "Processing McKnight National Champions data..." -ForegroundColor Yellow
-
-    $jsonPath = Join-Path $dataDir "mcknight-national-champions\mcknight-national-champions.json"
-    Write-Host "Looking for data file: $jsonPath"
-    
-    if (Test-Path $jsonPath) {
-        try {
-            Write-Host "Loading McKnight National Champions data..." -ForegroundColor Yellow
-            $championsContent = Get-Content $jsonPath -Raw
-            $championsContent = $championsContent -replace '<userStyle>Normal</userStyle>', ''
-            $championsData = $championsContent | ConvertFrom-Json
-            
-            $outputPath = Join-Path $outputBaseDir "mcknight-national-champions.html"
-            $templatePath = Join-Path $templateBaseDir "mcknight-national-champions-template.html"
-            
-            if (Test-Path $templatePath) {
-                $template = Get-Content $templatePath -Raw
-
-                # Fix data-file meta tag to ensure correct path
-                $template = $template -replace '<meta name="data-file" content="[^"]*">', 
-                    '<meta name="data-file" content="/static-football-rankings/data/mcknight-national-champions/mcknight-national-champions.json">'
-
-                # Replace placeholders
-                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
-                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-                $template = $template -replace '</body>', "$tableColorScript`n</body>"
-                
-                # Remove any userStyle tags
-                $template = $template -replace '<userStyle>Normal</userStyle>', ''
-                
-                # Generate table rows
-                $tableRows = $championsData.items | ForEach-Object {
-                    # Format decimal values to fixed precision
-                    $combined = if ($null -ne $_.combined) { [math]::Round([double]$_.combined, 3) } else { "" }
-                    $margin = if ($null -ne $_.margin) { [math]::Round([double]$_.margin, 3) } else { "" }
-                    $winLoss = if ($null -ne $_.win_loss) { [math]::Round([double]$_.win_loss, 3) } else { "" }
-                    $offense = if ($null -ne $_.offense) { [math]::Round([double]$_.offense, 3) } else { "" }
-                    $defense = if ($null -ne $_.defense) { [math]::Round([double]$_.defense, 3) } else { "" }
-                    
-                    @"
-    <tr>
-        <td>$($_.year)</td>
-        <td>$($_.team)</td>
-        <td>$($_.state)</td>
-        <td>$combined</td>
-        <td>$margin</td>
-        <td>$winLoss</td>
-        <td>$offense</td>
-        <td>$defense</td>
-        <td>$($_.games_played)</td>
-        <td class="text-center">$($_.teamLinkHtml)</td>
-    </tr>
-"@
-                }
-                
-                $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
-
-                Set-Content -Path $outputPath -Value $template -Encoding UTF8
-                Write-Host "Generated: mcknight-national-champions.html" -ForegroundColor Green
-            } else {
-                Write-Error "McKnight National Champions template not found: $templatePath"
-                Generate-ComingSoonPage -OutputPath $outputPath -Title "McKnight's American Football National Champions" -Message "Coming soon!"
-            }
-        } catch {
-            Write-Error "Error processing McKnight National Champions data: $_"
-            Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "mcknight-national-champions.html") -Title "McKnight's American Football National Champions" -Message "Coming soon!"
-        }
-    } else {
-        Write-Warning "McKnight National Champions data not found: $jsonPath"
-        Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "mcknight-national-champions.html") -Title "McKnight's American Football National Champions" -Message "Coming soon!"
-    }
-}
-
-# Update this in the Process-DecadeData function (around line 850-960)
 function Process-DecadeData {
     param (
         [string]$DecadeName,
@@ -1141,8 +845,7 @@ function Process-DecadeData {
                 # Make sure the meta tag fix is preserved
                 $processedTemplate = $processedTemplate -replace '<meta name="data-file" content="[^"]*">', 
                                                       "<meta name=`"data-file`" content=`"/static-football-rankings/data/decades/programs/programs-$DecadeName.json`">"
-                $processedTemplate = $processedTemplate -replace '</body>', "$tableColorScript`n</body>"
-
+                
                 Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
                 Write-Host "`nGenerated: $DecadeName-programs.html" -ForegroundColor Green
             }
@@ -1189,7 +892,7 @@ function Process-DecadeData {
                 # Make sure the meta tag fix is preserved
                 $processedTemplate = $processedTemplate -replace '<meta name="data-file" content="[^"]*">', 
                                                       "<meta name=`"data-file`" content=`"/static-football-rankings/data/decades/teams/teams-$DecadeName.json`">"
-                $processedTemplate = $processedTemplate -replace '</body>', "$tableColorScript`n</body>"
+                
                 Set-Content -Path $outputPath -Value $processedTemplate -Encoding UTF8
                 Write-Host "`nGenerated: $DecadeName-teams.html" -ForegroundColor Green
             }
@@ -1226,14 +929,7 @@ function Process-StateData {
                 $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-                $template = $template -replace '</body>', "$tableColorScript`n</body>"
-
-                # IMPORTANT: Comment out banner generation to prevent 404 errors
-                # if ($teamData.topItem) {
-                #     $bannerHtml = Generate-TeamBanner -TopItem $teamData.topItem -Type "team"
-                #     $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                # }
+                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 $tableRows = Generate-TableRows -Items $teamData.items -Type "team"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
@@ -1265,14 +961,7 @@ function Process-StateData {
                 $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-                $template = $template -replace '</body>', "$tableColorScript`n</body>"
-
-                # IMPORTANT: Comment out banner generation to prevent 404 errors
-                # if ($programData.topItem) {
-                #     $bannerHtml = Generate-TeamBanner -TopItem $programData.topItem -Type "program"
-                #     $template = $template -replace '<div id="teamHeaderContainer"></div>', $bannerHtml
-                # }
+                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 $tableRows = Generate-TableRows -Items $programData.items -Type "program"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
@@ -1364,15 +1053,7 @@ function Process-AllTimeData {
                 
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-                $template = $template -replace '</body>', "$tableColorScript`n</body>"
-
-# Comment out or delete these lines:
-# Banner
-# if ($jsonData.topItem) {
-#     $headerHtml = Generate-TeamBanner -TopItem $jsonData.topItem -Type $Category
-#     $template = $template -replace '<div id="teamHeaderContainer"></div>', $headerHtml
-# }
+                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 # Table rows
                 $tableRows = Generate-TableRows -Items $jsonData.items -Type $(if ($Category -eq "teams") { "team" } else { "program" })
@@ -1391,12 +1072,11 @@ function Process-AllTimeData {
     }
 }
 
-
 function Process-LatestSeasonData {
     Write-Host "Processing latest season data..." -ForegroundColor Yellow
     
-    # FIXED: Correct path to match actual JSON file location
-    $jsonPath = Join-Path $dataDir "latest-season\latest-season-teams.json"
+    # Update the path to match the correct file name
+    $jsonPath = Join-Path $dataDir "latest\latest-teams.json"
     Write-Host "Looking for file at: $jsonPath" -ForegroundColor Yellow
     
     if (Test-Path $jsonPath) {
@@ -1406,26 +1086,26 @@ function Process-LatestSeasonData {
             Write-Host "JSON content length: $($jsonContent.Length)" -ForegroundColor Yellow
             $jsonData = $jsonContent | ConvertFrom-Json
 
+            # Generate the standardized JSON file (like we do for other categories)
+            Generate-StandardizedJson -Type "latest-teams" `
+                                   -Items $jsonData.items `
+                                   -TopItem $jsonData.topItem `
+                                   -Description "Latest Season Rankings" `
+                                   -YearRange "latest" `
+                                   -OutputPath $jsonPath
+
             $templatePath = Join-Path $templateBaseDir "latest-season\latest-season-template.html"
-            $outputPath = Join-Path $outputBaseDir "latest-season\index.html"
-            
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
-
-                # FIXED: Ensure data-file meta tag points to correct location
-                $template = $template -replace '<meta name="data-file" content="[^"]*">', 
-                    '<meta name="data-file" content="/static-football-rankings/data/latest-season/latest-season-teams.json">'
+                
+                # Define output path (this was missing in original)
+                $outputPath = Join-Path $outputBaseDir "latest-season\index.html"
 
                 # Insert scripts and update timestamp
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                
-                # FIXED: Use case-insensitive replacement for TIMESTAMP
-                $currentDate = Get-Date -Format "M/d/yyyy"
-                $template = $template -creplace 'TIMESTAMP', $currentDate
-                $template = $template -replace '(<span id="lastUpdated">)[^<]*(</span>)', "`${1}$currentDate`${2}"
+                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
-                # Generate table rows
                 $tableRows = Generate-TableRows -Items $jsonData.items -Type "team"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
 
@@ -1434,7 +1114,7 @@ function Process-LatestSeasonData {
                 Write-Host "Generated: latest-season/index.html" -ForegroundColor Green
             } else {
                 Write-Error "Template not found: $templatePath"
-                Generate-ComingSoonPage -OutputPath $outputPath `
+                Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "latest-season\index.html") `
                                       -Title "Latest Season Rankings" `
                                       -Message "Template file missing. Please check back soon!"
             }
@@ -1454,7 +1134,6 @@ function Process-LatestSeasonData {
 
 function Process-MediaNationalChampions {
     Write-Host "Processing Media National Champions data..." -ForegroundColor Yellow
-
     $jsonPath = Join-Path $dataDir "media-national-champions\media-national-champions.json"
     Write-Host "Looking for data file: $jsonPath"
     
@@ -1463,59 +1142,57 @@ function Process-MediaNationalChampions {
             Write-Host "Loading Media National Champions data..." -ForegroundColor Yellow
             $championsData = Get-Content $jsonPath -Raw | ConvertFrom-Json
             $outputPath = Join-Path $outputBaseDir "media-national-champions.html"
-
             $templatePath = Join-Path $templateBaseDir "media-national-champions-template.html"
+            
             if (Test-Path $templatePath) {
                 $template = Get-Content $templatePath -Raw
-
-                # Fix data-file meta tag to ensure correct path
+                # Fix data-file meta tag
                 $template = $template -replace '<meta name="data-file" content="[^"]*">', 
                     '<meta name="data-file" content="/static-football-rankings/data/media-national-champions/media-national-champions.json">'
-
                 # Replace placeholders
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
                 $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-                $template = $template -replace '</body>', "$tableColorScript`n</body>"
                 
                 # Remove any userStyle tags
                 $template = $template -replace '<userStyle>Normal</userStyle>', ''
-
-                # Generate table rows with improved value handling
+                
+                # Generate table rows - NEW COLUMN LAYOUT
                 $tableRows = $championsData.items | ForEach-Object {
-                    # Clean up the source/notes to make it more readable
-                    $source = if ($_.sources) { 
-                        ($_.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim() 
+                    # Format combined rating
+                    $combined = if ($null -ne $_.combined -and $_.combined -gt 0) { 
+                        [math]::Round([double]$_.combined, 3) 
                     } else { 
-                        "N/A" 
+                        "" 
                     }
                     
-                    # Format decimal values to fixed precision
-                    $combined = if ($null -ne $_.combined) { [math]::Round([double]$_.combined, 3) } else { "" }
-                    $margin = if ($null -ne $_.margin) { [math]::Round([double]$_.margin, 3) } else { "" }
-                    $winLoss = if ($null -ne $_.win_loss) { [math]::Round([double]$_.win_loss, 3) } else { "" }
-                    $offense = if ($null -ne $_.offense) { [math]::Round([double]$_.offense, 3) } else { "" }
-                    $defense = if ($null -ne $_.defense) { [math]::Round([double]$_.defense, 3) } else { "" }
+                    # Get record (already formatted as W-L-T)
+                    $record = if ($_.record) { $_.record } else { "" }
+                    
+                    # Get coach name
+                    $coach = if ($_.coach) { $_.coach } else { "" }
+                    
+                    # Get sources (use display field we created in Python)
+                    $sources = if ($_.sources_display) { $_.sources_display } else { "N/A" }
+                    
+                    # Get notes
+                    $notes = if ($_.notes) { $_.notes } else { "" }
                     
                     @"
     <tr>
         <td>$($_.year)</td>
         <td>$($_.team)</td>
-        <td>$($_.state)</td>
         <td>$combined</td>
-        <td>$margin</td>
-        <td>$winLoss</td>
-        <td>$offense</td>
-        <td>$defense</td>
-        <td>$($_.games_played)</td>
-        <td>$source</td>
+        <td>$record</td>
+        <td>$coach</td>
+        <td>$sources</td>
+        <td>$notes</td>
         <td class="text-center">$($_.teamLinkHtml)</td>
     </tr>
 "@
                 }
                 
                 $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
-
                 Set-Content -Path $outputPath -Value $template -Encoding UTF8
                 Write-Host "Generated: media-national-champions.html" -ForegroundColor Green
             } else {
@@ -1532,6 +1209,70 @@ function Process-MediaNationalChampions {
     }
 }
 
+function Process-McKnightNationalChampions {
+    Write-Host "Processing McKnight National Champions data..." -ForegroundColor Yellow
+    $jsonPath = Join-Path $dataDir "mcknight-national-champions\mcknight-national-champions.json"
+    Write-Host "Looking for data file: $jsonPath"
+    
+    if (Test-Path $jsonPath) {
+        try {
+            Write-Host "Loading McKnight National Champions data..." -ForegroundColor Yellow
+            $championsData = Get-Content $jsonPath -Raw | ConvertFrom-Json
+            $outputPath = Join-Path $outputBaseDir "mcknight-national-champions.html"
+            $templatePath = Join-Path $templateBaseDir "mcknight-national-champions-template.html"
+            
+            if (Test-Path $templatePath) {
+                $template = Get-Content $templatePath -Raw
+                # Fix data-file meta tag
+                $template = $template -replace '<meta name="data-file" content="[^"]*">', 
+                    '<meta name="data-file" content="/static-football-rankings/data/mcknight-national-champions/mcknight-national-champions.json">'
+                # Replace placeholders
+                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
+                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                
+                # Remove any userStyle tags
+                $template = $template -replace '<userStyle>Normal</userStyle>', ''
+                
+                # Generate table rows
+                $tableRows = $championsData.items | ForEach-Object {
+                    $combined = if ($null -ne $_.combined) { [math]::Round([double]$_.combined, 3) } else { "" }
+                    $margin = if ($null -ne $_.margin) { [math]::Round([double]$_.margin, 3) } else { "" }
+                    $winLoss = if ($null -ne $_.win_loss) { [math]::Round([double]$_.win_loss, 3) } else { "" }
+                    $offense = if ($null -ne $_.offense) { [math]::Round([double]$_.offense, 3) } else { "" }
+                    $defense = if ($null -ne $_.defense) { [math]::Round([double]$_.defense, 3) } else { "" }
+                    
+                    @"
+    <tr>
+        <td>$($_.year)</td>
+        <td>$($_.team)</td>
+        <td>$combined</td>
+        <td>$margin</td>
+        <td>$winLoss</td>
+        <td>$offense</td>
+        <td>$defense</td>
+        <td>$($_.games_played)</td>
+        <td class="text-center">$($_.teamLinkHtml)</td>
+    </tr>
+"@
+                }
+                
+                $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
+                Set-Content -Path $outputPath -Value $template -Encoding UTF8
+                Write-Host "Generated: mcknight-national-champions.html" -ForegroundColor Green
+            } else {
+                Write-Error "McKnight National Champions template not found: $templatePath"
+                Generate-ComingSoonPage -OutputPath $outputPath -Title "McKnight National Champions" -Message "Coming soon!"
+            }
+        } catch {
+            Write-Error "Error processing McKnight National Champions data: $_"
+            Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "mcknight-national-champions.html") -Title "McKnight National Champions" -Message "Coming soon!"
+        }
+    } else {
+        Write-Warning "McKnight National Champions data not found: $jsonPath"
+        Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "mcknight-national-champions.html") -Title "McKnight National Champions" -Message "Coming soon!"
+    }
+}
 #endregion Processing Functions
 
 #region Main Script Execution
@@ -1653,13 +1394,9 @@ $stateRegions = @{
     Write-Host "`nProcessing latest season rankings..." -ForegroundColor Green
     Process-LatestSeasonData
 
-    # Process Media National Champions data
-    Write-Host "`nProcessing Media National Champions data..." -ForegroundColor Green
+    # Process National Champions
+    Write-Host "`nProcessing National Champions..." -ForegroundColor Green
     Process-MediaNationalChampions
-
-    
-    # Process McKnight National Champions data
-    Write-Host "`nProcessing McKnight National Champions data..." -ForegroundColor Green
     Process-McKnightNationalChampions
 
     # Generate Index Pages
@@ -1705,8 +1442,35 @@ $stateRegions = @{
         Write-Host "Generated all-time rankings index page" -ForegroundColor Green
     }
 
-# States index - DISABLED: Using manually maintained static version
-    Write-Host "Skipping states index generation (using static version)" -ForegroundColor Cyan
+    # States index
+    Write-Host "Generating states index..." -ForegroundColor Yellow
+    $statesIndexPath = Join-Path $outputBaseDir "states\index.html"
+    $statesIndexTemplatePath = Join-Path $templateBaseDir "index\states-index-template.html"
+    if (Test-Path $statesIndexTemplatePath) {
+        $statesIndexTemplate = Get-Content $statesIndexTemplatePath -Raw
+        if ($stateCodes) {
+            $stateCards = $stateCodes | ForEach-Object {
+                @"
+<div class="col-md-4 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title">$_</h5>
+            <div class="mt-auto">
+                <a href="$_-teams.html" class="btn btn-primary me-2">Teams</a>
+                <a href="$_-programs.html" class="btn btn-outline-primary">Programs</a>
+            </div>
+        </div>
+    </div>
+</div>
+"@
+            }
+            $statesIndexContent = $statesIndexTemplate -replace 'STATE_CARDS', ($stateCards -join "`n")
+        } else {
+            $statesIndexContent = $statesIndexTemplate -replace 'STATE_CARDS', ''
+        }
+        Set-Content -Path $statesIndexPath -Value $statesIndexContent -Encoding UTF8
+        Write-Host "Generated states index page" -ForegroundColor Green
+    }
 
     Write-Host "`nPage generation completed successfully!" -ForegroundColor Green
 } catch {
@@ -1715,126 +1479,4 @@ $stateRegions = @{
 } finally {
     Write-Host "Script execution completed." -ForegroundColor Green
 }
-
-function Process-MediaNationalChampions {
-    Write-Host "Processing Media National Champions data..." -ForegroundColor Yellow
-
-    $jsonPath = Join-Path $dataDir "media-national-champions\media-national-champions.json"
-    Write-Host "Looking for data file: $jsonPath"
-    
-    if (Test-Path $jsonPath) {
-        try {
-            Write-Host "Loading Media National Champions data..." -ForegroundColor Yellow
-            $championsContent = Get-Content $jsonPath -Raw
-            $championsContent = $championsContent -replace '<userStyle>Normal</userStyle>', ''
-            $championsData = $championsContent | ConvertFrom-Json
-            
-            $outputPath = Join-Path $outputBaseDir "media-national-champions.html"
-            $templatePath = Join-Path $templateBaseDir "media-national-champions-template.html"
-            
-            if (Test-Path $templatePath) {
-                $template = Get-Content $templatePath -Raw
-
-                # Fix data-file meta tag to ensure correct path
-                $template = $template -replace '<meta name="data-file" content="[^"]*">', 
-                    '<meta name="data-file" content="/static-football-rankings/data/media-national-champions/media-national-champions.json">'
-
-                # Replace placeholders
-                $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
-                $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
-                $template = $template -replace '</body>', "$tableColorScript`n</body>"
-                
-                # Remove any userStyle tags
-                $template = $template -replace '<userStyle>Normal</userStyle>', ''
-                
-                # Create a sorted array of champions
-                $champions = @()
-                foreach ($item in $championsData) {
-                    # Convert combined to a numeric value
-                    $combinedValue = 0
-                    if ($null -ne $item.combined) {
-                        if ($item.combined -is [string]) {
-                            if ([double]::TryParse($item.combined, [ref]$null)) {
-                                $combinedValue = [double]::Parse($item.combined)
-                            }
-                        } else {
-                            $combinedValue = [double]$item.combined
-                        }
-                    }
-                    
-                    $champions += [PSCustomObject]@{
-                        Year = $item.year
-                        Team = $item.team
-                        State = $item.state
-                        Combined = $combinedValue
-                        CombinedDisplay = if ($null -ne $item.combined) { [math]::Round($combinedValue, 3) } else { "" }
-                        Margin = if ($null -ne $item.margin) { [math]::Round([double]$item.margin, 3) } else { "" }
-                        WinLoss = if ($null -ne $item.win_loss) { [math]::Round([double]$item.win_loss, 3) } else { "" }
-                        Offense = if ($null -ne $item.offense) { [math]::Round([double]$item.offense, 3) } else { "" }
-                        Defense = if ($null -ne $item.defense) { [math]::Round([double]$item.defense, 3) } else { "" }
-                        GamesPlayed = $item.games_played
-                        Source = if ($item.source) { 
-                            ($item.source -replace '\[\d+\]', '' -replace ',\s*', ', ').Trim()
-                        teamLinkHtml = $item.teamLinkHtml                         
-                        } else { 
-                            "N/A" 
-                        }
-                    }
-                }
-                
-                # Sort by Combined (highest to lowest)
-                $sortedChampions = $champions | Sort-Object -Property Combined -Descending
-                
-                Write-Host "Original count: $($championsData.Count)"
-                Write-Host "Sorted count: $($sortedChampions.Count)"
-                
-                # First team should have highest combined value
-                Write-Host "First combined value: $($sortedChampions[0].Combined)"
-                Write-Host "Last combined value: $($sortedChampions[-1].Combined)"
-                
-                # Generate table rows from sorted list
-                $tableRows = $sortedChampions | ForEach-Object {
-                    @"
-    <tr>
-        <td>$($_.Year)</td>
-        <td>$($_.Team)</td>
-        <td>$($_.State)</td>
-        <td>$($_.CombinedDisplay)</td>
-        <td>$($_.Margin)</td>
-        <td>$($_.WinLoss)</td>
-        <td>$($_.Offense)</td>
-        <td>$($_.Defense)</td>
-        <td>$($_.GamesPlayed)</td>
-        <td>$($_.Source)</td>
-        <td class="text-center">$($_.teamLinkHtml)</td>
-    </tr>
-"@
-                }
-                
-                $template = $template -replace 'TABLE_ROWS', ($tableRows -join "`n")
-                
-                # Remove pagination controls - display all teams on one page
-                $template = $template -replace '<div class="row mt-4">.*?<div class="col-md-6">.*?<div class="pagination-info">.*?</div>.*?</div>.*?<div class="col-md-6">.*?<nav.*?</nav>.*?</div>.*?</div>', ''
-
-                Set-Content -Path $outputPath -Value $template -Encoding UTF8
-                Write-Host "Generated: media-national-champions.html" -ForegroundColor Green
-            } else {
-                Write-Error "Media National Champions template not found: $templatePath"
-                Generate-ComingSoonPage -OutputPath $outputPath -Title "Media National Champions" -Message "Coming soon!"
-            }
-        } catch {
-            Write-Error "Error processing Media National Champions data: $_"
-            Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "media-national-champions.html") -Title "Media National Champions" -Message "Coming soon!"
-        }
-    } else {
-        Write-Warning "Media National Champions data not found: $jsonPath"
-        Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "media-national-champions.html") -Title "Media National Champions" -Message "Coming soon!"
-    }
-}
-
-
 #endregion Main Script Execution
-
-
-
