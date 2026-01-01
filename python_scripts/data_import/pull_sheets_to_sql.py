@@ -70,14 +70,13 @@ with engine.begin() as conn:
         row_id = row[id_col_name]
         
         # SMART LOGIC:
-        # 1. User Managed Fields: Direct overwrite (Sheet is Master)
-        # 2. Script Managed Fields: Conditional update (Preserve DB if Sheet is blank)
+        # We REMOVED [Team_Name] from the SET clause below.
+        # This prevents the Trigger from blocking the update, even if the name in the Sheet 
+        # is slightly different from the DB.
         sql_update = text("""
             UPDATE [dbo].[HS_Team_Names]
             SET 
                 -- SECTION 1: USER MANAGED FIELDS (Overwrite DB)
-                -- If these are blank in the sheet, we want them blank in DB.
-                [Team_Name] = :team,
                 [City] = :city,
                 [State] = :state,
                 [Mascot] = :mascot,
@@ -91,8 +90,6 @@ with engine.begin() as conn:
                 [Longitude] = :long,
                 
                 -- SECTION 2: SCRIPT MANAGED FIELDS (Preserve DB)
-                -- Only update if the user explicitly typed a URL. 
-                -- If blank, keep the existing DB value (from the Ingest script).
                 [LogoURL] = CASE WHEN :logo = '' THEN [LogoURL] ELSE :logo END,
                 [School_Logo_URL] = CASE WHEN :school_logo = '' THEN [School_Logo_URL] ELSE :school_logo END,
                 [PhotoUrl] = CASE WHEN :photo = '' THEN [PhotoUrl] ELSE :photo END,
@@ -105,9 +102,8 @@ with engine.begin() as conn:
         def clean_num(val):
             return val if val != '' else None
 
-        # Execute parameters
+        # Execute parameters (Note: 'team' is NOT passed)
         conn.execute(sql_update, {
-            'team': row['Team_Name'],
             'city': row['City'],
             'state': row['State'],
             'mascot': row['Mascot'],
@@ -119,13 +115,13 @@ with engine.begin() as conn:
             'founded': clean_num(row['YearFounded']),
             'lat': clean_num(row['Latitude']),
             'long': clean_num(row['Longitude']),
-            # We pass raw strings for images; SQL handles the empty check
             'logo': str(row['LogoURL']),
             'school_logo': str(row['School_Logo_URL']),
             'photo': str(row['PhotoUrl']),
             'id': row_id
         })
         
+        # We still print the Team Name from the sheet for your reference
         print(f"Updated ID {row_id}: {row['Team_Name']}")
 
 print("SUCCESS: SQL Database updated.")
