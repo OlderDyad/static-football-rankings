@@ -27,7 +27,7 @@
         </nav>
     </div>
 
-    <!-- Dynamic program banner container -->
+    <!-- Dynamic program banner container (filled by inline script) -->
     <div id="teamHeaderContainer"></div>
 
     <!-- Main content -->
@@ -55256,10 +55256,6 @@
     }
 </script>
 
-    <!-- Local Storage and Main JavaScript -->
-    <script type="module" src="/static-football-rankings/js/local-storage.js"></script>
-    <script type="module" src="/static-football-rankings/js/main.js"></script>
-
     <!-- Comments Script -->
     <script>
 const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
@@ -55420,90 +55416,129 @@ document.getElementById('submitComment')?.addEventListener('click', submitCommen
 })();
 </script>
     
-    <!-- COMBINED: TopBanner + Table Color Theming -->
-    <script type="module">
-        import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+    <!-- INLINE: Banner + Table Color Theming (No Module Imports) -->
+    <script>
+        console.log('=== INLINE SCRIPT STARTING ===');
         
         document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                // Initialize banner first
-                const banner = new TopBanner();
-                await banner.initialize();
-                
-                // After banner loads, apply table colors using the same data
-                applyTableColors();
-                
-            } catch (error) {
-                console.warn('Banner initialization failed:', error);
-                document.body.style.display = 'block';
-                
-                // Even if banner fails, try to apply colors
-                applyTableColors();
-            }
-        });
-        
-        // Function to apply table colors from topItem
-        function applyTableColors() {
+            console.log('DOM loaded, loading data...');
+            
             // Get the data file path from meta tag
             const dataFileMeta = document.querySelector('meta[name="data-file"]');
             if (!dataFileMeta) {
-                console.warn('No data-file meta tag found for table colors');
+                console.error('âŒ No data-file meta tag found');
                 return;
             }
             
             const dataPath = dataFileMeta.getAttribute('content');
+            console.log('Data path:', dataPath);
             
-            // Fetch the JSON data
-            fetch(dataPath)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.topItem) {
-                        applyTeamColors(data.topItem);
-                        console.log('âœ“ Applied table colors from topItem:', data.topItem.program || data.topItem.team);
-                    } else {
-                        console.warn('No topItem found in JSON data');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading JSON data for table colors:', error);
-                });
+            try {
+                // Fetch the JSON data
+                const response = await fetch(dataPath);
+                console.log('Fetch status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('Data loaded:', data);
+                
+                if (data.topItem) {
+                    console.log('topItem found:', data.topItem);
+                    
+                    // Create banner
+                    createBanner(data.topItem);
+                    
+                    // Apply table colors
+                    applyTableColors(data.topItem);
+                } else {
+                    console.error('âŒ No topItem in data');
+                }
+                
+            } catch (error) {
+                console.error('âŒ Error:', error);
+            }
+        });
+        
+        function createBanner(topItem) {
+            console.log('Creating banner...');
+            
+            const container = document.getElementById('teamHeaderContainer');
+            if (!container) {
+                console.error('âŒ No teamHeaderContainer found');
+                return;
+            }
+            
+            const backgroundColor = topItem.backgroundColor || '#003366';
+            const textColor = topItem.textColor || '#FFFFFF';
+            const program = topItem.program || topItem.team || 'Unknown';
+            const mascot = topItem.mascot || '';
+            const seasons = topItem.seasons || '';
+            
+            const logoHTML = topItem.logoURL ? 
+                `<img src="/static-football-rankings/${topItem.logoURL}" alt="Logo" class="img-fluid" style="max-height: 120px;" onerror="this.style.display='none'">` : '';
+            
+            const schoolLogoHTML = topItem.schoolLogoURL ? 
+                `<img src="/static-football-rankings/${topItem.schoolLogoURL}" alt="School Logo" class="img-fluid" style="max-height: 120px;" onerror="this.style.display='none'">` : '';
+            
+            container.innerHTML = `
+                <div class="team-header" style="background-color: ${backgroundColor}; color: ${textColor}; padding: 30px 0;">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 text-center">
+                                ${logoHTML}
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <h2 style="margin: 0; font-size: 2.5rem;">${program}</h2>
+                                ${mascot ? `<p style="margin: 5px 0; font-size: 1.2rem;">${mascot}</p>` : ''}
+                                ${seasons ? `<p style="margin: 5px 0;">Seasons: ${seasons}</p>` : ''}
+                            </div>
+                            <div class="col-md-3 text-center">
+                                ${schoolLogoHTML}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            console.log('âœ“ Banner created');
         }
         
-        function applyTeamColors(topItem) {
-            // Get colors from topItem
+        function applyTableColors(topItem) {
+            console.log('Applying table colors...');
+            
             const backgroundColor = topItem.backgroundColor || '#343a40';
             const textColor = topItem.textColor || '#ffffff';
             
-            console.log(`Applying table colors: BG=${backgroundColor}, Text=${textColor}`);
-            
-            // Apply to table header
             const thead = document.querySelector('table thead');
-            if (thead) {
-                thead.style.backgroundColor = backgroundColor;
-                thead.style.color = textColor;
-                
-                // Apply to all th elements
-                const headers = thead.querySelectorAll('th');
-                headers.forEach(th => {
-                    th.style.backgroundColor = backgroundColor;
-                    th.style.color = textColor;
-                    th.style.borderColor = backgroundColor;
-                });
-                
-                console.log('âœ“ Table header colors applied');
-            } else {
-                console.warn('No table thead found');
+            if (!thead) {
+                console.error('âŒ No table thead found');
+                return;
             }
             
-            // Apply subtle tint to alternating rows
+            thead.style.backgroundColor = backgroundColor;
+            thead.style.color = textColor;
+            
+            const headers = thead.querySelectorAll('th');
+            headers.forEach(th => {
+                th.style.backgroundColor = backgroundColor;
+                th.style.color = textColor;
+                th.style.borderColor = backgroundColor;
+            });
+            
+            // Apply tint to alternating rows
             const tbody = document.querySelector('table tbody');
             if (tbody) {
                 const rows = tbody.querySelectorAll('tr:nth-child(even)');
-                const tintColor = backgroundColor + '1A'; // 10% opacity
+                const tintColor = backgroundColor + '1A';
                 rows.forEach(row => {
                     row.style.backgroundColor = tintColor;
                 });
             }
+            
+            console.log('âœ“ Table colors applied');
         }
     </script>
 </body>
