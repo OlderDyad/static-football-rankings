@@ -26,14 +26,22 @@ function Get-TeamMetadata {
 
         if ($dataset.Tables.Count -gt 0 -and $dataset.Tables[0].Rows.Count -gt 0) {
             $row = $dataset.Tables[0].Rows[0]
+            
+            # ✅ DEBUG LINES (AFTER $row is defined)
+            Write-Host "DEBUG: PrimaryColor = [$($row["PrimaryColor"])]" -ForegroundColor Cyan
+            Write-Host "DEBUG: SecondaryColor = [$($row["SecondaryColor"])]" -ForegroundColor Cyan
+            
             $metadata = @{
                 Mascot = if ($row["Mascot"]) { $row["Mascot"].ToString() } else { "" }
-                # Map from PrimaryColor and SecondaryColor to backgroundColor and textColor
                 backgroundColor = if ($row["PrimaryColor"]) { $row["PrimaryColor"].ToString() } else { "Navy" }
                 textColor = if ($row["SecondaryColor"]) { $row["SecondaryColor"].ToString() } else { "White" }
                 LogoURL = if ($row["LogoURL"]) { $row["LogoURL"].ToString() } else { "" }
                 School_Logo_URL = if ($row["School_Logo_URL"]) { $row["School_Logo_URL"].ToString() } else { "" }
             }
+            
+            # ✅ DEBUG: Check final value
+            Write-Host "DEBUG: Final textColor = [$($metadata.textColor)]" -ForegroundColor Yellow
+            
             Write-Host "Metadata fetched for: $TeamName"
             return $metadata
         } else {
