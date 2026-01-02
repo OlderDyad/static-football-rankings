@@ -55477,11 +55477,22 @@ document.getElementById('submitComment')?.addEventListener('click', submitCommen
             const mascot = topItem.mascot || '';
             const seasons = topItem.seasons || '';
             
+            // Fix logo paths - handle both absolute and relative URLs
+            const fixPath = (url) => {
+                if (!url) return '';
+                // If already starts with /static-football-rankings/, use as-is
+                if (url.startsWith('/static-football-rankings/')) return url;
+                // If starts with /, prepend /static-football-rankings
+                if (url.startsWith('/')) return '/static-football-rankings' + url;
+                // Otherwise, add /static-football-rankings/ prefix
+                return '/static-football-rankings/' + url;
+            };
+            
             const logoHTML = topItem.logoURL ? 
-                `<img src="/static-football-rankings/${topItem.logoURL}" alt="Logo" class="img-fluid" style="max-height: 120px;" onerror="this.style.display='none'">` : '';
+                `<img src="${fixPath(topItem.logoURL)}" alt="Logo" class="img-fluid" style="max-height: 120px;" onerror="this.style.display='none'">` : '';
             
             const schoolLogoHTML = topItem.schoolLogoURL ? 
-                `<img src="/static-football-rankings/${topItem.schoolLogoURL}" alt="School Logo" class="img-fluid" style="max-height: 120px;" onerror="this.style.display='none'">` : '';
+                `<img src="${fixPath(topItem.schoolLogoURL)}" alt="School Logo" class="img-fluid" style="max-height: 120px;" onerror="this.style.display='none'">` : '';
             
             container.innerHTML = `
                 <div class="team-header" style="background-color: ${backgroundColor}; color: ${textColor}; padding: 30px 0;">
