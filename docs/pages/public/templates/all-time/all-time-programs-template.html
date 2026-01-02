@@ -120,7 +120,6 @@
         document.addEventListener('DOMContentLoaded', async () => {
             console.log('DOM loaded, loading data...');
             
-            // Get the data file path from meta tag
             const dataFileMeta = document.querySelector('meta[name="data-file"]');
             if (!dataFileMeta) {
                 console.error('❌ No data-file meta tag found');
@@ -128,7 +127,6 @@
             }
             
             const dataPath = dataFileMeta.getAttribute('content');
-            console.log('Data path:', dataPath);
             
             try {
                 const response = await fetch(dataPath);
@@ -154,7 +152,6 @@
             const mascot = topItem.mascot || '';
             const seasons = topItem.seasons || '';
             
-            // Helper to fix logo paths
             const fixPath = (url) => {
                 if (!url) return '';
                 if (url.startsWith('/static-football-rankings/')) return url;
@@ -162,7 +159,7 @@
                 return '/static-football-rankings/' + url;
             };
             
-            // Logic for Logo Framing: Use secondary color as border to prevent bleeding
+            // Logo Border matches Text Color (Secondary)
             const borderStyle = `border: 3px solid ${textColor}; border-radius: 8px; padding: 6px; background-color: rgba(255,255,255,0.1); max-height: 120px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);`;
 
             const logoHTML = topItem.logoURL ? 
@@ -171,8 +168,7 @@
             const schoolLogoHTML = topItem.schoolLogoURL ? 
                 `<img src="${fixPath(topItem.schoolLogoURL)}" alt="School Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
             
-            // Adjusted Column Sizes: 2-8-2 instead of 3-6-3 to give the name more room
-            // Increased mascot font size
+            // NOTE: Added 'color: ${textColor} !important' to styles to force the Secondary Color on fonts
             container.innerHTML = `
                 <div class="team-header" style="background-color: ${backgroundColor}; color: ${textColor}; padding: 30px 0; border-bottom: 5px solid ${textColor};">
                     <div class="container">
@@ -181,9 +177,9 @@
                                 ${logoHTML}
                             </div>
                             <div class="col-md-8 text-center">
-                                <h2 style="margin: 0; font-size: 2.8rem; font-weight: 800; line-height: 1.2;">${program}</h2>
-                                ${mascot ? `<p style="margin: 10px 0 5px 0; font-size: 1.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;">${mascot}</p>` : ''}
-                                ${seasons ? `<div class="team-stats" style="margin-top: 10px; display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px;"><small style="font-size: 1rem; font-weight: bold;">Seasons: ${seasons}</small></div>` : ''}
+                                <h2 style="margin: 0; font-size: 2.8rem; font-weight: 800; line-height: 1.2; color: ${textColor} !important;">${program}</h2>
+                                ${mascot ? `<p style="margin: 10px 0 5px 0; font-size: 1.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: ${textColor} !important;">${mascot}</p>` : ''}
+                                ${seasons ? `<div class="team-stats" style="margin-top: 10px; display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px;"><small style="font-size: 1rem; font-weight: bold; color: ${textColor} !important;">Seasons: ${seasons}</small></div>` : ''}
                             </div>
                             <div class="col-md-2 text-center d-none d-md-block">
                                 ${schoolLogoHTML}
@@ -195,11 +191,16 @@
         }
         
         function applyTableColors(topItem) {
+            
+            // 1. Setup Colors
             let headerBg = topItem.backgroundColor || '#343a40';
             let headerText = topItem.textColor || '#ffffff';
-            let rowTintSource = topItem.backgroundColor; // Default source for row tint
+            
+            // Sources for tints
+            let stripeSource = topItem.backgroundColor || '#343a40'; // Primary Color
+            let hoverSource = topItem.textColor || '#ffffff';       // Secondary Color
 
-            // Detect Black/Dark Background
+            // 2. Black Logic Check
             const isBlack = (
                 headerBg.toLowerCase() === '#000000' || 
                 headerBg.toLowerCase() === 'black' || 
@@ -207,16 +208,12 @@
             );
 
             if (isBlack) {
-                console.log('ℹ️ Black primary color detected.');
-                // 1. Swap Header Colors: Background becomes Secondary, Text becomes Black
-                headerBg = topItem.textColor;
+                // If black, use secondary color for header background to keep it vibrant
+                headerBg = topItem.textColor; 
                 headerText = topItem.backgroundColor;
-
-                // 2. Fix Row Tint: Use Secondary Color for tinting rows so they look colorful, not gray
-                rowTintSource = topItem.textColor;
             }
             
-            // Apply Header Styles
+            // 3. Apply to Table Header
             const thead = document.querySelector('table thead');
             if (thead) {
                 thead.style.backgroundColor = headerBg;
@@ -228,31 +225,40 @@
                 });
             }
             
-            // Apply Row Tinting (Striping)
-            const tbody = document.querySelector('table tbody');
-            if (tbody && rowTintSource) {
-                // Parse the color source (either Primary or Secondary depending on logic above)
-                let hex = rowTintSource.replace('#', '');
+            // 4. Helper to get RGB from Hex
+            const hexToRgb = (hex) => {
+                hex = hex.replace('#', '');
                 if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
-                
                 const r = parseInt(hex.substring(0, 2), 16);
                 const g = parseInt(hex.substring(2, 4), 16);
                 const b = parseInt(hex.substring(4, 6), 16);
+                return (!isNaN(r) && !isNaN(g) && !isNaN(b)) ? `${r}, ${g}, ${b}` : null;
+            };
 
-                if (!isNaN(r) && !isNaN(g) && !isNaN(b)) {
-                    // Increased opacity slightly (0.05 -> 0.08) for better visibility
-                    const style = document.createElement('style');
-                    style.textContent = `
-                        table tbody tr:nth-of-type(odd) {
-                            background-color: rgba(${r}, ${g}, ${b}, 0.08) !important;
-                        }
-                        /* Add a subtle hover effect using the same color but stronger */
-                        table tbody tr:hover {
-                            background-color: rgba(${r}, ${g}, ${b}, 0.15) !important;
-                        }
-                    `;
-                    document.head.appendChild(style);
-                }
+            const stripeRgb = hexToRgb(stripeSource);
+            const hoverRgb = hexToRgb(hoverSource);
+
+            // 5. Inject CSS for Row Styling
+            if (stripeRgb && hoverRgb) {
+                const style = document.createElement('style');
+                style.textContent = `
+                    /* Static Rows (Odd): Use Primary Color Tint */
+                    table tbody tr:nth-of-type(odd) {
+                        background-color: rgba(${stripeRgb}, 0.12) !important;
+                        --bs-table-accent-bg: rgba(${stripeRgb}, 0.12) !important; /* Override Bootstrap var */
+                    }
+                    /* Even Rows: Force White */
+                    table tbody tr:nth-of-type(even) {
+                        background-color: #ffffff !important;
+                    }
+                    /* Hover Effect: Use Secondary Color Tint */
+                    table tbody tr:hover, table tbody tr:nth-of-type(odd):hover {
+                        background-color: rgba(${hoverRgb}, 0.25) !important;
+                        --bs-table-accent-bg: rgba(${hoverRgb}, 0.25) !important;
+                        cursor: default;
+                    }
+                `;
+                document.head.appendChild(style);
             }
         }
     </script>
