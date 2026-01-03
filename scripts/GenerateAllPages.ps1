@@ -570,257 +570,34 @@ $tableControlsScript = @'
 '@
 
 # Comments functionality
-$commentCode = @'
-<script>
-const VERCEL_API_BASE = "https://static-football-rankings.vercel.app/api";
-
-/**********************************************************
- * AUTH / LOGIN LOGIC
- **********************************************************/
-async function checkLoginStatus() {
-    try {
-        const res = await fetch(`${VERCEL_API_BASE}/auth/status`, {
-            method: 'GET',
-            credentials: 'include'
-        });
-        const data = await res.json();
-
-        if (data.success && data.loggedIn) {
-            document.getElementById('commentForm').style.display = 'block';
-            document.getElementById('authorName').textContent = data.user.name || 'Anonymous';
-            renderAuthUI(true, data.user);
-        } else {
-            document.getElementById('commentForm').style.display = 'none';
-            document.getElementById('authorName').textContent = 'Anonymous';
-            renderAuthUI(false);
-        }
-    } catch (error) {
-        console.warn('Login status error:', error);
-        document.getElementById('commentForm').style.display = 'none';
-        document.getElementById('authorName').textContent = 'Anonymous';
-        renderAuthUI(false);
-    }
-}
-
-function renderAuthUI(loggedIn, user = null) {
-    const authContainer = document.getElementById('authContainer');
-    if (!authContainer) return;
-
-    if (loggedIn && user) {
-        authContainer.innerHTML = `
-            <p>Welcome, <strong>${escapeHTML(user.name)}</strong> (${escapeHTML(user.email)})
-               <button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Logout</button></p>
-        `;
-        document.getElementById('logoutBtn')?.addEventListener('click', doLogout);
-    } else {
-        authContainer.innerHTML = `
-            <button id="loginBtn" class="btn btn-success">Sign in with Google</button>
-        `;
-        document.getElementById('loginBtn')?.addEventListener('click', doLogin);
-    }
-}
-
-function doLogin() {
-    window.location.href = `${VERCEL_API_BASE}/auth/google`;
-}
-
-function doLogout() {
-    document.cookie = "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
-    document.cookie = "user_name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
-    document.cookie = "user_email=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=None;";
-    window.location.reload();
-}
-
-/**********************************************************
- * COMMENTS LOGIC
- **********************************************************/
-async function fetchComments() {
-    const pageId = getPageId();
-    try {
-        const res = await fetch(`${VERCEL_API_BASE}/comments?pageId=${encodeURIComponent(pageId)}`, {
-            method: 'GET',
-            credentials: 'include'
-        });
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        const data = await res.json();
-        if (data.success) {
-            displayComments(data.comments);
-        }
-    } catch (err) {
-        console.error('Error fetching comments:', err);
-        document.getElementById('commentsList').innerHTML = '<div class="alert alert-warning">Unable to load comments at this time.</div>';
-    }
-}
-
-function displayComments(comments) {
-    const list = document.getElementById('commentsList');
-    if (!list) return;
-    if (!Array.isArray(comments) || comments.length === 0) {
-        list.innerHTML = '<p class="text-muted">No comments yet</p>';
-        return;
-    }
-    list.innerHTML = comments.map(c => `
-        <div class="card mb-2">
-            <div class="card-body">
-                <p class="mb-1">${escapeHTML(c.text)}</p>
-                <small class="text-muted">
-                    by ${escapeHTML(c.author)} on ${new Date(c.timestamp).toLocaleString()}
-                </small>
-            </div>
-        </div>
-    `).join('');
-}
-
-async function submitComment() {
-    const textEl = document.getElementById('commentText');
-    const text = textEl.value.trim();
-    if (!text) return alert('Please enter a comment');
-
-    const pageId = getPageId();
-
-    try {
-        const res = await fetch(`${VERCEL_API_BASE}/comments`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text, pageId })
-        });
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        const data = await res.json();
-        if (data.success) {
-            textEl.value = '';
-            await fetchComments();
-        } else {
-            alert('Error posting comment: ' + (data.error || 'Unknown error'));
-        }
-    } catch (err) {
-        console.error('Error posting comment:', err);
-        alert('Failed to post comment. Please try again later.');
-    }
-}
-
-function escapeHTML(str) {
-    if (!str) return '';
-    return str
-        .toString()
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
-function getPageId() {
-    const el = document.querySelector('[data-page-name]');
-    return el ? el.getAttribute('data-page-name') : 'unknown';
-}
-
-// Initialize
-document.getElementById('submitComment')?.addEventListener('click', submitComment);
-
-(async function initPage() {
-    try {
-        await Promise.all([
-            checkLoginStatus(),
-            fetchComments()
-        ]);
-    } catch (error) {
-        console.warn('Page initialization error:', error);
-    }
-})();
-</script>
-'@
-#endregion Template Scripts
-
-#region Processing Functions
-function Process-Template {
-    param (
-        [Parameter(Mandatory=$true)][string]$TemplatePath,
-        [Parameter(Mandatory=$true)][hashtable]$Replacements,
-        [Parameter(Mandatory=$true)][object]$Data,
-        [Parameter(Mandatory=$true)][string]$Type
-    )
-
-    Write-Host "`nProcessing template: $TemplatePath" -ForegroundColor Yellow
-    
-    try {
-        $template = Get-Content $TemplatePath -Raw
-        
-        # Clean up any userStyle tags that might be present in the template
-        $template = $template -replace '<userStyle>Normal</userStyle>', ''
-
-        # Handle data file path if present
-        if ($Replacements.ContainsKey('DataFilePath')) {
-            $pattern = $Replacements.DataFilePath.Pattern
-            $replacement = $Replacements.DataFilePath.Replacement
-            Write-Host "  Updating data file path..." -ForegroundColor Yellow
-            $template = $template -replace $pattern, $replacement
-        }
-
-        # Handle timestamp replacement
-        $currentDate = Get-Date -Format "M/d/yyyy"
-        $template = $template -replace '(<span id="lastUpdated">)[^<]*(</span>)', "`${1}$currentDate`${2}"
-
-        # Handle all other replacements
-        foreach ($key in $Replacements.Keys) {
-            if ($key -ne 'DataFilePath' -and $Replacements[$key]) {
-                Write-Host "  Replacing: $key" -ForegroundColor Yellow
-                $template = $template -replace $key, $Replacements[$key]
-            }
-        }
-
-        # Handle scripts (ensure they're clean of userStyle tags)
-        $cleanTableControls = $tableControlsScript -replace '<userStyle>Normal</userStyle>', ''
-        $cleanComments = $commentCode -replace '<userStyle>Normal</userStyle>', ''
-        
-        $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $cleanTableControls
-        $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $cleanComments
-
-        # Handle table rows
-        Write-Host "  Generating table rows..." -ForegroundColor Yellow
-        $tableRows = Generate-TableRows -Items $Data.items -Type $Type
-        Write-Host "  Generated $($Data.items.Count) rows"
-        $template = $template -replace 'TABLE_ROWS', $tableRows
-
-        return $template
-    }
-    catch {
-        Write-Error "Error processing template: $_"
-        throw
-    }
-}
-
-function Process-DecadeData {
-    param (
-        [string]$DecadeName,
-        [string]$StartYear,
-        [string]$EndYear,
-        [string]$DisplayName
-    )
-
-    Write-Host "`n========== Processing $DisplayName Programs ==========" -ForegroundColor Cyan
-
-    # Define common replacements with CORRECTED paths
-    $commonReplacements = @{
-        'DECADE_DISPLAY_NAME' = $DisplayName
-        'DECADE_NAME' = $DecadeName
-        'DECADE_START' = $StartYear
-        'DECADE_END' = $EndYear
-    }
-
-    # Process Programs
-    $programJsonPath = Join-Path $dataDir "decades\programs\programs-$DecadeName.json"
-    Write-Host "`nProcessing Programs" -ForegroundColor Yellow
-    Write-Host "  JSON Path: $programJsonPath"
-    
-    if (Test-Path $programJsonPath) {
-        try {
-            $jsonContent = Get-Content $programJsonPath -Raw | ConvertFrom-Json
-            
-            # Add standardization step
-            Generate-StandardizedJson -Type "decade-programs" `
-                                   -Items $jsonContent.items `
-                                   -TopItem $jsonContent.topItem `
+# Replace-CommentsWithGiscus.ps1
+$commentCode = @"
+<div class="container mt-5">
+    <div class="comments-section">
+        <h3 class="mb-4">Comments & Discussion</h3>
+        <p class="text-muted small mb-3">
+            Sign in with GitHub to comment. Comments are stored as 
+            <a href="https://github.com/olderdyad/static-football-rankings/discussions" target="_blank">GitHub Discussions</a>.
+        </p>
+        <script src="https://giscus.app/client.js"
+                data-repo="olderdyad/static-football-rankings"
+                data-repo-id="R_kgDONn_yOg"
+                data-category="General"
+                data-category-id="DIC_kwDONn_yOs4C0hls"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="1"
+                data-input-position="top"
+                data-theme="preferred_color_scheme"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+</div>
+"@
                                    -Description "$DisplayName Programs" `
                                    -YearRange "$StartYear-$EndYear" `
                                    -OutputPath $programJsonPath
