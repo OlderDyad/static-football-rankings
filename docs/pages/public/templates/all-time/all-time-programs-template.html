@@ -8,6 +8,14 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    
+    <style>
+        /* Program link styling */
+        .program-link:hover {
+            text-decoration: underline !important;
+            color: #0052a3 !important;
+        }
+    </style>
 </head>
 <body>
     <div class="header-banner">
@@ -66,7 +74,7 @@
                     </tr>
                 </thead>
                 <tbody id="programsTableBody">
-                    TABLE_ROWS
+                    <!-- Populated by JavaScript -->
                 </tbody>
             </table>
         </div>
@@ -141,6 +149,7 @@
                     console.log('topItem:', data.topItem);
                     createBanner(data.topItem);
                     applyTableColors(data.topItem);
+                    populateTable(data.items);  // NEW: Populate table with clickable names
                 } else {
                     console.error('❌ No topItem found');
                 }
@@ -148,6 +157,50 @@
                 console.error('❌ Error:', error);
             }
         });
+        
+        // NEW FUNCTION: Populate table with clickable program names
+        function populateTable(items) {
+            console.log(`Populating table with ${items.length} programs...`);
+            
+            const tbody = document.getElementById('programsTableBody');
+            if (!tbody) {
+                console.error('❌ No programsTableBody found');
+                return;
+            }
+            
+            // Clear existing rows
+            tbody.innerHTML = '';
+            
+            items.forEach(item => {
+                const row = document.createElement('tr');
+                
+                // Format program name with link if page exists
+                let programHtml;
+                if (item.hasProgramPage && item.programPageUrl) {
+                    // Has page - make it a clickable link
+                    programHtml = `<a href="${item.programPageUrl}" class="program-link" style="color: #0066cc; font-weight: 600; text-decoration: none;">${item.program}</a>`;
+                } else {
+                    // No page - just show name
+                    programHtml = item.program;
+                }
+                
+                row.innerHTML = `
+                    <td>${item.rank}</td>
+                    <td>${programHtml}</td>
+                    <td>${item.seasons}</td>
+                    <td>${item.combined}</td>
+                    <td>${item.margin}</td>
+                    <td>${item.win_loss}</td>
+                    <td>${item.offense}</td>
+                    <td>${item.defense}</td>
+                    <td>${item.state}</td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+            
+            console.log(`✓ Table populated with ${items.length} rows`);
+        }
         
         function createBanner(topItem) {
             console.log('Creating banner with colors:', topItem.backgroundColor, topItem.textColor);

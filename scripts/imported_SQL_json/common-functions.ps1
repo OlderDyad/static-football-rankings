@@ -85,6 +85,7 @@ function Get-TeamMetadata-old {
 }
 
 # Add to common-functions.ps1
+#Format-ProgramData
 function Format-ProgramData {
     param($programs, $metadata, $description)
     
@@ -155,6 +156,17 @@ function Format-ProgramData {
                     offense = SafeToString($_.offense, "0.000")
                     defense = SafeToString($_.defense, "0.000")
                     state = SafeToString($_.state)
+                    # ✅ NEW: Add program page link fields
+                    hasProgramPage = if ($_.PSObject.Properties['hasProgramPage']) { 
+                        [bool]$_.hasProgramPage 
+                    } else { 
+                        $false 
+                    }
+                    programPageUrl = if ($_.PSObject.Properties['programPageUrl']) { 
+                        $_.programPageUrl.ToString() 
+                    } else { 
+                        "" 
+                    }
                 }
             })
         }
@@ -164,106 +176,6 @@ function Format-ProgramData {
     }
     catch {
         Write-Host "Error in Format-ProgramData: $_" -ForegroundColor Red
-        Write-Host "Error details: $($_.ScriptStackTrace)" -ForegroundColor Red
-        throw
-    }
-}
-
-function Format-TeamData {
-    param($teams, $metadata, $description, $yearRange, $stateFormatted = "")
-    
-    # Add debug output
-    Write-Host "Formatting team data with $($teams.Rows.Count) rows"
-    
-    try {
-        # Improved SafeToString function with explicit array handling
-        function SafeToString($value, $defaultValue = "0") {
-            if ($null -eq $value -or [DBNull]::Value.Equals($value)) {
-                return $defaultValue
-            }
-            
-            # Handle array type explicitly (this is likely the issue)
-            if ($value -is [Array]) {
-                if ($value.Length -gt 0) {
-                    $firstVal = $value[0]
-                    if ($firstVal -is [System.Double] -or $firstVal -is [System.Decimal]) {
-                        return [double]::Parse($firstVal.ToString()).ToString("0.000")
-                    }
-                    return $firstVal.ToString()
-                }
-                return $defaultValue
-            }
-            
-            # Handle numeric types
-            if ($value -is [System.Double] -or $value -is [System.Decimal]) {
-                return [double]::Parse($value.ToString()).ToString("0.000")
-            }
-            
-            # Default string conversion
-            return $value.ToString()
-        }
-        
-        # Determine state to use
-        $stateToUse = if ([string]::IsNullOrEmpty($stateFormatted)) { 
-            SafeToString($teams.Rows[0].State) 
-        } else { 
-            $stateFormatted 
-        }
-        
-        $jsonData = @{
-            metadata = @{
-                timestamp = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
-                type = "teams" 
-                yearRange = $yearRange
-                totalItems = $teams.Rows.Count
-                description = $description
-            }
-            topItem = @{
-                rank = [int]$teams.Rows[0].Rank
-                team = $teams.Rows[0].Team
-                season = [int]$teams.Rows[0].Season 
-                # Use SafeToString to handle arrays
-                combined = SafeToString($teams.Rows[0].Combined, "0.000")
-                margin = SafeToString($teams.Rows[0].Margin, "0.000")
-                win_loss = SafeToString($teams.Rows[0].Win_Loss, "0.000")
-                offense = SafeToString($teams.Rows[0].Offense, "0.000")
-                defense = SafeToString($teams.Rows[0].Defense, "0.000")
-                state = $stateToUse
-                games_played = [int]$teams.Rows[0].Games_Played
-                mascot = if ($metadata) { $metadata.Mascot } else { "" }
-                backgroundColor = if ($metadata) { $metadata.backgroundColor } else { "Navy" }
-                textColor = if ($metadata) { $metadata.textColor } else { "White" }
-                logoURL = if ($metadata) { $metadata.LogoURL } else { "" }
-                schoolLogoURL = if ($metadata) { $metadata.School_Logo_URL } else { "" }
-            }
-            items = @($teams.Rows | ForEach-Object {
-                $itemState = if ([string]::IsNullOrEmpty($stateFormatted)) { 
-                    SafeToString($_.State) 
-                } else { 
-                    $stateFormatted 
-                }
-                
-                @{
-                    rank = [int]$_.Rank
-                    team = $_.Team
-                    season = [int]$_.Season
-                    # Use SafeToString to handle arrays
-                    combined = SafeToString($_.Combined, "0.000")
-                    margin = SafeToString($_.Margin, "0.000")
-                    win_loss = SafeToString($_.Win_Loss, "0.000")
-                    offense = SafeToString($_.Offense, "0.000")
-                    defense = SafeToString($_.Defense, "0.000")
-                    state = $itemState
-                    games_played = [int]$_.Games_Played
-                }
-            })
-        }
-        
-        Write-Host "Generated data for $($teams.Rows[0].Team) with $($teams.Rows.Count) items"
-        return $jsonData
-    }
-    catch {
-        Write-Host "Error in Format-TeamData: $_" -ForegroundColor Red
         Write-Host "Error details: $($_.ScriptStackTrace)" -ForegroundColor Red
         throw
     }
