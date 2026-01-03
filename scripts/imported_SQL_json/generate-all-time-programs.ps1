@@ -89,8 +89,13 @@ try {
             $template = Get-Content $templatePath -Raw
             $htmlFilename = "programs-$minSeasons-plus.html"
             
-            # Replace placeholder with Giscus script
+            # Replace all placeholders
+            $template = $template -replace 'PROGRAM_THRESHOLD', $minSeasons
+            $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
             $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $giscusScript
+            
+            # Note: TABLE_ROWS is intentionally left as-is since JavaScript populates the table
+            # If you want to pre-populate, we'd need to add that logic here
             
             # Save HTML file
             $htmlPath = Join-Path $htmlOutputDir $htmlFilename
