@@ -1,160 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DECADE_DISPLAY_NAME Programs - McKnight's American Football</title>
-        <meta name="decade-info" content="start-year:DECADE_START,end-year:DECADE_END">
-        <meta name="data-file" content="/static-football-rankings/data/decades/programs/decade-programs-DECADE_NAME.json">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECADE_DISPLAY_NAME Programs - McKnight's American Football</title>
+    <meta name="decade-info" content="start-year:DECADE_START,end-year:DECADE_END">
+    <meta name="data-file" content="/static-football-rankings/data/decades/programs/programs-DECADE_NAME.json">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    <style>
+        .program-link {
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .program-link:hover {
+            text-decoration: underline !important;
+            color: #0052a3 !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Custom Stylesheet -->
-        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-        
-        <style>
-            /* Prevent FOUC and white screen during load */
-            body {
-                visibility: visible;
-                opacity: 1;
-                transition: opacity 0.3s ease-in;
-            }
-            .page-content {
-                opacity: 1;
-                transition: opacity 0.3s ease-in;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Static header image -->
-        <div class="header-banner">
-            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    <!-- Breadcrumb navigation -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/decades/index.html">Rankings by Decade</a></li>
+                <li class="breadcrumb-item active" aria-current="page">DECADE_DISPLAY_NAME Programs</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Dynamic program banner container -->
+    <div id="programHeaderContainer"></div>
+
+    <!-- Main content -->
+    <div class="container mt-4">
+        <h1 data-page-name="DECADE_NAME">Top Programs of the DECADE_DISPLAY_NAME</h1>
+
+        <div class="d-flex justify-content-between mb-3">
+            <div>
+                <a href="DECADE_NAME-teams.html" class="btn btn-outline-primary">View Team Rankings</a>
+            </div>
+            <div class="text-muted">Updated: <span id="lastUpdated">TIMESTAMP</span></div>
         </div>
 
-        <div class="page-content">
-            <!-- Breadcrumb navigation -->
-            <div class="container mt-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/decades/index.html">Rankings by Decade</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">DECADE_DISPLAY_NAME</li>
-                    </ol>
+        <!-- Search Controls -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text">Search</span>
+                    <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="sticky-top bg-white">
+                    <tr>
+                        <th style="min-width: 60px">Rank</th>
+                        <th style="min-width: 200px">Program</th>
+                        <th style="min-width: 90px">Seasons</th>
+                        <th style="min-width: 90px">Combined</th>
+                        <th style="min-width: 90px">Margin</th>
+                        <th style="min-width: 90px">Win/Loss</th>
+                        <th style="min-width: 90px">Offense</th>
+                        <th style="min-width: 90px">Defense</th>
+                        <th style="min-width: 70px">State</th>
+                    </tr>
+                </thead>
+                <tbody id="programsTableBody">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="pagination-info">
+                    Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                </div>
+            </div>
+            <div class="col-md-6">
+                <nav aria-label="Table navigation">
+                    <ul class="pagination justify-content-end" id="tablePagination"></ul>
                 </nav>
             </div>
-
-            <!-- Dynamic team banner container -->
-            <div id="teamHeaderContainer"></div>
-
-            <!-- Main content -->
-            <div class="container mt-4">
-                <h1 data-page-name="DECADE_NAME">Top Programs of the DECADE_DISPLAY_NAME</h1>
-                
-                <div class="d-flex justify-content-between mb-3">
-                    <div>
-                        <a href="DECADE_NAME-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
-                    </div>
-                    <div class="text-muted">Updated: <span id="lastUpdated">TIMESTAMP</span></div>
-                </div>
-
-                <!-- Search Controls -->
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-text">Search</span>
-                            <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Table -->
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover">
-                        <thead class="sticky-top bg-white">
-                            <tr>
-                                <th style="min-width: 60px">Rank</th>
-                                <th style="min-width: 200px">Program</th>                                
-                                <th style="min-width: 80px">Seasons</th>
-                                <th style="min-width: 90px">Combined</th>
-                                <th style="min-width: 90px">Margin</th>
-                                <th style="min-width: 90px">Win/Loss</th>
-                                <th style="min-width: 90px">Offense</th>
-                                <th style="min-width: 90px">Defense</th>
-                                <th style="min-width: 70px">State</th>
-                            </tr>
-                        </thead>
-                        <tbody id="programsTableBody">
-                            TABLE_ROWS
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Pagination Controls -->
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <div class="pagination-info">
-                            Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="Table navigation">
-                            <ul class="pagination justify-content-end" id="tablePagination"></ul>
-                        </nav>
-                    </div>
-                </div>
-
-<!-- Comments Section -->
-<div class="comments-section mt-5">
-    <h3>Comments</h3>
-    <div id="authContainer" class="mb-3">
-        <!-- Auth UI will be inserted here -->
-    </div>
-    <div id="commentForm" class="mb-4" style="display: none">
-        <div class="card">
-            <div class="card-body">
-                <textarea id="commentText" class="form-control mb-2" rows="3" 
-                          placeholder="Share your thoughts..."></textarea> 
-                <div class="d-flex justify-content-between align-items-center">
-                    <button id="submitComment" class="btn btn-primary">Post Comment</button>
-                    <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
-                </div>
-            </div>
         </div>
-    </div>
-    <div id="commentsList" class="mt-3">
-        <!-- Comments will be loaded here -->
-        <div class="placeholder-glow">
-            <div class="card mb-2">
-                <div class="card-body">
-                    <p class="placeholder col-8"></p>
-                    <small class="text-muted placeholder col-4"></small>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <!-- Table Controls Script -->
-        TABLE_CONTROLS_SCRIPT
-        
-        <!-- Comments Script -->
         COMMENTS_SCRIPT_PLACEHOLDER
+
+        <footer class="mt-5 mb-3">
+            <div class="text-center">
+                <p>&copy; 2025 McKnight's Football Rankings</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    TABLE_CONTROLS_SCRIPT
+    
+    <script>
+        console.log('=== INLINE SCRIPT STARTING ===');
         
-<!-- TopBanner initialization -->
-<script type="module">
-    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
-    document.addEventListener('DOMContentLoaded', async () => {
-        try {
-            const banner = new TopBanner();
-            await banner.initialize();
-        } catch (error) {
-            console.warn('Banner initialization failed:', error);
-            document.body.style.display = 'block';
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('DOM loaded, loading data...');
+            
+            const dataFileMeta = document.querySelector('meta[name="data-file"]');
+            if (!dataFileMeta) {
+                console.error('❌ No data-file meta tag found');
+                return;
+            }
+            
+            const dataPath = dataFileMeta.getAttribute('content');
+            console.log('Data path:', dataPath);
+            
+            try {
+                const response = await fetch(dataPath);
+                console.log('Response status:', response.status);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const data = await response.json();
+                console.log('✓ Data loaded');
+                
+                if (data.topItem) {
+                    console.log('✓ topItem found');
+                    createBanner(data.topItem);
+                    applyTableColors(data.topItem);
+                    populateTable(data.items);
+                } else {
+                    console.error('❌ No topItem found');
+                }
+            } catch (error) {
+                console.error('❌ Error:', error);
+            }
+        });
+
+        function populateTable(items) {
+            console.log(`Populating table with ${items.length} programs...`);
+            
+            const tbody = document.getElementById('programsTableBody');
+            if (!tbody) {
+                console.error('❌ No programsTableBody found');
+                return;
+            }
+
+            // Clear existing rows
+            tbody.innerHTML = '';
+
+            items.forEach(item => {
+                const row = document.createElement('tr');
+                
+                // Format program name with link if page exists
+                let programHtml;
+                if (item.hasProgramPage && item.programPageUrl) {
+                    programHtml = `<a href="${item.programPageUrl}" class="program-link">${item.program}</a>`;
+                } else {
+                    programHtml = item.program;
+                }
+
+                row.innerHTML = `
+                    <td>${item.rank}</td>
+                    <td>${programHtml}</td>
+                    <td>${item.seasons}</td>
+                    <td>${item.combined}</td>
+                    <td>${item.margin}</td>
+                    <td>${item.win_loss}</td>
+                    <td>${item.offense}</td>
+                    <td>${item.defense}</td>
+                    <td>${item.state}</td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+
+            console.log(`✓ Table populated with ${items.length} rows`);
+            
+            // Initialize table controls AFTER population
+            if (window.TableControls) {
+                TableControls.init();
+            }
         }
-    });
-</script>
-    </body>
+
+        function fixPath(path) {
+            if (!path) return '';
+            return path.startsWith('/') ? path : `/static-football-rankings/${path}`;
+        }
+
+        function createBanner(topItem) {
+            console.log('Creating banner for:', topItem);
+
+            const container = document.getElementById('programHeaderContainer');
+            if (!container) {
+                console.error('❌ No programHeaderContainer found');
+                return;
+            }
+
+            const { program, seasons, mascot, backgroundColor, textColor, logoURL, schoolLogoURL } = topItem;
+
+            const primaryColor = backgroundColor || '#003087';
+            const secondaryColor = textColor || '#FFD700';
+
+            const borderStyle = `border: 3px solid ${secondaryColor}; border-radius: 8px; padding: 5px;`;
+
+            const logoHTML = logoURL ? 
+                `<img src="${fixPath(logoURL)}" alt="Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
+
+            const schoolLogoHTML = schoolLogoURL ? 
+                `<img src="${fixPath(schoolLogoURL)}" alt="School Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
+
+            container.innerHTML = `
+                <div class="team-header" style="background-color: ${primaryColor}; color: ${secondaryColor}; padding: 30px 0; border-bottom: 5px solid ${secondaryColor};">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center d-none d-md-block">
+                                ${logoHTML}
+                            </div>
+                            <div class="col-md-8 text-center">
+                                <h2 style="margin: 0; font-size: 2.8rem; font-weight: 800; color: ${secondaryColor} !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">${program}</h2>
+                                ${mascot ? `<p style="margin: 10px 0; font-size: 1.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: ${secondaryColor} !important;">${mascot}</p>` : ''}
+                                <div class="team-stats" style="margin-top: 10px; background: rgba(255,255,255,0.15); padding: 5px 15px; border-radius: 20px; border: 2px solid ${secondaryColor}; display: inline-block;">
+                                    <small style="font-size: 1rem; font-weight: bold; color: ${secondaryColor} !important;">Seasons: ${seasons}</small>
+                                </div>
+                            </div>
+                            <div class="col-md-2 text-center d-none d-md-block">
+                                ${schoolLogoHTML}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            console.log('✓ Banner created');
+        }
+
+        function applyTableColors(topItem) {
+            console.log('Applying table colors...');
+
+            const primaryColor = topItem.backgroundColor || '#343a40';
+            const secondaryColor = topItem.textColor || '#ffffff';
+
+            console.log('✓ Colors - Primary:', primaryColor, 'Secondary:', secondaryColor);
+
+            // Apply PRIMARY color to table header
+            const thead = document.querySelector('table thead');
+            if (thead) {
+                thead.style.backgroundColor = primaryColor;
+                thead.style.color = '#ffffff';
+
+                thead.querySelectorAll('th').forEach(th => {
+                    th.style.backgroundColor = primaryColor;
+                    th.style.color = '#ffffff';
+                    th.style.borderColor = primaryColor;
+                });
+
+                console.log('✓ Table header styled');
+            }
+
+            // Helper to convert hex to RGB
+            const hexToRgb = (hex) => {
+                hex = hex.replace('#', '');
+                if (hex.length === 3) {
+                    hex = hex.split('').map(c => c + c).join('');
+                }
+                const r = parseInt(hex.substring(0, 2), 16);
+                const g = parseInt(hex.substring(2, 4), 16);
+                const b = parseInt(hex.substring(4, 6), 16);
+                return (!isNaN(r) && !isNaN(g) && !isNaN(b)) ? `${r}, ${g}, ${b}` : null;
+            };
+
+            const primaryRgb = hexToRgb(primaryColor);
+            const secondaryRgb = hexToRgb(secondaryColor);
+
+            if (primaryRgb && secondaryRgb) {
+                const style = document.createElement('style');
+                style.textContent = `
+                    table tbody tr:nth-of-type(odd) {
+                        background-color: rgba(${primaryRgb}, 0.20) !important;
+                    }
+                    table tbody tr:nth-of-type(even) {
+                        background-color: #ffffff !important;
+                    }
+                    table tbody tr:hover {
+                        background-color: rgba(${secondaryRgb}, 0.25) !important;
+                        cursor: pointer;
+                        transition: background-color 0.2s ease;
+                    }
+                `;
+                document.head.appendChild(style);
+
+                console.log('✓ Table row colors applied');
+            }
+        }
+    </script>
+</body>
 </html>
