@@ -39,6 +39,8 @@ SELECT
        [PhotoUrl],
        [Latitude],
        [Longitude],
+       [Has_Team_Page],
+       [Team_Page_URL],
        [LastUpdated]
   FROM [hs_football_database].[dbo].[HS_Team_Names]
   WHERE [LogoURL] IS NULL 

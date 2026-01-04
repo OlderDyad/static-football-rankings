@@ -215,29 +215,31 @@ with engine.begin() as conn:
         # This prevents the Trigger from blocking the update, even if the name in the Sheet 
         # is slightly different from the DB.
         sql_update = text("""
-            UPDATE [dbo].[HS_Team_Names]
-            SET 
-                -- SECTION 1: USER MANAGED FIELDS (Overwrite DB)
-                [City] = :city,
-                [State] = :state,
-                [Mascot] = :mascot,
-                [PrimaryColor] = :p_color,
-                [SecondaryColor] = :s_color,
-                [TertiaryColor] = :t_color,
-                [Stadium] = :stadium,        
-                [Website] = :website,
-                [YearFounded] = :founded,
-                [Latitude] = :lat,
-                [Longitude] = :long,
-                
-                -- SECTION 2: SCRIPT MANAGED FIELDS (Preserve DB)
-                [LogoURL] = CASE WHEN :logo = '' THEN [LogoURL] ELSE :logo END,
-                [School_Logo_URL] = CASE WHEN :school_logo = '' THEN [School_Logo_URL] ELSE :school_logo END,
-                [PhotoUrl] = CASE WHEN :photo = '' THEN [PhotoUrl] ELSE :photo END,
-                
-                [LastUpdated] = GETDATE()
-            WHERE [ID] = :id
-        """)
+                    UPDATE [dbo].[HS_Team_Names]
+                    SET 
+                        -- SECTION 1: USER MANAGED FIELDS (Overwrite DB)
+                        [City] = :city,
+                        [State] = :state,
+                        [Mascot] = :mascot,
+                        [PrimaryColor] = :p_color,
+                        [SecondaryColor] = :s_color,
+                        [TertiaryColor] = :t_color,
+                        [Stadium] = :stadium,        
+                        [Website] = :website,
+                        [YearFounded] = :founded,
+                        [Latitude] = :lat,
+                        [Longitude] = :long,
+                        
+                        -- SECTION 2: SCRIPT MANAGED FIELDS (Preserve DB)
+                        [LogoURL] = CASE WHEN :logo = '' THEN [LogoURL] ELSE :logo END,
+                        [School_Logo_URL] = CASE WHEN :school_logo = '' THEN [School_Logo_URL] ELSE :school_logo END,
+                        [PhotoUrl] = CASE WHEN :photo = '' THEN [PhotoUrl] ELSE :photo END,
+                        [Has_Team_Page] = ISNULL([Has_Team_Page], 0),
+                        [Team_Page_URL] = ISNULL([Team_Page_URL], ''),
+                        
+                        [LastUpdated] = GETDATE()
+                    WHERE [ID] = :id
+                """)
 
         # HELPER: Handle numbers
         def clean_num(val):
