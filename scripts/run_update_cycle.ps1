@@ -1,7 +1,7 @@
 # ========================================================
-#  MASTER UPDATE CYCLE (v6 - Updated December 31, 2025)
+#  MASTER UPDATE CYCLE (v7 - Updated January 3, 2026)
 #  1. Syncs Google Sheets & Images to SQL (Python)
-#  2. Generates Web JSONs (Python for States AND Global)
+#  2. Generates Web JSONs (Python for States, PowerShell for All-Time)
 #  3. Generates Statistics (Database & Regional)
 #  4. Rebuilds HTML (PowerShell)
 #  5. Publishes to GitHub
@@ -38,18 +38,26 @@ python generate_site_data.py
 # ---------------------------------------------------------
 Write-Host "STEP 3: Generating Global & Decade JSON Data..." -ForegroundColor Cyan
 
-# 2. Generate All-Time & Decade Lists (1980s, 1990s, etc.)
+# 2. Generate Decade Lists (1980s, 1990s, etc.) - Python handles these
 python generate_global_data.py
 python generate_latest_season.py
 
-# 3. Generate National Champions JSON
+# 3. Generate All-Time Rankings - PowerShell (has team/program page links)
+Write-Host "  - Generating All-Time Teams..." -ForegroundColor Yellow
+Set-Location $psScriptsDir
+.\generate-all-time-teams.ps1
+
+Write-Host "  - Generating All-Time Programs..." -ForegroundColor Yellow
+.\generate-all-time-programs.ps1
+
+# 4. Generate National Champions JSON
 Write-Host "  - Generating Media National Champions..." -ForegroundColor Yellow
+Set-Location $pythonDir
 python generate_media_champions_json.py
 
 Write-Host "  - Generating McKnight National Champions..." -ForegroundColor Yellow
 Set-Location $psScriptsDir
 .\Generate-McKnightNationalChampions.ps1
-Set-Location $pythonDir
 
 # ---------------------------------------------------------
 # STEP 4: GENERATE STATISTICS (PYTHON)
@@ -86,7 +94,7 @@ git add .
 
 # Commit
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm"
-git commit -m "Master Cycle Update: Synced Sheets, Images, State, Global, Media & McKnight NC, and Statistics Data ($timestamp)"
+git commit -m "Master Cycle Update: Synced Sheets, Images, State, Global, All-Time (PS), Media & McKnight NC, and Statistics Data ($timestamp)"
 
 # Push
 git push origin main
@@ -97,7 +105,8 @@ Write-Host "--------------------------------" -ForegroundColor Green
 Write-Host ""
 Write-Host "Generated:" -ForegroundColor White
 Write-Host "  - State Teams & Programs JSON" -ForegroundColor Gray
-Write-Host "  - All-Time & Decade JSON" -ForegroundColor Gray
+Write-Host "  - Decade JSON (Python)" -ForegroundColor Gray
+Write-Host "  - All-Time JSON (PowerShell with page links)" -ForegroundColor Gray
 Write-Host "  - Latest Season JSON" -ForegroundColor Gray
 Write-Host "  - Media National Champions JSON" -ForegroundColor Gray
 Write-Host "  - McKnight National Champions JSON" -ForegroundColor Gray
