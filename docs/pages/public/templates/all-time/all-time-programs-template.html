@@ -92,7 +92,7 @@
             </div>
         </div>
 
-COMMENTS_SCRIPT_PLACEHOLDER
+<!-- Comments Script-->
 
         <footer class="mt-5 mb-3">
             <div class="text-center">
@@ -103,11 +103,17 @@ COMMENTS_SCRIPT_PLACEHOLDER
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    TABLE_CONTROLS_SCRIPT
+    <!-- TABLE_CONTROLS_SCRIPT -->
     
     <script>
         console.log('=== INLINE SCRIPT STARTING ===');
-        
+
+        // Global State
+        let allData = [];
+        let currentData = [];
+        let currentPage = 1;
+        const rowsPerPage = 100;
+
         document.addEventListener('DOMContentLoaded', async () => {
             console.log('DOM loaded, loading data...');
             
@@ -118,52 +124,165 @@ COMMENTS_SCRIPT_PLACEHOLDER
             }
             
             const dataPath = dataFileMeta.getAttribute('content');
-            console.log('Data path:', dataPath);
             
             try {
                 const response = await fetch(dataPath);
-                console.log('Response status:', response.status);
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 
                 const data = await response.json();
-                console.log('Data loaded:', data);
+                console.log('✓ Data loaded');
                 
                 if (data.topItem) {
-                    console.log('topItem:', data.topItem);
+                    // Initialize Header
                     createBanner(data.topItem);
                     applyTableColors(data.topItem);
-                    populateTable(data.items);  // NEW: Populate table with clickable names
-                } else {
-                    console.error('❌ No topItem found');
+                    
+                    // Initialize Data
+                    allData = data.items;
+                    currentData = allData;
+                    
+                    // Initialize Search
+                    setupSearch();
+
+                    // Render First Page
+                    renderPage(1);
                 }
             } catch (error) {
                 console.error('❌ Error:', error);
             }
         });
-        
-        // NEW FUNCTION: Populate table with clickable program names
-        function populateTable(items) {
-            console.log(`Populating table with ${items.length} teams...`);
+
+        // --- Pagination Logic ---
+
+        function renderPage(page) {
+            const totalPages = Math.ceil(currentData.length / rowsPerPage);
             
-            const tbody = document.getElementById('teamsTableBody');
+            // Bounds check
+            if (page < 1) page = 1;
+            if (page > totalPages && totalPages > 0) page = totalPages;
+            
+            currentPage = page;
+
+            // Slice data
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const pageItems = currentData.slice(start, end);
+
+            // Render
+            populateTable(pageItems);
+            renderPaginationControls(totalPages);
+            updateInfoText(start, pageItems.length, currentData.length);
+        }
+
+        function updateInfoText(startIndex, count, total) {
+            const startSpan = document.getElementById('startRow');
+            const endSpan = document.getElementById('endRow');
+            const totalSpan = document.getElementById('totalRows');
+
+            if (startSpan) startSpan.textContent = total === 0 ? 0 : startIndex + 1;
+            if (endSpan) endSpan.textContent = startIndex + count;
+            if (totalSpan) totalSpan.textContent = total;
+        }
+
+        function renderPaginationControls(totalPages) {
+            const paginationContainer = document.getElementById('tablePagination');
+            if (!paginationContainer) return;
+
+            paginationContainer.innerHTML = '';
+
+            const createItem = (label, pageNum, isActive, isDisabled) => {
+                const li = document.createElement('li');
+                li.className = `page-item ${isActive ? 'active' : ''} ${isDisabled ? 'disabled' : ''}`;
+                
+                const a = document.createElement('a');
+                a.className = 'page-link';
+                a.href = '#';
+                a.innerHTML = label;
+                
+                if (!isDisabled && !isActive) {
+                    a.onclick = (e) => {
+                        e.preventDefault();
+                        renderPage(pageNum);
+                    };
+                }
+                li.appendChild(a);
+                return li;
+            };
+
+            // Prev
+            paginationContainer.appendChild(createItem('&laquo;', currentPage - 1, false, currentPage === 1));
+
+            // Smart Pagination (1 ... 4 5 6 ... 50)
+            const maxVisibleButtons = 5; 
+            let startPage = Math.max(1, currentPage - 2);
+            let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
+
+            if (endPage - startPage < maxVisibleButtons - 1) {
+                startPage = Math.max(1, endPage - maxVisibleButtons + 1);
+            }
+
+            if (startPage > 1) {
+                paginationContainer.appendChild(createItem('1', 1, false, false));
+                if (startPage > 2) paginationContainer.appendChild(createItem('...', null, false, true));
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                paginationContainer.appendChild(createItem(i, i, currentPage === i, false));
+            }
+
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) paginationContainer.appendChild(createItem('...', null, false, true));
+                paginationContainer.appendChild(createItem(totalPages, totalPages, false, false));
+            }
+
+            // Next
+            paginationContainer.appendChild(createItem('&raquo;', currentPage + 1, false, currentPage === totalPages || totalPages === 0));
+        }
+
+        // --- Search Logic ---
+        function setupSearch() {
+            const searchInput = document.getElementById('tableSearch');
+            if (!searchInput) return;
+
+            searchInput.addEventListener('keyup', (e) => {
+                const term = e.target.value.toLowerCase();
+                
+                if (term.length < 2) {
+                    currentData = allData;
+                } else {
+                    currentData = allData.filter(item => 
+                        item.program.toLowerCase().includes(term)
+                    );
+                }
+                renderPage(1);
+            });
+        }
+
+        // --- Table Rendering ---
+
+        function populateTable(items) {
+            // CORRECTED ID: programsTableBody
+            const tbody = document.getElementById('programsTableBody');
+            
             if (!tbody) {
-                console.error('❌ No teamsTableBody found');
+                console.error('❌ No programsTableBody found');
                 return;
             }
             
-            // Clear existing rows
             tbody.innerHTML = '';
+            
+            if (items.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="9" class="text-center">No matching programs found</td></tr>';
+                return;
+            }
             
             items.forEach(item => {
                 const row = document.createElement('tr');
                 
-                // Format program name with link if page exists
                 let programHtml;
                 if (item.hasProgramPage && item.programPageUrl) {
-                    // Has page - make it a clickable link
                     programHtml = `<a href="${item.programPageUrl}" class="program-link" style="color: #0066cc; font-weight: 600; text-decoration: none;">${item.program}</a>`;
                 } else {
-                    // No page - just show name
                     programHtml = item.program;
                 }
                 
@@ -181,37 +300,25 @@ COMMENTS_SCRIPT_PLACEHOLDER
                 
                 tbody.appendChild(row);
             });
-            
-            console.log(`✓ Table populated with ${items.length} rows`);
         }
-        
+
+        // --- Header & Design Functions ---
+
         function createBanner(topItem) {
-            console.log('Creating banner with colors:', topItem.backgroundColor, topItem.textColor);
-            
             const container = document.getElementById('teamHeaderContainer');
-            if (!container) {
-                console.error('❌ No teamHeaderContainer found');
-                return;
-            }
+            if (!container) return;
             
-            // PRIMARY = Background (Navy #003087)
-            // SECONDARY = Text (Gold #FFD700)
             const primaryColor = topItem.backgroundColor || '#003366';
             const secondaryColor = topItem.textColor || '#FFD700';
             const program = topItem.program || topItem.team || 'Unknown';
             const mascot = topItem.mascot || '';
             const seasons = topItem.seasons || '';
-            
-            console.log('✓ Banner colors - Background:', primaryColor, 'Text:', secondaryColor);
-            
+
             const fixPath = (url) => {
                 if (!url) return '';
-                if (url.startsWith('/static-football-rankings/')) return url;
-                if (url.startsWith('/')) return '/static-football-rankings' + url;
-                return '/static-football-rankings/' + url;
+                return url.startsWith('/') ? url : `/static-football-rankings/${url}`;
             };
             
-            // Logo borders use SECONDARY color (Gold)
             const borderStyle = `border: 3px solid ${secondaryColor}; border-radius: 8px; padding: 6px; background-color: rgba(255,255,255,0.1); max-height: 120px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);`;
 
             const logoHTML = topItem.logoURL ? 
@@ -220,61 +327,41 @@ COMMENTS_SCRIPT_PLACEHOLDER
             const schoolLogoHTML = topItem.schoolLogoURL ? 
                 `<img src="${fixPath(topItem.schoolLogoURL)}" alt="School Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
             
-            // Banner: PRIMARY background, SECONDARY text (full saturation!)
             container.innerHTML = `
                 <div class="team-header" style="background-color: ${primaryColor}; color: ${secondaryColor}; padding: 30px 0; border-bottom: 5px solid ${secondaryColor};">
                     <div class="container">
                         <div class="row align-items-center">
-                            <div class="col-md-2 text-center d-none d-md-block">
-                                ${logoHTML}
-                            </div>
+                            <div class="col-md-2 text-center d-none d-md-block">${logoHTML}</div>
                             <div class="col-md-8 text-center">
                                 <h2 style="margin: 0; font-size: 2.8rem; font-weight: 800; line-height: 1.2; color: ${secondaryColor} !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">${program}</h2>
                                 ${mascot ? `<p style="margin: 10px 0 5px 0; font-size: 1.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: ${secondaryColor} !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.4);">${mascot}</p>` : ''}
                                 ${seasons ? `<div class="team-stats" style="margin-top: 10px; display: inline-block; background: rgba(255,255,255,0.15); padding: 5px 15px; border-radius: 20px; border: 2px solid ${secondaryColor};"><small style="font-size: 1rem; font-weight: bold; color: ${secondaryColor} !important;">Seasons: ${seasons}</small></div>` : ''}
                             </div>
-                            <div class="col-md-2 text-center d-none d-md-block">
-                                ${schoolLogoHTML}
-                            </div>
+                            <div class="col-md-2 text-center d-none d-md-block">${schoolLogoHTML}</div>
                         </div>
                     </div>
                 </div>
             `;
-            
-            console.log('✓ Banner created');
         }
         
         function applyTableColors(topItem) {
-            console.log('Applying table colors...');
-            
-            // PRIMARY = Navy Blue (for header and odd rows)
-            // SECONDARY = Gold (for hover)
             const primaryColor = topItem.backgroundColor || '#343a40';
             const secondaryColor = topItem.textColor || '#ffffff';
             
-            console.log('✓ Table colors - Primary:', primaryColor, 'Secondary:', secondaryColor);
-            
-            // 1. Apply PRIMARY color to table header
             const thead = document.querySelector('table thead');
             if (thead) {
                 thead.style.backgroundColor = primaryColor;
-                thead.style.color = '#ffffff';  // White text on navy header
-                
+                thead.style.color = '#ffffff';
                 thead.querySelectorAll('th').forEach(th => {
                     th.style.backgroundColor = primaryColor;
                     th.style.color = '#ffffff';
                     th.style.borderColor = primaryColor;
                 });
-                
-                console.log('✓ Table header styled');
             }
             
-            // 2. Helper to convert hex to RGB
             const hexToRgb = (hex) => {
                 hex = hex.replace('#', '');
-                if (hex.length === 3) {
-                    hex = hex.split('').map(c => c + c).join('');
-                }
+                if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
                 const r = parseInt(hex.substring(0, 2), 16);
                 const g = parseInt(hex.substring(2, 4), 16);
                 const b = parseInt(hex.substring(4, 6), 16);
@@ -285,33 +372,13 @@ COMMENTS_SCRIPT_PLACEHOLDER
             const secondaryRgb = hexToRgb(secondaryColor);
 
             if (primaryRgb && secondaryRgb) {
-                // 3. Inject CSS for row styling
                 const style = document.createElement('style');
                 style.textContent = `
-                    /* Odd Rows: PRIMARY color tint (Navy - 20% opacity for visibility) */
-                    table tbody tr:nth-of-type(odd) {
-                        background-color: rgba(${primaryRgb}, 0.20) !important;
-                    }
-                    
-                    /* Even Rows: Pure White */
-                    table tbody tr:nth-of-type(even) {
-                        background-color: #ffffff !important;
-                    }
-                    
-                    /* Hover: SECONDARY color tint (Gold - 25% opacity) */
-                    table tbody tr:hover {
-                        background-color: rgba(${secondaryRgb}, 0.25) !important;
-                        cursor: pointer;
-                        transition: background-color 0.2s ease;
-                    }
+                    table tbody tr:nth-of-type(odd) { background-color: rgba(${primaryRgb}, 0.20) !important; }
+                    table tbody tr:nth-of-type(even) { background-color: #ffffff !important; }
+                    table tbody tr:hover { background-color: rgba(${secondaryRgb}, 0.25) !important; cursor: pointer; transition: background-color 0.2s ease; }
                 `;
                 document.head.appendChild(style);
-                
-                console.log('✓ Table row colors applied');
-                console.log('  - Odd rows: rgba(' + primaryRgb + ', 0.20) - Navy tint');
-                console.log('  - Hover: rgba(' + secondaryRgb + ', 0.25) - Gold tint');
-            } else {
-                console.error('❌ Could not convert colors to RGB');
             }
         }
     </script>
