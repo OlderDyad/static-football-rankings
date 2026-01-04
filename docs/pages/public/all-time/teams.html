@@ -309,14 +309,14 @@
             }
         });
 
-        function populateTable(items) {
-            console.log(`Populating table with ${items.length} teams...`);
-            
-            const tbody = document.getElementById('teamsTableBody');
-            if (!tbody) {
-                console.error('âŒ No teamsTableBody found');
-                return;
-            }
+            function populateTable(items) {
+                console.log(`Populating table with ${items.length} teams...`);
+                
+                const tbody = document.getElementById('teamsTableBody');
+                if (!tbody) {
+                    console.error('âŒ No teamsTableBody found');
+                    return;
+                }
 
             // Clear existing rows
             tbody.innerHTML = '';
