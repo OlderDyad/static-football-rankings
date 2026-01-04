@@ -1,2061 +1,93 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>South Dakota High School Football Programs - McKnight's American Football</title>
-        <meta name="data-file" content="/static-football-rankings/data/states/programs/state-programs-SD.json">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-    </head>
-    <body>
-        <!-- Header Banner -->
-        <div class="header-banner">
-            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
-        </div>
-
-        <!-- Breadcrumb navigation -->
-        <div class="container mt-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">South Dakota Programs</li>
-                </ol>
-            </nav>
-        </div>
-
-        <!-- Dynamic team banner container -->
-        <div id="teamHeaderContainer"></div>
-
-        <!-- Main content -->
-        <div class="container mt-4">
-            <h1 data-page-name="SD">South Dakota High School Football Programs</h1>
-            
-            <div class="d-flex justify-content-between mb-3">
-                <div>
-                    <a href="SD-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
-                </div>
-                <div class="text-muted">Updated: <span id="lastUpdated">1/4/2026</span></div>
-            </div>
-
-            <!-- Search Controls -->
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Search</span>
-                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Table -->
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="sticky-top bg-white">
-                        <tr>
-                            <th style="min-width: 60px">Rank</th>
-                            <th style="min-width: 200px">Program</th>
-                            <th style="min-width: 80px">Seasons</th>
-                            <th style="min-width: 90px">Combined</th>
-                            <th style="min-width: 90px">Margin</th>
-                            <th style="min-width: 90px">Win/Loss</th>
-                            <th style="min-width: 90px">Offense</th>
-                            <th style="min-width: 90px">Defense</th>
-                            <th style="min-width: 70px">State</th>
-                        </tr>
-                    </thead>
-                    <tbody id="programsTableBody">
-                                    <tr>
-                <td>1</td>
-                <td>Sioux Falls Roosevelt (SD)</td>
-                <td>36</td>
-                <td>18.355</td>
-                <td>18.906</td>
-                <td>-0.588</td>
-                <td>17.012</td>
-                <td>5.506</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Sioux Falls Washington (SD)</td>
-                <td>105</td>
-                <td>17.636</td>
-                <td>17.36</td>
-                <td>0.265</td>
-                <td>13.866</td>
-                <td>10.248</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Sioux Falls O'Gorman (SD)</td>
-                <td>65</td>
-                <td>13.746</td>
-                <td>15.042</td>
-                <td>-1.316</td>
-                <td>15.82</td>
-                <td>11.146</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Brandon Valley (SD)</td>
-                <td>59</td>
-                <td>9.166</td>
-                <td>11.015</td>
-                <td>-1.878</td>
-                <td>15.533</td>
-                <td>8.063</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Yankton (SD)</td>
-                <td>97</td>
-                <td>6.674</td>
-                <td>7.667</td>
-                <td>-1.086</td>
-                <td>14.925</td>
-                <td>8.118</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Hartford West Central (SD)</td>
-                <td>54</td>
-                <td>6.479</td>
-                <td>8.694</td>
-                <td>-2.236</td>
-                <td>15.528</td>
-                <td>11.12</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Sioux Falls Lincoln (SD)</td>
-                <td>62</td>
-                <td>6.166</td>
-                <td>8.337</td>
-                <td>-2.183</td>
-                <td>16.554</td>
-                <td>10.507</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Canistota-Bridgewater (SD)</td>
-                <td>26</td>
-                <td>4.353</td>
-                <td>6.8</td>
-                <td>-2.439</td>
-                <td>17.893</td>
-                <td>6.089</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Watertown (SD)</td>
-                <td>99</td>
-                <td>3.955</td>
-                <td>5.168</td>
-                <td>-1.245</td>
-                <td>12.898</td>
-                <td>8.407</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Tripp-Delmont (SD)</td>
-                <td>33</td>
-                <td>1.334</td>
-                <td>5.479</td>
-                <td>-4.249</td>
-                <td>17.675</td>
-                <td>12.352</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>Aberdeen Central (SD)</td>
-                <td>100</td>
-                <td>0.768</td>
-                <td>2.404</td>
-                <td>-1.599</td>
-                <td>13.509</td>
-                <td>6.534</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>Pierre T.F. Riggs (SD)</td>
-                <td>60</td>
-                <td>-1.386</td>
-                <td>1.323</td>
-                <td>-2.755</td>
-                <td>16.276</td>
-                <td>7.394</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>Hayti Hamlin (SD)</td>
-                <td>32</td>
-                <td>-1.554</td>
-                <td>2.186</td>
-                <td>-3.806</td>
-                <td>14.794</td>
-                <td>8.738</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>Brookings (SD)</td>
-                <td>98</td>
-                <td>-1.801</td>
-                <td>0.141</td>
-                <td>-1.917</td>
-                <td>15.234</td>
-                <td>6.638</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Rapid City Central (SD)</td>
-                <td>86</td>
-                <td>-2.658</td>
-                <td>-0.381</td>
-                <td>-2.249</td>
-                <td>13.725</td>
-                <td>10.202</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>Rapid City Stevens (SD)</td>
-                <td>57</td>
-                <td>-3.172</td>
-                <td>0.074</td>
-                <td>-3.223</td>
-                <td>14.397</td>
-                <td>10.201</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>Harrisburg (SD)</td>
-                <td>58</td>
-                <td>-3.857</td>
-                <td>-0.535</td>
-                <td>-3.338</td>
-                <td>16.782</td>
-                <td>7.488</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>Ramona-Rutland (SD)</td>
-                <td>26</td>
-                <td>-4.391</td>
-                <td>0.344</td>
-                <td>-4.762</td>
-                <td>16.279</td>
-                <td>10.007</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>19</td>
-                <td>Tyndall Bon Homme (SD)</td>
-                <td>44</td>
-                <td>-4.474</td>
-                <td>-0.788</td>
-                <td>-3.66</td>
-                <td>12.115</td>
-                <td>9.689</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>Winner (SD)</td>
-                <td>67</td>
-                <td>-4.63</td>
-                <td>-1.545</td>
-                <td>-3.116</td>
-                <td>16.59</td>
-                <td>9.183</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>21</td>
-                <td>Canton (SD)</td>
-                <td>61</td>
-                <td>-5.506</td>
-                <td>-2.584</td>
-                <td>-2.943</td>
-                <td>15.298</td>
-                <td>8.416</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>22</td>
-                <td>Alexandria Hanson (SD)</td>
-                <td>52</td>
-                <td>-5.572</td>
-                <td>-1.486</td>
-                <td>-4.067</td>
-                <td>16.821</td>
-                <td>7.863</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>23</td>
-                <td>Mitchell (SD)</td>
-                <td>91</td>
-                <td>-5.656</td>
-                <td>-3.241</td>
-                <td>-2.385</td>
-                <td>17.199</td>
-                <td>6.331</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>24</td>
-                <td>Howard (SD)</td>
-                <td>54</td>
-                <td>-6.589</td>
-                <td>-2.601</td>
-                <td>-4.011</td>
-                <td>16.596</td>
-                <td>8.094</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>Freeman (SD)</td>
-                <td>43</td>
-                <td>-7.536</td>
-                <td>-3.657</td>
-                <td>-3.906</td>
-                <td>13.252</td>
-                <td>11.84</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>26</td>
-                <td>Gettysburg (SD)</td>
-                <td>36</td>
-                <td>-7.69</td>
-                <td>-3.293</td>
-                <td>-4.393</td>
-                <td>17.912</td>
-                <td>10.189</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>27</td>
-                <td>Viborg-Hurley (SD)</td>
-                <td>27</td>
-                <td>-7.778</td>
-                <td>-3.627</td>
-                <td>-4.212</td>
-                <td>11.734</td>
-                <td>12.705</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>28</td>
-                <td>Chester (SD)</td>
-                <td>58</td>
-                <td>-7.895</td>
-                <td>-3.922</td>
-                <td>-4.0</td>
-                <td>16.073</td>
-                <td>10.708</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>29</td>
-                <td>Vermillion (SD)</td>
-                <td>84</td>
-                <td>-7.908</td>
-                <td>-5.325</td>
-                <td>-2.602</td>
-                <td>10.0</td>
-                <td>10.429</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>30</td>
-                <td>Huron (SD)</td>
-                <td>97</td>
-                <td>-8.117</td>
-                <td>-5.555</td>
-                <td>-2.533</td>
-                <td>15.218</td>
-                <td>7.222</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>31</td>
-                <td>Corsica (SD)</td>
-                <td>34</td>
-                <td>-8.65</td>
-                <td>-4.108</td>
-                <td>-4.551</td>
-                <td>16.123</td>
-                <td>11.741</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>32</td>
-                <td>Rapid City More (SD)</td>
-                <td>34</td>
-                <td>-9.078</td>
-                <td>-6.204</td>
-                <td>-2.962</td>
-                <td>12.558</td>
-                <td>10.724</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>33</td>
-                <td>Avon (SD)</td>
-                <td>51</td>
-                <td>-10.544</td>
-                <td>-6.158</td>
-                <td>-4.376</td>
-                <td>15.918</td>
-                <td>12.458</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>34</td>
-                <td>Ipswich (SD)</td>
-                <td>43</td>
-                <td>-10.751</td>
-                <td>-5.882</td>
-                <td>-4.84</td>
-                <td>16.05</td>
-                <td>9.119</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>35</td>
-                <td>Gregory (SD)</td>
-                <td>68</td>
-                <td>-10.962</td>
-                <td>-6.932</td>
-                <td>-4.043</td>
-                <td>14.29</td>
-                <td>9.747</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>36</td>
-                <td>Castlewood (SD)</td>
-                <td>52</td>
-                <td>-10.971</td>
-                <td>-6.451</td>
-                <td>-4.553</td>
-                <td>15.403</td>
-                <td>11.016</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>37</td>
-                <td>Dell Rapids (SD)</td>
-                <td>57</td>
-                <td>-11.131</td>
-                <td>-7.329</td>
-                <td>-3.801</td>
-                <td>15.214</td>
-                <td>8.681</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>38</td>
-                <td>Pierre Old HS (SD)</td>
-                <td>52</td>
-                <td>-11.247</td>
-                <td>-7.949</td>
-                <td>-3.281</td>
-                <td>19.206</td>
-                <td>6.475</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>39</td>
-                <td>Garretson (SD)</td>
-                <td>62</td>
-                <td>-11.274</td>
-                <td>-7.06</td>
-                <td>-4.187</td>
-                <td>18.841</td>
-                <td>9.135</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>40</td>
-                <td>Warner (SD)</td>
-                <td>51</td>
-                <td>-11.281</td>
-                <td>-6.753</td>
-                <td>-4.56</td>
-                <td>15.881</td>
-                <td>10.475</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>41</td>
-                <td>North Sioux City Dakota Valley (SD)</td>
-                <td>32</td>
-                <td>-11.333</td>
-                <td>-8.479</td>
-                <td>-2.845</td>
-                <td>10.639</td>
-                <td>10.303</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>42</td>
-                <td>Buffalo Harding County (SD)</td>
-                <td>48</td>
-                <td>-11.489</td>
-                <td>-7.096</td>
-                <td>-4.406</td>
-                <td>15.743</td>
-                <td>11.87</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>43</td>
-                <td>Madison (SD)</td>
-                <td>93</td>
-                <td>-11.557</td>
-                <td>-8.506</td>
-                <td>-3.032</td>
-                <td>17.871</td>
-                <td>6.812</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>44</td>
-                <td>Milbank (SD)</td>
-                <td>61</td>
-                <td>-11.582</td>
-                <td>-7.932</td>
-                <td>-3.666</td>
-                <td>16.073</td>
-                <td>7.775</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>45</td>
-                <td>Onida Sully Buttes (SD)</td>
-                <td>51</td>
-                <td>-11.831</td>
-                <td>-7.167</td>
-                <td>-4.646</td>
-                <td>15.921</td>
-                <td>9.609</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>46</td>
-                <td>Aberdeen Roncalli (SD)</td>
-                <td>55</td>
-                <td>-11.969</td>
-                <td>-7.912</td>
-                <td>-4.099</td>
-                <td>13.426</td>
-                <td>9.862</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>47</td>
-                <td>De Smet (SD)</td>
-                <td>46</td>
-                <td>-12.707</td>
-                <td>-7.641</td>
-                <td>-5.07</td>
-                <td>16.999</td>
-                <td>5.322</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>48</td>
-                <td>Revillo Grant-Deuel (SD)</td>
-                <td>39</td>
-                <td>-12.887</td>
-                <td>-8.196</td>
-                <td>-4.785</td>
-                <td>17.457</td>
-                <td>10.29</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>49</td>
-                <td>Lennox (SD)</td>
-                <td>58</td>
-                <td>-13.033</td>
-                <td>-8.932</td>
-                <td>-4.089</td>
-                <td>14.131</td>
-                <td>11.729</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>50</td>
-                <td>Plankinton-White Lake (SD)</td>
-                <td>36</td>
-                <td>-13.501</td>
-                <td>-8.599</td>
-                <td>-4.84</td>
-                <td>16.649</td>
-                <td>10.635</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>51</td>
-                <td>Beresford (SD)</td>
-                <td>57</td>
-                <td>-14.313</td>
-                <td>-10.178</td>
-                <td>-4.106</td>
-                <td>13.817</td>
-                <td>12.393</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>52</td>
-                <td>Eureka-Bowdle (SD)</td>
-                <td>30</td>
-                <td>-14.471</td>
-                <td>-10.516</td>
-                <td>-3.941</td>
-                <td>15.631</td>
-                <td>10.344</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>53</td>
-                <td>Armour (SD)</td>
-                <td>29</td>
-                <td>-14.748</td>
-                <td>-9.091</td>
-                <td>-5.681</td>
-                <td>18.943</td>
-                <td>12.876</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>54</td>
-                <td>Colton Tri-Valley (SD)</td>
-                <td>55</td>
-                <td>-15.467</td>
-                <td>-10.971</td>
-                <td>-4.475</td>
-                <td>14.48</td>
-                <td>5.724</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>55</td>
-                <td>Parkston (SD)</td>
-                <td>51</td>
-                <td>-15.772</td>
-                <td>-10.791</td>
-                <td>-4.986</td>
-                <td>13.962</td>
-                <td>7.742</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>56</td>
-                <td>Sturgis Brown (SD)</td>
-                <td>29</td>
-                <td>-16.063</td>
-                <td>-10.064</td>
-                <td>-5.991</td>
-                <td>19.413</td>
-                <td>9.106</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>57</td>
-                <td>Hamlin (SD)</td>
-                <td>27</td>
-                <td>-16.18</td>
-                <td>-10.088</td>
-                <td>-6.081</td>
-                <td>19.435</td>
-                <td>8.104</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>58</td>
-                <td>Burke (SD)</td>
-                <td>34</td>
-                <td>-16.281</td>
-                <td>-10.112</td>
-                <td>-6.176</td>
-                <td>16.031</td>
-                <td>13.193</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>59</td>
-                <td>Lead (SD)</td>
-                <td>61</td>
-                <td>-16.427</td>
-                <td>-12.36</td>
-                <td>-4.087</td>
-                <td>16.413</td>
-                <td>4.717</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>60</td>
-                <td>Faulkton (SD)</td>
-                <td>50</td>
-                <td>-16.823</td>
-                <td>-11.72</td>
-                <td>-5.101</td>
-                <td>16.119</td>
-                <td>8.547</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>61</td>
-                <td>Elk Point-Jefferson (SD)</td>
-                <td>32</td>
-                <td>-17.244</td>
-                <td>-13.637</td>
-                <td>-3.614</td>
-                <td>10.108</td>
-                <td>11.129</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>62</td>
-                <td>Wall (SD)</td>
-                <td>51</td>
-                <td>-17.29</td>
-                <td>-12.15</td>
-                <td>-5.182</td>
-                <td>16.128</td>
-                <td>9.666</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>63</td>
-                <td>White Lake-Plankinton (SD)</td>
-                <td>26</td>
-                <td>-17.346</td>
-                <td>-11.159</td>
-                <td>-6.193</td>
-                <td>17.953</td>
-                <td>10.659</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>64</td>
-                <td>Leola-Frederick (SD)</td>
-                <td>30</td>
-                <td>-17.563</td>
-                <td>-12.758</td>
-                <td>-4.815</td>
-                <td>16.653</td>
-                <td>9.611</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>65</td>
-                <td>Viborg (SD)</td>
-                <td>27</td>
-                <td>-18.391</td>
-                <td>-13.223</td>
-                <td>-5.216</td>
-                <td>17.466</td>
-                <td>11.989</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>66</td>
-                <td>Fort Pierre Stanley County (SD)</td>
-                <td>51</td>
-                <td>-18.444</td>
-                <td>-13.482</td>
-                <td>-4.949</td>
-                <td>13.074</td>
-                <td>12.637</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>67</td>
-                <td>Hitchcock-Tulare (SD)</td>
-                <td>49</td>
-                <td>-18.496</td>
-                <td>-13.489</td>
-                <td>-5.08</td>
-                <td>14.924</td>
-                <td>11.166</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>68</td>
-                <td>Irene (SD)</td>
-                <td>28</td>
-                <td>-18.579</td>
-                <td>-12.549</td>
-                <td>-6.076</td>
-                <td>15.443</td>
-                <td>10.49</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>69</td>
-                <td>Platte (SD)</td>
-                <td>31</td>
-                <td>-18.665</td>
-                <td>-12.722</td>
-                <td>-6.007</td>
-                <td>17.298</td>
-                <td>7.801</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>70</td>
-                <td>Wolsey-Wessington (SD)</td>
-                <td>42</td>
-                <td>-18.934</td>
-                <td>-13.752</td>
-                <td>-5.127</td>
-                <td>15.087</td>
-                <td>10.375</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>71</td>
-                <td>Presho Lyman (SD)</td>
-                <td>42</td>
-                <td>-19.118</td>
-                <td>-14.245</td>
-                <td>-4.88</td>
-                <td>13.775</td>
-                <td>13.872</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>72</td>
-                <td>Spearfish (SD)</td>
-                <td>80</td>
-                <td>-19.543</td>
-                <td>-15.521</td>
-                <td>-4.011</td>
-                <td>10.297</td>
-                <td>8.311</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>73</td>
-                <td>Bridgewater (SD)</td>
-                <td>27</td>
-                <td>-19.649</td>
-                <td>-13.798</td>
-                <td>-5.853</td>
-                <td>16.083</td>
-                <td>11.811</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>74</td>
-                <td>Colman-Egan (SD)</td>
-                <td>38</td>
-                <td>-19.993</td>
-                <td>-15.115</td>
-                <td>-4.916</td>
-                <td>10.947</td>
-                <td>11.806</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>75</td>
-                <td>Arlington (SD)</td>
-                <td>47</td>
-                <td>-20.075</td>
-                <td>-14.691</td>
-                <td>-5.355</td>
-                <td>16.641</td>
-                <td>11.116</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>76</td>
-                <td>Scotland (SD)</td>
-                <td>46</td>
-                <td>-20.117</td>
-                <td>-15.24</td>
-                <td>-4.896</td>
-                <td>13.727</td>
-                <td>10.283</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>77</td>
-                <td>Volga Sioux Valley (SD)</td>
-                <td>41</td>
-                <td>-20.176</td>
-                <td>-15.759</td>
-                <td>-4.407</td>
-                <td>10.413</td>
-                <td>10.618</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>78</td>
-                <td>Wagner (SD)</td>
-                <td>54</td>
-                <td>-20.178</td>
-                <td>-15.519</td>
-                <td>-4.686</td>
-                <td>12.224</td>
-                <td>8.86</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>79</td>
-                <td>Sisseton (SD)</td>
-                <td>61</td>
-                <td>-20.188</td>
-                <td>-15.542</td>
-                <td>-4.651</td>
-                <td>13.429</td>
-                <td>9.366</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>80</td>
-                <td>Belle Fourche (SD)</td>
-                <td>80</td>
-                <td>-20.362</td>
-                <td>-16.133</td>
-                <td>-4.221</td>
-                <td>10.855</td>
-                <td>10.447</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>81</td>
-                <td>Elder Douglas (SD)</td>
-                <td>27</td>
-                <td>-20.566</td>
-                <td>-14.174</td>
-                <td>-6.331</td>
-                <td>18.187</td>
-                <td>10.802</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>82</td>
-                <td>Harding County (SD)</td>
-                <td>26</td>
-                <td>-20.699</td>
-                <td>-14.236</td>
-                <td>-6.512</td>
-                <td>18.96</td>
-                <td>12.673</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>83</td>
-                <td>Marion (SD)</td>
-                <td>33</td>
-                <td>-20.993</td>
-                <td>-15.046</td>
-                <td>-5.918</td>
-                <td>18.756</td>
-                <td>12.395</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>84</td>
-                <td>Clear Lake Deuel (SD)</td>
-                <td>40</td>
-                <td>-21.431</td>
-                <td>-16.87</td>
-                <td>-4.571</td>
-                <td>10.872</td>
-                <td>10.15</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>85</td>
-                <td>Colome (SD)</td>
-                <td>51</td>
-                <td>-21.731</td>
-                <td>-16.344</td>
-                <td>-5.396</td>
-                <td>14.832</td>
-                <td>12.612</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>86</td>
-                <td>Groton (SD)</td>
-                <td>50</td>
-                <td>-21.778</td>
-                <td>-16.7</td>
-                <td>-5.122</td>
-                <td>12.952</td>
-                <td>9.483</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>87</td>
-                <td>Webster (SD)</td>
-                <td>54</td>
-                <td>-21.861</td>
-                <td>-16.883</td>
-                <td>-4.938</td>
-                <td>12.859</td>
-                <td>10.255</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>88</td>
-                <td>Britton (SD)</td>
-                <td>29</td>
-                <td>-21.906</td>
-                <td>-15.568</td>
-                <td>-6.283</td>
-                <td>18.587</td>
-                <td>9.504</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>89</td>
-                <td>Alcester-Hudson (SD)</td>
-                <td>37</td>
-                <td>-21.955</td>
-                <td>-17.286</td>
-                <td>-4.67</td>
-                <td>11.594</td>
-                <td>12.777</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>90</td>
-                <td>Roslyn (SD)</td>
-                <td>25</td>
-                <td>-22.063</td>
-                <td>-16.024</td>
-                <td>-6.052</td>
-                <td>17.234</td>
-                <td>8.462</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>91</td>
-                <td>Hot Springs (SD)</td>
-                <td>70</td>
-                <td>-22.137</td>
-                <td>-17.706</td>
-                <td>-4.415</td>
-                <td>13.193</td>
-                <td>10.262</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>92</td>
-                <td>Clark (SD)</td>
-                <td>34</td>
-                <td>-22.223</td>
-                <td>-16.318</td>
-                <td>-5.889</td>
-                <td>17.387</td>
-                <td>8.43</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>93</td>
-                <td>Flandreau (SD)</td>
-                <td>71</td>
-                <td>-22.223</td>
-                <td>-17.873</td>
-                <td>-4.352</td>
-                <td>15.069</td>
-                <td>10.468</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>94</td>
-                <td>Doland-Conde (SD)</td>
-                <td>34</td>
-                <td>-22.255</td>
-                <td>-16.197</td>
-                <td>-6.1</td>
-                <td>18.982</td>
-                <td>8.686</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>95</td>
-                <td>Mobridge (SD)</td>
-                <td>47</td>
-                <td>-22.362</td>
-                <td>-17.288</td>
-                <td>-5.066</td>
-                <td>16.567</td>
-                <td>9.096</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>96</td>
-                <td>Philip (SD)</td>
-                <td>51</td>
-                <td>-22.785</td>
-                <td>-17.189</td>
-                <td>-5.607</td>
-                <td>13.567</td>
-                <td>9.691</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>97</td>
-                <td>Sturgis (SD)</td>
-                <td>70</td>
-                <td>-22.855</td>
-                <td>-18.596</td>
-                <td>-4.242</td>
-                <td>13.639</td>
-                <td>12.233</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>98</td>
-                <td>Dell Rapids St. Mary's (SD)</td>
-                <td>39</td>
-                <td>-23.332</td>
-                <td>-18.075</td>
-                <td>-5.311</td>
-                <td>14.23</td>
-                <td>12.691</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>99</td>
-                <td>Estelline (SD)</td>
-                <td>46</td>
-                <td>-23.363</td>
-                <td>-17.983</td>
-                <td>-5.338</td>
-                <td>14.125</td>
-                <td>11.909</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>100</td>
-                <td>Langford (SD)</td>
-                <td>44</td>
-                <td>-23.577</td>
-                <td>-17.841</td>
-                <td>-5.736</td>
-                <td>14.496</td>
-                <td>12.099</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>101</td>
-                <td>Elkton (SD)</td>
-                <td>40</td>
-                <td>-23.581</td>
-                <td>-17.762</td>
-                <td>-5.843</td>
-                <td>14.681</td>
-                <td>10.524</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>102</td>
-                <td>White Deubrook (SD)</td>
-                <td>55</td>
-                <td>-23.642</td>
-                <td>-18.098</td>
-                <td>-5.547</td>
-                <td>14.343</td>
-                <td>10.993</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>103</td>
-                <td>Miller (SD)</td>
-                <td>47</td>
-                <td>-23.942</td>
-                <td>-18.616</td>
-                <td>-5.357</td>
-                <td>14.377</td>
-                <td>10.008</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>104</td>
-                <td>Timber Lake (SD)</td>
-                <td>32</td>
-                <td>-24.513</td>
-                <td>-18.841</td>
-                <td>-5.696</td>
-                <td>11.466</td>
-                <td>14.319</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>105</td>
-                <td>Wessington Springs (SD)</td>
-                <td>34</td>
-                <td>-25.369</td>
-                <td>-19.253</td>
-                <td>-6.034</td>
-                <td>17.645</td>
-                <td>10.025</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>106</td>
-                <td>Salem McCook Central (SD)</td>
-                <td>25</td>
-                <td>-26.378</td>
-                <td>-20.506</td>
-                <td>-5.775</td>
-                <td>12.826</td>
-                <td>10.11</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>107</td>
-                <td>Selby (SD)</td>
-                <td>33</td>
-                <td>-26.777</td>
-                <td>-20.27</td>
-                <td>-6.497</td>
-                <td>17.807</td>
-                <td>11.144</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>108</td>
-                <td>Iroquois (SD)</td>
-                <td>32</td>
-                <td>-27.002</td>
-                <td>-20.6</td>
-                <td>-6.385</td>
-                <td>17.327</td>
-                <td>10.936</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>109</td>
-                <td>Parker (SD)</td>
-                <td>57</td>
-                <td>-27.052</td>
-                <td>-21.689</td>
-                <td>-5.337</td>
-                <td>15.369</td>
-                <td>10.597</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>110</td>
-                <td>Centerville (SD)</td>
-                <td>56</td>
-                <td>-27.899</td>
-                <td>-22.114</td>
-                <td>-5.763</td>
-                <td>12.19</td>
-                <td>15.105</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>111</td>
-                <td>Bonesteel-Fairfax (SD)</td>
-                <td>28</td>
-                <td>-28.076</td>
-                <td>-21.154</td>
-                <td>-6.841</td>
-                <td>17.26</td>
-                <td>12.563</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>112</td>
-                <td>Elk Point (SD)</td>
-                <td>31</td>
-                <td>-28.16</td>
-                <td>-22.018</td>
-                <td>-6.13</td>
-                <td>22.471</td>
-                <td>7.697</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>113</td>
-                <td>Wilmot (SD)</td>
-                <td>42</td>
-                <td>-28.545</td>
-                <td>-22.498</td>
-                <td>-6.089</td>
-                <td>15.919</td>
-                <td>12.896</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>114</td>
-                <td>Frederick-Hecla (SD)</td>
-                <td>27</td>
-                <td>-28.639</td>
-                <td>-21.301</td>
-                <td>-7.339</td>
-                <td>19.339</td>
-                <td>9.715</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>115</td>
-                <td>Mellette Northwestern Area (SD)</td>
-                <td>51</td>
-                <td>-28.888</td>
-                <td>-22.858</td>
-                <td>-6.022</td>
-                <td>12.799</td>
-                <td>11.683</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>116</td>
-                <td>Redfield-Doland (SD)</td>
-                <td>40</td>
-                <td>-29.119</td>
-                <td>-23.765</td>
-                <td>-5.297</td>
-                <td>9.929</td>
-                <td>12.046</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>117</td>
-                <td>Deadwood (SD)</td>
-                <td>31</td>
-                <td>-29.187</td>
-                <td>-25.448</td>
-                <td>-3.739</td>
-                <td>9.226</td>
-                <td>1.838</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>118</td>
-                <td>Menno (SD)</td>
-                <td>39</td>
-                <td>-30.258</td>
-                <td>-23.959</td>
-                <td>-6.268</td>
-                <td>18.483</td>
-                <td>12.842</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>119</td>
-                <td>Timber Lake-Isabel (SD)</td>
-                <td>34</td>
-                <td>-30.392</td>
-                <td>-23.881</td>
-                <td>-6.531</td>
-                <td>15.978</td>
-                <td>11.473</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>120</td>
-                <td>Box Elder Douglas (SD)</td>
-                <td>55</td>
-                <td>-31.322</td>
-                <td>-25.782</td>
-                <td>-5.534</td>
-                <td>11.607</td>
-                <td>13.067</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>121</td>
-                <td>Lemmon (SD)</td>
-                <td>47</td>
-                <td>-31.331</td>
-                <td>-25.463</td>
-                <td>-5.88</td>
-                <td>15.045</td>
-                <td>8.626</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>122</td>
-                <td>Alcester (SD)</td>
-                <td>27</td>
-                <td>-31.512</td>
-                <td>-24.346</td>
-                <td>-7.173</td>
-                <td>19.945</td>
-                <td>10.921</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>123</td>
-                <td>White River (SD)</td>
-                <td>45</td>
-                <td>-32.309</td>
-                <td>-25.292</td>
-                <td>-7.006</td>
-                <td>15.567</td>
-                <td>12.792</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>124</td>
-                <td>Oldham-Ramona-Rutland (SD)</td>
-                <td>34</td>
-                <td>-32.409</td>
-                <td>-26.736</td>
-                <td>-5.621</td>
-                <td>10.5</td>
-                <td>15.309</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>125</td>
-                <td>Baltic (SD)</td>
-                <td>52</td>
-                <td>-32.869</td>
-                <td>-26.819</td>
-                <td>-6.061</td>
-                <td>13.102</td>
-                <td>12.782</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>126</td>
-                <td>Waverly-South Shore (SD)</td>
-                <td>51</td>
-                <td>-33.139</td>
-                <td>-26.688</td>
-                <td>-6.381</td>
-                <td>13.877</td>
-                <td>13.465</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>127</td>
-                <td>Chamberlain (SD)</td>
-                <td>59</td>
-                <td>-33.707</td>
-                <td>-27.614</td>
-                <td>-6.044</td>
-                <td>12.287</td>
-                <td>11.764</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>128</td>
-                <td>Murdo Jones County-Midland (SD)</td>
-                <td>33</td>
-                <td>-33.97</td>
-                <td>-27.949</td>
-                <td>-6.015</td>
-                <td>9.536</td>
-                <td>13.565</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>129</td>
-                <td>Custer (SD)</td>
-                <td>79</td>
-                <td>-34.407</td>
-                <td>-29.077</td>
-                <td>-5.301</td>
-                <td>11.087</td>
-                <td>11.533</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>130</td>
-                <td>Lake Andes Central (SD)</td>
-                <td>34</td>
-                <td>-35.303</td>
-                <td>-29.533</td>
-                <td>-5.756</td>
-                <td>12.097</td>
-                <td>14.194</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>131</td>
-                <td>Faith (SD)</td>
-                <td>53</td>
-                <td>-35.583</td>
-                <td>-28.892</td>
-                <td>-6.639</td>
-                <td>13.941</td>
-                <td>13.521</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>132</td>
-                <td>Lake Preston (SD)</td>
-                <td>41</td>
-                <td>-36.21</td>
-                <td>-29.349</td>
-                <td>-6.823</td>
-                <td>15.707</td>
-                <td>10.419</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>133</td>
-                <td>Lead-Deadwood (SD)</td>
-                <td>36</td>
-                <td>-36.764</td>
-                <td>-32.478</td>
-                <td>-4.294</td>
-                <td>6.037</td>
-                <td>14.873</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>134</td>
-                <td>Florence-Henry (SD)</td>
-                <td>51</td>
-                <td>-37.318</td>
-                <td>-30.498</td>
-                <td>-6.757</td>
-                <td>13.507</td>
-                <td>12.126</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>135</td>
-                <td>Gayville-Volin (SD)</td>
-                <td>33</td>
-                <td>-37.508</td>
-                <td>-30.851</td>
-                <td>-6.678</td>
-                <td>12.374</td>
-                <td>14.95</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>136</td>
-                <td>Highmore-Harrold (SD)</td>
-                <td>39</td>
-                <td>-37.628</td>
-                <td>-30.901</td>
-                <td>-6.707</td>
-                <td>15.083</td>
-                <td>11.066</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>137</td>
-                <td>Kadoka Area (SD)</td>
-                <td>51</td>
-                <td>-38.247</td>
-                <td>-31.267</td>
-                <td>-6.911</td>
-                <td>12.793</td>
-                <td>13.066</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>138</td>
-                <td>Andes Central (SD)</td>
-                <td>26</td>
-                <td>-40.116</td>
-                <td>-31.819</td>
-                <td>-8.251</td>
-                <td>20.171</td>
-                <td>11.599</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>139</td>
-                <td>Todd County (SD)</td>
-                <td>26</td>
-                <td>-40.154</td>
-                <td>-31.821</td>
-                <td>-8.392</td>
-                <td>21.058</td>
-                <td>9.392</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>140</td>
-                <td>Waubay-Summit (SD)</td>
-                <td>42</td>
-                <td>-40.526</td>
-                <td>-33.312</td>
-                <td>-7.16</td>
-                <td>14.495</td>
-                <td>11.771</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>141</td>
-                <td>New Underwood (SD)</td>
-                <td>56</td>
-                <td>-40.628</td>
-                <td>-33.475</td>
-                <td>-7.16</td>
-                <td>11.188</td>
-                <td>12.088</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>142</td>
-                <td>Mission Todd County (SD)</td>
-                <td>51</td>
-                <td>-41.651</td>
-                <td>-33.706</td>
-                <td>-7.952</td>
-                <td>13.472</td>
-                <td>13.798</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>143</td>
-                <td>Martin Bennett County (SD)</td>
-                <td>51</td>
-                <td>-43.883</td>
-                <td>-36.675</td>
-                <td>-7.208</td>
-                <td>10.869</td>
-                <td>13.603</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>144</td>
-                <td>Edgemont (SD)</td>
-                <td>91</td>
-                <td>-44.941</td>
-                <td>-38.885</td>
-                <td>-6.041</td>
-                <td>8.766</td>
-                <td>10.078</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>145</td>
-                <td>McLaughlin (SD)</td>
-                <td>45</td>
-                <td>-45.478</td>
-                <td>-37.196</td>
-                <td>-8.25</td>
-                <td>11.238</td>
-                <td>14.265</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>146</td>
-                <td>Rapid City Christian (SD)</td>
-                <td>32</td>
-                <td>-45.836</td>
-                <td>-39.049</td>
-                <td>-6.774</td>
-                <td>9.753</td>
-                <td>17.733</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>147</td>
-                <td>Newell (SD)</td>
-                <td>67</td>
-                <td>-45.892</td>
-                <td>-39.017</td>
-                <td>-6.818</td>
-                <td>10.115</td>
-                <td>13.884</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>148</td>
-                <td>Hill City (SD)</td>
-                <td>60</td>
-                <td>-49.125</td>
-                <td>-41.514</td>
-                <td>-7.557</td>
-                <td>11.034</td>
-                <td>16.227</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>149</td>
-                <td>Miller Sunshine Bible Academy (SD)</td>
-                <td>39</td>
-                <td>-49.906</td>
-                <td>-42.449</td>
-                <td>-7.434</td>
-                <td>8.897</td>
-                <td>14.282</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>150</td>
-                <td>Stephan Crow Creek Tribal (SD)</td>
-                <td>25</td>
-                <td>-51.208</td>
-                <td>-41.88</td>
-                <td>-9.329</td>
-                <td>18.525</td>
-                <td>9.574</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>151</td>
-                <td>Bison (SD)</td>
-                <td>41</td>
-                <td>-54.123</td>
-                <td>-45.912</td>
-                <td>-8.217</td>
-                <td>14.159</td>
-                <td>16.544</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>152</td>
-                <td>Lower Brule (SD)</td>
-                <td>52</td>
-                <td>-54.581</td>
-                <td>-45.488</td>
-                <td>-9.083</td>
-                <td>12.389</td>
-                <td>15.987</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>153</td>
-                <td>Hand County Sunshine Bible Academy (SD)</td>
-                <td>26</td>
-                <td>-55.467</td>
-                <td>-45.634</td>
-                <td>-9.784</td>
-                <td>21.282</td>
-                <td>10.893</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>154</td>
-                <td>Cheyenne-Eagle Butte (SD)</td>
-                <td>50</td>
-                <td>-55.899</td>
-                <td>-46.964</td>
-                <td>-8.983</td>
-                <td>10.638</td>
-                <td>17.223</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>155</td>
-                <td>Pine Ridge Red Cloud (SD)</td>
-                <td>47</td>
-                <td>-56.309</td>
-                <td>-47.553</td>
-                <td>-8.722</td>
-                <td>11.72</td>
-                <td>15.084</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>156</td>
-                <td>Dupree (SD)</td>
-                <td>46</td>
-                <td>-59.245</td>
-                <td>-50.472</td>
-                <td>-8.749</td>
-                <td>11.237</td>
-                <td>17.864</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>157</td>
-                <td>Pine Ridge (SD)</td>
-                <td>56</td>
-                <td>-59.83</td>
-                <td>-50.563</td>
-                <td>-9.286</td>
-                <td>13.527</td>
-                <td>17.266</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>158</td>
-                <td>Agency Village Tiospa Zina (SD)</td>
-                <td>37</td>
-                <td>-64.372</td>
-                <td>-54.853</td>
-                <td>-9.508</td>
-                <td>9.615</td>
-                <td>19.012</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>159</td>
-                <td>Stephan Crow Creek (SD)</td>
-                <td>39</td>
-                <td>-67.051</td>
-                <td>-57.252</td>
-                <td>-9.725</td>
-                <td>4.444</td>
-                <td>18.87</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>160</td>
-                <td>Kyle Little Wound (SD)</td>
-                <td>45</td>
-                <td>-67.185</td>
-                <td>-56.399</td>
-                <td>-10.778</td>
-                <td>15.279</td>
-                <td>15.539</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>161</td>
-                <td>Marty Indian (SD)</td>
-                <td>34</td>
-                <td>-69.149</td>
-                <td>-58.929</td>
-                <td>-10.18</td>
-                <td>8.088</td>
-                <td>19.31</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>162</td>
-                <td>Oelrichs (SD)</td>
-                <td>35</td>
-                <td>-75.081</td>
-                <td>-64.316</td>
-                <td>-10.706</td>
-                <td>17.38</td>
-                <td>18.122</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>163</td>
-                <td>Saint Francis Indian (SD)</td>
-                <td>48</td>
-                <td>-79.873</td>
-                <td>-69.263</td>
-                <td>-10.603</td>
-                <td>7.52</td>
-                <td>19.187</td>
-                <td>SD</td>
-            </tr>
-            <tr>
-                <td>164</td>
-                <td>Wanblee Crazy Horse (SD)</td>
-                <td>31</td>
-                <td>-83.168</td>
-                <td>-70.438</td>
-                <td>-12.669</td>
-                <td>13.985</td>
-                <td>15.856</td>
-                <td>SD</td>
-            </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Pagination Controls -->
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="pagination-info">
-                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <nav aria-label="Table navigation">
-                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
-                    </nav>
-                </div>
-            </div>
-
-            <!-- Comments Section -->
-            <div class="comments-section mt-5">
-                <h3>Comments</h3>
-                <div id="authContainer" class="mb-3"></div>
-                <div id="commentForm" class="mb-4" style="display: none">
-                    <div class="card">
-                        <div class="card-body">
-                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
-                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="commentsList"></div>
-            </div>
-
-            <footer class="mt-5 mb-3">
-                <div class="text-center">
-                    <p>Â© 2025 McKnight's Football Rankings</p>
-                </div>
-            </footer>
-        </div>
-
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <!-- Table Controls Script -->
-        <script>
-    const TableControls = {
-        ROWS_PER_PAGE: 100,
-        currentPage: 1,
-        filteredRows: [],
-
-        init() {
-            const tableBody = document.querySelector('tbody');
-            if (tableBody) {
-                const rows = Array.from(tableBody.getElementsByTagName('tr'));
-                this.filteredRows = rows;
-                const totalRows = rows.length;
-                
-                const totalRowsElement = document.getElementById('totalRows');
-                if (totalRowsElement) {
-                    totalRowsElement.textContent = totalRows;
-                }
-                
-                this.setupEventListeners();
-                this.showPage(1);
-            }
-        },
-
-        setupEventListeners() {
-            const searchInput = document.getElementById('tableSearch');
-            const pagination = document.getElementById('tablePagination');
-
-            if (searchInput) {
-                searchInput.value = '';
-                const self = this;
-                searchInput.addEventListener('input', function(e) {
-                    self.filterTable(e.target.value.toLowerCase());
-                });
-            }
-
-            if (pagination) {
-                const self = this;
-                pagination.addEventListener('click', function(e) {
-                    const button = e.target.closest('button');
-                    if (!button || button.parentElement.classList.contains('disabled')) return;
-                    
-                    const page = button.dataset.page;
-                    if (page === 'prev') {
-                        self.showPage(self.currentPage - 1);
-                    } else if (page === 'next') {
-                        self.showPage(self.currentPage + 1);
-                    } else {
-                        self.showPage(parseInt(page));
-                    }
-                });
-            }
-        },
-
-        filterTable(searchTerm) {
-            const tableBody = document.querySelector('tbody');
-            if (!tableBody) return;
-
-            const rows = Array.from(tableBody.getElementsByTagName('tr'));
-            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
-                const text = Array.from(row.getElementsByTagName('td'))
-                    .map(cell => cell.textContent || cell.innerText)
-                    .join(' ')
-                    .toLowerCase();
-                return text.includes(searchTerm);
-            });
-
-            const totalRowsElement = document.getElementById('totalRows');
-            if (totalRowsElement) {
-                totalRowsElement.textContent = this.filteredRows.length;
-            }
-
-            this.currentPage = 1;
-            this.showPage(1);
-        },
-
-        showPage(pageNum) {
-            const tableBody = document.querySelector('tbody');
-            if (!tableBody) return;
-
-            this.currentPage = pageNum;
-            const start = (pageNum - 1) * this.ROWS_PER_PAGE;
-            const end = Math.min(start + this.ROWS_PER_PAGE, this.filteredRows.length);
-            
-            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
-            allRows.forEach(row => row.style.display = 'none');
-            
-            for (let i = start; i < end; i++) {
-                if (this.filteredRows[i]) {
-                    this.filteredRows[i].style.display = '';
-                }
-            }
-            
-            const startRowElement = document.getElementById('startRow');
-            const endRowElement = document.getElementById('endRow');
-            if (startRowElement) startRowElement.textContent = this.filteredRows.length === 0 ? 0 : start + 1;
-            if (endRowElement) endRowElement.textContent = end;
-            
-            this.updatePaginationControls();
-        },
-
-        updatePaginationControls() {
-            const pagination = document.getElementById('tablePagination');
-            if (!pagination) return;
-            
-            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
-            let html = [];
-            
-            html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
-                <button class="page-link" data-page="prev">&laquo;</button>
-            </li>`);
-            
-            for (let i = 1; i <= totalPages; i++) {
-                if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
-                    html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
-                        <button class="page-link" data-page="${i}">${i}</button>
-                    </li>`);
-                } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
-                    html.push('<li class="page-item disabled"><span class="page-link">...</span></li>');
-                }
-            }
-            
-            html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
-                <button class="page-link" data-page="next">&raquo;</button>
-            </li>`);
-            
-            pagination.innerHTML = html.join('');
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Dakota High School Football Programs - McKnight's American Football</title>
+    <meta name="data-file" content="/static-football-rankings/data/states/programs/state-programs-SD.json">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    <style>
+        .program-link {
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: none;
         }
-    };
+        .program-link:hover {
+            text-decoration: underline !important;
+            color: #0052a3 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => TableControls.init());
-    } else {
-        TableControls.init();
-    }
-</script>
-        
-        <!-- Comments Script -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
+                <li class="breadcrumb-item active" aria-current="page">South Dakota Programs</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div id="programHeaderContainer"></div>
+
+    <div class="container mt-4">
+        <h1 data-page-name="SD">South Dakota High School Football Programs</h1>
+
+        <div class="d-flex justify-content-between mb-3">
+            <div>
+                <a href="SD-teams.html" class="btn btn-outline-primary">View Team Rankings</a>
+            </div>
+            <div class="text-muted">Updated: <span id="lastUpdated">1/4/2026</span></div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text">Search</span>
+                    <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="sticky-top bg-white">
+                    <tr>
+                        <th style="min-width: 60px">Rank</th>
+                        <th style="min-width: 200px">Program</th>
+                        <th style="min-width: 90px">Seasons</th>
+                        <th style="min-width: 90px">Combined</th>
+                        <th style="min-width: 90px">Margin</th>
+                        <th style="min-width: 90px">Win/Loss</th>
+                        <th style="min-width: 90px">Offense</th>
+                        <th style="min-width: 90px">Defense</th>
+                        <th style="min-width: 70px">City</th>
+                    </tr>
+                </thead>
+                <tbody id="programsTableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="pagination-info">
+                    Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                </div>
+            </div>
+            <div class="col-md-6">
+                <nav aria-label="Table navigation">
+                    <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                </nav>
+            </div>
+        </div>
+
         <div class="container mt-5">
     <div class="comments-section">
         <h3 class="mb-4">Comments & Discussion</h3>
@@ -2081,19 +113,271 @@
         </script>
     </div>
 </div>
-        
-<!-- TopBanner initialization -->
-<script type="module">
-    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+
+        <footer class="mt-5 mb-3">
+            <div class="text-center">
+                <p>&copy; 2025 McKnight's Football Rankings</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script>
+    console.log('=== INLINE SCRIPT STARTING ===');
+
+    let allData = [];
+    let currentData = [];
+    let currentPage = 1;
+    const rowsPerPage = 100;
+
     document.addEventListener('DOMContentLoaded', async () => {
+        console.log('DOM loaded, loading data...');
+        
+        const dataFileMeta = document.querySelector('meta[name="data-file"]');
+        if (!dataFileMeta) {
+            console.error('âŒ No data-file meta tag found');
+            return;
+        }
+        
+        const dataPath = dataFileMeta.getAttribute('content');
+        
         try {
-            const banner = new TopBanner();
-            await banner.initialize();
+            const response = await fetch(dataPath);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            
+            const data = await response.json();
+            console.log('âœ“ Data loaded');
+            
+            if (data.topItem) {
+                createBanner(data.topItem);
+                applyTableColors(data.topItem);
+                
+                allData = data.items;
+                currentData = allData;
+                
+                setupSearch();
+                renderPage(1);
+            }
         } catch (error) {
-            console.warn('Banner initialization failed:', error);
-            document.body.style.display = 'block';
+            console.error('âŒ Error:', error);
         }
     });
+
+    function renderPage(page) {
+        const totalPages = Math.ceil(currentData.length / rowsPerPage);
+        if (page < 1) page = 1;
+        if (page > totalPages && totalPages > 0) page = totalPages;
+        
+        currentPage = page;
+
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageItems = currentData.slice(start, end);
+
+        populateTable(pageItems);
+        renderPaginationControls(totalPages);
+        updateInfoText(start, pageItems.length, currentData.length);
+    }
+
+    function updateInfoText(startIndex, count, total) {
+        const startSpan = document.getElementById('startRow');
+        const endSpan = document.getElementById('endRow');
+        const totalSpan = document.getElementById('totalRows');
+
+        if (startSpan) startSpan.textContent = total === 0 ? 0 : startIndex + 1;
+        if (endSpan) endSpan.textContent = startIndex + count;
+        if (totalSpan) totalSpan.textContent = total;
+    }
+
+    function renderPaginationControls(totalPages) {
+        const paginationContainer = document.getElementById('tablePagination');
+        if (!paginationContainer) return;
+
+        paginationContainer.innerHTML = '';
+
+        const createItem = (label, pageNum, isActive, isDisabled) => {
+            const li = document.createElement('li');
+            li.className = `page-item ${isActive ? 'active' : ''} ${isDisabled ? 'disabled' : ''}`;
+            
+            const a = document.createElement('a');
+            a.className = 'page-link';
+            a.href = '#';
+            a.innerHTML = label;
+            
+            if (!isDisabled && !isActive) {
+                a.onclick = (e) => {
+                    e.preventDefault();
+                    renderPage(pageNum);
+                };
+            }
+            li.appendChild(a);
+            return li;
+        };
+
+        paginationContainer.appendChild(createItem('&laquo;', currentPage - 1, false, currentPage === 1));
+
+        const maxVisibleButtons = 5; 
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
+
+        if (endPage - startPage < maxVisibleButtons - 1) {
+            startPage = Math.max(1, endPage - maxVisibleButtons + 1);
+        }
+
+        if (startPage > 1) {
+            paginationContainer.appendChild(createItem('1', 1, false, false));
+            if (startPage > 2) {
+                paginationContainer.appendChild(createItem('...', null, false, true));
+            }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            paginationContainer.appendChild(createItem(i, i, currentPage === i, false));
+        }
+
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationContainer.appendChild(createItem('...', null, false, true));
+            }
+            paginationContainer.appendChild(createItem(totalPages, totalPages, false, false));
+        }
+
+        paginationContainer.appendChild(createItem('&raquo;', currentPage + 1, false, currentPage === totalPages || totalPages === 0));
+    }
+
+    function setupSearch() {
+        const searchInput = document.getElementById('tableSearch');
+        if (!searchInput) return;
+
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            
+            if (term.length < 2) {
+                currentData = allData;
+            } else {
+                currentData = allData.filter(item => 
+                    item.program.toLowerCase().includes(term) ||
+                    (item.city && item.city.toLowerCase().includes(term))
+                );
+            }
+            
+            renderPage(1);
+        });
+    }
+
+    function populateTable(items) {
+        const tbody = document.getElementById('programsTableBody');
+        if (!tbody) return;
+
+        tbody.innerHTML = '';
+
+        if (items.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="9" class="text-center">No matching records found</td></tr>';
+            return;
+        }
+
+        items.forEach(item => {
+            const row = document.createElement('tr');
+            
+            let programHtml;
+            if (item.hasProgramPage && item.programPageUrl) {
+                programHtml = `<a href="${item.programPageUrl}" class="program-link">${item.program}</a>`;
+            } else {
+                programHtml = item.program;
+            }
+
+            row.innerHTML = `
+                <td>${item.rank}</td>
+                <td>${programHtml}</td>
+                <td>${item.seasons}</td>
+                <td>${item.combined}</td>
+                <td>${item.margin}</td>
+                <td>${item.win_loss}</td>
+                <td>${item.offense}</td>
+                <td>${item.defense}</td>
+                <td>${item.city || ''}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    function fixPath(path) {
+        if (!path) return '';
+        return path.startsWith('/') ? path : `/static-football-rankings/${path}`;
+    }
+
+    function createBanner(topItem) {
+        const container = document.getElementById('programHeaderContainer');
+        if (!container) return;
+
+        const { program, seasons, mascot, backgroundColor, textColor, logoURL, schoolLogoURL } = topItem;
+        const primaryColor = backgroundColor || '#003087';
+        const secondaryColor = textColor || '#FFD700';
+        const borderStyle = `border: 3px solid ${secondaryColor}; border-radius: 8px; padding: 5px;`;
+
+        const logoHTML = logoURL ? 
+            `<img src="${fixPath(logoURL)}" alt="Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
+
+        const schoolLogoHTML = schoolLogoURL ? 
+            `<img src="${fixPath(schoolLogoURL)}" alt="School Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
+
+        container.innerHTML = `
+            <div class="team-header" style="background-color: ${primaryColor}; color: ${secondaryColor}; padding: 30px 0; border-bottom: 5px solid ${secondaryColor};">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 text-center d-none d-md-block">${logoHTML}</div>
+                        <div class="col-md-8 text-center">
+                            <h2 style="margin: 0; font-size: 2.8rem; font-weight: 800; color: ${secondaryColor} !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">${program}</h2>
+                            ${mascot ? `<p style="margin: 10px 0; font-size: 1.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: ${secondaryColor} !important;">${mascot}</p>` : ''}
+                            <div class="team-stats" style="margin-top: 10px; background: rgba(255,255,255,0.15); padding: 5px 15px; border-radius: 20px; border: 2px solid ${secondaryColor}; display: inline-block;">
+                                <small style="font-size: 1rem; font-weight: bold; color: ${secondaryColor} !important;">Seasons: ${seasons}</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-center d-none d-md-block">${schoolLogoHTML}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function applyTableColors(topItem) {
+        const primaryColor = topItem.backgroundColor || '#343a40';
+        const secondaryColor = topItem.textColor || '#ffffff';
+
+        const thead = document.querySelector('table thead');
+        if (thead) {
+            thead.style.backgroundColor = primaryColor;
+            thead.style.color = '#ffffff';
+            thead.querySelectorAll('th').forEach(th => {
+                th.style.backgroundColor = primaryColor;
+                th.style.color = '#ffffff';
+                th.style.borderColor = primaryColor;
+            });
+        }
+
+        const hexToRgb = (hex) => {
+            hex = hex.replace('#', '');
+            if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            return (!isNaN(r) && !isNaN(g) && !isNaN(b)) ? `${r}, ${g}, ${b}` : null;
+        };
+
+        const primaryRgb = hexToRgb(primaryColor);
+        const secondaryRgb = hexToRgb(secondaryColor);
+
+        if (primaryRgb && secondaryRgb) {
+            const style = document.createElement('style');
+            style.textContent = `
+                table tbody tr:nth-of-type(odd) { background-color: rgba(${primaryRgb}, 0.20) !important; }
+                table tbody tr:nth-of-type(even) { background-color: #ffffff !important; }
+                table tbody tr:hover { background-color: rgba(${secondaryRgb}, 0.25) !important; cursor: pointer; transition: background-color 0.2s ease; }
+            `;
+            document.head.appendChild(style);
+        }
+    }
 </script>
-    </body>
+</body>
 </html>

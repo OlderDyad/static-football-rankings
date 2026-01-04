@@ -1,2930 +1,93 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>West Virginia High School Football Programs - McKnight's American Football</title>
-        <meta name="data-file" content="/static-football-rankings/data/states/programs/state-programs-WV.json">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-    </head>
-    <body>
-        <!-- Header Banner -->
-        <div class="header-banner">
-            <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
-        </div>
-
-        <!-- Breadcrumb navigation -->
-        <div class="container mt-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">West Virginia Programs</li>
-                </ol>
-            </nav>
-        </div>
-
-        <!-- Dynamic team banner container -->
-        <div id="teamHeaderContainer"></div>
-
-        <!-- Main content -->
-        <div class="container mt-4">
-            <h1 data-page-name="WV">West Virginia High School Football Programs</h1>
-            
-            <div class="d-flex justify-content-between mb-3">
-                <div>
-                    <a href="WV-teams.html" class="btn btn-outline-primary">View Season Rankings</a>
-                </div>
-                <div class="text-muted">Updated: <span id="lastUpdated">1/4/2026</span></div>
-            </div>
-
-            <!-- Search Controls -->
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <span class="input-group-text">Search</span>
-                        <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Table -->
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="sticky-top bg-white">
-                        <tr>
-                            <th style="min-width: 60px">Rank</th>
-                            <th style="min-width: 200px">Program</th>
-                            <th style="min-width: 80px">Seasons</th>
-                            <th style="min-width: 90px">Combined</th>
-                            <th style="min-width: 90px">Margin</th>
-                            <th style="min-width: 90px">Win/Loss</th>
-                            <th style="min-width: 90px">Offense</th>
-                            <th style="min-width: 90px">Defense</th>
-                            <th style="min-width: 70px">State</th>
-                        </tr>
-                    </thead>
-                    <tbody id="programsTableBody">
-                                    <tr>
-                <td>1</td>
-                <td>Charleston (WV)</td>
-                <td>87</td>
-                <td>22.017</td>
-                <td>19.943</td>
-                <td>1.993</td>
-                <td>12.738</td>
-                <td>9.689</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Ona Cabell Midland (WV)</td>
-                <td>32</td>
-                <td>21.521</td>
-                <td>20.598</td>
-                <td>0.871</td>
-                <td>16.908</td>
-                <td>4.848</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Parkersburg (WV)</td>
-                <td>130</td>
-                <td>20.595</td>
-                <td>18.985</td>
-                <td>1.571</td>
-                <td>15.785</td>
-                <td>7.751</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Kanawha County Stonewall Jackson (WV)</td>
-                <td>42</td>
-                <td>19.689</td>
-                <td>19.064</td>
-                <td>0.616</td>
-                <td>19.475</td>
-                <td>4.933</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Huntington Spring Valley (WV)</td>
-                <td>28</td>
-                <td>19.353</td>
-                <td>18.276</td>
-                <td>1.047</td>
-                <td>14.711</td>
-                <td>3.806</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Charleston Stonewall Jackson (WV)</td>
-                <td>49</td>
-                <td>19.088</td>
-                <td>18.484</td>
-                <td>0.524</td>
-                <td>14.675</td>
-                <td>7.022</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Charleston Capital (WV)</td>
-                <td>38</td>
-                <td>17.909</td>
-                <td>17.486</td>
-                <td>0.386</td>
-                <td>15.321</td>
-                <td>5.291</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Huntington (WV)</td>
-                <td>125</td>
-                <td>14.381</td>
-                <td>13.615</td>
-                <td>0.744</td>
-                <td>13.431</td>
-                <td>7.318</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Lewisburg Greenbrier Military Academy (WV)</td>
-                <td>56</td>
-                <td>12.644</td>
-                <td>10.644</td>
-                <td>1.97</td>
-                <td>13.84</td>
-                <td>1.915</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Wheeling (WV)</td>
-                <td>83</td>
-                <td>12.342</td>
-                <td>10.695</td>
-                <td>1.627</td>
-                <td>7.513</td>
-                <td>11.976</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>Morgantown (WV)</td>
-                <td>119</td>
-                <td>12.152</td>
-                <td>11.666</td>
-                <td>0.452</td>
-                <td>14.525</td>
-                <td>7.08</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>Bluefield (WV)</td>
-                <td>108</td>
-                <td>12.132</td>
-                <td>11.913</td>
-                <td>0.198</td>
-                <td>12.269</td>
-                <td>8.525</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>East Bank (WV)</td>
-                <td>82</td>
-                <td>10.738</td>
-                <td>10.669</td>
-                <td>0.026</td>
-                <td>14.131</td>
-                <td>7.881</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>Charleston George Washington (WV)</td>
-                <td>62</td>
-                <td>10.37</td>
-                <td>11.528</td>
-                <td>-1.173</td>
-                <td>16.811</td>
-                <td>7.874</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Martinsburg (WV)</td>
-                <td>107</td>
-                <td>10.014</td>
-                <td>10.13</td>
-                <td>-0.144</td>
-                <td>13.245</td>
-                <td>7.103</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>Beckley Woodrow Wilson (WV)</td>
-                <td>106</td>
-                <td>9.9</td>
-                <td>9.91</td>
-                <td>-0.032</td>
-                <td>11.458</td>
-                <td>8.151</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>Wheeling Park (WV)</td>
-                <td>54</td>
-                <td>9.276</td>
-                <td>10.624</td>
-                <td>-1.351</td>
-                <td>16.057</td>
-                <td>7.475</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>Wellsburg Brooke (WV)</td>
-                <td>57</td>
-                <td>9.192</td>
-                <td>10.397</td>
-                <td>-1.192</td>
-                <td>12.16</td>
-                <td>11.62</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>19</td>
-                <td>Weirton Weir (WV)</td>
-                <td>103</td>
-                <td>9.185</td>
-                <td>9.257</td>
-                <td>-0.114</td>
-                <td>11.556</td>
-                <td>9.291</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>Charleston Garnett (WV)</td>
-                <td>28</td>
-                <td>8.204</td>
-                <td>6.669</td>
-                <td>1.535</td>
-                <td>2.739</td>
-                <td>0.798</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>21</td>
-                <td>Clarksburg Victory (WV)</td>
-                <td>54</td>
-                <td>7.423</td>
-                <td>6.387</td>
-                <td>1.012</td>
-                <td>10.475</td>
-                <td>6.838</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>22</td>
-                <td>Benwood Union (WV)</td>
-                <td>46</td>
-                <td>6.453</td>
-                <td>5.46</td>
-                <td>1.001</td>
-                <td>9.58</td>
-                <td>5.934</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>23</td>
-                <td>Moundsville (WV)</td>
-                <td>64</td>
-                <td>6.28</td>
-                <td>4.616</td>
-                <td>1.69</td>
-                <td>8.248</td>
-                <td>9.176</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>24</td>
-                <td>Marshall Union (WV)</td>
-                <td>46</td>
-                <td>6.171</td>
-                <td>5.227</td>
-                <td>0.968</td>
-                <td>9.478</td>
-                <td>5.912</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>Wheeling Linsly Military Institute (WV)</td>
-                <td>126</td>
-                <td>5.897</td>
-                <td>5.935</td>
-                <td>-0.068</td>
-                <td>14.692</td>
-                <td>5.595</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>26</td>
-                <td>Huntington East (WV)</td>
-                <td>56</td>
-                <td>5.602</td>
-                <td>6.867</td>
-                <td>-1.243</td>
-                <td>14.619</td>
-                <td>8.2</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>27</td>
-                <td>Huntington Douglass (WV)</td>
-                <td>37</td>
-                <td>5.424</td>
-                <td>4.467</td>
-                <td>0.968</td>
-                <td>6.339</td>
-                <td>12.868</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>28</td>
-                <td>Follansbee (WV)</td>
-                <td>55</td>
-                <td>5.289</td>
-                <td>4.276</td>
-                <td>1.019</td>
-                <td>9.249</td>
-                <td>5.186</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>29</td>
-                <td>Bridgeport (WV)</td>
-                <td>105</td>
-                <td>5.075</td>
-                <td>5.737</td>
-                <td>-0.693</td>
-                <td>13.883</td>
-                <td>5.991</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>30</td>
-                <td>Fairmont (WV)</td>
-                <td>118</td>
-                <td>5.036</td>
-                <td>5.072</td>
-                <td>-0.078</td>
-                <td>11.579</td>
-                <td>7.77</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>31</td>
-                <td>Belle Dupont (WV)</td>
-                <td>68</td>
-                <td>4.483</td>
-                <td>5.458</td>
-                <td>-0.97</td>
-                <td>15.229</td>
-                <td>5.698</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>32</td>
-                <td>Parkersburg South (WV)</td>
-                <td>59</td>
-                <td>3.566</td>
-                <td>5.489</td>
-                <td>-1.913</td>
-                <td>15.119</td>
-                <td>9.37</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>33</td>
-                <td>South Charleston (WV)</td>
-                <td>100</td>
-                <td>3.215</td>
-                <td>3.96</td>
-                <td>-0.752</td>
-                <td>12.859</td>
-                <td>7.561</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>34</td>
-                <td>Dunbar Kanawha (WV)</td>
-                <td>68</td>
-                <td>3.0</td>
-                <td>3.587</td>
-                <td>-0.558</td>
-                <td>11.596</td>
-                <td>6.906</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>35</td>
-                <td>Princeton (WV)</td>
-                <td>102</td>
-                <td>2.722</td>
-                <td>3.588</td>
-                <td>-0.88</td>
-                <td>12.594</td>
-                <td>7.756</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>36</td>
-                <td>Barboursville (WV)</td>
-                <td>69</td>
-                <td>2.631</td>
-                <td>3.454</td>
-                <td>-0.832</td>
-                <td>15.639</td>
-                <td>7.294</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>37</td>
-                <td>Dunbar (WV)</td>
-                <td>69</td>
-                <td>2.444</td>
-                <td>3.152</td>
-                <td>-0.685</td>
-                <td>13.789</td>
-                <td>5.882</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>38</td>
-                <td>Wheeling Triadelphia (WV)</td>
-                <td>63</td>
-                <td>2.186</td>
-                <td>1.781</td>
-                <td>0.452</td>
-                <td>10.223</td>
-                <td>7.282</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>39</td>
-                <td>New Martinsville Magnolia (WV)</td>
-                <td>121</td>
-                <td>2.182</td>
-                <td>2.595</td>
-                <td>-0.403</td>
-                <td>12.32</td>
-                <td>8.471</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>40</td>
-                <td>Wellsburg (WV)</td>
-                <td>63</td>
-                <td>2.159</td>
-                <td>1.091</td>
-                <td>1.073</td>
-                <td>10.101</td>
-                <td>5.992</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>41</td>
-                <td>Glen Dale John Marshall (WV)</td>
-                <td>58</td>
-                <td>1.944</td>
-                <td>3.981</td>
-                <td>-2.032</td>
-                <td>13.773</td>
-                <td>9.931</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>42</td>
-                <td>Welch (WV)</td>
-                <td>56</td>
-                <td>1.832</td>
-                <td>1.753</td>
-                <td>0.066</td>
-                <td>8.856</td>
-                <td>8.268</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>43</td>
-                <td>Weston (WV)</td>
-                <td>56</td>
-                <td>1.271</td>
-                <td>0.55</td>
-                <td>0.702</td>
-                <td>7.891</td>
-                <td>9.037</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>44</td>
-                <td>Belle Riverside (WV)</td>
-                <td>28</td>
-                <td>1.152</td>
-                <td>1.539</td>
-                <td>-0.431</td>
-                <td>10.206</td>
-                <td>8.599</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>45</td>
-                <td>Gary (WV)</td>
-                <td>56</td>
-                <td>0.327</td>
-                <td>0.4</td>
-                <td>-0.066</td>
-                <td>10.321</td>
-                <td>7.145</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>46</td>
-                <td>Saint Albans (WV)</td>
-                <td>107</td>
-                <td>0.286</td>
-                <td>1.071</td>
-                <td>-0.782</td>
-                <td>11.482</td>
-                <td>9.37</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>47</td>
-                <td>Ceredo-Kenova (WV)</td>
-                <td>79</td>
-                <td>0.14</td>
-                <td>1.112</td>
-                <td>-1.0</td>
-                <td>12.425</td>
-                <td>8.292</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>48</td>
-                <td>Farmington North Marion (WV)</td>
-                <td>47</td>
-                <td>0.123</td>
-                <td>2.115</td>
-                <td>-2.025</td>
-                <td>12.664</td>
-                <td>10.442</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>49</td>
-                <td>Clarksburg Robert C. Byrd (WV)</td>
-                <td>30</td>
-                <td>0.046</td>
-                <td>0.695</td>
-                <td>-0.669</td>
-                <td>10.791</td>
-                <td>8.702</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>50</td>
-                <td>Wheeling Central Catholic (WV)</td>
-                <td>116</td>
-                <td>-0.101</td>
-                <td>0.545</td>
-                <td>-0.625</td>
-                <td>15.527</td>
-                <td>6.515</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>51</td>
-                <td>Shenandoah Junction Jefferson (WV)</td>
-                <td>55</td>
-                <td>-0.519</td>
-                <td>1.814</td>
-                <td>-2.26</td>
-                <td>13.772</td>
-                <td>7.98</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>52</td>
-                <td>Point Pleasant (WV)</td>
-                <td>105</td>
-                <td>-0.901</td>
-                <td>0.288</td>
-                <td>-1.175</td>
-                <td>11.649</td>
-                <td>7.752</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>53</td>
-                <td>Logan (WV)</td>
-                <td>104</td>
-                <td>-1.167</td>
-                <td>-0.027</td>
-                <td>-1.168</td>
-                <td>10.238</td>
-                <td>9.373</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>54</td>
-                <td>Lewisburg Greenbrier East (WV)</td>
-                <td>58</td>
-                <td>-1.289</td>
-                <td>1.099</td>
-                <td>-2.412</td>
-                <td>14.106</td>
-                <td>7.548</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>55</td>
-                <td>Clarksburg Washington Irving (WV)</td>
-                <td>92</td>
-                <td>-1.444</td>
-                <td>-0.74</td>
-                <td>-0.718</td>
-                <td>11.776</td>
-                <td>8.807</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>56</td>
-                <td>Clendenin Herbert Hoover (WV)</td>
-                <td>63</td>
-                <td>-1.726</td>
-                <td>0.602</td>
-                <td>-2.319</td>
-                <td>13.963</td>
-                <td>9.08</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>57</td>
-                <td>Montgomery (WV)</td>
-                <td>55</td>
-                <td>-1.785</td>
-                <td>-1.597</td>
-                <td>-0.206</td>
-                <td>8.69</td>
-                <td>6.517</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>58</td>
-                <td>Hinton (WV)</td>
-                <td>75</td>
-                <td>-2.096</td>
-                <td>-0.762</td>
-                <td>-1.334</td>
-                <td>12.41</td>
-                <td>8.023</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>59</td>
-                <td>Ridgeley Frankfort (WV)</td>
-                <td>50</td>
-                <td>-2.19</td>
-                <td>0.301</td>
-                <td>-2.531</td>
-                <td>13.285</td>
-                <td>8.687</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>60</td>
-                <td>Fairmont East Fairmont (WV)</td>
-                <td>84</td>
-                <td>-2.965</td>
-                <td>-1.433</td>
-                <td>-1.527</td>
-                <td>9.038</td>
-                <td>8.687</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>61</td>
-                <td>Buckhannon-Upshur (WV)</td>
-                <td>117</td>
-                <td>-3.297</td>
-                <td>-2.246</td>
-                <td>-1.057</td>
-                <td>8.622</td>
-                <td>9.465</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>62</td>
-                <td>La Salle College (WV)</td>
-                <td>29</td>
-                <td>-3.697</td>
-                <td>-3.714</td>
-                <td>0.017</td>
-                <td>12.074</td>
-                <td>2.331</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>63</td>
-                <td>Keyser (WV)</td>
-                <td>111</td>
-                <td>-4.043</td>
-                <td>-2.693</td>
-                <td>-1.367</td>
-                <td>13.962</td>
-                <td>5.79</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>64</td>
-                <td>Oak Hill (WV)</td>
-                <td>105</td>
-                <td>-4.655</td>
-                <td>-3.138</td>
-                <td>-1.497</td>
-                <td>10.588</td>
-                <td>8.491</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>65</td>
-                <td>Warwood (WV)</td>
-                <td>62</td>
-                <td>-5.385</td>
-                <td>-4.974</td>
-                <td>-0.412</td>
-                <td>11.331</td>
-                <td>5.72</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>66</td>
-                <td>Hurricane (WV)</td>
-                <td>101</td>
-                <td>-5.846</td>
-                <td>-4.045</td>
-                <td>-1.766</td>
-                <td>13.224</td>
-                <td>6.11</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>67</td>
-                <td>Mannington (WV)</td>
-                <td>72</td>
-                <td>-5.862</td>
-                <td>-5.471</td>
-                <td>-0.415</td>
-                <td>11.802</td>
-                <td>6.771</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>68</td>
-                <td>Lindside James Monroe (WV)</td>
-                <td>30</td>
-                <td>-6.224</td>
-                <td>-4.661</td>
-                <td>-1.519</td>
-                <td>9.687</td>
-                <td>10.451</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>69</td>
-                <td>Nitro (WV)</td>
-                <td>97</td>
-                <td>-6.287</td>
-                <td>-4.493</td>
-                <td>-1.787</td>
-                <td>12.76</td>
-                <td>8.909</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>70</td>
-                <td>Elkins (WV)</td>
-                <td>111</td>
-                <td>-6.449</td>
-                <td>-4.909</td>
-                <td>-1.563</td>
-                <td>8.811</td>
-                <td>10.881</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>71</td>
-                <td>Morgantown University (WV)</td>
-                <td>84</td>
-                <td>-6.943</td>
-                <td>-4.607</td>
-                <td>-2.318</td>
-                <td>14.111</td>
-                <td>7.03</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>72</td>
-                <td>Inwood Musselman (WV)</td>
-                <td>76</td>
-                <td>-7.289</td>
-                <td>-4.593</td>
-                <td>-2.745</td>
-                <td>14.111</td>
-                <td>7.849</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>73</td>
-                <td>War Big Creek (WV)</td>
-                <td>81</td>
-                <td>-7.622</td>
-                <td>-5.571</td>
-                <td>-2.089</td>
-                <td>11.723</td>
-                <td>8.901</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>74</td>
-                <td>Weston Lewis County (WV)</td>
-                <td>115</td>
-                <td>-7.651</td>
-                <td>-6.087</td>
-                <td>-1.555</td>
-                <td>8.807</td>
-                <td>10.134</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>75</td>
-                <td>Monongah (WV)</td>
-                <td>57</td>
-                <td>-7.97</td>
-                <td>-6.831</td>
-                <td>-1.147</td>
-                <td>17.63</td>
-                <td>-1.654</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>76</td>
-                <td>Valley-Montgomery (WV)</td>
-                <td>83</td>
-                <td>-8.264</td>
-                <td>-6.202</td>
-                <td>-2.049</td>
-                <td>10.408</td>
-                <td>8.391</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>77</td>
-                <td>Sistersville (WV)</td>
-                <td>89</td>
-                <td>-8.342</td>
-                <td>-6.975</td>
-                <td>-1.363</td>
-                <td>11.465</td>
-                <td>8.764</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>78</td>
-                <td>Spencer (WV)</td>
-                <td>76</td>
-                <td>-8.49</td>
-                <td>-6.642</td>
-                <td>-1.829</td>
-                <td>10.238</td>
-                <td>8.535</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>79</td>
-                <td>Wayne (WV)</td>
-                <td>103</td>
-                <td>-8.513</td>
-                <td>-6.587</td>
-                <td>-1.931</td>
-                <td>11.831</td>
-                <td>9.717</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>80</td>
-                <td>Alderson (WV)</td>
-                <td>46</td>
-                <td>-8.566</td>
-                <td>-8.004</td>
-                <td>-0.57</td>
-                <td>12.685</td>
-                <td>4.506</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>81</td>
-                <td>Shinnston (WV)</td>
-                <td>67</td>
-                <td>-9.117</td>
-                <td>-8.445</td>
-                <td>-0.635</td>
-                <td>12.133</td>
-                <td>5.843</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>82</td>
-                <td>Poca (WV)</td>
-                <td>96</td>
-                <td>-9.17</td>
-                <td>-7.071</td>
-                <td>-2.076</td>
-                <td>12.098</td>
-                <td>8.504</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>83</td>
-                <td>Clarksburg Roosevelt-Wilson (WV)</td>
-                <td>68</td>
-                <td>-9.284</td>
-                <td>-7.318</td>
-                <td>-1.965</td>
-                <td>14.233</td>
-                <td>3.783</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>84</td>
-                <td>New Cumberland Oak Glen (WV)</td>
-                <td>63</td>
-                <td>-9.309</td>
-                <td>-6.217</td>
-                <td>-3.116</td>
-                <td>10.673</td>
-                <td>10.987</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>85</td>
-                <td>Charleston Catholic (WV)</td>
-                <td>57</td>
-                <td>-9.688</td>
-                <td>-8.046</td>
-                <td>-1.641</td>
-                <td>9.592</td>
-                <td>7.775</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>86</td>
-                <td>Saint Marys (WV)</td>
-                <td>115</td>
-                <td>-9.706</td>
-                <td>-7.963</td>
-                <td>-1.752</td>
-                <td>10.683</td>
-                <td>10.242</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>87</td>
-                <td>Man (WV)</td>
-                <td>103</td>
-                <td>-9.962</td>
-                <td>-7.87</td>
-                <td>-2.087</td>
-                <td>10.147</td>
-                <td>7.954</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>88</td>
-                <td>Hinton Summers County (WV)</td>
-                <td>109</td>
-                <td>-10.148</td>
-                <td>-8.175</td>
-                <td>-1.96</td>
-                <td>10.278</td>
-                <td>10.356</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>89</td>
-                <td>Northfork (WV)</td>
-                <td>63</td>
-                <td>-10.256</td>
-                <td>-8.543</td>
-                <td>-1.732</td>
-                <td>8.699</td>
-                <td>9.338</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>90</td>
-                <td>Rainelle (WV)</td>
-                <td>44</td>
-                <td>-10.345</td>
-                <td>-9.541</td>
-                <td>-0.797</td>
-                <td>13.09</td>
-                <td>4.884</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>91</td>
-                <td>Grafton (WV)</td>
-                <td>118</td>
-                <td>-10.468</td>
-                <td>-8.773</td>
-                <td>-1.662</td>
-                <td>7.721</td>
-                <td>11.097</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>92</td>
-                <td>Mount Hope (WV)</td>
-                <td>90</td>
-                <td>-10.82</td>
-                <td>-8.598</td>
-                <td>-2.209</td>
-                <td>9.733</td>
-                <td>7.868</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>93</td>
-                <td>Chester (WV)</td>
-                <td>47</td>
-                <td>-10.856</td>
-                <td>-10.567</td>
-                <td>-0.249</td>
-                <td>12.434</td>
-                <td>4.057</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>94</td>
-                <td>Winfield (WV)</td>
-                <td>93</td>
-                <td>-11.041</td>
-                <td>-8.577</td>
-                <td>-2.475</td>
-                <td>12.692</td>
-                <td>8.074</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>95</td>
-                <td>Williamson (WV)</td>
-                <td>90</td>
-                <td>-11.109</td>
-                <td>-8.962</td>
-                <td>-2.107</td>
-                <td>8.1</td>
-                <td>11.5</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>96</td>
-                <td>Milton (WV)</td>
-                <td>70</td>
-                <td>-11.141</td>
-                <td>-9.001</td>
-                <td>-2.113</td>
-                <td>10.867</td>
-                <td>9.596</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>97</td>
-                <td>Ripley (WV)</td>
-                <td>98</td>
-                <td>-11.554</td>
-                <td>-9.238</td>
-                <td>-2.291</td>
-                <td>11.068</td>
-                <td>9.314</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>98</td>
-                <td>Charmco Greenbrier West (WV)</td>
-                <td>58</td>
-                <td>-11.648</td>
-                <td>-8.275</td>
-                <td>-3.377</td>
-                <td>12.862</td>
-                <td>9.7</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>99</td>
-                <td>Charlestown (WV)</td>
-                <td>51</td>
-                <td>-11.685</td>
-                <td>-10.663</td>
-                <td>-1.059</td>
-                <td>9.566</td>
-                <td>6.355</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>100</td>
-                <td>Summersville Nicholas County (WV)</td>
-                <td>105</td>
-                <td>-11.886</td>
-                <td>-9.504</td>
-                <td>-2.37</td>
-                <td>10.655</td>
-                <td>7.563</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>101</td>
-                <td>Ravenswood (WV)</td>
-                <td>112</td>
-                <td>-12.475</td>
-                <td>-10.419</td>
-                <td>-2.087</td>
-                <td>10.623</td>
-                <td>10.268</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>102</td>
-                <td>Farmington (WV)</td>
-                <td>53</td>
-                <td>-12.803</td>
-                <td>-11.477</td>
-                <td>-1.286</td>
-                <td>16.569</td>
-                <td>-2.269</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>103</td>
-                <td>Charleston Sissonville (WV)</td>
-                <td>91</td>
-                <td>-13.275</td>
-                <td>-10.628</td>
-                <td>-2.648</td>
-                <td>12.36</td>
-                <td>8.423</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>104</td>
-                <td>Lewisburg Greenbrier (WV)</td>
-                <td>57</td>
-                <td>-13.534</td>
-                <td>-12.36</td>
-                <td>-1.097</td>
-                <td>9.433</td>
-                <td>8.068</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>105</td>
-                <td>Williamstown (WV)</td>
-                <td>104</td>
-                <td>-13.658</td>
-                <td>-11.212</td>
-                <td>-2.476</td>
-                <td>12.019</td>
-                <td>8.792</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>106</td>
-                <td>Romney (WV)</td>
-                <td>33</td>
-                <td>-13.864</td>
-                <td>-12.747</td>
-                <td>-1.19</td>
-                <td>13.322</td>
-                <td>2.315</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>107</td>
-                <td>Clendenin (WV)</td>
-                <td>41</td>
-                <td>-14.466</td>
-                <td>-13.614</td>
-                <td>-0.824</td>
-                <td>5.426</td>
-                <td>6.396</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>108</td>
-                <td>White Sulphur Springs (WV)</td>
-                <td>43</td>
-                <td>-14.525</td>
-                <td>-13.239</td>
-                <td>-1.354</td>
-                <td>11.047</td>
-                <td>3.632</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>109</td>
-                <td>Green Bank (WV)</td>
-                <td>45</td>
-                <td>-14.702</td>
-                <td>-13.299</td>
-                <td>-1.385</td>
-                <td>12.368</td>
-                <td>4.714</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>110</td>
-                <td>Buffalo-Wayne (WV)</td>
-                <td>61</td>
-                <td>-15.145</td>
-                <td>-11.904</td>
-                <td>-3.241</td>
-                <td>15.4</td>
-                <td>4.007</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>111</td>
-                <td>Mullens (WV)</td>
-                <td>75</td>
-                <td>-15.247</td>
-                <td>-12.417</td>
-                <td>-2.834</td>
-                <td>10.137</td>
-                <td>10.578</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>112</td>
-                <td>Elkview (WV)</td>
-                <td>39</td>
-                <td>-15.28</td>
-                <td>-14.181</td>
-                <td>-1.101</td>
-                <td>9.509</td>
-                <td>4.739</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>113</td>
-                <td>Marlinton (WV)</td>
-                <td>50</td>
-                <td>-15.361</td>
-                <td>-14.036</td>
-                <td>-1.372</td>
-                <td>10.392</td>
-                <td>6.5</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>114</td>
-                <td>Wayne County Buffalo (WV)</td>
-                <td>68</td>
-                <td>-15.91</td>
-                <td>-12.841</td>
-                <td>-3.058</td>
-                <td>13.993</td>
-                <td>6.352</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>115</td>
-                <td>Sistersville Tyler (WV)</td>
-                <td>30</td>
-                <td>-16.04</td>
-                <td>-13.588</td>
-                <td>-2.397</td>
-                <td>8.274</td>
-                <td>14.824</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>116</td>
-                <td>Weirton Madonna (WV)</td>
-                <td>68</td>
-                <td>-16.098</td>
-                <td>-12.501</td>
-                <td>-3.551</td>
-                <td>12.657</td>
-                <td>9.297</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>117</td>
-                <td>Romney Hampshire (WV)</td>
-                <td>62</td>
-                <td>-16.542</td>
-                <td>-12.771</td>
-                <td>-3.751</td>
-                <td>10.94</td>
-                <td>11.992</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>118</td>
-                <td>Huntington Vinson (WV)</td>
-                <td>65</td>
-                <td>-16.606</td>
-                <td>-13.413</td>
-                <td>-3.156</td>
-                <td>14.049</td>
-                <td>6.973</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>119</td>
-                <td>Matewan (WV)</td>
-                <td>88</td>
-                <td>-16.697</td>
-                <td>-13.956</td>
-                <td>-2.762</td>
-                <td>10.997</td>
-                <td>9.795</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>120</td>
-                <td>Fayetteville (WV)</td>
-                <td>97</td>
-                <td>-16.958</td>
-                <td>-14.132</td>
-                <td>-2.84</td>
-                <td>9.928</td>
-                <td>7.826</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>121</td>
-                <td>Seth Sherman (WV)</td>
-                <td>101</td>
-                <td>-17.09</td>
-                <td>-14.263</td>
-                <td>-2.832</td>
-                <td>10.464</td>
-                <td>9.568</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>122</td>
-                <td>Matewan Magnolia (WV)</td>
-                <td>83</td>
-                <td>-17.373</td>
-                <td>-14.497</td>
-                <td>-2.914</td>
-                <td>9.692</td>
-                <td>10.904</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>123</td>
-                <td>Madison Scott (WV)</td>
-                <td>101</td>
-                <td>-17.407</td>
-                <td>-14.517</td>
-                <td>-2.873</td>
-                <td>9.837</td>
-                <td>9.603</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>124</td>
-                <td>Spencer Roane County (WV)</td>
-                <td>33</td>
-                <td>-17.578</td>
-                <td>-14.825</td>
-                <td>-2.782</td>
-                <td>8.69</td>
-                <td>12.493</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>125</td>
-                <td>Fairview (WV)</td>
-                <td>58</td>
-                <td>-17.917</td>
-                <td>-15.863</td>
-                <td>-2.046</td>
-                <td>13.718</td>
-                <td>4.624</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>126</td>
-                <td>Logan Aracoma (WV)</td>
-                <td>27</td>
-                <td>-18.035</td>
-                <td>-16.522</td>
-                <td>-1.508</td>
-                <td>-0.405</td>
-                <td>11.91</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>127</td>
-                <td>Pennsboro (WV)</td>
-                <td>66</td>
-                <td>-18.037</td>
-                <td>-15.492</td>
-                <td>-2.558</td>
-                <td>8.231</td>
-                <td>8.339</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>128</td>
-                <td>Moorefield (WV)</td>
-                <td>99</td>
-                <td>-18.124</td>
-                <td>-15.043</td>
-                <td>-3.067</td>
-                <td>11.942</td>
-                <td>8.245</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>129</td>
-                <td>Philippi Barbour (WV)</td>
-                <td>103</td>
-                <td>-18.229</td>
-                <td>-15.268</td>
-                <td>-2.937</td>
-                <td>10.072</td>
-                <td>9.81</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>130</td>
-                <td>Ansted (WV)</td>
-                <td>55</td>
-                <td>-18.261</td>
-                <td>-16.303</td>
-                <td>-1.98</td>
-                <td>8.355</td>
-                <td>6.232</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>131</td>
-                <td>New Cumberland (WV)</td>
-                <td>48</td>
-                <td>-18.339</td>
-                <td>-17.022</td>
-                <td>-1.321</td>
-                <td>11.67</td>
-                <td>2.582</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>132</td>
-                <td>Northfork Elkhorn (WV)</td>
-                <td>27</td>
-                <td>-18.701</td>
-                <td>-16.86</td>
-                <td>-1.846</td>
-                <td>7.745</td>
-                <td>7.826</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>133</td>
-                <td>Coal City Stoco (WV)</td>
-                <td>50</td>
-                <td>-18.919</td>
-                <td>-16.82</td>
-                <td>-2.108</td>
-                <td>12.684</td>
-                <td>7.336</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>134</td>
-                <td>West Union Doddridge County (WV)</td>
-                <td>107</td>
-                <td>-19.281</td>
-                <td>-16.298</td>
-                <td>-2.98</td>
-                <td>7.687</td>
-                <td>10.298</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>135</td>
-                <td>Elkhorn (WV)</td>
-                <td>25</td>
-                <td>-19.408</td>
-                <td>-18.01</td>
-                <td>-1.328</td>
-                <td>5.6</td>
-                <td>7.678</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>136</td>
-                <td>Masontown (WV)</td>
-                <td>36</td>
-                <td>-19.604</td>
-                <td>-17.952</td>
-                <td>-1.655</td>
-                <td>16.963</td>
-                <td>-0.274</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>137</td>
-                <td>Elizabeth Wirt County (WV)</td>
-                <td>103</td>
-                <td>-20.005</td>
-                <td>-16.876</td>
-                <td>-3.125</td>
-                <td>9.689</td>
-                <td>10.235</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>138</td>
-                <td>Coal City Independence (WV)</td>
-                <td>50</td>
-                <td>-20.4</td>
-                <td>-16.153</td>
-                <td>-4.221</td>
-                <td>9.855</td>
-                <td>11.374</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>139</td>
-                <td>Mason Wahama (WV)</td>
-                <td>91</td>
-                <td>-20.418</td>
-                <td>-17.083</td>
-                <td>-3.331</td>
-                <td>12.614</td>
-                <td>10.172</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>140</td>
-                <td>Rupert (WV)</td>
-                <td>31</td>
-                <td>-20.532</td>
-                <td>-18.355</td>
-                <td>-2.143</td>
-                <td>8.338</td>
-                <td>5.835</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>141</td>
-                <td>Ridgeley (WV)</td>
-                <td>42</td>
-                <td>-20.678</td>
-                <td>-18.196</td>
-                <td>-2.448</td>
-                <td>14.734</td>
-                <td>5.021</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>142</td>
-                <td>Kingwood Preston (WV)</td>
-                <td>35</td>
-                <td>-20.711</td>
-                <td>-17.605</td>
-                <td>-3.058</td>
-                <td>5.772</td>
-                <td>13.922</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>143</td>
-                <td>Oceana (WV)</td>
-                <td>55</td>
-                <td>-20.976</td>
-                <td>-16.435</td>
-                <td>-4.558</td>
-                <td>11.65</td>
-                <td>9.438</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>144</td>
-                <td>Lost Creek South Harrison (WV)</td>
-                <td>61</td>
-                <td>-20.986</td>
-                <td>-16.782</td>
-                <td>-4.197</td>
-                <td>10.33</td>
-                <td>12.09</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>145</td>
-                <td>Athens (WV)</td>
-                <td>25</td>
-                <td>-21.046</td>
-                <td>-17.881</td>
-                <td>-3.184</td>
-                <td>14.521</td>
-                <td>5.421</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>146</td>
-                <td>Middlebourne Tyler County (WV)</td>
-                <td>77</td>
-                <td>-21.144</td>
-                <td>-18.026</td>
-                <td>-3.095</td>
-                <td>10.452</td>
-                <td>8.939</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>147</td>
-                <td>Lookout Nuttall (WV)</td>
-                <td>50</td>
-                <td>-21.227</td>
-                <td>-18.78</td>
-                <td>-2.416</td>
-                <td>8.372</td>
-                <td>7.782</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>148</td>
-                <td>Richwood (WV)</td>
-                <td>105</td>
-                <td>-21.255</td>
-                <td>-18.065</td>
-                <td>-3.184</td>
-                <td>8.809</td>
-                <td>10.595</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>149</td>
-                <td>Cameron (WV)</td>
-                <td>116</td>
-                <td>-21.31</td>
-                <td>-18.447</td>
-                <td>-2.823</td>
-                <td>9.223</td>
-                <td>10.676</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>150</td>
-                <td>Hambleton Tucker County (WV)</td>
-                <td>48</td>
-                <td>-21.57</td>
-                <td>-17.275</td>
-                <td>-4.282</td>
-                <td>9.316</td>
-                <td>12.445</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>151</td>
-                <td>Welch Mount View (WV)</td>
-                <td>48</td>
-                <td>-21.593</td>
-                <td>-17.523</td>
-                <td>-3.979</td>
-                <td>9.733</td>
-                <td>12.432</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>152</td>
-                <td>Parsons (WV)</td>
-                <td>64</td>
-                <td>-21.705</td>
-                <td>-19.377</td>
-                <td>-2.368</td>
-                <td>11.283</td>
-                <td>8.402</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>153</td>
-                <td>Webster Springs (WV)</td>
-                <td>51</td>
-                <td>-21.755</td>
-                <td>-19.622</td>
-                <td>-2.086</td>
-                <td>9.703</td>
-                <td>7.073</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>154</td>
-                <td>Shinnston Lincoln (WV)</td>
-                <td>48</td>
-                <td>-21.764</td>
-                <td>-17.481</td>
-                <td>-4.248</td>
-                <td>7.854</td>
-                <td>12.736</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>155</td>
-                <td>Hedgesville (WV)</td>
-                <td>93</td>
-                <td>-21.85</td>
-                <td>-18.256</td>
-                <td>-3.6</td>
-                <td>11.224</td>
-                <td>9.295</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>156</td>
-                <td>Rivesville (WV)</td>
-                <td>48</td>
-                <td>-22.015</td>
-                <td>-18.485</td>
-                <td>-3.552</td>
-                <td>15.918</td>
-                <td>3.391</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>157</td>
-                <td>Lewisburg (WV)</td>
-                <td>43</td>
-                <td>-22.081</td>
-                <td>-19.942</td>
-                <td>-2.133</td>
-                <td>8.171</td>
-                <td>5.4</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>158</td>
-                <td>Kingwood (WV)</td>
-                <td>56</td>
-                <td>-22.094</td>
-                <td>-19.81</td>
-                <td>-2.254</td>
-                <td>8.311</td>
-                <td>7.284</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>159</td>
-                <td>Rowlesburg (WV)</td>
-                <td>29</td>
-                <td>-22.693</td>
-                <td>-21.043</td>
-                <td>-1.641</td>
-                <td>14.403</td>
-                <td>1.38</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>160</td>
-                <td>Iaeger (WV)</td>
-                <td>76</td>
-                <td>-23.041</td>
-                <td>-19.251</td>
-                <td>-3.747</td>
-                <td>10.701</td>
-                <td>9.066</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>161</td>
-                <td>Clarksburg Notre Dame (WV)</td>
-                <td>83</td>
-                <td>-23.095</td>
-                <td>-19.398</td>
-                <td>-3.715</td>
-                <td>11.608</td>
-                <td>8.342</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>162</td>
-                <td>Mount Zion Calhoun (WV)</td>
-                <td>103</td>
-                <td>-23.726</td>
-                <td>-20.32</td>
-                <td>-3.453</td>
-                <td>7.964</td>
-                <td>11.413</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>163</td>
-                <td>Barrackville (WV)</td>
-                <td>50</td>
-                <td>-23.784</td>
-                <td>-20.871</td>
-                <td>-2.893</td>
-                <td>14.35</td>
-                <td>3.923</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>164</td>
-                <td>Shepherdstown (WV)</td>
-                <td>40</td>
-                <td>-23.839</td>
-                <td>-21.174</td>
-                <td>-2.648</td>
-                <td>12.647</td>
-                <td>6.343</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>165</td>
-                <td>Shady Spring (WV)</td>
-                <td>102</td>
-                <td>-23.875</td>
-                <td>-20.272</td>
-                <td>-3.56</td>
-                <td>9.705</td>
-                <td>9.552</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>166</td>
-                <td>Sophia (WV)</td>
-                <td>33</td>
-                <td>-23.914</td>
-                <td>-20.779</td>
-                <td>-3.16</td>
-                <td>9.349</td>
-                <td>9.021</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>167</td>
-                <td>Clarksburg Liberty (WV)</td>
-                <td>76</td>
-                <td>-24.253</td>
-                <td>-20.331</td>
-                <td>-3.936</td>
-                <td>8.184</td>
-                <td>12.035</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>168</td>
-                <td>Franklin Pendleton County (WV)</td>
-                <td>30</td>
-                <td>-24.318</td>
-                <td>-21.199</td>
-                <td>-3.184</td>
-                <td>5.899</td>
-                <td>13.166</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>169</td>
-                <td>Harrisville (WV)</td>
-                <td>57</td>
-                <td>-24.473</td>
-                <td>-20.89</td>
-                <td>-3.547</td>
-                <td>7.517</td>
-                <td>10.917</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>170</td>
-                <td>Cowen (WV)</td>
-                <td>48</td>
-                <td>-24.67</td>
-                <td>-22.147</td>
-                <td>-2.509</td>
-                <td>8.646</td>
-                <td>9.18</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>171</td>
-                <td>Morgantown St. Francis (WV)</td>
-                <td>51</td>
-                <td>-24.953</td>
-                <td>-20.721</td>
-                <td>-4.183</td>
-                <td>12.02</td>
-                <td>6.181</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>172</td>
-                <td>Peterstown (WV)</td>
-                <td>56</td>
-                <td>-25.017</td>
-                <td>-20.038</td>
-                <td>-4.997</td>
-                <td>14.376</td>
-                <td>8.196</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>173</td>
-                <td>Harpers Ferry (WV)</td>
-                <td>44</td>
-                <td>-25.094</td>
-                <td>-22.444</td>
-                <td>-2.62</td>
-                <td>11.169</td>
-                <td>5.109</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>174</td>
-                <td>McMechen Bishop Donahue (WV)</td>
-                <td>57</td>
-                <td>-25.544</td>
-                <td>-20.853</td>
-                <td>-4.654</td>
-                <td>13.233</td>
-                <td>10.404</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>175</td>
-                <td>Pineville (WV)</td>
-                <td>62</td>
-                <td>-25.547</td>
-                <td>-21.142</td>
-                <td>-4.388</td>
-                <td>10.676</td>
-                <td>9.5</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>176</td>
-                <td>Chapmanville Regional (WV)</td>
-                <td>77</td>
-                <td>-25.72</td>
-                <td>-21.285</td>
-                <td>-4.404</td>
-                <td>9.326</td>
-                <td>11.339</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>177</td>
-                <td>Gauley Bridge (WV)</td>
-                <td>78</td>
-                <td>-25.737</td>
-                <td>-21.693</td>
-                <td>-4.071</td>
-                <td>10.675</td>
-                <td>8.739</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>178</td>
-                <td>Surveyor Trap Hill (WV)</td>
-                <td>47</td>
-                <td>-25.779</td>
-                <td>-22.805</td>
-                <td>-2.981</td>
-                <td>10.538</td>
-                <td>7.416</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>179</td>
-                <td>Clay County (WV)</td>
-                <td>100</td>
-                <td>-25.81</td>
-                <td>-22.039</td>
-                <td>-3.797</td>
-                <td>8.201</td>
-                <td>11.085</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>180</td>
-                <td>Thomas (WV)</td>
-                <td>35</td>
-                <td>-25.941</td>
-                <td>-24.017</td>
-                <td>-1.888</td>
-                <td>9.84</td>
-                <td>3.361</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>181</td>
-                <td>Newell Wells (WV)</td>
-                <td>38</td>
-                <td>-25.978</td>
-                <td>-23.726</td>
-                <td>-2.259</td>
-                <td>9.292</td>
-                <td>5.536</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>182</td>
-                <td>Putnam Buffalo (WV)</td>
-                <td>98</td>
-                <td>-26.052</td>
-                <td>-22.278</td>
-                <td>-3.771</td>
-                <td>9.354</td>
-                <td>9.928</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>183</td>
-                <td>Griffithsville Duval (WV)</td>
-                <td>80</td>
-                <td>-26.125</td>
-                <td>-22.023</td>
-                <td>-4.129</td>
-                <td>10.836</td>
-                <td>8.796</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>184</td>
-                <td>Hico Midland Trail (WV)</td>
-                <td>50</td>
-                <td>-26.141</td>
-                <td>-21.42</td>
-                <td>-4.722</td>
-                <td>9.607</td>
-                <td>13.155</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>185</td>
-                <td>Putnam County Buffalo (WV)</td>
-                <td>80</td>
-                <td>-26.275</td>
-                <td>-22.209</td>
-                <td>-4.05</td>
-                <td>12.108</td>
-                <td>6.847</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>186</td>
-                <td>Belington (WV)</td>
-                <td>46</td>
-                <td>-26.52</td>
-                <td>-24.346</td>
-                <td>-2.174</td>
-                <td>10.63</td>
-                <td>5.718</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>187</td>
-                <td>Branchland Guyan Valley (WV)</td>
-                <td>76</td>
-                <td>-26.668</td>
-                <td>-22.513</td>
-                <td>-4.156</td>
-                <td>11.15</td>
-                <td>8.822</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>188</td>
-                <td>Gilbert (WV)</td>
-                <td>56</td>
-                <td>-26.852</td>
-                <td>-22.461</td>
-                <td>-4.392</td>
-                <td>11.802</td>
-                <td>10.046</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>189</td>
-                <td>Fort Gay Tolsia (WV)</td>
-                <td>92</td>
-                <td>-27.039</td>
-                <td>-22.971</td>
-                <td>-4.09</td>
-                <td>10.641</td>
-                <td>10.671</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>190</td>
-                <td>Lewisburg Greenbrier Military JV (WV)</td>
-                <td>31</td>
-                <td>-27.264</td>
-                <td>-24.145</td>
-                <td>-3.086</td>
-                <td>17.2</td>
-                <td>-2.34</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>191</td>
-                <td>Parkersburg Catholic (WV)</td>
-                <td>56</td>
-                <td>-28.043</td>
-                <td>-23.002</td>
-                <td>-5.067</td>
-                <td>10.258</td>
-                <td>11.815</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>192</td>
-                <td>Gassaway (WV)</td>
-                <td>46</td>
-                <td>-28.163</td>
-                <td>-25.541</td>
-                <td>-2.605</td>
-                <td>8.274</td>
-                <td>7.444</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>193</td>
-                <td>Petersburg (WV)</td>
-                <td>93</td>
-                <td>-28.19</td>
-                <td>-23.97</td>
-                <td>-4.203</td>
-                <td>10.078</td>
-                <td>11.246</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>194</td>
-                <td>Sharples (WV)</td>
-                <td>26</td>
-                <td>-28.192</td>
-                <td>-25.929</td>
-                <td>-2.236</td>
-                <td>11.264</td>
-                <td>3.556</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>195</td>
-                <td>Meadow Bridge (WV)</td>
-                <td>95</td>
-                <td>-28.201</td>
-                <td>-23.911</td>
-                <td>-4.33</td>
-                <td>10.578</td>
-                <td>11.434</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>196</td>
-                <td>Smithers Valley (WV)</td>
-                <td>44</td>
-                <td>-28.708</td>
-                <td>-23.696</td>
-                <td>-4.959</td>
-                <td>9.029</td>
-                <td>14.554</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>197</td>
-                <td>Ellenboro Ritchie County (WV)</td>
-                <td>40</td>
-                <td>-28.868</td>
-                <td>-24.539</td>
-                <td>-4.288</td>
-                <td>6.781</td>
-                <td>14.436</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>198</td>
-                <td>Baker East Hardy (WV)</td>
-                <td>47</td>
-                <td>-29.203</td>
-                <td>-24.11</td>
-                <td>-5.076</td>
-                <td>9.091</td>
-                <td>14.612</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>199</td>
-                <td>Dunmore Pocahontas County (WV)</td>
-                <td>56</td>
-                <td>-29.344</td>
-                <td>-24.183</td>
-                <td>-5.143</td>
-                <td>8.446</td>
-                <td>13.481</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>200</td>
-                <td>Burnsville (WV)</td>
-                <td>42</td>
-                <td>-29.379</td>
-                <td>-26.582</td>
-                <td>-2.844</td>
-                <td>9.455</td>
-                <td>6.768</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>201</td>
-                <td>Berkeley Springs (WV)</td>
-                <td>98</td>
-                <td>-29.411</td>
-                <td>-25.207</td>
-                <td>-4.177</td>
-                <td>10.232</td>
-                <td>11.545</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>202</td>
-                <td>Sutton (WV)</td>
-                <td>45</td>
-                <td>-29.51</td>
-                <td>-26.707</td>
-                <td>-2.779</td>
-                <td>7.798</td>
-                <td>8.116</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>203</td>
-                <td>Lumberport (WV)</td>
-                <td>55</td>
-                <td>-29.607</td>
-                <td>-26.378</td>
-                <td>-3.201</td>
-                <td>12.349</td>
-                <td>7.694</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>204</td>
-                <td>Hillsboro (WV)</td>
-                <td>46</td>
-                <td>-29.647</td>
-                <td>-26.786</td>
-                <td>-2.865</td>
-                <td>9.301</td>
-                <td>5.943</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>205</td>
-                <td>Terra Alta (WV)</td>
-                <td>54</td>
-                <td>-29.737</td>
-                <td>-26.421</td>
-                <td>-3.286</td>
-                <td>9.433</td>
-                <td>8.346</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>206</td>
-                <td>Hamlin (WV)</td>
-                <td>74</td>
-                <td>-29.99</td>
-                <td>-25.368</td>
-                <td>-4.61</td>
-                <td>10.438</td>
-                <td>8.617</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>207</td>
-                <td>Paden City (WV)</td>
-                <td>74</td>
-                <td>-30.238</td>
-                <td>-25.412</td>
-                <td>-4.828</td>
-                <td>9.655</td>
-                <td>11.328</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>208</td>
-                <td>Stotesbury Mark Twain (WV)</td>
-                <td>28</td>
-                <td>-30.33</td>
-                <td>-27.572</td>
-                <td>-2.746</td>
-                <td>10.527</td>
-                <td>2.935</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>209</td>
-                <td>Blacksville Clay-Battelle (WV)</td>
-                <td>93</td>
-                <td>-30.579</td>
-                <td>-26.167</td>
-                <td>-4.438</td>
-                <td>11.233</td>
-                <td>8.652</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>210</td>
-                <td>Upper Glade Webster County (WV)</td>
-                <td>52</td>
-                <td>-30.757</td>
-                <td>-25.585</td>
-                <td>-5.16</td>
-                <td>8.073</td>
-                <td>14.098</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>211</td>
-                <td>Franklin (WV)</td>
-                <td>68</td>
-                <td>-30.779</td>
-                <td>-25.979</td>
-                <td>-4.814</td>
-                <td>11.576</td>
-                <td>9.489</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>212</td>
-                <td>Colcord Clear Fork (WV)</td>
-                <td>63</td>
-                <td>-31.112</td>
-                <td>-26.5</td>
-                <td>-4.609</td>
-                <td>11.448</td>
-                <td>8.544</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>213</td>
-                <td>Sutton Braxton County (WV)</td>
-                <td>57</td>
-                <td>-31.155</td>
-                <td>-25.69</td>
-                <td>-5.403</td>
-                <td>7.315</td>
-                <td>13.455</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>214</td>
-                <td>Crum (WV)</td>
-                <td>39</td>
-                <td>-31.659</td>
-                <td>-26.245</td>
-                <td>-5.434</td>
-                <td>12.69</td>
-                <td>9.245</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>215</td>
-                <td>New Richmond Wyoming East (WV)</td>
-                <td>28</td>
-                <td>-31.688</td>
-                <td>-28.326</td>
-                <td>-3.346</td>
-                <td>5.579</td>
-                <td>16.111</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>216</td>
-                <td>Van (WV)</td>
-                <td>95</td>
-                <td>-31.778</td>
-                <td>-27.389</td>
-                <td>-4.367</td>
-                <td>8.579</td>
-                <td>11.051</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>217</td>
-                <td>Union (WV)</td>
-                <td>58</td>
-                <td>-32.347</td>
-                <td>-26.747</td>
-                <td>-5.594</td>
-                <td>10.061</td>
-                <td>11.029</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>218</td>
-                <td>West Milford Unidis (WV)</td>
-                <td>41</td>
-                <td>-32.602</td>
-                <td>-29.666</td>
-                <td>-3.003</td>
-                <td>9.255</td>
-                <td>5.671</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>219</td>
-                <td>Davis Mountaineer (WV)</td>
-                <td>39</td>
-                <td>-33.154</td>
-                <td>-28.994</td>
-                <td>-4.122</td>
-                <td>14.25</td>
-                <td>5.952</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>220</td>
-                <td>Glen Daniel Liberty (WV)</td>
-                <td>49</td>
-                <td>-33.233</td>
-                <td>-27.76</td>
-                <td>-5.492</td>
-                <td>8.067</td>
-                <td>14.778</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>221</td>
-                <td>Montcoal Marsh Fork (WV)</td>
-                <td>72</td>
-                <td>-33.498</td>
-                <td>-28.484</td>
-                <td>-4.963</td>
-                <td>10.632</td>
-                <td>9.756</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>222</td>
-                <td>Glen Rogers (WV)</td>
-                <td>30</td>
-                <td>-33.541</td>
-                <td>-30.457</td>
-                <td>-3.069</td>
-                <td>14.91</td>
-                <td>3.463</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>223</td>
-                <td>Renick (WV)</td>
-                <td>37</td>
-                <td>-33.88</td>
-                <td>-30.92</td>
-                <td>-2.916</td>
-                <td>6.374</td>
-                <td>6.072</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>224</td>
-                <td>Pine Grove Valley (WV)</td>
-                <td>78</td>
-                <td>-34.272</td>
-                <td>-29.248</td>
-                <td>-4.994</td>
-                <td>9.045</td>
-                <td>13.121</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>225</td>
-                <td>Crichton (WV)</td>
-                <td>27</td>
-                <td>-34.396</td>
-                <td>-30.681</td>
-                <td>-3.677</td>
-                <td>10.0</td>
-                <td>9.342</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>226</td>
-                <td>Monroe County Union (WV)</td>
-                <td>56</td>
-                <td>-35.239</td>
-                <td>-29.188</td>
-                <td>-6.011</td>
-                <td>12.435</td>
-                <td>10.234</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>227</td>
-                <td>Williamson Tug Valley (WV)</td>
-                <td>39</td>
-                <td>-35.58</td>
-                <td>-30.721</td>
-                <td>-4.88</td>
-                <td>5.979</td>
-                <td>16.147</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>228</td>
-                <td>Beckley JV (WV)</td>
-                <td>31</td>
-                <td>-35.77</td>
-                <td>-31.699</td>
-                <td>-4.062</td>
-                <td>19.83</td>
-                <td>-4.919</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>229</td>
-                <td>Delbarton Burch (WV)</td>
-                <td>82</td>
-                <td>-37.353</td>
-                <td>-32.366</td>
-                <td>-4.9</td>
-                <td>9.408</td>
-                <td>10.974</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>230</td>
-                <td>Baileysville (WV)</td>
-                <td>47</td>
-                <td>-37.77</td>
-                <td>-31.289</td>
-                <td>-6.482</td>
-                <td>9.882</td>
-                <td>12.624</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>231</td>
-                <td>Glenville Gilmer County (WV)</td>
-                <td>96</td>
-                <td>-37.937</td>
-                <td>-32.86</td>
-                <td>-5.046</td>
-                <td>8.178</td>
-                <td>13.384</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>232</td>
-                <td>West Virginia School for the Deaf (WV)</td>
-                <td>44</td>
-                <td>-38.977</td>
-                <td>-33.799</td>
-                <td>-5.189</td>
-                <td>12.89</td>
-                <td>8.586</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>233</td>
-                <td>Princeton PikeView (WV)</td>
-                <td>32</td>
-                <td>-40.883</td>
-                <td>-36.142</td>
-                <td>-4.64</td>
-                <td>4.858</td>
-                <td>17.203</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>234</td>
-                <td>Grafton West Virginia Industrial Home for Boys (WV)</td>
-                <td>40</td>
-                <td>-41.24</td>
-                <td>-36.583</td>
-                <td>-4.584</td>
-                <td>15.359</td>
-                <td>3.733</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>235</td>
-                <td>West Virginia Industrial Home For Youth (WV)</td>
-                <td>36</td>
-                <td>-42.17</td>
-                <td>-37.466</td>
-                <td>-4.7</td>
-                <td>18.883</td>
-                <td>5.475</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>236</td>
-                <td>Frankford (WV)</td>
-                <td>29</td>
-                <td>-43.908</td>
-                <td>-39.098</td>
-                <td>-4.739</td>
-                <td>8.909</td>
-                <td>5.317</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>237</td>
-                <td>Walton (WV)</td>
-                <td>52</td>
-                <td>-46.473</td>
-                <td>-39.793</td>
-                <td>-6.617</td>
-                <td>9.889</td>
-                <td>14.606</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>238</td>
-                <td>Mill Creek Tygarts Valley (WV)</td>
-                <td>56</td>
-                <td>-46.79</td>
-                <td>-40.11</td>
-                <td>-6.64</td>
-                <td>6.157</td>
-                <td>17.728</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>239</td>
-                <td>Circleville (WV)</td>
-                <td>49</td>
-                <td>-48.388</td>
-                <td>-40.707</td>
-                <td>-7.659</td>
-                <td>8.851</td>
-                <td>14.005</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>240</td>
-                <td>Herndon (WV)</td>
-                <td>34</td>
-                <td>-52.123</td>
-                <td>-44.498</td>
-                <td>-7.595</td>
-                <td>12.098</td>
-                <td>18.595</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>241</td>
-                <td>Hundred (WV)</td>
-                <td>86</td>
-                <td>-54.221</td>
-                <td>-47.28</td>
-                <td>-6.936</td>
-                <td>7.952</td>
-                <td>16.761</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>242</td>
-                <td>Ashton Hannan (WV)</td>
-                <td>78</td>
-                <td>-65.29</td>
-                <td>-57.44</td>
-                <td>-7.773</td>
-                <td>3.572</td>
-                <td>18.887</td>
-                <td>WV</td>
-            </tr>
-            <tr>
-                <td>243</td>
-                <td>Montcalm (WV)</td>
-                <td>31</td>
-                <td>-67.072</td>
-                <td>-59.995</td>
-                <td>-7.003</td>
-                <td>-0.208</td>
-                <td>23.063</td>
-                <td>WV</td>
-            </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Pagination Controls -->
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="pagination-info">
-                        Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <nav aria-label="Table navigation">
-                        <ul class="pagination justify-content-end" id="tablePagination"></ul>
-                    </nav>
-                </div>
-            </div>
-
-            <!-- Comments Section -->
-            <div class="comments-section mt-5">
-                <h3>Comments</h3>
-                <div id="authContainer" class="mb-3"></div>
-                <div id="commentForm" class="mb-4" style="display: none">
-                    <div class="card">
-                        <div class="card-body">
-                            <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button id="submitComment" class="btn btn-primary">Post Comment</button>
-                                <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="commentsList"></div>
-            </div>
-
-            <footer class="mt-5 mb-3">
-                <div class="text-center">
-                    <p>Â© 2025 McKnight's Football Rankings</p>
-                </div>
-            </footer>
-        </div>
-
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <!-- Table Controls Script -->
-        <script>
-    const TableControls = {
-        ROWS_PER_PAGE: 100,
-        currentPage: 1,
-        filteredRows: [],
-
-        init() {
-            const tableBody = document.querySelector('tbody');
-            if (tableBody) {
-                const rows = Array.from(tableBody.getElementsByTagName('tr'));
-                this.filteredRows = rows;
-                const totalRows = rows.length;
-                
-                const totalRowsElement = document.getElementById('totalRows');
-                if (totalRowsElement) {
-                    totalRowsElement.textContent = totalRows;
-                }
-                
-                this.setupEventListeners();
-                this.showPage(1);
-            }
-        },
-
-        setupEventListeners() {
-            const searchInput = document.getElementById('tableSearch');
-            const pagination = document.getElementById('tablePagination');
-
-            if (searchInput) {
-                searchInput.value = '';
-                const self = this;
-                searchInput.addEventListener('input', function(e) {
-                    self.filterTable(e.target.value.toLowerCase());
-                });
-            }
-
-            if (pagination) {
-                const self = this;
-                pagination.addEventListener('click', function(e) {
-                    const button = e.target.closest('button');
-                    if (!button || button.parentElement.classList.contains('disabled')) return;
-                    
-                    const page = button.dataset.page;
-                    if (page === 'prev') {
-                        self.showPage(self.currentPage - 1);
-                    } else if (page === 'next') {
-                        self.showPage(self.currentPage + 1);
-                    } else {
-                        self.showPage(parseInt(page));
-                    }
-                });
-            }
-        },
-
-        filterTable(searchTerm) {
-            const tableBody = document.querySelector('tbody');
-            if (!tableBody) return;
-
-            const rows = Array.from(tableBody.getElementsByTagName('tr'));
-            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
-                const text = Array.from(row.getElementsByTagName('td'))
-                    .map(cell => cell.textContent || cell.innerText)
-                    .join(' ')
-                    .toLowerCase();
-                return text.includes(searchTerm);
-            });
-
-            const totalRowsElement = document.getElementById('totalRows');
-            if (totalRowsElement) {
-                totalRowsElement.textContent = this.filteredRows.length;
-            }
-
-            this.currentPage = 1;
-            this.showPage(1);
-        },
-
-        showPage(pageNum) {
-            const tableBody = document.querySelector('tbody');
-            if (!tableBody) return;
-
-            this.currentPage = pageNum;
-            const start = (pageNum - 1) * this.ROWS_PER_PAGE;
-            const end = Math.min(start + this.ROWS_PER_PAGE, this.filteredRows.length);
-            
-            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
-            allRows.forEach(row => row.style.display = 'none');
-            
-            for (let i = start; i < end; i++) {
-                if (this.filteredRows[i]) {
-                    this.filteredRows[i].style.display = '';
-                }
-            }
-            
-            const startRowElement = document.getElementById('startRow');
-            const endRowElement = document.getElementById('endRow');
-            if (startRowElement) startRowElement.textContent = this.filteredRows.length === 0 ? 0 : start + 1;
-            if (endRowElement) endRowElement.textContent = end;
-            
-            this.updatePaginationControls();
-        },
-
-        updatePaginationControls() {
-            const pagination = document.getElementById('tablePagination');
-            if (!pagination) return;
-            
-            const totalPages = Math.ceil(this.filteredRows.length / this.ROWS_PER_PAGE);
-            let html = [];
-            
-            html.push(`<li class="page-item ${this.currentPage === 1 ? 'disabled' : ''}">
-                <button class="page-link" data-page="prev">&laquo;</button>
-            </li>`);
-            
-            for (let i = 1; i <= totalPages; i++) {
-                if (i === 1 || i === totalPages || (i >= this.currentPage - 2 && i <= this.currentPage + 2)) {
-                    html.push(`<li class="page-item ${i === this.currentPage ? 'active' : ''}">
-                        <button class="page-link" data-page="${i}">${i}</button>
-                    </li>`);
-                } else if (i === this.currentPage - 3 || i === this.currentPage + 3) {
-                    html.push('<li class="page-item disabled"><span class="page-link">...</span></li>');
-                }
-            }
-            
-            html.push(`<li class="page-item ${this.currentPage === totalPages ? 'disabled' : ''}">
-                <button class="page-link" data-page="next">&raquo;</button>
-            </li>`);
-            
-            pagination.innerHTML = html.join('');
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Virginia High School Football Programs - McKnight's American Football</title>
+    <meta name="data-file" content="/static-football-rankings/data/states/programs/state-programs-WV.json">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    <style>
+        .program-link {
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: none;
         }
-    };
+        .program-link:hover {
+            text-decoration: underline !important;
+            color: #0052a3 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => TableControls.init());
-    } else {
-        TableControls.init();
-    }
-</script>
-        
-        <!-- Comments Script -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/static-football-rankings/pages/public/states/index.html">Rankings by State</a></li>
+                <li class="breadcrumb-item active" aria-current="page">West Virginia Programs</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div id="programHeaderContainer"></div>
+
+    <div class="container mt-4">
+        <h1 data-page-name="WV">West Virginia High School Football Programs</h1>
+
+        <div class="d-flex justify-content-between mb-3">
+            <div>
+                <a href="WV-teams.html" class="btn btn-outline-primary">View Team Rankings</a>
+            </div>
+            <div class="text-muted">Updated: <span id="lastUpdated">1/4/2026</span></div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text">Search</span>
+                    <input type="text" id="tableSearch" class="form-control" placeholder="Type to search..." autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="sticky-top bg-white">
+                    <tr>
+                        <th style="min-width: 60px">Rank</th>
+                        <th style="min-width: 200px">Program</th>
+                        <th style="min-width: 90px">Seasons</th>
+                        <th style="min-width: 90px">Combined</th>
+                        <th style="min-width: 90px">Margin</th>
+                        <th style="min-width: 90px">Win/Loss</th>
+                        <th style="min-width: 90px">Offense</th>
+                        <th style="min-width: 90px">Defense</th>
+                        <th style="min-width: 70px">City</th>
+                    </tr>
+                </thead>
+                <tbody id="programsTableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="pagination-info">
+                    Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
+                </div>
+            </div>
+            <div class="col-md-6">
+                <nav aria-label="Table navigation">
+                    <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                </nav>
+            </div>
+        </div>
+
         <div class="container mt-5">
     <div class="comments-section">
         <h3 class="mb-4">Comments & Discussion</h3>
@@ -2950,19 +113,271 @@
         </script>
     </div>
 </div>
-        
-<!-- TopBanner initialization -->
-<script type="module">
-    import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
+
+        <footer class="mt-5 mb-3">
+            <div class="text-center">
+                <p>&copy; 2025 McKnight's Football Rankings</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script>
+    console.log('=== INLINE SCRIPT STARTING ===');
+
+    let allData = [];
+    let currentData = [];
+    let currentPage = 1;
+    const rowsPerPage = 100;
+
     document.addEventListener('DOMContentLoaded', async () => {
+        console.log('DOM loaded, loading data...');
+        
+        const dataFileMeta = document.querySelector('meta[name="data-file"]');
+        if (!dataFileMeta) {
+            console.error('âŒ No data-file meta tag found');
+            return;
+        }
+        
+        const dataPath = dataFileMeta.getAttribute('content');
+        
         try {
-            const banner = new TopBanner();
-            await banner.initialize();
+            const response = await fetch(dataPath);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            
+            const data = await response.json();
+            console.log('âœ“ Data loaded');
+            
+            if (data.topItem) {
+                createBanner(data.topItem);
+                applyTableColors(data.topItem);
+                
+                allData = data.items;
+                currentData = allData;
+                
+                setupSearch();
+                renderPage(1);
+            }
         } catch (error) {
-            console.warn('Banner initialization failed:', error);
-            document.body.style.display = 'block';
+            console.error('âŒ Error:', error);
         }
     });
+
+    function renderPage(page) {
+        const totalPages = Math.ceil(currentData.length / rowsPerPage);
+        if (page < 1) page = 1;
+        if (page > totalPages && totalPages > 0) page = totalPages;
+        
+        currentPage = page;
+
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageItems = currentData.slice(start, end);
+
+        populateTable(pageItems);
+        renderPaginationControls(totalPages);
+        updateInfoText(start, pageItems.length, currentData.length);
+    }
+
+    function updateInfoText(startIndex, count, total) {
+        const startSpan = document.getElementById('startRow');
+        const endSpan = document.getElementById('endRow');
+        const totalSpan = document.getElementById('totalRows');
+
+        if (startSpan) startSpan.textContent = total === 0 ? 0 : startIndex + 1;
+        if (endSpan) endSpan.textContent = startIndex + count;
+        if (totalSpan) totalSpan.textContent = total;
+    }
+
+    function renderPaginationControls(totalPages) {
+        const paginationContainer = document.getElementById('tablePagination');
+        if (!paginationContainer) return;
+
+        paginationContainer.innerHTML = '';
+
+        const createItem = (label, pageNum, isActive, isDisabled) => {
+            const li = document.createElement('li');
+            li.className = `page-item ${isActive ? 'active' : ''} ${isDisabled ? 'disabled' : ''}`;
+            
+            const a = document.createElement('a');
+            a.className = 'page-link';
+            a.href = '#';
+            a.innerHTML = label;
+            
+            if (!isDisabled && !isActive) {
+                a.onclick = (e) => {
+                    e.preventDefault();
+                    renderPage(pageNum);
+                };
+            }
+            li.appendChild(a);
+            return li;
+        };
+
+        paginationContainer.appendChild(createItem('&laquo;', currentPage - 1, false, currentPage === 1));
+
+        const maxVisibleButtons = 5; 
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
+
+        if (endPage - startPage < maxVisibleButtons - 1) {
+            startPage = Math.max(1, endPage - maxVisibleButtons + 1);
+        }
+
+        if (startPage > 1) {
+            paginationContainer.appendChild(createItem('1', 1, false, false));
+            if (startPage > 2) {
+                paginationContainer.appendChild(createItem('...', null, false, true));
+            }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            paginationContainer.appendChild(createItem(i, i, currentPage === i, false));
+        }
+
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationContainer.appendChild(createItem('...', null, false, true));
+            }
+            paginationContainer.appendChild(createItem(totalPages, totalPages, false, false));
+        }
+
+        paginationContainer.appendChild(createItem('&raquo;', currentPage + 1, false, currentPage === totalPages || totalPages === 0));
+    }
+
+    function setupSearch() {
+        const searchInput = document.getElementById('tableSearch');
+        if (!searchInput) return;
+
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            
+            if (term.length < 2) {
+                currentData = allData;
+            } else {
+                currentData = allData.filter(item => 
+                    item.program.toLowerCase().includes(term) ||
+                    (item.city && item.city.toLowerCase().includes(term))
+                );
+            }
+            
+            renderPage(1);
+        });
+    }
+
+    function populateTable(items) {
+        const tbody = document.getElementById('programsTableBody');
+        if (!tbody) return;
+
+        tbody.innerHTML = '';
+
+        if (items.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="9" class="text-center">No matching records found</td></tr>';
+            return;
+        }
+
+        items.forEach(item => {
+            const row = document.createElement('tr');
+            
+            let programHtml;
+            if (item.hasProgramPage && item.programPageUrl) {
+                programHtml = `<a href="${item.programPageUrl}" class="program-link">${item.program}</a>`;
+            } else {
+                programHtml = item.program;
+            }
+
+            row.innerHTML = `
+                <td>${item.rank}</td>
+                <td>${programHtml}</td>
+                <td>${item.seasons}</td>
+                <td>${item.combined}</td>
+                <td>${item.margin}</td>
+                <td>${item.win_loss}</td>
+                <td>${item.offense}</td>
+                <td>${item.defense}</td>
+                <td>${item.city || ''}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    function fixPath(path) {
+        if (!path) return '';
+        return path.startsWith('/') ? path : `/static-football-rankings/${path}`;
+    }
+
+    function createBanner(topItem) {
+        const container = document.getElementById('programHeaderContainer');
+        if (!container) return;
+
+        const { program, seasons, mascot, backgroundColor, textColor, logoURL, schoolLogoURL } = topItem;
+        const primaryColor = backgroundColor || '#003087';
+        const secondaryColor = textColor || '#FFD700';
+        const borderStyle = `border: 3px solid ${secondaryColor}; border-radius: 8px; padding: 5px;`;
+
+        const logoHTML = logoURL ? 
+            `<img src="${fixPath(logoURL)}" alt="Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
+
+        const schoolLogoHTML = schoolLogoURL ? 
+            `<img src="${fixPath(schoolLogoURL)}" alt="School Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
+
+        container.innerHTML = `
+            <div class="team-header" style="background-color: ${primaryColor}; color: ${secondaryColor}; padding: 30px 0; border-bottom: 5px solid ${secondaryColor};">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 text-center d-none d-md-block">${logoHTML}</div>
+                        <div class="col-md-8 text-center">
+                            <h2 style="margin: 0; font-size: 2.8rem; font-weight: 800; color: ${secondaryColor} !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">${program}</h2>
+                            ${mascot ? `<p style="margin: 10px 0; font-size: 1.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: ${secondaryColor} !important;">${mascot}</p>` : ''}
+                            <div class="team-stats" style="margin-top: 10px; background: rgba(255,255,255,0.15); padding: 5px 15px; border-radius: 20px; border: 2px solid ${secondaryColor}; display: inline-block;">
+                                <small style="font-size: 1rem; font-weight: bold; color: ${secondaryColor} !important;">Seasons: ${seasons}</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-center d-none d-md-block">${schoolLogoHTML}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function applyTableColors(topItem) {
+        const primaryColor = topItem.backgroundColor || '#343a40';
+        const secondaryColor = topItem.textColor || '#ffffff';
+
+        const thead = document.querySelector('table thead');
+        if (thead) {
+            thead.style.backgroundColor = primaryColor;
+            thead.style.color = '#ffffff';
+            thead.querySelectorAll('th').forEach(th => {
+                th.style.backgroundColor = primaryColor;
+                th.style.color = '#ffffff';
+                th.style.borderColor = primaryColor;
+            });
+        }
+
+        const hexToRgb = (hex) => {
+            hex = hex.replace('#', '');
+            if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            return (!isNaN(r) && !isNaN(g) && !isNaN(b)) ? `${r}, ${g}, ${b}` : null;
+        };
+
+        const primaryRgb = hexToRgb(primaryColor);
+        const secondaryRgb = hexToRgb(secondaryColor);
+
+        if (primaryRgb && secondaryRgb) {
+            const style = document.createElement('style');
+            style.textContent = `
+                table tbody tr:nth-of-type(odd) { background-color: rgba(${primaryRgb}, 0.20) !important; }
+                table tbody tr:nth-of-type(even) { background-color: #ffffff !important; }
+                table tbody tr:hover { background-color: rgba(${secondaryRgb}, 0.25) !important; cursor: pointer; transition: background-color 0.2s ease; }
+            `;
+            document.head.appendChild(style);
+        }
+    }
 </script>
-    </body>
+</body>
 </html>
