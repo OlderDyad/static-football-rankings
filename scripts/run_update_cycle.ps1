@@ -1,7 +1,7 @@
 # ========================================================
-#  MASTER UPDATE CYCLE (v7 - Updated January 3, 2026)
+#  MASTER UPDATE CYCLE (v8 - Updated January 3, 2026)
 #  1. Syncs Google Sheets & Images to SQL (Python)
-#  2. Generates Web JSONs (Python for States, PowerShell for All-Time)
+#  2. Generates Web JSONs (PowerShell for All-Time & Decades, Python for States)
 #  3. Generates Statistics (Database & Regional)
 #  4. Rebuilds HTML (PowerShell)
 #  5. Publishes to GitHub
@@ -34,15 +34,11 @@ Write-Host "STEP 2: Generating State JSON Data..." -ForegroundColor Cyan
 python generate_site_data.py
 
 # ---------------------------------------------------------
-# STEP 3: GENERATE GLOBAL DATA (PYTHON & POWERSHELL)
+# STEP 3: GENERATE GLOBAL DATA (POWERSHELL & PYTHON)
 # ---------------------------------------------------------
 Write-Host "STEP 3: Generating Global & Decade JSON Data..." -ForegroundColor Cyan
 
-# 2. Generate Decade Lists (1980s, 1990s, etc.) - Python handles these
-python generate_global_data.py
-python generate_latest_season.py
-
-# 3. Generate All-Time Rankings - PowerShell (has team/program page links)
+# 2. Generate All-Time Rankings - PowerShell (has team/program page links)
 Write-Host "  - Generating All-Time Teams..." -ForegroundColor Yellow
 Set-Location $psScriptsDir
 .\generate-all-time-teams.ps1
@@ -50,9 +46,20 @@ Set-Location $psScriptsDir
 Write-Host "  - Generating All-Time Programs..." -ForegroundColor Yellow
 .\generate-all-time-programs.ps1
 
-# 4. Generate National Champions JSON
-Write-Host "  - Generating Media National Champions..." -ForegroundColor Yellow
+# 3. Generate Decade Lists (1980s, 1990s, etc.) - PowerShell (has page links)
+Write-Host "  - Generating Decade Teams..." -ForegroundColor Yellow
+.\generate-decade-teams.ps1
+
+Write-Host "  - Generating Decade Programs..." -ForegroundColor Yellow
+.\generate-decade-programs.ps1
+
+# 4. Generate Latest Season - Python
+Write-Host "  - Generating Latest Season..." -ForegroundColor Yellow
 Set-Location $pythonDir
+python generate_latest_season.py
+
+# 5. Generate National Champions JSON
+Write-Host "  - Generating Media National Champions..." -ForegroundColor Yellow
 python generate_media_champions_json.py
 
 Write-Host "  - Generating McKnight National Champions..." -ForegroundColor Yellow
@@ -94,7 +101,7 @@ git add .
 
 # Commit
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm"
-git commit -m "Master Cycle Update: Synced Sheets, Images, State, Global, All-Time (PS), Media & McKnight NC, and Statistics Data ($timestamp)"
+git commit -m "Master Cycle Update: Synced Sheets, Images, State, Global (PS), Decades (PS), Media & McKnight NC, and Statistics Data ($timestamp)"
 
 # Push
 git push origin main
@@ -105,8 +112,8 @@ Write-Host "--------------------------------" -ForegroundColor Green
 Write-Host ""
 Write-Host "Generated:" -ForegroundColor White
 Write-Host "  - State Teams & Programs JSON" -ForegroundColor Gray
-Write-Host "  - Decade JSON (Python)" -ForegroundColor Gray
 Write-Host "  - All-Time JSON (PowerShell with page links)" -ForegroundColor Gray
+Write-Host "  - Decade JSON (PowerShell with page links)" -ForegroundColor Gray
 Write-Host "  - Latest Season JSON" -ForegroundColor Gray
 Write-Host "  - Media National Champions JSON" -ForegroundColor Gray
 Write-Host "  - McKnight National Champions JSON" -ForegroundColor Gray
