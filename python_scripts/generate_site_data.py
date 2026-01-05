@@ -208,8 +208,14 @@ def process_state_data(cursor, state, mode):
         if mode == 'teams':
             item['season'] = get_int_value(rank_row, ['season', 'year'], 0)
             item['games_played'] = get_int_value(rank_row, ['games_played', 'gamesplayed'], 0)
+            # TEAM PAGE LINK FIELDS
+            item['hasTeamPage'] = get_int_value(rank_row, ['hasteampage'], 0) == 1
+            item['teamPageUrl'] = get_string_value(rank_row, ['teampageurl'], '')
         else:
             item['seasons'] = get_int_value(rank_row, ['seasons'], 0)
+            # PROGRAM PAGE LINK FIELDS
+            item['hasProgramPage'] = get_int_value(rank_row, ['hasprogrampage'], 0) == 1
+            item['programPageUrl'] = get_string_value(rank_row, ['programpageurl'], '')
 
         final_items.append(item)
 
