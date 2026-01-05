@@ -56,21 +56,24 @@ def generate_json():
                 champion = {}
                 for i, column in enumerate(columns):
                     value = row[i]
+                    
+                    # Convert column name to lowercase
+                    column_lower = column.lower()
 
-                    # Handle boolean conversion (FIXED: using HasTeamPage)
+                    # Handle boolean conversion (FIXED: using hasTeamPage)
                     if column in ['HasTeamPage', 'hasTeamPage']:
                         champion['hasTeamPage'] = bool(value) if value is not None else False
                     # Handle None values
                     elif value is None:
-                        champion[column] = None
+                        champion[column_lower] = None
                     # Handle Decimal types - convert to float
                     elif isinstance(value, Decimal):
-                        champion[column] = float(value)
+                        champion[column_lower] = float(value)
                     # Handle regular floats
                     elif isinstance(value, float):
-                        champion[column] = round(value, 3)
+                        champion[column_lower] = round(value, 3)
                     else:
-                        champion[column] = value
+                        champion[column_lower] = value
 
                 # FIXED: Generate link HTML based on hasTeamPage and teamPageUrl
 

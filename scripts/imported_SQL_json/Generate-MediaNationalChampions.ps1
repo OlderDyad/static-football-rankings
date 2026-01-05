@@ -91,8 +91,26 @@ def generate_json():
                     champion['source'] = champion['source_code']
                 else:
                     champion['source'] = 'N/A'
+                
+                  # Remove duplicate SQL column names
+                champion.pop('TeamPageUrl', None)
+                champion.pop('HasTeamPage', None)
+                champion.pop('Source', None)
+                champion.pop('Coach', None)
+                champion.pop('Notes', None)
+                champion.pop('State', None)
+                
+                # Ensure lowercase field names
+                if 'Year' in champion and 'year' not in champion:
+                    champion['year'] = champion['Year']
+                champion.pop('Year', None)
+                
+                if 'Team' in champion and 'team' not in champion:
+                    champion['team'] = champion['Team']
+                champion.pop('Team', None)
 
-                champions.append(champion)
+                champions.append(champion)  
+
 
             # Create output directory if needed
             os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
