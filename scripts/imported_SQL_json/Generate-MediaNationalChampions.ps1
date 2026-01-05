@@ -1,168 +1,180 @@
-# Define paths and connection string
-$logFile = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\logs\media-national-champions.log"
-$outputDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\media-national-champions"
-$connectionString = "Server=MCKNIGHTS-PC\SQLEXPRESS01;Database=hs_football_database;Trusted_Connection=True;TrustServerCertificate=True"
+# generate_media_champions_json.py
+"""
+Generate Media National Champions JSON
+Focus: Championship recognition details (not rating breakdowns)
+UPDATED: Fixed link field names (hasTeamPage, teamPageUrl)
+"""
 
-# Ensure directories exist and clear old files
-New-Item -ItemType Directory -Force -Path (Split-Path $logFile) | Out-Null
-New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
-Remove-Item "$outputDir\media-national-champions.json" -ErrorAction SilentlyContinue
+import pyodbc
+import json
+import os
+import logging
+from datetime import datetime
+from decimal import Decimal
 
-# Start logging
-Get-Date | Out-File $logFile
-"Starting Media National Champions generation" | Tee-Object -FilePath $logFile -Append
+# --- CONFIGURATION ---
+SERVER_NAME = "McKnights-PC\\SQLEXPRESS01"
+DATABASE_NAME = "hs_football_database"
+OUTPUT_FILE = "C:/Users/demck/OneDrive/Football_2024/static-football-rankings/docs/data/media-national-champions/media-national-champions.json"
+# --- END CONFIGURATION ---
 
-# Import common functions
-. ".\common-functions.ps1"
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
-# Helper function to safely parse decimal values
-function Parse-DecimalSafe {
-    param (
-        [Parameter(Mandatory=$false)]
-        [object]$Value,
-        [decimal]$DefaultValue = 0
-    )
-    
-    try {
-        if ($null -eq $Value -or [string]::IsNullOrWhiteSpace("$Value")) {
-            return $DefaultValue
-        }
-        return [decimal]::Parse("$Value")
-    }
-    catch {
-        "Warning: Could not parse value '$Value' to decimal, using default value $DefaultValue" | Tee-Object -FilePath $logFile -Append
-        return $DefaultValue
-    }
-}
+def generate_json():
+    """Generate Media National Champions JSON from stored procedure"""
 
-# Helper function to safely parse integer values
-function Parse-IntSafe {
-    param (
-        [Parameter(Mandatory=$false)]
-        [object]$Value,
-        [int]$DefaultValue = 0
-    )
-    
-    try {
-        if ($null -eq $Value -or [string]::IsNullOrWhiteSpace("$Value")) {
-            return $DefaultValue
-        }
-        return [int]::Parse("$Value")
-    }
-    catch {
-        "Warning: Could not parse value '$Value' to integer, using default value $DefaultValue" | Tee-Object -FilePath $logFile -Append
-        return $DefaultValue
-    }
-}
+    logging.info("=" * 60)
+    logging.info("GENERATING MEDIA NATIONAL CHAMPIONS JSON")
+    logging.info("=" * 60)
 
-try {
-    # Connect to the database
-    $connection = Connect-Database
-    Write-Host "Database connection established"
-    
-    # Execute SQL query to get media national champions
-    Write-Host "Processing Media National Champions..."
-    $command = New-Object System.Data.SqlClient.SqlCommand("EXEC Get_Media_National_Champions", $connection)
-    $adapter = New-Object System.Data.SqlClient.SqlDataAdapter($command)
-    $dataset = New-Object System.Data.DataSet
-    $adapter.Fill($dataset)
+    conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER_NAME};DATABASE={DATABASE_NAME};Trusted_Connection=yes;'
 
-    if ($dataset.Tables.Count -gt 0 -and $dataset.Tables[0].Rows.Count -gt 0) {
-        $championsTable = $dataset.Tables[0]
-        Write-Host "Retrieved $($championsTable.Rows.Count) Media National Champions"
+    try:
+        # Connect to database
+        logging.info(f"Connecting to database: {DATABASE_NAME}")
+        with pyodbc.connect(conn_str) as conn:
+            cursor = conn.cursor()
 
-        # Convert DataTable to array of objects and ensure proper data types
-        $champions = @()
-        foreach ($row in $championsTable.Rows) {
-            $champion = [PSCustomObject]@{
-                year = $row["year"]
-                team = $row["team"]
-                state = $row["state"]
-                combined = Parse-DecimalSafe -Value $row["combined"]
-                margin = Parse-DecimalSafe -Value $row["margin"]
-                win_loss = Parse-DecimalSafe -Value $row["win_loss"]
-                offense = Parse-DecimalSafe -Value $row["offense"]
-                defense = Parse-DecimalSafe -Value $row["defense"]
-                games_played = Parse-IntSafe -Value $row["games_played"]
-                source = $row["source"]
-                record = $row["record"]
-                logoURL = $row["logoURL"]
-                schoolLogoURL = $row["schoolLogoURL"]
-                backgroundColor = $row["backgroundColor"]
-                textColor = $row["textColor"]
-                mascot = $row["mascot"]
+            # Execute stored procedure (FIXED: removed sp_ prefix)
+            logging.info("Executing: Get_Media_National_Champions")
+            cursor.execute("EXEC Get_Media_National_Champions")
+
+            # Get column names
+            columns = [column[0] for column in cursor.description]
+            logging.info(f"Retrieved {len(columns)} columns")
+
+            # Fetch all rows
+            rows = cursor.fetchall()
+            logging.info(f"Retrieved {len(rows)} champions from database")
+
+            # Convert to list of dictionaries
+            champions = []
+            for row in rows:
+                champion = {}
+                for i, column in enumerate(columns):
+                    value = row[i]
+
+                    # Handle boolean conversion (FIXED: using hasTeamPage)
+                    if column in ['HasTeamPage', 'hasTeamPage']:
+                        champion['hasTeamPage'] = bool(value) if value is not None else False
+                    # Handle None values
+                    elif value is None:
+                        champion[column] = None
+                    # Handle Decimal types - convert to float
+                    elif isinstance(value, Decimal):
+                        champion[column] = float(value)
+                    # Handle regular floats
+                    elif isinstance(value, float):
+                        champion[column] = round(value, 3)
+                    else:
+                        champion[column] = value
+
+                # Generate link HTML based on hasTeamPage flag (FIXED: using teamPageUrl)
+                if champion.get('hasTeamPage') and champion.get('TeamPageUrl'):
+                    # Team has a team page - show link icon
+                    champion['teamPageUrl'] = champion['TeamPageUrl']
+                    champion['teamLinkHtml'] = f'<a href="{champion["teamPageUrl"]}" class="team-link" title="View {champion["team"]} team page"><i class="fas fa-external-link-alt"></i></a>'
+                else:
+                    # No team page yet - show placeholder with HTML entity
+                    champion['teamPageUrl'] = ''
+                    champion['teamLinkHtml'] = '<span class="no-page-icon" style="color:#ddd;" title="Page coming soon">&#9633;</span>'
+
+                # Clean up source display
+                if champion.get('source_full') or champion.get('Source'):
+                    # Use full source if available
+                    champion['source'] = champion.get('source_full') or champion.get('Source') or 'N/A'
+                elif champion.get('source_code'):
+                    # Fall back to code
+                    champion['source'] = champion['source_code']
+                else:
+                    champion['source'] = 'N/A'
+
+                champions.append(champion)
+
+            # Create output directory if needed
+            os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+            logging.info(f"Output directory: {os.path.dirname(OUTPUT_FILE)}")
+
+            # Get top item (most recent champion for banner)
+            topChampion = champions[0] if champions else None
+
+            # Create JSON structure matching All-Time format
+            jsonData = {
+                'topItem': topChampion,
+                'items': champions,
+                'metadata': {
+                    'timestamp': datetime.now().isoformat(),
+                    'type': 'media-national-champions',
+                    'yearRange': 'all-time',
+                    'totalItems': len(champions),
+                    'description': 'Media National Champions (Historical Recognition)',
+                    'source': 'Media_National_Champions'
+                }
             }
-            $champions += $champion
-        }
-        
-        # Explicitly sort by combined score (highest to lowest)
-        $sortedChampions = $champions | Sort-Object -Property combined -Descending
-        
-        # Verify the sort worked correctly
-        "First team combined score: $($sortedChampions[0].combined)" | Tee-Object -FilePath $logFile -Append
-        "Last team combined score: $($sortedChampions[-1].combined)" | Tee-Object -FilePath $logFile -Append
-        
-        # Get the champion with the highest combined score for the topItem
-        $topChampion = $sortedChampions[0]
-        
-        # Ensure the topChampion has the correct background and text colors
-        $topTeamName = $topChampion.team
-        $metadata = Get-TeamMetadata -connection $connection -TeamName $topTeamName -isProgram $false
-        
-        # Update top champion with metadata if available
-        if ($metadata -and $metadata.PrimaryColor) {
-            $topChampion.backgroundColor = $metadata.PrimaryColor
-        }
-        if ($metadata -and $metadata.SecondaryColor) {
-            $topChampion.textColor = $metadata.SecondaryColor
-        }
-        if ($metadata -and $metadata.LogoURL) {
-            $topChampion.logoURL = $metadata.LogoURL
-        }
-        if ($metadata -and $metadata.School_Logo_URL) {
-            $topChampion.schoolLogoURL = $metadata.School_Logo_URL
-        }
-        if ($metadata -and $metadata.Mascot) {
-            $topChampion.mascot = $metadata.Mascot
-        }
 
-        # Create JSON structure with sorted champions
-        $jsonData = @{
-            topItem = $topChampion
-            items = $sortedChampions
-            metadata = @{
-                timestamp = (Get-Date).ToString("o")
-                type = "media-national-champions"
-                yearRange = "all-time"
-                totalItems = $sortedChampions.Count
-                description = "Media National Champions"
-            }
-        }
+            # Write JSON file
+            logging.info(f"Writing JSON to: {OUTPUT_FILE}")
+            with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+                json.dump(jsonData, f, indent=2, ensure_ascii=False)
 
-        # Write JSON data to file
-        $outputPath = Join-Path $outputDir "media-national-champions.json"
-        $jsonString = ConvertTo-Json -InputObject $jsonData -Depth 10
-        Set-Content -Path $outputPath -Value $jsonString -Encoding UTF8
-        
-        Write-Host "File written: $outputPath"
-        Write-Host "File last modified: $(Get-Item $outputPath).LastWriteTime"
+            file_size = os.path.getsize(OUTPUT_FILE)
+            logging.info(f"✓ Successfully wrote {len(champions)} champions")
+            logging.info(f"  File size: {file_size:,} bytes")
 
-        # Log success
-        "File generated: $outputPath" | Tee-Object -FilePath $logFile -Append
-    } else {
-        Write-Host "No Media National Champions data available in the dataset" -ForegroundColor Yellow
-        "No Media National Champions data available in the dataset" | Tee-Object -FilePath $logFile -Append
-    }
-}
-catch {
-    Write-Host "Error: $_" -ForegroundColor Red
-    "Error: $_" | Tee-Object -FilePath $logFile -Append
-}
-finally {
-    if ($connection -and $connection.State -eq 'Open') {
-        $connection.Close()
-        Write-Host "Database connection closed"
-    }
-}
+            # Summary statistics
+            logging.info("")
+            logging.info("=" * 60)
+            logging.info("SUMMARY")
+            logging.info("=" * 60)
 
-"Media National Champions generation complete" | Tee-Object -FilePath $logFile -Append
+            total = len(champions)
+            with_ratings = sum(1 for c in champions if c.get('combined') and c.get('combined') > 0)
+            with_page = sum(1 for c in champions if c.get('hasTeamPage'))
+            with_coach = sum(1 for c in champions if c.get('coach') or c.get('Coach'))
+
+            logging.info(f"Total champions: {total}")
+            logging.info(f"With ratings: {with_ratings} ({100*with_ratings//total if total > 0 else 0}%)")
+            logging.info(f"With coach names: {with_coach} ({100*with_coach//total if total > 0 else 0}%)")
+            logging.info(f"With team pages: {with_page}")
+
+            # Year range
+            if champions:
+                years = [c.get('year') or c.get('Year', 0) for c in champions]
+                logging.info(f"Earliest year: {min(years)}")
+                logging.info(f"Latest year: {max(years)}")
+
+            logging.info("=" * 60)
+            logging.info("")
+
+            # Show sample - current season
+            current_year = max([c.get('year') or c.get('Year', 0) for c in champions]) if champions else 2025
+            logging.info(f"{current_year} Champions:")
+            for c in champions:
+                champ_year = c.get('year') or c.get('Year')
+                if champ_year == current_year:
+                    rating = f"{c['combined']:.3f}" if c.get('combined') else 'N/A'
+                    coach = c.get('coach') or c.get('Coach') or 'Unknown'
+                    has_page = "✓ Has Page" if c.get('hasTeamPage') else ""
+                    team_name = c.get('team') or c.get('Team', 'Unknown')
+                    record = c.get('record') or c.get('Record', 'N/A')
+                    logging.info(f"  - {team_name}: {record} - Coach: {coach} (Rating: {rating}) {has_page}")
+
+            logging.info("")
+            logging.info("✓ JSON generation complete!")
+            logging.info(f"✓ File location: {OUTPUT_FILE}")
+
+            return True
+
+    except Exception as e:
+        logging.error(f"Error generating JSON: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
+if __name__ == "__main__":
+    success = generate_json()
+    exit(0 if success else 1)

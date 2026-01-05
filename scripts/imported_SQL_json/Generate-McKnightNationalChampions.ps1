@@ -1,5 +1,6 @@
 # Generate-McKnightNationalChampions.ps1
 # UPDATED: Uses snake_case field names to match All-Time Teams
+# UPDATED: Fixed link field names (hasTeamPage, teamPageUrl)
 
 # Define paths and connection string
 $logFile = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\logs\mcknight-national-champions.log"
@@ -41,9 +42,9 @@ try {
     $connection = Connect-Database
     Write-Host "Database connection established"
 
-    # Execute stored procedure
+    # Execute stored procedure (FIXED: removed sp_ prefix)
     Write-Host "Processing McKnight National Champions (Rating-based)..."
-    $command = New-Object System.Data.SqlClient.SqlCommand("EXEC dbo.sp_Get_McKnight_National_Champions", $connection)
+    $command = New-Object System.Data.SqlClient.SqlCommand("EXEC dbo.Get_McKnight_National_Champions", $connection)
     $adapter = New-Object System.Data.SqlClient.SqlDataAdapter($command)
     $dataset = New-Object System.Data.DataSet
     $adapter.Fill($dataset)
@@ -56,10 +57,10 @@ try {
         $champions = @()
         foreach ($row in $championsTable.Rows) {
             
-            # Generate link HTML
+            # Generate link HTML (FIXED: using hasTeamPage and teamPageUrl)
             $linkHtml = ""
-            if ($row["hasProgramPage"] -eq 1 -and -not [string]::IsNullOrEmpty($row["programPageUrl"])) {
-                $url = $row["programPageUrl"]
+            if ($row["HasTeamPage"] -eq 1 -and -not [string]::IsNullOrEmpty($row["TeamPageUrl"])) {
+                $url = $row["TeamPageUrl"]
                 $linkHtml = "<a href='$url' class='team-link' title='View Team Page'><i class='fas fa-external-link-alt'></i></a>"
             } else {
                 $linkHtml = "<span class='no-page-icon' style='color:#ddd;' title='Page coming soon'>&#9633;</span>"
@@ -88,8 +89,8 @@ try {
                 mascot = $row["mascot"]
                 
                 teamId = $row["teamId"]
-                hasProgramPage = [bool]$row["hasProgramPage"]
-                programPageUrl = $row["programPageUrl"]
+                hasTeamPage = [bool]$row["HasTeamPage"]
+                teamPageUrl = $row["TeamPageUrl"]
                 teamLinkHtml = $linkHtml
             }
             $champions += $champion
