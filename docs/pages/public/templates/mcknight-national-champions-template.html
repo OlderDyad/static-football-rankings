@@ -5,35 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>McKnight's American Football National Champions - McKnight's American Football</title>
     <meta name="data-file" content="/static-football-rankings/data/mcknight-national-champions/mcknight-national-champions.json">
-
-    <!-- Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .team-link {
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .team-link:hover {
+            text-decoration: underline !important;
+            color: #0052a3 !important;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Banner -->
     <div class="header-banner">
         <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
     </div>
 
-    <!-- Breadcrumb navigation -->
     <div class="container mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/static-football-rankings/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">McKnight's American Football National Champions</li>
+                <li class="breadcrumb-item active" aria-current="page">McKnight's National Champions</li>
             </ol>
         </nav>
     </div>
 
-    <!-- Dynamic team banner container -->
     <div id="teamHeaderContainer"></div>
 
-    <!-- Main content -->
     <div class="container mt-4">
-        <h1 data-page-name="mcknight-national-champions">McKnight's American Football National Champions</h1>
-        
+        <h1>McKnight's American Football National Champions</h1>
+
         <div class="d-flex justify-content-between mb-3">
             <div>
                 <div class="btn-group">
@@ -45,7 +50,6 @@
             <div class="text-muted">Updated: <span id="lastUpdated">TIMESTAMP</span></div>
         </div>
 
-        <!-- Search Controls -->
         <div class="row mb-3">
             <div class="col-md-6">
                 <div class="input-group">
@@ -54,9 +58,9 @@
                 </div>
             </div>
         </div>
-        <!-- Table -->
+
         <div class="table-responsive">
-            <table class="table table-striped table-hover">
+            <table class="table table-hover">
                 <thead class="sticky-top bg-white">
                     <tr>
                         <th style="min-width: 60px">Year</th>
@@ -67,32 +71,28 @@
                         <th style="min-width: 90px">Offense</th>
                         <th style="min-width: 90px">Defense</th>
                         <th style="min-width: 70px">Games</th>
-                        <th class="text-center" style="min-width: 50px">Link</th>
+                        <th style="min-width: 100px">Record</th>
+                        <th style="min-width: 70px">State</th>
                     </tr>
                 </thead>
-                <tbody id="championsTableBody">
-                    TABLE_ROWS
-                </tbody>
+                <tbody id="championsTableBody"></tbody>
             </table>
         </div>
 
-        <!-- Comments Section -->
-        <div class="comments-section mt-5">
-            <h3>Comments</h3>
-            <div id="authContainer" class="mb-3"></div>
-            <div id="commentForm" class="mb-4" style="display: none">
-                <div class="card">
-                    <div class="card-body">
-                        <textarea id="commentText" class="form-control mb-2" rows="3" placeholder="Share your thoughts..."></textarea> 
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button id="submitComment" class="btn btn-primary">Post Comment</button>
-                            <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
-                        </div>
-                    </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="pagination-info">
+                    Showing <span id="startRow">1</span> to <span id="endRow">100</span> of <span id="totalRows">0</span> entries
                 </div>
             </div>
-            <div id="commentsList"></div>
+            <div class="col-md-6">
+                <nav aria-label="Table navigation">
+                    <ul class="pagination justify-content-end" id="tablePagination"></ul>
+                </nav>
+            </div>
         </div>
+
+        COMMENTS_SCRIPT_PLACEHOLDER
 
         <footer class="mt-5 mb-3">
             <div class="text-center">
@@ -101,89 +101,265 @@
         </footer>
     </div>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Table Controls Script without pagination -->
-    <script>
-    const TableControls = {
-        filteredRows: [],
+<script>
+    console.log('=== INLINE SCRIPT STARTING ===');
 
-        init() {
-            const tableBody = document.querySelector('tbody');
-            if (tableBody) {
-                const rows = Array.from(tableBody.getElementsByTagName('tr'));
-                this.filteredRows = rows;
-                const totalRows = rows.length;
+    let allData = [];
+    let currentData = [];
+    let currentPage = 1;
+    const rowsPerPage = 100;
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        console.log('DOM loaded, loading data...');
+        
+        const dataFileMeta = document.querySelector('meta[name="data-file"]');
+        if (!dataFileMeta) {
+            console.error('❌ No data-file meta tag found');
+            return;
+        }
+        
+        const dataPath = dataFileMeta.getAttribute('content');
+        
+        try {
+            const response = await fetch(dataPath);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            
+            const data = await response.json();
+            console.log('✓ Data loaded');
+            
+            if (data.topItem) {
+                createBanner(data.topItem);
+                applyTableColors(data.topItem);
                 
-                this.setupEventListeners();
-                this.showAllRows();
+                allData = data.items;
+                currentData = allData;
+                
+                setupSearch();
+                renderPage(1);
             }
-        },
+        } catch (error) {
+            console.error('❌ Error:', error);
+        }
+    });
 
-        setupEventListeners() {
-            const searchInput = document.getElementById('tableSearch');
+    function renderPage(page) {
+        const totalPages = Math.ceil(currentData.length / rowsPerPage);
+        if (page < 1) page = 1;
+        if (page > totalPages && totalPages > 0) page = totalPages;
+        
+        currentPage = page;
 
-            if (searchInput) {
-                searchInput.value = '';
-                const self = this;
-                searchInput.addEventListener('input', function(e) {
-                    self.filterTable(e.target.value.toLowerCase());
-                });
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageItems = currentData.slice(start, end);
+
+        populateTable(pageItems);
+        renderPaginationControls(totalPages);
+        updateInfoText(start, pageItems.length, currentData.length);
+    }
+
+    function updateInfoText(startIndex, count, total) {
+        const startSpan = document.getElementById('startRow');
+        const endSpan = document.getElementById('endRow');
+        const totalSpan = document.getElementById('totalRows');
+
+        if (startSpan) startSpan.textContent = total === 0 ? 0 : startIndex + 1;
+        if (endSpan) endSpan.textContent = startIndex + count;
+        if (totalSpan) totalSpan.textContent = total;
+    }
+
+    function renderPaginationControls(totalPages) {
+        const paginationContainer = document.getElementById('tablePagination');
+        if (!paginationContainer) return;
+
+        paginationContainer.innerHTML = '';
+
+        const createItem = (label, pageNum, isActive, isDisabled) => {
+            const li = document.createElement('li');
+            li.className = `page-item ${isActive ? 'active' : ''} ${isDisabled ? 'disabled' : ''}`;
+            
+            const a = document.createElement('a');
+            a.className = 'page-link';
+            a.href = '#';
+            a.innerHTML = label;
+            
+            if (!isDisabled && !isActive) {
+                a.onclick = (e) => {
+                    e.preventDefault();
+                    renderPage(pageNum);
+                };
             }
-        },
+            li.appendChild(a);
+            return li;
+        };
 
-        filterTable(searchTerm) {
-            const tableBody = document.querySelector('tbody');
-            if (!tableBody) return;
+        paginationContainer.appendChild(createItem('&laquo;', currentPage - 1, false, currentPage === 1));
 
-            const rows = Array.from(tableBody.getElementsByTagName('tr'));
-            this.filteredRows = searchTerm.trim() === '' ? rows : rows.filter(row => {
-                const text = Array.from(row.getElementsByTagName('td'))
-                    .map(cell => cell.textContent || cell.innerText)
-                    .join(' ')
-                    .toLowerCase();
-                return text.includes(searchTerm);
-            });
+        const maxVisibleButtons = 5; 
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
 
-            this.showAllRows();
-        },
+        if (endPage - startPage < maxVisibleButtons - 1) {
+            startPage = Math.max(1, endPage - maxVisibleButtons + 1);
+        }
 
-        showAllRows() {
-            const tableBody = document.querySelector('tbody');
-            if (!tableBody) return;
+        if (startPage > 1) {
+            paginationContainer.appendChild(createItem('1', 1, false, false));
+            if (startPage > 2) {
+                paginationContainer.appendChild(createItem('...', null, false, true));
+            }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            paginationContainer.appendChild(createItem(i, i, currentPage === i, false));
+        }
+
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationContainer.appendChild(createItem('...', null, false, true));
+            }
+            paginationContainer.appendChild(createItem(totalPages, totalPages, false, false));
+        }
+
+        paginationContainer.appendChild(createItem('&raquo;', currentPage + 1, false, currentPage === totalPages || totalPages === 0));
+    }
+
+    function setupSearch() {
+        const searchInput = document.getElementById('tableSearch');
+        if (!searchInput) return;
+
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
             
-            const allRows = Array.from(tableBody.getElementsByTagName('tr'));
-            allRows.forEach(row => row.style.display = 'none');
+            if (term.length < 2) {
+                currentData = allData;
+            } else {
+                currentData = allData.filter(item => 
+                    item.team.toLowerCase().includes(term) || 
+                    item.year.toString().includes(term) ||
+                    (item.state && item.state.toLowerCase().includes(term))
+                );
+            }
             
-            this.filteredRows.forEach(row => {
-                row.style.display = '';
+            renderPage(1);
+        });
+    }
+
+    function populateTable(items) {
+        const tbody = document.getElementById('championsTableBody');
+        if (!tbody) return;
+
+        tbody.innerHTML = '';
+
+        if (items.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="10" class="text-center">No matching records found</td></tr>';
+            return;
+        }
+
+        items.forEach(item => {
+            const row = document.createElement('tr');
+            
+            let teamHtml;
+            if (item.hasTeamPage && item.teamPageUrl) {
+                teamHtml = `<a href="${item.teamPageUrl}" class="team-link">${item.team}</a>`;
+            } else {
+                teamHtml = item.team;
+            }
+
+            row.innerHTML = `
+                <td>${item.year}</td>
+                <td>${teamHtml}</td>
+                <td>${item.combined || ''}</td>
+                <td>${item.margin || ''}</td>
+                <td>${item.win_loss || ''}</td>
+                <td>${item.offense || ''}</td>
+                <td>${item.defense || ''}</td>
+                <td>${item.games_played || ''}</td>
+                <td>${item.record || ''}</td>
+                <td>${item.state || ''}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    function fixPath(path) {
+        if (!path) return '';
+        return path.startsWith('/') ? path : `/static-football-rankings/${path}`;
+    }
+
+    function createBanner(topItem) {
+        const container = document.getElementById('teamHeaderContainer');
+        if (!container) return;
+
+        const { team, year, mascot, backgroundColor, textColor, logoURL, schoolLogoURL } = topItem;
+        const primaryColor = backgroundColor || '#003087';
+        const secondaryColor = textColor || '#FFD700';
+        const borderStyle = `border: 3px solid ${secondaryColor}; border-radius: 8px; padding: 5px;`;
+
+        const logoHTML = logoURL ? 
+            `<img src="${fixPath(logoURL)}" alt="Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
+
+        const schoolLogoHTML = schoolLogoURL ? 
+            `<img src="${fixPath(schoolLogoURL)}" alt="School Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
+
+        container.innerHTML = `
+            <div class="team-header" style="background-color: ${primaryColor}; color: ${secondaryColor}; padding: 30px 0; border-bottom: 5px solid ${secondaryColor};">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 text-center d-none d-md-block">${logoHTML}</div>
+                        <div class="col-md-8 text-center">
+                            <h2 style="margin: 0; font-size: 2.8rem; font-weight: 800; color: ${secondaryColor} !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">${team}</h2>
+                            ${mascot ? `<p style="margin: 10px 0; font-size: 1.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: ${secondaryColor} !important;">${mascot}</p>` : ''}
+                            <div class="team-stats" style="margin-top: 10px; background: rgba(255,255,255,0.15); padding: 5px 15px; border-radius: 20px; border: 2px solid ${secondaryColor}; display: inline-block;">
+                                <small style="font-size: 1rem; font-weight: bold; color: ${secondaryColor} !important;">${year} National Champion</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-center d-none d-md-block">${schoolLogoHTML}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function applyTableColors(topItem) {
+        const primaryColor = topItem.backgroundColor || '#343a40';
+        const secondaryColor = topItem.textColor || '#ffffff';
+
+        const thead = document.querySelector('table thead');
+        if (thead) {
+            thead.style.backgroundColor = primaryColor;
+            thead.style.color = '#ffffff';
+            thead.querySelectorAll('th').forEach(th => {
+                th.style.backgroundColor = primaryColor;
+                th.style.color = '#ffffff';
+                th.style.borderColor = primaryColor;
             });
         }
-    };
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => TableControls.init());
-    } else {
-        TableControls.init();
+        const hexToRgb = (hex) => {
+            hex = hex.replace('#', '');
+            if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            return (!isNaN(r) && !isNaN(g) && !isNaN(b)) ? `${r}, ${g}, ${b}` : null;
+        };
+
+        const primaryRgb = hexToRgb(primaryColor);
+        const secondaryRgb = hexToRgb(secondaryColor);
+
+        if (primaryRgb && secondaryRgb) {
+            const style = document.createElement('style');
+            style.textContent = `
+                table tbody tr:nth-of-type(odd) { background-color: rgba(${primaryRgb}, 0.20) !important; }
+                table tbody tr:nth-of-type(even) { background-color: #ffffff !important; }
+                table tbody tr:hover { background-color: rgba(${secondaryRgb}, 0.25) !important; cursor: pointer; transition: background-color 0.2s ease; }
+            `;
+            document.head.appendChild(style);
+        }
     }
-    </script>
-    
-    <!-- Comments Script -->
-    COMMENTS_SCRIPT_PLACEHOLDER
-    
-    <!-- TopBanner initialization -->
-    <script type="module">
-        import { TopBanner } from '/static-football-rankings/js/modules/topBanner.js';
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                const banner = new TopBanner();
-                await banner.initialize();
-            } catch (error) {
-                console.warn('Banner initialization failed:', error);
-                document.body.style.display = 'block';
-            }
-        });
-    </script>
+</script>
 </body>
 </html>
