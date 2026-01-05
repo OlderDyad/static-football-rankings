@@ -52,7 +52,6 @@ try {
                 year = $row["year"]
                 team = $row["team"]
                 state = $row["state"]
-                record = $row["record"]
                 combined = Parse-DecimalSafe $row["combined"]
                 margin = Parse-DecimalSafe $row["margin"]
                 win_loss = Parse-DecimalSafe $row["win_loss"]
