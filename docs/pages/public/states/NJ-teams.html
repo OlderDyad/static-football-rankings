@@ -44,7 +44,7 @@
             <div>
                 <a href="NJ-programs.html" class="btn btn-outline-primary">View Program Rankings</a>
             </div>
-            <div class="text-muted">Updated: <span id="lastUpdated">1/4/2026</span></div>
+            <div class="text-muted">Updated: <span id="lastUpdated">1/5/2026</span></div>
         </div>
 
         <div class="row mb-3">
@@ -69,7 +69,6 @@
                         <th style="min-width: 90px">Offense</th>
                         <th style="min-width: 90px">Defense</th>
                         <th style="min-width: 70px">Games</th>
-                        <th style="min-width: 70px">City</th>
                     </tr>
                 </thead>
                 <tbody id="teamsTableBody"></tbody>
@@ -259,8 +258,7 @@
             } else {
                 currentData = allData.filter(item => 
                     item.team.toLowerCase().includes(term) || 
-                    item.season.toString().includes(term) ||
-                    (item.city && item.city.toLowerCase().includes(term))
+                    item.season.toString().includes(term)
                 );
             }
             
@@ -275,7 +273,7 @@
         tbody.innerHTML = '';
 
         if (items.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="10" class="text-center">No matching records found</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="9" class="text-center">No matching records found</td></tr>';
             return;
         }
 
@@ -299,7 +297,6 @@
                 <td>${item.offense}</td>
                 <td>${item.defense}</td>
                 <td>${item.games_played}</td>
-                <td>${item.city || ''}</td>
             `;
             tbody.appendChild(row);
         });

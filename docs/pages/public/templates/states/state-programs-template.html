@@ -68,7 +68,6 @@
                         <th style="min-width: 90px">Win/Loss</th>
                         <th style="min-width: 90px">Offense</th>
                         <th style="min-width: 90px">Defense</th>
-                        <th style="min-width: 70px">City</th>
                     </tr>
                 </thead>
                 <tbody id="programsTableBody"></tbody>
@@ -233,8 +232,7 @@
                 currentData = allData;
             } else {
                 currentData = allData.filter(item => 
-                    item.program.toLowerCase().includes(term) ||
-                    (item.city && item.city.toLowerCase().includes(term))
+                    item.program.toLowerCase().includes(term)
                 );
             }
             
@@ -249,7 +247,7 @@
         tbody.innerHTML = '';
 
         if (items.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="9" class="text-center">No matching records found</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="8" class="text-center">No matching records found</td></tr>';
             return;
         }
 
@@ -272,7 +270,6 @@
                 <td>${item.win_loss}</td>
                 <td>${item.offense}</td>
                 <td>${item.defense}</td>
-                <td>${item.city || ''}</td>
             `;
             tbody.appendChild(row);
         });
