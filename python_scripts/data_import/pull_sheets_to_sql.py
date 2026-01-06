@@ -71,6 +71,12 @@ COLOR_LOOKUP = {
     'maroon': '#800000',
     'dark maroon': '#800000',
     'maroon red': '#800000',
+
+    # Burgundy variations
+    'burgundy': '#800020',
+    'burgundy red': '#800020',
+    'wine': '#722F37',
+    'wine red': '#722F37',
     
     # Brown variations
     'brown': '#654321',
@@ -103,6 +109,23 @@ COLOR_LOOKUP = {
     'harvard crimson': '#A51C30',
     'princeton orange': '#FF8F00',
     'yale blue': '#00356B',
+
+    # Additional common school colors
+    'columbia blue': '#B9D9EB',      # Light blue (Columbia, UNC)
+    'burnt orange': '#BF5700',       # Texas Longhorns
+    'carolina blue': '#7BAFD4',      # UNC
+    'michigan blue': '#00274C',      # Michigan
+    'tennessee orange': '#FF8200',   # Tennessee Volunteers
+    'penn state blue': '#041E42',    # Penn State
+    'clemson orange': '#F66733',     # Clemson Tigers
+    'notre dame gold': '#C99700',    # Notre Dame
+    'florida orange': '#FA4616',     # Florida Gators
+    'florida blue': '#0021A5',       # Florida Gators
+    'alabama crimson': '#9E1B32',    # Alabama Crimson Tide
+    'georgia red': '#BA0C2F',        # Georgia Bulldogs
+    'ohio state scarlet': '#BB0000', # Ohio State
+    'usc cardinal': '#990000',       # USC Trojans
+    'usc gold': '#FFC72C',           # USC Trojans
 }
 
 def convert_color_to_hex(color_value):
