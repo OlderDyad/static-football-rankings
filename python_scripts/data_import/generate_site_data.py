@@ -150,6 +150,7 @@ def process_state_data(cursor, state, mode):
         data_pkg = {
             "mascot": m[2] if m[2] else "",
             "bg_color_raw": m[3] if m[3] else "",
+            "text_color_raw": m[4] if m[4] else "",  # ADD SECONDARY COLOR
             "logo": m[5] if m[5] else "",
             "school_logo": m[6] if m[6] else "",
             "website": m[7] if m[7] else "",
@@ -179,10 +180,18 @@ def process_state_data(cursor, state, mode):
             if clean in meta_lookup:
                 meta = meta_lookup[clean]
 
-        # Visuals
+        # Visuals - USE BOTH PRIMARY AND SECONDARY FROM DATABASE
         mascot = meta['mascot'] if meta else ""
-        bg_color = get_hex_color(meta['bg_color_raw'] if meta else "")
-        text_color = determine_text_color(bg_color)
+        
+        # Try to use actual secondary color from database first
+        if meta and meta.get('text_color_raw'):
+            bg_color = get_hex_color(meta['bg_color_raw'])
+            text_color = get_hex_color(meta['text_color_raw'])
+        else:
+            # Fall back to auto-calculated text color
+            bg_color = get_hex_color(meta['bg_color_raw'] if meta else "")
+            text_color = determine_text_color(bg_color)
+            
         logo_url = fix_image_path(meta['logo']) if meta else ""
         school_logo = fix_image_path(meta['school_logo']) if meta else ""
         website = meta['website'] if meta else ""
@@ -244,6 +253,38 @@ def process_state_data(cursor, state, mode):
     
     top_item = final_items[0]
     
+    # CRITICAL FIX: Ensure top item has valid colors
+    # If the top team's colors are missing/default, try to get them from database
+    if top_item.get('backgroundColor') == '#333333' or not top_item.get('backgroundColor'):
+        top_team_name = top_item.get(json_name_key, '')
+        print(f"      ⚠️  Top team '{top_team_name}' missing colors, querying database...")
+        
+        try:
+            # Try to find the team in HS_Team_Names by exact name match
+            color_query = """
+                SELECT PrimaryColor, SecondaryColor, Mascot, LogoURL, School_Logo_URL
+                FROM HS_Team_Names 
+                WHERE Team_Name = ? OR Team_Name LIKE ?
+                ORDER BY ID DESC
+            """
+            cursor.execute(color_query, (top_team_name, f"%{top_team_name.split('(')[0].strip()}%"))
+            color_row = cursor.fetchone()
+            
+            if color_row and color_row[0]:
+                top_item['backgroundColor'] = get_hex_color(color_row[0])
+                top_item['textColor'] = get_hex_color(color_row[1]) if color_row[1] else determine_text_color(top_item['backgroundColor'])
+                if color_row[2]:
+                    top_item['mascot'] = color_row[2]
+                if color_row[3]:
+                    top_item['logoURL'] = fix_image_path(color_row[3])
+                if color_row[4]:
+                    top_item['schoolLogoURL'] = fix_image_path(color_row[4])
+                print(f"      ✓ Colors found: {top_item['backgroundColor']} / {top_item['textColor']}")
+            else:
+                print(f"      ⚠️  No colors found in database, using defaults")
+        except Exception as e:
+            print(f"      ⚠️  Error querying colors: {e}")
+    
     json_data = {
         "metadata": {
             "timestamp": datetime.now().isoformat(),
@@ -273,7 +314,7 @@ if __name__ == "__main__":
     start_time = time.time()
     
     print("=" * 60)
-    print("State Teams & Programs JSON Generator (Mapped Fix)")
+    print("State Teams & Programs JSON Generator (Color Fix)")
     print("=" * 60)
     
     try:
