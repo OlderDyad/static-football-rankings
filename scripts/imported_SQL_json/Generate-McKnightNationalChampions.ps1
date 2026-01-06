@@ -1,62 +1,69 @@
 # Generate-McKnightNationalChampions.ps1
-# CLEAN VERSION - Proper field handling
+# Generates JSON data for McKnight's National Champions page
+# Based on all-time teams structure
 
 $logFile = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\imported_SQL_json\logs\mcknight-national-champions.log"
 $outputDir = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\docs\data\mcknight-national-champions"
 
-# Setup
+# Setup directories
 New-Item -ItemType Directory -Force -Path (Split-Path $logFile) | Out-Null
 New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
 Remove-Item "$outputDir\mcknight-national-champions.json" -ErrorAction SilentlyContinue
 
+# Start logging
 Get-Date | Out-File $logFile
 "Starting McKnight National Champions generation" | Tee-Object -FilePath $logFile -Append
 
 # Import common functions
 . ".\common-functions.ps1"
 
+# Helper function to safely parse decimal values
 function Parse-DecimalSafe {
-    param($Value, $Default = 0)
+    param (
+        [Parameter(Mandatory=$false)]
+        [object]$Value,
+        [decimal]$DefaultValue = 0
+    )
     try {
-        if ($null -eq $Value -or [string]::IsNullOrWhiteSpace("$Value")) { return $Default }
+        if ($null -eq $Value -or [string]::IsNullOrWhiteSpace("$Value")) {
+            return $DefaultValue
+        }
         return [decimal]::Parse("$Value")
     }
-    catch { return $Default }
+    catch {
+        return $DefaultValue
+    }
 }
 
 try {
+    # Connect to the database
     $connection = Connect-Database
-    Write-Host "Database connected"
+    Write-Host "Database connection established"
 
-    Write-Host "Executing: Get_McKnight_National_Champions"
+    # Execute stored procedure to get McKnight National Champions
+    Write-Host "Processing McKnight National Champions..."
     $command = New-Object System.Data.SqlClient.SqlCommand("EXEC dbo.Get_McKnight_National_Champions", $connection)
     $adapter = New-Object System.Data.SqlClient.SqlDataAdapter($command)
     $dataset = New-Object System.Data.DataSet
     $adapter.Fill($dataset)
 
     if ($dataset.Tables.Count -gt 0 -and $dataset.Tables[0].Rows.Count -gt 0) {
-        $table = $dataset.Tables[0]
-        Write-Host "Retrieved $($table.Rows.Count) champions"
+        $championsTable = $dataset.Tables[0]
+        Write-Host "Retrieved $($championsTable.Rows.Count) McKnight National Champions"
 
+        # Convert DataTable to array of objects matching all-time teams structure
         $champions = @()
-        foreach ($row in $table.Rows) {
-            
-            # Build link HTML
-            $linkHtml = if ($row["HasTeamPage"] -eq 1 -and -not [string]::IsNullOrEmpty($row["TeamPageUrl"])) {
-                "<a href='$($row["TeamPageUrl"])' class='team-link' title='View Team Page'><i class='fas fa-external-link-alt'></i></a>"
-            } else {
-                "<span class='no-page-icon' style='color:#ddd;' title='Page coming soon'>&#9633;</span>"
-            }
+        foreach ($row in $championsTable.Rows) {
             
             $champion = [PSCustomObject]@{
                 year = $row["year"]
                 team = $row["team"]
                 state = $row["state"]
-                combined = Parse-DecimalSafe $row["combined"]
-                margin = Parse-DecimalSafe $row["margin"]
-                win_loss = Parse-DecimalSafe $row["win_loss"]
-                offense = Parse-DecimalSafe $row["offense"]
-                defense = Parse-DecimalSafe $row["defense"]
+                combined = Parse-DecimalSafe -Value $row["combined"]
+                margin = Parse-DecimalSafe -Value $row["margin"]
+                win_loss = Parse-DecimalSafe -Value $row["win_loss"]
+                offense = Parse-DecimalSafe -Value $row["offense"]
+                defense = Parse-DecimalSafe -Value $row["defense"]
                 games_played = $row["games_played"]
                 logoURL = $row["logoURL"]
                 schoolLogoURL = $row["schoolLogoURL"]
@@ -66,32 +73,37 @@ try {
                 teamId = $row["teamId"]
                 hasTeamPage = [bool]$row["HasTeamPage"]
                 teamPageUrl = $row["TeamPageUrl"]
-                teamLinkHtml = $linkHtml
             }
             $champions += $champion
         }
 
-        # Get most recent champion for banner
+        # Get most recent champion (top item) for banner
         $topChampion = $champions | Sort-Object -Property year -Descending | Select-Object -First 1
 
+        # Build JSON structure matching all-time teams format
         $jsonData = @{
             topItem = $topChampion
             items = $champions
             metadata = @{
                 timestamp = (Get-Date).ToString("o")
                 type = "mcknight-national-champions"
-                description = "McKnight's National Champions"
+                description = "McKnight's National Champions by Combined Rating"
                 totalItems = $champions.Count
             }
         }
 
+        # Write JSON to file
         $outputPath = Join-Path $outputDir "mcknight-national-champions.json"
         $jsonString = ConvertTo-Json -InputObject $jsonData -Depth 10
         Set-Content -Path $outputPath -Value $jsonString -Encoding UTF8
 
-        Write-Host "✓ Wrote $($champions.Count) champions"
-        Write-Host "✓ With team pages: $(($champions | Where-Object { $_.hasTeamPage }).Count)"
-        "Complete: $outputPath" | Tee-Object -FilePath $logFile -Append
+        Write-Host "✓ Successfully wrote $($champions.Count) champions to JSON"
+        Write-Host "✓ Teams with pages: $(($champions | Where-Object { $_.hasTeamPage }).Count)"
+        "File generated: $outputPath" | Tee-Object -FilePath $logFile -Append
+    }
+    else {
+        Write-Host "No champion data available in the dataset" -ForegroundColor Yellow
+        "No champion data available" | Tee-Object -FilePath $logFile -Append
     }
 }
 catch {
@@ -101,7 +113,8 @@ catch {
 finally {
     if ($connection -and $connection.State -eq 'Open') {
         $connection.Close()
+        Write-Host "Database connection closed"
     }
 }
 
-"McKnight generation complete" | Tee-Object -FilePath $logFile -Append
+"McKnight National Champions generation complete" | Tee-Object -FilePath $logFile -Append
