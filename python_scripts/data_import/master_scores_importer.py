@@ -1,4 +1,4 @@
-﻿# master_scores_importer.py (v3 - with Score Sanitization)
+﻿# master_scores_importer.py (v4 - Queue Integration)
 
 # === IMPORTS ===
 import os
@@ -11,6 +11,7 @@ from datetime import datetime
 from fuzzywuzzy import process as fuzzy_process
 from collections import defaultdict
 import csv
+import subprocess
 
 # === CONFIGURATION ===
 STAGING_DIRECTORY = "J:/Users/demck/Google Drive/Documents/Football/HSF/Newspapers/Staged"
@@ -40,7 +41,6 @@ def sanitize_raw_team_name(text_input):
 
 def sanitize_score(score_text):
     """
-    ** NEW FUNCTION **
     Cleans the raw score string by removing any non-digit characters.
     This ensures values like "30," or '"21"' are correctly converted.
     """
@@ -129,9 +129,36 @@ def get_newspaper_region(filename):
     match = re.search(r'^(.+?)_\d{4}', filename)
     return match.group(1).replace('_', ' ').strip() if match else "Unknown"
 
+def add_to_batch_queue(batch_id, file_count, game_count, source_files):
+    """Add batch to queue using the batch_queue_manager script."""
+    try:
+        # Build command to add batch to queue
+        source_files_str = ','.join(source_files)
+        cmd = [
+            'python', 
+            'batch_queue_manager.py', 
+            'add', 
+            batch_id, 
+            str(file_count), 
+            str(game_count), 
+            source_files_str
+        ]
+        
+        result = subprocess.run(cmd, capture_output=True, text=True, cwd=os.path.dirname(os.path.abspath(__file__)))
+        
+        if result.returncode == 0:
+            logger.info(f"✅ Batch {batch_id} added to processing queue")
+            return True
+        else:
+            logger.error(f"Failed to add batch to queue: {result.stderr}")
+            return False
+    except Exception as e:
+        logger.error(f"Error adding batch to queue: {e}")
+        return False
+
 # === MAIN EXECUTION FUNCTION ===
 def main():
-    logger.info("--- Starting Data Ingestion with Alias Verification (v3) ---")
+    logger.info("--- Starting Data Ingestion with Queue Integration (v4) ---")
     
     batch_id = str(uuid.uuid4())
     logger.info(f"Generated new BatchID for this run: {batch_id}")
@@ -160,7 +187,7 @@ def main():
                 home_team = sanitize_raw_team_name(row[0])
                 visitor_team = sanitize_raw_team_name(row[2])
                 
-                # ** NEW: Sanitize score fields immediately after reading **
+                # Sanitize score fields immediately after reading
                 home_score = sanitize_score(row[1])
                 visitor_score = sanitize_score(row[3])
                 
@@ -251,18 +278,25 @@ def main():
         logger.info(f"Writing {len(df_to_insert)} standardized records to staging table [RawScores_Staging]...")
         df_to_insert.to_sql('RawScores_Staging', con=engine, if_exists='append', index=False)
         
+        # Add batch to queue
+        source_files = list(set(games_df['SourceFile'].tolist()))
+        add_to_batch_queue(batch_id, len(source_files), len(df_to_insert), source_files)
+        
         logger.info("🎉 Stage 1 Ingestion Complete! 🎉")
-        logger.info(f"All raw data has been loaded into dbo.RawScores_Staging with BatchID: {batch_id}")
+        logger.info(f"Batch loaded into RawScores_Staging with BatchID: {batch_id}")
+        logger.info(f"✅ Batch added to processing queue - you can continue loading more batches")
 
-        print("\n" + "="*60)
-        print("NEXT STEP (AUDIT): To run the audit manager for this batch, copy the command below:")
-        print(f"python run_audit.py {batch_id}")
-        print("="*60)
-
-        print("\n" + "="*60)
-        print("STANDARDIZATION STEP: COPY THE COMMAND BELOW TO EXECUTE IN SSMS:")
-        print(f"EXEC dbo.sp_StandardizeStagedScores_v2 @BatchID = '{batch_id}';")
-        print("="*60)
+        print("\n" + "="*80)
+        print("✅ BATCH QUEUED FOR PROCESSING")
+        print("="*80)
+        print(f"BatchID: {batch_id}")
+        print(f"Games: {len(df_to_insert)}")
+        print(f"Files: {len(source_files)}")
+        print("\nThis batch is now in the queue. You can:")
+        print("1. Continue running this script to add more batches")
+        print("2. Run 'python batch_queue_manager.py' to view queue status")
+        print("3. Process all queued batches when your rating calc is complete")
+        print("="*80 + "\n")
 
     except Exception as e:
         logger.exception("FATAL: An error occurred during database load to staging table.")
