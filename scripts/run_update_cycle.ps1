@@ -34,28 +34,17 @@ Write-Host "STEP 2: Generating State JSON Data..." -ForegroundColor Cyan
 python generate_site_data.py
 
 # ---------------------------------------------------------
-# STEP 3: GENERATE GLOBAL DATA (POWERSHELL & PYTHON)
+# STEP 3: GENERATE GLOBAL DATA (PYTHON)
 # ---------------------------------------------------------
 Write-Host "STEP 3: Generating Global & Decade JSON Data..." -ForegroundColor Cyan
 
-# 2. Generate All-Time Rankings - PowerShell (has team/program page links)
-Write-Host "  - Generating All-Time Teams..." -ForegroundColor Yellow
-Set-Location $psScriptsDir
-.\generate-all-time-teams.ps1
-
-Write-Host "  - Generating All-Time Programs..." -ForegroundColor Yellow
-.\generate-all-time-programs.ps1
-
-# 3. Generate Decade Lists (1980s, 1990s, etc.) - PowerShell (has page links)
-Write-Host "  - Generating Decade Teams..." -ForegroundColor Yellow
-.\generate-decade-teams.ps1
-
-Write-Host "  - Generating Decade Programs..." -ForegroundColor Yellow
-.\generate-decade-programs.ps1
+# Generate All-Time & Decade Rankings (single Python script does all)
+Write-Host "  - Generating All-Time Teams, Programs & All Decades..." -ForegroundColor Yellow
+Set-Location $pythonDir
+python generate_global_data.py
 
 # 4. Generate Latest Season - Python
 Write-Host "  - Generating Latest Season..." -ForegroundColor Yellow
-Set-Location $pythonDir
 python generate_latest_season.py
 
 # 5. Generate National Champions JSON
