@@ -346,14 +346,31 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_season
         school_logo = fix_image_path(meta['school_logo'] if meta else "")
         website = meta['website'] if meta else ""
 
+        # --- COLUMN MAPPING LOGIC ---
+        # Programs have swapped columns in SQL output (same issue as state programs)
+        if 'program' in mode:
+            # SWAPPED MAPPING FOR PROGRAMS
+            combined_val = get_stat_value(rank_row, ['combined'])
+            margin_val   = get_stat_value(rank_row, ['win_loss'])  # Win/Loss → Margin
+            win_loss_val = get_stat_value(rank_row, ['margin'])    # Margin → Win/Loss
+            offense_val  = get_stat_value(rank_row, ['defense'])   # Defense → Offense
+            defense_val  = get_stat_value(rank_row, ['offense'])   # Offense → Defense
+        else:
+            # STANDARD MAPPING FOR TEAMS
+            combined_val = get_stat_value(rank_row, ['combined'])
+            margin_val   = get_stat_value(rank_row, ['margin'])
+            win_loss_val = get_stat_value(rank_row, ['win_loss'])
+            offense_val  = get_stat_value(rank_row, ['offense'])
+            defense_val  = get_stat_value(rank_row, ['defense'])
+
         item = {
             "rank": i + 1,
             json_name_key: entity_name,
-            "combined": get_stat_value(rank_row, ['combined']),
-            "margin": get_stat_value(rank_row, ['margin']),
-            "win_loss": get_stat_value(rank_row, ['win_loss']),
-            "offense": get_stat_value(rank_row, ['offense']),
-            "defense": get_stat_value(rank_row, ['defense']),
+            "combined": combined_val,
+            "margin": margin_val,
+            "win_loss": win_loss_val,
+            "offense": offense_val,
+            "defense": defense_val,
             "state": state_val,  # Now extracted from name, not metadata
             "mascot": mascot,
             "backgroundColor": bg_color,
@@ -365,7 +382,8 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_season
         
         if 'teams' in mode:
             item['season'] = get_int_value(rank_row, ['season', 'year'], 0)
-            item['games_played'] = get_int_value(rank_row, ['gamesplayed', 'games_played'], 0)
+            # FIXED: Check games_played first (with underscore) before gamesplayed
+            item['games_played'] = get_int_value(rank_row, ['games_played', 'gamesplayed'], 0)
         else:
             item['seasons'] = get_int_value(rank_row, ['seasons'], 0)
 

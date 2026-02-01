@@ -8,9 +8,11 @@ from datetime import datetime
 from sqlalchemy import create_engine, text
 import pandas as pd
 import sys
+import shutil
 
 # === CONFIGURATION ===
 STAGING_DIRECTORY = "J:/Users/demck/Google Drive/Documents/Football/HSF/Newspapers/Staged"
+COMPLETED_DIRECTORY = "C:/Users/demck/Google Drive/Documents/Football/HSF/Newspapers/Completed"
 QUEUE_FILE = os.path.join(STAGING_DIRECTORY, 'batch_queue.json')
 SERVER_NAME = "McKnights-PC\\SQLEXPRESS01"
 DATABASE_NAME = "hs_football_database"
@@ -48,12 +50,11 @@ def add_batch_to_queue(batch_id, file_count, game_count, source_files):
     
     batch_info = {
         'batch_id': batch_id,
-        'status': 'staged',  # staged -> standardized -> imported
+        'status': 'staged',  # staged -> imported
         'created_at': datetime.now().isoformat(),
         'file_count': file_count,
         'game_count': game_count,
         'source_files': source_files,
-        'standardized_at': None,
         'imported_at': None
     }
     
@@ -74,23 +75,16 @@ def show_queue_status():
     print("="*80)
     
     staged = [b for b in queue['batches'] if b['status'] == 'staged']
-    standardized = [b for b in queue['batches'] if b['status'] == 'standardized']
     imported = [b for b in queue['batches'] if b['status'] == 'imported']
     
     print(f"\n📊 Summary:")
-    print(f"  - Staged (ready for standardization): {len(staged)}")
-    print(f"  - Standardized (ready for import): {len(standardized)}")
-    print(f"  - Imported (complete): {len(imported)}")
+    print(f"  - Staged (ready to import to HS_Scores): {len(staged)}")
+    print(f"  - Imported (in HS_Scores table): {len(imported)}")
     
     if staged:
-        print(f"\n🔵 STAGED BATCHES (ready for standardization):")
+        print(f"\n🔵 STAGED BATCHES (ready to import):")
         for b in staged:
             print(f"  • {b['batch_id'][:8]}... | {b['game_count']} games | {b['file_count']} files | {b['created_at'][:10]}")
-    
-    if standardized:
-        print(f"\n🟢 STANDARDIZED BATCHES (ready for import):")
-        for b in standardized:
-            print(f"  • {b['batch_id'][:8]}... | {b['game_count']} games | Standardized: {b['standardized_at'][:10]}")
     
     if imported:
         print(f"\n✅ IMPORTED BATCHES (complete):")
@@ -100,19 +94,6 @@ def show_queue_status():
             print(f"  ... and {len(imported) - 5} more")
     
     print("\n" + "="*80 + "\n")
-
-def mark_batch_standardized(batch_id):
-    """Mark a batch as standardized."""
-    queue = load_queue()
-    for batch in queue['batches']:
-        if batch['batch_id'] == batch_id:
-            batch['status'] = 'standardized'
-            batch['standardized_at'] = datetime.now().isoformat()
-            save_queue(queue)
-            logger.info(f"✅ Batch {batch_id} marked as standardized")
-            return True
-    logger.error(f"Batch {batch_id} not found in queue")
-    return False
 
 def mark_batch_imported(batch_id):
     """Mark a batch as imported."""
@@ -127,60 +108,96 @@ def mark_batch_imported(batch_id):
     logger.error(f"Batch {batch_id} not found in queue")
     return False
 
+def move_source_files_to_completed(batch_info):
+    """Move source CSV files to completed directory after successful import."""
+    if not os.path.exists(COMPLETED_DIRECTORY):
+        os.makedirs(COMPLETED_DIRECTORY)
+        logger.info(f"Created completed directory: {COMPLETED_DIRECTORY}")
+    
+    source_files = batch_info.get('source_files', [])
+    moved_count = 0
+    failed_files = []
+    
+    for filename in source_files:
+        source_path = os.path.join(STAGING_DIRECTORY, filename)
+        dest_path = os.path.join(COMPLETED_DIRECTORY, filename)
+        
+        try:
+            if os.path.exists(source_path):
+                shutil.move(source_path, dest_path)
+                moved_count += 1
+                logger.info(f"Moved {filename} to completed directory")
+            else:
+                logger.warning(f"Source file not found: {filename}")
+                failed_files.append(filename)
+        except Exception as e:
+            logger.error(f"Failed to move {filename}: {e}")
+            failed_files.append(filename)
+    
+    if moved_count > 0:
+        logger.info(f"✅ Moved {moved_count} CSV files to completed directory")
+    if failed_files:
+        logger.warning(f"⚠️  Could not move {len(failed_files)} files: {', '.join(failed_files)}")
+    
+    return moved_count, failed_files
+
 # === BATCH PROCESSING ===
 
-def standardize_all_staged():
-    """Standardize all batches that are in 'staged' status."""
+def import_all_staged():
+    """Import all batches from RawScores_Staging directly to HS_Scores."""
     queue = load_queue()
     staged_batches = [b for b in queue['batches'] if b['status'] == 'staged']
     
     if not staged_batches:
-        print("\n📭 No staged batches to standardize\n")
+        print("\n📭 No staged batches to import\n")
         return
     
-    print(f"\n🔧 Standardizing {len(staged_batches)} batches...\n")
+    print(f"\n📥 Importing {len(staged_batches)} batches to HS_Scores...\n")
+    
+    total_moved = 0
+    total_failed = []
     
     with engine.begin() as connection:
         for batch in staged_batches:
             batch_id = batch['batch_id']
-            logger.info(f"Standardizing batch: {batch_id}")
-            
-            try:
-                query = text(f"EXEC dbo.sp_StandardizeStagedScores_v2 @BatchID = '{batch_id}';")
-                connection.execute(query)
-                mark_batch_standardized(batch_id)
-                logger.info(f"✅ Batch {batch_id} standardized successfully")
-            except Exception as e:
-                logger.error(f"❌ Failed to standardize batch {batch_id}: {e}")
-    
-    print(f"\n✅ Standardization complete for {len(staged_batches)} batches\n")
-
-def import_all_standardized():
-    """Import all batches that are in 'standardized' status."""
-    queue = load_queue()
-    standardized_batches = [b for b in queue['batches'] if b['status'] == 'standardized']
-    
-    if not standardized_batches:
-        print("\n📭 No standardized batches to import\n")
-        return
-    
-    print(f"\n📥 Importing {len(standardized_batches)} batches to HS_Scores...\n")
-    
-    with engine.begin() as connection:
-        for batch in standardized_batches:
-            batch_id = batch['batch_id']
             logger.info(f"Importing batch: {batch_id}")
             
             try:
-                # Your final import procedure - adjust this to match your actual SP name
-                query = text(f"EXEC dbo.sp_ImportFromStaging @BatchID = '{batch_id}';")
-                connection.execute(query)
+                # Insert from staging to HS_Scores using correct column names
+                query = text(f"""
+                    INSERT INTO HS_Scores (ID, Season, Date, Home, Visitor, Home_Score, Visitor_Score, OT, Forfeit)
+                    SELECT NEWID(), Season, GameDate, HomeTeamRaw, VisitorTeamRaw, HomeScore, VisitorScore, 
+                           CASE WHEN Overtime IS NOT NULL AND Overtime <> '' THEN 1 ELSE 0 END,
+                           CASE WHEN (HomeScore + VisitorScore) = 1 THEN 1 ELSE 0 END
+                    FROM RawScores_Staging
+                    WHERE BatchID = '{batch_id}'
+                """)
+                result = connection.execute(query)
+                rows_imported = result.rowcount
+                
+                # Mark as imported first
                 mark_batch_imported(batch_id)
-                logger.info(f"✅ Batch {batch_id} imported successfully")
+                logger.info(f"✅ Batch {batch_id} imported successfully ({rows_imported} games)")
+                
+                # Move CSV files to completed directory
+                moved, failed = move_source_files_to_completed(batch)
+                total_moved += moved
+                total_failed.extend(failed)
+                
             except Exception as e:
                 logger.error(f"❌ Failed to import batch {batch_id}: {e}")
     
-    print(f"\n✅ Import complete for {len(standardized_batches)} batches\n")
+    print(f"\n✅ Import complete for {len(staged_batches)} batches")
+    print(f"📁 Moved {total_moved} CSV files to completed directory")
+    
+    if total_failed:
+        print(f"⚠️  Warning: Could not move {len(total_failed)} files")
+        print(f"   Files: {', '.join(total_failed[:5])}")
+        if len(total_failed) > 5:
+            print(f"   ... and {len(total_failed) - 5} more")
+    
+    print(f"\n⚠️  IMPORTANT: Run duplicate removal next:")
+    print(f"   EXEC [dbo].[RemoveDuplicateGamesParameterized] @SeasonStart = 1877, @SeasonEnd = 2025;\n")
 
 def verify_batch_in_staging(batch_id):
     """Verify that a batch exists in RawScores_Staging."""
@@ -198,12 +215,9 @@ def main():
         print("BATCH QUEUE MANAGER")
         print("="*60)
         print("1. Show queue status")
-        print("2. Standardize all staged batches")
-        print("3. Import all standardized batches")
-        print("4. Process all (standardize + import)")
-        print("5. Mark batch as standardized (manual)")
-        print("6. Mark batch as imported (manual)")
-        print("7. Exit")
+        print("2. Import all staged batches to HS_Scores")
+        print("3. Mark batch as imported (manual)")
+        print("4. Exit")
         print("="*60)
         
         choice = input("\nSelect option: ").strip()
@@ -212,24 +226,13 @@ def main():
             show_queue_status()
         
         elif choice == '2':
-            standardize_all_staged()
+            import_all_staged()
         
         elif choice == '3':
-            import_all_standardized()
-        
-        elif choice == '4':
-            standardize_all_staged()
-            import_all_standardized()
-        
-        elif choice == '5':
-            batch_id = input("Enter BatchID: ").strip()
-            mark_batch_standardized(batch_id)
-        
-        elif choice == '6':
             batch_id = input("Enter BatchID: ").strip()
             mark_batch_imported(batch_id)
         
-        elif choice == '7':
+        elif choice == '4':
             print("\n👋 Goodbye!\n")
             break
         

@@ -212,6 +212,19 @@ def main():
     for game in all_raw_games:
         if game['quality_status'] == 'needs_review': continue
 
+        # Check for NULL/empty team names BEFORE standardization
+        if not game['HomeTeamRaw'] or game['HomeTeamRaw'].strip() == '':
+            info = unrecognized_teams_with_opponents[game['SourceRegion']]['[EMPTY/NULL HOME TEAM]']
+            info['opponents'].add(game['VisitorTeamRaw'])
+            info['source_files'].add(game['SourceFile'])
+            continue
+            
+        if not game['VisitorTeamRaw'] or game['VisitorTeamRaw'].strip() == '':
+            info = unrecognized_teams_with_opponents[game['SourceRegion']]['[EMPTY/NULL VISITOR TEAM]']
+            info['opponents'].add(game['HomeTeamRaw'])
+            info['source_files'].add(game['SourceFile'])
+            continue
+
         home_std = standardize_team_name(game['HomeTeamRaw'], game['SourceRegion'], alias_rules, abbrev_rules, all_canonical_names)
         visitor_std = standardize_team_name(game['VisitorTeamRaw'], game['SourceRegion'], alias_rules, abbrev_rules, all_canonical_names)
         
