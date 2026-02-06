@@ -30,8 +30,8 @@ conn_str = "DRIVER={ODBC Driver 17 for SQL Server};SERVER=MCKNIGHTS-PC\\SQLEXPRE
 OUTPUT_DIR = "C:/Users/demck/OneDrive/Football_2024/static-football-rankings/docs/data/statistics"
 
 # Combined Rating formula: 0.958 * Margin + 2.791
-# Where Margin = Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss
-COMBINED_RATING_FORMULA = "(0.958 * Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss + 2.791)"
+# Where Margin = Avg_Of_Avg_Of_Home_Modified_Score (NOT the Win_Loss version)
+COMBINED_RATING_FORMULA = "(0.958 * Avg_Of_Avg_Of_Home_Modified_Score + 2.791)"
 
 
 def get_connection():
@@ -58,7 +58,7 @@ def get_scores_by_decade():
         AND Season <= 2025
         AND Home_Score IS NOT NULL 
         AND Visitor_Score IS NOT NULL
-        AND Forfeit IS NULL
+        AND (Forfeit IS NULL OR Forfeit = 0)
     GROUP BY (Season / 10) * 10
     ORDER BY Decade
     """
@@ -139,7 +139,7 @@ def get_common_scores():
     FROM HS_Scores
     WHERE Home_Score IS NOT NULL 
         AND Visitor_Score IS NOT NULL
-        AND Forfeit IS NULL
+        AND (Forfeit IS NULL OR Forfeit = 0)
         AND Season >= 1900
     GROUP BY 
         CASE WHEN Home_Score >= Visitor_Score 
@@ -202,7 +202,7 @@ def get_ratings_by_decade():
     WHERE Season >= 1900 
         AND Season <= 2025
         AND Week = 52
-        AND Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss IS NOT NULL
+        AND Avg_Of_Avg_Of_Home_Modified_Score IS NOT NULL
     """
     
     df = pd.read_sql(query, conn)
@@ -265,7 +265,7 @@ def get_game_competitiveness():
         AND Season <= 2025
         AND Home_Score IS NOT NULL 
         AND Visitor_Score IS NOT NULL
-        AND Forfeit IS NULL
+        AND (Forfeit IS NULL OR Forfeit = 0)
     GROUP BY (Season / 10) * 10
     ORDER BY Decade
     """
@@ -440,7 +440,7 @@ def get_scores_by_rating():
             {COMBINED_RATING_FORMULA} AS Combined_Rating
         FROM HS_Rankings
         WHERE Week = 52
-            AND Avg_Of_Avg_Of_Home_Modified_Score_Win_Loss IS NOT NULL
+            AND Avg_Of_Avg_Of_Home_Modified_Score IS NOT NULL
     ),
     GameScores AS (
         SELECT 
