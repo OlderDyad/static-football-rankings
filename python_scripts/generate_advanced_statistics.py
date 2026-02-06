@@ -49,7 +49,7 @@ def get_scores_by_decade():
         AND Season <= 2025
         AND Home_Score IS NOT NULL 
         AND Visitor_Score IS NOT NULL
-        AND Forfeit IS NULL
+        AND (Forfeit IS NULL OR Forfeit = 0)
     GROUP BY (Season / 10) * 10
     ORDER BY Decade
     """
@@ -114,30 +114,38 @@ def create_scores_by_decade_chart(df):
 
 
 # =============================================================================
-# CHART 2: Most Common Final Scores
+# CHART 2: Most Common Final Scores - FIXED
 # =============================================================================
 def get_common_scores():
     """Get most common final score combinations"""
     conn = get_connection()
     
+    # Fixed query - properly format score as string with padding for correct sorting
     query = """
     SELECT TOP 30
-        CASE WHEN Home_Score >= Visitor_Score 
-             THEN CAST(Home_Score AS VARCHAR) + '-' + CAST(Visitor_Score AS VARCHAR)
-             ELSE CAST(Visitor_Score AS VARCHAR) + '-' + CAST(Home_Score AS VARCHAR)
-        END AS Final_Score,
-        COUNT(*) AS Occurrences
-    FROM HS_Scores
-    WHERE Home_Score IS NOT NULL 
-        AND Visitor_Score IS NOT NULL
-        AND Forfeit IS NULL
-        AND Season >= 1900
-    GROUP BY 
-        CASE WHEN Home_Score >= Visitor_Score 
-             THEN CAST(Home_Score AS VARCHAR) + '-' + CAST(Visitor_Score AS VARCHAR)
-             ELSE CAST(Visitor_Score AS VARCHAR) + '-' + CAST(Home_Score AS VARCHAR)
-        END
-    ORDER BY COUNT(*) DESC
+        Final_Score,
+        Occurrences
+    FROM (
+        SELECT 
+            CASE 
+                WHEN Home_Score >= Visitor_Score 
+                THEN CAST(Home_Score AS VARCHAR(10)) + '-' + CAST(Visitor_Score AS VARCHAR(10))
+                ELSE CAST(Visitor_Score AS VARCHAR(10)) + '-' + CAST(Home_Score AS VARCHAR(10))
+            END AS Final_Score,
+            COUNT(*) AS Occurrences
+        FROM HS_Scores
+        WHERE Home_Score IS NOT NULL 
+            AND Visitor_Score IS NOT NULL
+            AND (Forfeit IS NULL OR Forfeit = 0)
+            AND Season >= 1900
+        GROUP BY 
+            CASE 
+                WHEN Home_Score >= Visitor_Score 
+                THEN CAST(Home_Score AS VARCHAR(10)) + '-' + CAST(Visitor_Score AS VARCHAR(10))
+                ELSE CAST(Visitor_Score AS VARCHAR(10)) + '-' + CAST(Home_Score AS VARCHAR(10))
+            END
+    ) AS ScoreCounts
+    ORDER BY Occurrences DESC
     """
     
     df = pd.read_sql(query, conn)
@@ -164,7 +172,7 @@ def create_common_scores_chart(df):
     fig.update_layout(
         title={'text': 'Most Common Final Scores (All-Time)', 'x': 0.5, 'font': {'size': 22}},
         xaxis_title='Number of Games',
-        yaxis_title='Final Score',
+        yaxis_title='Final Score (Winner-Loser)',
         plot_bgcolor='white',
         paper_bgcolor='white',
         height=700,
@@ -172,7 +180,7 @@ def create_common_scores_chart(df):
     )
     
     fig.update_xaxes(gridcolor='lightgray', showline=True, linecolor='black', tickformat=',d')
-    fig.update_yaxes(showline=True, linecolor='black')
+    fig.update_yaxes(showline=True, linecolor='black', type='category')
     
     return fig
 
@@ -236,7 +244,7 @@ def create_ratings_by_decade_chart(df):
 
 
 # =============================================================================
-# CHART 4: Blowout vs. Close Game Trends
+# CHART 4: Blowout vs. Close Game Trends - FIXED with debugging
 # =============================================================================
 def get_game_competitiveness():
     """Get percentage of close vs blowout games by decade"""
@@ -255,12 +263,18 @@ def get_game_competitiveness():
         AND Season <= 2025
         AND Home_Score IS NOT NULL 
         AND Visitor_Score IS NOT NULL
-        AND Forfeit IS NULL
+        AND (Forfeit IS NULL OR Forfeit = 0)
     GROUP BY (Season / 10) * 10
     ORDER BY Decade
     """
     
     df = pd.read_sql(query, conn)
+    conn.close()
+    
+    # Debug: print game counts
+    print(f"   Game counts by decade:")
+    for _, row in df.iterrows():
+        print(f"      {int(row['Decade'])}s: {int(row['Total_Games']):,} games")
     
     # Calculate percentages
     df['Close_Pct'] = (df['Close_Games'] / df['Total_Games'] * 100).round(1)
@@ -268,7 +282,6 @@ def get_game_competitiveness():
     df['Comfortable_Pct'] = (df['Comfortable_Games'] / df['Total_Games'] * 100).round(1)
     df['Blowout_Pct'] = (df['Blowout_Games'] / df['Total_Games'] * 100).round(1)
     
-    conn.close()
     return df
 
 
@@ -277,6 +290,7 @@ def create_competitiveness_chart(df):
     
     fig = go.Figure()
     
+    # Stack order: Close at bottom, Blowout at top
     fig.add_trace(go.Scatter(
         x=df['Decade'].astype(str) + 's',
         y=df['Close_Pct'],
@@ -349,7 +363,7 @@ def get_coverage_data():
     SELECT 
         Season,
         CASE 
-            WHEN RIGHT(Home, 5) LIKE '%(%)' THEN SUBSTRING(RIGHT(Home, 4), 2, 2)
+            WHEN RIGHT(Home, 5) LIKE '%(__)' THEN SUBSTRING(RIGHT(Home, 4), 2, 2)
             WHEN RIGHT(Home, 6) = '(Ont)' THEN 'ON'
             ELSE 'Other'
         END AS State,
@@ -361,12 +375,12 @@ def get_coverage_data():
     GROUP BY 
         Season,
         CASE 
-            WHEN RIGHT(Home, 5) LIKE '%(%)' THEN SUBSTRING(RIGHT(Home, 4), 2, 2)
+            WHEN RIGHT(Home, 5) LIKE '%(__)' THEN SUBSTRING(RIGHT(Home, 4), 2, 2)
             WHEN RIGHT(Home, 6) = '(Ont)' THEN 'ON'
             ELSE 'Other'
         END
     HAVING CASE 
-            WHEN RIGHT(Home, 5) LIKE '%(%)' THEN SUBSTRING(RIGHT(Home, 4), 2, 2)
+            WHEN RIGHT(Home, 5) LIKE '%(__)' THEN SUBSTRING(RIGHT(Home, 4), 2, 2)
             WHEN RIGHT(Home, 6) = '(Ont)' THEN 'ON'
             ELSE 'Other'
         END != 'Other'
@@ -415,13 +429,13 @@ def create_coverage_heatmap(df):
 
 
 # =============================================================================
-# CHART 6: Average Scores by Rating Bin
+# CHART 6: Average Scores by Rating Bin - FIXED with negative ratings
 # =============================================================================
 def get_scores_by_rating():
     """Get average scores based on team ratings"""
     conn = get_connection()
     
-    # Join scores with rankings to get team ratings at time of game
+    # Fixed query with proper rating bins including negatives
     query = """
     WITH TeamRatings AS (
         SELECT 
@@ -439,16 +453,13 @@ def get_scores_by_rating():
             s.Visitor,
             s.Home_Score,
             s.Visitor_Score,
-            hr.Combined_Rating AS Home_Rating,
-            vr.Combined_Rating AS Visitor_Rating
+            hr.Combined_Rating AS Home_Rating
         FROM HS_Scores s
-        LEFT JOIN TeamRatings hr ON s.Home = hr.Home AND s.Season = hr.Season
-        LEFT JOIN TeamRatings vr ON s.Visitor = vr.Home AND s.Season = vr.Season
+        INNER JOIN TeamRatings hr ON s.Home = hr.Home AND s.Season = hr.Season
         WHERE s.Season >= 1950
             AND s.Home_Score IS NOT NULL
             AND s.Visitor_Score IS NOT NULL
-            AND s.Forfeit IS NULL
-            AND hr.Combined_Rating IS NOT NULL
+            AND (Forfeit IS NULL OR Forfeit = 0)
     )
     SELECT 
         CASE 
@@ -457,7 +468,11 @@ def get_scores_by_rating():
             WHEN Home_Rating >= 60 THEN '60-69'
             WHEN Home_Rating >= 50 THEN '50-59'
             WHEN Home_Rating >= 40 THEN '40-49'
-            ELSE 'Under 40'
+            WHEN Home_Rating >= 30 THEN '30-39'
+            WHEN Home_Rating >= 20 THEN '20-29'
+            WHEN Home_Rating >= 10 THEN '10-19'
+            WHEN Home_Rating >= 0 THEN '0-9'
+            ELSE 'Below 0'
         END AS Rating_Bin,
         COUNT(*) AS Games,
         AVG(CAST(Home_Score AS FLOAT)) AS Avg_Points_For,
@@ -471,22 +486,35 @@ def get_scores_by_rating():
             WHEN Home_Rating >= 60 THEN '60-69'
             WHEN Home_Rating >= 50 THEN '50-59'
             WHEN Home_Rating >= 40 THEN '40-49'
-            ELSE 'Under 40'
+            WHEN Home_Rating >= 30 THEN '30-39'
+            WHEN Home_Rating >= 20 THEN '20-29'
+            WHEN Home_Rating >= 10 THEN '10-19'
+            WHEN Home_Rating >= 0 THEN '0-9'
+            ELSE 'Below 0'
         END
     ORDER BY Rating_Bin DESC
     """
     
     df = pd.read_sql(query, conn)
     conn.close()
+    
+    # Debug: print what we got
+    print(f"   Rating bins found: {df['Rating_Bin'].tolist()}")
+    print(f"   Game counts: {df['Games'].tolist()}")
+    
     return df
 
 
 def create_scores_by_rating_chart(df):
     """Create grouped bar chart of scores by rating bin"""
     
-    # Define order
-    order = ['80+', '70-79', '60-69', '50-59', '40-49', 'Under 40']
-    df['Rating_Bin'] = pd.Categorical(df['Rating_Bin'], categories=order, ordered=True)
+    # Define proper order (highest to lowest)
+    order = ['80+', '70-79', '60-69', '50-59', '40-49', '30-39', '20-29', '10-19', '0-9', 'Below 0']
+    
+    # Filter to only bins that exist in data
+    existing_order = [b for b in order if b in df['Rating_Bin'].values]
+    
+    df['Rating_Bin'] = pd.Categorical(df['Rating_Bin'], categories=existing_order, ordered=True)
     df = df.sort_values('Rating_Bin')
     
     fig = go.Figure()
@@ -516,7 +544,7 @@ def create_scores_by_rating_chart(df):
         line=dict(color='#3498DB', width=3),
         marker=dict(size=10),
         yaxis='y2',
-        hovertemplate='<b>Rating %{x}</b><br>Avg Margin: %{y:.1f}<extra></extra>'
+        hovertemplate='<b>Rating %{x}</b><br>Avg Margin: %{y:+.1f}<extra></extra>'
     ))
     
     fig.update_layout(
@@ -563,6 +591,7 @@ def main():
     # Chart 2: Common Final Scores
     print("\n📊 Chart 2: Most Common Final Scores...")
     df2 = get_common_scores()
+    print(f"   Top 5 scores: {df2.head()['Final_Score'].tolist()}")
     fig2 = create_common_scores_chart(df2)
     save_chart(fig2, 'common_scores.html')
     
@@ -587,19 +616,15 @@ def main():
     # Chart 6: Scores by Rating
     print("\n📊 Chart 6: Average Scores by Rating Bin...")
     df6 = get_scores_by_rating()
-    fig6 = create_scores_by_rating_chart(df6)
-    save_chart(fig6, 'scores_by_rating.html')
+    if len(df6) > 0:
+        fig6 = create_scores_by_rating_chart(df6)
+        save_chart(fig6, 'scores_by_rating.html')
+    else:
+        print("   ⚠️ No rating data available (ratings may be recalculating)")
     
     print("\n" + "=" * 60)
     print("✅ Advanced Statistics Generation Complete!")
     print(f"   Output directory: {OUTPUT_DIR}")
-    print("\n   Generated files:")
-    print("   - scores_by_decade.html")
-    print("   - common_scores.html")
-    print("   - rating_distribution.html")
-    print("   - game_competitiveness.html")
-    print("   - coverage_heatmap.html")
-    print("   - scores_by_rating.html")
 
 
 if __name__ == "__main__":
