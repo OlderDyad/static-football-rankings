@@ -160,11 +160,15 @@ def create_common_scores_chart(df):
     # Reverse for horizontal bar chart (top scores at top)
     df_plot = df.iloc[::-1].reset_index(drop=True)
     
+    # CRITICAL: Convert to string and add quotes/prefix to prevent Plotly interpreting as math
+    # "14-0" gets interpreted as 14 minus 0 = 14, so we need to force text
+    df_plot['Final_Score_Text'] = df_plot['Final_Score'].astype(str)
+    
     fig = go.Figure()
     
     fig.add_trace(go.Bar(
         x=df_plot['Occurrences'],
-        y=df_plot['Final_Score'],
+        y=df_plot['Final_Score_Text'],
         orientation='h',
         marker_color='#9B59B6',
         hovertemplate='<b>%{y}</b><br>Occurrences: %{x:,}<extra></extra>'
@@ -173,11 +177,12 @@ def create_common_scores_chart(df):
     fig.update_layout(
         title={'text': 'Most Common Final Scores (All-Time)', 'x': 0.5, 'font': {'size': 22}},
         xaxis_title='Number of Games',
-        yaxis_title='Final Score',
+        yaxis_title='Final Score (Winner-Loser)',
         plot_bgcolor='white',
         paper_bgcolor='white',
         height=700,
-        margin=dict(l=100)
+        margin=dict(l=100),
+        yaxis=dict(type='category')  # Force categorical axis
     )
     
     fig.update_xaxes(gridcolor='lightgray', showline=True, linecolor='black', tickformat=',d')
