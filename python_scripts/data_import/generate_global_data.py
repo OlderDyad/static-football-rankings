@@ -8,6 +8,7 @@ FIXES APPLIED:
 2. Proper column mapping for margin/win_loss and offense/defense
 3. FIXED: Decade programs now require 7+ seasons (70% of decade) - was incorrectly set to 1
 4. ADDED: Generates all-time-programs-25.json, all-time-programs-50.json, all-time-programs-100.json
+5. FIXED: Added secondaryColor field for proper accent color theming
 """
 
 import json
@@ -64,6 +65,7 @@ def get_hex_color(color_input):
     return STANDARD_COLORS.get(clean_val.title(), '#333333')
 
 def determine_text_color(hex_color):
+    """Calculate readable text color (black or white) based on background brightness"""
     if not hex_color or not hex_color.startswith('#'): return '#FFFFFF'
     try:
         h = hex_color.lstrip('#')
@@ -338,9 +340,10 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_season
         # Match with metadata for visuals
         meta = meta_lookup.get(entity_name.lower())
         
-        # Visuals from metadata
+        # Visuals from metadata - FIXED: Added secondaryColor
         mascot = meta['mascot'] if meta else ""
         bg_color = get_hex_color(meta['bg_color_raw'] if meta else "")
+        secondary_color = get_hex_color(meta['secondary_color_raw'] if meta else "#FFD700")  # ADDED
         text_color = determine_text_color(bg_color)
         logo_url = fix_image_path(meta['logo'] if meta else "")
         school_logo = fix_image_path(meta['school_logo'] if meta else "")
@@ -371,9 +374,10 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_season
             "win_loss": win_loss_val,
             "offense": offense_val,
             "defense": defense_val,
-            "state": state_val,  # Now extracted from name, not metadata
+            "state": state_val,
             "mascot": mascot,
             "backgroundColor": bg_color,
+            "secondaryColor": secondary_color,  # ADDED
             "textColor": text_color,
             "logoURL": logo_url,
             "schoolLogoURL": school_logo,
@@ -382,7 +386,6 @@ def process_global_data(cursor, meta_lookup, mode, decade_start=None, min_season
         
         if 'teams' in mode:
             item['season'] = get_int_value(rank_row, ['season', 'year'], 0)
-            # FIXED: Check games_played first (with underscore) before gamesplayed
             item['games_played'] = get_int_value(rank_row, ['games_played', 'gamesplayed'], 0)
         else:
             item['seasons'] = get_int_value(rank_row, ['seasons'], 0)
@@ -469,6 +472,7 @@ if __name__ == "__main__":
         data_pkg = {
             "mascot": m[2] if m[2] else "",
             "bg_color_raw": m[3] if m[3] else "",
+            "secondary_color_raw": m[4] if m[4] else "",  # ADDED
             "logo": m[5] if m[5] else "",
             "school_logo": m[6] if m[6] else "",
             "website": m[7] if m[7] else "",
