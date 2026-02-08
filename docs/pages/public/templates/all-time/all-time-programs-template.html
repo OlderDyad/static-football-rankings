@@ -309,7 +309,7 @@
             if (!container) return;
             
             const primaryColor = topItem.backgroundColor || '#003366';
-            const secondaryColor = topItem.textColor || '#FFD700';
+            const secondaryColor = topItem.secondaryColor || '#FFD700';
             const program = topItem.program || topItem.team || 'Unknown';
             const mascot = topItem.mascot || '';
             const seasons = topItem.seasons || '';
@@ -346,7 +346,7 @@
         
         function applyTableColors(topItem) {
             const primaryColor = topItem.backgroundColor || '#343a40';
-            const secondaryColor = topItem.textColor || '#ffffff';
+            const secondaryColor = topItem.secondaryColor || '#FFD700';
             
             const thead = document.querySelector('table thead');
             if (thead) {

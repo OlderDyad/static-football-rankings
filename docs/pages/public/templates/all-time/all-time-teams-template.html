@@ -336,7 +336,7 @@
 
             const { team, season, mascot, backgroundColor, textColor, logoURL, schoolLogoURL } = topItem;
             const primaryColor = backgroundColor || '#003087';
-            const secondaryColor = textColor || '#FFD700';
+            const secondaryColor = topItem.secondaryColor || '#FFD700';
             const borderStyle = `border: 3px solid ${secondaryColor}; border-radius: 8px; padding: 5px;`;
 
             const logoHTML = logoURL ? 
@@ -366,7 +366,7 @@
 
         function applyTableColors(topItem) {
             const primaryColor = topItem.backgroundColor || '#343a40';
-            const secondaryColor = topItem.textColor || '#ffffff';
+            const secondaryColor = topItem.secondaryColor || '#FFD700';
 
             const thead = document.querySelector('table thead');
             if (thead) {
