@@ -86,6 +86,9 @@ Write-Host "  - Generating Greatest Games JSON..." -ForegroundColor Yellow
 Set-Location $pythonDir
 python generate_greatest_games_json.py
 
+Write-Host "  - Generating Greatest Rivalries JSON..." -ForegroundColor Yellow
+python generate_greatest_rivalries_json.py
+
 # ---------------------------------------------------------
 # STEP 4: GENERATE STATISTICS (PYTHON)
 # ---------------------------------------------------------
