@@ -110,6 +110,11 @@ function Test-RequiredTemplates {
             Description = "Greatest Games Template"
             Critical = $false
         }
+        @{
+            Path = Join-Path $templateBaseDir "greatest\greatest-rivalries.html"
+            Description = "Greatest Rivalries Template"
+            Critical = $false
+        }
     )
 
     $missingTemplates = @()
@@ -1236,6 +1241,82 @@ function Process-GreatestGames {
     }
 }
 
+function Process-GreatestGames {
+    Write-Host "Processing Greatest Games page..." -ForegroundColor Yellow
+
+    $templatePath = Join-Path $templateBaseDir "greatest\greatest-games.html"
+    $outputDir    = Join-Path $outputBaseDir   "greatest"
+    $outputPath   = Join-Path $outputDir        "greatest-games.html"
+
+    # Ensure output directory exists
+    if (-not (Test-Path $outputDir)) {
+        New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
+        Write-Host "  Created output directory: $outputDir" -ForegroundColor Cyan
+    }
+
+    if (Test-Path $templatePath) {
+        try {
+            $template = Get-Content $templatePath -Raw
+
+            # Inject comments script (same pattern as all other pages)
+            $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+
+            # Remove any stray userStyle tags (housekeeping, same as other functions)
+            $template = $template -replace '<userStyle>Normal</userStyle>', ''
+
+            Set-Content -Path $outputPath -Value $template -Encoding UTF8
+            Write-Host "  Generated: greatest-games.html" -ForegroundColor Green
+        } catch {
+            Write-Error "Error processing Greatest Games template: $_"
+            Generate-ComingSoonPage `
+                -OutputPath $outputPath `
+                -Title "Greatest Games" `
+                -Message "The Greatest Games rankings are coming soon. Please check back later."
+        }
+    } else {
+        Write-Warning "Greatest Games template not found: $templatePath"
+        Generate-ComingSoonPage `
+            -OutputPath $outputPath `
+            -Title "Greatest Games" `
+            -Message "The Greatest Games rankings are coming soon. Please check back later."
+    }
+}
+
+function Process-GreatestRivalries {
+    Write-Host "Processing Greatest Rivalries page..." -ForegroundColor Yellow
+
+    $templatePath = Join-Path $templateBaseDir "greatest\greatest-rivalries.html"
+    $outputDir    = Join-Path $outputBaseDir   "greatest"
+    $outputPath   = Join-Path $outputDir        "greatest-rivalries.html"
+
+    if (-not (Test-Path $outputDir)) {
+        New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
+        Write-Host "  Created output directory: $outputDir" -ForegroundColor Cyan
+    }
+
+    if (Test-Path $templatePath) {
+        try {
+            $template = Get-Content $templatePath -Raw -Encoding UTF8
+            $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+            $template = $template -replace '<userStyle>Normal</userStyle>', ''
+            Set-Content -Path $outputPath -Value $template -Encoding UTF8
+            Write-Host "  Generated: greatest-rivalries.html" -ForegroundColor Green
+        } catch {
+            Write-Error "Error processing Greatest Rivalries template: $_"
+            Generate-ComingSoonPage `
+                -OutputPath $outputPath `
+                -Title "Greatest Rivalries" `
+                -Message "The Greatest Rivalries rankings are coming soon. Please check back later."
+        }
+    } else {
+        Write-Warning "Greatest Rivalries template not found: $templatePath"
+        Generate-ComingSoonPage `
+            -OutputPath $outputPath `
+            -Title "Greatest Rivalries" `
+            -Message "The Greatest Rivalries rankings are coming soon. Please check back later."
+    }
+}
+
 #endregion Processing Functions
 
 #region Main Script Execution
@@ -1365,6 +1446,10 @@ $stateRegions = @{
     # Process Greatest Games
     Write-Host "`nProcessing Greatest Games..." -ForegroundColor Green
     Process-GreatestGames
+
+    # Process Greatest Rivalries
+    Write-Host "`nProcessing Greatest Rivalries..." -ForegroundColor Green
+    Process-GreatestRivalries
 
     # Generate Index Pages
     Write-Host "`nGenerating index pages..." -ForegroundColor Green
