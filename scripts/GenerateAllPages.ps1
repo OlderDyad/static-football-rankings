@@ -1210,7 +1210,7 @@ function Process-GreatestGames {
 
     if (Test-Path $templatePath) {
         try {
-            $template = Get-Content $templatePath -Raw
+            $template = Get-Content $templatePath -Raw -Encoding UTF8
 
             # Inject comments script (same pattern as all other pages)
             $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode

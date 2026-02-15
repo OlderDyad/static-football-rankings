@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greatest Games - McKnight's American Football Rankings</title>
-    <meta name="description" content="The greatest, most dramatic games in high school football history, ranked by the Pulse Rate Index â€” a measure of game quality and competitive tension.">
+    <meta name="description" content="The greatest, most dramatic games in high school football history, ranked by the Pulse Rate Index — a measure of game quality and competitive tension.">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
             border-color: #0d6efd;
         }
 
-        /* Score display â€” bold, compact */
+        /* Score display — bold, compact */
         .score-cell {
             font-weight: 600;
             white-space: nowrap;
@@ -76,7 +76,7 @@
             margin-bottom: 0.4rem;
         }
         .limitation-item::before {
-            content: "âš  ";
+            content: "⚠ ";
             color: #fd7e14;
         }
 
@@ -103,7 +103,7 @@
             padding: 2px 7px;
             border-radius: 4px;
         }
-        .margin-1 { background: #d4edda; color: #155724; }   /* 1pt â€” maximum drama */
+        .margin-1 { background: #d4edda; color: #155724; }   /* 1pt — maximum drama */
         .margin-2-3 { background: #d1ecf1; color: #0c5460; } /* 2-3pt */
         .margin-4-7 { background: #fff3cd; color: #856404; } /* 4-7pt */
         .margin-8 { background: #f8d7da; color: #721c24; }   /* 8pt */
@@ -128,7 +128,7 @@
             vertical-align: middle;
         }
 
-        /* Responsive â€” hide less critical columns on small screens */
+        /* Responsive — hide less critical columns on small screens */
         @media (max-width: 768px) {
             .col-margin, .col-pri { display: none; }
         }
@@ -177,10 +177,10 @@
         <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
             <div>
                 <h1 class="mb-1">Greatest Games</h1>
-                <p class="text-muted mb-0">The most dramatic, highest-quality games in high school football history â€” 1877 to present</p>
+                <p class="text-muted mb-0">The most dramatic, highest-quality games in high school football history — 1877 to present</p>
             </div>
             <div class="text-end">
-                <span class="last-updated">Last updated: <span id="lastUpdated">â€”</span></span>
+                <span class="last-updated">Last updated: <span id="lastUpdated">—</span></span>
             </div>
         </div>
 
@@ -205,9 +205,9 @@
                     <p>Each game is scored by the <strong>Pulse Rate Index</strong>, which combines two things: how good both teams were, and how close the game was.</p>
                     <p>The formula is:</p>
                     <blockquote class="blockquote fs-6">
-                        <code>PRI = (Home Team Rating + Visitor Team Rating) Ã— Margin Multiplier</code>
+                        <code>PRI = (Home Team Rating + Visitor Team Rating) × Margin Multiplier</code>
                     </blockquote>
-                    <p>Team ratings use the <strong>Combined Rating</strong> from the end-of-season final (Week 52) â€” a machine-learningâ€“derived measure of program strength for that season. Only elite programs qualify (see below).</p>
+                    <p>Team ratings use the <strong>Combined Rating</strong> from the end-of-season final (Week 52) — a machine-learning–derived measure of program strength for that season. Only elite programs qualify (see below).</p>
                     <p>The <strong>Margin Multiplier</strong> rewards close games and penalizes comfortable wins:</p>
                     <div class="table-responsive mb-3">
                         <table class="table table-sm table-bordered" style="max-width: 440px;">
@@ -215,10 +215,10 @@
                             <tbody>
                                 <tr><td>Tie</td><td>0.85</td><td>Less decisive than a one-point game</td></tr>
                                 <tr><td>1 point</td><td>1.00</td><td>Maximum drama</td></tr>
-                                <tr><td>2â€“3 points</td><td>0.90</td><td>Field goal range</td></tr>
-                                <tr><td>4â€“7 points</td><td>0.75</td><td>One score game</td></tr>
+                                <tr><td>2–3 points</td><td>0.90</td><td>Field goal range</td></tr>
+                                <tr><td>4–7 points</td><td>0.75</td><td>One score game</td></tr>
                                 <tr><td>8 points</td><td>0.60</td><td>TD + two-point conversion</td></tr>
-                                <tr><td>9+ points</td><td>â€”</td><td>Excluded (not "close" by any standard)</td></tr>
+                                <tr><td>9+ points</td><td>—</td><td>Excluded (not "close" by any standard)</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -230,15 +230,15 @@
                         <li>Five-year rolling average Combined Rating &gt; 20 (sustained excellence, not a one-year wonder)</li>
                         <li>At least 2 seasons of data within the five-year window</li>
                     </ul>
-                    <p>This filter ensures that the results represent genuinely elite matchups â€” not flukes between programs with thin historical records.</p>
+                    <p>This filter ensures that the results represent genuinely elite matchups — not flukes between programs with thin historical records.</p>
 
                     <h6>The PRI Score Shown in the Table</h6>
-                    <p>The PRI score is displayed on a 0â€“100 scale, where 100 represents the highest-scoring game in the dataset. This makes it easy to compare across eras without needing to interpret the raw formula values.</p>
+                    <p>The PRI score is displayed on a 0–100 scale, where 100 represents the highest-scoring game in the dataset. This makes it easy to compare across eras without needing to interpret the raw formula values.</p>
 
                     <h6>Known Limitations</h6>
                     <div class="mt-2">
                         <div class="limitation-item">
-                            <strong>Early Texas data (pre-1995):</strong> Coverage gaps in early-1990s Texas data compress team ratings for that era. Some historically significant Texas games (including John Tyler vs. Plano East, 1994 â€” the "61-point game") rank lower than they deserve and will improve as historical data fills in.
+                            <strong>Early Texas data (pre-1995):</strong> Coverage gaps in early-1990s Texas data compress team ratings for that era. Some historically significant Texas games (including John Tyler vs. Plano East, 1994 — the "61-point game") rank lower than they deserve and will improve as historical data fills in.
                         </div>
                         <div class="limitation-item">
                             <strong>Games with margin &gt; 8 points are excluded</strong> by design, even if they were historically significant matchups. The De La Salle vs. Long Beach Poly rivalry, for example, falls outside the cutoff in most of their meetings.
@@ -262,16 +262,16 @@
                 <span class="fw-semibold me-2 text-muted" style="font-size:0.85rem;">FILTER BY DECADE</span>
                 <div class="decade-filters d-inline-flex">
                     <button class="btn btn-outline-primary decade-btn active" data-decade="all">All</button>
-                    <button class="btn btn-outline-primary decade-btn" data-decade="1870">1870sâ€“1900s</button>
-                    <button class="btn btn-outline-primary decade-btn" data-decade="1910">1910sâ€“1930s</button>
-                    <button class="btn btn-outline-primary decade-btn" data-decade="1940">1940sâ€“1960s</button>
-                    <button class="btn btn-outline-primary decade-btn" data-decade="1970">1970sâ€“1980s</button>
-                    <button class="btn btn-outline-primary decade-btn" data-decade="1990">1990sâ€“2000s</button>
-                    <button class="btn btn-outline-primary decade-btn" data-decade="2010">2010sâ€“Present</button>
+                    <button class="btn btn-outline-primary decade-btn" data-decade="1870">1870s–1900s</button>
+                    <button class="btn btn-outline-primary decade-btn" data-decade="1910">1910s–1930s</button>
+                    <button class="btn btn-outline-primary decade-btn" data-decade="1940">1940s–1960s</button>
+                    <button class="btn btn-outline-primary decade-btn" data-decade="1970">1970s–1980s</button>
+                    <button class="btn btn-outline-primary decade-btn" data-decade="1990">1990s–2000s</button>
+                    <button class="btn btn-outline-primary decade-btn" data-decade="2010">2010s–Present</button>
                 </div>
             </div>
             <div class="ms-auto">
-                <span class="text-muted" style="font-size:0.85rem;" id="resultCount">Showing â€” games</span>
+                <span class="text-muted" style="font-size:0.85rem;" id="resultCount">Showing — games</span>
             </div>
         </div>
 
@@ -280,7 +280,7 @@
              ============================================================ -->
         <div id="loadingIndicator">
             <div class="spinner-border text-primary mb-3" role="status"></div>
-            <p>Loading games dataâ€¦</p>
+            <p>Loading games data…</p>
         </div>
 
         <div id="tableWrapper" style="display:none;">
@@ -316,7 +316,7 @@
                 </h5>
                 <p class="card-text text-muted mb-0">
                     Which two programs have produced the most consistently great, dramatic games against each other over time?
-                    Greatest Rivalries will rank head-to-head series by aggregated game quality, weighted by recency and competitive balance â€”
+                    Greatest Rivalries will rank head-to-head series by aggregated game quality, weighted by recency and competitive balance —
                     giving a definitive answer to who the best rivalries in high school football history really are.
                 </p>
             </div>
@@ -333,7 +333,7 @@
                 <div class="card">
                     <div class="card-body">
                         <textarea id="commentText" class="form-control mb-2" rows="3"
-                                  placeholder="Share your thoughts on the greatest games rankingsâ€¦"></textarea>
+                                  placeholder="Share your thoughts on the greatest games rankings…"></textarea>
                         <div class="d-flex justify-content-between align-items-center">
                             <button id="submitComment" class="btn btn-primary">Post Comment</button>
                             <small class="text-muted">Posting as <span id="authorName">Anonymous</span></small>
@@ -347,7 +347,7 @@
 
     <footer class="mt-5 mb-3">
         <div class="text-center">
-            <p>Â© 2025 McKnight's Football Rankings</p>
+            <p>© 2025 McKnight's Football Rankings</p>
         </div>
     </footer>
 
@@ -367,7 +367,7 @@
         let allGames = [];
         let activeDecade = 'all';
 
-        // â”€â”€ Decade range mapping â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ── Decade range mapping ──────────────────────────────────────────
         const DECADE_RANGES = {
             'all':  [0,    9999],
             '1870': [1877, 1909],
@@ -378,7 +378,7 @@
             '2010': [2010, 9999],
         };
 
-        // â”€â”€ Margin badge â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ── Margin badge ──────────────────────────────────────────────────
         function marginClass(margin) {
             const m = Math.abs(margin);
             if (m === 0) return '';
@@ -388,14 +388,14 @@
             return 'margin-8';
         }
 
-        // â”€â”€ Rank cell class â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ── Rank cell class ───────────────────────────────────────────────
         function rankClass(rank) {
             if (rank <= 10) return 'rank-cell top-10';
             if (rank <= 25) return 'rank-cell top-25';
             return 'rank-cell';
         }
 
-        // â”€â”€ PRI bar width (0â€“100 normalised) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ── PRI bar width (0–100 normalised) ─────────────────────────────
         function priBar(pri_normalised) {
             const w = Math.max(4, Math.round(pri_normalised));
             return `<div class="pri-bar-wrap">
@@ -404,18 +404,18 @@
                     </div>`;
         }
 
-        // â”€â”€ Score cell â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ── Score cell ────────────────────────────────────────────────────
         function scoreCell(homeScore, visitorScore, margin) {
             // margin is home - visitor; positive = home won
             const homeWon = margin >= 0;
             const homeClass  = homeWon  ? 'score-winner' : 'score-loser';
             const visClass   = !homeWon ? 'score-winner' : 'score-loser';
             return `<span class="score-cell ${homeClass}">${homeScore}</span>`
-                 + `<span class="text-muted px-1">â€“</span>`
+                 + `<span class="text-muted px-1">–</span>`
                  + `<span class="score-cell ${visClass}">${visitorScore}</span>`;
         }
 
-        // â”€â”€ Build one table row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ── Build one table row ───────────────────────────────────────────
         function buildRow(g) {
             const absMargin = Math.abs(g.margin);
             const mBadge = `<span class="margin-badge ${marginClass(g.margin)}">${absMargin === 0 ? 'TIE' : absMargin + ' pt'}</span>`;
@@ -436,7 +436,7 @@
             return d.innerHTML;
         }
 
-        // â”€â”€ Render filtered games â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ── Render filtered games ─────────────────────────────────────────
         function render() {
             const [minYear, maxYear] = DECADE_RANGES[activeDecade];
             const filtered = allGames.filter(g => g.season >= minYear && g.season <= maxYear);
@@ -456,7 +456,7 @@
             count.textContent = `Showing ${filtered.length} game${filtered.length !== 1 ? 's' : ''}`;
         }
 
-        // â”€â”€ Decade filter button wiring â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ── Decade filter button wiring ───────────────────────────────────
         document.querySelectorAll('.decade-btn').forEach(btn => {
             btn.addEventListener('click', function () {
                 document.querySelectorAll('.decade-btn').forEach(b => b.classList.remove('active'));
@@ -466,7 +466,7 @@
             });
         });
 
-        // â”€â”€ Load JSON data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ── Load JSON data ────────────────────────────────────────────────
         fetch(DATA_URL)
             .then(r => {
                 if (!r.ok) throw new Error(`HTTP ${r.status}`);
