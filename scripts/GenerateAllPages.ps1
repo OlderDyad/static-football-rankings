@@ -25,7 +25,8 @@ $directories = @(
     (Join-Path $outputBaseDir "decades"),
     (Join-Path $outputBaseDir "states"),
     (Join-Path $outputBaseDir "all-time"),
-    (Join-Path $outputBaseDir "latest-season")
+    (Join-Path $outputBaseDir "latest-season"),
+    (Join-Path $outputBaseDir "greatest")
 )
 
 foreach ($dir in $directories) {
@@ -102,6 +103,11 @@ function Test-RequiredTemplates {
         @{
             Path = Join-Path $templateBaseDir "index\all-time-index-template.html"
             Description = "All-Time Index Template"
+            Critical = $false
+        }
+        @{
+            Path = Join-Path $templateBaseDir "greatest\greatest-games.html"
+            Description = "Greatest Games Template"
             Critical = $false
         }
     )
@@ -1188,6 +1194,48 @@ function Process-McKnightNationalChampions {
         Generate-ComingSoonPage -OutputPath (Join-Path $outputBaseDir "mcknight-national-champions.html") -Title "McKnight National Champions" -Message "Coming soon!"
     }
 }
+
+function Process-GreatestGames {
+    Write-Host "Processing Greatest Games page..." -ForegroundColor Yellow
+
+    $templatePath = Join-Path $templateBaseDir "greatest\greatest-games.html"
+    $outputDir    = Join-Path $outputBaseDir   "greatest"
+    $outputPath   = Join-Path $outputDir        "greatest-games.html"
+
+    # Ensure output directory exists
+    if (-not (Test-Path $outputDir)) {
+        New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
+        Write-Host "  Created output directory: $outputDir" -ForegroundColor Cyan
+    }
+
+    if (Test-Path $templatePath) {
+        try {
+            $template = Get-Content $templatePath -Raw
+
+            # Inject comments script (same pattern as all other pages)
+            $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+
+            # Remove any stray userStyle tags (housekeeping, same as other functions)
+            $template = $template -replace '<userStyle>Normal</userStyle>', ''
+
+            Set-Content -Path $outputPath -Value $template -Encoding UTF8
+            Write-Host "  Generated: greatest-games.html" -ForegroundColor Green
+        } catch {
+            Write-Error "Error processing Greatest Games template: $_"
+            Generate-ComingSoonPage `
+                -OutputPath $outputPath `
+                -Title "Greatest Games" `
+                -Message "The Greatest Games rankings are coming soon. Please check back later."
+        }
+    } else {
+        Write-Warning "Greatest Games template not found: $templatePath"
+        Generate-ComingSoonPage `
+            -OutputPath $outputPath `
+            -Title "Greatest Games" `
+            -Message "The Greatest Games rankings are coming soon. Please check back later."
+    }
+}
+
 #endregion Processing Functions
 
 #region Main Script Execution
@@ -1314,6 +1362,10 @@ $stateRegions = @{
     Process-MediaNationalChampions
     Process-McKnightNationalChampions
 
+    # Process Greatest Games
+    Write-Host "`nProcessing Greatest Games..." -ForegroundColor Green
+    Process-GreatestGames
+
     # Generate Index Pages
     Write-Host "`nGenerating index pages..." -ForegroundColor Green
 
@@ -1346,6 +1398,8 @@ $stateRegions = @{
         Set-Content -Path $decadeIndexPath -Value $decadeIndexContent -Encoding UTF8
         Write-Host "Generated decades index page" -ForegroundColor Green
     }
+
+
 
     # All-time index
     Write-Host "Generating all-time index..." -ForegroundColor Yellow
