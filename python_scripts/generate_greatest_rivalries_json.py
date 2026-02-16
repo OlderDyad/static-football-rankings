@@ -158,17 +158,19 @@ DROP TABLE #EP_Rivals;
 
 SQL_ALLTIME_RECORD = """
 SELECT
-    SUM(CASE WHEN Home = ? AND Home_Score > Visitor_Score THEN 1
-             WHEN Visitor = ? AND Visitor_Score > Home_Score THEN 1
-             ELSE 0 END)   AS Team_A_Wins,
-    SUM(CASE WHEN Home = ? AND Visitor_Score > Home_Score THEN 1
-             WHEN Visitor = ? AND Home_Score > Visitor_Score THEN 1
-             ELSE 0 END)   AS Team_B_Wins,
+    SUM(CASE WHEN (Home = ? AND Home_Score > Visitor_Score)
+             OR   (Visitor = ? AND Visitor_Score > Home_Score)
+             THEN 1 ELSE 0 END)   AS Team_A_Wins,
+    SUM(CASE WHEN (Home = ? AND Visitor_Score > Home_Score)
+             OR   (Visitor = ? AND Home_Score > Visitor_Score)
+             THEN 1 ELSE 0 END)   AS Team_B_Wins,
     SUM(CASE WHEN Home_Score = Visitor_Score THEN 1 ELSE 0 END) AS Ties
 FROM HS_Scores
 WHERE
-    (Home = ? AND Visitor = ?)
-    OR (Home = ? AND Visitor = ?)
+    (
+        (Home = ? AND Visitor = ?)
+        OR (Home = ? AND Visitor = ?)
+    )
     AND (Future_Game IS NULL OR Future_Game = 0)
     AND (Forfeit IS NULL OR Forfeit = 0);
 """
