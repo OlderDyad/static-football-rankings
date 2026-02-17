@@ -21,11 +21,11 @@ cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
 
 Run the script:
 
-**CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\**
+**CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\**
 
-**python consolidation_workflow_v3.py**
+**.\run_update_cycle.ps1**
 
-**python update_media_national_champions.py**
+**python update_media_national_champions.py** Accidently deleted rebuild import from wikipedia to SQL table
 
 **python ambiguous_names_cleanup.py**
 

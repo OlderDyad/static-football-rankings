@@ -4,7 +4,12 @@ cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
 **.\venv\Scripts\Activate**
 
 CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
-python python pull_sheets_to_sql.py
+python pull_sheets_to_sql.py
+
+add names from: "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\excel_files\New_HS_Team_Names.csv"
+**python import_new_teams.py**
+
+**python bulk_convert_colors_onetime.py**
 
 ### **Command Line Quick Reference**
 

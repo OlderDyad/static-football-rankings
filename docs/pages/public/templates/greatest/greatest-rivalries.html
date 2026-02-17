@@ -133,6 +133,11 @@
             vertical-align: middle;
         }
 
+        /* Hide detail row background when collapsed */
+        .games-detail-row td {
+            background: transparent;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .col-meetings, .col-range, .col-pri { display: none; }
@@ -348,7 +353,6 @@
                         <span class="rivalry-vs">vs</span>
                         <span class="rivalry-team">${escapeHtml(r.team_b)}</span>
                     </div>
-                    ${gamesHtml}
                 </td>
                 <td class="col-meetings text-center">
                     <span class="meetings-badge">${r.qualifying_meetings}</span>
@@ -366,6 +370,11 @@
                        aria-expanded="false">
                         Games &#9660;
                     </a>
+                </td>
+            </tr>
+            <tr class="games-detail-row">
+                <td colspan="7" class="p-0 border-0">
+                    ${gamesHtml}
                 </td>
             </tr>`;
         }

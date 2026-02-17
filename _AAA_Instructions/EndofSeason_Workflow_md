@@ -1,3 +1,4 @@
+
 # End of Season MaxPreps Workflow
 ## Two-Phase Approach for Capturing Regular Season + Playoff Games
 
@@ -750,3 +751,585 @@ DELETE FROM scraping_batches WHERE status = 'failed';
 
 *Last Updated: December 2024*
 *For 2024 High School Football Season*
+
+
+# END-OF-SEASON RECOGNITION WORKFLOW
+## Annual Process for Identifying and Contacting Top Teams
+
+**Last Updated:** January 2026  
+**Next Execution:** December 2026 (after 2026 season)
+
+---
+
+## OVERVIEW
+
+This workflow identifies high school football teams that deserve recognition for either:
+1. **Top-Rated in State** - #1 Combined rating in their state for the current season
+2. **Program Record** - Best season in their program's history (25+ seasons minimum)
+3. **Double Recognition** - Both achievements in the same season
+
+**Purpose:** Build relationships with top programs, generate traffic, establish authority
+
+**Frequency:** Once per year, approximately 2-4 weeks after season ends
+
+**Time Investment:** 
+- Initial data generation: 2 hours
+- Contact research: 20-40 hours (spread over weeks)
+- Email outreach: 10-20 hours
+
+---
+
+## PHASE 1: DATA PREPARATION (December, Week 1-2)
+
+### Prerequisites
+✅ 2025 season data fully imported (MaxPreps scraping complete)  
+✅ Ranking calculator has processed through Week 52  
+✅ All game scores imported for current season  
+✅ GetLatestSeasonTeams procedure working correctly
+
+### Step 1.1: Verify Data Completeness
+
+Run these validation queries:
+
+```sql
+-- Check if current season data exists
+SELECT TOP 10 * FROM HS_Rankings WHERE Season = 2026 AND Week = 52;
+
+-- Verify game counts are reasonable
+SELECT COUNT(*) FROM HS_Scores WHERE Season = 2026;
+
+-- Check for teams with no games (will be excluded)
+SELECT Home, COUNT(*) as GameCount
+FROM HS_Scores
+WHERE Season = 2026
+GROUP BY Home
+HAVING COUNT(*) < 5;
+```
+
+**Expected Results:**
+- 5,000+ teams with Week 52 ratings
+- 50,000+ games for current season
+- < 100 teams with insufficient games
+
+### Step 1.2: Run Recognition Report
+
+```sql
+-- Generate the recognition report
+EXEC Get_2025_Recognition_Report_FAST;
+```
+
+**Expected Performance:** 60-90 seconds  
+**Expected Output:** 500-700 teams
+
+**Review Summary:**
+- Double Recognition: ~15-25 teams
+- Top-Rated in State: ~40-55 teams  
+- Program Record: ~450-650 teams
+
+### Step 1.3: Export Data
+
+Run the Python export script:
+
+```bash
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+python export_recognition_report.py
+```
+
+**Outputs Created:**
+- `Recognition_Report_2025_[timestamp].csv` - Full report
+- `Recognition_2025_Double_Recognition_[timestamp].csv` - Priority targets
+- `Recognition_2025_Top-Rated_in_State_[timestamp].csv` - State leaders
+- `Recognition_2025_Program_Record_[timestamp].csv` - Historical bests
+- `Recognition_2025_PRIORITY_[timestamp].csv` - Combined priority list
+- `Email_Merge_Data_2025_[timestamp].csv` - Email template data
+
+**Location:** `C:\Users\demck\OneDrive\Football_2024\static-football-rankings\recognition\2025\`
+
+---
+
+## PHASE 2: CONTACT RESEARCH (December-January, Ongoing)
+
+### Priority Order
+1. **Double Recognition** (15-25 teams) - IMMEDIATE
+2. **Top 100 National Rank + Program Record** - HIGH PRIORITY
+3. **All Top-Rated in State** - MEDIUM PRIORITY
+4. **Remaining Program Records** - BATCH PROCESS
+
+### Step 2.1: Website Research
+
+For each team, find their athletic website:
+
+**Search Patterns:**
+1. Google: `"[Team Name]" [City] [State] athletics`
+2. Check school district website → Athletics section
+3. Look for MaxPreps team page (often has website link)
+4. Check NFHS Network, Hudl, or state association sites
+
+**Common URL Patterns:**
+- Public schools: `[district].org/athletics` or `[school].[district].org/athletics`
+- Private schools: `[schoolname].org/athletics`
+- Dedicated domains: `[teamname]athletics.com`
+
+**Track in CSV:**
+- Column: `Website_Status` → "Found", "Not Found", "Need Research"
+- Column: `Website` → Full URL
+
+### Step 2.2: Contact Information Mining
+
+**For EACH website found, collect:**
+
+1. **Athletic Director**
+   - Name
+   - Email (usually: firstname.lastname@domain or adname@domain)
+   - Title
+
+2. **Head Football Coach**
+   - Name  
+   - Email (usually: firstname.lastname@domain or coachname@domain)
+   - Title
+
+3. **Athletic Department Email**
+   - General contact: athletics@domain or ad@domain
+   - Fallback if individual emails not found
+
+4. **Main Phone**
+   - Athletic department main line
+   - School main line as fallback
+
+**Email Discovery Tips:**
+- Check "Staff Directory" pages
+- Look in coaching staff section
+- Search athletics contact page
+- Try common patterns if exact email not listed
+- Use Hunter.io or similar tools to verify patterns
+
+**Track in CSV:**
+- `Athletic_Director` - Full name
+- `AD_Email` - Email address
+- `Head_Coach` - Full name
+- `Coach_Email` - Email address
+- `Athletic_Dept_Email` - General contact
+- `Main_Phone` - Phone number
+- `Contact_Notes` - Any special notes
+
+### Step 2.3: Research Workflow
+
+**Time Budget:**
+- Double Recognition: 15-20 minutes per team (thorough research)
+- Top-Rated: 10 minutes per team
+- Program Record: 5-7 minutes per team
+
+**Batch Processing:**
+- Research 10-15 teams at a time
+- Take breaks to avoid burnout
+- Update CSV after each batch
+
+**Missing Information Protocol:**
+1. Try school district main directory
+2. Call main school line to ask for AD/coach contact
+3. Leave information as "General Contact Only" and use dept email
+4. Flag for follow-up research if high priority
+
+---
+
+## PHASE 3: EMAIL CAMPAIGN (January-February)
+
+### Step 3.1: Prepare Email Templates
+
+Use the templates from `Email_Templates_2025.md`
+
+**Customize for each recognition type:**
+- Template 1: Double Recognition
+- Template 2: Top-Rated in State Only
+- Template 3: Program Record Only
+
+**Mail Merge Fields:**
+All fields automatically pulled from `Email_Merge_Data_2025_[timestamp].csv`
+
+### Step 3.2: Sending Schedule
+
+**Week 1 (Days 1-3):** Double Recognition
+- Send 5-10 per day
+- Personal review of each email before sending
+- Highest touch, most personalization
+
+**Week 2-3 (Days 4-14):** Top-Rated in State
+- Send 10-15 per day
+- Review in batches
+- Personal touch but more efficient
+
+**Week 4-6 (Days 15-30):** Top 100 Program Records
+- Send 15-25 per day
+- Batch process with mail merge
+- Standard personalization
+
+**Ongoing (Days 31+):** Remaining Program Records
+- Send 25-50 per day
+- Full automation via mail merge
+- Monitor bounce rate
+
+### Step 3.3: Email Platform Setup
+
+**Recommended:** Use Mail Merge tool in Gmail, Outlook, or dedicated platform
+
+**Setup:**
+1. Import `Email_Merge_Data_2025_[timestamp].csv`
+2. Map fields to template placeholders
+3. Set up BCC to tracking email
+4. Enable read receipts (if available)
+5. Configure sending limits (stay under provider limits)
+
+**Gmail Limits:** 500/day  
+**Outlook Limits:** Varies by account type  
+**Dedicated Platform:** Follow platform guidelines
+
+### Step 3.4: Tracking Responses
+
+**Track in CSV:**
+- `Email_Sent_Date` - Date sent
+- `Email_Status` - Sent, Bounced, Opened, Replied
+- `Response_Notes` - Summary of any response
+- `Follow_Up_Needed` - Yes/No
+- `Follow_Up_Date` - When to follow up
+
+**Response Types:**
+1. **Positive Interest** - Thank you, wants more info
+2. **Information Shared** - Sends photos, roster, etc.
+3. **Acknowledgment** - Brief thank you, no follow-up needed
+4. **No Response** - Track for potential follow-up
+5. **Bounced** - Flag for contact research update
+
+### Step 3.5: Follow-Up Protocol
+
+**Timing:** 10-14 days after initial email
+
+**Follow-Up Only For:**
+- Double Recognition teams (all)
+- Top 50 National Rank teams
+- Teams that opened but didn't reply
+- Teams with specific engagement history
+
+**Follow-Up Template:**
+
+```
+Subject: Re: [Original Subject]
+
+Hi [Name],
+
+I wanted to follow up on my previous email recognizing [TEAM]'s exceptional 2025 season. 
+
+[Original recognition summary - brief version]
+
+I know how busy this time of year is, so no response necessary if you've already seen the recognition. If you'd like to share any team photos, season highlights, or roster information for us to feature, we'd be honored to add it to your program's page.
+
+Congratulations again on an outstanding season.
+
+Best,
+David McKnight
+```
+
+---
+
+## PHASE 4: CONTENT ENHANCEMENT (Ongoing)
+
+### Step 4.1: Process Responses
+
+**For teams that provide content:**
+
+1. **Photos**
+   - Add to team page
+   - Credit source
+   - Optimize for web
+
+2. **Roster Information**
+   - Add to historical records if available
+   - Link to team page
+
+3. **Season Highlights**
+   - Create news/blog post
+   - Link from team page
+   - Share on social if applicable
+
+4. **Coach/AD Quotes**
+   - Feature in recognition section
+   - Use for future promotion
+
+### Step 4.2: Build Relationships
+
+**For engaged programs:**
+- Add to preferred contact list
+- Note for next season's outreach
+- Consider for feature stories
+- Invite to share future updates
+
+**Track:**
+- Programs with ongoing engagement
+- Programs that want annual recognition
+- Programs open to collaboration
+
+### Step 4.3: Generate Traffic Report
+
+**At campaign end, analyze:**
+- Total teams contacted
+- Response rate by category
+- Website traffic increase
+- Page engagement metrics
+- Social media mentions
+
+**Document for next year:**
+- What worked well
+- What to improve
+- Updated timing recommendations
+- Template effectiveness
+
+---
+
+## PHASE 5: ANNUAL REVIEW & PREPARATION
+
+### Step 5.1: Year-End Checklist (Before Next Season)
+
+□ Archive all recognition files to permanent storage  
+□ Document response rates and engagement metrics  
+□ Update email templates based on feedback  
+□ Review and improve website research techniques  
+□ Note any procedure or data issues for IT fixes  
+□ Update this workflow document with improvements  
+
+### Step 5.2: Database Maintenance
+
+**Update for next year:**
+
+```sql
+-- Create next year's procedure
+CREATE OR ALTER PROCEDURE [dbo].[Get_2026_Recognition_Report_FAST]
+AS
+BEGIN
+    -- [Copy from 2025 version]
+    -- Change all 2025 references to 2026
+    -- Update season comparisons (< 2026)
+END;
+```
+
+**Update Python script:**
+- Change year in file paths (2025 → 2026)
+- Update procedure call name
+- Update output directory
+
+### Step 5.3: Timeline Planning
+
+**Recommended Annual Schedule:**
+
+| Time Period | Activity |
+|------------|----------|
+| Nov 1-15 | Monitor MaxPreps scraping completion |
+| Nov 15-30 | Verify all playoff games captured |
+| Dec 1-7 | Run ranking calculator through Week 52 |
+| Dec 8-14 | Generate recognition report & export |
+| Dec 15-31 | Contact research (priority teams) |
+| Jan 1-15 | Email campaign phase 1 (double + top-rated) |
+| Jan 16-31 | Email campaign phase 2 (top 100 program records) |
+| Feb 1-28 | Email campaign phase 3 (remaining) + follow-ups |
+| Mar 1-15 | Process responses, enhance content |
+| Mar 16-31 | Final reporting and documentation |
+
+---
+
+## TROUBLESHOOTING
+
+### Issue: Recognition report takes too long (>5 minutes)
+
+**Possible Causes:**
+1. HS_Scores table has grown significantly
+2. Missing indexes on temp tables
+3. Database needs maintenance
+
+**Solutions:**
+```sql
+-- Check table sizes
+SELECT COUNT(*) FROM HS_Scores;  -- Should be <6M
+SELECT COUNT(*) FROM HS_Rankings;  -- Should be <550K
+
+-- Rebuild indexes
+ALTER INDEX ALL ON HS_Scores REBUILD;
+ALTER INDEX ALL ON HS_Rankings REBUILD;
+
+-- Update statistics
+UPDATE STATISTICS HS_Scores;
+UPDATE STATISTICS HS_Rankings;
+```
+
+### Issue: Teams missing from report
+
+**Check:**
+1. Do they have 25+ seasons? (Filter requirement)
+2. Do they have 5+ games in current season?
+3. Is their Week 52 rating calculated?
+
+```sql
+-- Verify specific team
+SELECT * FROM HS_Rankings 
+WHERE Home = 'Team Name (ST)' AND Season = 2025 AND Week = 52;
+
+SELECT COUNT(*) FROM HS_Scores
+WHERE (Home = 'Team Name (ST)' OR Visitor = 'Team Name (ST)')
+  AND Season = 2025;
+```
+
+### Issue: Historical best seems wrong
+
+**Verify manually:**
+```sql
+-- Check team's all-time ratings
+SELECT TOP 10
+    Season,
+    [Combined calculation]
+FROM HS_Rankings
+WHERE Home = 'Team Name (ST)' AND Week = 52
+ORDER BY [Combined] DESC;
+```
+
+**Common causes:**
+- Game count filter excluding legitimate seasons
+- Name variations in historical data
+- Missing historical game data
+
+### Issue: Email bounces
+
+**Resolution:**
+1. Verify email pattern is correct for that school
+2. Try alternate contacts (dept email, phone call)
+3. Check if domain changed (school website updates)
+4. Flag for manual outreach via phone or website form
+
+### Issue: Low response rate
+
+**Improvements for next year:**
+1. Send earlier in season (less off-season distraction)
+2. Shorten email templates (too long = skipped)
+3. Lead with specific stats in subject line
+4. A/B test different subject lines
+5. Send from personal email vs generic
+6. Include visual (chart/badge) in email
+
+---
+
+## BEST PRACTICES
+
+### Data Quality
+- ✅ Always verify procedure runs successfully before bulk export
+- ✅ Spot-check 10-15 teams manually to validate calculations
+- ✅ Review state top-rated lists for obvious errors
+- ✅ Compare to your public rankings pages for consistency
+
+### Contact Research  
+- ✅ Start with priority teams (double recognition) for quality time
+- ✅ Save difficult-to-find contacts for later batches
+- ✅ Document search process for teams with no public contacts
+- ✅ Build relationships with state association contacts
+
+### Email Campaign
+- ✅ Personal tone beats formal/automated
+- ✅ Specific stats beat generic praise
+- ✅ Shorter emails get better responses
+- ✅ One ask per email (don't request multiple things)
+- ✅ Make it easy to respond (yes/no questions)
+
+### Relationship Building
+- ✅ Respond quickly to any replies
+- ✅ Over-deliver on promises (add extra features they mention)
+- ✅ Credit sources when using their content
+- ✅ Follow up next year with past responders
+- ✅ Build a "VIP list" of engaged programs
+
+---
+
+## SUCCESS METRICS
+
+Track these annually for improvement:
+
+**Coverage Metrics:**
+- Total teams recognized
+- Percentage with contact info found
+- Percentage successfully contacted
+
+**Engagement Metrics:**
+- Email open rate (target: >30%)
+- Response rate (target: >10%)
+- Content contribution rate (target: >5%)
+- Follow-up engagement rate
+
+**Traffic Metrics:**
+- Website visits during campaign
+- Page views for featured teams
+- Time on site increase
+- Return visitor rate
+
+**Relationship Metrics:**
+- Programs added to preferred list
+- Programs requesting annual recognition
+- Programs sharing on social media
+- Programs linking to your site
+
+---
+
+## FILES & LOCATIONS
+
+**SQL Scripts:**
+- `SP_Get_2025_Recognition_Report_FAST.sql` - Stored procedure
+- Location: SQL Server database
+
+**Python Scripts:**
+- `export_recognition_report.py` - Data export
+- Location: `C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\`
+
+**Email Templates:**
+- `Email_Templates_2025.md` - All templates
+- Location: `C:\Users\demck\OneDrive\Football_2024\static-football-rankings\recognition\2025\`
+
+**Data Files:**
+- Recognition reports (CSV)
+- Email merge data (CSV)
+- Contact research tracking (Excel/CSV)
+- Location: `C:\Users\demck\OneDrive\Football_2024\static-football-rankings\recognition\2025\`
+
+**Documentation:**
+- This workflow document
+- Response tracking spreadsheet
+- Campaign results summary
+- Location: `C:\Users\demck\OneDrive\Football_2024\static-football-rankings\recognition\`
+
+---
+
+## ANNUAL UPDATE CHECKLIST
+
+When preparing for next year's campaign:
+
+□ Update procedure name (2025 → 2026)  
+□ Update Python script year references  
+□ Update email template year references  
+□ Update output directories for new year  
+□ Review and update email templates based on previous responses  
+□ Update timeline based on actual completion dates  
+□ Document any database changes needed  
+□ Update this workflow doc with improvements  
+
+---
+
+## CONTACT & SUPPORT
+
+**For questions or issues:**
+- Review troubleshooting section above
+- Check Claude project knowledge for detailed docs
+- Reference master workflow documentation
+
+**Key Resources:**
+- Project files in Claude
+- Recognition tracking spreadsheet
+- Past year's campaign results
+- Email response archive
+
+---
+
+**Document Version:** 1.0  
+**Created:** January 2026  
+**Next Review:** January 2027
