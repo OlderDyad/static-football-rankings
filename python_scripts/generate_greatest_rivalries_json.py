@@ -10,7 +10,9 @@ Approach:
             Compute: meeting count, total PRI, average PRI, season range.
   Step 3 — Pull all-time head-to-head record for each qualifying pair
             from HS_Scores (no elite/margin filter).
-  Step 4 — Filter to pairs with >= MIN_MEETINGS qualifying meetings.
+  Step 4 — Pull ALL games ever played between each qualifying pair.
+            Mark qualifying games with PRI scores; non-qualifying get null.
+  Step 5 — Filter to pairs with >= MIN_MEETINGS qualifying meetings.
             Sort by Total PRI descending. Output top 100.
 
 Output JSON schema:
@@ -29,9 +31,11 @@ Output JSON schema:
         "alltime_team_a_wins":int,
         "alltime_team_b_wins":int,
         "alltime_ties":       int,
+        "alltime_games":      int,   # total games played
         "series_leader":      str,   # "Team A leads X-Y", "Series tied X-X"
-        "qualifying_games":   list   # [{season, home, visitor, home_score,
-                                     #   visitor_score, margin, pri_normalised}]
+        "all_games":          list   # [{season, home, visitor, home_score,
+                                     #   visitor_score, margin, qualifying,
+                                     #   pri_normalised (null if not qualifying)}]
       }
     ]
   }
@@ -65,12 +69,6 @@ MIN_MEETINGS = 5        # minimum qualifying meetings to appear — tune as need
 TOP_RIVALS   = 100      # number of rivalries to output
 
 # ── SQL: Pull qualifying games ────────────────────────────────────────────────
-#
-# Same elite filter as Greatest Games:
-#   - Both teams Combined_Rating > 20, five-year avg > 20, >= 2 seasons in window
-#   - Non-11-man programs excluded via HS_Team_Level_History
-#   - Margin <= 8
-# Returns top 50,000 by PRI descending.
 
 SQL_QUALIFYING_GAMES = """
 IF OBJECT_ID('tempdb..#EP_Rivals') IS NOT NULL DROP TABLE #EP_Rivals;
@@ -153,14 +151,7 @@ DROP TABLE #EP_Rivals;
 
 # ── SQL: All-time head-to-head record for a pair ──────────────────────────────
 #
-# No elite or margin filter — all games ever played between the two programs.
-# Returns win counts for each team plus ties.
-#
-# FIX: Team_B_Wins is computed as "games where Team_A lost" (flipping > to <).
-# This avoids a pyodbc/SQL Server parameter binding issue where two identical
-# CASE expression patterns with different positional ? params can return the
-# same result.  By using distinct SQL logic (> vs <) for Team_A_Wins vs
-# Team_B_Wins, all 4 CASE params reference team_a and the results are correct.
+# Team_B_Wins computed as "games team_a lost" to avoid parameter binding issues.
 
 SQL_ALLTIME_RECORD = """
 SELECT
@@ -179,6 +170,29 @@ WHERE
     )
     AND (Future_Game IS NULL OR Future_Game = 0)
     AND (Forfeit IS NULL OR Forfeit = 0);
+"""
+
+# ── SQL: All games ever played between a pair ─────────────────────────────────
+#
+# Returns every game (no elite/margin filter) for the full series history.
+
+SQL_ALL_GAMES = """
+SELECT
+    Season,
+    Home,
+    Visitor,
+    Home_Score,
+    Visitor_Score,
+    Margin
+FROM HS_Scores
+WHERE
+    (
+        (Home = ? AND Visitor = ?)
+        OR (Home = ? AND Visitor = ?)
+    )
+    AND (Future_Game IS NULL OR Future_Game = 0)
+    AND (Forfeit IS NULL OR Forfeit = 0)
+ORDER BY Season ASC, Home ASC;
 """
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -217,6 +231,11 @@ def series_leader_text(team_a, team_b, a_wins, b_wins, ties):
         return f"{team_b} leads {b_wins}-{a_wins}" + (f"-{ties}" if ties else "")
     else:
         return f"Series tied {a_wins}-{b_wins}" + (f"-{ties}" if ties else "")
+
+def game_key(season, home, visitor, home_score, visitor_score):
+    """Unique key for a game to match qualifying games against all games."""
+    return (int(season), str(home).strip(), str(visitor).strip(),
+            int(home_score), int(visitor_score))
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
@@ -267,9 +286,10 @@ def main():
     games = [dict(zip(columns, r)) for r in rows]
     max_pri = float(max(g["pri_raw"] for g in games)) if games else 1.0
 
-    # Aggregate
+    # Aggregate qualifying games by pair
     pair_data = defaultdict(lambda: {
-        "games": [],
+        "qualifying_games": [],
+        "qualifying_keys":  set(),   # for fast lookup in Step 4
         "seasons": [],
     })
 
@@ -279,15 +299,19 @@ def main():
         key     = pair_key(home, visitor)
         pri_n   = normalise(safe_float(g["pri_raw"]), max_pri)
 
-        pair_data[key]["games"].append({
-            "season":        safe_int(g["season"]),
-            "home":          home,
-            "visitor":       visitor,
-            "home_score":    safe_int(g["home_score"]),
-            "visitor_score": safe_int(g["visitor_score"]),
-            "margin":        safe_int(g["margin"]),
+        gk = game_key(g["season"], g["home"], g["visitor"],
+                       g["home_score"], g["visitor_score"])
+
+        pair_data[key]["qualifying_games"].append({
+            "season":         safe_int(g["season"]),
+            "home":           home,
+            "visitor":        visitor,
+            "home_score":     safe_int(g["home_score"]),
+            "visitor_score":  safe_int(g["visitor_score"]),
+            "margin":         safe_int(g["margin"]),
             "pri_normalised": pri_n,
         })
+        pair_data[key]["qualifying_keys"].add(gk)
         pair_data[key]["seasons"].append(safe_int(g["season"]))
 
     print(f"  Found {len(pair_data):,} unique rivalry pairs.")
@@ -295,11 +319,11 @@ def main():
     # Filter to minimum meetings and compute totals
     qualifying_pairs = []
     for (team_a, team_b), data in pair_data.items():
-        meetings = len(data["games"])
+        meetings = len(data["qualifying_games"])
         if meetings < MIN_MEETINGS:
             continue
 
-        total_pri = round(sum(g["pri_normalised"] for g in data["games"]), 2)
+        total_pri = round(sum(g["pri_normalised"] for g in data["qualifying_games"]), 2)
         avg_pri   = round(total_pri / meetings, 2)
         seasons   = data["seasons"]
 
@@ -311,7 +335,12 @@ def main():
             "avg_pri":              avg_pri,
             "season_first":         min(seasons),
             "season_last":          max(seasons),
-            "qualifying_games":     sorted(data["games"], key=lambda x: x["season"]),
+            "qualifying_keys":      data["qualifying_keys"],
+            "qualifying_games_map": {
+                game_key(g["season"], g["home"], g["visitor"],
+                         g["home_score"], g["visitor_score"]): g["pri_normalised"]
+                for g in data["qualifying_games"]
+            },
         })
 
     # Sort by total PRI descending, take top 100
@@ -328,16 +357,16 @@ def main():
     for i, pair in enumerate(top_pairs, 1):
         team_a = pair["team_a"]
         team_b = pair["team_b"]
+        q_keys = pair["qualifying_keys"]
+        q_pri_map = pair["qualifying_games_map"]
 
+        # ── 3a: Aggregate record ──────────────────────────────────────────
         try:
-            # Parameters: team_a used for BOTH Team_A_Wins (where A wins)
-            # and Team_B_Wins (where A loses = B wins).
-            # WHERE clause uses team_a + team_b to filter to the matchup.
             cursor.execute(SQL_ALLTIME_RECORD, (
-                team_a, team_a,   # Team_A_Wins: team_a home win + team_a visitor win
-                team_a, team_a,   # Team_B_Wins: team_a home loss + team_a visitor loss
-                team_a, team_b,   # WHERE clause pair 1
-                team_b, team_a,   # WHERE clause pair 2
+                team_a, team_a,   # Team_A_Wins
+                team_a, team_a,   # Team_B_Wins (= team_a losses)
+                team_a, team_b,   # WHERE pair 1
+                team_b, team_a,   # WHERE pair 2
             ))
             row = cursor.fetchone()
             a_wins = safe_int(row[0]) if row else 0
@@ -347,15 +376,52 @@ def main():
             print(f"  WARNING: Could not fetch record for {team_a} vs {team_b}: {e}")
             a_wins, b_wins, ties = 0, 0, 0
 
+        # ── 3b: All games for this pair ───────────────────────────────────
+        try:
+            cursor.execute(SQL_ALL_GAMES, (
+                team_a, team_b,
+                team_b, team_a,
+            ))
+            all_rows = cursor.fetchall()
+        except Exception as e:
+            print(f"  WARNING: Could not fetch all games for {team_a} vs {team_b}: {e}")
+            all_rows = []
+
+        all_games = []
+        for gr in all_rows:
+            season       = safe_int(gr[0])
+            home         = safe_str(gr[1])
+            visitor      = safe_str(gr[2])
+            home_score   = safe_int(gr[3])
+            visitor_score = safe_int(gr[4])
+            margin       = safe_int(gr[5])
+
+            gk = game_key(season, home, visitor, home_score, visitor_score)
+            is_qualifying = gk in q_keys
+            pri_val = q_pri_map.get(gk) if is_qualifying else None
+
+            all_games.append({
+                "season":         season,
+                "home":           home,
+                "visitor":        visitor,
+                "home_score":     home_score,
+                "visitor_score":  visitor_score,
+                "margin":         margin,
+                "qualifying":     is_qualifying,
+                "pri_normalised": pri_val,
+            })
+
+        alltime_games = len(all_games)
         leader = series_leader_text(team_a, team_b, a_wins, b_wins, ties)
 
         # Validation check (first pair only)
         if i == 1:
-            total_games = a_wins + b_wins + ties
+            q_count = sum(1 for g in all_games if g["qualifying"])
             print(f"  Validation — {team_a} vs {team_b}:")
             print(f"    {team_a} wins: {a_wins}")
             print(f"    {team_b} wins: {b_wins}")
-            print(f"    Ties: {ties}  |  Total games: {total_games}")
+            print(f"    Ties: {ties}  |  Total games: {alltime_games}")
+            print(f"    Qualifying games matched: {q_count} of {pair['qualifying_meetings']}")
             print(f"    Series leader: {leader}")
 
         records.append({
@@ -370,8 +436,9 @@ def main():
             "alltime_team_a_wins": a_wins,
             "alltime_team_b_wins": b_wins,
             "alltime_ties":        ties,
+            "alltime_games":       alltime_games,
             "series_leader":       leader,
-            "qualifying_games":    pair["qualifying_games"],
+            "all_games":           all_games,
         })
 
         if i % 10 == 0:
@@ -404,9 +471,16 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
+    # Summary stats
+    total_all_games = sum(r["alltime_games"] for r in records)
+    total_qualifying = sum(r["qualifying_meetings"] for r in records)
     print(f"\nWritten: {OUTPUT_FILE}")
-    print(f"  {len(records)} rivalries | top pair: {records[0]['team_a']} vs {records[0]['team_b']} "
-          f"({records[0]['qualifying_meetings']} meetings, Total PRI {records[0]['total_pri']:.1f})")
+    print(f"  {len(records)} rivalries")
+    print(f"  {total_all_games:,} total games across all rivalries")
+    print(f"  {total_qualifying:,} qualifying games (highlighted with PRI)")
+    print(f"  Top pair: {records[0]['team_a']} vs {records[0]['team_b']} "
+          f"({records[0]['alltime_games']} games, {records[0]['qualifying_meetings']} qualifying, "
+          f"Total PRI {records[0]['total_pri']:.1f})")
     print(f"\nNote: If results look thin, lower MIN_MEETINGS (currently {MIN_MEETINGS}).")
     print("Done.")
 

@@ -100,21 +100,86 @@
         .games-list {
             font-size: 0.8rem;
             background: #f8f9fa;
-            border-radius: 4px;
-            padding: 8px 12px;
+            border-radius: 6px;
+            padding: 10px 14px;
             margin-top: 6px;
         }
+        .games-list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .games-list-title {
+            font-weight: 700;
+            font-size: 0.78rem;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .games-legend {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.72rem;
+            color: #6c757d;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .legend-swatch-qualifying {
+            width: 12px;
+            height: 12px;
+            background: #e8f0fe;
+            border-left: 3px solid #0d6efd;
+            border-radius: 2px;
+        }
+        .legend-swatch-normal {
+            width: 12px;
+            height: 12px;
+            background: transparent;
+            border: 1px solid #dee2e6;
+            border-radius: 2px;
+        }
+
+        /* Individual game rows */
         .game-row {
             display: flex;
             gap: 12px;
-            padding: 3px 0;
-            border-bottom: 1px solid #dee2e6;
+            padding: 4px 6px;
+            border-bottom: 1px solid #e9ecef;
             align-items: center;
+            border-radius: 3px;
         }
         .game-row:last-child { border-bottom: none; }
+
+        /* Qualifying game highlight */
+        .game-row.qualifying {
+            background: #e8f0fe;
+            border-left: 3px solid #0d6efd;
+            padding-left: 8px;
+        }
+
         .game-season { font-weight: 600; width: 44px; flex-shrink: 0; }
-        .game-score  { font-weight: 600; color: #155724; white-space: nowrap; }
-        .game-margin { color: #6c757d; white-space: nowrap; }
+        .game-score  { font-weight: 600; white-space: nowrap; }
+        .game-score.home-win  { color: #155724; }
+        .game-score.away-win  { color: #155724; }
+        .game-score.tie-game  { color: #856404; }
+        .game-margin { color: #6c757d; white-space: nowrap; font-size: 0.75rem; }
+        .game-pri {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #0d6efd;
+            background: #cfe2ff;
+            padding: 1px 6px;
+            border-radius: 8px;
+            white-space: nowrap;
+            margin-left: auto;
+        }
 
         /* Methodology */
         .methodology-card {
@@ -141,6 +206,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .col-meetings, .col-range, .col-pri { display: none; }
+            .games-legend { display: none; }
         }
 
         /* Loading */
@@ -202,8 +268,8 @@
                     <h6>Minimum Threshold</h6>
                     <p>A rivalry must have at least <span id="minMeetings">--</span> qualifying meetings to appear on this list. A single great game is not a rivalry — it belongs on the <a href="/static-football-rankings/pages/public/greatest/greatest-games.html">Greatest Games</a> page.</p>
 
-                    <h6>All-Time Record</h6>
-                    <p>The head-to-head record shown includes <em>all</em> games ever played between the two programs — not just qualifying meetings. This gives the full picture of how the series has gone across all eras.</p>
+                    <h6>All-Time Record &amp; Full Series History</h6>
+                    <p>The head-to-head record and game list include <em>all</em> games ever played between the two programs — not just qualifying meetings. Qualifying games are <span style="background:#e8f0fe;border-left:3px solid #0d6efd;padding:1px 6px;border-radius:3px;font-size:0.85rem;">highlighted in blue</span> with their PRI score.</p>
 
                     <h6>Limitations</h6>
                     <p class="mb-1" style="font-size:0.9rem;">
@@ -243,7 +309,7 @@
                             <th class="col-pri" style="width:140px;">Total PRI</th>
                             <th class="col-range text-center" style="width:110px;">Years</th>
                             <th>All-Time Record</th>
-                            <th style="width:70px;"></th>
+                            <th style="width:90px;"></th>
                         </tr>
                     </thead>
                     <tbody id="rivalsTableBody"></tbody>
@@ -309,33 +375,61 @@
             return 'rank-cell';
         }
 
-        // ── Expandable game list ──────────────────────────────────────────────
-        function buildGamesList(games, id) {
-            const rows = games.map(g => {
-                const homeWon   = g.margin >= 0;
-                const winner    = homeWon ? g.home : g.visitor;
-                const loser     = homeWon ? g.visitor : g.home;
-                const winScore  = homeWon ? g.home_score : g.visitor_score;
-                const lossScore = homeWon ? g.visitor_score : g.home_score;
-                const margin    = Math.abs(g.margin);
-                const marginTxt = margin === 0 ? 'TIE' : `${margin} pt`;
-                return `<div class="game-row">
+        // ── Build full game list (all games, qualifying highlighted) ──────────
+        function buildGamesList(allGames, qualifyingCount, id) {
+            if (!allGames || allGames.length === 0) return '';
+
+            const rows = allGames.map(g => {
+                const isQ       = g.qualifying;
+                const rowClass  = isQ ? 'game-row qualifying' : 'game-row';
+                const absMarg   = Math.abs(g.margin);
+                const isTie     = g.home_score === g.visitor_score;
+
+                let scoreHtml, marginTxt;
+                if (isTie) {
+                    scoreHtml = `<span class="game-score tie-game">${escapeHtml(g.home)} ${g.home_score}-${g.visitor_score} ${escapeHtml(g.visitor)}</span>`;
+                    marginTxt = 'TIE';
+                } else {
+                    const homeWon   = g.home_score > g.visitor_score;
+                    const winner    = homeWon ? g.home : g.visitor;
+                    const loser     = homeWon ? g.visitor : g.home;
+                    const winScore  = homeWon ? g.home_score : g.visitor_score;
+                    const lossScore = homeWon ? g.visitor_score : g.home_score;
+                    scoreHtml = `<span class="game-score home-win">${escapeHtml(winner)} ${winScore}-${lossScore}</span>`;
+                    marginTxt = `${absMarg} pt`;
+                }
+
+                const priHtml = isQ && g.pri_normalised != null
+                    ? `<span class="game-pri">PRI ${g.pri_normalised.toFixed(1)}</span>`
+                    : '';
+
+                return `<div class="${rowClass}">
                     <span class="game-season">${g.season}</span>
-                    <span class="game-score">${escapeHtml(winner)} ${winScore}-${lossScore}</span>
+                    ${scoreHtml}
                     <span class="game-margin">(${marginTxt})</span>
-                    <span class="pri-label ms-auto">${g.pri_normalised.toFixed(1)}</span>
+                    ${priHtml}
                 </div>`;
             }).join('');
 
             return `<div class="games-list collapse" id="games-${id}">
-                        <div class="fw-semibold mb-1" style="font-size:0.78rem;color:#6c757d;">
-                            QUALIFYING MEETINGS (${games.length})
+                        <div class="games-list-header">
+                            <span class="games-list-title">
+                                Complete Series History (${allGames.length} games &middot; ${qualifyingCount} qualifying)
+                            </span>
+                            <div class="games-legend">
+                                <span class="legend-item">
+                                    <span class="legend-swatch-qualifying"></span> Qualifying
+                                </span>
+                                <span class="legend-item">
+                                    <span class="legend-swatch-normal"></span> Other
+                                </span>
+                            </div>
                         </div>
                         ${rows}
                     </div>`;
         }
 
-        // ── Build one table row ───────────────────────────────────────────────
+        // ── Build one table row + detail row ──────────────────────────────────
         function buildRow(r, idx) {
             const leaderClass = r.series_leader.toLowerCase().startsWith('series tied')
                 ? 'series-tied' : '';
@@ -343,7 +437,13 @@
                 ? `${r.season_first}`
                 : `${r.season_first}&ndash;${r.season_last}`;
 
-            const gamesHtml = buildGamesList(r.qualifying_games || [], idx);
+            const allGames = r.all_games || [];
+            const totalGames = r.alltime_games || allGames.length;
+            const gamesHtml = buildGamesList(allGames, r.qualifying_meetings, idx);
+
+            const toggleLabel = totalGames > 0
+                ? `All ${totalGames} Games &#9660;`
+                : 'Games &#9660;';
 
             return `<tr>
                 <td class="${rankClass(r.rank)}">${r.rank}</td>
@@ -368,7 +468,7 @@
                     <a class="games-toggle" data-bs-toggle="collapse"
                        href="#games-${idx}" role="button"
                        aria-expanded="false">
-                        Games &#9660;
+                        ${toggleLabel}
                     </a>
                 </td>
             </tr>
