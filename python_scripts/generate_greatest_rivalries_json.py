@@ -155,14 +155,20 @@ DROP TABLE #EP_Rivals;
 #
 # No elite or margin filter — all games ever played between the two programs.
 # Returns win counts for each team plus ties.
+#
+# FIX: Team_B_Wins is computed as "games where Team_A lost" (flipping > to <).
+# This avoids a pyodbc/SQL Server parameter binding issue where two identical
+# CASE expression patterns with different positional ? params can return the
+# same result.  By using distinct SQL logic (> vs <) for Team_A_Wins vs
+# Team_B_Wins, all 4 CASE params reference team_a and the results are correct.
 
 SQL_ALLTIME_RECORD = """
 SELECT
     SUM(CASE WHEN (Home = ? AND Home_Score > Visitor_Score)
              OR   (Visitor = ? AND Visitor_Score > Home_Score)
              THEN 1 ELSE 0 END)   AS Team_A_Wins,
-    SUM(CASE WHEN (Home = ? AND Home_Score > Visitor_Score)
-             OR   (Visitor = ? AND Visitor_Score > Home_Score)
+    SUM(CASE WHEN (Home = ? AND Home_Score < Visitor_Score)
+             OR   (Visitor = ? AND Visitor_Score < Home_Score)
              THEN 1 ELSE 0 END)   AS Team_B_Wins,
     SUM(CASE WHEN Home_Score = Visitor_Score THEN 1 ELSE 0 END) AS Ties
 FROM HS_Scores
@@ -205,8 +211,6 @@ def safe_str(val, default=""):
 
 def series_leader_text(team_a, team_b, a_wins, b_wins, ties):
     """Format the series leader string."""
-    total_a = a_wins + (ties * 0)  # ties counted separately
-    total_b = b_wins
     if a_wins > b_wins:
         return f"{team_a} leads {a_wins}-{b_wins}" + (f"-{ties}" if ties else "")
     elif b_wins > a_wins:
@@ -326,9 +330,12 @@ def main():
         team_b = pair["team_b"]
 
         try:
+            # Parameters: team_a used for BOTH Team_A_Wins (where A wins)
+            # and Team_B_Wins (where A loses = B wins).
+            # WHERE clause uses team_a + team_b to filter to the matchup.
             cursor.execute(SQL_ALLTIME_RECORD, (
-                team_a, team_a,   # Team_A_Wins: home win + visitor win
-                team_b, team_b,   # Team_B_Wins: home win + visitor win
+                team_a, team_a,   # Team_A_Wins: team_a home win + team_a visitor win
+                team_a, team_a,   # Team_B_Wins: team_a home loss + team_a visitor loss
                 team_a, team_b,   # WHERE clause pair 1
                 team_b, team_a,   # WHERE clause pair 2
             ))
@@ -341,6 +348,15 @@ def main():
             a_wins, b_wins, ties = 0, 0, 0
 
         leader = series_leader_text(team_a, team_b, a_wins, b_wins, ties)
+
+        # Validation check (first pair only)
+        if i == 1:
+            total_games = a_wins + b_wins + ties
+            print(f"  Validation — {team_a} vs {team_b}:")
+            print(f"    {team_a} wins: {a_wins}")
+            print(f"    {team_b} wins: {b_wins}")
+            print(f"    Ties: {ties}  |  Total games: {total_games}")
+            print(f"    Series leader: {leader}")
 
         records.append({
             "rank":                i,
