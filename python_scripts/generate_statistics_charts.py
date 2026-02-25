@@ -210,14 +210,19 @@ def create_annual_additions_chart(df):
     
     fig = go.Figure()
     fig.add_trace(go.Bar(x=annual_df['Year'], y=annual_df['Games_Added'], marker_color='steelblue',
+                         text=annual_df['Games_Added'],
+                         texttemplate='%{text:,.0f}',
+                         textposition='outside',
+                         textfont=dict(size=9),
                          hovertemplate='<b>%{x}</b><br>Games Added: %{y:,.0f}<extra></extra>'))
-    
     fig.update_layout(
         title={'text': 'Games Added to Database by Year', 'x': 0.5, 'xanchor': 'center', 'font': {'size': 20}},
         xaxis_title='Year Added', yaxis_title='Number of Games',
         plot_bgcolor='white', paper_bgcolor='white', height=400,
+        uniformtext_minsize=8, uniformtext_mode='hide',
         xaxis=dict(gridcolor='lightgray', showline=True, linecolor='black', mirror=True),
-        yaxis=dict(gridcolor='lightgray', showline=True, linecolor='black', mirror=True, tickformat=',d')
+        yaxis=dict(gridcolor='lightgray', showline=True, linecolor='black', mirror=True, tickformat=',d',
+                   range=[0, annual_df['Games_Added'].max() * 1.12])
     )
     
     return fig

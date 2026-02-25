@@ -92,17 +92,25 @@ python generate_greatest_rivalries_json.py
 # ---------------------------------------------------------
 # STEP 4: GENERATE STATISTICS (PYTHON)
 # ---------------------------------------------------------
+
 Write-Host "STEP 4: Generating Database & Regional Statistics..." -ForegroundColor Cyan
 Set-Location $pythonScriptsRoot
 
-# Generate overall database statistics (cumulative games, annual additions)
 Write-Host "  - Generating Database Statistics..." -ForegroundColor Yellow
 python generate_statistics_charts.py
+if ($LASTEXITCODE -ne 0) { 
+    Write-Host "  ERROR: generate_statistics_charts.py failed with exit code $LASTEXITCODE" -ForegroundColor Red
+    Write-Host "  Retrying after 10 second delay..." -ForegroundColor Yellow
+    Start-Sleep -Seconds 10
+    python generate_statistics_charts.py
+    if ($LASTEXITCODE -ne 0) { Write-Host "  ERROR: Retry also failed. Statistics not updated." -ForegroundColor Red }
+}
 
-# Generate regional statistics (5 regions matching States Index)
-# Northeast, Southern, Midwest, Western, Canada
 Write-Host "  - Generating Regional Statistics..." -ForegroundColor Yellow
 python generate_regional_statistics.py
+if ($LASTEXITCODE -ne 0) { 
+    Write-Host "  ERROR: generate_regional_statistics.py failed with exit code $LASTEXITCODE" -ForegroundColor Red
+}
 
 # ---------------------------------------------------------
 # STEP 5: REBUILD HTML SHELL
@@ -145,5 +153,6 @@ Write-Host "  - Greatest Games JSON" -ForegroundColor Gray
 Write-Host "  - Database Statistics (cumulative/annual charts)" -ForegroundColor Gray
 Write-Host "  - Regional Statistics (5 regions)" -ForegroundColor Gray
 Write-Host "  - All HTML Pages" -ForegroundColor Gray
+git show --stat HEAD
 Write-Host ""
 Pause
