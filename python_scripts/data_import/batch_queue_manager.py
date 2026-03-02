@@ -156,33 +156,51 @@ def import_all_staged():
     
     total_moved = 0
     total_failed = []
+
+    # Get next BatchID once before the loop so each batch gets a unique incrementing ID
+    with engine.connect() as conn:
+        next_batch_id = conn.execute(text("SELECT ISNULL(MAX(BatchID), 0) + 1 FROM HS_Scores")).scalar()
     
     with engine.begin() as connection:
         for batch in staged_batches:
             batch_id = batch['batch_id']
-            logger.info(f"Importing batch: {batch_id}")
+            logger.info(f"Importing batch: {batch_id} as BatchID {next_batch_id}")
             
             try:
-                # Insert from staging to HS_Scores using correct column names
                 query = text(f"""
-                    INSERT INTO HS_Scores (ID, Season, Date, Home, Visitor, Home_Score, Visitor_Score, OT, Forfeit)
-                    SELECT NEWID(), Season, GameDate, HomeTeamRaw, VisitorTeamRaw, HomeScore, VisitorScore, 
-                           CASE WHEN Overtime IS NOT NULL AND Overtime <> '' THEN 1 ELSE 0 END,
-                           CASE WHEN (HomeScore + VisitorScore) = 1 THEN 1 ELSE 0 END
+                    INSERT INTO HS_Scores (ID, Season, Date, Home, Visitor, Home_Score, Visitor_Score, 
+                                          OT, Forfeit, Source, Date_Added, BatchID)
+                    SELECT 
+                        NEWID(), 
+                        Season, 
+                        GameDate, 
+                        HomeTeamRaw, 
+                        VisitorTeamRaw, 
+                        HomeScore, 
+                        VisitorScore, 
+                        CASE WHEN Overtime IS NOT NULL AND Overtime <> '' THEN 1 ELSE 0 END,
+                        CASE WHEN (HomeScore + VisitorScore) = 1 THEN 1 ELSE 0 END,
+                        SourceFile,
+                        GETDATE(),
+                        {next_batch_id}
                     FROM RawScores_Staging
                     WHERE BatchID = '{batch_id}'
                 """)
                 result = connection.execute(query)
                 rows_imported = result.rowcount
                 
-                # Mark as imported first
+                logger.info(f"✅ Batch {batch_id} imported successfully ({rows_imported} games) as BatchID {next_batch_id}")
+                
+                # Mark as imported in queue
                 mark_batch_imported(batch_id)
-                logger.info(f"✅ Batch {batch_id} imported successfully ({rows_imported} games)")
                 
                 # Move CSV files to completed directory
                 moved, failed = move_source_files_to_completed(batch)
                 total_moved += moved
                 total_failed.extend(failed)
+                
+                # Increment for next batch
+                next_batch_id += 1
                 
             except Exception as e:
                 logger.error(f"❌ Failed to import batch {batch_id}: {e}")
