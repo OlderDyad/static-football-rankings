@@ -46,8 +46,49 @@ def sanitize_score(score_text):
     """
     if not isinstance(score_text, str):
         return ""
-    # Remove all characters that are not digits
     return re.sub(r'\D', '', score_text)
+
+def sanitize_overtime(raw_value):
+    """
+    Converts raw OCR overtime text into a clean integer or None.
+
+    Recognized patterns:
+        OT, (OT), OT., ot               -> 1
+        2OT, 2 OT, (2OT), (2 OT)        -> 2
+        3OT, 3 OT, (3OT), (3 OT)        -> 3
+        ... any N followed by OT         -> N
+        (California Playoff), (Playoff)  -> 1  (any "playoff" mention = 1)
+        Anything else                    -> None (field left blank)
+
+    The field is non-critical — when in doubt, discard.
+    """
+    if not raw_value or not isinstance(raw_value, str):
+        return None
+
+    text = raw_value.strip()
+    if not text:
+        return None
+
+    # Normalize: remove parentheses, lowercase, collapse whitespace
+    normalized = text.lower()
+    normalized = re.sub(r'[()]', '', normalized).strip()
+    normalized = re.sub(r'\s+', ' ', normalized)
+
+    # Pattern 1: explicit N OT  e.g. "2OT", "2 OT", "3 ot"
+    m = re.match(r'^(\d+)\s*ot$', normalized)
+    if m:
+        return int(m.group(1))
+
+    # Pattern 2: plain OT (no number) -> 1
+    if normalized in ('ot', 'overtime', 'o.t.', 'o.t'):
+        return 1
+
+    # Pattern 3: any mention of "playoff" -> treat as single OT period
+    if 'playoff' in normalized:
+        return 1
+
+    # Nothing recognized — discard silently
+    return None
 
 def clean_text_for_lookup(text_input):
     """
@@ -132,7 +173,6 @@ def get_newspaper_region(filename):
 def add_to_batch_queue(batch_id, file_count, game_count, source_files):
     """Add batch to queue using the batch_queue_manager script."""
     try:
-        # Build command to add batch to queue
         source_files_str = ','.join(source_files)
         cmd = [
             'python', 
@@ -186,18 +226,17 @@ def main():
                 
                 home_team = sanitize_raw_team_name(row[0])
                 visitor_team = sanitize_raw_team_name(row[2])
-                
-                # Sanitize score fields immediately after reading
                 home_score = sanitize_score(row[1])
                 visitor_score = sanitize_score(row[3])
-                
-                overtime_text, quality_status, notes = row[4], row[5], row[6]
+                overtime_val = sanitize_overtime(row[4] if len(row) > 4 else '')
+                quality_status = row[5] if len(row) > 5 else ''
+                notes = row[6] if len(row) > 6 else ''
                 
                 all_raw_games.append({
                     'BatchID': batch_id, 'SourceFile': file_name, 'SourceRegion': source_region,
                     'GameDate': game_date, 'Season': season, 
                     'HomeTeamRaw': home_team, 'VisitorTeamRaw': visitor_team, 
-                    'HomeScore': home_score, 'VisitorScore': visitor_score, 'Overtime': overtime_text,
+                    'HomeScore': home_score, 'VisitorScore': visitor_score, 'Overtime': overtime_val,
                     'quality_status': quality_status, 'processing_notes': notes,
                     'LineNumber': line_num, 'RawLine': ','.join(row)
                 })
@@ -281,7 +320,7 @@ def main():
             'VisitorTeamRaw': games_df['VisitorTeamStd'],
             'HomeScore': pd.to_numeric(games_df['HomeScore'], errors='coerce').fillna(0).astype(int),
             'VisitorScore': pd.to_numeric(games_df['VisitorScore'], errors='coerce').fillna(0).astype(int),
-            'Overtime': games_df['Overtime'],
+            'Overtime': pd.array(games_df['Overtime'], dtype=pd.Int64Dtype()),
             'quality_status': games_df['quality_status'],
             'processing_notes': games_df['processing_notes'],
             'LineNumber': games_df['LineNumber'],

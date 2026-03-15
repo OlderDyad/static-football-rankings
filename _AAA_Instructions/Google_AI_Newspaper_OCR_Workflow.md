@@ -6,6 +6,10 @@ python ks_8man_classifier.py
 
 
 #Quick Guide:
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+..\venv\Scripts\Activate
+
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
 python custom_extractor_prepper.py
 python master_scores_importer.py

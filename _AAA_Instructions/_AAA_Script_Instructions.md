@@ -1,8 +1,32 @@
-High School Football Database Workflow (2025)
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
+python import_yearbook_results.py
 
-0. 
+
+
+-1. Doc Project summary into folder
+
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
 
+**.\Export-ProjectContext.ps1**
+
+High School Football Database Workflow (2025)
+
+0. n
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
+.\GenerateAllPages.ps1
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
+python generate_greatest_games_json.py
+python generate_greatest_rivalries_json.py
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+
+git add .
+git commit -m "fix: state pages secondary colors v1"
+
+git push origin main
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
 1. **.\run_update_cycle.ps1** (The "Daily Master Switch")
 When to use: Every time you make changes to Google Sheets or Add New Images. What it does:
 
@@ -18,7 +42,9 @@ Commits and Pushes everything to GitHub.
 
 Use Case: "I just updated New Britain's colors in Google Sheets and saved their logo to my desktop. I want the website to update."
 
+
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
+.\GenerateAllPages.ps1 
 
 2. **.\GenerateAllPages.ps1** (The "Template Refresher")
 When to use: Only when you change the HTML structure or JavaScript logic (like the color theming patch we just discussed). What it does:
