@@ -27,6 +27,8 @@ Run the script:
 
 **python update_media_national_champions.py** Accidently deleted rebuild import from wikipedia to SQL table
 
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+
 **python ambiguous_names_cleanup.py**
 
 for latin letters names
