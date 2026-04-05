@@ -167,9 +167,10 @@ def import_all_staged():
             logger.info(f"Importing batch: {batch_id} as BatchID {next_batch_id}")
             
             try:
+
                 query = text(f"""
-                    INSERT INTO HS_Scores (ID, Season, Date, Home, Visitor, Home_Score, Visitor_Score, 
-                                          OT, Forfeit, Source, Date_Added, BatchID)
+                    INSERT INTO HS_Scores (ID, Season, Date, Home, Visitor, Home_Score, Visitor_Score,
+                                        Margin, OT, Forfeit, Source, Date_Added, BatchID)
                     SELECT 
                         NEWID(), 
                         Season, 
@@ -177,7 +178,10 @@ def import_all_staged():
                         HomeTeamRaw, 
                         VisitorTeamRaw, 
                         HomeScore, 
-                        VisitorScore, 
+                        VisitorScore,
+                        CASE WHEN HomeScore IS NOT NULL AND VisitorScore IS NOT NULL 
+                            THEN HomeScore - VisitorScore 
+                            ELSE NULL END,
                         CASE WHEN Overtime IS NOT NULL AND Overtime <> '' THEN 1 ELSE 0 END,
                         CASE WHEN (HomeScore + VisitorScore) = 1 THEN 1 ELSE 0 END,
                         SourceFile,

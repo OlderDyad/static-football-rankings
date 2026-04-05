@@ -1,3 +1,8 @@
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\
+
+python review_suspicious_scores.py
+
+
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
 python import_yearbook_results.py
 
