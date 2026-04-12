@@ -19,7 +19,14 @@
             color: #0052a3 !important;
         }
     </style>
-</head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GC17GSJ4S0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GC17GSJ4S0');
+    </script></head>
 <body>
     <div class="header-banner">
         <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
@@ -44,7 +51,7 @@
             <div>
                 <a href="WV-programs.html" class="btn btn-outline-primary">View Program Rankings</a>
             </div>
-            <div class="text-muted">Updated: <span id="lastUpdated">4/11/2026</span></div>
+            <div class="text-muted">Updated: <span id="lastUpdated">4/12/2026</span></div>
         </div>
 
         <div class="row mb-3">
@@ -136,7 +143,7 @@
         
         const dataFileMeta = document.querySelector('meta[name="data-file"]');
         if (!dataFileMeta) {
-            console.error('âŒ No data-file meta tag found');
+            console.error('❌ No data-file meta tag found');
             return;
         }
         
@@ -147,7 +154,7 @@
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             
             const data = await response.json();
-            console.log('âœ“ Data loaded');
+            console.log('✓ Data loaded');
             
             if (data.topItem) {
                 createBanner(data.topItem);
@@ -160,7 +167,7 @@
                 renderPage(1);
             }
         } catch (error) {
-            console.error('âŒ Error:', error);
+            console.error('❌ Error:', error);
         }
     });
 

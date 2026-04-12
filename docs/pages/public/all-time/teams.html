@@ -19,7 +19,14 @@
             color: #0052a3 !important;
         }
     </style>
-</head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GC17GSJ4S0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GC17GSJ4S0');
+    </script></head>
 <body>
     <!-- Header Banner -->
     <div class="header-banner">
@@ -52,7 +59,7 @@
                     <a href="programs-100-plus.html" class="btn btn-outline-primary">100+ Season Programs</a>
                 </div>
             </div>
-            <div class="text-muted">Updated: <span id="lastUpdated">4/11/2026</span></div>
+            <div class="text-muted">Updated: <span id="lastUpdated">4/12/2026</span></div>
         </div>
 
         <!-- Search Controls -->
@@ -263,7 +270,7 @@
             
             const dataFileMeta = document.querySelector('meta[name="data-file"]');
             if (!dataFileMeta) {
-                console.error('âŒ No data-file meta tag found');
+                console.error('❌ No data-file meta tag found');
                 return;
             }
             
@@ -274,7 +281,7 @@
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 
                 const data = await response.json();
-                console.log('âœ“ Data loaded');
+                console.log('✓ Data loaded');
                 
                 if (data.topItem) {
                     // Initialize Header
@@ -292,7 +299,7 @@
                     renderPage(1);
                 }
             } catch (error) {
-                console.error('âŒ Error:', error);
+                console.error('❌ Error:', error);
             }
         });
 
@@ -533,7 +540,7 @@
                     table tbody tr:hover { background-color: rgba(${secondaryRgb}, 0.25) !important; cursor: pointer; transition: background-color 0.2s ease; }
                 `;
                 document.head.appendChild(style);
-                console.log('âœ“ Table row colors applied');
+                console.log('✓ Table row colors applied');
             }
         }
     </script>

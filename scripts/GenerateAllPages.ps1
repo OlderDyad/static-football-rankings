@@ -1229,6 +1229,7 @@ function Process-GreatestGames {
             $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
 
             # Remove any stray userStyle tags (housekeeping, same as other functions)
+            $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
             $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
             Set-Content -Path $outputPath -Value $template -Encoding UTF8
@@ -1270,6 +1271,7 @@ function Process-GreatestGames {
             $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
 
             # Remove any stray userStyle tags (housekeeping, same as other functions)
+            $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
             $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
             Set-Content -Path $outputPath -Value $template -Encoding UTF8
@@ -1306,6 +1308,7 @@ function Process-GreatestRivalries {
         try {
             $template = Get-Content $templatePath -Raw -Encoding UTF8
             $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+            $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
             $template = $template -replace '<userStyle>Normal</userStyle>', ''
             Set-Content -Path $outputPath -Value $template -Encoding UTF8
             Write-Host "  Generated: greatest-rivalries.html" -ForegroundColor Green

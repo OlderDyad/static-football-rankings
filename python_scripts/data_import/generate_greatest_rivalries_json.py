@@ -66,7 +66,7 @@ OUTPUT_FILE = os.path.join(OUTPUT_DIR, "greatest-rivalries.json")
 
 TOP_GAMES    = 50_000   # qualifying game pool
 MIN_MEETINGS = 5        # minimum qualifying meetings to appear — tune as needed
-TOP_RIVALS   = 100      # number of rivalries to output
+TOP_RIVALS   = 250      # number of rivalries to output
 
 # ── SQL: Pull qualifying games ────────────────────────────────────────────────
 
