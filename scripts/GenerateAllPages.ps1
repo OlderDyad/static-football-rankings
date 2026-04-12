@@ -818,7 +818,7 @@ function Process-StateData {
                 $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 $tableRows = Generate-TableRows -Items $teamData.items -Type "team"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
@@ -850,7 +850,7 @@ function Process-StateData {
                 $template = $template -replace 'STATE_NAME', $stateName                
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 $tableRows = Generate-TableRows -Items $programData.items -Type "program"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
@@ -942,7 +942,7 @@ function Process-AllTimeData {
                 
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 # Table rows
                 $tableRows = Generate-TableRows -Items $jsonData.items -Type $(if ($Category -eq "teams") { "team" } else { "program" })
@@ -993,7 +993,7 @@ function Process-LatestSeasonData {
                 # Insert scripts and update timestamp
                 $template = $template -replace 'TABLE_CONTROLS_SCRIPT', $tableControlsScript
                 $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-                $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+                $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
 
                 $tableRows = Generate-TableRows -Items $jsonData.items -Type "team"
                 $template = $template -replace 'TABLE_ROWS', $tableRows
@@ -1229,7 +1229,7 @@ function Process-GreatestGames {
             $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
 
             # Remove any stray userStyle tags (housekeeping, same as other functions)
-            $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+            $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
             $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
             Set-Content -Path $outputPath -Value $template -Encoding UTF8
@@ -1271,7 +1271,7 @@ function Process-GreatestGames {
             $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
 
             # Remove any stray userStyle tags (housekeeping, same as other functions)
-            $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+            $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
             $template = $template -replace '<userStyle>Normal</userStyle>', ''
 
             Set-Content -Path $outputPath -Value $template -Encoding UTF8
@@ -1308,7 +1308,7 @@ function Process-GreatestRivalries {
         try {
             $template = Get-Content $templatePath -Raw -Encoding UTF8
             $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
-            $template = $template -replace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+            $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
             $template = $template -replace '<userStyle>Normal</userStyle>', ''
             Set-Content -Path $outputPath -Value $template -Encoding UTF8
             Write-Host "  Generated: greatest-rivalries.html" -ForegroundColor Green
