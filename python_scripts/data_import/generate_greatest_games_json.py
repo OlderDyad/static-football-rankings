@@ -49,7 +49,7 @@ CONNECTION_STRING = (
 
 # Script lives in python_scripts\ — one level below repo root
 SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
-REPO_ROOT   = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+REPO_ROOT   = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 OUTPUT_DIR  = os.path.join(REPO_ROOT, "docs", "data", "greatest-games")
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "greatest-games.json")
 
@@ -57,33 +57,21 @@ TOP_N = 250
 
 # ── SQL Query ─────────────────────────────────────────────────────────────────
 
-SQL_QUERY = """
-IF OBJECT_ID('tempdb..#ElitePrograms') IS NOT NULL DROP TABLE #ElitePrograms;
-IF OBJECT_ID('tempdb..#GameScores')    IS NOT NULL DROP TABLE #GameScores;
-
--- STEP 1: Build #ElitePrograms
--- One row per (TeamName, Season) passing the elite filter.
--- Excludes non-11-man programs via HS_Team_Level_History.
-
+# ── SQL: Step 1 - Build elite programs temp table ─────────────────────────────
+SQL_CREATE_ELITE = """
 SELECT
     r.Home                      AS TeamName,
     r.Season,
-    r.Combined_Rating,
-    AVG(r5.Combined_Rating)     AS Five_Year_Avg,
-    COUNT(DISTINCT r5.Season)   AS Seasons_In_Window
-
+    (0.958 * r.[Avg_Of_Avg_Of_Home_Modified_Score] + 2.791)       AS Combined_Rating,
+    AVG(0.958 * r5.[Avg_Of_Avg_Of_Home_Modified_Score] + 2.791)   AS Five_Year_Avg,
+    COUNT(DISTINCT r5.Season)                                      AS Seasons_In_Window
 INTO #ElitePrograms
 FROM HS_Rankings r
-
 INNER JOIN HS_Rankings r5
     ON  r5.Home   = r.Home
     AND r5.Season BETWEEN r.Season - 4 AND r.Season
     AND r5.Week   = 52
-
 WHERE r.Week = 52
-
-  -- Exclude confirmed non-11-man programs (8-man, 9-man, 6-man)
-  -- Teams with no entry in HS_Team_Level_History are treated as 11-man
   AND NOT EXISTS (
       SELECT 1
       FROM HS_Team_Level_History lh
@@ -91,19 +79,18 @@ WHERE r.Week = 52
         AND lh.PlayerLevel IN (6, 8, 9)
         AND r.Season BETWEEN lh.Season_Begin AND lh.Season_End
   )
-
 GROUP BY
     r.Home,
     r.Season,
-    r.Combined_Rating
-
+    r.[Avg_Of_Avg_Of_Home_Modified_Score]
 HAVING
-    r.Combined_Rating           > 20
-    AND AVG(r5.Combined_Rating) > 20
-    AND COUNT(DISTINCT r5.Season) >= 2;
+    (0.958 * r.[Avg_Of_Avg_Of_Home_Modified_Score] + 2.791)           > 20
+    AND AVG(0.958 * r5.[Avg_Of_Avg_Of_Home_Modified_Score] + 2.791)   > 20
+    AND COUNT(DISTINCT r5.Season) >= 2
+"""
 
--- STEP 2: Score qualifying games, return TOP 250 by PRI descending
-
+# ── SQL: Step 2 - Score and return top games ──────────────────────────────────
+SQL_GET_GAMES = """
 SELECT TOP {top_n}
     ROW_NUMBER() OVER (ORDER BY
         (ep_h.Combined_Rating + ep_v.Combined_Rating) *
@@ -116,14 +103,12 @@ SELECT TOP {top_n}
             ELSE 0
         END DESC
     )                           AS Rank,
-
     s.Season,
     s.Home                      AS Home_Team,
     s.Visitor                   AS Visitor_Team,
     s.Home_Score,
     s.Visitor_Score,
     s.Margin,
-
     CAST(
         (ep_h.Combined_Rating + ep_v.Combined_Rating) *
         CASE
@@ -135,27 +120,18 @@ SELECT TOP {top_n}
             ELSE 0
         END
     AS DECIMAL(10,4))           AS PRI_Raw
-
-INTO #GameScores
 FROM HS_Scores s
-
 INNER JOIN #ElitePrograms ep_h
     ON  ep_h.TeamName = s.Home
     AND ep_h.Season   = s.Season
-
 INNER JOIN #ElitePrograms ep_v
     ON  ep_v.TeamName = s.Visitor
     AND ep_v.Season   = s.Season
-
 WHERE
     (s.Future_Game IS NULL OR s.Future_Game = 0)
     AND (s.Forfeit IS NULL OR s.Forfeit = 0)
-    AND ABS(s.Margin) <= 8;
-
-SELECT * FROM #GameScores ORDER BY Rank;
-
-DROP TABLE #ElitePrograms;
-DROP TABLE #GameScores;
+    AND ABS(s.Margin) <= 8
+ORDER BY PRI_Raw DESC
 """.format(top_n=TOP_N)
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -184,33 +160,22 @@ def safe_str(val, default=""):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def main():
-    print("=" * 60)
-    print("Greatest Games JSON Generator")
-    print(f"Target: {OUTPUT_FILE}")
-    print("=" * 60)
-
-    print("\nConnecting to SQL Server...")
+print("\nRunning PRI query (may take up to 2 minutes)...")
     try:
-        conn = pyodbc.connect(CONNECTION_STRING, timeout=30)
-        cursor = conn.cursor()
-        print("Connected.")
-    except Exception as e:
-        print(f"ERROR: Could not connect to database: {e}", file=sys.stderr)
-        sys.exit(1)
+        # Step 1: Build elite programs temp table
+        cursor.execute("IF OBJECT_ID('tempdb..#ElitePrograms') IS NOT NULL DROP TABLE #ElitePrograms")
+        cursor.execute(SQL_CREATE_ELITE)
 
-    print("\nRunning PRI v3 query (may take up to 2 minutes)...")
-    try:
-        cursor.execute(SQL_QUERY)
+        # Diagnostic
+        cursor.execute("SELECT COUNT(*) FROM #ElitePrograms")
+        ep_count = cursor.fetchone()[0]
+        print(f"  Elite programs table has {ep_count:,} rows")
 
-        # Advance past intermediate result sets (temp table DROP/SELECT INTO)
-        while cursor.description is None:
-            if not cursor.nextset():
-                break
-
+        # Step 2: Get top games
+        cursor.execute(SQL_GET_GAMES)
         rows = cursor.fetchall()
         columns = [col[0].lower() for col in cursor.description]
-        print(f"Query returned {len(rows)} rows.")
+        print(f"  Query returned {len(rows)} rows.")
 
     except Exception as e:
         print(f"ERROR: Query failed: {e}", file=sys.stderr)
@@ -219,9 +184,6 @@ def main():
 
     conn.close()
 
-    if not rows:
-        print("WARNING: No rows returned. Check query and elite filter thresholds.")
-        sys.exit(0)
 
     # Build records
     records = []

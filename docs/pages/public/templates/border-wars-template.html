@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Wars - McKnight's American Football Rankings</title>
+    <meta name="description" content="All-time cross-state win-loss records. How does your state stack up against its biggest rivals?">
+    <meta name="data-file" content="/static-football-rankings/data/border-wars/border-wars.json">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+
+    <style>
+        /* ── Border Wars page styles ── */
+        .border-wars-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 2.5rem 0 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 4px solid #e94560;
+        }
+        .border-wars-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        .border-wars-hero h1 span {
+            color: #e94560;
+        }
+        .border-wars-hero p {
+            color: #aab8c2;
+            font-size: 1.05rem;
+            max-width: 600px;
+        }
+        .bw-table-wrapper {
+            overflow-x: auto;
+        }
+        .bw-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+        .bw-table thead th {
+            background: #1a1a2e;
+            color: #e0e0e0;
+            padding: 0.75rem 1rem;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+            border-bottom: 3px solid #e94560;
+            white-space: nowrap;
+        }
+        .bw-table thead th.state-col {
+            width: 160px;
+            min-width: 140px;
+        }
+        .bw-table thead th.opp-col {
+            min-width: 180px;
+        }
+        .bw-table tbody tr {
+            border-bottom: 1px solid #dee2e6;
+            transition: background 0.15s;
+        }
+        .bw-table tbody tr:hover {
+            background: #f0f4ff;
+        }
+        .bw-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .bw-table tbody tr:nth-child(even):hover {
+            background: #e8eeff;
+        }
+        .bw-table td {
+            padding: 0.65rem 1rem;
+            vertical-align: middle;
+        }
+        .state-name-cell {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #1a1a2e;
+            white-space: nowrap;
+        }
+        .state-code-badge {
+            display: inline-block;
+            background: #1a1a2e;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 1px 5px;
+            border-radius: 3px;
+            margin-left: 4px;
+            vertical-align: middle;
+            letter-spacing: 0.5px;
+        }
+        .opponent-cell {
+            white-space: nowrap;
+        }
+        .opp-state {
+            font-weight: 600;
+            color: #0f3460;
+            font-size: 0.88rem;
+        }
+        .opp-record {
+            font-size: 0.82rem;
+            color: #555;
+            margin-top: 1px;
+        }
+        .win-pct {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-left: 4px;
+        }
+        .win-pct.above { background: #d4edda; color: #155724; }
+        .win-pct.below { background: #f8d7da; color: #721c24; }
+        .win-pct.even  { background: #e2e3e5; color: #383d41; }
+        .games-count {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 1px;
+        }
+        .legend {
+            font-size: 0.82rem;
+            color: #666;
+        }
+        .legend span {
+            display: inline-block;
+            padding: 1px 8px;
+            border-radius: 3px;
+            margin-right: 6px;
+            font-weight: 600;
+        }
+        .last-updated {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        @media (max-width: 768px) {
+            .border-wars-hero h1 { font-size: 1.8rem; }
+            .bw-table { font-size: 0.8rem; }
+            .bw-table td, .bw-table thead th { padding: 0.5rem 0.5rem; }
+        }
+    </style>    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GC17GSJ4S0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GC17GSJ4S0');
+    </script>
+
+</head>
+<body>
+
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Border Wars</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <div class="border-wars-hero">
+        <div class="container">
+            <h1>Border <span>Wars</span></h1>
+            <p>All-time cross-state win-loss records. For each state, the top 5 opponent states by total games played — with record and win percentage.</p>
+            <div class="mt-2 legend">
+                <span class="win-pct above">75.0%</span> Above 50% &nbsp;
+                <span class="win-pct below">43.2%</span> Below 50% &nbsp;
+                <span class="win-pct even">50.0%</span> Even &nbsp;&nbsp;
+                Win % calculated with ties as half a win.
+            </div>
+            <div class="mt-2 last-updated">
+                Last updated: <span id="lastUpdated">TIMESTAMP</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="container mb-5">
+        <div class="bw-table-wrapper">
+            <table class="bw-table" id="borderWarsTable">
+                <thead>
+                    <tr>
+                        <th class="state-col">State</th>
+                        <th class="opp-col">#1 Opponent</th>
+                        <th class="opp-col">#2 Opponent</th>
+                        <th class="opp-col">#3 Opponent</th>
+                        <th class="opp-col">#4 Opponent</th>
+                        <th class="opp-col">#5 Opponent</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr><td colspan="6" class="text-center py-4 text-muted">Loading Border Wars data...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    COMMENTS_SCRIPT_PLACEHOLDER
+
+    <footer class="mt-3 mb-3">
+        <div class="text-center">
+            <p>© 2025 McKnight's Football Rankings</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    // ── State code to full name map ────────────────────────────────────────────
+    const STATE_NAMES = {
+        AL:"Alabama", AK:"Alaska", AZ:"Arizona", AR:"Arkansas", CA:"California",
+        CO:"Colorado", CT:"Connecticut", DE:"Delaware", DC:"Washington D.C.",
+        FL:"Florida", GA:"Georgia", HI:"Hawaii", ID:"Idaho", IL:"Illinois",
+        IN:"Indiana", IA:"Iowa", KS:"Kansas", KY:"Kentucky", LA:"Louisiana",
+        ME:"Maine", MD:"Maryland", MA:"Massachusetts", MI:"Michigan",
+        MN:"Minnesota", MS:"Mississippi", MO:"Missouri", MT:"Montana",
+        NE:"Nebraska", NV:"Nevada", NH:"New Hampshire", NJ:"New Jersey",
+        NM:"New Mexico", NY:"New York", NC:"North Carolina", ND:"North Dakota",
+        OH:"Ohio", OK:"Oklahoma", OR:"Oregon", PA:"Pennsylvania",
+        RI:"Rhode Island", SC:"South Carolina", SD:"South Dakota",
+        TN:"Tennessee", TX:"Texas", UT:"Utah", VT:"Vermont", VA:"Virginia",
+        WA:"Washington", WV:"West Virginia", WI:"Wisconsin", WY:"Wyoming",
+        // Canadian Provinces
+        AB:"Alberta", BC:"British Columbia", MB:"Manitoba", NB:"New Brunswick",
+        NS:"Nova Scotia", ON:"Ontario", QC:"Quebec", SK:"Saskatchewan"
+    };
+
+    function winPctClass(pct) {
+        if (pct > 50) return "above";
+        if (pct < 50) return "below";
+        return "even";
+    }
+
+    function renderOpponent(opp) {
+        if (!opp) return '<td class="opponent-cell text-muted" style="font-size:0.8rem;">—</td>';
+        const cls = winPctClass(opp.win_pct);
+        const stateName = STATE_NAMES[opp.state] || opp.state;
+        return `<td class="opponent-cell">
+            <div class="opp-state">${stateName} <span style="color:#888;font-weight:400;">(${opp.state})</span></div>
+            <div class="opp-record">
+                ${opp.wins}–${opp.losses}${opp.ties > 0 ? '–' + opp.ties : ''}
+                <span class="win-pct ${cls}">${opp.win_pct}%</span>
+            </div>
+            <div class="games-count">${opp.games.toLocaleString()} games</div>
+        </td>`;
+    }
+
+    async function loadData() {
+        try {
+            const resp = await fetch('/static-football-rankings/data/border-wars/border-wars.json');
+            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+            const data = await resp.json();
+
+            // Update timestamp
+            if (data.metadata && data.metadata.timestamp) {
+                const d = new Date(data.metadata.timestamp);
+                document.getElementById('lastUpdated').textContent = d.toLocaleDateString('en-US', {
+                    year:'numeric', month:'long', day:'numeric'
+                });
+            }
+
+            // Build rows
+            const tbody = document.getElementById('tableBody');
+            const rows = data.items.map(item => {
+                const stateName = STATE_NAMES[item.state] || item.state;
+                const opps = item.opponents;
+                return `<tr>
+                    <td class="state-name-cell">
+                        ${stateName}
+                        <span class="state-code-badge">${item.state}</span>
+                    </td>
+                    ${renderOpponent(opps[0] || null)}
+                    ${renderOpponent(opps[1] || null)}
+                    ${renderOpponent(opps[2] || null)}
+                    ${renderOpponent(opps[3] || null)}
+                    ${renderOpponent(opps[4] || null)}
+                </tr>`;
+            });
+
+            tbody.innerHTML = rows.join('');
+
+        } catch (err) {
+            document.getElementById('tableBody').innerHTML =
+                `<tr><td colspan="6" class="text-center py-4 text-danger">Error loading data: ${err.message}</td></tr>`;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+
+</body>
+</html>

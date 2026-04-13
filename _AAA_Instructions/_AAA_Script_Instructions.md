@@ -118,6 +118,20 @@ Runs GenerateAllPages.ps1: Updates the HTML tables.
 
 Git Push: Publishes everything to the live site.
 
+Publish Top Rivalies and Games:
+
+Step 1 — Regenerate the JSON files (from venv):
+bashcd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+.\venv\Scripts\activate
+python python_scripts\data_import\generate_greatest_games_json.py
+python python_scripts\data_import\generate_greatest_rivalries_json.py
+Step 2 — Regenerate the HTML pages:
+powershell.\scripts\GenerateAllPages.ps1
+Step 3 — Push to GitHub:
+bashgit add .
+git commit -m "Update greatest games and rivalries"
+git push
+
 Summary: Just run .\run_update_cycle.ps1. It handles everything safely.
 
 Part B2:
