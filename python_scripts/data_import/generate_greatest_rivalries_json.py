@@ -60,7 +60,7 @@ CONNECTION_STRING = (
 )
 
 SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
-REPO_ROOT   = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+REPO_ROOT   = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 OUTPUT_DIR  = os.path.join(REPO_ROOT, "docs", "data", "greatest-rivalries")
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "greatest-rivalries.json")
 
@@ -70,27 +70,20 @@ TOP_RIVALS   = 250      # number of rivalries to output
 
 # ── SQL: Pull qualifying games ────────────────────────────────────────────────
 
-SQL_QUALIFYING_GAMES = """
-IF OBJECT_ID('tempdb..#EP_Rivals') IS NOT NULL DROP TABLE #EP_Rivals;
-
--- Build elite programs temp table
+SQL_CREATE_ELITE = """
 SELECT
     r.Home                      AS TeamName,
     r.Season,
-    r.Combined_Rating,
-    AVG(r5.Combined_Rating)     AS Five_Year_Avg,
-    COUNT(DISTINCT r5.Season)   AS Seasons_In_Window
-
+    (0.958 * r.[Avg_Of_Avg_Of_Home_Modified_Score] + 2.791)       AS Combined_Rating,
+    AVG(0.958 * r5.[Avg_Of_Avg_Of_Home_Modified_Score] + 2.791)   AS Five_Year_Avg,
+    COUNT(DISTINCT r5.Season)                                      AS Seasons_In_Window
 INTO #EP_Rivals
 FROM HS_Rankings r
-
 INNER JOIN HS_Rankings r5
     ON  r5.Home   = r.Home
     AND r5.Season BETWEEN r.Season - 4 AND r.Season
     AND r5.Week   = 52
-
 WHERE r.Week = 52
-
   AND NOT EXISTS (
       SELECT 1
       FROM HS_Team_Level_History lh
@@ -98,18 +91,17 @@ WHERE r.Week = 52
         AND lh.PlayerLevel IN (6, 8, 9)
         AND r.Season BETWEEN lh.Season_Begin AND lh.Season_End
   )
-
 GROUP BY
     r.Home,
     r.Season,
-    r.Combined_Rating
-
+    r.[Avg_Of_Avg_Of_Home_Modified_Score]
 HAVING
-    r.Combined_Rating           > 20
-    AND AVG(r5.Combined_Rating) > 20
-    AND COUNT(DISTINCT r5.Season) >= 2;
+    (0.958 * r.[Avg_Of_Avg_Of_Home_Modified_Score] + 2.791)           > 20
+    AND AVG(0.958 * r5.[Avg_Of_Avg_Of_Home_Modified_Score] + 2.791)   > 20
+    AND COUNT(DISTINCT r5.Season) >= 2
+"""
 
--- Score and return top qualifying games
+SQL_GET_GAMES = """
 SELECT TOP {top_games}
     s.Season,
     s.Home,
@@ -128,25 +120,18 @@ SELECT TOP {top_games}
             ELSE 0
         END
     AS DECIMAL(10,4))           AS PRI_Raw
-
 FROM HS_Scores s
-
 INNER JOIN #EP_Rivals ep_h
     ON  ep_h.TeamName = s.Home
     AND ep_h.Season   = s.Season
-
 INNER JOIN #EP_Rivals ep_v
     ON  ep_v.TeamName = s.Visitor
     AND ep_v.Season   = s.Season
-
 WHERE
     (s.Future_Game IS NULL OR s.Future_Game = 0)
     AND (s.Forfeit IS NULL OR s.Forfeit = 0)
     AND ABS(s.Margin) <= 8
-
 ORDER BY PRI_Raw DESC;
-
-DROP TABLE #EP_Rivals;
 """.format(top_games=TOP_GAMES)
 
 # ── SQL: All-time head-to-head record for a pair ──────────────────────────────
@@ -256,16 +241,20 @@ def main():
         print(f"ERROR: Could not connect: {e}", file=sys.stderr)
         sys.exit(1)
 
-    # ── Step 1: Pull qualifying games ─────────────────────────────────────────
+# ── Step 1: Pull qualifying games ─────────────────────────────────────────
     print(f"\nStep 1: Pulling top {TOP_GAMES:,} qualifying games (may take 2-3 minutes)...")
     try:
-        cursor.execute(SQL_QUALIFYING_GAMES)
+        print("  Building elite programs table...")
+        cursor.execute("IF OBJECT_ID('tempdb..#EP_Rivals') IS NOT NULL DROP TABLE #EP_Rivals")
+        cursor.execute(SQL_CREATE_ELITE)
 
-        # Advance past intermediate result sets
-        while cursor.description is None:
-            if not cursor.nextset():
-                break
+        # Diagnostic
+        cursor.execute("SELECT COUNT(*) FROM #EP_Rivals")
+        ep_count = cursor.fetchone()[0]
+        print(f"  Elite programs table has {ep_count:,} rows")
 
+        print("  Querying qualifying games...")
+        cursor.execute(SQL_GET_GAMES)
         rows = cursor.fetchall()
         columns = [col[0].lower() for col in cursor.description]
         print(f"  Retrieved {len(rows):,} qualifying games.")
@@ -275,10 +264,7 @@ def main():
         conn.close()
         sys.exit(1)
 
-    if not rows:
-        print("WARNING: No qualifying games returned.")
-        conn.close()
-        sys.exit(0)
+
 
     # ── Step 2: Normalise PRI and aggregate by pair ───────────────────────────
     print("\nStep 2: Normalising PRI and aggregating by rivalry pair...")
