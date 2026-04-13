@@ -1328,6 +1328,36 @@ function Process-GreatestRivalries {
     }
 }
 
+function Process-BorderWars {
+    Write-Host "Processing Border Wars page..." -ForegroundColor Yellow
+
+    $templatePath = Join-Path $templateBaseDir "border-wars-template.html"
+    $outputPath   = Join-Path $outputBaseDir   "border-wars.html"
+
+    if (Test-Path $templatePath) {
+        try {
+            $template = Get-Content $templatePath -Raw -Encoding UTF8
+            $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+            $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+            $template = $template -replace '<userStyle>Normal</userStyle>', ''
+            Set-Content -Path $outputPath -Value $template -Encoding UTF8
+            Write-Host "  Generated: border-wars.html" -ForegroundColor Green
+        } catch {
+            Write-Error "Error processing Border Wars template: $_"
+            Generate-ComingSoonPage `
+                -OutputPath $outputPath `
+                -Title "Border Wars" `
+                -Message "Border Wars data is being compiled. Please check back soon."
+        }
+    } else {
+        Write-Warning "Border Wars template not found: $templatePath"
+        Generate-ComingSoonPage `
+            -OutputPath $outputPath `
+            -Title "Border Wars" `
+            -Message "Border Wars data is being compiled. Please check back soon."
+    }
+}
+
 #endregion Processing Functions
 
 #region Main Script Execution
@@ -1461,6 +1491,10 @@ $stateRegions = @{
     # Process Greatest Rivalries
     Write-Host "`nProcessing Greatest Rivalries..." -ForegroundColor Green
     Process-GreatestRivalries
+
+    # Process Border Wars
+    Write-Host "`nProcessing Border Wars..." -ForegroundColor Green
+    Process-BorderWars
 
     # Generate Index Pages
     Write-Host "`nGenerating index pages..." -ForegroundColor Green
