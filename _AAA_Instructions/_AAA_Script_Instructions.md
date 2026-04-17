@@ -26,10 +26,14 @@ python generate_greatest_rivalries_json.py
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
 
-git add .
+git add .python 
 git commit -m "fix: state pages secondary colors v1"
 
 git push origin main
+
+Script only processes rows where Sync = x
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
+python pull_sheets_to_sql.py
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
 1. **.\run_update_cycle.ps1** (The "Daily Master Switch")
