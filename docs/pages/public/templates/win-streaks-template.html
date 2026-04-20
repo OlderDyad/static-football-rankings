@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Win Streaks - McKnight's American Football Rankings</title>
+    <meta name="description" content="The longest consecutive winning streaks in high school football history, led by De La Salle's record 151-game streak from 1992-2004.">
+    <meta name="data-file" content="/static-football-rankings/data/win-streaks/win-streaks.json">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    <style>
+        .streak-row { cursor: pointer; }
+        .streak-row:hover { background-color: #f8f9fa; }
+        .streak-detail { display: none; background-color: #f8f9fa; }
+        .streak-detail.show { display: table-row; }
+        .game-table { font-size: 0.85rem; }
+        .game-table th { background-color: #343a40; color: white; }
+        .win-badge { background-color: #198754; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8rem; }
+        .rank-cell { font-weight: bold; font-size: 1.1rem; color: #6c757d; }
+        .dls-row { background-color: #fff3cd !important; }
+        .dls-row:hover { background-color: #ffeeba !important; }
+        .caveat-box { background-color: #f8f9fa; border-left: 4px solid #6c757d; padding: 1rem; font-size: 0.875rem; }
+        .stat-badge { display: inline-block; background: #e9ecef; border-radius: 4px; padding: 2px 8px; font-size: 0.8rem; margin-right: 4px; }
+        .loading-spinner { display: flex; justify-content: center; align-items: center; height: 200px; }
+        .toggle-icon { float: right; font-size: 0.8rem; color: #6c757d; }
+    </style>
+    <!-- GA4 -->
+    COMMENTS_SCRIPT_PLACEHOLDER
+</head>
+<body>
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
+
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Greatest Win Streaks</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container mt-2">
+        <h1>Greatest Win Streaks</h1>
+        <p class="text-muted">Last updated: TIMESTAMP</p>
+
+        <!-- Intro -->
+        <div class="row mb-4">
+            <div class="col-lg-8">
+                <p>The longest consecutive winning streaks in high school football history. Any loss or tie ends a streak.
+                De La Salle High School of Concord, California holds the all-time record with <strong>151 consecutive wins</strong>
+                from 1992 to 2004 — a run so dominant it inspired a feature film and multiple books.</p>
+            </div>
+            <div class="col-lg-4">
+                <div class="card border-warning">
+                    <div class="card-body p-3">
+                        <h6 class="card-title mb-1">&#128081; All-Time Record</h6>
+                        <div class="fw-bold">Concord De La Salle (CA)</div>
+                        <div class="text-muted small">151 wins &bull; 1992–2004 &bull; Avg margin: +38</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Pages -->
+        <div class="mb-4">
+            <span class="me-2 text-muted small">Related:</span>
+            <a href="/static-football-rankings/pages/public/performance-streaks.html" class="btn btn-sm btn-outline-secondary me-2">Performance Streaks</a>
+        </div>
+
+        <!-- Table -->
+        <div id="loading" class="loading-spinner">
+            <div class="spinner-border text-secondary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div id="content" style="display:none;">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered align-middle" id="streaksTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th style="width:50px">#</th>
+                            <th>Team</th>
+                            <th style="width:80px" class="text-center">Wins</th>
+                            <th>Span</th>
+                            <th style="width:90px" class="text-center">Avg Margin</th>
+                            <th style="width:90px" class="text-center">Max Margin</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+
+            <!-- Caveat -->
+            <div class="caveat-box mt-4 mb-4">
+                <strong>Data Notes:</strong> This leaderboard is dynamically generated from McKnight's database of 5M+ historical game records.
+                Due to missing game logs prior to the digital era and varying state rulings on forfeits, some streak lengths may differ slightly
+                from official state or national record books. For example, Charlotte Independence's official streak is 109 games and
+                South Panola's is 89 games. Pre-1960 records are likely incomplete —
+                Sims (Union County, SC) had a 96-game unbeaten streak (1945–1954) and
+                Bedford County Training School (Shelbyville, TN) went 82 games without a loss (1943–1950),
+                but these programs may not be fully represented in our database.
+                8-man and 9-man streaks are included where data exists.
+            </div>
+        </div>
+
+        <div id="error" style="display:none;" class="alert alert-warning">
+            Unable to load win streaks data. Please try again later.
+        </div>
+    </div>
+
+    <footer class="mt-5 mb-3">
+        <div class="text-center text-muted">
+            <p>&copy; 2025 McKnight's Football Rankings</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    (function() {
+        const DATA_URL = '/static-football-rankings/data/win-streaks/win-streaks.json';
+        let allData = [];
+        let openRow = null;
+
+        function formatTeamState(team) {
+            const m = team.match(/\(([A-Z]{2})\)$/);
+            return m ? { name: team.replace(/\s*\([A-Z]{2}\)$/, ''), state: m[1] } : { name: team, state: '' };
+        }
+
+        function formatSeasons(start, end) {
+            return start === end ? String(start) : `${start}–${end}`;
+        }
+
+        function formatSpan(dateStart, dateEnd, seasonStart, seasonEnd) {
+            return `${formatSeasons(seasonStart, seasonEnd)}`;
+        }
+
+        function buildGameRows(games) {
+            return games.map((g, i) => {
+                const marginStr = g.margin > 0 ? `+${g.margin}` : String(g.margin);
+                const { name: oppName } = formatTeamState(g.opponent);
+                return `<tr>
+                    <td class="text-muted">${i + 1}</td>
+                    <td>${g.date}</td>
+                    <td>${oppName}</td>
+                    <td class="text-center"><span class="win-badge">${marginStr}</span></td>
+                </tr>`;
+            }).join('');
+        }
+
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            data.forEach(item => {
+                const { name, state } = formatTeamState(item.team);
+                const isDLS = item.team.includes('De La Salle');
+                const rowClass = isDLS ? 'streak-row dls-row' : 'streak-row';
+                const seasonSpan = formatSeasons(item.season_start, item.season_end);
+
+                // Main row
+                const tr = document.createElement('tr');
+                tr.className = rowClass;
+                tr.dataset.rank = item.rank;
+                tr.innerHTML = `
+                    <td class="rank-cell text-center">${item.rank}</td>
+                    <td>
+                        <strong>${name}</strong>
+                        ${state ? `<span class="badge bg-secondary ms-1">${state}</span>` : ''}
+                        ${isDLS ? '<span class="badge bg-warning text-dark ms-1">&#127942; Record</span>' : ''}
+                        <span class="toggle-icon">&#9660;</span>
+                    </td>
+                    <td class="text-center fw-bold fs-5">${item.streak_length}</td>
+                    <td>${seasonSpan}<br><small class="text-muted">${item.date_start} to ${item.date_end}</small></td>
+                    <td class="text-center">+${item.avg_margin}</td>
+                    <td class="text-center">+${item.max_margin}</td>
+                `;
+
+                // Detail row
+                const detailTr = document.createElement('tr');
+                detailTr.className = 'streak-detail';
+                detailTr.innerHTML = `
+                    <td colspan="6">
+                        <div class="p-3">
+                            <div class="mb-2">
+                                <span class="stat-badge">&#127944; ${item.streak_length} consecutive wins</span>
+                                <span class="stat-badge">Avg margin: +${item.avg_margin}</span>
+                                <span class="stat-badge">Max margin: +${item.max_margin}</span>
+                                <span class="stat-badge">Min margin: +${item.min_margin}</span>
+                            </div>
+                            <div class="table-responsive" style="max-height:400px; overflow-y:auto;">
+                                <table class="table table-sm game-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th><th>Date</th><th>Opponent</th><th class="text-center">Margin</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>${buildGameRows(item.games)}</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                `;
+
+                tr.addEventListener('click', function() {
+                    const icon = this.querySelector('.toggle-icon');
+                    if (openRow && openRow !== detailTr) {
+                        openRow.classList.remove('show');
+                        const prevRow = openRow.previousElementSibling;
+                        if (prevRow) prevRow.querySelector('.toggle-icon').innerHTML = '&#9660;';
+                    }
+                    detailTr.classList.toggle('show');
+                    icon.innerHTML = detailTr.classList.contains('show') ? '&#9650;' : '&#9660;';
+                    openRow = detailTr.classList.contains('show') ? detailTr : null;
+                });
+
+                tbody.appendChild(tr);
+                tbody.appendChild(detailTr);
+            });
+        }
+
+        fetch(DATA_URL)
+            .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(data => {
+                allData = data.items || [];
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                renderTable(allData);
+            })
+            .catch(err => {
+                console.error('Error loading win streaks:', err);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            });
+    })();
+    </script>
+</body>
+</html>

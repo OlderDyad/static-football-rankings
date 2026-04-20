@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Streaks - McKnight's American Football Rankings</title>
+    <meta name="description" content="The longest sustained elite-performance streaks in high school football history, benchmarked against De La Salle's legendary 151-game win streak.">
+    <meta name="data-file" content="/static-football-rankings/data/performance-streaks/performance-streaks.json">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+    <style>
+        .streak-row { cursor: pointer; }
+        .streak-row:hover { background-color: #f8f9fa; }
+        .streak-detail { display: none; background-color: #f8f9fa; }
+        .streak-detail.show { display: table-row; }
+        .game-table { font-size: 0.85rem; }
+        .game-table th { background-color: #343a40; color: white; }
+        .rank-cell { font-weight: bold; font-size: 1.1rem; color: #6c757d; }
+        .dls-row { background-color: #fff3cd !important; }
+        .dls-row:hover { background-color: #ffeeba !important; }
+        .methodology-box { background-color: #e8f4f8; border-left: 4px solid #0d6efd; padding: 1rem; }
+        .caveat-box { background-color: #f8f9fa; border-left: 4px solid #6c757d; padding: 1rem; font-size: 0.875rem; }
+        .stat-badge { display: inline-block; background: #e9ecef; border-radius: 4px; padding: 2px 8px; font-size: 0.8rem; margin-right: 4px; }
+        .perf-high { color: #198754; font-weight: bold; }
+        .perf-mid  { color: #0d6efd; }
+        .perf-low  { color: #6c757d; }
+        .loading-spinner { display: flex; justify-content: center; align-items: center; height: 200px; }
+        .toggle-icon { float: right; font-size: 0.8rem; color: #6c757d; }
+        .perf-bar-wrap { width: 80px; background: #e9ecef; border-radius: 3px; height: 8px; display: inline-block; vertical-align: middle; margin-left: 4px; }
+        .perf-bar-fill { height: 8px; border-radius: 3px; background: #0d6efd; }
+    </style>
+    <!-- GA4 -->
+    <div class="container mt-5">
+    <div class="comments-section">
+        <h3 class="mb-4">Comments & Discussion</h3>
+        <p class="text-muted small mb-3">
+            Sign in with GitHub to comment. Comments are stored as 
+            <a href="https://github.com/olderdyad/static-football-rankings/discussions" target="_blank">GitHub Discussions</a>.
+        </p>
+        <script src="https://giscus.app/client.js"
+                data-repo="olderdyad/static-football-rankings"
+                data-repo-id="R_kgDONn_yOg"
+                data-category="General"
+                data-category-id="DIC_kwDONn_yOs4C0hls"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="1"
+                data-input-position="top"
+                data-theme="preferred_color_scheme"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+</div>
+</head>
+<body>
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
+
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Performance Streaks</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container mt-2">
+        <h1>Performance Streaks</h1>
+        <p class="text-muted">Last updated: 4/20/2026</p>
+
+        <!-- Methodology -->
+        <div class="methodology-box mb-4">
+            <h5 class="mb-2">&#128202; How This Works: The De La Salle Benchmark</h5>
+            <p class="mb-2">
+                Rather than measuring win streaks alone, this page measures <strong>sustained elite performance</strong> —
+                a combination of dominant margins and strong opposition. Every game receives a
+                <strong>Game Performance Score</strong>:
+            </p>
+            <p class="mb-2 font-monospace small ps-3">
+                Game Performance = Average(Team Rating, Opponent Rating) + (Margin / 2)
+            </p>
+            <p class="mb-2">
+                The threshold is set by <strong>De La Salle's 151-game winning streak (1992–2004)</strong> —
+                specifically, the <em>minimum</em> Game Performance score recorded during that streak
+                (currently <strong id="thresholdVal">22.04</strong>).
+                A team's performance streak counts every consecutive game where their score meets or exceeds this benchmark.
+                This means even a dominant win against a weak team may not qualify if the combined ratings are too low.
+            </p>
+            <p class="mb-0 small text-muted">
+                Note: De La Salle appears twice — their historic 1992–2004 streak and a separate ongoing streak since 2004.
+                Unrated opponents use a rating of 0.
+            </p>
+        </div>
+
+        <!-- Related Pages -->
+        <div class="mb-4">
+            <span class="me-2 text-muted small">Related:</span>
+            <a href="/static-football-rankings/pages/public/win-streaks.html" class="btn btn-sm btn-outline-secondary me-2">Win Streaks</a>
+        </div>
+
+        <!-- Table -->
+        <div id="loading" class="loading-spinner">
+            <div class="spinner-border text-secondary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div id="content" style="display:none;">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered align-middle" id="streaksTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th style="width:50px">#</th>
+                            <th>Team</th>
+                            <th style="width:80px" class="text-center">Games</th>
+                            <th>Span</th>
+                            <th style="width:90px" class="text-center">Min Perf</th>
+                            <th style="width:90px" class="text-center">Avg Perf</th>
+                            <th style="width:90px" class="text-center">Max Perf</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="caveat-box mt-4 mb-4">
+                <strong>Data Notes:</strong> Performance scores depend on both teams having Week 52 ratings in the database.
+                Unrated opponents use a rating of 0, which lowers the performance score and makes it harder to maintain a streak
+                against unknown opposition. Pre-1980 coverage is incomplete and streaks from that era may be understated.
+            </div>
+        </div>
+
+        <div id="error" style="display:none;" class="alert alert-warning">
+            Unable to load performance streaks data. Please try again later.
+        </div>
+    </div>
+
+    <footer class="mt-5 mb-3">
+        <div class="text-center text-muted">
+            <p>&copy; 2025 McKnight's Football Rankings</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    (function() {
+        const DATA_URL = '/static-football-rankings/data/performance-streaks/performance-streaks.json';
+        let allData = [];
+        let openRow = null;
+
+        function formatTeamState(team) {
+            const m = team.match(/\(([A-Z]{2})\)$/);
+            return m ? { name: team.replace(/\s*\([A-Z]{2}\)$/, ''), state: m[1] } : { name: team, state: '' };
+        }
+
+        function formatSeasons(start, end) {
+            return start === end ? String(start) : `${start}–${end}`;
+        }
+
+        function perfClass(perf, threshold) {
+            if (perf >= threshold * 1.5) return 'perf-high';
+            if (perf >= threshold * 1.2) return 'perf-mid';
+            return 'perf-low';
+        }
+
+        function perfBar(avg, max) {
+            const pct = Math.min(100, Math.round((avg / max) * 100));
+            return `<div class="perf-bar-wrap"><div class="perf-bar-fill" style="width:${pct}%"></div></div>`;
+        }
+
+        function buildGameRows(games, threshold) {
+            return games.map((g, i) => {
+                const marginStr = g.margin > 0 ? `+${g.margin}` : String(g.margin);
+                const { name: oppName } = formatTeamState(g.opponent);
+                const pc = perfClass(g.game_performance, threshold);
+                return `<tr>
+                    <td class="text-muted">${i + 1}</td>
+                    <td>${g.date}</td>
+                    <td>${oppName}</td>
+                    <td class="text-center">${marginStr}</td>
+                    <td class="text-center ${pc}">${g.game_performance.toFixed(2)}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function renderTable(data, threshold) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            const maxAvg = Math.max(...data.map(d => d.avg_perf));
+
+            data.forEach(item => {
+                const { name, state } = formatTeamState(item.team);
+                const isDLS = item.team.includes('De La Salle');
+                const isHistoric = isDLS && item.date_end <= '2004-09-05';
+                const rowClass = isDLS ? 'streak-row dls-row' : 'streak-row';
+                const seasonSpan = formatSeasons(item.season_start, item.season_end);
+
+                const tr = document.createElement('tr');
+                tr.className = rowClass;
+                tr.dataset.rank = item.rank;
+                tr.innerHTML = `
+                    <td class="rank-cell text-center">${item.rank}</td>
+                    <td>
+                        <strong>${name}</strong>
+                        ${state ? `<span class="badge bg-secondary ms-1">${state}</span>` : ''}
+                        ${isHistoric ? '<span class="badge bg-warning text-dark ms-1">&#127942; Benchmark</span>' : ''}
+                        <span class="toggle-icon">&#9660;</span>
+                    </td>
+                    <td class="text-center fw-bold fs-5">${item.streak_length}</td>
+                    <td>${seasonSpan}<br><small class="text-muted">${item.date_start} to ${item.date_end}</small></td>
+                    <td class="text-center">${item.min_perf.toFixed(2)}</td>
+                    <td class="text-center">
+                        ${item.avg_perf.toFixed(2)}
+                        ${perfBar(item.avg_perf, maxAvg)}
+                    </td>
+                    <td class="text-center perf-high">${item.max_perf.toFixed(2)}</td>
+                `;
+
+                const detailTr = document.createElement('tr');
+                detailTr.className = 'streak-detail';
+                detailTr.innerHTML = `
+                    <td colspan="7">
+                        <div class="p-3">
+                            <div class="mb-2">
+                                <span class="stat-badge">&#128202; ${item.streak_length} games</span>
+                                <span class="stat-badge">Min: ${item.min_perf.toFixed(2)}</span>
+                                <span class="stat-badge">Avg: ${item.avg_perf.toFixed(2)}</span>
+                                <span class="stat-badge">Max: ${item.max_perf.toFixed(2)}</span>
+                                <span class="stat-badge">Threshold: ${threshold.toFixed(2)}</span>
+                            </div>
+                            <div class="table-responsive" style="max-height:400px; overflow-y:auto;">
+                                <table class="table table-sm game-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th><th>Date</th><th>Opponent</th>
+                                            <th class="text-center">Margin</th>
+                                            <th class="text-center">Perf Score</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>${buildGameRows(item.games, threshold)}</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                `;
+
+                tr.addEventListener('click', function() {
+                    const icon = this.querySelector('.toggle-icon');
+                    if (openRow && openRow !== detailTr) {
+                        openRow.classList.remove('show');
+                        const prevRow = openRow.previousElementSibling;
+                        if (prevRow) prevRow.querySelector('.toggle-icon').innerHTML = '&#9660;';
+                    }
+                    detailTr.classList.toggle('show');
+                    icon.innerHTML = detailTr.classList.contains('show') ? '&#9650;' : '&#9660;';
+                    openRow = detailTr.classList.contains('show') ? detailTr : null;
+                });
+
+                tbody.appendChild(tr);
+                tbody.appendChild(detailTr);
+            });
+        }
+
+        fetch(DATA_URL)
+            .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(data => {
+                const threshold = data.metadata.threshold || 22.04;
+                const el = document.getElementById('thresholdVal');
+                if (el) el.textContent = threshold.toFixed(2);
+                allData = data.items || [];
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                renderTable(allData, threshold);
+            })
+            .catch(err => {
+                console.error('Error loading performance streaks:', err);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            });
+    })();
+    </script>
+</body>
+</html>
+

@@ -89,6 +89,12 @@ python generate_greatest_games_json.py
 Write-Host "  - Generating Greatest Rivalries JSON..." -ForegroundColor Yellow
 python generate_greatest_rivalries_json.py
 
+Write-Host "  - Generating Win Streaks JSON..." -ForegroundColor Yellow
+python generate_win_streaks_json.py
+
+Write-Host "  - Generating Performance Streaks JSON..." -ForegroundColor Yellow
+python generate_performance_streaks_json.py
+
 Write-Host "  - Generating Border Wars JSON..." -ForegroundColor Yellow
 python generate_border_wars_json.py
 

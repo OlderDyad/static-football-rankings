@@ -45,6 +45,26 @@ if (-not (Test-Path $templateBaseDir)) {
     Write-Warning "Template directory not found, creating: $templateBaseDir"
     New-Item -ItemType Directory -Path $templateBaseDir -Force | Out-Null
 }
+
+function Process-PerformanceStreaks {
+    Write-Host "Processing Performance Streaks page..." -ForegroundColor Yellow
+    $templatePath = Join-Path $templateBaseDir "performance-streaks-template.html"
+    $outputPath   = Join-Path $outputBaseDir   "performance-streaks.html"
+    if (Test-Path $templatePath) {
+        try {
+            $template = Get-Content $templatePath -Raw -Encoding UTF8
+            $template = $template -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+            $template = $template -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+            $template = $template -replace '<userStyle>Normal</userStyle>', ''
+            Set-Content -Path $outputPath -Value $template -Encoding UTF8
+            Write-Host "  Generated: performance-streaks.html" -ForegroundColor Green
+        } catch {
+            Write-Error "Error processing Performance Streaks template: $_"
+        }
+    } else {
+        Write-Warning "Performance Streaks template not found: $templatePath"
+    }
+}
 #endregion Configuration
 
 #region Template Verification
@@ -1491,6 +1511,10 @@ $stateRegions = @{
     # Process Greatest Rivalries
     Write-Host "`nProcessing Greatest Rivalries..." -ForegroundColor Green
     Process-GreatestRivalries
+
+    # Process Greatest Performance Streaks
+    Write-Host "`nProcessing Performance Streaks..." -ForegroundColor Green
+    Process-PerformanceStreaks
 
     # Process Border Wars
     Write-Host "`nProcessing Border Wars..." -ForegroundColor Green

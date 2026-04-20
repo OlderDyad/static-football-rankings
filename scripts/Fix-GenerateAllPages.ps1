@@ -47,6 +47,33 @@ $commentCode = @"
 </div>
 "@
 
+function Process-WinStreaks {
+    $templatePath = Join-Path $templateBaseDir "win-streaks-template.html"
+    $outputPath   = Join-Path $outputBaseDir   "win-streaks.html"
+    if (Test-Path $templatePath) {
+        $t = Get-Content $templatePath -Raw -Encoding UTF8
+        $t = $t -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+        $t = $t -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+        Set-Content -Path $outputPath -Value $t -Encoding UTF8
+        Write-Host "  Generated: win-streaks.html" -ForegroundColor Green
+    }
+}
+
+function Process-PerformanceStreaks {
+    $templatePath = Join-Path $templateBaseDir "performance-streaks-template.html"
+    $outputPath   = Join-Path $outputBaseDir   "performance-streaks.html"
+    if (Test-Path $templatePath) {
+        $t = Get-Content $templatePath -Raw -Encoding UTF8
+        $t = $t -replace 'COMMENTS_SCRIPT_PLACEHOLDER', $commentCode
+        $t = $t -creplace 'TIMESTAMP', (Get-Date -Format "M/d/yyyy")
+        Set-Content -Path $outputPath -Value $t -Encoding UTF8
+        Write-Host "  Generated: performance-streaks.html" -ForegroundColor Green
+    }
+}
+
+Process-WinStreaks
+Process-PerformanceStreaks
+
 #endregion Template Scripts
 '@
 
