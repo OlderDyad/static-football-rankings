@@ -426,8 +426,11 @@
         function buildRow(g) {
             const absMargin = Math.abs(g.margin);
             const mBadge = `<span class="margin-badge ${marginClass(g.margin)}">${absMargin === 0 ? 'TIE' : absMargin + ' pt'}</span>`;
+            const detailLink = g.has_detail_page && g.detail_page_url
+                ? `<a href="${g.detail_page_url}" title="View game detail" class="ms-1">&#128196;</a>`
+                : '';
             return `<tr>
-                <td class="${rankClass(g.rank)}">${g.rank}</td>
+                <td class="${rankClass(g.rank)}">${g.rank}${detailLink}</td>
                 <td>${g.season}</td>
                 <td>${escapeHtml(g.home_team)}</td>
                 <td>${escapeHtml(g.visitor_team)}</td>

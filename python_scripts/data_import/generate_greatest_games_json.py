@@ -103,6 +103,9 @@ SELECT TOP {top_n}
             ELSE 0
         END DESC
     )                           AS Rank,
+    s.ID                        AS Game_ID,
+    ISNULL(s.Has_Detail_Page, 0) AS Has_Detail_Page,
+    s.Detail_Page_URL           AS Detail_Page_URL,
     s.Season,
     s.Home                      AS Home_Team,
     s.Visitor                   AS Visitor_Team,
@@ -160,7 +163,24 @@ def safe_str(val, default=""):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-print("\nRunning PRI query (may take up to 2 minutes)...")
+def main():
+    print("=" * 60)
+    print("Greatest Games JSON Generator")
+    print(f"Target: {OUTPUT_FILE}")
+    print(f"Top N: {TOP_N}")
+    print("=" * 60)
+
+    print("\nConnecting to SQL Server...")
+    try:
+        conn = pyodbc.connect(CONNECTION_STRING, timeout=30)
+        cursor = conn.cursor()
+        print("Connected.")
+    except Exception as e:
+        print(f"ERROR: Could not connect: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    print("\nRunning PRI query (may take up to 2 minutes)...")
+    
     try:
         # Step 1: Build elite programs temp table
         cursor.execute("IF OBJECT_ID('tempdb..#ElitePrograms') IS NOT NULL DROP TABLE #ElitePrograms")
@@ -191,6 +211,9 @@ print("\nRunning PRI query (may take up to 2 minutes)...")
         r = dict(zip(columns, row))
         records.append({
             "rank":          safe_int(r.get("rank")),
+            "game_id":       safe_str(r.get("game_id")),
+            "has_detail_page": bool(r.get("has_detail_page")),
+            "detail_page_url": safe_str(r.get("detail_page_url")) or None,
             "season":        safe_int(r.get("season")),
             "home_team":     safe_str(r.get("home_team")),
             "visitor_team":  safe_str(r.get("visitor_team")),
