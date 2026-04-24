@@ -75,6 +75,44 @@ def generate_json():
                     champion.pop(key, None)
                 
                 champions.append(champion)
+            
+            # Fetch season games for each champion
+            for champion in champions:
+                team_name = champion.get('team', '')
+                season = champion.get('year', 0)
+                try:
+                    cursor.execute("""
+                        SELECT 
+                            CONVERT(VARCHAR(10), Date, 120) AS game_date,
+                            Home, Visitor, Home_Score, Visitor_Score, Margin
+                        FROM HS_Scores
+                        WHERE (Home = ? OR Visitor = ?)
+                          AND Season = ?
+                          AND (Future_Game IS NULL OR Future_Game = 0)
+                          AND (Forfeit IS NULL OR Forfeit = 0)
+                          AND Home_Score IS NOT NULL
+                        ORDER BY Date
+                    """, team_name, team_name, season)
+                    game_rows = cursor.fetchall()
+                    games = []
+                    for g in game_rows:
+                        is_home = g.Home == team_name
+                        opponent = g.Visitor if is_home else g.Home
+                        team_score = g.Home_Score if is_home else g.Visitor_Score
+                        opp_score = g.Visitor_Score if is_home else g.Home_Score
+                        margin = g.Margin if is_home else -g.Margin
+                        result = 'W' if margin > 0 else ('L' if margin < 0 else 'T')
+                        games.append({
+                            'date': g.game_date or '',
+                            'opponent': opponent,
+                            'team_score': int(team_score),
+                            'opp_score': int(opp_score),
+                            'result': result,
+                            'margin': int(margin)
+                        })
+                    champion['games'] = games
+                except Exception as ge:
+                    champion['games'] = []
 
             os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
