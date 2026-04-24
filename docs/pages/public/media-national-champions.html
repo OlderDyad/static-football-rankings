@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media National Champions - McKnight's American Football</title>
     <meta name="data-file" content="/static-football-rankings/data/media-national-champions/media-national-champions.json">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
     <style>
@@ -18,6 +17,14 @@
             text-decoration: underline !important;
             color: #0052a3 !important;
         }
+        .champ-row { cursor: pointer; }
+        .games-detail { display: none; background: #f8f9fa; }
+        .games-detail.show { display: table-row; }
+        .game-result-W { color: #198754; font-weight: bold; }
+        .game-result-L { color: #dc3545; font-weight: bold; }
+        .game-result-T { color: #6c757d; font-weight: bold; }
+        .wiki-link { font-size: 0.8rem; margin-left: 4px; }
+        .toggle-icon { float: right; color: #6c757d; font-size: 0.8rem; }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GC17GSJ4S0"></script>
@@ -26,7 +33,8 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-GC17GSJ4S0');
-    </script></head>
+    </script>
+</head>
 <body>
     <div class="header-banner">
         <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
@@ -84,7 +92,15 @@
             </table>
         </div>
 
-        <div class="container mt-5">
+        <footer class="mt-5 mb-3">
+            <div class="text-center">
+                <p>&copy; 2025 McKnight's Football Rankings</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="container mt-5">
     <div class="comments-section">
         <h3 class="mb-4">Comments & Discussion</h3>
         <p class="text-muted small mb-3">
@@ -110,73 +126,47 @@
     </div>
 </div>
 
-        <footer class="mt-5 mb-3">
-            <div class="text-center">
-                <p>&copy; 2025 McKnight's Football Rankings</p>
-            </div>
-        </footer>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
 <script>
-    console.log('=== INLINE SCRIPT STARTING ===');
-
     let allData = [];
     let filteredData = [];
 
     document.addEventListener('DOMContentLoaded', async () => {
-        console.log('DOM loaded, loading data...');
-        
         const dataFileMeta = document.querySelector('meta[name="data-file"]');
-        if (!dataFileMeta) {
-            console.error('❌ No data-file meta tag found');
-            return;
-        }
-        
+        if (!dataFileMeta) return;
         const dataPath = dataFileMeta.getAttribute('content');
-        
         try {
             const response = await fetch(dataPath);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            
             const data = await response.json();
-            console.log('✓ Data loaded');
-            
             if (data.topItem) {
                 createBanner(data.topItem);
                 applyTableColors(data.topItem);
-                
-                allData = data.items;
-                filteredData = allData;
-                
-                setupSearch();
-                populateTable(filteredData);
             }
+            allData = data.items || [];
+            filteredData = allData;
+            setupSearch();
+            populateTable(filteredData);
         } catch (error) {
-            console.error('❌ Error:', error);
+            console.error('Error loading data:', error);
         }
     });
 
     function setupSearch() {
         const searchInput = document.getElementById('tableSearch');
         if (!searchInput) return;
-
         searchInput.addEventListener('keyup', (e) => {
             const term = e.target.value.toLowerCase();
-            
             if (term.length < 2) {
                 filteredData = allData;
             } else {
-                filteredData = allData.filter(item => 
-                    item.team.toLowerCase().includes(term) || 
+                filteredData = allData.filter(item =>
+                    item.team.toLowerCase().includes(term) ||
                     item.year.toString().includes(term) ||
                     (item.coach && item.coach.toLowerCase().includes(term)) ||
                     (item.source && item.source.toLowerCase().includes(term)) ||
                     (item.state && item.state.toLowerCase().includes(term))
                 );
             }
-            
             populateTable(filteredData);
         });
     }
@@ -184,27 +174,36 @@
     function populateTable(items) {
         const tbody = document.getElementById('championsTableBody');
         if (!tbody) return;
-
         tbody.innerHTML = '';
-
         if (items.length === 0) {
             tbody.innerHTML = '<tr><td colspan="8" class="text-center">No matching records found</td></tr>';
             return;
         }
-
+        let openDetail = null;
         items.forEach(item => {
+            // -- Main row --
             const row = document.createElement('tr');
-            
+            row.className = 'champ-row';
+
             let teamHtml;
             if (item.hasTeamPage && item.teamPageUrl) {
-                teamHtml = `<a href="${item.teamPageUrl}" class="team-link">${item.team}</a>`;
+                teamHtml = `<a href="${item.teamPageUrl}" class="team-link" onclick="event.stopPropagation()">${item.team}</a>`;
             } else {
                 teamHtml = item.team;
             }
 
+            const wikiHtml = item.wikipedia_url
+                ? `<a href="${item.wikipedia_url}" target="_blank" class="wiki-link" title="Wikipedia source" onclick="event.stopPropagation()">&#128196;</a>`
+                : '';
+
+            const hasGames = item.games && item.games.length > 0;
+            const toggleIcon = hasGames
+                ? `<span class="toggle-icon">&#9660;</span>`
+                : '';
+
             row.innerHTML = `
-                <td>${item.year}</td>
-                <td>${teamHtml}</td>
+                <td>${item.year}${wikiHtml}</td>
+                <td>${teamHtml}${toggleIcon}</td>
                 <td>${item.combined || ''}</td>
                 <td>${item.record || ''}</td>
                 <td>${item.coach || ''}</td>
@@ -212,10 +211,66 @@
                 <td>${item.notes || ''}</td>
                 <td>${item.state || ''}</td>
             `;
-            tbody.appendChild(row);
-        });
 
-        console.log(`✓ Table populated with ${items.length} champions`);
+            // -- Detail row --
+            const detailRow = document.createElement('tr');
+            detailRow.className = 'games-detail';
+
+            if (hasGames) {
+                const gameRows = item.games.map(g => {
+                    const oppName = g.opponent.replace(/\s*\([A-Z]{2}\)$/, '');
+                    const scoreStr = `${g.team_score}â€“${g.opp_score}`;
+                    const marginStr = g.margin > 0 ? `+${g.margin}` : String(g.margin);
+                    return `<tr>
+                        <td class="text-muted small">${g.date}</td>
+                        <td>${oppName}</td>
+                        <td class="text-center"><span class="game-result-${g.result}">${g.result}</span></td>
+                        <td class="text-center">${scoreStr}</td>
+                        <td class="text-center">${marginStr}</td>
+                    </tr>`;
+                }).join('');
+
+                detailRow.innerHTML = `
+                    <td colspan="8">
+                        <div class="p-3">
+                            <strong>${item.team} &mdash; ${item.year} Season (${item.record})</strong>
+                            <div class="table-responsive mt-2" style="max-height:350px;overflow-y:auto;">
+                                <table class="table table-sm table-bordered mb-0" style="font-size:0.85rem;">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Opponent</th>
+                                            <th class="text-center">W/L</th>
+                                            <th class="text-center">Score</th>
+                                            <th class="text-center">Margin</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>${gameRows}</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                `;
+
+                row.addEventListener('click', function() {
+                    const icon = this.querySelector('.toggle-icon');
+                    if (openDetail && openDetail !== detailRow) {
+                        openDetail.classList.remove('show');
+                        const prev = openDetail.previousElementSibling;
+                        if (prev) {
+                            const pi = prev.querySelector('.toggle-icon');
+                            if (pi) pi.innerHTML = '&#9660;';
+                        }
+                    }
+                    detailRow.classList.toggle('show');
+                    if (icon) icon.innerHTML = detailRow.classList.contains('show') ? '&#9650;' : '&#9660;';
+                    openDetail = detailRow.classList.contains('show') ? detailRow : null;
+                });
+            }
+
+            tbody.appendChild(row);
+            tbody.appendChild(detailRow);
+        });
     }
 
     function fixPath(path) {
@@ -226,28 +281,26 @@
     function createBanner(topItem) {
         const container = document.getElementById('teamHeaderContainer');
         if (!container) return;
-
-        const { team, year, mascot, backgroundColor, textColor, logoURL, schoolLogoURL } = topItem;
+        const { team, year, mascot, backgroundColor, logoURL, schoolLogoURL } = topItem;
         const primaryColor = backgroundColor || '#003087';
         const secondaryColor = topItem.secondaryColor || '#FFD700';
         const borderStyle = `border: 3px solid ${secondaryColor}; border-radius: 8px; padding: 5px;`;
-
-        const logoHTML = logoURL ? 
-            `<img src="${fixPath(logoURL)}" alt="Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
-
-        const schoolLogoHTML = schoolLogoURL ? 
-            `<img src="${fixPath(schoolLogoURL)}" alt="School Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">` : '';
-
+        const logoHTML = logoURL
+            ? `<img src="${fixPath(logoURL)}" alt="Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">`
+            : '';
+        const schoolLogoHTML = schoolLogoURL
+            ? `<img src="${fixPath(schoolLogoURL)}" alt="School Logo" class="img-fluid" style="${borderStyle}" onerror="this.style.display='none'">`
+            : '';
         container.innerHTML = `
-            <div class="team-header" style="background-color: ${primaryColor}; color: ${secondaryColor}; padding: 30px 0; border-bottom: 5px solid ${secondaryColor};">
+            <div class="team-header" style="background-color:${primaryColor};color:${secondaryColor};padding:30px 0;border-bottom:5px solid ${secondaryColor};">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-2 text-center d-none d-md-block">${logoHTML}</div>
                         <div class="col-md-8 text-center">
-                            <h2 style="margin: 0; font-size: 2.8rem; font-weight: 800; color: ${secondaryColor} !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">${team}</h2>
-                            ${mascot ? `<p style="margin: 10px 0; font-size: 1.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: ${secondaryColor} !important;">${mascot}</p>` : ''}
-                            <div class="team-stats" style="margin-top: 10px; background: rgba(255,255,255,0.15); padding: 5px 15px; border-radius: 20px; border: 2px solid ${secondaryColor}; display: inline-block;">
-                                <small style="font-size: 1rem; font-weight: bold; color: ${secondaryColor} !important;">${year} Media Champion</small>
+                            <h2 style="margin:0;font-size:2.8rem;font-weight:800;color:${secondaryColor}!important;text-shadow:2px 2px 4px rgba(0,0,0,0.4);">${team}</h2>
+                            ${mascot ? `<p style="margin:10px 0;font-size:1.8rem;font-weight:500;text-transform:uppercase;letter-spacing:2px;color:${secondaryColor}!important;">${mascot}</p>` : ''}
+                            <div style="margin-top:10px;background:rgba(255,255,255,0.15);padding:5px 15px;border-radius:20px;border:2px solid ${secondaryColor};display:inline-block;">
+                                <small style="font-size:1rem;font-weight:bold;color:${secondaryColor}!important;">${year} Media Champion</small>
                             </div>
                         </div>
                         <div class="col-md-2 text-center d-none d-md-block">${schoolLogoHTML}</div>
@@ -260,7 +313,6 @@
     function applyTableColors(topItem) {
         const primaryColor = topItem.backgroundColor || '#343a40';
         const secondaryColor = topItem.secondaryColor || '#FFD700';
-
         const thead = document.querySelector('table thead');
         if (thead) {
             thead.style.backgroundColor = primaryColor;
@@ -271,7 +323,6 @@
                 th.style.borderColor = primaryColor;
             });
         }
-
         const hexToRgb = (hex) => {
             hex = hex.replace('#', '');
             if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
@@ -280,16 +331,14 @@
             const b = parseInt(hex.substring(4, 6), 16);
             return (!isNaN(r) && !isNaN(g) && !isNaN(b)) ? `${r}, ${g}, ${b}` : null;
         };
-
         const primaryRgb = hexToRgb(primaryColor);
         const secondaryRgb = hexToRgb(secondaryColor);
-
         if (primaryRgb && secondaryRgb) {
             const style = document.createElement('style');
             style.textContent = `
-                table tbody tr:nth-of-type(odd) { background-color: rgba(${primaryRgb}, 0.20) !important; }
-                table tbody tr:nth-of-type(even) { background-color: #ffffff !important; }
-                table tbody tr:hover { background-color: rgba(${secondaryRgb}, 0.25) !important; cursor: pointer; transition: background-color 0.2s ease; }
+                table tbody tr.champ-row:nth-of-type(odd) { background-color: rgba(${primaryRgb}, 0.10) !important; }
+                table tbody tr.champ-row:nth-of-type(even) { background-color: #ffffff !important; }
+                table tbody tr.champ-row:hover { background-color: rgba(${secondaryRgb}, 0.25) !important; }
             `;
             document.head.appendChild(style);
         }
@@ -297,3 +346,4 @@
 </script>
 </body>
 </html>
+
