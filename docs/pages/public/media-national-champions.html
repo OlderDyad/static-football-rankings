@@ -219,7 +219,7 @@
             if (hasGames) {
                 const gameRows = item.games.map(g => {
                     const oppName = g.opponent.replace(/\s*\([A-Z]{2}\)$/, '');
-                    const scoreStr = `${g.team_score}â€“${g.opp_score}`;
+                    const scoreStr = g.team_score + '-' + g.opp_score;
                     const marginStr = g.margin > 0 ? `+${g.margin}` : String(g.margin);
                     return `<tr>
                         <td class="text-muted small">${g.date}</td>
@@ -346,4 +346,7 @@
 </script>
 </body>
 </html>
+
+
+
 
