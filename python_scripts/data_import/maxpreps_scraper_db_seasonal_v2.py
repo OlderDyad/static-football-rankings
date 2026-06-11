@@ -10,8 +10,15 @@
 #   - A team is only marked 'failed' after retries are exhausted, so re-running
 #     (which scrapes 'failed' teams first) genuinely resumes where it stopped.
 #
+# WHAT'S NEW vs v2 original:
+#   - Batch creation now uses URL_ProperName_Mapping (joined to HS_Team_Names)
+#     instead of HS_Team_MaxPreps, which was found to be corrupted/incomplete.
+#   - When no running batch exists, prompts for state and season interactively
+#     (or accepts --state / --season on the command line for scripted runs).
+#   - ALL keyword for --state scrapes all mapped teams nationally.
+#
 # Season behavior, URL building, DB writes, and the games_raw season_year tag
-# are identical to v1. PREREQUISITE columns are the same.
+# are otherwise identical to v2 original.
 
 import argparse
 import logging
@@ -30,12 +37,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 # === CONFIGURATION ===
-SERVER_NAME = "McKnights-PC\\SQLEXPRESS01"
+SERVER_NAME   = "McKnights-PC\\SQLEXPRESS01"
 DATABASE_NAME = "hs_football_database"
-URL_PROCESS_LIMIT = 2000
-WAIT_TIMEOUT = 15
-MAX_TEAM_RETRIES = 3          # attempts per team before marking 'failed'
-BATCH_NAME = f"MaxPreps Scrape - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+URL_PROCESS_LIMIT  = 2000
+WAIT_TIMEOUT       = 15
+MAX_TEAM_RETRIES   = 3
 DB_CONNECTION_STRING = (
     f"DRIVER={{ODBC Driver 17 for SQL Server}};"
     f"SERVER={SERVER_NAME};"
@@ -60,15 +66,18 @@ def slug_to_year(slug):
 
 
 # --- DRIVER AND SCRAPING FUNCTIONS ---
+
 def setup_driver():
-    """Sets up the Chrome driver."""
     chrome_options = Options()
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
     chrome_options.add_experimental_option('useAutomationExtension', False)
-    chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36")
+    chrome_options.add_argument(
+        "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+    )
     service = Service()
     driver = webdriver.Chrome(service=service, options=chrome_options)
     driver.set_page_load_timeout(30)
@@ -76,18 +85,16 @@ def setup_driver():
 
 
 def is_driver_alive(driver):
-    """True if the Selenium session is still responsive."""
     if driver is None:
         return False
     try:
-        _ = driver.current_url      # cheap round-trip to chromedriver
+        _ = driver.current_url
         return True
     except Exception:
         return False
 
 
 def ensure_driver(driver):
-    """Return a live driver, rebuilding the browser if the session has died."""
     if is_driver_alive(driver):
         return driver
     if driver is not None:
@@ -100,7 +107,6 @@ def ensure_driver(driver):
 
 
 def handle_popups(driver, timeout=5):
-    """Handles cookie consent pop-ups."""
     try:
         cookie_button = WebDriverWait(driver, timeout).until(
             EC.element_to_be_clickable((By.ID, 'onetrust-accept-btn-handler')))
@@ -108,12 +114,10 @@ def handle_popups(driver, timeout=5):
         cookie_button.click()
         time.sleep(1)
     except TimeoutException:
-        pass  # no banner; quiet to avoid log spam on rebuilt sessions
+        pass
 
 
 def scrape_schedule_data_robust(driver, batch_id, primary_team_name, season_year=None):
-    """Collect raw data from a page. season_year is stamped on every row so
-    finalization can set Season explicitly instead of inferring it."""
     games_data = []
     tables = driver.find_elements(By.TAG_NAME, 'table')
     if not tables:
@@ -127,9 +131,9 @@ def scrape_schedule_data_robust(driver, batch_id, primary_team_name, season_year
             if len(cells) < 3:
                 continue
 
-            date = cells[0].text.strip()
+            date             = cells[0].text.strip()
             opponent_name_raw = cells[1].text.strip()
-            result_text = cells[2].text.strip()
+            result_text      = cells[2].text.strip()
 
             opponent_url = ""
             try:
@@ -141,21 +145,32 @@ def scrape_schedule_data_robust(driver, batch_id, primary_team_name, season_year
                 continue
 
             games_data.append({
-                'primary_team_name': primary_team_name,
-                'opponent_name_raw': opponent_name_raw,
-                'result_text': result_text,
-                'game_date': date,
+                'primary_team_name':    primary_team_name,
+                'opponent_name_raw':    opponent_name_raw,
+                'result_text':          result_text,
+                'game_date':            date,
                 'opponent_maxpreps_url': opponent_url,
-                'batch_id': batch_id,
-                'season_year': season_year,
+                'batch_id':             batch_id,
+                'season_year':          season_year,
             })
     return games_data
 
 
 # --- DATABASE FUNCTIONS ---
-def setup_and_get_batch(cursor, batch_name, cli_season_slug=None):
-    """Finds a running batch or creates a new one.
-    Returns (batch_id, season_slug, season_year)."""
+
+def setup_and_get_batch(cursor, cli_season_slug=None, cli_state=None):
+    """
+    Finds a running batch and resumes it, or creates a new one.
+
+    When creating a new batch:
+      - Prompts for state and season if not supplied via CLI args.
+      - Queries URL_ProperName_Mapping (joined to HS_Team_Names) for the team list.
+        This is the same source the scraper uses when it actually fetches URLs,
+        so the batch team list and the scrape list are always in sync.
+      - State 'ALL' scrapes every mapped team nationally.
+
+    Returns (batch_id, season_slug, season_year).
+    """
     sql_find_running = (
         "SELECT TOP 1 batch_id, season_slug, season_year "
         "FROM scraping_batches WHERE status = 'running' ORDER BY created_date DESC;"
@@ -163,44 +178,90 @@ def setup_and_get_batch(cursor, batch_name, cli_season_slug=None):
     running = cursor.execute(sql_find_running).fetchone()
     if running:
         batch_id = running.batch_id
-        slug = running.season_slug
-        year = running.season_year
+        slug     = running.season_slug
+        year     = running.season_year
         if slug is None and cli_season_slug:
             slug = cli_season_slug
             year = slug_to_year(slug)
         logger.info(
-            f"Resuming existing 'running' batch with ID: {batch_id} (season={slug or 'current'})."
+            f"Resuming existing 'running' batch with ID: {batch_id} "
+            f"(season={slug or 'current'})."
         )
         return batch_id, slug, year
 
-    logger.info("No active batch found. Creating a new one (current season).")
-    sql_teams_to_scrape = "SELECT T.Team_ID FROM dbo.HS_Team_MaxPreps AS T;"
-    teams = cursor.execute(sql_teams_to_scrape).fetchall()
+    # ----------------------------------------------------------------
+    # No running batch — gather parameters then create one
+    # ----------------------------------------------------------------
+    if cli_season_slug:
+        slug = cli_season_slug.strip()
+    else:
+        slug = input(
+            "\nNo running batch found. Enter season slug (e.g. 14-15 for 2014, "
+            "22-23 for 2022, leave blank for current season): "
+        ).strip() or None
+
+    if cli_state:
+        state = cli_state.strip().upper()
+    else:
+        state = input(
+            "Enter state to scrape (2-letter code, e.g. FL  —  or ALL for all states): "
+        ).strip().upper()
+
+    year = slug_to_year(slug)
+
+    # Query URL_ProperName_Mapping filtered by state
+    if state == 'ALL':
+        sql_teams = "SELECT DISTINCT Team_ID FROM dbo.URL_ProperName_Mapping WHERE Team_ID IS NOT NULL;"
+        teams = cursor.execute(sql_teams).fetchall()
+    else:
+        sql_teams = """
+            SELECT DISTINCT m.Team_ID
+            FROM dbo.URL_ProperName_Mapping m
+            JOIN dbo.HS_Team_Names t ON m.Team_ID = t.ID
+            WHERE t.State = ?;
+        """
+        teams = cursor.execute(sql_teams, state).fetchall()
+
     if not teams:
-        logger.warning("No teams found to create a new batch.")
+        logger.warning(f"No mapped teams found for state='{state}'. Check HS_Team_Names.State values.")
         return None, None, None
 
-    slug = cli_season_slug
-    year = slug_to_year(slug)
-    insert_sql = (
-        "INSERT INTO scraping_batches (batch_name, created_date, total_teams, status, season_slug, season_year) "
-        "OUTPUT INSERTED.batch_id VALUES (?, GETDATE(), ?, 'running', ?, ?);"
+    state_label    = state
+    season_label   = slug or 'current'
+    batch_name_str = (
+        f"MaxPreps Re-Import {state_label} {season_label} - "
+        f"{datetime.now().strftime('%Y-%m-%d %H:%M')}"
     )
-    batch_id = cursor.execute(insert_sql, batch_name, len(teams), slug, year).fetchone()[0]
+
+    insert_sql = (
+        "INSERT INTO scraping_batches "
+        "  (batch_name, created_date, total_teams, status, season_slug, season_year) "
+        "OUTPUT INSERTED.batch_id "
+        "VALUES (?, GETDATE(), ?, 'running', ?, ?);"
+    )
+    batch_id = cursor.execute(
+        insert_sql, batch_name_str, len(teams), slug, year
+    ).fetchone()[0]
 
     status_entries = [(team.Team_ID, batch_id) for team in teams]
-    sql_insert_status = "INSERT INTO dbo.team_scraping_status (team_id, batch_id) VALUES (?, ?);"
-    cursor.executemany(sql_insert_status, status_entries)
+    cursor.executemany(
+        "INSERT INTO dbo.team_scraping_status (team_id, batch_id) VALUES (?, ?);",
+        status_entries
+    )
     cursor.connection.commit()
-    logger.info(f"Successfully created and populated batch {batch_id} (season={slug or 'current'}).")
+
+    logger.info(
+        f"Created batch {batch_id}: {len(teams)} teams | "
+        f"state={state_label} | season={season_label}"
+    )
     return batch_id, slug, year
 
 
 def update_team_status(cursor, batch_id, team_id, status, games_found=0, error_message=None):
-    """Updates the status of a scraped team."""
     sql = """
         UPDATE dbo.team_scraping_status
-        SET status = ?, attempts = attempts + 1, last_attempt = GETDATE(), games_found = ?, error_message = ?
+        SET status = ?, attempts = attempts + 1, last_attempt = GETDATE(),
+            games_found = ?, error_message = ?
         WHERE team_id = ? AND batch_id = ?;
     """
     cursor.execute(sql, status, games_found, error_message, team_id, batch_id)
@@ -208,28 +269,25 @@ def update_team_status(cursor, batch_id, team_id, status, games_found=0, error_m
 
 
 def save_raw_games_to_db(cursor, games_list):
-    """Saves a list of raw game dictionaries to the database."""
     if not games_list:
         return
-
     game_tuples = [
         (g['primary_team_name'], g['opponent_name_raw'], g['result_text'],
          g['game_date'], g['opponent_maxpreps_url'], g['batch_id'], g['season_year'])
         for g in games_list
     ]
-    sql = """
-        INSERT INTO dbo.games_raw (primary_team_name, opponent_name_raw, result_text, game_date, opponent_maxpreps_url, batch_id, season_year)
-        VALUES (?, ?, ?, ?, ?, ?, ?);
-    """
-    cursor.executemany(sql, game_tuples)
+    cursor.executemany(
+        "INSERT INTO dbo.games_raw "
+        "  (primary_team_name, opponent_name_raw, result_text, game_date, "
+        "   opponent_maxpreps_url, batch_id, season_year) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?);",
+        game_tuples
+    )
     cursor.connection.commit()
 
 
 def get_urls_to_process(cursor, batch_id, limit, season_slug=None):
-    """Uses the correct mapping table and robust URL cleaning. When season_slug
-    is set, the schedule URL targets that historical season."""
     logger.info(f"Fetching up to {limit} teams for batch {batch_id} (season={season_slug or 'current'}).")
-
     sql = """
         SELECT TOP (?)
             S.team_id,
@@ -237,10 +295,8 @@ def get_urls_to_process(cursor, batch_id, limit, season_slug=None):
             M.ProperName
         FROM dbo.team_scraping_status AS S
         JOIN dbo.URL_ProperName_Mapping AS M ON S.team_id = M.Team_ID
-        WHERE
-            S.batch_id = ? AND S.status IN ('pending', 'failed')
-        ORDER BY
-            CASE WHEN S.status = 'failed' THEN 0 ELSE 1 END, S.team_id;
+        WHERE S.batch_id = ? AND S.status IN ('pending', 'failed')
+        ORDER BY CASE WHEN S.status = 'failed' THEN 0 ELSE 1 END, S.team_id;
     """
     teams_to_process = cursor.execute(sql, limit, batch_id).fetchall()
 
@@ -274,43 +330,56 @@ def get_urls_to_process(cursor, batch_id, limit, season_slug=None):
 
 
 # --- MAIN EXECUTION BLOCK ---
+
 def main():
-    parser = argparse.ArgumentParser(description="DB-driven MaxPreps scraper (season-aware, resilient).")
+    parser = argparse.ArgumentParser(
+        description="DB-driven MaxPreps scraper (season-aware, resilient)."
+    )
     parser.add_argument(
         "--season", default=None,
-        help="Season slug fallback, e.g. 22-23. Only used if a resumed batch has no slug set.")
+        help="Season slug, e.g. 14-15. Prompted interactively if omitted."
+    )
+    parser.add_argument(
+        "--state", default=None,
+        help="2-letter state code, e.g. FL. Use ALL for all states. Prompted if omitted."
+    )
     args = parser.parse_args()
 
     logger.info("=== Starting Season-Aware DB-Driven MaxPreps Scraper (v2, resilient) ===")
     connection, batch_id = None, None
     try:
         connection = pyodbc.connect(DB_CONNECTION_STRING)
-        cursor = connection.cursor()
+        cursor     = connection.cursor()
         logger.info("Connected to database successfully.")
 
-        batch_id, season_slug, season_year = setup_and_get_batch(cursor, BATCH_NAME, args.season)
+        batch_id, season_slug, season_year = setup_and_get_batch(
+            cursor,
+            cli_season_slug=args.season,
+            cli_state=args.state,
+        )
         if not batch_id:
             return
 
         urls_to_process = get_urls_to_process(cursor, batch_id, URL_PROCESS_LIMIT, season_slug)
         if not urls_to_process:
-            logger.info("No more teams to process for this batch. Marking as complete.")
+            logger.info("No more teams to process for this batch.")
             return
 
         logger.info(
             f"Starting to process {len(urls_to_process)} URLs for batch_id {batch_id} "
             f"(season={season_slug or 'current'}, year={season_year})"
         )
+
         driver = setup_driver()
         consecutive_failures = 0
         try:
             for i, (team_id, url, proper_name) in enumerate(urls_to_process, 1):
                 logger.info(f"[{i}/{len(urls_to_process)}] Processing Team ID {team_id}: {url}")
 
-                success = False
+                success  = False
                 last_err = None
                 for attempt in range(1, MAX_TEAM_RETRIES + 1):
-                    driver = ensure_driver(driver)   # rebuild if the session died
+                    driver = ensure_driver(driver)
                     try:
                         driver.get(url)
                         handle_popups(driver)
@@ -327,11 +396,12 @@ def main():
                     except Exception as e:
                         last_err = str(e).strip()[:1000]
                         logger.warning(
-                            f"  Attempt {attempt}/{MAX_TEAM_RETRIES} failed for Team {team_id}: {last_err}")
+                            f"  Attempt {attempt}/{MAX_TEAM_RETRIES} failed for Team {team_id}: {last_err}"
+                        )
                         if not is_driver_alive(driver):
-                            driver = ensure_driver(driver)  # rebuild now so retry is clean
+                            driver = ensure_driver(driver)
                         if attempt < MAX_TEAM_RETRIES:
-                            time.sleep(random.uniform(10, 20) * attempt)  # backoff grows per attempt
+                            time.sleep(random.uniform(10, 20) * attempt)
 
                 if success:
                     consecutive_failures = 0
@@ -339,14 +409,14 @@ def main():
                     consecutive_failures += 1
                     update_team_status(cursor, batch_id, team_id, 'failed', error_message=last_err)
                     logger.error(
-                        f"✗ Gave up on Team {team_id} after {MAX_TEAM_RETRIES} attempts: {last_err}")
+                        f"✗ Gave up on Team {team_id} after {MAX_TEAM_RETRIES} attempts: {last_err}"
+                    )
 
-                # If many teams in a row fail even after rebuilds, it's likely an
-                # IP-level block/throttle rather than a crash. Pause to back off.
                 if consecutive_failures >= 5:
                     logger.error(
-                        "5 consecutive teams failed after retries — likely throttling. "
-                        "Pausing 5 minutes. Re-running later resumes 'failed' teams first.")
+                        "5 consecutive teams failed — likely throttling. "
+                        "Pausing 5 minutes. Re-running resumes 'failed' teams first."
+                    )
                     time.sleep(300)
                     consecutive_failures = 0
 
@@ -355,19 +425,20 @@ def main():
         finally:
             if is_driver_alive(driver):
                 driver.quit()
+
     except Exception as e:
-        logger.error(f"An unexpected error occurred in the main process: {e}", exc_info=True)
+        logger.error(f"An unexpected error occurred: {e}", exc_info=True)
     finally:
         if connection:
             connection.close()
             logger.info("Database connection closed.")
         if batch_id:
             print("\n" + "=" * 50)
-            print("  SCRAPE PASS COMPLETE. Inspect raw dates before finalizing:")
-            print(f"  SELECT DISTINCT game_date FROM dbo.games_raw WHERE batch_id = {batch_id};")
-            print("  Any 'failed' teams are retried first on the next run:")
-            print(f"  python maxpreps_scraper_db_seasonal_v2.py")
-            print("  When year handling is confirmed:")
+            print("  SCRAPE PASS COMPLETE.")
+            print("  Inspect raw date format before finalizing:")
+            print(f"  SELECT DISTINCT game_date, season_year FROM dbo.games_raw WHERE batch_id = {batch_id};")
+            print("  Any 'failed' teams are retried first on the next run.")
+            print("  When date format is confirmed, finalize:")
             print(f"  EXEC dbo.FinalizeMaxPrepsData @BatchID = {batch_id};")
             print("=" * 50 + "\n")
 
