@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp": "2026-06-14T17:08:41.000Z",
+    "timestamp": "2026-06-15T01:58:07.000Z",
     "type": "border-wars",
     "total_states": 59,
     "description": "All-time cross-state win-loss records for each state. Shows the top 5 opponent states by total games played. Win % calculated with ties counting as half a win. Includes all programs regardless of classification."
@@ -190,20 +190,20 @@
       "state": "AZ",
       "opponents": [
         {
+          "state": "CA",
+          "wins": 427,
+          "losses": 400,
+          "ties": 20,
+          "games": 847,
+          "win_pct": 51.6
+        },
+        {
           "state": "NM",
           "wins": 387,
           "losses": 431,
           "ties": 24,
           "games": 842,
           "win_pct": 47.4
-        },
-        {
-          "state": "CA",
-          "wins": 424,
-          "losses": 396,
-          "ties": 20,
-          "games": 840,
-          "win_pct": 51.7
         },
         {
           "state": "NV",
@@ -281,10 +281,10 @@
       "opponents": [
         {
           "state": "NV",
-          "wins": 1461,
-          "losses": 1321,
+          "wins": 1466,
+          "losses": 1325,
           "ties": 47,
-          "games": 2829,
+          "games": 2838,
           "win_pct": 52.5
         },
         {
@@ -297,11 +297,11 @@
         },
         {
           "state": "AZ",
-          "wins": 396,
-          "losses": 424,
+          "wins": 400,
+          "losses": 427,
           "ties": 20,
-          "games": 840,
-          "win_pct": 48.3
+          "games": 847,
+          "win_pct": 48.4
         },
         {
           "state": "HI",
@@ -1673,10 +1673,10 @@
       "opponents": [
         {
           "state": "CA",
-          "wins": 1321,
-          "losses": 1461,
+          "wins": 1325,
+          "losses": 1466,
           "ties": 47,
-          "games": 2829,
+          "games": 2838,
           "win_pct": 47.5
         },
         {
