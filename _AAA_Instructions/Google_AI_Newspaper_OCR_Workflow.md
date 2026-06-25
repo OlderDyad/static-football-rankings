@@ -17,6 +17,10 @@ python apply_corrections.py
 python master_scores_importer.py
 after completing:
 python batch_queue_manager.py
+python newspaper_batch_coverage.py --season 1967 --batch-after 2026-06-04 --state CA --reference-season 1968
+sql
+IMPORTANT: Run duplicate removal next:
+   EXEC [dbo].[RemoveDuplicateGamesParameterized] @SeasonStart = 1877, @SeasonEnd = 2025;
 ## Overview
 This workflow allows you to process newspaper images, extract game scores, and import them 
 into the HS_Scores database WITHOUT interrupting long-running rating calculations.

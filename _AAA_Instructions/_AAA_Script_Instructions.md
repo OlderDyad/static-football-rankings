@@ -36,7 +36,7 @@ cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
 python pull_sheets_to_sql.py
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts\
-1. **.\run_update_cycle.ps1** (The "Daily Master Switch")
+1. **** (The "Daily Master Switch")
 When to use: Every time you make changes to Google Sheets or Add New Images. What it does:
 
 Syncs your Google Sheet edits to SQL.

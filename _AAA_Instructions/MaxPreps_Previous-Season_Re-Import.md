@@ -1,6 +1,19 @@
 # WORKFLOW — MaxPreps Previous-Season Re-Import
+Quick Reverence:
+Close all Chrome windows from previous import batch session.
+python maxpreps_scraper_db_v2.py --season 21-22 --state CO
+may need to run a couple of times to finish and clear previous batch session.
+
+
 _Authoritative reference. Reconstructed from the full MO 2022 build + CO/FL investigations.
 Supersedes the earlier SOP draft. Last updated 2026-06-05._
+
+Current season (identical to before):
+powershellpython maxpreps_scraper_db_v2.py
+Past season — interactive:
+powershellpython maxpreps_scraper_db_v2.py
+# Prompts: Season slug: 14-15
+# Prompts: State [ALL]: FL
 
 ## Why this exists
 The old Excel-macro imports are unreliable: MaxPreps changes its page format
