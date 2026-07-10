@@ -1,8 +1,97 @@
 # NEWSPAPER SCORES IMPORT WORKFLOW - CURRENT VERSION
-# McKnight's American Football Rankings - Updated January 31, 2026
+# McKnight's American Football Rankings - Updated July 8, 2026
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\
 python ks_8man_classifier.py
+
+Newspaper Import Pipeline — Quick Guide
+
+Copy-paste workflow for processing a batch of scanned newspaper clippings
+from raw images through to imported games in HS_Scores.
+
+0. One-time setup (every new terminal session)
+
+powershellcd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\.venv\Scripts\Activate.ps1
+
+If you'll be running the AI resolver this session, also set your key (get a
+fresh one from aistudio.google.com/apikey if needed — never reuse a key
+that's touched a chat window or a public repo):
+
+powershell$env:GEMINI_API_KEY = "your-key-here"
+
+
+1. OCR extraction (raw images -> staged CSVs)
+
+Drop new scans into Next_Images_Comma_Format or Next_Images_Bar_Format
+first, then:
+
+powershellpython custom_extractor_prepper.py
+
+Prompts for c (comma-separated scores) or b (bar-separated). Moves
+processed images to Completed\Processed_IMAGES_... and writes one CSV per
+image into the Staged folder.
+
+2. First import attempt
+
+powershellpython master_scores_importer.py
+
+If everything resolves, it imports straight through. If not, it regenerates
+New_Alias_Suggestions.csv with every unrecognized team name and stops —
+continue below.
+
+3. AI-assisted name resolution
+
+powershell
+python gemini_alias_resolver.py --dry-run          # preview prompts, zero API calls
+python gemini_alias_resolver.py                    # real run, writes AI_Suggested_Name/AI_Confidence/AI_Reasoning
+
+Optional: skip straight to autofilling anything Gemini was fully confident
+about (this re-calls the API, only High-confidence rows get written to
+Final_Proper_Name):
+
+powershell
+python gemini_alias_resolver.py --autofill-min-confidence High
+
+4. Locally autofill the remaining confidence tiers
+
+No API call — just copies AI_Suggested_Name into Final_Proper_Name for
+rows already scored by step 3. Skim a few rows in the CSV first to make sure
+a tier looks trustworthy, then:
+
+powershell python autofill_from_ai.py --min-confidence Medium-Low
+
+5. Flag the leftover one-offs as Ignore
+
+Whatever's still blank after step 4 (usually Low-confidence, un-guessable
+names) gets checked against the one-off rule (no comma in Source_Files or
+Opponents_Played) and flagged Rule_Type=Ignore if it qualifies. Anything
+that recurs across multiple clippings is left alone and printed as a
+warning — those need a real name or an image check, not an Ignore.
+
+powershellpython flag_unresolved_as_ignore.py
+
+6. Commit corrections to the database
+
+powershellpython apply_corrections.py --dry-run --final      # preview every SQL statement, zero DB writes
+python apply_corrections.py --final                # commit aliases + Ignore rows for real
+
+Leave off --final on any run where you're not ready to permanently
+exclude the Ignore rows yet — they'll just stay pending for next time.
+
+7. Re-run the importer to complete the batch
+
+powershellpython master_scores_importer.py
+
+Should import clean now that every name is either aliased or flagged
+Ignore. If it still balks, it means step 6 didn't cover everything — check
+New_Alias_Suggestions.csv for remaining blanks.
+
+8. Push the staged batch into HS_Scores
+
+powershellpython batch_queue_manager.py
+
+Choose option 2 (Import all staged batches to HS_Scores).
 
 
 #Quick Guide:
@@ -14,7 +103,16 @@ cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
 python custom_extractor_prepper.py
 python master_scores_importer.py
 python apply_corrections.py
+
+python apply_corrections.py
+python gemini_alias_resolver.py --dry-run          # preview prompts, zero API calls
+python gemini_alias_resolver.py                    # real run, writes AI_Suggested_Name/AI_Confidence/AI_Reasoning
+python gemini_alias_resolver.py --autofill-min-confidence High
+powershell python autofill_from_ai.py --min-confidence Medium-Low
+python flag_unresolved_as_ignore.py
+
 python master_scores_importer.py
+
 after completing:
 python batch_queue_manager.py
 python newspaper_batch_coverage.py --season 1967 --batch-after 2026-06-04 --state CA --reference-season 1968
