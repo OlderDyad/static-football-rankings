@@ -186,6 +186,38 @@ def standardize_team_name(raw_name, source_region, alias_rules, abbrev_rules, al
         
     return None
 
+# Generic squad names that aren't a standalone team -- they're always THIS
+# school's own alumni squad playing whichever opponent is listed in that
+# specific game. Scope deliberately limited to just "Alumni" for now; other
+# generic terms (Faculty, Old Timers, etc.) can be added here later if they
+# turn out to need the same treatment.
+GENERIC_PLACEHOLDER_NAMES = {'alumni'}
+
+def resolve_generic_placeholder(raw_name, opponent_std, source_region):
+    """
+    A fixed alias for the literal string "Alumni" would incorrectly collapse
+    every school's alumni game into one shared "Alumni (ST)" team, so instead
+    it's derived per-game from whichever opponent name DID resolve, e.g.
+    opponent "Catlin (IL)" -> "Catlin Alumni (IL)".
+
+    Naming convention: state code stays the last 4 characters of the name
+    (" (XX)"), so the "Alumni" suffix is inserted before that, not appended
+    after it.
+
+    Returns None (falls through to normal unresolved handling) if raw_name
+    isn't a recognized generic placeholder, or if the opponent itself didn't
+    resolve -- never guess a name for the opponent side too.
+    """
+    if clean_text_for_lookup(raw_name) not in GENERIC_PLACEHOLDER_NAMES:
+        return None
+    if not opponent_std or opponent_std == IGNORE_SENTINEL:
+        return None
+    m = re.match(r'^(.*)(\s\([A-Za-z]{2}\))$', opponent_std)
+    if not m:
+        return None  # opponent name doesn't end in the expected " (XX)" state suffix -- don't guess
+    base_name, state_suffix = m.group(1), m.group(2)
+    return f"{base_name} Alumni{state_suffix}"
+
 def get_opponent_history_suggestions(opponents, all_canonical_names):
     if not opponents: return []
     escaped_opponents = ["'" + str(opp).replace("'", "''") + "'" for opp in opponents if opp]
@@ -220,6 +252,58 @@ def extract_date_and_season(filename):
 def get_newspaper_region(filename):
     match = re.search(r'^(.+?)_\d{4}', filename)
     return match.group(1).replace('_', ' ').strip() if match else "Unknown"
+
+def detect_and_mark_lightweight_games(all_raw_games):
+    """
+    Some newspapers (Chicago-area papers especially) print both a "Heavy"
+    (varsity, no weight limit) game and a "Lights"/"Lightweights" (150lb
+    limit) game between the same two schools on the same day, or split
+    across a Friday/Saturday weekend. When the distinction is only shown by
+    page position rather than inline text, the OCR/AI extractor can't tell
+    them apart, and the lightweight score silently ends up looking like a
+    second, separate varsity meeting.
+
+    Convention: the varsity game keeps the plain team names. The later
+    occurrence gets " Lightweights" appended to both team names before
+    standardization (e.g. "Chicago De La Salle (IL)" varsity vs
+    "Chicago De La Salle Lightweights (IL)" for the lightweight squad).
+
+    Scope (deliberately conservative -- same file OR adjacent weekend
+    files): only auto-fixes a pair of raw team names that appear together
+    in EXACTLY 2 games for that newspaper region, with those 2 games no
+    more than 1 day apart. Real rematches weeks/months apart, or 3+
+    meetings between the same two raw names, are left untouched -- those
+    need a human look, not a guess.
+    """
+    groups = defaultdict(list)
+    for game in all_raw_games:
+        home = (game.get('HomeTeamRaw') or '').strip()
+        visitor = (game.get('VisitorTeamRaw') or '').strip()
+        if not home or not visitor or not game.get('GameDate'):
+            continue
+        key = (game['SourceRegion'], frozenset({home.lower(), visitor.lower()}))
+        groups[key].append(game)
+
+    marked = 0
+    for (region, team_pair), games in groups.items():
+        if len(team_pair) != 2 or len(games) != 2:
+            continue  # only handle simple same-opponent pairs; 3+ meetings need a human look
+
+        first, second = sorted(games, key=lambda g: (g['GameDate'], g['LineNumber']))
+        gap_days = (second['GameDate'] - first['GameDate']).days
+        if gap_days > 1:
+            continue  # a real rematch weeks/months later, not a Heavy/Light split
+
+        second['HomeTeamRaw'] = f"{second['HomeTeamRaw']} Lightweights"
+        second['VisitorTeamRaw'] = f"{second['VisitorTeamRaw']} Lightweights"
+        second['processing_notes'] = (second.get('processing_notes') or '') + \
+            " [Auto-flagged Lightweights: 2nd meeting vs same raw opponent within 1 day]"
+        marked += 1
+
+    if marked:
+        logger.info(f"🏈 Auto-flagged {marked} game(s) as Lightweights (2nd meeting vs same raw opponent within 1 day of the 1st).")
+
+    return all_raw_games
 
 def _safe_cell(value, default=''):
     """
@@ -363,9 +447,11 @@ def main():
                     'LineNumber': line_num, 'RawLine': ','.join(row)
                 })
 
-    if not all_raw_games: 
+    if not all_raw_games:
         logger.warning("No valid game lines were parsed.")
         return
+
+    all_raw_games = detect_and_mark_lightweight_games(all_raw_games)
 
     unrecognized_teams_with_opponents = defaultdict(lambda: defaultdict(lambda: {'opponents': set(), 'source_files': set()}))
     games_to_import = []
@@ -389,6 +475,19 @@ def main():
 
         home_std = standardize_team_name(game['HomeTeamRaw'], game['SourceRegion'], alias_rules, abbrev_rules, all_canonical_names)
         visitor_std = standardize_team_name(game['VisitorTeamRaw'], game['SourceRegion'], alias_rules, abbrev_rules, all_canonical_names)
+
+        # "Alumni" isn't a standalone team -- resolve it relative to whichever
+        # side of THIS game did resolve, so different schools' alumni games
+        # don't collapse into one generic "Alumni (ST)" team. See
+        # resolve_generic_placeholder() for the naming rule.
+        if not home_std:
+            derived = resolve_generic_placeholder(game['HomeTeamRaw'], visitor_std, game['SourceRegion'])
+            if derived:
+                home_std = derived
+        if not visitor_std:
+            derived = resolve_generic_placeholder(game['VisitorTeamRaw'], home_std, game['SourceRegion'])
+            if derived:
+                visitor_std = derived
 
         # A team resolving to the Ignore sentinel was explicitly given up on via
         # apply_corrections.py --final. Drop just this game -- don't import a
