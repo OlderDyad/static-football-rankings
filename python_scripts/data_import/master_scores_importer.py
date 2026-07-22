@@ -274,6 +274,15 @@ def detect_and_mark_lightweight_games(all_raw_games):
     more than 1 day apart. Real rematches weeks/months apart, or 3+
     meetings between the same two raw names, are left untouched -- those
     need a human look, not a guess.
+
+    Score guard: a genuine Heavy/Light split is two DIFFERENT games, so the
+    scores should differ. If both occurrences report the identical score
+    for each team, this is almost certainly the same clipping extracted
+    twice (e.g. a duplicate "Foo (1).csv" staged file), not a real second
+    game -- renaming it would invent a fake team and hide a real duplicate
+    from RemoveDuplicateGamesParameterized (which dedupes on
+    Season+Home+Visitor+Score and would otherwise clean this up after
+    import). Same-score pairs are left untouched and logged instead.
     """
     groups = defaultdict(list)
     for game in all_raw_games:
@@ -285,6 +294,7 @@ def detect_and_mark_lightweight_games(all_raw_games):
         groups[key].append(game)
 
     marked = 0
+    probable_duplicates = 0
     for (region, team_pair), games in groups.items():
         if len(team_pair) != 2 or len(games) != 2:
             continue  # only handle simple same-opponent pairs; 3+ meetings need a human look
@@ -294,14 +304,33 @@ def detect_and_mark_lightweight_games(all_raw_games):
         if gap_days > 1:
             continue  # a real rematch weeks/months later, not a Heavy/Light split
 
+        # Compare scores per-team (not positionally) so this still works if
+        # home/visitor happen to be flipped between the two occurrences.
+        first_scores = {first['HomeTeamRaw'].strip().lower(): first.get('HomeScore'),
+                         first['VisitorTeamRaw'].strip().lower(): first.get('VisitorScore')}
+        second_scores = {second['HomeTeamRaw'].strip().lower(): second.get('HomeScore'),
+                          second['VisitorTeamRaw'].strip().lower(): second.get('VisitorScore')}
+        if all(first_scores.get(team) == second_scores.get(team) for team in first_scores):
+            # Identical score both times -- looks like a duplicate-extraction
+            # artifact, not a real Lightweight game. Leave it alone; don't
+            # invent a fake team over what's probably a staged-file duplicate.
+            probable_duplicates += 1
+            logger.info(f"   Possible duplicate file (not Lightweights): '{first['HomeTeamRaw']}' vs "
+                        f"'{first['VisitorTeamRaw']}' -- same score reported twice within {gap_days} day(s) "
+                        f"in region '{region}' ({first['SourceFile']} / {second['SourceFile']}). "
+                        f"Left as-is for RemoveDuplicateGamesParameterized to clean up post-import.")
+            continue
+
         second['HomeTeamRaw'] = f"{second['HomeTeamRaw']} Lightweights"
         second['VisitorTeamRaw'] = f"{second['VisitorTeamRaw']} Lightweights"
         second['processing_notes'] = (second.get('processing_notes') or '') + \
-            " [Auto-flagged Lightweights: 2nd meeting vs same raw opponent within 1 day]"
+            " [Auto-flagged Lightweights: 2nd meeting vs same raw opponent within 1 day, different score]"
         marked += 1
 
     if marked:
-        logger.info(f"🏈 Auto-flagged {marked} game(s) as Lightweights (2nd meeting vs same raw opponent within 1 day of the 1st).")
+        logger.info(f"🏈 Auto-flagged {marked} game(s) as Lightweights (2nd meeting vs same raw opponent within 1 day, different score).")
+    if probable_duplicates:
+        logger.info(f"⏭  Left {probable_duplicates} same-score pair(s) untouched as probable duplicate files -- see notes above.")
 
     return all_raw_games
 
