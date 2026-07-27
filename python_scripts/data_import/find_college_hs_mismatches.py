@@ -57,15 +57,38 @@ db_connection_str = f'mssql+pyodbc://{SERVER_NAME}/{DATABASE_NAME}?driver=ODBC+D
 engine = create_engine(db_connection_str)
 
 
+# Generic administrative qualifiers that don't identify a distinct school --
+# a name that's just the town plus one of these is still a bare/ambiguous
+# reference to "the" school in that town, not a specifically-named separate
+# institution. Deliberately NOT genuinely-distinguishing words like
+# "Central," "Roosevelt," "Community," or a saint's name -- those mean a
+# real, specific, unambiguous school (see MI smoke-test findings: Kalamazoo
+# and Ypsilanti are cities with several distinctly-named high schools, and
+# matching any "Kalamazoo ..." name as if it collided with Kalamazoo College
+# was pure noise). Kentucky/Ohio newspapers often identify a team by county
+# rather than city -- and the county's own proper name is part of that
+# geographic label, not a distinguishing SCHOOL name, e.g. real example
+# found in KY output: "Georgetown Scott County (KY)" is still just "the"
+# Georgetown high school, described by its county, same role "Twp" plays
+# for Albion. So "[ProperNoun] Co/County" is allowed as a qualifier unit too,
+# not just the bare word alone.
+GENERIC_QUALIFIERS = r'(?:Twp\.?\b|Township\b|City\b|(?:[A-Za-z]+\s+)?(?:Co\.?|County)\b)'
+
+
 def load_risk_list(path, states):
     df = pd.read_csv(path, encoding='utf-8-sig')
     df = df[df['State'].isin(states)].copy()
-    # Precompute a regex per row: matches "TownName" at the start of a
-    # standardized name, followed by the state suffix somewhere before the
-    # end, e.g. "Albion (MI)" or "Albion Twp (MI)". Word-boundary on the
-    # town name so "Albion" doesn't match "Albionville" as a substring.
+    # Precompute a regex per row: matches the bare town name, optionally
+    # followed by one or more generic qualifiers (Twp, County, City, etc.),
+    # then the state suffix -- e.g. "Albion (MI)" or "Albion Twp (MI)" match,
+    # but "Albion Central (MI)" or "Kalamazoo St. Augustine (MI)" do NOT,
+    # since those are proper names of a specific, unambiguous school.
     df['pattern'] = df.apply(
-        lambda r: re.compile(r'^' + re.escape(r['TownName']) + r'\b.*\(' + re.escape(r['State']) + r'\)$'),
+        lambda r: re.compile(
+            r'^' + re.escape(r['TownName']) + r'(?:\s+' + GENERIC_QUALIFIERS + r')*'
+            r'\s*\(' + re.escape(r['State']) + r'\)$',
+            re.IGNORECASE
+        ),
         axis=1
     )
     return df
@@ -77,13 +100,62 @@ def load_risk_list(path, states):
 ALREADY_DISAMBIGUATED_KEYWORDS = [
     'college', 'university', 'frosh', 'freshman', 'freshmen', 'junior high',
     'alumni', 'club', 'pro', ' jv', ' j.v', 'lightweights', ' b team',
-    ' reserve', ' reserves',
+    ' reserve', ' reserves', 'varsity', 'seminary', 'normal school',
+    'teachers', 'scrubs', 'subs', 'seconds',
 ]
+# Deliberately NOT added: 'col.' / 'u.' -- bare short abbreviations are too
+# easy to false-match inside messy OCR'd 1920s-era text (a stray period near
+# an unrelated "u" is common), and 'college'/'university' (full words) already
+# cover the case these were meant for.
+
+# Keywords that specifically mean "this name is already unambiguously a
+# college/university" -- used for the opponent-side high-confidence trigger
+# below. Narrower than ALREADY_DISAMBIGUATED_KEYWORDS (which also covers
+# Frosh/JV/Alumni-type HS-level modifiers that don't imply "college").
+COLLEGE_KEYWORDS = ['college', 'university']
+
+# Some real high schools carry "University" or "College" in their own proper
+# name without being a college at all -- e.g. "University of Detroit Jesuit"
+# is a Catholic prep HIGH SCHOOL, not the University of Detroit's team. If
+# one of these also appears, don't trust the bare college-keyword match.
+HS_NAME_CARVEOUTS = ['jesuit', 'prep', 'academy', 'high school', 'catholic central']
 
 
 def is_already_disambiguated(name):
     lowered = name.lower()
     return any(kw in lowered for kw in ALREADY_DISAMBIGUATED_KEYWORDS)
+
+
+def build_combined_risk_pattern(risk_df):
+    """
+    One alternation of every individual per-town risk-list pattern, e.g.
+    "(?:^Albion...\\(MI\\)$)|(?:^Alma...\\(MI\\)$)|...". Used for a single
+    vectorized pass over a whole column instead of testing every name
+    against all N risk-list patterns one at a time in a Python loop.
+
+    This matters at full 10-state/40-season scale: ~200K games x up to 71
+    patterns x 2 sides (Home/Visitor) is tens of millions of individual
+    re.match() calls done row-by-row via games_df.iterrows() -- that's what
+    actually takes minutes, not the SQL query itself. pandas' .str.match()
+    does the equivalent work as one C-level vectorized pass instead.
+    """
+    if risk_df.empty:
+        return re.compile(r'(?!)')  # matches nothing
+    return re.compile('|'.join(f'(?:{p.pattern})' for p in risk_df['pattern']), re.IGNORECASE)
+
+
+def build_disambiguation_pattern():
+    """Vectorized equivalent of is_already_disambiguated() for a whole column at once."""
+    return re.compile('|'.join(re.escape(kw) for kw in ALREADY_DISAMBIGUATED_KEYWORDS), re.IGNORECASE)
+
+
+def is_unambiguous_college(name):
+    if not isinstance(name, str) or not name:
+        return False
+    lowered = name.lower()
+    if any(kw in lowered for kw in HS_NAME_CARVEOUTS):
+        return False
+    return any(kw in lowered for kw in COLLEGE_KEYWORDS)
 
 
 def name_matches_risk_list(name, risk_df):
@@ -166,10 +238,14 @@ def score_candidate(row, side, opponent, team_score, opp_score, risk_df, baselin
     score = 0
     reasons = []
 
-    opp_risk_hit = name_matches_risk_list(opponent, risk_df)
-    if opp_risk_hit:
-        score += 3
-        reasons.append(f"Opponent '{opponent}' is ALSO a risk-listed college-town name -- may be a college-vs-college guarantee game misfiled as HS, or confirms both sides need a look.")
+    if is_unambiguous_college(opponent):
+        score += 4
+        reasons.append(f"Opponent '{opponent}' is ALREADY explicitly labeled a college/university -- a bare town-name team playing a confirmed college is very likely that same college's varsity/frosh, not the high school.")
+    else:
+        opp_risk_hit = name_matches_risk_list(opponent, risk_df)
+        if opp_risk_hit:
+            score += 3
+            reasons.append(f"Opponent '{opponent}' is ALSO a risk-listed college-town name -- may be a college-vs-college guarantee game misfiled as HS, or confirms both sides need a look.")
 
     if pd.notna(team_score) and pd.notna(opp_score) and baseline['game_count'] >= 3:
         # Home_Score/Visitor_Score come back as float64 from pandas whenever
@@ -195,6 +271,24 @@ def score_candidate(row, side, opponent, team_score, opp_score, risk_df, baselin
     return score, reasons
 
 
+def era_weight(season):
+    """
+    College varsity/frosh teams playing high schools was common in the
+    earliest decades of this dataset and had essentially stopped by 1950.
+    Rather than a flat "pre-1935" bonus, weight suspicion by how plausible a
+    crossover game actually was in that specific season -- this keeps the
+    review sheet focused on the era where mistakes are actually likely,
+    instead of spreading suspicion evenly across 40 seasons.
+    """
+    if season < 1930:
+        return 2, "Pre-1930 season -- college/HS crossover games were common this early."
+    if season < 1945:
+        return 1, "1930s/early-1940s season -- crossover games still happened, though less often than the 1920s."
+    if season < 1950:
+        return 0, "Late-1940s season -- crossover games were tapering off by this point (neutral, no adjustment)."
+    return -2, "1950 or later -- college/HS crossover games had essentially stopped by this point, so this is most likely a genuine same-name high school, not a misfiled college game."
+
+
 def main():
     parser = argparse.ArgumentParser(description="Read-only scan for possible college/HS name-collision mismatches in HS_Scores.")
     parser.add_argument('--risk-list', default=DEFAULT_RISK_LIST)
@@ -215,18 +309,30 @@ def main():
         return
 
     # Find every game where Home or Visitor matches a risk-list town name.
+    # Vectorized: one combined alternation regex tested against the whole
+    # Home/Visitor column in a single pandas .str.match()/.str.contains()
+    # pass, instead of looping every one of ~200K games through all N
+    # risk-list patterns one at a time (name_matches_risk_list() is still
+    # used below, per-candidate, where the small resulting subset makes the
+    # per-pattern loop cheap again).
+    combined_risk_pattern = build_combined_risk_pattern(risk_df)
+    disambig_pattern = build_disambiguation_pattern()
+
+    home = games_df['Home'].fillna('').astype(str)
+    visitor = games_df['Visitor'].fillna('').astype(str)
+
+    home_hit_mask = home.str.match(combined_risk_pattern) & ~home.str.contains(disambig_pattern, regex=True)
+    visitor_hit_mask = visitor.str.match(combined_risk_pattern) & ~visitor.str.contains(disambig_pattern, regex=True)
+
     candidates = []
-    for _, g in games_df.iterrows():
-        home_hit = name_matches_risk_list(g['Home'], risk_df)
-        visitor_hit = name_matches_risk_list(g['Visitor'], risk_df)
-        if home_hit:
-            candidates.append({'flagged_team': g['Home'], 'side': 'Home', 'opponent': g['Visitor'],
-                                'team_score': g['Home_Score'], 'opp_score': g['Visitor_Score'],
-                                'Season': g['Season'], 'Date': g['Date'], 'Source': g['Source']})
-        if visitor_hit:
-            candidates.append({'flagged_team': g['Visitor'], 'side': 'Visitor', 'opponent': g['Home'],
-                                'team_score': g['Visitor_Score'], 'opp_score': g['Home_Score'],
-                                'Season': g['Season'], 'Date': g['Date'], 'Source': g['Source']})
+    for g in games_df[home_hit_mask].itertuples(index=False):
+        candidates.append({'flagged_team': g.Home, 'side': 'Home', 'opponent': g.Visitor,
+                            'team_score': g.Home_Score, 'opp_score': g.Visitor_Score,
+                            'Season': g.Season, 'Date': g.Date, 'Source': g.Source})
+    for g in games_df[visitor_hit_mask].itertuples(index=False):
+        candidates.append({'flagged_team': g.Visitor, 'side': 'Visitor', 'opponent': g.Home,
+                            'team_score': g.Visitor_Score, 'opp_score': g.Home_Score,
+                            'Season': g.Season, 'Date': g.Date, 'Source': g.Source})
 
     if not candidates:
         logger.info("No risk-list name matches found in this range. Nothing to review.")
@@ -245,9 +351,10 @@ def main():
             c, c['side'], c['opponent'], c['team_score'], c['opp_score'],
             risk_df, baseline, args.season_start
         )
-        if c['Season'] < 1935:
-            score += 1
-            reasons.append("Pre-1935 season -- college/HS crossover games were more common this early.")
+        era_adjustment, era_reason = era_weight(c['Season'])
+        if era_adjustment != 0:
+            score += era_adjustment
+            reasons.append(era_reason)
 
         if score < args.min_suspicion:
             continue
@@ -267,6 +374,10 @@ def main():
             'Source': c['Source'],
             # Left blank for you to fill in:
             'Your_Determination': '',   # e.g. "HS - correct" / "College - rename" / "Needs image check"
+            # If you confirm this needs a rename, put the exact replacement name here
+            # (e.g. "Detroit University of Detroit Jesuit (MI)"). apply_college_hs_corrections.py
+            # only acts on rows where BOTH Your_Determination and Corrected_Name are filled in.
+            'Corrected_Name': '',
             'Notes': '',
         })
 
