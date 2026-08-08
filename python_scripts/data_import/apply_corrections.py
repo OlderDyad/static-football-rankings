@@ -18,6 +18,7 @@
 #      garbage team name or blocking the whole batch.
 
 import os
+import re
 import argparse
 import pandas as pd
 import logging
@@ -31,6 +32,16 @@ SERVER_NAME = "McKnights-PC\\SQLEXPRESS01"
 DATABASE_NAME = "hs_football_database"
 GLOBAL_ALIAS_REGION = "*Global*"
 IGNORE_SENTINEL = "[IGNORED]"
+# Every standardized team name must end in a space, an open paren, exactly
+# two letters, and a close paren -- e.g. "Marietta College (OH)". This is
+# deliberately just a STRUCTURAL check (any two letters), not a validated
+# list of real state/province codes, since a handful of standardized names
+# legitimately end in a non-US code (Canadian provinces, etc.). It's here to
+# catch typos/mangling in Final_Proper_Name -- missing space, wrong number
+# of letters, missing/extra parens, stray characters -- before they get
+# written into HS_Team_Aliases and start propagating into every future
+# import that matches this alias.
+STATE_SUFFIX_RE = re.compile(r' \([A-Z]{2}\)$')
 # =================================================
 
 # --- Boilerplate Setup ---
@@ -56,6 +67,18 @@ def is_one_off(source_files, opponents_played):
     return (',' not in str(source_files)) and (',' not in str(opponents_played))
 
 
+def bad_state_suffix_reason(proper_name):
+    """Returns a human-readable reason if proper_name's state/province suffix
+    is malformed, or None if it looks fine. Structural check only (any two
+    letters) -- not validated against a real state/province list, since a
+    few standardized names legitimately end in a non-US code."""
+    if STATE_SUFFIX_RE.search(proper_name):
+        return None
+    tail = proper_name[-6:] if len(proper_name) >= 6 else proper_name
+    return (f"expected the name to end in ' (XX)' (space, open paren, exactly two "
+            f"letters, close paren) -- got '...{tail}' instead")
+
+
 def apply_normal_rule(connection, row, dry_run=False):
     alias_name = str(row.get('Unrecognized_Alias', '')).replace("'", "''")
     proper_name = str(row.get('Final_Proper_Name', '')).replace("'", "''")
@@ -64,7 +87,13 @@ def apply_normal_rule(connection, row, dry_run=False):
     rule_type = str(row.get('Rule_Type', 'Alias')).strip().lower()
 
     if not alias_name or not proper_name:
-        return False
+        return 'skipped_missing'
+
+    suffix_problem = bad_state_suffix_reason(proper_name)
+    if suffix_problem:
+        logger.warning(f"{'[DRY RUN] ' if dry_run else ''}SKIPPED '{alias_name}' -> '{proper_name}': {suffix_problem}. "
+                        f"Fix Final_Proper_Name in the sheet and re-run.")
+        return 'skipped_bad_suffix'
 
     target_region = GLOBAL_ALIAS_REGION if scope.lower() == 'global' else region
 
@@ -81,7 +110,7 @@ def apply_normal_rule(connection, row, dry_run=False):
     else:
         logger.info(action)
         connection.execute(text(sql_str))
-    return True
+    return 'applied'
 
 
 def apply_ignore_rule(connection, row, final, dry_run=False):
@@ -157,15 +186,19 @@ def main():
     logger.info(f"Found {len(normal_df)} completed alias/abbreviation row(s) and {len(ignore_df)} Ignore row(s).")
 
     applied = 0
+    skipped_bad_suffix = 0
     ignore_applied = 0
     ignore_deferred = 0
     ignore_refused_recurring = 0
 
     def run_all(connection):
-        nonlocal applied, ignore_applied, ignore_deferred, ignore_refused_recurring
+        nonlocal applied, skipped_bad_suffix, ignore_applied, ignore_deferred, ignore_refused_recurring
         for _, row in normal_df.iterrows():
-            if apply_normal_rule(connection, row, dry_run=args.dry_run):
+            result = apply_normal_rule(connection, row, dry_run=args.dry_run)
+            if result == 'applied':
                 applied += 1
+            elif result == 'skipped_bad_suffix':
+                skipped_bad_suffix += 1
 
         for _, row in ignore_df.iterrows():
             result = apply_ignore_rule(connection, row, args.final, dry_run=args.dry_run)
@@ -192,6 +225,8 @@ def main():
             logger.info(f"⏸  {ignore_deferred} Ignore row(s) left uncommitted -- {'would need' if args.dry_run else 're-run with'} --final {'to commit them' if args.dry_run else 'when you are done reviewing this batch'}.")
         if ignore_refused_recurring:
             logger.warning(f"⚠️  {ignore_refused_recurring} Ignore row(s) {'would be' if args.dry_run else ''} refused because they recur across multiple clippings -- resolve these with a real name instead.")
+        if skipped_bad_suffix:
+            logger.warning(f"⚠️  {skipped_bad_suffix} row(s) {'would be' if args.dry_run else ''} skipped -- Final_Proper_Name doesn't end in a clean ' (XX)' state/province suffix. See warnings above, fix the sheet, and re-run.")
         if not args.dry_run:
             logger.info("You can now re-run 'master_scores_importer.py' to complete the import.")
         else:
