@@ -15,22 +15,37 @@ Same-opponent duplicate/typo pairs (two papers covering the same real
 game with a slightly different score) are deliberately NOT flagged here
 -- that's a separate dedup problem, not a mapping problem.
 
-Detection logic distinguishes three priorities per (AnchorTeam, Season):
-  High - same game, wrong opponent name   : a pair with an IDENTICAL score
-                                             for the anchor team -- one real
-                                             game, opponent name garbled/
-                                             mismatched between sources.
+Detection logic distinguishes four priorities per (AnchorTeam, Season):
+  High - same game, wrong opponent name   : a pair with an IDENTICAL score on
+                                             BOTH sides (anchor AND opponent)
+                                             -- one real game, opponent name
+                                             garbled/mismatched between
+                                             sources. Highest confidence.
   High - true same-day conflict           : a pair on the exact same date
-                                             with DIFFERENT scores -- two
-                                             genuinely different games
-                                             claimed for one team in one day.
+                                             with a DIFFERENT score on at
+                                             least one side -- two genuinely
+                                             different games claimed for one
+                                             team in one day.
+  Medium - anchor score coincidentally
+            matches, verify opponent
+            score before assuming
+            duplicate                     : only the anchor team's own score
+                                             matches between the two rows;
+                                             the opponent's score differs.
+                                             Common with low/round scores
+                                             (0-0, a 6-6 tie, a low-scoring
+                                             loss) where two DIFFERENT real
+                                             games can coincidentally share
+                                             one side's score. Don't assume
+                                             "same game" here without
+                                             checking the opponent score too.
   Low  - possible multi-level scheduling  : pairs 1-2 days apart with
-                                             different scores -- usually a
-                                             big program's freshman/JV/
-                                             varsity games in the same week,
-                                             not a real mapping error. Worth
-                                             a batch spot-check, not
-                                             one-by-one review.
+                                             different scores on both sides --
+                                             usually a big program's
+                                             freshman/JV/varsity games in the
+                                             same week, not a real mapping
+                                             error. Worth a batch spot-check,
+                                             not one-by-one review.
 
 Schema (auto-created on first run, see ensure_schema()):
   HS_Mapping_Investigations       -- one row per (AnchorTeam, State, Season)
@@ -41,20 +56,84 @@ Schema (auto-created on first run, see ensure_schema()):
                                       value, reason, and which investigation
                                       justified it.
 
+Also detects a second, structurally different problem: the SAME newspaper
+page OCR'd more than once (Source filenames sharing a base name with a
+' (1)'/' (2)' suffix), producing two HS_Scores rows for the same real game
+-- same Home, same Visitor, same date, but a different score because each
+OCR pass read the clipping differently. This is the mirror image of the
+ghost-team case (there: same team, different opponent; here: same team,
+same opponent, different score) and is NOT caught by `detect`, which
+explicitly ignores same-opponent pairs. Use `detect-duplicates` for this.
+Registered under ConflictType='DuplicateImport' in the same tables, with
+AnchorTeam storing 'Home || Visitor' since the case is about one game
+being duplicated, not one team's schedule. Confirmed duplicates get
+removed with the `delete` command, not `fix` (renaming would just leave
+two identical rows).
+
 Usage
 -----
 python mapping_conflict_audit.py detect --state OK
 python mapping_conflict_audit.py detect --state OK --dry-run
 
+python mapping_conflict_audit.py detect-duplicates --state OK
+
+A third, separate tool: once a specific alias bug is CONFIRMED (e.g.
+"Chickasha" mis-mapping to "Checotah (OK)" for certain newspaper regions --
+found by inspecting HS_Team_Name_Alias directly, not by this script),
+`reclassify` sorts out which already-imported rows are affected. Since the
+wrongly-mapped name is often also a real town with its own genuine
+history, date/opponent heuristics can't tell them apart -- instead it
+builds an opponent "fingerprint" for each real town (from sources NOT
+suspected of the bug) and classifies every disputed row by which
+fingerprint its actual opponent matches. Two towns in different parts of
+a state essentially never share a normal-season opponent, so a clean
+fingerprint match is a strong signal. Rows confirmed as the genuine
+article are left alone; only reclassify/ambiguous rows get registered
+(ConflictType='AliasReclassification'), each as its own investigation
+since the verdict is per-game, not per-season.
+
+python mapping_conflict_audit.py reclassify --state OK \\
+    --suspect-name "Checotah (OK)" --alt-name "Chickasha (OK)" \\
+    --bad-sources "Tulsa_World,The_Tulsa_Tribune,Muskogee_Daily_Phoenix"
+
+# Multiple suspect/alt name pairs in one run (comma-separated, 1:1 order),
+# prints a totaled summary table instead of having to add up each name by hand:
+python mapping_conflict_audit.py reclassify --state OK \\
+    --suspect-name "Sulphur (LA),Altus (AR),Clinton (AR)" \\
+    --alt-name "Sulphur (OK),Altus (OK),Clinton (OK)" \\
+    --bad-sources "Times_Record" --dry-run
+
+python mapping_conflict_audit.py apply-reclassify --state OK \\
+    --suspect-name "Sulphur (LA),Altus (AR),Clinton (AR)" --dry-run
+
+A fourth investigation type, ConflictType='TierMismatch', flags games
+against an opponent classified as structurally weaker (Deaf-league,
+JV/B/C/Lightweight/Freshmen/Frosh) or structurally stronger (college
+frosh/JV) than ordinary varsity play, per the reference table built by the
+separate classify_team_tiers.py script (run that first -- this command
+just reads HS_Team_Tier_Classification, it doesn't build it). Two signals:
+a Weak-tier opponent whose game margin ISN'T the lopsided loss you'd
+expect (Medium), or a Strong-tier (college frosh/JV) opponent showing up
+at all (High, since HS-vs-college is inherently rare/suspicious regardless
+of score). Same queue/dashboard/repeat-offenders/defer/dismiss workflow as
+every other ConflictType -- nothing else needed to change.
+
+python mapping_conflict_audit.py detect-tier-mismatch --state OK
+python mapping_conflict_audit.py detect-tier-mismatch --state OK --margin-threshold 15 --dry-run
+
 python mapping_conflict_audit.py dashboard
 python mapping_conflict_audit.py dashboard --state OK
 
 python mapping_conflict_audit.py queue --state OK --priority high
+python mapping_conflict_audit.py queue --state OK --type DuplicateImport
 python mapping_conflict_audit.py queue --state OK --investigation 73
 
 python mapping_conflict_audit.py fix --id 13AA058C-853E-4722-9232-5FF428FD4B79 \\
     --field Visitor --value "Amarillo San Jacinto Christian Academy (TX)" \\
     --investigation 73 --reason "Confirmed via 1961 Tulsa World clipping"
+
+python mapping_conflict_audit.py delete --id 876BC6F3-C84F-4D69-9C77-7AD9B9C4482B \\
+    --investigation 9 --reason "Duplicate OCR pass, base file read is correct"
 
 python mapping_conflict_audit.py dismiss --investigation 658 \\
     --status "Verified-FalsePositive" --reason "Mustang HS multi-squad program, freshman/JV/varsity vs different opponents same week"
@@ -64,6 +143,7 @@ python mapping_conflict_audit.py close --investigation 73 --status Fixed \\
 """
 
 import os
+import re
 import argparse
 import logging
 import pandas as pd
@@ -83,6 +163,8 @@ engine = create_engine(db_connection_str)
 VALID_FIELDS = {'Home', 'Visitor', 'Home_Score', 'Visitor_Score', 'Date',
                  'Season', 'Location', 'Location2', 'Source', 'Forfeit', 'OT'}
 
+DEAF_RE = re.compile(r'Deaf', re.IGNORECASE)
+
 DDL_STATEMENTS = [
     """
     IF OBJECT_ID('dbo.HS_Mapping_Investigations', 'U') IS NULL
@@ -91,11 +173,12 @@ DDL_STATEMENTS = [
         AnchorTeam VARCHAR(100) NOT NULL,
         State VARCHAR(10) NOT NULL,
         Season INT NOT NULL,
+        ConflictType VARCHAR(30) NOT NULL DEFAULT 'GhostTeam',
         DateIdentified DATETIME DEFAULT GETDATE(),
         Status VARCHAR(30) NOT NULL DEFAULT 'New',
         MinDaysApart INT NULL,
         ScoreMatchFlag BIT NULL,
-        Priority VARCHAR(60) NULL,
+        Priority VARCHAR(150) NULL,
         GhostTeamCandidate VARCHAR(100) NULL,
         ProbableCorrectOpponent VARCHAR(100) NULL,
         VerificationSource VARCHAR(255) NULL,
@@ -129,8 +212,22 @@ DDL_STATEMENTS = [
     # column guards, in case the tables were created by hand in SSMS before
     # this script existed and are missing a column added later
     "IF COL_LENGTH('HS_Mapping_Investigations', 'MinDaysApart') IS NULL ALTER TABLE HS_Mapping_Investigations ADD MinDaysApart INT NULL",
+    # ScoreMatchFlag now means BOTH sides' scores matched (was: anchor-only,
+    # before the classifier was tightened to avoid false positives on
+    # coincidental low/round scores like 0-0).
     "IF COL_LENGTH('HS_Mapping_Investigations', 'ScoreMatchFlag') IS NULL ALTER TABLE HS_Mapping_Investigations ADD ScoreMatchFlag BIT NULL",
-    "IF COL_LENGTH('HS_Mapping_Investigations', 'Priority') IS NULL ALTER TABLE HS_Mapping_Investigations ADD Priority VARCHAR(60) NULL",
+    "IF COL_LENGTH('HS_Mapping_Investigations', 'AnchorScoreOnlyMatch') IS NULL ALTER TABLE HS_Mapping_Investigations ADD AnchorScoreOnlyMatch BIT NULL",
+    "IF COL_LENGTH('HS_Mapping_Investigations', 'Priority') IS NULL ALTER TABLE HS_Mapping_Investigations ADD Priority VARCHAR(150) NULL",
+    # widen if the column already exists but is still the original, too-narrow VARCHAR(60)
+    "IF (SELECT CHARACTER_MAXIMUM_LENGTH FROM INFORMATION_SCHEMA.COLUMNS "
+    "WHERE TABLE_NAME = 'HS_Mapping_Investigations' AND COLUMN_NAME = 'Priority') < 150 "
+    "ALTER TABLE HS_Mapping_Investigations ALTER COLUMN Priority VARCHAR(150) NULL",
+    "IF COL_LENGTH('HS_Mapping_Investigations', 'ConflictType') IS NULL ALTER TABLE HS_Mapping_Investigations ADD ConflictType VARCHAR(30) NOT NULL DEFAULT 'GhostTeam'",
+    # used by ConflictType='AliasReclassification' -- the standardized name a
+    # fingerprint match proposes for GhostTeamCandidate (the currently-stored,
+    # disputed name), e.g. GhostTeamCandidate='Checotah (OK)',
+    # ProposedCorrection='Chickasha (OK)'.
+    "IF COL_LENGTH('HS_Mapping_Investigations', 'ProposedCorrection') IS NULL ALTER TABLE HS_Mapping_Investigations ADD ProposedCorrection VARCHAR(100) NULL",
 ]
 
 
@@ -193,21 +290,37 @@ def find_conflicts(reliable_df):
 
 
 def classify_groups(pairs_df):
-    """One row per (Team, Season) with MinDaysApart / ScoreMatchFlag / Priority."""
-    if pairs_df.empty:
-        return pd.DataFrame(columns=['Team', 'Season', 'MinDaysApart', 'ScoreMatch', 'Priority'])
+    """One row per (Team, Season) with MinDaysApart / score-match flags / Priority.
 
-    pairs_df = pairs_df.assign(ScoreMatch=pairs_df['TeamScore_1'] == pairs_df['TeamScore_2'])
+    BothScoresMatch requires BOTH sides of the score to match between the
+    two rows -- the high-confidence "one real game, opponent name garbled"
+    signal. AnchorScoreOnlyMatch (only the anchor team's own score matches,
+    opponent score differs) is downgraded to Medium, since a coincidental
+    low/round score (0-0, a 6-6 tie, a 7-point loss) can make two genuinely
+    different games look like a duplicate if you only check one side."""
+    if pairs_df.empty:
+        return pd.DataFrame(columns=['Team', 'Season', 'MinDaysApart',
+                                      'BothScoresMatch', 'AnchorScoreOnlyMatch', 'Priority'])
+
+    pairs_df = pairs_df.assign(
+        BothScoresMatch=(pairs_df['TeamScore_1'] == pairs_df['TeamScore_2'])
+                         & (pairs_df['OppScore_1'] == pairs_df['OppScore_2']),
+        AnchorScoreOnlyMatch=(pairs_df['TeamScore_1'] == pairs_df['TeamScore_2'])
+                              & (pairs_df['OppScore_1'] != pairs_df['OppScore_2']),
+    )
     grouped = pairs_df.groupby(['Team', 'Season']).agg(
         MinDaysApart=('DaysApart', 'min'),
-        ScoreMatch=('ScoreMatch', 'any'),
+        BothScoresMatch=('BothScoresMatch', 'any'),
+        AnchorScoreOnlyMatch=('AnchorScoreOnlyMatch', 'any'),
     ).reset_index()
 
     def priority(row):
-        if row['ScoreMatch']:
+        if row['BothScoresMatch']:
             return 'High - same game, wrong opponent name'
         if row['MinDaysApart'] == 0:
             return 'High - true same-day conflict'
+        if row['AnchorScoreOnlyMatch']:
+            return 'Medium - anchor score coincidentally matches, verify opponent score before assuming duplicate'
         return 'Low - possible multi-level scheduling, spot-check only'
 
     grouped['Priority'] = grouped.apply(priority, axis=1)
@@ -224,7 +337,8 @@ def register_investigations(pairs_df, groups_df, state, dry_run=False):
         return
 
     existing = pd.read_sql(
-        text("SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations WHERE State = :state"),
+        text("""SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations
+                 WHERE State = :state AND ConflictType = 'GhostTeam'"""),
         engine, params={'state': state}
     )
     existing_keys = set(zip(existing['AnchorTeam'], existing['Season']))
@@ -239,16 +353,18 @@ def register_investigations(pairs_df, groups_df, state, dry_run=False):
     with engine.begin() as conn:
         for _, row in new_anchors.iterrows():
             conn.execute(text("""
-                INSERT INTO HS_Mapping_Investigations (AnchorTeam, State, Season)
-                VALUES (:team, :state, :season)
+                INSERT INTO HS_Mapping_Investigations (AnchorTeam, State, Season, ConflictType)
+                VALUES (:team, :state, :season, 'GhostTeam')
             """), {'team': row['Team'], 'state': state, 'season': int(row['Season'])})
 
         for _, row in groups_df.iterrows():
             conn.execute(text("""
                 UPDATE HS_Mapping_Investigations
-                SET MinDaysApart = :mind, ScoreMatchFlag = :smatch, Priority = :priority
-                WHERE AnchorTeam = :team AND Season = :season AND State = :state
-            """), {'mind': int(row['MinDaysApart']), 'smatch': bool(row['ScoreMatch']),
+                SET MinDaysApart = :mind, ScoreMatchFlag = :bothmatch,
+                    AnchorScoreOnlyMatch = :anchormatch, Priority = :priority
+                WHERE AnchorTeam = :team AND Season = :season AND State = :state AND ConflictType = 'GhostTeam'
+            """), {'mind': int(row['MinDaysApart']), 'bothmatch': bool(row['BothScoresMatch']),
+                   'anchormatch': bool(row['AnchorScoreOnlyMatch']),
                    'priority': row['Priority'], 'team': row['Team'],
                    'season': int(row['Season']), 'state': state})
 
@@ -257,7 +373,8 @@ def register_investigations(pairs_df, groups_df, state, dry_run=False):
 
     # link games
     inv_map = pd.read_sql(
-        text("SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations WHERE State = :state"),
+        text("""SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations
+                 WHERE State = :state AND ConflictType = 'GhostTeam'"""),
         engine, params={'state': state}
     )
     inv_lookup = {(r.AnchorTeam, r.Season): r.InvestigationID for r in inv_map.itertuples()}
@@ -273,7 +390,7 @@ def register_investigations(pairs_df, groups_df, state, dry_run=False):
         SELECT g.InvestigationID, g.ScoresID
         FROM HS_Mapping_Investigation_Games g
         JOIN HS_Mapping_Investigations i ON i.InvestigationID = g.InvestigationID
-        WHERE i.State = :state
+        WHERE i.State = :state AND i.ConflictType = 'GhostTeam'
     """), engine, params={'state': state})
     existing_set = set(zip(existing_links['InvestigationID'], existing_links['ScoresID'].astype(str)))
 
@@ -293,6 +410,258 @@ def register_investigations(pairs_df, groups_df, state, dry_run=False):
             """), {'inv': int(row['InvestigationID']), 'sid': row['ScoresID']})
 
     logger.info(f"{state}: {len(new_links)} new game link(s) added.")
+
+
+# --- Duplicate-import (same source page OCR'd more than once) ----------
+
+def fetch_source_family_games(state):
+    """All HS_Scores rows for the state, with a derived BaseSource column
+    (Source with any trailing ' (N)' OCR-pass suffix stripped) so rows from
+    different re-reads of the same physical page group together."""
+    query = text("""
+        SELECT ID, Season, Date, Home, Visitor, Home_Score, Visitor_Score, Source
+        FROM HS_Scores
+        WHERE Home LIKE :pattern OR Visitor LIKE :pattern
+    """)
+    df = pd.read_sql(query, engine, params={'pattern': f'%{state}'})
+    df['ID'] = df['ID'].astype(str)
+    df['BaseSource'] = df['Source'].fillna('').str.replace(r'\s\(\d+\)(?=\.\w+$)', '', regex=True, n=1)
+    return df
+
+
+def find_duplicate_imports(df):
+    """Rows that share (Season, Date, Home, Visitor, BaseSource) -- the
+    exact same real game, same opponent -- but come from DIFFERENT Source
+    filenames (a ' (1)'/' (2)' OCR-pass variant of the same page) with a
+    DIFFERENT score on at least one side. Mirror image of find_conflicts():
+    there, a different opponent for the same team/date is the signal;
+    here, the SAME opponent with a different score is the signal --
+    almost always the same clipping OCR'd more than once."""
+    if df.empty:
+        return df
+
+    key = ['Season', 'Date', 'Home', 'Visitor', 'BaseSource']
+    multi_source = df.groupby(key)['Source'].transform('nunique') > 1
+    candidates = df[multi_source].copy()
+    if candidates.empty:
+        return candidates
+
+    score_varies = candidates.groupby(key)[['Home_Score', 'Visitor_Score']] \
+        .transform('nunique').max(axis=1) > 1
+    return candidates[score_varies].sort_values(key)
+
+
+def register_duplicate_investigations(dup_df, state, dry_run=False):
+    """Registers one investigation per (Season, Home, Visitor, BaseSource)
+    duplicate-import cluster, reusing the same tables as
+    register_investigations() but tagged ConflictType='DuplicateImport'.
+    AnchorTeam stores 'Home || Visitor' since the case is about one GAME
+    being duplicated, not one team's whole schedule."""
+    if dup_df.empty:
+        logger.info(f"{state}: no duplicate-import candidates found.")
+        return
+
+    dup_df = dup_df.copy()
+    dup_df['AnchorTeam'] = dup_df['Home'] + ' || ' + dup_df['Visitor']
+    groups = dup_df[['AnchorTeam', 'Season']].drop_duplicates()
+
+    existing = pd.read_sql(
+        text("""SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations
+                 WHERE State = :state AND ConflictType = 'DuplicateImport'"""),
+        engine, params={'state': state}
+    )
+    existing_keys = set(zip(existing['AnchorTeam'], existing['Season']))
+    new_anchors = groups[~groups.apply(lambda r: (r['AnchorTeam'], r['Season']) in existing_keys, axis=1)]
+
+    if dry_run:
+        logger.info(f"[DRY RUN] {state}: would register {len(new_anchors)} new duplicate-import "
+                    f"investigation(s) covering {len(dup_df)} row(s).")
+        return
+
+    with engine.begin() as conn:
+        for _, row in new_anchors.iterrows():
+            conn.execute(text("""
+                INSERT INTO HS_Mapping_Investigations (AnchorTeam, State, Season, ConflictType, Priority)
+                VALUES (:team, :state, :season, 'DuplicateImport',
+                        'High - duplicate OCR import, same opponent different score')
+            """), {'team': row['AnchorTeam'], 'state': state, 'season': int(row['Season'])})
+
+    logger.info(f"{state}: {len(new_anchors)} new duplicate-import investigation(s) registered.")
+
+    inv_map = pd.read_sql(
+        text("""SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations
+                 WHERE State = :state AND ConflictType = 'DuplicateImport'"""),
+        engine, params={'state': state}
+    )
+    inv_lookup = {(r.AnchorTeam, r.Season): r.InvestigationID for r in inv_map.itertuples()}
+
+    dup_df['InvestigationID'] = dup_df.apply(lambda r: inv_lookup.get((r['AnchorTeam'], r['Season'])), axis=1)
+    games_long = dup_df.dropna(subset=['InvestigationID'])[['InvestigationID', 'ID']] \
+        .rename(columns={'ID': 'ScoresID'}).drop_duplicates()
+
+    existing_links = pd.read_sql(text("""
+        SELECT g.InvestigationID, g.ScoresID
+        FROM HS_Mapping_Investigation_Games g
+        JOIN HS_Mapping_Investigations i ON i.InvestigationID = g.InvestigationID
+        WHERE i.State = :state AND i.ConflictType = 'DuplicateImport'
+    """), engine, params={'state': state})
+    existing_set = set(zip(existing_links['InvestigationID'], existing_links['ScoresID'].astype(str)))
+
+    new_links = games_long[~games_long.apply(
+        lambda r: (r['InvestigationID'], r['ScoresID']) in existing_set, axis=1
+    )].drop_duplicates(subset=['InvestigationID', 'ScoresID'])
+
+    if new_links.empty:
+        logger.info(f"{state}: no new duplicate-import game links to add.")
+        return
+
+    with engine.begin() as conn:
+        for _, row in new_links.iterrows():
+            conn.execute(text("""
+                INSERT INTO HS_Mapping_Investigation_Games (InvestigationID, ScoresID)
+                VALUES (:inv, :sid)
+            """), {'inv': int(row['InvestigationID']), 'sid': row['ScoresID']})
+
+    logger.info(f"{state}: {len(new_links)} new duplicate-import game link(s) added.")
+
+
+# --- Alias reclassification (opponent-fingerprint based) ---------------
+#
+# For a confirmed structural alias bug like Chickasha -> Checotah (OK), the
+# resulting HS_Scores rows can't be told apart by date/opponent-conflict
+# heuristics alone -- Checotah is also a real town with a real, decades-
+# long schedule, so most of its rows are genuine. Instead we build two
+# "fingerprints" (the distinct set of opponents each real town has
+# historically played, from sources NOT suspected of the bug) and classify
+# each disputed row by which fingerprint its actual opponent falls into.
+# Two towns 100+ miles apart in different parts of a state essentially
+# never share a normal-season opponent, so a clean fingerprint match is a
+# strong signal.
+
+def fetch_fingerprint_opponents(team_name, exclude_source_patterns=None):
+    """Every distinct opponent a team has played (Home or Visitor side),
+    optionally excluding rows whose Source starts with any of the given
+    prefixes -- used to build a 'known good' opponent network from sources
+    NOT suspected of the alias bug under investigation."""
+    query = text("""
+        SELECT Visitor AS Opponent, Source FROM HS_Scores WHERE Home = :team
+        UNION ALL
+        SELECT Home AS Opponent, Source FROM HS_Scores WHERE Visitor = :team
+    """)
+    df = pd.read_sql(query, engine, params={'team': team_name})
+    if exclude_source_patterns:
+        mask = pd.Series(False, index=df.index)
+        for pat in exclude_source_patterns:
+            mask |= df['Source'].fillna('').str.startswith(pat)
+        df = df[~mask]
+    return set(df['Opponent'].unique())
+
+
+def fetch_disputed_rows(team_name, source_patterns):
+    """All HS_Scores rows for team_name whose Source starts with one of the
+    given prefixes -- the pool suspected of the alias bug -- with the
+    game's actual Opponent (the other side) computed for classification."""
+    query = text("""
+        SELECT ID, Season, Date, Home, Visitor, Home_Score, Visitor_Score, Source,
+               CASE WHEN Home = :team THEN Visitor ELSE Home END AS Opponent
+        FROM HS_Scores
+        WHERE Home = :team OR Visitor = :team
+    """)
+    df = pd.read_sql(query, engine, params={'team': team_name})
+    df['ID'] = df['ID'].astype(str)
+    mask = pd.Series(False, index=df.index)
+    for pat in source_patterns:
+        mask |= df['Source'].fillna('').str.startswith(pat)
+    return df[mask].copy()
+
+
+def classify_by_fingerprint(disputed_df, own_fingerprint, alt_fingerprint):
+    """Verdict per disputed row: 'reclassify' (opponent matches ONLY the
+    alt team's fingerprint -- this row is almost certainly a mismap),
+    'confirmed' (matches only the suspect team's own fingerprint -- leave
+    alone), or 'ambiguous-both'/'ambiguous-neither' (needs a human look)."""
+    def classify(opp):
+        in_own = opp in own_fingerprint
+        in_alt = opp in alt_fingerprint
+        if in_alt and not in_own:
+            return 'reclassify'
+        if in_own and not in_alt:
+            return 'confirmed'
+        if in_own and in_alt:
+            return 'ambiguous-both'
+        return 'ambiguous-neither'
+
+    disputed_df = disputed_df.copy()
+    disputed_df['Verdict'] = disputed_df['Opponent'].apply(classify)
+    return disputed_df
+
+
+def register_reclassification(classified_df, state, suspect_name, alt_name, dry_run=False):
+    """Registers every NON-confirmed row (reclassify or ambiguous) as its
+    own investigation under ConflictType='AliasReclassification' -- one row
+    per disputed game, since the verdict here is per-game, not per-season.
+    Confirmed-correct rows are counted but not registered, to keep the
+    tracking table focused on rows that actually need a decision.
+
+    Returns a summary dict (used by the CLI to print a multi-name total)."""
+    confirmed_count = int((classified_df['Verdict'] == 'confirmed').sum())
+    logger.info(f"{confirmed_count} row(s) confirmed as genuine '{suspect_name}' "
+                f"(opponent matches its own fingerprint only) -- not registered.")
+
+    summary = {'suspect_name': suspect_name, 'disputed': len(classified_df),
+               'confirmed_genuine': confirmed_count, 'reclassify': 0,
+               'ambiguous_both': 0, 'ambiguous_neither': 0, 'registered': 0}
+
+    actionable = classified_df[classified_df['Verdict'] != 'confirmed'].copy()
+    if actionable.empty:
+        logger.info("Nothing actionable to register.")
+        return summary
+
+    priority_map = {
+        'reclassify': f'High - reclassify to {alt_name} (opponent fingerprint match)',
+        'ambiguous-both': f'Medium - ambiguous, opponent matches both {suspect_name} and {alt_name} fingerprints',
+        'ambiguous-neither': 'Low - ambiguous, opponent matches neither fingerprint, needs manual check',
+    }
+    actionable['Priority'] = actionable['Verdict'].map(priority_map)
+    actionable['ProposedName'] = actionable['Verdict'].apply(lambda v: alt_name if v == 'reclassify' else None)
+
+    counts = actionable['Verdict'].value_counts().to_dict()
+    logger.info(f"Verdict counts: {counts}")
+    summary['reclassify'] = int(counts.get('reclassify', 0))
+    summary['ambiguous_both'] = int(counts.get('ambiguous-both', 0))
+    summary['ambiguous_neither'] = int(counts.get('ambiguous-neither', 0))
+
+    existing = pd.read_sql(text("""
+        SELECT g.ScoresID
+        FROM HS_Mapping_Investigation_Games g
+        JOIN HS_Mapping_Investigations i ON i.InvestigationID = g.InvestigationID
+        WHERE i.ConflictType = 'AliasReclassification' AND i.State = :state AND i.GhostTeamCandidate = :suspect
+    """), engine, params={'state': state, 'suspect': suspect_name})
+    existing_ids = set(existing['ScoresID'].astype(str))
+    new_rows = actionable[~actionable['ID'].isin(existing_ids)]
+    summary['registered'] = len(new_rows)
+
+    if dry_run:
+        logger.info(f"[DRY RUN] Would register {len(new_rows)} new reclassification case(s).")
+        return summary
+
+    with engine.begin() as conn:
+        for _, row in new_rows.iterrows():
+            inv_id = conn.execute(text("""
+                INSERT INTO HS_Mapping_Investigations
+                    (AnchorTeam, State, Season, ConflictType, Priority, GhostTeamCandidate, ProposedCorrection)
+                OUTPUT INSERTED.InvestigationID
+                VALUES (:team, :state, :season, 'AliasReclassification', :priority, :suspect, :proposed)
+            """), {'team': suspect_name, 'state': state, 'season': int(row['Season']),
+                   'priority': row['Priority'], 'suspect': suspect_name,
+                   'proposed': row['ProposedName']}).scalar()
+            conn.execute(text("""
+                INSERT INTO HS_Mapping_Investigation_Games (InvestigationID, ScoresID)
+                VALUES (:inv, :sid)
+            """), {'inv': inv_id, 'sid': row['ID']})
+
+    logger.info(f"{state}: {len(new_rows)} new reclassification investigation(s) registered.")
+    return summary
 
 
 # --- Fix / change history ----------------------------------------------
@@ -337,6 +706,68 @@ def apply_fix(scores_id, field, new_value, investigation_id=None, reason='', dry
     return True
 
 
+def delete_duplicate_row(scores_id, investigation_id=None, reason='', dry_run=False):
+    """Deletes ONE HS_Scores row identified by its ID -- for confirmed
+    duplicate-import cases (e.g. the same newspaper clipping/page OCR'd
+    twice, producing two rows for the same real game, one with a garbled
+    opponent name). The FULL row is logged to HS_Scores_Change_Log as a
+    single ROW_DELETED entry before it's removed, so the deleted data is
+    still fully recoverable from the audit trail. Never touches any other
+    row with the same team name -- ID-scoped only, like apply_fix()."""
+    with engine.begin() as conn:
+        row = conn.execute(text("""
+            SELECT Date, Season, Home, Visitor, Home_Score, Visitor_Score,
+                   Location, Location2, Source, Forfeit, OT
+            FROM HS_Scores WHERE ID = :id
+        """), {'id': scores_id}).fetchone()
+        if row is None:
+            logger.warning(f"No HS_Scores row found for ID {scores_id} -- skipped.")
+            return False
+
+        row_snapshot = (f"Season={row.Season}, Date={row.Date}, Home={row.Home!r}, "
+                         f"Home_Score={row.Home_Score}, Visitor={row.Visitor!r}, "
+                         f"Visitor_Score={row.Visitor_Score}, Location={row.Location!r}, "
+                         f"Location2={row.Location2!r}, Source={row.Source!r}, "
+                         f"Forfeit={row.Forfeit}, OT={row.OT}")
+        preview = f"DELETE {scores_id}: {row_snapshot}"
+
+        if dry_run:
+            logger.info(f"[DRY RUN] {preview}")
+            return True
+
+        conn.execute(text("""
+            INSERT INTO HS_Scores_Change_Log
+                (ScoresID, InvestigationID, FieldChanged, OldValue, NewValue, Reason, Script)
+            VALUES (:id, :inv, 'ROW_DELETED', :old, NULL, :reason, :script)
+        """), {'id': scores_id, 'inv': investigation_id, 'old': row_snapshot,
+               'reason': reason, 'script': 'mapping_conflict_audit.py'})
+
+        conn.execute(text("DELETE FROM HS_Scores WHERE ID = :id"), {'id': scores_id})
+
+    logger.info(preview + "  [logged to HS_Scores_Change_Log, then deleted]")
+    return True
+
+
+def bulk_set_status(state, conflict_type, new_status, reason=None, from_status='New'):
+    """Bulk status change for every investigation of one ConflictType in one
+    state currently at from_status -- e.g. moving all 'DuplicateImport'
+    cases to 'Deferred' when you've decided not to work them right now but
+    still want them tracked (visible on the dashboard, excluded from the
+    default `queue --status New` view) rather than silently dropped."""
+    with engine.begin() as conn:
+        result = conn.execute(text("""
+            UPDATE HS_Mapping_Investigations
+            SET Status = :new_status,
+                Notes = CASE WHEN :reason IS NOT NULL THEN
+                            COALESCE(Notes + CHAR(10), '') + :reason
+                        ELSE Notes END
+            WHERE State = :state AND ConflictType = :ctype AND Status = :from_status
+        """), {'new_status': new_status, 'reason': reason, 'state': state,
+               'ctype': conflict_type, 'from_status': from_status})
+    logger.info(f"{state}/{conflict_type}: {result.rowcount} investigation(s) moved "
+                f"{from_status} -> {new_status}.")
+
+
 def close_investigation(investigation_id, status, reason=None):
     with engine.begin() as conn:
         conn.execute(text("""
@@ -351,19 +782,474 @@ def close_investigation(investigation_id, status, reason=None):
     logger.info(f"Investigation {investigation_id} -> {status}")
 
 
+def bulk_apply_reclassification(state, suspect_name, dry_run=False):
+    """Applies every pending HIGH-confidence 'reclassify' AliasReclassification
+    case for one suspect name -- skips 'ambiguous-both'/'ambiguous-neither'
+    cases entirely, those still need a human look. Each fix goes through
+    apply_fix() (same ID-scoped update + HS_Scores_Change_Log entry as any
+    other fix), then the investigation is auto-closed as Fixed.
+
+    Returns a summary dict (used by the CLI to print a multi-name total)."""
+    summary = {'suspect_name': suspect_name, 'pending': 0, 'applied': 0, 'skipped': 0}
+
+    df = pd.read_sql(text("""
+        SELECT i.InvestigationID, i.ProposedCorrection, g.ScoresID
+        FROM HS_Mapping_Investigations i
+        JOIN HS_Mapping_Investigation_Games g ON g.InvestigationID = i.InvestigationID
+        WHERE i.ConflictType = 'AliasReclassification'
+          AND i.GhostTeamCandidate = :suspect
+          AND i.State = :state
+          AND i.Status = 'New'
+          AND i.Priority LIKE 'High - reclassify%'
+    """), engine, params={'suspect': suspect_name, 'state': state})
+
+    if df.empty:
+        logger.info("No pending high-confidence reclassification cases found.")
+        return summary
+
+    summary['pending'] = len(df)
+    logger.info(f"{len(df)} high-confidence reclassification case(s) to apply.")
+
+    applied = 0
+    skipped = 0
+    for _, row in df.iterrows():
+        scores_id = str(row['ScoresID'])
+        current = pd.read_sql(text("SELECT Home, Visitor FROM HS_Scores WHERE ID = :id"),
+                               engine, params={'id': scores_id})
+        if current.empty:
+            logger.warning(f"  {scores_id}: no matching HS_Scores row -- skipping.")
+            skipped += 1
+            continue
+        home, visitor = current.iloc[0]['Home'], current.iloc[0]['Visitor']
+        if home == suspect_name:
+            field = 'Home'
+        elif visitor == suspect_name:
+            field = 'Visitor'
+        else:
+            logger.warning(f"  {scores_id}: neither Home nor Visitor is '{suspect_name}' anymore "
+                            f"-- skipping (already changed?).")
+            skipped += 1
+            continue
+
+        ok = apply_fix(scores_id, field, row['ProposedCorrection'], int(row['InvestigationID']),
+                        reason=f"Opponent fingerprint match: reclassified from '{suspect_name}' to "
+                               f"'{row['ProposedCorrection']}' (batch alias reclassification)",
+                        dry_run=dry_run)
+        if ok and not dry_run:
+            close_investigation(int(row['InvestigationID']), 'Fixed',
+                                 "Batch-applied via fingerprint reclassification.")
+            applied += 1
+
+    summary['applied'] = applied
+    summary['skipped'] = skipped
+
+    if dry_run:
+        logger.info(f"[DRY RUN] Would apply {len(df)} reclassification(s).")
+    else:
+        logger.info(f"{applied} reclassification(s) applied and closed.")
+    return summary
+
+
+# --- Tier mismatch (reads the classify_team_tiers.py reference table) --
+#
+# Uses HS_Team_Tier_Classification (built/refreshed separately by
+# classify_team_tiers.py -- name-seeded Deaf/JV/B/C/Lightweight/Frosh and
+# College-Frosh/JV teams, plus one hop of propagation to unnamed teams that
+# mostly play a seed-weak opponent) to flag individual GAMES where the
+# result doesn't match what that classification implies: a Weak-tier
+# opponent that didn't lose big, or a Strong-tier (college frosh/JV)
+# opponent showing up at all.
+#
+# The margin-implausibility check is deliberately restricted to Deaf-tier
+# opponents only (name-matched at query time, not stored as a separate
+# column -- Deaf status is fully recoverable from the name string itself).
+# A first OK run flagged 519 games under the broader "any Weak-tier
+# opponent" rule; a 15-case sample of those turned out to be uniformly
+# ordinary small-school-vs-big-school-JV games (e.g. "Lawton Eisenhower JV
+# 12, Rush Springs 0") -- a big program's JV squad is often roughly
+# comparable in caliber to a small school's varsity, so a close/competitive
+# result against one is normal scheduling, not a data error. The
+# assumption that a Weak-tier opponent should lose big only holds for a
+# genuinely different competitive CATEGORY (a Deaf school playing
+# mainstream varsity) -- it does not hold for JV/B/C/Lightweight/Frosh
+# suffix teams or the one-hop Propagated-weak teams (which were seeded from
+# a mix of Deaf and JV/B/C opponents and can't be cleanly separated).
+# Those are still correctly classified Weak-tier in the reference table --
+# just not something a close score should be read as suspicious for.
+
+def fetch_tier_classification():
+    df = pd.read_sql(text("SELECT TeamName, Tier FROM HS_Team_Tier_Classification"), engine)
+    if df.empty:
+        logger.warning("HS_Team_Tier_Classification is empty -- run classify_team_tiers.py first.")
+    return dict(zip(df['TeamName'], df['Tier']))
+
+
+def fetch_state_games_for_tiering(state):
+    query = text("""
+        SELECT ID, Season, Date, Home, Visitor, Home_Score, Visitor_Score
+        FROM HS_Scores WHERE Home LIKE :pattern OR Visitor LIKE :pattern
+    """)
+    df = pd.read_sql(query, engine, params={'pattern': f'%{state}'})
+    df['ID'] = df['ID'].astype(str)
+    return df
+
+
+def find_tier_mismatches(games_df, tier_map, margin_threshold=15):
+    """One row per flagged game. Weak-vs-weak and Normal-vs-Normal games are
+    never flagged -- only a Weak-tier team facing a non-Weak opponent with
+    an implausibly close result, or a Strong-tier (college frosh/JV)
+    opponent appearing at all, regardless of margin."""
+    results = []
+    for row in games_df.itertuples(index=False):
+        home_tier = tier_map.get(row.Home, 'Normal')
+        visitor_tier = tier_map.get(row.Visitor, 'Normal')
+
+        if home_tier == 'Normal' and visitor_tier == 'Normal':
+            continue
+        if home_tier == 'Weak' and visitor_tier == 'Weak':
+            continue
+
+        if home_tier == 'Strong' or visitor_tier == 'Strong':
+            anchor = row.Home if visitor_tier == 'Strong' else row.Visitor
+            opponent = row.Visitor if anchor == row.Home else row.Home
+            results.append({'ID': row.ID, 'Season': row.Season, 'Anchor': anchor,
+                             'Reason': 'CollegeTierSuspect',
+                             'Detail': f'{opponent} classified Strong-tier (college frosh/JV)'})
+            continue
+
+        if home_tier == 'Weak':
+            weak_score, other_score, anchor, opponent = row.Home_Score, row.Visitor_Score, row.Visitor, row.Home
+        else:
+            weak_score, other_score, anchor, opponent = row.Visitor_Score, row.Home_Score, row.Home, row.Visitor
+
+        if not DEAF_RE.search(opponent):
+            continue  # JV/B/C/Lightweight/Frosh/Propagated-weak: presence alone isn't suspicious, see note above
+
+        margin = int(other_score - weak_score)  # Home_Score/Visitor_Score come back as float64 from pandas
+        if margin < margin_threshold:
+            results.append({'ID': row.ID, 'Season': row.Season, 'Anchor': anchor,
+                             'Reason': 'InconsistentMargin-WeakTier',
+                             'Detail': f'{opponent} classified Weak-tier but margin only {margin:+d} '
+                                       f'(expected >= {margin_threshold})'})
+    return pd.DataFrame(results)
+
+
+def register_tier_mismatches(mismatch_df, state, dry_run=False):
+    """One investigation per (Anchor, Season), same shape as the GhostTeam
+    queue, so `queue`/`dashboard`/`repeat-offenders`/`defer`/`dismiss` work
+    on it unchanged. If a team has both a CollegeTierSuspect game and an
+    InconsistentMargin-WeakTier game in the same season, the case gets the
+    higher-severity (CollegeTierSuspect) Priority; both games still get
+    linked either way."""
+    if mismatch_df.empty:
+        logger.info(f"{state}: no tier mismatches found.")
+        return
+
+    priority_map = {
+        'CollegeTierSuspect': 'High - opponent classified Strong-tier (college frosh/JV), verify matchup',
+        'InconsistentMargin-WeakTier': 'Medium - opponent classified Weak-tier (Deaf/JV/B/C/Lightweight) but margin inconsistent with that tier',
+    }
+    rank_map = {'CollegeTierSuspect': 2, 'InconsistentMargin-WeakTier': 1}
+
+    mismatch_df = mismatch_df.copy()
+    mismatch_df['Rank'] = mismatch_df['Reason'].map(rank_map)
+
+    case_priority = (mismatch_df.sort_values('Rank', ascending=False)
+                      .drop_duplicates(subset=['Anchor', 'Season'])[['Anchor', 'Season', 'Reason']])
+    case_priority['Priority'] = case_priority['Reason'].map(priority_map)
+
+    existing = pd.read_sql(text("""
+        SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations
+        WHERE State = :state AND ConflictType = 'TierMismatch'
+    """), engine, params={'state': state})
+    existing_keys = set(zip(existing['AnchorTeam'], existing['Season']))
+    new_cases = case_priority[~case_priority.apply(lambda r: (r['Anchor'], r['Season']) in existing_keys, axis=1)]
+
+    if dry_run:
+        logger.info(f"[DRY RUN] {state}: would register {len(new_cases)} new TierMismatch investigation(s) "
+                    f"covering {len(mismatch_df)} flagged game(s) "
+                    f"({(mismatch_df['Reason'] == 'CollegeTierSuspect').sum()} CollegeTierSuspect, "
+                    f"{(mismatch_df['Reason'] == 'InconsistentMargin-WeakTier').sum()} InconsistentMargin-WeakTier).")
+        return
+
+    with engine.begin() as conn:
+        for _, row in new_cases.iterrows():
+            conn.execute(text("""
+                INSERT INTO HS_Mapping_Investigations (AnchorTeam, State, Season, ConflictType, Priority)
+                VALUES (:team, :state, :season, 'TierMismatch', :priority)
+            """), {'team': row['Anchor'], 'state': state, 'season': int(row['Season']), 'priority': row['Priority']})
+
+    logger.info(f"{state}: {len(new_cases)} new TierMismatch investigation(s) registered.")
+
+    inv_map = pd.read_sql(text("""
+        SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations
+        WHERE State = :state AND ConflictType = 'TierMismatch'
+    """), engine, params={'state': state})
+    inv_lookup = {(r.AnchorTeam, r.Season): r.InvestigationID for r in inv_map.itertuples()}
+
+    mismatch_df['InvestigationID'] = mismatch_df.apply(lambda r: inv_lookup.get((r['Anchor'], r['Season'])), axis=1)
+    games_long = mismatch_df.dropna(subset=['InvestigationID'])[['InvestigationID', 'ID']] \
+        .rename(columns={'ID': 'ScoresID'}).drop_duplicates()
+
+    existing_links = pd.read_sql(text("""
+        SELECT g.InvestigationID, g.ScoresID
+        FROM HS_Mapping_Investigation_Games g
+        JOIN HS_Mapping_Investigations i ON i.InvestigationID = g.InvestigationID
+        WHERE i.State = :state AND i.ConflictType = 'TierMismatch'
+    """), engine, params={'state': state})
+    existing_set = set(zip(existing_links['InvestigationID'], existing_links['ScoresID'].astype(str)))
+
+    new_links = games_long[~games_long.apply(
+        lambda r: (r['InvestigationID'], r['ScoresID']) in existing_set, axis=1
+    )].drop_duplicates(subset=['InvestigationID', 'ScoresID'])
+
+    if new_links.empty:
+        logger.info(f"{state}: no new TierMismatch game links to add.")
+        return
+
+    with engine.begin() as conn:
+        for _, row in new_links.iterrows():
+            conn.execute(text("""
+                INSERT INTO HS_Mapping_Investigation_Games (InvestigationID, ScoresID)
+                VALUES (:inv, :sid)
+            """), {'inv': int(row['InvestigationID']), 'sid': row['ScoresID']})
+
+    logger.info(f"{state}: {len(new_links)} new TierMismatch game link(s) added.")
+
+
+# --- Level mismatch (reads HS_Team_Level_History -- curated ground truth,
+# not name-inference) -----------------------------------------------------
+#
+# Unlike the Deaf/JV tier check above, this doesn't need a margin
+# threshold: 6/8-man and 11-man football are structurally different
+# formats (different field size, roster/eligibility rules), and most
+# state associations don't schedule regular-season games across that
+# divide. A genuine PlayerLevel mismatch between two opponents is
+# inherently suspicious on its own -- almost always a wrong-team mapping
+# rather than a real crossover game -- so every mismatch found gets
+# flagged High priority regardless of score.
+#
+# HS_Team_Level_History is only as complete as the onboarding/correction
+# work done for a state -- a team with no matching history row for a given
+# season is treated as PlayerLevel=11 (the standard default every team
+# starts at before any correction work happens), so this will only catch
+# mismatches where the WEAKER-documented side is missing a level record
+# improbably; teams that both lack verified history simply won't be
+# flagged (no false positives from missing data, just reduced recall).
+
+def fetch_level_history(state):
+    df = pd.read_sql(text("""
+        SELECT TeamName, PlayerLevel, Season_Begin, Season_End
+        FROM HS_Team_Level_History
+        WHERE TeamName LIKE :pattern
+    """), engine, params={'pattern': f'%{state}'})
+    return df
+
+
+def build_level_lookup(level_df):
+    """TeamName -> list of (Season_Begin, Season_End, PlayerLevel) intervals."""
+    lookup = {}
+    for r in level_df.itertuples(index=False):
+        lookup.setdefault(r.TeamName, []).append((r.Season_Begin, r.Season_End, r.PlayerLevel))
+    return lookup
+
+
+def level_for(lookup, team, season):
+    for begin, end, level in lookup.get(team, []):
+        if begin <= season <= end:
+            return level
+    return 11  # default: no verified history for this team/season yet
+
+
+def find_level_mismatches(games_df, level_lookup):
+    results = []
+    for row in games_df.itertuples(index=False):
+        home_level = level_for(level_lookup, row.Home, row.Season)
+        visitor_level = level_for(level_lookup, row.Visitor, row.Season)
+        if home_level == visitor_level:
+            continue
+        results.append({
+            'ID': row.ID, 'Season': row.Season, 'Anchor': row.Home,
+            'Detail': f'{row.Home} ({home_level}-man) vs {row.Visitor} ({visitor_level}-man)'
+        })
+    return pd.DataFrame(results)
+
+
+def register_level_mismatches(mismatch_df, state, dry_run=False):
+    if mismatch_df.empty:
+        logger.info(f"{state}: no level mismatches found.")
+        return
+
+    case_priority = mismatch_df.drop_duplicates(subset=['Anchor', 'Season'])[['Anchor', 'Season']].copy()
+    case_priority['Priority'] = 'High - PlayerLevel mismatch (verify opponent/mapping, not a real crossover game)'
+
+    existing = pd.read_sql(text("""
+        SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations
+        WHERE State = :state AND ConflictType = 'LevelMismatch'
+    """), engine, params={'state': state})
+    existing_keys = set(zip(existing['AnchorTeam'], existing['Season']))
+    new_cases = case_priority[~case_priority.apply(lambda r: (r['Anchor'], r['Season']) in existing_keys, axis=1)]
+
+    if dry_run:
+        logger.info(f"[DRY RUN] {state}: would register {len(new_cases)} new LevelMismatch investigation(s) "
+                    f"covering {len(mismatch_df)} flagged game(s).")
+        return
+
+    with engine.begin() as conn:
+        for _, row in new_cases.iterrows():
+            conn.execute(text("""
+                INSERT INTO HS_Mapping_Investigations (AnchorTeam, State, Season, ConflictType, Priority)
+                VALUES (:team, :state, :season, 'LevelMismatch', :priority)
+            """), {'team': row['Anchor'], 'state': state, 'season': int(row['Season']), 'priority': row['Priority']})
+
+    logger.info(f"{state}: {len(new_cases)} new LevelMismatch investigation(s) registered.")
+
+    inv_map = pd.read_sql(text("""
+        SELECT InvestigationID, AnchorTeam, Season FROM HS_Mapping_Investigations
+        WHERE State = :state AND ConflictType = 'LevelMismatch'
+    """), engine, params={'state': state})
+    inv_lookup = {(r.AnchorTeam, r.Season): r.InvestigationID for r in inv_map.itertuples()}
+
+    mismatch_df = mismatch_df.copy()
+    mismatch_df['InvestigationID'] = mismatch_df.apply(lambda r: inv_lookup.get((r['Anchor'], r['Season'])), axis=1)
+    games_long = mismatch_df.dropna(subset=['InvestigationID'])[['InvestigationID', 'ID']] \
+        .rename(columns={'ID': 'ScoresID'}).drop_duplicates()
+
+    existing_links = pd.read_sql(text("""
+        SELECT g.InvestigationID, g.ScoresID
+        FROM HS_Mapping_Investigation_Games g
+        JOIN HS_Mapping_Investigations i ON i.InvestigationID = g.InvestigationID
+        WHERE i.State = :state AND i.ConflictType = 'LevelMismatch'
+    """), engine, params={'state': state})
+    existing_set = set(zip(existing_links['InvestigationID'], existing_links['ScoresID'].astype(str)))
+
+    new_links = games_long[~games_long.apply(
+        lambda r: (r['InvestigationID'], r['ScoresID']) in existing_set, axis=1
+    )].drop_duplicates(subset=['InvestigationID', 'ScoresID'])
+
+    if new_links.empty:
+        logger.info(f"{state}: no new LevelMismatch game links to add.")
+        return
+
+    with engine.begin() as conn:
+        for _, row in new_links.iterrows():
+            conn.execute(text("""
+                INSERT INTO HS_Mapping_Investigation_Games (InvestigationID, ScoresID)
+                VALUES (:inv, :sid)
+            """), {'inv': int(row['InvestigationID']), 'sid': row['ScoresID']})
+
+    logger.info(f"{state}: {len(new_links)} new LevelMismatch game link(s) added.")
+
+
+def verify_and_close_resolved_level_mismatches(state, dry_run=True):
+    """detect-level-mismatch only ever ADDS investigations -- it never
+    re-checks open ones against current HS_Team_Level_History. Every time
+    more teams get verified (a new OSSAA-style import, an
+    infer_level_backfill.py run, manual fixes, etc.), some previously-real
+    LevelMismatch investigations silently stop being true without anyone
+    closing them, and the queue accumulates stale noise the same way the
+    519 stale Medium tier-mismatch cases did earlier. This re-checks every
+    open LevelMismatch investigation's linked games against the CURRENT
+    level lookup and closes any investigation where every linked game now
+    matches (both sides same PlayerLevel) as Verified-Resolved. Investigations
+    where at least one linked game still mismatches are left open."""
+    level_df = fetch_level_history(state)
+    lookup = build_level_lookup(level_df)
+
+    open_df = pd.read_sql(text("""
+        SELECT i.InvestigationID, g.ScoresID, s.Season, s.Home, s.Visitor
+        FROM HS_Mapping_Investigations i
+        JOIN HS_Mapping_Investigation_Games g ON g.InvestigationID = i.InvestigationID
+        JOIN HS_Scores s ON s.ID = g.ScoresID
+        WHERE i.State = :state AND i.ConflictType = 'LevelMismatch' AND i.Status = 'New'
+    """), engine, params={'state': state})
+
+    if open_df.empty:
+        logger.info(f"{state}: no open LevelMismatch investigations to verify.")
+        return
+
+    def still_mismatched(row):
+        home_level = level_for(lookup, row.Home, row.Season)
+        visitor_level = level_for(lookup, row.Visitor, row.Season)
+        return home_level != visitor_level
+
+    open_df['StillMismatched'] = open_df.apply(still_mismatched, axis=1)
+    per_investigation = open_df.groupby('InvestigationID')['StillMismatched'].any()
+    resolved_ids = per_investigation[~per_investigation].index.tolist()
+    still_open_ids = per_investigation[per_investigation].index.tolist()
+
+    logger.info(f"{state}: {len(resolved_ids)} investigation(s) now fully resolved, "
+                f"{len(still_open_ids)} still genuinely mismatched.")
+
+    if dry_run:
+        logger.info(f"[DRY RUN] Would close: {resolved_ids}")
+        return
+
+    reason = ("Re-verified against current HS_Team_Level_History: all linked games now "
+              "show matching PlayerLevel on both sides (see verify_and_close_resolved_"
+              "level_mismatches in mapping_conflict_audit.py).")
+    for inv_id in resolved_ids:
+        close_investigation(int(inv_id), 'Verified-Resolved', reason)
+    logger.info(f"{state}: {len(resolved_ids)} investigation(s) closed as Verified-Resolved.")
+
+
 # --- Reporting -----------------------------------------------------------
+
+def show_repeat_offenders(state, conflict_type='GhostTeam', priority_like='Low - possible multi-level',
+                           min_seasons=2, output=None):
+    """Rolls up existing investigations by AnchorTeam instead of listing
+    them one at a time. A team flagged ONCE for same-week paired-opponent
+    games is probably just a real big-program week (jamboree, home-and-away
+    doubleheader, etc.) -- not worth chasing. A team flagged across MANY
+    DIFFERENT seasons is a much stronger signal of a persistent, structural
+    issue (a real ghost-team merge or a varsity/JV split that was never
+    made, the same shape as Marlow Central and Edmond OCA). This ranks by
+    that repeat count instead of by raw single-season deviation, which
+    sidesteps the newspaper-coverage-completeness bias that made the
+    game-count-vs-era-average approach (game_count_anomaly_scanner.py)
+    unreliable -- coverage completeness varies by how well a city's own
+    newspaper covered its team, not by whether the team's data has a real
+    structural problem, so comparing one team's raw game count to a
+    state-wide average systematically over-flags well-documented teams
+    (e.g. Muskogee, which had its own paper) and under-flags
+    poorly-documented ones. Counting same-team date-clustering repeats
+    doesn't have that bias: it never compares across teams at all."""
+    df = pd.read_sql(text("""
+        SELECT AnchorTeam, State,
+               COUNT(DISTINCT Season) AS FlaggedSeasons,
+               MIN(Season) AS FirstSeason, MAX(Season) AS LastSeason,
+               STRING_AGG(CAST(Season AS VARCHAR(4)), ',') WITHIN GROUP (ORDER BY Season) AS Seasons,
+               COUNT(*) AS TotalInvestigations
+        FROM HS_Mapping_Investigations
+        WHERE State = :state AND ConflictType = :ctype AND Priority LIKE :priority
+        GROUP BY AnchorTeam, State
+        HAVING COUNT(DISTINCT Season) >= :min_seasons
+        ORDER BY FlaggedSeasons DESC, TotalInvestigations DESC
+    """), engine, params={'state': normalize_state(state), 'ctype': conflict_type,
+                           'priority': f'%{priority_like}%', 'min_seasons': min_seasons})
+
+    if df.empty:
+        logger.info(f"No teams with >= {min_seasons} flagged seasons found for {state} "
+                    f"[{conflict_type} / '{priority_like}']. Has `detect` been run for this state/range yet?")
+        return
+
+    print(df.to_string(index=False))
+    if output:
+        df.to_csv(output, index=False, encoding='utf-8-sig')
+        logger.info(f"Written to {output}")
+
 
 def show_dashboard(state=None, output=None):
     where = "WHERE State = :state" if state else ""
     params = {'state': state} if state else {}
     df = pd.read_sql(text(f"""
-        SELECT State,
+        SELECT State, ConflictType,
                CASE WHEN Season >= 2003 THEN 'Maxpreps era' ELSE 'Newspaper era' END AS Era,
                Priority, Status, COUNT(*) AS Cnt
         FROM HS_Mapping_Investigations
         {where}
-        GROUP BY State, CASE WHEN Season >= 2003 THEN 'Maxpreps era' ELSE 'Newspaper era' END, Priority, Status
-        ORDER BY State, Era, Priority, Status
+        GROUP BY State, ConflictType, CASE WHEN Season >= 2003 THEN 'Maxpreps era' ELSE 'Newspaper era' END, Priority, Status
+        ORDER BY State, ConflictType, Era, Priority, Status
     """), engine, params=params)
 
     if df.empty:
@@ -376,7 +1262,8 @@ def show_dashboard(state=None, output=None):
         logger.info(f"Written to {output}")
 
 
-def get_queue(state, priority=None, status='New', investigation_id=None, limit=20, output=None):
+def get_queue(state, priority=None, status='New', investigation_id=None, limit=20, output=None,
+               conflict_type=None, anchor=None):
     filters = ["i.State = :state"]
     params = {'state': normalize_state(state)} if state else {}
     if investigation_id:
@@ -389,10 +1276,17 @@ def get_queue(state, priority=None, status='New', investigation_id=None, limit=2
         if status:
             filters.append("i.Status = :status")
             params['status'] = status
+        if conflict_type:
+            filters.append("i.ConflictType = :ctype")
+            params['ctype'] = conflict_type
+        if anchor:
+            filters.append("i.AnchorTeam LIKE :anchor")
+            params['anchor'] = f'%{anchor}%'
 
     where = " AND ".join(filters)
     df = pd.read_sql(text(f"""
-        SELECT i.InvestigationID, i.AnchorTeam, i.Season, i.Priority, i.Status,
+        SELECT i.InvestigationID, i.AnchorTeam, i.Season, i.ConflictType, i.Priority, i.Status,
+               i.ProposedCorrection,
                s.ID AS ScoresID, s.Date, s.Home, s.Home_Score, s.Visitor, s.Visitor_Score, s.Source
         FROM HS_Mapping_Investigations i
         JOIN HS_Mapping_Investigation_Games g ON g.InvestigationID = i.InvestigationID
@@ -411,8 +1305,9 @@ def get_queue(state, priority=None, status='New', investigation_id=None, limit=2
 
     for inv_id, grp in df.groupby('InvestigationID', sort=False):
         first = grp.iloc[0]
-        print(f"\n=== Investigation {inv_id}: {first['AnchorTeam']} ({first['Season']}) "
-              f"[{first['Priority']}] Status={first['Status']} ===")
+        proposed = f" -> proposed: {first['ProposedCorrection']}" if first['ProposedCorrection'] else ""
+        print(f"\n=== Investigation {inv_id} [{first['ConflictType']}]: {first['AnchorTeam']} ({first['Season']}) "
+              f"[{first['Priority']}] Status={first['Status']}{proposed} ===")
         for _, r in grp.iterrows():
             print(f"  [{r['ScoresID']}] {r['Date']}: {r['Home']} {r['Home_Score']} - "
                   f"{r['Visitor_Score']} {r['Visitor']}  ({r['Source']})")
@@ -428,19 +1323,59 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest='command', required=True)
 
-    p_detect = sub.add_parser('detect', help='Scan a state for new mapping conflicts and register them.')
+    p_detect = sub.add_parser('detect', help='Scan a state for new ghost-team mapping conflicts and register them.')
     p_detect.add_argument('--state', required=True, help="2-letter code, e.g. OK")
     p_detect.add_argument('--dry-run', action='store_true')
+
+    p_dupes = sub.add_parser('detect-duplicates', help='Scan a state for same-page duplicate-OCR-pass imports and register them.')
+    p_dupes.add_argument('--state', required=True, help="2-letter code, e.g. OK")
+    p_dupes.add_argument('--dry-run', action='store_true')
+
+    p_reclassify = sub.add_parser('reclassify', help='Fingerprint-classify rows disputed between two commonly-confused team names (e.g. Checotah vs Chickasha).')
+    p_reclassify.add_argument('--state', required=True)
+    p_reclassify.add_argument('--suspect-name', required=True, help="Name(s) currently stored in the disputed rows, e.g. 'Checotah (OK)'. Comma-separated for multiple names in one run (must line up 1:1 with --alt-name); a total summary prints at the end.")
+    p_reclassify.add_argument('--alt-name', required=True, help="The other real team it may actually be, e.g. 'Chickasha (OK)'. Comma-separated, same order/count as --suspect-name.")
+    p_reclassify.add_argument('--bad-sources', required=True, help="Comma-separated Source filename prefixes suspected of the bug (shared across all suspect names in this run)")
+    p_reclassify.add_argument('--dry-run', action='store_true')
+
+    p_apply_reclass = sub.add_parser('apply-reclassify', help='Bulk-apply all pending HIGH-confidence AliasReclassification cases for one or more suspect names (skips ambiguous cases).')
+    p_apply_reclass.add_argument('--state', required=True)
+    p_apply_reclass.add_argument('--suspect-name', required=True, help="Same value(s) passed to `reclassify`, e.g. 'Checotah (OK)'. Comma-separated for multiple names in one run; a total summary prints at the end.")
+    p_apply_reclass.add_argument('--dry-run', action='store_true')
 
     p_dash = sub.add_parser('dashboard', help='Show investigation counts by era/priority/status.')
     p_dash.add_argument('--state', default=None)
     p_dash.add_argument('--output', default=None)
 
+    p_repeat = sub.add_parser('repeat-offenders', help="Roll up existing investigations by team, ranked by how many DIFFERENT seasons they were flagged in (repeat pattern = stronger signal than raw game-count deviation, and immune to newspaper-coverage bias).")
+    p_repeat.add_argument('--state', required=True)
+    p_repeat.add_argument('--type', dest='conflict_type', default='GhostTeam', choices=['GhostTeam', 'DuplicateImport', 'AliasReclassification', 'GameCountAnomaly', 'TierMismatch', 'LevelMismatch'])
+    p_repeat.add_argument('--priority', dest='priority_like', default='Low - possible multi-level',
+                           help="Substring match on Priority, e.g. 'Low - possible multi-level' (default) for the varsity/JV-style signal")
+    p_repeat.add_argument('--min-seasons', type=int, default=2, help="Only show teams flagged in at least this many distinct seasons (default 2)")
+    p_repeat.add_argument('--output', default=None)
+
+    p_tier = sub.add_parser('detect-tier-mismatch', help="Flag games against a Weak-tier (Deaf/JV/B/C/Lightweight) or Strong-tier (college frosh/JV) opponent, per HS_Team_Tier_Classification (built separately by classify_team_tiers.py).")
+    p_tier.add_argument('--state', required=True, help="2-letter code, e.g. OK")
+    p_tier.add_argument('--margin-threshold', type=int, default=15,
+                         help="Min point margin expected when beating a Weak-tier opponent; anything closer gets flagged (default 15)")
+    p_tier.add_argument('--dry-run', action='store_true')
+
+    p_level = sub.add_parser('detect-level-mismatch', help="Flag games where the two opponents' PlayerLevel (6/8-man vs 11-man) differ, per HS_Team_Level_History (curated ground truth, e.g. from ossaa_8man_import.py).")
+    p_level.add_argument('--state', required=True, help="2-letter code, e.g. OK")
+    p_level.add_argument('--dry-run', action='store_true')
+
+    p_verify_level = sub.add_parser('verify-level-mismatches', help="Re-check open LevelMismatch investigations against the CURRENT HS_Team_Level_History and close any that are now fully resolved (e.g. after an OSSAA import or infer_level_backfill.py run).")
+    p_verify_level.add_argument('--state', required=True, help="2-letter code, e.g. OK")
+    p_verify_level.add_argument('--dry-run', action='store_true')
+
     p_queue = sub.add_parser('queue', help='List open investigations and their games.')
     p_queue.add_argument('--state', default=None)
     p_queue.add_argument('--priority', default=None, help="Substring match, e.g. 'High'")
     p_queue.add_argument('--status', default='New')
+    p_queue.add_argument('--type', dest='conflict_type', default=None, choices=['GhostTeam', 'DuplicateImport', 'AliasReclassification', 'GameCountAnomaly', 'TierMismatch', 'LevelMismatch'])
     p_queue.add_argument('--investigation', type=int, default=None)
+    p_queue.add_argument('--anchor', default=None, help="Substring match on AnchorTeam, e.g. 'Bishop Kelley'")
     p_queue.add_argument('--limit', type=int, default=20)
     p_queue.add_argument('--output', default=None)
 
@@ -451,6 +1386,19 @@ def main():
     p_fix.add_argument('--investigation', type=int, default=None)
     p_fix.add_argument('--reason', default='')
     p_fix.add_argument('--dry-run', action='store_true')
+
+    p_delete = sub.add_parser('delete', help='Delete one confirmed duplicate-import HS_Scores row (logs full row first).')
+    p_delete.add_argument('--id', required=True, help="HS_Scores.ID (GUID) of the row to delete")
+    p_delete.add_argument('--investigation', type=int, default=None)
+    p_delete.add_argument('--reason', required=True)
+    p_delete.add_argument('--dry-run', action='store_true')
+
+    p_defer = sub.add_parser('defer', help='Bulk-move every New investigation of one ConflictType to another status (keeps them flagged, out of the default queue).')
+    p_defer.add_argument('--state', required=True)
+    p_defer.add_argument('--type', dest='conflict_type', required=True, choices=['GhostTeam', 'DuplicateImport', 'AliasReclassification', 'GameCountAnomaly', 'TierMismatch', 'LevelMismatch'])
+    p_defer.add_argument('--status', default='Deferred')
+    p_defer.add_argument('--from-status', dest='from_status', default='New')
+    p_defer.add_argument('--reason', default=None)
 
     p_dismiss = sub.add_parser('dismiss', help='Close an investigation as a false positive (no HS_Scores change).')
     p_dismiss.add_argument('--investigation', type=int, required=True)
@@ -475,15 +1423,118 @@ def main():
         groups = classify_groups(pairs)
         register_investigations(pairs, groups, state, dry_run=args.dry_run)
 
+    elif args.command == 'detect-duplicates':
+        state = normalize_state(args.state)
+        logger.info(f"Fetching source-family games for {state}...")
+        family_df = fetch_source_family_games(state)
+        logger.info(f"  {len(family_df)} team-game row(s) for {state}.")
+        dup_df = find_duplicate_imports(family_df)
+        logger.info(f"  {len(dup_df)} row(s) in duplicate-import clusters found.")
+        register_duplicate_investigations(dup_df, state, dry_run=args.dry_run)
+
+    elif args.command == 'reclassify':
+        state = normalize_state(args.state)
+        bad_sources = [s.strip() for s in args.bad_sources.split(',') if s.strip()]
+        suspect_names = [s.strip() for s in args.suspect_name.split(',') if s.strip()]
+        alt_names = [s.strip() for s in args.alt_name.split(',') if s.strip()]
+        if len(suspect_names) != len(alt_names):
+            parser.error(f"--suspect-name has {len(suspect_names)} name(s) but --alt-name has "
+                         f"{len(alt_names)} -- they must line up 1:1.")
+
+        summaries = []
+        for suspect_name, alt_name in zip(suspect_names, alt_names):
+            logger.info(f"--- {suspect_name} -> {alt_name} ---")
+            logger.info(f"Building fingerprint for '{suspect_name}' (excluding {bad_sources})...")
+            own_fp = fetch_fingerprint_opponents(suspect_name, exclude_source_patterns=bad_sources)
+            logger.info(f"  {len(own_fp)} distinct known-good opponent(s).")
+            logger.info(f"Building fingerprint for '{alt_name}' (all sources)...")
+            alt_fp = fetch_fingerprint_opponents(alt_name)
+            logger.info(f"  {len(alt_fp)} distinct known opponent(s).")
+            disputed = fetch_disputed_rows(suspect_name, bad_sources)
+            logger.info(f"  {len(disputed)} disputed row(s) found.")
+            classified = classify_by_fingerprint(disputed, own_fp, alt_fp)
+            summary = register_reclassification(classified, state, suspect_name, alt_name, dry_run=args.dry_run)
+            summaries.append(summary or {'suspect_name': suspect_name, 'disputed': 0,
+                                          'confirmed_genuine': 0, 'reclassify': 0,
+                                          'ambiguous_both': 0, 'ambiguous_neither': 0, 'registered': 0})
+
+        if len(summaries) > 1:
+            df = pd.DataFrame(summaries).rename(columns={
+                'suspect_name': 'SuspectName', 'disputed': 'Disputed',
+                'confirmed_genuine': 'ConfirmedGenuine', 'reclassify': 'Reclassify',
+                'ambiguous_both': 'AmbigBoth', 'ambiguous_neither': 'AmbigNeither',
+                'registered': 'Registered'})
+            totals = df.drop(columns='SuspectName').sum(numeric_only=True)
+            df.loc['TOTAL'] = ['(' + str(len(summaries)) + ' names)'] + list(totals)
+            prefix = "[DRY RUN] " if args.dry_run else ""
+            print(f"\n{prefix}=== reclassify summary ===")
+            print(df.to_string(index=False))
+
+    elif args.command == 'apply-reclassify':
+        state = normalize_state(args.state)
+        suspect_names = [s.strip() for s in args.suspect_name.split(',') if s.strip()]
+
+        summaries = []
+        for suspect_name in suspect_names:
+            logger.info(f"--- {suspect_name} ---")
+            summary = bulk_apply_reclassification(state, suspect_name, dry_run=args.dry_run)
+            summaries.append(summary or {'suspect_name': suspect_name, 'pending': 0, 'applied': 0, 'skipped': 0})
+
+        if len(summaries) > 1:
+            df = pd.DataFrame(summaries).rename(columns={
+                'suspect_name': 'SuspectName', 'pending': 'Pending',
+                'applied': 'Applied', 'skipped': 'Skipped'})
+            totals = df.drop(columns='SuspectName').sum(numeric_only=True)
+            df.loc['TOTAL'] = ['(' + str(len(summaries)) + ' names)'] + list(totals)
+            prefix = "[DRY RUN] " if args.dry_run else ""
+            print(f"\n{prefix}=== apply-reclassify summary ===")
+            print(df.to_string(index=False))
+
     elif args.command == 'dashboard':
         state = normalize_state(args.state) if args.state else None
         show_dashboard(state, args.output)
 
+    elif args.command == 'repeat-offenders':
+        show_repeat_offenders(args.state, args.conflict_type, args.priority_like, args.min_seasons, args.output)
+
+    elif args.command == 'detect-tier-mismatch':
+        state = normalize_state(args.state)
+        tier_map = fetch_tier_classification()
+        logger.info(f"  {len(tier_map)} team(s) in the tier classification reference table.")
+        games = fetch_state_games_for_tiering(state)
+        logger.info(f"  {len(games)} game(s) for {state}.")
+        mismatches = find_tier_mismatches(games, tier_map, args.margin_threshold)
+        logger.info(f"  {len(mismatches)} flagged game(s) found.")
+        register_tier_mismatches(mismatches, state, dry_run=args.dry_run)
+
+    elif args.command == 'detect-level-mismatch':
+        state = normalize_state(args.state)
+        level_df = fetch_level_history(state)
+        logger.info(f"  {len(level_df)} level-history row(s) for {state}.")
+        level_lookup = build_level_lookup(level_df)
+        games = fetch_state_games_for_tiering(state)
+        logger.info(f"  {len(games)} game(s) for {state}.")
+        mismatches = find_level_mismatches(games, level_lookup)
+        logger.info(f"  {len(mismatches)} flagged game(s) found.")
+        register_level_mismatches(mismatches, state, dry_run=args.dry_run)
+
+    elif args.command == 'verify-level-mismatches':
+        state = normalize_state(args.state)
+        verify_and_close_resolved_level_mismatches(state, dry_run=args.dry_run)
+
     elif args.command == 'queue':
-        get_queue(args.state, args.priority, args.status, args.investigation, args.limit, args.output)
+        get_queue(args.state, args.priority, args.status, args.investigation, args.limit,
+                  args.output, args.conflict_type, args.anchor)
 
     elif args.command == 'fix':
         apply_fix(args.id, args.field, args.value, args.investigation, args.reason, args.dry_run)
+
+    elif args.command == 'delete':
+        delete_duplicate_row(args.id, args.investigation, args.reason, args.dry_run)
+
+    elif args.command == 'defer':
+        state = normalize_state(args.state)
+        bulk_set_status(state, args.conflict_type, args.status, args.reason, args.from_status)
 
     elif args.command == 'dismiss':
         close_investigation(args.investigation, args.status, args.reason)
