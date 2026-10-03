@@ -3,6 +3,10 @@
 Copy-paste workflow for processing a batch of scanned newspaper clippings
 from raw images through to imported games in `HS_Scores`.
 
+> Once games are in `HS_Scores`, see `STATE_ONBOARDING_AND_CLEANUP_GUIDE.md`
+> for the next stage: alias consolidation, ghost-team/duplicate detection,
+> date-truncation fixes, and the full state-onboarding checklist.
+
 ## 0. One-time setup (every new terminal session)
 
 ```powershell

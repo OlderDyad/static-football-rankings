@@ -4,6 +4,7 @@ import pyodbc
 import logging
 import os
 import sys
+import glob
 from sqlalchemy import create_engine
 
 # --- CONFIGURATION ---
@@ -16,13 +17,26 @@ STAGING_TABLE_NAME = "ConsolidationRules_Staging"
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def get_state_code():
-    """Prompts the user to enter a valid state code."""
+    """Prompts the user to enter a valid state code, or 'US' to process every state."""
     while True:
-        state_abbr = input("Please enter the 2-letter state abbreviation (e.g., MD, MA): ").upper()
+        state_abbr = input("Please enter the 2-letter state abbreviation (e.g., MD, MA) or 'US' for all states: ").upper()
+        if state_abbr == "US":
+            return "US"
         if len(state_abbr) == 2 and state_abbr.isalpha():
             return f"({state_abbr})"
         else:
-            print("Invalid input. Please enter a 2-letter abbreviation.")
+            print("Invalid input. Please enter a 2-letter abbreviation or 'US'.")
+
+def get_all_alias_files():
+    """Returns every *_Alias_Rules.csv file in the rules folder (skips *_ACTIVE.csv working copies)."""
+    pattern = os.path.join(RULES_FOLDER, "*_Alias_Rules.csv")
+    return sorted(glob.glob(pattern))
+
+def extract_state_code_from_filename(file_path):
+    """Extracts the state code from a filename like 'MD_Alias_Rules.csv' and returns '(MD)'."""
+    filename = os.path.basename(file_path)
+    state_abbr = filename.split('_')[0]
+    return f"({state_abbr})"
 
 def generate_and_update_correction_file(state_code, file_path):
     """Calls the SQL procedure to get the list of problems and updates the CSV file with current GameCounts."""
@@ -153,8 +167,16 @@ def validate_rules(df_to_upload):
     logging.info(f"Validation passed: {len(df_to_upload)} rules are clean and ready to upload.")
     return True
 
-def run_consolidation_from_staging(state_code, file_path):
-    """Uploads rules to a staging table and then executes the consolidation procedure."""
+def run_consolidation_from_staging(state_code, file_path, reason=None):
+    """Uploads rules to a staging table and then executes the consolidation procedure.
+
+    `reason` is passed through to dbo.sp_ConsolidateNames_FromStaging's optional
+    @Reason parameter (added in V8, 2026-09-12), which logs it to
+    dbo.HS_Consolidation_Log alongside each rule's before/after names and row
+    counts. None/blank is fine -- @Reason defaults to NULL in the procedure,
+    same as before this parameter existed -- but supplying one here is now the
+    normal way to record *why* a given consolidation run happened, instead of
+    that context only ever living in whoever's memory ran it."""
     logging.info(f"Starting consolidation for state: {state_code} using staging table method.")
     
     try:
@@ -192,6 +214,15 @@ def run_consolidation_from_staging(state_code, file_path):
         engine = create_engine(f'mssql+pyodbc://{SERVER_NAME}/{DATABASE_NAME}?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes')
         
         logging.info(f"Uploading {len(df_to_upload)} rules to staging table: {STAGING_TABLE_NAME}...")
+        # 2026-09-15: root cause was pandas 2.3.3 + SQLAlchemy 1.4.46 in this
+        # venv -- confirmed via an isolated sqlite-only repro that this broke
+        # to_sql() against ANY SQLAlchemy connectable, not just this script's
+        # mssql/pyodbc engine (my first attempted fix, wrapping in
+        # engine.begin(), didn't help -- pandas wasn't recognizing SQLAlchemy
+        # objects at all, regardless of Engine vs Connection). Real fix was
+        # upgrading SQLAlchemy to 2.0.53 in this venv (the version pandas 2.x
+        # is actually built/tested against), so the original bare-engine
+        # pattern works again and needs no script-level workaround.
         df_to_upload.to_sql(STAGING_TABLE_NAME, con=engine, if_exists='replace', index=False)
         logging.info("Upload to staging table complete.")
 
@@ -199,8 +230,12 @@ def run_consolidation_from_staging(state_code, file_path):
         with pyodbc.connect(conn_str, autocommit=True) as conn:
             with conn.cursor() as cursor:
                 logging.info("Executing dbo.sp_ConsolidateNames_FromStaging...")
-                cursor.execute("EXEC dbo.sp_ConsolidateNames_FromStaging @StateCode = ?", state_code)
+                cursor.execute("EXEC dbo.sp_ConsolidateNames_FromStaging @StateCode = ?, @Reason = ?", state_code, reason)
                 logging.info("SUCCESS: Consolidation from staging table is complete.")
+                if reason:
+                    logging.info(f"Reason logged to dbo.HS_Consolidation_Log: {reason}")
+                else:
+                    logging.info("No reason supplied -- dbo.HS_Consolidation_Log rows for this run will have Reason = NULL.")
                 logging.info("TIP: Run option 1 again to refresh GameCount values and see which aliases remain.")
 
         # ============================================================
@@ -225,30 +260,95 @@ def run_consolidation_from_staging(state_code, file_path):
     except Exception:
         logging.exception("An error occurred during the consolidation process.")
 
+def run_all_states_generate():
+    """Runs option 1 (generate/update correction file) against every state's alias file."""
+    alias_files = get_all_alias_files()
+    if not alias_files:
+        logging.warning(f"No alias files found in {RULES_FOLDER}")
+        return
+    logging.info(f"Found {len(alias_files)} state alias files. Refreshing GameCount for each...")
+    for file_path in alias_files:
+        state_code = extract_state_code_from_filename(file_path)
+        logging.info(f"\n{'='*60}\nGenerating: {os.path.basename(file_path)} [{state_code}]\n{'='*60}")
+        generate_and_update_correction_file(state_code, file_path)
+
+def run_all_states_consolidation(reason=None):
+    """Runs option 2 (consolidate from staging) against every state's alias file.
+
+    Reuses run_consolidation_from_staging() as-is for each state, one state at a
+    time -- including its NaN-safety validation guard and its post-run check --
+    so 'US' gets exactly the same safety behavior as running a single state by
+    hand, just looped."""
+    alias_files = get_all_alias_files()
+    if not alias_files:
+        logging.warning(f"No alias files found in {RULES_FOLDER}")
+        return
+
+    logging.info(f"Found {len(alias_files)} state alias files to consolidate.")
+    success_count = 0
+    error_count = 0
+    for file_path in alias_files:
+        state_code = extract_state_code_from_filename(file_path)
+        logging.info(f"\n{'='*60}\nProcessing: {os.path.basename(file_path)} [{state_code}]\n{'='*60}")
+        try:
+            run_consolidation_from_staging(state_code, file_path, reason=reason)
+            success_count += 1
+        except Exception:
+            logging.exception(f"Failed processing {state_code}")
+            error_count += 1
+
+    logging.info(f"\n{'='*60}\nBATCH (US) PROCESSING COMPLETE\n{'='*60}")
+    logging.info(f"States processed without a raised exception: {success_count}")
+    logging.info(f"States with an unhandled error: {error_count}")
+    logging.info("Note: a state can appear 'processed' above and still have logged its own")
+    logging.info("VALIDATION FAILED / ABORTED message if that state's file had bad rows --")
+    logging.info("scroll up for any per-state ABORTED lines rather than trusting this count alone.")
+
 if __name__ == "__main__":
     # Main Workflow Logic
     if not os.path.exists(RULES_FOLDER):
         os.makedirs(RULES_FOLDER)
 
     state_code = get_state_code()
-    file_name = f"{state_code.strip('()')}_Alias_Rules.csv"
-    correction_file_path = os.path.join(RULES_FOLDER, file_name)
 
-    print("\nSelect an action:")
-    print("1: Generate or Update the correction file for this state (refreshes GameCount, filters out unused aliases).")
-    print("2: Run the consolidation using the completed correction file for this state.")
-    
-    while True:
-        action = input("Enter your choice (1 or 2): ")
-        if action in ['1', '2']:
-            break
-        else:
-            print("Invalid choice.")
+    if state_code == "US":
+        print("\n'US' selected - will process every *_Alias_Rules.csv file in the rules folder.")
+        print("\nSelect an action:")
+        print("1: Generate or Update the correction file for every state (refreshes GameCount, filters out unused aliases).")
+        print("2: Run the consolidation using each state's completed correction file.")
 
-    if action == '1':
-        generate_and_update_correction_file(state_code, correction_file_path)
-    elif action == '2':
-        if not os.path.exists(correction_file_path):
-            logging.error(f"Correction file not found at {correction_file_path}. Please run option 1 first.")
-        else:
-            run_consolidation_from_staging(state_code, correction_file_path)
+        while True:
+            action = input("Enter your choice (1 or 2): ")
+            if action in ['1', '2']:
+                break
+            else:
+                print("Invalid choice.")
+
+        if action == '1':
+            run_all_states_generate()
+        elif action == '2':
+            reason = input("Reason for this consolidation run, applied to every state (optional, press Enter to skip): ").strip()
+            run_all_states_consolidation(reason=reason if reason else None)
+    else:
+        file_name = f"{state_code.strip('()')}_Alias_Rules.csv"
+        correction_file_path = os.path.join(RULES_FOLDER, file_name)
+
+        print("\nSelect an action:")
+        print("1: Generate or Update the correction file for this state (refreshes GameCount, filters out unused aliases).")
+        print("2: Run the consolidation using the completed correction file for this state.")
+
+        while True:
+            action = input("Enter your choice (1 or 2): ")
+            if action in ['1', '2']:
+                break
+            else:
+                print("Invalid choice.")
+
+        if action == '1':
+            generate_and_update_correction_file(state_code, correction_file_path)
+        elif action == '2':
+            if not os.path.exists(correction_file_path):
+                logging.error(f"Correction file not found at {correction_file_path}. Please run option 1 first.")
+            else:
+                reason = input("Reason for this consolidation run (optional, press Enter to skip): ").strip()
+                run_consolidation_from_staging(state_code, correction_file_path, reason=reason or None)

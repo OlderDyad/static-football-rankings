@@ -119,7 +119,7 @@ of score). Same queue/dashboard/repeat-offenders/defer/dismiss workflow as
 every other ConflictType -- nothing else needed to change.
 
 python mapping_conflict_audit.py detect-tier-mismatch --state OK
-python mapping_conflict_audit.py detect-tier-mismatch --state OK --margin-threshold 15 --dry-run
+python mapping_conflict_audit.py detect-tier-mismatch --state OK --residual-threshold 22 --dry-run
 
 python mapping_conflict_audit.py dashboard
 python mapping_conflict_audit.py dashboard --state OK
@@ -148,7 +148,7 @@ import argparse
 import logging
 import pandas as pd
 import pyodbc
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine, text, bindparam
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -748,24 +748,45 @@ def delete_duplicate_row(scores_id, investigation_id=None, reason='', dry_run=Fa
     return True
 
 
-def bulk_set_status(state, conflict_type, new_status, reason=None, from_status='New'):
+def bulk_set_status(state, conflict_type, new_status, reason=None, from_status='New', priority_like=None):
     """Bulk status change for every investigation of one ConflictType in one
     state currently at from_status -- e.g. moving all 'DuplicateImport'
     cases to 'Deferred' when you've decided not to work them right now but
     still want them tracked (visible on the dashboard, excluded from the
-    default `queue --status New` view) rather than silently dropped."""
+    default `queue --status New` view) rather than silently dropped.
+
+    priority_like (optional): restricts to Priority LIKE '%...%' -- without
+    this, a bulk close on a ConflictType with mixed priorities (e.g.
+    TierMismatch's High 'college frosh/JV' cases alongside its Medium
+    'margin inconsistent' cases) would silently sweep up the High-priority
+    cases too, even though those need individual review, not an automatic
+    close. Always scope this to the specific priority text you actually
+    reviewed/calibrated against, not just the ConflictType.
+
+    NOTE: Status is VARCHAR(20) -- a status string over 20 chars raises a
+    SQL truncation error and this single UPDATE rolls back atomically (all
+    rows or none, thanks to engine.begin()), so it fails safely rather than
+    partially -- but always verify new_status is <= 20 chars before running
+    this at scale, and re-check the actual row count afterward rather than
+    trusting the call succeeded just because no traceback was printed to
+    you secondhand."""
     with engine.begin() as conn:
-        result = conn.execute(text("""
+        query = """
             UPDATE HS_Mapping_Investigations
             SET Status = :new_status,
                 Notes = CASE WHEN :reason IS NOT NULL THEN
                             COALESCE(Notes + CHAR(10), '') + :reason
                         ELSE Notes END
             WHERE State = :state AND ConflictType = :ctype AND Status = :from_status
-        """), {'new_status': new_status, 'reason': reason, 'state': state,
-               'ctype': conflict_type, 'from_status': from_status})
-    logger.info(f"{state}/{conflict_type}: {result.rowcount} investigation(s) moved "
-                f"{from_status} -> {new_status}.")
+        """
+        params = {'new_status': new_status, 'reason': reason, 'state': state,
+                   'ctype': conflict_type, 'from_status': from_status}
+        if priority_like:
+            query += " AND Priority LIKE :priority_like"
+            params['priority_like'] = f'%{priority_like}%'
+        result = conn.execute(text(query), params)
+    logger.info(f"{state}/{conflict_type}" + (f" (Priority LIKE '%{priority_like}%')" if priority_like else "") +
+                f": {result.rowcount} investigation(s) moved {from_status} -> {new_status}.")
 
 
 def close_investigation(investigation_id, status, reason=None):
@@ -894,12 +915,65 @@ def fetch_state_games_for_tiering(state):
     return df
 
 
-def find_tier_mismatches(games_df, tier_map, margin_threshold=15):
+# Season-final (Week=52) rating formula -- matches the Coefficients table /
+# Combined Rating Formula doc. Used only by the Deaf-opponent tier-mismatch
+# check below, NOT the live ranking pipeline (that reads HS_Rankings.Combined_Rating
+# directly; this recomputes from the raw margin component the same way
+# diagnose_deaf_tier_margin_ratings.py did during validation).
+RATING_EXPR = "(0.958 * [Avg_Of_Avg_Of_Home_Modified_Score] + 2.791)"
+
+
+def fetch_ratings_lookup(games_df):
+    """Season-final ratings for every team appearing in games_df (not
+    state-filtered -- an out-of-state opponent, e.g. Texas School for the
+    Deaf appearing in an LA check, needs its own rating too).
+
+    NOTE: filters by Season only, NOT by team name, in SQL -- a state like
+    LA can have thousands of distinct team names across its history, and
+    binding all of them as individual IN-clause parameters blows past SQL
+    Server's ~2100 ODBC parameter limit ("COUNT field incorrect" error,
+    hit 2026-09-12). Season lists are small (tens to ~100), so pulling all
+    Week=52 ratings nationwide for just those seasons and filtering down to
+    the needed teams in pandas afterward stays well within limits."""
+    teams = set(pd.unique(games_df[['Home', 'Visitor']].values.ravel('K')).tolist())
+    seasons = games_df['Season'].unique().tolist()
+    if not teams or not seasons:
+        return {}
+    stmt = text(f"""
+        SELECT Home AS TeamName, Season, {RATING_EXPR} AS Rating
+        FROM HS_Rankings
+        WHERE Week = 52
+          AND Season IN :seasons
+          AND [Avg_Of_Avg_Of_Home_Modified_Score] IS NOT NULL
+    """).bindparams(bindparam('seasons', expanding=True))
+    df = pd.read_sql(stmt, engine, params={'seasons': seasons})
+    df = df[df['TeamName'].isin(teams)]
+    return {(row.TeamName, row.Season): row.Rating for row in df.itertuples(index=False)}
+
+
+def find_tier_mismatches(games_df, tier_map, ratings_lookup, residual_threshold=22.0):
     """One row per flagged game. Weak-vs-weak and Normal-vs-Normal games are
     never flagged -- only a Weak-tier team facing a non-Weak opponent with
-    an implausibly close result, or a Strong-tier (college frosh/JV)
-    opponent appearing at all, regardless of margin."""
+    an implausible result, or a Strong-tier (college frosh/JV) opponent
+    appearing at all, regardless of margin.
+
+    Deaf-opponent games use a rating-differential check (ExpectedMargin =
+    Rating(Anchor,Season) - Rating(Opponent,Season), both Week=52
+    season-final) instead of a flat margin cutoff -- validated against 64
+    LA cases on 2026-09-12: 63/64 known-false-positives clustered within
+    +-19.4 of expected margin, the 1 real error (inv. 4904, a duplicate-
+    source score mixup, since fixed) sat at 26.2, well clear of that band.
+    residual_threshold=22 sits in that gap. Games missing a Week=52 rating
+    on either side are EXCLUDED, not flagged and not passed -- no verdict
+    is possible from this method for those (sparse/old-era coverage gaps).
+
+    JV/B/C/Lightweight/Frosh Weak-tier opponents are NOT covered by this
+    check (same as before this port) -- only Deaf has been validated this
+    way; those tiers may not carry reliable HS_Rankings rows of their own
+    and would need separate validation before extending this method to them.
+    """
     results = []
+    excluded_no_rating = 0
     for row in games_df.itertuples(index=False):
         home_tier = tier_map.get(row.Home, 'Normal')
         visitor_tier = tier_map.get(row.Visitor, 'Normal')
@@ -923,15 +997,32 @@ def find_tier_mismatches(games_df, tier_map, margin_threshold=15):
             weak_score, other_score, anchor, opponent = row.Visitor_Score, row.Home_Score, row.Home, row.Visitor
 
         if not DEAF_RE.search(opponent):
-            continue  # JV/B/C/Lightweight/Frosh/Propagated-weak: presence alone isn't suspicious, see note above
+            continue  # JV/B/C/Lightweight/Frosh: not covered by this check yet, see docstring
 
-        margin = int(other_score - weak_score)  # Home_Score/Visitor_Score come back as float64 from pandas
-        if margin < margin_threshold:
+        anchor_rating = ratings_lookup.get((anchor, row.Season))
+        opponent_rating = ratings_lookup.get((opponent, row.Season))
+        if anchor_rating is None or opponent_rating is None:
+            excluded_no_rating += 1
+            continue  # no verdict possible -- excluded, NOT a pass
+
+        actual_margin = other_score - weak_score  # Home_Score/Visitor_Score come back as float64 from pandas
+        expected_margin = anchor_rating - opponent_rating
+        residual = actual_margin - expected_margin
+
+        if abs(residual) > residual_threshold:
             results.append({'ID': row.ID, 'Season': row.Season, 'Anchor': anchor,
                              'Reason': 'InconsistentMargin-WeakTier',
-                             'Detail': f'{opponent} classified Weak-tier but margin only {margin:+d} '
-                                       f'(expected >= {margin_threshold})'})
-    return pd.DataFrame(results)
+                             'Detail': f'{opponent} (Deaf) -- actual margin {actual_margin:+.0f} vs. '
+                                       f'rating-expected {expected_margin:+.1f} (residual {residual:+.1f}, '
+                                       f'threshold {residual_threshold})'})
+
+    if excluded_no_rating:
+        logger.info(f"  {excluded_no_rating} Deaf-opponent game(s) excluded from tier-mismatch check -- "
+                     f"no Week=52 rating on one or both sides that season (no verdict possible).")
+
+    if results:
+        return pd.DataFrame(results)
+    return pd.DataFrame(columns=['ID', 'Season', 'Anchor', 'Reason', 'Detail'])
 
 
 def register_tier_mismatches(mismatch_df, state, dry_run=False):
@@ -1355,10 +1446,12 @@ def main():
     p_repeat.add_argument('--min-seasons', type=int, default=2, help="Only show teams flagged in at least this many distinct seasons (default 2)")
     p_repeat.add_argument('--output', default=None)
 
-    p_tier = sub.add_parser('detect-tier-mismatch', help="Flag games against a Weak-tier (Deaf/JV/B/C/Lightweight) or Strong-tier (college frosh/JV) opponent, per HS_Team_Tier_Classification (built separately by classify_team_tiers.py).")
+    p_tier = sub.add_parser('detect-tier-mismatch', help="Flag games against a Deaf-tier opponent (rating-differential check) or Strong-tier (college frosh/JV) opponent (always flagged), per HS_Team_Tier_Classification (built separately by classify_team_tiers.py). JV/B/C/Lightweight Weak-tier opponents are not yet covered by margin checking.")
     p_tier.add_argument('--state', required=True, help="2-letter code, e.g. OK")
-    p_tier.add_argument('--margin-threshold', type=int, default=15,
-                         help="Min point margin expected when beating a Weak-tier opponent; anything closer gets flagged (default 15)")
+    p_tier.add_argument('--residual-threshold', type=float, default=22.0,
+                         help="For Deaf-tier opponents: max allowed |actual margin - rating-differential-expected margin| "
+                              "before flagging (default 22.0; validated 2026-09-12 against 64 LA cases -- gap between "
+                              "worst false positive [19.4] and the one real error caught [26.2])")
     p_tier.add_argument('--dry-run', action='store_true')
 
     p_level = sub.add_parser('detect-level-mismatch', help="Flag games where the two opponents' PlayerLevel (6/8-man vs 11-man) differ, per HS_Team_Level_History (curated ground truth, e.g. from ossaa_8man_import.py).")
@@ -1398,6 +1491,9 @@ def main():
     p_defer.add_argument('--type', dest='conflict_type', required=True, choices=['GhostTeam', 'DuplicateImport', 'AliasReclassification', 'GameCountAnomaly', 'TierMismatch', 'LevelMismatch'])
     p_defer.add_argument('--status', default='Deferred')
     p_defer.add_argument('--from-status', dest='from_status', default='New')
+    p_defer.add_argument('--priority-like', dest='priority_like', default=None,
+                          help="Restrict to Priority LIKE '%...%' -- required when a ConflictType has mixed "
+                               "priorities you don't want to blanket-close together (e.g. TierMismatch).")
     p_defer.add_argument('--reason', default=None)
 
     p_dismiss = sub.add_parser('dismiss', help='Close an investigation as a false positive (no HS_Scores change).')
@@ -1503,7 +1599,9 @@ def main():
         logger.info(f"  {len(tier_map)} team(s) in the tier classification reference table.")
         games = fetch_state_games_for_tiering(state)
         logger.info(f"  {len(games)} game(s) for {state}.")
-        mismatches = find_tier_mismatches(games, tier_map, args.margin_threshold)
+        ratings_lookup = fetch_ratings_lookup(games)
+        logger.info(f"  {len(ratings_lookup)} (team, season) rating(s) available for the tier-mismatch check.")
+        mismatches = find_tier_mismatches(games, tier_map, ratings_lookup, args.residual_threshold)
         logger.info(f"  {len(mismatches)} flagged game(s) found.")
         register_tier_mismatches(mismatches, state, dry_run=args.dry_run)
 
@@ -1534,7 +1632,7 @@ def main():
 
     elif args.command == 'defer':
         state = normalize_state(args.state)
-        bulk_set_status(state, args.conflict_type, args.status, args.reason, args.from_status)
+        bulk_set_status(state, args.conflict_type, args.status, args.reason, args.from_status, args.priority_like)
 
     elif args.command == 'dismiss':
         close_investigation(args.investigation, args.status, args.reason)

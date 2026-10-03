@@ -123,7 +123,36 @@ def get_pending_teams(cursor, batch_id):
     return [(row.team_id, row.ProperName, row.URL) for row in cursor.fetchall()]
 
 
+def filter_teams_with_names_row(cursor, matched):
+    """team_scraping_status.team_id has a FOREIGN KEY to HS_Team_Names.ID --
+    but URL_ProperName_Mapping.Team_ID isn't guaranteed to have a matching
+    HS_Team_Names row (the same underlying gap the Loren export's null-ID
+    warning flags: not every team in HS_Scores/URL_ProperName_Mapping has
+    been added to the HS_Team_Names registry yet). A single unmatched
+    team_id fails the WHOLE batch insert (all-or-nothing), so filter those
+    out here -- loudly, not silently -- rather than let one bad row block
+    scraping every other team."""
+    if not matched:
+        return matched
+    team_ids = [team_id for team_id, _, _ in matched]
+    placeholders = ", ".join("?" for _ in team_ids)
+    cursor.execute(f"SELECT ID FROM HS_Team_Names WHERE ID IN ({placeholders})", team_ids)
+    existing_ids = {row[0] for row in cursor.fetchall()}
+
+    kept = [m for m in matched if m[0] in existing_ids]
+    dropped = [m for m in matched if m[0] not in existing_ids]
+    if dropped:
+        logger.warning(f"{len(dropped)} team(s) matched a URL but have no HS_Team_Names row "
+                        f"(FK constraint would reject them) -- skipped, not scraped this run: " +
+                        ", ".join(name for _, name, _ in dropped))
+    return kept
+
+
 def create_batch(cursor, matched):
+    matched = filter_teams_with_names_row(cursor, matched)
+    if not matched:
+        logger.error("No teams left to scrape after filtering out missing-HS_Team_Names rows.")
+        return None, matched
     batch_name = f"2019 Date Truncation Reconciliation - {time.strftime('%Y-%m-%d %H:%M')}"
     insert_sql = ("INSERT INTO scraping_batches (batch_name, created_date, total_teams, status, season_slug, season_year) "
                   "OUTPUT INSERTED.batch_id VALUES (?, GETDATE(), ?, 'running', ?, ?);")
@@ -131,7 +160,7 @@ def create_batch(cursor, matched):
     status_entries = [(team_id, batch_id) for team_id, _, _ in matched]
     cursor.executemany("INSERT INTO dbo.team_scraping_status (team_id, batch_id) VALUES (?, ?);", status_entries)
     cursor.connection.commit()
-    return batch_id
+    return batch_id, matched
 
 
 def save_raw_games(cursor, games_list, batch_id):
@@ -190,7 +219,10 @@ def main():
             matched = matched[:args.limit]
             logger.info(f"--limit {args.limit}: scraping only {len(matched)} team(s) this run.")
 
-        batch_id = create_batch(cursor, matched)
+        batch_id, matched = create_batch(cursor, matched)
+        if batch_id is None:
+            connection.close()
+            return
         logger.info(f"Created scoped batch_id {batch_id} for {len(matched)} team(s), season_slug={SEASON_SLUG}.")
 
     if not matched:

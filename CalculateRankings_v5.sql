@@ -1,3 +1,23 @@
+-- SUPERSEDED 2026-09-19 -- do not run this version. Kept for reference only.
+-- Use CalculateRankings_v5_Fixed instead (CalculateRankings_v5_Fixed.sql in
+-- this same folder). Reason: this plain v5 does full-season DELETE cleanup
+-- of the 143/153 staging tables but does not filter Loop_Query_Step_6v2's
+-- output by @CurrentSeason before inserting into table 153, which allowed
+-- duplicate SeasonHome keys to accumulate across multiple week-runs and
+-- caused convergence to stay stuck (documented root cause in v5_Fixed and
+-- v5_Final headers, both scripted from the live database 2026-09-19).
+-- v5_Fixed applies the season-filter fix using tooling already deployed
+-- (dbo.Loop_Query_Step_6v2); v5_Final also exists live but depends on an
+-- unverified dbo.Loop_Query_Step_6v2_Fixed(@Season, @Week) function and was
+-- not adopted.
+--
+-- (Original adoption note, now superseded: this was validated against test
+-- season 2023 as of Jan 2026 but never rolled into regular use. Supersedes
+-- CalculateRankings_v4_Optimized, archived as
+-- CalculateRankings_v4_Optimized_old.sql. Populates dbo.ScoresWinLossResults
+-- fresh each run via EXEC dbo.ScoresWinLoss, fixes a Margin/Win-Loss/Log
+-- column-swap bug from Power_Rankings_Prelim.)
+
 USE [hs_football_database]
 GO
 

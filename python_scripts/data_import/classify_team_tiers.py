@@ -114,13 +114,45 @@ def build_classification(df, threshold, min_games):
     # Stage 1: name-seed classification, evaluated per (name, season) since
     # the Deaf rule is era-gated -- the same name can be seed-weak in one
     # season and unclassified in an earlier one.
+    #
+    # BUGFIX (2026-09-10): this loop previously only checked
+    # COLLEGE_FROSH_JV_RE / WEAK_SUFFIX_RE -- DEAF_RE was never checked
+    # here despite the module docstring documenting it as a Stage-1 seed.
+    # DEAF_RE was only being used below (Stage 2) to score OTHER teams'
+    # propagation eligibility, never to seed the Deaf-named team itself.
+    # Net effect: NO Deaf-named team was ever directly seeded; each one
+    # depended entirely on its own schedule happening to be >=65% against
+    # already-weak opponents to reach Stage 2 propagation instead --
+    # arbitrary relative to the documented intent, and the root cause of
+    # a confirmed false-positive pair in detect-tier-mismatch (LA vs NC
+    # School for the Deaf, investigations 4853/4854): NC's schedule
+    # happened to clear 65% and propagated to Weak, Louisiana's didn't
+    # and silently defaulted to Normal, so the Weak-vs-Weak skip never
+    # triggered for what should have been treated as two evenly-matched
+    # Deaf programs.
+    #
+    # HS_Team_Tier_Classification stores one Tier per TeamName (no season
+    # column), so a team's Deaf-rule era-gating can't be stored per-season
+    # here regardless -- seed as Weak if this name has ANY game at or
+    # after MIN_WEAK_TIER_SEASON, matching the same per-game era check
+    # Stage 2 already uses below.
     logger.info("Stage 1: name-seed classification...")
     all_names = pd.unique(pd.concat([df['Home'], df['Visitor']]))
     static_seed = {}  # names whose seed status doesn't depend on season (suffix/college rules)
+
+    name_max_season = defaultdict(lambda: -1)
+    for row in df.itertuples(index=False):
+        if row.Season > name_max_season[row.Home]:
+            name_max_season[row.Home] = row.Season
+        if row.Season > name_max_season[row.Visitor]:
+            name_max_season[row.Visitor] = row.Season
+
     for name in all_names:
         if COLLEGE_FROSH_JV_RE.search(name):
             static_seed[name] = 'Strong'
         elif WEAK_SUFFIX_RE.search(name):
+            static_seed[name] = 'Weak'
+        elif DEAF_RE.search(name) and name_max_season[name] >= MIN_WEAK_TIER_SEASON:
             static_seed[name] = 'Weak'
     logger.info(f"  {len(static_seed)} teams seeded by name pattern "
                 f"({sum(1 for v in static_seed.values() if v == 'Weak')} weak, "

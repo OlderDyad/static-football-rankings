@@ -1,3 +1,14 @@
+-- DEPRECATED 2026-09-19: superseded by CalculateRankings_v5.sql.
+-- This version never repopulates dbo.ScoresWinLossResults for the season
+-- before running (that step is missing entirely), so it silently produces
+-- zero HS_Rankings rows for any season whose ScoresWinLossResults data is
+-- stale or empty -- confirmed to be the case for the 2026 season. v5 also
+-- fixes a real Margin/Win-Loss/Log column-swap bug in how it reads
+-- Power_Rankings_Prelim's output (see the mapping comment in v5), and does
+-- a more aggressive full-season cleanup to avoid a duplicate-row bug from
+-- filtering only by Week. Kept here for reference only -- do not run this
+-- version going forward.
+
 USE [hs_football_database]
 GO
 /****** Object:  StoredProcedure [dbo].[CalculateRankings_v4_Optimized]    Script Date: 1/13/2026 9:12:42 AM ******/

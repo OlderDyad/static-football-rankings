@@ -1,0 +1,648 @@
+{
+ "alias_updates": [
+  {
+   "alias": "Lexington",
+   "region": "The Charlotte News",
+   "old": "Lexington (SC)",
+   "new": "Lexington (NC)"
+  },
+  {
+   "alias": "Farmville",
+   "region": "The Charlotte News",
+   "old": "Farmville (VA)",
+   "new": "Farmville (NC)"
+  },
+  {
+   "alias": "Farmville",
+   "region": "The Greensboro Record",
+   "old": "Farmville (VA)",
+   "new": "Farmville (NC)"
+  },
+  {
+   "alias": "LaGrange",
+   "region": "The Charlotte News",
+   "old": "LaGrange (GA)",
+   "new": "LaGrange North Lenoir (NC)"
+  },
+  {
+   "alias": "La Grange",
+   "region": "The Charlotte News",
+   "old": "LaGrange (GA)",
+   "new": "LaGrange North Lenoir (NC)"
+  },
+  {
+   "alias": "Bath",
+   "region": "The Charlotte News",
+   "old": "Hot Springs Bath County (VA)",
+   "new": "Bath (NC)"
+  },
+  {
+   "alias": "Bath",
+   "region": "The Charlotte Observer",
+   "old": "Hot Springs Bath County (VA)",
+   "new": "Bath (NC)"
+  },
+  {
+   "alias": "Hot Springs",
+   "region": "The Charlotte Observer",
+   "old": "Hot Springs Bath County (VA)",
+   "new": "Hot Springs (NC)"
+  },
+  {
+   "alias": "Hot Springs",
+   "region": "The Greensboro Record",
+   "old": "Hot Springs Bath County (VA)",
+   "new": "Hot Springs (NC)"
+  },
+  {
+   "alias": "Cleveland",
+   "region": "The Charlotte News",
+   "old": "Cleveland (TN)",
+   "new": "Cleveland (NC)"
+  },
+  {
+   "alias": "Cleveland",
+   "region": "The Charlotte Observer",
+   "old": "Cleveland (TN)",
+   "new": "Cleveland (NC)"
+  },
+  {
+   "alias": "Bennett",
+   "region": "The Charlotte News",
+   "old": "Kingsport Dobyns-Bennett (TN)",
+   "new": "Bennett (NC)"
+  },
+  {
+   "alias": "Bennett",
+   "region": "The Charlotte Observer",
+   "old": "Kingsport Dobyns-Bennett (TN)",
+   "new": "Bennett (NC)"
+  },
+  {
+   "alias": "Lexington Dunbar",
+   "region": "The Charlotte News",
+   "old": "Lexington Paul Laurence Dunbar (KY)",
+   "new": "Lexington Dunbar (NC)"
+  },
+  {
+   "alias": "Nathanael Green",
+   "region": "The Charlotte News",
+   "old": "Siloam Nathanael Greene Academy (GA)",
+   "new": "Nathanael Greene (NC)"
+  },
+  {
+   "alias": "Nathaniel Greene",
+   "region": "The Charlotte News",
+   "old": "Siloam Nathanael Greene Academy (GA)",
+   "new": "Nathanael Greene (NC)"
+  },
+  {
+   "alias": "Weaverville-Bar- nardsville",
+   "region": "The Charlotte News",
+   "old": "Weaverville-Barnardsville (VA)",
+   "new": "Weaverville-Barnardsville (NC)"
+  },
+  {
+   "alias": "Weaverville-Barnardsville",
+   "region": "The Charlotte News",
+   "old": "Weaverville-Barnardsville (VA)",
+   "new": "Weaverville-Barnardsville (NC)"
+  },
+  {
+   "alias": "Weaverville-Barnardsville",
+   "region": "The Charlotte Observer",
+   "old": "Weaverville-Barnardsville (VA)",
+   "new": "Weaverville-Barnardsville (NC)"
+  },
+  {
+   "alias": "Weaverville-Bernardsv'e",
+   "region": "The Greensboro Record",
+   "old": "Weaverville-Barnardsville (VA)",
+   "new": "Weaverville-Barnardsville (NC)"
+  },
+  {
+   "alias": "Lees McRae JC (NC)",
+   "region": "*Global*",
+   "old": "Lees-McRae Junior College (NC)",
+   "new": "Lees-McRae College (NC)"
+  },
+  {
+   "alias": "Lees-McRae College (NC)",
+   "region": "*Global*",
+   "old": "Lees-McRae Junior College (NC)",
+   "new": "Lees-McRae College (NC)"
+  },
+  {
+   "alias": "Lees-McRae JC (NC)",
+   "region": "*Global*",
+   "old": "Lees-McRae Junior College (NC)",
+   "new": "Lees-McRae College (NC)"
+  }
+ ],
+ "score_updates": [
+  {
+   "id": "529967D6-42E1-4CE2-B87B-9C59123C7311",
+   "side": "Visitor",
+   "old": "Farmville (VA)",
+   "new": "Farmville (NC)"
+  },
+  {
+   "id": "0D386451-E4A9-4C7A-A345-002880DB14D9",
+   "side": "Home",
+   "old": "Farmville (VA)",
+   "new": "Farmville (NC)"
+  },
+  {
+   "id": "FA26E4D3-A672-4C43-A6CE-54FF30C396F9",
+   "side": "Home",
+   "old": "LaGrange (GA)",
+   "new": "LaGrange North Lenoir (NC)"
+  },
+  {
+   "id": "28967AC4-1363-4EB2-8D4D-C6B51D99C189",
+   "side": "Visitor",
+   "old": "Hot Springs Bath County (VA)",
+   "new": "Hot Springs (NC)"
+  },
+  {
+   "id": "15556BAA-0715-4B67-803E-D1EC3A5AAA51",
+   "side": "Visitor",
+   "old": "Hot Springs Bath County (VA)",
+   "new": "Hot Springs (NC)"
+  },
+  {
+   "id": "6FC51CDA-B48A-4225-B422-9E913DA725F6",
+   "side": "Home",
+   "old": "Hot Springs Bath County (VA)",
+   "new": "Hot Springs (NC)"
+  },
+  {
+   "id": "5C6B0D63-DB43-41A5-AE1C-B454B0A8CCE6",
+   "side": "Home",
+   "old": "Hot Springs Bath County (VA)",
+   "new": "Hot Springs (NC)"
+  },
+  {
+   "id": "D31942A8-57D6-4703-B0CF-B0DA1067811E",
+   "side": "Home",
+   "old": "Andrews (SC)",
+   "new": "Andrews (NC)"
+  },
+  {
+   "id": "177E4EEC-8524-4DDC-822B-4004D32FFE62",
+   "side": "Home",
+   "old": "Andrews (SC)",
+   "new": "Andrews (NC)"
+  },
+  {
+   "id": "81BC636C-C03E-4FC7-94D3-C417B2EC32F4",
+   "side": "Visitor",
+   "old": "Andrews (SC)",
+   "new": "Andrews (NC)"
+  },
+  {
+   "id": "0DB94B09-C7C8-437C-81B5-BEF68E42C798",
+   "side": "Home",
+   "old": "Andrews (SC)",
+   "new": "Andrews (NC)"
+  },
+  {
+   "id": "A2995C43-713D-48E6-91C6-C143F6C2CFEE",
+   "side": "Home",
+   "old": "Andrews (SC)",
+   "new": "Andrews (NC)"
+  },
+  {
+   "id": "EDB15548-DA61-4E6A-A884-1D700AB62B80",
+   "side": "Visitor",
+   "old": "Columbia (SC)",
+   "new": "Columbia (NC)"
+  },
+  {
+   "id": "CF94EDBD-7C81-4F10-884A-51FFDD24F199",
+   "side": "Visitor",
+   "old": "Columbia (SC)",
+   "new": "Columbia (NC)"
+  },
+  {
+   "id": "4CDC2867-21CA-4AC3-9053-7ED1397D5A24",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "4F8638A8-9EEE-4C44-9574-EB9B96CA1DB0",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "153C2DAB-D422-4C5F-9C3D-1A2E0611387B",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "CAEB3E4C-A411-4EC3-9F57-1EB7835E69A8",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "61B1A8F9-F839-44AB-9BB8-836A59AFF2D4",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "1E27F8B2-4F9F-4906-B089-61854C959E78",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "E459E26D-2EE6-4A4B-A112-E135C03C25E0",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "B8E546A3-02C6-409E-B7D0-AD2AE0CBDEF9",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "297407D9-F5C9-4380-ABBC-0D7E413F91F5",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "1457AD55-033E-4D4D-BAD9-A7A36793A475",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "A34A5590-01F4-4CD3-BD2C-CBD83B0F0941",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "5716598C-FAAE-419F-8B24-19DBE617ACA1",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "DB7B044F-E806-4FD2-8867-368F4B6EA451",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "3C725C9C-E2FA-47C4-865D-EC37043F131B",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "1524DA29-CC2C-4BD9-B341-0B4B31C7996A",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "C926BA04-D895-442B-AC3A-51BFD16521C4",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "F60A6FE8-55B4-46B5-8D43-01C90035F3DE",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "AA0AA685-653F-4119-933D-3B8C37B5142F",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "61C20FC8-DCD2-4C9C-BA1E-FA3863118480",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "7DE557EA-8259-46CC-A2D2-238A7CDBFE4E",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "E4A2C429-6FDC-42ED-A348-E7CD0C28AEA9",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "1C6F7502-0096-4EDD-88FC-9D00EA439364",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "8D3B33DE-3CCE-421E-BF2B-87936740D481",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "6A41F86B-1070-4150-818F-1F3286329F73",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "E5A83930-2714-4E07-A5F1-77D2EEF11CCF",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "24C8E481-8110-425F-AC5F-4A59476209A4",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "F19A6715-BC5C-46A7-AD25-06DF823CD364",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "9C7721BC-5BBD-4A33-B0FF-091C5B9BBBF3",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "AD53E7D3-6761-44C9-87BB-87235B60373C",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "05278002-71C8-47AD-812E-A334672B7D2A",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "79A3D843-6C84-42CD-8F3F-02B9CF612A5D",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "1B2D4D6F-0BB1-4B6E-AA6F-E5899D8A9610",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "466578C0-D3F1-48DB-B2FA-EB3F45F1CD1A",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "302F58FB-A127-4103-B5F1-E8AF8DD4323E",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "4805FA75-CFFA-48A0-9D85-7678D8D71FF8",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "A6359207-DF57-4A06-968E-2EA83E92559A",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "F88937F3-F2E5-4241-BE09-C8F09CDC37A8",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "75B5483F-79D1-4449-8686-81E78293F415",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "08CC3E7A-7AB7-4E12-A946-EB057841E61D",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "D875FBED-79C3-40FB-8322-A01924863F54",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "755C9DF9-C9F8-45AF-8242-E4D85E55DA81",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "79EF44AC-64D8-43D5-A528-CC6C95CC9B3F",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "8B01B145-7EC7-459F-98DB-9F801900681E",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "421D67C8-39EC-42FB-B4AB-D586CE77BCA1",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "E48336FC-61FD-4609-A489-CE746DC320D7",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "C9EC94EC-FB7C-42A3-9959-3CA9F99B4C34",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "B552F6F0-B37B-4121-8815-8BD92583D0F7",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "95937D03-D96F-4275-B972-B45C9820EEF0",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "FD254376-7A68-40A2-B803-25DED6674296",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "FA1E7E55-EA08-421A-A196-299FB94AA032",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "4B922F60-2E80-4525-BAF5-BA9F0494F641",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "B3732BA0-310B-435F-BB5C-4C1C36287A10",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "F7841A13-6616-4CE1-BDDD-660894526304",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "E8C197A4-2B70-4746-B54C-B96DB4A8D42C",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "8F91BF2C-7596-41F1-9DDF-6165E92ADC61",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "ED75827A-F905-4DA3-9D95-BC8F943AB78A",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "EA1E31B2-4F9E-438E-B889-21C11C3DB600",
+   "side": "Visitor",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "4CF888E4-AE9A-4B0E-A77D-AB254B9643A4",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "E5A992BE-F221-4A60-93E9-B7A308C78E64",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "80805B7E-5A8F-471A-BFE1-B63DD766E4CB",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "D27B14FB-65C9-4FD2-AFA9-D44275396662",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "24BDF9DF-D003-4EB9-8904-080E956C14B3",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "2E9B4A4C-7802-43D0-AF29-93ABF26FD920",
+   "side": "Home",
+   "old": "Greenville (NC)",
+   "new": "Greenville (SC)"
+  },
+  {
+   "id": "065EA7AD-4CD9-4017-92C4-A24AB6FC3ACA",
+   "side": "Visitor",
+   "old": "Weaverville-Barnardsville (VA)",
+   "new": "Weaverville-Barnardsville (NC)"
+  },
+  {
+   "id": "B584A971-CBEA-4A67-9391-776B74B3B9BE",
+   "side": "Visitor",
+   "old": "Weaverville-Barnardsville (VA)",
+   "new": "Weaverville-Barnardsville (NC)"
+  },
+  {
+   "id": "FCB10EF0-9C26-45BB-B606-60285ECA30FD",
+   "side": "Visitor",
+   "old": "Weaverville-Barnardsville (VA)",
+   "new": "Weaverville-Barnardsville (NC)"
+  },
+  {
+   "id": "6DBFA49F-B07C-4DCE-816C-077D85E6510C",
+   "side": "Home",
+   "old": "Weaverville-Barnardsville (VA)",
+   "new": "Weaverville-Barnardsville (NC)"
+  },
+  {
+   "id": "7F58CD69-29E5-493A-82E0-FF2164415508",
+   "side": "Visitor",
+   "old": "Weaverville-Barnardsville (VA)",
+   "new": "Weaverville-Barnardsville (NC)"
+  },
+  {
+   "id": "4912ACF2-D4A7-4ABA-9A1E-33FC52B1EAD2",
+   "side": "Visitor",
+   "old": "Lees-McRae Junior College (NC)",
+   "new": "Lees-McRae College (NC)"
+  },
+  {
+   "id": "47AD3194-973C-4E67-949C-AE80E865C71A",
+   "side": "Visitor",
+   "old": "Lees-McRae Junior College (NC)",
+   "new": "Lees-McRae College (NC)"
+  }
+ ]
+}

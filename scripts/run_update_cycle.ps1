@@ -8,6 +8,10 @@
 #  5. Publishes to GitHub
 # ========================================================
 
+# 2026-09-25: -NoPause lets weekly_pipeline.py run this unattended (the
+# closing Pause would otherwise wait forever in a hidden window).
+param([switch]$NoPause)
+
 $repoRoot = "C:\Users\demck\OneDrive\Football_2024\static-football-rankings"
 $pythonDir = "$repoRoot\python_scripts\data_import"
 $pythonScriptsRoot = "$repoRoot\python_scripts"
@@ -164,4 +168,4 @@ Write-Host "  - Regional Statistics (5 regions)" -ForegroundColor Gray
 Write-Host "  - All HTML Pages" -ForegroundColor Gray
 git show --stat HEAD
 Write-Host ""
-Pause
+if (-not $NoPause) { Pause }
