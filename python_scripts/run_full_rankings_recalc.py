@@ -228,7 +228,14 @@ def main():
     print()
     print(f"Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    conn = pyodbc.connect(CONN_STR, autocommit=False)
+    # 2026-10-04 fix: autocommit=True, matching how SSMS runs the procedure.
+    # With autocommit=False the whole ~20-minute CalculateRankings_v4_Optimized
+    # call ran inside ONE implicit transaction; when the procedure's internal
+    # TRY/CATCH caught an error, that outer transaction became uncommittable
+    # (error 3930 "The current transaction cannot be committed...") and all
+    # of the Week 39 work was rolled back. The same call from SSMS (autocommit)
+    # on 2026-09-20 produced a clean result.
+    conn = pyodbc.connect(CONN_STR, autocommit=True)
     exit_code = 0
     try:
         error_count = repopulate_scores_win_loss(conn, begin_season, end_season, week)

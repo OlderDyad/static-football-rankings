@@ -1,3 +1,8 @@
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+
+python run_full_rankings_recalc.p
+
+
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\
 
 python review_suspicious_scores.py
