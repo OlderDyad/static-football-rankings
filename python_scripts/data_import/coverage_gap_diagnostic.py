@@ -96,4 +96,39 @@ if tcol:
     cn = [d[0] for d in cur.description]
     print('  ' + ' | '.join(cn))
     for r in cur.fetchall(): print('  ' + ' | '.join(str(v)[:40] for v in r))
+
+# ---------------- E. why did category 2 drop out between 2025 and 2026? ----------------
+hdr('E. Category 2 teams: were they scraped in 2025, and with what URL?')
+ids2 = list(cat2)
+def in_chunks(seq, n=900):
+    for i in range(0, len(seq), n): yield seq[i:i + n]
+ts = cols('team_scraping_status')
+if 'batch_id' in [c.lower() for c in ts]:
+    per_batch = collections.Counter()
+    for ch in in_chunks(ids2):
+        cur.execute(f"SELECT batch_id, COUNT(*) FROM team_scraping_status WHERE team_id IN ({','.join('?' * len(ch))}) GROUP BY batch_id", *ch)
+        for b, n in cur.fetchall(): per_batch[b] += n
+    print('  team_scraping_status rows for these teams, by batch_id (last 15 batches):')
+    for b in sorted(per_batch, key=lambda x: (x is None, x or 0))[-15:]: print(f'     batch {b}: {per_batch[b]}')
+gr = cols('games_raw')
+tcol = next((c for c in gr if c.lower() in ('team_id', 'source_team_id', 'teamid')), None)
+ucols = [c for c in gr if 'url' in c.lower()]
+bcol = next((c for c in gr if c.lower() in ('batch_id', 'batchid')), None)
+print(f'  games_raw team col={tcol}  batch col={bcol}  url cols={ucols}')
+if tcol:
+    seen = collections.Counter(); urls = {}
+    for ch in in_chunks(ids2):
+        sel = f"[{tcol}]" + (f", [{bcol}]" if bcol else ", NULL") + (f", MAX([{ucols[0]}])" if ucols else ", NULL")
+        grp = f"[{tcol}]" + (f", [{bcol}]" if bcol else "")
+        cur.execute(f"SELECT {sel} FROM games_raw WHERE [{tcol}] IN ({','.join('?' * len(ch))}) GROUP BY {grp}", *ch)
+        for t, b, u in cur.fetchall():
+            seen[b] += 1
+            if u: urls.setdefault(t, u)
+    print('  distinct category-2 teams with games_raw rows, by batch:')
+    for b in sorted(seen, key=lambda x: (x is None, x or 0))[-15:]: print(f'     batch {b}: {seen[b]} teams')
+    print(f'  teams with a URL recoverable from games_raw: {len(urls)}')
+    for t in list(urls)[:15]: print(f'     {t:>6} {names.get(t, cat2[t][0]):45s} {urls[t]}')
+# opponent side: were they someone else's opponent in 2025 (opponent URL column)?
+ocol = next((c for c in gr if 'opponent' in c.lower() and 'url' in c.lower()), None)
+print(f'  games_raw opponent URL column: {ocol}')
 print('\nDone - nothing was changed.')

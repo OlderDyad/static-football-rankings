@@ -15,6 +15,84 @@ cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
 sql
 EXEC dbo.FinalizeMaxPrepsData @BatchID = [Your_Batch_ID];
 
+Troubleshhoting:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+One thing to check is that weekly_pipeline.py --loop is still running, since it’s what creates Sunday’s batch.
+
+how do I check this,  what causes it to stop running, how do I restart?
+
+Your pipeline log shows the looping copy was last started on Oct 4 at 17:25 as PID 133712. The status file says WAITING for Sunday Oct 11 at 06:00. That file only changes when the state changes, though, so it still reads WAITING after the process has died. The reliable check is whether Windows still has the process.
+
+How to check
+
+Run this in PowerShell:
+
+powershell
+Get-CimInstance Win32_Process -Filter "Name like 'python%'" |
+  Where-Object CommandLine -like '*weekly_pipeline*' |
+  Select-Object ProcessId, CreationDate, CommandLine
+
+If it shows a row with PID 133712 (or any PID) and --loop, it’s running. If it returns nothing, it has stopped.
+
+What makes it stop
+
+A reboot. Windows Update restarts are the usual cause.
+Signing out. It runs inside your logged-in session, not as a service.
+Closing its console window, or Ctrl+C in it.
+
+Some things don’t stop it. A failed week (bad checks, a SQL error) is caught, marked FAILED, and the loop carries on to the next Sunday. Sleep only pauses it: when the PC wakes, it notices Sunday has passed and starts right away.
+
+After a reboot, the Startup-folder shortcut relaunches it with --loop. That waits for the next Sunday at 06:00, which is fine unless the reboot happens partway through a week’s batch (see below).
+
+How to restart it
+
+Run the check first so you don’t end up with two copies. Then:
+
+powershell
+Start-Process python -ArgumentList "weekly_pipeline.py --loop" `
+  -WorkingDirectory "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import"
+
+For a restart that happens after Sunday at 06:00, while a batch is still in progress or hasn’t started, use --now --loop instead. It picks up the running batch right away instead of waiting a week.
+
+For today: if the check shows nothing running, use the plain --loop command above, and it will start batch 38 on Sunday at 06:00 as planned.
+
+(.venv) PS C:\Users\demck\OneDrive\Football_2024\static-football-rankings> Get-CimInstance Win32_Process -Filter "Name like 'python%'" |
+
+  Where-Object CommandLine -like '*weekly_pipeline*' |
+  Select-Object ProcessId, CreationDate, CommandLine
+
+ProcessId CreationDate         CommandLine                                                                                                              
+--------- ------------         -----------                                                                                                              
+    37340 10/4/2026 5:25:02 PM "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\.venv\Scripts\python.exe" weekly_pipeline.py --now --loop
+   133712 10/4/2026 5:25:02 PM "C:\Users\demck\AppData\Local\Programs\Python\Python311\python.exe" weekly_pipeline.py --now --loop                      
+
+(.venv) PS C:\Users\demck\OneDrive\Football_2024\static-football-rankings>
+
+It’s running. Those two rows are one pipeline, not two.
+
+On Windows, .venv\Scripts\python.exe is a small launcher. It starts your real Python 3.11 as a child process and waits for it to finish. That’s why both rows have the same start time, and why only PID 133712 appears in the pipeline log: it’s the process actually running the code.
+
+To confirm, run:
+
+powershell
+Get-CimInstance Win32_Process -Filter "ProcessId=133712" | Select-Object ProcessId, ParentProcessId
+
+ParentProcessId should come back as 37340. If it does, leave both alone, because stopping either one stops the pipeline. Batch 38 will start on Sunday at 06:00 as planned.
+
+When you check this in future, seeing two weekly_pipeline rows with the same start time is normal. You’d only have a real duplicate if there were two pairs with different start times.
+
+(.venv) PS C:\Users\demck\OneDrive\Football_2024\static-football-rankings> Get-CimInstance Win32_Process -Filter "ProcessId=133712" | Select-Object ProcessId, ParentProcessId
+
+ProcessId ParentProcessId
+--------- ---------------
+   133712           37340
+
+(.venv) PS C:\Users\demck\OneDrive\Football_2024\static-football-rankings>
+
+The parent is 37340, so it’s one pipeline: the .venv launcher (37340) running your real Python (133712). Leave both running. Batch 38 starts on Sunday at 06:00 with all 15,922 teams.
+
+That leaves the Week 40 review, the Week 39 recalc, and the update cycle, which you can do whenever you’re ready.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 MaxPreps Scraping Workflow
 
 **Superseded 2026-09-19.** Everything below the old manual six-step process
