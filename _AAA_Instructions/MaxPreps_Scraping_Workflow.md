@@ -1,3 +1,20 @@
+Nightly Auto Run:
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+.\create_watcher_startup_shortcut.ps1
+
+Morning check:
+python check_last_night_run.py
+Get-Content "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\maxpreps_wrapper_log.txt" -Tail 8
+
+
+Manual start:
+Summary Steps:
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+.\run_maxpreps_scraper.ps1
+
+sql
+EXEC dbo.FinalizeMaxPrepsData @BatchID = [Your_Batch_ID];
+
 MaxPreps Scraping Workflow
 
 **Superseded 2026-09-19.** Everything below the old manual six-step process
@@ -185,9 +202,8 @@ is exactly the gap that caused last year's automation to silently stop
 producing data; it's now automatic).
 
 Summery Steps:
-CD C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\
-
-**python maxpreps_scraper_db.py**
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+.\run_maxpreps_scraper.ps1
 
 sql
 EXEC dbo.FinalizeMaxPrepsData @BatchID = [Your_Batch_ID];

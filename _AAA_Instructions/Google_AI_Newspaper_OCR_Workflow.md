@@ -1,252 +1,554 @@
-#!/usr/bin/env python3
-"""
-edmond_oca_jv_split.py
+# NEWSPAPER SCORES IMPORT WORKFLOW - CURRENT VERSION
+# McKnight's American Football Rankings - Updated January 31, 2026
+# McKnight's American Football Rankings - Updated July 8, 2026
 
-Edmond Oklahoma Christian Academy (OK) has ~2x the plausible varsity game
-count in HS_Scores for every season 2003-2022 (confirmed by hand for 2017:
-26 DB rows vs. an actual 11-2 / 13-game varsity season per MaxPreps). The
-extra rows are real games, just at a JV/sub-varsity level, imported under
-the same standardized team name as varsity ("Edmond Oklahoma Christian
-Academy (OK)") instead of being split out the way other schools already
-are in this DB (e.g. "Tulsa Central JV (OK)", "Sallisaw Central JV (OK)").
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\
+python ks_8man_classifier.py
 
-This script, for each season:
-  1. Pulls every HS_Scores row where Home or Visitor is
-     "Edmond Oklahoma Christian Academy (OK)".
-  2. Fetches that season's real varsity schedule directly from MaxPreps
-     (server-rendered HTML table -- no JS execution needed) at
-     https://www.maxpreps.com/ok/edmond/oklahoma-christian-academy-eagles/football/{YY}-{YY+1}/schedule/
-  3. Matches each DB row to the varsity schedule by (date, our_score,
-     opponent_score). A match = confirmed varsity, no action needed.
-     No match = flagged as non-varsity (JV/2nd team), a rename candidate.
-  4. Prints a per-season summary table. No writes happen unless --apply
-     is passed, and even then each flagged row is fixed individually via
-     apply_fix()-equivalent logic (ID-scoped, full audit trail in
-     HS_Scores_Change_Log) -- never a blanket rename by team name.
+Newspaper Import Pipeline — Quick Guide
 
-Usage:
-  python edmond_oca_jv_split.py --start 2003 --end 2022                  # review only, no writes
-  python edmond_oca_jv_split.py --start 2003 --end 2022 --show-flagged   # also print flagged row detail
-  python edmond_oca_jv_split.py --start 2003 --end 2022 --apply          # apply renames after review
-  python edmond_oca_jv_split.py --start 2017 --end 2017 --show-flagged   # single-season spot check
-"""
+Copy-paste workflow for processing a batch of scanned newspaper clippings
+from raw images through to imported games in HS_Scores.
 
-import argparse
-import logging
-import re
-import time
-from datetime import date
+0. One-time setup (every new terminal session)
 
-import pandas as pd
-import requests
-from bs4 import BeautifulSoup
-from sqlalchemy import create_engine, text
+powershellcd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+C:\Users\demck\OneDrive\Football_2024\static-football-rankings\.venv\Scripts\Activate.ps1
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+If you'll be running the AI resolver this session, also set your key (get a
+fresh one from aistudio.google.com/apikey if needed — never reuse a key
+that's touched a chat window or a public repo):
 
-SERVER_NAME = "McKnights-PC\\SQLEXPRESS01"
-DATABASE_NAME = "hs_football_database"
-db_connection_str = f'mssql+pyodbc://{SERVER_NAME}/{DATABASE_NAME}?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes'
-engine = create_engine(db_connection_str)
-
-TEAM_NAME = "Edmond Oklahoma Christian Academy (OK)"
-JV_NAME = "Edmond Oklahoma Christian Academy JV (OK)"
-SCHEDULE_URL_TMPL = "https://www.maxpreps.com/ok/edmond/oklahoma-christian-academy-eagles/football/{yy1}-{yy2}/schedule/"
-HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+powershell$env:GEMINI_API_KEY = "your-key-here"
 
 
-def fetch_varsity_schedule(season):
-    """Returns a set of (month, day, our_score, their_score) tuples for the
-    real varsity schedule of the given season, scraped from MaxPreps'
-    server-rendered schedule table. Returns None if the page couldn't be
-    fetched/parsed (so the caller can skip that season rather than assume
-    zero varsity games)."""
-    yy1 = season % 100
-    yy2 = (season + 1) % 100
-    url = SCHEDULE_URL_TMPL.format(yy1=f"{yy1:02d}", yy2=f"{yy2:02d}")
+1. OCR extraction (raw images -> staged CSVs)
 
-    try:
-        resp = requests.get(url, headers=HEADERS, timeout=20)
-    except requests.RequestException as e:
-        logger.warning(f"Season {season}: request failed ({e}) -- skipping, DB rows left unclassified.")
-        return None
+Drop new scans into Next_Images_Comma_Format or Next_Images_Bar_Format
+first, then:
 
-    if resp.status_code != 200:
-        logger.warning(f"Season {season}: HTTP {resp.status_code} at {url} -- skipping, DB rows left unclassified.")
-        return None
+powershellpython custom_extractor_prepper.py
 
-    soup = BeautifulSoup(resp.text, "html.parser")
-    rows = soup.select("table tbody tr")
-    if not rows:
-        logger.warning(f"Season {season}: no schedule table rows found at {url} -- skipping, DB rows left unclassified.")
-        return None
+Prompts for c (comma-separated scores) or b (bar-separated). Moves
+processed images to Completed\Processed_IMAGES_... and writes one CSV per
+image into the Staged folder.
 
-    games = set()
-    for row in rows:
-        date_link = row.select_one("td a[aria-label]")
-        result_span = row.select_one("span.result")
-        score_span = row.select_one("span.score")
-        if date_link is None or result_span is None or score_span is None:
-            continue
+2. First import attempt
 
-        m = re.search(r"(\d{1,2})/(\d{1,2})", date_link.get_text())
-        if not m:
-            continue
-        month, day = int(m.group(1)), int(m.group(2))
+powershellpython master_scores_importer.py
 
-        score_text = score_span.get_text().strip()
-        sm = re.search(r"(\d+)-(\d+)", score_text)
-        if not sm:
-            continue
-        s1, s2 = int(sm.group(1)), int(sm.group(2))
-        result = result_span.get_text().strip().upper()  # 'W' or 'L' (or 'T')
+If everything resolves, it imports straight through. If not, it regenerates
+New_Alias_Suggestions.csv with every unrecognized team name and stops —
+continue below.
 
-        # score_span is always "winner_score-loser_score" regardless of
-        # which side OCA was on; use the W/L result to assign our_score.
-        if result == 'W':
-            our_score, their_score = s1, s2
-        elif result == 'L':
-            our_score, their_score = s2, s1
-        else:
-            # tie -- s1 == s2, order doesn't matter
-            our_score, their_score = s1, s2
+3. AI-assisted name resolution
 
-        games.add((month, day, our_score, their_score))
+powershell
+python gemini_alias_resolver.py --dry-run          # preview prompts, zero API calls
+python gemini_alias_resolver.py                    # real run, writes AI_Suggested_Name/AI_Confidence/AI_Reasoning
 
-    return games
+Optional: skip straight to autofilling anything Gemini was fully confident
+about (this re-calls the API, only High-confidence rows get written to
+Final_Proper_Name):
 
+powershell
+python gemini_alias_resolver.py --autofill-min-confidence High
 
-def get_db_rows(season):
-    """All HS_Scores rows for the team in this season, with our_score /
-    their_score normalized regardless of which side (Home/Visitor) OCA
-    was on."""
-    df = pd.read_sql(text("""
-        SELECT ID, Date, Season, Home, Home_Score, Visitor, Visitor_Score
-        FROM HS_Scores
-        WHERE Season = :season
-          AND (Home = :team OR Visitor = :team)
-    """), engine, params={'season': season, 'team': TEAM_NAME})
+4. Locally autofill the remaining confidence tiers
 
-    if df.empty:
-        return df
+No API call — just copies AI_Suggested_Name into Final_Proper_Name for
+rows already scored by step 3. Skim a few rows in the CSV first to make sure
+a tier looks trustworthy, then:
 
-    df['is_home'] = df['Home'] == TEAM_NAME
-    df['our_score'] = df.apply(lambda r: r['Home_Score'] if r['is_home'] else r['Visitor_Score'], axis=1)
-    df['their_score'] = df.apply(lambda r: r['Visitor_Score'] if r['is_home'] else r['Home_Score'], axis=1)
-    df['field'] = df['is_home'].apply(lambda h: 'Home' if h else 'Visitor')
-    return df
+powershell python autofill_from_ai.py --min-confidence Medium-Low
+
+5. Flag the leftover one-offs as Ignore
+
+Whatever's still blank after step 4 (usually Low-confidence, un-guessable
+names) gets checked against the one-off rule (no comma in Source_Files or
+Opponents_Played) and flagged Rule_Type=Ignore if it qualifies. Anything
+that recurs across multiple clippings is left alone and printed as a
+warning — those need a real name or an image check, not an Ignore.
+
+powershellpython flag_unresolved_as_ignore.py
+
+6. Commit corrections to the database
+
+powershellpython apply_corrections.py --dry-run --final      # preview every SQL statement, zero DB writes
+python apply_corrections.py --final                # commit aliases + Ignore rows for real
+
+Leave off --final on any run where you're not ready to permanently
+exclude the Ignore rows yet — they'll just stay pending for next time.
+
+7. Re-run the importer to complete the batch
+
+powershellpython master_scores_importer.py
+
+Should import clean now that every name is either aliased or flagged
+Ignore. If it still balks, it means step 6 didn't cover everything — check
+New_Alias_Suggestions.csv for remaining blanks.
+
+8. Push the staged batch into HS_Scores
+
+powershellpython batch_queue_manager.py
+
+Choose option 2 (Import all staged batches to HS_Scores).
 
 
-def classify_season(season):
-    """Returns (matched_df, flagged_df, unverified) for one season.
-    unverified=True means the MaxPreps fetch failed and nothing in this
-    season should be touched."""
-    db_rows = get_db_rows(season)
-    if db_rows.empty:
-        return db_rows, db_rows, False
+#Quick Guide:
 
-    varsity_games = fetch_varsity_schedule(season)
-    if varsity_games is None:
-        return db_rows.iloc[0:0], db_rows.iloc[0:0], True
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+..\venv\Scripts\Activate
 
-    def is_varsity(row):
-        d = row['Date']
-        key = (d.month, d.day, int(row['our_score']), int(row['their_score']))
-        return key in varsity_games
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+python custom_extractor_prepper.py
+python master_scores_importer.py
+python apply_corrections.py
 
-    db_rows['is_varsity'] = db_rows.apply(is_varsity, axis=1)
-    matched = db_rows[db_rows['is_varsity']]
-    flagged = db_rows[~db_rows['is_varsity']]
-    return matched, flagged, False
+python apply_corrections.py
+python gemini_alias_resolver.py --dry-run          # preview prompts, zero API calls
+python gemini_alias_resolver.py                    # real run, writes AI_Suggested_Name/AI_Confidence/AI_Reasoning
+python gemini_alias_resolver.py --autofill-min-confidence High
+powershell python autofill_from_ai.py --min-confidence Medium-Low
+python flag_unresolved_as_ignore.py
 
+python master_scores_importer.py
 
-def apply_jv_rename(scores_id, field, reason, dry_run=False):
-    with engine.begin() as conn:
-        current = conn.execute(text(f"SELECT {field} AS val FROM HS_Scores WHERE ID = :id"),
-                                {'id': scores_id}).fetchone()
-        if current is None:
-            logger.warning(f"No HS_Scores row found for ID {scores_id} -- skipped.")
-            return False
-        old_value = current.val
-        preview = f"{scores_id}: SET {field} = '{JV_NAME}' (was '{old_value}')"
+after completing:
+python batch_queue_manager.py
+python newspaper_batch_coverage.py --season 1967 --batch-after 2026-06-04 --state CA --reference-season 1968
+sql
+IMPORTANT: Run duplicate removal next:
+   EXEC [dbo].[RemoveDuplicateGamesParameterized] @SeasonStart = 1877, @SeasonEnd = 2025;
 
-        if str(old_value) == JV_NAME:
-            logger.info(f"{scores_id}: {field} already '{JV_NAME}' -- no change needed.")
-            return False
+duplicate
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+..\venv\Scripts\Activate
 
-        if dry_run:
-            logger.info(f"[DRY RUN] {preview}")
-            return True
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import
+python custom_extractor_prepper.py
+python master_scores_importer.py
+python apply_corrections.py
 
-        conn.execute(text("""
-            INSERT INTO HS_Scores_Change_Log
-                (ScoresID, InvestigationID, FieldChanged, OldValue, NewValue, Reason, Script)
-            VALUES (:id, NULL, :field, :old, :new, :reason, :script)
-        """), {'id': scores_id, 'field': field, 'old': str(old_value), 'new': JV_NAME,
-               'reason': reason, 'script': 'edmond_oca_jv_split.py'})
+python apply_corrections.py
+python gemini_alias_resolver.py --dry-run          # preview prompts, zero API calls
+python gemini_alias_resolver.py                    # real run, writes AI_Suggested_Name/AI_Confidence/AI_Reasoning
+python gemini_alias_resolver.py --autofill-min-confidence High
+powershell python autofill_from_ai.py --min-confidence Medium-Low
+python flag_unresolved_as_ignore.py
 
-        conn.execute(text(f"UPDATE HS_Scores SET {field} = :new WHERE ID = :id"),
-                     {'new': JV_NAME, 'id': scores_id})
+python master_scores_importer.py
 
-    logger.info(preview + "  [logged to HS_Scores_Change_Log]")
-    return True
+after completing:
+python batch_queue_manager.py
+python newspaper_batch_coverage.py --season 1967 --batch-after 2026-06-04 --state CA --reference-season 1968
+sql
+IMPORTANT: Run duplicate removal next:
+   EXEC [dbo].[RemoveDuplicateGamesParameterized] @SeasonStart = 1877, @SeasonEnd = 2025;
+## Overview
+This workflow allows you to process newspaper images, extract game scores, and import them 
+into the HS_Scores database WITHOUT interrupting long-running rating calculations.
 
+## Key Features
+✅ **Non-blocking**: Queue batches while rating calculations run
+✅ **NULL validation**: Prevents empty team names from reaching the database
+✅ **Batch processing**: Handle multiple batches at once
+✅ **Simple 2-stage process**: STAGED → IMPORTED
+✅ **Integration**: Works with your existing duplicate removal procedure
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--start', type=int, required=True)
-    parser.add_argument('--end', type=int, required=True)
-    parser.add_argument('--show-flagged', action='store_true', help="Print full row detail for flagged (non-varsity) rows")
-    parser.add_argument('--apply', action='store_true', help="Actually rename flagged rows to the JV standardized name (default is dry-run/review only)")
-    args = parser.parse_args()
+## File Structure
+```
+custom_extractor_prepper.py     # Processes images → CSV files
+master_scores_importer.py       # CSV → RawScores_Staging + queue
+apply_corrections.py            # Applies alias corrections
+batch_queue_manager.py          # Import batches to HS_Scores
+```
 
-    summary_rows = []
-    all_flagged = []
+## Complete Workflow
 
-    for season in range(args.start, args.end + 1):
-        matched, flagged, unverified = classify_season(season)
-        if unverified:
-            summary_rows.append({'Season': season, 'DBRows': len(get_db_rows(season)),
-                                  'Varsity_Matched': 'N/A', 'Flagged_NonVarsity': 'N/A',
-                                  'Note': 'MaxPreps fetch failed -- skipped'})
-            time.sleep(0.5)
-            continue
+### PHASE 1: Image Processing
+```bash
+python custom_extractor_prepper.py
+```
 
-        summary_rows.append({'Season': season, 'DBRows': len(matched) + len(flagged),
-                              'Varsity_Matched': len(matched), 'Flagged_NonVarsity': len(flagged),
-                              'Note': ''})
-        if len(flagged):
-            all_flagged.append(flagged)
-        time.sleep(0.5)  # be polite to MaxPreps
+**What it does:**
+1. Prompts you to select format (Comma or Bar separated)
+2. Processes images from appropriate folder:
+   - Bar: `J:\...\Next_Images_Bar_Format`
+   - Comma: `J:\...\Next_Images_Comma_Format`
+3. Uses Google Document AI custom extractors to extract game data
+4. Creates CSV files in: `J:\...\Staged\`
+5. Moves processed images to: `C:\...\Processed_IMAGES_[Format]\`
 
-    summary_df = pd.DataFrame(summary_rows)
-    print("\n=== Edmond OCA varsity/JV classification summary ===")
-    print(summary_df.to_string(index=False))
+**CSV Output Format:**
+```
+home_team,home_score,visitor_team,visitor_score,overtime,quality_status,notes
+Lincoln,21,Jefferson,14,,good,
+Central,28,Roosevelt,27,OT,good,
+Washington,1,Adams,0,,needs_review,Forfeit game detected
+```
 
-    if not all_flagged:
-        print("\nNo flagged (non-varsity) rows found.")
-        return
+### PHASE 2: Import to Staging (Can Run While Rating Calc Runs!)
+```bash
+python master_scores_importer.py
+```
 
-    flagged_df = pd.concat(all_flagged, ignore_index=True)
-    print(f"\nTotal flagged rows across {args.start}-{args.end}: {len(flagged_df)}")
+**What it does:**
+1. Reads all CSV files from `J:\...\Staged\`
+2. Extracts date, season, and newspaper region from filenames
+3. Sanitizes team names and scores
+4. **NEW: Validates no NULL/empty team names**
+5. Checks aliases and abbreviations against database
+6. If unrecognized teams found → generates `New_Alias_Suggestions.csv`
+7. If all teams recognized → loads to `RawScores_Staging` and queues batch
 
-    if args.show_flagged:
-        print("\n=== Flagged (non-varsity) row detail ===")
-        print(flagged_df[['ID', 'Date', 'Season', 'Home', 'Home_Score', 'Visitor', 'Visitor_Score']].to_string(index=False))
+**Filename Pattern Required:**
+```
+NewspaperName_YYYY_MM_DD.csv
+Example: Valley_News_1977_10_31_11.csv
+```
 
-    if args.apply:
-        print(f"\nApplying JV rename to {len(flagged_df)} rows...")
-        applied = 0
-        for _, row in flagged_df.iterrows():
-            reason = (f"Edmond OCA varsity/JV split: {row['Date']} game not found on real MaxPreps "
-                      f"varsity schedule for season {row['Season']} -- reclassified as JV/sub-varsity.")
-            if apply_jv_rename(row['ID'], row['field'], reason, dry_run=False):
-                applied += 1
-        print(f"Applied: {applied} / {len(flagged_df)}")
-    else:
-        print("\n(Review only -- no changes made. Re-run with --apply once you've checked --show-flagged output.)")
+**Batch States:**
+- 📋 **STAGED** = In RawScores_Staging, ready to import to HS_Scores
+- ✅ **IMPORTED** = In HS_Scores table, complete
 
+### PHASE 2A: Handle Unrecognized Teams (If Needed)
+If you see: `New_Alias_Suggestions.csv has been generated`
 
-if __name__ == "__main__":
-    main()
+1. **Open the file**: `J:\...\Staged\New_Alias_Suggestions.csv`
+
+2. **Review suggestions**: Three AI-suggested names provided for each unrecognized team
+
+3. **Fill in Final_Proper_Name column**: 
+   - Use one of the suggestions, OR
+   - Type the correct standardized name
+
+4. **Set Alias_Scope**:
+   - `Regional` = Only for this newspaper region
+   - `Global` = Apply everywhere
+
+5. **Set Rule_Type**:
+   - `Alias` = Full team name variation
+   - `Abbreviation` = Short form (e.g., "Cen" → "Central")
+
+**Example:**
+```csv
+Unrecognized_Alias,Newspaper_Region,Final_Proper_Name,Alias_Scope,Rule_Type
+Cen HS,Valley News,Central (WA),Regional,Alias
+Jeff,Valley News,Jefferson (WA),Regional,Abbreviation
+```
+
+6. **Apply corrections**:
+```bash
+python apply_corrections.py
+```
+
+7. **Re-run importer**:
+```bash
+python master_scores_importer.py
+```
+
+### PHASE 3: Import to HS_Scores (When Rating Calc is Done)
+```bash
+python batch_queue_manager.py
+```
+
+**Menu Options:**
+```
+1. Show queue status          # View all batches and their states
+2. Import all staged batches  # Move batches to HS_Scores
+3. Mark batch as imported     # Manual override (rarely needed)
+4. Exit
+```
+
+**Typical usage:**
+1. Select option `1` to view queued batches
+2. Select option `2` to import all batches
+3. Exit (option `4`)
+
+**What option 2 does:**
+```sql
+-- For each batch, runs:
+INSERT INTO HS_Scores (ID, Season, Date, Home, Visitor, Home_Score, Visitor_Score, OT, Forfeit)
+SELECT NEWID(), Season, GameDate, HomeTeamRaw, VisitorTeamRaw, HomeScore, VisitorScore, 
+       CASE WHEN Overtime IS NOT NULL AND Overtime <> '' THEN 1 ELSE 0 END,
+       CASE WHEN (HomeScore + VisitorScore) = 1 THEN 1 ELSE 0 END
+FROM RawScores_Staging
+WHERE BatchID = '{batch_id}'
+```
+
+### PHASE 4: Remove Duplicates
+```sql
+EXEC [dbo].[RemoveDuplicateGamesParameterized] 
+    @SeasonStart = 1877, 
+    @SeasonEnd = 2025;
+```
+
+**Or target specific seasons:**
+```sql
+-- Just process the years you imported
+EXEC [dbo].[RemoveDuplicateGamesParameterized] 
+    @SeasonStart = 1970, 
+    @SeasonEnd = 1985;
+```
+
+**What this does:**
+1. Marks forfeit games (1-0 scores)
+2. Finds and removes exact duplicates
+3. Finds and removes team-swapped duplicates
+4. Prints what was found and deleted
+
+## Real-World Example
+
+### Scenario: 5-Day Rating Calculation + Data Collection
+
+**Day 1 (10:00 AM)**: Start rating calculation (will run until Day 5)
+```bash
+# Meanwhile, process newspapers:
+python custom_extractor_prepper.py  # Process 50 images
+python master_scores_importer_v4.py # Batch #1 → STAGED (3,996 games)
+```
+
+**Day 2 (2:00 PM)**: Continue collecting data
+```bash
+python custom_extractor_prepper.py  # Process 30 images
+python master_scores_importer_v4.py # Batch #2 → STAGED (2,147 games)
+```
+
+**Day 3 (11:00 AM)**: More data
+```bash
+python custom_extractor_prepper.py  # Process 45 images
+python master_scores_importer_v4.py # Batch #3 → STAGED (4,523 games)
+```
+
+**Day 4**: Check status
+```bash
+python batch_queue_manager.py
+# Option 1: Shows 3 batches staged, 10,666 total games queued
+```
+
+**Day 5 (3:00 PM)**: Rating calc completes!
+```bash
+python batch_queue_manager.py
+# Option 2: Import all 3 batches (takes ~2 minutes)
+```
+
+**Day 5 (3:05 PM)**: Clean up
+```sql
+EXEC [dbo].[RemoveDuplicateGamesParameterized] 
+    @SeasonStart = 1877, @SeasonEnd = 2025;
+-- Removes duplicates, takes ~5 minutes
+```
+
+**Day 5 (3:10 PM)**: Start new rating calculation with fresh data!
+
+## Data Validation & Quality Control
+
+### NULL Team Name Prevention
+The importer now catches NULL/empty team names BEFORE importing:
+
+**If found, you'll see:**
+```
+Unrecognized_Alias: [EMPTY/NULL HOME TEAM]
+Source_Files: Valley_News_1977_10_31.csv
+Opponents_Played: Lincoln High
+```
+
+**How to fix:**
+1. Open the source CSV file
+2. Find the game with empty team name
+3. Re-extract image OR manually add team name
+4. Re-run `master_scores_importer_v4.py`
+
+### Score Sanitization
+Automatically removes non-digit characters from scores:
+- `"30,"` → `30`
+- `"21"` → `21`
+- `28.` → `28`
+
+### Overtime Detection
+Converts text overtime markers to numeric:
+- Any non-empty overtime field → `OT = 1`
+- Empty overtime field → `OT = 0`
+
+### Forfeit Detection
+Automatically marks forfeit games:
+- Games with total score = 1 → `Forfeit = 1`
+- All other games → `Forfeit = 0`
+
+## Queue Storage
+
+**Location**: `J:\Users\demck\Google Drive\Documents\Football\HSF\Newspapers\Staged\batch_queue.json`
+
+**Format:**
+```json
+{
+  "batches": [
+    {
+      "batch_id": "057ec603-7764-4f13-ae54-ebb5a5d0fb73",
+      "status": "staged",
+      "created_at": "2026-01-28T17:44:29",
+      "file_count": 291,
+      "game_count": 3996,
+      "source_files": ["Valley_News_1977_10_31_11.csv", "..."],
+      "imported_at": null
+    }
+  ]
+}
+```
+
+## Database Tables
+
+### RawScores_Staging
+**Purpose**: Temporary holding area for validated game data
+
+**Columns:**
+- BatchID (uniqueidentifier)
+- SourceFile, SourceRegion
+- GameDate, Season
+- HomeTeamRaw, VisitorTeamRaw (standardized names)
+- HomeScore, VisitorScore
+- Overtime, quality_status, processing_notes
+- LineNumber, RawLine
+
+### HS_Scores
+**Purpose**: Primary game results table
+
+**Key Columns:**
+- ID (uniqueidentifier, auto-generated)
+- Season, Date
+- Home, Visitor
+- Home_Score, Visitor_Score
+- OT (int: 0 or 1)
+- Forfeit (bit)
+- Margin (computed)
+
+## Troubleshooting
+
+### "Batch not found in queue"
+The batch was imported before the queue system existed. Either:
+- Manually add to queue, OR
+- Just continue with new batches
+
+### "Unrecognized teams found"
+1. Check `New_Alias_Suggestions.csv`
+2. Fill in proper names
+3. Run `apply_corrections.py`
+4. Re-run `master_scores_importer_v4.py`
+
+### "Failed to import batch" - ID column error
+Update `batch_queue_manager.py` - the INSERT needs `NEWID()` for the ID column.
+(This should already be fixed in current version)
+
+### "Found 37 NULL games in database"
+These slipped through before validation was added:
+```sql
+DELETE FROM HS_Scores WHERE Home IS NULL OR Visitor IS NULL;
+```
+
+### Duplicate games still appearing
+Make sure you run the duplicate removal procedure AFTER each import:
+```sql
+EXEC [dbo].[RemoveDuplicateGamesParameterized] 
+    @SeasonStart = 1877, @SeasonEnd = 2025;
+```
+
+### Images not moving after processing
+`custom_extractor_prepper.py` uses `shutil.move` for cross-disk moves.
+Check that destination folders exist and are writable.
+
+## Best Practices
+
+### 1. Consistent Filename Format
+Always use: `NewspaperName_YYYY_MM_DD_PageNumber.csv`
+- Newspaper name determines region for alias lookup
+- Date determines season (Aug-Dec = current year, Jan-Jul = previous year)
+
+### 2. Batch Size
+- Small batches (50-100 games): Easier to fix if errors found
+- Large batches (1000+ games): More efficient processing
+- Recommended: 200-500 games per batch
+
+### 3. Alias Management
+- Use **Regional** scope for newspaper-specific abbreviations
+- Use **Global** scope for widely recognized teams
+- Document unusual cases in team name notes
+
+### 4. Timing Imports
+- **Safe to import** if rating calc hasn't reached those seasons yet
+- **Wait for calc to finish** if importing seasons already processed
+- **Check current season** of rating calc before importing
+
+### 5. Verify After Import
+```sql
+-- Check recent imports
+SELECT TOP 100 * FROM HS_Scores 
+ORDER BY Date_Added DESC;
+
+-- Verify game counts by season
+SELECT Season, COUNT(*) as Games
+FROM HS_Scores
+WHERE Season BETWEEN 1970 AND 1985
+GROUP BY Season
+ORDER BY Season;
+```
+
+## Quick Reference Commands
+
+### Process everything from start to finish:
+```bash
+# 1. Extract from images
+python custom_extractor_prepper.py
+
+# 2. Import to staging (may need alias corrections)
+python master_scores_importer_v4.py
+
+# 3. Apply corrections if needed
+python apply_corrections.py
+python master_scores_importer_v4.py  # Re-run after corrections
+
+# 4. Import to HS_Scores (when ready)
+python batch_queue_manager.py  # Option 2
+
+# 5. Clean up duplicates
+# Run in SQL Server:
+EXEC [dbo].[RemoveDuplicateGamesParameterized] @SeasonStart = 1877, @SeasonEnd = 2025;
+```
+
+### Check status:
+```bash
+python batch_queue_manager.py  # Option 1
+```
+
+### View queue file directly:
+```bash
+# Windows:
+notepad "J:\Users\demck\Google Drive\Documents\Football\HSF\Newspapers\Staged\batch_queue.json"
+```
+
+## Version History
+
+### v4.0 (January 31, 2026)
+- Added NULL team name validation
+- Simplified to 2-stage process (removed STANDARDIZED stage)
+- Fixed ID column auto-generation with NEWID()
+- Integrated with batch queue system
+- Score sanitization improvements
+
+### v3.0 (January 28, 2026)
+- Added batch queue system
+- Non-blocking imports during rating calculations
+- Automatic batch tracking
+
+### v2.0 (Earlier)
+- Added custom extractor integration
+- Alias suggestion system
+- Regional newspaper context
+
+### v1.0 (Original)
+- Basic CSV import
+- Manual SQL execution required
+
+---
+
+**Questions or Issues?**
