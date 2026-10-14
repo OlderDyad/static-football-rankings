@@ -15,6 +15,10 @@ cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
 sql
 EXEC dbo.FinalizeMaxPrepsData @BatchID = [Your_Batch_ID];
 
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+   python run_full_rankings_recalc.py --begin 2026 --end 2026 --week 41 --yes
+
 Troubleshhoting:
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 One thing to check is that weekly_pipeline.py --loop is still running, since it’s what creates Sunday’s batch.
