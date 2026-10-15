@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games of the Week - McKnight's American Football Rankings</title>
+    <meta name="description" content="The top upcoming high school football games of the week, ranked by a Game Index built from both teams' Combined Ratings and the projected margin.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link href="/static-football-rankings/css/styles.css" rel="stylesheet">
+
+    <style>
+        /* Decade filter buttons */
+        .decade-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 1rem;
+        }
+        .decade-btn {
+            font-size: 0.85rem;
+            padding: 4px 12px;
+        }
+        .decade-btn.active {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
+
+        /* Score display — bold, compact */
+        .score-cell {
+            font-weight: 600;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+        .score-winner {
+            color: #155724;
+        }
+        .score-loser {
+            color: #6c757d;
+        }
+
+        /* PRI bar visualization */
+        .pri-bar-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pri-bar {
+            height: 8px;
+            background: linear-gradient(90deg, #0d6efd, #6610f2);
+            border-radius: 4px;
+            min-width: 4px;
+        }
+        .pri-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            color: #495057;
+        }
+
+        /* Methodology section */
+        .methodology-card {
+            border-left: 4px solid #0d6efd;
+            background: #f8f9fa;
+        }
+        .methodology-card .card-body {
+            padding: 1.25rem 1.5rem;
+        }
+        .limitation-item {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-bottom: 0.4rem;
+        }
+        .limitation-item::before {
+            content: "⚠ ";
+            color: #fd7e14;
+        }
+
+        /* Rivalries teaser card */
+        .coming-soon-card {
+            border: 2px dashed #ced4da;
+            background: #f8f9fa;
+            opacity: 0.85;
+        }
+        .coming-soon-badge {
+            font-size: 0.7rem;
+            background: #6c757d;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        /* Margin badge */
+        .margin-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 4px;
+        }
+        .margin-1 { background: #d4edda; color: #155724; }   /* 1pt — maximum drama */
+        .margin-2-3 { background: #d1ecf1; color: #0c5460; } /* 2-3pt */
+        .margin-4-7 { background: #fff3cd; color: #856404; } /* 4-7pt */
+        .margin-8 { background: #f8d7da; color: #721c24; }   /* 8pt */
+
+        /* Rank column */
+        .rank-cell {
+            font-weight: 700;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .rank-cell.top-10 { color: #0d6efd; }
+        .rank-cell.top-25 { color: #198754; }
+
+        /* Table header */
+        .table thead th {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6c757d;
+            background: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+            vertical-align: middle;
+        }
+
+        /* Responsive — hide less critical columns on small screens */
+        @media (max-width: 768px) {
+            .col-margin, .col-pri { display: none; }
+        }
+
+        /* Loading state */
+        #loadingIndicator {
+            text-align: center;
+            padding: 3rem;
+            color: #6c757d;
+        }
+        #noResults {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+            display: none;
+        }
+
+        /* Last updated */
+        .last-updated {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GC17GSJ4S0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GC17GSJ4S0');
+    </script></head>
+<body>
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Games of the Week</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container mt-4">
+
+        <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
+            <div>
+                <h1 class="mb-1">Games of the Week</h1>
+                <p class="text-muted mb-0" id="pageSubtitle">The top 100 upcoming high school football matchups</p>
+            </div>
+            <div class="text-end">
+                <span class="last-updated">Last updated: <span id="lastUpdated">—</span></span>
+            </div>
+        </div>
+
+        <!-- Methodology -->
+        <div class="card methodology-card mb-4 mt-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">How Games Are Ranked</h5>
+                    <button class="btn btn-sm btn-outline-secondary" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#methodologyBody"
+                            aria-expanded="false" aria-controls="methodologyBody">
+                        Show / Hide
+                    </button>
+                </div>
+                <div class="collapse" id="methodologyBody">
+                    <hr>
+                    <h6>The Game Index</h6>
+                    <p>This is the <a href="/static-football-rankings/pages/public/greatest/greatest-games.html">Greatest Games</a> Pulse Rate Index applied before kickoff. A game scores highly when both teams are strong <em>and</em> the game is projected to be close.</p>
+                    <p class="font-monospace bg-light p-2 rounded">Game Index = (Home Rating + Visitor Rating) &times; Closeness Multiplier</p>
+                    <p>Ratings are each team's current-season <strong>Combined Rating</strong> from the most recent weekly calculation. The projected margin is the difference between the two ratings, in points, plus 1.6 points for the home team. That home-field figure is measured from 1.76 million games played from 2004 to 2025.</p>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered" style="max-width: 440px;">
+                            <thead><tr><th>Projected margin</th><th>Multiplier</th></tr></thead>
+                            <tbody>
+                                <tr><td>1 point or less</td><td>1.00</td></tr>
+                                <tr><td>3 points or less</td><td>0.90</td></tr>
+                                <tr><td>7 points or less</td><td>0.75</td></tr>
+                                <tr><td>8 points or less</td><td>0.60</td></tr>
+                                <tr><td>More than 8 points</td><td>Not listed</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h6>Who qualifies</h6>
+                    <p>Both teams must have a Combined Rating above 20 this season (roughly the top 9% nationally) and play 11-man football. Unlike Greatest Games, there is no five-year history requirement: a team having a great season qualifies even if it wasn't strong before.</p>
+                    <h6>Caveats</h6>
+                    <p class="mb-0">Schedules come from MaxPreps and can change after this page is published. Neutral-site games aren't identified, so every game gets the home-field adjustment. Early-season ratings rest on only a few games and move more from week to week.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day filter -->
+        <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+            <div>
+                <span class="fw-semibold me-2 text-muted" style="font-size:0.85rem;">FILTER BY DAY</span>
+                <div class="decade-filters d-inline-flex" id="dayFilters">
+                    <button class="btn btn-outline-primary decade-btn active" data-day="all">All</button>
+                </div>
+            </div>
+            <div class="ms-auto">
+                <span class="text-muted" style="font-size:0.85rem;" id="resultCount">Showing — games</span>
+            </div>
+        </div>
+
+        <div id="loadingIndicator">
+            <div class="spinner-border text-primary mb-3" role="status"></div>
+            <p>Loading games…</p>
+        </div>
+
+        <div id="tableWrapper" style="display:none;">
+            <div class="table-responsive">
+                <table class="table table-hover table-sm align-middle" id="gamesTable">
+                    <thead>
+                        <tr>
+                            <th style="width:48px;">#</th>
+                            <th style="width:90px;">Date</th>
+                            <th>Visitor</th>
+                            <th>Home</th>
+                            <th class="col-margin">Projection</th>
+                            <th class="col-pri" style="width:140px;">Game Index</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gamesTableBody"></tbody>
+                </table>
+            </div>
+            <div id="noResults">No games found for the selected day.</div>
+        </div>
+
+    </div><!-- /container -->
+
+    <footer class="mt-5 mb-3">
+        <div class="text-center">
+            <p>© 2026 McKnight's Football Rankings</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/static-football-rankings/js/main.js"></script>
+
+    <script>
+    (function () {
+        'use strict';
+
+        const DATA_URL = '/static-football-rankings/data/upcoming-games/upcoming-games.json';
+        let allGames = [];
+        let currentDay = 'all';
+
+        function escapeHtml(str) {
+            return String(str ?? '').replace(/[&<>"']/g, c =>
+                ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+
+        function fmtDate(iso, opts) {
+            const [y, m, d] = iso.split('-').map(Number);
+            return new Date(y, m - 1, d).toLocaleDateString('en-US', opts);
+        }
+
+        function closenessClass(margin) {
+            if (margin <= 1) return 'margin-1';
+            if (margin <= 3) return 'margin-2-3';
+            if (margin <= 7) return 'margin-4-7';
+            return 'margin-8';
+        }
+
+        function teamCell(name, rank, record, rating) {
+            const rec = record ? ` <span class="text-muted">(${escapeHtml(record)})</span>` : '';
+            return `<span class="text-muted small">#${rank}</span> ${escapeHtml(name)}${rec}`
+                 + `<div class="text-muted small">Rating ${rating.toFixed(1)}</div>`;
+        }
+
+        function indexBar(v) {
+            const w = Math.max(4, Math.round(v));
+            return `<div class="pri-bar-wrap"><div class="pri-bar" style="width:${w}px;"></div>`
+                 + `<span class="pri-label">${v.toFixed(1)}</span></div>`;
+        }
+
+        function buildRow(g) {
+            const proj = g.projected_margin < 0.5
+                ? '<span class="margin-badge margin-1">Toss-up</span>'
+                : `<span class="margin-badge ${closenessClass(g.projected_margin)}">${escapeHtml(g.favorite)} by ${g.projected_margin.toFixed(1)}</span>`;
+            return `<tr>
+                <td>${g.rank}</td>
+                <td>${fmtDate(g.game_date, { weekday: 'short', month: 'numeric', day: 'numeric' })}</td>
+                <td>${teamCell(g.visitor_team, g.visitor_rank, g.visitor_record, g.visitor_rating)}</td>
+                <td>${teamCell(g.home_team, g.home_rank, g.home_record, g.home_rating)}</td>
+                <td class="col-margin">${proj}</td>
+                <td class="col-pri">${indexBar(g.index_normalised)}</td>
+            </tr>`;
+        }
+
+        function render() {
+            const shown = currentDay === 'all' ? allGames : allGames.filter(g => g.game_date === currentDay);
+            document.getElementById('gamesTableBody').innerHTML = shown.map(buildRow).join('');
+            document.getElementById('noResults').style.display = shown.length ? 'none' : 'block';
+            document.getElementById('resultCount').textContent = `Showing ${shown.length} games`;
+        }
+
+        function buildDayButtons() {
+            const days = [...new Set(allGames.map(g => g.game_date))].sort();
+            const wrap = document.getElementById('dayFilters');
+            days.forEach(d => {
+                const b = document.createElement('button');
+                b.className = 'btn btn-outline-primary decade-btn';
+                b.dataset.day = d;
+                b.textContent = fmtDate(d, { weekday: 'short', month: 'numeric', day: 'numeric' });
+                wrap.appendChild(b);
+            });
+            wrap.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+                wrap.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+                b.classList.add('active');
+                currentDay = b.dataset.day;
+                render();
+            }));
+        }
+
+        fetch(DATA_URL)
+            .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+            .then(data => {
+                allGames = data.items || [];
+                const md = data.metadata || {};
+                if (md.timestamp) {
+                    document.getElementById('lastUpdated').textContent = new Date(md.timestamp)
+                        .toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                }
+                if (md.window_start && md.window_end) {
+                    const o = { month: 'long', day: 'numeric' };
+                    document.getElementById('pageSubtitle').textContent =
+                        `The top ${allGames.length} matchups for ${fmtDate(md.window_start, o)} – ${fmtDate(md.window_end, o)}, `
+                        + `${md.season} (ratings through Week ${md.ratings_week})`;
+                }
+                buildDayButtons();
+                document.getElementById('loadingIndicator').style.display = 'none';
+                document.getElementById('tableWrapper').style.display = 'block';
+                render();
+            })
+            .catch(err => {
+                console.error('Failed to load upcoming games:', err);
+                document.getElementById('loadingIndicator').innerHTML =
+                    '<p class="text-danger">Unable to load games. Please try again later.</p>';
+            });
+    })();
+    </script>
+
+    <div class="container mt-5">
+        <div class="comments-section">
+            <h3 class="mb-4">Comments &amp; Discussion</h3>
+            <p class="text-muted small mb-3">
+                Sign in with GitHub to comment. Comments are stored as
+                <a href="https://github.com/olderdyad/static-football-rankings/discussions" target="_blank">GitHub Discussions</a>.
+            </p>
+            <script src="https://giscus.app/client.js"
+                    data-repo="olderdyad/static-football-rankings"
+                    data-repo-id="R_kgDONn_yOg"
+                    data-category="General"
+                    data-category-id="DIC_kwDONn_yOs4C0hls"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="1"
+                    data-input-position="top"
+                    data-theme="preferred_color_scheme"
+                    data-lang="en"
+                    data-loading="lazy"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </div>
+    </div>
+
+</body>
+</html>
