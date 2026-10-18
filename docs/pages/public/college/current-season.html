@@ -73,7 +73,7 @@
     const d = await collegeLoad('current-season.json');
     collegeStamp(d.metadata);
     
-    document.getElementById('pageTitle').textContent = d.metadata.season + ' College Ratings (through week ' + d.metadata.week + ')';
+    document.getElementById('pageTitle').textContent = d.metadata.season + ' College Ratings' + (d.metadata.week >= 52 ? ' (Final)' : ' (through week ' + d.metadata.week + ')');
     collegeTable({
       data: d.items, tableId: 'dataTable', searchKeys: ['team', 'coach', 'state'],
       defaultSort: { key: 'combined', dir: -1 },

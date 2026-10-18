@@ -276,10 +276,13 @@ def main():
 
     # national champions
     champs = []
+    final_week = {}
+    for (t, s_), v in rat.items():
+        final_week[s_] = max(final_week.get(s_, 0), v[4] or 0)
     for s in sorted(by_season):
         lst = by_season[s]
-        if not lst:
-            continue
+        if not lst or final_week.get(s, 52) < 52:
+            continue                                  # season still in progress: no champion yet
         c1, t1 = lst[0]
         x = row(t1, s)
         x["teams_ranked"] = len(lst)

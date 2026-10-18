@@ -91,7 +91,7 @@
 (async () => {
   try {
     const cur = await collegeLoad('current-season.json');
-    document.getElementById('curTitle').textContent = cur.metadata.season + ' (through week ' + cur.metadata.week + ')';
+    document.getElementById('curTitle').textContent = cur.metadata.season + (cur.metadata.week >= 52 ? ' final' : ' (through week ' + cur.metadata.week + ')');
     collegeStamp(cur.metadata);
     const tb = document.getElementById('top10');
     cur.items.filter(x => x.rank).slice(0, 10).forEach(x => {
