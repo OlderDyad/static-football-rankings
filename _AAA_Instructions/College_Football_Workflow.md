@@ -1,0 +1,139 @@
+# College Football Workflow
+
+Last updated: October 17, 2026
+
+Everything for the college database, ratings and weekly updates in one place. College uses the same SQL rating procedures as high school (`CalculateRankings_v4_Optimized`, league 2). All scripts live in `python_scripts/college/` unless noted, and run from that folder in the `.venv` PowerShell. Scripts that read SQL or the internet run on Windows.
+
+General rules (same as HS): preview first, commit second; separate preview and commit steps; fixes by `Access_ID`; duplicates are moved to `College_Scores_Duplicates`, never just deleted; score conflicts follow default-and-flag (keep the older `Access_ID`, set `Score_Disputed = 1`).
+
+---
+
+## 1. Tables
+
+| Table | What it holds |
+|---|---|
+| `College_Scores` | All games 1869-present (~280,000). Key columns: `ID`, `Access_ID`, `Season`, `Date`, `Home`, `Home_Score`, `Visitor`, `Visitor_Score`, `Neutral`, `Score_Disputed`. Aug 1 = date unknown (entered in playing order, so `Access_ID` order = game order). |
+| `College_Scores_Duplicates` | Duplicate games moved out of `College_Scores` |
+| `College_Rankings` | v4 output; `Combined_Rating` filled at the end of each run |
+| `College_Rankings_Convergence_Master` | One snapshot per full run (`Snapshot_College_Convergence`), for volatility checks |
+| `College_Team_Names` | One row per team: Kind (College / HS/Prep / Club / Military / JC / Academy / Freshmen), State, Division_History, HS link |
+| `College_Team_Aliases`, `College_Name_Fixes`, `College_Dup_Actions` | Name-cleanup history from the Access import |
+| `College_Division_Alignment` | Access division by school and years |
+| `College_Coach_Seasons`, `College_Coaches` | Coach for each team-season (with `Coach_ID`), coach identities |
+| View `College_Coach_Season_Records` | W-L-T per coach-season (NULL when two coaches shared a season) |
+| `College_Future_Games` | Unplayed games of the current season from Wolfe's schedule page (Games of the Week source) |
+| `College_Rankings_Access` | Old Access ratings, comparison only |
+| `LeagueConfig` | League 2 = College_Scores / College_Rankings; `Seed_Window` (college 15, HS 2) |
+
+Inclusion rule: a game belongs in `College_Scores` when at least one team is a college (any opponent a college played directly: athletic clubs, YMCAs, alumni, town and prep teams). Games between those non-college teams go to `HS_Scores`.
+
+---
+
+## 2. Weekly update (each Sunday after Wolfe's update)
+
+1. Load scores and schedule from wolferatings.com:
+
+   ```
+   python wolfe_weekly.py                          (preview)
+   python wolfe_weekly.py --commit --update-scores (load)
+   ```
+
+   - `scores.htm` -> `College_Scores`: NEW games inserted (Source 'Wolfe'), SAME skipped, CHANGED scores updated to Wolfe's with `--update-scores` (he corrects scores as reports come in). A location on the line = neutral site.
+   - `schedules.htm` -> `College_Future_Games` (unplayed games only, refreshed each run; cancelled games marked).
+   - Check the printed unknown team names (`wolfe_weekly/unknown_names.csv`): a new program or a spelling change needs a `College_Team_Names` row or a fix.
+   - wolferatings.com is reachable only from the Windows PC.
+
+2. Rate the current season at the current week:
+
+   ```
+   cd ..
+   python run_full_rankings_recalc.py --league 2 --begin 2026 --end 2026 --week <week> --yes
+   ```
+
+3. (Planned) regenerate the college pages and Games of the Week, then publish.
+
+---
+
+## 3. Full rating recalculation (history)
+
+```
+cd python_scripts
+python run_full_rankings_recalc.py --league 2 --begin 1869 --end 2025 --week 52 --yes   (forward)
+python run_full_rankings_recalc.py --league 2 --begin 2025 --end 1869 --week 52 --yes   (backward)
+```
+
+- Alternate forward and backward runs until settled. Each league-2 run ends with `Snapshot_College_Convergence` and prints the run number.
+- Settled = average change well under 1 point and few team-seasons moving more than 5. Watch progress in `dbo.RankingsProcessLog`.
+- Seeding: each season starts from the average of the surrounding seasons, +/- `LeagueConfig.Seed_Window` (15 for college). Detached clusters (regions that played no one else) keep the level of their seed, so they move as a block from run to run until the wide window settles them.
+- `--no-snapshot` skips the convergence snapshot. Step 1 (ScoresWinLoss) is skipped for college; v4 reads games through `GetScores`.
+- Runs so far: Run 1 2025 baseline; Run 2 forward (2026-10-16); Run 3 backward (avg change 0.73); Run 4 forward, first with Seed_Window 15 (avg 1.45, expected jump); Run 5 backward after the name fixes of 2026-10-17.
+
+Volatility query: compare the two latest snapshots in `College_Rankings_Convergence_Master` (HS query adapted, state/kind/games from `College_Team_Names`). Large uniform moves of a whole small group = a detached cluster, not instability.
+
+---
+
+## 4. Data-quality tools
+
+| Script | Purpose | Changes data? |
+|---|---|---|
+| `island_worklist.py` | Weakly linked / detached clusters among top-25 team-seasons; one-opponent teams set aside (2-core); `Hangs_On` shows what a team's rating rests on. Outputs `island_worklist.csv`, `island_clusters.csv`. `--keep-leaves` = old counting. | No |
+| `missing_games_audit.py` | Team-seasons with far fewer games than the team's nearby seasons or its division peers; gap seasons. Outputs `missing_games_by_team.csv` (record-book shopping list) and `missing_games_by_season.csv`. | No |
+| `split_name_collisions.py` | Games filed under a name shared by two schools (California / California PA, Indiana / Indiana PA, Georgetown DC / Georgetown KY, Pacific / Pacific OR) -> `name_collision_review.csv` | No |
+| `apply_name_collisions.py` | Applies that review by `Access_ID`; `--skip "Opponent"`, `--include-weak`, `--commit` | Yes |
+| `merge_same_school.py` | Merges two names for the same school without doubling games (DUPLICATE / CONFLICT / REVIEW / SELF / RENAME); `--old`, `--new`, `--commit` | Yes |
+| `wolfe_weekly.py` | Weekly scores and schedule load | Yes (with `--commit`) |
+| `game_residuals.py` | Every game's actual margin vs the margin the two teams' ratings predict; worst misses first, ranked by Impact (rating points the game moves), with hints (scores swapped?, undated, far apart, few games, huge score). Best general tool for misnamed opponents (Centre AL vs Centre College, Notre Dame JC) and score typos. Output `game_residuals.csv`. | No |
+
+Aug-1 outlier query (name collisions): a team with a fully dated season that has one Aug-1 game against an opponent whose season is all Aug-1 is a likely name collision (found Notre Dame / Minnesota-Crookston 1967-68 and the California, Indiana, Georgetown, Pacific mixes). Most hits are real games from undated small-school sources; judge by geography.
+
+### Fixes done (2026-10-16/17)
+
+- Bowl/post-season: 191 January games moved to the previous season; CFP dates fixed.
+- Notre Dame vs Minnesota-Crookston 1967, 1968 -> 'Notre Dame JC' (Access_IDs 358913, 358978).
+- SW Missouri St merged into Missouri St: 735 duplicates and 9 conflicts moved, 119 renamed.
+- Name collisions: 531 games renamed (California PA 66, Indiana PA 67, Georgetown KY 240, Pacific OR 158). Kept with the main school: Cal-Pennsylvania, Cal-Wagner 2026, Indiana-Villanova/Fordham/Colgate/William & Mary. 6 resulting duplicates (Indiana PA-St Francis PA) moved.
+
+### Still to do
+
+- Overlaps: Trinity vs Trinity TX (1913-2004), Lewis & Clark -> Lewis & Clark OR (2016), Cal Poly SLO 1970-71 (16-17 games; Cal Poly-Pomona mixed in?).
+- Single games: Marshall-Stephen F. Austin 1923, St Mary's CA-Eastern Kentucky 1924, Clark Atlanta-Portland St 1950, Trinity-Doane 1921, Boston/Dartmouth-Manhattan 1985/87.
+- Name merges: Florida Int'll; Central Connecticut St / Central Conn St; Southeast / SE Missouri St; Clarke / Clarke IA; Anderson / Anderson IN/SC; Union / Union NY/KY; Miami / Miami FL/OH; Bridgewater St / Bridgewater St MA; Coloradod St; Detroit MercyAC.
+- Refresh `College_Team_Names` game counts and seasons (stale after the merges).
+- Fixed 2026-10-17: Jacksonville St 1920 opponents 'Centre' (2 games) and 'Ashland' were Alabama town teams -> 'Centre AL HS', 'Ashland AL HS'.
+- Scores to check: Cincinnati-Miami OH 1906 (paper 6-0, table 0-0); M.A.C.-Kalamazoo 1906 date (paper Oct 13, table Oct 20).
+
+---
+
+## 5. Filling gaps (bridging islands, missing games)
+
+- Bridging games matter most: a game that links a weakly connected cluster to the main network (e.g. Notre Dame-Hillsdale 1906 for the Michigan cluster, Ohio State-Wittenberg 1906 for Dayton). Games inside a cluster do not move its level.
+- Rough guide: 1 link = cluster level uncertain by ~15 points, 4 links ~7, 9 links ~5.
+- Sources: school record books / media guides (D-II, D-III, NAIA, all eras); Monday newspaper score lists for pre-1950 (pilot: Lansing State Journal + Dayton Herald, every Monday Sep-Nov 1906); d2football.com / d3football.com for recent seasons.
+- Load college games only, tagged with Source, through the name matcher; flag conflicts, don't overwrite. Then rerun `island_worklist.py` for that season and compare link counts.
+- Structural islands (NESCAC conference-only schedules, segregation-era HBCU networks, 1870s) have no missing games to find; note them on the site.
+
+---
+
+## 6. Coaches
+
+Goal: a coach for every team-season at every level, to rate coaches by program rating before / during / after (value added) and by straight average (min 10 seasons).
+
+Build order: `build_coach_seasons.py` (Access tenures) -> `fetch_current_coaches.py` + `build_current_coach_fill.py` (Wikipedia current lists) -> `fetch_program_coach_history.py` (per-program Wikipedia tables; resumable, `--fresh`) -> `build_coach_seasons_combined.py` -> `build_coach_ids.py` -> load with `load_access_export.py coachseasons coaches`.
+
+Status: 47,481 coach-seasons, 7,665 coach IDs. Coverage of team-seasons: FBS 97-100%, FCS 67-95%, D-II ~50%, D-III 38-61%, NAIA 24-51%. Next: bullet-list coach pages, carousel pages for 2024-26 changes (collegefootballpoll.com, FootballScoop, d2football.com, d3football.com), two-coach seasons, coach ratings after convergence.
+
+---
+
+## 7. College site
+
+Pages (static, in `docs/pages/public/college/`): `index.html` (College home: links, top 10, recent champions), `current-season.html`, `all-time-teams.html`, `all-time-programs.html`, `national-champions.html`, `programs.html` (search list), `program.html?team=<slug>` (one page serves every program: season-by-season ratings, record, coach, and each season's games). Shared script `docs/js/college/college.js` (search, filters, sorting, paging). Linked from the HS home page ("College Football" card).
+
+Data: `python generate_college_site.py` writes `docs/data/college/` (current-season, all-time-teams, all-time-programs, national-champions, programs-index JSON, plus `programs/<slug>.json` per program). Run it after every full rating run and after the weekly 2026 run, then commit and publish. `--no-games` leaves game lists out of the program files; `--top-teams N` sets the all-time list length (default 2000).
+
+Rules: season ranks count only Kind = College teams with games >= max(5, 60% of a full schedule), a full schedule being the 75th percentile of college teams' games that season (capped at that, for the 1870s). A Note (from `island_worklist.csv`; run `island_worklist.py` first) marks detached, weakly linked (3 or fewer connecting games) or one-opponent seasons. Program files are rewritten only when they change. McKnight's champion = highest rating each season, with runner-up and gap. Programs list = 10+ ranked seasons (page filter defaults to 25). Levels come from `Division_History` (1A = FBS, 1AA = FCS, II, III, NAIA; before 1937 "College").
+
+Still to come: Games of the Week (from `College_Future_Games`), Coaches, Greatest Games and Rivalries, media champions column, conference strength, cross-level comparison, upsets, streaks, bowl and playoff history.
+
+## 8. One-time import (done, for reference)
+
+The Access database (`CFB 2023_09_03.accdb`, 32-bit, no ODBC driver) was read with `access-parser`, exported to `access_export/` (git-ignored), loaded with `load_access_export.py`, names cleaned (`build_name_fixes.py`, `split_ambiguous_names.py`, `find_duplicates.py`, `build_dup_actions.py`), teams built (`build_team_profile.py`, `match_hs_names.py`, `build_team_names.py`), then moved into `College_Scores` (280,222 games). No further Access imports: Wolfe's pages replace the weekly Access update.
