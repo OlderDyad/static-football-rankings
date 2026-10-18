@@ -1,0 +1,129 @@
+"""
+split_name_collisions.py  -- run on Windows (reads SQL Server; changes nothing)
+
+Some Wolfe/Access names hold TWO schools for part of their history, because the
+second school only got its own suffixed name later (e.g. Georgetown KY exists only
+from 2005; its earlier games sit under "Georgetown DC"). Each game of the shared
+name is assigned by where/who the opponent is:
+
+  1. opponent state in only one school's region           -> that school
+  2. state in both regions: opponent's level that season
+     (major vs small) matched against each school's level -> that school
+  3. still unclear: date hint (an Aug-1 / undated game in a season where the base
+     school's schedule is dated points to the other school) -> proposal, marked weak
+  otherwise REVIEW
+
+Output: name_collision_review.csv  (Access_ID, proposal, reason) -- review, then
+a separate commit script applies the accepted moves by Access_ID.
+Add pairs to COLLISIONS as more turn up.
+"""
+import csv, os, re
+from collections import defaultdict
+
+import pyodbc
+
+CONN = ("DRIVER={ODBC Driver 17 for SQL Server};SERVER=MCKNIGHTS-PC\\SQLEXPRESS01;"
+        "DATABASE=hs_football_database;Trusted_Connection=yes;TrustServerCertificate=yes;")
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+WEST = {"CA", "NV", "AZ", "UT", "HI", "NM"}
+NW = {"OR", "WA", "ID", "MT", "AK"}
+EAST = {"PA", "NY", "NJ", "MD", "DE", "DC", "VA", "WV", "CT", "MA", "RI"}
+MIDWEST = {"IN", "IL", "MI", "WI", "IA", "MN", "MO", "KS", "NE", "OH", "KY", "TN"}
+
+# base name: (base regions, alt name, alt regions, seasons before which alt games hide in base)
+COLLISIONS = {
+    "California":   (WEST | NW,                         "California PA", EAST | {"OH"},               2027),
+    "Indiana":      (MIDWEST,                           "Indiana PA",    EAST | {"OH"},               2027),
+    "Georgetown DC": (EAST | {"NC", "ME", "NH", "VT"},  "Georgetown KY", {"KY", "OH", "IN", "TN", "WV"}, 2005),
+    "Pacific":      (WEST | NW,                         "Pacific OR",    NW,                          2010),
+    "Notre Dame":   (MIDWEST | EAST | WEST,             "Notre Dame JC", {"MN", "ND", "SD", "MB"},    2027),
+}
+MAJOR = {"Major College", "I", "1A", "1AA"}
+SMALL = {"Small College", "II", "III", "NAIA", "JC", "NJCAA", "Club", "HS", "Military", "College"}
+
+
+def division_map(history):
+    out = {}
+    for part in (history or "").split(";"):
+        m = re.match(r"\s*(\d{4})-(\d{4})\s+(.+?)\s*$", part)
+        if m:
+            for s in range(int(m.group(1)), int(m.group(2)) + 1):
+                out[s] = m.group(3)
+    return out
+
+
+def tier(div):
+    if not div:
+        return ""
+    if div in MAJOR:
+        return "major"
+    if div in SMALL or div.startswith("III") or div.startswith("II"):
+        return "small"
+    return ""
+
+
+def main():
+    conn = pyodbc.connect(CONN)
+    cur = conn.cursor()
+    names = list(COLLISIONS)
+    ph = ",".join("?" * len(names))
+    games = cur.execute(f"""
+        SELECT Access_ID, Season, Date, Home, Home_Score, Visitor, Visitor_Score
+        FROM dbo.College_Scores WHERE Home IN ({ph}) OR Visitor IN ({ph})""", *names, *names).fetchall()
+    info = {t: (st or "", division_map(h)) for t, st, h in cur.execute(
+        "SELECT Team_Name, State, Division_History FROM dbo.College_Team_Names").fetchall()}
+    conn.close()
+
+    dated = defaultdict(lambda: [0, 0])          # (name, season) -> [dated, aug1]
+    for g in games:
+        aug1 = g[2] is not None and g[2].month == 8 and g[2].day == 1
+        for t in (g[3], g[5]):
+            if t in COLLISIONS:
+                dated[(t, g[1])][1 if aug1 else 0] += 1
+
+    out, tally = [], defaultdict(lambda: defaultdict(int))
+    for aid, s, d, h, hs, v, vs in games:
+        for side, team, opp in (("Home", h, v), ("Visitor", v, h)):
+            if team not in COLLISIONS:
+                continue
+            base_reg, alt, alt_reg, until = COLLISIONS[team]
+            if s >= until:
+                continue
+            ost, odiv = info.get(opp, ("", {}))
+            ot = tier(odiv.get(s, ""))
+            bt = tier(info.get(team, ("", {}))[1].get(s, ""))
+            at = tier(info.get(alt, ("", {}))[1].get(s, "")) or ("small" if bt == "major" else "")
+            aug1 = d is not None and d.month == 8 and d.day == 1
+            in_b, in_a = ost in base_reg, ost in alt_reg
+            if in_a and not in_b:
+                prop, why = alt, f"opponent state {ost} in {alt} region only"
+            elif in_b and not in_a:
+                prop, why = team, f"opponent state {ost} in {team} region only"
+            elif ot and bt and at and bt != at:
+                prop = team if ot == bt else alt
+                why = f"state {ost or '?'} fits both; opponent level {ot}, {team} {bt}, {alt} {at}"
+            elif aug1 and dated[(team, s)][0] >= 5:
+                prop, why = alt + " (weak)", f"undated game; {team}'s {s} schedule is dated"
+            else:
+                prop, why = "REVIEW", f"opponent state {ost or '?'}, level {ot or '?'}"
+            if prop == team:
+                tally[team]["stays"] += 1
+                continue                              # only list games that move or need a look
+            tally[team]["move" if not prop.startswith("REVIEW") else "review"] += 1
+            out.append([aid, s, d, team, side, opp, ost, ot, hs if side == "Home" else vs,
+                        vs if side == "Home" else hs, prop, why])
+
+    out.sort(key=lambda x: (x[3], x[1]))
+    with open(os.path.join(HERE, "name_collision_review.csv"), "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["Access_ID", "Season", "Date", "Name_Now", "Side", "Opponent", "Opp_State", "Opp_Level",
+                    "Score_For", "Score_Against", "Proposed_Name", "Reason"])
+        w.writerows(out)
+    print("Written: name_collision_review.csv\n")
+    for t, c in tally.items():
+        print(f"  {t:15s} -> {COLLISIONS[t][1]:15s} move {c['move']:4d}  review {c['review']:3d}  stay {c['stays']:5d}")
+
+
+if __name__ == "__main__":
+    main()

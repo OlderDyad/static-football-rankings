@@ -44,7 +44,8 @@ from datetime import datetime, timedelta
 # --- CONFIGURATION (hardcoded -- matches consolidation_workflow_latin.py) ---
 SERVER_NAME = "McKnights-PC\\SQLEXPRESS01"
 DATABASE_NAME = "hs_football_database"
-LEAGUE_TYPE = 1          # 1 = High School
+LEAGUE_TYPE = 1          # 1 = High School (default); --league 2 = College
+LEAGUE_NAMES = {1: "High School", 2: "College", 3: "NFL", 4: "Pro"}
 MAX_LOOPS = 2048
 LOG_FREQUENCY = 100
 CONN_STR = (
@@ -182,7 +183,7 @@ def run_calculate_rankings(conn, begin_season, end_season, week):
     print(f"STEP 2/3 complete in {elapsed}.")
 
 
-def run_update_combined_rating(conn):
+def run_update_combined_rating(conn, league=1):
     """Refreshes Combined_Rating for ALL data -- fast (~6 sec for 1.2M rows
     per project docs), simplest to just always refresh everything rather
     than track exactly which seasons changed."""
@@ -190,7 +191,10 @@ def run_update_combined_rating(conn):
     print("STEP 3/3: Refreshing Combined_Rating for all data...")
     start_time = time.time()
     with conn.cursor() as cursor:
-        cursor.execute("EXEC UpdateCombinedRating @Season = NULL, @Week = NULL")
+        if league == 1:
+            cursor.execute("EXEC UpdateCombinedRating @Season = NULL, @Week = NULL")
+        else:
+            cursor.execute("EXEC UpdateCombinedRating @Season = NULL, @Week = NULL, @LeagueType = ?", league)
         while cursor.nextset():
             pass
     conn.commit()
@@ -204,13 +208,20 @@ def parse_args():
     parser.add_argument("--begin", type=int, help="Begin season")
     parser.add_argument("--end", type=int, help="End season")
     parser.add_argument("--week", type=int, help="Week cutoff (1-52)")
+    parser.add_argument("--league", type=int, default=1, choices=[1, 2, 3, 4],
+                        help="1 = High School (default), 2 = College, 3 = NFL, 4 = Pro")
+    parser.add_argument("--no-snapshot", action="store_true",
+                        help="College only: skip the convergence snapshot after the run")
     parser.add_argument("--yes", action="store_true",
                         help="Skip the YES confirmation (for unattended runs)")
     return parser.parse_args()
 
 
 def main():
+    global LEAGUE_TYPE
     args = parse_args()
+    LEAGUE_TYPE = args.league
+    print(f"League: {LEAGUE_TYPE} ({LEAGUE_NAMES[LEAGUE_TYPE]})")
     if args.begin is not None and args.end is not None and args.week is not None:
         if not (1 <= args.week <= 52):
             print(f"--week must be 1-52 (got {args.week}).")
@@ -238,7 +249,16 @@ def main():
     conn = pyodbc.connect(CONN_STR, autocommit=True)
     exit_code = 0
     try:
-        error_count = repopulate_scores_win_loss(conn, begin_season, end_season, week)
+        # CalculateRankings_v4_Optimized reads games through dbo.GetScores, NOT
+        # dbo.ScoresWinLossResults (checked 2026-10-16). Step 1 is kept for HS
+        # only (unchanged behavior); for other leagues it is skipped, because
+        # ScoresWinLossResults has no league column and refilling it would
+        # replace that season's HS rows.
+        error_count = 0
+        if LEAGUE_TYPE == 1:
+            error_count = repopulate_scores_win_loss(conn, begin_season, end_season, week)
+        else:
+            print("\nSTEP 1/3: skipped for this league (v4 reads games via GetScores).")
         if error_count > 0:
             exit_code = 2
             print()
@@ -247,7 +267,18 @@ def main():
                   f"rows or stale data. Review the errors above before trusting "
                   f"those seasons' results.")
         run_calculate_rankings(conn, begin_season, end_season, week)
-        run_update_combined_rating(conn)
+        run_update_combined_rating(conn, LEAGUE_TYPE)
+        if LEAGUE_TYPE == 2 and not args.no_snapshot:
+            # Convergence tracking (college): snapshot every season's final week
+            # into College_Rankings_Convergence_Master as the next Run_Number.
+            with conn.cursor() as cursor:
+                cursor.execute("EXEC dbo.Snapshot_College_Convergence @Notes = ?",
+                               f"seasons {begin_season}-{end_season}, week {week}")
+                row = cursor.fetchone()
+                while cursor.nextset():
+                    pass
+            if row:
+                print(f"\nConvergence snapshot saved as Run {row[0]} ({row[1]:,} team-seasons).")
     except Exception as exc:
         print(f"FATAL: {exc}")
         return 1
@@ -261,7 +292,7 @@ def main():
     print(f"Finished: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 70)
     print()
-    print("Next: spot-check HS_Rankings for a few seasons/weeks in this range,")
+    print(f"Next: spot-check {'HS' if LEAGUE_TYPE == 1 else LEAGUE_NAMES[LEAGUE_TYPE]} rankings for a few seasons/weeks in this range,")
     print("then run .\\run_update_cycle.ps1 to publish.")
     return exit_code
 
