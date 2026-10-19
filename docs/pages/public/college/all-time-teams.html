@@ -15,6 +15,8 @@
     </script>
     <style>
       .college-table th, .college-table td { white-space: nowrap; }
+      .college-table { font-size: .9rem; }
+      .college-table td.wrap { white-space: normal; min-width: 11rem; max-width: 22rem; }
       .note-box { font-size: .9rem; }
     </style>
 </head>
@@ -87,7 +89,7 @@
         { key: 'season', label: 'Season', num: true }, { key: 'level', label: 'Level' },
         { key: 'record', label: 'Record', sortKey: 'w' }, { key: 'combined', label: 'Rating', fmt: 'num1', num: true },
         { key: 'offense', label: 'Offense', fmt: 'num1', num: true }, { key: 'defense', label: 'Defense', fmt: 'num1', num: true },
-        { key: 'rank', label: 'Season Rank', num: true }, { key: 'coach', label: 'Coach', coachLinks: 'coach_links' }, { key: 'note', label: 'Note' } ]
+        { key: 'rank', label: 'Season Rank', num: true }, { key: 'coach', label: 'Coach', coachLinks: 'coach_links' }, { key: 'note', label: 'Note', wrap: true } ]
     });
   } catch (e) { console.warn(e); document.getElementById('dataTable').insertAdjacentHTML('beforebegin', '<div class="alert alert-warning">Data not available yet.</div>'); }
 })();

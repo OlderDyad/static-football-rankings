@@ -15,6 +15,8 @@
     </script>
     <style>
       .college-table th, .college-table td { white-space: nowrap; }
+      .college-table { font-size: .9rem; }
+      .college-table td.wrap { white-space: normal; min-width: 11rem; max-width: 22rem; }
       .note-box { font-size: .9rem; }
     </style>
 </head>
@@ -63,7 +65,7 @@
             Value Added compares each school with itself, so it rewards coaches who lifted a program, not just those who inherited a power.
             It needs at least two ranked seasons of the school before or after the tenure; current coaches are measured against the seasons before they arrived.
             Coaching records are most complete for FBS and FCS; many small-college seasons are still missing a coach.
-            Titles = seasons his team finished #1 in McKnight's ratings.
+            Era Pct = where his teams finished in each season's ranking of all college teams (100 = first, 0 = last), averaged; ratings have risen over time, so sort by Era Pct to compare coaches across eras. Titles = seasons his team finished #1 in McKnight's ratings.
         </div>
         <footer class="mt-5 mb-3">
             <div class="text-center">
@@ -80,18 +82,22 @@
     const d = await collegeLoad('coaches-index.json');
     collegeStamp(d.metadata);
     collegeTable({
-      data: d.items, tableId: 'dataTable', searchKeys: ['coach', 'schools'],
+      data: d.items.map(x => Object.assign({}, x, {
+        years: x.first === x.last ? String(x.first) : x.first + '–' + x.last,
+        best_text: x.best_season ? x.best_season + ' (' + collegeFmt(x.best, 'num1') + ')' : '' })),
+      tableId: 'dataTable', searchKeys: ['coach', 'schools'],
       defaultSort: { key: 'avg', dir: -1 },
       filters: [{ id: 'minSeasons', key: 'rated_seasons', type: 'min', default: 10 },
                 { id: 'fromSeason', key: 'last', type: 'min' }],
       columns: [
-        { key: 'coach', label: 'Coach', coachId: 'id' }, { key: 'schools', label: 'Schools' },
-        { key: 'first', label: 'First', num: true }, { key: 'last', label: 'Last', num: true },
+        { key: 'coach', label: 'Coach', coachId: 'id' }, { key: 'schools', label: 'Schools', wrap: true },
+        { key: 'years', label: 'Years', sortKey: 'first' },
         { key: 'seasons', label: 'Seasons', num: true }, { key: 'record', label: 'Record', sortKey: 'w' },
         { key: 'pct', label: 'Pct', fmt: 'pct', num: true },
         { key: 'avg', label: 'Avg Rating', fmt: 'num1', num: true },
+        { key: 'era_pct', label: 'Era Pct', fmt: 'num1', num: true },
         { key: 'value_added', label: 'Value Added', fmt: 'num1', num: true },
-        { key: 'best_season', label: 'Best Season' }, { key: 'best', label: 'Best Rating', fmt: 'num1', num: true },
+        { key: 'best_text', label: 'Best Season', sortKey: 'best' },
         { key: 'titles', label: 'Titles', num: true } ]
     });
   } catch (e) { console.warn(e); document.getElementById('dataTable').insertAdjacentHTML('beforebegin', '<div class="alert alert-warning">Data not available yet.</div>'); }

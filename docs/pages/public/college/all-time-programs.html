@@ -15,6 +15,8 @@
     </script>
     <style>
       .college-table th, .college-table td { white-space: nowrap; }
+      .college-table { font-size: .9rem; }
+      .college-table td.wrap { white-space: normal; min-width: 11rem; max-width: 22rem; }
       .note-box { font-size: .9rem; }
     </style>
 </head>
@@ -78,7 +80,7 @@
     collegeStamp(d.metadata);
     
     collegeTable({
-      data: d.items, tableId: 'dataTable', searchKeys: ['team', 'state'],
+      data: d.items.map(x => Object.assign({}, x, { years: x.first + '–' + x.last })), tableId: 'dataTable', searchKeys: ['team', 'state'],
       defaultSort: { key: 'avg', dir: -1 },
       filters: [{ id: 'levelFilter', key: 'level', type: 'select' },
                 { id: 'minSeasons', key: 'ranked_seasons', type: 'min', default: 25 },
@@ -87,9 +89,9 @@
         { key: 'rank', label: 'Rank', num: true }, { key: 'team', label: 'Program', link: 'slug' },
         { key: 'level', label: 'Level' }, { key: 'state', label: 'State' },
         { key: 'avg', label: 'Avg Rating', fmt: 'num1', num: true }, { key: 'ranked_seasons', label: 'Seasons', num: true },
-        { key: 'first', label: 'First', num: true }, { key: 'last', label: 'Last', num: true },
+        { key: 'years', label: 'Years', sortKey: 'first' },
         { key: 'record', label: 'Record', sortKey: 'w' }, { key: 'pct', label: 'Pct', fmt: 'pct', num: true },
-        { key: 'best_season', label: 'Best Season', num: true }, { key: 'best', label: 'Best Rating', fmt: 'num1', num: true },
+        { key: 'best_season', label: 'Best', num: true }, { key: 'best', label: 'Rating', fmt: 'num1', num: true },
         { key: 'titles', label: 'Titles', num: true } ]
     });
   } catch (e) { console.warn(e); document.getElementById('dataTable').insertAdjacentHTML('beforebegin', '<div class="alert alert-warning">Data not available yet.</div>'); }

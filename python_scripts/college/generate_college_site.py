@@ -394,12 +394,14 @@ def write_coaches(rec, rat, season_rank, n_ranked, coach_ids, titles, row, final
                 tenures[-1]["seasons"].append(s)
             else:
                 tenures.append(dict(team=t, first=s, last=s, seasons=[s]))
-        sole_vals, va_num, va_den = [], 0.0, 0
+        sole_vals, va_num, va_den, pcts = [], 0.0, 0, []
         for tn in tenures:
             t = tn["team"]
             mine = [s for s in tn["seasons"] if sole.get((t, s)) == cid and rated(t, s)]
             vals = [rat[(t, s)][0] for s in mine]
             sole_vals += vals
+            # era-neutral: place in that season's ranking, 100 = best team, 0 = last
+            pcts += [100.0 * (1 - (season_rank[(t, s)] - 1) / max(1, n_ranked[s] - 1)) for s in mine]
             before = [rat[(t, y)][0] for y in range(tn["first"] - WINDOW, tn["first"])
                       if rated(t, y) and sole.get((t, y)) != cid]
             after = [rat[(t, y)][0] for y in range(tn["last"] + 1, tn["last"] + 1 + WINDOW)
@@ -429,6 +431,7 @@ def write_coaches(rec, rat, season_rank, n_ranked, coach_ids, titles, row, final
                      w=W, l=L, t=T, record=f"{W}-{L}" + (f"-{T}" if T else ""),
                      pct=round((W + 0.5 * T) / (W + L + T), 3) if W + L + T else None,
                      avg=r1(sum(sole_vals) / len(sole_vals)) if sole_vals else None,
+                     era_pct=r1(sum(pcts) / len(pcts)) if pcts else None,
                      value_added=r1(va_num / va_den) if va_den else None, va_seasons=va_den,
                      best=best[0] if best else None, best_season=f"{best[1]} {best[2]}" if best else "",
                      titles=champs_by.get(cid, 0))

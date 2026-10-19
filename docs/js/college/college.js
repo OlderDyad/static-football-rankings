@@ -26,6 +26,21 @@ function collegeProgramLink(name, slug) {
   return a;
 }
 
+function collegeCoachLink(name, id) {
+  if (id === null || id === undefined || id === '') return document.createTextNode(name || '');
+  const a = document.createElement('a');
+  a.href = COLLEGE_BASE + '/pages/public/college/coach.html?id=' + encodeURIComponent(id);
+  a.textContent = name;
+  return a;
+}
+
+function collegeCoachLinks(td, list) {
+  list.forEach((c, i) => {
+    if (i) td.appendChild(document.createTextNode(' / '));
+    td.appendChild(collegeCoachLink(c[0], c[1]));
+  });
+}
+
 /* opts: { data: [...rows], columns: [{key,label,fmt,link,num,sortKey}], tableId, pageSize,
            searchKeys: [...], filters: [{id, key, type:'select'|'min', label, default}],
            defaultSort: {key, dir} , countId } */
@@ -96,8 +111,11 @@ function collegeTable(opts) {
       opts.columns.forEach(c => {
         const td = document.createElement('td');
         if (c.link) td.appendChild(collegeProgramLink(x[c.key], x[c.link]));
+        else if (c.coachLinks && x[c.coachLinks] && x[c.coachLinks].length) collegeCoachLinks(td, x[c.coachLinks]);
+        else if (c.coachId) td.appendChild(collegeCoachLink(x[c.key], x[c.coachId]));
         else td.textContent = collegeFmt(x[c.key], c.fmt);
         if (c.num) td.className = 'text-end';
+        if (c.wrap) td.classList.add('wrap');
         row.appendChild(td);
       });
       tbody.appendChild(row);
