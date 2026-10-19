@@ -145,10 +145,14 @@ def main():
         FROM dbo.College_Scores
         WHERE Home_Score IS NOT NULL AND Visitor_Score IS NOT NULL""").fetchall()
     coach = defaultdict(list)
-    for t, s, c, role in cur.execute("SELECT Team_Name, Season, Coach, Role FROM dbo.College_Coach_Seasons"):
+    coach_ids = defaultdict(list)                      # (team, season) -> [(Coach_ID, name)]
+    for t, s, c, role, cid in cur.execute(
+            "SELECT Team_Name, Season, Coach, Role, Coach_ID FROM dbo.College_Coach_Seasons"):
         name = "No coach" if role == "No coach" else c
         if name and name not in coach[(t, s)]:
             coach[(t, s)].append(name)
+        if cid is not None and role != "No coach" and all(x[0] != cid for x in coach_ids[(t, s)]):
+            coach_ids[(t, s)].append((int(cid), c))
     conn.close()
 
     # per team-season record
@@ -243,6 +247,7 @@ def main():
                     record=f"{w}-{l}" + (f"-{ti}" if ti else ""), w=w, l=l, t=ti, pf=pf, pa=pa,
                     combined=c, margin=m, offense=o, defense=d, rank=season_rank.get((t, s)),
                     of=n_ranked.get(s), coach=" / ".join(coach.get((t, s), [])),
+                    coach_links=[[n_, cid_] for cid_, n_ in coach_ids.get((t, s), [])],
                     note=notes.get((t, s), "") or ("Not connected to the main college network this season "
                                                    "(rated, not ranked)" if (t, s) in detached else ""))
 
@@ -341,7 +346,112 @@ def main():
         os.remove(os.path.join(OUT, "programs", f))
     print(f"programs: {len(index):,} program files ({written_programs:,} changed, {len(stale)} removed); "
           f"all-time-programs.json {len(programs):,} programs")
+    write_coaches(rec, rat, season_rank, n_ranked, coach_ids, titles, row, final_week, meta, stamp)
     print(f"\nWritten to {OUT}")
+
+
+def write_coaches(rec, rat, season_rank, n_ranked, coach_ids, titles, row, final_week, meta, stamp):
+    """Coach careers, straight average and value added.
+
+    Straight average = mean rating of the coach's seasons as SOLE head coach in completed,
+    ranked seasons (min 10 such seasons for the main list).
+    Value added = for each tenure (consecutive seasons at one school), the school's average
+    rating during the tenure minus its average in the 5 ranked seasons before and the 5 after
+    (other coaches only). Career value added = season-weighted mean over tenures that have a
+    baseline of at least 2 seasons.
+    """
+    WINDOW = 5
+    complete = lambda s: final_week.get(s, 52) >= 52
+    sole = {}                                           # (team, season) -> coach id when one coach
+    seasons_of = defaultdict(list)                      # coach id -> [(season, team, shared)]
+    names = defaultdict(lambda: defaultdict(int))
+    for (t, s), lst in coach_ids.items():
+        for cid, n in lst:
+            seasons_of[cid].append((s, t, len(lst) > 1))
+            names[cid][n] += 1
+        if len(lst) == 1:
+            sole[(t, s)] = lst[0][0]
+
+    def rated(t, s):
+        return (t, s) in season_rank and complete(s)
+
+    champs_by = defaultdict(int)
+    for (t, s), r in season_rank.items():
+        if r == 1 and complete(s) and sole.get((t, s)):
+            champs_by[sole[(t, s)]] += 1
+
+    index, n_files = [], 0
+    keep = set()
+    out_dir = os.path.join(OUT, "coaches")
+    for cid, lst in seasons_of.items():
+        lst.sort()
+        name = max(names[cid].items(), key=lambda x: x[1])[0]
+        # tenures: consecutive seasons at one school
+        tenures = []
+        for s, t, shared in lst:
+            if tenures and tenures[-1]["team"] == t and s - tenures[-1]["last"] <= 1:
+                tenures[-1]["last"] = s
+                tenures[-1]["seasons"].append(s)
+            else:
+                tenures.append(dict(team=t, first=s, last=s, seasons=[s]))
+        sole_vals, va_num, va_den = [], 0.0, 0
+        for tn in tenures:
+            t = tn["team"]
+            mine = [s for s in tn["seasons"] if sole.get((t, s)) == cid and rated(t, s)]
+            vals = [rat[(t, s)][0] for s in mine]
+            sole_vals += vals
+            before = [rat[(t, y)][0] for y in range(tn["first"] - WINDOW, tn["first"])
+                      if rated(t, y) and sole.get((t, y)) != cid]
+            after = [rat[(t, y)][0] for y in range(tn["last"] + 1, tn["last"] + 1 + WINDOW)
+                     if rated(t, y) and sole.get((t, y)) != cid]
+            base = before + after
+            W = sum(rec[(t, s)][0] for s in tn["seasons"]); L = sum(rec[(t, s)][1] for s in tn["seasons"])
+            T = sum(rec[(t, s)][2] for s in tn["seasons"])
+            tn.update(record=f"{W}-{L}" + (f"-{T}" if T else ""), w=W, l=L, t=T,
+                      avg=r1(sum(vals) / len(vals)) if vals else None, rated_seasons=len(vals),
+                      before=r1(sum(before) / len(before)) if before else None, n_before=len(before),
+                      after=r1(sum(after) / len(after)) if after else None, n_after=len(after))
+            tn["value_added"] = r1(tn["avg"] - sum(base) / len(base)) if vals and len(base) >= 2 else None
+            if tn["value_added"] is not None:
+                va_num += tn["value_added"] * len(vals)
+                va_den += len(vals)
+            tn["slug"] = row(t, tn["first"])["slug"]
+            del tn["seasons"]
+        W = sum(x["w"] for x in tenures); L = sum(x["l"] for x in tenures); T = sum(x["t"] for x in tenures)
+        best = max(((rat[(t, s)][0], s, t) for s, t, _ in lst if sole.get((t, s)) == cid and rated(t, s)),
+                   default=None)
+        schools = []
+        for x in tenures:
+            if x["team"] not in schools:
+                schools.append(x["team"])
+        entry = dict(id=cid, coach=name, first=lst[0][0], last=lst[-1][0], seasons=len({s for s, _, _ in lst}),
+                     rated_seasons=len(sole_vals), schools=", ".join(schools), n_schools=len(schools),
+                     w=W, l=L, t=T, record=f"{W}-{L}" + (f"-{T}" if T else ""),
+                     pct=round((W + 0.5 * T) / (W + L + T), 3) if W + L + T else None,
+                     avg=r1(sum(sole_vals) / len(sole_vals)) if sole_vals else None,
+                     value_added=r1(va_num / va_den) if va_den else None, va_seasons=va_den,
+                     best=best[0] if best else None, best_season=f"{best[1]} {best[2]}" if best else "",
+                     titles=champs_by.get(cid, 0))
+        index.append(entry)
+        season_rows = []
+        for s, t, shared in lst:
+            x = row(t, s)
+            season_rows.append(dict(season=s, team=t, slug=x["slug"], level=x["level"], record=x["record"],
+                                    w=x["w"], combined=x["combined"], rank=x["rank"], of=x["of"],
+                                    shared="yes" if shared else "", coach=x["coach"]))
+        fn = f"{cid}.json"
+        keep.add(fn)
+        n_files += dump(os.path.join(out_dir, fn), dict(metadata=dict(description=name, note=NOTE),
+                                                         coach=entry, tenures=tenures, seasons=season_rows))
+    os.makedirs(out_dir, exist_ok=True)
+    stale = [f for f in os.listdir(out_dir) if f.endswith(".json") and f not in keep]
+    for f in stale:
+        os.remove(os.path.join(out_dir, f))
+    index.sort(key=lambda x: -(x["avg"] if x["avg"] is not None else -999))
+    dump(os.path.join(OUT, "coaches-index.json"),
+         dict(metadata=dict(meta("College head coaches"), window=WINDOW), items=index))
+    print(f"coaches: {len(index):,} coaches ({n_files:,} files changed, {len(stale)} removed); "
+          f"{sum(1 for x in index if x['rated_seasons'] >= 10):,} with 10+ rated seasons")
 
 
 if __name__ == "__main__":

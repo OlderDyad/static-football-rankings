@@ -87,7 +87,7 @@
         { key: 'season', label: 'Season', num: true }, { key: 'level', label: 'Level' },
         { key: 'record', label: 'Record', sortKey: 'w' }, { key: 'combined', label: 'Rating', fmt: 'num1', num: true },
         { key: 'offense', label: 'Offense', fmt: 'num1', num: true }, { key: 'defense', label: 'Defense', fmt: 'num1', num: true },
-        { key: 'rank', label: 'Season Rank', num: true }, { key: 'coach', label: 'Coach' }, { key: 'note', label: 'Note' } ]
+        { key: 'rank', label: 'Season Rank', num: true }, { key: 'coach', label: 'Coach', coachLinks: 'coach_links' }, { key: 'note', label: 'Note' } ]
     });
   } catch (e) { console.warn(e); document.getElementById('dataTable').insertAdjacentHTML('beforebegin', '<div class="alert alert-warning">Data not available yet.</div>'); }
 })();

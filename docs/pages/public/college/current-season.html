@@ -84,7 +84,7 @@
         { key: 'level', label: 'Level' }, { key: 'record', label: 'Record', sortKey: 'w' },
         { key: 'combined', label: 'Rating', fmt: 'num1', num: true }, { key: 'offense', label: 'Offense', fmt: 'num1', num: true },
         { key: 'defense', label: 'Defense', fmt: 'num1', num: true }, { key: 'games', label: 'Games', num: true },
-        { key: 'state', label: 'State' }, { key: 'coach', label: 'Coach' } ]
+        { key: 'state', label: 'State' }, { key: 'coach', label: 'Coach', coachLinks: 'coach_links' } ]
     });
   } catch (e) { console.warn(e); document.getElementById('dataTable').insertAdjacentHTML('beforebegin', '<div class="alert alert-warning">Data not available yet.</div>'); }
 })();

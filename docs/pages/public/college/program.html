@@ -39,7 +39,7 @@
                 <label class="form-label small mb-1" for="tableSearch">Search</label>
                 <input type="text" id="tableSearch" class="form-control" placeholder="Season or coach..." autocomplete="off">
             </div>
-            <div class="col-md text-md-end text-muted small align-self-end"><span id="rowCount">0</span> seasons · Updated <span id="lastUpdated"></span></div>
+            <div class="col-md text-md-end text-muted small align-self-end"><span id="rowCount">0</span> seasons</div>
         </div>
         <div class="table-responsive">
             <table class="table table-striped table-hover table-sm college-table" id="dataTable">
@@ -92,7 +92,7 @@
         { key: 'record', label: 'Record', sortKey: 'w' }, { key: 'pf', label: 'PF', num: true }, { key: 'pa', label: 'PA', num: true },
         { key: 'combined', label: 'Rating', fmt: 'num1', num: true }, { key: 'offense', label: 'Offense', fmt: 'num1', num: true },
         { key: 'defense', label: 'Defense', fmt: 'num1', num: true }, { key: 'rank_of', label: 'Rank', sortKey: 'rank' },
-        { key: 'coach', label: 'Coach' }, { key: 'note', label: 'Note' } ]
+        { key: 'coach', label: 'Coach', coachLinks: 'coach_links' }, { key: 'note', label: 'Note' } ]
     });
     const pick = document.getElementById('seasonPick');
     const withGames = d.seasons.filter(x => x.games_list && x.games_list.length).map(x => x.season).sort((a, b) => b - a);
