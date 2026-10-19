@@ -118,6 +118,7 @@ function collegeTable(opts) {
         if (c.wrap) td.classList.add('wrap');
         row.appendChild(td);
       });
+      if (opts.onRow) { row.style.cursor = 'pointer'; row.addEventListener('click', e => { if (e.target.tagName !== 'A') opts.onRow(x); }); }
       tbody.appendChild(row);
     });
     const cnt = document.getElementById(opts.countId || 'rowCount');

@@ -347,6 +347,7 @@ def main():
     print(f"programs: {len(index):,} program files ({written_programs:,} changed, {len(stale)} removed); "
           f"all-time-programs.json {len(programs):,} programs")
     write_coaches(rec, rat, season_rank, n_ranked, coach_ids, titles, row, final_week, meta, stamp)
+    write_rivalries(games, season_rank, n_ranked, final_week, sl_of, meta)
     print(f"\nWritten to {OUT}")
 
 
@@ -455,6 +456,80 @@ def write_coaches(rec, rat, season_rank, n_ranked, coach_ids, titles, row, final
          dict(metadata=dict(meta("College head coaches"), window=WINDOW), items=index))
     print(f"coaches: {len(index):,} coaches ({n_files:,} files changed, {len(stale)} removed); "
           f"{sum(1 for x in index if x['rated_seasons'] >= 10):,} with 10+ rated seasons")
+
+
+
+# ---------------------------------------------------------------------------------------------
+# Greatest rivalries -- the high school method (generate_greatest_rivalries_json.py) with an
+# era-neutral quality measure: college ratings rise over the decades, so "elite" and the game
+# score use each team's place in that season's ranking (percentile, 100 = #1) instead of the
+# raw rating.
+RIV_ELITE_PCT = 75        # team in the top 25% of ranked college teams that season ...
+RIV_ELITE_AVG = 70        # ... and averaging top-30% over that season and the 4 before (2+ seasons)
+RIV_MAX_MARGIN = 8
+RIV_MIN_MEETINGS = 5
+RIV_TOP = 100
+
+
+def closeness(m):
+    m = abs(m)
+    return 0.85 if m == 0 else 1.00 if m == 1 else 0.90 if m <= 3 else 0.75 if m <= 7 else 0.60 if m == 8 else 0.0
+
+
+def write_rivalries(games, season_rank, n_ranked, final_week, sl_of, meta):
+    complete = lambda s: final_week.get(s, 52) >= 52
+    pct = {}
+    for (t, s), r in season_rank.items():
+        if complete(s):
+            pct[(t, s)] = 100.0 * (1 - (r - 1) / max(1, n_ranked[s] - 1))
+
+    def elite(t, s):
+        p = pct.get((t, s))
+        if p is None or p < RIV_ELITE_PCT:
+            return False
+        window = [pct[(t, y)] for y in range(s - 4, s + 1) if (t, y) in pct]
+        return len(window) >= 2 and sum(window) / len(window) >= RIV_ELITE_AVG
+
+    series = {}                                         # pair -> [a_wins, b_wins, ties, n, first, last]
+    qual = defaultdict(list)
+    for s, d, h, hs, v, vs, n in games:
+        if h == v:
+            continue
+        a, b = sorted((h, v))
+        fa, fb = (hs, vs) if a == h else (vs, hs)
+        x = series.setdefault((a, b), [0, 0, 0, 0, s, s])
+        x[0 if fa > fb else 1 if fb > fa else 2] += 1
+        x[3] += 1
+        x[4] = min(x[4], s)
+        x[5] = max(x[5], s)
+        if complete(s) and abs(hs - vs) <= RIV_MAX_MARGIN and elite(h, s) and elite(v, s):
+            pri = (pct[(h, s)] + pct[(v, s)]) / 2 * closeness(hs - vs)
+            qual[(a, b)].append(dict(season=s, date="" if d is None or (d.month == 8 and d.day == 1) else d.isoformat(),
+                                     home=h, visitor=v, home_score=hs, visitor_score=vs,
+                                     margin=hs - vs, pri=round(pri, 1)))
+    items = []
+    for (a, b), gl in qual.items():
+        if len(gl) < RIV_MIN_MEETINGS:
+            continue
+        aw, bw, ti, n, first, last = series[(a, b)]
+        total = sum(g["pri"] for g in gl)
+        leader = (f"{a} leads {aw}-{bw}" if aw > bw else f"{b} leads {bw}-{aw}" if bw > aw
+                  else f"Series tied {aw}-{bw}") + (f"-{ti}" if ti else "")
+        gl.sort(key=lambda g: (g["season"], g["date"]))
+        items.append(dict(team_a=a, slug_a=sl_of(a), team_b=b, slug_b=sl_of(b),
+                          rivalry=f"{a} vs {b}", qualifying=len(gl), total=round(total, 1),
+                          avg=round(total / len(gl), 1), q_first=gl[0]["season"], q_last=gl[-1]["season"],
+                          meetings=n, first=first, last=last, a_wins=aw, b_wins=bw, ties=ti,
+                          series=leader, games=gl))
+    items.sort(key=lambda x: -x["total"])
+    items = items[:RIV_TOP]
+    for i, x in enumerate(items, 1):
+        x["rank"] = i
+    dump(os.path.join(OUT, "greatest-rivalries.json"),
+         dict(metadata=dict(meta("Greatest college rivalries"), elite_pct=RIV_ELITE_PCT, elite_avg=RIV_ELITE_AVG,
+                            max_margin=RIV_MAX_MARGIN, min_meetings=RIV_MIN_MEETINGS), items=items))
+    print(f"greatest-rivalries.json: {len(items)} rivalries "
+          f"({sum(1 for v in qual.values() if len(v) >= RIV_MIN_MEETINGS):,} pairs qualified)")
 
 
 if __name__ == "__main__":
