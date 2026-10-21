@@ -48,23 +48,21 @@
             </div>
             <div class="text-muted small">Updated <span id="lastUpdated"></span></div>
         </div>
-        <p class="text-muted mt-3">Every level counts: FBS, FCS, Division II, Division III and NAIA teams are rated on one scale.
-        A game is listed when both teams are in the top quarter of this season's college ratings and the projected margin is 8 points or less.
+        <p class="text-muted mt-3">Every level is rated on one scale. <strong>All</strong> lists the best games nationally; the level tabs rank each
+        level's own games by where the teams stand within that level, so a big FCS or Division III game gets its due.
         <a data-bs-toggle="collapse" href="#how" role="button" aria-expanded="false" aria-controls="how">How games are ranked</a></p>
         <div class="collapse mb-3" id="how"><div class="card card-body bg-light small">
-            <p><strong>Game Index</strong> = how good both teams are &times; how close the game should be. Team strength is each team's place in this
-            season's ranking (100 = #1), averaged for the two teams &mdash; the same measure as
-            <a href="/static-football-rankings/pages/public/college/greatest-games.html">Greatest Games</a>.</p>
+            <p><strong>Game Index</strong> = how good both teams are &times; how close the game should be. Team strength comes from each team's rank
+            (national rank on the All list, rank within the level on a level tab), on a scale where #1 = 100 and each step down the top of the table
+            counts more than a step further down: #5 vs #15 is a big difference, #125 vs #135 a small one.</p>
             <p><strong>Projected margin</strong> = the difference between the two ratings, in points, plus <span id="hfa">a few</span> points for the home team
             (none at neutral sites). The home-field figure is measured from <span id="hfaGames">college</span> games played from 2004 to 2025.</p>
-            <table class="table table-sm table-bordered bg-white mb-2" style="max-width: 380px;">
-                <thead><tr><th>Projected margin</th><th>Closeness</th></tr></thead>
-                <tbody><tr><td>1 point or less</td><td>1.00</td></tr><tr><td>3 points or less</td><td>0.90</td></tr>
-                <tr><td>7 points or less</td><td>0.75</td></tr><tr><td>8 points or less</td><td>0.60</td></tr></tbody>
-            </table>
+            <p><strong>Closeness</strong> = 1 &minus; projected margin &divide; 30: a toss-up 1.00, 4 points 0.87, 8 points 0.73, 10 points 0.67.
+            Games projected at more than 10 points are not listed.</p>
             <p class="mb-0">Schedules come from wolferatings.com and are refreshed each week; games can move or be cancelled after this page is published.
             Early-season ratings rest on few games and change more from week to week.</p>
         </div></div>
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-2" id="levels"></div>
         <div class="d-flex flex-wrap align-items-center gap-2 mb-3" id="days"></div>
         <div id="status" class="text-muted py-4 text-center">Loading games&hellip;</div>
         <div class="table-responsive">
@@ -82,7 +80,7 @@
 (async () => {
   const fmtDate = (iso, o) => { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString('en-US', o); };
   const status = document.getElementById('status');
-  let items = [], day = 'all';
+  let items = [], day = 'all', lvl = 'All';
 
   function teamCell(name, slug, rank, record, level) {
     const td = document.createElement('td');
@@ -98,8 +96,14 @@
   function render() {
     const body = document.getElementById('gowBody');
     body.innerHTML = '';
-    const shown = day === 'all' ? items : items.filter(g => g.date === day);
-    for (const g of shown) {
+    let shown = lvl === 'All'
+      ? items.filter(g => g.rank).sort((a, b) => a.rank - b.rank)
+      : items.filter(g => g.level === lvl && g.level_list_rank).sort((a, b) => a.level_list_rank - b.level_list_rank);
+    if (day !== 'all') shown = shown.filter(g => g.date === day);
+    const L = lvl !== 'All';
+    for (const g0 of shown) {
+      const g = L ? Object.assign({}, g0, { rank: g0.level_list_rank, home_rank: g0.home_level_rank,
+                                            visitor_rank: g0.visitor_level_rank, index: g0.level_index }) : g0;
       const tr = document.createElement('tr');
       const c = (txt) => { const td = document.createElement('td'); td.textContent = txt; return td; };
       tr.append(c(g.rank), c(fmtDate(g.date, { weekday: 'short', month: 'numeric', day: 'numeric' })));
@@ -131,10 +135,19 @@
     items = d.items || [];
     const o = { month: 'long', day: 'numeric' };
     if (md.window_start) document.getElementById('subtitle').textContent =
-      'The top ' + items.length + ' games for ' + fmtDate(md.window_start, o) + ' – ' + fmtDate(md.window_end, o) +
+      'The top games for ' + fmtDate(md.window_start, o) + ' – ' + fmtDate(md.window_end, o) +
       ', ' + md.season + ' (ratings through week ' + md.ratings_week + ')';
     if (md.home_field_adv != null) document.getElementById('hfa').textContent = md.home_field_adv.toFixed(1);
     if (md.hfa_games) document.getElementById('hfaGames').textContent = md.hfa_games.toLocaleString() + ' college-vs-college';
+    const lw = document.getElementById('levels');
+    for (const k of ['All', ...(md.levels || [])]) {
+      if (k !== 'All' && !items.some(g => g.level === k && g.level_list_rank)) continue;
+      const b = document.createElement('button');
+      b.className = 'btn btn-sm btn-outline-primary day-btn' + (k === 'All' ? ' active' : '');
+      b.textContent = k;
+      b.onclick = () => { lw.querySelectorAll('button').forEach(x => x.classList.remove('active')); b.classList.add('active'); lvl = k; render(); };
+      lw.append(b);
+    }
     const wrap = document.getElementById('days');
     const days = ['all', ...new Set(items.map(g => g.date).sort())];
     for (const k of days) {

@@ -36,6 +36,8 @@ from collections import defaultdict
 from datetime import datetime
 from statistics import median
 
+import math
+
 import pyodbc
 
 CONN = ("DRIVER={ODBC Driver 17 for SQL Server};SERVER=MCKNIGHTS-PC\\SQLEXPRESS01;"
@@ -558,24 +560,28 @@ def write_rivalries(games, season_rank, n_ranked, final_week, sl_of, meta):
           f"({sum(1 for v in qual.values() if len(v) >= RIV_MIN_MEETINGS):,} pairs qualified)")
 
 
-# Games of the Week (upcoming-games.json): the Greatest Games measure applied before kickoff.
-GOW_ELITE_PCT = 75        # both teams in the top 25% of this season's ranked college teams
-GOW_MAX_MARGIN = 8        # projected margin, points
-GOW_TOP = 50
+# Games of the Week (upcoming-games.json). Calibrated 2026-10-21: "must see" = two highly ranked teams
+# first, closeness second. Quality uses log rank, so #5 vs #50 matters far more than #120 vs #160
+# (with percentiles, two mid-table FBS teams in a toss-up outranked Ole Miss at Texas).
+GOW_MAX_MARGIN = 10       # projected margin, points
+GOW_CLOSE_SPAN = 30       # closeness = 1 - margin / 30 (toss-up 1.00, 4 pts 0.87, 8 pts 0.73, 10 pts 0.67)
+GOW_TOP = 40              # games on the All list
+GOW_TOP_LEVEL = 15        # games per level list (same-level games, ranked within the level)
+GOW_LEVELS = ["FBS", "FCS", "Division II", "Division III", "NAIA"]
 COMBINED_PER_POINT = 0.958   # Combined_Rating = 0.958 x margin rating + 2.791 (same as HS)
 
 
-def proj_closeness(m):
-    m = abs(m)
-    return 1.00 if m <= 1 else 0.90 if m <= 3 else 0.75 if m <= 7 else 0.60 if m <= 8 else 0.0
+def gow_quality(rank, n):
+    return 100.0 * (1 - math.log(rank) / math.log(max(2, n)))
 
 
 def write_upcoming(fut, games, rat, rec, season_rank, n_ranked, season, week, is_college, level, sl_of,
                    meta, start, days):
     """Top upcoming games from College_Future_Games (Wolfe's schedule page, refreshed weekly).
-    Game Index = average of the two teams' season percentiles (100 = #1) x closeness of the
-    PROJECTED margin. Projected margin = rating gap in points + home field (none at neutral sites);
-    home field is measured from 2004-2025 college-vs-college games against final ratings."""
+    Game Index = average team quality (log of national rank; 100 = #1) x closeness of the PROJECTED
+    margin. Level lists rank same-level games by each team's rank within its level.
+    Projected margin = rating gap in points + home field (none at neutral sites); home field is
+    measured from 2004-2025 college-vs-college games against final ratings."""
     import datetime as dt
     diffs = []
     for s, d, h, hs, v, vs, n in games:
@@ -587,41 +593,62 @@ def write_upcoming(fut, games, rat, rec, season_rank, n_ranked, season, week, is
     first = dt.date.fromisoformat(start) if start else dt.date.today()
     last = first + dt.timedelta(days=days - 1)
     n = n_ranked.get(season, 0)
-    pct = lambda t: 100.0 * (1 - (season_rank[(t, season)] - 1) / max(1, n - 1))
-    rows, seen = [], set()
+    by_level = defaultdict(list)
+    for (t, s_), r in season_rank.items():
+        if s_ == season:
+            by_level[level(t, season)].append((r, t))
+    lrank = {}
+    for lv, lst in by_level.items():
+        lst.sort()
+        for i, (_, t) in enumerate(lst, 1):
+            lrank[t] = (i, len(lst))
+    cands, seen = [], set()
     for s, d, h, v, neu, loc in fut:
         if s != season or d is None or not first <= d <= last or (h, v, d) in seen:
             continue
         seen.add((h, v, d))
         if (h, s) not in season_rank or (v, s) not in season_rank:
             continue
-        if pct(h) < GOW_ELITE_PCT or pct(v) < GOW_ELITE_PCT:
-            continue
         ch, cv = rat[(h, s)][0], rat[(v, s)][0]
         proj = (ch - cv) / COMBINED_PER_POINT + (0 if neu else hfa)
-        mult = proj_closeness(proj)
-        if mult == 0:
+        if abs(proj) > GOW_MAX_MARGIN:
             continue
-        recs = lambda t: "{}-{}".format(*rec[(t, s)][:2]) + (f"-{rec[(t, s)][2]}" if rec[(t, s)][2] else "")
-        rows.append(dict(date=d.isoformat(), home=h, visitor=v, home_slug=sl_of(h), visitor_slug=sl_of(v),
-                         home_rank=season_rank[(h, s)], visitor_rank=season_rank[(v, s)], of=n,
-                         home_rating=ch, visitor_rating=cv, home_record=recs(h), visitor_record=recs(v),
-                         home_level=level(h, s), visitor_level=level(v, s),
-                         neutral=1 if neu else 0, location=loc or "",
-                         projected_margin=round(abs(proj), 1), favorite=h if proj >= 0 else v,
-                         index=round((pct(h) + pct(v)) / 2 * mult, 2)))
-    rows.sort(key=lambda g: (-g["index"], g["home_rank"] + g["visitor_rank"]))
-    rows = rows[:GOW_TOP]
-    for i, g in enumerate(rows, 1):
+        close = 1 - abs(proj) / GOW_CLOSE_SPAN
+        hr, vr = season_rank[(h, s)], season_rank[(v, s)]
+        lh, lv_ = level(h, s), level(v, s)
+        g = dict(date=d.isoformat(), home=h, visitor=v, home_slug=sl_of(h), visitor_slug=sl_of(v),
+                 home_rank=hr, visitor_rank=vr, of=n, home_rating=ch, visitor_rating=cv,
+                 home_record="{}-{}".format(*rec[(h, s)][:2]) + (f"-{rec[(h, s)][2]}" if rec[(h, s)][2] else ""),
+                 visitor_record="{}-{}".format(*rec[(v, s)][:2]) + (f"-{rec[(v, s)][2]}" if rec[(v, s)][2] else ""),
+                 home_level=lh, visitor_level=lv_, neutral=1 if neu else 0, location=loc or "",
+                 projected_margin=round(abs(proj), 1), favorite=h if proj >= 0 else v,
+                 index=round((gow_quality(hr, n) + gow_quality(vr, n)) / 2 * close, 2),
+                 level="", level_index=None)
+        if lh == lv_ and lh in GOW_LEVELS:
+            (a_, m_), (b_, _) = lrank[h], lrank[v]
+            g.update(level=lh, home_level_rank=a_, visitor_level_rank=b_, level_of=m_,
+                     level_index=round((gow_quality(a_, m_) + gow_quality(b_, m_)) / 2 * close, 2))
+        cands.append(g)
+    keep = sorted(cands, key=lambda g: -g["index"])[:GOW_TOP]
+    for i, g in enumerate(keep, 1):
         g["rank"] = i
+    for lv in GOW_LEVELS:
+        lst = sorted((g for g in cands if g["level"] == lv), key=lambda g: -g["level_index"])[:GOW_TOP_LEVEL]
+        for i, g in enumerate(lst, 1):
+            g["level_list_rank"] = i
+            if g not in keep:
+                keep.append(g)
+    keep = [g for g in keep if "rank" in g or "level_list_rank" in g]
     dump(os.path.join(OUT, "upcoming-games.json"),
          dict(metadata=dict(meta("College games of the week"), season=season, ratings_week=week,
                             window_start=first.isoformat(), window_end=last.isoformat(), home_field_adv=hfa,
-                            hfa_games=len(diffs), elite_pct=GOW_ELITE_PCT, max_margin=GOW_MAX_MARGIN,
-                            top_n=GOW_TOP, scheduled_games=len(seen)), items=rows))
-    print(f"upcoming-games.json: {len(rows)} games {first}..{last} "
-          f"(from {len(seen):,} scheduled; home field {hfa} pts from {len(diffs):,} games)")
-
+                            hfa_games=len(diffs), max_margin=GOW_MAX_MARGIN, close_span=GOW_CLOSE_SPAN,
+                            top_n=GOW_TOP, top_level=GOW_TOP_LEVEL, levels=GOW_LEVELS,
+                            scheduled_games=len(seen)), items=keep))
+    top = sorted((g for g in keep if "rank" in g), key=lambda g: g["rank"])[:3]
+    print(f"upcoming-games.json: {sum(1 for g in keep if 'rank' in g)} games on the All list, "
+          f"{len(keep)} in all, {first}..{last} (from {len(seen):,} scheduled; home field {hfa} pts from "
+          f"{len(diffs):,} games); top: " + "; ".join(f"{g['visitor']} at {g['home']}" for g in top))
 
 if __name__ == "__main__":
     main()
