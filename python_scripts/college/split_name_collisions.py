@@ -60,12 +60,45 @@ ROUND2 = {
 }
 # Union University (TN) dropped football after 1952; Cumberland TN's modern games are already
 # under its own name, so both alternatives stop there (Faulkner, Shorter, South Florida stay).
-ROUND = 2
+
+# Round 4 (2026-10-20): bare names left over from the Access import, where EVERY game belongs
+# to some other name. Each base has rules tried in order:
+#   (new name, first season, last season, opponent states or None, opponents or None, note)
+# A rule matches when first <= season <= last and (opponent in its list or opponent state in
+# its states); states and opponents both None = any opponent. Games no rule takes are written
+# as CHECK (never applied). BY_ID overrides everything; NEW_DATE fixes dates in the same pass.
+# Each rule's years are the school's football years, checked before adding the rule.
+NE = {"NY", "VT", "MA", "CT", "NJ", "PA", "RI", "NH", "ME"}
+MIDWEST = {"OH", "IN", "MI", "IL", "WV", "KY", "PA", "WI", "IA"}
+SOUTH = {"FL", "GA", "AL", "LA", "TN", "MS", "SC", "NC", "AR"}
+ROUND4 = {
+    # Anderson University (IN) football 1947-; Anderson SC started 2024 and has its own name.
+    "Anderson": [("Anderson IN", 1947, 2023, None, None, "Anderson (IN) football 1947-")],
+    # Detroit Athletic Club, founded 1887 (Detroit Mercy football began 1896). Same name the
+    # 1906 newspaper split uses, so later newspaper seasons land on it too.
+    "Detroit MercyAC": [("Detroit Athletic Club (MI)", 1887, 1930, None, None, "Detroit Athletic Club")],
+    # Miami (OH) football since 1888, Miami (FL) since 1926.
+    "Miami": [("Miami OH", 1888, 2026, MIDWEST, {"Marshall"}, "Miami (OH) since 1888, Midwest opponent"),
+              ("Miami FL", 1926, 2026, SOUTH, {"San Diego St"}, "Miami (FL) since 1926, Southern opponent")],
+    # Union (NY) since 1886; Union (TN) football ended 1952; Union (KY) after that in the South.
+    "Union": [("Union NY", 1886, 2026, NE, {"Middlebury", "WPI"}, "Union (NY), Northeast opponent"),
+              ("Union TN", 1900, 1952, SOUTH, None, "Union (TN) football to 1952, Southern opponent"),
+              ("Union KY", 1953, 2026, SOUTH | {"KY", "VA", "WV"}, None, "Union (KY), Southern opponent after 1952")],
+}
+ROUND4_BY_ID = {
+    14670: ("Anderson Training School", "Sewanee 1910 schedule: Anderson Training School, W 27-0 Oct 8"),
+    2431: ("Detroit Independents", "Michigan 1883 schedule: Detroit Independents, W 40-5 May 12 (DAC founded 1887)"),
+    445238: ("Miami FL", "Wolfe: Central Michigan at Miami FL 52-3, Sep 26 2026"),
+}
+ROUND4_NEW_DATE = {14670: "1910-10-08", 2431: "1883-05-12"}
+ROUND = 4
 
 
 def main():
     conn = pyodbc.connect(CONN)
     cur = conn.cursor()
+    if ROUND == 4:
+        return round4(cur, conn)
     COLLISIONS = ROUND1 if ROUND == 1 else ROUND2
     names = list(COLLISIONS)
     ph = ",".join("?" * len(names))
@@ -147,6 +180,72 @@ def main():
             if x[3] == t:
                 opp[x[5]] += 1
         print("     moved opponents: " + ", ".join(f"{o} {n}" for o, n in sorted(opp.items(), key=lambda z: -z[1])[:30]))
+
+
+def round4(cur, conn):
+    """Every game of each bare name gets a new name (or CHECK). A game that already exists under
+    the new name (same season, opponent and score) is marked Dup_Of: apply moves it to
+    College_Scores_Duplicates instead of renaming it."""
+    names = list(ROUND4)
+    ph = ",".join("?" * len(names))
+    games = cur.execute(f"""
+        SELECT Access_ID, Season, Date, Home, Home_Score, Visitor, Visitor_Score
+        FROM dbo.College_Scores WHERE Home IN ({ph}) OR Visitor IN ({ph})""", *names, *names).fetchall()
+    info = {t: (st or "", ld or "") for t, st, ld in cur.execute(
+        "SELECT Team_Name, State, Latest_Division FROM dbo.College_Team_Names").fetchall()}
+    targets = sorted({r[0] for rules in ROUND4.values() for r in rules} | {v[0] for v in ROUND4_BY_ID.values()})
+    ph = ",".join("?" * len(targets))
+    have = defaultdict(list)                      # (new name, season, opponent) -> [(aid, for, against)]
+    for aid, s, d, h, hs, v, vs in cur.execute(f"""
+            SELECT Access_ID, Season, Date, Home, Home_Score, Visitor, Visitor_Score
+            FROM dbo.College_Scores WHERE Home IN ({ph}) OR Visitor IN ({ph})""", *targets, *targets):
+        if h in targets:
+            have[(h, s, v)].append((aid, hs, vs))
+        if v in targets:
+            have[(v, s, h)].append((aid, vs, hs))
+    conn.close()
+
+    out, tally = [], defaultdict(lambda: defaultdict(int))
+    for aid, s, d, h, hs, v, vs in games:
+        for side, team, opp in (("Home", h, v), ("Visitor", v, h)):
+            if team not in ROUND4:
+                continue
+            ost = info.get(opp, ("", ""))[0]
+            sf, sa = (hs, vs) if side == "Home" else (vs, hs)
+            prop = why = None
+            if aid in ROUND4_BY_ID:
+                prop, why = ROUND4_BY_ID[aid]
+            else:
+                for alt, first, last, states, opps, note in ROUND4[team]:
+                    if not first <= s <= last:
+                        continue
+                    if (states is None and opps is None) or (opps and opp in opps) or (states and ost in states):
+                        prop, why = alt, f"{note} ({opp}, {ost or 'state ?'})"
+                        break
+            dup = ""
+            if prop:
+                for kaid, kf, ka in have.get((prop, s, opp), []):
+                    if (kf, ka) == (sf, sa) and kaid != aid:
+                        dup = kaid
+                        break
+            tally[team]["CHECK" if not prop else ("dup" if dup else prop)] += 1
+            out.append([aid, s, d, team, side, opp, ost, "", sf, sa, prop or "CHECK",
+                        why or "no rule matched -- decide by hand", dup, ROUND4_NEW_DATE.get(aid, "")])
+
+    out.sort(key=lambda x: (x[3], x[10], x[1]))
+    with open(os.path.join(HERE, "name_collision_review.csv"), "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["Access_ID", "Season", "Date", "Name_Now", "Side", "Opponent", "Opp_State", "Opp_FBS",
+                    "Score_For", "Score_Against", "Proposed_Name", "Reason", "Dup_Of", "New_Date"])
+        w.writerows(out)
+    print("Written: name_collision_review.csv (round 4)\n")
+    for t in ROUND4:
+        print(f"  {t:16s} " + ", ".join(f"{k} {n}" for k, n in sorted(tally[t].items())))
+    for x in out:
+        if x[10] == "CHECK":
+            print(f"     CHECK {x[0]} {x[1]} {x[3]} vs {x[5]} ({x[6] or '?'}) {x[8]}-{x[9]}")
+        if x[12]:
+            print(f"     DUP   {x[0]} {x[1]} {x[3]} vs {x[5]} {x[8]}-{x[9]} = existing {x[10]} row {x[12]}")
 
 
 if __name__ == "__main__":

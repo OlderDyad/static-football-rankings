@@ -3,6 +3,7 @@ generate_college_site.py  -- run on Windows (reads SQL Server; writes JSON for t
 
 Writes docs/data/college/:
   current-season.json      latest rated season, every college team (rank among eligible teams)
+  upcoming-games.json      Games of the Week: top upcoming games (College_Future_Games), next 7 days
   all-time-teams.json      top team-seasons of all time
   all-time-programs.json   program averages (college programs with 10+ ranked seasons)
   national-champions.json  McKnight's #1 for every season, with runner-up
@@ -117,6 +118,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--top-teams", type=int, default=2000)
     ap.add_argument("--no-games", action="store_true", help="leave game lists out of program files")
+    ap.add_argument("--gow-start", help="Games of the Week: first date, YYYY-MM-DD (default today)")
+    ap.add_argument("--gow-days", type=int, default=7, help="Games of the Week: window length in days (default 7)")
     a = ap.parse_args()
 
     conn = pyodbc.connect(CONN)
@@ -153,6 +156,11 @@ def main():
             coach[(t, s)].append(name)
         if cid is not None and role != "No coach" and all(x[0] != cid for x in coach_ids[(t, s)]):
             coach_ids[(t, s)].append((int(cid), c))
+    try:
+        fut = cur.execute("""SELECT Season, Game_Date, Home, Visitor, Neutral, Location
+                             FROM dbo.College_Future_Games WHERE Status <> 'Cancelled'""").fetchall()
+    except pyodbc.Error:
+        fut = []                                       # table not created yet (wolfe_weekly.py --commit makes it)
     conn.close()
 
     # per team-season record
@@ -348,6 +356,8 @@ def main():
           f"all-time-programs.json {len(programs):,} programs")
     write_coaches(rec, rat, season_rank, n_ranked, coach_ids, titles, row, final_week, meta, stamp)
     write_rivalries(games, season_rank, n_ranked, final_week, sl_of, meta)
+    write_upcoming(fut, games, rat, rec, season_rank, n_ranked, cur_season, week, is_college, level, sl_of,
+                   meta, a.gow_start, a.gow_days)
     print(f"\nWritten to {OUT}")
 
 
@@ -469,6 +479,7 @@ RIV_ELITE_AVG = 70        # ... and averaging top-30% over that season and the 4
 RIV_MAX_MARGIN = 8
 RIV_MIN_MEETINGS = 5
 RIV_TOP = 100
+GAMES_TOP = 1000          # greatest games listed
 
 
 def closeness(m):
@@ -504,9 +515,12 @@ def write_rivalries(games, season_rank, n_ranked, final_week, sl_of, meta):
         x[5] = max(x[5], s)
         if complete(s) and abs(hs - vs) <= RIV_MAX_MARGIN and elite(h, s) and elite(v, s):
             pri = (pct[(h, s)] + pct[(v, s)]) / 2 * closeness(hs - vs)
+            post = d is not None and (d.month == 1 or (d.month == 12 and d.day >= 8))
             qual[(a, b)].append(dict(season=s, date="" if d is None or (d.month == 8 and d.day == 1) else d.isoformat(),
                                      home=h, visitor=v, home_score=hs, visitor_score=vs,
-                                     margin=hs - vs, pri=round(pri, 1)))
+                                     margin=hs - vs, pri=round(pri, 2),
+                                     home_rank=season_rank[(h, s)], visitor_rank=season_rank[(v, s)],
+                                     of=n_ranked[s], post="Post-season" if post else ""))
     items = []
     for (a, b), gl in qual.items():
         if len(gl) < RIV_MIN_MEETINGS:
@@ -521,6 +535,18 @@ def write_rivalries(games, season_rank, n_ranked, final_week, sl_of, meta):
                           avg=round(total / len(gl), 1), q_first=gl[0]["season"], q_last=gl[-1]["season"],
                           meetings=n, first=first, last=last, a_wins=aw, b_wins=bw, ties=ti,
                           series=leader, games=gl))
+    # greatest games: every counted game, best first (ties broken by the better pair of ranks)
+    all_games = [dict(g, home_slug=sl_of(g["home"]), visitor_slug=sl_of(g["visitor"]),
+                      rivalry_games=len(qual[k])) for k, gl in qual.items() for g in gl]
+    all_games.sort(key=lambda g: (-g["pri"], g["home_rank"] + g["visitor_rank"]))
+    all_games = all_games[:GAMES_TOP]
+    for i, g in enumerate(all_games, 1):
+        g["rank"] = i
+    dump(os.path.join(OUT, "greatest-games.json"),
+         dict(metadata=dict(meta("Greatest college games"), elite_pct=RIV_ELITE_PCT, max_margin=RIV_MAX_MARGIN),
+              items=all_games))
+    print(f"greatest-games.json: {len(all_games):,} games")
+
     items.sort(key=lambda x: -x["total"])
     items = items[:RIV_TOP]
     for i, x in enumerate(items, 1):
@@ -530,6 +556,71 @@ def write_rivalries(games, season_rank, n_ranked, final_week, sl_of, meta):
                             max_margin=RIV_MAX_MARGIN, min_meetings=RIV_MIN_MEETINGS), items=items))
     print(f"greatest-rivalries.json: {len(items)} rivalries "
           f"({sum(1 for v in qual.values() if len(v) >= RIV_MIN_MEETINGS):,} pairs qualified)")
+
+
+# Games of the Week (upcoming-games.json): the Greatest Games measure applied before kickoff.
+GOW_ELITE_PCT = 75        # both teams in the top 25% of this season's ranked college teams
+GOW_MAX_MARGIN = 8        # projected margin, points
+GOW_TOP = 50
+COMBINED_PER_POINT = 0.958   # Combined_Rating = 0.958 x margin rating + 2.791 (same as HS)
+
+
+def proj_closeness(m):
+    m = abs(m)
+    return 1.00 if m <= 1 else 0.90 if m <= 3 else 0.75 if m <= 7 else 0.60 if m <= 8 else 0.0
+
+
+def write_upcoming(fut, games, rat, rec, season_rank, n_ranked, season, week, is_college, level, sl_of,
+                   meta, start, days):
+    """Top upcoming games from College_Future_Games (Wolfe's schedule page, refreshed weekly).
+    Game Index = average of the two teams' season percentiles (100 = #1) x closeness of the
+    PROJECTED margin. Projected margin = rating gap in points + home field (none at neutral sites);
+    home field is measured from 2004-2025 college-vs-college games against final ratings."""
+    import datetime as dt
+    diffs = []
+    for s, d, h, hs, v, vs, n in games:
+        if 2004 <= s <= 2025 and not n and is_college(h) and is_college(v):
+            ch, cv = rat.get((h, s), (None,))[0], rat.get((v, s), (None,))[0]
+            if ch is not None and cv is not None and abs(ch - cv) <= 14:
+                diffs.append((hs - vs) - (ch - cv) / COMBINED_PER_POINT)
+    hfa = round(sum(diffs) / len(diffs), 2) if diffs else 2.0
+    first = dt.date.fromisoformat(start) if start else dt.date.today()
+    last = first + dt.timedelta(days=days - 1)
+    n = n_ranked.get(season, 0)
+    pct = lambda t: 100.0 * (1 - (season_rank[(t, season)] - 1) / max(1, n - 1))
+    rows, seen = [], set()
+    for s, d, h, v, neu, loc in fut:
+        if s != season or d is None or not first <= d <= last or (h, v, d) in seen:
+            continue
+        seen.add((h, v, d))
+        if (h, s) not in season_rank or (v, s) not in season_rank:
+            continue
+        if pct(h) < GOW_ELITE_PCT or pct(v) < GOW_ELITE_PCT:
+            continue
+        ch, cv = rat[(h, s)][0], rat[(v, s)][0]
+        proj = (ch - cv) / COMBINED_PER_POINT + (0 if neu else hfa)
+        mult = proj_closeness(proj)
+        if mult == 0:
+            continue
+        recs = lambda t: "{}-{}".format(*rec[(t, s)][:2]) + (f"-{rec[(t, s)][2]}" if rec[(t, s)][2] else "")
+        rows.append(dict(date=d.isoformat(), home=h, visitor=v, home_slug=sl_of(h), visitor_slug=sl_of(v),
+                         home_rank=season_rank[(h, s)], visitor_rank=season_rank[(v, s)], of=n,
+                         home_rating=ch, visitor_rating=cv, home_record=recs(h), visitor_record=recs(v),
+                         home_level=level(h, s), visitor_level=level(v, s),
+                         neutral=1 if neu else 0, location=loc or "",
+                         projected_margin=round(abs(proj), 1), favorite=h if proj >= 0 else v,
+                         index=round((pct(h) + pct(v)) / 2 * mult, 2)))
+    rows.sort(key=lambda g: (-g["index"], g["home_rank"] + g["visitor_rank"]))
+    rows = rows[:GOW_TOP]
+    for i, g in enumerate(rows, 1):
+        g["rank"] = i
+    dump(os.path.join(OUT, "upcoming-games.json"),
+         dict(metadata=dict(meta("College games of the week"), season=season, ratings_week=week,
+                            window_start=first.isoformat(), window_end=last.isoformat(), home_field_adv=hfa,
+                            hfa_games=len(diffs), elite_pct=GOW_ELITE_PCT, max_margin=GOW_MAX_MARGIN,
+                            top_n=GOW_TOP, scheduled_games=len(seen)), items=rows))
+    print(f"upcoming-games.json: {len(rows)} games {first}..{last} "
+          f"(from {len(seen):,} scheduled; home field {hfa} pts from {len(diffs):,} games)")
 
 
 if __name__ == "__main__":
