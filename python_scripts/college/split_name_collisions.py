@@ -102,7 +102,11 @@ ROUND5 = {
     # Stops at 2000: later Nicholls St games are already under its own name, and Nichols College's
     # D-III opponents outside the Northeast (Bridgewater VA 2001-04, Gallaudet 2023-24) are real.
     "Nichols": [("Nicholls St", 1972, 2000, US - NE, None, "Nicholls St (LA) since 1972, non-Northeast opponent")],   # applied 2026-10-21
-    "Loyola": [],     # by Access_ID only (ROUND5_BY_ID); New Orleans games stay
+    "Loyola": [],     # by Access_ID only (ROUND5_BY_ID); New Orleans games stay -- applied 2026-10-21
+    # Charleston Southern was founded in 1964; the 1906-13 games vs The Citadel, Davidson and Furman are
+    # College of Charleston (Citadel 1909 and 1913 schedules list "College of Charleston").
+    "Charleston Southern": [("College of Charleston", 1890, 1963, None, None, "Charleston Southern founded 1964")],   # applied 2026-10-22
+    "Central Michigan": [],   # by Access_ID only: Central Normal (Danville IN) games -> Canterbury
 }
 # "Loyola" = Loyola New Orleans (Wolf Pack, 1921-39; its games STAY). Other schools' games matched
 # one by one to Wikipedia season schedules (Loyola Wolf Pack / Lions / Ramblers / Green and Gray pages,
@@ -130,9 +134,22 @@ ROUND5_BY_ID.update({int(x): ("Loyola Baltimore", "Loyola (MD) on the schedule /
 for x in """249225 249080 352655 352860 249272 351597 349391 344427 344440 213130 274169 274616
 281284 255729 281779 307574""".split():
     ROUND5_BY_ID[int(x)] = ("CHECK", "Loyola game not found on any school's schedule")
+# "Central Michigan" before 1940 also holds Central Normal College (Danville IN; Canterbury College from
+# 1946). Checked against Central Michigan season pages 1924-39 and the season list (no team 1894, 1901,
+# 1906, 1913-15): Indiana/Illinois/Kentucky games not on CMU's schedule -> Canterbury. Real CMU games kept:
+# Assumption ON, Bowling Green, Toledo, Valparaiso 1924/25/28, Defiance, Purdue B, Baldwin-Wallace,
+# Bluffton, Lawrence Tech, and 1939 Northern Illinois / Eastern Kentucky / Ball St. 2026-10-22.
+_CN = """249513 249512 233027 249164 350993 351236 346909 242498 80931 80934 242234 242163 81135 242003
+218370 81141 241848 241779 218380 175855 81150 356187 348015 348090 81192 218394 81213 268996 269120
+356573 229639 81218 269258 269497 81228 269603 229654 218418 356844 81236 269815 81243 175903 270172
+81251 270464 81259 270607 270873 81268 270963 229690 253484 271130 81275 229695 271207 271417"""
+ROUND5_BY_ID.update({int(x): ("Canterbury", "Central Normal (Danville IN): not on Central Michigan's schedule") for x in _CN.split()})
+ROUND5_BY_ID.update({352153: ("CHECK", "Butler 55-5 1904: CMU went 0-1 that year -- CMU or Central Normal?"),
+                     250318: ("CHECK", "John Carroll 6-6 1922: CMU had two ties that year -- check"),
+                     250844: ("Central Michigan", "undated copy of the Nov 15 1924 Valparaiso game")})
 ROUND5_NEW_DATE = {29930: "1938-10-30"}           # LMU at Centenary, Oct 30 1938
 # Same LMU game entered twice under 'Loyola' (only one meeting that season): move the second copy.
-ROUND5_DUP_OF = {30131: 307991, 31541: 307998}   # Hardin-Simmons 1938 (Nov 19), 1940 (Nov 8)
+ROUND5_DUP_OF = {30131: 307991, 31541: 307998, 250844: 347046}   # Hardin-Simmons 1938 (Nov 19), 1940 (Nov 8)
 ROUND = 5
 
 

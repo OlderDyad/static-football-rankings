@@ -1,6 +1,6 @@
 # MaxPreps Scraping, Season Import & Publishing Workflow
 
-Last updated: 2026-10-21. This is the working reference for the in-season
+Last updated: 2026-10-22. This is the working reference for the in-season
 MaxPreps import (scrape -> finalize -> clean -> rate -> publish) and the
 end-of-season wrap-up (playoffs, Michigan MHSAA, Canadian provinces, other
 scrapers). Older notes are kept, unchanged, in the **Archive** at the bottom.
@@ -179,22 +179,32 @@ names like hyphen to space, `St.` to `Saint`, or a dropped apostrophe.
 - A rule that already exists still needs Action 2 rerun when new games
   arrive under the old spelling.
 
-**3.5 Duplicate games after merges.** Same two teams and same score in a
-season, even with home/away flipped:
+**3.5 Duplicate games.** Use the existing procedure. It previews by default,
+keeps the best-documented row, archives the rest to
+`HS_Scores_Duplicate_Archive`, logs to `HS_Scores_Change_Log`, and only lists
+(never deletes) same-score pairs more than 1 day apart:
 
 ```sql
-;WITH g AS (
-  SELECT s.ID, s.Date,
-         CASE WHEN s.Home < s.Visitor THEN s.Home ELSE s.Visitor END AS T1,
-         CASE WHEN s.Home < s.Visitor THEN s.Visitor ELSE s.Home END AS T2,
-         CASE WHEN s.Home < s.Visitor THEN s.Home_Score ELSE s.Visitor_Score END AS S1,
-         CASE WHEN s.Home < s.Visitor THEN s.Visitor_Score ELSE s.Home_Score END AS S2
-  FROM dbo.HS_Scores s WHERE s.Season = 2026)
-SELECT T1, T2, S1, S2, COUNT(*) AS N, MIN(Date) AS D1, MAX(Date) AS D2
-FROM g GROUP BY T1, T2, S1, S2 HAVING COUNT(*) > 1 ORDER BY T1;
+EXEC dbo.RemoveDuplicateGamesParameterized
+    @State = NULL, @SeasonStart = 2026, @SeasonEnd = 2026;          -- preview
+EXEC dbo.RemoveDuplicateGamesParameterized
+    @State = NULL, @SeasonStart = 2026, @SeasonEnd = 2026, @Preview = 0;  -- commit
 ```
 
-Archive the extras into the duplicates table rather than just deleting them.
+- The summary's `State` column shows `AL` when `@State = NULL`; that is a
+  display truncation of `ALL`, not a filter.
+- Look at the REVIEW ONLY pairs by hand against MaxPreps.
+- After a commit, rerun the ratings for every week rated since the
+  duplicates arrived.
+
+**Why duplicates appeared (2026-10-22).** `FinalizeMaxPrepsData` only skipped
+games whose `Access_ID` (date + both team names at first insert) matched.
+After name merges the stored key goes stale, so the 10/11 full sweep
+re-inserted 5,604 games (Thompson AL showed 9 games instead of 8). v3 of the
+procedure (`python_scripts/data_import/FinalizeMaxPrepsData_v3_dedup_guard.sql`)
+also skips any game already stored for the same two teams within +/-1 day.
+Run the 3.5 preview after each Sunday sweep for the next few weeks to
+confirm it stays near zero.
 
 **3.6 Suspicious scores.** Check for any 2026 score of 100 or more, and for
 forfeits. MaxPreps marks forfeits "(FF)"; set them to 1-0 with
@@ -336,10 +346,11 @@ import. After that, run duplicate checks against the MaxPreps MI games (3.5).
 
 ---
 
-## 7. Open items (as of 2026-10-21)
+## 7. Open items (as of 2026-10-22)
 
 1. Run TX Action 2 (`consolidation_workflow_latin.py`) for the 14 merged
-   pairs, then the 3.5 duplicate check.
+   pairs, then the 3.5 duplicate check. Apply
+   `FinalizeMaxPrepsData_v3_dedup_guard.sql` first (2026-10-22).
 2. Four held pairs need a game-by-game look:
    - Tomball Christian HomeSchool vs Tomball Christian (two programs?)
    - Houston vs Tomball Concordia Lutheran (canonical: Tomball; dedupe)
