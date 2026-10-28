@@ -1,5 +1,29 @@
 # College Football Workflow
 
+Quick Guide:
+
+python run_full_rankings_recalc.py --league 2 --begin 2026 --end 2026 --week 43 --yes --no-snapshot
+
+The weekly routine is now:
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts/college
+python wolfe_weekly.py --commit --update-scores
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+python run_full_rankings_recalc.py --league 2 --begin 2026 --end 2026 --week 44 --yes --no-snapshot
+python run_full_rankings_recalc.py --league 2 --begin 2025 --end 1869 --week 52 --yes
+python run_full_rankings_recalc.py --league 2 --begin 1869 --end 2025 --week 52 --yes
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\college
+python game_residuals.py --min-games 5
+python island_worklist.py
+python generate_college_site.py
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings
+git add docs
+git commit -m "College rerate: 2026 week 44"
+git push
+
+
 Last updated: October 20, 2026
 
 Everything for the college database, ratings and weekly updates in one place. College uses the same SQL rating procedures as high school (`CalculateRankings_v4_Optimized`, league 2). All scripts live in `python_scripts/college/` unless noted, and run from that folder in the `.venv` PowerShell. Scripts that read SQL or the internet run on Windows.
@@ -149,6 +173,8 @@ Aug-1 outlier query (name collisions): a team with a fully dated season that has
 - 2026-10-21 Loyola Marymount clean-up (round-3 leftovers): Cal Poly SLO 1922/1927 exact duplicates moved (346524, 347543; kept 176534, 241916); 1931 Santa Clara: 356643 = LMU 0-6 Nov 6 (LMU home), 356644 = Loyola New Orleans 7-13 Nov 26 at Loyola Stadium.
 - 2026-10-22 round 5: 'Charleston Southern' 1906-13 (school founded 1964) -> College of Charleston (Citadel 1909/1913 schedules): 7 renamed, 9 duplicates moved.
 - 2026-10-22 round 5: 'Central Michigan' 1894-1939 also held Central Normal College (Danville IN; Canterbury from 1946) -> 58 games to Canterbury (Indiana/Illinois/Kentucky opponents not on CMU's season pages; CMU had no team 1894, 1901, 1906, 1913-15); Dayton 161-0 1923 (346685) fixed by hand first; duplicate Valparaiso 1924 copy (250844) moved. CHECK: Butler-CMU 1904 (352153), John Carroll-CMU 1922 (250318). State fixes still to do: Assumption MA -> Ontario (CMU's opponent 1924/35/37 is Assumption, Windsor ON); 'St Mary's MN' 1933 vs CMU (71014) is St Mary's MI; 'Grand Rapids CC' state OH -> MI.
+- 2026-10-23 round 5: bare 'Cornell' -> Cornell IA to 2008 (51 renamed, 8 duplicates moved; Dubuque/Lawrence/Michigan Tech games) and Cornell NY 2013/2014/2025 (30); 'Washington' vs Chicago 1983-2000 -> Washington U. (17, UAA); College of Charleston 6-0 Marshall 1913 (91326) = Morris Harvey (Charleston WV) 6 at Marshall 0; Loyola CHECK games resolved: Mines 1909 -> Loyola Marymount, Case/Duquesne/Chicago 1970-71 -> Loyola Chicago, Hofstra 1950 -> Loyola Montreal (10 left). Oregon St 1960-84 has only ~3 games a season on file: the Access source lacked them (none misnamed or in duplicates) -> fill from season pages.
+- Score checks: St John's MN-Augsburg 1952 (235972: ours 26-6, Hartford Courant 13-0), Hamilton-Wagner 1952 (274625: 33-20 vs 23-20); all batch-195 conflicts are flagged Score_Disputed.
 - 2026-10-22 score fixes (schedules): Baylor 27-13 LMU 1937 (29598, neutral Beaumont TX); Loyola Chicago 21-7 South Dakota St 1929 (325932, Nov 24); Loyola NO 13-0 Texas Tech 1936 (28979); Loyola NO 14-7 Iowa St 1930 (25046); Citadel 21-6 College of Charleston 1909 (344434, Nov 20); 'Birmingham' 1934 duplicate (262385) moved, kept Birmingham-Southern 235790. State fixes: Centenary LA, Delaware Valley PA, Loyola Chicago IL, Washington U. MO.
 - 2026-10-20 checked, no change: Anderson-Mt St Joseph 2019 (two real games: Sep 21 non-conference 34-7, Nov 9 conference 76-46); Anderson 78-43 Indianapolis 1969 (team averaged 45.5 points).
 
@@ -187,10 +213,86 @@ Aug-1 outlier query (name collisions): a team with a fully dated season that has
 2. Baseline: `python island_worklist.py` (only reads College_Scores; fine to run any time before the commit).
 3. `python newspaper_college_split.py --season <year> --batch <id>` (preview). Review `newspaper_split/newspaper_college_names.csv`; put decisions in `newspaper_college_map.csv` (HS_Name, College_Name; `HS` = not a college). Rerun until 0 REVIEW. Check CONFLICT games (usually OCR misreads in the paper: dropped/added digits, 0 read as 4 or 5).
 4. `python newspaper_college_split.py --season <year> --batch <id> --commit --fix-dates` (MOVE both-college games, COPY one-college games, skip existing, fill Aug-1 dates; deletes use the Season index).
+   Routing rule (2026-10-22): a game goes to College_Scores when at least one team is a college varsity, and to HS_Scores when at least one team is a high school varsity; college vs HS = both tables (COPY). College vs club / YMCA / alumni / military / reserves-freshmen = College only (MOVE, removed from HS_Scores). Non-HS side detected by name words, map value `CLUB`, or a College_Team_Names Club/Military/Freshmen row linked by HS_Team_Name; `--copy-clubs` keeps the old copy behaviour. (1906 was split under the old rule: its college-vs-club games are still in both tables.)
 5. Check the season's top 25 for names that slipped through (a school appearing twice under two names). Fix with `fix_newspaper_names.py --season <year>` (edit its RENAMES list), preview, commit -- it renames newspaper rows, moves the exposed duplicates, cleans team names and updates the map file.
 6. `python island_worklist.py` (compare), rerate the season for college (`--league 2 --begin <year> --end <year> --week 52 --yes --no-snapshot`) and for HS.
 
 1906 result: ~600 newspaper lines -> 122 new college games (after 26 duplicates exposed by name fixes), 128 existing games confirmed, 11 dates filled; Michigan St (1 link) and Dayton (hung on Wittenberg) left the weak list. Names that needed explicit mapping: US Military/Naval Academy -> Army/Navy (the "Academy" rule treats them as prep), Carlisle Indians -> Carlisle Indian School, Washington & Jefferson College -> Wash & Jeff, Cornell University (NY) -> Cornell NY, Case School -> Case Western Reserve, Western Reserve University -> Western Reserve (new college).
+
+Batch 195 (2026-10-23, college roundups: Philadelphia Inquirer 1907-08, Billings Gazette 1909, Hartford Courant 1950/1952, Chicago Tribune + Cleveland Press 1971): 1,265 lines -> HS duplicate removal v4 by season range (no @State: 2 + 175 + 70 archived) -> split per season:
+
+| Season | New college games | Already on file | Conflicts (ours kept, flagged) | Notes |
+|---|---|---|---|---|
+| 1907 | 5 | 15 | 2 | |
+| 1908 | 46 | 111 | 11 (+2 where the paper was right: VPI-UNC 10-0, Tulane-Miss A&M 33-0 fixed first) | |
+| 1909 | 1 | 7 | 0 | |
+| 1950 | 59 | 151 | 7 (Fordham-Georgetown 14-13 fixed first) | Hofstra-Loyola = Loyola Montreal |
+| 1952 | 38 | 67 | 3 | |
+| 1971 | 252 | 375 | 33 | Case/Duquesne-Loyola 1970-71 = Loyola Chicago |
+
+About 400 new games; 70% of the paper's college games were already on file. New games are almost all small colleges. Conflicts were mostly OCR (9 of 11 checked in 1908 went our way). Islands: 532 -> 530.
+
+New split options: `--played-dates` (Sunday/Monday paper dates -> the Saturday before, for new games and date fixes), `--drop-conflicts` (CONFLICT rows: keep our score, remove the paper's row from HS_Scores, set Score_Disputed = 1 on ours -- fix our score first where the paper is right). Standard commit: `python newspaper_college_split.py --season <yr> --batch <id> --played-dates --drop-conflicts --fix-dates --commit`.
+Map lessons: the map is GLOBAL (every later season reuses it) -- never map a school to another school's name to match one stray game (Loyola Chicago -> 'Loyola' would have sent all Ramblers games to New Orleans); fix the stray game instead. "Pittsburgh College (PA)" is the HS-table name for Pitt in every era. Non-breaking spaces in the map broke a match (loader now strips them). New college names must be in College_Team_Names before the commit, or the split creates them as HS/Prep (Carleton MO had to be corrected). The newspaper pre-processing for these pages (OCR name maps, resolved names) is in `newspaper_roundups/`.
+
+## 5c. Season pages -> College_Scores (structured schedules, proven on Oregon St 1960-84)
+
+For a team whose games are missing (from `missing_games_audit.py`), when Wikipedia has its season pages:
+
+1. `python fetch_season_schedules.py --team "<College_Team_Names name>" --years <from>-<to> --page "{year} <Wikipedia team name> football team"` -- reads the {{CFB Schedule Entry}} templates through the MediaWiki API, writes `schedules/<team>_<years>.csv` (Team, Season, Date, Opponent_Raw, Site H/A/N, Team_Score, Opp_Score, Result, Location, Source). Pages are cached in `schedules/cache` (reruns are offline); it waits 3 s between pages and backs off on 429 rate limits. Seasons with no page or no template are listed.
+2. `python import_schedule_csv.py schedules/<file>.csv` (preview) -- names through `schedules/schedule_name_map.csv` (Raw,Team_Name; SKIP drops) then `college_names.Matcher`; every game NEW / DUPLICATE / DATE-FIX / CONFLICT / UNMATCHED, written to `<file>_review.csv`. Same-score games match within 7 days (our date can be off), other scores within 3. Before committing, check the team's games on file in that range all appear as DUPLICATE/DATE-FIX (count them).
+3. `python import_schedule_csv.py schedules/<file>.csv --commit --fix-dates` -- inserts NEW (Source = page URL), sets our date to the page's on DATE-FIX. Conflicts are only listed.
+
+Oregon St 1960-84 (2026-10-23): 268 games on the pages, 35 on file (Access lacked all but the Civil War and a few others) -> 233 added, 1 date fixed (1979 Civil War Nov 29 -> Nov 24), 0 conflicts, 7 names mapped (USC, BYU, San Jose State -> San José St, Long Beach State -> Cal St-Long Beach, UNLV, Hawaii, Pacific (CA)). One command per team; far cheaper per game than newspapers. 4 games came without a date (template date format) and got Aug 1. Name-table cleanup noticed: duplicate rows San Jose St / San José St and Nevada-Las Vegas (CO) / UNLV.
+
+### Opponent-history pages (Sidearm athletics sites)
+
+Many athletics sites (Sidearm platform) have `<site>/sports/football/opponent-history/<opponent>/<id>`: every game against each opponent, often back to the 1890s even when the site's season schedules start in the 1990s. `python fetch_opponent_history.py --site https://<site> --team "<College_Team_Names name>"` reads the dropdown of all opponents and each page, obeys robots.txt (Crawl-delay, usually 30 s -> 72 opponents = ~35 min, fine to run overnight) and caches pages in `schedules/cache_sidearm/<host>/`. Output is the same schedule CSV -> `import_schedule_csv.py` (preview, then `--commit --fix-dates --flag-conflicts`; conflicts keep our score and get Score_Disputed = 1).
+
+Before importing, check the names: the matcher picks wrong schools for "California University of Pennsylvania" (Cal), "Indiana University of Pennsylvania" (Indiana), "West Virginia University Institute of Technology" (WVU), "Boston University" (Boston College), "Notre Dame College (Ohio)", "Saint Joseph's College (Ind.)" -- all now in `schedules/schedule_name_map.csv` (29 rows; reused by every site).
+
+Which sites go back far enough is checked per school (opponent-history index, 'Years' column). PSAC survey 2026-10-23: Bloomsburg (1890s), Shippensburg (1915), West Chester (1921) deep; Kutztown 1980, Millersville 1984, East Stroudsburg 1990, Slippery Rock 2003, California 2005 shallow; Edinboro and Lock Haven block robots; Clarion page failed.
+
+Results (2026-10-23/24): Bloomsburg 1,021 games -> 42 new, 89 dates, 21 conflicts flagged (its own record was nearly complete); Shippensburg 957 -> 565 new, 8 dates, 12 flagged; West Chester 959 -> 452 new (after Shippensburg, the 22 shared games were duplicates), 16 dates, 9 flagged. 1,059 PSAC games added, mostly 1920s-1990s vs the audit's gap schools (Millersville, East Stroudsburg, Kutztown, Lock Haven, Mansfield, California PA, Indiana PA, Slippery Rock, Clarion, Edinboro). Order matters: commit one site before previewing the next so shared games count as duplicates. New names added: Elizabethtown, Goldey-Beacom, Thaddeus Stevens.
+
+Round 2 (2026-10-24): Kutztown 497 -> 140 new, 6 flagged; Millersville 168 -> ~43 new (preview count) (newer Sidearm layout, see below); Northeastern St (OK) 1,009 -> 155 new after the fix below; Central Oklahoma 1,004 -> 551 new, 22 dates, 14 flagged. Both Oklahoma sites go back to 1912/1922; fetches can run during a rerate (they only read the web), commits cannot.
+
+Lessons from round 2:
+- ALWAYS read the name table of `<file>_review.csv` (Opponent_Raw -> Opponent, by action) before --commit, not just the UNMATCHED lines. The matcher sent Northwestern Oklahoma St to Northwestern (Big Ten, 66 games), Nebraska-Kearney to Nebraska, Arkansas-Monticello to Arkansas, Lincoln MO to Lincoln PA. These were committed and rated once; taken back with `undo_schedule_import.py <csv> --raw "<site name>" ... --commit` (moves the inserted rows, found by their opponent-history URL, to College_Scores_Duplicates), then the map fixed and the CSV re-imported.
+- Alias pairs make duplicates: the import only sees games under the matched name. Merged 2026-10-24 (modern names): TAMU-Commerce -> East Texas A&M, TAMU-Kingsville -> Texas A&M-Kingsville, Mesa St -> Colorado Mesa, Western St CO -> Western Colorado, Northeastern St OK -> Northeastern St. Still open: East Central / East Central OK, Missouri Western St / Missouri Western, Northwest Missouri St / NW Missouri St, Benedictine / Benedictine KS, bare Western St (may hold Western Michigan/Kentucky games), Grand Rapids JC / Grand Rapids CC.
+- "Lost points" conflicts: older rows (Access IDs 302xxx Central Arkansas, 265xxx Northern Colorado and others) have one team at 0 where the source has points and the other score matches. Default-and-flag would keep the wrong score, so these take the site's score by Access_ID (24 fixed for Northeastern St / Central Oklahoma), Margin recomputed.
+- A site that lists the school against itself (Central Oklahoma 1922-58, 8 games) or 'NCAA' has an unknown opponent: those rows are removed from the CSV (held in schedules/Oklahoma_held_games.csv), never mapped to SKIP by a name another site uses.
+- Newer Sidearm layout (Millersville): dates "Saturday, October 19" + a season column; the parser handles it, but the opponent list is paged in the browser, so only the first 15 opponents are read (to fix).
+- Don't rerun a fetch after its CSV was hand-cleaned: it overwrites the CSV.
+
+Round 3 (2026-10-25, after missing_games_audit.py: ~46,700 still missing): Clarion (clariongoldeneagles.com, 44 opponents from 1958) 641 -> 277 new, 4 flagged; Findlay (findlayoilers.com, 125 opponents from 1940) 824 -> 366 new, 22 flagged (Findlay's 2003 scores are unreliable -- ties in the OT era -- ours kept). Site survey of other audit leaders: Nebraska-Kearney, Chadron, Minnesota-Duluth, Winona St, Upper Iowa, Western NM histories start in the 2000s; Central Washington 1985. Wikipedia has some 1930s Slippery Rock season articles (fetch_season_schedules.py) -- not yet tried.
+- A site name shared by two schools across sites ('Central State University' = Central Oklahoma on Oklahoma sites, Central St OH on Findlay's) is renamed in that one CSV (e.g. 'Central State University (Ohio)') and the new spelling mapped; never map the shared spelling globally.
+- Bare 'Wayne St' held BOTH schools: split 2026-10-25 by opponent state (plains states + Albert Lea, OK Panhandle 2004, Western Illinois 2003 -> Wayne St NE, 171 games via a temp name and merge_same_school.py; the rest -> Wayne St MI, 360). Left with Michigan as CHECK: Iowa St 1951, North Dakota St 1954, Drake (4).
+- Also merged: Missouri Western St -> Missouri Western, Northwest Missouri St -> NW Missouri St, East Central -> East Central OK. Still open: Benedictine / Benedictine KS, Wheeling Jesuit / Wheeling U., Anderson (no games) row, Grand Rapids JC / CC, Grand Rapids (no state).
+
+Round 4 (2026-10-25/26). Tools added:
+- `fetch_opponent_history.py` reads the newer Sidearm layout from the index page's __NUXT_DATA__ (all opponents, one request; Millersville 168 -> 432 games) and skips a missing opponent page (404).
+- `fetch_batch.ps1` runs a list of sites (`schedules\fetch_list.csv`, Site,Team) as parallel background jobs (Get-Job; logs in schedules\logs\; output appears only at the end). Robots-blocked: Edinboro, Lock Haven, Henderson St, Cameron. Shallow (2000s only): Western Colorado, Emporia St, Ouachita, SW Oklahoma St, Western Oregon, Central Missouri, Nebraska-Kearney, Chadron, Minnesota-Duluth, Winona St, Upper Iowa, Western NM, Northern Colorado, St Cloud St.
+- `fetch_season_schedules.py --category "<team> football seasons"` (Wikipedia season pages, any nickname) and `--conference "{year} <conference> football season"` (every team on a conference page; import_schedule_csv.py resolves section titles and keeps one copy of each game: IN-FILE COPY). Wikipedia conference pages exist mostly for 1946 and 1961 only -- ~240 games total. Section titles are era names (PSTC 'California' = California PA, OCC 'Northwestern State' = NW Oklahoma St): rename them inside the CSV, never in the global map.
+- `fix_lost_points.py <review files> [--commit]`: takes the source score for CONFLICT rows where ours has a 0 the source does not and the other score matches (or ours is 0-0). Run after the preview, before the import commit.
+- `undo_schedule_import.py` (round 2) and the self-game guard in import_schedule_csv.py (opponent = team -> SKIPPED).
+
+LOST POINTS: two source blocks lost the opponent's score -- Northern Colorado (Access_ID 264-265k, 385 of 405 rows) and Central Arkansas (302k, 383 of 403). Repaired so far: 253 from College_Scores_Duplicates copies (SQL in chat 2026-10-25), ~110 from opponent sites via fix_lost_points.py, 11 by the Southern Colorado merge. Check what is left with the remaining-damage query (opponent score = 0 in those blocks, grouped by opponent).
+
+Imports: Clarion 277, Findlay 366, Millersville +42, conference pages 238, Central Arkansas 2, batch 1 (Mines, Mississippi College, Augustana, Mankato, ENMU, Harding, Pueblo, W Colorado, C Missouri, Colorado College) ~1,630, batch 2 (Washburn, Northern St SD, Missouri S&T, NMHU, Southern Arkansas, Arkansas Tech, others) ~1,890.
+
+Alias merges 2026-10-25/26 (kept name first): Oklahoma Panhandle St <- OK Panhandle St; Sam Houston St <- Sam Houston; Texas St-San Marcos <- Texas St; SE Louisiana St <- SE Louisiana; Houston Christian <- Houston Baptist; Austin Peay <- Austin Peay St; Central Missouri <- Central Missouri St; Colorado St-Pueblo <- Southern Colorado; Minn St-Mankato <- Minnesota St-Mankato; Minn St-Moorhead <- Moorhead St; Colorado Mines <- Colorado School of Mines; Chattanooga <- Tennessee-Chattanooga; Southern Miss <- Southern Mississippi; Rochester <- Rochester NY; Louisiana Christian <- Louisiana College; Lyon <- Arkansas College; Northern St SD <- Northern St; Missouri S&T <- Missouri-Rolla; Southwest Baptist <- SW Baptist; Wayne St split MI/NE. Split by opponent state: Trinity -> Trinity TX / Trinity CT (Northeast opponents); Bethel -> Bethel MN / TN / KS (3 left as bare Bethel). Still open: VMI / Virginia Military Institute, Wheeling U. / Wheeling Jesuit, Central Conn St / Central Connecticut St, Benedictine / Benedictine KS, bare Central St, Grand Rapids JC / CC.
+
+Winsipedia (2026-10-26 on):
+- Damaged blocks REPAIRED from Winsipedia season pages: `fetch_winsipedia.py --slug <school> --team <name> --home <town> --years a-b` reads winsipedia.com/<slug>/schedule/<year> (robots.txt allows it; no terms of use found; 10 s between pages; cache schedules\cache_winsipedia\; retries network errors). Home/away from the Location column or the page's JSON-LD; Site U when unknown -> import with --no-new-unknown. fix_lost_points.py fixed 362 rows; opponent shutout share now Central Arkansas 75/403 (19%), Northern Colorado 59/392 (15%) = normal. 17 leftover name rows of merged schools deleted.
+- `winsipedia_batch.ps1` runs schedules\winsipedia_list.csv (Slug,Team,Home,Years) one school at a time; a wrong slug stops after one page (slugs shorten State to -st, e.g. winona-st). Correct slugs for ~470 schools are in schedules\winsipedia_slugs.json (harvested from cached pages) -- use it to build the next list. Opponent "(N)" = neutral. Coverage varies (Upper Iowa sparse: only games vs teams Winsipedia tracks); 2015+ pages read 0 games (newer layout; not needed).
+- Batch 1 (2026-10-27, 20 audit gap schools; list kept as winsipedia_list_batch1.csv): 4,042 new games (137 held, site unknown). "Wayne St." resolved per file (Kearney/Chadron/Duluth = NE, Cal PA/Edinboro = MI).
+- Batch 2 (2026-10-28, 24 schools from the rerun audit): ~3,130 new games (308 held). 'Central State' is ambiguous per file (WV St / St Joseph's IN / Carson-Newman = Central St OH; Southwest Baptist = Central Oklahoma).
+- Audit after batch 1 rose to ~50,500 missing (filled seasons raise each school's expected season length); top schools now ~200 missing each.
+
+ROUTING RULE APPLIED TO IMPORTS: any game with a college varsity team goes to College_Scores, whatever the opponent (HS, academy, club, military, JC, freshmen/JV). Do NOT map such opponents to SKIP -- add a College_Team_Names row with the right Kind (63 added 2026-10-27, schedules\add_nonvarsity_names.sql; 10 more 2026-10-28) and map to it. SKIP only non-teams ('NCAA', 'New Balance Invitational') and unresolvable names ('University of Louisiana', 'LMU' 1908-09). Still to do: copy the college-vs-HS games to HS_Scores as well; re-add ~5 rows dropped by hand from conference CSVs (Murray Aggies, Brooke Field, Drake B, College of Idaho).
+
+Name traps to check in every review (Opponent_Raw -> Opponent for NEW rows): 'University of X at Y' -> X (Nebraska at Kearney, Tennessee at Chattanooga, Texas at El Paso, Colorado at Colorado Springs); state-less 'Northern State'; 'Wayne State College' (= NE); 'Washington University in St. Louis' (= Washington U.); 'South Dakota Mines' (= South Dakota Tech); 'Central State'; freshmen/JV/B teams matching the varsity; community colleges / HS matching a university.
 
 ## 6. Coaches
 

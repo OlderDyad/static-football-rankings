@@ -1,13 +1,22 @@
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+python run_full_rankings_recalc.py --begin 2026 --end 2026 --week 41 --yes
+python run_full_rankings_recalc.py --begin 1959 --end 1959 --week 52 --yes
 
-python run_full_rankings_recalc.p
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\scripts
+.\run_update_cycle.ps1
+
+
+cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
+
 
 Option 1: The Automated Master Script (Recommended)
 This is the Publish-Website.ps1 script we just finalized. It is your workflow, automated into a single file. This is the most efficient way to run your updates.
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
-python run_full_rankings_recalc.py --begin 1920 --end 1959 --week 52 --yes
+python run_full_rankings_recalc.py --begin 1959 --end 1940 --week 52 --yes
 
+python run_full_rankings_recalc.py --league 2 --begin 1869 --end 2025 --week 52 --yes
+python run_full_rankings_recalc.py --league 2 --begin 2025 --end 1869 --week 52 --yes
 How to Use It
 Open PowerShell.
 

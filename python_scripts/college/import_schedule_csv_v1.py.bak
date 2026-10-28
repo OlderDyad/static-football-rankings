@@ -1,0 +1,171 @@
+"""
+import_schedule_csv.py -- run on Windows. Preview by default; --commit applies.
+
+Loads a standard schedule CSV (from fetch_season_schedules.py, or typed from a record book):
+  Team, Season, Date, Opponent_Raw, Site (H/A/N), Team_Score, Opp_Score, [Result, Location, Source]
+and compares every game with College_Scores (same season, same two teams, dates within 3 days or
+our date is the Aug-1 placeholder):
+  NEW         not on file                      -> inserted (Source = the row's Source)
+  DUPLICATE   same score                       -> nothing
+  DATE-FIX    same score, ours undated (Aug 1) or dated up to 7 days off -> our date set to the
+              source's with --fix-dates (same-score games match within 7 days, others within 3)
+  CONFLICT    different score                  -> listed; --flag-conflicts sets Score_Disputed = 1 on ours
+  UNMATCHED   opponent name not found          -> skipped; add it to schedules/schedule_name_map.csv
+Opponent names go through schedules/schedule_name_map.csv (Raw,Team_Name; Team_Name = SKIP drops the
+game) and then college_names.Matcher (State -> St, drops University/College and mascots).
+
+Usage:  python import_schedule_csv.py schedules/Oregon_St_1960-1984.csv
+        python import_schedule_csv.py schedules/Oregon_St_1960-1984.csv --commit --fix-dates
+Output: schedules/<file>_review.csv (every game and its action)
+"""
+import argparse, csv, os, re, sys, uuid
+from collections import Counter, defaultdict
+from datetime import date
+
+import pyodbc
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from college_names import Matcher  # noqa: E402
+
+CONN = ("DRIVER={ODBC Driver 17 for SQL Server};SERVER=MCKNIGHTS-PC\\SQLEXPRESS01;"
+        "DATABASE=hs_football_database;Trusted_Connection=yes;TrustServerCertificate=yes;")
+HERE = os.path.dirname(os.path.abspath(__file__))
+MAP = os.path.join(HERE, "schedules", "schedule_name_map.csv")
+
+
+def aug1(d):
+    return d is None or (d.month == 8 and d.day == 1)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("file")
+    ap.add_argument("--commit", action="store_true")
+    ap.add_argument("--fix-dates", action="store_true")
+    ap.add_argument("--flag-conflicts", action="store_true",
+                    help="default-and-flag: keep our score on CONFLICT games, set Score_Disputed = 1")
+    a = ap.parse_args()
+    rows = list(csv.DictReader(open(a.file, encoding="utf-8-sig")))
+    user = {}
+    if os.path.exists(MAP):
+        user = {r["Raw"].strip(): r["Team_Name"].strip() for r in csv.DictReader(open(MAP, encoding="utf-8-sig"))}
+
+    conn = pyodbc.connect(CONN)
+    cur = conn.cursor()
+    teams = {r[0] for r in cur.execute("SELECT Team_Name FROM dbo.College_Team_Names")}
+    seasons = sorted({int(r["Season"]) for r in rows})
+    ph = ",".join("?" * len(seasons))
+    existing = defaultdict(list)
+    for aid, s, d, h, hs, v, vs in cur.execute(
+            f"SELECT Access_ID, Season, Date, Home, Home_Score, Visitor, Visitor_Score FROM dbo.College_Scores "
+            f"WHERE Season IN ({ph})", *seasons):
+        existing[(s, frozenset((h, v)))].append((aid, d, h, hs, v, vs))
+    matcher = Matcher()
+
+    def resolve(raw, season):
+        if raw in user:
+            return (None, "map: SKIP") if user[raw].upper() == "SKIP" else (user[raw], "map")
+        t, how, _ = matcher.match(raw, season, mascot=True)
+        if t and t in teams:
+            return t, how
+        return None, "no match" if not t else f"matched {t} (not in College_Team_Names)"
+
+    out, used = [], set()
+    for r in rows:
+        s = int(r["Season"])
+        team = r["Team"].strip()
+        d = date.fromisoformat(r["Date"]) if r.get("Date") else None
+        opp, how = resolve(r["Opponent_Raw"].strip(), s)
+        ts, os_ = int(r["Team_Score"]), int(r["Opp_Score"])
+        site = (r.get("Site") or "H").upper()[:1]
+        base = dict(r, Opponent=opp or "", How=how, Access_ID="", Ours="")
+        if team not in teams:
+            out.append(dict(base, Action="UNMATCHED TEAM"))
+            continue
+        if not opp:
+            out.append(dict(base, Action="UNMATCHED" if how != "map: SKIP" else "SKIPPED"))
+            continue
+        pool = [e for e in existing.get((s, frozenset((team, opp))), []) if e[0] not in used]
+        near = lambda e, days: d is None or aug1(e[1]) or abs((e[1] - d).days) <= days
+        mine = lambda e: {e[2]: e[3], e[4]: e[5]}
+        # same score: same game within a week (our date can be a few days off); other scores: 3 days
+        same = [e for e in pool if near(e, 7) and (mine(e).get(team), mine(e).get(opp)) == (ts, os_)]
+        cands = [e for e in pool if near(e, 3)]
+        if same:
+            e = same[0]
+            used.add(e[0])
+            act = "DATE-FIX" if d and (aug1(e[1]) or e[1] != d) else "DUPLICATE"
+            out.append(dict(base, Action=act, Access_ID=e[0]))
+        elif cands:
+            e = cands[0]
+            used.add(e[0])
+            out.append(dict(base, Action="CONFLICT", Access_ID=e[0], Ours=f"{mine(e).get(team)}-{mine(e).get(opp)}"))
+        else:
+            out.append(dict(base, Action="NEW", Site=site))
+
+    rev = os.path.splitext(a.file)[0] + "_review.csv"
+    cols = list(rows[0].keys()) + ["Opponent", "How", "Action", "Access_ID", "Ours"]
+    with open(rev, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+        w.writeheader()
+        w.writerows(out)
+    c = Counter(x["Action"] for x in out)
+    print(f"{len(out)} games: " + ", ".join(f"{k} {v}" for k, v in sorted(c.items())))
+    for x in out:
+        if x["Action"] in ("UNMATCHED", "UNMATCHED TEAM"):
+            print(f"   UNMATCHED  {x['Season']} {x['Opponent_Raw']!r:30s} ({x['How']})")
+    for x in out:
+        if x["Action"] == "CONFLICT":
+            print(f"   CONFLICT   {x['Season']} {x['Date']} {x['Team']} {x['Team_Score']}-{x['Opp_Score']} {x['Opponent']}"
+                  f"   ours {x['Ours']} (Access_ID {x['Access_ID']})")
+    print(f"Written: {rev}")
+    if not a.commit:
+        print("\nPreview only. Add unmatched names to schedules/schedule_name_map.csv, rerun, then --commit.")
+        return
+
+    colinfo = {r[0]: r for r in cur.execute("""
+        SELECT c.name, c.is_identity, c.is_computed, c.is_nullable, t.name, c.default_object_id
+        FROM sys.columns c JOIN sys.types t ON t.user_type_id = c.user_type_id
+        WHERE c.object_id = OBJECT_ID('dbo.College_Scores')""")}
+    nxt = {}
+    for col in ("Access_ID", "ID"):
+        r_ = colinfo.get(col)
+        if r_ and not r_[1] and not r_[2] and r_[4] in ("int", "bigint"):
+            nxt[col] = max((cur.execute(f"SELECT MAX([{col}]) FROM dbo.College_Scores").fetchone()[0] or 0) + 1,
+                           900000000 if col == "Access_ID" else 1)
+    try:
+        ins = fixed = flagged = 0
+        for x in out:
+            if x["Action"] == "NEW":
+                team, opp, site = x["Team"].strip(), x["Opponent"], x["Site"]
+                ts, os_ = int(x["Team_Score"]), int(x["Opp_Score"])
+                h, hs, v, vs = (opp, os_, team, ts) if site == "A" else (team, ts, opp, os_)
+                d = date.fromisoformat(x["Date"]) if x.get("Date") else date(int(x["Season"]), 8, 1)
+                vals = {"Date": d, "Season": int(x["Season"]), "Home": h, "Visitor": v, "Home_Score": hs,
+                        "Visitor_Score": vs, "Margin": hs - vs, "Neutral": 1 if site == "N" else 0,
+                        "Location": (x.get("Location") or None) if site == "N" else None,
+                        "Source": (x.get("Source") or "schedule import")[:255], "Future_Game": 0}
+                for col in list(nxt):
+                    vals[col] = nxt[col]
+                    nxt[col] += 1
+                if "ID" in colinfo and "ID" not in vals and colinfo["ID"][4] == "uniqueidentifier" and not colinfo["ID"][5]:
+                    vals["ID"] = str(uuid.uuid4())
+                vals = {k: v_ for k, v_ in vals.items() if k in colinfo and not colinfo[k][1] and not colinfo[k][2]}
+                cur.execute(f"INSERT INTO dbo.College_Scores ({', '.join('[' + k + ']' for k in vals)}) "
+                            f"VALUES ({','.join('?' * len(vals))})", *vals.values())
+                ins += 1
+            elif x["Action"] == "CONFLICT" and a.flag_conflicts:
+                cur.execute("UPDATE dbo.College_Scores SET Score_Disputed = 1 WHERE Access_ID = ?", int(x["Access_ID"]))
+                flagged += 1
+            elif x["Action"] == "DATE-FIX" and a.fix_dates:
+                cur.execute("UPDATE dbo.College_Scores SET Date = ? WHERE Access_ID = ?", x["Date"], int(x["Access_ID"]))
+                fixed += 1
+        conn.commit()
+        print(f"\nCommitted: {ins} games added, {fixed} dates filled, {flagged} conflicts flagged Score_Disputed.")
+    except Exception as e:
+        conn.rollback()
+        print(f"\nRolled back: {e}")
+
+
+if __name__ == "__main__":
+    main()

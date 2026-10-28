@@ -1,0 +1,223 @@
+"""
+fetch_opponent_history.py -- run on Windows (needs internet). Changes nothing in the database.
+
+Reads a school's football OPPONENT-HISTORY pages on a Sidearm athletics site
+(<site>/sports/football/opponent-history/<opponent>/<id>), which list every game against each
+opponent (date, home/away/neutral, result and score) -- often back to the 1890s even when the
+site's season schedules only start in the 1990s. Writes the standard schedule CSV that
+import_schedule_csv.py loads.
+
+Polite by design: obeys robots.txt (disallowed paths and Crawl-delay; default 30 s between
+requests), sends an honest User-Agent, and caches every page under schedules/cache_sidearm/<host>/,
+so reruns and parser fixes need no new requests.
+
+Usage:
+  python fetch_opponent_history.py --site https://bloomsburgathletics.com --team "Bloomsburg"
+  python fetch_opponent_history.py --site https://bloomsburgathletics.com --team "Bloomsburg" --limit 2
+  python fetch_opponent_history.py ... --from 1900 --to 1983      (keep only these seasons)
+Output: schedules/<team>_opponent_history.csv
+"""
+import argparse, csv, html, json, os, re, time, urllib.error, urllib.parse, urllib.request, urllib.robotparser
+from datetime import date
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(HERE, "schedules")
+UA = "McKnightFootballRankings/1.0 (historical football research; olderdyad.github.io/static-football-rankings)"
+MON = {m: i for i, m in enumerate("jan feb mar apr may jun jul aug sep oct nov dec".split(), 1)}
+
+
+class Fetcher:
+    def __init__(self, site, delay):
+        self.site = site.rstrip("/")
+        self.host = urllib.parse.urlparse(self.site).netloc
+        self.cache = os.path.join(OUT, "cache_sidearm", self.host)
+        os.makedirs(self.cache, exist_ok=True)
+        self.rp = urllib.robotparser.RobotFileParser(self.site + "/robots.txt")
+        try:
+            self.rp.read()
+        except Exception:
+            pass
+        cd = self.rp.crawl_delay(UA) or self.rp.crawl_delay("*")
+        self.delay = max(delay, float(cd or 0))
+        self.last = 0.0
+
+    def get(self, path):
+        url = urllib.parse.urljoin(self.site + "/", path.lstrip("/"))
+        cf = os.path.join(self.cache, re.sub(r"[^A-Za-z0-9]+", "_", urllib.parse.urlparse(url).path).strip("_") + ".html")
+        if os.path.exists(cf):
+            return open(cf, encoding="utf-8").read(), url
+        if not self.rp.can_fetch(UA, url):
+            raise PermissionError(f"robots.txt disallows {url}")
+        wait = self.last + self.delay - time.time()
+        if wait > 0:
+            time.sleep(wait)
+        for attempt in range(5):
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    text = r.read().decode("utf-8", "replace")
+                break
+            except urllib.error.HTTPError as e:
+                if e.code in (429, 500, 502, 503, 504):
+                    ra = e.headers.get("Retry-After")
+                    time.sleep(int(ra) if ra and ra.isdigit() else 60 * (attempt + 1))
+                    continue
+                raise
+        else:
+            raise RuntimeError(f"gave up on {url}")
+        self.last = time.time()
+        open(cf, "w", encoding="utf-8").write(text)
+        return text, url
+
+
+def strip(s):
+    s = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", s, flags=re.S | re.I)
+    s = re.sub(r"<br\s*/?>", " ", s, flags=re.I)
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", s))).strip()
+
+
+def opponents(index_html):
+    """(path, name) for every opponent in the 'all time opponents' dropdown (Sidearm leaves the
+    <option> tags unclosed); falls back to table links if there is no dropdown."""
+    found = {}
+    for m in re.finditer(r'<option[^>]*value="([^"]*/opponent-history/[^"]+)"[^>]*>\s*([^<]+)', index_html, re.I):
+        found.setdefault(m.group(1), html.unescape(m.group(2)).strip())
+    if not found:
+        for m in re.finditer(r'<a[^>]*href="([^"]*/sports/football/opponent-history/[^"/]+/\d+)"[^>]*>(.*?)</a>',
+                             index_html, re.S | re.I):
+            found.setdefault(m.group(1), strip(m.group(2)))
+    return [(p, n) for p, n in found.items() if n and not n.lower().startswith("select")]
+
+
+DATE_RE = re.compile(r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})", re.I)
+NUM_RE = re.compile(r"\b(\d{1,2})/(\d{1,2})/((?:18|19|20)\d\d)\b")
+MD_RE = re.compile(r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2})\b", re.I)
+RES_RE = re.compile(r"\b([WLT])\s*,?\s*(\d{1,3})\s*[-–]\s*(\d{1,3})\b")
+
+
+def games(page_html):
+    """Every table row with a date and a W/L/T score -> (date, site, ts, os, result, location)."""
+    out = []
+    for row in re.findall(r"<tr[^>]*>(.*?)</tr>", page_html, re.S | re.I):
+        cells = [strip(c) for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", row, re.S | re.I)]
+        txt = " | ".join(cells)
+        dm, rm = DATE_RE.search(txt), RES_RE.search(txt)
+        if not rm:
+            continue
+        nm = NUM_RE.search(txt)
+        if dm:
+            d = date(int(dm.group(3)), MON[dm.group(1).lower()[:3]], int(dm.group(2)))
+        elif nm:
+            d = date(int(nm.group(3)), int(nm.group(1)), int(nm.group(2)))
+        else:
+            # newer Sidearm layout: "Saturday, October 19 | 1985 | Away Bloomsburg, PA | L 17-28"
+            md = MD_RE.search(txt)
+            yr = next((int(c) for c in cells if re.fullmatch(r"(18|19|20)\d\d", c)), None)
+            if not md or not yr:
+                continue
+            mon = MON[md.group(1).lower()[:3]]
+            d = date(yr + (1 if mon <= 2 else 0), mon, int(md.group(2)))
+        res, a, b = rm.group(1).upper(), int(rm.group(2)), int(rm.group(3))
+        hi, lo = max(a, b), min(a, b)
+        ts, os_ = (hi, lo) if res == "W" else (lo, hi) if res == "L" else (a, b)
+        low = txt.lower()
+        # Sidearm: "vs" = home, "at" = away; neutral only when the row says so
+        site = "N" if "neutral" in low else "A" if ("away" in low or re.search(r"(^|\|)\s*at\b", low)) else "H"
+        loc = next((c for c in cells if re.search(r",\s*[A-Z][a-z]?\.?\s*[A-Z]?\.?$|\b[A-Z]{2}\b", c) and not DATE_RE.search(c)
+                    and not RES_RE.search(c)), "")
+        out.append((d, site, ts, os_, res, loc))
+    return out
+
+
+def nuxt_games(index_html):
+    """Newer Sidearm layout: the opponent-history index page carries every opponent's results in its
+    __NUXT_DATA__ block (the visible list is paged in the browser). -> [(opponent, date, site, ts, os, res)]"""
+    m = re.search(r'<script[^>]*id="__NUXT_DATA__"[^>]*>(.*?)</script>', index_html, re.S)
+    if not m:
+        return []
+    try:
+        a = json.loads(m.group(1))
+    except ValueError:
+        return []
+    v = lambda i: a[i] if isinstance(i, int) and not isinstance(i, bool) and 0 <= i < len(a) else i
+    out = []
+    for o in a:
+        if not (isinstance(o, dict) and "opponentName" in o and "results" in o):
+            continue
+        name = str(v(o["opponentName"])).strip()
+        for gi in v(o["results"]) or []:
+            g = v(gi)
+            if not isinstance(g, dict):
+                continue
+            try:
+                d = date.fromisoformat(str(v(g.get("gameDate")))[:10])
+                ts, os_ = int(v(g.get("teamScore"))), int(v(g.get("opponentScore")))
+            except (TypeError, ValueError):
+                continue                                           # not played / no score
+            loc = str(v(g.get("gameLocationIndicator")) or "H").upper()[:1]
+            res = str(v(g.get("resultStatus")) or "").upper()[:1] or ("W" if ts > os_ else "L" if ts < os_ else "T")
+            out.append((name, d, loc if loc in "HAN" else "H", ts, os_, res))
+    return out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--site", required=True, help="e.g. https://bloomsburgathletics.com")
+    ap.add_argument("--team", required=True, help="College_Team_Names name of the site's school")
+    ap.add_argument("--delay", type=float, default=30, help="seconds between requests (robots Crawl-delay wins if larger)")
+    ap.add_argument("--limit", type=int, default=0, help="only the first N opponents (test run)")
+    ap.add_argument("--from", dest="first", type=int, default=0)
+    ap.add_argument("--to", dest="last", type=int, default=9999)
+    a = ap.parse_args()
+    f = Fetcher(a.site, a.delay)
+    print(f"{f.host}: {f.delay:.0f} s between requests (robots.txt)")
+    idx, idx_url = f.get("/sports/football/opponent-history")
+    ng = nuxt_games(idx)
+    if ng:
+        rows = []
+        for name, d, site, ts, os_, res in ng:
+            season = d.year - 1 if d.month <= 2 else d.year
+            if a.first <= season <= a.last:
+                rows.append(dict(Team=a.team, Season=season, Date=d.isoformat(), Opponent_Raw=name, Site=site,
+                                 Team_Score=ts, Opp_Score=os_, Result=res, Location="", Source=idx_url))
+        print(f"newer layout: {len({x[0] for x in ng})} opponents, {len(ng)} games read from the index page "
+              f"({min(x[1] for x in ng)} to {max(x[1] for x in ng)})")
+        write(a.team, rows)
+        return
+    opps = opponents(idx)
+    print(f"{len(opps)} opponents listed")
+    if a.limit:
+        opps = opps[:a.limit]
+    rows = []
+    for i, (path, name) in enumerate(opps, 1):
+        try:
+            page, url = f.get(path)
+        except PermissionError as e:
+            print(f"  skip: {e}")
+            continue
+        except urllib.error.HTTPError as e:
+            print(f"  {i}/{len(opps)} {name}: skipped (HTTP {e.code})")
+            continue
+        g = games(page)
+        for d, site, ts, os_, res, loc in g:
+            season = d.year - 1 if d.month <= 2 else d.year            # January bowls / playoffs
+            if a.first <= season <= a.last:
+                rows.append(dict(Team=a.team, Season=season, Date=d.isoformat(), Opponent_Raw=name, Site=site,
+                                 Team_Score=ts, Opp_Score=os_, Result=res, Location=loc, Source=url))
+        print(f"  {i}/{len(opps)} {name}: {len(g)} games")
+    write(a.team, rows)
+
+
+def write(team, rows):
+    rows.sort(key=lambda r: (r["Season"], r["Date"]))
+    fn = os.path.join(OUT, f"{re.sub(r'[^A-Za-z0-9]+', '_', team)}_opponent_history.csv")
+    with open(fn, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["Team", "Season", "Date", "Opponent_Raw", "Site", "Team_Score", "Opp_Score",
+                                           "Result", "Location", "Source"])
+        w.writeheader()
+        w.writerows(rows)
+    print(f"\n{len(rows)} games written to {fn}")
+
+
+if __name__ == "__main__":
+    main()

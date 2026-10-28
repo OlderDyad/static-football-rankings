@@ -106,7 +106,14 @@ ROUND5 = {
     # Charleston Southern was founded in 1964; the 1906-13 games vs The Citadel, Davidson and Furman are
     # College of Charleston (Citadel 1909 and 1913 schedules list "College of Charleston").
     "Charleston Southern": [("College of Charleston", 1890, 1963, None, None, "Charleston Southern founded 1964")],   # applied 2026-10-22
-    "Central Michigan": [],   # by Access_ID only: Central Normal (Danville IN) games -> Canterbury
+    "Central Michigan": [],   # by Access_ID only: Central Normal (Danville IN) games -> Canterbury -- applied 2026-10-22
+    # bare 'Cornell': to 2008 one game a year vs Dubuque / Lawrence / Michigan Tech = Cornell College (Iowa);
+    # 2013, 2014 and 2025 full Ivy schedules = Cornell University. 2026-10-23.
+    "Cornell": [("Cornell IA", 1890, 2012, None, None, "Cornell College (IA): Midwest Conference opponents"),
+                ("Cornell NY", 2013, 2026, None, None, "Cornell University: full Ivy League schedule")],   # applied 2026-10-23
+    # 'Washington' vs Chicago after Chicago restarted football (1969) = Washington U. (St. Louis), UAA rivals;
+    # the Huskies never played the revived Maroons. 2026-10-23.
+    "Washington": [("Washington U.", 1969, 2026, None, {"Chicago"}, "Washington U. (St. Louis) vs Chicago, UAA")],
 }
 # "Loyola" = Loyola New Orleans (Wolf Pack, 1921-39; its games STAY). Other schools' games matched
 # one by one to Wikipedia season schedules (Loyola Wolf Pack / Lions / Ramblers / Green and Gray pages,
