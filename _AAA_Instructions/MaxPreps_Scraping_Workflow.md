@@ -28,7 +28,7 @@ EXEC dbo.RemoveDuplicateGamesParameterized
     @Preview = 0;
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
-   python run_full_rankings_recalc.py --begin 2026 --end 2026 --week 42 --yes (10/22/2026)
+   python run_full_rankings_recalc.py --begin 2026 --end 2026 --week 443 --yes (10/28/2026)
    python run_full_rankings_recalc.py --begin 1959 --end 1940 --week 52 --yes
 
 

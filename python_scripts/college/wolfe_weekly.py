@@ -131,6 +131,14 @@ def main():
     through = re.search(r"Scores through ([A-Za-z]+ \d{1,2}, \d{4})", stext)
     scores, bad = parse_scores(stext)
     sched = parse_schedule(page_text(a.schedule_file or URLS["schedule"]))
+    # Wolfe's spellings -> our College_Team_Names (wolfe_weekly/wolfe_name_map.csv: Wolfe,Team_Name)
+    wmap_file = os.path.join(OUT, "wolfe_name_map.csv")
+    if os.path.exists(wmap_file):
+        wmap = {r["Wolfe"].strip(): r["Team_Name"].strip()
+                for r in csv.DictReader(open(wmap_file, encoding="utf-8-sig")) if r.get("Wolfe")}
+        for g in scores + sched:
+            g["Visitor"] = wmap.get(g["Visitor"], g["Visitor"])
+            g["Home"] = wmap.get(g["Home"], g["Home"])
     print(f"Scores page: {len(scores):,} games" + (f" (through {through.group(1)})" if through else "")
           + (f"; {len(bad)} lines not understood" if bad else ""))
     for b in bad[:10]:

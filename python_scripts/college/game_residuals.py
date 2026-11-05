@@ -84,7 +84,7 @@ def main():
     games = cur.execute(f"""
         SELECT Access_ID, Season, Date, Home, Home_Score, Visitor, Visitor_Score, {neutral}
         FROM dbo.College_Scores
-        WHERE Season BETWEEN ? AND ? AND Home_Score IS NOT NULL AND Visitor_Score IS NOT NULL""",
+        WHERE Season BETWEEN ? AND ? AND Home_Score IS NOT NULL AND Visitor_Score IS NOT NULL AND ISNULL(Forfeit, 0) = 0""",
                         a.first, a.last).fetchall()
     conn.close()
 

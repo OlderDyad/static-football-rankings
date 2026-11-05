@@ -405,6 +405,11 @@ function Generate-ComingSoonPage {
       gtag('js', new Date());
       gtag('config', 'G-GC17GSJ4S0');
     </script>
+    <link rel="icon" href="/static-football-rankings/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/static-football-rankings/images/icons/icon.svg">
+    <link rel="apple-touch-icon" href="/static-football-rankings/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/static-football-rankings/site.webmanifest">
+    <meta name="theme-color" content="#1b5e20">
 </head>
 <body>
     <div class="header-banner">

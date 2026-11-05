@@ -48,7 +48,7 @@ def main():
     conn = pyodbc.connect(CONN)
     cur = conn.cursor()
     print("Reading games ...")
-    games = cur.execute("SELECT Season, Home, Visitor FROM dbo.College_Scores WHERE Season >= ?", a.first).fetchall()
+    games = cur.execute("SELECT Season, Home, Visitor FROM dbo.College_Scores WHERE Season >= ? AND ISNULL(Forfeit, 0) = 0", a.first).fetchall()
     print("Reading ratings (latest week per season) ...")
     rat = cur.execute("""
         SELECT r.Season, r.Home,

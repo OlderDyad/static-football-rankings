@@ -380,6 +380,11 @@ def generate_team_page(team_data, recognition_type, improvement=None, previous_b
             margin: 2rem 0;
         }}
     </style>
+    <link rel="icon" href="/static-football-rankings/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/static-football-rankings/images/icons/icon.svg">
+    <link rel="apple-touch-icon" href="/static-football-rankings/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/static-football-rankings/site.webmanifest">
+    <meta name="theme-color" content="#1b5e20">
 </head>
 <body>
     <!-- Navigation -->
@@ -694,6 +699,11 @@ def generate_index_page(recognition_df):
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }}
     </style>
+    <link rel="icon" href="/static-football-rankings/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/static-football-rankings/images/icons/icon.svg">
+    <link rel="apple-touch-icon" href="/static-football-rankings/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/static-football-rankings/site.webmanifest">
+    <meta name="theme-color" content="#1b5e20">
 </head>
 <body>
     <!-- Navigation -->

@@ -1,0 +1,78 @@
+# HS / College Name Detangling
+
+Started 2026-10-29. Purpose: find and fix games where a COLLEGE team and a HIGH SCHOOL team share a name
+(e.g. "Saint Louis University (MO)" = SLUH the high school, and Saint Louis University the college), so that
+games are filed under the wrong team in HS_Scores and/or College_Scores. Secondary goal: once clean, use the
+teams rated in BOTH systems to measure (and later anchor) the offset between the college and HS rating scales.
+
+Rules (same as the college workflow): preview first, commit second; scripts in python_scripts/ (preview by
+default, --commit to apply); fixes by Access_ID / ID; never just delete -- move to the Duplicates table with a
+reason; SQL is given in the chat for copy/paste. College and HS rating runs must never overlap.
+
+## 1. How the two systems are linked
+
+- `College_Team_Names.HS_Team_Name` = the name the college has in the HS tables (HS_Scores / HS_Rankings).
+- Routing rule: a game goes to College_Scores when at least one team is a college varsity, and to HS_Scores
+  when at least one team is a high school varsity; college vs HS = both tables.
+- Rating tables: `College_Rankings` and `HS_Rankings` (Season, Week, Home, Avg_Of_Avg_Of_Home_Modified_Score;
+  final week = MAX(Week) per season).
+
+## 2. The measurement that started this (2026-10-29)
+
+gap = college rating - HS rating, for every college rated in both tables in the same season.
+Because each table's zero is its own average team, the gap measures the distance between the two scales.
+
+Result by era (before any cleaning): 1894-1910 about -15 to -35; 1911-1919 about -41 to -47 (a real ~15-point
+shift, 15-22 teams per year); 1920-1990 about -5 to -20 (mean about -13); sd about 25 throughout.
+
+Query (season summary; add `ORDER BY` / filters as needed):
+
+```sql
+WITH c AS (
+  SELECT r.Season, r.Home AS College, n.HS_Team_Name, r.Avg_Of_Avg_Of_Home_Modified_Score AS College_Rating
+  FROM dbo.College_Rankings r
+  JOIN (SELECT Season, MAX(Week) AS W FROM dbo.College_Rankings GROUP BY Season) w ON w.Season = r.Season AND w.W = r.Week
+  JOIN dbo.College_Team_Names n ON n.Team_Name = r.Home
+  WHERE n.HS_Team_Name IS NOT NULL AND n.Kind = 'College'),
+h AS (
+  SELECT r.Season, r.Home AS HS_Name, r.Avg_Of_Avg_Of_Home_Modified_Score AS HS_Rating
+  FROM dbo.HS_Rankings r
+  JOIN (SELECT Season, MAX(Week) AS W FROM dbo.HS_Rankings GROUP BY Season) w ON w.Season = r.Season AND w.W = r.Week)
+SELECT c.Season, COUNT(*) AS teams_in_both,
+       CAST(AVG(c.College_Rating - h.HS_Rating) AS decimal(6,1)) AS avg_gap,
+       CAST(STDEV(c.College_Rating - h.HS_Rating) AS decimal(6,1)) AS sd_gap
+FROM c JOIN h ON h.Season = c.Season AND h.HS_Name = c.HS_Team_Name
+GROUP BY c.Season ORDER BY c.Season;
+```
+
+## 3. Known / suspected collisions (from the outlier list, 2026-10-29)
+
+Same-name HIGH SCHOOLS (the HS table's team is a different school):
+- Saint Louis University (MO) -- SLUH (St. Louis University High School). Fix: rename the HS team (add "High").
+- Memphis University (TN) -- Memphis University School (MUS), a high school. 1916, 1917, 1962, 2003, 2024-26 rows.
+- Boston College (MA) -- Boston College High School. 2024-26 rows (+31 to +68 gap).
+- Likely the same pattern in other university towns: check Temple University (PA) (Temple's prep / HS
+  department, 1904-1932 rows swing both ways), Loyola College (LA) (1923), Jefferson College (LA) (1920),
+  Pittsburgh College (PA) (1908: in the newspaper map "Pittsburgh College" = Pitt; Pittsburgh Catholic
+  College = Duquesne -- check), York University (NE), Spokane University (WA), Marquette University (WI) (1931).
+
+College JV / B teams in the HS table under the varsity name (gap steady about -30, 2003-2010):
+- Rowan, The College of New Jersey, Montclair St, Kean, William Paterson, La Salle, Muhlenberg, Buffalo St,
+  Morrisville St. The HS table's games are probably the colleges' JV schedules against high schools / prep
+  schools; they should sit under "<College> JV", not the varsity name.
+
+Single teams with |gap - season average| > 60 (1903-1958): about 90 rows; each is either a collision, a
+mis-filed game, or a college whose HS-side rating rests on 1-2 games. List with the outlier query (section 2
+query + `ABS(gap - season_avg) > 60`).
+
+## 4. Proposed workflow
+
+1. Inventory: every HS_Team_Name that is ALSO used by a team playing a mostly-HS schedule (opponent Kind mix
+   by season) -> candidate collisions. Start with the list in section 3.
+2. Per name: list its HS_Scores games by season with opponents; decide by opponent type / era which games are
+   the college and which the high school (as done for Wayne St, Trinity, Bethel in College_Scores).
+3. Rename the high school's games to a distinct HS name ("Saint Louis University High (MO)", "Memphis
+   University School (TN)", "Boston College High (MA)"); move college JV games to "<College> JV".
+4. Re-run the gap query; then weight by games on the HS side and fit an era offset.
+5. Decide on anchoring: simple era offset, seeding thin early college seasons from the HS scale, or a joint
+   1890-1925 rating run.

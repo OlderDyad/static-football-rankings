@@ -1,0 +1,215 @@
+"""
+hs_college_detangle.py  -- run on Windows. Preview by default; --commit applies.
+
+Untangles HS_Scores rows where a college and a high school share one HS-table name
+(SLUH vs Saint Louis University, MUS vs Memphis, BC High vs Boston College ...).
+Reads a plan file (default hs_college_detangle_plan.csv), one row per HS_Scores game, by HS_Scores.ID:
+
+  DUP          college-vs-college game already in College_Scores (Keep_Access_ID):
+               HS row -> HS_Scores_Duplicate_Archive (KeptID = that College_Scores.ID) + change log,
+               then deleted from HS_Scores. Dispute = 1 also sets College_Scores.Score_Disputed.
+  RENAME       college-vs-HS game: Old_Name side of the HS row -> New_Name (row stays in HS_Scores)
+  RENAME+COPY  as RENAME, and the game is inserted into College_Scores as College_Name vs the
+               opponent's college-table name (College_Team_Names.HS_Team_Name link, else the HS
+               name, added as Kind HS/Prep)
+  HSDUP        HS-vs-HS duplicate exposed by a name merge: HS row -> HS_Scores_Duplicate_Archive
+               (KeptID = Keep_HS_ID, the surviving HS_Scores row, which must exist) + change log, deleted
+  JUNK         not a real game (e.g. a Saylor season W-L read as a score): archived with
+               KeptID = its own ID (nothing kept) + change log, deleted
+  CHECK        listed only, never changed
+
+  --link "St Louis=Saint Louis University College (MO)"
+               also sets College_Team_Names.HS_Team_Name for that college (commit only)
+  --plan FILE  another plan file (Memphis, Boston College, ...)
+
+Every row is re-checked against the database first (still there, same season, Old_Name on one
+side); any mismatch stops the run. One transaction; counts checked before COMMIT.
+
+Usage:  python hs_college_detangle.py --link "St Louis=Saint Louis University College (MO)"
+        python hs_college_detangle.py --link "St Louis=Saint Louis University College (MO)" --commit
+"""
+import argparse, csv, os, re, uuid
+
+import pyodbc
+
+CONN = ("DRIVER={ODBC Driver 17 for SQL Server};SERVER=MCKNIGHTS-PC\\SQLEXPRESS01;"
+        "DATABASE=hs_football_database;Trusted_Connection=yes;TrustServerCertificate=yes;")
+HERE = os.path.dirname(os.path.abspath(__file__))
+SCRIPT = "hs_college_detangle.py"
+HS_COLS = ("ID, [Date], Season, Home, Visitor, Neutral, Location, Location2, Line, Future_Game, "
+           "Source, Date_Added, OT, Forfeit, Visitor_Score, Home_Score, Margin, BatchID, Access_ID")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--plan", default="hs_college_detangle_plan.csv")
+    ap.add_argument("--link", default=None, help='"College=HS name" for College_Team_Names.HS_Team_Name')
+    ap.add_argument("--commit", action="store_true")
+    a = ap.parse_args()
+
+    plan = list(csv.DictReader(open(os.path.join(HERE, a.plan), encoding="utf-8-sig")))
+    conn = pyodbc.connect(CONN)
+    cur = conn.cursor()
+
+    # ---- check every row against the database ----
+    problems, rows = [], []
+    for p in plan:
+        act = p["Action"].strip().upper()
+        g = cur.execute("SELECT ID, [Date], Season, Home, Home_Score, Visitor, Visitor_Score, Source "
+                        "FROM dbo.HS_Scores WHERE Season = ? AND ID = ?", int(p["Season"]), p["HS_ID"]).fetchone()
+        if not g:
+            problems.append(f"{p['HS_ID']} ({p['Season']}): not in HS_Scores")
+            continue
+        old = p["Old_Name"]
+        side = "Home" if g.Home == old else "Visitor" if g.Visitor == old else None
+        if not side:
+            problems.append(f"{p['HS_ID']}: '{old}' not on either side ({g.Home} / {g.Visitor})")
+            continue
+        opp = g.Visitor if side == "Home" else g.Home
+        col = None
+        if p.get("Keep_Access_ID"):
+            col = cur.execute("SELECT ID, Access_ID, [Date], Home, Home_Score, Visitor, Visitor_Score "
+                              "FROM dbo.College_Scores WHERE Access_ID = ?", int(p["Keep_Access_ID"])).fetchone()
+            if not col:
+                problems.append(f"{p['HS_ID']}: College_Scores Access_ID {p['Keep_Access_ID']} not found")
+                continue
+        keep = None
+        if act == "HSDUP":
+            if not p.get("Keep_HS_ID"):
+                problems.append(f"{p['HS_ID']}: HSDUP needs Keep_HS_ID")
+                continue
+            keep = cur.execute("SELECT ID, [Date], Home, Home_Score, Visitor, Visitor_Score FROM dbo.HS_Scores "
+                               "WHERE Season = ? AND ID = ?", int(p["Season"]), p["Keep_HS_ID"]).fetchone()
+            if not keep:
+                problems.append(f"{p['HS_ID']}: kept HS row {p['Keep_HS_ID']} not found")
+                continue
+            col = keep
+        if act == "JUNK":
+            col = None
+        if act == "DUP" and not col:
+            problems.append(f"{p['HS_ID']}: DUP needs Keep_Access_ID")
+            continue
+        if act in ("RENAME", "RENAME+COPY") and not p["New_Name"]:
+            problems.append(f"{p['HS_ID']}: {act} needs New_Name")
+            continue
+        rows.append((p, act, g, side, opp, col))
+
+    print(f"{'Season':6} {'Action':12} {'Date':10}  Game (HS_Scores)  ->  College_Scores")
+    for p, act, g, side, opp, col in rows:
+        game = f"{g.Home} {g.Home_Score}-{g.Visitor_Score} {g.Visitor}"
+        c = ("[archive, nothing kept]" if act == "JUNK" else
+             f"[HS keep] {col.Date} {col.Home} {col.Home_Score}-{col.Visitor_Score} {col.Visitor}" if act == "HSDUP"
+             else f"[{col.Access_ID}] {col.Date} {col.Home} {col.Home_Score}-{col.Visitor_Score} {col.Visitor}"
+             if col else "")
+        flag = "  + Score_Disputed" if p.get("Dispute") == "1" else ""
+        print(f"{g.Season:<6} {act:12} {str(g.Date):10}  {game}\n{'':31}{c}{flag}  ({p['Note']})")
+    for x in problems:
+        print("  PROBLEM:", x)
+    n = {k: sum(1 for r in rows if r[1] == k) for k in ("DUP", "HSDUP", "JUNK", "RENAME", "RENAME+COPY", "CHECK")}
+    print(f"\n{n['DUP']} to archive (college kept), {n['HSDUP']} to archive (HS row kept), {n['JUNK']} junk to archive, {n['RENAME']} to rename, {n['RENAME+COPY']} to rename + copy, "
+          f"{n['CHECK']} CHECK (left alone)")
+    if a.link:
+        print(f"College_Team_Names link: {a.link}")
+    if problems:
+        print("Fix the problems above first -- nothing applied.")
+        return
+    if not a.commit:
+        print("\nPreview only. Re-run with --commit to apply.")
+        return
+
+    # ---- commit ----
+    colinfo = {r[0]: r for r in cur.execute("""
+        SELECT c.name, c.is_identity, c.is_computed, t.name, c.default_object_id
+        FROM sys.columns c JOIN sys.types t ON t.user_type_id = c.user_type_id
+        WHERE c.object_id = OBJECT_ID('dbo.College_Scores')""")}
+    next_aid = max((cur.execute("SELECT MAX(Access_ID) FROM dbo.College_Scores").fetchone()[0] or 0) + 1, 900000000)
+    run_id, done = str(uuid.uuid4()), {"DUP": 0, "HSDUP": 0, "JUNK": 0, "RENAME": 0, "RENAME+COPY": 0, "COPY": 0, "FLAG": 0}
+    try:
+        for p, act, g, side, opp, col in rows:
+            gid, season = str(g.ID), int(g.Season)
+            if act in ("DUP", "HSDUP", "JUNK"):
+                if act == "JUNK":
+                    params = f"{SCRIPT} {a.plan}: not a real game, nothing kept (KeptID = own ID)"[:400]
+                    reason = f"not a real game: {p['Note']}"
+                    keep_id, keep_date = gid, g.Date
+                elif act == "DUP":
+                    params = (f"{SCRIPT} {a.plan}: college game kept in College_Scores "
+                              f"Access_ID {col.Access_ID} (KeptID = College_Scores.ID)")[:400]
+                    reason = f"HS/college detangle: college game, kept College_Scores Access_ID {col.Access_ID}"
+                else:
+                    params = f"{SCRIPT} {a.plan}: duplicate exposed by name merge (KeptID = HS_Scores.ID)"[:400]
+                    reason = f"name-merge duplicate of HS_Scores {col.ID} ({p['Note']})"
+                cur.execute(f"""INSERT INTO dbo.HS_Scores_Duplicate_Archive
+                        (RunID, RunAt, RunParams, KeptID, DayGap, {HS_COLS})
+                    SELECT ?, GETDATE(), ?, ?, ABS(DATEDIFF(day, s.[Date], ?)), {HS_COLS.replace('ID,', 's.ID,', 1)}
+                    FROM dbo.HS_Scores s WHERE s.Season = ? AND s.ID = ?""",
+                            run_id, params, keep_id if act == "JUNK" else str(col.ID),
+                            keep_date if act == "JUNK" else col.Date, season, gid)
+                if cur.rowcount != 1:
+                    raise RuntimeError(f"archive failed for {gid}")
+                cur.execute("""INSERT INTO dbo.HS_Scores_Change_Log
+                        (ScoresID, InvestigationID, FieldChanged, OldValue, NewValue, Reason, Script)
+                    VALUES (?, NULL, 'ROW_DELETED', ?, NULL, ?, ?)""", gid,
+                            f"Season={season}, Date={g.Date}, Home='{g.Home}', Home_Score={g.Home_Score}, "
+                            f"Visitor='{g.Visitor}', Visitor_Score={g.Visitor_Score}"[:255],
+                            reason[:255], SCRIPT)  # noqa
+                cur.execute("DELETE FROM dbo.HS_Scores WHERE Season = ? AND ID = ?", season, gid)
+                if cur.rowcount != 1:
+                    raise RuntimeError(f"delete failed for {gid}")
+                done[act] += 1
+                if act == "DUP" and p.get("Dispute") == "1":
+                    cur.execute("UPDATE dbo.College_Scores SET Score_Disputed = 1 WHERE Access_ID = ?", col.Access_ID)
+                    done["FLAG"] += cur.rowcount
+            elif act in ("RENAME", "RENAME+COPY"):
+                new = p["New_Name"]
+                cur.execute(f"UPDATE dbo.HS_Scores SET [{side}] = ? WHERE Season = ? AND ID = ? AND [{side}] = ?",
+                            new, season, gid, p["Old_Name"])
+                if cur.rowcount != 1:
+                    raise RuntimeError(f"rename failed for {gid}")
+                cur.execute("""INSERT INTO dbo.HS_Scores_Change_Log
+                        (ScoresID, InvestigationID, FieldChanged, OldValue, NewValue, Reason, Script)
+                    VALUES (?, NULL, ?, ?, ?, ?, ?)""", gid, side, p["Old_Name"], new,
+                            f"HS/college detangle: {p['Note']}"[:255], SCRIPT)
+                done[act] += 1
+                if act == "RENAME+COPY":
+                    college = p["College_Name"]
+                    hit = cur.execute("SELECT TOP 1 Team_Name FROM dbo.College_Team_Names "
+                                      "WHERE HS_Team_Name = ? OR Team_Name = ? ORDER BY CASE WHEN Team_Name = ? THEN 1 ELSE 0 END",
+                                      opp, opp, opp).fetchone()
+                    opp_c = hit[0] if hit else opp
+                    if not hit:
+                        st = re.search(r"\(([A-Z]{2})\)\s*$", opp)
+                        cur.execute("INSERT INTO dbo.College_Team_Names (Team_Name, Kind, State, State_Source, HS_Team_Name) "
+                                    "VALUES (?, 'HS/Prep', ?, 'name suffix', ?)", opp, st.group(1) if st else None, opp)
+                        print(f"  added College_Team_Names {opp} (HS/Prep)")
+                    H, V = (college, opp_c) if side == "Home" else (opp_c, college)
+                    vals = {"Access_ID": next_aid, "Date": g.Date, "Season": season, "Home": H, "Visitor": V,
+                            "Home_Score": g.Home_Score, "Visitor_Score": g.Visitor_Score,
+                            "Margin": g.Home_Score - g.Visitor_Score, "Neutral": 0, "Future_Game": 0,
+                            "Source": f"Newspaper: {g.Source}"[:255] if g.Source else "HS_Scores copy"}
+                    next_aid += 1
+                    if "ID" in colinfo and colinfo["ID"][3] == "uniqueidentifier" and not colinfo["ID"][4]:
+                        vals["ID"] = str(uuid.uuid4())
+                    vals = {k: x for k, x in vals.items() if k in colinfo and not colinfo[k][1] and not colinfo[k][2]}
+                    cur.execute(f"INSERT INTO dbo.College_Scores ({', '.join('[' + k + ']' for k in vals)}) "
+                                f"VALUES ({','.join('?' * len(vals))})", *vals.values())
+                    done["COPY"] += 1
+        if a.link:
+            college, hs = [x.strip() for x in a.link.split("=", 1)]
+            cur.execute("UPDATE dbo.College_Team_Names SET HS_Team_Name = ? WHERE Team_Name = ?", hs, college)
+            if cur.rowcount != 1:
+                raise RuntimeError(f"link: College_Team_Names '{college}' not found")
+        if any(done[k] != n[k] for k in ("DUP", "HSDUP", "JUNK", "RENAME", "RENAME+COPY")):
+            raise RuntimeError(f"count mismatch {done}")
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        print("ROLLED BACK -- nothing changed.")
+        raise
+    print(f"Committed: {done['DUP'] + done['HSDUP'] + done['JUNK']} archived + deleted (RunID {run_id}), {done['RENAME'] + done['RENAME+COPY']} renamed, "
+          f"{done['COPY']} copied to College_Scores, {done['FLAG']} flagged Score_Disputed"
+          + (", link updated." if a.link else "."))
+
+
+if __name__ == "__main__":
+    main()
