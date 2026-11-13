@@ -1,0 +1,52 @@
+
+>>> dedup NE --commit
+
+DEDUP v4 NE - COMMIT
+ dedup_archive: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_archive_COMMITTED_20261106_1230.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_review_COMMITTED_20261106_1230.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_summary_COMMITTED_20261106_1230.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NE     100566        2                    0                99D4C62F-36DB-4432-9C12-4757AAFB33CB
+
+>>> step NE 1.1 "in progress" "round 1 (26 rules) + round 2 (town names of county schools) 2026-11-06"
+Tracker updated: NE 1.1 -> in progress
+
+>>> step NE 1.2 done "11 MaxPreps URLs pointed back at long-standing names"
+Tracker updated: NE 1.2 -> done
+
+>>> step NE 1.3 done "same-town pairs are real separate schools (Omaha/Lincoln); West Point CC -> Guardian Angels merged"
+Tracker updated: NE 1.3 -> done
+
+>>> step NE 1.4 "in progress" "co-ops split by year (17 families); NP St. Patrick's -> O'Neill St. Mary's 338; Kimball (NE) -> Kimball (SD) 126; Polk-Hordville 1970-85 left"
+Tracker updated: NE 1.4 -> in progress
+
+>>> step NE 2.1 done "dedup 133 + 187 + 2"
+Tracker updated: NE 2.1 -> done
+
+>>> step NE 2.2 done "review pairs 4 + 32"
+Tracker updated: NE 2.2 -> done
+
+>>> step NE 2.3 "in progress" "same-score 514 archived; Source '0' import (2015-17) misnames opponents"
+Tracker updated: NE 2.3 -> in progress
+
+>>> query NE season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_season_date_1_20261106_1230.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_season_date_2_20261106_1230.csv
+
+>>> query NE forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_forfeits_1_20261106_1230.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_forfeits_2_20261106_1230.csv
+
+>>> query NE college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_college_check_1_20261106_1230.csv
+ set 2: 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_college_check_2_20261106_1230.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_college_check_3_20261106_1230.csv
+ set 4: 264 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_college_check_4_20261106_1230.csv
+
+=== OK 2026-11-06 12:30:50

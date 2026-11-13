@@ -1,0 +1,1091 @@
+
+>>> remap MI --url "https://www.maxpreps.com/mi/ada/forest-hills-eastern-hawks/football/schedule/" --to "Ada Forest Hills Eastern (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/ada/forest-hills-eastern-hawks/football/schedule/ -> Ada Forest Hills Eastern (MI) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/mi/ada/forest-h  Ada Forest Hills (MI)  16908    Ada Forest Hills Eastern (MI)  70146     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/ann-arbor/huron-river-rats/football/schedule/" --to "Ann Arbor Huron (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/ann-arbor/huron-river-rats/football/schedule/ -> Ann Arbor Huron (MI) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName         NewTeam_ID
+   https://www.maxpreps.com/mi/ann-arbor/hu  Ann Arbor Huron River (MI)  44104    Ann Arbor Huron (MI)  58976     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/bessemer/gogebic-johnston-wakefield-miners/football/schedule/" --to "Bessemer (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/bessemer/gogebic-johnston-wakefield-miners/football/schedule/ -> Bessemer (MI) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/mi/bessemer/gog  Bessemer Gogebic Johnston (MI)  30781    Bessemer (MI)  59650     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/calumet/calumet-copper-kings/football/schedule/" --to "Calumet (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/calumet/calumet-copper-kings/football/schedule/ -> Calumet (MI) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/mi/calumet/calu  Calumet Copper (MI)  20578    Calumet (MI)   60155     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/detroit/central-trail-blazers/football/schedule/" --to "Detroit Central Collegiate (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/detroit/central-trail-blazers/football/schedule/ -> Detroit Central Collegiate (MI) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/mi/detroit/cent  Detroit Central Trail (MI)  18701    Detroit Central Collegiate (MI)  61446     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/detroit/ford-trojans/football/schedule/" --to "Detroit Henry Ford (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/detroit/ford-trojans/football/schedule/ -> Detroit Henry Ford (MI) - COMMIT
+   URL                                       ProperName         Team_ID  NewProperName            NewTeam_ID
+   https://www.maxpreps.com/mi/detroit/ford  Detroit Ford (MI)  45510    Detroit Henry Ford (MI)  61462     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/detroit/king-crusaders/football/schedule/" --to "Detroit Martin Luther King (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/detroit/king-crusaders/football/schedule/ -> Detroit Martin Luther King (MI) - COMMIT
+   URL                                       ProperName         Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/mi/detroit/king  Detroit King (MI)  21005    Detroit Martin Luther King (MI)  61469     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/detroit/university-of-detroit-jesuit-cubs/football/schedule/" --to "Detroit University of Detroit Jesuit (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/detroit/university-of-detroit-jesuit-cubs/football/schedule/ -> Detroit University of Detroit Jesuit (MI) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/mi/detroit/univ  Detroit University Of (MI)  40044    Detroit University of Detroit Jesuit (MI  61500     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/dowagiac/dowagiac-chieftains/football/schedule/" --to "Dowagiac Union (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/dowagiac/dowagiac-chieftains/football/schedule/ -> Dowagiac Union (MI) - COMMIT
+   URL                                       ProperName     Team_ID  NewProperName        NewTeam_ID
+   https://www.maxpreps.com/mi/dowagiac/dow  Dowagiac (MI)  35935    Dowagiac Union (MI)  61556     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/flint/flint-southwestern-academy-knights/football/schedule/" --to "Flint Southwestern Classical Academy (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/flint/flint-southwestern-academy-knights/football/schedule/ -> Flint Southwestern Classical Academy (MI) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/mi/flint/flint-  Flint Southwestern Academy (MI)  10582    Flint Southwestern Classical Academy (MI  62128     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/grosse-pointe/grosse-pointe-north-norsemen/football/schedule/" --to "Grosse Pointe North (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/grosse-pointe/grosse-pointe-north-norsemen/football/schedule/ -> Grosse Pointe North (MI) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/mi/grosse-point  Grosse Pointe Pointe North (MI)  36519    Grosse Pointe North (MI)  62720     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/grosse-pointe/grosse-pointe-south-blue-devils/football/schedule/" --to "Grosse Pointe South (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/grosse-pointe/grosse-pointe-south-blue-devils/football/schedule/ -> Grosse Pointe South (MI) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/mi/grosse-point  Grosse Pointe Pointe South (MI)  20841    Grosse Pointe South (MI)  62721     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/ironwood/wright-red-devils/football/schedule/" --to "Ironwood Luther L Wright (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/ironwood/wright-red-devils/football/schedule/ -> Ironwood Luther L Wright (MI) - COMMIT
+   URL                                       ProperName     Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/mi/ironwood/wri  Ironwood (MI)  63425    Ironwood Luther L Wright (MI)  63426     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/kalamazoo/norrix-knights/football/schedule/" --to "Kalamazoo Loy Norrix (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/kalamazoo/norrix-knights/football/schedule/ -> Kalamazoo Loy Norrix (MI) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/mi/kalamazoo/no  Kalamazoo Norrix (MI)  25351    Kalamazoo Loy Norrix (MI)  63607     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/middleton/fulton-pirates/football/schedule/" --to "Middleton Fulton (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/middleton/fulton-pirates/football/schedule/ -> Middleton Fulton (MI) - COMMIT
+   URL                                       ProperName      Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/mi/middleton/fu  Middleton (MI)  46854    Middleton Fulton (MI)  65196     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/mt-morris/mt-morris-panthers/football/schedule/" --to "Mount Morris EA Johnson (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/mt-morris/mt-morris-panthers/football/schedule/ -> Mount Morris EA Johnson (MI) - COMMIT
+   URL                                       ProperName         Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/mi/mt-morris/mt  Mount Morris (MI)  65571    Mount Morris EA Johnson (MI)  65573     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/st-ignace/stignace-saints/football/schedule/" --to "Saint Ignace LaSalle (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/st-ignace/stignace-saints/football/schedule/ -> Saint Ignace LaSalle (MI) - COMMIT
+   URL                                       ProperName         Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/mi/st-ignace/st  Saint Ignace (MI)  840      Saint Ignace LaSalle (MI)  22255     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/wayland/wayland-wildcats/football/schedule/" --to "Wayland Union (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/wayland/wayland-wildcats/football/schedule/ -> Wayland Union (MI) - COMMIT
+   URL                                       ProperName    Team_ID  NewProperName       NewTeam_ID
+   https://www.maxpreps.com/mi/wayland/wayl  Wayland (MI)  38623    Wayland Union (MI)  69572     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/bay-city/glenn-bobcats/football/schedule/" --to "Bay City John Glenn (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/bay-city/glenn-bobcats/football/schedule/ -> Bay City John Glenn (MI) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/mi/bay-city/gle  Bay City Glenn (MI)  1082     Bay City John Glenn (MI)  59457     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/byron/byron-eagles/football/schedule/" --to "Byron Area (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/byron/byron-eagles/football/schedule/ -> Byron Area (MI) - COMMIT
+   URL                                       ProperName  Team_ID  NewProperName    NewTeam_ID
+   https://www.maxpreps.com/mi/byron/byron-  Byron (MI)  38146    Byron Area (MI)  60119     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/carson-city/carson-city-crystal-eagles/football/schedule/" --to "Carson City-Crystal (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/carson-city/carson-city-crystal-eagles/football/schedule/ -> Carson City-Crystal (MI) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/mi/carson-city/  Carson City Carson City (MI)  4753     Carson City-Crystal (MI)  60287     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/detroit/consortium-college-prep-cougars/football/schedule/" --to "Detroit Consortium College Prep (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/detroit/consortium-college-prep-cougars/football/schedule/ -> Detroit Consortium College Prep (MI) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/mi/detroit/cons  Detroit Consortium College (MI)  21931    Detroit Consortium College Prep (MI)  61452     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/iron-river/west-iron-county-wykons/football/schedule/" --to "Iron River West Iron County (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/iron-river/west-iron-county-wykons/football/schedule/ -> Iron River West Iron County (MI) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/mi/iron-river/w  Iron River West Iron (MI)  12502    Iron River West Iron County (MI)  63421     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/madison-heights/bishop-foley-ventures/football/schedule/" --to "Madison Heights Bishop Foley Catholic (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/madison-heights/bishop-foley-ventures/football/schedule/ -> Madison Heights Bishop Foley Catholic (MI) - COMMIT
+   URL                                       ProperName                         Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/mi/madison-heig  Madison Heights Bishop Foley (MI)  21963    Madison Heights Bishop Foley Catholic (M  64694     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/mt-pleasant/sacred-heart-academy-irish/football/schedule/" --to "Mount Pleasant Sacred Heart Academy (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/mt-pleasant/sacred-heart-academy-irish/football/schedule/ -> Mount Pleasant Sacred Heart Academy (MI) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/mi/mt-pleasant/  Mount Pleasant Sacred Heart (MI)  19747    Mount Pleasant Sacred Heart Academy (MI)  65583     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/norton-shores/mona-shores-sailors/football/schedule/" --to "Muskegon Mona Shores (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/norton-shores/mona-shores-sailors/football/schedule/ -> Muskegon Mona Shores (MI) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/mi/norton-shore  Norton Shores Mona Shores (MI)  3806     Muskegon Mona Shores (MI)  65656     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/novi/catholic-central-shamrocks/football/schedule/" --to "Detroit Catholic Central (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/novi/catholic-central-shamrocks/football/schedule/ -> Detroit Catholic Central (MI) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/mi/novi/catholi  Novi Catholic Central (MI)  45423    Detroit Catholic Central (MI)  61445     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/otisville/lakeville-falcons/football/schedule/" --to "Otisville LakeVille Memorial (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/otisville/lakeville-falcons/football/schedule/ -> Otisville LakeVille Memorial (MI) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/mi/otisville/la  Otisville Lakeville (MI)  17049    Otisville LakeVille Memorial (MI)  66388     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/scottville/mason-county-central-spartans/football/schedule/" --to "Scottville Mason County Central (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/scottville/mason-county-central-spartans/football/schedule/ -> Scottville Mason County Central (MI) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/mi/scottville/m  Scottville Mason County (MI)  22365    Scottville Mason County Central (MI)  68000     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/standish/standish-sterling-panthers/football/schedule/" --to "Standish-Sterling Central (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/standish/standish-sterling-panthers/football/schedule/ -> Standish-Sterling Central (MI) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/mi/standish/sta  Standish St. erling (MI)  6671     Standish-Sterling Central (MI)  68427     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MI --url "https://www.maxpreps.com/mi/parma/western-panthers/football/schedule/" --to "Parma Jackson County Western (MI)" --commit
+
+REMAP https://www.maxpreps.com/mi/parma/western-panthers/football/schedule/ -> Parma Jackson County Western (MI) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/mi/parma/wester  Parma Western (MI)  23454    Parma Jackson County Western (MI)  66539     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck MI --commit
+
+MAPPING CHECK MI - COMMIT (Team_ID set to the ProperName ID)
+ 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_mapcheck_COMMITTED_20261112_0617.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/mi/sebewaing/un  Sebewaing Unionville Sebewaing (MI)  4935     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mi/westland/gle  Westland Glenn (MI)                  27402    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mi/addison/addi  Addison (MI)                         70134    58760   Team_ID points to another name   Adrian B (MI)                           
+   https://www.maxpreps.com/mi/ann-arbor/sk  Ann Arbor Skyline (MI)               58979    58978   Team_ID points to another name   Ann Arbor University High (MI)          
+   https://www.maxpreps.com/mi/auburn/bay-c  Auburn Bay City (MI)                 59460    18601   Team_ID points to another name   Bay City St. Mary (MI)                  
+   https://www.maxpreps.com/mi/bay-city/cen  Bay City Central (MI)                59458    59455   Team_ID points to another name   Bay City St. James (MI)                 
+   https://www.maxpreps.com/mi/benton-harbo  Benton Harbor (MI)                   59617    59616   Team_ID points to another name   Benton Harbor St. John (MI)             
+   https://www.maxpreps.com/mi/burton/bentl  Burton Bentley (MI)                  60119    60099   Team_ID points to another name   Byron Area (MI)                         
+   https://www.maxpreps.com/mi/center-line/  Center Line (MI)                     60360    60359   Team_ID points to another name   Center Line St. Clement (MI)            
+   https://www.maxpreps.com/mi/coldwater/co  Coldwater (MI)                       60899    60897   Team_ID points to another name   Coldwater St. Charles (MI)              
+   https://www.maxpreps.com/mi/dearborn-hei  Dearborn Heights Robichaud (MI)      61334    61333   Team_ID points to another name   Dearborn Heights Star International Acad
+   https://www.maxpreps.com/mi/detroit/detr  Detroit Community (MI)               61452    61451   Team_ID points to another name   Detroit Consortium College Prep (MI)    
+   https://www.maxpreps.com/mi/detroit/denb  Detroit Denby (MI)                   61455    72067   Team_ID points to another name   Detroit Denby Tech Prep (MI)            
+   https://www.maxpreps.com/mi/detroit/rena  Detroit Renaissance (MI)             61485    61480   Team_ID points to another name   Detroit St. Andrew (MI)                 
+   https://www.maxpreps.com/mi/detroit/west  Detroit Western International (MI)   61505    61504   Team_ID points to another name   Detroit Westside Christian Academy (MI) 
+   https://www.maxpreps.com/mi/eben-junctio  Eben Junction Superior Central (MI)  61685    61682   Team_ID points to another name   Ecorse (MI)                             
+   https://www.maxpreps.com/mi/ecorse/ecors  Ecorse (MI)                          61686    61685   Team_ID points to another name   Ecorse St. Francis Xavier (MI)          
+   https://www.maxpreps.com/mi/elk-rapids/e  Elk Rapids (MI)                      54408    61770   Team_ID points to another name   Elkhart (IN)                            
+   https://www.maxpreps.com/mi/essexville/g  Essexville Garber (MI)               61896    61895   Team_ID points to another name   Essexville St. John (MI)                
+   https://www.maxpreps.com/mi/ferndale/fer  Ferndale (MI)                        62082    62080   Team_ID points to another name   Ferndale St. James (MI)                 
+   ... 44 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  62       None
+
+>>> consolidate MI --reason "MI round 1: 2024 MaxPreps short names (Ada Forest Hills, Huron River, Calumet Copper, Detroit Central Trail/Ford/King/University Of, Grosse Pointe Pointe North/South, Norrix, Wayland, Dowagiac...), same-school variants (Mount Morris EA Johnson, St. Ignace LaSalle, Ironwood LL Wright, Canton-Salem, Middleton Fulton, Petersburg-Summerfield, Vandercook Lake, Ogemaw Heights, Central Montcalm, Mason County Central, Highland Milford), renames to latest (Montrose -> Hill-McCloy, Western State High -> University High)"
+Consolidating MI from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\MI_Alias_Rules.csv
+
+[stderr]
+2026-11-12 06:17:51,153 - INFO - Starting consolidation for state: (MI) using staging table method.
+2026-11-12 06:17:51,172 - WARNING - WARNING: 782 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 06:17:51,172 - WARNING -   'Ada Forest Hills Eastern (MI)' -> 'Ada Forest Hills Eastern (MI)' (no change)
+2026-11-12 06:17:51,172 - WARNING -   'Addison (MI)' -> 'Addison (MI)' (no change)
+2026-11-12 06:17:51,172 - WARNING -   'Adrian (MI)' -> 'Adrian (MI)' (no change)
+2026-11-12 06:17:51,172 - WARNING -   'Adrian Catholic Central (MI)' -> 'Adrian Catholic Central (MI)' (no change)
+2026-11-12 06:17:51,173 - WARNING -   'Adrian Lenawee Christian (MI)' -> 'Adrian Lenawee Christian (MI)' (no change)
+2026-11-12 06:17:51,173 - WARNING -   'Adrian Madison (MI)' -> 'Adrian Madison (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Akron- Fairgrove (MI)' -> 'Akron- Fairgrove (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Albion (MI)' -> 'Albion (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Algonac (MI)' -> 'Algonac (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Allegan (MI)' -> 'Allegan (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Allen Park (MI)' -> 'Allen Park (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Allen Park Cabrini (MI)' -> 'Allen Park Cabrini (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Allendale (MI)' -> 'Allendale (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Alma (MI)' -> 'Alma (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Almont (MI)' -> 'Almont (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Alpena (MI)' -> 'Alpena (MI)' (no change)
+2026-11-12 06:17:51,174 - WARNING -   'Ann Arbor Father Gabriel Richard (MI)' -> 'Ann Arbor Father Gabriel Richard (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Ann Arbor Huron (MI)' -> 'Ann Arbor Huron (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Ann Arbor Pioneer (MI)' -> 'Ann Arbor Pioneer (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Ann Arbor Skyline (MI)' -> 'Ann Arbor Skyline (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Ann Arbor University High (MI)' -> 'Ann Arbor University High (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Armada (MI)' -> 'Armada (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Ashley (MI)' -> 'Ashley (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Athens (MI)' -> 'Athens (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Atlanta (MI)' -> 'Atlanta (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Au Gres-Sims (MI)' -> 'Au Gres-Sims (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Auburn Hills Avondale (MI)' -> 'Auburn Hills Avondale (MI)' (no change)
+2026-11-12 06:17:51,175 - WARNING -   'Auburn Hills Oakland Christian (MI)' -> 'Auburn Hills Oakland Christian (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Bad Axe (MI)' -> 'Bad Axe (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Baldwin (MI)' -> 'Baldwin (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Bangor (MI)' -> 'Bangor (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Baraga (MI)' -> 'Baraga (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Bark River-Harris (MI)' -> 'Bark River-Harris (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Bath (MI)' -> 'Bath (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Battle Creek Central (MI)' -> 'Battle Creek Central (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Battle Creek Harper Creek (MI)' -> 'Battle Creek Harper Creek (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Battle Creek Lakeview (MI)' -> 'Battle Creek Lakeview (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Battle Creek Pennfield (MI)' -> 'Battle Creek Pennfield (MI)' (no change)
+2026-11-12 06:17:51,176 - WARNING -   'Bay City All Saints Central (MI)' -> 'Bay City All Saints Central (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Bay City Central (MI)' -> 'Bay City Central (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Bay City Handy (MI)' -> 'Bay City Handy (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Bay City John Glenn (MI)' -> 'Bay City John Glenn (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Bay City St. Joseph (MI)' -> 'Bay City St. Joseph (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Bay City St. Stanislaus (MI)' -> 'Bay City St. Stanislaus (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Bay City Western (MI)' -> 'Bay City Western (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Beal City (MI)' -> 'Beal City (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Beaverton (MI)' -> 'Beaverton (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Belding (MI)' -> 'Belding (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Bellaire (MI)' -> 'Bellaire (MI)' (no change)
+2026-11-12 06:17:51,177 - WARNING -   'Belleville (MI)' -> 'Belleville (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Bellevue (MI)' -> 'Bellevue (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Benton Harbor (MI)' -> 'Benton Harbor (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Benton Harbor St. John (MI)' -> 'Benton Harbor St. John (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Benzonia Benzie Central (MI)' -> 'Benzonia Benzie Central (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Berkley (MI)' -> 'Berkley (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Berrien Springs (MI)' -> 'Berrien Springs (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Bessemer (MI)' -> 'Bessemer (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Big Rapids (MI)' -> 'Big Rapids (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Big Rapids Crossroads Charter Academy (MI)' -> 'Big Rapids Crossroads Charter Academy (MI)' (no change)
+2026-11-12 06:17:51,178 - WARNING -   'Birch Run (MI)' -> 'Birch Run (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Birmingham Brother Rice (MI)' -> 'Birmingham Brother Rice (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Birmingham Detroit Country Day (MI)' -> 'Birmingham Detroit Country Day (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Birmingham Groves (MI)' -> 'Birmingham Groves (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Birmingham Seaholm (MI)' -> 'Birmingham Seaholm (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Blanchard Montabella (MI)' -> 'Blanchard Montabella (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Blissfield (MI)' -> 'Blissfield (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Bloomfield Hills (MI)' -> 'Bloomfield Hills (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Bloomfield Hills Andover (MI)' -> 'Bloomfield Hills Andover (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Bloomfield Hills Brother Rice (MI)' -> 'Bloomfield Hills Brother Rice (MI)' (no change)
+2026-11-12 06:17:51,179 - WARNING -   'Bloomfield Hills Cranbrook-Kingswood (MI)' -> 'Bloomfield Hills Cranbrook-Kingswood (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Bloomfield Hills Lahser (MI)' -> 'Bloomfield Hills Lahser (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Bloomingdale (MI)' -> 'Bloomingdale (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Boyne City (MI)' -> 'Boyne City (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Breckenridge (MI)' -> 'Breckenridge (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Brethren (MI)' -> 'Brethren (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Bridgeport (MI)' -> 'Bridgeport (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Bridgman (MI)' -> 'Bridgman (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Brighton (MI)' -> 'Brighton (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Brimley (MI)' -> 'Brimley (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Britton-Deerfield (MI)' -> 'Britton-Deerfield (MI)' (no change)
+2026-11-12 06:17:51,180 - WARNING -   'Britton-Macon (MI)' -> 'Britton-Macon (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Britton-Macon-Deerfield (MI)' -> 'Britton-Macon-Deerfield (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Bronson (MI)' -> 'Bronson (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Brooklyn (MI)' -> 'Brooklyn (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Brooklyn Columbia Central (MI)' -> 'Brooklyn Columbia Central (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Brown City (MI)' -> 'Brown City (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Brownstown Woodhaven (MI)' -> 'Brownstown Woodhaven (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Buchanan (MI)' -> 'Buchanan (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Burr Oak (MI)' -> 'Burr Oak (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Burton Atherton (MI)' -> 'Burton Atherton (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Burton Bendle (MI)' -> 'Burton Bendle (MI)' (no change)
+2026-11-12 06:17:51,181 - WARNING -   'Burton Bentley (MI)' -> 'Burton Bentley (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Byron Area (MI)' -> 'Byron Area (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Byron Center (MI)' -> 'Byron Center (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Byron Center Grand Valley Christian Patriots (MI)' -> 'Byron Center Grand Valley Christian Patriots (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Cadillac (MI)' -> 'Cadillac (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Caledonia (MI)' -> 'Caledonia (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Calumet (MI)' -> 'Calumet (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Camden-Frontier (MI)' -> 'Camden-Frontier (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Canton (MI)' -> 'Canton (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Canton Plymouth (MI)' -> 'Canton Plymouth (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Canton-Salem (MI)' -> 'Canton-Salem (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Capac (MI)' -> 'Capac (MI)' (no change)
+2026-11-12 06:17:51,182 - WARNING -   'Carleton Airport (MI)' -> 'Carleton Airport (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Carney-Nadeau (MI)' -> 'Carney-Nadeau (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Caro (MI)' -> 'Caro (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Carrollton (MI)' -> 'Carrollton (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Carson City (MI)' -> 'Carson City (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Carson City-Crystal (MI)' -> 'Carson City-Crystal (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Carsonville-Port Sanilac (MI)' -> 'Carsonville-Port Sanilac (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Caseville (MI)' -> 'Caseville (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Cass City (MI)' -> 'Cass City (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Cassopolis Ross Beatty (MI)' -> 'Cassopolis Ross Beatty (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Cedar Springs (MI)' -> 'Cedar Springs (MI)' (no change)
+2026-11-12 06:17:51,183 - WARNING -   'Cedarville (MI)' -> 'Cedarville (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Center Line (MI)' -> 'Center Line (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Center Line St. Clement (MI)' -> 'Center Line St. Clement (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Central Lake (MI)' -> 'Central Lake (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Centreville (MI)' -> 'Centreville (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Charlevoix (MI)' -> 'Charlevoix (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Charlotte (MI)' -> 'Charlotte (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Charlotte Alumni (MI)' -> 'Charlotte Alumni (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Cheboygan (MI)' -> 'Cheboygan (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Cheboygan Catholic Central (MI)' -> 'Cheboygan Catholic Central (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Chelsea (MI)' -> 'Chelsea (MI)' (no change)
+2026-11-12 06:17:51,184 - WARNING -   'Chesaning (MI)' -> 'Chesaning (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Clare (MI)' -> 'Clare (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Clarkston (MI)' -> 'Clarkston (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Clarkston Everest Collegiate (MI)' -> 'Clarkston Everest Collegiate (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Clawson (MI)' -> 'Clawson (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Climax-Scotts (MI)' -> 'Climax-Scotts (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Clinton (MI)' -> 'Clinton (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Clinton Boysville (MI)' -> 'Clinton Boysville (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Clinton Township Chippewa Valley (MI)' -> 'Clinton Township Chippewa Valley (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Clinton Township Clintondale (MI)' -> 'Clinton Township Clintondale (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Clio (MI)' -> 'Clio (MI)' (no change)
+2026-11-12 06:17:51,185 - WARNING -   'Coldwater (MI)' -> 'Coldwater (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Coldwater St. Charles (MI)' -> 'Coldwater St. Charles (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Coleman (MI)' -> 'Coleman (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Coloma (MI)' -> 'Coloma (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Colon (MI)' -> 'Colon (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Comstock Park (MI)' -> 'Comstock Park (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Concord (MI)' -> 'Concord (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Constantine (MI)' -> 'Constantine (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Coopersville (MI)' -> 'Coopersville (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Corunna (MI)' -> 'Corunna (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Covert (MI)' -> 'Covert (MI)' (no change)
+2026-11-12 06:17:51,186 - WARNING -   'Croswell-Lexington (MI)' -> 'Croswell-Lexington (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Crystal Falls Forest Park (MI)' -> 'Crystal Falls Forest Park (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Dansville (MI)' -> 'Dansville (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Davison (MI)' -> 'Davison (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Dearborn (MI)' -> 'Dearborn (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Dearborn Advanced Tech Academy (MI)' -> 'Dearborn Advanced Tech Academy (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Dearborn Divine Child (MI)' -> 'Dearborn Divine Child (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Dearborn Edsel Ford (MI)' -> 'Dearborn Edsel Ford (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Dearborn Fordson (MI)' -> 'Dearborn Fordson (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Dearborn Heights Annapolis (MI)' -> 'Dearborn Heights Annapolis (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Dearborn Heights Crestwood (MI)' -> 'Dearborn Heights Crestwood (MI)' (no change)
+2026-11-12 06:17:51,187 - WARNING -   'Dearborn Heights Riverside (MI)' -> 'Dearborn Heights Riverside (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Dearborn Heights Robichaud (MI)' -> 'Dearborn Heights Robichaud (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Dearborn Heights Star International Academy (MI)' -> 'Dearborn Heights Star International Academy (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Dearborn Henry Ford Academy (MI)' -> 'Dearborn Henry Ford Academy (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Dearborn Lowrey (MI)' -> 'Dearborn Lowrey (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Dearborn Sacred Heart (MI)' -> 'Dearborn Sacred Heart (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Dearborn St. Alphonsus (MI)' -> 'Dearborn St. Alphonsus (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Decatur (MI)' -> 'Decatur (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Deckerville (MI)' -> 'Deckerville (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Deerfield (MI)' -> 'Deerfield (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Delton Kellogg (MI)' -> 'Delton Kellogg (MI)' (no change)
+2026-11-12 06:17:51,188 - WARNING -   'Detour (MI)' -> 'Detour (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Austin (MI)' -> 'Detroit Austin (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Cass Tech (MI)' -> 'Detroit Cass Tech (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Catholic Central (MI)' -> 'Detroit Catholic Central (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Central Collegiate (MI)' -> 'Detroit Central Collegiate (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Chadsey (MI)' -> 'Detroit Chadsey (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Cody (MI)' -> 'Detroit Cody (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Collegiate Prep (MI)' -> 'Detroit Collegiate Prep (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Communication Media Arts (MI)' -> 'Detroit Communication Media Arts (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Community (MI)' -> 'Detroit Community (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Consortium College Prep (MI)' -> 'Detroit Consortium College Prep (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Cooley (MI)' -> 'Detroit Cooley (MI)' (no change)
+2026-11-12 06:17:51,189 - WARNING -   'Detroit Country Day (MI)' -> 'Detroit Country Day (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit Crockett Tech (MI)' -> 'Detroit Crockett Tech (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit Denby Tech Prep (MI)' -> 'Detroit Denby Tech Prep (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit DePorres (MI)' -> 'Detroit DePorres (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit Douglass (MI)' -> 'Detroit Douglass (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit East Catholic (MI)' -> 'Detroit East Catholic (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit East English Village Prep (MI)' -> 'Detroit East English Village Prep (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit Edison Academy (MI)' -> 'Detroit Edison Academy (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit Finney (MI)' -> 'Detroit Finney (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit Henry Ford (MI)' -> 'Detroit Henry Ford (MI)' (no change)
+2026-11-12 06:17:51,190 - WARNING -   'Detroit Holy Redeemer (MI)' -> 'Detroit Holy Redeemer (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Kettering (MI)' -> 'Detroit Kettering (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Lincoln-King Academy (MI)' -> 'Detroit Lincoln-King Academy (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Loyola (MI)' -> 'Detroit Loyola (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Lutheran West (MI)' -> 'Detroit Lutheran West (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Mackenzie (MI)' -> 'Detroit Mackenzie (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Martin Luther King (MI)' -> 'Detroit Martin Luther King (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Mumford (MI)' -> 'Detroit Mumford (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Murray-Wright (MI)' -> 'Detroit Murray-Wright (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Nativity (MI)' -> 'Detroit Nativity (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Northeastern (MI)' -> 'Detroit Northeastern (MI)' (no change)
+2026-11-12 06:17:51,191 - WARNING -   'Detroit Northern (MI)' -> 'Detroit Northern (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Northwestern (MI)' -> 'Detroit Northwestern (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Old Redford Academy (MI)' -> 'Detroit Old Redford Academy (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Osborn (MI)' -> 'Detroit Osborn (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Pershing (MI)' -> 'Detroit Pershing (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Redford (MI)' -> 'Detroit Redford (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Renaissance (MI)' -> 'Detroit Renaissance (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Salesian (MI)' -> 'Detroit Salesian (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Servite (MI)' -> 'Detroit Servite (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Southeastern (MI)' -> 'Detroit Southeastern (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit Southwestern (MI)' -> 'Detroit Southwestern (MI)' (no change)
+2026-11-12 06:17:51,192 - WARNING -   'Detroit St. Anthony (MI)' -> 'Detroit St. Anthony (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit St. Catherine (MI)' -> 'Detroit St. Catherine (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit St. Charles Borromeo (MI)' -> 'Detroit St. Charles Borromeo (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit St. Rita (MI)' -> 'Detroit St. Rita (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit St. Theresa (MI)' -> 'Detroit St. Theresa (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit University High (MI)' -> 'Detroit University High (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit University Prep (MI)' -> 'Detroit University Prep (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit University Prep Science & Math (MI)' -> 'Detroit University Prep Science & Math (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit Voyageur Academy (MI)' -> 'Detroit Voyageur Academy (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit Western International (MI)' -> 'Detroit Western International (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'Detroit Westside Christian Academy (MI)' -> 'Detroit Westside Christian Academy (MI)' (no change)
+2026-11-12 06:17:51,193 - WARNING -   'DeWitt (MI)' -> 'DeWitt (MI)' (no change)
+2026-11-12 06:17:51,194 - WARNING -   'Dexter (MI)' -> 'Dexter (MI)' (no change)
+2026-11-12 06:17:51,194 - WARNING -   'Dimondale (MI)' -> 'Dimondale (MI)' (no change)
+2026-11-12 06:17:51,194 - WARNING -   'Dowagiac Union (MI)' -> 'Dowagiac Union (MI)' (no change)
+2026-11-12 06:17:51,194 - WARNING -   'Dryden (MI)' -> 'Dryden (MI)' (no change)
+2026-11-12 06:17:51,194 - WARNING -   'Dundee (MI)' -> 'Dundee (MI)' (no change)
+2026-11-12 06:17:51,195 - WARNING -   'Durand (MI)' -> 'Durand (MI)' (no change)
+2026-11-12 06:17:51,195 - WARNING -   'East Grand Rapids (MI)' -> 'East Grand Rapids (MI)' (no change)
+2026-11-12 06:17:51,195 - WARNING -   'East Jackson (MI)' -> 'East Jackson (MI)' (no change)
+2026-11-12 06:17:51,195 - WARNING -   'East Jordan (MI)' -> 'East Jordan (MI)' (no change)
+2026-11-12 06:17:51,195 - WARNING -   'East Kentwood (MI)' -> 'East Kentwood (MI)' (no change)
+2026-11-12 06:17:51,195 - WARNING -   'East Lansing (MI)' -> 'East Lansing (MI)' (no change)
+2026-11-12 06:17:51,195 - WARNING -   'Eastpointe East Detroit (MI)' -> 'Eastpointe East Detroit (MI)' (no change)
+2026-11-12 06:17:51,195 - WARNING -   'Eaton Rapids (MI)' -> 'Eaton Rapids (MI)' (no change)
+2026-11-12 06:17:51,195 - WARNING -   'Eau Claire (MI)' -> 'Eau Claire (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Eben Junction Superior Central (MI)' -> 'Eben Junction Superior Central (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Ecorse (MI)' -> 'Ecorse (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Edwardsburg (MI)' -> 'Edwardsburg (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Elk Rapids (MI)' -> 'Elk Rapids (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Elkton-Pigeon-Bay (MI)' -> 'Elkton-Pigeon-Bay (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Ellsworth (MI)' -> 'Ellsworth (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Elsie (MI)' -> 'Elsie (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Engadine (MI)' -> 'Engadine (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Erie-Mason (MI)' -> 'Erie-Mason (MI)' (no change)
+2026-11-12 06:17:51,196 - WARNING -   'Escanaba (MI)' -> 'Escanaba (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Escanaba Holy Name (MI)' -> 'Escanaba Holy Name (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Essexville Garber (MI)' -> 'Essexville Garber (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Evart (MI)' -> 'Evart (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Ewen-Trout Creek (MI)' -> 'Ewen-Trout Creek (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Farmington (MI)' -> 'Farmington (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Farmington Hills Harrison (MI)' -> 'Farmington Hills Harrison (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Farwell (MI)' -> 'Farwell (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Felch North Dickinson (MI)' -> 'Felch North Dickinson (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Fennville (MI)' -> 'Fennville (MI)' (no change)
+2026-11-12 06:17:51,197 - WARNING -   'Fenton (MI)' -> 'Fenton (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Ferndale (MI)' -> 'Ferndale (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Fife Lake Forest Area (MI)' -> 'Fife Lake Forest Area (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Flat Rock (MI)' -> 'Flat Rock (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Flint Ainsworth (MI)' -> 'Flint Ainsworth (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Flint Beecher (MI)' -> 'Flint Beecher (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Flint Carman (MI)' -> 'Flint Carman (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Flint Carman-Ainsworth (MI)' -> 'Flint Carman-Ainsworth (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Flint Central (MI)' -> 'Flint Central (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Flint Dye (MI)' -> 'Flint Dye (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Flint Hamady (MI)' -> 'Flint Hamady (MI)' (no change)
+2026-11-12 06:17:51,198 - WARNING -   'Flint Holy Rosary (MI)' -> 'Flint Holy Rosary (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flint Kearsley (MI)' -> 'Flint Kearsley (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flint New Standard Academy (MI)' -> 'Flint New Standard Academy (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flint Northern (MI)' -> 'Flint Northern (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flint Northwestern (MI)' -> 'Flint Northwestern (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flint Powers Catholic (MI)' -> 'Flint Powers Catholic (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flint Sacred Heart (MI)' -> 'Flint Sacred Heart (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flint Southwestern Classical Academy (MI)' -> 'Flint Southwestern Classical Academy (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flint St. Matthew (MI)' -> 'Flint St. Matthew (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flint St. Michael (MI)' -> 'Flint St. Michael (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Flushing (MI)' -> 'Flushing (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Fowler (MI)' -> 'Fowler (MI)' (no change)
+2026-11-12 06:17:51,199 - WARNING -   'Fowlerville (MI)' -> 'Fowlerville (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Frankenmuth (MI)' -> 'Frankenmuth (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Frankfort (MI)' -> 'Frankfort (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Fraser (MI)' -> 'Fraser (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Freeland (MI)' -> 'Freeland (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Fremont (MI)' -> 'Fremont (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Fruitport (MI)' -> 'Fruitport (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Fulton (MI)' -> 'Fulton (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Fulton-Middleton (MI)' -> 'Fulton-Middleton (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Galesburg-Augusta (MI)' -> 'Galesburg-Augusta (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Gallen (MI)' -> 'Gallen (MI)' (no change)
+2026-11-12 06:17:51,200 - WARNING -   'Garden City (MI)' -> 'Garden City (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Garden City East (MI)' -> 'Garden City East (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Garden City West (MI)' -> 'Garden City West (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Gaylord (MI)' -> 'Gaylord (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Gaylord St. Mary Cathedral (MI)' -> 'Gaylord St. Mary Cathedral (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Genesee (MI)' -> 'Genesee (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Gibraltar Carlson (MI)' -> 'Gibraltar Carlson (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Gladstone (MI)' -> 'Gladstone (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Gladwin (MI)' -> 'Gladwin (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Glen Arbor Leelanau (MI)' -> 'Glen Arbor Leelanau (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Gobles (MI)' -> 'Gobles (MI)' (no change)
+2026-11-12 06:17:51,201 - WARNING -   'Goodrich (MI)' -> 'Goodrich (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Blanc (MI)' -> 'Grand Blanc (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Haven (MI)' -> 'Grand Haven (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Ledge (MI)' -> 'Grand Ledge (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Rapids Catholic Central (MI)' -> 'Grand Rapids Catholic Central (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Rapids Central (MI)' -> 'Grand Rapids Central (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Rapids Christian (MI)' -> 'Grand Rapids Christian (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Rapids Creston (MI)' -> 'Grand Rapids Creston (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Rapids Forest Hills Central (MI)' -> 'Grand Rapids Forest Hills Central (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Rapids Forest Hills Northern (MI)' -> 'Grand Rapids Forest Hills Northern (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Rapids Kenowa Hills (MI)' -> 'Grand Rapids Kenowa Hills (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Rapids NorthPointe Christian (MI)' -> 'Grand Rapids NorthPointe Christian (MI)' (no change)
+2026-11-12 06:17:51,202 - WARNING -   'Grand Rapids Northview (MI)' -> 'Grand Rapids Northview (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grand Rapids Ottawa Hills (MI)' -> 'Grand Rapids Ottawa Hills (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grand Rapids Sacred Heart Academy (MI)' -> 'Grand Rapids Sacred Heart Academy (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grand Rapids South (MI)' -> 'Grand Rapids South (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grand Rapids South Christian (MI)' -> 'Grand Rapids South Christian (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grand Rapids Union (MI)' -> 'Grand Rapids Union (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grand Rapids West Catholic (MI)' -> 'Grand Rapids West Catholic (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grandville (MI)' -> 'Grandville (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grandville Calvin Christian (MI)' -> 'Grandville Calvin Christian (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grant (MI)' -> 'Grant (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grass Lake (MI)' -> 'Grass Lake (MI)' (no change)
+2026-11-12 06:17:51,203 - WARNING -   'Grayling (MI)' -> 'Grayling (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Greenville (MI)' -> 'Greenville (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Gross Pointe St. Paul (MI)' -> 'Gross Pointe St. Paul (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Grosse Ile (MI)' -> 'Grosse Ile (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Grosse Pointe North (MI)' -> 'Grosse Pointe North (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Grosse Pointe South (MI)' -> 'Grosse Pointe South (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Grosse Pointe Woods University Liggett (MI)' -> 'Grosse Pointe Woods University Liggett (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Gwinn (MI)' -> 'Gwinn (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Hale (MI)' -> 'Hale (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Hamilton (MI)' -> 'Hamilton (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Hamtramck (MI)' -> 'Hamtramck (MI)' (no change)
+2026-11-12 06:17:51,204 - WARNING -   'Hancock (MI)' -> 'Hancock (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Hanover-Horton (MI)' -> 'Hanover-Horton (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harbor Beach (MI)' -> 'Harbor Beach (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harbor Springs (MI)' -> 'Harbor Springs (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harper Woods (MI)' -> 'Harper Woods (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harper Woods Chandler Park Academy (MI)' -> 'Harper Woods Chandler Park Academy (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harper Woods Gallagher (MI)' -> 'Harper Woods Gallagher (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harper Woods Lutheran East (MI)' -> 'Harper Woods Lutheran East (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harper Woods Notre Dame (MI)' -> 'Harper Woods Notre Dame (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harper Woods Trinity Catholic (MI)' -> 'Harper Woods Trinity Catholic (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harrison (MI)' -> 'Harrison (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Harrison Township L'Anse Creuse (MI)' -> 'Harrison Township L'Anse Creuse (MI)' (no change)
+2026-11-12 06:17:51,205 - WARNING -   'Hart (MI)' -> 'Hart (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Hartford (MI)' -> 'Hartford (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Hartland (MI)' -> 'Hartland (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Haslett (MI)' -> 'Haslett (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Hastings (MI)' -> 'Hastings (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Hazel Park (MI)' -> 'Hazel Park (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Hemlock (MI)' -> 'Hemlock (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Hesperia (MI)' -> 'Hesperia (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Highland Park (MI)' -> 'Highland Park (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Highland Park St. Benedict (MI)' -> 'Highland Park St. Benedict (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Hillman (MI)' -> 'Hillman (MI)' (no change)
+2026-11-12 06:17:51,206 - WARNING -   'Hillsdale (MI)' -> 'Hillsdale (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Holland (MI)' -> 'Holland (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Holland Christian (MI)' -> 'Holland Christian (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Holland West Ottawa (MI)' -> 'Holland West Ottawa (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Holly (MI)' -> 'Holly (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Holt (MI)' -> 'Holt (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Holton (MI)' -> 'Holton (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Homer (MI)' -> 'Homer (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Hopkins (MI)' -> 'Hopkins (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Houghton (MI)' -> 'Houghton (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Houghton Lake (MI)' -> 'Houghton Lake (MI)' (no change)
+2026-11-12 06:17:51,207 - WARNING -   'Howard City Tri County Area (MI)' -> 'Howard City Tri County Area (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Howell (MI)' -> 'Howell (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Hudson (MI)' -> 'Hudson (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Hudsonville (MI)' -> 'Hudsonville (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Hudsonville Unity Christian (MI)' -> 'Hudsonville Unity Christian (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Ida (MI)' -> 'Ida (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Imlay City (MI)' -> 'Imlay City (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Indian River Inland Lakes (MI)' -> 'Indian River Inland Lakes (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Inkster (MI)' -> 'Inkster (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Inkster Cherry Hill (MI)' -> 'Inkster Cherry Hill (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Ionia (MI)' -> 'Ionia (MI)' (no change)
+2026-11-12 06:17:51,208 - WARNING -   'Iron Mountain (MI)' -> 'Iron Mountain (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Iron River West Iron County (MI)' -> 'Iron River West Iron County (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Ironwood Luther L Wright (MI)' -> 'Ironwood Luther L Wright (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Ishpeming (MI)' -> 'Ishpeming (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Ishpeming Westwood (MI)' -> 'Ishpeming Westwood (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Ithaca (MI)' -> 'Ithaca (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Jackson (MI)' -> 'Jackson (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Jackson Lumen Christi Catholic (MI)' -> 'Jackson Lumen Christi Catholic (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Jackson Northwest (MI)' -> 'Jackson Northwest (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Jackson Parkside (MI)' -> 'Jackson Parkside (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Jackson St. Johns (MI)' -> 'Jackson St. Johns (MI)' (no change)
+2026-11-12 06:17:51,209 - WARNING -   'Jackson St. Mary (MI)' -> 'Jackson St. Mary (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Jackson Vandercook Lake (MI)' -> 'Jackson Vandercook Lake (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Jenison (MI)' -> 'Jenison (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Johannesburg-Lewiston (MI)' -> 'Johannesburg-Lewiston (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Jonesville (MI)' -> 'Jonesville (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Kalamazoo Central (MI)' -> 'Kalamazoo Central (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Kalamazoo Christian (MI)' -> 'Kalamazoo Christian (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Kalamazoo Comstock (MI)' -> 'Kalamazoo Comstock (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Kalamazoo Hackett Catholic Prep (MI)' -> 'Kalamazoo Hackett Catholic Prep (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Kalamazoo Loy Norrix (MI)' -> 'Kalamazoo Loy Norrix (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Kalkaska (MI)' -> 'Kalkaska (MI)' (no change)
+2026-11-12 06:17:51,210 - WARNING -   'Kent City (MI)' -> 'Kent City (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Kinde-North Huron (MI)' -> 'Kinde-North Huron (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Kingsford (MI)' -> 'Kingsford (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Kingsley (MI)' -> 'Kingsley (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Kingston (MI)' -> 'Kingston (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Laingsburg (MI)' -> 'Laingsburg (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Lake City (MI)' -> 'Lake City (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Lake Linden-Hubbell (MI)' -> 'Lake Linden-Hubbell (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Lake Odessa (MI)' -> 'Lake Odessa (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Lake Odessa Lakewood (MI)' -> 'Lake Odessa Lakewood (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Lake Orion (MI)' -> 'Lake Orion (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'Lakeview (MI)' -> 'Lakeview (MI)' (no change)
+2026-11-12 06:17:51,211 - WARNING -   'L'Anse (MI)' -> 'L'Anse (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing Boys Training (MI)' -> 'Lansing Boys Training (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing Catholic Central (MI)' -> 'Lansing Catholic Central (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing Central (MI)' -> 'Lansing Central (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing Eastern (MI)' -> 'Lansing Eastern (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing Everett (MI)' -> 'Lansing Everett (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing Gabriels (MI)' -> 'Lansing Gabriels (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing O'Rafferty (MI)' -> 'Lansing O'Rafferty (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing Sexton (MI)' -> 'Lansing Sexton (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing St. Mary Cathedral (MI)' -> 'Lansing St. Mary Cathedral (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lansing Waverly (MI)' -> 'Lansing Waverly (MI)' (no change)
+2026-11-12 06:17:51,212 - WARNING -   'Lapeer (MI)' -> 'Lapeer (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Lapeer East (MI)' -> 'Lapeer East (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Lapeer West (MI)' -> 'Lapeer West (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Lawrence (MI)' -> 'Lawrence (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Lawton (MI)' -> 'Lawton (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Leroy Pine River Area (MI)' -> 'Leroy Pine River Area (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Leslie (MI)' -> 'Leslie (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Lincoln Alcona (MI)' -> 'Lincoln Alcona (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Lincoln Park (MI)' -> 'Lincoln Park (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Linden (MI)' -> 'Linden (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Linden Lake Fenton (MI)' -> 'Linden Lake Fenton (MI)' (no change)
+2026-11-12 06:17:51,213 - WARNING -   'Litchfield (MI)' -> 'Litchfield (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Livonia Bentley (MI)' -> 'Livonia Bentley (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Livonia Churchill (MI)' -> 'Livonia Churchill (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Livonia Clarenceville (MI)' -> 'Livonia Clarenceville (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Livonia Franklin (MI)' -> 'Livonia Franklin (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Livonia Stevenson (MI)' -> 'Livonia Stevenson (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Lowell (MI)' -> 'Lowell (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Ludington (MI)' -> 'Ludington (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Ludington St. Simon (MI)' -> 'Ludington St. Simon (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Mackinaw City (MI)' -> 'Mackinaw City (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Macomb Dakota (MI)' -> 'Macomb Dakota (MI)' (no change)
+2026-11-12 06:17:51,214 - WARNING -   'Macomb L'Anse Creuse North (MI)' -> 'Macomb L'Anse Creuse North (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Macomb Lutheran North (MI)' -> 'Macomb Lutheran North (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Madison Heights Bishop Foley Catholic (MI)' -> 'Madison Heights Bishop Foley Catholic (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Madison Heights Lamphere (MI)' -> 'Madison Heights Lamphere (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Madison Heights Madison (MI)' -> 'Madison Heights Madison (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Mancelona (MI)' -> 'Mancelona (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Manchester (MI)' -> 'Manchester (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Manistee (MI)' -> 'Manistee (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Manistee Catholic Central (MI)' -> 'Manistee Catholic Central (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Manistique (MI)' -> 'Manistique (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Manton (MI)' -> 'Manton (MI)' (no change)
+2026-11-12 06:17:51,215 - WARNING -   'Maple City Glen Lake (MI)' -> 'Maple City Glen Lake (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Marcelius (MI)' -> 'Marcelius (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Marine City (MI)' -> 'Marine City (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Marine City Cardinal Mooney Catholic (MI)' -> 'Marine City Cardinal Mooney Catholic (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Marine City Holy Cross (MI)' -> 'Marine City Holy Cross (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Marion (MI)' -> 'Marion (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Marlette (MI)' -> 'Marlette (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Marquette John D. Pierce (MI)' -> 'Marquette John D. Pierce (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Marshall (MI)' -> 'Marshall (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Martin (MI)' -> 'Martin (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Marysville (MI)' -> 'Marysville (MI)' (no change)
+2026-11-12 06:17:51,216 - WARNING -   'Mason (MI)' -> 'Mason (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Mattawan (MI)' -> 'Mattawan (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Mayville (MI)' -> 'Mayville (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'McBain (MI)' -> 'McBain (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Melvindale (MI)' -> 'Melvindale (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Melvindale Academy for Business & Tech (MI)' -> 'Melvindale Academy for Business & Tech (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Memphis (MI)' -> 'Memphis (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Mendon (MI)' -> 'Mendon (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Menominee (MI)' -> 'Menominee (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Merrill (MI)' -> 'Merrill (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Mesick (MI)' -> 'Mesick (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Michigan Center (MI)' -> 'Michigan Center (MI)' (no change)
+2026-11-12 06:17:51,217 - WARNING -   'Michigan School for the Deaf (MI)' -> 'Michigan School for the Deaf (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Middleton Fulton (MI)' -> 'Middleton Fulton (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Middleville Thornapple Kellogg (MI)' -> 'Middleville Thornapple Kellogg (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Midland (MI)' -> 'Midland (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Midland Bullock Creek (MI)' -> 'Midland Bullock Creek (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Midland Dow (MI)' -> 'Midland Dow (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Milan (MI)' -> 'Milan (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Millington (MI)' -> 'Millington (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Mio-Au Sable (MI)' -> 'Mio-Au Sable (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Monroe (MI)' -> 'Monroe (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Monroe Jefferson (MI)' -> 'Monroe Jefferson (MI)' (no change)
+2026-11-12 06:17:51,218 - WARNING -   'Monroe St. Mary Catholic Central (MI)' -> 'Monroe St. Mary Catholic Central (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Montague (MI)' -> 'Montague (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Montrose Hill-McCloy (MI)' -> 'Montrose Hill-McCloy (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Morenci (MI)' -> 'Morenci (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Morley-Stanwood (MI)' -> 'Morley-Stanwood (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Morrice (MI)' -> 'Morrice (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Mount Clemens (MI)' -> 'Mount Clemens (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Mount Clemens clintondale (MI)' -> 'Mount Clemens clintondale (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Mount Clemens LAnse Creuse (MI)' -> 'Mount Clemens LAnse Creuse (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Mount Clemens St. Mary (MI)' -> 'Mount Clemens St. Mary (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Mount Morris EA Johnson (MI)' -> 'Mount Morris EA Johnson (MI)' (no change)
+2026-11-12 06:17:51,219 - WARNING -   'Mount Morris St. Mary (MI)' -> 'Mount Morris St. Mary (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Mount Pleasant (MI)' -> 'Mount Pleasant (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Mount Pleasant Indian School (MI)' -> 'Mount Pleasant Indian School (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Mount Pleasant Sacred Heart Academy (MI)' -> 'Mount Pleasant Sacred Heart Academy (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Munising (MI)' -> 'Munising (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Muskegon (MI)' -> 'Muskegon (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Muskegon Catholic Central (MI)' -> 'Muskegon Catholic Central (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Muskegon Heights (MI)' -> 'Muskegon Heights (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Muskegon Mona Shores (MI)' -> 'Muskegon Mona Shores (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Muskegon Oakridge (MI)' -> 'Muskegon Oakridge (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Muskegon Orchard View (MI)' -> 'Muskegon Orchard View (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Muskegon Reeths-Puffer (MI)' -> 'Muskegon Reeths-Puffer (MI)' (no change)
+2026-11-12 06:17:51,220 - WARNING -   'Napoleon (MI)' -> 'Napoleon (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'Nashville (MI)' -> 'Nashville (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'Negaunee (MI)' -> 'Negaunee (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'New Baltimore Anchor Bay (MI)' -> 'New Baltimore Anchor Bay (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'New Boston Huron (MI)' -> 'New Boston Huron (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'New Buffalo (MI)' -> 'New Buffalo (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'New Haven (MI)' -> 'New Haven (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'New Haven Merritt Academy (MI)' -> 'New Haven Merritt Academy (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'New Lothrop (MI)' -> 'New Lothrop (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'Newaygo (MI)' -> 'Newaygo (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'Newberry (MI)' -> 'Newberry (MI)' (no change)
+2026-11-12 06:17:51,221 - WARNING -   'Niles (MI)' -> 'Niles (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'Niles Brandywine (MI)' -> 'Niles Brandywine (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'North Adams-Jerome (MI)' -> 'North Adams-Jerome (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'North Branch (MI)' -> 'North Branch (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'North Branch Heritage Christian Academy (MI)' -> 'North Branch Heritage Christian Academy (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'North Farmington (MI)' -> 'North Farmington (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'North Muskegon (MI)' -> 'North Muskegon (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'Northville (MI)' -> 'Northville (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'Norway (MI)' -> 'Norway (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'Novi (MI)' -> 'Novi (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'Oak Park (MI)' -> 'Oak Park (MI)' (no change)
+2026-11-12 06:17:51,222 - WARNING -   'Okemos (MI)' -> 'Okemos (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Olivet (MI)' -> 'Olivet (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Onaway (MI)' -> 'Onaway (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Onekama (MI)' -> 'Onekama (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Onsted (MI)' -> 'Onsted (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Ontonagon Area (MI)' -> 'Ontonagon Area (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Orchard Lake St. Marys Prep (MI)' -> 'Orchard Lake St. Marys Prep (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Ortonville-Brandon (MI)' -> 'Ortonville-Brandon (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Oscoda (MI)' -> 'Oscoda (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Otisville LakeVille Memorial (MI)' -> 'Otisville LakeVille Memorial (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Otsego (MI)' -> 'Otsego (MI)' (no change)
+2026-11-12 06:17:51,223 - WARNING -   'Ottawa Lake-Whiteford (MI)' -> 'Ottawa Lake-Whiteford (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Ovid (MI)' -> 'Ovid (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Ovid-Elsie (MI)' -> 'Ovid-Elsie (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Owendale-Gagetown (MI)' -> 'Owendale-Gagetown (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Owosso (MI)' -> 'Owosso (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Owosso St. Paul (MI)' -> 'Owosso St. Paul (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Oxford (MI)' -> 'Oxford (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Parchment (MI)' -> 'Parchment (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Parma (MI)' -> 'Parma (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Parma Jackson County Western (MI)' -> 'Parma Jackson County Western (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Paw Paw (MI)' -> 'Paw Paw (MI)' (no change)
+2026-11-12 06:17:51,224 - WARNING -   'Peck (MI)' -> 'Peck (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Pellston (MI)' -> 'Pellston (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Perry (MI)' -> 'Perry (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Petersburg-Summerfield (MI)' -> 'Petersburg-Summerfield (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Petoskey (MI)' -> 'Petoskey (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Pewamo-Westphalia (MI)' -> 'Pewamo-Westphalia (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Pickford (MI)' -> 'Pickford (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Pigeon (MI)' -> 'Pigeon (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Pinckney (MI)' -> 'Pinckney (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Pinconning (MI)' -> 'Pinconning (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Pittsford (MI)' -> 'Pittsford (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Plainwell (MI)' -> 'Plainwell (MI)' (no change)
+2026-11-12 06:17:51,225 - WARNING -   'Plymouth Salem (MI)' -> 'Plymouth Salem (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Pontiac (MI)' -> 'Pontiac (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Pontiac Arts & Tech (MI)' -> 'Pontiac Arts & Tech (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Pontiac Central (MI)' -> 'Pontiac Central (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Pontiac Northern (MI)' -> 'Pontiac Northern (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Pontiac Notre Dame Prep (MI)' -> 'Pontiac Notre Dame Prep (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Pontiac St. Frederick (MI)' -> 'Pontiac St. Frederick (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Port Austin (MI)' -> 'Port Austin (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Port Huron (MI)' -> 'Port Huron (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Port Huron Northern (MI)' -> 'Port Huron Northern (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Port Huron St. Stephen (MI)' -> 'Port Huron St. Stephen (MI)' (no change)
+2026-11-12 06:17:51,226 - WARNING -   'Portage Central (MI)' -> 'Portage Central (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Portage Northern (MI)' -> 'Portage Northern (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Portland (MI)' -> 'Portland (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Posen (MI)' -> 'Posen (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Potterville (MI)' -> 'Potterville (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Powers North Central (MI)' -> 'Powers North Central (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Quincy (MI)' -> 'Quincy (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Rapid River (MI)' -> 'Rapid River (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Ravenna (MI)' -> 'Ravenna (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Reading (MI)' -> 'Reading (MI)' (no change)
+2026-11-12 06:17:51,227 - WARNING -   'Redford Covenant (MI)' -> 'Redford Covenant (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'Redford Drexel (MI)' -> 'Redford Drexel (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'Redford Thurston (MI)' -> 'Redford Thurston (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'Redford Union (MI)' -> 'Redford Union (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'Reed City (MI)' -> 'Reed City (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'Reese (MI)' -> 'Reese (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'Remus Chippewa Hills (MI)' -> 'Remus Chippewa Hills (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'Richland Gull Lake (MI)' -> 'Richland Gull Lake (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'Richmond (MI)' -> 'Richmond (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'River Rouge (MI)' -> 'River Rouge (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'River Rouge Our Lady of the Lourdes (MI)' -> 'River Rouge Our Lady of the Lourdes (MI)' (no change)
+2026-11-12 06:17:51,228 - WARNING -   'Riverview (MI)' -> 'Riverview (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Riverview Gabriel Richard Catholic (MI)' -> 'Riverview Gabriel Richard Catholic (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Rochester Adams (MI)' -> 'Rochester Adams (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Rochester Hills Lutheran Northwest (MI)' -> 'Rochester Hills Lutheran Northwest (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Rochester Hills Rochester (MI)' -> 'Rochester Hills Rochester (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Rochester Hills Stoney Creek (MI)' -> 'Rochester Hills Stoney Creek (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Rock Mid-Peninsula (MI)' -> 'Rock Mid-Peninsula (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Rockford (MI)' -> 'Rockford (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Rogers City (MI)' -> 'Rogers City (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Romeo (MI)' -> 'Romeo (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Romulus (MI)' -> 'Romulus (MI)' (no change)
+2026-11-12 06:17:51,229 - WARNING -   'Romulus Summit Academy (MI)' -> 'Romulus Summit Academy (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Roscommon (MI)' -> 'Roscommon (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Roseville (MI)' -> 'Roseville (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Roseville Brablec (MI)' -> 'Roseville Brablec (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Roseville Sacred Heart (MI)' -> 'Roseville Sacred Heart (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Royal Oak (MI)' -> 'Royal Oak (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Royal Oak Dondero (MI)' -> 'Royal Oak Dondero (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Royal Oak Kimball (MI)' -> 'Royal Oak Kimball (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Royal Oak Shrine Catholic (MI)' -> 'Royal Oak Shrine Catholic (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Rudyard (MI)' -> 'Rudyard (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Saginaw (MI)' -> 'Saginaw (MI)' (no change)
+2026-11-12 06:17:51,230 - WARNING -   'Saginaw Arthur Hill (MI)' -> 'Saginaw Arthur Hill (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw Arthur Hill Reserves (MI)' -> 'Saginaw Arthur Hill Reserves (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw Buena Vista (MI)' -> 'Saginaw Buena Vista (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw Eisenhower (MI)' -> 'Saginaw Eisenhower (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw Heritage (MI)' -> 'Saginaw Heritage (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw Holy Rosary (MI)' -> 'Saginaw Holy Rosary (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw MacArthur (MI)' -> 'Saginaw MacArthur (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw Michigan Lutheran Seminary (MI)' -> 'Saginaw Michigan Lutheran Seminary (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw Nouvel Catholic Central (MI)' -> 'Saginaw Nouvel Catholic Central (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw Saints Peter & Paul (MI)' -> 'Saginaw Saints Peter & Paul (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw St. Andrew (MI)' -> 'Saginaw St. Andrew (MI)' (no change)
+2026-11-12 06:17:51,231 - WARNING -   'Saginaw St. Joseph (MI)' -> 'Saginaw St. Joseph (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saginaw Swan Valley (MI)' -> 'Saginaw Swan Valley (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saginaw United (MI)' -> 'Saginaw United (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saginaw Valley Lutheran (MI)' -> 'Saginaw Valley Lutheran (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saint Charles (MI)' -> 'Saint Charles (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saint Clair (MI)' -> 'Saint Clair (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saint Clair Shores Lake Shore (MI)' -> 'Saint Clair Shores Lake Shore (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saint Clair Shores Lakeview (MI)' -> 'Saint Clair Shores Lakeview (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saint Clair Shores South Lake (MI)' -> 'Saint Clair Shores South Lake (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saint Ignace LaSalle (MI)' -> 'Saint Ignace LaSalle (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saint Johns (MI)' -> 'Saint Johns (MI)' (no change)
+2026-11-12 06:17:51,232 - WARNING -   'Saint Joseph (MI)' -> 'Saint Joseph (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Saint Joseph Catholic (MI)' -> 'Saint Joseph Catholic (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Saint Joseph Lake Michigan Catholic (MI)' -> 'Saint Joseph Lake Michigan Catholic (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Saint Joseph Michigan Lutheran (MI)' -> 'Saint Joseph Michigan Lutheran (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Saint Louis (MI)' -> 'Saint Louis (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Saline (MI)' -> 'Saline (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Saline Washtenaw Saints (MI)' -> 'Saline Washtenaw Saints (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Sand Creek (MI)' -> 'Sand Creek (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Sandusky (MI)' -> 'Sandusky (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Sanford Meridian (MI)' -> 'Sanford Meridian (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Saranac (MI)' -> 'Saranac (MI)' (no change)
+2026-11-12 06:17:51,233 - WARNING -   'Saugatuck (MI)' -> 'Saugatuck (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'Sault Saint Marie Sault Area (MI)' -> 'Sault Saint Marie Sault Area (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'Schoolcraft (MI)' -> 'Schoolcraft (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'Scottville Mason County Central (MI)' -> 'Scottville Mason County Central (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'Sebewaing (MI)' -> 'Sebewaing (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'Shelby (MI)' -> 'Shelby (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'Shepherd (MI)' -> 'Shepherd (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'South Haven (MI)' -> 'South Haven (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'South Lyon East (MI)' -> 'South Lyon East (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'South Lyons (MI)' -> 'South Lyons (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'Southfield (MI)' -> 'Southfield (MI)' (no change)
+2026-11-12 06:17:51,234 - WARNING -   'Southfield Arts & Tech (MI)' -> 'Southfield Arts & Tech (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Southfield Bradford Academy (MI)' -> 'Southfield Bradford Academy (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Southfield Christian (MI)' -> 'Southfield Christian (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Southfield-Lathrup (MI)' -> 'Southfield-Lathrup (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Southgate (MI)' -> 'Southgate (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Southgate Anderson (MI)' -> 'Southgate Anderson (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Southgate Aquinas (MI)' -> 'Southgate Aquinas (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Southgate Schafer (MI)' -> 'Southgate Schafer (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Sparta (MI)' -> 'Sparta (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Spring Lake (MI)' -> 'Spring Lake (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Springfield (MI)' -> 'Springfield (MI)' (no change)
+2026-11-12 06:17:51,235 - WARNING -   'Springport (MI)' -> 'Springport (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Standish-Sterling Central (MI)' -> 'Standish-Sterling Central (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Stanton (MI)' -> 'Stanton (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Stanton Central Montcalm (MI)' -> 'Stanton Central Montcalm (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Stephenson (MI)' -> 'Stephenson (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Sterling Heights (MI)' -> 'Sterling Heights (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Sterling Heights Parkway Christian (MI)' -> 'Sterling Heights Parkway Christian (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Sterling Heights Stevenson (MI)' -> 'Sterling Heights Stevenson (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Sterling Heights Utica Ford (MI)' -> 'Sterling Heights Utica Ford (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Stevensville Lakeshore (MI)' -> 'Stevensville Lakeshore (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Stockbridge (MI)' -> 'Stockbridge (MI)' (no change)
+2026-11-12 06:17:51,236 - WARNING -   'Sturgis (MI)' -> 'Sturgis (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Suttons Bay (MI)' -> 'Suttons Bay (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Suttons Bay-St. Mary (MI)' -> 'Suttons Bay-St. Mary (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Swartz Creek (MI)' -> 'Swartz Creek (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Tawas (MI)' -> 'Tawas (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Taylor (MI)' -> 'Taylor (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Taylor Kennedy (MI)' -> 'Taylor Kennedy (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Taylor Light & Life Christian (MI)' -> 'Taylor Light & Life Christian (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Taylor Truman (MI)' -> 'Taylor Truman (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Tecumseh (MI)' -> 'Tecumseh (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Tekonsha (MI)' -> 'Tekonsha (MI)' (no change)
+2026-11-12 06:17:51,237 - WARNING -   'Temperance Bedford (MI)' -> 'Temperance Bedford (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Three Oaks River Valley (MI)' -> 'Three Oaks River Valley (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Three Rivers (MI)' -> 'Three Rivers (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Traverse City Central (MI)' -> 'Traverse City Central (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Traverse City St. Francis (MI)' -> 'Traverse City St. Francis (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Traverse City West (MI)' -> 'Traverse City West (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Trenton (MI)' -> 'Trenton (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Troy (MI)' -> 'Troy (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Troy Athens (MI)' -> 'Troy Athens (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Twining Arenac Eastern (MI)' -> 'Twining Arenac Eastern (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Ubly (MI)' -> 'Ubly (MI)' (no change)
+2026-11-12 06:17:51,238 - WARNING -   'Union City (MI)' -> 'Union City (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Unionville (MI)' -> 'Unionville (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Unionville-Sebewaing (MI)' -> 'Unionville-Sebewaing (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Utica (MI)' -> 'Utica (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Utica Eisenhower (MI)' -> 'Utica Eisenhower (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Utica Ford (MI)' -> 'Utica Ford (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Vassar (MI)' -> 'Vassar (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Vermontville Maple Valley (MI)' -> 'Vermontville Maple Valley (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Vestaburg (MI)' -> 'Vestaburg (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Vicksburg (MI)' -> 'Vicksburg (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Wakefield (MI)' -> 'Wakefield (MI)' (no change)
+2026-11-12 06:17:51,239 - WARNING -   'Waldron (MI)' -> 'Waldron (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Walled Lake Central (MI)' -> 'Walled Lake Central (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Walled Lake Northern (MI)' -> 'Walled Lake Northern (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Walled Lake Western (MI)' -> 'Walled Lake Western (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Warren (MI)' -> 'Warren (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Warren Cousino (MI)' -> 'Warren Cousino (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Warren De La Salle Collegiate (MI)' -> 'Warren De La Salle Collegiate (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Warren Fitzgerald (MI)' -> 'Warren Fitzgerald (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Warren Immaculate Conception (MI)' -> 'Warren Immaculate Conception (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Warren Lincoln (MI)' -> 'Warren Lincoln (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Warren Michigan Collegiate (MI)' -> 'Warren Michigan Collegiate (MI)' (no change)
+2026-11-12 06:17:51,240 - WARNING -   'Warren Mott (MI)' -> 'Warren Mott (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Warren Woods (MI)' -> 'Warren Woods (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Warren Woods-Tower (MI)' -> 'Warren Woods-Tower (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Waterford (MI)' -> 'Waterford (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Waterford Kettering (MI)' -> 'Waterford Kettering (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Waterford Mott (MI)' -> 'Waterford Mott (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Waterford Our Lady of the Lakes (MI)' -> 'Waterford Our Lady of the Lakes (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Watervliet (MI)' -> 'Watervliet (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Wayland Union (MI)' -> 'Wayland Union (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Wayne Memorial (MI)' -> 'Wayne Memorial (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'Webberville (MI)' -> 'Webberville (MI)' (no change)
+2026-11-12 06:17:51,241 - WARNING -   'West Bloomfield (MI)' -> 'West Bloomfield (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'West Branch (MI)' -> 'West Branch (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'West Branch Ogemaw Heights (MI)' -> 'West Branch Ogemaw Heights (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'West Iron County (MI)' -> 'West Iron County (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'Westland John Glenn (MI)' -> 'Westland John Glenn (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'Westland Lutheran (MI)' -> 'Westland Lutheran (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'White Cloud (MI)' -> 'White Cloud (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'White Lake Lakeland (MI)' -> 'White Lake Lakeland (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'White Pigeon (MI)' -> 'White Pigeon (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'White Pine (MI)' -> 'White Pine (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'Whitehall (MI)' -> 'Whitehall (MI)' (no change)
+2026-11-12 06:17:51,242 - WARNING -   'Whitmore Lake (MI)' -> 'Whitmore Lake (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Whittemore-Prescott (MI)' -> 'Whittemore-Prescott (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Williamston (MI)' -> 'Williamston (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Woodland (MI)' -> 'Woodland (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Wyandotte Mt. Carmel (MI)' -> 'Wyandotte Mt. Carmel (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Wyandotte Roosevelt (MI)' -> 'Wyandotte Roosevelt (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Wyandotte St. Patrick (MI)' -> 'Wyandotte St. Patrick (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Wyoming (MI)' -> 'Wyoming (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Wyoming Godwin Heights (MI)' -> 'Wyoming Godwin Heights (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Wyoming Kelloggsville (MI)' -> 'Wyoming Kelloggsville (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Wyoming Lee (MI)' -> 'Wyoming Lee (MI)' (no change)
+2026-11-12 06:17:51,243 - WARNING -   'Wyoming Park (MI)' -> 'Wyoming Park (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Wyoming Rogers (MI)' -> 'Wyoming Rogers (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Wyoming Tri-Unity Christian (MI)' -> 'Wyoming Tri-Unity Christian (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Yale (MI)' -> 'Yale (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Ypsilanti Community (MI)' -> 'Ypsilanti Community (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Ypsilanti Lincoln (MI)' -> 'Ypsilanti Lincoln (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Ypsilanti Roosevelt (MI)' -> 'Ypsilanti Roosevelt (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Ypsilanti St. John (MI)' -> 'Ypsilanti St. John (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Ypsilanti Willow Run (MI)' -> 'Ypsilanti Willow Run (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Zeeland East (MI)' -> 'Zeeland East (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Zeeland West (MI)' -> 'Zeeland West (MI)' (no change)
+2026-11-12 06:17:51,244 - WARNING -   'Detroit Central Collegiate (MI)' -> 'Detroit Central Collegiate (MI)' (no change)
+2026-11-12 06:17:51,244 - INFO - Validation passed: 1764 rules are clean and ready to upload.
+2026-11-12 06:17:51,263 - INFO - Uploading 1764 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 06:17:51,494 - INFO - Upload to staging table complete.
+2026-11-12 06:17:51,499 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 06:23:09,108 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 06:23:09,108 - INFO - Reason logged to dbo.HS_Consolidation_Log: MI round 1: 2024 MaxPreps short names (Ada Forest Hills, Huron River, Calumet Copper, Detroit Central Trail/Ford/King/University Of, Grosse Pointe Pointe North/South, Norrix, Wayland, Dowagiac...), same-school variants (Mount Morris EA Johnson, St. Ignace LaSalle, Ironwood LL Wright, Canton-Salem, Middleton Fulton, Petersburg-Summerfield, Vandercook Lake, Ogemaw Heights, Central Montcalm, Mason County Central, Highland Milford), renames to latest (Montrose -> Hill-McCloy, Western State High -> University High)
+2026-11-12 06:23:09,108 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 06:23:09,109 - INFO - Running post-consolidation safety check...
+2026-11-12 06:23:09,115 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup MI
+
+DEDUP v4 MI - PREVIEW (nothing changed)
+ dedup_archive: 730 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_dedup_archive_20261112_0623.csv
+ dedup_review: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_dedup_review_20261112_0623.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_dedup_summary_20261112_0623.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MI     209901        730                  19               None 
+
+>>> review-pairs MI
+
+REVIEW-ONLY PAIRS MI - PREVIEW (nothing changed)
+ 19 pairs {'LONG': 2, 'SHORT': 17} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_review_pairs_20261112_0623.csv
+
+=== OK 2026-11-12 06:23:26

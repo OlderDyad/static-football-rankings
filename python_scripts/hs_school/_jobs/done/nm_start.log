@@ -1,0 +1,105 @@
+
+>>> addstate NM
+Tracker rows ready for NM
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report NM names
+
+REPORT names NM: 356 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_names_20261106_1458.csv
+   Name                                      Games  FirstSeason  LastSeason  InTeamNames  Mapped
+    Albuquerque Highland (NM)                52     1950         1972        1            0     
+    Albuquerque Highland B (NM)              1      1962         1962        0            0     
+   8th Field Artillery (NM)                  1      1928         1928        1            0     
+   Abluquerque Valley (NM)                   1      1957         1957        0            0     
+   Air Force Prep (NM)                       1      1974         1974        0            0     
+   Alamagordo JV (NM)                        1      1964         1964        0            0     
+   Alamo (NM)                                2      2002         2003        0            0     
+   Alamogordo (NM)                           907    1904         2026        1            1     
+   Alamogordo B (NM)                         3      1938         1968        0            0     
+   Alamogordo C (NM)                         3      1996         2000        1            0     
+   Alamogordo Immaculate Conception (NM)     1      1975         1975        1            0     
+   Alamogordo JV (NM)                        6      1964         2003        1            0     
+   Albuquerque (NM)                          840    1916         2026        1            1     
+   Albuquerque Academy (NM)                  515    1963         2026        1            1     
+   Albuquerque Atrisco Heritage Academy (NM  164    2010         2026        1            1     
+   ... 341 more rows (see CSV)
+
+>>> report NM drift
+
+REPORT drift NM: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_drift_20261106_1459.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started             N_Games  N_First  N_Last  N_Mapped
+   Albuquerque Foothill (NM)                 95       2008     2018    0         None                None     None     None    0       
+   Albuquerque Mission Achievement & Succes  11       2016     2018    0         None                None     None     None    0       
+   Carrizozo (NM)                            541      1938     2025    1         None                None     None     None    0       
+   Clovis Christian (NM)                     64       1998     2021    0         None                None     None     None    0       
+   Corona (NM)                               214      1939     2015    0         None                None     None     None    0       
+   Crown Point (NM)                          417      1971     2024    0         None                None     None     None    0       
+   Cuba Tse' Yi' Gai (NM)                    30       2013     2019    0         None                None     None     None    0       
+   Dora-Elida (NM)                           41       2014     2017    0         None                None     None     None    0       
+   Elida (NM)                                81       2008     2025    1         None                None     None     None    0       
+   Fort Sumner (NM)                          593      1930     2020    0         None                None     None     None    0       
+   Fort Wingate (NM)                         517      1933     2025    1         None                None     None     None    0       
+   Grady-San Jon (NM)                        51       2012     2017    0         None                None     None     None    0       
+   Hagerman (NM)                             472      1928     2023    0         Hagerman Lake (NM)  25       2024     2026    1       
+   Hondo (NM)                                226      1957     2024    1         None                None     None     None    0       
+   Jemez Pueblo Jemez Valley (NM)            28       2014     2022    0         None                None     None     None    0       
+   ... 13 more rows (see CSV)
+
+>>> report NM same-town
+
+REPORT same-town NM: 154 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_same_town_20261106_1459.csv
+   A                            B                            Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Albuquerque Highland (NM)    Albuquerque Sandia (NM)      152   52       1958         2023        885      778    
+   Albuquerque Eldorado (NM)    Albuquerque Manzano (NM)     122   44       1970         2026        654      719    
+   Las Cruces (NM)              Las Cruces Mayfield (NM)     98    42       1967         2020        1188     735    
+   Albuquerque Rio Grande (NM)  Albuquerque Valley (NM)      95    49       1958         2026        610      652    
+   Roswell (NM)                 Roswell Goddard (NM)         89    45       1965         2026        1112     672    
+   Albuquerque (NM)             Albuquerque Valley (NM)      86    45       1954         2023        840      652    
+   Albuquerque (NM)             Albuquerque Highland (NM)    84    46       1950         2019        840      885    
+   Albuquerque Highland (NM)    Albuquerque Manzano (NM)     84    39       1961         2026        885      719    
+   Albuquerque Del Norte (NM)   Albuquerque Manzano (NM)     82    40       1965         2023        604      719    
+   Albuquerque Eldorado (NM)    Albuquerque Sandia (NM)      80    36       1972         2025        654      778    
+   Albuquerque Manzano (NM)     Albuquerque Rio Grande (NM)  77    38       1962         2026        719      610    
+   Albuquerque Sandia (NM)      Albuquerque Valley (NM)      77    33       1959         2013        778      652    
+   Albuquerque (NM)             Albuquerque Manzano (NM)     73    37       1961         2021        840      719    
+   Albuquerque Rio Grande (NM)  Albuquerque West Mesa (NM)   72    32       1967         2026        610      561    
+   Albuquerque (NM)             Albuquerque West Mesa (NM)   71    33       1967         2026        840      561    
+   ... 139 more rows (see CSV)
+
+>>> mapcheck NM
+
+MAPPING CHECK NM - PREVIEW (nothing changed)
+ 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_mapcheck_20261106_1459.csv
+   URL                                       ProperName                Team_ID  NameID  Problem                          Team_ID_Name   
+   https://www.maxpreps.com/nm/santa-fe/new  Santa Fe New Mexico (NM)  41397    None    ProperName not in HS_Team_Names  None           
+   https://www.maxpreps.com/nm/socorro/soco  Socorro (NM)              70298    68220   Team_ID points to another name   Socorro JV (NM)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  1        None
+
+>>> dedup NM
+
+DEDUP v4 NM - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_archive_20261106_1459.csv
+ dedup_review: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_review_20261106_1459.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_summary_20261106_1459.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  NM     38221         0                    13               None 
+
+=== OK 2026-11-06 14:59:42

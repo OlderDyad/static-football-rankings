@@ -1,0 +1,589 @@
+
+>>> addstate KY
+Tracker rows ready for KY
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report KY drift
+
+REPORT drift KY: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_drift_20261112_1044.csv
+   Stopped                               S_Games  S_First  S_Last  S_Mapped  Started                  N_Games  N_First  N_Last  N_Mapped
+   Bowling Green Christian Academy (KY)  28       2016     2020    0         None                     None     None     None    0       
+   Eastern Allen Central (KY)            331      1986     2016    0         None                     None     None     None    0       
+   Franklin-Simpson (KY)                 803      1920     2023    0         None                     None     None     None    0       
+   Fulton City (KY)                      738      1926     2019    1         None                     None     None     None    0       
+   Georgetown Great Crossing (KY)        56       1961     2025    1         None                     None     None     None    0       
+   Hi Hat South Floyd (KY)               239      1993     2016    0         None                     None     None     None    0       
+   Hopkinsville (KY)                     973      1911     2025    1         None                     None     None     None    0       
+   Jenkins (KY)                          924      1925     2024    0         None                     None     None     None    0       
+   Langley Floyd Central (KY)            21       2017     2018    0         None                     None     None     None    0       
+   Madisonville North Hopkins (KY)       323      1964     2023    0         Madisonville North (KY)  33       2024     2026    1       
+   Newport Central Catholic (KY)         805      1935     2023    1         Newport Central (KY)     37       2024     2026    1       
+   Pineville (KY)                        1203     1920     2023    0         Pineville Mountain (KY)  32       2024     2026    1       
+   Somerset (KY)                         1086     1915     2023    0         Somerset Briar (KY)      38       2024     2026    1       
+   Williamsburg (KY)                     947      1923     2023    0         None                     None     None     None    0       
+
+>>> mapcheck KY --commit
+
+MAPPING CHECK KY - COMMIT (Team_ID set to the ProperName ID)
+ 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_mapcheck_COMMITTED_20261112_1044.csv
+   URL                                       ProperName                          Team_ID  NameID  Problem                          Team_ID_Name                           
+   https://www.maxpreps.com/ky/williamsburg  Williamsburg Yellow (KY)            3240     None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/ky/bardstown/ne  Bardstown Nelson County (KY)        19203    59368   Team_ID points to another name   Bardstown St. Joseph's Prep (KY)       
+   https://www.maxpreps.com/ky/betsy-layne/  Betsy Layne (KY)                    11724    7767    Team_ID points to another name   Stanville Betsy Layne (KY)             
+   https://www.maxpreps.com/ky/hebron/conne  Hebron Conner (KY)                  63015    62992   Team_ID points to another name   Henderson Barrett (KY)                 
+   https://www.maxpreps.com/ky/jenkins/jenk  Jenkins (KY)                        64644    63525   Team_ID points to another name   Lyndon Kentucky Military Institute (KY)
+   https://www.maxpreps.com/ky/louisville/b  Louisville Ballard (KY)             64541    64540   Team_ID points to another name   Louisville Beth Haven Christian (KY)   
+   https://www.maxpreps.com/ky/middlesboro/  Middlesboro (KY)                    65252    65192   Team_ID points to another name   Millersburg Military Institute (KY)    
+   https://www.maxpreps.com/ky/mt-washingto  Mount Washington Bullitt East (KY)  23841    65599   Team_ID points to another name   Mount Sterling (KY)                    
+   https://www.maxpreps.com/ky/newport/newp  Newport (KY)                        65937    65933   Team_ID points to another name   Newport Central Catholic (KY)          
+   https://www.maxpreps.com/ky/pineville/be  Pineville Bell County (KY)          67066    66817   Team_ID points to another name   Prestonsburg (KY)                      
+   https://www.maxpreps.com/ky/prestonsburg  Prestonsburg (KY)                   67080    67066   Team_ID points to another name   Princeton Caldwell County (KY)         
+   https://www.maxpreps.com/ky/princeton/ca  Princeton Caldwell County (KY)      6368     67080   Team_ID points to another name   Putnam Junior High (KY)                
+   https://www.maxpreps.com/ky/russellville  Russellville Logan County (KY)      16580    67545   Team_ID points to another name   Covington St. Augustine (KY)           
+   https://www.maxpreps.com/ky/west-liberty  West Liberty Morgan County (KY)     39634    69636   Team_ID points to another name   Paducah Heath (KY)                     
+   https://www.maxpreps.com/ky/williamsburg  Williamsburg Whitley County (KY)    69820    69809   Team_ID points to another name   Williamstown (KY)                      
+   Status     Fixable  Err 
+   COMMITTED  14       None
+
+>>> dedup KY --commit
+
+DEDUP v4 KY - COMMIT
+ dedup_archive: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_dedup_archive_COMMITTED_20261112_1044.csv
+ dedup_review: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_dedup_review_COMMITTED_20261112_1044.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_dedup_summary_COMMITTED_20261112_1044.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  KY     93751         79                   4                EC92A5B4-EC18-4569-A5A1-535CDAE51321
+
+>>> review-pairs KY --commit
+
+REVIEW-ONLY PAIRS KY - COMMIT
+ 3 pairs {'SHORT': 3} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_review_pairs_COMMITTED_20261112_1044.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  3         3123439D-7DAA-42C0-BB25-8E0882C51A00  None
+
+>>> same-score-fix KY
+
+SAME-SCORE DOUBLE-BOOKINGS KY - PREVIEW (nothing changed)
+ 2933 pairs {'DROP A': 486, 'DROP B': 544, 'UNDECIDED': 1903} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_same_score_20261112_1047.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  991       None   None
+
+>>> query KY ky_dump.sql
+
+QUERY ky_dump (1 result sets)
+ set 1: 93670 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_ky_dump_1_20261112_1047.csv
+
+>>> query KY ky_names.sql
+
+QUERY ky_names (1 result sets)
+ set 1: 723 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_ky_names_1_20261112_1047.csv
+
+>>> addstate WV
+Tracker rows ready for WV
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report WV drift
+
+REPORT drift WV: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_drift_20261112_1048.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                  N_Games  N_First  N_Last  N_Mapped
+   Ashton Hannan (WV)                        743      1937     2023    1         None                     None     None     None    0       
+   Beckley Woodrow Wilson (WV)               1193     1916     2023    0         Beckley Wilson (WV)      31       2024     2026    1       
+   Clarksburg Liberty (WV)                   550      1928     2024    1         None                     None     None     None    0       
+   Clarksburg Notre Dame (WV)                816      1936     2018    0         None                     None     None     None    0       
+   Clendenin Herbert Hoover (WV)             696      1963     2025    0         None                     None     None     None    0       
+   Fairmont (WV)                             1222     1903     2023    0         Fairmont Senior (WV)     33       2024     2026    1       
+   Fairmont East (WV)                        212      1933     2023    0         Fairmont Senior (WV)     33       2024     2026    1       
+   Fayetteville (WV)                         1081     1921     2018    0         None                     None     None     None    0       
+   Hundred (WV)                              683      1931     2024    1         None                     None     None     None    0       
+   Huntington St. Joseph Central Catholic (  12       1926     2023    1         None                     None     None     None    0       
+   Lindside James Monroe (WV)                337      1994     2023    0         Lindside Monroe (WV)     30       2024     2026    1       
+   Mason Wahama (WV)                         984      1931     2023    0         Mason Wahama White (WV)  36       2024     2026    1       
+   McMechen Bishop Donahue (WV)              517      1960     2016    0         None                     None     None     None    0       
+   Morgantown Trinity Christian (WV)         36       2009     2024    1         None                     None     None     None    0       
+   Paden City (WV)                           682      1945     2024    1         None                     None     None     None    0       
+   ... 5 more rows (see CSV)
+
+>>> mapcheck WV --commit
+
+MAPPING CHECK WV - COMMIT (Team_ID set to the ProperName ID)
+ 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_mapcheck_COMMITTED_20261112_1048.csv
+   URL                                       ProperName                      Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/wv/clendenin/ho  Clendenin Hoover (WV)           3962     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wv/huntington/s  Huntington Spring Valley (WV)   35084    63305   Team_ID points to another name   Huntington St. Joseph Central Catholic (
+   https://www.maxpreps.com/wv/lewisburg/gr  Lewisburg Greenbrier East (WV)  36884    64278   Team_ID points to another name   Lewisburg Greenbrier Military Academy (W
+   https://www.maxpreps.com/wv/nitro/nitro-  Nitro (WV)                      66028    65973   Team_ID points to another name   North Carolina School for the Deaf (NC) 
+   https://www.maxpreps.com/wv/van/van-bull  Van (WV)                        7540     69232   Team_ID points to another name   Virginia Tech University JV (VA)        
+   Status     Fixable  Err 
+   COMMITTED  4        None
+
+>>> dedup WV --commit
+
+DEDUP v4 WV - COMMIT
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_dedup_archive_COMMITTED_20261112_1048.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_dedup_review_COMMITTED_20261112_1048.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_dedup_summary_COMMITTED_20261112_1048.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   COMMITTED  WV     89172         0                    0                None 
+
+>>> review-pairs WV --commit
+
+REVIEW-ONLY PAIRS WV - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_review_pairs_COMMITTED_20261112_1048.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         FEEDBD6B-0A43-460E-BD6B-00D216777597  None
+
+>>> same-score-fix WV
+
+SAME-SCORE DOUBLE-BOOKINGS WV - PREVIEW (nothing changed)
+ 4546 pairs {'DROP B': 138, 'DROP A': 145, 'UNDECIDED': 4263} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_same_score_20261112_1052.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  271       None   None
+
+>>> query WV wv_dump.sql
+
+QUERY wv_dump (1 result sets)
+ set 1: 89173 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_wv_dump_1_20261112_1052.csv
+
+>>> query WV wv_names.sql
+
+QUERY wv_names (1 result sets)
+ set 1: 697 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_wv_names_1_20261112_1052.csv
+
+>>> addstate VA
+Tracker rows ready for VA
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report VA drift
+
+REPORT drift VA: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_drift_20261112_1053.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                                   N_Games  N_First  N_Last  N_Mapped
+   Alexandria Episcopal (VA)                 330      1919     2023    0         Alexandria City (VA)                      62       2021     2026    1       
+   Alexandria Jefferson (VA)                 641      1948     2023    0         Alexandria City (VA)                      62       2021     2026    1       
+   Alexandria T. C. Williams (VA)            658      1951     2023    0         Alexandria City (VA)                      62       2021     2026    1       
+   Alexandria Thomas Jefferson Science & Te  39       1949     2023    0         Alexandria City (VA)                      62       2021     2026    1       
+   Ashburn Riverside (VA)                    59       2015     2021    0         Ashburn Independence (VA)                 74       2019     2026    1       
+   Ashburn Virginia Academy (VA)             23       2014     2024    1         None                                      None     None     None    0       
+   Big Stone Gap Union (VA)                  13       2023     2023    0         None                                      None     None     None    0       
+   Bluefield Graham (VA)                     1076     1911     2023    0         Bluefield Graham G (VA)                   37       2024     2026    1       
+   Central Woodstock (VA)                    15       2022     2022    0         None                                      None     None     None    0       
+   Charlottesville Covenant (VA)             181      2004     2023    0         Charlottesville The Covenant (VA)         36       2023     2026    1       
+   Charlottesville St.Anne's-Belfield (VA)   176      1982     2021    0         Charlottesville The Covenant (VA)         36       2023     2026    1       
+   Chesapeake Hampton Roads Generals (VA)    13       2017     2019    0         None                                      None     None     None    0       
+   Chesterfield Richmond Christian (VA)      62       2014     2024    1         None                                      None     None     None    0       
+   Clintwood (VA)                            863      1927     2016    0         Clintwood Ridgeview (VA)                  131      2015     2026    1       
+   Coeburn (VA)                              906      1923     2015    0         Coeburn Eastside [Coeburn-Saint Paul] (V  167      2011     2026    1       
+   ... 68 more rows (see CSV)
+
+>>> mapcheck VA --commit
+
+MAPPING CHECK VA - COMMIT (Team_ID set to the ProperName ID)
+ 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_mapcheck_COMMITTED_20261112_1053.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/va/alexandria/s  Alexandria St. St. ephens (VA)            22808    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/va/king-and-que  King And Queen Court House King And (VA)  45055    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/va/lynchburg/vi  Lynchburg Virginia Episcopal (VA)         1160     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/va/richmond/cen  Richmond Central Virginia (VA)            39502    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/va/waynesboro/f  Waynesboro Fishburne Military (VA)        34351    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/va/alexandria/m  Alexandria Mount Vernon (VA)              58864    58862   Team_ID points to another name   Alexandria St.Stephen's & St. Agnes (VA)
+   https://www.maxpreps.com/va/arlington/wa  Arlington Washington-Liberty (VA)         59076    59077   Team_ID points to another name   Arlington Washington & Lee (VA)         
+   https://www.maxpreps.com/va/bealeton/lib  Bealeton Liberty (VA)                     71599    59476   Team_ID points to another name   Beaumont Industrial School (VA)         
+   https://www.maxpreps.com/va/christiansbu  Christiansburg (VA)                       22811    60693   Team_ID points to another name   Clearbrook Stonewall Jackson (VA)       
+   https://www.maxpreps.com/va/damascus/hol  Damascus Holston (VA)                     71996    61247   Team_ID points to another name   Danville School for Boys (VA)           
+   https://www.maxpreps.com/va/dublin/pulas  Dublin Pulaski County (VA)                61598    61588   Team_ID points to another name   Dumfries St. John Paul the Great Catholi
+   https://www.maxpreps.com/va/elliston/eas  Elliston Eastern Montgomery (VA)          71360    61804   Team_ID points to another name   Emory & Henry College Frosh (VA)        
+   https://www.maxpreps.com/va/fairfax/fair  Fairfax (VA)                              61983    61981   Team_ID points to another name   Fairfax Paul VI (VA)                    
+   https://www.maxpreps.com/va/front-royal/  Front Royal Warren County (VA)            62187    62362   Team_ID points to another name   Fort Defiance Augusta Military Academy (
+   https://www.maxpreps.com/va/grundy/grund  Grundy (VA)                               72001    14338   Team_ID points to another name   Hampden-Sydney College JV (VA)          
+   https://www.maxpreps.com/va/lynchburg/li  Lynchburg Liberty Christian (VA)          72012    64636   Team_ID points to another name   Lynchburg Virginia Episcopal School JV (
+   https://www.maxpreps.com/va/norfolk/norv  Norfolk Norview (VA)                      71058    65998   Team_ID points to another name   Norfolk St. Mary Academy (VA)           
+   https://www.maxpreps.com/va/sterling/par  Park View-Sterling (VA)                   66567    66524   Team_ID points to another name   Patrick Henry-Ashland (VA)              
+   https://www.maxpreps.com/va/penn-laird/s  Penn Laird Spotswood (VA)                 12591    66641   Team_ID points to another name   Pennington Gap Pennington (VA)          
+   https://www.maxpreps.com/va/radford/radf  Radford (VA)                              72073    67152   Team_ID points to another name   Randolph-Macon College JV (VA)          
+   ... 10 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  25       None
+
+>>> dedup VA --commit
+
+DEDUP v4 VA - COMMIT
+ dedup_archive: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_dedup_archive_COMMITTED_20261112_1053.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_dedup_review_COMMITTED_20261112_1053.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_dedup_summary_COMMITTED_20261112_1053.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  VA     137856        1                    0                9A4ABE96-5B89-4989-BB9C-DE2C494AAF2A
+
+>>> review-pairs VA --commit
+
+REVIEW-ONLY PAIRS VA - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_review_pairs_COMMITTED_20261112_1053.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         28BAC9B1-AFD1-4FB2-A2F4-5D4B87E64EB6  None
+
+>>> same-score-fix VA
+
+SAME-SCORE DOUBLE-BOOKINGS VA - PREVIEW (nothing changed)
+ 6508 pairs {'DROP A': 370, 'DROP B': 354, 'UNDECIDED': 5784} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_same_score_20261112_1059.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  697       None   None
+
+>>> query VA va_dump.sql
+
+QUERY va_dump (1 result sets)
+ set 1: 137857 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_va_dump_1_20261112_1059.csv
+
+>>> query VA va_names.sql
+
+QUERY va_names (1 result sets)
+ set 1: 1466 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_va_names_1_20261112_1059.csv
+
+>>> addstate MD
+Tracker rows ready for MD
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report MD drift
+
+REPORT drift MD: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_drift_20261112_1100.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                              N_Games  N_First  N_Last  N_Mapped
+   Baltimore Bluford Drew Jemison Academy (  34       2014     2018    0         Baltimore Green Street Academy (MD)  87       2016     2026    1       
+   Baltimore Bluford Drew Jemison Academy (  34       2014     2018    0         Baltimore Lake Clifton-Reach (MD)    58       2016     2024    1       
+   Baltimore Bluford Drew Jemison Academy (  34       2014     2018    0         Baltimore Seed (MD)                  59       2015     2026    1       
+   Baltimore Bluford Drew Jemison Academy-C  59       2011     2016    0         Baltimore Seed (MD)                  59       2015     2026    1       
+   Baltimore Bluford Drew Jemison Academy-C  59       2011     2016    0         Baltimore Lake Clifton-Reach (MD)    58       2016     2024    1       
+   Baltimore Bluford Drew Jemison Academy-C  59       2011     2016    0         Baltimore Green Street Academy (MD)  87       2016     2026    1       
+   Baltimore Connexions Leadership Academy   17       2024     2025    1         Baltimore Franklin (MD)              30       2024     2026    1       
+   Baltimore Connexions Leadership Academy   17       2024     2025    1         Baltimore Mount St. (MD)             1        2026     2026    0       
+   Baltimore Du Bois (MD)                    125      2002     2016    0         Baltimore Seed (MD)                  59       2015     2026    1       
+   Baltimore Du Bois (MD)                    125      2002     2016    0         Baltimore Green Street Academy (MD)  87       2016     2026    1       
+   Baltimore Du Bois (MD)                    125      2002     2016    0         Baltimore Lake Clifton-Reach (MD)    58       2016     2024    1       
+   Baltimore Friends (MD)                    290      1919     2018    0         Baltimore Seed (MD)                  59       2015     2026    1       
+   Baltimore Friends (MD)                    290      1919     2018    0         Baltimore Green Street Academy (MD)  87       2016     2026    1       
+   Baltimore Friends (MD)                    290      1919     2018    0         Baltimore Lake Clifton-Reach (MD)    58       2016     2024    1       
+   Baltimore Friendship Academy Engineering  52       2013     2017    0         Baltimore Lake Clifton-Reach (MD)    58       2016     2024    1       
+   ... 48 more rows (see CSV)
+
+>>> mapcheck MD --commit
+
+MAPPING CHECK MD - COMMIT (Team_ID set to the ProperName ID)
+ 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_mapcheck_COMMITTED_20261112_1100.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/md/baltimore/mo  Baltimore Mount St. (MD)             49452    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/md/baltimore/st  Baltimore St. Frances (MD)           49454    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/md/baltimore/st  Baltimore St. Frances Regional (MD)  49455    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/md/brooklandvil  Brooklandville St. Pauls (MD)        49471    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/md/baltimore/mi  Baltimore Milford Mill Academy (MD)  59329    59328   Team_ID points to another name   Baltimore Mt. Saint Joseph (MD)         
+   https://www.maxpreps.com/md/baltimore/po  Baltimore Poly (MD)                  59344    59339   Team_ID points to another name   Baltimore St. Frances Academy (MD)      
+   https://www.maxpreps.com/md/brandywine/g  Brandywine Gwynn Park (MD)           59968    59876   Team_ID points to another name   Brooklandville St.Paul's (MD)           
+   https://www.maxpreps.com/md/ellicott-cit  Ellicott City Mt. Hebron (MD)        70349    61800   Team_ID points to another name   Emmitsburgs Mount St. Marys University P
+   https://www.maxpreps.com/md/frostburg/mo  Frostburg Mountain Ridge (MD)        72059    35121   Team_ID points to another name   Fort Washington Lord Baltimore (MD)     
+   https://www.maxpreps.com/md/towson/loyol  Towson Loyola Blakefield (MD)        31465    68986   Team_ID points to another name   United States Naval Academy Plebes (MD) 
+   Status     Fixable  Err 
+   COMMITTED  6        None
+
+>>> dedup MD --commit
+
+DEDUP v4 MD - COMMIT
+ dedup_archive: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_dedup_archive_COMMITTED_20261112_1100.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_dedup_review_COMMITTED_20261112_1100.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_dedup_summary_COMMITTED_20261112_1100.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  MD     50616         2                    0                CA703F00-9F9F-48F2-8132-0753D13B2187
+
+>>> review-pairs MD --commit
+
+REVIEW-ONLY PAIRS MD - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_review_pairs_COMMITTED_20261112_1100.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         663BFD62-BF75-4585-9E6A-5E08CD9E9F04  None
+
+>>> same-score-fix MD
+
+SAME-SCORE DOUBLE-BOOKINGS MD - PREVIEW (nothing changed)
+ 183 pairs {'DROP A': 38, 'DROP B': 46, 'UNDECIDED': 99} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_same_score_20261112_1101.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  84        None   None
+
+>>> query MD md_dump.sql
+
+QUERY md_dump (1 result sets)
+ set 1: 50615 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_md_dump_1_20261112_1101.csv
+
+>>> query MD md_names.sql
+
+QUERY md_names (1 result sets)
+ set 1: 583 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_md_names_1_20261112_1101.csv
+
+>>> addstate IN
+Tracker rows ready for IN
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report IN drift
+
+REPORT drift IN: 116 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_drift_20261112_1102.csv
+   Stopped                         S_Games  S_First  S_Last  S_Mapped  Started                           N_Games  N_First  N_Last  N_Mapped
+   Anderson Highland (IN)          460      1928     2018    0         None                              None     None     None    0       
+   Anderson Prep Academy (IN)      76       2011     2020    0         None                              None     None     None    0       
+   Bedford North Lawrence (IN)     610      1948     2023    0         Bedford North (IN)                34       2024     2026    1       
+   Culver Military Academy (IN)    690      1899     2024    0         Culver Academies (IN)             30       2024     2026    1       
+   Danville Community (IN)         708      1941     2023    0         Danville (IN)                     33       2024     2026    1       
+   Elkhart Christian Academy (IN)  19       2010     2015    0         None                              None     None     None    0       
+   Elkhart Memorial (IN)           522      1903     2020    0         None                              None     None     None    0       
+   Evansville Mater Dei (IN)       952      1949     2023    0         Evansville Mater (IN)             34       2024     2026    1       
+   Evansville Reitz Memorial (IN)  1063     1895     2023    0         Evansville Mater (IN)             34       2024     2026    1       
+   Frankfort (IN)                  773      1906     2023    0         Frankfort Hot (IN)                30       2024     2026    1       
+   Gary Calumet (IN)               501      1924     2024    0         None                              None     None     None    0       
+   Gary Roosevelt (IN)             624      1929     2019    0         None                              None     None     None    0       
+   Greenwood Community (IN)        486      1925     2023    0         Greenwood Christian Academy (IN)  39       2022     2026    1       
+   Hammond (IN)                    1001     1902     2021    0         None                              None     None     None    0       
+   Hammond Bishop Noll (IN)        708      1939     2023    0         Hammond Bishop (IN)               31       2024     2026    1       
+   ... 101 more rows (see CSV)
+
+>>> mapcheck IN --commit
+
+MAPPING CHECK IN - COMMIT (Team_ID set to the ProperName ID)
+ 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_mapcheck_COMMITTED_20261112_1102.csv
+   URL                                       ProperName                          Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/in/whitestown/t  Whitestown Traders Point (IN)       30929    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/in/bloomington/  Bloomington South (IN)              41200    59766   Team_ID points to another name   Bloomington University High (IN)        
+   https://www.maxpreps.com/in/butler/easts  Butler Eastside (IN)                63369    60105   Team_ID points to another name   Indianapolis Calumet Heritage Christian 
+   https://www.maxpreps.com/in/culver/culve  Culver Community (IN)               70457    61196   Team_ID points to another name   Culver Military Academy B (IN)          
+   https://www.maxpreps.com/in/evansville/e  Evansville Bosse (IN)               34558    61938   Team_ID points to another name   Evansville Boys' Catholic (IN)          
+   https://www.maxpreps.com/in/fishers/hami  Fishers Hamilton Southeastern (IN)  36908    62101   Team_ID points to another name   Columbus (IN)                           
+   https://www.maxpreps.com/in/harlan/tri-s  Harlan Tri-State Crusaders (IN)     1643     38040   Team_ID points to another name   Indianapolis Harry E. Wood (IN)         
+   https://www.maxpreps.com/in/hobart/river  Hobart River Forest (IN)            63268    1092    Team_ID points to another name   Howe Military Academy (IN)              
+   https://www.maxpreps.com/in/indianapolis  Indianapolis Pike (IN)              63368    63387   Team_ID points to another name   Indianapolis Broad Ripple (IN)          
+   https://www.maxpreps.com/in/indianapolis  Indianapolis Scecina Memorial (IN)  47798    63390   Team_ID points to another name   Indiana School for the Deaf (IN)        
+   https://www.maxpreps.com/in/lapel/lapel-  Lapel (IN)                          63883    39102   Team_ID points to another name   La Porte La Lumiere (IN)                
+   https://www.maxpreps.com/in/martinsville  Martinsville (IN)                   71644    64881   Team_ID points to another name   Martinsville Tabernacle Christian (IN)  
+   https://www.maxpreps.com/in/north-vernon  North Vernon Jennings County (IN)   71302    66078   Team_ID points to another name   Notre Dame University Frosh (IN)        
+   https://www.maxpreps.com/in/plainfield/p  Plainfield (IN)                     12972    66864   Team_ID points to another name   Plainfield Charlton School for Boys (IN)
+   https://www.maxpreps.com/in/south-bend/s  South Bend Adams (IN)               68245    68243   Team_ID points to another name   South Bend Central Catholic (IN)        
+   https://www.maxpreps.com/in/south-bend/s  South Bend Washington (IN)          40312    41869   Team_ID points to another name   South Bend LaSalle (IN)                 
+   https://www.maxpreps.com/in/tell-city/te  Tell City (IN)                      68817    29219   Team_ID points to another name   Tennessee School for the Deaf (TN)      
+   https://www.maxpreps.com/in/union-mills/  Union Mills South Central (IN)      26933    34472   Team_ID points to another name   Notre Dame Univerity Walsh Hall (IN)    
+   https://www.maxpreps.com/in/whiteland/wh  Whiteland (IN)                      69751    69747   Team_ID points to another name   Whitestown Traders Point Christian Acade
+   Status     Fixable  Err 
+   COMMITTED  18       None
+
+>>> dedup IN --commit
+
+DEDUP v4 IN - COMMIT
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_dedup_archive_COMMITTED_20261112_1102.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_dedup_review_COMMITTED_20261112_1102.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_dedup_summary_COMMITTED_20261112_1102.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   COMMITTED  IN     123012        0                    0                None 
+
+>>> review-pairs IN --commit
+
+REVIEW-ONLY PAIRS IN - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_review_pairs_COMMITTED_20261112_1102.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         FBA8DEFE-688D-459D-A51F-3B2812F89B03  None
+
+>>> same-score-fix IN
+
+SAME-SCORE DOUBLE-BOOKINGS IN - PREVIEW (nothing changed)
+ 3394 pairs {'DROP B': 545, 'DROP A': 521, 'UNDECIDED': 2328} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_same_score_20261112_1105.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1002      None   None
+
+>>> query IN in_dump.sql
+
+QUERY in_dump (1 result sets)
+ set 1: 123013 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_in_dump_1_20261112_1105.csv
+
+>>> query IN in_names.sql
+
+QUERY in_names (1 result sets)
+ set 1: 894 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_in_names_1_20261112_1105.csv
+
+>>> addstate NY
+Tracker rows ready for NY
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report NY drift
+
+REPORT drift NY: 341 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_drift_20261112_1106.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                       N_Games  N_First  N_Last  N_Mapped
+   Albany Bishop Maginn (NY)                 191      1977     2015    0         Albany Green Tech (NY)        126      2011     2026    1       
+   Alexandria Bay Alexandria Central (NY)    416      1923     2024    0         None                          None     None     None    0       
+   Altmar-Parish-Williamstown (NY)           429      1965     2023    0         None                          None     None     None    0       
+   Athol Springs St. Francis (NY)            645      1924     2023    0         None                          None     None     None    0       
+   Bainbridge-Guilford-Afton (NY)            328      1948     2023    0         None                          None     None     None    0       
+   Barker (NY)                               332      1960     2018    0         None                          None     None     None    0       
+   Barker-Royalton-Hartland (NY)             61       2011     2017    0         None                          None     None     None    0       
+   Bayport-Blue Point (NY)                   448      1967     2023    0         None                          None     None     None    0       
+   Bemus Point Maple Grove-Chautauqua Lake   172      1960     2020    0         None                          None     None     None    0       
+   Binghamton Seton Catholic Central (NY)    475      1965     2017    0         None                          None     None     None    0       
+   Bishop Kearney-Rochester Prep (NY)        12       2018     2019    0         None                          None     None     None    0       
+   Bolivar-Richburg (NY)                     222      1991     2024    0         None                          None     None     None    0       
+   Brooklyn A-Tech (NY)                      16       2021     2023    0         Brooklyn A Tech (NY)          26       2024     2026    1       
+   Brooklyn A-Tech (NY)                      16       2021     2023    0         Brooklyn Eagle Academy (NY)   30       2024     2026    1       
+   Brooklyn A-Tech (NY)                      16       2021     2023    0         Brooklyn Grand St. reet (NY)  25       2024     2026    1       
+   ... 326 more rows (see CSV)
+
+>>> mapcheck NY --commit
+
+MAPPING CHECK NY - COMMIT (Team_ID set to the ProperName ID)
+ 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_mapcheck_COMMITTED_20261112_1106.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                     
+   https://www.maxpreps.com/ny/bellmore/ken  Bellmore Kennedy (NY)                     12669    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/bolivar/boli  Bolivar Richburg (NY)                     12204    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/endwell/main  Endwell Maine Endwell (NY)                31320    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/greenport/ma  Greenport Mattituck Southold (NY)         24009    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/hastings-on-  Hastings On Hudson Hastings Yellow (NY)   39757    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/katonah/harv  Katonah Harvey (NY)                       26344    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/mechanicvill  Mechanicville Hoosic (NY)                 46040    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/rochester/gr  Rochester Greece Odyssey (NY)             4816     None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/rochester/wi  Rochester Wilson Magnet-Early College In  45821    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/staten-islan  Staten Island St. Joseph (NY)             19273    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/tarrytown/ha  Tarrytown Hackley (NY)                    42806    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/tupper-lake/  Tupper Lake (NY)                          37819    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/warwick/warw  Warwick (NY)                              46993    None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/webster/webs  Webster Thomas (NY)                       5523     None    ProperName not in HS_Team_Names  None                             
+   https://www.maxpreps.com/ny/bronx/smith-  Bronx Smith (NY)                          70891    59961   Team_ID points to another name   Bronx St. Catharine Academy (NY) 
+   https://www.maxpreps.com/ny/bronxville/b  Bronxville (NY)                           13692    59964   Team_ID points to another name   Bronxville Concordia Prep (NY)   
+   https://www.maxpreps.com/ny/brooklyn/roo  Brooklyn Roosevelt (NY)                   60861    71528   Team_ID points to another name   Clintonville AuSable Valley (NY) 
+   https://www.maxpreps.com/ny/brooklyn/sou  Brooklyn South Shore (NY)                 15156    59982   Team_ID points to another name   Brooklyn St Johns Prep (NY)      
+   https://www.maxpreps.com/ny/dobbs-ferry/  Dobbs Ferry (NY)                          14757    61530   Team_ID points to another name   Dobbs Ferry Mackenzie School (NY)
+   https://www.maxpreps.com/ny/garden-city/  Garden City (NY)                          2371     62407   Team_ID points to another name   Garden City St.Paul's (NY)       
+   ... 8 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  14       None
+
+>>> dedup NY --commit
+
+DEDUP v4 NY - COMMIT
+ dedup_archive: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_dedup_archive_COMMITTED_20261112_1107.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_dedup_review_COMMITTED_20261112_1107.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_dedup_summary_COMMITTED_20261112_1107.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NY     158625        5                    1                77DC824F-8499-4C5C-B9CD-60759D23369F
+
+>>> review-pairs NY --commit
+
+REVIEW-ONLY PAIRS NY - COMMIT
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_review_pairs_COMMITTED_20261112_1107.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1         988BBE2A-96CC-4B14-8C74-973BC23A7FC7  None
+
+>>> same-score-fix NY
+
+SAME-SCORE DOUBLE-BOOKINGS NY - PREVIEW (nothing changed)
+ 2942 pairs {'DROP B': 559, 'DROP A': 593, 'UNDECIDED': 1790} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_same_score_20261112_1111.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1135      None   None
+
+>>> query NY ny_dump.sql
+
+QUERY ny_dump (1 result sets)
+ set 1: 158620 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_ny_dump_1_20261112_1111.csv
+
+>>> query NY ny_names.sql
+
+QUERY ny_names (1 result sets)
+ set 1: 2049 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_ny_names_1_20261112_1111.csv
+
+=== OK 2026-11-12 11:11:07

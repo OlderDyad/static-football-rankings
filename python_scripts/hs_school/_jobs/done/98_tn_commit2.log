@@ -1,0 +1,16 @@
+
+>>> commit TN
+
+DEDUP v4 TN - COMMIT
+ dedup_archive: 1957 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_archive_COMMITTED_20261110_0904.csv
+ dedup_review: 751 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_review_COMMITTED_20261110_0904.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_summary_COMMITTED_20261110_0904.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  TN     124898        1957                 751              127DC163-A38E-4326-8CB3-F5DE91B0F196
+
+REVIEW-ONLY PAIRS TN - COMMIT
+ 745 pairs {'LONG': 28, 'SHORT': 717} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_review_pairs_COMMITTED_20261110_0904.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  745       D4925F99-5E9D-4075-945D-81BC4BA85ECE  None
+
+=== OK 2026-11-10 09:04:45

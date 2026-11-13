@@ -1,0 +1,34 @@
+
+>>> commit FL
+
+DEDUP v4 FL - COMMIT
+ dedup_archive: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_archive_COMMITTED_20261111_1853.csv
+ dedup_review: 36 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_review_COMMITTED_20261111_1853.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_summary_COMMITTED_20261111_1853.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  FL     129382        96                   36               E6E64AA8-5A28-4A42-BEB4-CDDAA3983B6C
+
+REVIEW-ONLY PAIRS FL - COMMIT
+ 36 pairs {'SHORT': 36} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_review_pairs_COMMITTED_20261111_1854.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  36        5FFA4067-9F28-4E61-9616-99209D2A1BBF  None
+
+>>> same-score-fix FL
+
+SAME-SCORE DOUBLE-BOOKINGS FL - PREVIEW (nothing changed)
+ 179 pairs {'DROP B': 4, 'DROP A': 7, 'UNDECIDED': 168} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_same_score_20261111_1854.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  11        None   None
+
+>>> query FL fl_dump.sql
+
+QUERY fl_dump (1 result sets)
+ set 1: 129251 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_dump_1_20261111_1854.csv
+
+>>> query FL fl_geo_all.sql
+
+QUERY fl_geo_all (2 result sets)
+ set 1: 36437 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_geo_all_1_20261111_1855.csv
+ set 2: 129251 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_geo_all_2_20261111_1855.csv
+
+=== OK 2026-11-11 18:55:02

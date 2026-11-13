@@ -1,0 +1,668 @@
+
+>>> move-team LA --from "Dallas Sunset (TX)" --to "Sunset (LA)" --seasons 1880-2026 --ids hsfha_mv_05.csv --reason "HSFHA-LA match: game belongs to Sunset (LA) (hsfha.org school code)" --commit
+ only the 115 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_05.csv
+
+MOVE Dallas Sunset (TX) -> Sunset (LA), seasons 1880-2026 - COMMIT
+ move_games: 115 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0841.csv
+ move_by_season: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0841.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  115    1                  None
+
+>>> move-team LA --from "Farmersville (TX)" --to "Farmerville Union Parish (LA)" --seasons 1880-2026 --ids hsfha_mv_07.csv --reason "HSFHA-LA match: game belongs to Farmerville Union Parish (LA) (hsfha.org school code)" --commit
+ only the 104 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_07.csv
+
+MOVE Farmersville (TX) -> Farmerville Union Parish (LA), seasons 1880-2026 - COMMIT
+ move_games: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0841.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0841.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  104    1                  None
+
+>>> move-team LA --from "Menard (TX)" --to "Alexandria Menard Memorial (LA)" --seasons 1880-2026 --ids hsfha_mv_09.csv --reason "HSFHA-LA match: game belongs to Alexandria Menard Memorial (LA) (hsfha.org school code)" --commit
+ only the 87 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_09.csv
+
+MOVE Menard (TX) -> Alexandria Menard Memorial (LA), seasons 1880-2026 - COMMIT
+ move_games: 87 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0842.csv
+ move_by_season: 109 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0842.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  87     1                  None
+
+>>> move-team LA --from "West Helena DeSoto (AR)" --to "Mansfield DeSoto (LA)" --seasons 1880-2026 --ids hsfha_mv_17.csv --reason "HSFHA-LA match: game belongs to Mansfield DeSoto (LA) (hsfha.org school code)" --commit
+ only the 39 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_17.csv
+
+MOVE West Helena DeSoto (AR) -> Mansfield DeSoto (LA), seasons 1880-2026 - COMMIT
+ move_games: 39 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0842.csv
+ move_by_season: 58 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0842.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  39     1                  None
+
+>>> move-team LA --from "Jonesboro (AR)" --to "Jonesboro-Hodge (LA)" --seasons 1880-2026 --ids hsfha_mv_20.csv --reason "HSFHA-LA match: game belongs to Jonesboro-Hodge (LA) (hsfha.org school code)" --commit
+ only the 34 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_20.csv
+
+MOVE Jonesboro (AR) -> Jonesboro-Hodge (LA), seasons 1880-2026 - COMMIT
+ move_games: 34 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0842.csv
+ move_by_season: 111 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0842.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  34     1                  None
+
+>>> move-team LA --from "Pine Bluff Watson Chapel (AR)" --to "Waterproof (LA)" --seasons 1880-2026 --ids hsfha_mv_24.csv --reason "HSFHA-LA match: game belongs to Waterproof (LA) (hsfha.org school code)" --commit
+ only the 31 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_24.csv
+
+MOVE Pine Bluff Watson Chapel (AR) -> Waterproof (LA), seasons 1880-2026 - COMMIT
+ move_games: 31 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0842.csv
+ move_by_season: 85 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0842.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  31     1                  None
+
+>>> move-team LA --from "Lake Charles College Prep (La)" --to "Lake Charles College Prep (LA)" --seasons 1880-2026 --ids hsfha_mv_32.csv --reason "HSFHA-LA match: game belongs to Lake Charles College Prep (LA) (hsfha.org school code)" --commit
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_32.csv
+
+MOVE Lake Charles College Prep (La) -> Lake Charles College Prep (LA), seasons 1880-2026 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0842.csv
+ move_by_season: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0842.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team LA --from "Vicksburg St.Aloysius (MS)" --to "New Orleans St. Aloysius (LA)" --seasons 1880-2026 --ids hsfha_mv_41.csv --reason "HSFHA-LA match: game belongs to New Orleans St. Aloysius (LA) (hsfha.org school code)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_41.csv
+
+MOVE Vicksburg St.Aloysius (MS) -> New Orleans St. Aloysius (LA), seasons 1880-2026 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0842.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0842.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team LA --from "Americus Southland Academy (GA)" --to "Hammond Southwood Academy (LA)" --seasons 1880-2026 --ids hsfha_mv_48.csv --reason "HSFHA-LA match: game belongs to Hammond Southwood Academy (LA) (hsfha.org school code)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_48.csv
+
+MOVE Americus Southland Academy (GA) -> Hammond Southwood Academy (LA), seasons 1880-2026 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0842.csv
+ move_by_season: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0842.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team LA --from "Longview Spring Hill (TX)" --to "Springhill (LA)" --seasons 1880-2026 --ids hsfha_mv_49.csv --reason "HSFHA-LA match: game belongs to Springhill (LA) (hsfha.org school code)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_49.csv
+
+MOVE Longview Spring Hill (TX) -> Springhill (LA), seasons 1880-2026 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0842.csv
+ move_by_season: 93 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0842.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team LA --from "Biloxi Nichols (MS)" --to "New Orleans F.T. Nicholls (LA)" --seasons 1880-2026 --ids hsfha_mv_62.csv --reason "HSFHA-LA match: game belongs to New Orleans F.T. Nicholls (LA) (hsfha.org school code)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\hsfha_mv_62.csv
+
+MOVE Biloxi Nichols (MS) -> New Orleans F.T. Nicholls (LA), seasons 1880-2026 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0842.csv
+ move_by_season: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0842.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> remap LA --url "https://www.maxpreps.com/la/athens/mount-olive-christian/football/schedule/" --to "Athens Mt. Olive Christian (LA)" --commit
+
+REMAP https://www.maxpreps.com/la/athens/mount-olive-christian/football/schedule/ -> Athens Mt. Olive Christian (LA) - COMMIT
+   URL                                       ProperName                         Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/la/athens/mount  Athens Mount Olive Christian (LA)  18718    Athens Mt. Olive Christian (LA)  59165     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap LA --url "https://www.maxpreps.com/la/grand-coteau/berchmans-academy-saints/football/schedule/" --to "Grand Coteau Berchmans Academy of the Sacred Heart (LA)" --commit
+
+REMAP https://www.maxpreps.com/la/grand-coteau/berchmans-academy-saints/football/schedule/ -> Grand Coteau Berchmans Academy of the Sacred Heart (LA) - COMMIT
+   URL                                       ProperName                           Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/la/grand-coteau  Grand Coteau Berchmans Academy (LA)  41377    Grand Coteau Berchmans Academy of the Sa  62582     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap LA --url "https://www.maxpreps.com/la/houma/aj-ellender-patriots/football/schedule/" --to "Houma A.J. Ellender (LA)" --commit
+
+REMAP https://www.maxpreps.com/la/houma/aj-ellender-patriots/football/schedule/ -> Houma A.J. Ellender (LA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/la/houma/aj-ell  Houma Aj Ellender (LA)  5100     Houma A.J. Ellender (LA)  63240     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap LA --url "https://www.maxpreps.com/la/lafayette/teurlings-catholic-rebels/football/schedule/" --to "Lafayette Teurlings Catholic (LA)" --commit
+
+REMAP https://www.maxpreps.com/la/lafayette/teurlings-catholic-rebels/football/schedule/ -> Lafayette Teurlings Catholic (LA) - COMMIT
+   URL                                       ProperName                         Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/la/lafayette/te  Lafayette Teurlings Catholic (LA)  24850    Lafayette Teurlings Catholic (LA)  72436     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap LA --url "https://www.maxpreps.com/la/marrero/lw-higgins-hurricanes/football/schedule/" --to "Marrero L.W. Higgins (LA)" --commit
+
+REMAP https://www.maxpreps.com/la/marrero/lw-higgins-hurricanes/football/schedule/ -> Marrero L.W. Higgins (LA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/la/marrero/lw-h  Marrero Lw Higgins (LA)  34284    Marrero L.W. Higgins (LA)  64861     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap LA --url "https://www.maxpreps.com/la/metairie/archbishop-rummel-raiders/football/schedule/" --to "Metairie Archbishop Rummel (LA)" --commit
+
+REMAP https://www.maxpreps.com/la/metairie/archbishop-rummel-raiders/football/schedule/ -> Metairie Archbishop Rummel (LA) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/la/metairie/arc  Metairie Archbishop Rummel (LA)  4451     Metairie Archbishop Rummel (LA)  72437     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap LA --url "https://www.maxpreps.com/la/st-joseph/tensas-panthers/football/schedule/" --to "St. Joseph Tensas (LA)" --commit
+
+REMAP https://www.maxpreps.com/la/st-joseph/tensas-panthers/football/schedule/ -> St. Joseph Tensas (LA) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/la/st-joseph/te  Saint Joseph Tensas (LA)  6000     St. Joseph Tensas (LA)  68403     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap LA --url "https://www.maxpreps.com/la/shreveport/captain-shreve-gators/football/schedule/" --to "Shreveport Captain Shreve (LA)" --commit
+
+REMAP https://www.maxpreps.com/la/shreveport/captain-shreve-gators/football/schedule/ -> Shreveport Captain Shreve (LA) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/la/shreveport/c  Shreveport Captain Shreve (LA)  10372    Shreveport Captain Shreve (LA)  72438     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck LA --commit
+
+MAPPING CHECK LA - COMMIT (Team_ID set to the ProperName ID)
+ 32 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_mapcheck_COMMITTED_20261111_0842.csv
+   URL                                       ProperName                              Team_ID  NameID  Problem                         Team_ID_Name                            
+   https://www.maxpreps.com/la/arnaudville/  Arnaudville Beau Chene (LA)             59165    59083   Team_ID points to another name  Athens Mt. Olive Christian (LA)         
+   https://www.maxpreps.com/la/baton-rouge/  Baton Rouge Liberty Magnet (LA)         70988    33034   Team_ID points to another name  Baton Rouge Louisiana State University H
+   https://www.maxpreps.com/la/baton-rouge/  Baton Rouge Southern Lab (LA)           71182    59436   Team_ID points to another name  Baton Rouge St. Aloysius Catholic (LA)  
+   https://www.maxpreps.com/la/crowley/notr  Crowley Notre Dame (LA)                 30924    46905   Team_ID points to another name  Crowley St. Michael's (LA)              
+   https://www.maxpreps.com/la/dequincy/deq  DeQuincy (LA)                           6161     18535   Team_ID points to another name  De Quincy (LA)                          
+   https://www.maxpreps.com/la/grambling/li  Grambling Lincoln Prep (LA)             62582    15598   Team_ID points to another name  Grand Coteau Berchmans Academy of the Sa
+   https://www.maxpreps.com/la/hammond/hamm  Hammond (LA)                            31923    62802   Team_ID points to another name  Hammond Southwood Academy (LA)          
+   https://www.maxpreps.com/la/harvey/west-  Harvey West Jefferson (LA)              70585    62920   Team_ID points to another name  Haughton B (LA)                         
+   https://www.maxpreps.com/la/houma/vandeb  Houma Vandebilt Catholic (LA)           63301    63244   Team_ID points to another name  Huntington Academy (LA)                 
+   https://www.maxpreps.com/la/kaplan/kapla  Kaplan (LA)                             63670    63651   Team_ID points to another name  Keithville Graywood Christian Academy (L
+   https://www.maxpreps.com/la/lafayette/ca  Lafayette Carencro (LA)                 63904    63903   Team_ID points to another name  Lafayette Cathedral Carmel (LA)         
+   https://www.maxpreps.com/la/lake-provide  Lake Providence General Trass (LA)      64082    63981   Team_ID points to another name  Laplace St. Charles (LA)                
+   https://www.maxpreps.com/la/laplace/st-c  Laplace St. Charles (LA)                70836    64082   Team_ID points to another name  Larose-Cutoff (LA)                      
+   https://www.maxpreps.com/la/marrero/arch  Marrero Archbishop Shaw (LA)            64861    64859   Team_ID points to another name  Marrero L.W. Higgins (LA)               
+   https://www.maxpreps.com/la/napoleonvill  Napoleonville Assumption (LA)           71695    65677   Team_ID points to another name  Natalbany Baptist Christian (LA)        
+   https://www.maxpreps.com/la/new-orleans/  New Orleans Benjamin Franklin (LA)      71810    65836   Team_ID points to another name  New Orleans Boys School (LA)            
+   https://www.maxpreps.com/la/new-orleans/  New Orleans Livingston Collegiate (LA)  34763    41331   Team_ID points to another name  New Orleans Livingston Collegiate Academ
+   https://www.maxpreps.com/la/new-orleans/  New Orleans McDonogh 35 (LA)            71825    65856   Team_ID points to another name  New Orleans Mid-City Baptist (LA)       
+   https://www.maxpreps.com/la/new-orleans/  New Orleans Newman (LA)                 65843    65857   Team_ID points to another name  New Orleans F.T. Nicholls (LA)          
+   https://www.maxpreps.com/la/new-orleans/  New Orleans Reed (LA)                   45954    65859   Team_ID points to another name  New Orleans Samuel J. Peters (LA)       
+   ... 12 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  32       None
+
+>>> consolidate LA --reason "LA round 1: HSFHA-LA match - same-school name variants and renames to latest name (Holy Savior Menard, St. Michael, Lincoln Prep, Liberty Magnet, Dunham, Willow, Univ Christian Prep, Loyola Prep, Booker T. Washington, Warren Easton...), 2024 MaxPreps names, spacing fixes"
+Consolidating LA from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\LA_Alias_Rules.csv
+
+[stderr]
+2026-11-11 08:42:30,938 - INFO - Starting consolidation for state: (LA) using staging table method.
+2026-11-11 08:42:30,975 - WARNING - WARNING: 444 row(s) have identical OldName and NewName (no-op rules).
+2026-11-11 08:42:30,975 - WARNING -   'Abbeville (LA)' -> 'Abbeville (LA)' (no change)
+2026-11-11 08:42:30,975 - WARNING -   'Abbeville Harvest Time Christian Academy (LA)' -> 'Abbeville Harvest Time Christian Academy (LA)' (no change)
+2026-11-11 08:42:30,975 - WARNING -   'Abbeville Vermilion Catholic (LA)' -> 'Abbeville Vermilion Catholic (LA)' (no change)
+2026-11-11 08:42:30,975 - WARNING -   'Albany (LA)' -> 'Albany (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Alexandria (LA)' -> 'Alexandria (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Alexandria Bolton (LA)' -> 'Alexandria Bolton (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Alexandria Holy Savior Menard (LA)' -> 'Alexandria Holy Savior Menard (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Alexandria Peabody (LA)' -> 'Alexandria Peabody (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Amite (LA)' -> 'Amite (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Amite Oak Forest Academy (LA)' -> 'Amite Oak Forest Academy (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Amite Valley Forge Academy (LA)' -> 'Amite Valley Forge Academy (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Amite Woodland (LA)' -> 'Amite Woodland (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Angie Varnado (LA)' -> 'Angie Varnado (LA)' (no change)
+2026-11-11 08:42:30,976 - WARNING -   'Arcadia (LA)' -> 'Arcadia (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Arnaudville Beau Chene (LA)' -> 'Arnaudville Beau Chene (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Athens Mt. Olive Christian (LA)' -> 'Athens Mt. Olive Christian (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Baker (LA)' -> 'Baker (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Baker Central Private (LA)' -> 'Baker Central Private (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Baldwin West St. Mary (LA)' -> 'Baldwin West St. Mary (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Basile (LA)' -> 'Basile (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Bastrop (LA)' -> 'Bastrop (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Bastrop Beekman Charter (LA)' -> 'Bastrop Beekman Charter (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Bastrop Prairie View Academy (LA)' -> 'Bastrop Prairie View Academy (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Baton Rouge (LA)' -> 'Baton Rouge (LA)' (no change)
+2026-11-11 08:42:30,977 - WARNING -   'Baton Rouge Belaire (LA)' -> 'Baton Rouge Belaire (LA)' (no change)
+2026-11-11 08:42:30,978 - WARNING -   'Baton Rouge Broadmoor (LA)' -> 'Baton Rouge Broadmoor (LA)' (no change)
+2026-11-11 08:42:30,978 - WARNING -   'Baton Rouge Capitol (LA)' -> 'Baton Rouge Capitol (LA)' (no change)
+2026-11-11 08:42:30,978 - WARNING -   'Baton Rouge Catholic (LA)' -> 'Baton Rouge Catholic (LA)' (no change)
+2026-11-11 08:42:30,978 - WARNING -   'Baton Rouge Central (LA)' -> 'Baton Rouge Central (LA)' (no change)
+2026-11-11 08:42:30,978 - WARNING -   'Baton Rouge Christian Home Educators Fellowship (LA)' -> 'Baton Rouge Christian Home Educators Fellowship (LA)' (no change)
+2026-11-11 08:42:30,978 - WARNING -   'Baton Rouge Christian Life (LA)' -> 'Baton Rouge Christian Life (LA)' (no change)
+2026-11-11 08:42:30,978 - WARNING -   'Baton Rouge Dunham (LA)' -> 'Baton Rouge Dunham (LA)' (no change)
+2026-11-11 08:42:30,978 - WARNING -   'Baton Rouge Episcopal (LA)' -> 'Baton Rouge Episcopal (LA)' (no change)
+2026-11-11 08:42:30,978 - WARNING -   'Baton Rouge Glen Oaks (LA)' -> 'Baton Rouge Glen Oaks (LA)' (no change)
+2026-11-11 08:42:30,979 - WARNING -   'Baton Rouge Istrouma (LA)' -> 'Baton Rouge Istrouma (LA)' (no change)
+2026-11-11 08:42:30,979 - WARNING -   'Baton Rouge Liberty Magnet (LA)' -> 'Baton Rouge Liberty Magnet (LA)' (no change)
+2026-11-11 08:42:30,979 - WARNING -   'Baton Rouge Louisiana State University High (LA)' -> 'Baton Rouge Louisiana State University High (LA)' (no change)
+2026-11-11 08:42:30,979 - WARNING -   'Baton Rouge Madison Prep Academy (LA)' -> 'Baton Rouge Madison Prep Academy (LA)' (no change)
+2026-11-11 08:42:30,979 - WARNING -   'Baton Rouge McKinley (LA)' -> 'Baton Rouge McKinley (LA)' (no change)
+2026-11-11 08:42:30,979 - WARNING -   'Baton Rouge Parkview Baptist (LA)' -> 'Baton Rouge Parkview Baptist (LA)' (no change)
+2026-11-11 08:42:30,979 - WARNING -   'Baton Rouge Redemptorist (LA)' -> 'Baton Rouge Redemptorist (LA)' (no change)
+2026-11-11 08:42:30,979 - WARNING -   'Baton Rouge Scotlandville (LA)' -> 'Baton Rouge Scotlandville (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Baton Rouge Southern Lab (LA)' -> 'Baton Rouge Southern Lab (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Baton Rouge St. Aloysius Catholic (LA)' -> 'Baton Rouge St. Aloysius Catholic (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Baton Rouge St. Michael (LA)' -> 'Baton Rouge St. Michael (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Baton Rouge Tara (LA)' -> 'Baton Rouge Tara (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Baton Rouge Thrive Academy (LA)' -> 'Baton Rouge Thrive Academy (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Baton Rouge University Lab (LA)' -> 'Baton Rouge University Lab (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Baton Rouge Woodlawn (LA)' -> 'Baton Rouge Woodlawn (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Belle Chasse (LA)' -> 'Belle Chasse (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Belle Chasse River Oaks Academy (LA)' -> 'Belle Chasse River Oaks Academy (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Benton (LA)' -> 'Benton (LA)' (no change)
+2026-11-11 08:42:30,980 - WARNING -   'Bernice (LA)' -> 'Bernice (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Berwick (LA)' -> 'Berwick (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Bogalusa (LA)' -> 'Bogalusa (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Bogalusa Ben's Ford Christian (LA)' -> 'Bogalusa Ben's Ford Christian (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Boothville-Venice (LA)' -> 'Boothville-Venice (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Bossier City Airline (LA)' -> 'Bossier City Airline (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Bossier City Bossier (LA)' -> 'Bossier City Bossier (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Bossier City Parkway (LA)' -> 'Bossier City Parkway (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Bourg South Terrebonne (LA)' -> 'Bourg South Terrebonne (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Boutte Hahnville (LA)' -> 'Boutte Hahnville (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Braithwaite Phoenix (LA)' -> 'Braithwaite Phoenix (LA)' (no change)
+2026-11-11 08:42:30,981 - WARNING -   'Breaux Bridge (LA)' -> 'Breaux Bridge (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Breaux Bridge Christian Academy (LA)' -> 'Breaux Bridge Christian Academy (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Brusly (LA)' -> 'Brusly (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Buckeye (LA)' -> 'Buckeye (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Bunkie (LA)' -> 'Bunkie (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Buras (LA)' -> 'Buras (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Buras Delta Heritage Academy (LA)' -> 'Buras Delta Heritage Academy (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Buras South Plaquemines (LA)' -> 'Buras South Plaquemines (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Calhoun (LA)' -> 'Calhoun (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Calvary Chapel Christian (LA)' -> 'Calvary Chapel Christian (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Campti Lakeview (LA)' -> 'Campti Lakeview (LA)' (no change)
+2026-11-11 08:42:30,982 - WARNING -   'Cecilia (LA)' -> 'Cecilia (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Centerville (LA)' -> 'Centerville (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Chalmette (LA)' -> 'Chalmette (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Chauvin St. Joseph Benedictine (LA)' -> 'Chauvin St. Joseph Benedictine (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Church Point (LA)' -> 'Church Point (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Clinton (LA)' -> 'Clinton (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Clinton Silliman Institute (LA)' -> 'Clinton Silliman Institute (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Columbia Caldwell Parish (LA)' -> 'Columbia Caldwell Parish (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Cotton Valley (LA)' -> 'Cotton Valley (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Cottonport (LA)' -> 'Cottonport (LA)' (no change)
+2026-11-11 08:42:30,983 - WARNING -   'Coushatta (LA)' -> 'Coushatta (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Coushatta Red River (LA)' -> 'Coushatta Red River (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Coushatta Riverdale Academy (LA)' -> 'Coushatta Riverdale Academy (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Covington (LA)' -> 'Covington (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Covington Archbishop Hannan (LA)' -> 'Covington Archbishop Hannan (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Covington Northlake Christian (LA)' -> 'Covington Northlake Christian (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Covington Northshore Vultures (LA)' -> 'Covington Northshore Vultures (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Covington St. Paul's (LA)' -> 'Covington St. Paul's (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Creole South Cameron (LA)' -> 'Creole South Cameron (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Crowley (LA)' -> 'Crowley (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Crowley H. C. Ross (LA)' -> 'Crowley H. C. Ross (LA)' (no change)
+2026-11-11 08:42:30,984 - WARNING -   'Crowley Notre Dame (LA)' -> 'Crowley Notre Dame (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'Crowley St. Michael's (LA)' -> 'Crowley St. Michael's (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'Crowville (LA)' -> 'Crowville (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'De Quincy (LA)' -> 'De Quincy (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'Delcambre (LA)' -> 'Delcambre (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'Delhi (LA)' -> 'Delhi (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'Delhi Charter (LA)' -> 'Delhi Charter (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'Denham Springs (LA)' -> 'Denham Springs (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'DeRidder (LA)' -> 'DeRidder (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'DeRidder East Beauregard (LA)' -> 'DeRidder East Beauregard (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'Destrehan (LA)' -> 'Destrehan (LA)' (no change)
+2026-11-11 08:42:30,985 - WARNING -   'Donaldsonville (LA)' -> 'Donaldsonville (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Donaldsonville Ascension Catholic (LA)' -> 'Donaldsonville Ascension Catholic (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Donaldsonville Catholic of Pointe Coupee (LA)' -> 'Donaldsonville Catholic of Pointe Coupee (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Dry Prong Grant (LA)' -> 'Dry Prong Grant (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Edgard Second Ward (LA)' -> 'Edgard Second Ward (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Edgard West Saint John (LA)' -> 'Edgard West Saint John (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Elton (LA)' -> 'Elton (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Erath (LA)' -> 'Erath (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Eunice (LA)' -> 'Eunice (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Eunice St. Edmund (LA)' -> 'Eunice St. Edmund (LA)' (no change)
+2026-11-11 08:42:30,986 - WARNING -   'Farmerville D'Arbonne Woods (LA)' -> 'Farmerville D'Arbonne Woods (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Farmerville Union Christian Academy (LA)' -> 'Farmerville Union Christian Academy (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Farmerville Union Parish (LA)' -> 'Farmerville Union Parish (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Ferriday (LA)' -> 'Ferriday (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Ferriday Delta Charter (LA)' -> 'Ferriday Delta Charter (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Ferriday Huntington (LA)' -> 'Ferriday Huntington (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Franklin (LA)' -> 'Franklin (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Franklin Hanson Memorial (LA)' -> 'Franklin Hanson Memorial (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Franklinton (LA)' -> 'Franklinton (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Franklinton Bowling Green (LA)' -> 'Franklinton Bowling Green (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Franklinton Pine (LA)' -> 'Franklinton Pine (LA)' (no change)
+2026-11-11 08:42:30,987 - WARNING -   'Galliano South Lafourche (LA)' -> 'Galliano South Lafourche (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Geismar Dutchtown (LA)' -> 'Geismar Dutchtown (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Gilbert (LA)' -> 'Gilbert (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Gonzales Ascension Christian (LA)' -> 'Gonzales Ascension Christian (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Gonzales East Ascension (LA)' -> 'Gonzales East Ascension (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Grambling Alma Brown (LA)' -> 'Grambling Alma Brown (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Grambling Lincoln Prep (LA)' -> 'Grambling Lincoln Prep (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Grand Cane Central School (LA)' -> 'Grand Cane Central School (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Grand Coteau Berchmans Academy of the Sacred Heart (LA)' -> 'Grand Coteau Berchmans Academy of the Sacred Heart (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Gray Bourgeois (LA)' -> 'Gray Bourgeois (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Greensburg St. Helena College (LA)' -> 'Greensburg St. Helena College (LA)' (no change)
+2026-11-11 08:42:30,988 - WARNING -   'Gretna Thomas Jefferson (LA)' -> 'Gretna Thomas Jefferson (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Gueydan (LA)' -> 'Gueydan (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Hackberry (LA)' -> 'Hackberry (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Hammond (LA)' -> 'Hammond (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Hammond Southwood Academy (LA)' -> 'Hammond Southwood Academy (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Hammond St. Thomas Aquinas (LA)' -> 'Hammond St. Thomas Aquinas (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Harvey Cox (LA)' -> 'Harvey Cox (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Harvey Jefferson RISE Charter (LA)' -> 'Harvey Jefferson RISE Charter (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Harvey West Jefferson (LA)' -> 'Harvey West Jefferson (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Haughton (LA)' -> 'Haughton (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Haughton B (LA)' -> 'Haughton B (LA)' (no change)
+2026-11-11 08:42:30,989 - WARNING -   'Haynesville (LA)' -> 'Haynesville (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Haynesville Claiborne Academy (LA)' -> 'Haynesville Claiborne Academy (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Homer (LA)' -> 'Homer (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Houma A.J. Ellender (LA)' -> 'Houma A.J. Ellender (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Houma Christian (LA)' -> 'Houma Christian (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Houma Covenant Christian Academy (LA)' -> 'Houma Covenant Christian Academy (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Houma Terrebonne (LA)' -> 'Houma Terrebonne (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Houma Vandebilt Catholic (LA)' -> 'Houma Vandebilt Catholic (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Huntington Academy (LA)' -> 'Huntington Academy (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Independence (LA)' -> 'Independence (LA)' (no change)
+2026-11-11 08:42:30,990 - WARNING -   'Iota (LA)' -> 'Iota (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Iowa (LA)' -> 'Iowa (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Jackson (LA)' -> 'Jackson (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Jackson East Feliciana (LA)' -> 'Jackson East Feliciana (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Jeanerette (LA)' -> 'Jeanerette (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Jefferson Riverdale (LA)' -> 'Jefferson Riverdale (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Jena (LA)' -> 'Jena (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Jennings (LA)' -> 'Jennings (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Jonesboro (LA)' -> 'Jonesboro (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Jonesboro-Hodge (LA)' -> 'Jonesboro-Hodge (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Jonesville Block (LA)' -> 'Jonesville Block (LA)' (no change)
+2026-11-11 08:42:30,991 - WARNING -   'Kaplan (LA)' -> 'Kaplan (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Kenner Bonnabel (LA)' -> 'Kenner Bonnabel (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Kenner Discovery (LA)' -> 'Kenner Discovery (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Kentwood (LA)' -> 'Kentwood (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Kentwood Sumner (LA)' -> 'Kentwood Sumner (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Kinder (LA)' -> 'Kinder (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Lafayette (LA)' -> 'Lafayette (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Lafayette Acadiana (LA)' -> 'Lafayette Acadiana (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Lafayette Acadiana Christian (LA)' -> 'Lafayette Acadiana Christian (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Lafayette Acadiana HomeSchool (LA)' -> 'Lafayette Acadiana HomeSchool (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Lafayette Ascension Episcopal (LA)' -> 'Lafayette Ascension Episcopal (LA)' (no change)
+2026-11-11 08:42:30,992 - WARNING -   'Lafayette Carencro (LA)' -> 'Lafayette Carencro (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette Cathedral Carmel (LA)' -> 'Lafayette Cathedral Carmel (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette Christian Academy (LA)' -> 'Lafayette Christian Academy (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette Comeaux (LA)' -> 'Lafayette Comeaux (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette First Baptist Christian (LA)' -> 'Lafayette First Baptist Christian (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette John Paul the Great Academy (LA)' -> 'Lafayette John Paul the Great Academy (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette Louisiana Kings (LA)' -> 'Lafayette Louisiana Kings (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette Northside (LA)' -> 'Lafayette Northside (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette Our Lady of Fatima (LA)' -> 'Lafayette Our Lady of Fatima (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette Pope John Paul II Academy (LA)' -> 'Lafayette Pope John Paul II Academy (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette Renaissance Charter Academy (LA)' -> 'Lafayette Renaissance Charter Academy (LA)' (no change)
+2026-11-11 08:42:30,993 - WARNING -   'Lafayette St. Thomas More (LA)' -> 'Lafayette St. Thomas More (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lafayette Teurlings Catholic (LA)' -> 'Lafayette Teurlings Catholic (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lafitte Fisher (LA)' -> 'Lafitte Fisher (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lake Arthur (LA)' -> 'Lake Arthur (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lake Charles (LA)' -> 'Lake Charles (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lake Charles Barbe (LA)' -> 'Lake Charles Barbe (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lake Charles College Prep (LA)' -> 'Lake Charles College Prep (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lake Charles Grand Lake (LA)' -> 'Lake Charles Grand Lake (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lake Charles Hamilton Christian (LA)' -> 'Lake Charles Hamilton Christian (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lake Charles LaGrange (LA)' -> 'Lake Charles LaGrange (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lake Charles Landry Memorial (LA)' -> 'Lake Charles Landry Memorial (LA)' (no change)
+2026-11-11 08:42:30,994 - WARNING -   'Lake Charles Southwest Louisiana HomeSchool (LA)' -> 'Lake Charles Southwest Louisiana HomeSchool (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Lake Charles St. Louis Catholic (LA)' -> 'Lake Charles St. Louis Catholic (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Lake Charles W.O. Boston (LA)' -> 'Lake Charles W.O. Boston (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Lake Charles Washington (LA)' -> 'Lake Charles Washington (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Lake Charles Washington-Marion (LA)' -> 'Lake Charles Washington-Marion (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Lake Charles-Boston (LA)' -> 'Lake Charles-Boston (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Lake Providence (LA)' -> 'Lake Providence (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Lake Providence Briarfield Academy (LA)' -> 'Lake Providence Briarfield Academy (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Lake Providence General Trass (LA)' -> 'Lake Providence General Trass (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Laplace St. Charles (LA)' -> 'Laplace St. Charles (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Larose-Cutoff (LA)' -> 'Larose-Cutoff (LA)' (no change)
+2026-11-11 08:42:30,995 - WARNING -   'Lebeau North Central (LA)' -> 'Lebeau North Central (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Leesville (LA)' -> 'Leesville (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Leesville Pickering (LA)' -> 'Leesville Pickering (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Lena Northwood (LA)' -> 'Lena Northwood (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Livingston Doyle (LA)' -> 'Livingston Doyle (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Livonia (LA)' -> 'Livonia (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Lockport (LA)' -> 'Lockport (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Logansport (LA)' -> 'Logansport (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Longville South Beauregard (LA)' -> 'Longville South Beauregard (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Loranger (LA)' -> 'Loranger (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Loreauville (LA)' -> 'Loreauville (LA)' (no change)
+2026-11-11 08:42:30,996 - WARNING -   'Louisiana School for the Deaf (LA)' -> 'Louisiana School for the Deaf (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Lutcher (LA)' -> 'Lutcher (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Mamou (LA)' -> 'Mamou (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Mandeville (LA)' -> 'Mandeville (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Mandeville Fontainebleau (LA)' -> 'Mandeville Fontainebleau (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Mandeville Lakeshore (LA)' -> 'Mandeville Lakeshore (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Mangham (LA)' -> 'Mangham (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Mansfield (LA)' -> 'Mansfield (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Many (LA)' -> 'Many (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Marion (LA)' -> 'Marion (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Marksville (LA)' -> 'Marksville (LA)' (no change)
+2026-11-11 08:42:30,997 - WARNING -   'Marrero Archbishop Shaw (LA)' -> 'Marrero Archbishop Shaw (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Marrero John Ehret (LA)' -> 'Marrero John Ehret (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Marrero L.W. Higgins (LA)' -> 'Marrero L.W. Higgins (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Maurice North Vermilion (LA)' -> 'Maurice North Vermilion (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Melville (LA)' -> 'Melville (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Mer Rouge Delta (LA)' -> 'Mer Rouge Delta (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Merryville (LA)' -> 'Merryville (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Metairie Archbishop Rummel (LA)' -> 'Metairie Archbishop Rummel (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Metairie Crescent City Christian (LA)' -> 'Metairie Crescent City Christian (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Metairie East Jefferson (LA)' -> 'Metairie East Jefferson (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Metairie Ecole Classique (LA)' -> 'Metairie Ecole Classique (LA)' (no change)
+2026-11-11 08:42:30,998 - WARNING -   'Metairie Grace King (LA)' -> 'Metairie Grace King (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Metairie Haynes Academy (LA)' -> 'Metairie Haynes Academy (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Metairie Lutheran (LA)' -> 'Metairie Lutheran (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Metairie Park Country Day (LA)' -> 'Metairie Park Country Day (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Metairie Ridgewood (LA)' -> 'Metairie Ridgewood (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Metairie Sam Barthe School for Boys (LA)' -> 'Metairie Sam Barthe School for Boys (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Metairie St. Martin's Episcopal (LA)' -> 'Metairie St. Martin's Episcopal (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Midland (LA)' -> 'Midland (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Minden (LA)' -> 'Minden (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Minden Glenbrook (LA)' -> 'Minden Glenbrook (LA)' (no change)
+2026-11-11 08:42:30,999 - WARNING -   'Monroe Carroll (LA)' -> 'Monroe Carroll (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Monroe Neville (LA)' -> 'Monroe Neville (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Monroe Ouachita Christian (LA)' -> 'Monroe Ouachita Christian (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Monroe Ouachita Parish (LA)' -> 'Monroe Ouachita Parish (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Monroe Richwood (LA)' -> 'Monroe Richwood (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Monroe River Oaks (LA)' -> 'Monroe River Oaks (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Monroe St. Frederick (LA)' -> 'Monroe St. Frederick (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Monroe Wossman (LA)' -> 'Monroe Wossman (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Montgomery (LA)' -> 'Montgomery (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Moreauville Avoyelles (LA)' -> 'Moreauville Avoyelles (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Morgan City (LA)' -> 'Morgan City (LA)' (no change)
+2026-11-11 08:42:31,000 - WARNING -   'Morgan City Central Catholic (LA)' -> 'Morgan City Central Catholic (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'Morganza Pointe Coupee Central (LA)' -> 'Morganza Pointe Coupee Central (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'Napoleonville Assumption (LA)' -> 'Napoleonville Assumption (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'Natalbany Baptist Christian (LA)' -> 'Natalbany Baptist Christian (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'Natchitoches Central (LA)' -> 'Natchitoches Central (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'Natchitoches St. Mary (LA)' -> 'Natchitoches St. Mary (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'New Iberia (LA)' -> 'New Iberia (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'New Iberia Acadiana Christian (LA)' -> 'New Iberia Acadiana Christian (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'New Iberia Catholic (LA)' -> 'New Iberia Catholic (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'New Iberia Highland Baptist Christian (LA)' -> 'New Iberia Highland Baptist Christian (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'New Iberia Westgate (LA)' -> 'New Iberia Westgate (LA)' (no change)
+2026-11-11 08:42:31,001 - WARNING -   'New Orleans Abramson (LA)' -> 'New Orleans Abramson (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans Academy (LA)' -> 'New Orleans Academy (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans Behrman (LA)' -> 'New Orleans Behrman (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans Benjamin Franklin (LA)' -> 'New Orleans Benjamin Franklin (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans Boys School (LA)' -> 'New Orleans Boys School (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans Brother Martin (LA)' -> 'New Orleans Brother Martin (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans Carver (LA)' -> 'New Orleans Carver (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans Cohen (LA)' -> 'New Orleans Cohen (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans De La Salle (LA)' -> 'New Orleans De La Salle (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans Douglass (LA)' -> 'New Orleans Douglass (LA)' (no change)
+2026-11-11 08:42:31,002 - WARNING -   'New Orleans Eleanor McMain (LA)' -> 'New Orleans Eleanor McMain (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans F.T. Nicholls (LA)' -> 'New Orleans F.T. Nicholls (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans Fortier (LA)' -> 'New Orleans Fortier (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans Ganus (LA)' -> 'New Orleans Ganus (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans Holy Cross (LA)' -> 'New Orleans Holy Cross (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans Home School Saints (LA)' -> 'New Orleans Home School Saints (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans J.S. Clark (LA)' -> 'New Orleans J.S. Clark (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans Jesuit (LA)' -> 'New Orleans Jesuit (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans Karr (LA)' -> 'New Orleans Karr (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans Kennedy (LA)' -> 'New Orleans Kennedy (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans KIPP Renaissance (LA)' -> 'New Orleans KIPP Renaissance (LA)' (no change)
+2026-11-11 08:42:31,003 - WARNING -   'New Orleans Landry (LA)' -> 'New Orleans Landry (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans Landry-Walker (LA)' -> 'New Orleans Landry-Walker (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans Lawless (LA)' -> 'New Orleans Lawless (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans Livingston Collegiate Academy (LA)' -> 'New Orleans Livingston Collegiate Academy (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans McDonogh (LA)' -> 'New Orleans McDonogh (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans McDonogh 35 (LA)' -> 'New Orleans McDonogh 35 (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans Mid-City Baptist (LA)' -> 'New Orleans Mid-City Baptist (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans Miller-McCoy Academy (LA)' -> 'New Orleans Miller-McCoy Academy (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans Newman (LA)' -> 'New Orleans Newman (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans O.P. Walker (LA)' -> 'New Orleans O.P. Walker (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans Redeemer (LA)' -> 'New Orleans Redeemer (LA)' (no change)
+2026-11-11 08:42:31,004 - WARNING -   'New Orleans Redeemer-Seton (LA)' -> 'New Orleans Redeemer-Seton (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Orleans Redemptorist (LA)' -> 'New Orleans Redemptorist (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Orleans Reed (LA)' -> 'New Orleans Reed (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Orleans Sci Academy (LA)' -> 'New Orleans Sci Academy (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Orleans St. Aloysius (LA)' -> 'New Orleans St. Aloysius (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Orleans St. Augustine (LA)' -> 'New Orleans St. Augustine (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Orleans Verrina High School for Boys (LA)' -> 'New Orleans Verrina High School for Boys (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Orleans Wright (LA)' -> 'New Orleans Wright (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Orleans Xavier University Prep (LA)' -> 'New Orleans Xavier University Prep (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Roads Catholic of Pointe Coupee (LA)' -> 'New Roads Catholic of Pointe Coupee (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Roads False River (LA)' -> 'New Roads False River (LA)' (no change)
+2026-11-11 08:42:31,005 - WARNING -   'New Roads Rosenwald (LA)' -> 'New Roads Rosenwald (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Newellton (LA)' -> 'Newellton (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Northwestern State University Frosh (LA)' -> 'Northwestern State University Frosh (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Oak Grove (LA)' -> 'Oak Grove (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Oakdale (LA)' -> 'Oakdale (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Oberlin (LA)' -> 'Oberlin (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Olla LaSalle (LA)' -> 'Olla LaSalle (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Opelousas (LA)' -> 'Opelousas (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Opelousas A.B. Ware (LA)' -> 'Opelousas A.B. Ware (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Opelousas Academy of the Immaculate Conception (LA)' -> 'Opelousas Academy of the Immaculate Conception (LA)' (no change)
+2026-11-11 08:42:31,006 - WARNING -   'Opelousas Belmont Academy (LA)' -> 'Opelousas Belmont Academy (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Opelousas Catholic (LA)' -> 'Opelousas Catholic (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Opelousas J. S. Clark (LA)' -> 'Opelousas J. S. Clark (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Opelousas Northwest (LA)' -> 'Opelousas Northwest (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Opelousas Plaisance (LA)' -> 'Opelousas Plaisance (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Opelousas Westminster Academy (LA)' -> 'Opelousas Westminster Academy (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Patterson (LA)' -> 'Patterson (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Pearl River (LA)' -> 'Pearl River (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Pine Prairie (LA)' -> 'Pine Prairie (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Pineville (LA)' -> 'Pineville (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Pineville Cenla Christian Academy (LA)' -> 'Pineville Cenla Christian Academy (LA)' (no change)
+2026-11-11 08:42:31,007 - WARNING -   'Plain Dealing Academy (LA)' -> 'Plain Dealing Academy (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Plain Dealing Louisiana New Tech (LA)' -> 'Plain Dealing Louisiana New Tech (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Plaquemine (LA)' -> 'Plaquemine (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Plaquemine St. John The Evangelist (LA)' -> 'Plaquemine St. John The Evangelist (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Ponchatoula (LA)' -> 'Ponchatoula (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Port Allen (LA)' -> 'Port Allen (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Port Barre (LA)' -> 'Port Barre (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Port Sulphur (LA)' -> 'Port Sulphur (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'PortBarre (LA)' -> 'PortBarre (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Pride Northeast (LA)' -> 'Pride Northeast (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Raceland Central Lafourche (LA)' -> 'Raceland Central Lafourche (LA)' (no change)
+2026-11-11 08:42:31,008 - WARNING -   'Rayne (LA)' -> 'Rayne (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'Rayville (LA)' -> 'Rayville (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'Rayville Riverfield Academy (LA)' -> 'Rayville Riverfield Academy (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'Reserve East St. John (LA)' -> 'Reserve East St. John (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'Reserve Leon Godchaux (LA)' -> 'Reserve Leon Godchaux (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'Reserve Riverside Academy (LA)' -> 'Reserve Riverside Academy (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'Ringgold (LA)' -> 'Ringgold (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'River Ridge Curtis (LA)' -> 'River Ridge Curtis (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'River Ridge Curtis (LA)' -> 'River Ridge Curtis (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'Rosedale North Iberville (LA)' -> 'Rosedale North Iberville (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'Rosedale Shady Grove (LA)' -> 'Rosedale Shady Grove (LA)' (no change)
+2026-11-11 08:42:31,009 - WARNING -   'Rosepine (LA)' -> 'Rosepine (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Ruston (LA)' -> 'Ruston (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Ruston Cedar Creek (LA)' -> 'Ruston Cedar Creek (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Saint Francisville Julius Freyhan (LA)' -> 'Saint Francisville Julius Freyhan (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Sarepta (LA)' -> 'Sarepta (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Scott Lafayette Parish (LA)' -> 'Scott Lafayette Parish (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Shreveport Baptist Christian (LA)' -> 'Shreveport Baptist Christian (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Shreveport Byrd (LA)' -> 'Shreveport Byrd (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Shreveport Calvary Baptist Academy (LA)' -> 'Shreveport Calvary Baptist Academy (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Shreveport Captain Shreve (LA)' -> 'Shreveport Captain Shreve (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Shreveport Evangel Christian Academy (LA)' -> 'Shreveport Evangel Christian Academy (LA)' (no change)
+2026-11-11 08:42:31,010 - WARNING -   'Shreveport Fair Park (LA)' -> 'Shreveport Fair Park (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport First Baptist (LA)' -> 'Shreveport First Baptist (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport Friendship Academy (LA)' -> 'Shreveport Friendship Academy (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport Grawood Christian Academy (LA)' -> 'Shreveport Grawood Christian Academy (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport Green Oaks (LA)' -> 'Shreveport Green Oaks (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport Huntington (LA)' -> 'Shreveport Huntington (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport Jesuit (LA)' -> 'Shreveport Jesuit (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport Loyola College Prep (LA)' -> 'Shreveport Loyola College Prep (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport Magnolia School (LA)' -> 'Shreveport Magnolia School (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport Northwood (LA)' -> 'Shreveport Northwood (LA)' (no change)
+2026-11-11 08:42:31,011 - WARNING -   'Shreveport Southfield Academy (LA)' -> 'Shreveport Southfield Academy (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Shreveport Southwood (LA)' -> 'Shreveport Southwood (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Shreveport Woodlawn (LA)' -> 'Shreveport Woodlawn (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Sibley Lakeside (LA)' -> 'Sibley Lakeside (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Sicily Island (LA)' -> 'Sicily Island (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Simmesport (LA)' -> 'Simmesport (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Slaughter Community Charter (LA)' -> 'Slaughter Community Charter (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Slidell (LA)' -> 'Slidell (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Slidell Northshore (LA)' -> 'Slidell Northshore (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Slidell Pope John Paul II (LA)' -> 'Slidell Pope John Paul II (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Slidell Salmen (LA)' -> 'Slidell Salmen (LA)' (no change)
+2026-11-11 08:42:31,012 - WARNING -   'Southwest Louisiana Frosh (LA)' -> 'Southwest Louisiana Frosh (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'Springfield (LA)' -> 'Springfield (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'Springhill (LA)' -> 'Springhill (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'Springhill North Webster (LA)' -> 'Springhill North Webster (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'St. Amant (LA)' -> 'St. Amant (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'St. Bernard (LA)' -> 'St. Bernard (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'St. Francisville West Feliciana (LA)' -> 'St. Francisville West Feliciana (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'St. Gabriel East Iberville (LA)' -> 'St. Gabriel East Iberville (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'St. James (LA)' -> 'St. James (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'St. Joseph Davidson (LA)' -> 'St. Joseph Davidson (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'St. Joseph Tensas (LA)' -> 'St. Joseph Tensas (LA)' (no change)
+2026-11-11 08:42:31,013 - WARNING -   'St. Joseph Tensas Academy (LA)' -> 'St. Joseph Tensas Academy (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'St. Martinville (LA)' -> 'St. Martinville (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Sterlington (LA)' -> 'Sterlington (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Stonewall North DeSoto (LA)' -> 'Stonewall North DeSoto (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Sulphur (LA)' -> 'Sulphur (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Sunset (LA)' -> 'Sunset (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Tallulah Academy (LA)' -> 'Tallulah Academy (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Tallulah Madison (LA)' -> 'Tallulah Madison (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Tallulah McCall (LA)' -> 'Tallulah McCall (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Thibodaux (LA)' -> 'Thibodaux (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Thibodaux E.D. White (LA)' -> 'Thibodaux E.D. White (LA)' (no change)
+2026-11-11 08:42:31,014 - WARNING -   'Tioga (LA)' -> 'Tioga (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'Vidalia (LA)' -> 'Vidalia (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'Ville Platte (LA)' -> 'Ville Platte (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'Ville Platte Sacred Heart (LA)' -> 'Ville Platte Sacred Heart (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'Vinton (LA)' -> 'Vinton (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'Vivian North Caddo (LA)' -> 'Vivian North Caddo (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'Walker (LA)' -> 'Walker (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'Waterproof (LA)' -> 'Waterproof (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'Watson Live Oak (LA)' -> 'Watson Live Oak (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'Welsh (LA)' -> 'Welsh (LA)' (no change)
+2026-11-11 08:42:31,015 - WARNING -   'West Monroe (LA)' -> 'West Monroe (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'West Monroe B (LA)' -> 'West Monroe B (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'West Monroe Northeast Baptist (LA)' -> 'West Monroe Northeast Baptist (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'West Monroe Ridgedale Academy (LA)' -> 'West Monroe Ridgedale Academy (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'West Monroe West Ouachita (LA)' -> 'West Monroe West Ouachita (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'Westlake (LA)' -> 'Westlake (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'White Castle (LA)' -> 'White Castle (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'Winnfield (LA)' -> 'Winnfield (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'Winnsboro (LA)' -> 'Winnsboro (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'Winnsboro Franklin Academy (LA)' -> 'Winnsboro Franklin Academy (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'Winnsboro Franklin Parish (LA)' -> 'Winnsboro Franklin Parish (LA)' (no change)
+2026-11-11 08:42:31,016 - WARNING -   'Wisner (LA)' -> 'Wisner (LA)' (no change)
+2026-11-11 08:42:31,017 - WARNING -   'Youngsville Southside (LA)' -> 'Youngsville Southside (LA)' (no change)
+2026-11-11 08:42:31,017 - WARNING -   'Zachary (LA)' -> 'Zachary (LA)' (no change)
+2026-11-11 08:42:31,017 - WARNING -   'Zachary Chaneyville (LA)' -> 'Zachary Chaneyville (LA)' (no change)
+2026-11-11 08:42:31,017 - INFO - Validation passed: 681 rules are clean and ready to upload.
+2026-11-11 08:42:31,062 - INFO - Uploading 681 rules to staging table: ConsolidationRules_Staging...
+2026-11-11 08:42:31,800 - INFO - Upload to staging table complete.
+2026-11-11 08:42:31,805 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-11 08:44:31,009 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-11 08:44:31,009 - INFO - Reason logged to dbo.HS_Consolidation_Log: LA round 1: HSFHA-LA match - same-school name variants and renames to latest name (Holy Savior Menard, St. Michael, Lincoln Prep, Liberty Magnet, Dunham, Willow, Univ Christian Prep, Loyola Prep, Booker T. Washington, Warren Easton...), 2024 MaxPreps names, spacing fixes
+2026-11-11 08:44:31,009 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-11 08:44:31,009 - INFO - Running post-consolidation safety check...
+2026-11-11 08:44:31,246 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup LA
+
+DEDUP v4 LA - PREVIEW (nothing changed)
+ dedup_archive: 428 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_archive_20261111_0844.csv
+ dedup_review: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_review_20261111_0844.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_summary_20261111_0844.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  LA     104213        428                  26               None 
+
+>>> review-pairs LA
+
+REVIEW-ONLY PAIRS LA - PREVIEW (nothing changed)
+ 26 pairs {'SHORT': 26} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_review_pairs_20261111_0844.csv
+
+=== OK 2026-11-11 08:44:45

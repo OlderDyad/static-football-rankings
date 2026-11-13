@@ -1,0 +1,35 @@
+remap MI --url "https://www.maxpreps.com/mi/ada/forest-hills-eastern-hawks/football/schedule/" --to "Ada Forest Hills Eastern (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/ann-arbor/huron-river-rats/football/schedule/" --to "Ann Arbor Huron (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/bessemer/gogebic-johnston-wakefield-miners/football/schedule/" --to "Bessemer (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/calumet/calumet-copper-kings/football/schedule/" --to "Calumet (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/detroit/central-trail-blazers/football/schedule/" --to "Detroit Central Collegiate (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/detroit/ford-trojans/football/schedule/" --to "Detroit Henry Ford (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/detroit/king-crusaders/football/schedule/" --to "Detroit Martin Luther King (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/detroit/university-of-detroit-jesuit-cubs/football/schedule/" --to "Detroit University of Detroit Jesuit (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/dowagiac/dowagiac-chieftains/football/schedule/" --to "Dowagiac Union (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/flint/flint-southwestern-academy-knights/football/schedule/" --to "Flint Southwestern Classical Academy (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/grosse-pointe/grosse-pointe-north-norsemen/football/schedule/" --to "Grosse Pointe North (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/grosse-pointe/grosse-pointe-south-blue-devils/football/schedule/" --to "Grosse Pointe South (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/ironwood/wright-red-devils/football/schedule/" --to "Ironwood Luther L Wright (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/kalamazoo/norrix-knights/football/schedule/" --to "Kalamazoo Loy Norrix (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/middleton/fulton-pirates/football/schedule/" --to "Middleton Fulton (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/mt-morris/mt-morris-panthers/football/schedule/" --to "Mount Morris EA Johnson (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/st-ignace/stignace-saints/football/schedule/" --to "Saint Ignace LaSalle (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/wayland/wayland-wildcats/football/schedule/" --to "Wayland Union (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/bay-city/glenn-bobcats/football/schedule/" --to "Bay City John Glenn (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/byron/byron-eagles/football/schedule/" --to "Byron Area (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/carson-city/carson-city-crystal-eagles/football/schedule/" --to "Carson City-Crystal (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/detroit/consortium-college-prep-cougars/football/schedule/" --to "Detroit Consortium College Prep (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/iron-river/west-iron-county-wykons/football/schedule/" --to "Iron River West Iron County (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/madison-heights/bishop-foley-ventures/football/schedule/" --to "Madison Heights Bishop Foley Catholic (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/mt-pleasant/sacred-heart-academy-irish/football/schedule/" --to "Mount Pleasant Sacred Heart Academy (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/norton-shores/mona-shores-sailors/football/schedule/" --to "Muskegon Mona Shores (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/novi/catholic-central-shamrocks/football/schedule/" --to "Detroit Catholic Central (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/otisville/lakeville-falcons/football/schedule/" --to "Otisville LakeVille Memorial (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/scottville/mason-county-central-spartans/football/schedule/" --to "Scottville Mason County Central (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/standish/standish-sterling-panthers/football/schedule/" --to "Standish-Sterling Central (MI)" --commit
+remap MI --url "https://www.maxpreps.com/mi/parma/western-panthers/football/schedule/" --to "Parma Jackson County Western (MI)" --commit
+mapcheck MI --commit
+consolidate MI --reason "MI round 1: 2024 MaxPreps short names (Ada Forest Hills, Huron River, Calumet Copper, Detroit Central Trail/Ford/King/University Of, Grosse Pointe Pointe North/South, Norrix, Wayland, Dowagiac...), same-school variants (Mount Morris EA Johnson, St. Ignace LaSalle, Ironwood LL Wright, Canton-Salem, Middleton Fulton, Petersburg-Summerfield, Vandercook Lake, Ogemaw Heights, Central Montcalm, Mason County Central, Highland Milford), renames to latest (Montrose -> Hill-McCloy, Western State High -> University High)"
+dedup MI
+review-pairs MI

@@ -1,0 +1,13 @@
+commit MS
+query MS ms_dump.sql
+query MS ms_export.sql
+step MS 1.1 done "2026-11-11: ~130 long-pending MS rules applied (AHS->Academy etc.) + ~45 HSFHA-MS same-school merges; wrong old rules fixed (Bay HS vs St. Stanislaus, Broadmoor LA, St. Aloysius)"
+step MS 1.2 done "2026-11-11: 4 URLs remapped, mapcheck"
+step MS 1.3 done "2026-11-11: MS schools under AL/SC names moved (Rosedale 442, Decatur 400, Macon Central Academy 333, Macon 160, +3 small); 4 reviewed per-game groups (Bay vs St. Stanislaus 55, Calhoun City 81...)"
+step MS 2.1 done "2026-11-11: dedup 102 + 2,383 (ahsfhs team-page copies under two name spellings) + 5"
+step MS 2.2 done "2026-11-11: review pairs 52 + 1"
+step MS 2.3 done "2026-11-11: same-score 51 + 6,835 (mostly the same ahsfhs game under two lineage names, e.g. Laurel/Laurel Watkins; kept the name used more in other seasons)"
+step MS 3.1 done "2026-11-11: 5 odd dates left (Corinth 1924 Feb 1925; 3 HSFHA imports with wrong-year dates)"
+step MS 3.2 done "2026-11-11: 4 2-0 games without forfeit flag left as-is"
+step MS 4.3 done "2026-11-11: 338 dates, 5 scores set from HSFHA; 2,208 HSFHA games imported (BatchID 200)"
+step MS 5.0 done "2026-11-11: no 1940+ college copies found by name match"

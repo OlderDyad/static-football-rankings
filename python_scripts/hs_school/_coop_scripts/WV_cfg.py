@@ -1,0 +1,5 @@
+WRONG=[]
+ALIAS=[('Dunbar Kanawha','Dunbar')]
+COOP=[]
+PREF=[('Hinton','Hinton Summers County',1993),('Montgomery','Valley-Montgomery',1976),('Weston','Weston Lewis County',1967),('Smithers Valley','Valley-Montgomery',2004)]
+MOVE=[]

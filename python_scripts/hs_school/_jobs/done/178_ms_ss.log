@@ -1,0 +1,24 @@
+
+>>> same-score-fix MS --commit
+ 6981 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS MS - COMMIT
+ 7000 pairs {'DROP B': 4269, 'DROP A': 2591, 'UNDECIDED': 140} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_same_score_COMMITTED_20261111_1015.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  6835      58D1F69F-5E81-43A5-BF7C-FC3C1533DA49  None
+
+>>> dedup MS
+
+DEDUP v4 MS - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_archive_20261111_1015.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_review_20261111_1015.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_summary_20261111_1015.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MS     131496        0                    0                None 
+
+>>> review-pairs MS
+
+REVIEW-ONLY PAIRS MS - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_review_pairs_20261111_1015.csv
+
+=== OK 2026-11-11 10:15:31

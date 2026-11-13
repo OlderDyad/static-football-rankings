@@ -1,0 +1,390 @@
+
+>>> same-score-fix KY --commit
+ 1902 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS KY - COMMIT
+ 997 pairs {'DROP A': 3, 'DROP B': 6, 'UNDECIDED': 988} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_same_score_COMMITTED_20261112_1620.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  9         E1096B36-4689-4480-85F4-D1BE0B6C23ED  None
+
+>>> consolidate KY --reason "KY co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/KY_cfg.py"
+Consolidating KY from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\KY_Alias_Rules.csv
+
+[stderr]
+2026-11-12 16:20:25,102 - INFO - Starting consolidation for state: (KY) using staging table method.
+2026-11-12 16:20:25,115 - WARNING - WARNING: 273 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 16:20:25,115 - WARNING -   'Albany Clinton County (KY)' -> 'Albany Clinton County (KY)' (no change)
+2026-11-12 16:20:25,115 - WARNING -   'Alexandria Bishop Brossart (KY)' -> 'Alexandria Bishop Brossart (KY)' (no change)
+2026-11-12 16:20:25,115 - WARNING -   'Alexandria Campbell County (KY)' -> 'Alexandria Campbell County (KY)' (no change)
+2026-11-12 16:20:25,115 - WARNING -   'Alva Black Star (KY)' -> 'Alva Black Star (KY)' (no change)
+2026-11-12 16:20:25,115 - WARNING -   'Ashland Blazer (KY)' -> 'Ashland Blazer (KY)' (no change)
+2026-11-12 16:20:25,116 - WARNING -   'Ashland Boyd County (KY)' -> 'Ashland Boyd County (KY)' (no change)
+2026-11-12 16:20:25,116 - WARNING -   'Ashland Fairview (KY)' -> 'Ashland Fairview (KY)' (no change)
+2026-11-12 16:20:25,116 - WARNING -   'Barbourville (KY)' -> 'Barbourville (KY)' (no change)
+2026-11-12 16:20:25,116 - WARNING -   'Barbourville Knox Central (KY)' -> 'Barbourville Knox Central (KY)' (no change)
+2026-11-12 16:20:25,116 - WARNING -   'Bardstown (KY)' -> 'Bardstown (KY)' (no change)
+2026-11-12 16:20:25,116 - WARNING -   'Bardstown Bethlehem (KY)' -> 'Bardstown Bethlehem (KY)' (no change)
+2026-11-12 16:20:25,116 - WARNING -   'Bardstown Nelson County (KY)' -> 'Bardstown Nelson County (KY)' (no change)
+2026-11-12 16:20:25,117 - WARNING -   'Bardstown St. Joseph's Prep (KY)' -> 'Bardstown St. Joseph's Prep (KY)' (no change)
+2026-11-12 16:20:25,117 - WARNING -   'Bardstown Thomas Nelson (KY)' -> 'Bardstown Thomas Nelson (KY)' (no change)
+2026-11-12 16:20:25,117 - WARNING -   'Barlow Ballard Memorial (KY)' -> 'Barlow Ballard Memorial (KY)' (no change)
+2026-11-12 16:20:25,117 - WARNING -   'Bedford Trimble County (KY)' -> 'Bedford Trimble County (KY)' (no change)
+2026-11-12 16:20:25,117 - WARNING -   'Belfry (KY)' -> 'Belfry (KY)' (no change)
+2026-11-12 16:20:25,117 - WARNING -   'Bellevue (KY)' -> 'Bellevue (KY)' (no change)
+2026-11-12 16:20:25,117 - WARNING -   'Benham (KY)' -> 'Benham (KY)' (no change)
+2026-11-12 16:20:25,117 - WARNING -   'Benton Marshall County (KY)' -> 'Benton Marshall County (KY)' (no change)
+2026-11-12 16:20:25,117 - WARNING -   'Berea (KY)' -> 'Berea (KY)' (no change)
+2026-11-12 16:20:25,118 - WARNING -   'Berea Madison Southern (KY)' -> 'Berea Madison Southern (KY)' (no change)
+2026-11-12 16:20:25,118 - WARNING -   'Bowling Green (KY)' -> 'Bowling Green (KY)' (no change)
+2026-11-12 16:20:25,118 - WARNING -   'Bowling Green Greenwood (KY)' -> 'Bowling Green Greenwood (KY)' (no change)
+2026-11-12 16:20:25,118 - WARNING -   'Bowling Green South Warren (KY)' -> 'Bowling Green South Warren (KY)' (no change)
+2026-11-12 16:20:25,118 - WARNING -   'Bowling Green Warren Central (KY)' -> 'Bowling Green Warren Central (KY)' (no change)
+2026-11-12 16:20:25,118 - WARNING -   'Bowling Green Warren East (KY)' -> 'Bowling Green Warren East (KY)' (no change)
+2026-11-12 16:20:25,118 - WARNING -   'Brandenburg Meade County (KY)' -> 'Brandenburg Meade County (KY)' (no change)
+2026-11-12 16:20:25,118 - WARNING -   'Brooksville Bracken County (KY)' -> 'Brooksville Bracken County (KY)' (no change)
+2026-11-12 16:20:25,118 - WARNING -   'Brownsville Edmonson County (KY)' -> 'Brownsville Edmonson County (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Buckner Oldham County (KY)' -> 'Buckner Oldham County (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Burlington Cooper (KY)' -> 'Burlington Cooper (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Cadiz Trigg County (KY)' -> 'Cadiz Trigg County (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Calhoun McLean County (KY)' -> 'Calhoun McLean County (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Campbellsville (KY)' -> 'Campbellsville (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Campbellsville Taylor County (KY)' -> 'Campbellsville Taylor County (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Carlisle Nicholas County (KY)' -> 'Carlisle Nicholas County (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Carrollton Carroll County (KY)' -> 'Carrollton Carroll County (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Catlettsburg (KY)' -> 'Catlettsburg (KY)' (no change)
+2026-11-12 16:20:25,119 - WARNING -   'Cecilia Central Hardin (KY)' -> 'Cecilia Central Hardin (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Cecilia West Hardin (KY)' -> 'Cecilia West Hardin (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Celicia East Hardin (KY)' -> 'Celicia East Hardin (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Columbia Adair County (KY)' -> 'Columbia Adair County (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Corbin (KY)' -> 'Corbin (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Corbin Lynn Camp (KY)' -> 'Corbin Lynn Camp (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Covington Holmes (KY)' -> 'Covington Holmes (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Covington Holy Cross (KY)' -> 'Covington Holy Cross (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Covington Scott (KY)' -> 'Covington Scott (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Crestwood South Oldham (KY)' -> 'Crestwood South Oldham (KY)' (no change)
+2026-11-12 16:20:25,120 - WARNING -   'Cumberland (KY)' -> 'Cumberland (KY)' (no change)
+2026-11-12 16:20:25,121 - WARNING -   'Cynthiana Harrison County (KY)' -> 'Cynthiana Harrison County (KY)' (no change)
+2026-11-12 16:20:25,121 - WARNING -   'Danville (KY)' -> 'Danville (KY)' (no change)
+2026-11-12 16:20:25,121 - WARNING -   'Danville Boyle County (KY)' -> 'Danville Boyle County (KY)' (no change)
+2026-11-12 16:20:25,121 - WARNING -   'Dayton (KY)' -> 'Dayton (KY)' (no change)
+2026-11-12 16:20:25,121 - WARNING -   'Dixon Webster County (KY)' -> 'Dixon Webster County (KY)' (no change)
+2026-11-12 16:20:25,121 - WARNING -   'Dry Ridge Grant County (KY)' -> 'Dry Ridge Grant County (KY)' (no change)
+2026-11-12 16:20:25,121 - WARNING -   'Eastern Allen Central (KY)' -> 'Eastern Allen Central (KY)' (no change)
+2026-11-12 16:20:25,121 - WARNING -   'Eastern Floyd Central (KY)' -> 'Eastern Floyd Central (KY)' (no change)
+2026-11-12 16:20:25,122 - WARNING -   'Edgewood Dixie Heights (KY)' -> 'Edgewood Dixie Heights (KY)' (no change)
+2026-11-12 16:20:25,122 - WARNING -   'Edmonton Metcalfe County (KY)' -> 'Edmonton Metcalfe County (KY)' (no change)
+2026-11-12 16:20:25,122 - WARNING -   'Elizabethtown (KY)' -> 'Elizabethtown (KY)' (no change)
+2026-11-12 16:20:25,122 - WARNING -   'Elizabethtown John Hardin (KY)' -> 'Elizabethtown John Hardin (KY)' (no change)
+2026-11-12 16:20:25,122 - WARNING -   'Elkhorn City (KY)' -> 'Elkhorn City (KY)' (no change)
+2026-11-12 16:20:25,122 - WARNING -   'Elkton Todd County Central (KY)' -> 'Elkton Todd County Central (KY)' (no change)
+2026-11-12 16:20:25,122 - WARNING -   'Eminence (KY)' -> 'Eminence (KY)' (no change)
+2026-11-12 16:20:25,122 - WARNING -   'Erlanger Lloyd Memorial (KY)' -> 'Erlanger Lloyd Memorial (KY)' (no change)
+2026-11-12 16:20:25,122 - WARNING -   'Evarts (KY)' -> 'Evarts (KY)' (no change)
+2026-11-12 16:20:25,123 - WARNING -   'Fairdale (KY)' -> 'Fairdale (KY)' (no change)
+2026-11-12 16:20:25,123 - WARNING -   'Falmouth Pendleton County (KY)' -> 'Falmouth Pendleton County (KY)' (no change)
+2026-11-12 16:20:25,123 - WARNING -   'Fleming-Neon (KY)' -> 'Fleming-Neon (KY)' (no change)
+2026-11-12 16:20:25,123 - WARNING -   'Flemingsburg Fleming County (KY)' -> 'Flemingsburg Fleming County (KY)' (no change)
+2026-11-12 16:20:25,123 - WARNING -   'Florence Boone County (KY)' -> 'Florence Boone County (KY)' (no change)
+2026-11-12 16:20:25,123 - WARNING -   'Fort Campbell (KY)' -> 'Fort Campbell (KY)' (no change)
+2026-11-12 16:20:25,123 - WARNING -   'Fort Knox (KY)' -> 'Fort Knox (KY)' (no change)
+2026-11-12 16:20:25,123 - WARNING -   'Fort Mitchell Beechwood (KY)' -> 'Fort Mitchell Beechwood (KY)' (no change)
+2026-11-12 16:20:25,123 - WARNING -   'Fort Thomas Highlands (KY)' -> 'Fort Thomas Highlands (KY)' (no change)
+2026-11-12 16:20:25,124 - WARNING -   'Frankfort (KY)' -> 'Frankfort (KY)' (no change)
+2026-11-12 16:20:25,124 - WARNING -   'Frankfort Franklin County (KY)' -> 'Frankfort Franklin County (KY)' (no change)
+2026-11-12 16:20:25,124 - WARNING -   'Frankfort Western Hills (KY)' -> 'Frankfort Western Hills (KY)' (no change)
+2026-11-12 16:20:25,124 - WARNING -   'Franklin-Simpson (KY)' -> 'Franklin-Simpson (KY)' (no change)
+2026-11-12 16:20:25,124 - WARNING -   'Fulton City (KY)' -> 'Fulton City (KY)' (no change)
+2026-11-12 16:20:25,124 - WARNING -   'Georgetown Great Crossing (KY)' -> 'Georgetown Great Crossing (KY)' (no change)
+2026-11-12 16:20:25,124 - WARNING -   'Georgetown Scott County (KY)' -> 'Georgetown Scott County (KY)' (no change)
+2026-11-12 16:20:25,124 - WARNING -   'Glasgow (KY)' -> 'Glasgow (KY)' (no change)
+2026-11-12 16:20:25,124 - WARNING -   'Glasgow Barren County (KY)' -> 'Glasgow Barren County (KY)' (no change)
+2026-11-12 16:20:25,125 - WARNING -   'Goshen North Oldham (KY)' -> 'Goshen North Oldham (KY)' (no change)
+2026-11-12 16:20:25,125 - WARNING -   'Grayson East Carter (KY)' -> 'Grayson East Carter (KY)' (no change)
+2026-11-12 16:20:25,125 - WARNING -   'Greensburg Green County (KY)' -> 'Greensburg Green County (KY)' (no change)
+2026-11-12 16:20:25,125 - WARNING -   'Greenup County (KY)' -> 'Greenup County (KY)' (no change)
+2026-11-12 16:20:25,125 - WARNING -   'Greenville Muhlenberg County (KY)' -> 'Greenville Muhlenberg County (KY)' (no change)
+2026-11-12 16:20:25,125 - WARNING -   'Greenville Muhlenberg North (KY)' -> 'Greenville Muhlenberg North (KY)' (no change)
+2026-11-12 16:20:25,125 - WARNING -   'Greenville Muhlenberg South (KY)' -> 'Greenville Muhlenberg South (KY)' (no change)
+2026-11-12 16:20:25,125 - WARNING -   'Harlan (KY)' -> 'Harlan (KY)' (no change)
+2026-11-12 16:20:25,125 - WARNING -   'Harlan Cawood (KY)' -> 'Harlan Cawood (KY)' (no change)
+2026-11-12 16:20:25,126 - WARNING -   'Harlan County (KY)' -> 'Harlan County (KY)' (no change)
+2026-11-12 16:20:25,126 - WARNING -   'Harlan Grays Knob Hall (KY)' -> 'Harlan Grays Knob Hall (KY)' (no change)
+2026-11-12 16:20:25,126 - WARNING -   'Harned Breckinridge County (KY)' -> 'Harned Breckinridge County (KY)' (no change)
+2026-11-12 16:20:25,126 - WARNING -   'Harrodsburg (KY)' -> 'Harrodsburg (KY)' (no change)
+2026-11-12 16:20:25,126 - WARNING -   'Harrodsburg Mercer County (KY)' -> 'Harrodsburg Mercer County (KY)' (no change)
+2026-11-12 16:20:25,126 - WARNING -   'Hartford Ohio County (KY)' -> 'Hartford Ohio County (KY)' (no change)
+2026-11-12 16:20:25,126 - WARNING -   'Hazard (KY)' -> 'Hazard (KY)' (no change)
+2026-11-12 16:20:25,126 - WARNING -   'Hazard M.C. Napier (KY)' -> 'Hazard M.C. Napier (KY)' (no change)
+2026-11-12 16:20:25,127 - WARNING -   'Hazard Perry County Central (KY)' -> 'Hazard Perry County Central (KY)' (no change)
+2026-11-12 16:20:25,127 - WARNING -   'Hebron Conner (KY)' -> 'Hebron Conner (KY)' (no change)
+2026-11-12 16:20:25,127 - WARNING -   'Henderson Barrett (KY)' -> 'Henderson Barrett (KY)' (no change)
+2026-11-12 16:20:25,127 - WARNING -   'Henderson County (KY)' -> 'Henderson County (KY)' (no change)
+2026-11-12 16:20:25,127 - WARNING -   'Hi Hat South Floyd (KY)' -> 'Hi Hat South Floyd (KY)' (no change)
+2026-11-12 16:20:25,127 - WARNING -   'Hickman Fulton County (KY)' -> 'Hickman Fulton County (KY)' (no change)
+2026-11-12 16:20:25,127 - WARNING -   'Hindman Knott County Central (KY)' -> 'Hindman Knott County Central (KY)' (no change)
+2026-11-12 16:20:25,127 - WARNING -   'Hodgenville Larue County (KY)' -> 'Hodgenville Larue County (KY)' (no change)
+2026-11-12 16:20:25,128 - WARNING -   'Hopkinsville (KY)' -> 'Hopkinsville (KY)' (no change)
+2026-11-12 16:20:25,128 - WARNING -   'Hopkinsville Christian County (KY)' -> 'Hopkinsville Christian County (KY)' (no change)
+2026-11-12 16:20:25,128 - WARNING -   'Horse Cave Caverna (KY)' -> 'Horse Cave Caverna (KY)' (no change)
+2026-11-12 16:20:25,128 - WARNING -   'Hyden Leslie County (KY)' -> 'Hyden Leslie County (KY)' (no change)
+2026-11-12 16:20:25,128 - WARNING -   'Independence Simon Kenton (KY)' -> 'Independence Simon Kenton (KY)' (no change)
+2026-11-12 16:20:25,128 - WARNING -   'Inez Martin County (KY)' -> 'Inez Martin County (KY)' (no change)
+2026-11-12 16:20:25,128 - WARNING -   'Irvine Estill County (KY)' -> 'Irvine Estill County (KY)' (no change)
+2026-11-12 16:20:25,128 - WARNING -   'Jackson Breathitt County (KY)' -> 'Jackson Breathitt County (KY)' (no change)
+2026-11-12 16:20:25,128 - WARNING -   'Jenkins (KY)' -> 'Jenkins (KY)' (no change)
+2026-11-12 16:20:25,129 - WARNING -   'Kentucky School for the Deaf (KY)' -> 'Kentucky School for the Deaf (KY)' (no change)
+2026-11-12 16:20:25,129 - WARNING -   'Lancaster Garrard County (KY)' -> 'Lancaster Garrard County (KY)' (no change)
+2026-11-12 16:20:25,129 - WARNING -   'Lawrenceburg Anderson County (KY)' -> 'Lawrenceburg Anderson County (KY)' (no change)
+2026-11-12 16:20:25,129 - WARNING -   'Lebanon Marion County (KY)' -> 'Lebanon Marion County (KY)' (no change)
+2026-11-12 16:20:25,129 - WARNING -   'Leitchfield Grayson County (KY)' -> 'Leitchfield Grayson County (KY)' (no change)
+2026-11-12 16:20:25,129 - WARNING -   'Lewisport Hancock County (KY)' -> 'Lewisport Hancock County (KY)' (no change)
+2026-11-12 16:20:25,129 - WARNING -   'Lexington Bryan Station (KY)' -> 'Lexington Bryan Station (KY)' (no change)
+2026-11-12 16:20:25,129 - WARNING -   'Lexington Catholic (KY)' -> 'Lexington Catholic (KY)' (no change)
+2026-11-12 16:20:25,129 - WARNING -   'Lexington Christian (KY)' -> 'Lexington Christian (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'Lexington Frederick Douglass (KY)' -> 'Lexington Frederick Douglass (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'Lexington Henry Clay (KY)' -> 'Lexington Henry Clay (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'Lexington Lafayette (KY)' -> 'Lexington Lafayette (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'Lexington Model (KY)' -> 'Lexington Model (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'Lexington Paul Laurence Dunbar (KY)' -> 'Lexington Paul Laurence Dunbar (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'Lexington Tates Creek (KY)' -> 'Lexington Tates Creek (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'Liberty Casey County (KY)' -> 'Liberty Casey County (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'Lick Creek East Ridge (KY)' -> 'Lick Creek East Ridge (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'London Laurel County (KY)' -> 'London Laurel County (KY)' (no change)
+2026-11-12 16:20:25,130 - WARNING -   'London North Laurel (KY)' -> 'London North Laurel (KY)' (no change)
+2026-11-12 16:20:25,131 - WARNING -   'London South Laurel (KY)' -> 'London South Laurel (KY)' (no change)
+2026-11-12 16:20:25,131 - WARNING -   'Louisa (KY)' -> 'Louisa (KY)' (no change)
+2026-11-12 16:20:25,131 - WARNING -   'Louisa Lawrence County (KY)' -> 'Louisa Lawrence County (KY)' (no change)
+2026-11-12 16:20:25,131 - WARNING -   'Louisville Atherton (KY)' -> 'Louisville Atherton (KY)' (no change)
+2026-11-12 16:20:25,131 - WARNING -   'Louisville Ballard (KY)' -> 'Louisville Ballard (KY)' (no change)
+2026-11-12 16:20:25,131 - WARNING -   'Louisville Beth Haven Christian (KY)' -> 'Louisville Beth Haven Christian (KY)' (no change)
+2026-11-12 16:20:25,131 - WARNING -   'Louisville Bishop David (KY)' -> 'Louisville Bishop David (KY)' (no change)
+2026-11-12 16:20:25,131 - WARNING -   'Louisville Butler (KY)' -> 'Louisville Butler (KY)' (no change)
+2026-11-12 16:20:25,131 - WARNING -   'Louisville Central (KY)' -> 'Louisville Central (KY)' (no change)
+2026-11-12 16:20:25,132 - WARNING -   'Louisville Christian Academy (KY)' -> 'Louisville Christian Academy (KY)' (no change)
+2026-11-12 16:20:25,132 - WARNING -   'Louisville DeSales (KY)' -> 'Louisville DeSales (KY)' (no change)
+2026-11-12 16:20:25,132 - WARNING -   'Louisville Doss (KY)' -> 'Louisville Doss (KY)' (no change)
+2026-11-12 16:20:25,132 - WARNING -   'Louisville DuPont Manual (KY)' -> 'Louisville DuPont Manual (KY)' (no change)
+2026-11-12 16:20:25,132 - WARNING -   'Louisville Eastern (KY)' -> 'Louisville Eastern (KY)' (no change)
+2026-11-12 16:20:25,132 - WARNING -   'Louisville Fern Creek (KY)' -> 'Louisville Fern Creek (KY)' (no change)
+2026-11-12 16:20:25,132 - WARNING -   'Louisville Flaget (KY)' -> 'Louisville Flaget (KY)' (no change)
+2026-11-12 16:20:25,132 - WARNING -   'Louisville Holy Cross (KY)' -> 'Louisville Holy Cross (KY)' (no change)
+2026-11-12 16:20:25,132 - WARNING -   'Louisville Iroquois (KY)' -> 'Louisville Iroquois (KY)' (no change)
+2026-11-12 16:20:25,133 - WARNING -   'Louisville Jeffersontown (KY)' -> 'Louisville Jeffersontown (KY)' (no change)
+2026-11-12 16:20:25,133 - WARNING -   'Louisville Kentucky Country Day (KY)' -> 'Louisville Kentucky Country Day (KY)' (no change)
+2026-11-12 16:20:25,133 - WARNING -   'Louisville Male (KY)' -> 'Louisville Male (KY)' (no change)
+2026-11-12 16:20:25,133 - WARNING -   'Louisville Moore (KY)' -> 'Louisville Moore (KY)' (no change)
+2026-11-12 16:20:25,133 - WARNING -   'Louisville Normal (KY)' -> 'Louisville Normal (KY)' (no change)
+2026-11-12 16:20:25,133 - WARNING -   'Louisville Pleasure Ridge Park (KY)' -> 'Louisville Pleasure Ridge Park (KY)' (no change)
+2026-11-12 16:20:25,133 - WARNING -   'Louisville Seneca (KY)' -> 'Louisville Seneca (KY)' (no change)
+2026-11-12 16:20:25,133 - WARNING -   'Louisville Shawnee (KY)' -> 'Louisville Shawnee (KY)' (no change)
+2026-11-12 16:20:25,133 - WARNING -   'Louisville Southern (KY)' -> 'Louisville Southern (KY)' (no change)
+2026-11-12 16:20:25,134 - WARNING -   'Louisville St. Xavier (KY)' -> 'Louisville St. Xavier (KY)' (no change)
+2026-11-12 16:20:25,134 - WARNING -   'Louisville Trinity (KY)' -> 'Louisville Trinity (KY)' (no change)
+2026-11-12 16:20:25,134 - WARNING -   'Louisville Trinity (KY)' -> 'Louisville Trinity (KY)' (no change)
+2026-11-12 16:20:25,134 - WARNING -   'Louisville Valley (KY)' -> 'Louisville Valley (KY)' (no change)
+2026-11-12 16:20:25,134 - WARNING -   'Louisville Waggener (KY)' -> 'Louisville Waggener (KY)' (no change)
+2026-11-12 16:20:25,134 - WARNING -   'Louisville Western (KY)' -> 'Louisville Western (KY)' (no change)
+2026-11-12 16:20:25,134 - WARNING -   'Louisville Westport (KY)' -> 'Louisville Westport (KY)' (no change)
+2026-11-12 16:20:25,134 - WARNING -   'Loyall (KY)' -> 'Loyall (KY)' (no change)
+2026-11-12 16:20:25,134 - WARNING -   'Ludlow (KY)' -> 'Ludlow (KY)' (no change)
+2026-11-12 16:20:25,135 - WARNING -   'Lynch (KY)' -> 'Lynch (KY)' (no change)
+2026-11-12 16:20:25,135 - WARNING -   'Lyndon Kentucky Military Institute (KY)' -> 'Lyndon Kentucky Military Institute (KY)' (no change)
+2026-11-12 16:20:25,135 - WARNING -   'Madisonville (KY)' -> 'Madisonville (KY)' (no change)
+2026-11-12 16:20:25,135 - WARNING -   'Madisonville Hopkins County Central (KY)' -> 'Madisonville Hopkins County Central (KY)' (no change)
+2026-11-12 16:20:25,135 - WARNING -   'Madisonville North Hopkins (KY)' -> 'Madisonville North Hopkins (KY)' (no change)
+2026-11-12 16:20:25,135 - WARNING -   'Manchester Clay County (KY)' -> 'Manchester Clay County (KY)' (no change)
+2026-11-12 16:20:25,135 - WARNING -   'Marion Crittenden County (KY)' -> 'Marion Crittenden County (KY)' (no change)
+2026-11-12 16:20:25,135 - WARNING -   'Mayfield (KY)' -> 'Mayfield (KY)' (no change)
+2026-11-12 16:20:25,135 - WARNING -   'Mayfield Graves County (KY)' -> 'Mayfield Graves County (KY)' (no change)
+2026-11-12 16:20:25,136 - WARNING -   'Maysville Mason County (KY)' -> 'Maysville Mason County (KY)' (no change)
+2026-11-12 16:20:25,136 - WARNING -   'McKee Jackson County (KY)' -> 'McKee Jackson County (KY)' (no change)
+2026-11-12 16:20:25,136 - WARNING -   'Middlesboro (KY)' -> 'Middlesboro (KY)' (no change)
+2026-11-12 16:20:25,136 - WARNING -   'Millersburg Military Institute (KY)' -> 'Millersburg Military Institute (KY)' (no change)
+2026-11-12 16:20:25,136 - WARNING -   'Monticello Wayne County (KY)' -> 'Monticello Wayne County (KY)' (no change)
+2026-11-12 16:20:25,136 - WARNING -   'Morehead Rowan County (KY)' -> 'Morehead Rowan County (KY)' (no change)
+2026-11-12 16:20:25,136 - WARNING -   'Morganfield Union County (KY)' -> 'Morganfield Union County (KY)' (no change)
+2026-11-12 16:20:25,136 - WARNING -   'Morgantown Butler County (KY)' -> 'Morgantown Butler County (KY)' (no change)
+2026-11-12 16:20:25,137 - WARNING -   'Mount Sterling Montgomery County (KY)' -> 'Mount Sterling Montgomery County (KY)' (no change)
+2026-11-12 16:20:25,137 - WARNING -   'Mount Vernon Rockcastle County (KY)' -> 'Mount Vernon Rockcastle County (KY)' (no change)
+2026-11-12 16:20:25,137 - WARNING -   'Mount Washington Bullitt East (KY)' -> 'Mount Washington Bullitt East (KY)' (no change)
+2026-11-12 16:20:25,137 - WARNING -   'Munfordville Hart County (KY)' -> 'Munfordville Hart County (KY)' (no change)
+2026-11-12 16:20:25,137 - WARNING -   'Murray (KY)' -> 'Murray (KY)' (no change)
+2026-11-12 16:20:25,137 - WARNING -   'Murray Calloway County (KY)' -> 'Murray Calloway County (KY)' (no change)
+2026-11-12 16:20:25,137 - WARNING -   'New Castle Henry County (KY)' -> 'New Castle Henry County (KY)' (no change)
+2026-11-12 16:20:25,138 - WARNING -   'Newport (KY)' -> 'Newport (KY)' (no change)
+2026-11-12 16:20:25,138 - WARNING -   'Newport Central Catholic (KY)' -> 'Newport Central Catholic (KY)' (no change)
+2026-11-12 16:20:25,138 - WARNING -   'Nicholasville East Jessamine (KY)' -> 'Nicholasville East Jessamine (KY)' (no change)
+2026-11-12 16:20:25,138 - WARNING -   'Nicholasville Jessamine County (KY)' -> 'Nicholasville Jessamine County (KY)' (no change)
+2026-11-12 16:20:25,138 - WARNING -   'Nicholasville West Jessamine (KY)' -> 'Nicholasville West Jessamine (KY)' (no change)
+2026-11-12 16:20:25,138 - WARNING -   'Nortonville South Hopkins (KY)' -> 'Nortonville South Hopkins (KY)' (no change)
+2026-11-12 16:20:25,138 - WARNING -   'Olive Hill West Carter (KY)' -> 'Olive Hill West Carter (KY)' (no change)
+2026-11-12 16:20:25,138 - WARNING -   'Owensboro (KY)' -> 'Owensboro (KY)' (no change)
+2026-11-12 16:20:25,138 - WARNING -   'Owensboro Apollo (KY)' -> 'Owensboro Apollo (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Owensboro Catholic (KY)' -> 'Owensboro Catholic (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Owensboro Daviess County (KY)' -> 'Owensboro Daviess County (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Owenton Owen County (KY)' -> 'Owenton Owen County (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Owingsville Bath County (KY)' -> 'Owingsville Bath County (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Paducah Lone Oak (KY)' -> 'Paducah Lone Oak (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Paducah McCracken County (KY)' -> 'Paducah McCracken County (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Paducah Reidland (KY)' -> 'Paducah Reidland (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Paducah Tilghman (KY)' -> 'Paducah Tilghman (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Paintsville (KY)' -> 'Paintsville (KY)' (no change)
+2026-11-12 16:20:25,139 - WARNING -   'Paintsville Johnson Central (KY)' -> 'Paintsville Johnson Central (KY)' (no change)
+2026-11-12 16:20:25,140 - WARNING -   'Paris (KY)' -> 'Paris (KY)' (no change)
+2026-11-12 16:20:25,140 - WARNING -   'Paris Bourbon County (KY)' -> 'Paris Bourbon County (KY)' (no change)
+2026-11-12 16:20:25,140 - WARNING -   'Park Hills Covington Catholic (KY)' -> 'Park Hills Covington Catholic (KY)' (no change)
+2026-11-12 16:20:25,140 - WARNING -   'Phelps (KY)' -> 'Phelps (KY)' (no change)
+2026-11-12 16:20:25,140 - WARNING -   'Pikeville (KY)' -> 'Pikeville (KY)' (no change)
+2026-11-12 16:20:25,140 - WARNING -   'Pikeville Johns Creek (KY)' -> 'Pikeville Johns Creek (KY)' (no change)
+2026-11-12 16:20:25,140 - WARNING -   'Pikeville Mullins (KY)' -> 'Pikeville Mullins (KY)' (no change)
+2026-11-12 16:20:25,140 - WARNING -   'Pikeville Pike County Central (KY)' -> 'Pikeville Pike County Central (KY)' (no change)
+2026-11-12 16:20:25,140 - WARNING -   'Pikeville Shelby Valley (KY)' -> 'Pikeville Shelby Valley (KY)' (no change)
+2026-11-12 16:20:25,141 - WARNING -   'Pineville (KY)' -> 'Pineville (KY)' (no change)
+2026-11-12 16:20:25,141 - WARNING -   'Pineville Bell County (KY)' -> 'Pineville Bell County (KY)' (no change)
+2026-11-12 16:20:25,141 - WARNING -   'Prestonsburg (KY)' -> 'Prestonsburg (KY)' (no change)
+2026-11-12 16:20:25,141 - WARNING -   'Princeton Caldwell County (KY)' -> 'Princeton Caldwell County (KY)' (no change)
+2026-11-12 16:20:25,141 - WARNING -   'Putnam Junior High (KY)' -> 'Putnam Junior High (KY)' (no change)
+2026-11-12 16:20:25,141 - WARNING -   'Raceland (KY)' -> 'Raceland (KY)' (no change)
+2026-11-12 16:20:25,141 - WARNING -   'Radcliff North Hardin (KY)' -> 'Radcliff North Hardin (KY)' (no change)
+2026-11-12 16:20:25,141 - WARNING -   'Richmond Madison (KY)' -> 'Richmond Madison (KY)' (no change)
+2026-11-12 16:20:25,142 - WARNING -   'Richmond Madison Central (KY)' -> 'Richmond Madison Central (KY)' (no change)
+2026-11-12 16:20:25,142 - WARNING -   'Russell (KY)' -> 'Russell (KY)' (no change)
+2026-11-12 16:20:25,142 - WARNING -   'Russell Springs Russell County (KY)' -> 'Russell Springs Russell County (KY)' (no change)
+2026-11-12 16:20:25,142 - WARNING -   'Russellville (KY)' -> 'Russellville (KY)' (no change)
+2026-11-12 16:20:25,142 - WARNING -   'Russellville Logan County (KY)' -> 'Russellville Logan County (KY)' (no change)
+2026-11-12 16:20:25,142 - WARNING -   'Salyersville Magoffin County (KY)' -> 'Salyersville Magoffin County (KY)' (no change)
+2026-11-12 16:20:25,142 - WARNING -   'Scottsville Allen County (KY)' -> 'Scottsville Allen County (KY)' (no change)
+2026-11-12 16:20:25,142 - WARNING -   'Shelbyville Collins (KY)' -> 'Shelbyville Collins (KY)' (no change)
+2026-11-12 16:20:25,142 - WARNING -   'Shelbyville Shelby County (KY)' -> 'Shelbyville Shelby County (KY)' (no change)
+2026-11-12 16:20:25,143 - WARNING -   'Shepherdsville Bullitt Central (KY)' -> 'Shepherdsville Bullitt Central (KY)' (no change)
+2026-11-12 16:20:25,143 - WARNING -   'Shepherdsville North Bullitt (KY)' -> 'Shepherdsville North Bullitt (KY)' (no change)
+2026-11-12 16:20:25,143 - WARNING -   'Somerset (KY)' -> 'Somerset (KY)' (no change)
+2026-11-12 16:20:25,143 - WARNING -   'Somerset Pulaski County (KY)' -> 'Somerset Pulaski County (KY)' (no change)
+2026-11-12 16:20:25,143 - WARNING -   'Somerset Southwestern (KY)' -> 'Somerset Southwestern (KY)' (no change)
+2026-11-12 16:20:25,143 - WARNING -   'South Shore McKell (KY)' -> 'South Shore McKell (KY)' (no change)
+2026-11-12 16:20:25,143 - WARNING -   'Springfield Washington County (KY)' -> 'Springfield Washington County (KY)' (no change)
+2026-11-12 16:20:25,143 - WARNING -   'Stanford Lincoln County (KY)' -> 'Stanford Lincoln County (KY)' (no change)
+2026-11-12 16:20:25,144 - WARNING -   'Stanton Powell County (KY)' -> 'Stanton Powell County (KY)' (no change)
+2026-11-12 16:20:25,144 - WARNING -   'Stanville Betsy Layne (KY)' -> 'Stanville Betsy Layne (KY)' (no change)
+2026-11-12 16:20:25,144 - WARNING -   'Stearns McCreary Central (KY)' -> 'Stearns McCreary Central (KY)' (no change)
+2026-11-12 16:20:25,144 - WARNING -   'Taylorsville Spencer County (KY)' -> 'Taylorsville Spencer County (KY)' (no change)
+2026-11-12 16:20:25,144 - WARNING -   'Tompkinsville Monroe County (KY)' -> 'Tompkinsville Monroe County (KY)' (no change)
+2026-11-12 16:20:25,144 - WARNING -   'Union Ryle (KY)' -> 'Union Ryle (KY)' (no change)
+2026-11-12 16:20:25,144 - WARNING -   'University of Louisville Frosh (KY)' -> 'University of Louisville Frosh (KY)' (no change)
+2026-11-12 16:20:25,144 - WARNING -   'Vanceburg Lewis County (KY)' -> 'Vanceburg Lewis County (KY)' (no change)
+2026-11-12 16:20:25,145 - WARNING -   'Versailles Woodford County (KY)' -> 'Versailles Woodford County (KY)' (no change)
+2026-11-12 16:20:25,145 - WARNING -   'Virgie (KY)' -> 'Virgie (KY)' (no change)
+2026-11-12 16:20:25,145 - WARNING -   'Wallins Creek (KY)' -> 'Wallins Creek (KY)' (no change)
+2026-11-12 16:20:25,145 - WARNING -   'Walton-Verona (KY)' -> 'Walton-Verona (KY)' (no change)
+2026-11-12 16:20:25,145 - WARNING -   'Warsaw Gallatin County (KY)' -> 'Warsaw Gallatin County (KY)' (no change)
+2026-11-12 16:20:25,145 - WARNING -   'West Liberty Morgan County (KY)' -> 'West Liberty Morgan County (KY)' (no change)
+2026-11-12 16:20:25,145 - WARNING -   'Wheelwright (KY)' -> 'Wheelwright (KY)' (no change)
+2026-11-12 16:20:25,145 - WARNING -   'Whitesburg (KY)' -> 'Whitesburg (KY)' (no change)
+2026-11-12 16:20:25,145 - WARNING -   'Whitesburg Letcher County Central (KY)' -> 'Whitesburg Letcher County Central (KY)' (no change)
+2026-11-12 16:20:25,146 - WARNING -   'Williamsburg (KY)' -> 'Williamsburg (KY)' (no change)
+2026-11-12 16:20:25,146 - WARNING -   'Williamsburg Whitley County (KY)' -> 'Williamsburg Whitley County (KY)' (no change)
+2026-11-12 16:20:25,146 - WARNING -   'Williamstown (KY)' -> 'Williamstown (KY)' (no change)
+2026-11-12 16:20:25,146 - WARNING -   'Winchester George Rogers Clark (KY)' -> 'Winchester George Rogers Clark (KY)' (no change)
+2026-11-12 16:20:25,146 - WARNING -   'Wurtland (KY)' -> 'Wurtland (KY)' (no change)
+2026-11-12 16:20:25,146 - INFO - Validation passed: 389 rules are clean and ready to upload.
+2026-11-12 16:20:25,169 - INFO - Uploading 389 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 16:20:25,294 - INFO - Upload to staging table complete.
+2026-11-12 16:20:25,300 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 16:21:32,352 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 16:21:32,352 - INFO - Reason logged to dbo.HS_Consolidation_Log: KY co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/KY_cfg.py
+2026-11-12 16:21:32,352 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 16:21:32,352 - INFO - Running post-consolidation safety check...
+2026-11-12 16:21:32,357 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team KY --from "Lexington (KY)" --to "Lexington Henry Clay (KY)" --seasons 1880-1942 --reason "KY same school, older name -> later name for 1880-1942 (2026-11-12)" --commit
+
+MOVE Lexington (KY) -> Lexington Henry Clay (KY), seasons 1880-1942 - COMMIT
+ move_games: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_games_COMMITTED_20261112_1621.csv
+ move_by_season: 118 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_by_season_COMMITTED_20261112_1621.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  79     1                  None
+
+>>> move-team KY --from "Corbin Lynn Camp (KY)" --to "Corbin (KY)" --seasons 1941-1961 --ids coop_ids/KY_mv_000.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 72 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\coop_ids/KY_mv_000.csv
+
+MOVE Corbin Lynn Camp (KY) -> Corbin (KY), seasons 1941-1961 - COMMIT
+ move_games: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_games_COMMITTED_20261112_1621.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_by_season_COMMITTED_20261112_1621.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  27     1                  None
+
+>>> move-team KY --from "Danville Boyle County (KY)" --to "Danville (KY)" --seasons 1927-1958 --ids coop_ids/KY_mv_001.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 125 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\coop_ids/KY_mv_001.csv
+
+MOVE Danville Boyle County (KY) -> Danville (KY), seasons 1927-1958 - COMMIT
+ move_games: 121 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_games_COMMITTED_20261112_1621.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_by_season_COMMITTED_20261112_1621.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  121    1                  None
+
+>>> move-team KY --from "Harlan County (KY)" --to "Harlan (KY)" --seasons 1930-1997 --ids coop_ids/KY_mv_002.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 480 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\coop_ids/KY_mv_002.csv
+
+MOVE Harlan County (KY) -> Harlan (KY), seasons 1930-1997 - COMMIT
+ move_games: 474 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_games_COMMITTED_20261112_1621.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_by_season_COMMITTED_20261112_1621.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  474    1                  None
+
+>>> move-team KY --from "Louisa Lawrence County (KY)" --to "Louisa (KY)" --seasons 1923-1973 --ids coop_ids/KY_mv_003.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 395 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\coop_ids/KY_mv_003.csv
+
+MOVE Louisa Lawrence County (KY) -> Louisa (KY), seasons 1923-1973 - COMMIT
+ move_games: 385 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_games_COMMITTED_20261112_1621.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_by_season_COMMITTED_20261112_1621.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  385    1                  None
+
+>>> move-team KY --from "Mount Sterling Montgomery County (KY)" --to "Mount Sterling (KY)" --seasons 1934-1962 --ids coop_ids/KY_mv_004.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 25 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\coop_ids/KY_mv_004.csv
+
+MOVE Mount Sterling Montgomery County (KY) -> Mount Sterling (KY), seasons 1934-1962 - COMMIT
+ move_games: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_games_COMMITTED_20261112_1621.csv
+ move_by_season: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_by_season_COMMITTED_20261112_1621.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  20     1                  None
+
+>>> move-team KY --from "Richmond Madison Central (KY)" --to "Richmond Madison (KY)" --seasons 1935-1970 --ids coop_ids/KY_mv_005.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 27 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\coop_ids/KY_mv_005.csv
+
+MOVE Richmond Madison Central (KY) -> Richmond Madison (KY), seasons 1935-1970 - COMMIT
+ move_games: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_games_COMMITTED_20261112_1621.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_move_by_season_COMMITTED_20261112_1621.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  22     1                  None
+
+>>> dedup KY --commit
+
+DEDUP v4 KY - COMMIT
+ dedup_archive: 859 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_dedup_archive_COMMITTED_20261112_1622.csv
+ dedup_review: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_dedup_review_COMMITTED_20261112_1622.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_dedup_summary_COMMITTED_20261112_1622.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  KY     91328         859                  25               C9ACD3BB-8694-45F0-B232-BCD9E5D2323B
+
+>>> review-pairs KY --commit
+
+REVIEW-ONLY PAIRS KY - COMMIT
+ 25 pairs {'LONG': 3, 'SHORT': 22} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_review_pairs_COMMITTED_20261112_1622.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  25        6F9F10E5-1227-4C83-8CE0-A79422110500  None
+
+>>> same-score-fix KY
+ 1902 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS KY - PREVIEW (nothing changed)
+ 360 pairs {'DROP B': 11, 'DROP A': 12, 'UNDECIDED': 337} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_same_score_20261112_1623.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  23        None   None
+
+>>> query KY ky_dump.sql
+
+QUERY ky_dump (1 result sets)
+ set 1: 90445 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_ky_dump_1_20261112_1623.csv
+
+=== OK 2026-11-12 16:23:15

@@ -1,0 +1,16 @@
+fix-dates MA --commit
+query MA college_check.sql
+query MA ma_roadmap_check.sql
+report MA names
+report MA double-booked
+step MA 1.1 "in progress" "round 1 2026-11-09: 70 new rules + 18 updated rules (MaxPreps short/mascot names, regional/co-op splits, Roxbury O'Bryant, Pittsfield St. Joseph Central, South Weymouth Weymouth)"
+step MA 1.2 done "20 URLs remapped; mapcheck fixed 9 Team_IDs"
+step MA 1.3 done "same-town reviewed; Boston Latin/BLA, Boston/Springfield Commerce, Cambridge Rindge splits resolved"
+step MA 1.4 done "move-team: Boston Latin->BLA (27), Boston College->BC High (3), Cambridge Rindge Tech->Rindge & Latin (29), Springfield->Sci-Tech (24), Carlisle MA->OH (1), Boston Commerce->Springfield Commerce 1970-2005 (17)"
+step MA 2.1 done "dedup 338 archived (RunID D187ED28...); 8 1938 Everett synthetic yearbook dups archived"
+step MA 2.2 done "review pairs 137 archived (3 LONG, 134 SHORT); fix-dates 2 updated"
+step MA 2.3 "in progress" "same-score 185 archived (RunID C2BF922A...); 145 undecided (mostly CT/NH prep school aliases)"
+step MA 3.1 "in progress" "2 odd dates: 1899 Brockton v Hyde Park dated 1999; 1882 Andover v Exeter filed as Season 1982"
+step MA 3.2 done "forfeit flags consistent except NULL on 2026 weekly imports"
+step MA 5.0 "in progress" "3 college copies archived (AIC 1954/1985, Brandeis Club 1971); MA_for_college_chat.csv"
+status MA

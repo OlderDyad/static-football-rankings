@@ -1,0 +1,97 @@
+
+>>> addstate AL
+Tracker rows ready for AL
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report AL drift
+
+REPORT drift AL: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_drift_20261111_1052.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                            N_Games  N_First  N_Last  N_Mapped
+   Alabama School for the Deaf (AL)          889      1895     2023    0         None                               None     None     None    0       
+   Alabaster Kingwood Christian (AL)         229      1997     2018    0         None                               None     None     None    0       
+   Alexander City Benjamin Russell (AL)      1108     1922     2023    0         Alexander City Russell (AL)        35       2024     2026    1       
+   Alexandria (AL)                           1028     1923     2023    0         Alexandria Valley (AL)             35       2024     2026    1       
+   Ariton (AL)                               643      1928     2023    0         Ariton Purple (AL)                 35       2024     2026    1       
+   Ashford Academy (AL)                      379      1970     2016    0         None                               None     None     None    0       
+   Ashland Clay County Christian Academy (A  98       2011     2023    0         None                               None     None     None    0       
+   Ashland First Assembly Christian (AL)     31       2010     2023    0         None                               None     None     None    0       
+   Auburn Ballard Christian (AL)             97       2008     2017    0         None                               None     None     None    0       
+   Autaugaville (AL)                         730      1934     2024    1         None                               None     None     None    0       
+   Bessemer City Jess Lanier (AL)            1158     1910     2023    0         Bessemer City (AL)                 33       2024     2026    1       
+   Birmingham Carver (AL)                    208      1961     2023    0         Birmingham Banks Academy (AL)      82       2019     2026    1       
+   Birmingham Carver (AL)                    208      1961     2023    0         Birmingham Carver Birmingham (AL)  26       2024     2026    1       
+   Birmingham Gunn Christian Academy (AL)    13       2015     2017    0         Birmingham Banks Academy (AL)      82       2019     2026    1       
+   Camp Hill Southern Prep Academy (AL)      192      2004     2025    1         None                               None     None     None    0       
+   ... 54 more rows (see CSV)
+
+>>> mapcheck AL
+
+MAPPING CHECK AL - PREVIEW (nothing changed)
+ 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_mapcheck_20261111_1052.csv
+   URL                                       ProperName                            Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/al/huntsville/w  Huntsville Whitesburg Christian (AL)  6541     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/al/phenix-city/  Phenix City Glenwood (AL)             32102    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/al/boaz/sardis-  Boaz Sardis (AL)                      36180    59784   Team_ID points to another name   Boys Industrial School (AL)             
+   https://www.maxpreps.com/al/childersburg  Childersburg (AL)                     71305    60670   Team_ID points to another name   Childersburg Phyllis Wheatley (AL)      
+   https://www.maxpreps.com/al/east-brewton  East Brewton W.S. Neal (AL)           42106    12194   Team_ID points to another name   Eastern North Carolina School for the De
+   https://www.maxpreps.com/al/lanett/lanet  Lanett (AL)                           25379    64055   Team_ID points to another name   Lanett Lafayette Lanier (AL)            
+   https://www.maxpreps.com/al/lanett/sprin  Lanett Springwood (AL)                28387    64056   Team_ID points to another name   Lanier (AL)                             
+   https://www.maxpreps.com/al/mobile/ums-w  Mobile UMS-Wright Prep (AL)           70945    19251   Team_ID points to another name   Mobile West End (AL)                    
+   https://www.maxpreps.com/al/oxford/oxfor  Oxford (AL)                           4041     66430   Team_ID points to another name   Oxford Trinity Christian Academy (AL)   
+   https://www.maxpreps.com/al/phil-campbel  Phil Campbell (AL)                    71111    66709   Team_ID points to another name   Pickens R.J. Kirksey (AL)               
+   https://www.maxpreps.com/al/tallassee/ta  Tallassee (AL)                        68726    30523   Team_ID points to another name   Tallassee Robert Russa Moton (AL)       
+   https://www.maxpreps.com/al/tuscaloosa/n  Tuscaloosa Northridge (AL)            70798    32535   Team_ID points to another name   Tuscaloosa St. Pauls (AL)               
+   https://www.maxpreps.com/al/york/sumter-  York Sumter Central (AL)              70734    30622   Team_ID points to another name   York West End (AL)                      
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  11       None
+
+>>> dedup AL
+
+DEDUP v4 AL - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_archive_20261111_1052.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_review_20261111_1052.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_summary_20261111_1052.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  AL     188080        0                    2                None 
+
+>>> review-pairs AL
+
+REVIEW-ONLY PAIRS AL - PREVIEW (nothing changed)
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_review_pairs_20261111_1052.csv
+
+>>> same-score-fix AL
+
+SAME-SCORE DOUBLE-BOOKINGS AL - PREVIEW (nothing changed)
+ 5217 pairs {'DROP B': 506, 'DROP A': 485, 'UNDECIDED': 4226} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_same_score_20261111_1057.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  956       None   None
+
+>>> query AL al_dump.sql
+
+QUERY al_dump (1 result sets)
+ set 1: 188082 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_al_dump_1_20261111_1057.csv
+
+>>> query AL al_geo_all.sql
+
+QUERY al_geo_all (2 result sets)
+ set 1: 36437 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_al_geo_all_1_20261111_1057.csv
+ set 2: 188082 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_al_geo_all_2_20261111_1057.csv
+
+=== OK 2026-11-11 10:57:19

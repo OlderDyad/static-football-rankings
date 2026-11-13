@@ -1,0 +1,805 @@
+
+>>> move-team FL --from "Oakland Park Northeast (FL)" --to "Saint Petersburg Northeast (FL)" --seasons 1880-2026 --ids hsfha_mv_01.csv --reason "HSFHA-FL match: game belongs to Saint Petersburg Northeast (FL) (hsfha.org school code)" --commit
+ only the 22 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\hsfha_mv_01.csv
+
+MOVE Oakland Park Northeast (FL) -> Saint Petersburg Northeast (FL), seasons 1880-2026 - COMMIT
+ move_games: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_games_COMMITTED_20261111_1848.csv
+ move_by_season: 74 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_by_season_COMMITTED_20261111_1848.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  22     1                  None
+
+>>> move-team FL --from "Savannah Jenkins (GA)" --to "Lakeland George Jenkins (FL)" --seasons 1880-2026 --ids hsfha_mv_02.csv --reason "HSFHA-FL match: game belongs to Lakeland George Jenkins (FL) (hsfha.org school code)" --commit
+ only the 21 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\hsfha_mv_02.csv
+
+MOVE Savannah Jenkins (GA) -> Lakeland George Jenkins (FL), seasons 1880-2026 - COMMIT
+ move_games: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_games_COMMITTED_20261111_1848.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_by_season_COMMITTED_20261111_1848.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  21     1                  None
+
+>>> move-team FL --from "Miami Booker T. Washington (FL)" --to "Pensacola Booker T. Washington (FL)" --seasons 1880-2026 --ids hsfha_mv_03.csv --reason "HSFHA-FL match: game belongs to Pensacola Booker T. Washington (FL) (hsfha.org school code)" --commit
+ only the 18 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\hsfha_mv_03.csv
+
+MOVE Miami Booker T. Washington (FL) -> Pensacola Booker T. Washington (FL), seasons 1880-2026 - COMMIT
+ move_games: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_games_COMMITTED_20261111_1848.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_by_season_COMMITTED_20261111_1848.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  18     1                  None
+
+>>> move-team FL --from "Palm Bay Heritage (FL)" --to "Orlando Heritage Prep (FL)" --seasons 1880-2026 --ids hsfha_mv_04.csv --reason "HSFHA-FL match: game belongs to Orlando Heritage Prep (FL) (hsfha.org school code)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\hsfha_mv_04.csv
+
+MOVE Palm Bay Heritage (FL) -> Orlando Heritage Prep (FL), seasons 1880-2026 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_games_COMMITTED_20261111_1848.csv
+ move_by_season: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_by_season_COMMITTED_20261111_1848.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team FL --from "Saint Petersburg Northeast (FL)" --to "Oakland Park Northeast (FL)" --seasons 1880-2026 --ids hsfha_mv_13.csv --reason "HSFHA-FL match: game belongs to Oakland Park Northeast (FL) (hsfha.org school code)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\hsfha_mv_13.csv
+
+MOVE Saint Petersburg Northeast (FL) -> Oakland Park Northeast (FL), seasons 1880-2026 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_games_COMMITTED_20261111_1848.csv
+ move_by_season: 74 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_by_season_COMMITTED_20261111_1848.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team FL --from "Dover Specially Fit Academy (FL)" --to "Dover Strawberry Crest (FL)" --seasons 1880-2026 --ids hsfha_mv_w1.csv --reason "HSFHA-FL school code: Strawberry Crest games 2009-2026 filed under Specially Fit Academy" --commit
+ only the 177 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\hsfha_mv_w1.csv
+
+MOVE Dover Specially Fit Academy (FL) -> Dover Strawberry Crest (FL), seasons 1880-2026 - COMMIT
+ move_games: 177 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_games_COMMITTED_20261111_1848.csv
+ move_by_season: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_by_season_COMMITTED_20261111_1848.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  177    1                  None
+
+>>> move-team FL --from "Havana Gadsden County (FL)" --to "Quincy East Gadsden (FL)" --seasons 1880-2026 --ids hsfha_mv_w2.csv --reason "HSFHA-FL school code: East Gadsden 2003-2016 games filed under Gadsden County (consolidation 2017)" --commit
+ only the 137 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\hsfha_mv_w2.csv
+
+MOVE Havana Gadsden County (FL) -> Quincy East Gadsden (FL), seasons 1880-2026 - COMMIT
+ move_games: 137 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_games_COMMITTED_20261111_1848.csv
+ move_by_season: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_by_season_COMMITTED_20261111_1848.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  137    1                  None
+
+>>> move-team FL --from "Lakeland Victory Christian Academy (FL)" --to "Lakeland Evangel Christian (FL)" --seasons 1880-2026 --ids hsfha_mv_w3.csv --reason "HSFHA-FL school code: Evangel Christian 2004-2005 games filed under Victory Christian" --commit
+ only the 27 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\hsfha_mv_w3.csv
+
+MOVE Lakeland Victory Christian Academy (FL) -> Lakeland Evangel Christian (FL), seasons 1880-2026 - COMMIT
+ move_games: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_games_COMMITTED_20261111_1848.csv
+ move_by_season: 32 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_move_by_season_COMMITTED_20261111_1848.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  27     1                  None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/fort-walton-beach/fort-walton-beach-vikings/football/schedule/" --to "Fort Walton Beach (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/fort-walton-beach/fort-walton-beach-vikings/football/schedule/ -> Fort Walton Beach (FL) - COMMIT
+   URL                                       ProperName                          Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/fl/fort-walton-  Fort Walton Beach Fort Walton (FL)  48428    Fort Walton Beach (FL)  62231     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/greenacres/palm-beach-christian-prep-saints/football/schedule/" --to "Greenacres Palm Beach Christian Prep (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/greenacres/palm-beach-christian-prep-saints/football/schedule/ -> Greenacres Palm Beach Christian Prep (FL) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/fl/greenacres/p  Greenacres Palm Beach (FL)  14729    Greenacres Palm Beach Christian Prep (FL  46171     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/jacksonville/north-florida-educational-institute-fighting-eagles/football/schedule/" --to "Jacksonville North Florida Educational Institute (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/jacksonville/north-florida-educational-institute-fighting-eagles/football/schedule/ -> Jacksonville North Florida Educational Institute (FL) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/fl/jacksonville  Jacksonville North Florida (FL)  34736    Jacksonville North Florida Educational I  47548     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/miami/booker-t-washington-tornadoes/football/schedule/" --to "Miami Booker T. Washington (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/miami/booker-t-washington-tornadoes/football/schedule/ -> Miami Booker T. Washington (FL) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/fl/miami/booker  Miami Booker T (FL)  23535    Miami Booker T. Washington (FL)  65148     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/miami/immaculata-la-salle-royal-lions/football/schedule/" --to "Miami LaSalle (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/miami/immaculata-la-salle-royal-lions/football/schedule/ -> Miami LaSalle (FL) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName       NewTeam_ID
+   https://www.maxpreps.com/fl/miami/immacu  Miami Immaculata-Lasalle (FL)  5168     Miami LaSalle (FL)  7430      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/palm-harbor/palm-harbor-university-hurricanes/football/schedule/" --to "Palm Harbor University (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/palm-harbor/palm-harbor-university-hurricanes/football/schedule/ -> Palm Harbor University (FL) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/fl/palm-harbor/  Palm Harbor Palm Harbor (FL)  44830    Palm Harbor University (FL)  66476     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/riverview/bell-creek-academy-panthers/football/schedule/" --to "Riverview Bell Creek Academy (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/riverview/bell-creek-academy-panthers/football/schedule/ -> Riverview Bell Creek Academy (FL) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/fl/riverview/be  Riverview Bell Creek (FL)  40589    Riverview Bell Creek Academy (FL)  26138     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/st-augustine/st-joseph-academy-fighting-flashes/football/schedule/" --to "Saint Augustine St. Joseph (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/st-augustine/st-joseph-academy-fighting-flashes/football/schedule/ -> Saint Augustine St. Joseph (FL) - COMMIT
+   URL                                       ProperName                             Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/fl/st-augustine  St. Augustine St. Joseph Academy (FL)  68393    Saint Augustine St. Joseph (FL)  21872     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/tampa/tampa-bay-tech-titans/football/schedule/" --to "Tampa Bay Tech (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/tampa/tampa-bay-tech-titans/football/schedule/ -> Tampa Bay Tech (FL) - COMMIT
+   URL                                       ProperName      Team_ID  NewProperName        NewTeam_ID
+   https://www.maxpreps.com/fl/tampa/tampa-  Tampa Bay (FL)  1991     Tampa Bay Tech (FL)  68730     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/west-palm-beach/atlantic-christian-sharks/football/schedule/" --to "West Palm Beach Summit Christian (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/west-palm-beach/atlantic-christian-sharks/football/schedule/ -> West Palm Beach Summit Christian (FL) - COMMIT
+   URL                                       ProperName                               Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/fl/west-palm-be  West Palm Beach Atlantic Christian (FL)  72213    West Palm Beach Summit Christian (FL)  29694     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/west-palm-beach/cardinal-newman-crusaders/football/schedule/" --to "West Palm Beach Cardinal Newman (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/west-palm-beach/cardinal-newman-crusaders/football/schedule/ -> West Palm Beach Cardinal Newman (FL) - COMMIT
+   URL                                       ProperName                            Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/fl/west-palm-be  West Palm Beach Cardinal Newman�(FL)  26894    West Palm Beach Cardinal Newman (FL)  69658     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/pensacola/booker-t-washington-wildcats/football/schedule/" --to "Pensacola Booker T. Washington (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/pensacola/booker-t-washington-wildcats/football/schedule/ -> Pensacola Booker T. Washington (FL) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/fl/pensacola/bo  Pensacola Booker T (FL)  70105    Pensacola Booker T. Washington (FL)  66652     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/north-fort-myers/north-fort-myers-red-knights/football/schedule/" --to "North Fort Myers (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/north-fort-myers/north-fort-myers-red-knights/football/schedule/ -> North Fort Myers (FL) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/fl/north-fort-m  North Fort Myers North Fort (FL)  66039    North Fort Myers (FL)  66039     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap FL --url "https://www.maxpreps.com/fl/dover/specially-fit-academy-rams/football/schedule/" --to "Dover Specially Fit Academy (FL)" --commit
+
+REMAP https://www.maxpreps.com/fl/dover/specially-fit-academy-rams/football/schedule/ -> Dover Specially Fit Academy (FL) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/fl/dover/specia  Dover Specially Fit (FL)  61554    Dover Specially Fit Academy (FL)  61554     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck FL --commit
+
+MAPPING CHECK FL - COMMIT (Team_ID set to the ProperName ID)
+ 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_mapcheck_COMMITTED_20261111_1848.csv
+   URL                                       ProperName                              Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/fl/kissimmee/vi  Kissimmee Victory Charter (FL)          49527    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/fl/tallahassee/  Tallahassee Rickards (FL)               40561    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/fl/coral-gables  Coral Gables (FL)                       48492    61068   Team_ID points to another name   Coral Gables St. Theresa Catholic (FL)  
+   https://www.maxpreps.com/fl/dade-city/pa  Dade City Pasco (FL)                    61280    61219   Team_ID points to another name   Davenport Ridge Community (FL)          
+   https://www.maxpreps.com/fl/dover/strawb  Dover Strawberry Crest (FL)             25176    72474   Team_ID points to another name   None                                    
+   https://www.maxpreps.com/fl/eastpoint/fr  Eastpoint Franklin County (FL)          61680    61673   Team_ID points to another name   Eatonville Wymore Tech (FL)             
+   https://www.maxpreps.com/fl/englewood/le  Englewood Lemon Bay (FL)                69403    61852   Team_ID points to another name   Walnut Hill Ernest Ward (FL)            
+   https://www.maxpreps.com/fl/fernandina-b  Fernandina Beach (FL)                   72404    62078   Team_ID points to another name   Saint Petersburg Florida Military Academ
+   https://www.maxpreps.com/fl/fernandina-b  Fernandina Beach (FL)                   72404    62078   Team_ID points to another name   Saint Petersburg Florida Military Academ
+   https://www.maxpreps.com/fl/gibsonton/ea  Gibsonton East Bay (FL)                 62516    62473   Team_ID points to another name   Glen St. Mary Baker County (FL)         
+   https://www.maxpreps.com/fl/harmony/harm  Harmony (FL)                            70904    62859   Team_ID points to another name   Hastings Walter E. Harris (FL)          
+   https://www.maxpreps.com/fl/jacksonville  Jacksonville University Christian (FL)  63496    63495   Team_ID points to another name   Jacksonville Victory Christian Academy (
+   https://www.maxpreps.com/fl/jacksonville  Jacksonville University Christian (FL)  63496    63495   Team_ID points to another name   Jacksonville Victory Christian Academy (
+   https://www.maxpreps.com/fl/key-west/key  Key West (FL)                           70907    63738   Team_ID points to another name   Key West Mary Immaculate Star of The Sea
+   https://www.maxpreps.com/fl/lynn-haven/m  Lynn Haven Mosley (FL)                  64658    64646   Team_ID points to another name   Macclenny Baker County (FL)             
+   https://www.maxpreps.com/fl/miami/braddo  Miami Braddock (FL)                     70195    65149   Team_ID points to another name   Miami BridgePrep Village (FL)           
+   https://www.maxpreps.com/fl/miami-garden  Miami Gardens Tru Prep Academy (FL)     70170    65161   Team_ID points to another name   Miami Gesu Catholic (FL)                
+   https://www.maxpreps.com/fl/orlando/free  Orlando Freedom (FL)                    66334    66333   Team_ID points to another name   Orlando Heritage Prep (FL)              
+   https://www.maxpreps.com/fl/port-orange/  Port Orange Spruce Creek (FL)           6996     66970   Team_ID points to another name   Port St. Lucie Treasure Coast (FL)      
+   https://www.maxpreps.com/fl/rockledge/ro  Rockledge (FL)                          72039    67412   Team_ID points to another name   Panama City Rosenwald (FL)              
+   ... 6 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  24       None
+
+>>> consolidate FL --reason "FL round 3 (HSFHA-FL): same-school name variants (Tampa Bay Tech, Miami Booker T. Washington, Palm Harbor University, Fort Walton Beach, Glen St. Mary Baker County...), renames to latest (Immaculata-LaSalle -> LaSalle, St. Ann -> Cardinal Newman, Florida Air Academy -> Florida Prep)"
+Consolidating FL from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\FL_Alias_Rules.csv
+
+[stderr]
+2026-11-11 18:48:40,161 - INFO - Starting consolidation for state: (FL) using staging table method.
+2026-11-11 18:48:40,177 - WARNING - WARNING: 560 row(s) have identical OldName and NewName (no-op rules).
+2026-11-11 18:48:40,177 - WARNING -   'Alachua Santa Fe (FL)' -> 'Alachua Santa Fe (FL)' (no change)
+2026-11-11 18:48:40,177 - WARNING -   'Altamonte Springs Lake Brantley (FL)' -> 'Altamonte Springs Lake Brantley (FL)' (no change)
+2026-11-11 18:48:40,177 - WARNING -   'Apopka (FL)' -> 'Apopka (FL)' (no change)
+2026-11-11 18:48:40,177 - WARNING -   'Apopka Wekiva (FL)' -> 'Apopka Wekiva (FL)' (no change)
+2026-11-11 18:48:40,177 - WARNING -   'Arcadia DeSoto County (FL)' -> 'Arcadia DeSoto County (FL)' (no change)
+2026-11-11 18:48:40,177 - WARNING -   'Auburndale (FL)' -> 'Auburndale (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Auburndale Jordan Christian Prep (FL)' -> 'Auburndale Jordan Christian Prep (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Avon Park (FL)' -> 'Avon Park (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Baker (FL)' -> 'Baker (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Baldwin (FL)' -> 'Baldwin (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Bartow (FL)' -> 'Bartow (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Bell (FL)' -> 'Bell (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Belle Glade Christian Day (FL)' -> 'Belle Glade Christian Day (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Belle Glade Glades Day (FL)' -> 'Belle Glade Glades Day (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Belle Glades Central (FL)' -> 'Belle Glades Central (FL)' (no change)
+2026-11-11 18:48:40,178 - WARNING -   'Belleview (FL)' -> 'Belleview (FL)' (no change)
+2026-11-11 18:48:40,179 - WARNING -   'Blountstown (FL)' -> 'Blountstown (FL)' (no change)
+2026-11-11 18:48:40,179 - WARNING -   'Boca Raton Christian (FL)' -> 'Boca Raton Christian (FL)' (no change)
+2026-11-11 18:48:40,179 - WARNING -   'Boca Raton Olympic Heights (FL)' -> 'Boca Raton Olympic Heights (FL)' (no change)
+2026-11-11 18:48:40,179 - WARNING -   'Boca Raton Spanish River (FL)' -> 'Boca Raton Spanish River (FL)' (no change)
+2026-11-11 18:48:40,179 - WARNING -   'Boca Raton St. Andrews (FL)' -> 'Boca Raton St. Andrews (FL)' (no change)
+2026-11-11 18:48:40,179 - WARNING -   'Boca Raton St. John Paul II Academy (FL)' -> 'Boca Raton St. John Paul II Academy (FL)' (no change)
+2026-11-11 18:48:40,179 - WARNING -   'Boca Raton West (FL)' -> 'Boca Raton West (FL)' (no change)
+2026-11-11 18:48:40,179 - WARNING -   'BocaRaton (FL)' -> 'BocaRaton (FL)' (no change)
+2026-11-11 18:48:40,179 - WARNING -   'Bonifay Holmes County (FL)' -> 'Bonifay Holmes County (FL)' (no change)
+2026-11-11 18:48:40,180 - WARNING -   'Boynton Beach (FL)' -> 'Boynton Beach (FL)' (no change)
+2026-11-11 18:48:40,180 - WARNING -   'Bradenton Bayshore (FL)' -> 'Bradenton Bayshore (FL)' (no change)
+2026-11-11 18:48:40,180 - WARNING -   'Bradenton Braden River (FL)' -> 'Bradenton Braden River (FL)' (no change)
+2026-11-11 18:48:40,180 - WARNING -   'Bradenton Lakewood Ranch (FL)' -> 'Bradenton Lakewood Ranch (FL)' (no change)
+2026-11-11 18:48:40,180 - WARNING -   'Bradenton Manatee (FL)' -> 'Bradenton Manatee (FL)' (no change)
+2026-11-11 18:48:40,180 - WARNING -   'Bradenton Southeast (FL)' -> 'Bradenton Southeast (FL)' (no change)
+2026-11-11 18:48:40,180 - WARNING -   'Brandon (FL)' -> 'Brandon (FL)' (no change)
+2026-11-11 18:48:40,180 - WARNING -   'Branford (FL)' -> 'Branford (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Bratt Northview (FL)' -> 'Bratt Northview (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Bristol Liberty County (FL)' -> 'Bristol Liberty County (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Bronson (FL)' -> 'Bronson (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Brooksville Central (FL)' -> 'Brooksville Central (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Brooksville Hernando (FL)' -> 'Brooksville Hernando (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Brooksville Hernando Christian Academy (FL)' -> 'Brooksville Hernando Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Brooksville Nature Coast Tech (FL)' -> 'Brooksville Nature Coast Tech (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Bushnell South Sumter (FL)' -> 'Bushnell South Sumter (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Callahan West Nassau (FL)' -> 'Callahan West Nassau (FL)' (no change)
+2026-11-11 18:48:40,181 - WARNING -   'Cantonment Tate (FL)' -> 'Cantonment Tate (FL)' (no change)
+2026-11-11 18:48:40,182 - WARNING -   'Cape Coral (FL)' -> 'Cape Coral (FL)' (no change)
+2026-11-11 18:48:40,182 - WARNING -   'Cape Coral Ida Baker (FL)' -> 'Cape Coral Ida Baker (FL)' (no change)
+2026-11-11 18:48:40,182 - WARNING -   'Cape Coral Mariner (FL)' -> 'Cape Coral Mariner (FL)' (no change)
+2026-11-11 18:48:40,182 - WARNING -   'Celebration (FL)' -> 'Celebration (FL)' (no change)
+2026-11-11 18:48:40,182 - WARNING -   'Century (FL)' -> 'Century (FL)' (no change)
+2026-11-11 18:48:40,182 - WARNING -   'Chiefland (FL)' -> 'Chiefland (FL)' (no change)
+2026-11-11 18:48:40,182 - WARNING -   'Chipley (FL)' -> 'Chipley (FL)' (no change)
+2026-11-11 18:48:40,182 - WARNING -   'Citra North Marion (FL)' -> 'Citra North Marion (FL)' (no change)
+2026-11-11 18:48:40,182 - WARNING -   'Clearwater (FL)' -> 'Clearwater (FL)' (no change)
+2026-11-11 18:48:40,183 - WARNING -   'Clearwater Calvary Christian (FL)' -> 'Clearwater Calvary Christian (FL)' (no change)
+2026-11-11 18:48:40,183 - WARNING -   'Clearwater Central Catholic (FL)' -> 'Clearwater Central Catholic (FL)' (no change)
+2026-11-11 18:48:40,183 - WARNING -   'Clearwater Countryside (FL)' -> 'Clearwater Countryside (FL)' (no change)
+2026-11-11 18:48:40,183 - WARNING -   'Clearwater Lakeside Christian (FL)' -> 'Clearwater Lakeside Christian (FL)' (no change)
+2026-11-11 18:48:40,183 - WARNING -   'Clermont East Ridge (FL)' -> 'Clermont East Ridge (FL)' (no change)
+2026-11-11 18:48:40,183 - WARNING -   'Clermont Real Life Christian Academy (FL)' -> 'Clermont Real Life Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,183 - WARNING -   'Clewiston (FL)' -> 'Clewiston (FL)' (no change)
+2026-11-11 18:48:40,183 - WARNING -   'Cocoa (FL)' -> 'Cocoa (FL)' (no change)
+2026-11-11 18:48:40,183 - WARNING -   'Cocoa Beach (FL)' -> 'Cocoa Beach (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Cocoa Space Coast (FL)' -> 'Cocoa Space Coast (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Coconut Creek (FL)' -> 'Coconut Creek (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Coconut Creek Monarch (FL)' -> 'Coconut Creek Monarch (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Coconut Creek North Broward Prep (FL)' -> 'Coconut Creek North Broward Prep (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Cooper City (FL)' -> 'Cooper City (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Coral Gables (FL)' -> 'Coral Gables (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Coral Gables (FL)' -> 'Coral Gables (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Coral Gables St. Theresa Catholic (FL)' -> 'Coral Gables St. Theresa Catholic (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Coral Springs (FL)' -> 'Coral Springs (FL)' (no change)
+2026-11-11 18:48:40,184 - WARNING -   'Coral Springs Charter (FL)' -> 'Coral Springs Charter (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Coral Springs Christian (FL)' -> 'Coral Springs Christian (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Coral Springs Coral Glades (FL)' -> 'Coral Springs Coral Glades (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Coral Springs Taravella (FL)' -> 'Coral Springs Taravella (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Cottondale (FL)' -> 'Cottondale (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Crawfordville Wakulla (FL)' -> 'Crawfordville Wakulla (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Crescent City (FL)' -> 'Crescent City (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Crestview (FL)' -> 'Crestview (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Cross City Dixie County (FL)' -> 'Cross City Dixie County (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Crystal River (FL)' -> 'Crystal River (FL)' (no change)
+2026-11-11 18:48:40,185 - WARNING -   'Dade City Pasco (FL)' -> 'Dade City Pasco (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'Davenport Ridge Community (FL)' -> 'Davenport Ridge Community (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'Davie Nova (FL)' -> 'Davie Nova (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'Davie Western (FL)' -> 'Davie Western (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'Daytona Beach Father Lopez (FL)' -> 'Daytona Beach Father Lopez (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'Daytona Beach Mainland (FL)' -> 'Daytona Beach Mainland (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'Daytona Beach Seabreeze (FL)' -> 'Daytona Beach Seabreeze (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'Deerfield Beach (FL)' -> 'Deerfield Beach (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'Deerfield Beach Somerset Academy (FL)' -> 'Deerfield Beach Somerset Academy (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'Deerfield Beach Zion Lutheran (FL)' -> 'Deerfield Beach Zion Lutheran (FL)' (no change)
+2026-11-11 18:48:40,186 - WARNING -   'DeFuniak Springs Walton (FL)' -> 'DeFuniak Springs Walton (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'DeLand (FL)' -> 'DeLand (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'Delray Beach American Heritage (FL)' -> 'Delray Beach American Heritage (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'Delray Beach Atlantic Community (FL)' -> 'Delray Beach Atlantic Community (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'Deltona (FL)' -> 'Deltona (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'Deltona Pine Ridge (FL)' -> 'Deltona Pine Ridge (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'Deltona Trinity Christian Academy (FL)' -> 'Deltona Trinity Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'Doral Academy (FL)' -> 'Doral Academy (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'Dover Specially Fit Academy (FL)' -> 'Dover Specially Fit Academy (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'Dunedin (FL)' -> 'Dunedin (FL)' (no change)
+2026-11-11 18:48:40,187 - WARNING -   'Dunnellon (FL)' -> 'Dunnellon (FL)' (no change)
+2026-11-11 18:48:40,188 - WARNING -   'Eagle Lake Lake Region (FL)' -> 'Eagle Lake Lake Region (FL)' (no change)
+2026-11-11 18:48:40,188 - WARNING -   'Eastpoint Franklin County (FL)' -> 'Eastpoint Franklin County (FL)' (no change)
+2026-11-11 18:48:40,188 - WARNING -   'Eatonville Wymore Tech (FL)' -> 'Eatonville Wymore Tech (FL)' (no change)
+2026-11-11 18:48:40,188 - WARNING -   'Englewood Lemon Bay (FL)' -> 'Englewood Lemon Bay (FL)' (no change)
+2026-11-11 18:48:40,188 - WARNING -   'Estero (FL)' -> 'Estero (FL)' (no change)
+2026-11-11 18:48:40,188 - WARNING -   'Eustis (FL)' -> 'Eustis (FL)' (no change)
+2026-11-11 18:48:40,188 - WARNING -   'Fernandina Beach (FL)' -> 'Fernandina Beach (FL)' (no change)
+2026-11-11 18:48:40,188 - WARNING -   'Florida School for the Deaf (FL)' -> 'Florida School for the Deaf (FL)' (no change)
+2026-11-11 18:48:40,189 - WARNING -   'Fort Lauderdale (FL)' -> 'Fort Lauderdale (FL)' (no change)
+2026-11-11 18:48:40,189 - WARNING -   'Fort Lauderdale Archbishop McCarthy (FL)' -> 'Fort Lauderdale Archbishop McCarthy (FL)' (no change)
+2026-11-11 18:48:40,189 - WARNING -   'Fort Lauderdale Calvary Christian Academy (FL)' -> 'Fort Lauderdale Calvary Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,189 - WARNING -   'Fort Lauderdale Cardinal Gibbons (FL)' -> 'Fort Lauderdale Cardinal Gibbons (FL)' (no change)
+2026-11-11 18:48:40,189 - WARNING -   'Fort Lauderdale Dillard (FL)' -> 'Fort Lauderdale Dillard (FL)' (no change)
+2026-11-11 18:48:40,189 - WARNING -   'Fort Lauderdale Pine Crest (FL)' -> 'Fort Lauderdale Pine Crest (FL)' (no change)
+2026-11-11 18:48:40,189 - WARNING -   'Fort Lauderdale St. Thomas Aquinas (FL)' -> 'Fort Lauderdale St. Thomas Aquinas (FL)' (no change)
+2026-11-11 18:48:40,189 - WARNING -   'Fort Lauderdale Stranahan (FL)' -> 'Fort Lauderdale Stranahan (FL)' (no change)
+2026-11-11 18:48:40,190 - WARNING -   'Fort Lauderdale Westminster Academy (FL)' -> 'Fort Lauderdale Westminster Academy (FL)' (no change)
+2026-11-11 18:48:40,190 - WARNING -   'Fort Meade (FL)' -> 'Fort Meade (FL)' (no change)
+2026-11-11 18:48:40,190 - WARNING -   'Fort Myers (FL)' -> 'Fort Myers (FL)' (no change)
+2026-11-11 18:48:40,190 - WARNING -   'Fort Myers Bishop Verot (FL)' -> 'Fort Myers Bishop Verot (FL)' (no change)
+2026-11-11 18:48:40,190 - WARNING -   'Fort Myers Cypress Lake (FL)' -> 'Fort Myers Cypress Lake (FL)' (no change)
+2026-11-11 18:48:40,190 - WARNING -   'Fort Myers Dunbar (FL)' -> 'Fort Myers Dunbar (FL)' (no change)
+2026-11-11 18:48:40,190 - WARNING -   'Fort Myers Evangelical Christian (FL)' -> 'Fort Myers Evangelical Christian (FL)' (no change)
+2026-11-11 18:48:40,190 - WARNING -   'Fort Myers Gateway Charter (FL)' -> 'Fort Myers Gateway Charter (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Fort Myers Riverdale (FL)' -> 'Fort Myers Riverdale (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Fort Myers Southwest Florida Christian (FL)' -> 'Fort Myers Southwest Florida Christian (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Fort Pierce Central (FL)' -> 'Fort Pierce Central (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Fort Pierce John Carroll Catholic (FL)' -> 'Fort Pierce John Carroll Catholic (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Fort Pierce St. Lucie Christian (FL)' -> 'Fort Pierce St. Lucie Christian (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Fort Pierce Westwood (FL)' -> 'Fort Pierce Westwood (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Fort Walton Beach (FL)' -> 'Fort Walton Beach (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Fort Walton Beach Choctawhatchee (FL)' -> 'Fort Walton Beach Choctawhatchee (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Fort White (FL)' -> 'Fort White (FL)' (no change)
+2026-11-11 18:48:40,191 - WARNING -   'Freeport (FL)' -> 'Freeport (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Frostproof (FL)' -> 'Frostproof (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Gainesville (FL)' -> 'Gainesville (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Gainesville Eastside (FL)' -> 'Gainesville Eastside (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Gainesville Oak Hall (FL)' -> 'Gainesville Oak Hall (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Gainesville P.K. Yonge (FL)' -> 'Gainesville P.K. Yonge (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Gibsonton East Bay (FL)' -> 'Gibsonton East Bay (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Glen St. Mary Baker County (FL)' -> 'Glen St. Mary Baker County (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Graceville (FL)' -> 'Graceville (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Green Cove Springs Clay (FL)' -> 'Green Cove Springs Clay (FL)' (no change)
+2026-11-11 18:48:40,192 - WARNING -   'Greenacres Leonard (FL)' -> 'Greenacres Leonard (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Groveland South Lake (FL)' -> 'Groveland South Lake (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Gulf Breeze (FL)' -> 'Gulf Breeze (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Gulfport Boca Ciega (FL)' -> 'Gulfport Boca Ciega (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Haines City (FL)' -> 'Haines City (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Hallandale (FL)' -> 'Hallandale (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Harmony (FL)' -> 'Harmony (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Hastings Walter E. Harris (FL)' -> 'Hastings Walter E. Harris (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Havana Gadsden County (FL)' -> 'Havana Gadsden County (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Hawthorne (FL)' -> 'Hawthorne (FL)' (no change)
+2026-11-11 18:48:40,193 - WARNING -   'Hialeah (FL)' -> 'Hialeah (FL)' (no change)
+2026-11-11 18:48:40,194 - WARNING -   'Hialeah American (FL)' -> 'Hialeah American (FL)' (no change)
+2026-11-11 18:48:40,194 - WARNING -   'Hialeah Gardens Mater Academy Charter (FL)' -> 'Hialeah Gardens Mater Academy Charter (FL)' (no change)
+2026-11-11 18:48:40,194 - WARNING -   'Hialeah-Miami Lakes (FL)' -> 'Hialeah-Miami Lakes (FL)' (no change)
+2026-11-11 18:48:40,194 - WARNING -   'Hilliard (FL)' -> 'Hilliard (FL)' (no change)
+2026-11-11 18:48:40,194 - WARNING -   'Hollywood Avant Garde Academy (FL)' -> 'Hollywood Avant Garde Academy (FL)' (no change)
+2026-11-11 18:48:40,194 - WARNING -   'Hollywood Chaminade-Madonna (FL)' -> 'Hollywood Chaminade-Madonna (FL)' (no change)
+2026-11-11 18:48:40,194 - WARNING -   'Hollywood Hills (FL)' -> 'Hollywood Hills (FL)' (no change)
+2026-11-11 18:48:40,194 - WARNING -   'Hollywood McArthur (FL)' -> 'Hollywood McArthur (FL)' (no change)
+2026-11-11 18:48:40,194 - WARNING -   'Hollywood South Broward (FL)' -> 'Hollywood South Broward (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Homestead (FL)' -> 'Homestead (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Homestead Everglades Prep Academy (FL)' -> 'Homestead Everglades Prep Academy (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Homestead South Dade (FL)' -> 'Homestead South Dade (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Hudson (FL)' -> 'Hudson (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Immokalee (FL)' -> 'Immokalee (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Interlachen (FL)' -> 'Interlachen (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Inverness Citrus (FL)' -> 'Inverness Citrus (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Jacksonville Andrew Jackson (FL)' -> 'Jacksonville Andrew Jackson (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Jacksonville Bishop Kenny (FL)' -> 'Jacksonville Bishop Kenny (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Jacksonville Bishop Snyder (FL)' -> 'Jacksonville Bishop Snyder (FL)' (no change)
+2026-11-11 18:48:40,195 - WARNING -   'Jacksonville Bolles (FL)' -> 'Jacksonville Bolles (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville Cedar Creek Christian (FL)' -> 'Jacksonville Cedar Creek Christian (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville Christ's Church Academy (FL)' -> 'Jacksonville Christ's Church Academy (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville Duval Charter (FL)' -> 'Jacksonville Duval Charter (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville Duval Charter (FL)' -> 'Jacksonville Duval Charter (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville Eagle's View (FL)' -> 'Jacksonville Eagle's View (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville ED White (FL)' -> 'Jacksonville ED White (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville Englewood (FL)' -> 'Jacksonville Englewood (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville Episcopal School (FL)' -> 'Jacksonville Episcopal School (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville First Coast (FL)' -> 'Jacksonville First Coast (FL)' (no change)
+2026-11-11 18:48:40,196 - WARNING -   'Jacksonville Hollis Christian Academy (FL)' -> 'Jacksonville Hollis Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,197 - WARNING -   'Jacksonville Impact Christian Academy (FL)' -> 'Jacksonville Impact Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,197 - WARNING -   'Jacksonville Joshua Christian Academy (FL)' -> 'Jacksonville Joshua Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,197 - WARNING -   'Jacksonville Mandarin (FL)' -> 'Jacksonville Mandarin (FL)' (no change)
+2026-11-11 18:48:40,197 - WARNING -   'Jacksonville Old Plank Christian Academy (FL)' -> 'Jacksonville Old Plank Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,197 - WARNING -   'Jacksonville Parker (FL)' -> 'Jacksonville Parker (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville Paxon (FL)' -> 'Jacksonville Paxon (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville Potter's House Christian (FL)' -> 'Jacksonville Potter's House Christian (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville Providence School (FL)' -> 'Jacksonville Providence School (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville Raines (FL)' -> 'Jacksonville Raines (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville Ribault (FL)' -> 'Jacksonville Ribault (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville Sandalwood (FL)' -> 'Jacksonville Sandalwood (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'jacksonville St. Paul's Catholic (FL)' -> 'jacksonville St. Paul's Catholic (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville Stanton College Prep (FL)' -> 'Jacksonville Stanton College Prep (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville Temple Christian Academy (FL)' -> 'Jacksonville Temple Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville Trinity Christian Academy (FL)' -> 'Jacksonville Trinity Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,198 - WARNING -   'Jacksonville University Christian (FL)' -> 'Jacksonville University Christian (FL)' (no change)
+2026-11-11 18:48:40,199 - WARNING -   'Jacksonville Victory Christian Academy (FL)' -> 'Jacksonville Victory Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,199 - WARNING -   'Jacksonville Wolfson (FL)' -> 'Jacksonville Wolfson (FL)' (no change)
+2026-11-11 18:48:40,199 - WARNING -   'Jacksonville Young Kids In Motion (FL)' -> 'Jacksonville Young Kids In Motion (FL)' (no change)
+2026-11-11 18:48:40,199 - WARNING -   'Jasper Hamilton County (FL)' -> 'Jasper Hamilton County (FL)' (no change)
+2026-11-11 18:48:40,199 - WARNING -   'Jay (FL)' -> 'Jay (FL)' (no change)
+2026-11-11 18:48:40,199 - WARNING -   'Jensen Beach (FL)' -> 'Jensen Beach (FL)' (no change)
+2026-11-11 18:48:40,199 - WARNING -   'Jupiter (FL)' -> 'Jupiter (FL)' (no change)
+2026-11-11 18:48:40,199 - WARNING -   'Jupiter Christian (FL)' -> 'Jupiter Christian (FL)' (no change)
+2026-11-11 18:48:40,199 - WARNING -   'Key West (FL)' -> 'Key West (FL)' (no change)
+2026-11-11 18:48:40,200 - WARNING -   'Key West Mary Immaculate Star of The Sea (FL)' -> 'Key West Mary Immaculate Star of The Sea (FL)' (no change)
+2026-11-11 18:48:40,200 - WARNING -   'Keystone Heights (FL)' -> 'Keystone Heights (FL)' (no change)
+2026-11-11 18:48:40,200 - WARNING -   'Kissimmee City of Life Christian Academy (FL)' -> 'Kissimmee City of Life Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,200 - WARNING -   'Kissimmee Gateway (FL)' -> 'Kissimmee Gateway (FL)' (no change)
+2026-11-11 18:48:40,200 - WARNING -   'Kissimmee Liberty (FL)' -> 'Kissimmee Liberty (FL)' (no change)
+2026-11-11 18:48:40,200 - WARNING -   'Kissimmee Poinciana (FL)' -> 'Kissimmee Poinciana (FL)' (no change)
+2026-11-11 18:48:40,200 - WARNING -   'Kissimmee Victory Charter (FL)' -> 'Kissimmee Victory Charter (FL)' (no change)
+2026-11-11 18:48:40,200 - WARNING -   'La Belle (FL)' -> 'La Belle (FL)' (no change)
+2026-11-11 18:48:40,200 - WARNING -   'Lake Butler Union County (FL)' -> 'Lake Butler Union County (FL)' (no change)
+2026-11-11 18:48:40,201 - WARNING -   'Lake City Columbia (FL)' -> 'Lake City Columbia (FL)' (no change)
+2026-11-11 18:48:40,201 - WARNING -   'Lake Mary (FL)' -> 'Lake Mary (FL)' (no change)
+2026-11-11 18:48:40,201 - WARNING -   'Lake Mary Prep (FL)' -> 'Lake Mary Prep (FL)' (no change)
+2026-11-11 18:48:40,201 - WARNING -   'Lake Placid (FL)' -> 'Lake Placid (FL)' (no change)
+2026-11-11 18:48:40,201 - WARNING -   'Lake Wales (FL)' -> 'Lake Wales (FL)' (no change)
+2026-11-11 18:48:40,201 - WARNING -   'Lake Worth (FL)' -> 'Lake Worth (FL)' (no change)
+2026-11-11 18:48:40,201 - WARNING -   'Lake Worth Dr. Joaquin Garcia (FL)' -> 'Lake Worth Dr. Joaquin Garcia (FL)' (no change)
+2026-11-11 18:48:40,201 - WARNING -   'Lake Worth Park Vista (FL)' -> 'Lake Worth Park Vista (FL)' (no change)
+2026-11-11 18:48:40,201 - WARNING -   'Lakeland (FL)' -> 'Lakeland (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Lakeland (FL)' -> 'Lakeland (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Lakeland Christian (FL)' -> 'Lakeland Christian (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Lakeland Geneva Classical Academy (FL)' -> 'Lakeland Geneva Classical Academy (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Lakeland George Jenkins (FL)' -> 'Lakeland George Jenkins (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Lakeland Kathleen (FL)' -> 'Lakeland Kathleen (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Lakeland Lake Gibson (FL)' -> 'Lakeland Lake Gibson (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Lakeland Santa Fe Catholic (FL)' -> 'Lakeland Santa Fe Catholic (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Lakeland Victory Christian Academy (FL)' -> 'Lakeland Victory Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Land O'Lakes (FL)' -> 'Land O'Lakes (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Land O'Lakes Sunlake (FL)' -> 'Land O'Lakes Sunlake (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Lantana Santaluces (FL)' -> 'Lantana Santaluces (FL)' (no change)
+2026-11-11 18:48:40,202 - WARNING -   'Largo (FL)' -> 'Largo (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Largo Indian Rocks Christian (FL)' -> 'Largo Indian Rocks Christian (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Largo Pinellas Park (FL)' -> 'Largo Pinellas Park (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Lauderdale Lakes Boyd Anderson (FL)' -> 'Lauderdale Lakes Boyd Anderson (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Lecanto (FL)' -> 'Lecanto (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Lecanto Seven Rivers Christian (FL)' -> 'Lecanto Seven Rivers Christian (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Leesburg (FL)' -> 'Leesburg (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Leesburg First Academy (FL)' -> 'Leesburg First Academy (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Lehigh Acres (FL)' -> 'Lehigh Acres (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Lehigh Acres East Lee County (FL)' -> 'Lehigh Acres East Lee County (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Live Oak Suwannee (FL)' -> 'Live Oak Suwannee (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Longwood Lyman (FL)' -> 'Longwood Lyman (FL)' (no change)
+2026-11-11 18:48:40,203 - WARNING -   'Loxahatchee Seminole Ridge (FL)' -> 'Loxahatchee Seminole Ridge (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Lynn Haven Mosley (FL)' -> 'Lynn Haven Mosley (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Madison County (FL)' -> 'Madison County (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Maitland Orangewood Christian (FL)' -> 'Maitland Orangewood Christian (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Marathon (FL)' -> 'Marathon (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Marianna (FL)' -> 'Marianna (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Mayo Lafayette (FL)' -> 'Mayo Lafayette (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Melbourne (FL)' -> 'Melbourne (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Melbourne Central Catholic (FL)' -> 'Melbourne Central Catholic (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Melbourne Eau Gallie (FL)' -> 'Melbourne Eau Gallie (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Melbourne Holy Trinity Episcopal Academy (FL)' -> 'Melbourne Holy Trinity Episcopal Academy (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Melbourne Palm Bay (FL)' -> 'Melbourne Palm Bay (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Merritt Island (FL)' -> 'Merritt Island (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Miami Archbishop Curley (FL)' -> 'Miami Archbishop Curley (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Miami Beach (FL)' -> 'Miami Beach (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Miami Belen Jesuit Prep School (FL)' -> 'Miami Belen Jesuit Prep School (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Miami Booker T. Washington (FL)' -> 'Miami Booker T. Washington (FL)' (no change)
+2026-11-11 18:48:40,204 - WARNING -   'Miami Braddock (FL)' -> 'Miami Braddock (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Carol City (FL)' -> 'Miami Carol City (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Central (FL)' -> 'Miami Central (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Columbus (FL)' -> 'Miami Columbus (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Coral Park (FL)' -> 'Miami Coral Park (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Coral Reef (FL)' -> 'Miami Coral Reef (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Country Day (FL)' -> 'Miami Country Day (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Dade Christian (FL)' -> 'Miami Dade Christian (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Dr. Krop (FL)' -> 'Miami Dr. Krop (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Edison (FL)' -> 'Miami Edison (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Ferguson (FL)' -> 'Miami Ferguson (FL)' (no change)
+2026-11-11 18:48:40,205 - WARNING -   'Miami Florida Christian (FL)' -> 'Miami Florida Christian (FL)' (no change)
+2026-11-11 18:48:40,206 - WARNING -   'Miami Gesu Catholic (FL)' -> 'Miami Gesu Catholic (FL)' (no change)
+2026-11-11 18:48:40,206 - WARNING -   'Miami Goleman (FL)' -> 'Miami Goleman (FL)' (no change)
+2026-11-11 18:48:40,206 - WARNING -   'Miami Gulliver Prep (FL)' -> 'Miami Gulliver Prep (FL)' (no change)
+2026-11-11 18:48:40,206 - WARNING -   'Miami Jackson (FL)' -> 'Miami Jackson (FL)' (no change)
+2026-11-11 18:48:40,206 - WARNING -   'Miami Killian (FL)' -> 'Miami Killian (FL)' (no change)
+2026-11-11 18:48:40,206 - WARNING -   'Miami La Progresiva Presbyterian (FL)' -> 'Miami La Progresiva Presbyterian (FL)' (no change)
+2026-11-11 18:48:40,206 - WARNING -   'Miami LaSalle (FL)' -> 'Miami LaSalle (FL)' (no change)
+2026-11-11 18:48:40,206 - WARNING -   'Miami Monsignor Pace (FL)' -> 'Miami Monsignor Pace (FL)' (no change)
+2026-11-11 18:48:40,206 - WARNING -   'Miami Norland (FL)' -> 'Miami Norland (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Northwest Christian (FL)' -> 'Miami Northwest Christian (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Northwestern (FL)' -> 'Miami Northwestern (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Palm Glades Academy (FL)' -> 'Miami Palm Glades Academy (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Palmer Trinity (FL)' -> 'Miami Palmer Trinity (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Palmetto (FL)' -> 'Miami Palmetto (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Ransom Everglades (FL)' -> 'Miami Ransom Everglades (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Senior (FL)' -> 'Miami Senior (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Senior (FL)' -> 'Miami Senior (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Smarten Sports (FL)' -> 'Miami Smarten Sports (FL)' (no change)
+2026-11-11 18:48:40,207 - WARNING -   'Miami Somerset Academy Silver Palms (FL)' -> 'Miami Somerset Academy Silver Palms (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Miami Southridge (FL)' -> 'Miami Southridge (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Miami Southwest (FL)' -> 'Miami Southwest (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Miami Springs (FL)' -> 'Miami Springs (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Miami St. Peter & Paul (FL)' -> 'Miami St. Peter & Paul (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Miami Sunset (FL)' -> 'Miami Sunset (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Miami True North Classical Academy (FL)' -> 'Miami True North Classical Academy (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Miami Varela (FL)' -> 'Miami Varela (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Miami Westminster Christian (FL)' -> 'Miami Westminster Christian (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Middleburg (FL)' -> 'Middleburg (FL)' (no change)
+2026-11-11 18:48:40,208 - WARNING -   'Milton (FL)' -> 'Milton (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Miramar (FL)' -> 'Miramar (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Miramar Everglades (FL)' -> 'Miramar Everglades (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Monticello Aucilla Christian Academy (FL)' -> 'Monticello Aucilla Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Monticello Jefferson County (FL)' -> 'Monticello Jefferson County (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Moore Haven (FL)' -> 'Moore Haven (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Mount Dora (FL)' -> 'Mount Dora (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Mount Dora Christian Academy (FL)' -> 'Mount Dora Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Mulberry (FL)' -> 'Mulberry (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Naples (FL)' -> 'Naples (FL)' (no change)
+2026-11-11 18:48:40,209 - WARNING -   'Naples Barron Collier (FL)' -> 'Naples Barron Collier (FL)' (no change)
+2026-11-11 18:48:40,210 - WARNING -   'Naples First Baptist Academy (FL)' -> 'Naples First Baptist Academy (FL)' (no change)
+2026-11-11 18:48:40,210 - WARNING -   'Naples Golden Gate (FL)' -> 'Naples Golden Gate (FL)' (no change)
+2026-11-11 18:48:40,210 - WARNING -   'Naples Gulf Coast (FL)' -> 'Naples Gulf Coast (FL)' (no change)
+2026-11-11 18:48:40,210 - WARNING -   'Naples Lely (FL)' -> 'Naples Lely (FL)' (no change)
+2026-11-11 18:48:40,210 - WARNING -   'Naples Neumann (FL)' -> 'Naples Neumann (FL)' (no change)
+2026-11-11 18:48:40,210 - WARNING -   'Naples Palmetto Ridge (FL)' -> 'Naples Palmetto Ridge (FL)' (no change)
+2026-11-11 18:48:40,210 - WARNING -   'Navarre (FL)' -> 'Navarre (FL)' (no change)
+2026-11-11 18:48:40,210 - WARNING -   'Neptune Beach Fletcher (FL)' -> 'Neptune Beach Fletcher (FL)' (no change)
+2026-11-11 18:48:40,210 - WARNING -   'New Port Richey Gulf (FL)' -> 'New Port Richey Gulf (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'New Port Richey Mitchell (FL)' -> 'New Port Richey Mitchell (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'New Port Richey Ridgewood (FL)' -> 'New Port Richey Ridgewood (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'New Port Richey River Ridge (FL)' -> 'New Port Richey River Ridge (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'Newberry (FL)' -> 'Newberry (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'Niceville (FL)' -> 'Niceville (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'North Fort Myers (FL)' -> 'North Fort Myers (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'North Lauderdale Somerset Prep (FL)' -> 'North Lauderdale Somerset Prep (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'North Miami (FL)' -> 'North Miami (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'North Miami Beach (FL)' -> 'North Miami Beach (FL)' (no change)
+2026-11-11 18:48:40,211 - WARNING -   'North Palm Beach Benjamin (FL)' -> 'North Palm Beach Benjamin (FL)' (no change)
+2026-11-11 18:48:40,212 - WARNING -   'North Port (FL)' -> 'North Port (FL)' (no change)
+2026-11-11 18:48:40,212 - WARNING -   'Oakland Park Northeast (FL)' -> 'Oakland Park Northeast (FL)' (no change)
+2026-11-11 18:48:40,212 - WARNING -   'Ocala Christian Academy (FL)' -> 'Ocala Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,212 - WARNING -   'Ocala Forest (FL)' -> 'Ocala Forest (FL)' (no change)
+2026-11-11 18:48:40,212 - WARNING -   'Ocala Lake Weir (FL)' -> 'Ocala Lake Weir (FL)' (no change)
+2026-11-11 18:48:40,212 - WARNING -   'Ocala Marion Academy (FL)' -> 'Ocala Marion Academy (FL)' (no change)
+2026-11-11 18:48:40,212 - WARNING -   'Ocala St. John Lutheran (FL)' -> 'Ocala St. John Lutheran (FL)' (no change)
+2026-11-11 18:48:40,212 - WARNING -   'Ocala Trinity Catholic (FL)' -> 'Ocala Trinity Catholic (FL)' (no change)
+2026-11-11 18:48:40,212 - WARNING -   'Ocala Vanguard (FL)' -> 'Ocala Vanguard (FL)' (no change)
+2026-11-11 18:48:40,213 - WARNING -   'Ocala West Port (FL)' -> 'Ocala West Port (FL)' (no change)
+2026-11-11 18:48:40,213 - WARNING -   'Ocoee (FL)' -> 'Ocoee (FL)' (no change)
+2026-11-11 18:48:40,213 - WARNING -   'Ocoee Central Florida Christian Academy (FL)' -> 'Ocoee Central Florida Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,213 - WARNING -   'Okeechobee (FL)' -> 'Okeechobee (FL)' (no change)
+2026-11-11 18:48:40,213 - WARNING -   'Orange Park (FL)' -> 'Orange Park (FL)' (no change)
+2026-11-11 18:48:40,213 - WARNING -   'Orange Park Fleming Island (FL)' -> 'Orange Park Fleming Island (FL)' (no change)
+2026-11-11 18:48:40,213 - WARNING -   'Orange Park Ridgeview (FL)' -> 'Orange Park Ridgeview (FL)' (no change)
+2026-11-11 18:48:40,213 - WARNING -   'Orange Park St. Johns Country Day (FL)' -> 'Orange Park St. Johns Country Day (FL)' (no change)
+2026-11-11 18:48:40,214 - WARNING -   'Orlando Bishop Moore (FL)' -> 'Orlando Bishop Moore (FL)' (no change)
+2026-11-11 18:48:40,214 - WARNING -   'Orlando Boone (FL)' -> 'Orlando Boone (FL)' (no change)
+2026-11-11 18:48:40,214 - WARNING -   'Orlando Colonial (FL)' -> 'Orlando Colonial (FL)' (no change)
+2026-11-11 18:48:40,214 - WARNING -   'Orlando Cypress Creek (FL)' -> 'Orlando Cypress Creek (FL)' (no change)
+2026-11-11 18:48:40,214 - WARNING -   'Orlando Dr. Phillips (FL)' -> 'Orlando Dr. Phillips (FL)' (no change)
+2026-11-11 18:48:40,214 - WARNING -   'Orlando Eastland Christian (FL)' -> 'Orlando Eastland Christian (FL)' (no change)
+2026-11-11 18:48:40,214 - WARNING -   'Orlando Edgewater (FL)' -> 'Orlando Edgewater (FL)' (no change)
+2026-11-11 18:48:40,214 - WARNING -   'Orlando Evans (FL)' -> 'Orlando Evans (FL)' (no change)
+2026-11-11 18:48:40,214 - WARNING -   'Orlando Faith Christian (FL)' -> 'Orlando Faith Christian (FL)' (no change)
+2026-11-11 18:48:40,215 - WARNING -   'Orlando Freedom (FL)' -> 'Orlando Freedom (FL)' (no change)
+2026-11-11 18:48:40,215 - WARNING -   'Orlando Heritage Prep (FL)' -> 'Orlando Heritage Prep (FL)' (no change)
+2026-11-11 18:48:40,215 - WARNING -   'Orlando Jones (FL)' -> 'Orlando Jones (FL)' (no change)
+2026-11-11 18:48:40,215 - WARNING -   'Orlando Lake Buena Vista (FL)' -> 'Orlando Lake Buena Vista (FL)' (no change)
+2026-11-11 18:48:40,215 - WARNING -   'Orlando Lutheran Academy (FL)' -> 'Orlando Lutheran Academy (FL)' (no change)
+2026-11-11 18:48:40,215 - WARNING -   'Orlando Oakridge (FL)' -> 'Orlando Oakridge (FL)' (no change)
+2026-11-11 18:48:40,215 - WARNING -   'Orlando Olympia (FL)' -> 'Orlando Olympia (FL)' (no change)
+2026-11-11 18:48:40,215 - WARNING -   'Orlando The First Academy (FL)' -> 'Orlando The First Academy (FL)' (no change)
+2026-11-11 18:48:40,215 - WARNING -   'Orlando Timber Creek (FL)' -> 'Orlando Timber Creek (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Orlando University (FL)' -> 'Orlando University (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Orlando West Oaks Academy (FL)' -> 'Orlando West Oaks Academy (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Oviedo (FL)' -> 'Oviedo (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Oviedo Hagerty (FL)' -> 'Oviedo Hagerty (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Oviedo Master's Academy (FL)' -> 'Oviedo Master's Academy (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Pace (FL)' -> 'Pace (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Pahokee (FL)' -> 'Pahokee (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Palatka (FL)' -> 'Palatka (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Palatka South (FL)' -> 'Palatka South (FL)' (no change)
+2026-11-11 18:48:40,216 - WARNING -   'Palm Bay Bayside (FL)' -> 'Palm Bay Bayside (FL)' (no change)
+2026-11-11 18:48:40,217 - WARNING -   'Palm Bay Heritage (FL)' -> 'Palm Bay Heritage (FL)' (no change)
+2026-11-11 18:48:40,217 - WARNING -   'Palm Beach Gardens (FL)' -> 'Palm Beach Gardens (FL)' (no change)
+2026-11-11 18:48:40,217 - WARNING -   'Palm Beach Gardens Dwyer (FL)' -> 'Palm Beach Gardens Dwyer (FL)' (no change)
+2026-11-11 18:48:40,217 - WARNING -   'Palm Coast Flagler (FL)' -> 'Palm Coast Flagler (FL)' (no change)
+2026-11-11 18:48:40,217 - WARNING -   'Palm Coast Matanzas (FL)' -> 'Palm Coast Matanzas (FL)' (no change)
+2026-11-11 18:48:40,217 - WARNING -   'Palm Harbor University (FL)' -> 'Palm Harbor University (FL)' (no change)
+2026-11-11 18:48:40,217 - WARNING -   'Palmetto (FL)' -> 'Palmetto (FL)' (no change)
+2026-11-11 18:48:40,217 - WARNING -   'Panama City Bay (FL)' -> 'Panama City Bay (FL)' (no change)
+2026-11-11 18:48:40,218 - WARNING -   'Panama City Beach Arnold (FL)' -> 'Panama City Beach Arnold (FL)' (no change)
+2026-11-11 18:48:40,218 - WARNING -   'Panama City Bozeman (FL)' -> 'Panama City Bozeman (FL)' (no change)
+2026-11-11 18:48:40,218 - WARNING -   'Panama City North Bay Haven Academy (FL)' -> 'Panama City North Bay Haven Academy (FL)' (no change)
+2026-11-11 18:48:40,218 - WARNING -   'Panama City Rosenwald (FL)' -> 'Panama City Rosenwald (FL)' (no change)
+2026-11-11 18:48:40,218 - WARNING -   'Panama City Rutherford (FL)' -> 'Panama City Rutherford (FL)' (no change)
+2026-11-11 18:48:40,218 - WARNING -   'Parkland Stoneman Douglas (FL)' -> 'Parkland Stoneman Douglas (FL)' (no change)
+2026-11-11 18:48:40,218 - WARNING -   'Pembroke Pines Charter (FL)' -> 'Pembroke Pines Charter (FL)' (no change)
+2026-11-11 18:48:40,218 - WARNING -   'Pembroke Pines Flanagan (FL)' -> 'Pembroke Pines Flanagan (FL)' (no change)
+2026-11-11 18:48:40,218 - WARNING -   'Pensacola (FL)' -> 'Pensacola (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Pensacola Booker T. Washington (FL)' -> 'Pensacola Booker T. Washington (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Pensacola Catholic (FL)' -> 'Pensacola Catholic (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Pensacola Escambia (FL)' -> 'Pensacola Escambia (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Pensacola Lighthouse Private Christian Academy (FL)' -> 'Pensacola Lighthouse Private Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Pensacola Pine Forest (FL)' -> 'Pensacola Pine Forest (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Pensacola West Florida (FL)' -> 'Pensacola West Florida (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Pensacola Woodham (FL)' -> 'Pensacola Woodham (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Perry Taylor County (FL)' -> 'Perry Taylor County (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Pierson Taylor (FL)' -> 'Pierson Taylor (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Plant City (FL)' -> 'Plant City (FL)' (no change)
+2026-11-11 18:48:40,219 - WARNING -   'Plant City Durant (FL)' -> 'Plant City Durant (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Plantation (FL)' -> 'Plantation (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Plantation American Heritage (FL)' -> 'Plantation American Heritage (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Pompano Beach (FL)' -> 'Pompano Beach (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Pompano Beach Blanche Ely (FL)' -> 'Pompano Beach Blanche Ely (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Pompano Beach Highlands Christian Academy (FL)' -> 'Pompano Beach Highlands Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Ponce de Leon (FL)' -> 'Ponce de Leon (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Ponte Vedra (FL)' -> 'Ponte Vedra (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Ponte Vedra Nease (FL)' -> 'Ponte Vedra Nease (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Port Charlotte (FL)' -> 'Port Charlotte (FL)' (no change)
+2026-11-11 18:48:40,220 - WARNING -   'Port Orange Atlantic (FL)' -> 'Port Orange Atlantic (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Port Orange Spruce Creek (FL)' -> 'Port Orange Spruce Creek (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Port St. Joe (FL)' -> 'Port St. Joe (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Port St. Lucie (FL)' -> 'Port St. Lucie (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Port St. Lucie Centennial (FL)' -> 'Port St. Lucie Centennial (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Port St. Lucie Tradition Prep (FL)' -> 'Port St. Lucie Tradition Prep (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Port St. Lucie Treasure Coast (FL)' -> 'Port St. Lucie Treasure Coast (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Punta Gorda Charlotte (FL)' -> 'Punta Gorda Charlotte (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Quincy Carter-Paramore (FL)' -> 'Quincy Carter-Paramore (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Quincy Munroe (FL)' -> 'Quincy Munroe (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Quincy Shanks (FL)' -> 'Quincy Shanks (FL)' (no change)
+2026-11-11 18:48:40,221 - WARNING -   'Riverview (FL)' -> 'Riverview (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Riverview Spoto (FL)' -> 'Riverview Spoto (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Riviera Beach Inlet Grove (FL)' -> 'Riviera Beach Inlet Grove (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Riviera Beach Suncoast (FL)' -> 'Riviera Beach Suncoast (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Rockledge (FL)' -> 'Rockledge (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Royal Palm Beach (FL)' -> 'Royal Palm Beach (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Ruskin Lennard (FL)' -> 'Ruskin Lennard (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Saint Augustine (FL)' -> 'Saint Augustine (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Saint Augustine St. Joseph (FL)' -> 'Saint Augustine St. Joseph (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Saint Cloud (FL)' -> 'Saint Cloud (FL)' (no change)
+2026-11-11 18:48:40,222 - WARNING -   'Saint Johns Bartram Trail (FL)' -> 'Saint Johns Bartram Trail (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg (FL)' -> 'Saint Petersburg (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Admiral Farragut (FL)' -> 'Saint Petersburg Admiral Farragut (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Baypoint (FL)' -> 'Saint Petersburg Baypoint (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Canterbury (FL)' -> 'Saint Petersburg Canterbury (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Catholic (FL)' -> 'Saint Petersburg Catholic (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Dixie Hollins (FL)' -> 'Saint Petersburg Dixie Hollins (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Florida Military Academy (FL)' -> 'Saint Petersburg Florida Military Academy (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Gibbs (FL)' -> 'Saint Petersburg Gibbs (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Keswick Christian (FL)' -> 'Saint Petersburg Keswick Christian (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Lakewood (FL)' -> 'Saint Petersburg Lakewood (FL)' (no change)
+2026-11-11 18:48:40,223 - WARNING -   'Saint Petersburg Northeast (FL)' -> 'Saint Petersburg Northeast (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Saint Petersburg Northside Christian (FL)' -> 'Saint Petersburg Northside Christian (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Saint Petersburg Shorecrest Prep (FL)' -> 'Saint Petersburg Shorecrest Prep (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Sanford Seminole (FL)' -> 'Sanford Seminole (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Santa Rosa Beach South Walton (FL)' -> 'Santa Rosa Beach South Walton (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Sarasota (FL)' -> 'Sarasota (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Sarasota Booker (FL)' -> 'Sarasota Booker (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Sarasota Cardinal Mooney (FL)' -> 'Sarasota Cardinal Mooney (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Sarasota Out-of-Door Academy (FL)' -> 'Sarasota Out-of-Door Academy (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Sarasota Riverview (FL)' -> 'Sarasota Riverview (FL)' (no change)
+2026-11-11 18:48:40,224 - WARNING -   'Sarasota The Classical (FL)' -> 'Sarasota The Classical (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'Satellite Beach Satellite (FL)' -> 'Satellite Beach Satellite (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'Sebastian River (FL)' -> 'Sebastian River (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'Sebring (FL)' -> 'Sebring (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'Seffner Armwood (FL)' -> 'Seffner Armwood (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'Seminole (FL)' -> 'Seminole (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'Seminole Osceola (FL)' -> 'Seminole Osceola (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'Sneads (FL)' -> 'Sneads (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'South Daytona Warner Christian Academy (FL)' -> 'South Daytona Warner Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'South Fort Myers (FL)' -> 'South Fort Myers (FL)' (no change)
+2026-11-11 18:48:40,225 - WARNING -   'South Miami (FL)' -> 'South Miami (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'South Plantation (FL)' -> 'South Plantation (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'Spring Hill Bishop McLaughlin Catholic (FL)' -> 'Spring Hill Bishop McLaughlin Catholic (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'Spring Hill Christian Academy (FL)' -> 'Spring Hill Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'Spring Hill Springstead (FL)' -> 'Spring Hill Springstead (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'Starke Bradford (FL)' -> 'Starke Bradford (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'Stuart Martin County (FL)' -> 'Stuart Martin County (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'Stuart South Fork (FL)' -> 'Stuart South Fork (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'Sunrise Piper (FL)' -> 'Sunrise Piper (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'Tallahassee Chiles (FL)' -> 'Tallahassee Chiles (FL)' (no change)
+2026-11-11 18:48:40,226 - WARNING -   'Tallahassee Florida A&M University High (FL)' -> 'Tallahassee Florida A&M University High (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tallahassee Godby (FL)' -> 'Tallahassee Godby (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tallahassee Leon (FL)' -> 'Tallahassee Leon (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tallahassee Lincoln (FL)' -> 'Tallahassee Lincoln (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tallahassee Maclay (FL)' -> 'Tallahassee Maclay (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tallahassee Maranatha Christian Academy (FL)' -> 'Tallahassee Maranatha Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tallahassee North Florida Christian (FL)' -> 'Tallahassee North Florida Christian (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tallahassee Richards (FL)' -> 'Tallahassee Richards (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tampa Alonso (FL)' -> 'Tampa Alonso (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tampa Bay Tech (FL)' -> 'Tampa Bay Tech (FL)' (no change)
+2026-11-11 18:48:40,227 - WARNING -   'Tampa Berkeley Prep (FL)' -> 'Tampa Berkeley Prep (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Blake (FL)' -> 'Tampa Blake (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Brewster Tech (FL)' -> 'Tampa Brewster Tech (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Cambridge Christian (FL)' -> 'Tampa Cambridge Christian (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Catholic (FL)' -> 'Tampa Catholic (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Chamberlain (FL)' -> 'Tampa Chamberlain (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Freedom (FL)' -> 'Tampa Freedom (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Gaither (FL)' -> 'Tampa Gaither (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Good Shepherd (FL)' -> 'Tampa Good Shepherd (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Hillsborough (FL)' -> 'Tampa Hillsborough (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Jefferson (FL)' -> 'Tampa Jefferson (FL)' (no change)
+2026-11-11 18:48:40,228 - WARNING -   'Tampa Jesuit (FL)' -> 'Tampa Jesuit (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tampa King (FL)' -> 'Tampa King (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tampa Leto (FL)' -> 'Tampa Leto (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tampa Middleton (FL)' -> 'Tampa Middleton (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tampa Plant (FL)' -> 'Tampa Plant (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tampa Providence Christian (FL)' -> 'Tampa Providence Christian (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tampa Robinson (FL)' -> 'Tampa Robinson (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tampa Sickles (FL)' -> 'Tampa Sickles (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tampa Temple Heights Christian (FL)' -> 'Tampa Temple Heights Christian (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tampa Wharton (FL)' -> 'Tampa Wharton (FL)' (no change)
+2026-11-11 18:48:40,229 - WARNING -   'Tarpon Springs (FL)' -> 'Tarpon Springs (FL)' (no change)
+2026-11-11 18:48:40,230 - WARNING -   'Tarpon Springs East Lake (FL)' -> 'Tarpon Springs East Lake (FL)' (no change)
+2026-11-11 18:48:40,230 - WARNING -   'Tavares (FL)' -> 'Tavares (FL)' (no change)
+2026-11-11 18:48:40,230 - WARNING -   'Tavares Liberty Christian Prep (FL)' -> 'Tavares Liberty Christian Prep (FL)' (no change)
+2026-11-11 18:48:40,230 - WARNING -   'Tavernier Coral Shores (FL)' -> 'Tavernier Coral Shores (FL)' (no change)
+2026-11-11 18:48:40,230 - WARNING -   'The Villages Charter (FL)' -> 'The Villages Charter (FL)' (no change)
+2026-11-11 18:48:40,230 - WARNING -   'Thomas Industrial Institute (FL)' -> 'Thomas Industrial Institute (FL)' (no change)
+2026-11-11 18:48:40,230 - WARNING -   'Titusville (FL)' -> 'Titusville (FL)' (no change)
+2026-11-11 18:48:40,230 - WARNING -   'Titusville Astronaut (FL)' -> 'Titusville Astronaut (FL)' (no change)
+2026-11-11 18:48:40,230 - WARNING -   'Trenton (FL)' -> 'Trenton (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Umatilla (FL)' -> 'Umatilla (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Valrico Bloomingdale (FL)' -> 'Valrico Bloomingdale (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Valrico Foundation Christian Academy (FL)' -> 'Valrico Foundation Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Venice (FL)' -> 'Venice (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Vernon (FL)' -> 'Vernon (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Vero Beach (FL)' -> 'Vero Beach (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Vero Beach Master's Academy (FL)' -> 'Vero Beach Master's Academy (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Vero Beach St. Edward's (FL)' -> 'Vero Beach St. Edward's (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Viera (FL)' -> 'Viera (FL)' (no change)
+2026-11-11 18:48:40,231 - WARNING -   'Walnut Hill Ernest Ward (FL)' -> 'Walnut Hill Ernest Ward (FL)' (no change)
+2026-11-11 18:48:40,232 - WARNING -   'Wauchula Hardee (FL)' -> 'Wauchula Hardee (FL)' (no change)
+2026-11-11 18:48:40,232 - WARNING -   'Wellington (FL)' -> 'Wellington (FL)' (no change)
+2026-11-11 18:48:40,232 - WARNING -   'Wellington Palm Beach Central (FL)' -> 'Wellington Palm Beach Central (FL)' (no change)
+2026-11-11 18:48:40,232 - WARNING -   'Wesley Chapel (FL)' -> 'Wesley Chapel (FL)' (no change)
+2026-11-11 18:48:40,232 - WARNING -   'Wesley Chapel Wiregrass Ranch (FL)' -> 'Wesley Chapel Wiregrass Ranch (FL)' (no change)
+2026-11-11 18:48:40,232 - WARNING -   'West Melbourne Calvary Chapel Academy (FL)' -> 'West Melbourne Calvary Chapel Academy (FL)' (no change)
+2026-11-11 18:48:40,232 - WARNING -   'West Palm Beach Berean Christian (FL)' -> 'West Palm Beach Berean Christian (FL)' (no change)
+2026-11-11 18:48:40,232 - WARNING -   'West Palm Beach Cardinal Newman (FL)' -> 'West Palm Beach Cardinal Newman (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'West Palm Beach Forest Hill (FL)' -> 'West Palm Beach Forest Hill (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'West Palm Beach King's Academy (FL)' -> 'West Palm Beach King's Academy (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'West Palm Beach Palm Beach Lakes (FL)' -> 'West Palm Beach Palm Beach Lakes (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'Weston Cypress Bay (FL)' -> 'Weston Cypress Bay (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'Wewahitchka (FL)' -> 'Wewahitchka (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'Wildwood (FL)' -> 'Wildwood (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'Williston (FL)' -> 'Williston (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'Winter Garden Foundation Academy (FL)' -> 'Winter Garden Foundation Academy (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'Winter Garden West Orange (FL)' -> 'Winter Garden West Orange (FL)' (no change)
+2026-11-11 18:48:40,233 - WARNING -   'Winter Haven (FL)' -> 'Winter Haven (FL)' (no change)
+2026-11-11 18:48:40,234 - WARNING -   'Winter Haven All Saints' Academy (FL)' -> 'Winter Haven All Saints' Academy (FL)' (no change)
+2026-11-11 18:48:40,234 - WARNING -   'Winter Haven Ambassadors Christian (FL)' -> 'Winter Haven Ambassadors Christian (FL)' (no change)
+2026-11-11 18:48:40,234 - WARNING -   'Winter Park (FL)' -> 'Winter Park (FL)' (no change)
+2026-11-11 18:48:40,234 - WARNING -   'Winter Park Lake Howell (FL)' -> 'Winter Park Lake Howell (FL)' (no change)
+2026-11-11 18:48:40,234 - WARNING -   'Winter Park Trinity Prep (FL)' -> 'Winter Park Trinity Prep (FL)' (no change)
+2026-11-11 18:48:40,234 - WARNING -   'Winter Springs (FL)' -> 'Winter Springs (FL)' (no change)
+2026-11-11 18:48:40,234 - WARNING -   'Yulee (FL)' -> 'Yulee (FL)' (no change)
+2026-11-11 18:48:40,234 - WARNING -   'Zephyrhills (FL)' -> 'Zephyrhills (FL)' (no change)
+2026-11-11 18:48:40,234 - WARNING -   'Zephyrhills Christian Academy (FL)' -> 'Zephyrhills Christian Academy (FL)' (no change)
+2026-11-11 18:48:40,234 - INFO - Validation passed: 938 rules are clean and ready to upload.
+2026-11-11 18:48:40,256 - INFO - Uploading 938 rules to staging table: ConsolidationRules_Staging...
+2026-11-11 18:48:40,496 - INFO - Upload to staging table complete.
+2026-11-11 18:48:40,502 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-11 18:51:18,895 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-11 18:51:18,895 - INFO - Reason logged to dbo.HS_Consolidation_Log: FL round 3 (HSFHA-FL): same-school name variants (Tampa Bay Tech, Miami Booker T. Washington, Palm Harbor University, Fort Walton Beach, Glen St. Mary Baker County...), renames to latest (Immaculata-LaSalle -> LaSalle, St. Ann -> Cardinal Newman, Florida Air Academy -> Florida Prep)
+2026-11-11 18:51:18,896 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-11 18:51:18,896 - INFO - Running post-consolidation safety check...
+2026-11-11 18:51:18,904 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup FL
+
+DEDUP v4 FL - PREVIEW (nothing changed)
+ dedup_archive: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_archive_20261111_1851.csv
+ dedup_review: 36 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_review_20261111_1851.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_summary_20261111_1851.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  FL     129382        96                   36               None 
+
+>>> review-pairs FL
+
+REVIEW-ONLY PAIRS FL - PREVIEW (nothing changed)
+ 36 pairs {'SHORT': 36} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_review_pairs_20261111_1851.csv
+
+=== OK 2026-11-11 18:51:32

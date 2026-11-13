@@ -1,0 +1,27 @@
+move-team TN --from "Church Hill Volunteer (TN)" --to "Church Hill (TN)" --seasons 1880-1979 --reason "Lineage split (consolidation/merger, HSFHA-TN): Church Hill (TN) era" --commit
+move-team TN --from "Winchester Franklin County (TN)" --to "Winchester (TN)" --seasons 1880-1948 --reason "Lineage split (consolidation/merger, HSFHA-TN): Winchester (TN) era" --commit
+move-team TN --from "Dickson County (TN)" --to "Dickson (TN)" --seasons 1880-1971 --reason "Lineage split (consolidation/merger, HSFHA-TN): Dickson (TN) era" --commit
+move-team TN --from "Evensville Rhea County (TN)" --to "Rhea Central (TN)" --seasons 1880-1973 --reason "Lineage split (consolidation/merger, HSFHA-TN): Rhea Central (TN) era" --commit
+move-team TN --from "McMinnville Warren County (TN)" --to "McMinnville Central (TN)" --seasons 1880-1968 --reason "Lineage split (consolidation/merger, HSFHA-TN): McMinnville Central (TN) era" --commit
+move-team TN --from "Lynnville Richland (TN)" --to "Lynnville (TN)" --seasons 1880-1977 --reason "Lineage split (consolidation/merger, HSFHA-TN): Lynnville (TN) era" --commit
+move-team TN --from "Martin Westview (TN)" --to "Martin (TN)" --seasons 1880-1969 --reason "Lineage split (consolidation/merger, HSFHA-TN): Martin (TN) era" --commit
+move-team TN --from "Copperhill Copper Basin (TN)" --to "Copperhill (TN)" --seasons 1880-1955 --reason "Lineage split (consolidation/merger, HSFHA-TN): Copperhill (TN) era" --commit
+move-team TN --from "Ashland City Cheatham County Central (TN)" --to "Ashland City (TN)" --seasons 1880-1969 --reason "Lineage split (consolidation/merger, HSFHA-TN): Ashland City (TN) era" --commit
+move-team TN --from "Tiptonville Lake County (TN)" --to "Tiptonville (TN)" --seasons 1880-1962 --reason "Lineage split (consolidation/merger, HSFHA-TN): Tiptonville (TN) era" --commit
+move-team TN --from "Englewood McMinn Central (TN)" --to "Englewood (TN)" --seasons 1880-1965 --reason "Lineage split (consolidation/merger, HSFHA-TN): Englewood (TN) era" --commit
+move-team TN --from "Nashville Pearl-Cohn (TN)" --to "Pearl (TN)" --seasons 1880-1982 --reason "Lineage split (consolidation/merger, HSFHA-TN): Pearl (TN) era" --commit
+move-team TN --from "Selmer McNairy Central (TN)" --to "Selmer (TN)" --seasons 1880-1968 --reason "Lineage split (consolidation/merger, HSFHA-TN): Selmer (TN) era" --commit
+move-team TN --from "Newbern Dyer County (TN)" --to "Newbern (TN)" --seasons 1880-1971 --reason "Lineage split (consolidation/merger, HSFHA-TN): Newbern (TN) era" --commit
+move-team TN --from "Wartrace Cascade (TN)" --to "Wartrace (TN)" --seasons 1880-1976 --reason "Lineage split (consolidation/merger, HSFHA-TN): Wartrace (TN) era" --commit
+move-team TN --from "Saint Andrews-Sewanee (TN)" --to "St. Andrews Academy (TN)" --seasons 1880-1980 --reason "Lineage split (consolidation/merger, HSFHA-TN): St. Andrews Academy (TN) era" --commit
+move-team TN --from "Gatlinburg (TN)" --to "Gatlinburg-Pittman (TN)" --seasons 1962-2026 --reason "Lineage split (consolidation/merger, HSFHA-TN): Gatlinburg-Pittman (TN) era" --commit
+move-team TN --from "Jackson University School of Jackson (TN)" --to "Jackson Old Hickory Academy (TN)" --seasons 1880-1986 --reason "Lineage split (consolidation/merger, HSFHA-TN): Jackson Old Hickory Academy (TN) era" --commit
+move-team TN --from "Fayetteville (TN)" --to "Fayetteville Central (TN)" --seasons 1880-1978 --reason "Lineage split (consolidation/merger, HSFHA-TN): Fayetteville Central (TN) era" --commit
+move-team TN --from "Somerville Fayette County (TN)" --to "Somerville Fayette Academy (TN)" --seasons 1960-2026 --ids hsfha_fayette_academy.csv --reason "HSFHA-TN: Fayette Academy (private, 1964+) games filed under Fayette County High" --commit
+move-team TN --from "Memphis Academy of Health Sciences (TN)" --to "Memphis Academy of Science and Engineering (TN)" --seasons 2009-2026 --ids hsfha_mase.csv --reason "HSFHA-TN: MASE games filed under MAHS" --commit
+remap TN --url "https://www.maxpreps.com/tn/memphis/memphis-academy-of-science-and-engineering-phoenix/football/schedule/" --to "Memphis Academy of Science and Engineering (TN)" --commit
+move-team TN --from "Trenton Peabody (TN)" --to "Nashville Peabody Demonstration (TN)" --seasons 1880-2026 --ids hsfha_mv_08.csv --reason "HSFHA-TN match: game belongs to Nashville Peabody (TN) (hsfha.org school code)" --commit
+move-team TN --from "Memphis Trezevant (TN)" --to "Trezevant (TN)" --seasons 1880-2026 --ids hsfha_mv_11.csv --reason "HSFHA-TN match: game belongs to Trezevant (TN) (hsfha.org school code)" --commit
+consolidate TN --reason "TN round 4: lineage rules (Lynnville, Ashland City, Pearl, McMinnville Central, Copperhill kept separate; Peabody Demonstration)"
+dedup TN
+review-pairs TN

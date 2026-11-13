@@ -1,0 +1,10 @@
+fix-dates AZ --commit
+step AZ 1.1 "in progress" "round 1 (34 rules: azfootballarchives city-prefix twins, 2024 drift, ALA names, Canyon State, Phoenix Indian) + round 2 (3)"
+step AZ 1.2 done "19 URLs remapped (8 ProperNames did not exist); mapcheck fixed 10 Team_IDs"
+step AZ 1.4 "in progress" "Rincon-University co-op from 2014 (67 moved)"
+step AZ 2.1 done "dedup 1704 + 24"
+step AZ 2.2 done "review pairs 885 + 26 (azfootballarchives estimated dates now rank below newspapers)"
+step AZ 2.3 "in progress" "same-score 37 archived, 53 undecided; 6 self-games archived; ~8,000 different-game pairs = azfootballarchives estimated dates"
+step AZ 3.1 "in progress" "35 championship-page games (indchd6) with Season = date year + 1: which season?"
+step AZ 3.2 done "forfeit flags consistent except NULL on 2026 weekly imports"
+step AZ 5.0 "in progress" "no 1940+ college-vs-college games; AZ_for_college_chat.csv (174)"

@@ -1,0 +1,42 @@
+
+>>> same-score-fix MI --commit
+ 977 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS MI - COMMIT
+ 1813 pairs {'DROP B': 664, 'DROP A': 620, 'UNDECIDED': 529} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_same_score_COMMITTED_20261112_0631.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1275      0D7732B9-5E7E-44CB-A5DB-0028A2F8478E  None
+
+>>> query MI season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_season_date_1_20261112_0631.csv
+ set 2: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_season_date_2_20261112_0631.csv
+
+>>> query MI forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_forfeits_1_20261112_0631.csv
+ set 2: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_forfeits_2_20261112_0631.csv
+
+>>> query MI college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 59 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_college_check_1_20261112_0631.csv
+ set 2: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_college_check_2_20261112_0631.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_college_check_3_20261112_0631.csv
+ set 4: 1572 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_college_check_4_20261112_0631.csv
+
+>>> step MI 1.1 done "2026-11-12: 30 rules: 2024 MaxPreps short names (Forest Hills Eastern, Huron River, Calumet Copper, Detroit Central/Ford/King/U of D, Grosse Pointe North/South, Norrix, Wayland, Dowagiac, Flint Southwestern), same-school variants (Mount Morris EA Johnson, St. Ignace LaSalle, Ironwood LL Wright, Canton-Salem, Middleton Fulton, Petersburg-Summerfield, Vandercook Lake, Ogemaw Heights, Central Montcalm, Mason County Central, Highland Milford), renames to latest (Montrose -> Hill-McCloy, Western State High -> University High)"
+Tracker updated: MI 1.1 -> done
+
+>>> step MI 1.2 done "2026-11-12: 31 URLs remapped (13 ProperNames did not exist), mapcheck 62"
+Tracker updated: MI 1.2 -> done
+
+>>> step MI 2.1 done "2026-11-12: dedup 730"
+Tracker updated: MI 2.1 -> done
+
+>>> step MI 2.2 done "2026-11-12: review pairs 19"
+Tracker updated: MI 2.2 -> done
+
+=== OK 2026-11-12 06:31:32

@@ -1,0 +1,20 @@
+remap TN --url "https://www.maxpreps.com/tn/coalfield/coalfield-yellow-jackets/football/schedule/" --to "Coalfield (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/decaturville/riverside-panthers/football/schedule/" --to "Decatur County-Riverside (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/nashville/east-nashville-magnet-eagles/football/schedule/" --to "Nashville East Nashville Magnet (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/greeneville/greeneville-greene-devils/football/schedule/" --to "Greeneville (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/jackson/jackson-central-merry-cougars/football/schedule/" --to "Jackson Central-Merry (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/jackson/jackson-north-side-indians/football/schedule/" --to "Jackson North Side (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/jackson/jackson-south-side-hawks/football/schedule/" --to "Jackson South Side (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/jackson/university-school-of-jackson-bruins/football/schedule/" --to "Jackson University School of Jackson (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/knoxville/austin-east-roadrunners/football/schedule/" --to "Knoxville Austin-East (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/murfreesboro/middle-tennessee-christian-cougars/football/schedule/" --to "Murfreesboro Middle Tennessee Christian (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/nashville/overton-bobcats/football/schedule/" --to "Nashville John Overton (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/seymour/kings-academy-lions/football/schedule/" --to "Seymour King's Academy (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/soddy-daisy/soddy-daisy-trojans/football/schedule/" --to "Soddy-Daisy (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/unionville/community-vikings-viqueens/football/schedule/" --to "Unionville Community (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/watertown/watertown-purple-tigers/football/schedule/" --to "Watertown (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/knoxville/christian-academy-of-knoxville-warriors/football/schedule/" --to "Christian Academy of Knoxville (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/knoxville/tennessee-school-for-the-deaf-vikings/football/schedule/" --to "Tennessee School for the Deaf (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/nashville/tennessee-heat/football/schedule/" --to "Mount Juliet Middle Tennessee Heat (TN)" --commit
+mapcheck TN
+round TN --reason "TN round 1: 2024 MaxPreps short/mascot names merged into long-standing names (Jackson, Knoxville, Nashville, Watertown...), Tennessee Heat, TSD, KY border names"

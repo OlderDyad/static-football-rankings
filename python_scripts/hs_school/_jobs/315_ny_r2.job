@@ -1,0 +1,21 @@
+same-score-fix NY --commit
+consolidate NY --reason "NY round 2 (2026-11-13): same-school names, see _coop_scripts/NY_cfg.py"
+move-team NY --from "Brooklyn Frank J. Macchiarola (NY)" --to "Brooklyn Sheepshead Bay (NY)" --seasons 2017-2022 --ids coop_ids/NY_c3_000.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Buffalo Bishop Timon (NY)" --to "Buffalo Bishop Timon-St. Jude (NY)" --seasons 1989-2003 --ids coop_ids/NY_c3_001.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Buffalo Bishop Timon-St. Jude (NY)" --to "Buffalo Bishop Timon (NY)" --seasons 1983-1992 --ids coop_ids/NY_c3_002.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Buffalo Hutchinson Tech (NY)" --to "Buffalo Hutchinson-Central Tech-Emerson Vo-Tech (NY)" --seasons 1980-2000 --ids coop_ids/NY_c3_003.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Cicero (NY)" --to "Cicero-North Syracuse (NY)" --seasons 1976-1976 --ids coop_ids/NY_c3_004.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Cicero-North Syracuse (NY)" --to "Cicero (NY)" --seasons 1969-1980 --ids coop_ids/NY_c3_005.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Coxsackie (NY)" --to "Coxsackie-Athens (NY)" --seasons 1966-1999 --ids coop_ids/NY_c3_006.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Cuba (NY)" --to "Cuba-Rushford (NY)" --seasons 1980-1995 --ids coop_ids/NY_c3_007.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Cuba-Rushford (NY)" --to "Cuba (NY)" --seasons 1974-1978 --ids coop_ids/NY_c3_008.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Geneseo (NY)" --to "Geneseo-Mount Morris (NY)" --seasons 2020-2024 --ids coop_ids/NY_c3_009.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Geneseo-Mount Morris (NY)" --to "Geneseo (NY)" --seasons 2022-2022 --ids coop_ids/NY_c3_010.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Morrisville (NY)" --to "Morrisville-Eaton (NY)" --seasons 1968-1974 --ids coop_ids/NY_c3_011.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Morrisville-Eaton (NY)" --to "Morrisville (NY)" --seasons 1965-1970 --ids coop_ids/NY_c3_012.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Troy Catholic Central-Notre Dame Bishop Gibbons-Saratoga Central Catholic (NY)" --to "Schenectady Notre Dame Bishop Gibbons (NY)" --seasons 1990-2003 --ids coop_ids/NY_c3_013.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NY --from "Utica Proctor (NY)" --to "Utica (NY)" --seasons 1989-1992 --ids coop_ids/NY_c3_014.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup NY --commit
+review-pairs NY --commit
+same-score-fix NY
+query NY ny_dump.sql

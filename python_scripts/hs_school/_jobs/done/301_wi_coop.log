@@ -1,0 +1,774 @@
+
+>>> same-score-fix WI --commit
+ 467 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS WI - COMMIT
+ 297 pairs {'DROP B': 6, 'DROP A': 7, 'UNDECIDED': 284} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_same_score_COMMITTED_20261112_1556.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  13        EFF88547-849A-4B32-BD9C-349BF267986F  None
+
+>>> consolidate WI --reason "WI co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/WI_cfg.py"
+Consolidating WI from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\WI_Alias_Rules.csv
+
+[stderr]
+2026-11-12 15:57:00,297 - INFO - Starting consolidation for state: (WI) using staging table method.
+2026-11-12 15:57:00,307 - WARNING - WARNING: 485 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 15:57:00,307 - WARNING -   'Abbotsford (WI)' -> 'Abbotsford (WI)' (no change)
+2026-11-12 15:57:00,307 - WARNING -   'Adams-Friendship (WI)' -> 'Adams-Friendship (WI)' (no change)
+2026-11-12 15:57:00,307 - WARNING -   'Algoma (WI)' -> 'Algoma (WI)' (no change)
+2026-11-12 15:57:00,307 - WARNING -   'Alma (WI)' -> 'Alma (WI)' (no change)
+2026-11-12 15:57:00,307 - WARNING -   'Alma Center Lincoln (WI)' -> 'Alma Center Lincoln (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Alma-Gilmanton (WI)' -> 'Alma-Gilmanton (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Almond-Bancroft (WI)' -> 'Almond-Bancroft (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Altoona (WI)' -> 'Altoona (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Amery (WI)' -> 'Amery (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Amherst (WI)' -> 'Amherst (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Antigo (WI)' -> 'Antigo (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Appleton (WI)' -> 'Appleton (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Appleton East (WI)' -> 'Appleton East (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Appleton Fox Valley Lutheran (WI)' -> 'Appleton Fox Valley Lutheran (WI)' (no change)
+2026-11-12 15:57:00,308 - WARNING -   'Appleton North (WI)' -> 'Appleton North (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Appleton West (WI)' -> 'Appleton West (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Appleton Xavier (WI)' -> 'Appleton Xavier (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Arcadia (WI)' -> 'Arcadia (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Argyle (WI)' -> 'Argyle (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Ashland (WI)' -> 'Ashland (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Athens (WI)' -> 'Athens (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Auburndale (WI)' -> 'Auburndale (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Augusta (WI)' -> 'Augusta (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Baldwin-Woodville (WI)' -> 'Baldwin-Woodville (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Balsam Lake Unity (WI)' -> 'Balsam Lake Unity (WI)' (no change)
+2026-11-12 15:57:00,309 - WARNING -   'Bangor (WI)' -> 'Bangor (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Baraboo (WI)' -> 'Baraboo (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Barneveld (WI)' -> 'Barneveld (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Barron (WI)' -> 'Barron (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Beaver Dam (WI)' -> 'Beaver Dam (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Beaver Dam Wayland Academy (WI)' -> 'Beaver Dam Wayland Academy (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Belleville-Albany (WI)' -> 'Belleville-Albany (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Belmont (WI)' -> 'Belmont (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Beloit Catholic (WI)' -> 'Beloit Catholic (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Beloit Memorial (WI)' -> 'Beloit Memorial (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Beloit Turner Memorial (WI)' -> 'Beloit Turner Memorial (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Benton (WI)' -> 'Benton (WI)' (no change)
+2026-11-12 15:57:00,310 - WARNING -   'Benton-Scales Mound (IL)-Shullsburg (WI)' -> 'Benton-Scales Mound (IL)-Shullsburg (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Berlin (WI)' -> 'Berlin (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Birchwood (WI)' -> 'Birchwood (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Black River Falls (WI)' -> 'Black River Falls (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Blair-Taylor (WI)' -> 'Blair-Taylor (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Blanchardville Pecatonica (WI)' -> 'Blanchardville Pecatonica (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Blanchardville Pecatonica-Argyle (WI)' -> 'Blanchardville Pecatonica-Argyle (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Bloomer (WI)' -> 'Bloomer (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Bloomington (WI)' -> 'Bloomington (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Bonduel (WI)' -> 'Bonduel (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Boscobel (WI)' -> 'Boscobel (WI)' (no change)
+2026-11-12 15:57:00,311 - WARNING -   'Bowler (WI)' -> 'Bowler (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Boyceville (WI)' -> 'Boyceville (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Brillion (WI)' -> 'Brillion (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Brodhead (WI)' -> 'Brodhead (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Brodhead-Juda (WI)' -> 'Brodhead-Juda (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Brookfield Academy (WI)' -> 'Brookfield Academy (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Brookfield Central (WI)' -> 'Brookfield Central (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Brookfield East (WI)' -> 'Brookfield East (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Brown Deer (WI)' -> 'Brown Deer (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Bruce (WI)' -> 'Bruce (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Brussels Southern Door (WI)' -> 'Brussels Southern Door (WI)' (no change)
+2026-11-12 15:57:00,312 - WARNING -   'Burlington (WI)' -> 'Burlington (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Burlington Catholic Central (WI)' -> 'Burlington Catholic Central (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Cadott (WI)' -> 'Cadott (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Cambria-Friesland (WI)' -> 'Cambria-Friesland (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Cambridge (WI)' -> 'Cambridge (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Cameron (WI)' -> 'Cameron (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Campbellsport (WI)' -> 'Campbellsport (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Cashton (WI)' -> 'Cashton (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Cassville (WI)' -> 'Cassville (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Cazenovia Weston (WI)' -> 'Cazenovia Weston (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Cedar Grove (WI)' -> 'Cedar Grove (WI)' (no change)
+2026-11-12 15:57:00,313 - WARNING -   'Cedar Grove-Belgium (WI)' -> 'Cedar Grove-Belgium (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Cedarburg (WI)' -> 'Cedarburg (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Chetek (WI)' -> 'Chetek (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Chetek-Weyerhaeuser (WI)' -> 'Chetek-Weyerhaeuser (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Chilton (WI)' -> 'Chilton (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Chippewa Falls (WI)' -> 'Chippewa Falls (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Chippewa Falls McDonell Central Catholic (WI)' -> 'Chippewa Falls McDonell Central Catholic (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Clayton (WI)' -> 'Clayton (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Clear Lake (WI)' -> 'Clear Lake (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Clinton (WI)' -> 'Clinton (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Clintonville (WI)' -> 'Clintonville (WI)' (no change)
+2026-11-12 15:57:00,314 - WARNING -   'Cochrane-Fountain City (WI)' -> 'Cochrane-Fountain City (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Colby (WI)' -> 'Colby (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Coleman (WI)' -> 'Coleman (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Colfax (WI)' -> 'Colfax (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Columbus (WI)' -> 'Columbus (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Cornell (WI)' -> 'Cornell (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Crandon (WI)' -> 'Crandon (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Crivitz (WI)' -> 'Crivitz (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Cuba City (WI)' -> 'Cuba City (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Cudahy (WI)' -> 'Cudahy (WI)' (no change)
+2026-11-12 15:57:00,315 - WARNING -   'Cumberland (WI)' -> 'Cumberland (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'Darlington (WI)' -> 'Darlington (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'De Pere (WI)' -> 'De Pere (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'Deerfield (WI)' -> 'Deerfield (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'DeForest (WI)' -> 'DeForest (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'Delafield Ethan Allen Schoolfor Boys (WI)' -> 'Delafield Ethan Allen Schoolfor Boys (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'Delavan-Darien (WI)' -> 'Delavan-Darien (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'Denmark (WI)' -> 'Denmark (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'Desoto (WI)' -> 'Desoto (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'Dodgeville (WI)' -> 'Dodgeville (WI)' (no change)
+2026-11-12 15:57:00,316 - WARNING -   'Durand (WI)' -> 'Durand (WI)' (no change)
+2026-11-12 15:57:00,317 - WARNING -   'Durand-Arkansaw (WI)' -> 'Durand-Arkansaw (WI)' (no change)
+2026-11-12 15:57:00,317 - WARNING -   'Eagle River Northland Pines-Phelps (WI)' -> 'Eagle River Northland Pines-Phelps (WI)' (no change)
+2026-11-12 15:57:00,317 - WARNING -   'East Troy (WI)' -> 'East Troy (WI)' (no change)
+2026-11-12 15:57:00,317 - WARNING -   'Eau Claire Memorial (WI)' -> 'Eau Claire Memorial (WI)' (no change)
+2026-11-12 15:57:00,317 - WARNING -   'Eau Claire North (WI)' -> 'Eau Claire North (WI)' (no change)
+2026-11-12 15:57:00,317 - WARNING -   'Eau Claire Regis (WI)' -> 'Eau Claire Regis (WI)' (no change)
+2026-11-12 15:57:00,317 - WARNING -   'Edgar (WI)' -> 'Edgar (WI)' (no change)
+2026-11-12 15:57:00,317 - WARNING -   'Edgerton (WI)' -> 'Edgerton (WI)' (no change)
+2026-11-12 15:57:00,317 - WARNING -   'Elcho-White Lake (WI)' -> 'Elcho-White Lake (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Eleva-Strum (WI)' -> 'Eleva-Strum (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Elk Mound (WI)' -> 'Elk Mound (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Elkhart Lake (WI)' -> 'Elkhart Lake (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Elkhart Lake-Glenbeulah (WI)' -> 'Elkhart Lake-Glenbeulah (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Elkhorn (WI)' -> 'Elkhorn (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Ellsworth (WI)' -> 'Ellsworth (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Elmwood (WI)' -> 'Elmwood (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Elmwood-Plum City (WI)' -> 'Elmwood-Plum City (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Elroy Royall (WI)' -> 'Elroy Royall (WI)' (no change)
+2026-11-12 15:57:00,318 - WARNING -   'Evansville-Albany (WI)' -> 'Evansville-Albany (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Fall Creek (WI)' -> 'Fall Creek (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Fall River (WI)' -> 'Fall River (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Fall River-Rio (WI)' -> 'Fall River-Rio (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Fennimore (WI)' -> 'Fennimore (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Fish Creek Gibraltar (WI)' -> 'Fish Creek Gibraltar (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Florence (WI)' -> 'Florence (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Fond du Lac (WI)' -> 'Fond du Lac (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Fond du Lac Winnebago Lutheran Academy (WI)' -> 'Fond du Lac Winnebago Lutheran Academy (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Fort Atkinson (WI)' -> 'Fort Atkinson (WI)' (no change)
+2026-11-12 15:57:00,319 - WARNING -   'Franklin (WI)' -> 'Franklin (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Frederic (WI)' -> 'Frederic (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Fredonia Ozaukee (WI)' -> 'Fredonia Ozaukee (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Freedom (WI)' -> 'Freedom (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Galesville Gale-Ettrick (WI)' -> 'Galesville Gale-Ettrick (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Galesville Gale-Ettrick-Trempealeau (WI)' -> 'Galesville Gale-Ettrick-Trempealeau (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Germantown (WI)' -> 'Germantown (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Gillett (WI)' -> 'Gillett (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Gilman (WI)' -> 'Gilman (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Glendale Nicolet (WI)' -> 'Glendale Nicolet (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Glenwood City (WI)' -> 'Glenwood City (WI)' (no change)
+2026-11-12 15:57:00,320 - WARNING -   'Grafton (WI)' -> 'Grafton (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Grantsburg (WI)' -> 'Grantsburg (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Green Bay Ashwaubenon (WI)' -> 'Green Bay Ashwaubenon (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Green Bay Bay Port (WI)' -> 'Green Bay Bay Port (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Green Bay East (WI)' -> 'Green Bay East (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Green Bay Notre Dame Academy (WI)' -> 'Green Bay Notre Dame Academy (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Green Bay Preble (WI)' -> 'Green Bay Preble (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Green Bay Southwest (WI)' -> 'Green Bay Southwest (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Green Bay West (WI)' -> 'Green Bay West (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Green Lake (WI)' -> 'Green Lake (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Greendale (WI)' -> 'Greendale (WI)' (no change)
+2026-11-12 15:57:00,321 - WARNING -   'Greendale Martin Luther Prep (WI)' -> 'Greendale Martin Luther Prep (WI)' (no change)
+2026-11-12 15:57:00,322 - WARNING -   'Greenfield (WI)' -> 'Greenfield (WI)' (no change)
+2026-11-12 15:57:00,322 - WARNING -   'Greenfield Whitnall (WI)' -> 'Greenfield Whitnall (WI)' (no change)
+2026-11-12 15:57:00,322 - WARNING -   'Greenwood (WI)' -> 'Greenwood (WI)' (no change)
+2026-11-12 15:57:00,322 - WARNING -   'Hartford (WI)' -> 'Hartford (WI)' (no change)
+2026-11-12 15:57:00,322 - WARNING -   'Hartland Arrowhead (WI)' -> 'Hartland Arrowhead (WI)' (no change)
+2026-11-12 15:57:00,322 - WARNING -   'Hartland Lake Country Lutheran (WI)' -> 'Hartland Lake Country Lutheran (WI)' (no change)
+2026-11-12 15:57:00,322 - WARNING -   'Hayward-Lac Courte Oreilles (WI)' -> 'Hayward-Lac Courte Oreilles (WI)' (no change)
+2026-11-12 15:57:00,322 - WARNING -   'Hazel Green Southwestern (WI)' -> 'Hazel Green Southwestern (WI)' (no change)
+2026-11-12 15:57:00,322 - WARNING -   'Highland (WI)' -> 'Highland (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Hilbert (WI)' -> 'Hilbert (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Hillsboro (WI)' -> 'Hillsboro (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Holmen (WI)' -> 'Holmen (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Horicon (WI)' -> 'Horicon (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Hortonville (WI)' -> 'Hortonville (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Howards Grove (WI)' -> 'Howards Grove (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Hudson (WI)' -> 'Hudson (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Hurley (WI)' -> 'Hurley (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Hustisford (WI)' -> 'Hustisford (WI)' (no change)
+2026-11-12 15:57:00,323 - WARNING -   'Independence (WI)' -> 'Independence (WI)' (no change)
+2026-11-12 15:57:00,324 - WARNING -   'Independence-Gilmanton (WI)' -> 'Independence-Gilmanton (WI)' (no change)
+2026-11-12 15:57:00,324 - WARNING -   'Iola-Scandinavia (WI)' -> 'Iola-Scandinavia (WI)' (no change)
+2026-11-12 15:57:00,324 - WARNING -   'Jackson Kettle Moraine Lutheran (WI)' -> 'Jackson Kettle Moraine Lutheran (WI)' (no change)
+2026-11-12 15:57:00,324 - WARNING -   'Jackson Living Word Lutheran (WI)' -> 'Jackson Living Word Lutheran (WI)' (no change)
+2026-11-12 15:57:00,324 - WARNING -   'Janesville Craig (WI)' -> 'Janesville Craig (WI)' (no change)
+2026-11-12 15:57:00,324 - WARNING -   'Janesville Parker (WI)' -> 'Janesville Parker (WI)' (no change)
+2026-11-12 15:57:00,324 - WARNING -   'Jefferson (WI)' -> 'Jefferson (WI)' (no change)
+2026-11-12 15:57:00,324 - WARNING -   'Johnson Creek (WI)' -> 'Johnson Creek (WI)' (no change)
+2026-11-12 15:57:00,324 - WARNING -   'Juneau Dodgeland (WI)' -> 'Juneau Dodgeland (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kaukauna (WI)' -> 'Kaukauna (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kenosha Bradford (WI)' -> 'Kenosha Bradford (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kenosha Bradford-Reuther (WI)' -> 'Kenosha Bradford-Reuther (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kenosha Indian Trail (WI)' -> 'Kenosha Indian Trail (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kenosha Tremper (WI)' -> 'Kenosha Tremper (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Keshena Menominee Indian (WI)' -> 'Keshena Menominee Indian (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kewaskum (WI)' -> 'Kewaskum (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kewaunee (WI)' -> 'Kewaunee (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kiel (WI)' -> 'Kiel (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kimberly (WI)' -> 'Kimberly (WI)' (no change)
+2026-11-12 15:57:00,325 - WARNING -   'Kohler (WI)' -> 'Kohler (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'La Crosse Aquinas (WI)' -> 'La Crosse Aquinas (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'La Crosse Central (WI)' -> 'La Crosse Central (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'La Crosse Logan (WI)' -> 'La Crosse Logan (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'La Farge (WI)' -> 'La Farge (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'Ladysmith (WI)' -> 'Ladysmith (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'Lake Geneva Badger (WI)' -> 'Lake Geneva Badger (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'Lake Holcombe (WI)' -> 'Lake Holcombe (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'Lake Mills (WI)' -> 'Lake Mills (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'Lake Mills Lakeside Lutheran (WI)' -> 'Lake Mills Lakeside Lutheran (WI)' (no change)
+2026-11-12 15:57:00,326 - WARNING -   'Lancaster (WI)' -> 'Lancaster (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Lena (WI)' -> 'Lena (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Little Chute (WI)' -> 'Little Chute (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Livingston Iowa-Grant (WI)' -> 'Livingston Iowa-Grant (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Lodi (WI)' -> 'Lodi (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Lomira (WI)' -> 'Lomira (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Loyal (WI)' -> 'Loyal (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Luck (WI)' -> 'Luck (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Luxemburg (WI)' -> 'Luxemburg (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Luxemburg-Casco (WI)' -> 'Luxemburg-Casco (WI)' (no change)
+2026-11-12 15:57:00,327 - WARNING -   'Madison Abundant Life Christian (WI)' -> 'Madison Abundant Life Christian (WI)' (no change)
+2026-11-12 15:57:00,328 - WARNING -   'Madison East (WI)' -> 'Madison East (WI)' (no change)
+2026-11-12 15:57:00,328 - WARNING -   'Madison Edgewood (WI)' -> 'Madison Edgewood (WI)' (no change)
+2026-11-12 15:57:00,328 - WARNING -   'Madison Holy Name Seminary (WI)' -> 'Madison Holy Name Seminary (WI)' (no change)
+2026-11-12 15:57:00,328 - WARNING -   'Madison La Follette (WI)' -> 'Madison La Follette (WI)' (no change)
+2026-11-12 15:57:00,328 - WARNING -   'Madison Vel Phillips Memorial (WI)' -> 'Madison Vel Phillips Memorial (WI)' (no change)
+2026-11-12 15:57:00,328 - WARNING -   'Madison West (WI)' -> 'Madison West (WI)' (no change)
+2026-11-12 15:57:00,328 - WARNING -   'Manawa Little Wolf (WI)' -> 'Manawa Little Wolf (WI)' (no change)
+2026-11-12 15:57:00,328 - WARNING -   'Manitowoc Lincoln (WI)' -> 'Manitowoc Lincoln (WI)' (no change)
+2026-11-12 15:57:00,328 - WARNING -   'Manitowoc Lutheran (WI)' -> 'Manitowoc Lutheran (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Manitowoc Roncalli (WI)' -> 'Manitowoc Roncalli (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Maple Northwestern (WI)' -> 'Maple Northwestern (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Marathon (WI)' -> 'Marathon (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Marinette (WI)' -> 'Marinette (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Marinette Catholic Central (WI)' -> 'Marinette Catholic Central (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Marion (WI)' -> 'Marion (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Marion-Tigerton (WI)' -> 'Marion-Tigerton (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Markesan (WI)' -> 'Markesan (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Marshfield (WI)' -> 'Marshfield (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Mauston (WI)' -> 'Mauston (WI)' (no change)
+2026-11-12 15:57:00,329 - WARNING -   'Mayville (WI)' -> 'Mayville (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Mazomanie Wisconsin Heights (WI)' -> 'Mazomanie Wisconsin Heights (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'McFarland (WI)' -> 'McFarland (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Medford (WI)' -> 'Medford (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Melrose-Mindoro (WI)' -> 'Melrose-Mindoro (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Menasha (WI)' -> 'Menasha (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Menasha St. Mary Central (WI)' -> 'Menasha St. Mary Central (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Menomonee Falls (WI)' -> 'Menomonee Falls (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Menomonee Falls East (WI)' -> 'Menomonee Falls East (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Menomonee Falls North (WI)' -> 'Menomonee Falls North (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Menomonie (WI)' -> 'Menomonie (WI)' (no change)
+2026-11-12 15:57:00,330 - WARNING -   'Mequon Homestead (WI)' -> 'Mequon Homestead (WI)' (no change)
+2026-11-12 15:57:00,331 - WARNING -   'Merrill (WI)' -> 'Merrill (WI)' (no change)
+2026-11-12 15:57:00,331 - WARNING -   'Messmer-Shorewood (WI)' -> 'Messmer-Shorewood (WI)' (no change)
+2026-11-12 15:57:00,331 - WARNING -   'Middleton (WI)' -> 'Middleton (WI)' (no change)
+2026-11-12 15:57:00,331 - WARNING -   'Milton (WI)' -> 'Milton (WI)' (no change)
+2026-11-12 15:57:00,331 - WARNING -   'Milwaukee Barack Obama Career & Tech (WI)' -> 'Milwaukee Barack Obama Career & Tech (WI)' (no change)
+2026-11-12 15:57:00,331 - WARNING -   'Milwaukee Bay View-Conservatory of Lifelong Learning (WI)' -> 'Milwaukee Bay View-Conservatory of Lifelong Learning (WI)' (no change)
+2026-11-12 15:57:00,331 - WARNING -   'Milwaukee Bradley Tech (WI)' -> 'Milwaukee Bradley Tech (WI)' (no change)
+2026-11-12 15:57:00,332 - WARNING -   'Milwaukee Custer (WI)' -> 'Milwaukee Custer (WI)' (no change)
+2026-11-12 15:57:00,332 - WARNING -   'Milwaukee Hamilton (WI)' -> 'Milwaukee Hamilton (WI)' (no change)
+2026-11-12 15:57:00,332 - WARNING -   'Milwaukee HOPE Christian (WI)' -> 'Milwaukee HOPE Christian (WI)' (no change)
+2026-11-12 15:57:00,332 - WARNING -   'Milwaukee Juneau (WI)' -> 'Milwaukee Juneau (WI)' (no change)
+2026-11-12 15:57:00,332 - WARNING -   'Milwaukee Lutheran (WI)' -> 'Milwaukee Lutheran (WI)' (no change)
+2026-11-12 15:57:00,332 - WARNING -   'Milwaukee Madison University-Northwest (WI)' -> 'Milwaukee Madison University-Northwest (WI)' (no change)
+2026-11-12 15:57:00,332 - WARNING -   'Milwaukee Marquette University High (WI)' -> 'Milwaukee Marquette University High (WI)' (no change)
+2026-11-12 15:57:00,332 - WARNING -   'Milwaukee Marshall-School of Languages (WI)' -> 'Milwaukee Marshall-School of Languages (WI)' (no change)
+2026-11-12 15:57:00,332 - WARNING -   'Milwaukee North (WI)' -> 'Milwaukee North (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee Pius XI (WI)' -> 'Milwaukee Pius XI (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee Pulaski-Carmen Science & Tech South (WI)' -> 'Milwaukee Pulaski-Carmen Science & Tech South (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee Riverside University (WI)' -> 'Milwaukee Riverside University (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee Rufus King (WI)' -> 'Milwaukee Rufus King (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee South (WI)' -> 'Milwaukee South (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee St. John's Cathedral (WI)' -> 'Milwaukee St. John's Cathedral (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee University School (WI)' -> 'Milwaukee University School (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee Vincent-Destiny (WI)' -> 'Milwaukee Vincent-Destiny (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee Wisconsin Career Academy-Young Coggs Prep (WI)' -> 'Milwaukee Wisconsin Career Academy-Young Coggs Prep (WI)' (no change)
+2026-11-12 15:57:00,333 - WARNING -   'Milwaukee Wisconsin Lutheran (WI)' -> 'Milwaukee Wisconsin Lutheran (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Mineral Point (WI)' -> 'Mineral Point (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Minocqua Lakeland (WI)' -> 'Minocqua Lakeland (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Minong Northwood-Solon Springs (WI)' -> 'Minong Northwood-Solon Springs (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Mishicot (WI)' -> 'Mishicot (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Mondovi (WI)' -> 'Mondovi (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Monona Grove (WI)' -> 'Monona Grove (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Monroe (WI)' -> 'Monroe (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Montello (WI)' -> 'Montello (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Montello-Princeton-Green Lake (WI)' -> 'Montello-Princeton-Green Lake (WI)' (no change)
+2026-11-12 15:57:00,334 - WARNING -   'Mosinee (WI)' -> 'Mosinee (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Mount Horeb (WI)' -> 'Mount Horeb (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Mount Horeb-Barneveld (WI)' -> 'Mount Horeb-Barneveld (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Mukwonago (WI)' -> 'Mukwonago (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Muscoda Riverdale (WI)' -> 'Muscoda Riverdale (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Muskego (WI)' -> 'Muskego (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Necedah (WI)' -> 'Necedah (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Neenah (WI)' -> 'Neenah (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Neillsville (WI)' -> 'Neillsville (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Neillsville-Granton (WI)' -> 'Neillsville-Granton (WI)' (no change)
+2026-11-12 15:57:00,335 - WARNING -   'Nekoosa (WI)' -> 'Nekoosa (WI)' (no change)
+2026-11-12 15:57:00,336 - WARNING -   'New Auburn (WI)' -> 'New Auburn (WI)' (no change)
+2026-11-12 15:57:00,336 - WARNING -   'New Berlin Eisenhower (WI)' -> 'New Berlin Eisenhower (WI)' (no change)
+2026-11-12 15:57:00,336 - WARNING -   'New Berlin West (WI)' -> 'New Berlin West (WI)' (no change)
+2026-11-12 15:57:00,336 - WARNING -   'New Glarus (WI)' -> 'New Glarus (WI)' (no change)
+2026-11-12 15:57:00,336 - WARNING -   'New Glarus-Monticello (WI)' -> 'New Glarus-Monticello (WI)' (no change)
+2026-11-12 15:57:00,336 - WARNING -   'New Holstein (WI)' -> 'New Holstein (WI)' (no change)
+2026-11-12 15:57:00,336 - WARNING -   'New Lisbon (WI)' -> 'New Lisbon (WI)' (no change)
+2026-11-12 15:57:00,336 - WARNING -   'New London (WI)' -> 'New London (WI)' (no change)
+2026-11-12 15:57:00,336 - WARNING -   'New Richmond (WI)' -> 'New Richmond (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'North Fond du Lac (WI)' -> 'North Fond du Lac (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'Northern Elite [Niagara-Goodman-Pembine] (WI)' -> 'Northern Elite [Niagara-Goodman-Pembine] (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'Oak Creek (WI)' -> 'Oak Creek (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'Oakfield (WI)' -> 'Oakfield (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'Oconomowoc (WI)' -> 'Oconomowoc (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'Oconto (WI)' -> 'Oconto (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'Oconto Falls (WI)' -> 'Oconto Falls (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'Omro (WI)' -> 'Omro (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'Onalaska (WI)' -> 'Onalaska (WI)' (no change)
+2026-11-12 15:57:00,337 - WARNING -   'Onalaska Luther (WI)' -> 'Onalaska Luther (WI)' (no change)
+2026-11-12 15:57:00,338 - WARNING -   'Oneida Nation (WI)' -> 'Oneida Nation (WI)' (no change)
+2026-11-12 15:57:00,338 - WARNING -   'Ontario Brookwood (WI)' -> 'Ontario Brookwood (WI)' (no change)
+2026-11-12 15:57:00,338 - WARNING -   'Oostburg (WI)' -> 'Oostburg (WI)' (no change)
+2026-11-12 15:57:00,338 - WARNING -   'Oregon (WI)' -> 'Oregon (WI)' (no change)
+2026-11-12 15:57:00,338 - WARNING -   'Orfordville Parkview (WI)' -> 'Orfordville Parkview (WI)' (no change)
+2026-11-12 15:57:00,338 - WARNING -   'Osceola (WI)' -> 'Osceola (WI)' (no change)
+2026-11-12 15:57:00,338 - WARNING -   'Oshkosh (WI)' -> 'Oshkosh (WI)' (no change)
+2026-11-12 15:57:00,338 - WARNING -   'Oshkosh Lourdes Academy (WI)' -> 'Oshkosh Lourdes Academy (WI)' (no change)
+2026-11-12 15:57:00,338 - WARNING -   'Oshkosh North (WI)' -> 'Oshkosh North (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Oshkosh West (WI)' -> 'Oshkosh West (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Osseo-Fairchild (WI)' -> 'Osseo-Fairchild (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Owen-Withee (WI)' -> 'Owen-Withee (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Palmyra (WI)' -> 'Palmyra (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Palmyra-Eagle (WI)' -> 'Palmyra-Eagle (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Pardeeville (WI)' -> 'Pardeeville (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Park Falls (WI)' -> 'Park Falls (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Park Falls Chequamegon-Butternut (WI)' -> 'Park Falls Chequamegon-Butternut (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Patch Grove River Ridge (WI)' -> 'Patch Grove River Ridge (WI)' (no change)
+2026-11-12 15:57:00,339 - WARNING -   'Pepin (WI)' -> 'Pepin (WI)' (no change)
+2026-11-12 15:57:00,340 - WARNING -   'Pepin-Alma (WI)' -> 'Pepin-Alma (WI)' (no change)
+2026-11-12 15:57:00,340 - WARNING -   'Peshtigo (WI)' -> 'Peshtigo (WI)' (no change)
+2026-11-12 15:57:00,340 - WARNING -   'Pewaukee (WI)' -> 'Pewaukee (WI)' (no change)
+2026-11-12 15:57:00,340 - WARNING -   'Phillips (WI)' -> 'Phillips (WI)' (no change)
+2026-11-12 15:57:00,340 - WARNING -   'Pittsville (WI)' -> 'Pittsville (WI)' (no change)
+2026-11-12 15:57:00,340 - WARNING -   'Plainfield Tri-County (WI)' -> 'Plainfield Tri-County (WI)' (no change)
+2026-11-12 15:57:00,340 - WARNING -   'Platteville (WI)' -> 'Platteville (WI)' (no change)
+2026-11-12 15:57:00,340 - WARNING -   'Plum City (WI)' -> 'Plum City (WI)' (no change)
+2026-11-12 15:57:00,340 - WARNING -   'Plymouth (WI)' -> 'Plymouth (WI)' (no change)
+2026-11-12 15:57:00,341 - WARNING -   'Port Edwards (WI)' -> 'Port Edwards (WI)' (no change)
+2026-11-12 15:57:00,341 - WARNING -   'Port Washington (WI)' -> 'Port Washington (WI)' (no change)
+2026-11-12 15:57:00,341 - WARNING -   'Portage (WI)' -> 'Portage (WI)' (no change)
+2026-11-12 15:57:00,341 - WARNING -   'Potosi (WI)' -> 'Potosi (WI)' (no change)
+2026-11-12 15:57:00,341 - WARNING -   'Poynette (WI)' -> 'Poynette (WI)' (no change)
+2026-11-12 15:57:00,341 - WARNING -   'Prairie du Chien (WI)' -> 'Prairie du Chien (WI)' (no change)
+2026-11-12 15:57:00,341 - WARNING -   'Prairie du Sac Sauk (WI)' -> 'Prairie du Sac Sauk (WI)' (no change)
+2026-11-12 15:57:00,341 - WARNING -   'Prairie Farm (WI)' -> 'Prairie Farm (WI)' (no change)
+2026-11-12 15:57:00,341 - WARNING -   'Prescott (WI)' -> 'Prescott (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Princeton (WI)' -> 'Princeton (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Pulaski (WI)' -> 'Pulaski (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Pulaski-Milwaukee Arts-Reagan Prep (WI)' -> 'Pulaski-Milwaukee Arts-Reagan Prep (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Racine Case (WI)' -> 'Racine Case (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Racine Horlick (WI)' -> 'Racine Horlick (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Racine Lutheran (WI)' -> 'Racine Lutheran (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Racine St. Catherines (WI)' -> 'Racine St. Catherines (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Racine Washington Park (WI)' -> 'Racine Washington Park (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Randolph (WI)' -> 'Randolph (WI)' (no change)
+2026-11-12 15:57:00,342 - WARNING -   'Random Lake (WI)' -> 'Random Lake (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Reedsburg (WI)' -> 'Reedsburg (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Reedsville (WI)' -> 'Reedsville (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Rhinelander (WI)' -> 'Rhinelander (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Rib Lake-Prentice (WI)' -> 'Rib Lake-Prentice (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Rice Lake (WI)' -> 'Rice Lake (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Richland Center (WI)' -> 'Richland Center (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Richland Center Ithaca (WI)' -> 'Richland Center Ithaca (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Rio (WI)' -> 'Rio (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Ripon (WI)' -> 'Ripon (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'River Falls (WI)' -> 'River Falls (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Rosendale Laconia (WI)' -> 'Rosendale Laconia (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Rosholt (WI)' -> 'Rosholt (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Saint Croix Falls (WI)' -> 'Saint Croix Falls (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Saint Francis (WI)' -> 'Saint Francis (WI)' (no change)
+2026-11-12 15:57:00,343 - WARNING -   'Salem Central (WI)' -> 'Salem Central (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Salem Westosha Central (WI)' -> 'Salem Westosha Central (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Schofield D.C. Everest (WI)' -> 'Schofield D.C. Everest (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Seneca (WI)' -> 'Seneca (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Sevastopol-Gibraltar (WI)' -> 'Sevastopol-Gibraltar (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Seymour (WI)' -> 'Seymour (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Shawano Community (WI)' -> 'Shawano Community (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Sheboygan Area (WI)' -> 'Sheboygan Area (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Sheboygan Area Lutheran (WI)' -> 'Sheboygan Area Lutheran (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Sheboygan Falls (WI)' -> 'Sheboygan Falls (WI)' (no change)
+2026-11-12 15:57:00,345 - WARNING -   'Sheboygan North (WI)' -> 'Sheboygan North (WI)' (no change)
+2026-11-12 15:57:00,346 - WARNING -   'Sheboygan South (WI)' -> 'Sheboygan South (WI)' (no change)
+2026-11-12 15:57:00,346 - WARNING -   'Shell Lake (WI)' -> 'Shell Lake (WI)' (no change)
+2026-11-12 15:57:00,346 - WARNING -   'Shiocton (WI)' -> 'Shiocton (WI)' (no change)
+2026-11-12 15:57:00,346 - WARNING -   'Shorewood (WI)' -> 'Shorewood (WI)' (no change)
+2026-11-12 15:57:00,346 - WARNING -   'Shullsburg (WI)' -> 'Shullsburg (WI)' (no change)
+2026-11-12 15:57:00,346 - WARNING -   'Siren (WI)' -> 'Siren (WI)' (no change)
+2026-11-12 15:57:00,346 - WARNING -   'Slinger (WI)' -> 'Slinger (WI)' (no change)
+2026-11-12 15:57:00,346 - WARNING -   'Soldiers Grove North Crawford (WI)' -> 'Soldiers Grove North Crawford (WI)' (no change)
+2026-11-12 15:57:00,347 - WARNING -   'Somers Shoreland Lutheran (WI)' -> 'Somers Shoreland Lutheran (WI)' (no change)
+2026-11-12 15:57:00,347 - WARNING -   'Somerset (WI)' -> 'Somerset (WI)' (no change)
+2026-11-12 15:57:00,347 - WARNING -   'South Milwaukee (WI)' -> 'South Milwaukee (WI)' (no change)
+2026-11-12 15:57:00,347 - WARNING -   'South Wayne Black Hawk (WI)' -> 'South Wayne Black Hawk (WI)' (no change)
+2026-11-12 15:57:00,347 - WARNING -   'Sparta (WI)' -> 'Sparta (WI)' (no change)
+2026-11-12 15:57:00,347 - WARNING -   'Spencer (WI)' -> 'Spencer (WI)' (no change)
+2026-11-12 15:57:00,347 - WARNING -   'Spencer-Columbus Catholic (WI)' -> 'Spencer-Columbus Catholic (WI)' (no change)
+2026-11-12 15:57:00,348 - WARNING -   'Spooner (WI)' -> 'Spooner (WI)' (no change)
+2026-11-12 15:57:00,348 - WARNING -   'Spring Green River Valley (WI)' -> 'Spring Green River Valley (WI)' (no change)
+2026-11-12 15:57:00,348 - WARNING -   'Spring Valley (WI)' -> 'Spring Valley (WI)' (no change)
+2026-11-12 15:57:00,348 - WARNING -   'Stanley-Boyd (WI)' -> 'Stanley-Boyd (WI)' (no change)
+2026-11-12 15:57:00,348 - WARNING -   'Stevens Point (WI)' -> 'Stevens Point (WI)' (no change)
+2026-11-12 15:57:00,348 - WARNING -   'Stevens Point Pacelli (WI)' -> 'Stevens Point Pacelli (WI)' (no change)
+2026-11-12 15:57:00,348 - WARNING -   'Stockbridge (WI)' -> 'Stockbridge (WI)' (no change)
+2026-11-12 15:57:00,348 - WARNING -   'Stoughton (WI)' -> 'Stoughton (WI)' (no change)
+2026-11-12 15:57:00,348 - WARNING -   'Stratford (WI)' -> 'Stratford (WI)' (no change)
+2026-11-12 15:57:00,349 - WARNING -   'Sturgeon Bay (WI)' -> 'Sturgeon Bay (WI)' (no change)
+2026-11-12 15:57:00,349 - WARNING -   'Sturgeon Bay Sevastopol (WI)' -> 'Sturgeon Bay Sevastopol (WI)' (no change)
+2026-11-12 15:57:00,349 - WARNING -   'SunPrairie (WI)' -> 'SunPrairie (WI)' (no change)
+2026-11-12 15:57:00,349 - WARNING -   'Superior Central (WI)' -> 'Superior Central (WI)' (no change)
+2026-11-12 15:57:00,349 - WARNING -   'Suring (WI)' -> 'Suring (WI)' (no change)
+2026-11-12 15:57:00,349 - WARNING -   'Sussex Hamilton (WI)' -> 'Sussex Hamilton (WI)' (no change)
+2026-11-12 15:57:00,349 - WARNING -   'Thorp (WI)' -> 'Thorp (WI)' (no change)
+2026-11-12 15:57:00,349 - WARNING -   'Three Lakes (WI)' -> 'Three Lakes (WI)' (no change)
+2026-11-12 15:57:00,350 - WARNING -   'Tigerton (WI)' -> 'Tigerton (WI)' (no change)
+2026-11-12 15:57:00,350 - WARNING -   'Tomah (WI)' -> 'Tomah (WI)' (no change)
+2026-11-12 15:57:00,350 - WARNING -   'Tomahawk (WI)' -> 'Tomahawk (WI)' (no change)
+2026-11-12 15:57:00,350 - WARNING -   'Tony Flambeau (WI)' -> 'Tony Flambeau (WI)' (no change)
+2026-11-12 15:57:00,350 - WARNING -   'Turtle Lake (WI)' -> 'Turtle Lake (WI)' (no change)
+2026-11-12 15:57:00,350 - WARNING -   'Two Rivers (WI)' -> 'Two Rivers (WI)' (no change)
+2026-11-12 15:57:00,350 - WARNING -   'Union Grove (WI)' -> 'Union Grove (WI)' (no change)
+2026-11-12 15:57:00,350 - WARNING -   'Valders (WI)' -> 'Valders (WI)' (no change)
+2026-11-12 15:57:00,351 - WARNING -   'Verona (WI)' -> 'Verona (WI)' (no change)
+2026-11-12 15:57:00,351 - WARNING -   'Viola Kickapoo (WI)' -> 'Viola Kickapoo (WI)' (no change)
+2026-11-12 15:57:00,351 - WARNING -   'Viola Kickapoo-La Farge (WI)' -> 'Viola Kickapoo-La Farge (WI)' (no change)
+2026-11-12 15:57:00,351 - WARNING -   'Viroqua (WI)' -> 'Viroqua (WI)' (no change)
+2026-11-12 15:57:00,351 - WARNING -   'Viroqua-Cornerstone Christian Academy-Youth Initiatve (WI)' -> 'Viroqua-Cornerstone Christian Academy-Youth Initiatve (WI)' (no change)
+2026-11-12 15:57:00,351 - WARNING -   'Wabeno-Laona (WI)' -> 'Wabeno-Laona (WI)' (no change)
+2026-11-12 15:57:00,351 - WARNING -   'Wales Kettle Moraine (WI)' -> 'Wales Kettle Moraine (WI)' (no change)
+2026-11-12 15:57:00,351 - WARNING -   'Walworth Big Foot (WI)' -> 'Walworth Big Foot (WI)' (no change)
+2026-11-12 15:57:00,351 - WARNING -   'Washburn-Bayfield-Solon Springs (WI)' -> 'Washburn-Bayfield-Solon Springs (WI)' (no change)
+2026-11-12 15:57:00,352 - WARNING -   'Washington-Milwaukee Academy of Science-CEO Leadership Academy (WI)' -> 'Washington-Milwaukee Academy of Science-CEO Leadership Academy (WI)' (no change)
+2026-11-12 15:57:00,352 - WARNING -   'Waterford (WI)' -> 'Waterford (WI)' (no change)
+2026-11-12 15:57:00,352 - WARNING -   'Waterloo (WI)' -> 'Waterloo (WI)' (no change)
+2026-11-12 15:57:00,352 - WARNING -   'Watertown (WI)' -> 'Watertown (WI)' (no change)
+2026-11-12 15:57:00,352 - WARNING -   'Watertown Luther Prep (WI)' -> 'Watertown Luther Prep (WI)' (no change)
+2026-11-12 15:57:00,352 - WARNING -   'Watertown Maranatha Baptist (WI)' -> 'Watertown Maranatha Baptist (WI)' (no change)
+2026-11-12 15:57:00,352 - WARNING -   'Waukesha (WI)' -> 'Waukesha (WI)' (no change)
+2026-11-12 15:57:00,352 - WARNING -   'Waukesha Catholic Memorial (WI)' -> 'Waukesha Catholic Memorial (WI)' (no change)
+2026-11-12 15:57:00,352 - WARNING -   'Waukesha North (WI)' -> 'Waukesha North (WI)' (no change)
+2026-11-12 15:57:00,353 - WARNING -   'Waukesha South (WI)' -> 'Waukesha South (WI)' (no change)
+2026-11-12 15:57:00,353 - WARNING -   'Waukesha West (WI)' -> 'Waukesha West (WI)' (no change)
+2026-11-12 15:57:00,353 - WARNING -   'Waunakee (WI)' -> 'Waunakee (WI)' (no change)
+2026-11-12 15:57:00,353 - WARNING -   'Waupaca (WI)' -> 'Waupaca (WI)' (no change)
+2026-11-12 15:57:00,353 - WARNING -   'Waupun (WI)' -> 'Waupun (WI)' (no change)
+2026-11-12 15:57:00,353 - WARNING -   'Wausau (WI)' -> 'Wausau (WI)' (no change)
+2026-11-12 15:57:00,353 - WARNING -   'Wausau East (WI)' -> 'Wausau East (WI)' (no change)
+2026-11-12 15:57:00,353 - WARNING -   'Wausau Newman Catholic (WI)' -> 'Wausau Newman Catholic (WI)' (no change)
+2026-11-12 15:57:00,353 - WARNING -   'Wausau West (WI)' -> 'Wausau West (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'Wausaukee (WI)' -> 'Wausaukee (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'Wautoma (WI)' -> 'Wautoma (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'Wauwatosa (WI)' -> 'Wauwatosa (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'Wauwatosa East (WI)' -> 'Wauwatosa East (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'Wauwatosa Kingdom Prep Lutheran (WI)' -> 'Wauwatosa Kingdom Prep Lutheran (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'Wauwatosa West (WI)' -> 'Wauwatosa West (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'Wauzeka (WI)' -> 'Wauzeka (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'Wauzeka-Steuben (WI)' -> 'Wauzeka-Steuben (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'Webster (WI)' -> 'Webster (WI)' (no change)
+2026-11-12 15:57:00,354 - WARNING -   'West Allis Central (WI)' -> 'West Allis Central (WI)' (no change)
+2026-11-12 15:57:00,355 - WARNING -   'West Allis Hale (WI)' -> 'West Allis Hale (WI)' (no change)
+2026-11-12 15:57:00,355 - WARNING -   'West Bend (WI)' -> 'West Bend (WI)' (no change)
+2026-11-12 15:57:00,355 - WARNING -   'West Bend East (WI)' -> 'West Bend East (WI)' (no change)
+2026-11-12 15:57:00,355 - WARNING -   'West Bend West (WI)' -> 'West Bend West (WI)' (no change)
+2026-11-12 15:57:00,355 - WARNING -   'West De Pere (WI)' -> 'West De Pere (WI)' (no change)
+2026-11-12 15:57:00,355 - WARNING -   'West Milwaukee (WI)' -> 'West Milwaukee (WI)' (no change)
+2026-11-12 15:57:00,355 - WARNING -   'West Salem (WI)' -> 'West Salem (WI)' (no change)
+2026-11-12 15:57:00,355 - WARNING -   'Westby (WI)' -> 'Westby (WI)' (no change)
+2026-11-12 15:57:00,355 - WARNING -   'Westfield Area (WI)' -> 'Westfield Area (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Weyauwega (WI)' -> 'Weyauwega (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Weyauwega-Fremont (WI)' -> 'Weyauwega-Fremont (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Weyerhaeuser-Birchwood (WI)' -> 'Weyerhaeuser-Birchwood (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Whitefish Bay (WI)' -> 'Whitefish Bay (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Whitefish Bay Dominican (WI)' -> 'Whitefish Bay Dominican (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Whitehall (WI)' -> 'Whitehall (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Whitewater (WI)' -> 'Whitewater (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Wild Rose (WI)' -> 'Wild Rose (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Williams Bay (WI)' -> 'Williams Bay (WI)' (no change)
+2026-11-12 15:57:00,356 - WARNING -   'Wilmot (WI)' -> 'Wilmot (WI)' (no change)
+2026-11-12 15:57:00,357 - WARNING -   'Winneconne (WI)' -> 'Winneconne (WI)' (no change)
+2026-11-12 15:57:00,357 - WARNING -   'Wisconsin Dells (WI)' -> 'Wisconsin Dells (WI)' (no change)
+2026-11-12 15:57:00,357 - WARNING -   'Wisconsin Rapids Assumption (WI)' -> 'Wisconsin Rapids Assumption (WI)' (no change)
+2026-11-12 15:57:00,357 - WARNING -   'Wisconsin Rapids Lincoln (WI)' -> 'Wisconsin Rapids Lincoln (WI)' (no change)
+2026-11-12 15:57:00,357 - WARNING -   'Wisconsin School for the Deaf (WI)' -> 'Wisconsin School for the Deaf (WI)' (no change)
+2026-11-12 15:57:00,357 - WARNING -   'Wittenberg-Birnamwood (WI)' -> 'Wittenberg-Birnamwood (WI)' (no change)
+2026-11-12 15:57:00,357 - WARNING -   'Wonewoc-Center (WI)' -> 'Wonewoc-Center (WI)' (no change)
+2026-11-12 15:57:00,358 - WARNING -   'Wrightstown (WI)' -> 'Wrightstown (WI)' (no change)
+2026-11-12 15:57:00,358 - WARNING -   'Milwaukee Messmer (WI)' -> 'Milwaukee Messmer (WI)' (no change)
+2026-11-12 15:57:00,358 - INFO - Validation passed: 583 rules are clean and ready to upload.
+2026-11-12 15:57:00,379 - INFO - Uploading 583 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 15:57:00,519 - INFO - Upload to staging table complete.
+2026-11-12 15:57:00,524 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 15:58:32,162 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 15:58:32,162 - INFO - Reason logged to dbo.HS_Consolidation_Log: WI co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/WI_cfg.py
+2026-11-12 15:58:32,162 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 15:58:32,163 - INFO - Running post-consolidation safety check...
+2026-11-12 15:58:32,168 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team WI --from "Blair (WI)" --to "Blair-Taylor (WI)" --seasons 1971-1971 --ids coop_ids/WI_mv_000.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_000.csv
+
+MOVE Blair (WI) -> Blair-Taylor (WI), seasons 1971-1971 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team WI --from "Blair-Taylor (WI)" --to "Blair (WI)" --seasons 1970-1970 --ids coop_ids/WI_mv_001.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_001.csv
+
+MOVE Blair-Taylor (WI) -> Blair (WI), seasons 1970-1970 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team WI --from "Brodhead (WI)" --to "Brodhead-Juda (WI)" --seasons 1985-2003 --ids coop_ids/WI_mv_002.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_002.csv
+
+MOVE Brodhead (WI) -> Brodhead-Juda (WI), seasons 1985-2003 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 89 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team WI --from "Brodhead-Juda (WI)" --to "Brodhead (WI)" --seasons 2002-2002 --ids coop_ids/WI_mv_003.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_003.csv
+
+MOVE Brodhead-Juda (WI) -> Brodhead (WI), seasons 2002-2002 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 89 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team WI --from "Cedar Grove (WI)" --to "Cedar Grove-Belgium (WI)" --seasons 2003-2003 --ids coop_ids/WI_mv_004.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_004.csv
+
+MOVE Cedar Grove (WI) -> Cedar Grove-Belgium (WI), seasons 2003-2003 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team WI --from "Cedar Grove-Belgium (WI)" --to "Cedar Grove (WI)" --seasons 2025-2025 --ids coop_ids/WI_mv_005.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_005.csv
+
+MOVE Cedar Grove-Belgium (WI) -> Cedar Grove (WI), seasons 2025-2025 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team WI --from "Eagle River (WI)" --to "Eagle River Northland Pines-Phelps (WI)" --seasons 1977-1986 --ids coop_ids/WI_mv_006.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_006.csv
+
+MOVE Eagle River (WI) -> Eagle River Northland Pines-Phelps (WI), seasons 1977-1986 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team WI --from "Eagle River Northland Pines-Phelps (WI)" --to "Eagle River (WI)" --seasons 1975-1976 --ids coop_ids/WI_mv_007.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_007.csv
+
+MOVE Eagle River Northland Pines-Phelps (WI) -> Eagle River (WI), seasons 1975-1976 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team WI --from "Elkhart Lake (WI)" --to "Elkhart Lake-Glenbeulah (WI)" --seasons 2003-2003 --ids coop_ids/WI_mv_008.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_008.csv
+
+MOVE Elkhart Lake (WI) -> Elkhart Lake-Glenbeulah (WI), seasons 2003-2003 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team WI --from "Galesville Gale-Ettrick (WI)" --to "Galesville Gale-Ettrick-Trempealeau (WI)" --seasons 1972-1974 --ids coop_ids/WI_mv_009.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_009.csv
+
+MOVE Galesville Gale-Ettrick (WI) -> Galesville Gale-Ettrick-Trempealeau (WI), seasons 1972-1974 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team WI --from "Galesville Gale-Ettrick-Trempealeau (WI)" --to "Galesville Gale-Ettrick (WI)" --seasons 1970-1971 --ids coop_ids/WI_mv_010.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_010.csv
+
+MOVE Galesville Gale-Ettrick-Trempealeau (WI) -> Galesville Gale-Ettrick (WI), seasons 1970-1971 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1558.csv
+ move_by_season: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1558.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team WI --from "Marion (WI)" --to "Marion-Tigerton (WI)" --seasons 2019-2019 --ids coop_ids/WI_mv_011.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_011.csv
+
+MOVE Marion (WI) -> Marion-Tigerton (WI), seasons 2019-2019 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 86 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team WI --from "Milwaukee Pulaski-Carmen Science & Tech South (WI)" --to "Pulaski-Milwaukee Arts-Carmen Science & Tech South (WI)" --seasons 2017-2018 --ids coop_ids/WI_mv_012.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_012.csv
+
+MOVE Milwaukee Pulaski-Carmen Science & Tech South (WI) -> Pulaski-Milwaukee Arts-Carmen Science & Tech South (WI), seasons 2017-2018 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team WI --from "Milwaukee Riverside University (WI)" --to "Milwaukee Riverside University-Meir (WI)" --seasons 2017-2022 --ids coop_ids/WI_mv_013.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_013.csv
+
+MOVE Milwaukee Riverside University (WI) -> Milwaukee Riverside University-Meir (WI), seasons 2017-2022 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team WI --from "New Berlin (WI)" --to "New Berlin West (WI)" --seasons 1973-1976 --ids coop_ids/WI_mv_014.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_014.csv
+
+MOVE New Berlin (WI) -> New Berlin West (WI), seasons 1973-1976 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team WI --from "New Berlin West (WI)" --to "New Berlin (WI)" --seasons 1970-1970 --ids coop_ids/WI_mv_015.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_015.csv
+
+MOVE New Berlin West (WI) -> New Berlin (WI), seasons 1970-1970 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team WI --from "Pepin-Arkansaw-Plum City (WI)" --to "Pepin-Arkansaw (WI)" --seasons 1988-1989 --ids coop_ids/WI_mv_016.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_016.csv
+
+MOVE Pepin-Arkansaw-Plum City (WI) -> Pepin-Arkansaw (WI), seasons 1988-1989 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team WI --from "Rosendale Laconia (WI)" --to "Rosendale-Brandon (WI)" --seasons 1970-1970 --ids coop_ids/WI_mv_017.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_017.csv
+
+MOVE Rosendale Laconia (WI) -> Rosendale-Brandon (WI), seasons 1970-1970 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team WI --from "Spencer (WI)" --to "Spencer-Columbus Catholic (WI)" --seasons 2025-2025 --ids coop_ids/WI_mv_018.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_018.csv
+
+MOVE Spencer (WI) -> Spencer-Columbus Catholic (WI), seasons 2025-2025 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team WI --from "Sturgeon Bay Sevastopol-Gibraltar (WI)" --to "Sevastopol-Gibraltar (WI)" --seasons 2003-2003 --ids coop_ids/WI_mv_019.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_019.csv
+
+MOVE Sturgeon Bay Sevastopol-Gibraltar (WI) -> Sevastopol-Gibraltar (WI), seasons 2003-2003 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team WI --from "Three Lakes (WI)" --to "Three Lakes-Phelps (WI)" --seasons 2021-2023 --ids coop_ids/WI_mv_020.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_020.csv
+
+MOVE Three Lakes (WI) -> Three Lakes-Phelps (WI), seasons 2021-2023 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 58 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team WI --from "Wauzeka (WI)" --to "Wauzeka-Steuben (WI)" --seasons 2003-2003 --ids coop_ids/WI_mv_021.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_021.csv
+
+MOVE Wauzeka (WI) -> Wauzeka-Steuben (WI), seasons 2003-2003 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 56 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team WI --from "Wauzeka-Steuben (WI)" --to "Wauzeka (WI)" --seasons 1971-1971 --ids coop_ids/WI_mv_022.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_022.csv
+
+MOVE Wauzeka-Steuben (WI) -> Wauzeka (WI), seasons 1971-1971 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 56 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team WI --from "Weyauwega (WI)" --to "Weyauwega-Fremont (WI)" --seasons 1984-1988 --ids coop_ids/WI_mv_023.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_023.csv
+
+MOVE Weyauwega (WI) -> Weyauwega-Fremont (WI), seasons 1984-1988 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team WI --from "Weyauwega-Fremont (WI)" --to "Weyauwega (WI)" --seasons 1982-1982 --ids coop_ids/WI_mv_024.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_024.csv
+
+MOVE Weyauwega-Fremont (WI) -> Weyauwega (WI), seasons 1982-1982 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team WI --from "Wittenberg-Birnamwood (WI)" --to "Wittenberg (WI)" --seasons 1970-1971 --ids coop_ids/WI_mv_025.csv --reason "WI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\coop_ids/WI_mv_025.csv
+
+MOVE Wittenberg-Birnamwood (WI) -> Wittenberg (WI), seasons 1970-1971 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_games_COMMITTED_20261112_1559.csv
+ move_by_season: 77 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_move_by_season_COMMITTED_20261112_1559.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> dedup WI --commit
+
+DEDUP v4 WI - COMMIT
+ dedup_archive: 244 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_dedup_archive_COMMITTED_20261112_1559.csv
+ dedup_review: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_dedup_review_COMMITTED_20261112_1559.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_dedup_summary_COMMITTED_20261112_1559.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  WI     128034        244                  11               755F1776-28B2-4B04-8185-45F10E46644C
+
+>>> review-pairs WI --commit
+
+REVIEW-ONLY PAIRS WI - COMMIT
+ 11 pairs {'SHORT': 11} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_review_pairs_COMMITTED_20261112_1600.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  11        5DA13B95-C392-4C4E-A5A2-0D97079D902B  None
+
+>>> same-score-fix WI
+ 467 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS WI - PREVIEW (nothing changed)
+ 94 pairs {'DROP A': 1, 'UNDECIDED': 93} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_same_score_20261112_1600.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1         None   None
+
+>>> query WI wi_dump.sql
+
+QUERY wi_dump (1 result sets)
+ set 1: 127780 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_wi_dump_1_20261112_1600.csv
+
+=== OK 2026-11-12 16:00:54

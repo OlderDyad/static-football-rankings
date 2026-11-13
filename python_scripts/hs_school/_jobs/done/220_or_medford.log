@@ -1,0 +1,24 @@
+
+>>> move-team OR --from "South Medford (OR)" --to "North Medford (OR)" --seasons 1880-1985 --reason "Lineage (David 2026-11-11): old Medford High became North Medford; South Medford opened 1986 (first N-S Medford game 1986). beasport carried Medford High history on both pages" --commit
+
+MOVE South Medford (OR) -> North Medford (OR), seasons 1880-1985 - COMMIT
+ move_games: 660 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_move_games_COMMITTED_20261111_2003.csv
+ move_by_season: 119 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_move_by_season_COMMITTED_20261111_2003.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  660    1                  None
+
+>>> dedup OR
+
+DEDUP v4 OR - PREVIEW (nothing changed)
+ dedup_archive: 167 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_archive_20261111_2003.csv
+ dedup_review: 402 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_review_20261111_2003.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_summary_20261111_2003.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  OR     72974         167                  402              None 
+
+>>> review-pairs OR
+
+REVIEW-ONLY PAIRS OR - PREVIEW (nothing changed)
+ 402 pairs {'LONG': 133, 'SHORT': 269} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_review_pairs_20261111_2003.csv
+
+=== OK 2026-11-11 20:03:41

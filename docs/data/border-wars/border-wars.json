@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp": "2026-11-05T02:16:49.000Z",
+    "timestamp": "2026-11-13T11:12:26.000Z",
     "type": "border-wars",
     "total_states": 59,
     "description": "All-time cross-state win-loss records for each state. Shows the top 5 opponent states by total games played. Win % calculated with ties counting as half a win. Includes all programs regardless of classification."
@@ -11,11 +11,11 @@
       "opponents": [
         {
           "state": "CA",
-          "wins": 13,
+          "wins": 12,
           "losses": 67,
           "ties": 0,
-          "games": 80,
-          "win_pct": 16.2
+          "games": 79,
+          "win_pct": 15.2
         },
         {
           "state": "MT",
@@ -63,20 +63,20 @@
           "win_pct": 34.4
         },
         {
-          "state": "AL",
-          "wins": 9,
-          "losses": 14,
-          "ties": 0,
-          "games": 23,
-          "win_pct": 39.1
-        },
-        {
           "state": "WA",
           "wins": 8,
           "losses": 12,
           "ties": 0,
           "games": 20,
           "win_pct": 40.0
+        },
+        {
+          "state": "AL",
+          "wins": 6,
+          "losses": 6,
+          "ties": 0,
+          "games": 12,
+          "win_pct": 50.0
         },
         {
           "state": "BC",
@@ -100,44 +100,44 @@
       "state": "AL",
       "opponents": [
         {
-          "state": "MS",
-          "wins": 2237,
-          "losses": 1950,
-          "ties": 133,
-          "games": 4320,
-          "win_pct": 53.3
-        },
-        {
           "state": "GA",
-          "wins": 1411,
-          "losses": 1441,
-          "ties": 104,
-          "games": 2956,
-          "win_pct": 49.5
+          "wins": 1440,
+          "losses": 1408,
+          "ties": 111,
+          "games": 2959,
+          "win_pct": 50.5
         },
         {
           "state": "FL",
-          "wins": 1280,
-          "losses": 1200,
-          "ties": 98,
-          "games": 2578,
-          "win_pct": 51.6
+          "wins": 1349,
+          "losses": 1222,
+          "ties": 103,
+          "games": 2674,
+          "win_pct": 52.4
+        },
+        {
+          "state": "MS",
+          "wins": 1298,
+          "losses": 1167,
+          "ties": 75,
+          "games": 2540,
+          "win_pct": 52.6
         },
         {
           "state": "TN",
-          "wins": 1037,
-          "losses": 841,
-          "ties": 72,
-          "games": 1950,
-          "win_pct": 55.0
+          "wins": 1052,
+          "losses": 882,
+          "ties": 75,
+          "games": 2009,
+          "win_pct": 54.2
         },
         {
           "state": "LA",
-          "wins": 87,
-          "losses": 79,
+          "wins": 85,
+          "losses": 78,
           "ties": 6,
-          "games": 172,
-          "win_pct": 52.3
+          "games": 169,
+          "win_pct": 52.1
         }
       ]
     },
@@ -146,43 +146,43 @@
       "opponents": [
         {
           "state": "OK",
-          "wins": 988,
-          "losses": 865,
-          "ties": 76,
-          "games": 1929,
-          "win_pct": 53.2
+          "wins": 996,
+          "losses": 900,
+          "ties": 74,
+          "games": 1970,
+          "win_pct": 52.4
         },
         {
           "state": "MS",
-          "wins": 809,
-          "losses": 960,
-          "ties": 16,
-          "games": 1785,
-          "win_pct": 45.8
+          "wins": 801,
+          "losses": 968,
+          "ties": 15,
+          "games": 1784,
+          "win_pct": 45.3
         },
         {
           "state": "MO",
-          "wins": 749,
-          "losses": 400,
-          "ties": 26,
-          "games": 1175,
+          "wins": 729,
+          "losses": 389,
+          "ties": 24,
+          "games": 1142,
           "win_pct": 64.9
         },
         {
           "state": "LA",
-          "wins": 461,
-          "losses": 531,
-          "ties": 31,
-          "games": 1023,
-          "win_pct": 46.6
+          "wins": 446,
+          "losses": 488,
+          "ties": 29,
+          "games": 963,
+          "win_pct": 47.8
         },
         {
-          "state": "TX",
-          "wins": 297,
-          "losses": 364,
-          "ties": 22,
-          "games": 683,
-          "win_pct": 45.1
+          "state": "TN",
+          "wins": 432,
+          "losses": 315,
+          "ties": 19,
+          "games": 766,
+          "win_pct": 57.6
         }
       ]
     },
@@ -190,44 +190,44 @@
       "state": "AZ",
       "opponents": [
         {
-          "state": "CA",
-          "wins": 500,
-          "losses": 448,
+          "state": "NM",
+          "wins": 434,
+          "losses": 466,
           "ties": 30,
-          "games": 978,
-          "win_pct": 52.7
+          "games": 930,
+          "win_pct": 48.3
         },
         {
-          "state": "NM",
-          "wins": 448,
-          "losses": 476,
-          "ties": 32,
-          "games": 956,
-          "win_pct": 48.5
+          "state": "CA",
+          "wins": 467,
+          "losses": 429,
+          "ties": 25,
+          "games": 921,
+          "win_pct": 52.1
         },
         {
           "state": "NV",
-          "wins": 137,
-          "losses": 186,
+          "wins": 134,
+          "losses": 184,
           "ties": 1,
-          "games": 324,
-          "win_pct": 42.4
+          "games": 319,
+          "win_pct": 42.2
         },
         {
           "state": "UT",
-          "wins": 87,
-          "losses": 162,
-          "ties": 3,
-          "games": 252,
-          "win_pct": 35.1
+          "wins": 80,
+          "losses": 143,
+          "ties": 2,
+          "games": 225,
+          "win_pct": 36.0
         },
         {
           "state": "TX",
-          "wins": 79,
-          "losses": 105,
-          "ties": 12,
-          "games": 196,
-          "win_pct": 43.4
+          "wins": 66,
+          "losses": 92,
+          "ties": 9,
+          "games": 167,
+          "win_pct": 42.2
         }
       ]
     },
@@ -236,27 +236,27 @@
       "opponents": [
         {
           "state": "WA",
-          "wins": 170,
-          "losses": 375,
+          "wins": 169,
+          "losses": 371,
           "ties": 14,
-          "games": 559,
-          "win_pct": 31.7
+          "games": 554,
+          "win_pct": 31.8
         },
         {
           "state": "CA",
-          "wins": 20,
-          "losses": 45,
+          "wins": 19,
+          "losses": 44,
           "ties": 1,
-          "games": 66,
-          "win_pct": 31.1
+          "games": 64,
+          "win_pct": 30.5
         },
         {
           "state": "OR",
           "wins": 26,
-          "losses": 31,
+          "losses": 30,
           "ties": 2,
-          "games": 59,
-          "win_pct": 45.8
+          "games": 58,
+          "win_pct": 46.6
         },
         {
           "state": "AB",
@@ -281,43 +281,43 @@
       "opponents": [
         {
           "state": "NV",
-          "wins": 1508,
-          "losses": 1368,
+          "wins": 1491,
+          "losses": 1365,
           "ties": 50,
-          "games": 2926,
-          "win_pct": 52.4
+          "games": 2906,
+          "win_pct": 52.2
         },
         {
           "state": "OR",
-          "wins": 625,
-          "losses": 649,
+          "wins": 618,
+          "losses": 614,
           "ties": 59,
-          "games": 1333,
-          "win_pct": 49.1
+          "games": 1291,
+          "win_pct": 50.2
         },
         {
           "state": "AZ",
-          "wins": 448,
-          "losses": 500,
-          "ties": 30,
-          "games": 978,
-          "win_pct": 47.3
+          "wins": 429,
+          "losses": 467,
+          "ties": 25,
+          "games": 921,
+          "win_pct": 47.9
         },
         {
           "state": "HI",
-          "wins": 167,
-          "losses": 104,
+          "wins": 164,
+          "losses": 103,
           "ties": 3,
-          "games": 274,
-          "win_pct": 61.5
+          "games": 270,
+          "win_pct": 61.3
         },
         {
           "state": "WA",
           "wins": 77,
-          "losses": 94,
+          "losses": 93,
           "ties": 9,
-          "games": 180,
-          "win_pct": 45.3
+          "games": 179,
+          "win_pct": 45.5
         }
       ]
     },
@@ -326,43 +326,43 @@
       "opponents": [
         {
           "state": "NM",
-          "wins": 987,
-          "losses": 776,
-          "ties": 54,
-          "games": 1817,
-          "win_pct": 55.8
+          "wins": 940,
+          "losses": 724,
+          "ties": 52,
+          "games": 1716,
+          "win_pct": 56.3
         },
         {
           "state": "UT",
-          "wins": 320,
-          "losses": 239,
-          "ties": 20,
-          "games": 579,
-          "win_pct": 57.0
+          "wins": 305,
+          "losses": 233,
+          "ties": 18,
+          "games": 556,
+          "win_pct": 56.5
         },
         {
           "state": "NE",
-          "wins": 264,
-          "losses": 243,
+          "wins": 259,
+          "losses": 239,
           "ties": 16,
-          "games": 523,
-          "win_pct": 52.0
+          "games": 514,
+          "win_pct": 51.9
         },
         {
           "state": "WY",
-          "wins": 266,
-          "losses": 227,
+          "wins": 259,
+          "losses": 220,
           "ties": 29,
-          "games": 522,
-          "win_pct": 53.7
+          "games": 508,
+          "win_pct": 53.8
         },
         {
           "state": "KS",
-          "wins": 157,
-          "losses": 140,
+          "wins": 154,
+          "losses": 139,
           "ties": 7,
-          "games": 304,
-          "win_pct": 52.8
+          "games": 300,
+          "win_pct": 52.5
         }
       ]
     },
@@ -371,43 +371,43 @@
       "opponents": [
         {
           "state": "MA",
-          "wins": 1592,
-          "losses": 1485,
-          "ties": 104,
-          "games": 3181,
-          "win_pct": 51.7
-        },
-        {
-          "state": "NY",
-          "wins": 1267,
-          "losses": 1062,
-          "ties": 64,
-          "games": 2393,
-          "win_pct": 54.3
-        },
-        {
-          "state": "RI",
-          "wins": 286,
-          "losses": 281,
-          "ties": 28,
-          "games": 595,
-          "win_pct": 50.4
-        },
-        {
-          "state": "NJ",
-          "wins": 272,
-          "losses": 256,
-          "ties": 17,
-          "games": 545,
+          "wins": 1506,
+          "losses": 1416,
+          "ties": 100,
+          "games": 3022,
           "win_pct": 51.5
         },
         {
+          "state": "NY",
+          "wins": 1182,
+          "losses": 979,
+          "ties": 58,
+          "games": 2219,
+          "win_pct": 54.6
+        },
+        {
+          "state": "RI",
+          "wins": 262,
+          "losses": 255,
+          "ties": 25,
+          "games": 542,
+          "win_pct": 50.6
+        },
+        {
+          "state": "NJ",
+          "wins": 249,
+          "losses": 242,
+          "ties": 16,
+          "games": 507,
+          "win_pct": 50.7
+        },
+        {
           "state": "NH",
-          "wins": 178,
-          "losses": 277,
-          "ties": 10,
-          "games": 465,
-          "win_pct": 39.4
+          "wins": 151,
+          "losses": 240,
+          "ties": 7,
+          "games": 398,
+          "win_pct": 38.8
         }
       ]
     },
@@ -416,27 +416,27 @@
       "opponents": [
         {
           "state": "MD",
-          "wins": 897,
-          "losses": 1030,
+          "wins": 894,
+          "losses": 1027,
           "ties": 38,
-          "games": 1965,
+          "games": 1959,
           "win_pct": 46.6
         },
         {
           "state": "VA",
-          "wins": 568,
-          "losses": 724,
+          "wins": 547,
+          "losses": 697,
           "ties": 38,
-          "games": 1330,
+          "games": 1282,
           "win_pct": 44.1
         },
         {
           "state": "PA",
-          "wins": 155,
-          "losses": 242,
+          "wins": 154,
+          "losses": 241,
           "ties": 9,
-          "games": 406,
-          "win_pct": 39.3
+          "games": 404,
+          "win_pct": 39.2
         },
         {
           "state": "WV",
@@ -461,43 +461,43 @@
       "opponents": [
         {
           "state": "PA",
-          "wins": 744,
-          "losses": 787,
-          "ties": 64,
-          "games": 1595,
-          "win_pct": 48.7
+          "wins": 738,
+          "losses": 773,
+          "ties": 63,
+          "games": 1574,
+          "win_pct": 48.9
         },
         {
           "state": "MD",
-          "wins": 604,
-          "losses": 400,
+          "wins": 602,
+          "losses": 395,
           "ties": 27,
-          "games": 1031,
-          "win_pct": 59.9
+          "games": 1024,
+          "win_pct": 60.1
         },
         {
           "state": "NJ",
-          "wins": 209,
-          "losses": 213,
-          "ties": 16,
-          "games": 438,
-          "win_pct": 49.5
+          "wins": 207,
+          "losses": 212,
+          "ties": 15,
+          "games": 434,
+          "win_pct": 49.4
         },
         {
           "state": "VA",
-          "wins": 42,
-          "losses": 46,
+          "wins": 43,
+          "losses": 43,
           "ties": 0,
-          "games": 88,
-          "win_pct": 47.7
+          "games": 86,
+          "win_pct": 50.0
         },
         {
           "state": "DC",
-          "wins": 32,
+          "wins": 31,
           "losses": 23,
           "ties": 4,
-          "games": 59,
-          "win_pct": 57.6
+          "games": 58,
+          "win_pct": 56.9
         }
       ]
     },
@@ -506,43 +506,43 @@
       "opponents": [
         {
           "state": "AL",
-          "wins": 1200,
-          "losses": 1280,
-          "ties": 98,
-          "games": 2578,
-          "win_pct": 48.4
+          "wins": 1222,
+          "losses": 1349,
+          "ties": 103,
+          "games": 2674,
+          "win_pct": 47.6
         },
         {
           "state": "GA",
-          "wins": 571,
-          "losses": 729,
-          "ties": 70,
-          "games": 1370,
-          "win_pct": 44.2
+          "wins": 587,
+          "losses": 811,
+          "ties": 80,
+          "games": 1478,
+          "win_pct": 42.4
         },
         {
           "state": "MS",
-          "wins": 115,
-          "losses": 76,
+          "wins": 113,
+          "losses": 72,
           "ties": 3,
-          "games": 194,
-          "win_pct": 60.1
-        },
-        {
-          "state": "CA",
-          "wins": 76,
-          "losses": 70,
-          "ties": 9,
-          "games": 155,
-          "win_pct": 51.9
+          "games": 188,
+          "win_pct": 60.9
         },
         {
           "state": "NJ",
-          "wins": 53,
-          "losses": 96,
+          "wins": 52,
+          "losses": 82,
           "ties": 3,
-          "games": 152,
-          "win_pct": 35.9
+          "games": 137,
+          "win_pct": 39.1
+        },
+        {
+          "state": "TN",
+          "wins": 69,
+          "losses": 56,
+          "ties": 7,
+          "games": 132,
+          "win_pct": 54.9
         }
       ]
     },
@@ -551,43 +551,43 @@
       "opponents": [
         {
           "state": "AL",
-          "wins": 1441,
-          "losses": 1411,
-          "ties": 104,
-          "games": 2956,
-          "win_pct": 50.5
+          "wins": 1408,
+          "losses": 1440,
+          "ties": 111,
+          "games": 2959,
+          "win_pct": 49.5
         },
         {
           "state": "SC",
-          "wins": 1264,
-          "losses": 1050,
-          "ties": 63,
-          "games": 2377,
-          "win_pct": 54.5
+          "wins": 1390,
+          "losses": 1161,
+          "ties": 76,
+          "games": 2627,
+          "win_pct": 54.4
         },
         {
           "state": "TN",
-          "wins": 602,
-          "losses": 719,
-          "ties": 99,
-          "games": 1420,
-          "win_pct": 45.9
+          "wins": 653,
+          "losses": 790,
+          "ties": 107,
+          "games": 1550,
+          "win_pct": 45.6
         },
         {
           "state": "FL",
-          "wins": 729,
-          "losses": 571,
-          "ties": 70,
-          "games": 1370,
-          "win_pct": 55.8
+          "wins": 811,
+          "losses": 587,
+          "ties": 80,
+          "games": 1478,
+          "win_pct": 57.6
         },
         {
           "state": "NC",
-          "wins": 332,
-          "losses": 309,
+          "wins": 341,
+          "losses": 332,
           "ties": 23,
-          "games": 664,
-          "win_pct": 51.7
+          "games": 696,
+          "win_pct": 50.6
         }
       ]
     },
@@ -596,19 +596,19 @@
       "opponents": [
         {
           "state": "CA",
-          "wins": 104,
-          "losses": 167,
+          "wins": 103,
+          "losses": 164,
           "ties": 3,
-          "games": 274,
-          "win_pct": 38.5
+          "games": 270,
+          "win_pct": 38.7
         },
         {
           "state": "NV",
           "wins": 15,
-          "losses": 16,
+          "losses": 15,
           "ties": 0,
-          "games": 31,
-          "win_pct": 48.4
+          "games": 30,
+          "win_pct": 50.0
         },
         {
           "state": "UT",
@@ -620,11 +620,11 @@
         },
         {
           "state": "OR",
-          "wins": 11,
+          "wins": 10,
           "losses": 7,
           "ties": 0,
-          "games": 18,
-          "win_pct": 61.1
+          "games": 17,
+          "win_pct": 58.8
         },
         {
           "state": "WA",
@@ -641,43 +641,43 @@
       "opponents": [
         {
           "state": "NE",
-          "wins": 1155,
-          "losses": 1583,
-          "ties": 89,
-          "games": 2827,
-          "win_pct": 42.4
+          "wins": 999,
+          "losses": 1427,
+          "ties": 77,
+          "games": 2503,
+          "win_pct": 41.5
         },
         {
           "state": "IL",
-          "wins": 1479,
-          "losses": 1048,
-          "ties": 97,
-          "games": 2624,
-          "win_pct": 58.2
+          "wins": 1274,
+          "losses": 911,
+          "ties": 88,
+          "games": 2273,
+          "win_pct": 58.0
         },
         {
           "state": "SD",
-          "wins": 1148,
-          "losses": 963,
-          "ties": 82,
-          "games": 2193,
-          "win_pct": 54.2
+          "wins": 1033,
+          "losses": 820,
+          "ties": 75,
+          "games": 1928,
+          "win_pct": 55.5
         },
         {
           "state": "MO",
-          "wins": 546,
-          "losses": 423,
+          "wins": 521,
+          "losses": 415,
           "ties": 43,
-          "games": 1012,
-          "win_pct": 56.1
+          "games": 979,
+          "win_pct": 55.4
         },
         {
           "state": "MN",
-          "wins": 385,
-          "losses": 427,
-          "ties": 41,
-          "games": 853,
-          "win_pct": 47.5
+          "wins": 355,
+          "losses": 397,
+          "ties": 39,
+          "games": 791,
+          "win_pct": 47.3
         }
       ]
     },
@@ -686,35 +686,35 @@
       "opponents": [
         {
           "state": "WA",
-          "wins": 1630,
-          "losses": 1593,
+          "wins": 1559,
+          "losses": 1515,
           "ties": 62,
-          "games": 3285,
-          "win_pct": 50.6
+          "games": 3136,
+          "win_pct": 50.7
         },
         {
           "state": "OR",
-          "wins": 737,
-          "losses": 756,
+          "wins": 723,
+          "losses": 748,
           "ties": 66,
-          "games": 1559,
-          "win_pct": 49.4
+          "games": 1537,
+          "win_pct": 49.2
         },
         {
           "state": "UT",
-          "wins": 296,
-          "losses": 289,
-          "ties": 17,
-          "games": 602,
-          "win_pct": 50.6
+          "wins": 277,
+          "losses": 278,
+          "ties": 16,
+          "games": 571,
+          "win_pct": 49.9
         },
         {
           "state": "MT",
-          "wins": 205,
-          "losses": 290,
-          "ties": 16,
-          "games": 511,
-          "win_pct": 41.7
+          "wins": 204,
+          "losses": 284,
+          "ties": 15,
+          "games": 503,
+          "win_pct": 42.0
         },
         {
           "state": "WY",
@@ -731,43 +731,43 @@
       "opponents": [
         {
           "state": "MO",
-          "wins": 1469,
-          "losses": 1497,
-          "ties": 104,
-          "games": 3070,
-          "win_pct": 49.5
+          "wins": 1372,
+          "losses": 1416,
+          "ties": 99,
+          "games": 2887,
+          "win_pct": 49.2
         },
         {
           "state": "IA",
-          "wins": 1048,
-          "losses": 1479,
-          "ties": 97,
-          "games": 2624,
-          "win_pct": 41.8
+          "wins": 911,
+          "losses": 1274,
+          "ties": 88,
+          "games": 2273,
+          "win_pct": 42.0
         },
         {
           "state": "IN",
-          "wins": 1034,
-          "losses": 1152,
-          "ties": 84,
-          "games": 2270,
-          "win_pct": 47.4
+          "wins": 989,
+          "losses": 1073,
+          "ties": 80,
+          "games": 2142,
+          "win_pct": 48.0
         },
         {
           "state": "WI",
-          "wins": 881,
-          "losses": 1006,
-          "ties": 45,
-          "games": 1932,
-          "win_pct": 46.8
+          "wins": 855,
+          "losses": 969,
+          "ties": 44,
+          "games": 1868,
+          "win_pct": 46.9
         },
         {
           "state": "MI",
-          "wins": 91,
-          "losses": 150,
-          "ties": 11,
-          "games": 252,
-          "win_pct": 38.3
+          "wins": 84,
+          "losses": 137,
+          "ties": 9,
+          "games": 230,
+          "win_pct": 38.5
         }
       ]
     },
@@ -776,43 +776,43 @@
       "opponents": [
         {
           "state": "KY",
-          "wins": 1380,
-          "losses": 1665,
-          "ties": 119,
-          "games": 3164,
-          "win_pct": 45.5
+          "wins": 1099,
+          "losses": 1415,
+          "ties": 103,
+          "games": 2617,
+          "win_pct": 44.0
         },
         {
           "state": "IL",
-          "wins": 1152,
-          "losses": 1034,
-          "ties": 84,
-          "games": 2270,
-          "win_pct": 52.6
+          "wins": 1073,
+          "losses": 989,
+          "ties": 80,
+          "games": 2142,
+          "win_pct": 52.0
         },
         {
           "state": "OH",
-          "wins": 651,
-          "losses": 796,
-          "ties": 32,
-          "games": 1479,
-          "win_pct": 45.1
+          "wins": 593,
+          "losses": 742,
+          "ties": 31,
+          "games": 1366,
+          "win_pct": 44.5
         },
         {
           "state": "MI",
-          "wins": 392,
-          "losses": 371,
-          "ties": 22,
-          "games": 785,
-          "win_pct": 51.3
+          "wins": 384,
+          "losses": 362,
+          "ties": 21,
+          "games": 767,
+          "win_pct": 51.4
         },
         {
           "state": "WI",
           "wins": 31,
-          "losses": 43,
+          "losses": 40,
           "ties": 1,
-          "games": 75,
-          "win_pct": 42.0
+          "games": 72,
+          "win_pct": 43.8
         }
       ]
     },
@@ -821,43 +821,43 @@
       "opponents": [
         {
           "state": "MO",
-          "wins": 2725,
-          "losses": 2350,
-          "ties": 136,
-          "games": 5211,
-          "win_pct": 53.6
+          "wins": 2468,
+          "losses": 2174,
+          "ties": 135,
+          "games": 4777,
+          "win_pct": 53.1
         },
         {
           "state": "OK",
-          "wins": 786,
-          "losses": 947,
-          "ties": 50,
-          "games": 1783,
-          "win_pct": 45.5
+          "wins": 756,
+          "losses": 868,
+          "ties": 44,
+          "games": 1668,
+          "win_pct": 46.6
         },
         {
           "state": "NE",
-          "wins": 458,
-          "losses": 559,
-          "ties": 13,
-          "games": 1030,
-          "win_pct": 45.1
+          "wins": 452,
+          "losses": 548,
+          "ties": 12,
+          "games": 1012,
+          "win_pct": 45.3
         },
         {
           "state": "CO",
-          "wins": 140,
-          "losses": 157,
+          "wins": 139,
+          "losses": 154,
           "ties": 7,
-          "games": 304,
-          "win_pct": 47.2
+          "games": 300,
+          "win_pct": 47.5
         },
         {
           "state": "TX",
           "wins": 60,
-          "losses": 73,
+          "losses": 72,
           "ties": 4,
-          "games": 137,
-          "win_pct": 45.3
+          "games": 136,
+          "win_pct": 45.6
         }
       ]
     },
@@ -866,43 +866,43 @@
       "opponents": [
         {
           "state": "OH",
-          "wins": 1672,
-          "losses": 1994,
-          "ties": 144,
-          "games": 3810,
-          "win_pct": 45.8
+          "wins": 1498,
+          "losses": 1789,
+          "ties": 123,
+          "games": 3410,
+          "win_pct": 45.7
         },
         {
           "state": "IN",
-          "wins": 1665,
-          "losses": 1380,
-          "ties": 119,
-          "games": 3164,
-          "win_pct": 54.5
+          "wins": 1415,
+          "losses": 1099,
+          "ties": 103,
+          "games": 2617,
+          "win_pct": 56.0
         },
         {
           "state": "TN",
-          "wins": 1504,
-          "losses": 1535,
-          "ties": 91,
-          "games": 3130,
-          "win_pct": 49.5
+          "wins": 1200,
+          "losses": 1280,
+          "ties": 62,
+          "games": 2542,
+          "win_pct": 48.4
         },
         {
           "state": "WV",
-          "wins": 717,
-          "losses": 781,
-          "ties": 120,
-          "games": 1618,
-          "win_pct": 48.0
+          "wins": 566,
+          "losses": 626,
+          "ties": 93,
+          "games": 1285,
+          "win_pct": 47.7
         },
         {
           "state": "VA",
-          "wins": 271,
-          "losses": 270,
-          "ties": 23,
-          "games": 564,
-          "win_pct": 50.1
+          "wins": 255,
+          "losses": 260,
+          "ties": 17,
+          "games": 532,
+          "win_pct": 49.5
         }
       ]
     },
@@ -911,43 +911,43 @@
       "opponents": [
         {
           "state": "MS",
-          "wins": 2483,
-          "losses": 2665,
+          "wins": 2445,
+          "losses": 2609,
           "ties": 77,
-          "games": 5225,
-          "win_pct": 48.3
+          "games": 5131,
+          "win_pct": 48.4
         },
         {
           "state": "TX",
-          "wins": 786,
-          "losses": 762,
-          "ties": 56,
-          "games": 1604,
-          "win_pct": 50.7
+          "wins": 580,
+          "losses": 590,
+          "ties": 46,
+          "games": 1216,
+          "win_pct": 49.6
         },
         {
           "state": "AR",
-          "wins": 531,
-          "losses": 461,
-          "ties": 31,
-          "games": 1023,
-          "win_pct": 53.4
+          "wins": 488,
+          "losses": 446,
+          "ties": 29,
+          "games": 963,
+          "win_pct": 52.2
         },
         {
           "state": "AL",
-          "wins": 79,
-          "losses": 87,
+          "wins": 78,
+          "losses": 85,
           "ties": 6,
-          "games": 172,
-          "win_pct": 47.7
+          "games": 169,
+          "win_pct": 47.9
         },
         {
           "state": "FL",
-          "wins": 53,
-          "losses": 75,
+          "wins": 50,
+          "losses": 77,
           "ties": 0,
-          "games": 128,
-          "win_pct": 41.4
+          "games": 127,
+          "win_pct": 39.4
         }
       ]
     },
@@ -956,42 +956,42 @@
       "opponents": [
         {
           "state": "CT",
-          "wins": 1485,
-          "losses": 1592,
-          "ties": 104,
-          "games": 3181,
-          "win_pct": 48.3
+          "wins": 1416,
+          "losses": 1506,
+          "ties": 100,
+          "games": 3022,
+          "win_pct": 48.5
         },
         {
           "state": "NH",
-          "wins": 1100,
-          "losses": 1051,
-          "ties": 96,
-          "games": 2247,
-          "win_pct": 51.1
+          "wins": 981,
+          "losses": 967,
+          "ties": 88,
+          "games": 2036,
+          "win_pct": 50.3
         },
         {
           "state": "RI",
-          "wins": 639,
-          "losses": 372,
-          "ties": 44,
-          "games": 1055,
-          "win_pct": 62.7
+          "wins": 636,
+          "losses": 368,
+          "ties": 43,
+          "games": 1047,
+          "win_pct": 62.8
         },
         {
           "state": "VT",
           "wins": 215,
-          "losses": 165,
+          "losses": 166,
           "ties": 12,
-          "games": 392,
-          "win_pct": 56.4
+          "games": 393,
+          "win_pct": 56.2
         },
         {
           "state": "ME",
-          "wins": 205,
-          "losses": 160,
+          "wins": 195,
+          "losses": 152,
           "ties": 19,
-          "games": 384,
+          "games": 366,
           "win_pct": 55.9
         }
       ]
@@ -1046,43 +1046,43 @@
       "opponents": [
         {
           "state": "WV",
-          "wins": 1539,
-          "losses": 1347,
+          "wins": 1537,
+          "losses": 1345,
           "ties": 58,
-          "games": 2944,
+          "games": 2940,
           "win_pct": 53.3
         },
         {
           "state": "DC",
-          "wins": 1030,
-          "losses": 897,
+          "wins": 1027,
+          "losses": 894,
           "ties": 38,
-          "games": 1965,
+          "games": 1959,
           "win_pct": 53.4
         },
         {
           "state": "VA",
-          "wins": 1055,
-          "losses": 751,
+          "wins": 1044,
+          "losses": 741,
           "ties": 37,
-          "games": 1843,
-          "win_pct": 58.2
+          "games": 1822,
+          "win_pct": 58.3
         },
         {
           "state": "PA",
-          "wins": 788,
-          "losses": 706,
+          "wins": 785,
+          "losses": 703,
           "ties": 45,
-          "games": 1539,
+          "games": 1533,
           "win_pct": 52.7
         },
         {
           "state": "DE",
-          "wins": 400,
-          "losses": 604,
+          "wins": 395,
+          "losses": 602,
           "ties": 27,
-          "games": 1031,
-          "win_pct": 40.1
+          "games": 1024,
+          "win_pct": 39.9
         }
       ]
     },
@@ -1091,43 +1091,43 @@
       "opponents": [
         {
           "state": "NH",
-          "wins": 355,
-          "losses": 440,
+          "wins": 335,
+          "losses": 419,
           "ties": 40,
-          "games": 835,
-          "win_pct": 44.9
+          "games": 794,
+          "win_pct": 44.7
         },
         {
           "state": "MA",
-          "wins": 160,
-          "losses": 205,
+          "wins": 152,
+          "losses": 195,
           "ties": 19,
-          "games": 384,
+          "games": 366,
           "win_pct": 44.1
         },
         {
           "state": "CT",
-          "wins": 119,
-          "losses": 120,
-          "ties": 10,
-          "games": 249,
-          "win_pct": 49.8
+          "wins": 80,
+          "losses": 88,
+          "ties": 8,
+          "games": 176,
+          "win_pct": 47.7
         },
         {
           "state": "RI",
-          "wins": 35,
-          "losses": 47,
+          "wins": 34,
+          "losses": 44,
           "ties": 3,
-          "games": 85,
-          "win_pct": 42.9
+          "games": 81,
+          "win_pct": 43.8
         },
         {
           "state": "VT",
           "wins": 53,
-          "losses": 23,
+          "losses": 22,
           "ties": 3,
-          "games": 79,
-          "win_pct": 69.0
+          "games": 78,
+          "win_pct": 69.9
         }
       ]
     },
@@ -1136,43 +1136,43 @@
       "opponents": [
         {
           "state": "OH",
-          "wins": 839,
-          "losses": 1118,
-          "ties": 40,
-          "games": 1997,
-          "win_pct": 43.0
+          "wins": 730,
+          "losses": 1013,
+          "ties": 32,
+          "games": 1775,
+          "win_pct": 42.0
         },
         {
           "state": "WI",
-          "wins": 1017,
-          "losses": 751,
+          "wins": 962,
+          "losses": 695,
           "ties": 25,
-          "games": 1793,
-          "win_pct": 57.4
+          "games": 1682,
+          "win_pct": 57.9
         },
         {
           "state": "IN",
-          "wins": 371,
-          "losses": 392,
-          "ties": 22,
-          "games": 785,
-          "win_pct": 48.7
+          "wins": 362,
+          "losses": 384,
+          "ties": 21,
+          "games": 767,
+          "win_pct": 48.6
         },
         {
           "state": "ON",
-          "wins": 311,
-          "losses": 61,
+          "wins": 308,
+          "losses": 60,
           "ties": 5,
-          "games": 377,
+          "games": 373,
           "win_pct": 83.2
         },
         {
           "state": "IL",
-          "wins": 150,
-          "losses": 91,
-          "ties": 11,
-          "games": 252,
-          "win_pct": 61.7
+          "wins": 137,
+          "losses": 84,
+          "ties": 9,
+          "games": 230,
+          "win_pct": 61.5
         }
       ]
     },
@@ -1181,43 +1181,43 @@
       "opponents": [
         {
           "state": "SD",
-          "wins": 1365,
-          "losses": 1310,
-          "ties": 78,
-          "games": 2753,
-          "win_pct": 51.0
+          "wins": 1177,
+          "losses": 1133,
+          "ties": 72,
+          "games": 2382,
+          "win_pct": 50.9
         },
         {
           "state": "ND",
-          "wins": 1242,
-          "losses": 1153,
-          "ties": 137,
-          "games": 2532,
-          "win_pct": 51.8
+          "wins": 1103,
+          "losses": 1011,
+          "ties": 120,
+          "games": 2234,
+          "win_pct": 52.1
         },
         {
           "state": "WI",
-          "wins": 1000,
-          "losses": 1193,
-          "ties": 76,
-          "games": 2269,
-          "win_pct": 45.7
+          "wins": 958,
+          "losses": 1130,
+          "ties": 71,
+          "games": 2159,
+          "win_pct": 46.0
         },
         {
           "state": "IA",
-          "wins": 427,
-          "losses": 385,
-          "ties": 41,
-          "games": 853,
-          "win_pct": 52.5
+          "wins": 397,
+          "losses": 355,
+          "ties": 39,
+          "games": 791,
+          "win_pct": 52.7
         },
         {
           "state": "MI",
-          "wins": 46,
-          "losses": 55,
+          "wins": 43,
+          "losses": 46,
           "ties": 4,
-          "games": 105,
-          "win_pct": 45.7
+          "games": 93,
+          "win_pct": 48.4
         }
       ]
     },
@@ -1226,43 +1226,43 @@
       "opponents": [
         {
           "state": "KS",
-          "wins": 2350,
-          "losses": 2725,
-          "ties": 136,
-          "games": 5211,
-          "win_pct": 46.4
+          "wins": 2174,
+          "losses": 2468,
+          "ties": 135,
+          "games": 4777,
+          "win_pct": 46.9
         },
         {
           "state": "IL",
-          "wins": 1497,
-          "losses": 1469,
-          "ties": 104,
-          "games": 3070,
-          "win_pct": 50.5
+          "wins": 1416,
+          "losses": 1372,
+          "ties": 99,
+          "games": 2887,
+          "win_pct": 50.8
         },
         {
           "state": "AR",
-          "wins": 400,
-          "losses": 749,
-          "ties": 26,
-          "games": 1175,
+          "wins": 389,
+          "losses": 729,
+          "ties": 24,
+          "games": 1142,
           "win_pct": 35.1
         },
         {
           "state": "IA",
-          "wins": 423,
-          "losses": 546,
+          "wins": 415,
+          "losses": 521,
           "ties": 43,
-          "games": 1012,
-          "win_pct": 43.9
+          "games": 979,
+          "win_pct": 44.6
         },
         {
           "state": "OK",
-          "wins": 201,
-          "losses": 286,
+          "wins": 194,
+          "losses": 280,
           "ties": 13,
-          "games": 500,
-          "win_pct": 41.5
+          "games": 487,
+          "win_pct": 41.2
         }
       ]
     },
@@ -1271,43 +1271,43 @@
       "opponents": [
         {
           "state": "LA",
-          "wins": 2665,
-          "losses": 2483,
+          "wins": 2609,
+          "losses": 2445,
           "ties": 77,
-          "games": 5225,
-          "win_pct": 51.7
-        },
-        {
-          "state": "AL",
-          "wins": 1950,
-          "losses": 2237,
-          "ties": 133,
-          "games": 4320,
-          "win_pct": 46.7
+          "games": 5131,
+          "win_pct": 51.6
         },
         {
           "state": "TN",
-          "wins": 1549,
-          "losses": 932,
-          "ties": 25,
-          "games": 2506,
-          "win_pct": 62.3
+          "wins": 1555,
+          "losses": 1012,
+          "ties": 30,
+          "games": 2597,
+          "win_pct": 60.5
+        },
+        {
+          "state": "AL",
+          "wins": 1167,
+          "losses": 1298,
+          "ties": 75,
+          "games": 2540,
+          "win_pct": 47.4
         },
         {
           "state": "AR",
-          "wins": 960,
-          "losses": 809,
-          "ties": 16,
-          "games": 1785,
-          "win_pct": 54.2
+          "wins": 968,
+          "losses": 801,
+          "ties": 15,
+          "games": 1784,
+          "win_pct": 54.7
         },
         {
           "state": "FL",
-          "wins": 76,
-          "losses": 115,
+          "wins": 72,
+          "losses": 113,
           "ties": 3,
-          "games": 194,
-          "win_pct": 39.9
+          "games": 188,
+          "win_pct": 39.1
         }
       ]
     },
@@ -1316,35 +1316,35 @@
       "opponents": [
         {
           "state": "WY",
-          "wins": 433,
-          "losses": 394,
-          "ties": 24,
-          "games": 851,
-          "win_pct": 52.3
+          "wins": 318,
+          "losses": 288,
+          "ties": 17,
+          "games": 623,
+          "win_pct": 52.4
         },
         {
           "state": "ND",
-          "wins": 354,
-          "losses": 297,
-          "ties": 36,
-          "games": 687,
-          "win_pct": 54.1
+          "wins": 277,
+          "losses": 226,
+          "ties": 29,
+          "games": 532,
+          "win_pct": 54.8
         },
         {
           "state": "ID",
-          "wins": 290,
-          "losses": 205,
-          "ties": 16,
-          "games": 511,
-          "win_pct": 58.3
+          "wins": 284,
+          "losses": 204,
+          "ties": 15,
+          "games": 503,
+          "win_pct": 58.0
         },
         {
           "state": "SD",
-          "wins": 45,
-          "losses": 32,
+          "wins": 44,
+          "losses": 30,
           "ties": 1,
-          "games": 78,
-          "win_pct": 58.3
+          "games": 75,
+          "win_pct": 59.3
         },
         {
           "state": "WA",
@@ -1390,43 +1390,43 @@
       "opponents": [
         {
           "state": "SC",
-          "wins": 1234,
-          "losses": 1365,
-          "ties": 88,
-          "games": 2687,
-          "win_pct": 47.6
+          "wins": 1274,
+          "losses": 1433,
+          "ties": 97,
+          "games": 2804,
+          "win_pct": 47.2
         },
         {
           "state": "VA",
-          "wins": 741,
-          "losses": 914,
-          "ties": 88,
-          "games": 1743,
-          "win_pct": 45.0
+          "wins": 724,
+          "losses": 890,
+          "ties": 86,
+          "games": 1700,
+          "win_pct": 45.1
         },
         {
           "state": "TN",
-          "wins": 373,
-          "losses": 395,
-          "ties": 34,
-          "games": 802,
-          "win_pct": 48.6
+          "wins": 364,
+          "losses": 405,
+          "ties": 27,
+          "games": 796,
+          "win_pct": 47.4
         },
         {
           "state": "GA",
-          "wins": 309,
-          "losses": 332,
+          "wins": 332,
+          "losses": 341,
           "ties": 23,
-          "games": 664,
-          "win_pct": 48.3
+          "games": 696,
+          "win_pct": 49.4
         },
         {
           "state": "MS",
-          "wins": 21,
-          "losses": 26,
+          "wins": 16,
+          "losses": 23,
           "ties": 0,
-          "games": 47,
-          "win_pct": 44.7
+          "games": 39,
+          "win_pct": 41.0
         }
       ]
     },
@@ -1435,43 +1435,43 @@
       "opponents": [
         {
           "state": "MN",
-          "wins": 1153,
-          "losses": 1242,
-          "ties": 137,
-          "games": 2532,
-          "win_pct": 48.2
+          "wins": 1011,
+          "losses": 1103,
+          "ties": 120,
+          "games": 2234,
+          "win_pct": 47.9
         },
         {
           "state": "SD",
-          "wins": 530,
-          "losses": 488,
-          "ties": 40,
-          "games": 1058,
-          "win_pct": 52.0
+          "wins": 485,
+          "losses": 431,
+          "ties": 36,
+          "games": 952,
+          "win_pct": 52.8
         },
         {
           "state": "MT",
-          "wins": 297,
-          "losses": 354,
-          "ties": 36,
-          "games": 687,
-          "win_pct": 45.9
+          "wins": 226,
+          "losses": 277,
+          "ties": 29,
+          "games": 532,
+          "win_pct": 45.2
         },
         {
           "state": "WI",
-          "wins": 23,
-          "losses": 12,
+          "wins": 19,
+          "losses": 8,
           "ties": 0,
-          "games": 35,
-          "win_pct": 65.7
+          "games": 27,
+          "win_pct": 70.4
         },
         {
           "state": "IA",
-          "wins": 22,
-          "losses": 10,
+          "wins": 15,
+          "losses": 7,
           "ties": 0,
-          "games": 32,
-          "win_pct": 68.8
+          "games": 22,
+          "win_pct": 68.2
         }
       ]
     },
@@ -1480,43 +1480,43 @@
       "opponents": [
         {
           "state": "IA",
-          "wins": 1583,
-          "losses": 1155,
-          "ties": 89,
-          "games": 2827,
-          "win_pct": 57.6
+          "wins": 1427,
+          "losses": 999,
+          "ties": 77,
+          "games": 2503,
+          "win_pct": 58.5
         },
         {
           "state": "SD",
-          "wins": 826,
-          "losses": 634,
-          "ties": 24,
-          "games": 1484,
-          "win_pct": 56.5
+          "wins": 715,
+          "losses": 540,
+          "ties": 21,
+          "games": 1276,
+          "win_pct": 56.9
         },
         {
           "state": "WY",
-          "wins": 647,
-          "losses": 560,
-          "ties": 22,
-          "games": 1229,
-          "win_pct": 53.5
+          "wins": 548,
+          "losses": 466,
+          "ties": 20,
+          "games": 1034,
+          "win_pct": 54.0
         },
         {
           "state": "KS",
-          "wins": 559,
-          "losses": 458,
-          "ties": 13,
-          "games": 1030,
-          "win_pct": 54.9
+          "wins": 548,
+          "losses": 452,
+          "ties": 12,
+          "games": 1012,
+          "win_pct": 54.7
         },
         {
           "state": "CO",
-          "wins": 243,
-          "losses": 264,
+          "wins": 239,
+          "losses": 259,
           "ties": 16,
-          "games": 523,
-          "win_pct": 48.0
+          "games": 514,
+          "win_pct": 48.1
         }
       ]
     },
@@ -1525,43 +1525,43 @@
       "opponents": [
         {
           "state": "MA",
-          "wins": 1051,
-          "losses": 1100,
-          "ties": 96,
-          "games": 2247,
-          "win_pct": 48.9
+          "wins": 967,
+          "losses": 981,
+          "ties": 88,
+          "games": 2036,
+          "win_pct": 49.7
         },
         {
           "state": "VT",
-          "wins": 495,
-          "losses": 465,
+          "wins": 491,
+          "losses": 461,
           "ties": 28,
-          "games": 988,
+          "games": 980,
           "win_pct": 51.5
         },
         {
           "state": "ME",
-          "wins": 440,
-          "losses": 355,
+          "wins": 419,
+          "losses": 335,
           "ties": 40,
-          "games": 835,
-          "win_pct": 55.1
+          "games": 794,
+          "win_pct": 55.3
         },
         {
           "state": "CT",
-          "wins": 277,
-          "losses": 178,
-          "ties": 10,
-          "games": 465,
-          "win_pct": 60.6
+          "wins": 240,
+          "losses": 151,
+          "ties": 7,
+          "games": 398,
+          "win_pct": 61.2
         },
         {
           "state": "RI",
           "wins": 82,
-          "losses": 49,
+          "losses": 47,
           "ties": 2,
-          "games": 133,
-          "win_pct": 62.4
+          "games": 131,
+          "win_pct": 63.4
         }
       ]
     },
@@ -1570,43 +1570,43 @@
       "opponents": [
         {
           "state": "PA",
-          "wins": 3009,
-          "losses": 2290,
-          "ties": 287,
-          "games": 5586,
-          "win_pct": 56.4
+          "wins": 2947,
+          "losses": 2238,
+          "ties": 278,
+          "games": 5463,
+          "win_pct": 56.5
         },
         {
           "state": "NY",
-          "wins": 1495,
-          "losses": 1302,
-          "ties": 146,
-          "games": 2943,
-          "win_pct": 53.3
+          "wins": 1474,
+          "losses": 1274,
+          "ties": 137,
+          "games": 2885,
+          "win_pct": 53.5
         },
         {
           "state": "CT",
-          "wins": 256,
-          "losses": 272,
-          "ties": 17,
-          "games": 545,
-          "win_pct": 48.5
+          "wins": 242,
+          "losses": 249,
+          "ties": 16,
+          "games": 507,
+          "win_pct": 49.3
         },
         {
           "state": "DE",
-          "wins": 213,
-          "losses": 209,
-          "ties": 16,
-          "games": 438,
-          "win_pct": 50.5
+          "wins": 212,
+          "losses": 207,
+          "ties": 15,
+          "games": 434,
+          "win_pct": 50.6
         },
         {
           "state": "MD",
-          "wins": 98,
-          "losses": 87,
+          "wins": 97,
+          "losses": 84,
           "ties": 7,
-          "games": 192,
-          "win_pct": 52.9
+          "games": 188,
+          "win_pct": 53.5
         }
       ]
     },
@@ -1615,43 +1615,43 @@
       "opponents": [
         {
           "state": "TX",
-          "wins": 1889,
-          "losses": 2416,
-          "ties": 127,
-          "games": 4432,
-          "win_pct": 44.1
+          "wins": 1852,
+          "losses": 2373,
+          "ties": 126,
+          "games": 4351,
+          "win_pct": 44.0
         },
         {
           "state": "CO",
-          "wins": 776,
-          "losses": 987,
-          "ties": 54,
-          "games": 1817,
-          "win_pct": 44.2
+          "wins": 724,
+          "losses": 940,
+          "ties": 52,
+          "games": 1716,
+          "win_pct": 43.7
         },
         {
           "state": "AZ",
-          "wins": 476,
-          "losses": 448,
-          "ties": 32,
-          "games": 956,
-          "win_pct": 51.5
+          "wins": 466,
+          "losses": 434,
+          "ties": 30,
+          "games": 930,
+          "win_pct": 51.7
         },
         {
           "state": "UT",
-          "wins": 99,
-          "losses": 112,
+          "wins": 97,
+          "losses": 111,
           "ties": 1,
-          "games": 212,
-          "win_pct": 46.9
+          "games": 209,
+          "win_pct": 46.7
         },
         {
           "state": "OK",
-          "wins": 80,
+          "wins": 79,
           "losses": 74,
           "ties": 4,
-          "games": 158,
-          "win_pct": 51.9
+          "games": 157,
+          "win_pct": 51.6
         }
       ]
     },
@@ -1681,27 +1681,27 @@
       "opponents": [
         {
           "state": "CA",
-          "wins": 1368,
-          "losses": 1508,
+          "wins": 1365,
+          "losses": 1491,
           "ties": 50,
-          "games": 2926,
-          "win_pct": 47.6
+          "games": 2906,
+          "win_pct": 47.8
         },
         {
           "state": "UT",
           "wins": 208,
-          "losses": 308,
+          "losses": 306,
           "ties": 4,
-          "games": 520,
-          "win_pct": 40.4
+          "games": 518,
+          "win_pct": 40.5
         },
         {
           "state": "AZ",
-          "wins": 186,
-          "losses": 137,
+          "wins": 184,
+          "losses": 134,
           "ties": 1,
-          "games": 324,
-          "win_pct": 57.6
+          "games": 319,
+          "win_pct": 57.8
         },
         {
           "state": "ID",
@@ -1714,10 +1714,10 @@
         {
           "state": "NM",
           "wins": 47,
-          "losses": 50,
+          "losses": 49,
           "ties": 6,
-          "games": 103,
-          "win_pct": 48.5
+          "games": 102,
+          "win_pct": 49.0
         }
       ]
     },
@@ -1726,43 +1726,43 @@
       "opponents": [
         {
           "state": "PA",
-          "wins": 1474,
-          "losses": 1602,
-          "ties": 109,
-          "games": 3185,
-          "win_pct": 48.0
+          "wins": 1345,
+          "losses": 1514,
+          "ties": 104,
+          "games": 2963,
+          "win_pct": 47.1
         },
         {
           "state": "NJ",
-          "wins": 1302,
-          "losses": 1495,
-          "ties": 146,
-          "games": 2943,
-          "win_pct": 46.7
+          "wins": 1274,
+          "losses": 1474,
+          "ties": 137,
+          "games": 2885,
+          "win_pct": 46.5
         },
         {
           "state": "CT",
-          "wins": 1062,
-          "losses": 1267,
-          "ties": 64,
-          "games": 2393,
-          "win_pct": 45.7
+          "wins": 979,
+          "losses": 1182,
+          "ties": 58,
+          "games": 2219,
+          "win_pct": 45.4
         },
         {
           "state": "MA",
-          "wins": 188,
-          "losses": 158,
+          "wins": 185,
+          "losses": 156,
           "ties": 12,
-          "games": 358,
-          "win_pct": 54.2
+          "games": 353,
+          "win_pct": 54.1
         },
         {
           "state": "VT",
-          "wins": 144,
-          "losses": 176,
+          "wins": 139,
+          "losses": 171,
           "ties": 2,
-          "games": 322,
-          "win_pct": 45.0
+          "games": 312,
+          "win_pct": 44.9
         }
       ]
     },
@@ -1771,43 +1771,43 @@
       "opponents": [
         {
           "state": "WV",
-          "wins": 3421,
-          "losses": 3501,
-          "ties": 284,
-          "games": 7206,
+          "wins": 3335,
+          "losses": 3415,
+          "ties": 274,
+          "games": 7024,
           "win_pct": 49.4
         },
         {
           "state": "KY",
-          "wins": 1994,
-          "losses": 1672,
-          "ties": 144,
-          "games": 3810,
-          "win_pct": 54.2
+          "wins": 1789,
+          "losses": 1498,
+          "ties": 123,
+          "games": 3410,
+          "win_pct": 54.3
         },
         {
           "state": "PA",
-          "wins": 1587,
-          "losses": 1362,
-          "ties": 111,
-          "games": 3060,
-          "win_pct": 53.7
+          "wins": 1562,
+          "losses": 1326,
+          "ties": 108,
+          "games": 2996,
+          "win_pct": 53.9
         },
         {
           "state": "MI",
-          "wins": 1118,
-          "losses": 839,
-          "ties": 40,
-          "games": 1997,
-          "win_pct": 57.0
+          "wins": 1013,
+          "losses": 730,
+          "ties": 32,
+          "games": 1775,
+          "win_pct": 58.0
         },
         {
           "state": "IN",
-          "wins": 796,
-          "losses": 651,
-          "ties": 32,
-          "games": 1479,
-          "win_pct": 54.9
+          "wins": 742,
+          "losses": 593,
+          "ties": 31,
+          "games": 1366,
+          "win_pct": 55.5
         }
       ]
     },
@@ -1816,43 +1816,43 @@
       "opponents": [
         {
           "state": "TX",
-          "wins": 1170,
-          "losses": 1508,
-          "ties": 79,
-          "games": 2757,
+          "wins": 1149,
+          "losses": 1477,
+          "ties": 77,
+          "games": 2703,
           "win_pct": 43.9
         },
         {
           "state": "AR",
-          "wins": 865,
-          "losses": 988,
-          "ties": 76,
-          "games": 1929,
-          "win_pct": 46.8
+          "wins": 900,
+          "losses": 996,
+          "ties": 74,
+          "games": 1970,
+          "win_pct": 47.6
         },
         {
           "state": "KS",
-          "wins": 947,
-          "losses": 786,
-          "ties": 50,
-          "games": 1783,
-          "win_pct": 54.5
+          "wins": 868,
+          "losses": 756,
+          "ties": 44,
+          "games": 1668,
+          "win_pct": 53.4
         },
         {
           "state": "MO",
-          "wins": 286,
-          "losses": 201,
+          "wins": 280,
+          "losses": 194,
           "ties": 13,
-          "games": 500,
-          "win_pct": 58.5
+          "games": 487,
+          "win_pct": 58.8
         },
         {
-          "state": "CO",
-          "wins": 91,
-          "losses": 90,
-          "ties": 2,
-          "games": 183,
-          "win_pct": 50.3
+          "state": "NM",
+          "wins": 74,
+          "losses": 79,
+          "ties": 4,
+          "games": 157,
+          "win_pct": 48.4
         }
       ]
     },
@@ -1861,19 +1861,19 @@
       "opponents": [
         {
           "state": "MI",
-          "wins": 61,
-          "losses": 311,
+          "wins": 60,
+          "losses": 308,
           "ties": 5,
-          "games": 377,
+          "games": 373,
           "win_pct": 16.8
         },
         {
           "state": "OH",
           "wins": 21,
-          "losses": 221,
+          "losses": 217,
           "ties": 0,
-          "games": 242,
-          "win_pct": 8.7
+          "games": 238,
+          "win_pct": 8.8
         },
         {
           "state": "MB",
@@ -1886,10 +1886,10 @@
         {
           "state": "PA",
           "wins": 13,
-          "losses": 56,
+          "losses": 55,
           "ties": 0,
-          "games": 69,
-          "win_pct": 18.8
+          "games": 68,
+          "win_pct": 19.1
         },
         {
           "state": "NY",
@@ -1906,43 +1906,43 @@
       "opponents": [
         {
           "state": "WA",
-          "wins": 1075,
-          "losses": 1380,
-          "ties": 108,
-          "games": 2563,
+          "wins": 1024,
+          "losses": 1316,
+          "ties": 105,
+          "games": 2445,
           "win_pct": 44.0
         },
         {
           "state": "ID",
-          "wins": 756,
-          "losses": 737,
+          "wins": 748,
+          "losses": 723,
           "ties": 66,
-          "games": 1559,
-          "win_pct": 50.6
+          "games": 1537,
+          "win_pct": 50.8
         },
         {
           "state": "CA",
-          "wins": 649,
-          "losses": 625,
+          "wins": 614,
+          "losses": 618,
           "ties": 59,
-          "games": 1333,
-          "win_pct": 50.9
+          "games": 1291,
+          "win_pct": 49.8
         },
         {
           "state": "BC",
-          "wins": 31,
+          "wins": 30,
           "losses": 26,
           "ties": 2,
-          "games": 59,
-          "win_pct": 54.2
+          "games": 58,
+          "win_pct": 53.4
         },
         {
           "state": "NV",
-          "wins": 20,
+          "wins": 19,
           "losses": 11,
           "ties": 0,
-          "games": 31,
-          "win_pct": 64.5
+          "games": 30,
+          "win_pct": 63.3
         }
       ]
     },
@@ -1951,42 +1951,42 @@
       "opponents": [
         {
           "state": "NJ",
-          "wins": 2290,
-          "losses": 3009,
-          "ties": 287,
-          "games": 5586,
-          "win_pct": 43.6
-        },
-        {
-          "state": "NY",
-          "wins": 1602,
-          "losses": 1474,
-          "ties": 109,
-          "games": 3185,
-          "win_pct": 52.0
+          "wins": 2238,
+          "losses": 2947,
+          "ties": 278,
+          "games": 5463,
+          "win_pct": 43.5
         },
         {
           "state": "OH",
-          "wins": 1362,
-          "losses": 1587,
-          "ties": 111,
-          "games": 3060,
-          "win_pct": 46.3
+          "wins": 1326,
+          "losses": 1562,
+          "ties": 108,
+          "games": 2996,
+          "win_pct": 46.1
+        },
+        {
+          "state": "NY",
+          "wins": 1514,
+          "losses": 1345,
+          "ties": 104,
+          "games": 2963,
+          "win_pct": 52.9
         },
         {
           "state": "DE",
-          "wins": 787,
-          "losses": 744,
-          "ties": 64,
-          "games": 1595,
-          "win_pct": 51.3
+          "wins": 773,
+          "losses": 738,
+          "ties": 63,
+          "games": 1574,
+          "win_pct": 51.1
         },
         {
           "state": "MD",
-          "wins": 706,
-          "losses": 788,
+          "wins": 703,
+          "losses": 785,
           "ties": 45,
-          "games": 1539,
+          "games": 1533,
           "win_pct": 47.3
         }
       ]
@@ -2041,43 +2041,43 @@
       "opponents": [
         {
           "state": "MA",
-          "wins": 372,
-          "losses": 639,
-          "ties": 44,
-          "games": 1055,
-          "win_pct": 37.3
+          "wins": 368,
+          "losses": 636,
+          "ties": 43,
+          "games": 1047,
+          "win_pct": 37.2
         },
         {
           "state": "CT",
-          "wins": 281,
-          "losses": 286,
-          "ties": 28,
-          "games": 595,
-          "win_pct": 49.6
+          "wins": 255,
+          "losses": 262,
+          "ties": 25,
+          "games": 542,
+          "win_pct": 49.4
         },
         {
           "state": "NH",
-          "wins": 49,
+          "wins": 47,
           "losses": 82,
           "ties": 2,
-          "games": 133,
-          "win_pct": 37.6
+          "games": 131,
+          "win_pct": 36.6
         },
         {
           "state": "ME",
-          "wins": 47,
-          "losses": 35,
+          "wins": 44,
+          "losses": 34,
           "ties": 3,
-          "games": 85,
-          "win_pct": 57.1
+          "games": 81,
+          "win_pct": 56.2
         },
         {
           "state": "NY",
           "wins": 16,
-          "losses": 14,
+          "losses": 13,
           "ties": 0,
-          "games": 30,
-          "win_pct": 53.3
+          "games": 29,
+          "win_pct": 55.2
         }
       ]
     },
@@ -2086,43 +2086,43 @@
       "opponents": [
         {
           "state": "NC",
-          "wins": 1365,
-          "losses": 1234,
-          "ties": 88,
-          "games": 2687,
-          "win_pct": 52.4
+          "wins": 1433,
+          "losses": 1274,
+          "ties": 97,
+          "games": 2804,
+          "win_pct": 52.8
         },
         {
           "state": "GA",
-          "wins": 1050,
-          "losses": 1264,
-          "ties": 63,
-          "games": 2377,
-          "win_pct": 45.5
+          "wins": 1161,
+          "losses": 1390,
+          "ties": 76,
+          "games": 2627,
+          "win_pct": 45.6
         },
         {
           "state": "TN",
-          "wins": 47,
-          "losses": 58,
-          "ties": 5,
-          "games": 110,
-          "win_pct": 45.0
+          "wins": 52,
+          "losses": 62,
+          "ties": 4,
+          "games": 118,
+          "win_pct": 45.8
         },
         {
           "state": "FL",
-          "wins": 32,
-          "losses": 54,
+          "wins": 31,
+          "losses": 53,
           "ties": 1,
-          "games": 87,
-          "win_pct": 37.4
+          "games": 85,
+          "win_pct": 37.1
         },
         {
           "state": "AL",
-          "wins": 23,
-          "losses": 43,
+          "wins": 19,
+          "losses": 39,
           "ties": 0,
-          "games": 66,
-          "win_pct": 34.8
+          "games": 58,
+          "win_pct": 32.8
         }
       ]
     },
@@ -2131,43 +2131,43 @@
       "opponents": [
         {
           "state": "MN",
-          "wins": 1310,
-          "losses": 1365,
-          "ties": 78,
-          "games": 2753,
-          "win_pct": 49.0
+          "wins": 1133,
+          "losses": 1177,
+          "ties": 72,
+          "games": 2382,
+          "win_pct": 49.1
         },
         {
           "state": "IA",
-          "wins": 963,
-          "losses": 1148,
-          "ties": 82,
-          "games": 2193,
-          "win_pct": 45.8
+          "wins": 820,
+          "losses": 1033,
+          "ties": 75,
+          "games": 1928,
+          "win_pct": 44.5
         },
         {
           "state": "NE",
-          "wins": 634,
-          "losses": 826,
-          "ties": 24,
-          "games": 1484,
-          "win_pct": 43.5
-        },
-        {
-          "state": "WY",
-          "wins": 566,
-          "losses": 669,
-          "ties": 33,
-          "games": 1268,
-          "win_pct": 45.9
+          "wins": 540,
+          "losses": 715,
+          "ties": 21,
+          "games": 1276,
+          "win_pct": 43.1
         },
         {
           "state": "ND",
-          "wins": 488,
-          "losses": 530,
-          "ties": 40,
-          "games": 1058,
-          "win_pct": 48.0
+          "wins": 431,
+          "losses": 485,
+          "ties": 36,
+          "games": 952,
+          "win_pct": 47.2
+        },
+        {
+          "state": "WY",
+          "wins": 425,
+          "losses": 479,
+          "ties": 31,
+          "games": 935,
+          "win_pct": 47.1
         }
       ]
     },
@@ -2220,44 +2220,44 @@
       "state": "TN",
       "opponents": [
         {
-          "state": "KY",
-          "wins": 1535,
-          "losses": 1504,
-          "ties": 91,
-          "games": 3130,
-          "win_pct": 50.5
+          "state": "MS",
+          "wins": 1012,
+          "losses": 1555,
+          "ties": 30,
+          "games": 2597,
+          "win_pct": 39.5
         },
         {
-          "state": "MS",
-          "wins": 932,
-          "losses": 1549,
-          "ties": 25,
-          "games": 2506,
-          "win_pct": 37.7
+          "state": "KY",
+          "wins": 1280,
+          "losses": 1200,
+          "ties": 62,
+          "games": 2542,
+          "win_pct": 51.6
         },
         {
           "state": "AL",
-          "wins": 841,
-          "losses": 1037,
-          "ties": 72,
-          "games": 1950,
-          "win_pct": 45.0
+          "wins": 882,
+          "losses": 1052,
+          "ties": 75,
+          "games": 2009,
+          "win_pct": 45.8
         },
         {
           "state": "GA",
-          "wins": 719,
-          "losses": 602,
-          "ties": 99,
-          "games": 1420,
-          "win_pct": 54.1
+          "wins": 790,
+          "losses": 653,
+          "ties": 107,
+          "games": 1550,
+          "win_pct": 54.4
         },
         {
           "state": "VA",
-          "wins": 738,
-          "losses": 493,
-          "ties": 68,
-          "games": 1299,
-          "win_pct": 59.4
+          "wins": 662,
+          "losses": 435,
+          "ties": 59,
+          "games": 1156,
+          "win_pct": 59.8
         }
       ]
     },
@@ -2266,43 +2266,43 @@
       "opponents": [
         {
           "state": "NM",
-          "wins": 2416,
-          "losses": 1889,
-          "ties": 127,
-          "games": 4432,
-          "win_pct": 55.9
+          "wins": 2373,
+          "losses": 1852,
+          "ties": 126,
+          "games": 4351,
+          "win_pct": 56.0
         },
         {
           "state": "OK",
-          "wins": 1508,
-          "losses": 1170,
-          "ties": 79,
-          "games": 2757,
+          "wins": 1477,
+          "losses": 1149,
+          "ties": 77,
+          "games": 2703,
           "win_pct": 56.1
         },
         {
           "state": "LA",
-          "wins": 762,
-          "losses": 786,
-          "ties": 56,
-          "games": 1604,
-          "win_pct": 49.3
+          "wins": 590,
+          "losses": 580,
+          "ties": 46,
+          "games": 1216,
+          "win_pct": 50.4
         },
         {
           "state": "AR",
-          "wins": 364,
-          "losses": 297,
-          "ties": 22,
-          "games": 683,
-          "win_pct": 54.9
+          "wins": 330,
+          "losses": 254,
+          "ties": 19,
+          "games": 603,
+          "win_pct": 56.3
         },
         {
           "state": "AZ",
-          "wins": 105,
-          "losses": 79,
-          "ties": 12,
-          "games": 196,
-          "win_pct": 56.6
+          "wins": 92,
+          "losses": 66,
+          "ties": 9,
+          "games": 167,
+          "win_pct": 57.8
         }
       ]
     },
@@ -2311,43 +2311,43 @@
       "opponents": [
         {
           "state": "ID",
-          "wins": 289,
-          "losses": 296,
-          "ties": 17,
-          "games": 602,
-          "win_pct": 49.4
+          "wins": 278,
+          "losses": 277,
+          "ties": 16,
+          "games": 571,
+          "win_pct": 50.1
         },
         {
           "state": "CO",
-          "wins": 239,
-          "losses": 320,
-          "ties": 20,
-          "games": 579,
-          "win_pct": 43.0
+          "wins": 233,
+          "losses": 305,
+          "ties": 18,
+          "games": 556,
+          "win_pct": 43.5
         },
         {
           "state": "NV",
-          "wins": 308,
+          "wins": 306,
           "losses": 208,
           "ties": 4,
-          "games": 520,
-          "win_pct": 59.6
+          "games": 518,
+          "win_pct": 59.5
         },
         {
           "state": "WY",
           "wins": 118,
-          "losses": 146,
+          "losses": 150,
           "ties": 3,
-          "games": 267,
-          "win_pct": 44.8
+          "games": 271,
+          "win_pct": 44.1
         },
         {
           "state": "AZ",
-          "wins": 162,
-          "losses": 87,
-          "ties": 3,
-          "games": 252,
-          "win_pct": 64.9
+          "wins": 143,
+          "losses": 80,
+          "ties": 2,
+          "games": 225,
+          "win_pct": 64.0
         }
       ]
     },
@@ -2356,43 +2356,43 @@
       "opponents": [
         {
           "state": "WV",
-          "wins": 1415,
-          "losses": 1489,
-          "ties": 151,
-          "games": 3055,
-          "win_pct": 48.8
+          "wins": 1389,
+          "losses": 1428,
+          "ties": 145,
+          "games": 2962,
+          "win_pct": 49.3
         },
         {
           "state": "MD",
-          "wins": 751,
-          "losses": 1055,
+          "wins": 741,
+          "losses": 1044,
           "ties": 37,
-          "games": 1843,
-          "win_pct": 41.8
+          "games": 1822,
+          "win_pct": 41.7
         },
         {
           "state": "NC",
-          "wins": 914,
-          "losses": 741,
-          "ties": 88,
-          "games": 1743,
-          "win_pct": 55.0
+          "wins": 890,
+          "losses": 724,
+          "ties": 86,
+          "games": 1700,
+          "win_pct": 54.9
         },
         {
           "state": "DC",
-          "wins": 724,
-          "losses": 568,
+          "wins": 697,
+          "losses": 547,
           "ties": 38,
-          "games": 1330,
+          "games": 1282,
           "win_pct": 55.9
         },
         {
           "state": "TN",
-          "wins": 493,
-          "losses": 738,
-          "ties": 68,
-          "games": 1299,
-          "win_pct": 40.6
+          "wins": 435,
+          "losses": 662,
+          "ties": 59,
+          "games": 1156,
+          "win_pct": 40.2
         }
       ]
     },
@@ -2401,43 +2401,43 @@
       "opponents": [
         {
           "state": "NH",
-          "wins": 465,
-          "losses": 495,
+          "wins": 461,
+          "losses": 491,
           "ties": 28,
-          "games": 988,
+          "games": 980,
           "win_pct": 48.5
         },
         {
           "state": "MA",
-          "wins": 165,
+          "wins": 166,
           "losses": 215,
           "ties": 12,
-          "games": 392,
-          "win_pct": 43.6
+          "games": 393,
+          "win_pct": 43.8
         },
         {
           "state": "NY",
-          "wins": 176,
-          "losses": 144,
+          "wins": 171,
+          "losses": 139,
           "ties": 2,
-          "games": 322,
-          "win_pct": 55.0
-        },
-        {
-          "state": "CT",
-          "wins": 46,
-          "losses": 48,
-          "ties": 7,
-          "games": 101,
-          "win_pct": 49.0
+          "games": 312,
+          "win_pct": 55.1
         },
         {
           "state": "ME",
-          "wins": 23,
+          "wins": 22,
           "losses": 53,
           "ties": 3,
-          "games": 79,
-          "win_pct": 31.0
+          "games": 78,
+          "win_pct": 30.1
+        },
+        {
+          "state": "CT",
+          "wins": 31,
+          "losses": 40,
+          "ties": 3,
+          "games": 74,
+          "win_pct": 43.9
         }
       ]
     },
@@ -2446,35 +2446,35 @@
       "opponents": [
         {
           "state": "ID",
-          "wins": 1593,
-          "losses": 1630,
+          "wins": 1515,
+          "losses": 1559,
           "ties": 62,
-          "games": 3285,
-          "win_pct": 49.4
+          "games": 3136,
+          "win_pct": 49.3
         },
         {
           "state": "OR",
-          "wins": 1380,
-          "losses": 1075,
-          "ties": 108,
-          "games": 2563,
+          "wins": 1316,
+          "losses": 1024,
+          "ties": 105,
+          "games": 2445,
           "win_pct": 56.0
         },
         {
           "state": "BC",
-          "wins": 375,
-          "losses": 170,
+          "wins": 371,
+          "losses": 169,
           "ties": 14,
-          "games": 559,
-          "win_pct": 68.3
+          "games": 554,
+          "win_pct": 68.2
         },
         {
           "state": "CA",
-          "wins": 94,
+          "wins": 93,
           "losses": 77,
           "ties": 9,
-          "games": 180,
-          "win_pct": 54.7
+          "games": 179,
+          "win_pct": 54.5
         },
         {
           "state": "UT",
@@ -2491,43 +2491,43 @@
       "opponents": [
         {
           "state": "MN",
-          "wins": 1193,
-          "losses": 1000,
-          "ties": 76,
-          "games": 2269,
-          "win_pct": 54.3
+          "wins": 1130,
+          "losses": 958,
+          "ties": 71,
+          "games": 2159,
+          "win_pct": 54.0
         },
         {
           "state": "IL",
-          "wins": 1006,
-          "losses": 881,
-          "ties": 45,
-          "games": 1932,
-          "win_pct": 53.2
+          "wins": 969,
+          "losses": 855,
+          "ties": 44,
+          "games": 1868,
+          "win_pct": 53.1
         },
         {
           "state": "MI",
-          "wins": 751,
-          "losses": 1017,
+          "wins": 695,
+          "losses": 962,
           "ties": 25,
-          "games": 1793,
-          "win_pct": 42.6
+          "games": 1682,
+          "win_pct": 42.1
         },
         {
           "state": "IA",
-          "wins": 85,
-          "losses": 118,
+          "wins": 83,
+          "losses": 114,
           "ties": 4,
-          "games": 207,
-          "win_pct": 42.0
+          "games": 201,
+          "win_pct": 42.3
         },
         {
           "state": "IN",
-          "wins": 43,
+          "wins": 40,
           "losses": 31,
           "ties": 1,
-          "games": 75,
-          "win_pct": 58.0
+          "games": 72,
+          "win_pct": 56.2
         }
       ]
     },
@@ -2536,43 +2536,43 @@
       "opponents": [
         {
           "state": "OH",
-          "wins": 3501,
-          "losses": 3421,
-          "ties": 284,
-          "games": 7206,
+          "wins": 3415,
+          "losses": 3335,
+          "ties": 274,
+          "games": 7024,
           "win_pct": 50.6
         },
         {
           "state": "VA",
-          "wins": 1489,
-          "losses": 1415,
-          "ties": 151,
-          "games": 3055,
-          "win_pct": 51.2
+          "wins": 1428,
+          "losses": 1389,
+          "ties": 145,
+          "games": 2962,
+          "win_pct": 50.7
         },
         {
           "state": "MD",
-          "wins": 1347,
-          "losses": 1539,
+          "wins": 1345,
+          "losses": 1537,
           "ties": 58,
-          "games": 2944,
+          "games": 2940,
           "win_pct": 46.7
         },
         {
-          "state": "KY",
-          "wins": 781,
-          "losses": 717,
-          "ties": 120,
-          "games": 1618,
-          "win_pct": 52.0
+          "state": "PA",
+          "wins": 683,
+          "losses": 636,
+          "ties": 80,
+          "games": 1399,
+          "win_pct": 51.7
         },
         {
-          "state": "PA",
-          "wins": 700,
-          "losses": 649,
-          "ties": 85,
-          "games": 1434,
-          "win_pct": 51.8
+          "state": "KY",
+          "wins": 626,
+          "losses": 566,
+          "ties": 93,
+          "games": 1285,
+          "win_pct": 52.3
         }
       ]
     },
@@ -2580,36 +2580,36 @@
       "state": "WY",
       "opponents": [
         {
-          "state": "SD",
-          "wins": 669,
-          "losses": 566,
-          "ties": 33,
-          "games": 1268,
-          "win_pct": 54.1
+          "state": "NE",
+          "wins": 466,
+          "losses": 548,
+          "ties": 20,
+          "games": 1034,
+          "win_pct": 46.0
         },
         {
-          "state": "NE",
-          "wins": 560,
-          "losses": 647,
-          "ties": 22,
-          "games": 1229,
-          "win_pct": 46.5
+          "state": "SD",
+          "wins": 479,
+          "losses": 425,
+          "ties": 31,
+          "games": 935,
+          "win_pct": 52.9
         },
         {
           "state": "MT",
-          "wins": 394,
-          "losses": 433,
-          "ties": 24,
-          "games": 851,
-          "win_pct": 47.7
+          "wins": 288,
+          "losses": 318,
+          "ties": 17,
+          "games": 623,
+          "win_pct": 47.6
         },
         {
           "state": "CO",
-          "wins": 227,
-          "losses": 266,
+          "wins": 220,
+          "losses": 259,
           "ties": 29,
-          "games": 522,
-          "win_pct": 46.3
+          "games": 508,
+          "win_pct": 46.2
         },
         {
           "state": "ID",

@@ -1,0 +1,1 @@
+SELECT URL, ProperName, Team_ID FROM dbo.URL_ProperName_Mapping WHERE ProperName IN ('Salina North Sevier (UT)', 'Vernal Uintah (UT)', 'Blanding San Juan (UT)', 'Fillmore Millard (UT)', 'Monroe South Sevier (UT)');

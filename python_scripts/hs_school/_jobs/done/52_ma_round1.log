@@ -1,0 +1,23 @@
+
+>>> move-team MA --from "Boston Latin School (MA)" --to "Dorchester Boston Latin Academy (MA)" --seasons 2025-2026 --reason "2025-2026 Boston Latin Academy games mis-mapped to Boston Latin School" --commit
+
+MOVE Boston Latin School (MA) -> Dorchester Boston Latin Academy (MA), seasons 2025-2026 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261109_0855.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261109_0855.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team MA --from "Boston Latin (MA)" --to "Dorchester Boston Latin Academy (MA)" --seasons 2024-2024 --ids C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\ma_bla_2024_ids.csv --reason "2024 Boston Latin Academy games mis-mapped to Boston Latin" --commit
+
+[stderr]
+Traceback (most recent call last):
+  File "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\hs_cleanup.py", line 1052, in <module>
+    main()
+  File "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\hs_cleanup.py", line 1048, in main
+    a.f(a)
+  File "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\hs_cleanup.py", line 418, in cmd_move
+    with open(path, encoding='utf-8-sig') as fh:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\demck\\OneDrive\\Football_2024\\static-football-rankings\\python_scripts\\hs_school\\MA\\UsersdemckOneDriveFootball_2024static-football-rankingspython_scriptshs_schoolMAma_bla_2024_ids.csv'
+
+=== FAILED (exit 1) 2026-11-09 08:55:53

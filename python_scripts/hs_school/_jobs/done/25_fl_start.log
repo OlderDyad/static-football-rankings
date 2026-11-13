@@ -1,0 +1,177 @@
+
+>>> addstate FL
+Tracker rows ready for FL
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report FL names
+
+REPORT names FL: 1487 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_names_20261108_2007.csv
+   Name                                      Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   1962 Sawdust Bowl Opp (FL)                1      1962         1962        1            0     
+   A.F.A. (FL)                               1      1949         1949        1            0     
+   AE Lee Jax (FL)                           1      1961         1961        1            0     
+   Alachua (FL)                              1      1945         1945        1            0     
+   Alachua A.L. Mebane (FL)                  2      1967         1969        0            0     
+   Alachua Calvary Christian Academy (FL)    7      1981         2003        1            0     
+   Alachua Rolling Green Academy (FL)        32     1974         1982        1            0     
+   Alachua Santa Fe (FL)                     662    1931         2026        1            1     
+   Albany (FL)                               1      1969         1969        1            0     
+   Allentown (FL)                            4      1947         1951        1            0     
+   Allwood (FL)                              1      1991         1991        1            0     
+   Altamonte Christian (FL)                  2      1976         1977        0            0     
+   Altamonte Springs Altamonte Christian (F  5      1985         1989        1            0     
+   Altamonte Springs Lake Brantley (FL)      564    1973         2026        1            1     
+   Altha (FL)                                27     1950         1961        1            0     
+   ... 1472 more rows (see CSV)
+
+>>> report FL drift
+
+REPORT drift FL: 197 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_drift_20261108_2008.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                                N_Games  N_First  N_Last  N_Mapped
+   Auburndale Jordan Christian Prep (FL)     47       2015     2024    1         None                                   None     None     None    0       
+   Auburndale Kingdom Prep (FL)              15       2017     2018    0         Auburndale Jordan Christian Prep (FL)  47       2015     2024    1       
+   Boca Raton Saint John Paul II Academy (F  71       1982     2023    0         None                                   None     None     None    0       
+   Boca Raton St. John Paul II Academy (FL)  245      1982     2022    0         None                                   None     None     None    0       
+   Boynton Beach Somerset Academy - Canyons  64       2016     2023    0         Boynton Beach Somerset Academy (FL)    33       2024     2026    1       
+   Bradenton IMG Academy Blue (FL)           25       2021     2024    1         None                                   None     None     None    0       
+   Brandon Faith Baptist Christian (FL)      33       2008     2022    0         None                                   None     None     None    0       
+   Brandon Families Instructing Students Ho  66       2009     2016    1         None                                   None     None     None    0       
+   Bunnell First Baptist Christian Academy   17       2018     2020    0         None                                   None     None     None    0       
+   Clearwater Academy International (FL)     161      2008     2023    1         None                                   None     None     None    0       
+   Clearwater American Collegiate Academy (  25       2019     2023    0         None                                   None     None     None    0       
+   Clearwater Superior Collegiate (FL)       16       2017     2018    0         None                                   None     None     None    0       
+   Deerfield Beach Somerset Academy (FL)     37       2019     2025    1         None                                   None     None     None    0       
+   Deerfield Beach Zion Lutheran (FL)        161      1991     2015    1         None                                   None     None     None    0       
+   DeLand Lighthouse Christian (FL)          50       2006     2017    0         None                                   None     None     None    0       
+   ... 182 more rows (see CSV)
+
+>>> report FL same-town
+
+REPORT same-town FL: 1766 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_same_town_20261108_2009.csv
+   A                                 B                           Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Orlando Boone (FL)                Orlando Evans (FL)          114   55       1959         2026        778      669    
+   Tampa Hillsborough (FL)           Tampa Plant (FL)            101   46       1930         2025        966      1080   
+   Tampa Chamberlain (FL)            Tampa Plant (FL)            93    43       1956         2021        734      1080   
+   Tampa Hillsborough (FL)           Tampa Robinson (FL)         90    38       1960         2023        966      664    
+   Tampa Hillsborough (FL)           Tampa King (FL)             79    43       1960         2020        966      614    
+   Tampa Jefferson (FL)              Tampa Robinson (FL)         76    37       1959         2026        861      664    
+   Tampa King (FL)                   Tampa Robinson (FL)         75    33       1960         2025        614      664    
+   Jacksonville Andrew Jackson (FL)  Jacksonville Lee (FL)       75    33       1933         2023        754      838    
+   Jacksonville Forrest (FL)         Jacksonville Westside (FL)  74    15       1976         2023        380      167    
+   Tampa Jefferson (FL)              Tampa Plant (FL)            73    46       1941         2026        861      1080   
+   Tampa Chamberlain (FL)            Tampa King (FL)             71    33       1962         2026        734      614    
+   Orlando Colonial (FL)             Orlando Evans (FL)          71    42       1961         2019        599      669    
+   Orlando Colonial (FL)             Orlando Oakridge (FL)       68    37       1964         2026        599      580    
+   Tampa Hillsborough (FL)           Tampa Jefferson (FL)        66    39       1941         2020        966      861    
+   Tampa Chamberlain (FL)            Tampa Robinson (FL)         64    35       1962         2026        734      664    
+   ... 1751 more rows (see CSV)
+
+>>> mapcheck FL
+
+MAPPING CHECK FL - PREVIEW (nothing changed)
+ 75 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_mapcheck_20261108_2009.csv
+   URL                                       ProperName                               Team_ID  NameID  Problem                          Team_ID_Name
+   https://www.maxpreps.com/fl/auburndale/j  Auburndale Jordan Christian (FL)         21080    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/miami/belen-  Belen Jesuit Prep (FL)                   3749     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/bradenton/sa  Bradenton Saint St. ephens (FL)          26450    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/dover/strawb  Dover Strawberry Crest (FL)              25176    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/fort-lauderd  Fort Lauderdale St. ranahan Mighty (FL)  8269     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/fort-myers/g  Fort Myers Gateway (FL)                  46995    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/fort-pierce/  Fort Pierce John Carroll (FL)            4002     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/gainesville/  Gainesville Saint Francis (FL)           19001    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/hollywood/av  Hollywood Avant Garde (FL)               18955    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/homestead/ev  Homestead Everglades Prep (FL)           8490     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/jacksonville  Jacksonville First Coast Christian (FL)  30845    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/jacksonville  Jacksonville St. anton (FL)              35692    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/kissimmee/vi  Kissimmee Victory Charter (FL)           49527    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/labelle/labe  LaBelle (FL)                             41051    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/land-o-lakes  Land O Lakes Land O (FL)                 5528     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/lecanto/seve  Lecanto Seven Rivers (FL)                1578     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/lithia/newso  Lithia Newsome (FL)                      24905    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/miami/miami-  Miami (FL)                               9944     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/miami-garden  Miami Gardens Tru Prep (FL)              24507    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/fl/miami/immacu  Miami Immaculata La (FL)                 29016    None    ProperName not in HS_Team_Names  None        
+   ... 55 more rows (see CSV)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  48       None
+
+>>> dedup FL
+
+DEDUP v4 FL - PREVIEW (nothing changed)
+ dedup_archive: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_archive_20261108_2009.csv
+ dedup_review: 448 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_review_20261108_2009.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_summary_20261108_2009.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  FL     130461        3                    448              None 
+
+>>> review-pairs FL
+
+REVIEW-ONLY PAIRS FL - PREVIEW (nothing changed)
+ 448 pairs {'LONG': 11, 'SHORT': 437} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_review_pairs_20261108_2009.csv
+
+>>> same-score-fix FL
+
+SAME-SCORE DOUBLE-BOOKINGS FL - PREVIEW (nothing changed)
+ 995 pairs {'DROP A': 190, 'DROP B': 162, 'UNDECIDED': 643} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_same_score_20261108_2011.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  349       None   None
+
+>>> report FL double-booked
+
+REPORT double-booked FL: 3081 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_double_booked_20261108_2012.csv
+   Kind             Team                   Season  Gap  A_Date      A_Opp                                A_Score  A_Source                                  A_Batch  B_Date      B_Opp                                    B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1969    0    1969-09-27  Hawthorne (FL)                       27-0     The_Orlando_Sentinel_1969_09_27_Page_24.  93       1969-09-27  Sarasota Cardinal Mooney (FL)            27-14    The_Orlando_Sentinel_1969_09_27_Page_24.  93       C97D1829-DBE8-4275-96A7-3A475170AC06  06CA65AC-BFE2-4744-9596-92309DE10F58
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1969    0    1969-11-15  Macclenny Baker County (FL)          17-0     The_Orlando_Sentinel_1969_11_15_Page_28.  93       1969-11-15  Winter Park Trinity Prep (FL)            52-0     The_Orlando_Sentinel_1969_11_15_Page_28.  93       EE655782-A68B-4E74-873D-B7CBE06EDADF  0DDE7C68-ED0C-4D21-9B23-C1CFEAEB149A
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1969    1    1969-12-12  Delray Beach Carver (FL)             6-30     http://www.fhsaa.org                      None     1969-12-13  Baker (FL)                               28-6     The_Orlando_Sentinel_1969_12_13_Page_26.  93       F7291911-D3D4-45BC-AC8A-0AF9C77D1951  5FBB55DF-6B44-4501-B924-4AFFA67F8072
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1970    0    1970-10-24  Blountstown (FL)                     18-7     The_Orlando_Sentinel_1970_10_24_Page_24.  92       1970-10-24  Newberry (FL)                            6-12     The_Orlando_Sentinel_1970_10_24_Page_24.  92       E01B1848-FA8E-4E5C-8BA8-70B7F100C918  D10F744E-6CAF-487D-A5B7-BE3B2B522552
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1991    0    1991-10-25  Jacksonville Bolles (FL)             39-18    https://www.newspapers.com/image/2676961  None     1991-10-25  Cape Coral Mariner (FL)                  0-35     https://www.newspapers.com/image/2321484  None     432CA2C4-568C-4D4B-94D3-9CC3712B17D3  1EEA2FF4-9498-413F-943F-B47FD27E3FED
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1991    0    1991-10-25  Cape Coral Mariner (FL)              0-35     https://www.newspapers.com/image/2321484  None     1991-10-25  Jacksonville Bolles (FL)                 39-19    https://www.newspapers.com/image/2321484  None     1EEA2FF4-9498-413F-943F-B47FD27E3FED  293B1750-BB0A-48D6-A17C-E962DC995F1A
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1992    0    1992-10-09  Tift County (GA)                     16-14    http://ghsfha.org/                        None     1992-10-09  Gainesville Buchholz (FL)                25-13    https://www.newspapers.com/image/2678688  None     180429CF-5997-4E68-A965-04C952E4EDEC  B120EE9B-C95C-46F4-8F73-0B5A40FA5114
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1994    0    1994-12-16  Dade City Pasco (FL)                 34-27    http://www.fhsaa.org/sites/default/files  None     1994-12-16  Lake Wales (FL)                          25-6     https://floridahsfootball.com/football-v  None     B98F43D2-57A5-4184-8FC0-7824CE7FD09B  0025D78C-55FB-4A46-B661-A8EEE720FF90
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1999    0    1999-10-01  Gainesville (FL)                     37-21    https://www.newspapers.com/image/2631708  None     1999-10-01  St. Petersburg Keswick Christian (FL)    45-6     https://www.newspapers.com/image/2631708  None     3B61441E-17C6-4789-A135-5190EAE48CBE  DD565E3A-F507-4652-B4B7-F406531A45F5
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  1999    0    1999-12-03  Live Oak Suwannee (FL)               47-48    https://www.newspapers.com/image/2388444  None     1999-12-03  Jacksonville Ribault (FL)                38-14    http://www.fhsaa.org/sites/default/files  None     37C9AFEA-9BE0-493A-B762-6F9AE3677AAD  DA04858A-E1C6-4C56-8604-EA57F19706A5
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  2000    0    2000-09-08  Melbourne Central Catholic (FL)      0-37     https://www.newspapers.com/image/3416559  None     2000-09-08  Citra North Marion (FL)                  14-24    https://www.newspapers.com/image/2690935  None     E720AE65-278D-4C49-89DD-3B611F1D7F4F  0FBDFCBD-C4AA-404D-8715-CAB2B6644D10
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  2000    1    2000-10-12  Gainesville Eastside (FL)            14-13    https://www.newspapers.com/image/2691019  None     2000-10-13  St. Petersburg Northside Christian (FL)  26-6     https://www.newspapers.com/image/3415281  None     3ABA7A2F-90F8-444C-81C2-7160BD346204  C1D64114-83FB-4B03-BE9E-B6E91D0EA98A
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  2000    0    2000-10-20  St. Petersburg Shorecrest Prep (FL)  10-28    https://www.newspapers.com/image/3415858  None     2000-10-20  Ocala Lake Weir (FL)                     49-0     https://www.newspapers.com/image/3415858  None     594703FA-F9CE-42D5-9CDF-B55FA4435641  EC4499E8-BCF2-4C01-8496-D2CF5F54578E
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  2000    0    2000-10-27  Fort Meade (FL)                      0-56     https://www.newspapers.com/image/3416124  None     2000-10-27  Wildwood (FL)                            56-0     https://www.newspapers.com/image/3416124  None     21679CA2-8534-474D-98D2-C5E2F477AB84  D4D38B28-419E-4DC5-BB2C-C8E46A52A748
+   DIFFERENT GAMES  Alachua Santa Fe (FL)  2000    0    2000-10-27  Fort Meade (FL)                      0-56     https://www.newspapers.com/image/3416124  None     2000-10-27  Wildwood (FL)                            45-6     https://www.newspapers.com/image/3416124  None     21679CA2-8534-474D-98D2-C5E2F477AB84  381187C3-B776-4C8E-9D98-E5133B25FC09
+   ... 3066 more rows (see CSV)
+
+>>> query FL season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_season_date_1_20261108_2012.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_season_date_2_20261108_2012.csv
+
+>>> query FL forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_forfeits_1_20261108_2012.csv
+ set 2: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_forfeits_2_20261108_2012.csv
+
+>>> query FL college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_1_20261108_2012.csv
+ set 2: 52 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_2_20261108_2012.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_3_20261108_2012.csv
+ set 4: 1467 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_4_20261108_2012.csv
+
+=== OK 2026-11-08 20:12:29

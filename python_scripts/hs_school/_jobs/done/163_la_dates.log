@@ -1,0 +1,44 @@
+
+>>> set-dates LA --file hsfha_dates_blank.csv --reason "no-source estimated date replaced by HSFHA-LA game date (both teams + score match)" --commit
+
+SET DATES LA - COMMIT
+ 7 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_set_dates_COMMITTED_20261111_0847.csv
+   Season  OldDate     NewDate     DayShift  Home                        Home_Score  Visitor                       Visitor_Score  Source  Note                   ID                                  
+   1979    1979-08-31  1979-09-07  7         Lafayette Acadiana (LA)     7           River Ridge Curtis (LA)       0              None    hsfha.org game 472672  94AD1F33-CEC2-460A-BDF6-894969B5F9A8
+   1979    1979-09-07  1979-09-14  7         Lafayette Acadiana (LA)     14          Lafayette Northside (LA)      0              None    hsfha.org game 472665  5F16555C-F510-4E6D-814C-71E2634531B0
+   1979    1979-09-14  1979-09-21  7         Lafayette Acadiana (LA)     40          Opelousas (LA)                15             None    hsfha.org game 472646  1AFEE179-A0B0-43A8-A58D-D70A82C62D48
+   1979    1979-11-09  1979-11-16  7         Baton Rouge Broadmoor (LA)  31          Lafayette Acadiana (LA)       21             None    hsfha.org game 472508  513AEFA6-E774-4B9B-A713-7E6DDF597216
+   1985    1985-10-04  1985-10-11  7         Opelousas (LA)              22          Lafayette Acadiana (LA)       7              None    hsfha.org game 465377  CC37AB1D-1762-43AF-839A-075693686D72
+   1999    1999-08-27  1999-09-03  7         Lafayette Acadiana (LA)     47          Baton Rouge Tara (LA)         13             None    hsfha.org game 447404  241EB924-9B25-425E-8EDA-1CEB0241F9CF
+   1999    1999-11-05  1999-11-13  8         Lafayette Acadiana (LA)     36          Marrero Archbishop Shaw (LA)  35             None    hsfha.org game 446366  D1E39D06-49A3-48F1-B916-EFFB0F64DC3C
+   Status     Listed  Updated  Err 
+   COMMITTED  7       7        None
+
+>>> set-dates LA --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-LA date: same teams + same score in season" --commit
+
+SET DATES LA - COMMIT
+ 523 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_set_dates_COMMITTED_20261111_0847.csv
+   Season  OldDate     NewDate     DayShift  Home                            Home_Score  Visitor                         Visitor_Score  Source                                    Note                                      ID                                  
+   1926    1926-10-29  1926-11-11  13        Shreveport Byrd (LA)            20          Haynesville (LA)                7              http://www.cebyrdathletics.com/uploadedf  hsfha.org game 480088 (same teams+score)  A0073EE4-244A-4CA5-A7CC-BD5B94F23E4C
+   1926    1926-09-24  1926-11-11  48        Little Rock Central (AR)        18          New Orleans Warren Easton (LA)  6              http://www.classmates.com/siteui/yearboo  hsfha.org game 482408 (same teams+score)  FB9F4267-1A0E-4E61-920F-BB32C9F01E46
+   1929    1929-10-25  1929-11-08  14        Haynesville (LA)                9           Shreveport Byrd (LA)            7              http://www.cebyrdathletics.com/uploadedf  hsfha.org game 480006 (same teams+score)  4FD8D9F2-7551-4B61-98BA-56DA294C4821
+   1932    1932-11-04  1932-11-19  15        Haynesville (LA)                0           Shreveport Byrd (LA)            0              http://www.cebyrdathletics.com/uploadedf  hsfha.org game 479909 (same teams+score)  3B2A8EB1-E686-4FBD-A07B-F00D48B7B7D8
+   1933    1933-12-01  1933-12-16  15        Shreveport Byrd (LA)            13          Haynesville (LA)                6              http://www.cebyrdathletics.com/uploadedf  hsfha.org game 479886 (same teams+score)  F8808C61-7589-459C-A407-0CA9B9F128C8
+   1941    1941-10-17  1941-11-07  21        Shreveport Byrd (LA)            13          Haynesville (LA)                9              http://www.cebyrdathletics.com/uploadedf  hsfha.org game 479673 (same teams+score)  C542A9B9-B7FD-4185-AE1C-28F6FBF62BA3
+   1942    1942-10-16  1942-11-06  21        Shreveport Byrd (LA)            25          Haynesville (LA)                7              http://www.cebyrdathletics.com/uploadedf  hsfha.org game 479637 (same teams+score)  07D41F60-DF9C-42EC-8D59-550515C256F4
+   1946    1946-10-18  1946-11-01  14        Haynesville (LA)                7           Shreveport Byrd (LA)            0              http://www.cebyrdathletics.com/uploadedf  hsfha.org game 479532 (same teams+score)  8B5F64A7-54BB-4E7A-8BC1-958FAE7E3C7D
+   1946    1946-11-01  1946-12-14  43        New Orleans Warren Easton (LA)  0           Haynesville (LA)                0              http://www.classmates.com/siteui/yearboo  hsfha.org game 479524 (same teams+score)  6AA04A60-F8B4-4E43-A9FB-D2D62683A4D5
+   1947    1947-10-10  1947-10-23  13        Sulphur (LA)                    34          De Quincy (LA)                  15             http://www.classmates.com/yearbooks/Sulp  hsfha.org game 479482 (same teams+score)  4C9BBFF1-A83B-4BA5-805B-116F6613ACC9
+   ... 513 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  523     523      None
+
+>>> same-score-fix LA --commit
+ 1128 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS LA - COMMIT
+ 925 pairs {'DROP B': 381, 'DROP A': 363, 'UNDECIDED': 181} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_same_score_COMMITTED_20261111_0849.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  739       85ABC497-20C3-4249-94DD-7877D7ECE529  None
+
+=== OK 2026-11-11 08:49:18

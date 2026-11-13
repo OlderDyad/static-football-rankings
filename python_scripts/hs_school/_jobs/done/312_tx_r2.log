@@ -1,0 +1,10 @@
+
+>>> same-score-fix TX --commit
+ 1304 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS TX - COMMIT
+ 1167 pairs {'DROP A': 13, 'DROP B': 13, 'UNDECIDED': 1141} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_same_score_COMMITTED_20261113_0610.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  26        6E3A2119-EA41-41AF-9E47-6912E3E91E43  None
+
+>>> consolidate TX --reason "TX round 2 (2026-11-13): same-school names, see _coop_scripts/TX_cfg.py"

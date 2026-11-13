@@ -1,0 +1,32 @@
+
+>>> same-score-fix WY --commit
+ 136 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS WY - COMMIT
+ 776 pairs {'DROP B': 298, 'DROP A': 303, 'UNDECIDED': 175} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_same_score_COMMITTED_20261106_0742.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  595       CD69C69F-6100-4B1D-9F63-7E899A05E650  None
+   (tracker: no row for WY step 2.3; run: EXEC dbo.HS_Cleanup_AddState 'WY')
+
+>>> report WY double-booked
+
+REPORT double-booked WY: 913 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_double_booked_20261106_0743.csv
+   Kind             Team                           Season  Gap  A_Date      A_Opp                      A_Score  A_Source                                  A_Batch  B_Date      B_Opp                      B_Score  B_Source                               B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Afton Star Valley (WY)         1956    1    1956-09-08  Montpelier Bear Lake (ID)  29-0     The_Idaho_Statesman_1956_09_08_8.csv      186      1956-09-07  Montpelier (ID)            39-0     http://wyoming-football.com/           None     1C2CED4D-78F7-438B-B11C-94B0D7E3660B  9A142956-5C68-4ACC-92D1-B491658902A0
+   DIFFERENT GAMES  Afton Star Valley (WY)         1962    1    1962-09-07  Montpelier (ID)            46-0     http://wyoming-football.com/              None     1962-09-08  Montpelier Bear Lake (ID)  48-0     The_Billings_Gazette_1962_09_08_8.csv  37       95556772-C9D2-4CC6-8EA1-3EE9050B3320  C2C09EDC-A829-4297-9BBE-50D19F8B7CEE
+   DIFFERENT GAMES  Afton Star Valley (WY)         1990    1    1990-09-22  Cody-Kilgore (NE)          44-8     Rapid City Journal                        None     1990-09-21  Cody (WY)                  42-8     http://wyoming-football.com/           None     CC8CF828-1786-4340-929B-0475CD810403  696C19CC-9A50-49E2-AA07-7A2B92724A45
+   DIFFERENT GAMES  Afton Star Valley (WY)         1991    1    1991-09-14  Montpelier Bear Lake (ID)  2-0      https://www.newspapers.com/image/5755387  None     1991-09-13  Lovell (WY)                33-12    http://wyoming-football.com/           None     9CD73DF6-C1E7-43E1-8C17-71C948FA510B  BCF68567-01D9-4E1A-8607-925AACD2F1E7
+   DIFFERENT GAMES  Afton Star Valley (WY)         2017    2    2017-10-01  Powell (WY)                40-7     www.maxpreps.com                          None     2017-09-29  Cody (WY)                  16-6     www.maxpreps.com                       None     58EAEA9D-0A70-46DC-A0D2-72AD27138DDF  6BA46589-C1CB-42F7-8779-ED50A03AA8EC
+   DIFFERENT GAMES  Afton Star Valley (WY)         2017    1    2017-10-02  Green River (WY)           21-0     www.maxpreps.com                          None     2017-10-01  Powell (WY)                40-7     www.maxpreps.com                       None     0F1D5DA9-43C1-4890-9AED-440107426958  58EAEA9D-0A70-46DC-A0D2-72AD27138DDF
+   DIFFERENT GAMES  Afton Star Valley (WY)         2019    1    2019-10-02  Evanston (WY)              63-0     www.maxpreps.com                          None     2019-10-01  Jackson Hole (WY)          30-0     www.maxpreps.com                       None     512796D4-1609-4B13-B006-D3965F309382  A010FF16-925E-4FAB-A447-F393D4EEF1F5
+   DIFFERENT GAMES  Afton Star Valley (WY)         2019    2    2019-10-04  Powell (WY)                36-0     www.maxpreps.com                          None     2019-10-02  Evanston (WY)              63-0     www.maxpreps.com                       None     47C27400-7903-4A3C-B8DF-5B5976DA9AED  512796D4-1609-4B13-B006-D3965F309382
+   DIFFERENT GAMES  Afton Star Valley (WY)         2023    1    2023-09-28  Riverton (WY)              56-6     www.maxpreps.com                          None     2023-09-29  Powell (WY)                24-21    www.maxpreps.com                       None     FAEBBFD1-E92A-495C-B699-43767B58DE90  10BC8EC9-34AD-4663-A996-64C50C7DD5CF
+   DIFFERENT GAMES  Albin (WY)                     1950    1    1950-10-03  Sunrise (WY)               14-47    http://wyoming-football.com/              None     1950-10-04  Morrill (NE)               18-38    http://wyoming-football.com/           None     3E373F2E-3346-4C45-B081-697D7CE692A9  D353C233-D11A-4A87-B45E-F4C7BFA9A191
+   DIFFERENT GAMES  Baggs (WY)                     1953    1    1953-10-16  Cokeville (WY)             18-68    http://wyoming-football.com/              None     1953-10-17  Big Piney (WY)             31-31    http://wyoming-football.com/           None     8301661B-7886-4EBE-9654-68C9716925F4  E76D6EB8-B8A6-43DA-B631-8203B16598B1
+   DIFFERENT GAMES  Baggs Little Snake River (WY)  2017    1    2017-10-01  Burlington (WY)            38-49    www.maxpreps.com                          None     2017-10-02  Hanna-Elk Mountain (WY)    75-13    www.maxpreps.com                       None     C5EB0806-8848-49A0-8F60-7CC173AD3ADE  498199E6-CB13-4A55-9444-BC44BD5119D7
+   DIFFERENT GAMES  Baggs Little Snake River (WY)  2017    1    2017-10-01  Burlington (WY)            38-49    www.maxpreps.com                          None     2017-10-02  Farson-Eden (WY)           53-18    www.maxpreps.com                       None     C5EB0806-8848-49A0-8F60-7CC173AD3ADE  FAF1F702-B5B1-400D-99B9-872B648269CE
+   DIFFERENT GAMES  Baggs Little Snake River (WY)  2017    2    2017-10-01  Burlington (WY)            38-49    www.maxpreps.com                          None     2017-09-29  Ten Sleep (WY)             64-0     www.maxpreps.com                       None     C5EB0806-8848-49A0-8F60-7CC173AD3ADE  2B2E848E-DF1E-41AA-9E88-909ACFD27FD7
+   DIFFERENT GAMES  Baggs Little Snake River (WY)  2017    0    2017-10-02  Farson-Eden (WY)           53-18    www.maxpreps.com                          None     2017-10-02  Hanna-Elk Mountain (WY)    75-13    www.maxpreps.com                       None     FAF1F702-B5B1-400D-99B9-872B648269CE  498199E6-CB13-4A55-9444-BC44BD5119D7
+   ... 898 more rows (see CSV)
+
+=== OK 2026-11-06 07:43:26

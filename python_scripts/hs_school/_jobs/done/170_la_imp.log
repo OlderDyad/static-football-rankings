@@ -1,0 +1,30 @@
+
+>>> import-games LA --file hsfha_import_LA.csv --reason "HSFHA-LA (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+
+IMPORT GAMES LA - COMMIT from hsfha_import_LA.csv (9856 rows)
+   Skip                                Games
+   a team already has a game that day  1291 
+   IMPORT                              8397 
+   name not in HS_Team_Names           168  
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_import_skipped_20261111_0907.csv
+   Status     Imported  BatchID  Err 
+   COMMITTED  8397      199      None
+
+>>> same-score-fix LA
+ 1128 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS LA - PREVIEW (nothing changed)
+ 188 pairs {'DROP A': 6, 'DROP B': 9, 'UNDECIDED': 173} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_same_score_20261111_0908.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  15        None   None
+
+>>> dedup LA
+
+DEDUP v4 LA - PREVIEW (nothing changed)
+ dedup_archive: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_archive_20261111_0908.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_review_20261111_0908.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_summary_20261111_0908.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  LA     111243        16                   2                None 
+
+=== OK 2026-11-11 09:08:56

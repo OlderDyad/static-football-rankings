@@ -1,0 +1,124 @@
+
+>>> set-dates FL --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-FL game date (both teams + score match)" --commit
+
+SET DATES FL - COMMIT
+ 21 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_set_dates_COMMITTED_20261111_1857.csv
+   Season  OldDate     NewDate     DayShift  Home                                     Home_Score  Visitor                                Visitor_Score  Source                       Note                   ID                                  
+   2000    2000-09-08  2000-09-01  -7        Fort Lauderdale St. Thomas Aquinas (FL)  28          Deerfield Beach (FL)                   7              http://www.hsfdatabase.com/  hsfha.org game 567232  0CB1D7C6-5A8D-4CB3-992D-AE5DCF79E174
+   2000    2000-09-15  2000-09-08  -7        Fort Lauderdale St. Thomas Aquinas (FL)  48          Fort Lauderdale Cardinal Gibbons (FL)  14             http://www.hsfdatabase.com/  hsfha.org game 567139  B3E5D3E9-CD41-4330-999F-3F2E74AE87E4
+   2000    2000-09-22  2000-09-15  -7        Fort Lauderdale St. Thomas Aquinas (FL)  37          Hollywood McArthur (FL)                6              http://www.hsfdatabase.com/  hsfha.org game 567035  526E22F6-BA1B-4F69-B381-87724B51F86A
+   2000    2000-09-29  2000-09-22  -7        Fort Lauderdale St. Thomas Aquinas (FL)  17          Fort Lauderdale Stranahan (FL)         14             http://www.hsfdatabase.com/  hsfha.org game 566841  35CA7603-B9AE-4B74-ABB6-04C69FC40696
+   2000    2000-10-06  2000-09-28  -8        Fort Lauderdale St. Thomas Aquinas (FL)  10          Plantation (FL)                        9              http://www.hsfdatabase.com/  hsfha.org game 566758  015B81E3-2540-4460-A6CA-E305B659A53C
+   2000    2000-10-13  2000-10-06  -7        Fort Lauderdale St. Thomas Aquinas (FL)  21          Hallandale (FL)                        7              http://www.hsfdatabase.com/  hsfha.org game 566613  B844CB19-DB54-422A-B0E0-BC888A29BB0B
+   2000    2000-10-20  2000-10-13  -7        Fort Lauderdale St. Thomas Aquinas (FL)  19          Fort Lauderdale Dillard (FL)           14             http://www.hsfdatabase.com/  hsfha.org game 566503  A5BBB310-9550-40E2-8974-AA6081618ACB
+   2000    2000-10-27  2000-10-20  -7        Fort Lauderdale St. Thomas Aquinas (FL)  35          Oakland Park Northeast (FL)            7              http://www.hsfdatabase.com/  hsfha.org game 566556  5852993E-B82E-4B29-A38A-5E72DDA41D16
+   2000    2000-11-03  2000-10-27  -7        Fort Lauderdale St. Thomas Aquinas (FL)  48          South Plantation (FL)                  0              http://www.hsfdatabase.com/  hsfha.org game 566265  F5ECA308-7880-4BD4-A168-74ED1DED71CA
+   2000    2000-11-10  2000-11-03  -7        Fort Lauderdale St. Thomas Aquinas (FL)  27          Hollywood South Broward (FL)           0              http://www.hsfdatabase.com/  hsfha.org game 566160  6A3B6565-3FB2-4F7E-B15C-4705BBAF6A75
+   ... 11 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  21      21       None
+
+>>> set-dates FL --file hsfha_dates_blank.csv --reason "no-source date replaced by HSFHA-FL game date (both teams + score match)" --commit
+
+SET DATES FL - COMMIT
+ 4 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_set_dates_COMMITTED_20261111_1857.csv
+   Season  OldDate     NewDate     DayShift  Home                                  Home_Score  Visitor                   Visitor_Score  Source  Note                   ID                                  
+   1982    1982-11-19  1982-11-26  7         Vero Beach (FL)                       27          Longwood Lyman (FL)       6              None    hsfha.org game 638321  E9B8AC0B-FF93-45AA-B8BC-3A55D9BC6725
+   1982    1982-12-03  1982-12-10  7         Miami Columbus (FL)                   31          Vero Beach (FL)           24             None    hsfha.org game 638299  2C700260-279B-49E0-BCEB-BD1B68AA1E07
+   1995    1995-09-15  1995-09-08  -7        Altamonte Springs Lake Brantley (FL)  10          Jacksonville Bolles (FL)  3              None    hsfha.org game 573771  D6F29DAE-0F67-4747-9ED0-B6821665FCBB
+   2001    2001-09-28  2001-09-21  -7        Naples (FL)                           39          Fort Myers (FL)           29             None    hsfha.org game 565604  A2E57BE1-A0A4-4022-B0EF-7E46ECE5E75B
+   Status     Listed  Updated  Err 
+   COMMITTED  4       4        None
+
+>>> set-dates FL --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-FL date: same teams + same score in season" --commit
+
+SET DATES FL - COMMIT
+ 97 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_set_dates_COMMITTED_20261111_1857.csv
+   Season  OldDate     NewDate     DayShift  Home                                      Home_Score  Visitor                               Visitor_Score  Source                                    Note                                      ID                                  
+   1931    1931-10-02  1931-10-23  21        Saint Petersburg Florida Military Academ  13          Chattanooga Baylor (TN)               6              http://www.hsfdatabase.com/               hsfha.org game 669430 (same teams+score)  7EF65ED5-C9F0-45A7-8B57-76B6D2FE86D7
+   1935    1935-09-20  1935-10-04  14        Kingsport Dobyns-Bennett (TN)             36          Miami Senior (FL)                     0              None                                      hsfha.org game 670263 (same teams+score)  39EC6524-0D17-4FAF-B70D-6CB81B6644CE
+   1938    1938-11-04  1938-11-23  19        Morristown (TN)                           38          Lake City Columbia (FL)               0              www.hsfdatabase.com-tennessee.htm         hsfha.org game 1549275 (same teams+score  701D7F56-AEE2-4266-8350-E7947A3DDC1F
+   1949    1949-10-07  1949-10-28  21        Daytona Beach Mainland (FL)               39          Ocala (FL)                            0              http://www.classmates.com/siteui/yearboo  hsfha.org game 651377 (same teams+score)  8C98300C-F3E5-4912-9D0B-1239476C54E4
+   1951    1951-09-28  1951-10-13  15        Miami Senior (FL)                         14          Harrison Chattanooga Central (TN)     12             None                                      hsfha.org game 669436 (same teams+score)  4DC812CE-B584-45C6-8420-D1E0EE47ECD4
+   1952    1952-09-12  1952-10-16  34        Coral Gables (FL)                         42          Miami Tech (FL)                       0              http://www.classmates.com/yearbooks/Cora  hsfha.org game 651059 (same teams+score)  E3F53070-4B60-4B70-9F3B-227FB4D1C774
+   1952    1952-10-03  1952-11-06  34        Coral Gables (FL)                         20          Tampa Hillsborough (FL)               7              http://www.classmates.com/yearbooks/Cora  hsfha.org game 651001 (same teams+score)  C37CCB83-5FB0-4285-94D8-D48711820E31
+   1952    1952-10-17  1952-11-13  27        Miami Jackson (FL)                        27          Coral Gables (FL)                     0              http://www.classmates.com/yearbooks/Miam  hsfha.org game 650970 (same teams+score)  D2379FCA-8AB8-408B-BC2B-CC19AD3073C4
+   1959    1959-10-23  1959-11-12  20        Sebring (FL)                              19          Lakeland Kathleen (FL)                0              http://www.classmates.com/yearbooks/Kath  hsfha.org game 649748 (same teams+score)  A644D195-23E1-4F7F-92CB-FDFE1C73CC8C
+   1960    1960-11-04  1960-11-19  15        Hollywood South Broward (FL)              39          Ft. Lauderdale Central Catholic (FL)  6              http://www.classmates.com/siteui/yearboo  hsfha.org game 649433 (same teams+score)  BD571A49-A220-4079-88C6-8ECA8EBE2808
+   ... 87 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  97      97       None
+
+>>> set-scores FL --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-FL score (David 2026-11-10 rule)" --commit
+
+SET SCORES FL - COMMIT
+ 48 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_set_scores_COMMITTED_20261111_1857.csv
+   ID                                    Season  Date        Home                                  OldHS  NewHS  Visitor                              OldVS  NewVS  Source                                    Note                 
+   4440A666-71E3-47FA-9004-6D69418018B4  1930    1930-09-26  Tampa Plant (FL)                      1      0      Palmetto (FL)                        0      0      http://www.classmates.com/yearbooks/H-B-  hsfha.org game 652160
+   88E21057-38D3-4DCA-ABBE-9B936B5A881D  1931    1931-09-18  Jacksonville Riverside (FL)           13     33     Tallahassee Leon (FL)                0      0      http://www.classmates.com/siteui/yearboo  hsfha.org game 652138
+   411B7F3A-7541-4BD7-9D33-42D0FAC4A7DB  1942    1942-10-23  Vero Beach (FL)                       1      0      Titusville (FL)                      0      0      None                                      hsfha.org game 651778
+   39B7C7AB-C0C5-49E7-84BC-AF92777005FC  1967    1967-09-15  Coral Gables (FL)                     22     23     Miami Edison (FL)                    0      0      http://www.classmates.com/siteui/yearboo  hsfha.org game 647718
+   8BFB90AD-8396-4D3E-B504-45AD7A759CDC  1969    1969-11-07  Sarasota (FL)                         1      0      Sarasota Riverview (FL)              0      0      http://www.classmates.com/siteui/yearboo  hsfha.org game 646715
+   461633D5-7C37-416D-B596-F41D10396055  1972    1972-11-17  Biloxi (MS)                           38     21     Neptune Beach Fletcher (FL)          21     38     https://www.classmates.com/siteui/yearbo  hsfha.org game 670304
+   BCD61E59-FC3B-4237-A982-365ADC59EF28  1973    1973-10-12  Delray Beach Atlantic Community (FL)  27     24     Pahokee (FL)                         6      6      https://www.classmates.com/siteui/yearbo  hsfha.org game 645048
+   DD24A631-ACA3-4258-867A-4F45C9DF2DA0  1975    1975-09-12  Port Orange Spruce Creek (FL)         1      0      Daytona Beach Seabreeze (FL)         0      0      https://www.classmates.com/siteui/yearbo  hsfha.org game 644268
+   4D9775B6-FF81-4492-A1BD-F0486D944405  1975    1975-09-19  Plant City (FL)                       1      0      Tampa King (FL)                      0      0      https://www.classmates.com/siteui/yearbo  hsfha.org game 644215
+   B0D0AC0B-1C63-4C5F-8994-8CCAADC37B1A  1975    1975-10-17  Saint Petersburg Lakewood (FL)        1      0      Saint Petersburg Dixie Hollins (FL)  0      0      http://www.classmates.com/siteui/yearboo  hsfha.org game 644057
+   ... 38 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  48      48       None
+
+>>> same-score-fix FL --commit
+ 179 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS FL - COMMIT
+ 179 pairs {'DROP A': 32, 'DROP B': 22, 'UNDECIDED': 125} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_same_score_COMMITTED_20261111_1858.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  53        E9E920E4-68A5-430F-8E7D-E63CEA49F447  None
+
+>>> import-games FL --file hsfha_import_FL.csv --reason "HSFHA-FL (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+
+IMPORT GAMES FL - COMMIT from hsfha_import_FL.csv (1402 rows)
+   Skip                                Games
+   a team already has a game that day  408  
+   IMPORT                              755  
+   name not in HS_Team_Names           239  
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_import_skipped_20261111_1858.csv
+   Status     Imported  BatchID  Err 
+   COMMITTED  755       204      None
+
+>>> dedup FL
+
+DEDUP v4 FL - PREVIEW (nothing changed)
+ dedup_archive: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_archive_20261111_1858.csv
+ dedup_review: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_review_20261111_1858.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_summary_20261111_1858.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  FL     129952        17                   3                None 
+
+>>> review-pairs FL
+
+REVIEW-ONLY PAIRS FL - PREVIEW (nothing changed)
+ 3 pairs {'LONG': 1, 'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_review_pairs_20261111_1858.csv
+
+>>> query FL season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_season_date_1_20261111_1858.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_season_date_2_20261111_1858.csv
+
+>>> query FL forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_forfeits_1_20261111_1858.csv
+ set 2: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_forfeits_2_20261111_1858.csv
+
+>>> query FL college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_1_20261111_1858.csv
+ set 2: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_2_20261111_1858.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_3_20261111_1858.csv
+ set 4: 1516 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_4_20261111_1858.csv
+
+=== OK 2026-11-11 18:58:50

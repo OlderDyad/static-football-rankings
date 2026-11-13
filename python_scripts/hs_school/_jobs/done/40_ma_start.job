@@ -1,0 +1,12 @@
+addstate MA
+report MA names
+report MA drift
+report MA same-town
+mapcheck MA
+dedup MA
+review-pairs MA
+same-score-fix MA
+report MA double-booked
+query MA season_date.sql
+query MA forfeits.sql
+query MA college_check.sql

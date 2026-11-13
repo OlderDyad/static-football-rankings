@@ -1,0 +1,27 @@
+
+>>> commit SC
+
+DEDUP v4 SC - COMMIT
+ dedup_archive: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_dedup_archive_COMMITTED_20261111_1656.csv
+ dedup_review: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_dedup_review_COMMITTED_20261111_1656.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_dedup_summary_COMMITTED_20261111_1656.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  SC     102200        22                   19               7BDE108B-A58F-4F4D-AF6F-547188575DC4
+
+REVIEW-ONLY PAIRS SC - COMMIT
+ 17 pairs {'LONG': 3, 'SHORT': 14} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_review_pairs_COMMITTED_20261111_1656.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  17        B147578D-BD0B-49BC-9569-EA57A096990F  None
+
+>>> query SC sc_dump.sql
+
+QUERY sc_dump (1 result sets)
+ set 1: 102163 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_sc_dump_1_20261111_1656.csv
+
+>>> query SC sc_export.sql
+
+QUERY sc_export (2 result sets)
+ set 1: 102163 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_sc_export_1_20261111_1656.csv
+ set 2: 844 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_sc_export_2_20261111_1656.csv
+
+=== OK 2026-11-11 16:56:59

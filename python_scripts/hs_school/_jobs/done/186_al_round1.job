@@ -1,0 +1,34 @@
+move-team AL --from "Huntsville A.L. Johnson (AL)" --to "Huntsville J.O. Johnson (AL)" --seasons 1880-2026 --ids hsfha_mv_00.csv --reason "HSFHA-AL match: game belongs to Huntsville J.O. Johnson (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Birmingham West End (AL)" --to "Walnut Grove West End (AL)" --seasons 1880-2026 --ids hsfha_mv_01.csv --reason "HSFHA-AL match: game belongs to Walnut Grove West End (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Millport South Lamar (AL)" --to "Millport (AL)" --seasons 1880-2026 --ids hsfha_mv_02.csv --reason "HSFHA-AL match: game belongs to Millport (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Elba (AL)" --to "Alba (AL)" --seasons 1880-2026 --ids hsfha_mv_03.csv --reason "HSFHA-AL match: game belongs to Alba (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Huntsville Columbia (AL)" --to "Columbia Houston County (AL)" --seasons 1880-2026 --ids hsfha_mv_04.csv --reason "HSFHA-AL match: game belongs to Columbia Houston County (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Columbiana Cornerstone Christian (AL)" --to "Rainsville Cornerstone Christian (AL)" --seasons 1880-2026 --ids hsfha_mv_05.csv --reason "HSFHA-AL match: game belongs to Rainsville Cornerstone Christian (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Plantersville Dallas County (AL)" --to "Livingston (AL)" --seasons 1880-2026 --ids hsfha_mv_06.csv --reason "HSFHA-AL match: game belongs to Livingston (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Huntsville Councill (AL)" --to "Councill Training (AL)" --seasons 1880-2026 --ids hsfha_mv_08.csv --reason "HSFHA-AL match: game belongs to Councill Training (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Marion (AL)" --to "Marion Military Institute College (AL)" --seasons 1880-2026 --ids hsfha_mv_10.csv --reason "HSFHA-AL match: game belongs to Marion Military Institute College (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Huntsville Randolph Academy (AL)" --to "Wedowee Randolph County (AL)" --seasons 1880-2026 --ids hsfha_mv_11.csv --reason "HSFHA-AL match: game belongs to Wedowee Randolph County (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Augusta Westminster Schools of Augusta (GA)" --to "Huntsville Westminster Christian (AL)" --seasons 1880-2026 --ids hsfha_mv_12.csv --reason "HSFHA-AL match: game belongs to Huntsville Westminster Christian (AL) (hsfha.org school code + geography check)" --commit
+move-team AL --from "Huntsville Westminster Christian (AL)" --to "Huntsville Whitesburg Christian (AL)" --seasons 1880-2026 --ids hsfha_mv_w1.csv --reason "HSFHA-AL school code + geography check: Whitesburg Christian Academy games filed under Westminster Christian" --commit
+move-team AL --from "Alabaster Evangel Christian (AL)" --to "Eight Mile Evangel Christian (AL)" --seasons 1880-2026 --ids hsfha_mv_w2.csv --reason "HSFHA-AL school code + geography check: Evangel Christian (Saraland/Eight Mile) 1971-1987 games filed under Alabaster" --commit
+move-team AL --from "Selma Ellwood Christian (AL)" --to "Selma Central Christian Academy (AL)" --seasons 1880-2026 --ids hsfha_mv_w3.csv --reason "HSFHA-AL school code + geography check: Central Christian (Selma) 2004-2007 games filed under Ellwood Christian" --commit
+move-team AL --from "York Sumter Central (AL)" --to "York Sumter County (AL)" --seasons 1880-2010 --reason "Lineage split (consolidation: Sumter County + Livingston -> Sumter Central 2011, HSFHA-AL): Sumter County era" --commit
+remap AL --url "https://www.maxpreps.com/al/alexander-city/benjamin-russell-wildcats/football/schedule/" --to "Alexander City Benjamin Russell (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/alexandria/alexandria-valley-cubs/football/schedule/" --to "Alexandria (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/ariton/ariton-purple-cats/football/schedule/" --to "Ariton (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/bessemer/bessemer-city-tigers/football/schedule/" --to "Bessemer City Jess Lanier (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/birmingham/carver-birmingham-rams/football/schedule/" --to "Birmingham Carver (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/cecil/macon-east-montgomery-academy-knights/football/schedule/" --to "Cecil Macon-East Montgomery Academy (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/florence/mars-hill-bible-panthers/football/schedule/" --to "Florence Mars Hill Bible (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/grant/kate-duncan-smith-dar-patriots/football/schedule/" --to "Grant Kate Duncan Smith DAR (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/greenville/fort-dale-academy-eagles/football/schedule/" --to "Greenville Fort Dale Academy (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/kimberly/mortimer-jordan-blue-devils/football/schedule/" --to "Kimberly Mortimer Jordan (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/ragland/ragland-purple-devils/football/schedule/" --to "Ragland (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/semmes/mary-g-montgomery-vikings/football/schedule/" --to "Mary Montgomery (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/talladega/alabama-school-for-the-deaf-silent-warriors/football/schedule/" --to "Alabama School for the Deaf (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/troy/pike-liberal-arts-patriots/football/schedule/" --to "Troy Pike Liberal Arts (AL)" --commit
+remap AL --url "https://www.maxpreps.com/al/phenix-city/glenwood-gators/football/schedule/" --to "Phenix City Glenwood Academy (AL)" --commit
+mapcheck AL --commit
+consolidate AL --reason "AL round 1: HSFHA-AL same-school name variants (city-first names), renames merged to the latest name per David's rule (Jasper Walker->Jasper, Montgomery Lee->Percy Julian, Jefferson Davis->JAG, Fairfax->Valley, Erwin->Center Point...), MaxPreps 2024 pipeline names (Ariton Purple, Alexandria Valley...), Thomaston A.L. Johnson fixed (was Huntsville)"
+dedup AL
+review-pairs AL

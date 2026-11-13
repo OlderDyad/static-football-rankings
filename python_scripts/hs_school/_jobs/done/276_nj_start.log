@@ -1,0 +1,104 @@
+
+>>> addstate NJ
+Tracker rows ready for NJ
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report NJ drift
+
+REPORT drift NJ: 43 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_drift_20261112_1318.csv
+   Stopped                                 S_Games  S_First  S_Last  S_Mapped  Started                  N_Games  N_First  N_Last  N_Mapped
+   Bayonne Marist (NJ)                     565      1960     2019    0         None                     None     None     None    0       
+   Belvidere (NJ)                          781      1901     2023    0         Belvidere County (NJ)    31       2024     2026    1       
+   Bridgewater-Raritan (NJ)                638      1961     2023    0         None                     None     None     None    0       
+   Buena Regional (NJ)                     521      1973     2023    0         Buena (NJ)               29       2024     2026    1       
+   Camden Woodrow Wilson (NJ)              883      1931     2023    0         Camden Eastside (NJ)     31       2024     2026    1       
+   Camden Woodrow Wilson (NJ)              883      1931     2023    0         Camden Kipp Cooper (NJ)  34       2022     2026    1       
+   Camden Woodrow Wilson (NJ)              883      1931     2023    0         Camden Mastery (NJ)      37       2022     2026    1       
+   Chester West Morris Central (NJ)        690      1959     2023    0         Chester West (NJ)        34       2024     2026    1       
+   Dwight-Englewood (NJ)                   650      1931     2017    0         None                     None     None     None    0       
+   East Orange Campus (NJ)                 225      1971     2023    0         None                     None     None     None    0       
+   Edison Bishop Ahr (NJ)                  439      1949     2023    0         None                     None     None     None    0       
+   Emerson (NJ)                            619      1921     2023    0         None                     None     None     None    0       
+   Gloucester Catholic (NJ)                664      1914     2023    0         None                     None     None     None    0       
+   Harrison (NJ)                           833      1937     2023    0         None                     None     None     None    0       
+   Jackson Township Jackson Memorial (NJ)  662      1964     2025    1         None                     None     None     None    0       
+   ... 28 more rows (see CSV)
+
+>>> mapcheck NJ --commit
+
+MAPPING CHECK NJ - COMMIT (Team_ID set to the ProperName ID)
+ 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_mapcheck_COMMITTED_20261112_1318.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                          Team_ID_Name                          
+   https://www.maxpreps.com/nj/clark/johnso  Clark Johnson (NJ)                   1489     None    ProperName not in HS_Team_Names  None                                  
+   https://www.maxpreps.com/nj/edison/jp-st  Edison Jp St. evens (NJ)             2658     None    ProperName not in HS_Team_Names  None                                  
+   https://www.maxpreps.com/nj/flanders/mou  Flanders Mount Olive (NJ)            13695    None    ProperName not in HS_Team_Names  None                                  
+   https://www.maxpreps.com/nj/hightstown/p  Hightstown Peddie (NJ)               41535    None    ProperName not in HS_Team_Names  None                                  
+   https://www.maxpreps.com/nj/old-tappan/n  Old Tappan Nv Old (NJ)               44429    None    ProperName not in HS_Team_Names  None                                  
+   https://www.maxpreps.com/nj/plainsboro/w  Plainsboro West Windsor North (NJ)   33157    None    ProperName not in HS_Team_Names  None                                  
+   https://www.maxpreps.com/nj/point-pleasa  Point Pleasant Point Pleasant (NJ)   32803    None    ProperName not in HS_Team_Names  None                                  
+   https://www.maxpreps.com/nj/princeton/hu  Princeton Hun (NJ)                   4686     None    ProperName not in HS_Team_Names  None                                  
+   https://www.maxpreps.com/nj/springfield/  Springfield Dayton (NJ)              13789    None    ProperName not in HS_Team_Names  None                                  
+   https://www.maxpreps.com/nj/bordentown/b  Bordentown (NJ)                      59820    59819   Team_ID points to another name   Bordentown Manual Training (NJ)       
+   https://www.maxpreps.com/nj/cinnaminson/  Cinnaminson (NJ)                     8007     60744   Team_ID points to another name   Clark Arthur L. Johnson Regional (NJ) 
+   https://www.maxpreps.com/nj/erial/timber  Erial Timber Creek Regional (NJ)     61893    61866   Team_ID points to another name   Essex Fells Kingsley (NJ)             
+   https://www.maxpreps.com/nj/farmingdale/  Farmingdale Howell (NJ)              26560    62024   Team_ID points to another name   Flanders Mt. Olive (NJ)               
+   https://www.maxpreps.com/nj/gloucester-c  Gloucester City (NJ)                 70900    62539   Team_ID points to another name   Gloucester City Catholic (NJ)         
+   https://www.maxpreps.com/nj/gloucester-c  Gloucester City Catholic (NJ)        72061    70900   Team_ID points to another name   Gloucester City JV (NJ)               
+   https://www.maxpreps.com/nj/jersey-city/  Jersey City St. Peters Prep (NJ)     63534    21945   Team_ID points to another name   Jersey City St. Peter's Prep (NJ)     
+   https://www.maxpreps.com/nj/long-branch/  Long Branch (NJ)                     64581    64465   Team_ID points to another name   Lower Cape May Regional (NJ)          
+   https://www.maxpreps.com/nj/madison/madi  Madison (NJ)                         31285    64682   Team_ID points to another name   Madison Bayley-Ellard (NJ)            
+   https://www.maxpreps.com/nj/martinsville  Martinsville The Pingry School (NJ)  70521    26584   Team_ID points to another name   Martinsville The Pingry School JV (NJ)
+   https://www.maxpreps.com/nj/montclair/mo  Montclair Kimberley Academy (NJ)     65419    65418   Team_ID points to another name   Montclair State University (NJ)       
+   ... 5 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  16       None
+
+>>> dedup NJ
+
+DEDUP v4 NJ - PREVIEW (nothing changed)
+ dedup_archive: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_dedup_archive_20261112_1319.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_dedup_review_20261112_1319.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_dedup_summary_20261112_1319.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  NJ     161522        1                    1                None 
+
+>>> review-pairs NJ
+
+REVIEW-ONLY PAIRS NJ - PREVIEW (nothing changed)
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_review_pairs_20261112_1319.csv
+
+>>> same-score-fix NJ
+
+SAME-SCORE DOUBLE-BOOKINGS NJ - PREVIEW (nothing changed)
+ 2712 pairs {'DROP B': 671, 'DROP A': 686, 'UNDECIDED': 1355} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_same_score_20261112_1321.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1324      None   None
+
+>>> query NJ nj_dump.sql
+
+QUERY nj_dump (1 result sets)
+ set 1: 161525 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_nj_dump_1_20261112_1322.csv
+
+>>> query NJ nj_names.sql
+
+QUERY nj_names (1 result sets)
+ set 1: 1123 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_nj_names_1_20261112_1322.csv
+
+=== OK 2026-11-12 13:22:02

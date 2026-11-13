@@ -1,0 +1,46 @@
+
+>>> import-games MS --file hsfha_import_MS.csv --reason "HSFHA-MS (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+
+IMPORT GAMES MS - COMMIT from hsfha_import_MS.csv (2711 rows)
+   Skip                                Games
+   a team already has a game that day  503  
+   IMPORT                              2208 
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_import_skipped_20261111_1020.csv
+   Status     Imported  BatchID  Err 
+   COMMITTED  2208      200      None
+
+>>> dedup MS
+
+DEDUP v4 MS - PREVIEW (nothing changed)
+ dedup_archive: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_archive_20261111_1020.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_review_20261111_1020.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_summary_20261111_1020.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MS     133704        5                    1                None 
+
+>>> review-pairs MS
+
+REVIEW-ONLY PAIRS MS - PREVIEW (nothing changed)
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_review_pairs_20261111_1020.csv
+
+>>> query MS season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_season_date_1_20261111_1020.csv
+ set 2: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_season_date_2_20261111_1020.csv
+
+>>> query MS forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_forfeits_1_20261111_1020.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_forfeits_2_20261111_1020.csv
+
+>>> query MS college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_college_check_1_20261111_1021.csv
+ set 2: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_college_check_2_20261111_1021.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_college_check_3_20261111_1021.csv
+ set 4: 497 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_college_check_4_20261111_1021.csv
+
+=== OK 2026-11-11 10:21:16

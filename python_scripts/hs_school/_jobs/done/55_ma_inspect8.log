@@ -1,0 +1,24 @@
+
+>>> query MA ma_inspect8.sql
+
+QUERY ma_inspect8 (4 result sets)
+ set 1: 32 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_ma_inspect8_1_20261109_0914.csv
+ set 2: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_ma_inspect8_2_20261109_0914.csv
+ set 3: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_ma_inspect8_3_20261109_0914.csv
+ set 4: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_ma_inspect8_4_20261109_0914.csv
+
+>>> query MA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_1_20261109_0914.csv
+ set 2: 115 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_2_20261109_0914.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_3_20261109_0914.csv
+ set 4: 666 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_4_20261109_0914.csv
+
+>>> query MA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_season_date_1_20261109_0914.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_season_date_2_20261109_0914.csv
+
+=== OK 2026-11-09 09:14:43

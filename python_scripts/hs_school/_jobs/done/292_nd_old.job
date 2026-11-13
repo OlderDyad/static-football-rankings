@@ -1,0 +1,7 @@
+move-team ND --from "Jamestown-Medina-Montpelier (ND)" --to "Jamestown (ND)" --seasons 1880-2003 --reason "ND: Jamestown co-op name used for pre-MaxPreps seasons (bhs.bismarckschools etc.); co-op split by year, before 2004 = Jamestown (2026-11-12)" --commit
+move-team ND --from "Fargo (ND)" --to "Fargo Central (ND)" --seasons 1880-1964 --reason "ND: Fargo (ND) = Fargo Central High (only public HS before Fargo North opened 1965) (2026-11-12)" --commit
+move-team ND --from "Dickinson Trinity (ND)" --to "Dickinson Trinity Old HS (ND)" --seasons 1880-1981 --reason "ND: same school, two names (2026-11-12)" --commit
+dedup ND --commit
+review-pairs ND --commit
+same-score-fix ND
+query ND nd_dump.sql

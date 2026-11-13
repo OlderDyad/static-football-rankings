@@ -1,0 +1,18 @@
+remap NC --url "https://www.maxpreps.com/nc/asheville/tc-roberson-rams/football/schedule/" --to "Asheville T.C. Roberson (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/hickory/hickory-christian-academy-knights/football/schedule/" --to "Hickory Christian Academy (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/kannapolis/al-brown-wonders/football/schedule/" --to "Kannapolis A.L. Brown (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/mooresboro/thomas-jefferson-gryphons/football/schedule/" --to "Mooresboro Thomas Jefferson Classical Academy (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/huntersville/lake-norman-charter-knights/football/schedule/" --to "Huntersville Lake Norman Charter (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/mooresville/pine-lake-preparatory-pride/football/schedule/" --to "Mooresville Pine Lake Prep (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/oxford/jf-webb-warriors/football/schedule/" --to "Oxford J.F. Webb (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/rutherfordton/r-s-central-hilltoppers/football/schedule/" --to "Rutherfordton-Spindale Central (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/williamston/bear-grass-charter-bears/football/schedule/" --to "Williamston Bear Grass Charter School (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/wilmington/ea-laney-buccaneers/football/schedule/" --to "Wilmington E.A. Laney (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/wilson/hunt-warriors/football/schedule/" --to "Wilson James B. Hunt (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/winston-salem/rj-reynolds-demons/football/schedule/" --to "Winston-Salem R.J. Reynolds (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/winston-salem/winston-salem-preparatory-academy-phoenix/football/schedule/" --to "Winston-Salem Prep (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/winston-salem/mount-tabor-spartans/football/schedule/" --to "Winston-Salem Mount Tabor (NC)" --commit
+mapcheck NC --commit
+consolidate NC --reason "NC round 1: HSFHA-NC school-code match - 2024 MaxPreps short names, same-school variants, renames to latest name (Vance->Chambers, Wake Forest-Rolesville->Wake Forest, Boyden->Salisbury, Hobgood Charter), Mount Tabor/Mount Zion spelled out"
+dedup NC
+review-pairs NC

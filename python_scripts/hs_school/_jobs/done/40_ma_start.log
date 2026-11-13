@@ -1,0 +1,167 @@
+
+>>> addstate MA
+Tracker rows ready for MA
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report MA names
+
+REPORT names MA: 843 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_names_20261109_0822.csv
+   Name                                      Games  FirstSeason  LastSeason  InTeamNames  Mapped
+    Boston Thompson Island Farm and Trades   1      1951         1951        0            0     
+   Abington (MA)                             844    1903         2026        1            1     
+   Acton (MA)                                2      1969         1970        1            0     
+   Acton-Boxborough (MA)                     540    1965         2025        1            1     
+   Acton-Foxboro (MA)                        2      1966         1972        0            0     
+   Adams Academy (MA)                        2      1900         1901        1            0     
+   Adams Hoosac Valley (MA)                  113    1967         2003        1            0     
+   Adams Memorial (MA)                       118    1919         1970        1            0     
+   Agawam (MA)                               596    1929         2026        1            1     
+   Allen School (MA)                         1      1918         1918        1            0     
+   American International College (MA)       4      1954         1986        1            0     
+   American International College Frosh (MA  2      1947         1969        0            0     
+   Amesbury (MA)                             774    1919         2026        1            1     
+   Amesbury Academy of Strategic Learning (  1      2016         2016        1            0     
+   Amherst (MA)                              1      1954         1954        1            0     
+   ... 828 more rows (see CSV)
+
+>>> report MA drift
+
+REPORT drift MA: 92 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_drift_20261109_0823.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                N_Games  N_First  N_Last  N_Mapped
+   Acton-Boxborough (MA)                     540      1965     2025    1         None                   None     None     None    0       
+   Amherst-Pelham Regional-Granby (MA)       12       2019     2020    0         None                   None     None     None    0       
+   Arlington (MA)                            923      1910     2023    0         Arlington Spy (MA)     30       2024     2026    1       
+   Ashburnham Cushing Academy (MA)           404      1907     2019    0         None                   None     None     None    0       
+   Ayer Shirley-Bromfield (MA)               30       2017     2020    0         None                   None     None     None    0       
+   Blackstone-Millville-Hopedale (MA)        33       2017     2020    0         None                   None     None     None    0       
+   Boston Cathedral-Cristo Rey (MA)          21       2017     2021    0         None                   None     None     None    0       
+   Boston English-New Mission (MA)           102      2004     2023    0         None                   None     None     None    0       
+   Brighton (MA)                             261      1900     2022    0         Brighton Kennedy (MA)  22       2024     2025    1       
+   Brighton Kennedy (MA)                     22       2024     2025    1         None                   None     None     None    0       
+   Brighton St. Joseph Prep (MA)             51       2012     2016    0         None                   None     None     None    0       
+   Brighton-Green Academy-Lyon Pilot (MA)    66       2013     2020    0         None                   None     None     None    0       
+   Buckland Mohawk Trail Regional (MA)       407      1967     2018    0         None                   None     None     None    0       
+   Buckland Mohawk Trail Regional-Turners F  10       1996     2019    0         None                   None     None     None    0       
+   Burke-Community Academy of Science & Hea  12       2017     2018    0         None                   None     None     None    0       
+   ... 77 more rows (see CSV)
+
+>>> report MA same-town
+
+REPORT same-town MA: 176 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_same_town_20261109_0824.csv
+   A                                     B                                     Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   North Attleborough (MA)               North Easton Oliver Ames (MA)         96    31       1933         2026        689      727    
+   Palmer (MA)                           Palmer Pathfinder RVT (MA)            77    29       1976         2025        579      763    
+   Lynn Classical (MA)                   Lynn English (MA)                     75    42       1944         2025        812      648    
+   Springfield Commerce (MA)             Springfield Putnam Vo-Tech (MA)       58    29       1921         2022        413      596    
+   Lawrence (MA)                         Lawrence Central Catholic (MA)        47    31       1961         2026        827      709    
+   Peabody (MA)                          Peabody Veterans Memorial (MA)        46    35       1944         2001        188      584    
+   Chicopee (MA)                         Chicopee Comp (MA)                    45    23       1964         2015        639      478    
+   Andover (MA)                          Andover Phillips Academy (MA)         43    31       1927         2003        931      754    
+   North Andover (MA)                    North Reading (MA)                    41    29       1961         2015        626      680    
+   Pittsfield (MA)                       Pittsfield Taconic (MA)               39    26       1970         2024        474      334    
+   Dorchester Boston Latin Academy (MA)  Dorchester Burke (MA)                 38    23       1981         2015        487      292    
+   Attleboro (MA)                        Attleboro Bishop Feehan (MA)          36    27       1963         2025        748      572    
+   Pittsfield (MA)                       Pittsfield St. Joseph Central (MA)    36    21       1950         2012        474      307    
+   Dorchester (MA)                       Dorchester Burke (MA)                 33    24       1976         2012        399      292    
+   Dorchester (MA)                       Dorchester Boston Latin Academy (MA)  30    23       1977         2015        399      487    
+   ... 161 more rows (see CSV)
+
+>>> mapcheck MA
+
+MAPPING CHECK MA - PREVIEW (nothing changed)
+ 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_mapcheck_20261109_0824.csv
+   URL                                       ProperName                              Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/ma/dorchester/b  Boston Latin Academy (MA)               49467    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ma/easthampton/  Easthampton Williston Northampton (MA)  49507    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ma/boston/bosto  Boston Latin (MA)                       59822    19529   Team_ID points to another name   Boston Latin School (MA)                
+   https://www.maxpreps.com/ma/brookline/br  Brookline (MA)                          38216    32321   Team_ID points to another name   Brookline Dexter Southfield (MA)        
+   https://www.maxpreps.com/ma/brookline/de  Brookline Dexter Southfield (MA)        70451    38216   Team_ID points to another name   Brookline St. Mary's of the Assumption (
+   https://www.maxpreps.com/ma/east-sandwic  East Sandwich (MA)                      61669    25461   Team_ID points to another name   Easthampton Williston Northampton School
+   https://www.maxpreps.com/ma/pittsfield/t  Pittsfield Taconic (MA)                 36138    46696   Team_ID points to another name   Pittsfield St. Joseph Central (MA)      
+   https://www.maxpreps.com/ma/springfield/  Springfield Commerce (MA)               29510    14862   Team_ID points to another name   Springfield Putnam Vo-Tech (MA)         
+   https://www.maxpreps.com/ma/springfield/  Springfield Putnam Vo-Tech (MA)         48155    29510   Team_ID points to another name   Springfield Sci-Tech (MA)               
+   https://www.maxpreps.com/ma/worcester/wo  Worcester Tech (MA)                     70006    69999   Team_ID points to another name   Wrentham King Philip Regional (MA)      
+   https://www.maxpreps.com/ma/wrentham/kin  Wrentham King Philip Regional (MA)      7502     70006   Team_ID points to another name   Yale University Frosh (CT)              
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  9        None
+
+>>> dedup MA
+
+DEDUP v4 MA - PREVIEW (nothing changed)
+ dedup_archive: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_archive_20261109_0824.csv
+ dedup_review: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_review_20261109_0824.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_summary_20261109_0824.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MA     96962         65                   19               None 
+
+>>> review-pairs MA
+
+REVIEW-ONLY PAIRS MA - PREVIEW (nothing changed)
+ 19 pairs {'LONG': 2, 'SHORT': 17} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_review_pairs_20261109_0824.csv
+
+>>> same-score-fix MA
+
+SAME-SCORE DOUBLE-BOOKINGS MA - PREVIEW (nothing changed)
+ 520 pairs {'DROP A': 104, 'DROP B': 111, 'UNDECIDED': 305} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_same_score_20261109_0825.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  215       None   None
+
+>>> report MA double-booked
+
+REPORT double-booked MA: 5015 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_double_booked_20261109_0826.csv
+   Kind             Team           Season  Gap  A_Date      A_Opp                         A_Score  A_Source                                  A_Batch  B_Date      B_Opp                         B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Abington (MA)  1941    2    1941-10-26  Stoughton (MA)                7-20     The_Standard_Times_1941_10_26_18.csv      187      1941-10-24  Whitman-Hanson Regional (MA)  14-0     https://archive.org/stream/whitmanhanson  None     A0738498-B17E-4EA7-AAF8-BC92256E097F  8E31FE4E-18BC-42DA-8374-DFFB62B48581
+   DIFFERENT GAMES  Abington (MA)  1945    2    1945-11-09  Whitman-Hanson Regional (MA)  27-6     https://archive.org/stream/whitmanhanson  None     1945-11-11  Rockland (MA)                 20-6     The_Boston_Globe_1945_11_11_27.csv        187      B635F3D8-E550-48F8-925E-6138600732D9  3BDF35A3-8BEF-41F0-AE29-655E75A9A74F
+   DIFFERENT GAMES  Abington (MA)  1946    2    1946-10-11  Stoughton (MA)                0-13     https://archive.org/stream/stoughtonhigh  None     1946-10-13  Hingham (MA)                  0-8      The_Boston_Globe_1946_10_13_31.csv        187      EAEEE3A3-3E39-4AB8-B366-12D0CE4494DD  5D207805-BF51-483A-AC85-1919C518626C
+   DIFFERENT GAMES  Abington (MA)  1947    2    1947-10-12  Hingham (MA)                  6-18     The_Boston_Globe_1947_10_12_31.csv        187      1947-10-10  Stoughton (MA)                0-13     https://archive.org/stream/stoughtonhigh  None     82F4768B-73ED-4F84-8937-7780425E619D  278FA450-0B9C-4B1F-AF2E-FD46E8F89DC6
+   DIFFERENT GAMES  Abington (MA)  1949    2    1949-10-28  Rockland (MA)                 26-6     https://archive.org/stream/rpslibrary_ro  None     1949-10-30  West Bridgewater (MA)         7-32     The_Boston_Globe_1949_10_30_47 (1).csv    187      8B51385C-0A83-4F7B-9054-191D59425C89  47FD5D4E-3C9A-4810-8808-B9D2944ACAB3
+   DIFFERENT GAMES  Abington (MA)  1951    0    1951-09-30  Hyannis Barnstable (MA)       7-14     The_Boston_Globe_1951_09_30_47 (1).csv    187      1951-09-30  Woburn Memorial (MA)          7-27     The_Boston_Globe_1951_09_30_47 (1).csv    83       0C34F0FC-F334-4687-B4CA-6827800C7D5B  311957C7-71CC-42DF-B8CA-6FA486698D35
+   DIFFERENT GAMES  Abington (MA)  1951    0    1951-10-28  Pittsfield (MA)               55-0     The_Boston_Globe_1951_10_28_49 (2).csv    187      1951-10-28  West Bridgewater (MA)         55-13    The_Boston_Globe_1951_10_28_49.csv        83       5DCB4C99-15F1-4FBE-9D71-0BA64C67FAC3  9A9191E6-37C2-4BF1-B327-66E3BC2822BE
+   DIFFERENT GAMES  Abington (MA)  1951    2    1951-11-11  Canton (MA)                   13-34    The_Boston_Globe_1951_11_11_54.csv        187      1951-11-09  Whitman-Hanson Regional (MA)  14-6     https://archive.org/stream/whitmanhanson  None     1709B36F-11F4-4943-AB6C-881268B12E4D  33B310DC-9D73-4428-A50D-DA17BC689967
+   DIFFERENT GAMES  Abington (MA)  1952    2    1952-10-24  Whitman-Hanson Regional (MA)  13-25    https://archive.org/stream/whitmanhanson  None     1952-10-26  Plymouth (MA)                 0-22     The_Boston_Globe_1952_10_26_61 (1).csv    187      00DE35A1-BF88-4548-A9B3-35F820E3ECCD  B5FB0C55-14F7-492E-AE68-6FBEC58B9078
+   DIFFERENT GAMES  Abington (MA)  1954    2    1954-10-03  West Bridgewater (MA)         13-7     The_Boston_Globe_1954_10_03_57 (1).csv    187      1954-10-01  Stoughton (MA)                14-32    https://archive.org/stream/stoughtonhigh  None     F6BFD4F6-EBEE-460B-B68E-5BE354D9F9F8  A7DAE8FC-95F2-403D-B19C-765A60616091
+   DIFFERENT GAMES  Abington (MA)  1982    2    1982-10-22  Duxbury (MA)                  0-28     https://archive.org/stream/partridge1983  None     1982-10-24  Hanover (MA)                  3-27     The Boston Globe                          None     F9AB609D-65DF-4C06-8686-2D172A984384  88398CF1-EBDB-475D-B570-B56E166CC0C0
+   DIFFERENT GAMES  Abington (MA)  1984    2    1984-10-28  Holbrook (MA)                 35-8     The Boston Globe                          None     1984-10-26  Whitman-Hanson Regional (MA)  6-7      https://archive.org/stream/whitmanhanson  None     EC1FA931-D99B-47E5-AD3C-217FC26FC52E  7D8F86F6-927A-40D3-9E9D-D8D12F1F2AC0
+   DIFFERENT GAMES  Abington (MA)  2015    0    2015-10-16  East Bridgewater (MA)         0-21     www.maxpreps.com                          None     2015-10-16  Norwell (MA)                  29-21    www.maxpreps.com                          None     080172BB-2A1D-4DE9-A7C6-B07AA9475BFE  9BB15C6A-E4CB-4B9F-A23D-C405C381BFC3
+   DIFFERENT GAMES  Abington (MA)  2017    1    2017-11-02  Whitman-Hanson Regional (MA)  23-12    www.maxpreps.com                          None     2017-11-03  Nantucket (MA)                28-13    www.maxpreps.com                          None     DD55A4A6-029C-4915-9C2C-0C7BF9DE03E4  A282AECB-2E13-4E88-94E3-3220B9AC61C1
+   DIFFERENT GAMES  Abington (MA)  2018    0    2018-11-02  Whitman-Hanson Regional (MA)  0-16     www.maxpreps.com                          None     2018-11-02  Nantucket (MA)                36-14    www.maxpreps.com                          None     3675676E-E41C-487F-B056-6D84222F9DBA  B2978F79-3160-48A2-9847-E9DB4AA179FE
+   ... 5000 more rows (see CSV)
+
+>>> query MA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_season_date_1_20261109_0826.csv
+ set 2: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_season_date_2_20261109_0826.csv
+
+>>> query MA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_forfeits_1_20261109_0826.csv
+ set 2: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_forfeits_2_20261109_0826.csv
+
+>>> query MA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_1_20261109_0827.csv
+ set 2: 120 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_2_20261109_0827.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_3_20261109_0827.csv
+ set 4: 806 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_4_20261109_0827.csv
+
+=== OK 2026-11-09 08:27:00

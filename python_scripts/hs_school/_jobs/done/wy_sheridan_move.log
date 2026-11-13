@@ -1,0 +1,20 @@
+
+>>> move-team WY --from "Sheridan (WY)" --to "Sheridan (MT)" --seasons 1900-2026 --ids WY_sheridan_to_mt_ids.csv --reason "Sheridan (WY) games vs western-MT small schools are Sheridan (MT)" --commit
+ only the 30 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_sheridan_to_mt_ids.csv
+
+MOVE Sheridan (WY) -> Sheridan (MT), seasons 1900-2026 - COMMIT
+ move_games: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_move_games_COMMITTED_20261106_0755.csv
+ move_by_season: 115 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_move_by_season_COMMITTED_20261106_0755.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  30     1                  None
+
+>>> dedup MT
+
+DEDUP v4 MT - PREVIEW (nothing changed)
+ dedup_archive: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_dedup_archive_20261106_0755.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_dedup_review_20261106_0755.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_dedup_summary_20261106_0755.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MT     41198         19                   1                None 
+
+=== OK 2026-11-06 07:55:35

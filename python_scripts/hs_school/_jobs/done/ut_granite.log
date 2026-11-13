@@ -1,0 +1,41 @@
+
+>>> move-team UT --from "Grantsville (UT)" --to "Salt Lake City Granite (UT)" --seasons 1920-1975 --ids UT_grantsville_to_granite_ids.csv --reason "Grantsville games vs Salt Lake valley schools in its double-booked seasons are Granite's" --commit
+ only the 151 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_grantsville_to_granite_ids.csv
+
+MOVE Grantsville (UT) -> Salt Lake City Granite (UT), seasons 1920-1975 - COMMIT
+ move_games: 151 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_move_games_COMMITTED_20261106_1615.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_move_by_season_COMMITTED_20261106_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  151    1                  None
+
+>>> dedup UT
+
+DEDUP v4 UT - PREVIEW (nothing changed)
+ dedup_archive: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_dedup_archive_20261106_1615.csv
+ dedup_review: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_dedup_review_20261106_1615.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_dedup_summary_20261106_1615.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  UT     34298         21                   5                None 
+
+>>> report UT double-booked
+
+REPORT double-booked UT: 267 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_double_booked_20261106_1616.csv
+   Kind             Team                           Season  Gap  A_Date      A_Opp                               A_Score  A_Source                            A_Batch  B_Date      B_Opp                           B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Altamont (UT)                  2025    1    2025-09-13  Monument Valley (UT)                46-22    MaxPreps                            8        2025-09-12  Monticello (UT)                 44-37    MaxPreps                                  8        243D9392-6713-4DEF-BE02-16684B167C26  C5564A7A-D329-40E1-8520-9C49F1B571A6
+   DIFFERENT GAMES  American Fork (UT)             2019    0    2019-10-01  Draper Corner Canyon (UT)           28-59    www.maxpreps.com                    None     2019-10-01  Highland Lone Peak (UT)         26-21    www.maxpreps.com                          None     1A7CFDDD-1A9E-41A1-B6A9-9F6EE7E01C45  329B7ED3-AFA8-4DF8-9881-E1226407B841
+   DIFFERENT GAMES  Bicknell Wayne (UT)            2015    1    2015-10-23  Parowan (UT)                        20-68    www.maxpreps.com                    None     2015-10-24  Randolph Rich (UT)              6-34     www.maxpreps.com                          None     E9D9733B-808A-4926-AEF3-0ADF97A62976  9E4FA32E-58D9-46CF-82D2-4CFBC6F69071
+   DIFFERENT GAMES  Blanding San Juan County (UT)  1981    1    1981-09-12  Kirtland Central (NM)               13-22    Albuquerque Journal                 None     1981-09-11  Page Sand (AZ)                  14-52    http://www.azfootballarchives.com/indtea  None     B71B005D-7039-4915-9F91-2A5ECE393D9B  EC29EF58-1353-475F-A881-585B1EDED263
+   DIFFERENT GAMES  Bountiful (UT)                 1960    0    1960-10-23  Ogden (UT)                          0-33     The_Sunday_Herald_1960_10_23_7.csv  184      1960-10-23  Pleasant View Weber (UT)        21-6     The_Sunday_Herald_1960_10_23_7.csv        184      BA343665-F9E5-4688-B47F-7CBD746A6D04  68FE4597-125E-43B8-B4CF-8BD5E3FBD5E1
+   DIFFERENT GAMES  Brigham City Box Elder (UT)    2015    0    2015-10-27  Ogden (UT)                          59-0     www.maxpreps.com                    None     2015-10-27  Woods Cross (UT)                21-14    www.maxpreps.com                          None     95FC92CB-49C8-4A8E-8AD3-ABBFC7B5C668  DBCB08FC-6CCC-4BBD-87B3-D73F004136D7
+   DIFFERENT GAMES  Brigham City Box Elder (UT)    2015    0    2015-10-27  Washington Terrace Bonneville (UT)  7-0      www.maxpreps.com                    None     2015-10-27  Woods Cross (UT)                21-14    www.maxpreps.com                          None     F0902E8F-ED8B-419F-9F39-739254270E9F  DBCB08FC-6CCC-4BBD-87B3-D73F004136D7
+   DIFFERENT GAMES  Brigham City Box Elder (UT)    2015    0    2015-10-27  Washington Terrace Bonneville (UT)  7-0      www.maxpreps.com                    None     2015-10-27  Ogden (UT)                      59-0     www.maxpreps.com                          None     F0902E8F-ED8B-419F-9F39-739254270E9F  95FC92CB-49C8-4A8E-8AD3-ABBFC7B5C668
+   DIFFERENT GAMES  Brigham City Box Elder (UT)    2017    2    2017-09-29  Clearfield (UT)                     24-7     www.maxpreps.com                    None     2017-10-01  Woods Cross (UT)                21-37    www.maxpreps.com                          None     240BECCB-2DFD-4AE5-94F7-63F56C36AB06  B91407A6-AD3E-40AE-A0EC-8F1586D0E705
+   DIFFERENT GAMES  Cedar City Canyon View (UT)    2015    0    2015-10-27  Nephi Juab County (UT)              26-36    www.maxpreps.com                    None     2015-10-27  Delta (UT)                      26-48    www.maxpreps.com                          None     30EBD5FA-3904-49F2-8117-C2C922584165  44791D2A-6378-491F-8AC0-DA4A114D244B
+   DIFFERENT GAMES  Delta (UT)                     2019    0    2019-10-01  Mount Pleasant North Sanpete (UT)   7-47     www.maxpreps.com                    None     2019-10-01  Nephi Juab County (UT)          7-28     www.maxpreps.com                          None     63BBD998-BF55-46D4-A4D2-338D71971F30  F03C5CD9-9431-4632-90A4-74DC6489C9F6
+   DIFFERENT GAMES  Draper Corner Canyon (UT)      2016    2    2016-09-27  Roy (UT)                            36-6     www.maxpreps.com                    None     2016-09-29  Orem Mountain View (UT)         56-12    www.maxpreps.com                          None     D2C8D144-D409-47BD-89A6-6BA4F39C230E  BB45D035-1426-4F2A-9497-E2D3771A24AA
+   DIFFERENT GAMES  Draper Corner Canyon (UT)      2019    0    2019-10-01  Lehi Skyridge (UT)                  56-22    www.maxpreps.com                    None     2019-10-01  American Fork (UT)              59-28    www.maxpreps.com                          None     E6C61CFF-1509-4D28-AFE2-51FB5556C7E8  1A7CFDDD-1A9E-41A1-B6A9-9F6EE7E01C45
+   DIFFERENT GAMES  Draper Corner Canyon (UT)      2019    0    2019-11-01  Highland Lone Peak (UT)             34-7     www.maxpreps.com                    None     2019-11-01  Saratoga Springs Westlake (UT)  53-21    www.maxpreps.com                          None     987DAD87-1544-4C4D-9546-09DC7E742A0B  F9CC2AD5-D955-47CE-812C-69A62EC5C4C8
+   DIFFERENT GAMES  Enterprise (UT)                2019    0    2019-10-01  Fillmore Millard County (UT)        14-38    www.maxpreps.com                    None     2019-10-01  Kanab (UT)                      28-14    www.maxpreps.com                          None     D3C373A4-D846-4EF6-AB1E-908BBD1FA66F  01D8AD05-C6A1-4DFA-B691-B9618DD90AF1
+   ... 252 more rows (see CSV)
+
+=== OK 2026-11-06 16:16:20

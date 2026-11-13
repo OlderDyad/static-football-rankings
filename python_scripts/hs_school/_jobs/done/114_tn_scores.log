@@ -1,0 +1,38 @@
+
+>>> set-scores TN --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-TN score (David 2026-11-10: HSFHA volunteer-corrected)" --commit
+
+SET SCORES TN - COMMIT
+ 1580 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_set_scores_COMMITTED_20261110_1418.csv
+   ID                                    Season  Date        Home                                    OldHS  NewHS  Visitor                                 OldVS  NewVS  Source                             Note                  
+   64F2BA26-D635-41A4-AED2-49D16426A7C0  1905    1905-09-29  Hawkins School (TN)                     17     0      Nashville Montgomery Bell Academy (TN)  6      0      www.hsfdatabase.com-tennessee.htm  hsfha.org game 1177661
+   C450E4F4-ACDA-479C-A7B9-234735B32DAF  1906    1906-09-07  Chattanooga McCallie (TN)               62     61     Rome (GA)                               0      0      None                               hsfha.org game 1195156
+   8B2DFF69-4DAF-4CEC-8AC0-AE0C21948A49  1906    1906-11-29  Chattanooga McCallie (TN)               5      41     Chattanooga Baylor (TN)                 0      0      None                               hsfha.org game 1174716
+   6E4ADF6D-0D5D-43E7-B5DC-55ADEBC6AED7  1907    1907-09-13  Nashville Montgomery Bell Academy (TN)  14     4      Nashville Wallace Academy (TN)          6      6      None                               hsfha.org game 1180163
+   23F8BF24-1449-4126-BB56-1095223835EE  1907    1907-09-27  Hawkins School (TN)                     44     0      Nashville Montgomery Bell Academy (TN)  0      16     None                               hsfha.org game 1185485
+   9A0494BD-8216-4557-A14A-23E02C13C4D1  1908    1908-09-26  Harrison Chattanooga Central (TN)       10     0      Rhea Central (TN)                       6      0      None                               hsfha.org game 1174644
+   591B85C4-A22B-43C6-8DA0-22E9C9E614F4  1908    1908-11-07  Harrison Chattanooga Central (TN)       0      10     Rhea Central (TN)                       0      6      None                               hsfha.org game 1174835
+   550521B7-6A2E-4540-BB8F-922EF202AA86  1909    1909-09-10  Harrison Chattanooga Central (TN)       16     16     Chattanooga City (TN)                   3      5      None                               hsfha.org game 1174730
+   846C6A3C-301F-4B06-BA07-3044C35BA53D  1911    1911-09-08  Harrison Chattanooga Central (TN)       14     37     Athens School (TN)                      12     0      None                               hsfha.org game 1178450
+   8123312A-E2E9-4A54-A942-87968E83E277  1911    1911-09-22  Chattanooga Baylor (TN)                 32     30     Chattanooga McCallie (TN)               0      0      None                               hsfha.org game 1174594
+   ... 1570 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  1580    1580     None
+
+>>> dedup TN
+
+DEDUP v4 TN - PREVIEW (nothing changed)
+ dedup_archive: 423 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_archive_20261110_1418.csv
+ dedup_review: 473 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_review_20261110_1418.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_summary_20261110_1418.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  TN     145716        423                  473              None 
+
+>>> same-score-fix TN
+ 368 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS TN - PREVIEW (nothing changed)
+ 163 pairs {'DROP B': 3, 'DROP A': 2, 'UNDECIDED': 158} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_same_score_20261110_1418.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  5         None   None
+
+=== OK 2026-11-10 14:18:56

@@ -1,0 +1,5 @@
+# commit the 296 co-op/St. Mary's duplicates (all same teams + score, 0-3 days), then re-preview the same-score pairs
+addstate WY
+step WY 1.1 "in progress" "round 1 (42 rules) + round 2 (St. Mary's merge, co-op split by year) 2026-11-06"
+dedup WY --commit
+same-score-fix WY

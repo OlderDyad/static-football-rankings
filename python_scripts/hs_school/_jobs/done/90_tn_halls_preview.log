@@ -1,0 +1,38 @@
+
+>>> move-team TN --from "Knoxville Halls (TN)" --to "Halls (TN)" --seasons 1900-2026 --ids khalls_to_halls.csv --reason "Halls (Lauderdale Co., West TN) games tagged Knoxville Halls: opponent in West TN / western KY"
+ only the 518 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\khalls_to_halls.csv
+
+MOVE Knoxville Halls (TN) -> Halls (TN), seasons 1900-2026 - PREVIEW (nothing changed)
+ move_games: 518 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0505.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0505.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  518    True               None
+
+>>> move-team TN --from "Knoxville Halls (TN)" --to "Harlan Grays Knob Hall (KY)" --seasons 1900-1963 --ids khalls_to_hallky.csv --reason "Hall (Grays Knob, Harlan Co. KY) games tagged Knoxville Halls: Harlan-area KY league opponents"
+ only the 66 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\khalls_to_hallky.csv
+
+MOVE Knoxville Halls (TN) -> Harlan Grays Knob Hall (KY), seasons 1900-1963 - PREVIEW (nothing changed)
+ move_games: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0505.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0505.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  66     True               None
+
+>>> move-team TN --from "Halls (TN)" --to "Harlan Grays Knob Hall (KY)" --seasons 1900-1963 --ids halls_to_hallky.csv --reason "Hall (Grays Knob, Harlan Co. KY) games tagged Halls (TN) (Lexington Herald): Harlan-area KY league opponents"
+ only the 65 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\halls_to_hallky.csv
+
+MOVE Halls (TN) -> Harlan Grays Knob Hall (KY), seasons 1900-1963 - PREVIEW (nothing changed)
+ move_games: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0505.csv
+ move_by_season: 40 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0505.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  65     True               None
+
+>>> move-team TN --from "Halls (TN)" --to "Knoxville Halls (TN)" --seasons 1900-2026 --ids halls_to_khalls.csv --reason "Knoxville Halls games tagged Halls (TN): East TN opponents"
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\halls_to_khalls.csv
+
+MOVE Halls (TN) -> Knoxville Halls (TN), seasons 1900-2026 - PREVIEW (nothing changed)
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0505.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0505.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  4      True               None
+
+=== OK 2026-11-10 05:05:46

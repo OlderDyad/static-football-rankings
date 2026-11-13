@@ -1,0 +1,12 @@
+addstate MO
+report MO names
+report MO drift
+report MO same-town
+mapcheck MO
+dedup MO
+review-pairs MO
+same-score-fix MO
+report MO double-booked
+query MO season_date.sql
+query MO forfeits.sql
+query MO college_check.sql

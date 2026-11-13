@@ -1,0 +1,147 @@
+
+>>> addstate TN
+Tracker rows ready for TN
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> status TN
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report TN names
+
+REPORT names TN: 1367 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_names_20261110_0445.csv
+   Name                                    Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   Adams (TN)                              8      1931         1943        1            0     
+   Adams Robertson County (TN)             8      1932         1934        0            0     
+   Adamsville (TN)                         619    1916         2026        1            1     
+   Afton Chuckey-Doak (TN)                 541    1975         2026        1            1     
+   Ahrenes Academy (TN)                    1      2003         2003        1            0     
+   Alamo (TN)                              136    1914         1982        1            0     
+   Alamo Crockett County (TN)              511    1954         2026        1            1     
+   Alcoa (TN)                              995    1927         2026        1            1     
+   Alcoa Hall (TN)                         32     1942         1967        1            0     
+   Algood Putnam County (TN)               2      1958         1962        0            0     
+   Algood Putnam County Lightweights (TN)  1      1962         1962        0            0     
+   Allentown (TN)                          1      1936         1936        0            0     
+   Alumni (TN)                             4      1909         1915        1            0     
+   American University School (TN)         1      1908         1908        1            0     
+   Antioch (TN)                            911    1934         2026        1            1     
+   ... 1352 more rows (see CSV)
+
+>>> report TN drift
+
+REPORT drift TN: 114 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_drift_20261110_0446.csv
+   Stopped                                  S_Games  S_First  S_Last  S_Mapped  Started                      N_Games  N_First  N_Last  N_Mapped
+   Antioch Lighthouse Christian (TN)        215      1994     2022    0         None                         None     None     None    0       
+   Arlington Memphis Nighthawks (TN)        73       2014     2021    0         None                         None     None     None    0       
+   Bell Buckle The Webb School (TN)         200      1933     2024    0         None                         None     None     None    0       
+   Blountville Sullivan Central (TN)        706      1934     2020    0         Blountville West Ridge (TN)  62       2021     2026    1       
+   Christian Academy of Knoxville (TN)      270      2001     2023    0         None                         None     None     None    0       
+   Cleveland Tennessee Christian Prep (TN)  13       2014     2016    0         None                         None     None     None    0       
+   Coalfield (TN)                           762      1935     2023    0         Coalfield Yellow (TN)        39       2024     2026    1       
+   Decatur County-Riverside (TN)            555      1902     2023    0         None                         None     None     None    0       
+   Franklin Classical School (TN)           151      2001     2023    0         None                         None     None     None    0       
+   Gray Trinity Academy (TN)                40       2015     2019    0         None                         None     None     None    0       
+   Greeneville (TN)                         1185     1906     2023    0         Greeneville Greene (TN)      39       2024     2026    1       
+   Hendersonville Christian Academy (TN)    69       2008     2017    0         None                         None     None     None    0       
+   Jackson Central-Merry (TN)               448      1969     2023    0         Jackson Central (TN)         34       2024     2026    1       
+   Jackson Central-Merry (TN)               448      1969     2023    0         Jackson North (TN)           32       2024     2026    1       
+   Jackson Central-Merry (TN)               448      1969     2023    0         Jackson South (TN)           30       2024     2026    1       
+   ... 99 more rows (see CSV)
+
+>>> report TN same-town
+
+REPORT same-town TN: 1494 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_same_town_20261110_0447.csv
+   A                             B                                       Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Chattanooga Baylor (TN)       Chattanooga McCallie (TN)               128   68       1908         2024        1347     1306   
+   Knoxville Bearden (TN)        Knoxville Farragut (TN)                 95    53       1950         2024        867      892    
+   Nashville Father Ryan (TN)    Nashville Montgomery Bell Academy (TN)  86    53       1934         2022        933      1262   
+   Knoxville Halls (TN)          Knoxville Karns (TN)                    77    47       1956         2026        1435     756    
+   Chattanooga East Ridge (TN)   Chattanooga Red Bank (TN)               70    37       1959         2026        567      785    
+   Nashville Father Ryan (TN)    Nashville Hillsboro (TN)                70    49       1943         2026        933      898    
+   Morristown-Hamblen East (TN)  Morristown-Hamblen West (TN)            68    36       1975         2026        627      700    
+   Cleveland (TN)                Cleveland Bradley Central (TN)          64    28       1966         2026        711      1230   
+   Nashville Glencliff (TN)      Nashville John Overton (TN)             64    35       1963         2018        688      716    
+   Nashville Hillwood (TN)       Nashville John Overton (TN)             63    37       1961         2019        660      716    
+   Knoxville Central (TN)        Knoxville Farragut (TN)                 63    38       1953         2024        1083     892    
+   Hendersonville (TN)           Hendersonville Beech (TN)               62    35       1981         2026        877      551    
+   Knoxville Austin-East (TN)    Knoxville Fulton (TN)                   60    32       1969         2023        630      895    
+   Memphis Frayser (TN)          Memphis King Prep (TN)                  60    7        2014         2023        424      81     
+   Nashville Glencliff (TN)      Nashville Hillsboro (TN)                60    38       1961         2017        688      898    
+   ... 1479 more rows (see CSV)
+
+>>> report TN double-booked
+
+REPORT double-booked TN: 12720 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_double_booked_20261110_0447.csv
+   Kind             Team             Season  Gap  A_Date      A_Opp                              A_Score  A_Source                                  A_Batch  B_Date      B_Opp                                     B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Adamsville (TN)  1970    0    1970-09-11  Glen Alcorn Central (MS)           28-8     http://www.ahsfhs.org/mississippi/        None     1970-09-11  Corinth Biggersville (MS)                 44-0     http://www.hsfdatabase.com/tennessee.htm  None     59F03D2C-61D4-4A74-BA55-1899F1408751  3CE97BCB-49ED-46D8-8F02-9E969BA7B3DA
+   DIFFERENT GAMES  Adamsville (TN)  1970    0    1970-09-25  Waynesboro Wayne County (TN)       6-13     http://www.hsfdatabase.com/tennessee.htm  None     1970-09-25  Faulkner (MS)                             12-0     http://www.hsfdatabase.com/tennessee.htm  None     A0B4FB3F-F285-420E-A51C-1BECD9478E55  97316BE4-A034-4A18-9817-B016BE731047
+   DIFFERENT GAMES  Adamsville (TN)  1970    1    1970-10-09  Middleton (TN)                     28-6     http://www.hsfdatabase.com/tennessee.htm  None     1970-10-08  Falkner (MS)                              12-0     http://www.ahsfhs.org/MISSISSIPPI/        None     7CBFF8DD-CFEB-4A17-93AD-80CAA3EAE736  339DE91F-BC3B-4AE4-8B72-C0A6EC556993
+   DIFFERENT GAMES  Adamsville (TN)  1974    1    1974-10-11  Hohenwald Lewis County (TN)        6-37     www.hsfdatabase.com/tennessee.htm         None     1974-10-10  Falkner (MS)                              12-42    http://www.ahsfhs.org/MISSISSIPPI/        None     E69AF20D-2221-465B-A95A-52A8A09BD013  2667F17A-F0C7-4BE1-AD0C-D721CC39D7C8
+   DIFFERENT GAMES  Adamsville (TN)  1975    0    1975-09-26  Waynesboro Wayne County (TN)       0-48     http://www.hsfdatabase.com/tennessee.htm  None     1975-09-26  Burnsville (MS)                           14-32    http://www.ahsfhs.org/mississippi/        None     9761126B-DF51-46B9-B97E-7443BEE7C1D0  539C5E7C-6461-4784-848B-B2B272865A7D
+   DIFFERENT GAMES  Adamsville (TN)  1977    1    1977-10-07  Waynesboro Wayne County (TN)       12-14    http://www.hsfdatabase.com/tennessee.htm  None     1977-10-06  Falkner (MS)                              35-22    http://www.ahsfhs.org/MISSISSIPPI/        None     96D392C3-EAAF-4329-83CC-04CFC8C8A214  9067A857-4210-4A9F-8F5B-CB5D879DD278
+   DIFFERENT GAMES  Adamsville (TN)  1978    0    1978-09-22  Alamo (TN)                         14-0     http://www.hsfdatabase.com/tennessee.htm  None     1978-09-22  Burnsville (MS)                           0-12     http://www.ahsfhs.org/mississippi/        None     30290884-BF42-41E2-B787-333256E321BA  D7340FBC-B9D2-4B27-8942-AF498B4C3CA3
+   DIFFERENT GAMES  Adamsville (TN)  1979    0    1979-09-14  Fulton City (KY)                   0-30     http://www.hsfdatabase.com/tennessee.htm  None     1979-09-14  Brownsville Haywood (TN)                  0-36     www.hsfdatabase.com/tennessee.htm         None     68AEDCF6-655E-4BDA-8B2F-8742559CF7AE  9AF7AA18-898F-4C05-8065-E7D006737EEA
+   DIFFERENT GAMES  Adamsville (TN)  1980    0    1980-09-12  Fulton City (KY)                   14-0     http://www.hsfdatabase.com/tennessee.htm  None     1980-09-12  Tiptonville Lake County (TN)              8-42     www.hsfdatabase.com/tennessee.htm         None     EE27B790-DD30-4813-A569-7128174FD102  91DFD813-CABC-499E-848B-E730DF7C9F98
+   DIFFERENT GAMES  Adamsville (TN)  1981    0    1981-09-25  Waynesboro Wayne County (TN)       26-8     http://www.hsfdatabase.com/tennessee.htm  None     1981-09-25  Jackson University School of Jackson (TN  6-34     www.hsfdatabase.com/tennessee.htm         None     77191919-EDF9-43E3-9D2E-BB963C322D44  E7ADF33D-778E-485A-AE4D-D049BD7E0AD9
+   DIFFERENT GAMES  Adamsville (TN)  1982    0    1982-09-24  Waynesboro Wayne County (TN)       37-27    http://www.hsfdatabase.com/tennessee.htm  None     1982-09-24  Jackson University School of Jackson (TN  6-21     www.hsfdatabase.com/tennessee.htm         None     187C635E-8A24-4796-AD07-3AE580216E00  6E8C44EC-9866-43BD-953E-58B9DC54D340
+   DIFFERENT GAMES  Adamsville (TN)  1984    0    1984-08-31  Hollow Rock-Bruceton Central (TN)  23-36    www.hsfdatabase.com/tennessee.htm         None     1984-08-31  Henderson Chester County (TN)             6-7      http://www.hsfdatabase.com/tennessee.htm  None     907A2858-1215-4D55-98A1-07DBF06E1858  C16B3F30-2CFF-45ED-A3ED-4217625B443B
+   DIFFERENT GAMES  Adamsville (TN)  1986    0    1986-09-12  Decatur County-Riverside (TN)      0-35     http://www.hsfdatabase.com/tennessee.htm  None     1986-09-12  Jackson University School of Jackson (TN  0-34     www.hsfdatabase.com/tennessee.htm         None     DFCFFFF1-32CB-4859-9C1F-5D63D3ECDC2F  7E2EC109-9E00-44B2-BBF9-886B0AC0C9BA
+   DIFFERENT GAMES  Adamsville (TN)  1986    0    1986-10-17  Atwood West Carroll (TN)           50-6     http://www.hsfdatabase.com/tennessee.htm  None     1986-10-17  Hollow Rock-Bruceton Central (TN)         12-35    www.hsfdatabase.com/tennessee.htm         None     24B115B9-7EE9-4F07-9B72-AA7575676E8F  054EE7ED-F9C7-419F-88D2-D31113523CAC
+   DIFFERENT GAMES  Adamsville (TN)  1989    0    1989-10-06  Decatur County-Riverside (TN)      7-32     http://www.hsfdatabase.com/tennessee.htm  None     1989-10-06  Waynesboro Wayne County (TN)              0-13     http://www.hsfdatabase.com/tennessee.htm  None     3CE5EEE3-CD5C-4C0F-8ABA-6476074FA2CF  D4ED75C1-A6EA-440C-A779-C4512414DBAC
+   ... 12705 more rows (see CSV)
+
+>>> mapcheck TN
+
+MAPPING CHECK TN - PREVIEW (nothing changed)
+ 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_mapcheck_20261110_0447.csv
+   URL                                       ProperName                               Team_ID  NameID  Problem                          Team_ID_Name                           
+   https://www.maxpreps.com/tn/bell-buckle/  Bell Buckle The Webb (TN)                48174    None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/memphis/book  Memphis Booker T (TN)                    44573    None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/memphis/free  Memphis Freedom Prep (TN)                3947     None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/morristown/m  Morristown Hamblen West (TN)             2878     None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/white-house/  White House Christian Community (TN)     3376     None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/brownsville/  Brownsville Haywood (TN)                 60004    28508   Team_ID points to another name   Bruceton Central (TN)                  
+   https://www.maxpreps.com/tn/chattanooga/  Chattanooga Brainerd (TN)                71839    60478   Team_ID points to another name   Chattanooga Central (TN)               
+   https://www.maxpreps.com/tn/memphis/memp  Memphis Academy of Health Sciences�(TN)  65046    44914   Team_ID points to another name   Memphis Academy of Health Sciences (TN)
+   https://www.maxpreps.com/tn/memphis/memp  Memphis University (TN)                  42629    36346   Team_ID points to another name   Memphis University School (TN)         
+   https://www.maxpreps.com/tn/memphis/wood  Memphis Wooddale (TN)                    72023    65082   Team_ID points to another name   Middle Tennessee State Univestity (TN) 
+   https://www.maxpreps.com/tn/sevierville/  Sevierville Sevier County (TN)           17673    68057   Team_ID points to another name   Sewanee (TN)                           
+   https://www.maxpreps.com/tn/south-pittsb  South Pittsburg (TN)                     40631    68272   Team_ID points to another name   South Pittsburg McReynolds (TN)        
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  7        None
+
+=== OK 2026-11-10 04:47:56

@@ -1,0 +1,7 @@
+same-score-fix OK --commit
+fix-dates OK --commit
+move-team OK --from "Oklahoma City Northwest Classen (OK)" --to "Oklahoma City Classen (OK)" --seasons 1880-1954 --reason "Northwest Classen opened 1955; earlier games are Classen High" --commit
+move-team OK --from "Tulsa (OK)" --to "Tulsa Central (OK)" --seasons 1880-1934 --reason "Tulsa High School = Tulsa Central (renamed); latest-name rule" --commit
+consolidate OK --reason "OK round 2: Oklahoma City Northwest -> Northwest Classen"
+dedup OK
+review-pairs OK

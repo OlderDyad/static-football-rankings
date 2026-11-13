@@ -1,0 +1,16 @@
+
+>>> same-score-fix AZ --commit
+
+SAME-SCORE DOUBLE-BOOKINGS AZ - COMMIT
+ 101 pairs {'DROP A': 20, 'DROP B': 17, 'UNDECIDED': 64} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_same_score_COMMITTED_20261108_1843.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  37        B11CE049-2044-4399-AABB-6D4B073681F2  None
+
+>>> query AZ az_round2_check.sql
+
+QUERY az_round2_check (3 result sets)
+ set 1: 594 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_az_round2_check_1_20261108_1843.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_az_round2_check_2_20261108_1843.csv
+ set 3: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_az_round2_check_3_20261108_1843.csv
+
+=== OK 2026-11-08 18:43:18

@@ -1,0 +1,1 @@
+SELECT URL, ProperName FROM dbo.URL_ProperName_Mapping WHERE ProperName IN ('Jacksonville Jackson (FL)','Lehigh Acres Lehigh (FL)','Lakeland Santa Fe (FL)','Bishop Mclaughlin Catholic (FL)','Dixie County Cross City (FL)');

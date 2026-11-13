@@ -1,0 +1,563 @@
+
+>>> same-score-fix SD --commit
+ 1296 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS SD - COMMIT
+ 598 pairs {'DROP B': 36, 'DROP A': 40, 'UNDECIDED': 522} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_same_score_COMMITTED_20261112_1518.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  76        B1924C3D-0390-4D34-AE9B-DB7FAE8511C6  None
+
+>>> consolidate SD --reason "SD co-op round: same-school spellings (White Lake-Plankinton, Herried-Pollock, Herried, Hand County Sunshine Bible, Rapid City St. Thomas More, Wessington-Wolsey, Letcher-Mt. Vernon, Edmunds Central, Stateline, Selby Area, Aberdeen -> Aberdeen Central)"
+Consolidating SD from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\SD_Alias_Rules.csv
+
+[stderr]
+2026-11-12 15:18:27,529 - INFO - Starting consolidation for state: (SD) using staging table method.
+2026-11-12 15:18:27,539 - WARNING - WARNING: 194 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 15:18:27,539 - WARNING -   'Aberdeen Central (SD)' -> 'Aberdeen Central (SD)' (no change)
+2026-11-12 15:18:27,539 - WARNING -   'Aberdeen Roncalli (SD)' -> 'Aberdeen Roncalli (SD)' (no change)
+2026-11-12 15:18:27,539 - WARNING -   'Agency Village Tiospa Zina (SD)' -> 'Agency Village Tiospa Zina (SD)' (no change)
+2026-11-12 15:18:27,539 - WARNING -   'Alcester-Hudson (SD)' -> 'Alcester-Hudson (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Alexandria Hanson (SD)' -> 'Alexandria Hanson (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Alpena-Woonsocket (SD)' -> 'Alpena-Woonsocket (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Arlington (SD)' -> 'Arlington (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Armour (SD)' -> 'Armour (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Avon (SD)' -> 'Avon (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Baltic (SD)' -> 'Baltic (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Belle Fourche (SD)' -> 'Belle Fourche (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Beresford (SD)' -> 'Beresford (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Bison (SD)' -> 'Bison (SD)' (no change)
+2026-11-12 15:18:27,540 - WARNING -   'Bonesteel-Fairfax (SD)' -> 'Bonesteel-Fairfax (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Box Elder Douglas (SD)' -> 'Box Elder Douglas (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Brandon Valley (SD)' -> 'Brandon Valley (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Bridgewater (SD)' -> 'Bridgewater (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Bridgewater-Emery-Ethan (SD)' -> 'Bridgewater-Emery-Ethan (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Britton (SD)' -> 'Britton (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Britton-Hecla (SD)' -> 'Britton-Hecla (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Brookings (SD)' -> 'Brookings (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Buffalo Harding County (SD)' -> 'Buffalo Harding County (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Burke (SD)' -> 'Burke (SD)' (no change)
+2026-11-12 15:18:27,541 - WARNING -   'Campbell County co-op [Herreid-Pollock] (SD)' -> 'Campbell County co-op [Herreid-Pollock] (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Canistota-Bridgewater (SD)' -> 'Canistota-Bridgewater (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Canton (SD)' -> 'Canton (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Canton Augustana Academy (SD)' -> 'Canton Augustana Academy (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Castlewood (SD)' -> 'Castlewood (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Centerville (SD)' -> 'Centerville (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Chamberlain (SD)' -> 'Chamberlain (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Chester (SD)' -> 'Chester (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Cheyenne-Eagle Butte (SD)' -> 'Cheyenne-Eagle Butte (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Clark (SD)' -> 'Clark (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Clark-Willow Lake (SD)' -> 'Clark-Willow Lake (SD)' (no change)
+2026-11-12 15:18:27,542 - WARNING -   'Clear Lake Deuel (SD)' -> 'Clear Lake Deuel (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Colman-Egan (SD)' -> 'Colman-Egan (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Colome (SD)' -> 'Colome (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Colton Tri-Valley (SD)' -> 'Colton Tri-Valley (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Corsica (SD)' -> 'Corsica (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Corsica-Stickney (SD)' -> 'Corsica-Stickney (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Custer (SD)' -> 'Custer (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'De Smet (SD)' -> 'De Smet (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Dell Rapids (SD)' -> 'Dell Rapids (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Dell Rapids St. Mary's (SD)' -> 'Dell Rapids St. Mary's (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Doland-Conde (SD)' -> 'Doland-Conde (SD)' (no change)
+2026-11-12 15:18:27,543 - WARNING -   'Dupree (SD)' -> 'Dupree (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Edgemont (SD)' -> 'Edgemont (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Elk Point (SD)' -> 'Elk Point (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Elk Point-Jefferson (SD)' -> 'Elk Point-Jefferson (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Elkton (SD)' -> 'Elkton (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Emery-Ethan (SD)' -> 'Emery-Ethan (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Estelline (SD)' -> 'Estelline (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Eureka-Bowdle (SD)' -> 'Eureka-Bowdle (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Faith (SD)' -> 'Faith (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Faulkton (SD)' -> 'Faulkton (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Flandreau (SD)' -> 'Flandreau (SD)' (no change)
+2026-11-12 15:18:27,544 - WARNING -   'Flandreau Indian (SD)' -> 'Flandreau Indian (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Florence-Henry (SD)' -> 'Florence-Henry (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Fort Pierre Stanley County (SD)' -> 'Fort Pierre Stanley County (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Frederick-Hecla (SD)' -> 'Frederick-Hecla (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Freeman (SD)' -> 'Freeman (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Freeman-Marion-Freeman Academy (SD)' -> 'Freeman-Marion-Freeman Academy (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Garretson (SD)' -> 'Garretson (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Gayville-Volin (SD)' -> 'Gayville-Volin (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Geddes (SD)' -> 'Geddes (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Gettysburg (SD)' -> 'Gettysburg (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Gregory (SD)' -> 'Gregory (SD)' (no change)
+2026-11-12 15:18:27,545 - WARNING -   'Groton (SD)' -> 'Groton (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Harrisburg (SD)' -> 'Harrisburg (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Hartford West Central (SD)' -> 'Hartford West Central (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Hayti Hamlin (SD)' -> 'Hayti Hamlin (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Herreid-Selby (SD)' -> 'Herreid-Selby (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Highmore-Harrold (SD)' -> 'Highmore-Harrold (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Hill City (SD)' -> 'Hill City (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Hitchcock-Tulare (SD)' -> 'Hitchcock-Tulare (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Hot Springs (SD)' -> 'Hot Springs (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Hoven (SD)' -> 'Hoven (SD)' (no change)
+2026-11-12 15:18:27,546 - WARNING -   'Howard (SD)' -> 'Howard (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Huron (SD)' -> 'Huron (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Ipswich (SD)' -> 'Ipswich (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Irene (SD)' -> 'Irene (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Irene-Wakonda (SD)' -> 'Irene-Wakonda (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Iroquois (SD)' -> 'Iroquois (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Kadoka Area (SD)' -> 'Kadoka Area (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Kimball (SD)' -> 'Kimball (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Kimball-White Lake (SD)' -> 'Kimball-White Lake (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Kyle Little Wound (SD)' -> 'Kyle Little Wound (SD)' (no change)
+2026-11-12 15:18:27,547 - WARNING -   'Lake Andes Central (SD)' -> 'Lake Andes Central (SD)' (no change)
+2026-11-12 15:18:27,548 - WARNING -   'Lake Preston (SD)' -> 'Lake Preston (SD)' (no change)
+2026-11-12 15:18:27,548 - WARNING -   'Langford (SD)' -> 'Langford (SD)' (no change)
+2026-11-12 15:18:27,548 - WARNING -   'Lead (SD)' -> 'Lead (SD)' (no change)
+2026-11-12 15:18:27,548 - WARNING -   'Lead-Deadwood (SD)' -> 'Lead-Deadwood (SD)' (no change)
+2026-11-12 15:18:27,548 - WARNING -   'Lemmon (SD)' -> 'Lemmon (SD)' (no change)
+2026-11-12 15:18:27,548 - WARNING -   'Lemmon-McIntosh (SD)' -> 'Lemmon-McIntosh (SD)' (no change)
+2026-11-12 15:18:27,548 - WARNING -   'Lennox (SD)' -> 'Lennox (SD)' (no change)
+2026-11-12 15:18:27,548 - WARNING -   'Leola-Edmunds Central (SD)' -> 'Leola-Edmunds Central (SD)' (no change)
+2026-11-12 15:18:27,548 - WARNING -   'Leola-Frederick (SD)' -> 'Leola-Frederick (SD)' (no change)
+2026-11-12 15:18:27,549 - WARNING -   'Lower Brule (SD)' -> 'Lower Brule (SD)' (no change)
+2026-11-12 15:18:27,549 - WARNING -   'Madison (SD)' -> 'Madison (SD)' (no change)
+2026-11-12 15:18:27,549 - WARNING -   'Marion (SD)' -> 'Marion (SD)' (no change)
+2026-11-12 15:18:27,549 - WARNING -   'Martin Bennett County (SD)' -> 'Martin Bennett County (SD)' (no change)
+2026-11-12 15:18:27,549 - WARNING -   'Marty Indian (SD)' -> 'Marty Indian (SD)' (no change)
+2026-11-12 15:18:27,549 - WARNING -   'McIntosh (SD)' -> 'McIntosh (SD)' (no change)
+2026-11-12 15:18:27,549 - WARNING -   'McLaughlin (SD)' -> 'McLaughlin (SD)' (no change)
+2026-11-12 15:18:27,549 - WARNING -   'Mellette Northwestern Area (SD)' -> 'Mellette Northwestern Area (SD)' (no change)
+2026-11-12 15:18:27,549 - WARNING -   'Menno (SD)' -> 'Menno (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Menno-Scotland (SD)' -> 'Menno-Scotland (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Milbank (SD)' -> 'Milbank (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Miller (SD)' -> 'Miller (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Miller Sunshine Bible Academy (SD)' -> 'Miller Sunshine Bible Academy (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Mission Todd County (SD)' -> 'Mission Todd County (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Mitchell (SD)' -> 'Mitchell (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Mobridge (SD)' -> 'Mobridge (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Mobridge Northwestern Lutheran Academy (SD)' -> 'Mobridge Northwestern Lutheran Academy (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Mobridge-Pollock (SD)' -> 'Mobridge-Pollock (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Montrose (SD)' -> 'Montrose (SD)' (no change)
+2026-11-12 15:18:27,550 - WARNING -   'Mount Vernon (SD)' -> 'Mount Vernon (SD)' (no change)
+2026-11-12 15:18:27,551 - WARNING -   'Mount Vernon-Plankinton (SD)' -> 'Mount Vernon-Plankinton (SD)' (no change)
+2026-11-12 15:18:27,551 - WARNING -   'Murdo Jones County (SD)' -> 'Murdo Jones County (SD)' (no change)
+2026-11-12 15:18:27,551 - WARNING -   'Murdo Jones County-Midland (SD)' -> 'Murdo Jones County-Midland (SD)' (no change)
+2026-11-12 15:18:27,551 - WARNING -   'New Underwood (SD)' -> 'New Underwood (SD)' (no change)
+2026-11-12 15:18:27,551 - WARNING -   'Newell (SD)' -> 'Newell (SD)' (no change)
+2026-11-12 15:18:27,551 - WARNING -   'North Sioux City Dakota Valley (SD)' -> 'North Sioux City Dakota Valley (SD)' (no change)
+2026-11-12 15:18:27,551 - WARNING -   'Oelrichs (SD)' -> 'Oelrichs (SD)' (no change)
+2026-11-12 15:18:27,551 - WARNING -   'Oldham-Ramona-Rutland (SD)' -> 'Oldham-Ramona-Rutland (SD)' (no change)
+2026-11-12 15:18:27,551 - WARNING -   'Onida Sully Buttes (SD)' -> 'Onida Sully Buttes (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Parker (SD)' -> 'Parker (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Parkston (SD)' -> 'Parkston (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Philip (SD)' -> 'Philip (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Pierre T.F. Riggs (SD)' -> 'Pierre T.F. Riggs (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Pine Ridge (SD)' -> 'Pine Ridge (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Plankinton-White Lake (SD)' -> 'Plankinton-White Lake (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Platte (SD)' -> 'Platte (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Platte-Geddes (SD)' -> 'Platte-Geddes (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Presho Lyman (SD)' -> 'Presho Lyman (SD)' (no change)
+2026-11-12 15:18:27,552 - WARNING -   'Ramona-Oldham (SD)' -> 'Ramona-Oldham (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Ramona-Rutland (SD)' -> 'Ramona-Rutland (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Rapid City Central (SD)' -> 'Rapid City Central (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Rapid City Christian (SD)' -> 'Rapid City Christian (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Rapid City More (SD)' -> 'Rapid City More (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Rapid City Stevens (SD)' -> 'Rapid City Stevens (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Redfield-Doland (SD)' -> 'Redfield-Doland (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Revillo Grant-Deuel (SD)' -> 'Revillo Grant-Deuel (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Ridgeview Tiospaye Topa (SD)' -> 'Ridgeview Tiospaye Topa (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Rosholt Tri-State co-op [Rosholt-Fairmount-Campbell-Tintah] (SD)' -> 'Rosholt Tri-State co-op [Rosholt-Fairmount-Campbell-Tintah] (SD)' (no change)
+2026-11-12 15:18:27,553 - WARNING -   'Roslyn (SD)' -> 'Roslyn (SD)' (no change)
+2026-11-12 15:18:27,554 - WARNING -   'Saint Francis Indian (SD)' -> 'Saint Francis Indian (SD)' (no change)
+2026-11-12 15:18:27,554 - WARNING -   'Salem McCook Central (SD)' -> 'Salem McCook Central (SD)' (no change)
+2026-11-12 15:18:27,554 - WARNING -   'Scotland (SD)' -> 'Scotland (SD)' (no change)
+2026-11-12 15:18:27,554 - WARNING -   'Selby (SD)' -> 'Selby (SD)' (no change)
+2026-11-12 15:18:27,554 - WARNING -   'Sioux Falls Lincoln (SD)' -> 'Sioux Falls Lincoln (SD)' (no change)
+2026-11-12 15:18:27,554 - WARNING -   'Sioux Falls O'Gorman (SD)' -> 'Sioux Falls O'Gorman (SD)' (no change)
+2026-11-12 15:18:27,554 - WARNING -   'Sioux Falls Roosevelt (SD)' -> 'Sioux Falls Roosevelt (SD)' (no change)
+2026-11-12 15:18:27,554 - WARNING -   'Sioux Falls St. Joseph's Cathedral (SD)' -> 'Sioux Falls St. Joseph's Cathedral (SD)' (no change)
+2026-11-12 15:18:27,555 - WARNING -   'Sioux Falls Washington (SD)' -> 'Sioux Falls Washington (SD)' (no change)
+2026-11-12 15:18:27,555 - WARNING -   'Sisseton (SD)' -> 'Sisseton (SD)' (no change)
+2026-11-12 15:18:27,555 - WARNING -   'Spearfish (SD)' -> 'Spearfish (SD)' (no change)
+2026-11-12 15:18:27,555 - WARNING -   'Stephan Crow Creek (SD)' -> 'Stephan Crow Creek (SD)' (no change)
+2026-11-12 15:18:27,555 - WARNING -   'Sturgis Brown (SD)' -> 'Sturgis Brown (SD)' (no change)
+2026-11-12 15:18:27,555 - WARNING -   'Tea (SD)' -> 'Tea (SD)' (no change)
+2026-11-12 15:18:27,555 - WARNING -   'Timber Lake (SD)' -> 'Timber Lake (SD)' (no change)
+2026-11-12 15:18:27,555 - WARNING -   'Timber Lake-Isabel (SD)' -> 'Timber Lake-Isabel (SD)' (no change)
+2026-11-12 15:18:27,556 - WARNING -   'Tripp-Delmont (SD)' -> 'Tripp-Delmont (SD)' (no change)
+2026-11-12 15:18:27,556 - WARNING -   'Tyndall Bon Homme (SD)' -> 'Tyndall Bon Homme (SD)' (no change)
+2026-11-12 15:18:27,556 - WARNING -   'Vermillion (SD)' -> 'Vermillion (SD)' (no change)
+2026-11-12 15:18:27,556 - WARNING -   'Viborg (SD)' -> 'Viborg (SD)' (no change)
+2026-11-12 15:18:27,556 - WARNING -   'Viborg-Hurley (SD)' -> 'Viborg-Hurley (SD)' (no change)
+2026-11-12 15:18:27,556 - WARNING -   'Volga Sioux Valley (SD)' -> 'Volga Sioux Valley (SD)' (no change)
+2026-11-12 15:18:27,556 - WARNING -   'Wagner (SD)' -> 'Wagner (SD)' (no change)
+2026-11-12 15:18:27,556 - WARNING -   'Wall (SD)' -> 'Wall (SD)' (no change)
+2026-11-12 15:18:27,556 - WARNING -   'Wanblee Crazy Horse (SD)' -> 'Wanblee Crazy Horse (SD)' (no change)
+2026-11-12 15:18:27,557 - WARNING -   'Warner (SD)' -> 'Warner (SD)' (no change)
+2026-11-12 15:18:27,557 - WARNING -   'Watertown (SD)' -> 'Watertown (SD)' (no change)
+2026-11-12 15:18:27,557 - WARNING -   'Watertown Great Plains Lutheran (SD)' -> 'Watertown Great Plains Lutheran (SD)' (no change)
+2026-11-12 15:18:27,557 - WARNING -   'Waubay-Summit (SD)' -> 'Waubay-Summit (SD)' (no change)
+2026-11-12 15:18:27,557 - WARNING -   'Waverly-South Shore (SD)' -> 'Waverly-South Shore (SD)' (no change)
+2026-11-12 15:18:27,557 - WARNING -   'Webster (SD)' -> 'Webster (SD)' (no change)
+2026-11-12 15:18:27,557 - WARNING -   'Wessington Springs (SD)' -> 'Wessington Springs (SD)' (no change)
+2026-11-12 15:18:27,557 - WARNING -   'White Deubrook (SD)' -> 'White Deubrook (SD)' (no change)
+2026-11-12 15:18:27,557 - WARNING -   'White River (SD)' -> 'White River (SD)' (no change)
+2026-11-12 15:18:27,558 - WARNING -   'Willow Lake (SD)' -> 'Willow Lake (SD)' (no change)
+2026-11-12 15:18:27,558 - WARNING -   'Wilmot (SD)' -> 'Wilmot (SD)' (no change)
+2026-11-12 15:18:27,558 - WARNING -   'Winner (SD)' -> 'Winner (SD)' (no change)
+2026-11-12 15:18:27,558 - WARNING -   'Wolsey-Wessington (SD)' -> 'Wolsey-Wessington (SD)' (no change)
+2026-11-12 15:18:27,558 - WARNING -   'Woonsocket (SD)' -> 'Woonsocket (SD)' (no change)
+2026-11-12 15:18:27,558 - WARNING -   'Woonsocket-Wessington Springs-Sanborn Central (SD)' -> 'Woonsocket-Wessington Springs-Sanborn Central (SD)' (no change)
+2026-11-12 15:18:27,558 - WARNING -   'Yankton (SD)' -> 'Yankton (SD)' (no change)
+2026-11-12 15:18:27,558 - WARNING -   'Estelline-Hendricks (SD)' -> 'Estelline-Hendricks (SD)' (no change)
+2026-11-12 15:18:27,558 - WARNING -   'Eureka North Central (SD)' -> 'Eureka North Central (SD)' (no change)
+2026-11-12 15:18:27,559 - WARNING -   'Harding County-Bison (SD)' -> 'Harding County-Bison (SD)' (no change)
+2026-11-12 15:18:27,559 - WARNING -   'Herreid (SD)' -> 'Herreid (SD)' (no change)
+2026-11-12 15:18:27,559 - WARNING -   'Mount Vernon-Letcher (SD)' -> 'Mount Vernon-Letcher (SD)' (no change)
+2026-11-12 15:18:27,559 - WARNING -   'Roscoe Edmunds Central (SD)' -> 'Roscoe Edmunds Central (SD)' (no change)
+2026-11-12 15:18:27,559 - WARNING -   'State Line (SD)' -> 'State Line (SD)' (no change)
+2026-11-12 15:18:27,559 - INFO - Validation passed: 287 rules are clean and ready to upload.
+2026-11-12 15:18:27,583 - INFO - Uploading 287 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 15:18:27,704 - INFO - Upload to staging table complete.
+2026-11-12 15:18:27,710 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 15:19:18,415 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 15:19:18,415 - INFO - Reason logged to dbo.HS_Consolidation_Log: SD co-op round: same-school spellings (White Lake-Plankinton, Herried-Pollock, Herried, Hand County Sunshine Bible, Rapid City St. Thomas More, Wessington-Wolsey, Letcher-Mt. Vernon, Edmunds Central, Stateline, Selby Area, Aberdeen -> Aberdeen Central)
+2026-11-12 15:19:18,415 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 15:19:18,415 - INFO - Running post-consolidation safety check...
+2026-11-12 15:19:18,419 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team SD --from "Sioux Falls (SD)" --to "Sioux Falls Washington (SD)" --seasons 1880-1964 --reason "SD: Sioux Falls (SD) = Washington High, the only public HS before Lincoln opened 1965 (2026-11-12)" --commit
+
+MOVE Sioux Falls (SD) -> Sioux Falls Washington (SD), seasons 1880-1964 - COMMIT
+ move_games: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 111 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  107    1                  None
+
+>>> move-team SD --from "Alcester Hudson (SD)" --to "Hudson (SD)" --seasons 1976-1983 --ids coop_ids/SD_mv_000.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_000.csv
+
+MOVE Alcester Hudson (SD) -> Hudson (SD), seasons 1976-1983 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team SD --from "Alpena-Woonsocket (SD)" --to "Alpena (SD)" --seasons 1975-1984 --ids coop_ids/SD_mv_001.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_001.csv
+
+MOVE Alpena-Woonsocket (SD) -> Alpena (SD), seasons 1975-1984 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 35 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team SD --from "Alpena-Woonsocket (SD)" --to "Woonsocket (SD)" --seasons 1975-1998 --ids coop_ids/SD_mv_002.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 32 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_002.csv
+
+MOVE Alpena-Woonsocket (SD) -> Woonsocket (SD), seasons 1975-1998 - COMMIT
+ move_games: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  22     1                  None
+
+>>> move-team SD --from "Bonesteel (SD)" --to "Bonesteel-Fairfax (SD)" --seasons 1923-1971 --ids coop_ids/SD_mv_003.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_003.csv
+
+MOVE Bonesteel (SD) -> Bonesteel-Fairfax (SD), seasons 1923-1971 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team SD --from "Bonesteel-Fairfax-Burke (SD)" --to "Bonesteel-Fairfax (SD)" --seasons 1990-1991 --ids coop_ids/SD_mv_004.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_004.csv
+
+MOVE Bonesteel-Fairfax-Burke (SD) -> Bonesteel-Fairfax (SD), seasons 1990-1991 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team SD --from "Doland (SD)" --to "Doland-Conde (SD)" --seasons 1926-1986 --ids coop_ids/SD_mv_005.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 28 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_005.csv
+
+MOVE Doland (SD) -> Doland-Conde (SD), seasons 1926-1986 - COMMIT
+ move_games: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  28     1                  None
+
+>>> move-team SD --from "Eureka (SD)" --to "Eureka-Bowdle (SD)" --seasons 1987-2010 --ids coop_ids/SD_mv_006.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 19 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_006.csv
+
+MOVE Eureka (SD) -> Eureka-Bowdle (SD), seasons 1987-2010 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team SD --from "Frederick (SD)" --to "Frederick-Hecla (SD)" --seasons 1981-1981 --ids coop_ids/SD_mv_007.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_007.csv
+
+MOVE Frederick (SD) -> Frederick-Hecla (SD), seasons 1981-1981 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team SD --from "Frederick (SD)" --to "Leola-Frederick (SD)" --seasons 1926-1981 --ids coop_ids/SD_mv_008.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_008.csv
+
+MOVE Frederick (SD) -> Leola-Frederick (SD), seasons 1926-1981 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team SD --from "Frederick-Hecla (SD)" --to "Frederick (SD)" --seasons 1982-1982 --ids coop_ids/SD_mv_009.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_009.csv
+
+MOVE Frederick-Hecla (SD) -> Frederick (SD), seasons 1982-1982 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 33 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team SD --from "Highmore (SD)" --to "Highmore-Harrold (SD)" --seasons 1925-2001 --ids coop_ids/SD_mv_010.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_010.csv
+
+MOVE Highmore (SD) -> Highmore-Harrold (SD), seasons 1925-2001 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1519.csv
+ move_by_season: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1519.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> move-team SD --from "Highmore-Harrold (SD)" --to "Highmore (SD)" --seasons 1995-1995 --ids coop_ids/SD_mv_011.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_011.csv
+
+MOVE Highmore-Harrold (SD) -> Highmore (SD), seasons 1995-1995 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team SD --from "Hitchcock (SD)" --to "Hitchcock-Tulare (SD)" --seasons 1964-1991 --ids coop_ids/SD_mv_012.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 31 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_012.csv
+
+MOVE Hitchcock (SD) -> Hitchcock-Tulare (SD), seasons 1964-1991 - COMMIT
+ move_games: 31 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  31     1                  None
+
+>>> move-team SD --from "Leola (SD)" --to "Leola-Edmunds Central (SD)" --seasons 1994-2000 --ids coop_ids/SD_mv_013.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_013.csv
+
+MOVE Leola (SD) -> Leola-Edmunds Central (SD), seasons 1994-2000 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team SD --from "Leola-Edmunds Central (SD)" --to "Leola (SD)" --seasons 1991-1992 --ids coop_ids/SD_mv_014.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_014.csv
+
+MOVE Leola-Edmunds Central (SD) -> Leola (SD), seasons 1991-1992 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team SD --from "Leola-Frederick (SD)" --to "Frederick (SD)" --seasons 1957-1982 --ids coop_ids/SD_mv_015.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_015.csv
+
+MOVE Leola-Frederick (SD) -> Frederick (SD), seasons 1957-1982 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team SD --from "Plankinton (SD)" --to "Plankinton-White Lake (SD)" --seasons 1926-1995 --ids coop_ids/SD_mv_016.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_016.csv
+
+MOVE Plankinton (SD) -> Plankinton-White Lake (SD), seasons 1926-1995 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 86 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team SD --from "Plankinton-White Lake (SD)" --to "White Lake (SD)" --seasons 1953-1982 --ids coop_ids/SD_mv_017.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 50 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_017.csv
+
+MOVE Plankinton-White Lake (SD) -> White Lake (SD), seasons 1953-1982 - COMMIT
+ move_games: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  50     1                  None
+
+>>> move-team SD --from "Roslyn (SD)" --to "Roslyn-Bristol (SD)" --seasons 1986-1993 --ids coop_ids/SD_mv_018.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_018.csv
+
+MOVE Roslyn (SD) -> Roslyn-Bristol (SD), seasons 1986-1993 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 51 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team SD --from "Roslyn-Bristol (SD)" --to "Roslyn (SD)" --seasons 1995-1995 --ids coop_ids/SD_mv_019.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_019.csv
+
+MOVE Roslyn-Bristol (SD) -> Roslyn (SD), seasons 1995-1995 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 51 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team SD --from "Stickney (SD)" --to "Stickney-Mount Vernon (SD)" --seasons 1987-1993 --ids coop_ids/SD_mv_020.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_020.csv
+
+MOVE Stickney (SD) -> Stickney-Mount Vernon (SD), seasons 1987-1993 - COMMIT
+ move_games: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 52 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  16     1                  None
+
+>>> move-team SD --from "Timber Lake (SD)" --to "Timber Lake-Isabel (SD)" --seasons 1923-1996 --ids coop_ids/SD_mv_021.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 19 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_021.csv
+
+MOVE Timber Lake (SD) -> Timber Lake-Isabel (SD), seasons 1923-1996 - COMMIT
+ move_games: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  19     1                  None
+
+>>> move-team SD --from "Timber Lake-Isabel (SD)" --to "Timber Lake (SD)" --seasons 1989-2001 --ids coop_ids/SD_mv_022.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 25 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_022.csv
+
+MOVE Timber Lake-Isabel (SD) -> Timber Lake (SD), seasons 1989-2001 - COMMIT
+ move_games: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  25     1                  None
+
+>>> move-team SD --from "Tripp (SD)" --to "Tripp-Delmont (SD)" --seasons 1966-1984 --ids coop_ids/SD_mv_023.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_023.csv
+
+MOVE Tripp (SD) -> Tripp-Delmont (SD), seasons 1966-1984 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team SD --from "Tripp-Delmont (SD)" --to "Tripp (SD)" --seasons 1989-1989 --ids coop_ids/SD_mv_024.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_024.csv
+
+MOVE Tripp-Delmont (SD) -> Tripp (SD), seasons 1989-1989 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team SD --from "Tyndall (SD)" --to "Tyndall-Tabor (SD)" --seasons 1925-1963 --ids coop_ids/SD_mv_025.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_025.csv
+
+MOVE Tyndall (SD) -> Tyndall-Tabor (SD), seasons 1925-1963 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team SD --from "Waubay (SD)" --to "Waubay-Summit (SD)" --seasons 1968-1987 --ids coop_ids/SD_mv_026.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 24 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_026.csv
+
+MOVE Waubay (SD) -> Waubay-Summit (SD), seasons 1968-1987 - COMMIT
+ move_games: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  24     1                  None
+
+>>> move-team SD --from "Waubay-Summit (SD)" --to "Waubay (SD)" --seasons 1960-2000 --ids coop_ids/SD_mv_027.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 73 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_027.csv
+
+MOVE Waubay-Summit (SD) -> Waubay (SD), seasons 1960-2000 - COMMIT
+ move_games: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  73     1                  None
+
+>>> move-team SD --from "Waverly (SD)" --to "Waverly-South Shore (SD)" --seasons 1983-1997 --ids coop_ids/SD_mv_028.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_028.csv
+
+MOVE Waverly (SD) -> Waverly-South Shore (SD), seasons 1983-1997 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team SD --from "Waverly-South Shore (SD)" --to "Waverly (SD)" --seasons 1975-1982 --ids coop_ids/SD_mv_029.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 16 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_029.csv
+
+MOVE Waverly-South Shore (SD) -> Waverly (SD), seasons 1975-1982 - COMMIT
+ move_games: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1520.csv
+ move_by_season: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1520.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  16     1                  None
+
+>>> move-team SD --from "White Lake (SD)" --to "Plankinton-White Lake (SD)" --seasons 1950-1984 --ids coop_ids/SD_mv_030.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 62 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_030.csv
+
+MOVE White Lake (SD) -> Plankinton-White Lake (SD), seasons 1950-1984 - COMMIT
+ move_games: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1521.csv
+ move_by_season: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1521.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  62     1                  None
+
+>>> move-team SD --from "White River (SD)" --to "White River-Wood (SD)" --seasons 1967-1987 --ids coop_ids/SD_mv_031.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 27 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_031.csv
+
+MOVE White River (SD) -> White River-Wood (SD), seasons 1967-1987 - COMMIT
+ move_games: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1521.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1521.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  27     1                  None
+
+>>> move-team SD --from "White River-Wood (SD)" --to "White River (SD)" --seasons 1982-1988 --ids coop_ids/SD_mv_032.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_032.csv
+
+MOVE White River-Wood (SD) -> White River (SD), seasons 1982-1988 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1521.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1521.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team SD --from "Woonsocket (SD)" --to "Alpena-Woonsocket (SD)" --seasons 1985-1992 --ids coop_ids/SD_mv_033.csv --reason "SD co-op/member names in the same season: minority name -> majority name for that season (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_mv_033.csv
+
+MOVE Woonsocket (SD) -> Alpena-Woonsocket (SD), seasons 1985-1992 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1521.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1521.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> dedup SD --commit
+
+DEDUP v4 SD - COMMIT
+ dedup_archive: 438 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_archive_COMMITTED_20261112_1521.csv
+ dedup_review: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_review_COMMITTED_20261112_1521.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_summary_COMMITTED_20261112_1521.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  SD     55527         438                  12               D4236FCA-5AA1-44D5-8022-B3D7A240204F
+
+>>> review-pairs SD --commit
+
+REVIEW-ONLY PAIRS SD - COMMIT
+ 12 pairs {'SHORT': 12} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_review_pairs_COMMITTED_20261112_1521.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  12        DB8CA0A7-9834-4C9C-9E2C-527D1E5D5B34  None
+
+>>> same-score-fix SD
+ 1296 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS SD - PREVIEW (nothing changed)
+ 291 pairs {'DROP A': 17, 'DROP B': 21, 'UNDECIDED': 253} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_same_score_20261112_1522.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  38        None   None
+
+>>> query SD sd_dump.sql
+
+QUERY sd_dump (1 result sets)
+ set 1: 55077 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_sd_dump_1_20261112_1522.csv
+
+=== OK 2026-11-12 15:22:32

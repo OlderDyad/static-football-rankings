@@ -1,0 +1,36 @@
+move-team SD --from "Gary (SD)" --to "Gayville-Volin (SD)" --seasons 1982-1986 --ids coop_ids/SD_wrong_000.csv --reason "SD: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team SD --from "Ramona-Rutland (SD)" --to "Rapid City Stevens (SD)" --seasons 1977-2000 --ids coop_ids/SD_wrong_001.csv --reason "SD: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+dedup SD --commit
+same-score-fix SD
+move-team MN --from "Newfolden Marshall County Central (MN)" --to "Slayton Murray County Central (MN)" --seasons 1998-1998 --ids coop_ids/MN_wrong_000.csv --reason "MN: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team MN --from "Saint Louis Park (MN)" --to "Cottage Grove Park (MN)" --seasons 1992-1998 --ids coop_ids/MN_wrong_001.csv --reason "MN: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team MN --from "Two Harbors (MN)" --to "Tyler (MN)" --seasons 1956-1956 --ids coop_ids/MN_wrong_002.csv --reason "MN: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+dedup MN --commit
+same-score-fix MN
+move-team IA --from "Columbus Junction (IA)" --to "Waterloo Columbus (IA)" --seasons 1971-1987 --ids coop_ids/IA_wrong_000.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IA --from "Estherville Lincoln Central (IA)" --to "Gruver Lincoln Central (IA)" --seasons 1973-1986 --ids coop_ids/IA_wrong_001.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IA --from "Fairmont (MN)" --to "Fairfield (IA)" --seasons 1931-1969 --ids coop_ids/IA_wrong_002.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IA --from "Jefferson (IA)" --to "Cedar Rapids Jefferson (IA)" --seasons 1977-1989 --ids coop_ids/IA_wrong_003.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IA --from "Milan (MO)" --to "Milford (IA)" --seasons 1927-1969 --ids coop_ids/IA_wrong_004.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IA --from "Prairie City (IA)" --to "Cedar Rapids Prairie (IA)" --seasons 1973-1976 --ids coop_ids/IA_wrong_005.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IA --from "Stuart West Central Valley (IA)" --to "Maynard West Central (IA)" --seasons 1981-1999 --ids coop_ids/IA_wrong_006.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+dedup IA --commit
+same-score-fix IA
+move-team IL --from "Alton Marquette Catholic (IL)" --to "Ottawa Marquette Academy (IL)" --seasons 1960-1982 --ids coop_ids/IL_wrong_000.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Aurora Waubonsie Valley (IL)" --to "Fairview Valley (IL)" --seasons 1960-1964 --ids coop_ids/IL_wrong_001.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Barry Western Community (IL)" --to "Buda Western (IL)" --seasons 1963-1982 --ids coop_ids/IL_wrong_002.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Carbondale University High (IL)" --to "Tolono Unity (IL)" --seasons 1959-1965 --ids coop_ids/IL_wrong_003.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Chicago Parker (IL)" --to "Paris (IL)" --seasons 1958-1964 --ids coop_ids/IL_wrong_004.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Chicago St. Joseph (IL)" --to "Westchester St. Joseph (IL)" --seasons 1979-2003 --ids coop_ids/IL_wrong_005.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Decatur Eisenhower (IL)" --to "Blue Island Eisenhower (IL)" --seasons 1995-2003 --ids coop_ids/IL_wrong_006.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "East St. Louis Lincoln (IL)" --to "Lincoln (IL)" --seasons 1954-1991 --ids coop_ids/IL_wrong_007.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Monmouth (IL)" --to "Alexis United (IL)" --seasons 1969-1969 --ids coop_ids/IL_wrong_008.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Newman (IL)" --to "Sterling Newman Central Catholic (IL)" --seasons 1956-1993 --ids coop_ids/IL_wrong_009.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Niantic Sangamon Valley (IL)" --to "London Mills Spoon River Valley (IL)" --seasons 1980-1993 --ids coop_ids/IL_wrong_010.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "Paris (IL)" --to "Pana Coop (IL)" --seasons 1939-1964 --ids coop_ids/IL_wrong_011.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+move-team IL --from "River Forest Trinity (IL)" --to "Bloomington Trinity (IL)" --seasons 1929-1966 --ids coop_ids/IL_wrong_012.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+dedup IL --commit
+same-score-fix IL
+move-team VA --from "Salem (VA)" --to "Virginia Beach Salem (VA)" --seasons 2000-2000 --ids coop_ids/VA_wrong_000.csv --reason "VA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+dedup VA --commit
+same-score-fix VA

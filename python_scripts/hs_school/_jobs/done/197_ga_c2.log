@@ -1,0 +1,27 @@
+
+>>> commit GA
+
+DEDUP v4 GA - COMMIT
+ dedup_archive: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_dedup_archive_COMMITTED_20261111_1539.csv
+ dedup_review: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_dedup_review_COMMITTED_20261111_1539.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_dedup_summary_COMMITTED_20261111_1539.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  GA     171814        4                    12               F9D17309-0354-4F8B-A920-072BECF095FC
+
+REVIEW-ONLY PAIRS GA - COMMIT
+ 10 pairs {'LONG': 7, 'SHORT': 3} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_review_pairs_COMMITTED_20261111_1539.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  10        06801821-7E96-4A25-A8C7-331626C96048  None
+
+>>> query GA ga_dump.sql
+
+QUERY ga_dump (1 result sets)
+ set 1: 171800 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_ga_dump_1_20261111_1540.csv
+
+>>> query GA ga_export.sql
+
+QUERY ga_export (2 result sets)
+ set 1: 171800 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_ga_export_1_20261111_1540.csv
+ set 2: 2104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_ga_export_2_20261111_1540.csv
+
+=== OK 2026-11-11 15:40:08

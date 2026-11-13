@@ -1,0 +1,1 @@
+SELECT URL, ProperName, Team_ID FROM dbo.URL_ProperName_Mapping WHERE ProperName IN ('Barrow Utqiagvik (AK)','Honolulu Kamehameha (HI)','Honolulu Kapalama (HI)','''Iolani (HI)','Washington Wilson (DC)','Georgetown Fca (DE)','Dayton Dust (NV)','Las Vegas The Meadows (NV)','Las Vegas Agassi Prep (NV)');

@@ -1,0 +1,349 @@
+
+>>> same-score-fix WV --commit
+ 4263 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS WV - COMMIT
+ 2288 pairs {'DROP B': 5, 'DROP A': 3, 'UNDECIDED': 2280} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_same_score_COMMITTED_20261112_1625.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  8         CB7C3884-7E19-4CF5-8D2A-A8FE879E3654  None
+
+>>> consolidate WV --reason "WV co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/WV_cfg.py"
+Consolidating WV from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\WV_Alias_Rules.csv
+
+[stderr]
+2026-11-12 16:25:25,710 - INFO - Starting consolidation for state: (WV) using staging table method.
+2026-11-12 16:25:25,719 - WARNING - WARNING: 258 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 16:25:25,720 - WARNING -   'Alderson (WV)' -> 'Alderson (WV)' (no change)
+2026-11-12 16:25:25,720 - WARNING -   'Alderson Christian Institution (WV)' -> 'Alderson Christian Institution (WV)' (no change)
+2026-11-12 16:25:25,720 - WARNING -   'Alderson Collegiate Institute (WV)' -> 'Alderson Collegiate Institute (WV)' (no change)
+2026-11-12 16:25:25,720 - WARNING -   'Allegheny Collegiate Institute (WV)' -> 'Allegheny Collegiate Institute (WV)' (no change)
+2026-11-12 16:25:25,720 - WARNING -   'Ansted (WV)' -> 'Ansted (WV)' (no change)
+2026-11-12 16:25:25,720 - WARNING -   'Ashton Hannan (WV)' -> 'Ashton Hannan (WV)' (no change)
+2026-11-12 16:25:25,720 - WARNING -   'Athens (WV)' -> 'Athens (WV)' (no change)
+2026-11-12 16:25:25,720 - WARNING -   'Baileysville (WV)' -> 'Baileysville (WV)' (no change)
+2026-11-12 16:25:25,720 - WARNING -   'Baker East Hardy (WV)' -> 'Baker East Hardy (WV)' (no change)
+2026-11-12 16:25:25,720 - WARNING -   'Barboursville (WV)' -> 'Barboursville (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Barrackville (WV)' -> 'Barrackville (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Beckley Woodrow Wilson (WV)' -> 'Beckley Woodrow Wilson (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Belington (WV)' -> 'Belington (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Belle Dupont (WV)' -> 'Belle Dupont (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Belle Riverside (WV)' -> 'Belle Riverside (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Benwood Union (WV)' -> 'Benwood Union (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Berkeley Springs (WV)' -> 'Berkeley Springs (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Blacksville Clay-Battelle (WV)' -> 'Blacksville Clay-Battelle (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Bluefield (WV)' -> 'Bluefield (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Bradshaw River View (WV)' -> 'Bradshaw River View (WV)' (no change)
+2026-11-12 16:25:25,721 - WARNING -   'Bramwell (WV)' -> 'Bramwell (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Branchland Guyan Valley (WV)' -> 'Branchland Guyan Valley (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Bridgeport (WV)' -> 'Bridgeport (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Buckhannon-Upshur (WV)' -> 'Buckhannon-Upshur (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Burnsville (WV)' -> 'Burnsville (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Cameron (WV)' -> 'Cameron (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Cedar Grove (WV)' -> 'Cedar Grove (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Ceredo-Kenova (WV)' -> 'Ceredo-Kenova (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Chapmanville Regional (WV)' -> 'Chapmanville Regional (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Charles Town Washington (WV)' -> 'Charles Town Washington (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Charleston (WV)' -> 'Charleston (WV)' (no change)
+2026-11-12 16:25:25,722 - WARNING -   'Charleston Capital (WV)' -> 'Charleston Capital (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Charleston Catholic (WV)' -> 'Charleston Catholic (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Charleston George Washington (WV)' -> 'Charleston George Washington (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Charleston Sissonville (WV)' -> 'Charleston Sissonville (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Charleston Stonewall Jackson (WV)' -> 'Charleston Stonewall Jackson (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Charlestown (WV)' -> 'Charlestown (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Charmco Greenbrier West (WV)' -> 'Charmco Greenbrier West (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Chattaroy (WV)' -> 'Chattaroy (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Chester (WV)' -> 'Chester (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Circleville (WV)' -> 'Circleville (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Clarksburg Liberty (WV)' -> 'Clarksburg Liberty (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Clarksburg Notre Dame (WV)' -> 'Clarksburg Notre Dame (WV)' (no change)
+2026-11-12 16:25:25,723 - WARNING -   'Clarksburg Robert C. Byrd (WV)' -> 'Clarksburg Robert C. Byrd (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Clarksburg Roosevelt-Wilson (WV)' -> 'Clarksburg Roosevelt-Wilson (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Clarksburg Victory (WV)' -> 'Clarksburg Victory (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Clarksburg Washington Irving (WV)' -> 'Clarksburg Washington Irving (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Clay County (WV)' -> 'Clay County (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Clear Fork WestSide (WV)' -> 'Clear Fork WestSide (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Clendenin (WV)' -> 'Clendenin (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Clendenin Herbert Hoover (WV)' -> 'Clendenin Herbert Hoover (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Coal City Independence (WV)' -> 'Coal City Independence (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Coal City Stoco (WV)' -> 'Coal City Stoco (WV)' (no change)
+2026-11-12 16:25:25,724 - WARNING -   'Colcord Clear Fork (WV)' -> 'Colcord Clear Fork (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Cowen (WV)' -> 'Cowen (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Crichton (WV)' -> 'Crichton (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Crum (WV)' -> 'Crum (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Davis Mountaineer (WV)' -> 'Davis Mountaineer (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Delbarton Burch (WV)' -> 'Delbarton Burch (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Dunbar (WV)' -> 'Dunbar (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Dunmore Pocahontas County (WV)' -> 'Dunmore Pocahontas County (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'East Bank (WV)' -> 'East Bank (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Elizabeth Wirt County (WV)' -> 'Elizabeth Wirt County (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Elkhorn (WV)' -> 'Elkhorn (WV)' (no change)
+2026-11-12 16:25:25,725 - WARNING -   'Elkins (WV)' -> 'Elkins (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Elkview (WV)' -> 'Elkview (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Ellenboro Ritchie County (WV)' -> 'Ellenboro Ritchie County (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Elliott Business College (WV)' -> 'Elliott Business College (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Fairmont (WV)' -> 'Fairmont (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Fairmont East (WV)' -> 'Fairmont East (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Fairmont East Fairmont (WV)' -> 'Fairmont East Fairmont (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Fairmont State University (WV)' -> 'Fairmont State University (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Fairview (WV)' -> 'Fairview (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Farmington (WV)' -> 'Farmington (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Farmington North Marion (WV)' -> 'Farmington North Marion (WV)' (no change)
+2026-11-12 16:25:25,726 - WARNING -   'Fayetteville (WV)' -> 'Fayetteville (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Follansbee (WV)' -> 'Follansbee (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Fort Gay Tolsia (WV)' -> 'Fort Gay Tolsia (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Frankford (WV)' -> 'Frankford (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Franklin (WV)' -> 'Franklin (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Franklin Pendleton County (WV)' -> 'Franklin Pendleton County (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Gary (WV)' -> 'Gary (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Gassaway (WV)' -> 'Gassaway (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Gauley Bridge (WV)' -> 'Gauley Bridge (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Gilbert (WV)' -> 'Gilbert (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Glen Dale John Marshall (WV)' -> 'Glen Dale John Marshall (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Glen Daniel Liberty (WV)' -> 'Glen Daniel Liberty (WV)' (no change)
+2026-11-12 16:25:25,727 - WARNING -   'Glen Rogers (WV)' -> 'Glen Rogers (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Glenville Gilmer County (WV)' -> 'Glenville Gilmer County (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Grafton (WV)' -> 'Grafton (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Grafton West Virginia Industrial Home for Boys (WV)' -> 'Grafton West Virginia Industrial Home for Boys (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Green Bank (WV)' -> 'Green Bank (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Griffithsville Duval (WV)' -> 'Griffithsville Duval (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Hambleton Tucker County (WV)' -> 'Hambleton Tucker County (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Hamlin (WV)' -> 'Hamlin (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Hamlin Lincoln County (WV)' -> 'Hamlin Lincoln County (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Harpers Ferry (WV)' -> 'Harpers Ferry (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Harrisville (WV)' -> 'Harrisville (WV)' (no change)
+2026-11-12 16:25:25,728 - WARNING -   'Hedgesville (WV)' -> 'Hedgesville (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Herndon (WV)' -> 'Herndon (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Hico Midland Trail (WV)' -> 'Hico Midland Trail (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Hillsboro (WV)' -> 'Hillsboro (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Hinton (WV)' -> 'Hinton (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Hinton Summers County (WV)' -> 'Hinton Summers County (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Hundred (WV)' -> 'Hundred (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Huntington (WV)' -> 'Huntington (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Huntington Douglass (WV)' -> 'Huntington Douglass (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Huntington Spring Valley (WV)' -> 'Huntington Spring Valley (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Huntington St. Joseph Central Catholic (WV)' -> 'Huntington St. Joseph Central Catholic (WV)' (no change)
+2026-11-12 16:25:25,729 - WARNING -   'Huntington Vinson (WV)' -> 'Huntington Vinson (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Hurricane (WV)' -> 'Hurricane (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Iaeger (WV)' -> 'Iaeger (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Inwood Musselman (WV)' -> 'Inwood Musselman (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Keyser (WV)' -> 'Keyser (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Kingston (WV)' -> 'Kingston (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Kingwood (WV)' -> 'Kingwood (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Kingwood Central Preston (WV)' -> 'Kingwood Central Preston (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Kingwood Preston (WV)' -> 'Kingwood Preston (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Lenore (WV)' -> 'Lenore (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Lewisburg (WV)' -> 'Lewisburg (WV)' (no change)
+2026-11-12 16:25:25,730 - WARNING -   'Lewisburg Greenbrier (WV)' -> 'Lewisburg Greenbrier (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Lewisburg Greenbrier East (WV)' -> 'Lewisburg Greenbrier East (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Lewisburg Greenbrier Military Academy (WV)' -> 'Lewisburg Greenbrier Military Academy (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Lindside James Monroe (WV)' -> 'Lindside James Monroe (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Logan (WV)' -> 'Logan (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Lookout Nuttall (WV)' -> 'Lookout Nuttall (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Lost Creek South Harrison (WV)' -> 'Lost Creek South Harrison (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Lumberport (WV)' -> 'Lumberport (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Madison Scott (WV)' -> 'Madison Scott (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Man (WV)' -> 'Man (WV)' (no change)
+2026-11-12 16:25:25,731 - WARNING -   'Mannington (WV)' -> 'Mannington (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Marlinton (WV)' -> 'Marlinton (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Marshall Union (WV)' -> 'Marshall Union (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Martinsburg (WV)' -> 'Martinsburg (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Martinsburg Spring Mills (WV)' -> 'Martinsburg Spring Mills (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Mason Wahama (WV)' -> 'Mason Wahama (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Masontown (WV)' -> 'Masontown (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Masontown West Preston (WV)' -> 'Masontown West Preston (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Matewan Magnolia (WV)' -> 'Matewan Magnolia (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Matewan Mingo Central (WV)' -> 'Matewan Mingo Central (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'McMechen Bishop Donahue (WV)' -> 'McMechen Bishop Donahue (WV)' (no change)
+2026-11-12 16:25:25,732 - WARNING -   'Meadow Bridge (WV)' -> 'Meadow Bridge (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Middlebourne Tyler County (WV)' -> 'Middlebourne Tyler County (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Mill Creek Tygarts Valley (WV)' -> 'Mill Creek Tygarts Valley (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Milton (WV)' -> 'Milton (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Monongah (WV)' -> 'Monongah (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Monongalia County Valley Preston (WV)' -> 'Monongalia County Valley Preston (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Monroe County Union (WV)' -> 'Monroe County Union (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Montcalm (WV)' -> 'Montcalm (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Montcoal Marsh Fork (WV)' -> 'Montcoal Marsh Fork (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Montgomery (WV)' -> 'Montgomery (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Moorefield (WV)' -> 'Moorefield (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Morgantown (WV)' -> 'Morgantown (WV)' (no change)
+2026-11-12 16:25:25,733 - WARNING -   'Morgantown St. Francis (WV)' -> 'Morgantown St. Francis (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'Morgantown University (WV)' -> 'Morgantown University (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'Moundsville (WV)' -> 'Moundsville (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'Mount Hope (WV)' -> 'Mount Hope (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'Mullens (WV)' -> 'Mullens (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'New Cumberland (WV)' -> 'New Cumberland (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'New Cumberland Oak Glen (WV)' -> 'New Cumberland Oak Glen (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'New Martinsville Magnolia (WV)' -> 'New Martinsville Magnolia (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'New Richmond Wyoming East (WV)' -> 'New Richmond Wyoming East (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'Nitro (WV)' -> 'Nitro (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'Northfork (WV)' -> 'Northfork (WV)' (no change)
+2026-11-12 16:25:25,734 - WARNING -   'Northfork Elkhorn (WV)' -> 'Northfork Elkhorn (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Oak Hill (WV)' -> 'Oak Hill (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Oceana (WV)' -> 'Oceana (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Ona Cabell Midland (WV)' -> 'Ona Cabell Midland (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Paden City (WV)' -> 'Paden City (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Parkersburg (WV)' -> 'Parkersburg (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Parkersburg Catholic (WV)' -> 'Parkersburg Catholic (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Parkersburg South (WV)' -> 'Parkersburg South (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Parsons (WV)' -> 'Parsons (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Pennsboro (WV)' -> 'Pennsboro (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Petersburg (WV)' -> 'Petersburg (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Peterstown (WV)' -> 'Peterstown (WV)' (no change)
+2026-11-12 16:25:25,735 - WARNING -   'Philippi Barbour (WV)' -> 'Philippi Barbour (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Pine Grove Valley (WV)' -> 'Pine Grove Valley (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Pineville (WV)' -> 'Pineville (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Poca (WV)' -> 'Poca (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Point Pleasant (WV)' -> 'Point Pleasant (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Princeton (WV)' -> 'Princeton (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Princeton PikeView (WV)' -> 'Princeton PikeView (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Putnam County Buffalo (WV)' -> 'Putnam County Buffalo (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Rainelle (WV)' -> 'Rainelle (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Ravenswood (WV)' -> 'Ravenswood (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Renick (WV)' -> 'Renick (WV)' (no change)
+2026-11-12 16:25:25,736 - WARNING -   'Richwood (WV)' -> 'Richwood (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Ridgeley (WV)' -> 'Ridgeley (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Ridgeley Frankfort (WV)' -> 'Ridgeley Frankfort (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Ripley (WV)' -> 'Ripley (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Rivesville (WV)' -> 'Rivesville (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Romney (WV)' -> 'Romney (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Romney Hampshire (WV)' -> 'Romney Hampshire (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Rupert (WV)' -> 'Rupert (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Saint Albans (WV)' -> 'Saint Albans (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Seth Sherman (WV)' -> 'Seth Sherman (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Shady Spring (WV)' -> 'Shady Spring (WV)' (no change)
+2026-11-12 16:25:25,737 - WARNING -   'Sharples (WV)' -> 'Sharples (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Shenandoah Junction Jefferson (WV)' -> 'Shenandoah Junction Jefferson (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Shepherdstown (WV)' -> 'Shepherdstown (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Shinnston (WV)' -> 'Shinnston (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Shinnston Lincoln (WV)' -> 'Shinnston Lincoln (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Sistersville (WV)' -> 'Sistersville (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Sistersville Tyler (WV)' -> 'Sistersville Tyler (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Sistersville Tyler County Consolidated (WV)' -> 'Sistersville Tyler County Consolidated (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Smithers Valley (WV)' -> 'Smithers Valley (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Sophia (WV)' -> 'Sophia (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'South Charleston (WV)' -> 'South Charleston (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Spencer (WV)' -> 'Spencer (WV)' (no change)
+2026-11-12 16:25:25,738 - WARNING -   'Spencer Roane County (WV)' -> 'Spencer Roane County (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Stotesbury Mark Twain (WV)' -> 'Stotesbury Mark Twain (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Summersville Nicholas County (WV)' -> 'Summersville Nicholas County (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Surveyor Trap Hill (WV)' -> 'Surveyor Trap Hill (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Sutton (WV)' -> 'Sutton (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Sutton Braxton County (WV)' -> 'Sutton Braxton County (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Terra Alta (WV)' -> 'Terra Alta (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Terra Alta East Preston (WV)' -> 'Terra Alta East Preston (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Thomas (WV)' -> 'Thomas (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Upper Glade Webster County (WV)' -> 'Upper Glade Webster County (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Valley-Montgomery (WV)' -> 'Valley-Montgomery (WV)' (no change)
+2026-11-12 16:25:25,739 - WARNING -   'Van (WV)' -> 'Van (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Walton (WV)' -> 'Walton (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'War Big Creek (WV)' -> 'War Big Creek (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Warwood (WV)' -> 'Warwood (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Wayne (WV)' -> 'Wayne (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Wayne County Buffalo (WV)' -> 'Wayne County Buffalo (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Webster Springs (WV)' -> 'Webster Springs (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Weirton Madonna (WV)' -> 'Weirton Madonna (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Weirton Weir (WV)' -> 'Weirton Weir (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Welch (WV)' -> 'Welch (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Welch Mount View (WV)' -> 'Welch Mount View (WV)' (no change)
+2026-11-12 16:25:25,740 - WARNING -   'Wellsburg (WV)' -> 'Wellsburg (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'Wellsburg Brooke (WV)' -> 'Wellsburg Brooke (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'West Liberty University (WV)' -> 'West Liberty University (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'West Milford Unidis (WV)' -> 'West Milford Unidis (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'West Union Doddridge County (WV)' -> 'West Union Doddridge County (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'West Virginia School for the Deaf (WV)' -> 'West Virginia School for the Deaf (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'Weston (WV)' -> 'Weston (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'Weston Lewis County (WV)' -> 'Weston Lewis County (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'Wheeling (WV)' -> 'Wheeling (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'Wheeling Central Catholic (WV)' -> 'Wheeling Central Catholic (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'Wheeling Linsly Military Institute (WV)' -> 'Wheeling Linsly Military Institute (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'Wheeling Park (WV)' -> 'Wheeling Park (WV)' (no change)
+2026-11-12 16:25:25,741 - WARNING -   'Wheeling Triadelphia (WV)' -> 'Wheeling Triadelphia (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'White Sulphur Springs (WV)' -> 'White Sulphur Springs (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Williamson (WV)' -> 'Williamson (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Williamson Tug Valley (WV)' -> 'Williamson Tug Valley (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Williamstown (WV)' -> 'Williamstown (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Winfield (WV)' -> 'Winfield (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Winding Gulf (WV)' -> 'Winding Gulf (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Salem (WV)' -> 'Salem (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Union (WV)' -> 'Union (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Newell Wells (WV)' -> 'Newell Wells (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Sandstone (WV)' -> 'Sandstone (WV)' (no change)
+2026-11-12 16:25:25,742 - WARNING -   'Jane Lew (WV)' -> 'Jane Lew (WV)' (no change)
+2026-11-12 16:25:25,743 - WARNING -   'Talcott (WV)' -> 'Talcott (WV)' (no change)
+2026-11-12 16:25:25,743 - WARNING -   'Oakvale (WV)' -> 'Oakvale (WV)' (no change)
+2026-11-12 16:25:25,743 - INFO - Validation passed: 307 rules are clean and ready to upload.
+2026-11-12 16:25:25,761 - INFO - Uploading 307 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 16:25:25,867 - INFO - Upload to staging table complete.
+2026-11-12 16:25:25,873 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 16:26:14,546 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 16:26:14,546 - INFO - Reason logged to dbo.HS_Consolidation_Log: WV co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/WV_cfg.py
+2026-11-12 16:26:14,546 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 16:26:14,546 - INFO - Running post-consolidation safety check...
+2026-11-12 16:26:14,552 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team WV --from "Hinton Summers County (WV)" --to "Hinton (WV)" --seasons 1911-1993 --ids coop_ids/WV_mv_000.csv --reason "WV co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 701 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\coop_ids/WV_mv_000.csv
+
+MOVE Hinton Summers County (WV) -> Hinton (WV), seasons 1911-1993 - COMMIT
+ move_games: 701 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_move_games_COMMITTED_20261112_1626.csv
+ move_by_season: 110 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_move_by_season_COMMITTED_20261112_1626.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  701    1                  None
+
+>>> move-team WV --from "Valley-Montgomery (WV)" --to "Montgomery (WV)" --seasons 1923-1976 --ids coop_ids/WV_mv_001.csv --reason "WV co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 469 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\coop_ids/WV_mv_001.csv
+
+MOVE Valley-Montgomery (WV) -> Montgomery (WV), seasons 1923-1976 - COMMIT
+ move_games: 411 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_move_games_COMMITTED_20261112_1626.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_move_by_season_COMMITTED_20261112_1626.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  411    1                  None
+
+>>> move-team WV --from "Valley-Montgomery (WV)" --to "Smithers Valley (WV)" --seasons 1976-2004 --ids coop_ids/WV_mv_002.csv --reason "WV co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 295 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\coop_ids/WV_mv_002.csv
+
+MOVE Valley-Montgomery (WV) -> Smithers Valley (WV), seasons 1976-2004 - COMMIT
+ move_games: 293 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_move_games_COMMITTED_20261112_1626.csv
+ move_by_season: 53 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_move_by_season_COMMITTED_20261112_1626.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  293    1                  None
+
+>>> move-team WV --from "Weston Lewis County (WV)" --to "Weston (WV)" --seasons 1912-1967 --ids coop_ids/WV_mv_003.csv --reason "WV co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 459 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\coop_ids/WV_mv_003.csv
+
+MOVE Weston Lewis County (WV) -> Weston (WV), seasons 1912-1967 - COMMIT
+ move_games: 457 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_move_games_COMMITTED_20261112_1626.csv
+ move_by_season: 117 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_move_by_season_COMMITTED_20261112_1626.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  457    1                  None
+
+>>> dedup WV --commit
+
+DEDUP v4 WV - COMMIT
+ dedup_archive: 2125 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_dedup_archive_COMMITTED_20261112_1626.csv
+ dedup_review: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_dedup_review_COMMITTED_20261112_1626.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_dedup_summary_COMMITTED_20261112_1626.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  WV     86658         2125                 13               067E48F9-3B16-42FB-A567-464076B07ABE
+
+>>> review-pairs WV --commit
+
+REVIEW-ONLY PAIRS WV - COMMIT
+ 13 pairs {'LONG': 5, 'SHORT': 8} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_review_pairs_COMMITTED_20261112_1626.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  13        27175C68-DABB-40BF-9B12-DDE6FAD748C8  None
+
+>>> same-score-fix WV
+ 4263 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS WV - PREVIEW (nothing changed)
+ 259 pairs {'DROP B': 2, 'UNDECIDED': 257} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_same_score_20261112_1627.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  2         None   None
+
+>>> query WV wv_dump.sql
+
+QUERY wv_dump (1 result sets)
+ set 1: 84521 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_wv_dump_1_20261112_1627.csv
+
+=== OK 2026-11-12 16:27:48

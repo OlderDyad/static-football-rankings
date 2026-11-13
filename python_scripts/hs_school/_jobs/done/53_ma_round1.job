@@ -1,0 +1,32 @@
+move-team MA --from "Boston Latin (MA)" --to "Dorchester Boston Latin Academy (MA)" --seasons 2024-2024 --ids ma_bla_2024_ids.csv --reason "2024 Boston Latin Academy games mis-mapped to Boston Latin" --commit
+move-team MA --from "Boston College (MA)" --to "Boston College High (MA)" --seasons 2020-2026 --reason "2026 BC High games imported as Boston College (MA)" --commit
+move-team MA --from "Cambridge Rindge Tech (MA)" --to "Cambridge Rindge & Latin (MA)" --seasons 2024-2026 --reason "2024-2026 Cambridge Rindge & Latin games imported as Cambridge Rindge Tech" --commit
+move-team MA --from "Springfield (MA)" --to "Springfield Sci-Tech (MA)" --seasons 2024-2026 --reason "2024-2026 Springfield International/Sci-Tech co-op games imported as Springfield (MA)" --commit
+move-team MA --from "Carlisle (MA)" --to "Carlisle (OH)" --seasons 1974-1974 --reason "1974 Dayton Jefferson Township (OH) vs Carlisle (OH) mis-tagged as Carlisle (MA)" --commit
+archive-ids MA --ids ma_everett_1938_ids.csv --reason "1937 Everett schedule duplicated in Season 1938 with synthetic Dec 1938-Feb 1939 dates from Classmates yearbook" --commit
+remap MA "https://www.maxpreps.com/ma/arlington/arlington-spy-ponders/football/schedule/" "Arlington (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/boston/boston-college-high-eagles/football/schedule/" "Boston College High (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/dorchester/boston-latin-academy-dragons/football/schedule/" "Dorchester Boston Latin Academy (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/boxford/masconomet-regional-chieftains/football/schedule/" "Topsfield Masconomet Regional (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/brighton/brighton-kennedy-health-careers/football/schedule/" "Brighton (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/cambridge/cambridge-rindge-and-latin-falcons/football/schedule/" "Cambridge Rindge & Latin (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/harwich/cape-cod-rvt-crusaders/football/schedule/" "Harwich Cape Cod RVT (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/easthampton/williston-northampton-wildcats/football/schedule/" "Easthampton Williston Northampton School (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/fitchburg/montachusett-rvt-bulldogs/football/schedule/" "Fitchburg Montachusett RVT (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/groton/groton-dunstable-crusaders/football/schedule/" "Groton-Dunstable (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/holyoke/holyoke-purple-knights/football/schedule/" "Holyoke (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/hyannis/st-john-paul-ii-lions/football/schedule/" "Hyannis Pope John Paul II (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/lynn/kipp-academy-lynn-collegiate-panthers/football/schedule/" "Lynn Collegiate-KIPP Academy (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/milford/milford-scarlet-hawks/football/schedule/" "Milford (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/north-adams/drury-mount-greylock-regional/football/schedule/" "North Adams Drury (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/south-dartmouth/dartmouth-indians/football/schedule/" "Dartmouth (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/south-hamilton/hamilton-wenham-regional-generals/football/schedule/" "Hamilton-Wenham Regional (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/springfield/springfield-international/football/schedule/" "Springfield Sci-Tech (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/sudbury/lincoln-sudbury-warriors/football/schedule/" "Lincoln-Sudbury (MA)" --commit
+remap MA "https://www.maxpreps.com/ma/townsend/north-middlesex-regional-patriots/football/schedule/" "Townsend North Middlesex Regional (MA)" --commit
+mapcheck MA --commit
+consolidate MA --reason "MA Round 1: MaxPreps short-name/mascot drift, regional/co-op splits, and school renames"
+dedup MA
+review-pairs MA
+same-score-fix MA
+block-dups MA

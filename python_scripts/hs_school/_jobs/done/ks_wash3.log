@@ -1,0 +1,21 @@
+
+>>> commit KS
+
+DEDUP v4 KS - COMMIT
+ dedup_archive: 189 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_archive_COMMITTED_20261107_0622.csv
+ dedup_review: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_review_COMMITTED_20261107_0622.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_summary_COMMITTED_20261107_0622.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  KS     125767        189                  55               86E42BE1-B713-4A41-A176-9CADD20CF335
+
+REVIEW-ONLY PAIRS KS - COMMIT
+ 55 pairs {'SHORT': 55} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_review_pairs_COMMITTED_20261107_0622.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  55        3D8660B6-F7C4-49C0-9669-4EDEDD65CA0E  None
+
+>>> query KS ks_wash_verify.sql
+
+QUERY ks_wash_verify (1 result sets)
+ set 1: 1520 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_ks_wash_verify_1_20261107_0622.csv
+
+=== OK 2026-11-07 06:22:50

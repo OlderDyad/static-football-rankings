@@ -1,0 +1,13 @@
+remap KS --url "https://www.maxpreps.com/ks/argonia/argonia-attica-titans/football/schedule/" --to "Attica-Argonia (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/brewster/triplains-brewster-titans/football/schedule/" --to "Triplains-Brewster (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/hays/thomas-more-prep-marian-monarchs/football/schedule/" --to "Hays Thomas More Prep-Marian (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/inman/inman-inman-teutons/football/schedule/" --to "Inman (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/lawrence/lawrence-free-state-firebirds/football/schedule/" --to "Lawrence Free State (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/otis/otis-bison-cougars/football/schedule/" --to "Otis-Bison (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/wichita/bishop-carroll-golden-eagles/football/schedule/" --to "Wichita Carroll (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/olathe/kansas-school-for-the-deaf-jackrabbits/football/schedule/" --to "Kansas School for the Deaf (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/melvern/marais-des-cygnes-valley-trojans/football/schedule/" --to "Melvern Marais Des Cygne Valley (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/overland-park/saint-thomas-aquinas-saints/football/schedule/" --to "Overland Park St. Thomas Aquinas (KS)" --commit
+remap KS --url "https://www.maxpreps.com/ks/wichita/kapaun-mt-carmel-crusaders/football/schedule/" --to "Wichita Kapaun Mount Carmel (KS)" --commit
+mapcheck KS --commit
+round KS --reason "KS round 1: 2024 MaxPreps drift, same-school names (Christ Prep, Chaparral, Rural Vista, Riverside, South Sumner, KSD, Independent)"

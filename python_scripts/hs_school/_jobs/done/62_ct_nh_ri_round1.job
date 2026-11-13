@@ -1,0 +1,67 @@
+# 1. URL Remaps & Mapcheck for CT, NH, RI
+remap CT --url "https://www.maxpreps.com/ct/ansonia/obrien-rvt-condors/football/schedule/" --to "Ansonia O'Brien RVT (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/avon/avon-old-farms-beavers/football/schedule/" --to "Avon Old Farms (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/bridgeport/bullard-havens-tigers/football/schedule/" --to "Bridgeport Bullard Havens Tech (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/coventry/coventry-windham-rvt-bolton-lyman-memorial-patriots/football/schedule/" --to "Coventry-Windham RVT-Bolton (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/farmington/farmington-river-hawks/football/schedule/" --to "Farmington (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/griswold/griswold-wheeler-wolverines/football/schedule/" --to "Griswold (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/hartford/prince-rvt-falcons/football/schedule/" --to "Hartford Prince Tech (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/hartford/sports-and-medical-sciences-academy-bulkeley-classical-magnet-tigerhawks/football/schedule/" --to "Hartford Sport & Medical Sciences Academy (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/killingly/killingly-redmen/football/schedule/" --to "Danielson Killingly (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/meriden/wilcox-tech-kaynor-rvt/football/schedule/" --to "Meriden Wilcox Tech-Kaynor RVT (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/norwich/thames-river-co-op-norwich-rvt-grasso-rvt-st-bernard-crusaders/football/schedule/" --to "Norwich Thames River Academy (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/oakdale/st-thomas-more-chancellors/football/schedule/" --to "Oakdale St.Thomas More (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/putnam/quinebaug-valley-coop-pride/football/schedule/" --to "Putnam Quinebaug Valley Coop (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/stafford-springs/stafford-somers-east-windsor-bulldogs/football/schedule/" --to "Stafford Springs Stafford-Somers-East Windsor (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/stamford/king-vikings/football/schedule/" --to "Stamford King Low Heywood Thomas (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/washington/frederick-gunn-highlanders/football/schedule/" --to "Washington Federick Gunn (CT)" --commit
+remap CT --url "https://www.maxpreps.com/ct/west-haven/west-haven-blue-devils/football/schedule/" --to "West Haven (CT)" --commit
+mapcheck CT --commit
+
+remap NH --url "https://www.maxpreps.com/nh/belmont/belmont-gilford-red-raiders/football/schedule/" --to "Belmont-Gilford (NH)" --commit
+remap NH --url "https://www.maxpreps.com/nh/exeter/phillips-exeter-academy-lions/football/schedule/" --to "Phillips Exeter Academy (NH)" --commit
+remap NH --url "https://www.maxpreps.com/nh/hillsboro/hillsboro-deering-hopkinton/football/schedule/" --to "Hillsboro-Deering-Hopkinton (NH)" --commit
+remap NH --url "https://www.maxpreps.com/nh/meredith/inter-lakes-moultonborough-academy-lakers/football/schedule/" --to "Meredith Inter-Lakes-Moultonborough Academy (NH)" --commit
+remap NH --url "https://www.maxpreps.com/nh/peterborough/conval-cougars/football/schedule/" --to "Peterborough Contoocook Valley Regional (NH)" --commit
+mapcheck NH --commit
+
+remap RI --url "https://www.maxpreps.com/ri/central-falls/central-falls-blackstone-valley-prep-achievement-first/football/schedule/" --to "Central Falls (RI)" --commit
+remap RI --url "https://www.maxpreps.com/ri/east-providence/providence-country-day-highlander-charter-sanchez-complex/football/schedule/" --to "Providence Country Day-Highlander Charter-Sanchez Complex (RI)" --commit
+remap RI --url "https://www.maxpreps.com/ri/lincoln/davies-career-and-tech-patriots/football/schedule/" --to "Lincoln Davies Career & Tech (RI)" --commit
+remap RI --url "https://www.maxpreps.com/ri/north-smithfield/north-smithfield-mount-st-charles-academy/football/schedule/" --to "North Smithfield-Mount St. Charles Academy (RI)" --commit
+remap RI --url "https://www.maxpreps.com/ri/providence/hope-st-patrick-academy/football/schedule/" --to "Providence Hope (RI)" --commit
+remap RI --url "https://www.maxpreps.com/ri/providence/la-salle-academy-rams/football/schedule/" --to "Providence Lasalle Academy (RI)" --commit
+remap RI --url "https://www.maxpreps.com/ri/west-greenwich/exeter-west-greenwich-prout/football/schedule/" --to "Exeter-West Greenwich-Prout (RI)" --commit
+remap RI --url "https://www.maxpreps.com/ri/west-greenwich/exeter-west-greenwich-scarlet-knights/football/schedule/" --to "Exeter-West Greenwich (RI)" --commit
+remap RI --url "https://www.maxpreps.com/ri/woonsocket/woonsocket-villa-novans/football/schedule/" --to "Woonsocket (RI)" --commit
+mapcheck RI --commit
+
+# 2. Pre-consolidation move-team splits
+move-team CT --from "New London Buckeley (CT)" --to "New London (CT)" --seasons 1951-1992 --ids ct_nl_from_buckeley_ids.csv --reason "1951-1992 New London HS games mis-assigned to closed Bulkeley School" --commit
+move-team CT --from "New London Buckeley (CT)" --to "Hartford Bulkeley (CT)" --seasons 1952-2003 --reason "1952-2003 Hartford Bulkeley games mis-assigned to New London Buckeley" --commit
+move-team CT --from "Bristol (CT)" --to "Bristol (RI)" --seasons 1967-1986 --reason "1967-1986 Bristol RI yearbook games mis-tagged as Bristol CT" --commit
+move-team CT --from "Waterbury Career Academy (CT)" --to "Waterbury McTernan (CT)" --seasons 1960-1970 --reason "1961 and 1966 Chase Collegiate / McTernan games wrongly merged into Waterbury Career Academy" --commit
+move-team CT --from "Cromwell (CT)" --to "Cromwell-Portland (CT)" --seasons 2015-2026 --reason "2015+ games belong to Cromwell-Portland co-op" --commit
+move-team RI --from "Bristol Mt. Hope (RI)" --to "Providence Hope (RI)" --seasons 1949-1992 --reason "Pre-1993 Boston Globe games of Providence Hope mis-mapped to Bristol Mt. Hope" --commit
+move-team RI --from "Pawtucket (RI)" --to "Pawtucket Shea (RI)" --seasons 1953-1953 --ids ri_pawt_shea_1953_id.csv --reason "1953-10-18 vs Providence Classical belongs to Pawtucket West/Shea" --commit
+
+# 3. Consolidate MA, CT, NH, RI
+consolidate MA
+consolidate CT
+consolidate NH
+consolidate RI
+
+# 4. Preview dedup, review-pairs, and same-score-fix
+dedup CT
+review-pairs CT
+same-score-fix CT
+
+dedup NH
+review-pairs NH
+same-score-fix NH
+
+dedup RI
+review-pairs RI
+same-score-fix RI
+
+same-score-fix MA

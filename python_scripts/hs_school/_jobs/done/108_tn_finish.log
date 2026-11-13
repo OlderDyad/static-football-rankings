@@ -1,0 +1,22 @@
+
+>>> archive-ids TN --ids tn_college_dup_ids.csv --reason "Post-1940 college games confirmed present in College_Scores (names+scores match)" --commit
+
+ARCHIVE LISTED GAMES TN - COMMIT
+ 3 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_archive_ids_COMMITTED_20261110_1117.csv
+   Season  Date        Home                               Home_Score  Visitor                                 Visitor_Score  Source                                    Access_ID  ID                                  
+   1940    1940-10-05  Austin Peay State University (TN)  35          Middle Tennessee State University (TN)  6              The_Times_Picayune_1940_10_05_14.csv      None       5A4F59A9-A3A9-4EC6-A778-7E7E9BD363BE
+   1943    1943-11-26  Vanderbilt University (TN)         45          Tennessee Tech University (TN)          7              Lexington_Herald_Leader_1943_11_26_7 (1)  None       DE000870-03C6-46DC-97A2-E72DA882EE0A
+   1955    1955-10-22  Chattanooga College (TN)           7           Abilene Christian College (TX)          6              The_Indianapolis_Star_1955_10_22_Page_21  None       ACC95CD4-0F15-4A12-8D68-E1BAD36E3FB5
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  3       3      86B5953C-2FB2-422C-85F3-B37E4AE86F62  None
+
+>>> step TN 3.1 done "6 odd dates left: 2 Corinth (MS) 1924 games dated Feb 1925; 4 Covington Byars-Hall 1969 hsfdatabase games dated Apr-May 1979"
+Tracker updated: TN 3.1 -> done
+
+>>> step TN 3.2 done "1 game 2-0 without forfeit flag (Clarksville Academy - Montgomery Central 2026) left as-is"
+Tracker updated: TN 3.2 -> done
+
+>>> step TN 5.0 done "3 college copies archived (APSU-MTSU 1940, Vanderbilt-Tennessee Tech 1943, Chattanooga-Abilene Christian 1955)"
+Tracker updated: TN 5.0 -> done
+
+=== OK 2026-11-10 11:17:36

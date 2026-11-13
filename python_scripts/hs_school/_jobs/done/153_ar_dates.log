@@ -1,0 +1,59 @@
+
+>>> set-dates AR --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-AR game date (both teams + score match)" --commit
+
+SET DATES AR - COMMIT
+ 13 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_set_dates_COMMITTED_20261111_0823.csv
+   Season  OldDate     NewDate     DayShift  Home                      Home_Score  Visitor                     Visitor_Score  Source                                    Note                    ID                                  
+   1969    1969-08-29  1969-09-05  7         Brownsville Carver (TN)   14          West Memphis Wonder (AR)    6              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 1559821  EA615E25-7801-423A-8A12-2E312993184E
+   1969    1969-09-05  1969-09-12  7         Strong (AR)               6           Merry (TN)                  0              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 1238406  B9D7D9E1-D51E-4851-AF34-780952D98C6D
+   1980    1980-09-26  1980-10-03  7         Blytheville (AR)          21          Jackson Central-Merry (TN)  7              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 1574648  BFAE1507-A117-4EA4-A1E8-9FAD2B09EDEA
+   2000    2000-09-08  2000-09-01  -7        Little Rock Central (AR)  35          West Memphis (AR)           21             http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1213969  57F28E4A-496B-4BBA-B6C7-408FE4E8A705
+   2000    2000-11-03  2000-10-27  -7        Little Rock Central (AR)  34          Little Rock McClellan (AR)  15             http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1646699  16B995B6-8FED-47F8-8163-22D55D3AE46F
+   2000    2000-11-10  2000-11-03  -7        Little Rock Hall (AR)     16          Little Rock Central (AR)    20             http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1647186  BDFB99A1-6E24-4269-AF83-E2744F448189
+   2001    2001-09-07  2001-08-31  -7        Little Rock Central (AR)  27          West Memphis (AR)           7              http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1646607  7CA77FDF-CE3A-41E2-948B-568534D5200B
+   2001    2001-09-14  2001-09-07  -7        Little Rock Central (AR)  21          Sherwood Sylvan Hills (AR)  12             http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1256853  63123434-5B8A-43D0-BCF6-0F5187AC522A
+   2001    2001-10-12  2001-10-05  -7        Little Rock Central (AR)  61          Mountain Home (AR)          20             http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1646738  21DE1952-606B-47F9-BE51-860A2D9F76F0
+   2001    2001-10-19  2001-10-12  -7        Little Rock Central (AR)  23          Little Rock Parkview (AR)   14             http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1643681  8C701AB2-A229-4B86-9830-9769BF17190D
+   ... 3 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  13      13       None
+
+>>> set-dates AR --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-AR date: same teams + same score in season" --commit
+
+SET DATES AR - COMMIT
+ 230 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_set_dates_COMMITTED_20261111_0823.csv
+   Season  OldDate     NewDate     DayShift  Home                       Home_Score  Visitor                    Visitor_Score  Source                                    Note                                      ID                                  
+   1910    1910-11-11  1910-11-24  13        Fort Smith Northside (AR)  17          Little Rock Central (AR)   0              http://www.classmates.com/siteui/yearboo  hsfha.org game 1182072 (same teams+score  837CA3EA-9ABC-4538-88AA-21F92DDE2719
+   1911    1911-11-10  1911-11-30  20        Little Rock Central (AR)   22          Fort Smith Northside (AR)  10             http://www.classmates.com/siteui/yearboo  hsfha.org game 1188499 (same teams+score  B48BBD63-93AE-4682-A69A-F317070FC9D6
+   1918    1918-10-04  1918-11-09  36        Fort Smith Northside (AR)  21          Muskogee (OK)              20             http://www.classmates.com/siteui/yearboo  hsfha.org game 1948236 (same teams+score  A2CE3F30-990B-48D0-9F9D-22C96D315B5B
+   1920    1920-10-08  1920-11-05  28        Fort Smith Northside (AR)  7           Tulsa Central (OK)         6              http://www.classmates.com/yearbooks/Nort  hsfha.org game 1205764 (same teams+score  3296C99C-63CC-4ED5-B1D8-071EF9762DF5
+   1921    1921-12-02  1921-11-18  -14       Pine Bluff (AR)            42          Shreveport (LA)            7              http://www.classmates.com/yearbooks/Pine  hsfha.org game 482438 (same teams+score)  D2FA82AA-4512-4AA9-8E47-1157F5603B80
+   1923    1923-11-02  1923-09-28  -35       Little Rock Central (AR)   3           Pine Bluff (AR)            0              http://www.classmates.com/yearbooks/Pine  hsfha.org game 1176232 (same teams+score  63AFDED0-AFBB-4FFA-869F-70C6AE1CC53E
+   1924    1924-09-12  1924-10-03  21        Russellville (AR)          26          Booneville (AR)            20             http://www.classmates.com/yearbooks/Russ  hsfha.org game 1254028 (same teams+score  8EF7AFA9-85CA-4037-978C-9D4E9C34ACEE
+   1925    1925-11-13  1925-10-31  -13       Pine Bluff (AR)            23          Little Rock Central (AR)   0              http://www.classmates.com/yearbooks/Pine  hsfha.org game 1188521 (same teams+score  61C51A09-4660-4CA7-B2B7-88DBF6FFA6FA
+   1925    1925-12-18  1925-11-21  -27       Pine Bluff (AR)            58          Fort Smith Northside (AR)  0              http://www.classmates.com/yearbooks/Pine  hsfha.org game 1262145 (same teams+score  384809E8-2525-4A64-8F8E-E9C5B86C4126
+   1925    1925-12-25  1925-11-26  -29       Pine Bluff (AR)            32          Atlanta Tech (GA)          0              http://www.classmates.com/yearbooks/Pine  hsfha.org game 1235066 (same teams+score  80FE8BAF-86B7-4DA8-B39D-C75F2C4FC61E
+   ... 220 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  230     230      None
+
+>>> set-scores AR --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-AR score (David 2026-11-10 rule)" --commit
+
+SET SCORES AR - COMMIT
+ 3 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_set_scores_COMMITTED_20261111_0823.csv
+   ID                                    Season  Date        Home                      OldHS  NewHS  Visitor                     OldVS  NewVS  Source                                    Note                  
+   B8DF9742-1046-4A0C-B6BC-66EAC6F8F8AC  2000    2000-09-15  Little Rock Central (AR)  13     17     Sherwood Sylvan Hills (AR)  7      7      http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1256918
+   ED7CA3D0-D150-4712-9751-BEF4968C9A81  2000    2000-10-13  Little Rock Central (AR)  49     49     Mountain Home (AR)          6      9      http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1209855
+   3A09A975-7445-4179-8AF7-317C5EB13624  2003    2003-11-07  Little Rock Hall (AR)     8      0      Little Rock Central (AR)    41     41     http://www.hsfdatabase.com/ar_littlerock  hsfha.org game 1646527
+   Status     Listed  Updated  Err 
+   COMMITTED  3       3        None
+
+>>> same-score-fix AR --commit
+ 533 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS AR - COMMIT
+ 436 pairs {'DROP B': 175, 'DROP A': 168, 'UNDECIDED': 93} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_same_score_COMMITTED_20261111_0824.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  341       A6D07D74-B88C-4BC0-9A10-50DEF732F295  None
+
+=== OK 2026-11-11 08:24:31

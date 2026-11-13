@@ -1,0 +1,65 @@
+
+>>> move-team MA --from "Boston Latin (MA)" --to "Dorchester Boston Latin Academy (MA)" --seasons 2024-2024 --ids ma_bla_2024_ids.csv --reason "2024 Boston Latin Academy games mis-mapped to Boston Latin" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\ma_bla_2024_ids.csv
+
+MOVE Boston Latin (MA) -> Dorchester Boston Latin Academy (MA), seasons 2024-2024 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261109_0857.csv
+ move_by_season: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261109_0857.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team MA --from "Boston College (MA)" --to "Boston College High (MA)" --seasons 2020-2026 --reason "2026 BC High games imported as Boston College (MA)" --commit
+
+MOVE Boston College (MA) -> Boston College High (MA), seasons 2020-2026 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261109_0857.csv
+ move_by_season: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261109_0857.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team MA --from "Cambridge Rindge Tech (MA)" --to "Cambridge Rindge & Latin (MA)" --seasons 2024-2026 --reason "2024-2026 Cambridge Rindge & Latin games imported as Cambridge Rindge Tech" --commit
+
+MOVE Cambridge Rindge Tech (MA) -> Cambridge Rindge & Latin (MA), seasons 2024-2026 - COMMIT
+ move_games: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261109_0857.csv
+ move_by_season: 118 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261109_0857.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  29     1                  None
+
+>>> move-team MA --from "Springfield (MA)" --to "Springfield Sci-Tech (MA)" --seasons 2024-2026 --reason "2024-2026 Springfield International/Sci-Tech co-op games imported as Springfield (MA)" --commit
+
+MOVE Springfield (MA) -> Springfield Sci-Tech (MA), seasons 2024-2026 - COMMIT
+ move_games: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261109_0857.csv
+ move_by_season: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261109_0857.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  24     1                  None
+
+>>> move-team MA --from "Carlisle (MA)" --to "Carlisle (OH)" --seasons 1974-1974 --reason "1974 Dayton Jefferson Township (OH) vs Carlisle (OH) mis-tagged as Carlisle (MA)" --commit
+
+MOVE Carlisle (MA) -> Carlisle (OH), seasons 1974-1974 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261109_0857.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261109_0857.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> archive-ids MA --ids ma_everett_1938_ids.csv --reason "1937 Everett schedule duplicated in Season 1938 with synthetic Dec 1938-Feb 1939 dates from Classmates yearbook" --commit
+
+ARCHIVE LISTED GAMES MA - COMMIT
+ 8 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_archive_ids_COMMITTED_20261109_0857.csv
+   Season  Date        Home                     Home_Score  Visitor          Visitor_Score  Source                                    Access_ID  ID                                  
+   1938    1938-12-30  Concord (MA)             6           Everett (MA)     6              http://www.classmates.com/yearbooks/Ever  None       6A4641D8-E7F0-4EC4-8C0E-7670FEC25080
+   1938    1939-01-06  Salem (MA)               0           Everett (MA)     0              http://www.classmates.com/yearbooks/Ever  None       E137083C-3557-4E62-A88F-1A4A27BFA23B
+   1938    1939-01-13  Everett (MA)             6           Newton (MA)      0              http://www.classmates.com/yearbooks/Ever  None       7C3E542E-0353-42F3-A970-D64D8259D113
+   1938    1939-01-20  Manchester Central (NH)  0           Everett (MA)     0              http://www.classmates.com/yearbooks/Ever  None       66971BA3-3C3A-48A6-A41C-69FA82D33021
+   1938    1939-01-27  Everett (MA)             20          Revere (MA)      0              http://www.classmates.com/yearbooks/Ever  None       68CF3740-D984-41B3-BC03-C66BBD0E0558
+   1938    1939-02-03  Everett (MA)             20          Providence (RI)  0              http://www.classmates.com/yearbooks/Ever  None       3B869277-87EF-4F28-9354-CF0600242099
+   1938    1939-02-10  Malden (MA)              0           Everett (MA)     0              http://www.classmates.com/yearbooks/Ever  None       3F80285B-2ED0-4B5E-B040-A972CD7BE828
+   1938    1939-02-17  Chelsea (MA)             6           Everett (MA)     0              http://www.classmates.com/yearbooks/Ever  None       F7943F32-6414-4670-9E2C-AB7981ABD527
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  8       8      40691928-3EE4-4865-A252-30CAD462924D  None
+
+>>> remap MA "https://www.maxpreps.com/ma/arlington/arlington-spy-ponders/football/schedule/" "Arlington (MA)" --commit
+
+[stderr]
+usage: hs_cleanup.py remap [-h] --url URL --to TO [--commit] state
+hs_cleanup.py remap: error: the following arguments are required: --url, --to
+
+=== FAILED (exit 2) 2026-11-09 08:57:32

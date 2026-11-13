@@ -1,0 +1,56 @@
+addstate WA
+report WA drift
+mapcheck WA --commit
+dedup WA --commit
+review-pairs WA --commit
+same-score-fix WA --commit
+query WA season_date.sql
+query WA forfeits.sql
+addstate ID
+report ID drift
+mapcheck ID --commit
+dedup ID --commit
+review-pairs ID --commit
+same-score-fix ID --commit
+query ID season_date.sql
+query ID forfeits.sql
+addstate MT
+report MT drift
+mapcheck MT --commit
+dedup MT --commit
+review-pairs MT --commit
+same-score-fix MT --commit
+query MT season_date.sql
+query MT forfeits.sql
+addstate ND
+report ND drift
+mapcheck ND --commit
+dedup ND --commit
+review-pairs ND --commit
+same-score-fix ND --commit
+query ND season_date.sql
+query ND forfeits.sql
+addstate SD
+report SD drift
+mapcheck SD --commit
+dedup SD --commit
+review-pairs SD --commit
+same-score-fix SD --commit
+query SD season_date.sql
+query SD forfeits.sql
+addstate MN
+report MN drift
+mapcheck MN --commit
+dedup MN --commit
+review-pairs MN --commit
+same-score-fix MN --commit
+query MN season_date.sql
+query MN forfeits.sql
+addstate WI
+report WI drift
+mapcheck WI --commit
+dedup WI --commit
+review-pairs WI --commit
+same-score-fix WI --commit
+query WI season_date.sql
+query WI forfeits.sql

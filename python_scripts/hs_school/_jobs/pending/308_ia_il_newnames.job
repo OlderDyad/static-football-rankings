@@ -1,0 +1,9 @@
+move-team IA --from "Corydon Wayne (IA)" --to "Corydon (IA)" --seasons 1958-1958 --ids coop_ids/IA_mv_012.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IA --from "Dunlap Boyer Valley (IA)" --to "Dunlap (IA)" --seasons 1952-1957 --ids coop_ids/IA_mv_017.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IA --from "Leon Central Decatur (IA)" --to "Leon (IA)" --seasons 1958-1958 --ids coop_ids/IA_mv_035.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IA --from "Tabor Fremont-Mills (IA)" --to "Tabor (IA)" --seasons 1948-1958 --ids coop_ids/IA_mv_058.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup IA --commit
+same-score-fix IA
+move-team IL --from "Northbrook Glenbrook North (IL)" --to "Northfield Township Glenbrook (IL)" --seasons 1958-1958 --ids coop_ids/IL_mv_063.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup IL --commit
+same-score-fix IL

@@ -1,0 +1,12 @@
+archive-ids AR --ids ar_college_dup_ids.csv --reason "Post-1940 college game confirmed present in College_Scores (names+scores match)" --commit
+step AR 1.1 done "2026-11-11: HSFHA-AR match; ~30 alias rules (2024 MaxPreps short names, Fort Smith->Northside, HWH Central variants, Des Arc); wrong old rules fixed (Arkansas School for the Deaf, LR Southwest, college Aggies)"
+step AR 1.2 done "2026-11-11: 5 URLs remapped, mapcheck"
+step AR 1.3 done "2026-11-11: 21 per-game school fix groups via HSFHA codes (Lake Village/Hot Springs Lakeside, FS Northside/Southside, White Hall/LR Hall, Elkins/Atkins, TX/LA/KS twins)"
+step AR 1.4 done "2026-11-11: Amity, LR Southwest (2020+), West Helena Woodruff, Hartman per-game; Palestine split to 1986. Consolidations kept separate (Glenwood, Ola, Yellville, Wilson, Helena)"
+step AR 2.1 done "2026-11-11: dedup 591 + 6"
+step AR 2.2 done "2026-11-11: review pairs 34 + 13"
+step AR 2.3 done "2026-11-11: same-score 341 + 4 + 3 archived (HSFHA decisions)"
+step AR 3.1 done "2026-11-11: 1 HSFHA game season/date mismatch (Brinkley-West Helena 1928 dated 1927) left"
+step AR 3.2 done "2026-11-11: 27 2-0 games without forfeit flag left as-is"
+step AR 4.3 done "2026-11-11: HSFHA-AR compare: 243 dates, 3 scores set; 14,374 HSFHA games imported (BatchID 198)"
+step AR 5.0 done "2026-11-11: 1 college copy archived (Arkansas Tech-Henderson State 1961)"

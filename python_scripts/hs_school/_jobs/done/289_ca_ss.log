@@ -1,0 +1,25 @@
+
+>>> same-score-fix CA --commit
+ 1634 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS CA - COMMIT
+ 3579 pairs {'DROP A': 1188, 'DROP B': 1245, 'UNDECIDED': 1146} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_same_score_COMMITTED_20261112_1456.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  2409      C08020A5-F18E-4580-BFC3-413CA2D481F9  None
+
+>>> query CA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_season_date_1_20261112_1456.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_season_date_2_20261112_1456.csv
+
+>>> query CA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_forfeits_1_20261112_1456.csv
+ set 2: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_forfeits_2_20261112_1456.csv
+
+>>> step CA 1.1 done "2026-11-12: 43 MaxPreps short names; renames to latest (University of San Diego High -> Cathedral Catholic, Chatsworth/Granada Hills -> Charter, Sepulveda Monroe -> North Hills Monroe, Riverside Rubidoux -> Jurupa Valley); same-school variants (Stevenson, Heritage Christian, Southlands Christian, San Jose Academy, Horizon Christian, Southwest, Palos Verdes Estates)"
+Tracker updated: CA 1.1 -> done
+
+=== OK 2026-11-12 14:56:11

@@ -1,0 +1,4 @@
+move-team WY --from "Byron (WY)" --to "Byron (NE)" --seasons 1969-1969 --ids WY_byron_ne_ids.csv --reason "Byron (WY) vs Hardy (NE) 1969 is Byron (NE)" --commit
+move-team WY --from "Torrington (WY)" --to "Torrington (CT)" --seasons 2016-2016 --ids WY_torrington_ct_ids.csv --reason "Torrington (WY) vs Ansonia (CT) 2016 is Torrington (CT)" --commit
+move-team WY --from "Elk Garden (WY)" --to "Elk Garden (WV)" --seasons 1979-1980 --reason "Elk Garden is a West Virginia school" --commit
+report WY double-booked

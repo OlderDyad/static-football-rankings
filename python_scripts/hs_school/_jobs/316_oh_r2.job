@@ -1,0 +1,10 @@
+same-score-fix OH --commit
+consolidate OH --reason "OH round 2 (2026-11-13): same-school names, see _coop_scripts/OH_cfg.py"
+move-team OH --from "Akron Garfield (OH)" --to "Akron Kenmore-Garfield (OH)" --seasons 2017-2019 --ids coop_ids/OH_c3_000.csv --reason "OH co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team OH --from "Akron Kenmore-Garfield (OH)" --to "Akron Garfield (OH)" --seasons 2022-2022 --ids coop_ids/OH_c3_001.csv --reason "OH co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team OH --from "Waynesfield (OH)" --to "Waynesfield-Goshen (OH)" --seasons 1985-1999 --ids coop_ids/OH_c3_002.csv --reason "OH co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team OH --from "Waynesfield-Goshen (OH)" --to "Waynesfield (OH)" --seasons 1963-1994 --ids coop_ids/OH_c3_003.csv --reason "OH co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup OH --commit
+review-pairs OH --commit
+same-score-fix OH
+query OH oh_dump.sql

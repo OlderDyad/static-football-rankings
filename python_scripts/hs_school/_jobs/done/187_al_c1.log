@@ -1,0 +1,34 @@
+
+>>> commit AL
+
+DEDUP v4 AL - COMMIT
+ dedup_archive: 3920 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_archive_COMMITTED_20261111_1156.csv
+ dedup_review: 185 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_review_COMMITTED_20261111_1156.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_summary_COMMITTED_20261111_1156.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  AL     188080        3920                 185              087A5685-5D0B-4F4E-A6C8-8C694A880A52
+
+REVIEW-ONLY PAIRS AL - COMMIT
+ 184 pairs {'LONG': 18, 'SHORT': 166} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_review_pairs_COMMITTED_20261111_1156.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  184       13C72272-B908-4216-8E04-43811089CA47  None
+
+>>> same-score-fix AL
+
+SAME-SCORE DOUBLE-BOOKINGS AL - PREVIEW (nothing changed)
+ 1907 pairs {'DROP B': 386, 'DROP A': 360, 'UNDECIDED': 1161} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_same_score_20261111_1158.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  735       None   None
+
+>>> query AL al_dump.sql
+
+QUERY al_dump (1 result sets)
+ set 1: 183978 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_al_dump_1_20261111_1158.csv
+
+>>> query AL al_geo_all.sql
+
+QUERY al_geo_all (2 result sets)
+ set 1: 36437 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_al_geo_all_1_20261111_1158.csv
+ set 2: 183978 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_al_geo_all_2_20261111_1158.csv
+
+=== OK 2026-11-11 11:58:54

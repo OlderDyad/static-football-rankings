@@ -1,0 +1,29 @@
+import pickle,collections,csv,os,re
+D=os.path.expanduser('~/mnt/static-football-rankings/python_scripts/hs_school/TN/')
+out=pickle.load(open('/tmp/hsfha_missing.pkl','rb'))
+mp,votes=pickle.load(open('/tmp/hsfha_map.pkl','rb'))
+A,B,canon,dom=pickle.load(open('/tmp/hsfha_AB.pkl','rb'))
+def strong(code):
+    v=votes.get(code); n=canon.get(code)
+    if not v or not n: return False
+    return v[n]>=10 and v[n]>=2*max([x for k,x in v.items() if k!=n] or [0])
+ok=[];c=collections.Counter()
+for x in out:
+    if not (strong(x['TeamCode']) and strong(x['OppCode'])): c['weakmap']+=1; continue
+    if not x['Date']: c['undated']+=1
+    ok.append(x)
+print(c,len(ok))
+def city(n): return n.split(' (')[0].lower()
+rows=[];hc=collections.Counter()
+for x in ok:
+    loc=(x['Location'] or '').split(',')[0].strip().lower()
+    t,o=x['OurTeam'],x['OurOpp']; ts,os_=x['TeamScore'],x['OppScore']
+    if loc and city(o).startswith(loc) and not city(t).startswith(loc): home,vis,hs,vs,neu=o,t,os_,ts,None; hc['opp home']+=1
+    elif loc and city(t).startswith(loc): home,vis,hs,vs,neu=t,o,ts,os_,None; hc['team home']+=1
+    elif loc: home,vis,hs,vs,neu=t,o,ts,os_,None; hc['site unclear']+=1
+    else: home,vis,hs,vs,neu=t,o,ts,os_,None; hc['no location']+=1
+    rows.append([x['Season'],x['Date'],home,hs,vis,vs,'' if neu is None else neu,x['Location'],f"hsfha.org HSFHA-TN game {x['GameID']}"])
+print(hc)
+with open(D+'hsfha_import_TN.csv','w',newline='',encoding='utf-8') as f:
+    w=csv.writer(f); w.writerow(['Season','Date','Home','Home_Score','Visitor','Visitor_Score','Neutral','Location','Source']); w.writerows(rows)
+print(len(rows))

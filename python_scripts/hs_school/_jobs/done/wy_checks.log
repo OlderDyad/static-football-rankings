@@ -1,0 +1,25 @@
+
+>>> step WY 1.3 done "same-town pairs are real separate schools (Natrona/Walsh, Cheyenne Central/East/South, Campbell Co/Thunder Basin)"
+Tracker updated: WY 1.3 -> done
+
+>>> query WY season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_q_season_date_1_20261106_0800.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_q_season_date_2_20261106_0800.csv
+
+>>> query WY forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_q_forfeits_1_20261106_0800.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_q_forfeits_2_20261106_0800.csv
+
+>>> query WY college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_q_college_check_1_20261106_0800.csv
+ set 2: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_q_college_check_2_20261106_0800.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_q_college_check_3_20261106_0800.csv
+ set 4: 44 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_q_college_check_4_20261106_0800.csv
+
+=== OK 2026-11-06 08:00:24

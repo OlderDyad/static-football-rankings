@@ -1,0 +1,15 @@
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/admiral-farragut-blue-jackets/football/schedule/" --to "Saint Petersburg Admiral Farragut (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/gibbs-gladiators/football/schedule/" --to "Saint Petersburg Gibbs (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/keswick-christian-crusaders/football/schedule/" --to "Saint Petersburg Keswick Christian (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/lakewood-spartans/football/schedule/" --to "Saint Petersburg Lakewood (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/northeast-vikings/football/schedule/" --to "Saint Petersburg Northeast (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/northside-christian-mustangs/football/schedule/" --to "Saint Petersburg Northside Christian (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/shorecrest-prep-chargers/football/schedule/" --to "Saint Petersburg Shorecrest Prep (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/st-petersburg-catholic-barons/football/schedule/" --to "Saint Petersburg Catholic (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/st-petersburg-green-devils/football/schedule/" --to "Saint Petersburg (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/canterbury-crusaders/football/schedule/" --to "Saint Petersburg Canterbury (FL)" --commit
+mapcheck FL --commit
+consolidate FL --reason "City names spelled out: St. Petersburg -> Saint Petersburg (David 2026-11-08)"
+dedup FL
+report FL names
+query FL fl_stpete.sql

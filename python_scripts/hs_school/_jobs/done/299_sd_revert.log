@@ -1,0 +1,312 @@
+
+>>> move-team SD --from "Alpena (SD)" --to "Alpena-Woonsocket (SD)" --seasons 1975-1982 --ids coop_ids/SD_revert_000.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_000.csv
+
+MOVE Alpena (SD) -> Alpena-Woonsocket (SD), seasons 1975-1982 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1549.csv
+ move_by_season: 34 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1549.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team SD --from "Alpena-Woonsocket (SD)" --to "Woonsocket (SD)" --seasons 1985-1992 --ids coop_ids/SD_revert_001.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_001.csv
+
+MOVE Alpena-Woonsocket (SD) -> Woonsocket (SD), seasons 1985-1992 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1549.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1549.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team SD --from "Bonesteel-Fairfax (SD)" --to "Bonesteel (SD)" --seasons 1923-1971 --ids coop_ids/SD_revert_002.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_002.csv
+
+MOVE Bonesteel-Fairfax (SD) -> Bonesteel (SD), seasons 1923-1971 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team SD --from "Bonesteel-Fairfax (SD)" --to "Bonesteel-Fairfax-Burke (SD)" --seasons 1990-1991 --ids coop_ids/SD_revert_003.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_003.csv
+
+MOVE Bonesteel-Fairfax (SD) -> Bonesteel-Fairfax-Burke (SD), seasons 1990-1991 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team SD --from "Doland-Conde (SD)" --to "Doland (SD)" --seasons 1926-1986 --ids coop_ids/SD_revert_004.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_004.csv
+
+MOVE Doland-Conde (SD) -> Doland (SD), seasons 1926-1986 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team SD --from "Eureka-Bowdle (SD)" --to "Eureka (SD)" --seasons 1987-2010 --ids coop_ids/SD_revert_005.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 16 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_005.csv
+
+MOVE Eureka-Bowdle (SD) -> Eureka (SD), seasons 1987-2010 - COMMIT
+ move_games: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  14     1                  None
+
+>>> move-team SD --from "Frederick (SD)" --to "Leola-Frederick (SD)" --seasons 1982-1982 --ids coop_ids/SD_revert_006.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_006.csv
+
+MOVE Frederick (SD) -> Leola-Frederick (SD), seasons 1982-1982 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team SD --from "Highmore (SD)" --to "Highmore-Harrold (SD)" --seasons 1995-1995 --ids coop_ids/SD_revert_007.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_007.csv
+
+MOVE Highmore (SD) -> Highmore-Harrold (SD), seasons 1995-1995 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team SD --from "Highmore-Harrold (SD)" --to "Highmore (SD)" --seasons 1925-2001 --ids coop_ids/SD_revert_008.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_008.csv
+
+MOVE Highmore-Harrold (SD) -> Highmore (SD), seasons 1925-2001 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team SD --from "Hitchcock-Tulare (SD)" --to "Hitchcock (SD)" --seasons 1964-1991 --ids coop_ids/SD_revert_009.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 14 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_009.csv
+
+MOVE Hitchcock-Tulare (SD) -> Hitchcock (SD), seasons 1964-1991 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team SD --from "Hudson (SD)" --to "Alcester Hudson (SD)" --seasons 1976-1982 --ids coop_ids/SD_revert_010.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_010.csv
+
+MOVE Hudson (SD) -> Alcester Hudson (SD), seasons 1976-1982 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team SD --from "Leola (SD)" --to "Leola-Edmunds Central (SD)" --seasons 1991-1992 --ids coop_ids/SD_revert_011.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_011.csv
+
+MOVE Leola (SD) -> Leola-Edmunds Central (SD), seasons 1991-1992 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team SD --from "Leola-Edmunds Central (SD)" --to "Leola (SD)" --seasons 1994-2000 --ids coop_ids/SD_revert_012.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_012.csv
+
+MOVE Leola-Edmunds Central (SD) -> Leola (SD), seasons 1994-2000 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team SD --from "Leola-Frederick (SD)" --to "Frederick (SD)" --seasons 1927-1977 --ids coop_ids/SD_revert_013.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_013.csv
+
+MOVE Leola-Frederick (SD) -> Frederick (SD), seasons 1927-1977 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team SD --from "Plankinton-White Lake (SD)" --to "Plankinton (SD)" --seasons 1930-1995 --ids coop_ids/SD_revert_014.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_014.csv
+
+MOVE Plankinton-White Lake (SD) -> Plankinton (SD), seasons 1930-1995 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team SD --from "Plankinton-White Lake (SD)" --to "White Lake (SD)" --seasons 1950-1984 --ids coop_ids/SD_revert_015.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 56 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_015.csv
+
+MOVE Plankinton-White Lake (SD) -> White Lake (SD), seasons 1950-1984 - COMMIT
+ move_games: 56 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  56     1                  None
+
+>>> move-team SD --from "Roslyn (SD)" --to "Roslyn-Bristol (SD)" --seasons 1995-1995 --ids coop_ids/SD_revert_016.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_016.csv
+
+MOVE Roslyn (SD) -> Roslyn-Bristol (SD), seasons 1995-1995 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 51 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team SD --from "Roslyn-Bristol (SD)" --to "Roslyn (SD)" --seasons 1993-1993 --ids coop_ids/SD_revert_017.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_017.csv
+
+MOVE Roslyn-Bristol (SD) -> Roslyn (SD), seasons 1993-1993 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 51 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team SD --from "Stickney-Mount Vernon (SD)" --to "Stickney (SD)" --seasons 1987-1993 --ids coop_ids/SD_revert_018.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_018.csv
+
+MOVE Stickney-Mount Vernon (SD) -> Stickney (SD), seasons 1987-1993 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 52 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team SD --from "Timber Lake (SD)" --to "Timber Lake-Isabel (SD)" --seasons 1989-2001 --ids coop_ids/SD_revert_019.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_019.csv
+
+MOVE Timber Lake (SD) -> Timber Lake-Isabel (SD), seasons 1989-2001 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team SD --from "Timber Lake-Isabel (SD)" --to "Timber Lake (SD)" --seasons 1956-1995 --ids coop_ids/SD_revert_020.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_020.csv
+
+MOVE Timber Lake-Isabel (SD) -> Timber Lake (SD), seasons 1956-1995 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team SD --from "Tripp (SD)" --to "Tripp-Delmont (SD)" --seasons 1989-1989 --ids coop_ids/SD_revert_021.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_021.csv
+
+MOVE Tripp (SD) -> Tripp-Delmont (SD), seasons 1989-1989 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team SD --from "Tripp-Delmont (SD)" --to "Tripp (SD)" --seasons 1966-1984 --ids coop_ids/SD_revert_022.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_022.csv
+
+MOVE Tripp-Delmont (SD) -> Tripp (SD), seasons 1966-1984 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team SD --from "Tyndall-Tabor (SD)" --to "Tyndall (SD)" --seasons 1942-1943 --ids coop_ids/SD_revert_023.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_023.csv
+
+MOVE Tyndall-Tabor (SD) -> Tyndall (SD), seasons 1942-1943 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1550.csv
+ move_by_season: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1550.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team SD --from "Waubay (SD)" --to "Waubay-Summit (SD)" --seasons 1960-2000 --ids coop_ids/SD_revert_024.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 68 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_024.csv
+
+MOVE Waubay (SD) -> Waubay-Summit (SD), seasons 1960-2000 - COMMIT
+ move_games: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1551.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1551.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  68     1                  None
+
+>>> move-team SD --from "Waubay-Summit (SD)" --to "Waubay (SD)" --seasons 1968-1987 --ids coop_ids/SD_revert_025.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 16 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_025.csv
+
+MOVE Waubay-Summit (SD) -> Waubay (SD), seasons 1968-1987 - COMMIT
+ move_games: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1551.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1551.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  16     1                  None
+
+>>> move-team SD --from "Waverly (SD)" --to "Waverly-South Shore (SD)" --seasons 1975-1981 --ids coop_ids/SD_revert_026.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_026.csv
+
+MOVE Waverly (SD) -> Waverly-South Shore (SD), seasons 1975-1981 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1551.csv
+ move_by_season: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1551.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team SD --from "Waverly-South Shore (SD)" --to "Waverly (SD)" --seasons 1983-1997 --ids coop_ids/SD_revert_027.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_027.csv
+
+MOVE Waverly-South Shore (SD) -> Waverly (SD), seasons 1983-1997 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1551.csv
+ move_by_season: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1551.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team SD --from "White Lake (SD)" --to "Plankinton-White Lake (SD)" --seasons 1953-1982 --ids coop_ids/SD_revert_028.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 48 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_028.csv
+
+MOVE White Lake (SD) -> Plankinton-White Lake (SD), seasons 1953-1982 - COMMIT
+ move_games: 48 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1551.csv
+ move_by_season: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1551.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  48     1                  None
+
+>>> move-team SD --from "White River (SD)" --to "White River-Wood (SD)" --seasons 1988-1988 --ids coop_ids/SD_revert_029.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_029.csv
+
+MOVE White River (SD) -> White River-Wood (SD), seasons 1988-1988 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1551.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1551.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team SD --from "White River-Wood (SD)" --to "White River (SD)" --seasons 1967-1986 --ids coop_ids/SD_revert_030.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_030.csv
+
+MOVE White River-Wood (SD) -> White River (SD), seasons 1967-1986 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1551.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1551.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team SD --from "Woonsocket (SD)" --to "Alpena-Woonsocket (SD)" --seasons 1975-1998 --ids coop_ids/SD_revert_031.csv --reason "SD co-op round correction: game had no matching game under the other name, so name restored (2026-11-12)" --commit
+ only the 32 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_revert_031.csv
+
+MOVE Woonsocket (SD) -> Alpena-Woonsocket (SD), seasons 1975-1998 - COMMIT
+ move_games: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1551.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1551.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  23     1                  None
+
+>>> dedup SD --commit
+
+DEDUP v4 SD - COMMIT
+ dedup_archive: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_archive_COMMITTED_20261112_1551.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_review_COMMITTED_20261112_1551.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_summary_COMMITTED_20261112_1551.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  SD     55077         2                    0                F1B6DC4B-5424-4F19-BA18-D90B8F9FD289
+
+>>> same-score-fix SD
+ 1296 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS SD - PREVIEW (nothing changed)
+ 256 pairs {'DROP A': 12, 'DROP B': 7, 'UNDECIDED': 237} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_same_score_20261112_1552.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  19        None   None
+
+>>> query SD sd_dump.sql
+
+QUERY sd_dump (1 result sets)
+ set 1: 55075 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_sd_dump_1_20261112_1552.csv
+
+=== OK 2026-11-12 15:52:31

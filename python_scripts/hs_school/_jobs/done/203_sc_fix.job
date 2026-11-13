@@ -1,0 +1,10 @@
+set-dates SC --file hsfha_dates_scfh.csv --reason "scfootballhistory date (week-based, mostly 7 or 14 days late) replaced by HSFHA-SC game date: same teams + same score" --commit
+set-dates SC --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-SC date: same teams + same score in season" --commit
+set-scores SC --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-SC score (David 2026-11-10 rule)" --commit
+same-score-fix SC --commit
+import-games SC --file hsfha_import_SC.csv --reason "HSFHA-SC (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+dedup SC
+review-pairs SC
+query SC season_date.sql
+query SC forfeits.sql
+query SC college_check.sql

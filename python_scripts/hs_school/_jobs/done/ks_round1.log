@@ -1,0 +1,581 @@
+
+>>> remap KS --url "https://www.maxpreps.com/ks/argonia/argonia-attica-titans/football/schedule/" --to "Attica-Argonia (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/argonia/argonia-attica-titans/football/schedule/ -> Attica-Argonia (KS) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName        NewTeam_ID
+   https://www.maxpreps.com/ks/argonia/argo  Argonia Attica (KS)  9936     Attica-Argonia (KS)  59175     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/brewster/triplains-brewster-titans/football/schedule/" --to "Triplains-Brewster (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/brewster/triplains-brewster-titans/football/schedule/ -> Triplains-Brewster (KS) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName            NewTeam_ID
+   https://www.maxpreps.com/ks/brewster/tri  Brewster Triplains Brewster (KS)  8790     Triplains-Brewster (KS)  69025     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/hays/thomas-more-prep-marian-monarchs/football/schedule/" --to "Hays Thomas More Prep-Marian (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/hays/thomas-more-prep-marian-monarchs/football/schedule/ -> Hays Thomas More Prep-Marian (KS) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ks/hays/thomas-  Hays Thomas More (KS)  45328    Hays Thomas More Prep-Marian (KS)  35940     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/inman/inman-inman-teutons/football/schedule/" --to "Inman (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/inman/inman-inman-teutons/football/schedule/ -> Inman (KS) - COMMIT
+   URL                                       ProperName        Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/ks/inman/inman-  Inman Inman (KS)  22184    Inman (KS)     63401     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/lawrence/lawrence-free-state-firebirds/football/schedule/" --to "Lawrence Free State (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/lawrence/lawrence-free-state-firebirds/football/schedule/ -> Lawrence Free State (KS) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/ks/lawrence/law  Lawrence Free (KS)  13643    Lawrence Free State (KS)  64152     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/otis/otis-bison-cougars/football/schedule/" --to "Otis-Bison (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/otis/otis-bison-cougars/football/schedule/ -> Otis-Bison (KS) - COMMIT
+   URL                                       ProperName       Team_ID  NewProperName    NewTeam_ID
+   https://www.maxpreps.com/ks/otis/otis-bi  Otis Bison (KS)  31916    Otis-Bison (KS)  66387     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/wichita/bishop-carroll-golden-eagles/football/schedule/" --to "Wichita Carroll (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/wichita/bishop-carroll-golden-eagles/football/schedule/ -> Wichita Carroll (KS) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName         NewTeam_ID
+   https://www.maxpreps.com/ks/wichita/bish  Wichita Bishop Carroll (KS)  23906    Wichita Carroll (KS)  69765     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/olathe/kansas-school-for-the-deaf-jackrabbits/football/schedule/" --to "Kansas School for the Deaf (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/olathe/kansas-school-for-the-deaf-jackrabbits/football/schedule/ -> Kansas School for the Deaf (KS) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/ks/olathe/kansa  Olathe Kansas School (KS)  21155    Kansas School for the Deaf (KS)  63646     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/melvern/marais-des-cygnes-valley-trojans/football/schedule/" --to "Melvern Marais Des Cygne Valley (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/melvern/marais-des-cygnes-valley-trojans/football/schedule/ -> Melvern Marais Des Cygne Valley (KS) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/ks/melvern/mara  Melvern Marais Des (KS)  43641    Melvern Marais Des Cygne Valley (KS)  65040     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/overland-park/saint-thomas-aquinas-saints/football/schedule/" --to "Overland Park St. Thomas Aquinas (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/overland-park/saint-thomas-aquinas-saints/football/schedule/ -> Overland Park St. Thomas Aquinas (KS) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/ks/overland-par  Overland Park Saint Thomas (KS)  25528    Overland Park St. Thomas Aquinas (KS)  66406     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap KS --url "https://www.maxpreps.com/ks/wichita/kapaun-mt-carmel-crusaders/football/schedule/" --to "Wichita Kapaun Mount Carmel (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/wichita/kapaun-mt-carmel-crusaders/football/schedule/ -> Wichita Kapaun Mount Carmel (KS) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/ks/wichita/kapa  Wichita Kapaun Mt. Crusad (KS)  47742    Wichita Kapaun Mount Carmel (KS)  69776     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck KS --commit
+
+MAPPING CHECK KS - COMMIT (Team_ID set to the ProperName ID)
+ 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_mapcheck_COMMITTED_20261106_1905.csv
+   URL                                       ProperName                      Team_ID  NameID  Problem                         Team_ID_Name                            
+   https://www.maxpreps.com/ks/abilene/abil  Abilene (KS)                    25772    58711   Team_ID points to another name  Agra Eastern Heights (KS)               
+   https://www.maxpreps.com/ks/ashland/ashl  Ashland (KS)                    71790    59113   Team_ID points to another name  Assaria Southeast of Saline (KS)        
+   https://www.maxpreps.com/ks/caney/caney-  Caney Valley (KS)               60226    60200   Team_ID points to another name  Canton-Galva (KS)                       
+   https://www.maxpreps.com/ks/canton/canto  Canton-Galva (KS)               60243    60226   Team_ID points to another name  Carbondale Santa Fe Trail (KS)          
+   https://www.maxpreps.com/ks/carbondale/s  Carbondale Santa Fe Trail (KS)  60325    60243   Team_ID points to another name  Cawker City Waconda East (KS)           
+   https://www.maxpreps.com/ks/chapman/chap  Chapman (KS)                    71424    60421   Team_ID points to another name  Chapman-Dickinson County (KS)           
+   https://www.maxpreps.com/ks/clearwater/c  Clearwater (KS)                 60847    60806   Team_ID points to another name  Clifton Rural (KS)                      
+   https://www.maxpreps.com/ks/dodge-city/d  Dodge City (KS)                 61533    61532   Team_ID points to another name  Dodge City St. Mary of The Plains Academ
+   https://www.maxpreps.com/ks/emporia/empo  Emporia (KS)                    71617    61845   Team_ID points to another name  Emporia State University B (KS)         
+   https://www.maxpreps.com/ks/eureka/eurek  Eureka (KS)                     71088    61924   Team_ID points to another name  Fairmount College Reserves (KS)         
+   https://www.maxpreps.com/ks/hays/hays-in  Hays (KS)                       29552    62961   Team_ID points to another name  Hays St. Joseph's Military Academy (KS) 
+   https://www.maxpreps.com/ks/lacrosse/lac  LaCrosse (KS)                   72167    5105    Team_ID points to another name  Lafayette St. Joseph  (KS)              
+   https://www.maxpreps.com/ks/medicine-lod  Medicine Lodge (KS)             65040    65020   Team_ID points to another name  Melvern Marais Des Cygne Valley (KS)    
+   https://www.maxpreps.com/ks/mulvane/mulv  Mulvane (KS)                    3223     65629   Team_ID points to another name  Nashville-Zenda (KS)                    
+   https://www.maxpreps.com/ks/ottawa/ottaw  Ottawa (KS)                     72021    66390   Team_ID points to another name  Ottawa University Academy (KS)          
+   https://www.maxpreps.com/ks/st-francis/s  Saint Francis (KS)              67624    67621   Team_ID points to another name  Saint George (KS)                       
+   https://www.maxpreps.com/ks/salina/south  Salina South (KS)               67781    67780   Team_ID points to another name  Salina St.John's Military (KS)          
+   https://www.maxpreps.com/ks/syracuse/syr  Syracuse (KS)                   23903    68682   Team_ID points to another name  Syracuse Christian Academy (KS)         
+   https://www.maxpreps.com/ks/topeka/highl  Topeka Highland Park (KS)       71325    68950   Team_ID points to another name  Topeka Kansas Voc (KS)                  
+   https://www.maxpreps.com/ks/uniontown/un  Uniontown (KS)                  46089    69168   Team_ID points to another name  University of Arkansas (AR)             
+   ... 1 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  21       None
+
+>>> round KS --reason "KS round 1: 2024 MaxPreps drift, same-school names (Christ Prep, Chaparral, Rural Vista, Riverside, South Sumner, KSD, Independent)"
+Consolidating KS from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\KS_Alias_Rules.csv
+
+DEDUP v4 KS - PREVIEW (nothing changed)
+ dedup_archive: 122 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_archive_20261106_1907.csv
+ dedup_review: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_review_20261106_1907.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_summary_20261106_1907.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  KS     127474        122                  14               None 
+
+REVIEW-ONLY PAIRS KS - PREVIEW (nothing changed)
+ 14 pairs {'SHORT': 14} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_review_pairs_20261106_1907.csv
+
+Nothing deleted yet. Check the CSVs (or ask Claude to), then run:  python hs_cleanup.py commit KS
+
+[stderr]
+2026-11-06 19:05:26,536 - INFO - Starting consolidation for state: (KS) using staging table method.
+2026-11-06 19:05:26,547 - WARNING - WARNING: 434 row(s) have identical OldName and NewName (no-op rules).
+2026-11-06 19:05:26,547 - WARNING -   'Abilene (KS)' -> 'Abilene (KS)' (no change)
+2026-11-06 19:05:26,547 - WARNING -   'Agra Eastern Heights (KS)' -> 'Agra Eastern Heights (KS)' (no change)
+2026-11-06 19:05:26,547 - WARNING -   'Allen Northern Heights (KS)' -> 'Allen Northern Heights (KS)' (no change)
+2026-11-06 19:05:26,547 - WARNING -   'Alma (KS)' -> 'Alma (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Alma Wabaunsee (KS)' -> 'Alma Wabaunsee (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Almena Northern Valley (KS)' -> 'Almena Northern Valley (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Alta Vista (KS)' -> 'Alta Vista (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Altamont Labette County (KS)' -> 'Altamont Labette County (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Andale (KS)' -> 'Andale (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Andover (KS)' -> 'Andover (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Andover Central (KS)' -> 'Andover Central (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Anthony (KS)' -> 'Anthony (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Anthony-Harper-Chaparral (KS)' -> 'Anthony-Harper-Chaparral (KS)' (no change)
+2026-11-06 19:05:26,548 - WARNING -   'Argonia (KS)' -> 'Argonia (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Arkansas City (KS)' -> 'Arkansas City (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Arma (KS)' -> 'Arma (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Arma Northeast (KS)' -> 'Arma Northeast (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Ashland (KS)' -> 'Ashland (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Assaria Southeast of Saline (KS)' -> 'Assaria Southeast of Saline (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Atchison (KS)' -> 'Atchison (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Atchison Maur Hill Prep (KS)' -> 'Atchison Maur Hill Prep (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Atchison Maur Hill Prep-Mount Academy (KS)' -> 'Atchison Maur Hill Prep-Mount Academy (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Attica (KS)' -> 'Attica (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Attica-Argonia (KS)' -> 'Attica-Argonia (KS)' (no change)
+2026-11-06 19:05:26,549 - WARNING -   'Atwood (KS)' -> 'Atwood (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Atwood Rawlins County (KS)' -> 'Atwood Rawlins County (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Augusta (KS)' -> 'Augusta (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Augusta City All Stars (KS)' -> 'Augusta City All Stars (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Axtell (KS)' -> 'Axtell (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Baileyville B & B (KS)' -> 'Baileyville B & B (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Baldwin (KS)' -> 'Baldwin (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Basehor (KS)' -> 'Basehor (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Basehor-Linwood (KS)' -> 'Basehor-Linwood (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Baxter Springs (KS)' -> 'Baxter Springs (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Bel Aire Sunrise Christian Academy (KS)' -> 'Bel Aire Sunrise Christian Academy (KS)' (no change)
+2026-11-06 19:05:26,550 - WARNING -   'Belle Plaine (KS)' -> 'Belle Plaine (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Belleville (KS)' -> 'Belleville (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Belleville Republic County (KS)' -> 'Belleville Republic County (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Beloit (KS)' -> 'Beloit (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Beloit St. John's (KS)' -> 'Beloit St. John's (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Beloit St. John's-Tipton Catholic (KS)' -> 'Beloit St. John's-Tipton Catholic (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Bennington (KS)' -> 'Bennington (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Bern (KS)' -> 'Bern (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Bird City Cheylin (KS)' -> 'Bird City Cheylin (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Blue Rapids Valley Heights (KS)' -> 'Blue Rapids Valley Heights (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Bonner Springs (KS)' -> 'Bonner Springs (KS)' (no change)
+2026-11-06 19:05:26,551 - WARNING -   'Brewster (KS)' -> 'Brewster (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Brookville Ell-Saline (KS)' -> 'Brookville Ell-Saline (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Bucklin (KS)' -> 'Bucklin (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Buffalo Altoona-Midway (KS)' -> 'Buffalo Altoona-Midway (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Buhler (KS)' -> 'Buhler (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Burden Central (KS)' -> 'Burden Central (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Burlingame (KS)' -> 'Burlingame (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Burlington (KS)' -> 'Burlington (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Burrton (KS)' -> 'Burrton (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Bushton Quivira Heights (KS)' -> 'Bushton Quivira Heights (KS)' (no change)
+2026-11-06 19:05:26,552 - WARNING -   'Caldwell (KS)' -> 'Caldwell (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Caldwell South Sumner [Caldwell-South Haven] (KS)' -> 'Caldwell South Sumner [Caldwell-South Haven] (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Caney Valley (KS)' -> 'Caney Valley (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Canton-Galva (KS)' -> 'Canton-Galva (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Carbondale Santa Fe Trail (KS)' -> 'Carbondale Santa Fe Trail (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Cawker City Waconda East (KS)' -> 'Cawker City Waconda East (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Cedar Vale (KS)' -> 'Cedar Vale (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Cedar Vale-Dexter (KS)' -> 'Cedar Vale-Dexter (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Centralia-Wetmore (KS)' -> 'Centralia-Wetmore (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Chanute (KS)' -> 'Chanute (KS)' (no change)
+2026-11-06 19:05:26,553 - WARNING -   'Chapman (KS)' -> 'Chapman (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Chapman-Dickinson County (KS)' -> 'Chapman-Dickinson County (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Chase (KS)' -> 'Chase (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Cheney (KS)' -> 'Cheney (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Cherokee Southeast (KS)' -> 'Cherokee Southeast (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Cherryvale (KS)' -> 'Cherryvale (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Chetopa (KS)' -> 'Chetopa (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Cimarron (KS)' -> 'Cimarron (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Claflin (KS)' -> 'Claflin (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Claflin Central Plains (KS)' -> 'Claflin Central Plains (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Clay Center (KS)' -> 'Clay Center (KS)' (no change)
+2026-11-06 19:05:26,554 - WARNING -   'Clearwater (KS)' -> 'Clearwater (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Clifton Rural (KS)' -> 'Clifton Rural (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Clyde (KS)' -> 'Clyde (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Clyde Clifton-Clyde (KS)' -> 'Clyde Clifton-Clyde (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Coffeyville Field Kindley (KS)' -> 'Coffeyville Field Kindley (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Colby (KS)' -> 'Colby (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Coldwater South Central (KS)' -> 'Coldwater South Central (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Colony Crest (KS)' -> 'Colony Crest (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Columbus (KS)' -> 'Columbus (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Concordia (KS)' -> 'Concordia (KS)' (no change)
+2026-11-06 19:05:26,555 - WARNING -   'Conway Springs (KS)' -> 'Conway Springs (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Copeland (KS)' -> 'Copeland (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Cottonwood Falls Chase County (KS)' -> 'Cottonwood Falls Chase County (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Council Grove (KS)' -> 'Council Grove (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Crawford County McCune (KS)' -> 'Crawford County McCune (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Cuba Hillcrest (KS)' -> 'Cuba Hillcrest (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Cunningham (KS)' -> 'Cunningham (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Cygne Prairie View (KS)' -> 'Cygne Prairie View (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Deerfield (KS)' -> 'Deerfield (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Denison (KS)' -> 'Denison (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Denton Midway (KS)' -> 'Denton Midway (KS)' (no change)
+2026-11-06 19:05:26,556 - WARNING -   'Derby (KS)' -> 'Derby (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'DeSoto (KS)' -> 'DeSoto (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'Dighton (KS)' -> 'Dighton (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'Dodge City (KS)' -> 'Dodge City (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'Douglass (KS)' -> 'Douglass (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'Downs (KS)' -> 'Downs (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'Downs Lakeside (KS)' -> 'Downs Lakeside (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'Easton Pleasant Ridge (KS)' -> 'Easton Pleasant Ridge (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'Effingham Atchison County (KS)' -> 'Effingham Atchison County (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'El Dorado (KS)' -> 'El Dorado (KS)' (no change)
+2026-11-06 19:05:26,557 - WARNING -   'Elkhart (KS)' -> 'Elkhart (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Ellinwood (KS)' -> 'Ellinwood (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Ellis (KS)' -> 'Ellis (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Ellsworth (KS)' -> 'Ellsworth (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Elwood (KS)' -> 'Elwood (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Emporia (KS)' -> 'Emporia (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Emporia Normal High (KS)' -> 'Emporia Normal High (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Erie (KS)' -> 'Erie (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Eskridge (KS)' -> 'Eskridge (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Eskridge Mission Valley (KS)' -> 'Eskridge Mission Valley (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Eudora (KS)' -> 'Eudora (KS)' (no change)
+2026-11-06 19:05:26,558 - WARNING -   'Eureka (KS)' -> 'Eureka (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Fairmount College Reserves (KS)' -> 'Fairmount College Reserves (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Fort Scott (KS)' -> 'Fort Scott (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Fowler (KS)' -> 'Fowler (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Frankfort (KS)' -> 'Frankfort (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Fredonia (KS)' -> 'Fredonia (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Fredonia-Elk Valley (KS)' -> 'Fredonia-Elk Valley (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Frontenac (KS)' -> 'Frontenac (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Galena (KS)' -> 'Galena (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Garden City (KS)' -> 'Garden City (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Garden Plain (KS)' -> 'Garden Plain (KS)' (no change)
+2026-11-06 19:05:26,559 - WARNING -   'Gardner (KS)' -> 'Gardner (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Gardner-Edgerton (KS)' -> 'Gardner-Edgerton (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Garnett Anderson County (KS)' -> 'Garnett Anderson County (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Girard (KS)' -> 'Girard (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Glasco (KS)' -> 'Glasco (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Goddard (KS)' -> 'Goddard (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Goddard Eisenhower (KS)' -> 'Goddard Eisenhower (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Goessel (KS)' -> 'Goessel (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Goodland (KS)' -> 'Goodland (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Grainfield Wheatland-Grinnell (KS)' -> 'Grainfield Wheatland-Grinnell (KS)' (no change)
+2026-11-06 19:05:26,560 - WARNING -   'Great Bend (KS)' -> 'Great Bend (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Greensburg (KS)' -> 'Greensburg (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Greensburg Kiowa County (KS)' -> 'Greensburg Kiowa County (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Gypsum Southeast of Saline (KS)' -> 'Gypsum Southeast of Saline (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Halstead (KS)' -> 'Halstead (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Hanover (KS)' -> 'Hanover (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Hanston (KS)' -> 'Hanston (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Hartford (KS)' -> 'Hartford (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Haven (KS)' -> 'Haven (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Haviland (KS)' -> 'Haviland (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Hays (KS)' -> 'Hays (KS)' (no change)
+2026-11-06 19:05:26,561 - WARNING -   'Hays St. Joseph's Military Academy (KS)' -> 'Hays St. Joseph's Military Academy (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Hays Thomas More Prep-Marian (KS)' -> 'Hays Thomas More Prep-Marian (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Herington (KS)' -> 'Herington (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Hesston (KS)' -> 'Hesston (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Hiawatha (KS)' -> 'Hiawatha (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Highland (KS)' -> 'Highland (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Highland Doniphan West (KS)' -> 'Highland Doniphan West (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Hill City (KS)' -> 'Hill City (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Hillsboro (KS)' -> 'Hillsboro (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Hoisington (KS)' -> 'Hoisington (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Holcomb (KS)' -> 'Holcomb (KS)' (no change)
+2026-11-06 19:05:26,562 - WARNING -   'Holton (KS)' -> 'Holton (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Holton Jackson Heights (KS)' -> 'Holton Jackson Heights (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Hope (KS)' -> 'Hope (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Horton (KS)' -> 'Horton (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Howard West Elk (KS)' -> 'Howard West Elk (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Hoxie (KS)' -> 'Hoxie (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Hoxie-Sheridan County (KS)' -> 'Hoxie-Sheridan County (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Hoyt Royal Valley (KS)' -> 'Hoyt Royal Valley (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Hugoton (KS)' -> 'Hugoton (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Humboldt (KS)' -> 'Humboldt (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Hutchinson (KS)' -> 'Hutchinson (KS)' (no change)
+2026-11-06 19:05:26,563 - WARNING -   'Hutchinson Central Christian (KS)' -> 'Hutchinson Central Christian (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Hutchinson Reno County HomeSchool (KS)' -> 'Hutchinson Reno County HomeSchool (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Hutchinson Trinity (KS)' -> 'Hutchinson Trinity (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Independence (KS)' -> 'Independence (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Ingalls (KS)' -> 'Ingalls (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Inman (KS)' -> 'Inman (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Iola (KS)' -> 'Iola (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Jetmore (KS)' -> 'Jetmore (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Jetmore Hodgeman County (KS)' -> 'Jetmore Hodgeman County (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Jewell (KS)' -> 'Jewell (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Johnson-Stanton County (KS)' -> 'Johnson-Stanton County (KS)' (no change)
+2026-11-06 19:05:26,564 - WARNING -   'Junction City (KS)' -> 'Junction City (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Junction City St. Xavier (KS)' -> 'Junction City St. Xavier (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Junction City-St. Xavier (KS)' -> 'Junction City-St. Xavier (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Kansas City Argentine (KS)' -> 'Kansas City Argentine (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Kansas City Bishop Miege (KS)' -> 'Kansas City Bishop Miege (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Kansas City Bishop Ward (KS)' -> 'Kansas City Bishop Ward (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Kansas City Harmon (KS)' -> 'Kansas City Harmon (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Kansas City Piper (KS)' -> 'Kansas City Piper (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Kansas City Rosedale (KS)' -> 'Kansas City Rosedale (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Kansas City Schlagle (KS)' -> 'Kansas City Schlagle (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Kansas City Sumner Academy (KS)' -> 'Kansas City Sumner Academy (KS)' (no change)
+2026-11-06 19:05:26,565 - WARNING -   'Kansas City Turner (KS)' -> 'Kansas City Turner (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'Kansas City Washington (KS)' -> 'Kansas City Washington (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'Kansas City Wyandotte (KS)' -> 'Kansas City Wyandotte (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'Kansas School for the Deaf (KS)' -> 'Kansas School for the Deaf (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'Kensington Thunder Ridge (KS)' -> 'Kensington Thunder Ridge (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'Kensington West Smith County (KS)' -> 'Kensington West Smith County (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'Kingman (KS)' -> 'Kingman (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'Kinsley (KS)' -> 'Kinsley (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'Kiowa South Barber (KS)' -> 'Kiowa South Barber (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'Kismet Southwestern Heights (KS)' -> 'Kismet Southwestern Heights (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'La Cygne Prairie View (KS)' -> 'La Cygne Prairie View (KS)' (no change)
+2026-11-06 19:05:26,566 - WARNING -   'LaCrosse (KS)' -> 'LaCrosse (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Lakin (KS)' -> 'Lakin (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Langdon Fairfield (KS)' -> 'Langdon Fairfield (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Lansing (KS)' -> 'Lansing (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Larned (KS)' -> 'Larned (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Lawrence (KS)' -> 'Lawrence (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Lawrence Free State (KS)' -> 'Lawrence Free State (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Lawrence Haskell Indian Nations University (KS)' -> 'Lawrence Haskell Indian Nations University (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Lawrence Independence Home School (KS)' -> 'Lawrence Independence Home School (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Lawrence Veritas Christian (KS)' -> 'Lawrence Veritas Christian (KS)' (no change)
+2026-11-06 19:05:26,567 - WARNING -   'Leavenworth (KS)' -> 'Leavenworth (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Leavenworth Immaculata (KS)' -> 'Leavenworth Immaculata (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Lebo (KS)' -> 'Lebo (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Lenexa Christ Prep Academy (KS)' -> 'Lenexa Christ Prep Academy (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Lenexa St. James Academy (KS)' -> 'Lenexa St. James Academy (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Leon Bluestem (KS)' -> 'Leon Bluestem (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Leoti Wichita County (KS)' -> 'Leoti Wichita County (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Leroy Southern Coffey County (KS)' -> 'Leroy Southern Coffey County (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Liberal (KS)' -> 'Liberal (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Lincoln (KS)' -> 'Lincoln (KS)' (no change)
+2026-11-06 19:05:26,568 - WARNING -   'Lindsborg (KS)' -> 'Lindsborg (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Lindsborg Smoky Valley (KS)' -> 'Lindsborg Smoky Valley (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Linn (KS)' -> 'Linn (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Little River (KS)' -> 'Little River (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Logan (KS)' -> 'Logan (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Longton Elk Valley (KS)' -> 'Longton Elk Valley (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Lost Springs Centre (KS)' -> 'Lost Springs Centre (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Louisburg (KS)' -> 'Louisburg (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Lucas-Luray (KS)' -> 'Lucas-Luray (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Lyndon (KS)' -> 'Lyndon (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Lyons (KS)' -> 'Lyons (KS)' (no change)
+2026-11-06 19:05:26,569 - WARNING -   'Macksville (KS)' -> 'Macksville (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'Madison (KS)' -> 'Madison (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'Madison-Hamilton (KS)' -> 'Madison-Hamilton (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'Maize (KS)' -> 'Maize (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'Manhattan (KS)' -> 'Manhattan (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'Manhattan Monsignor Luckey (KS)' -> 'Manhattan Monsignor Luckey (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'Mankato (KS)' -> 'Mankato (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'Mankato Rock Hills (KS)' -> 'Mankato Rock Hills (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'Marion (KS)' -> 'Marion (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'Marysville (KS)' -> 'Marysville (KS)' (no change)
+2026-11-06 19:05:26,570 - WARNING -   'McLouth (KS)' -> 'McLouth (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'McPherson (KS)' -> 'McPherson (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Meade (KS)' -> 'Meade (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Medicine Lodge (KS)' -> 'Medicine Lodge (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Melvern Marais Des Cygne Valley (KS)' -> 'Melvern Marais Des Cygne Valley (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Meriden Jefferson West (KS)' -> 'Meriden Jefferson West (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Miltonvale (KS)' -> 'Miltonvale (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Minneapolis (KS)' -> 'Minneapolis (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Minneola (KS)' -> 'Minneola (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Montezuma (KS)' -> 'Montezuma (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Montezuma South Gray (KS)' -> 'Montezuma South Gray (KS)' (no change)
+2026-11-06 19:05:26,571 - WARNING -   'Moran (KS)' -> 'Moran (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Moran Marmaton Valley (KS)' -> 'Moran Marmaton Valley (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Morrowville North Central (KS)' -> 'Morrowville North Central (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Moscow (KS)' -> 'Moscow (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Mound City Jayhawk Linn (KS)' -> 'Mound City Jayhawk Linn (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Moundridge (KS)' -> 'Moundridge (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Mount Hope (KS)' -> 'Mount Hope (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Mulberry (KS)' -> 'Mulberry (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Mulvane (KS)' -> 'Mulvane (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Natoma (KS)' -> 'Natoma (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Neodesha (KS)' -> 'Neodesha (KS)' (no change)
+2026-11-06 19:05:26,572 - WARNING -   'Ness City (KS)' -> 'Ness City (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Newton (KS)' -> 'Newton (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Nickerson (KS)' -> 'Nickerson (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Norton (KS)' -> 'Norton (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Norwich (KS)' -> 'Norwich (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Oakley (KS)' -> 'Oakley (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Oberlin Decatur Community (KS)' -> 'Oberlin Decatur Community (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Olathe (KS)' -> 'Olathe (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Olathe East (KS)' -> 'Olathe East (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Olathe North (KS)' -> 'Olathe North (KS)' (no change)
+2026-11-06 19:05:26,573 - WARNING -   'Olathe Northwest (KS)' -> 'Olathe Northwest (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Olathe South (KS)' -> 'Olathe South (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Olpe (KS)' -> 'Olpe (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Onaga (KS)' -> 'Onaga (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Osage City (KS)' -> 'Osage City (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Osawatomie (KS)' -> 'Osawatomie (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Osborne (KS)' -> 'Osborne (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Oskaloosa (KS)' -> 'Oskaloosa (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Oswego (KS)' -> 'Oswego (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Otis-Bison (KS)' -> 'Otis-Bison (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Ottawa (KS)' -> 'Ottawa (KS)' (no change)
+2026-11-06 19:05:26,574 - WARNING -   'Ottawa University Academy (KS)' -> 'Ottawa University Academy (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Overland Park Blue Valley North (KS)' -> 'Overland Park Blue Valley North (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Overland Park Blue Valley Northwest (KS)' -> 'Overland Park Blue Valley Northwest (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Overland Park Blue Valley Southwest (KS)' -> 'Overland Park Blue Valley Southwest (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Overland Park Shawnee Mission (KS)' -> 'Overland Park Shawnee Mission (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Overland Park St. Thomas Aquinas (KS)' -> 'Overland Park St. Thomas Aquinas (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Oxford (KS)' -> 'Oxford (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Palco (KS)' -> 'Palco (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Paola (KS)' -> 'Paola (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Parsons (KS)' -> 'Parsons (KS)' (no change)
+2026-11-06 19:05:26,575 - WARNING -   'Peabody (KS)' -> 'Peabody (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Peabody-Burns (KS)' -> 'Peabody-Burns (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Perry-Lecompton (KS)' -> 'Perry-Lecompton (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Phillipsburg (KS)' -> 'Phillipsburg (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Pittsburg (KS)' -> 'Pittsburg (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Pittsburg St. Mary's-Colgan (KS)' -> 'Pittsburg St. Mary's-Colgan (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Plainville (KS)' -> 'Plainville (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Pleasanton (KS)' -> 'Pleasanton (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Pomona (KS)' -> 'Pomona (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Pomona West Franklin (KS)' -> 'Pomona West Franklin (KS)' (no change)
+2026-11-06 19:05:26,576 - WARNING -   'Powhattan Kickapoo Nation (KS)' -> 'Powhattan Kickapoo Nation (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Pratt (KS)' -> 'Pratt (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Pratt Skyline (KS)' -> 'Pratt Skyline (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Pretty Prairie (KS)' -> 'Pretty Prairie (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Quinter (KS)' -> 'Quinter (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Randolph Blue Valley (KS)' -> 'Randolph Blue Valley (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Ransom (KS)' -> 'Ransom (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Rexford Golden Plains (KS)' -> 'Rexford Golden Plains (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Richmond Central Heights (KS)' -> 'Richmond Central Heights (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Riley County (KS)' -> 'Riley County (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Riverton (KS)' -> 'Riverton (KS)' (no change)
+2026-11-06 19:05:26,577 - WARNING -   'Rolla (KS)' -> 'Rolla (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Rosalia Flinthills (KS)' -> 'Rosalia Flinthills (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Rose Hill (KS)' -> 'Rose Hill (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Rossville (KS)' -> 'Rossville (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Rozel Pawnee Heights (KS)' -> 'Rozel Pawnee Heights (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Russell (KS)' -> 'Russell (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Sabetha (KS)' -> 'Sabetha (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Saint Francis (KS)' -> 'Saint Francis (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Saint George Rock Creek (KS)' -> 'Saint George Rock Creek (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Saint John (KS)' -> 'Saint John (KS)' (no change)
+2026-11-06 19:05:26,578 - WARNING -   'Saint Marys (KS)' -> 'Saint Marys (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Saint Mary's Academy (KS)' -> 'Saint Mary's Academy (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Salina Central (KS)' -> 'Salina Central (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Salina Sacred Heart (KS)' -> 'Salina Sacred Heart (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Salina South (KS)' -> 'Salina South (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Salina St.John's Military (KS)' -> 'Salina St.John's Military (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Satanta (KS)' -> 'Satanta (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Scandia Pike Valley (KS)' -> 'Scandia Pike Valley (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Scott City (KS)' -> 'Scott City (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Sedan (KS)' -> 'Sedan (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Sedgwick (KS)' -> 'Sedgwick (KS)' (no change)
+2026-11-06 19:05:26,579 - WARNING -   'Seneca Nemaha Central (KS)' -> 'Seneca Nemaha Central (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Seneca Nemaha Valley (KS)' -> 'Seneca Nemaha Valley (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Sharon Springs (KS)' -> 'Sharon Springs (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Sharon Springs Wallace County (KS)' -> 'Sharon Springs Wallace County (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Shawnee Maranatha Christian Academy (KS)' -> 'Shawnee Maranatha Christian Academy (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Shawnee Mill Valley (KS)' -> 'Shawnee Mill Valley (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Shawnee Mission (KS)' -> 'Shawnee Mission (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Shawnee Mission Bishop Miege (KS)' -> 'Shawnee Mission Bishop Miege (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Shawnee Mission East (KS)' -> 'Shawnee Mission East (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Shawnee Mission North (KS)' -> 'Shawnee Mission North (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Shawnee Mission Northwest (KS)' -> 'Shawnee Mission Northwest (KS)' (no change)
+2026-11-06 19:05:26,580 - WARNING -   'Shawnee Mission South (KS)' -> 'Shawnee Mission South (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'Shawnee Mission West (KS)' -> 'Shawnee Mission West (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'Shawnee St. Joseph (KS)' -> 'Shawnee St. Joseph (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'Silver Lake (KS)' -> 'Silver Lake (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'Smith Center (KS)' -> 'Smith Center (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'Solomon (KS)' -> 'Solomon (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'South Haven (KS)' -> 'South Haven (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'Southern Cloud co-op [Miltonvale-Glasco] (KS)' -> 'Southern Cloud co-op [Miltonvale-Glasco] (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'Spearville (KS)' -> 'Spearville (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'Spring Hill (KS)' -> 'Spring Hill (KS)' (no change)
+2026-11-06 19:05:26,581 - WARNING -   'Stafford (KS)' -> 'Stafford (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Sterling (KS)' -> 'Sterling (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Stilwell Blue Valley (KS)' -> 'Stilwell Blue Valley (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Stilwell Blue Valley West (KS)' -> 'Stilwell Blue Valley West (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Stockton (KS)' -> 'Stockton (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Sublette (KS)' -> 'Sublette (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Sylvan Grove (KS)' -> 'Sylvan Grove (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Sylvan Grove Sylvan-Lucas (KS)' -> 'Sylvan Grove Sylvan-Lucas (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Sylvia Rural (KS)' -> 'Sylvia Rural (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Syracuse (KS)' -> 'Syracuse (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Syracuse Christian Academy (KS)' -> 'Syracuse Christian Academy (KS)' (no change)
+2026-11-06 19:05:26,582 - WARNING -   'Tecumseh Shawnee Heights (KS)' -> 'Tecumseh Shawnee Heights (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Tescott (KS)' -> 'Tescott (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Thayer (KS)' -> 'Thayer (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Tonganoxie (KS)' -> 'Tonganoxie (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Topeka (KS)' -> 'Topeka (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Topeka Cair Paravel (KS)' -> 'Topeka Cair Paravel (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Topeka Cornerstone Family (KS)' -> 'Topeka Cornerstone Family (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Topeka Hayden (KS)' -> 'Topeka Hayden (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Topeka Highland Park (KS)' -> 'Topeka Highland Park (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Topeka Seaman (KS)' -> 'Topeka Seaman (KS)' (no change)
+2026-11-06 19:05:26,583 - WARNING -   'Topeka Washburn Rural (KS)' -> 'Topeka Washburn Rural (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Topeka West (KS)' -> 'Topeka West (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Towanda Circle (KS)' -> 'Towanda Circle (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Tribune Greeley County (KS)' -> 'Tribune Greeley County (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Triplains-Brewster (KS)' -> 'Triplains-Brewster (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Troy (KS)' -> 'Troy (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Udall (KS)' -> 'Udall (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Ulysses (KS)' -> 'Ulysses (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Uniontown (KS)' -> 'Uniontown (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Valley Center (KS)' -> 'Valley Center (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Valley Falls (KS)' -> 'Valley Falls (KS)' (no change)
+2026-11-06 19:05:26,584 - WARNING -   'Victoria (KS)' -> 'Victoria (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'WaKeeney Trego (KS)' -> 'WaKeeney Trego (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'Wakefield (KS)' -> 'Wakefield (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'Wamego (KS)' -> 'Wamego (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'Washington (KS)' -> 'Washington (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'Washington County (KS)' -> 'Washington County (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'Wathena (KS)' -> 'Wathena (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'Wathena Riverside [Wathena-Elwood] (KS)' -> 'Wathena Riverside [Wathena-Elwood] (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'Waverly (KS)' -> 'Waverly (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'Wellington (KS)' -> 'Wellington (KS)' (no change)
+2026-11-06 19:05:26,585 - WARNING -   'Wellsville (KS)' -> 'Wellsville (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Weskan (KS)' -> 'Weskan (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Westmoreland (KS)' -> 'Westmoreland (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'White City (KS)' -> 'White City (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Whitewater Remington (KS)' -> 'Whitewater Remington (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Wichita (KS)' -> 'Wichita (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Wichita Carroll (KS)' -> 'Wichita Carroll (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Wichita Cathedral of the Immaculate Conception (KS)' -> 'Wichita Cathedral of the Immaculate Conception (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Wichita Collegiate (KS)' -> 'Wichita Collegiate (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Wichita East (KS)' -> 'Wichita East (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Wichita Haysville Campus (KS)' -> 'Wichita Haysville Campus (KS)' (no change)
+2026-11-06 19:05:26,586 - WARNING -   'Wichita Heights (KS)' -> 'Wichita Heights (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita HomeSchool (KS)' -> 'Wichita HomeSchool (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita Independent (KS)' -> 'Wichita Independent (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita Kapaun Mount Carmel (KS)' -> 'Wichita Kapaun Mount Carmel (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita Maize South (KS)' -> 'Wichita Maize South (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita North (KS)' -> 'Wichita North (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita Northwest (KS)' -> 'Wichita Northwest (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita South (KS)' -> 'Wichita South (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita Southeast (KS)' -> 'Wichita Southeast (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita Trinity Academy (KS)' -> 'Wichita Trinity Academy (KS)' (no change)
+2026-11-06 19:05:26,587 - WARNING -   'Wichita West (KS)' -> 'Wichita West (KS)' (no change)
+2026-11-06 19:05:26,588 - WARNING -   'Wichita Word of Life (KS)' -> 'Wichita Word of Life (KS)' (no change)
+2026-11-06 19:05:26,588 - WARNING -   'Williamsburg (KS)' -> 'Williamsburg (KS)' (no change)
+2026-11-06 19:05:26,588 - WARNING -   'Wilson (KS)' -> 'Wilson (KS)' (no change)
+2026-11-06 19:05:26,588 - WARNING -   'Winchester Jefferson County North (KS)' -> 'Winchester Jefferson County North (KS)' (no change)
+2026-11-06 19:05:26,588 - WARNING -   'Windhorst (KS)' -> 'Windhorst (KS)' (no change)
+2026-11-06 19:05:26,588 - WARNING -   'Winfield (KS)' -> 'Winfield (KS)' (no change)
+2026-11-06 19:05:26,588 - WARNING -   'Yates Center (KS)' -> 'Yates Center (KS)' (no change)
+2026-11-06 19:05:26,588 - INFO - Validation passed: 586 rules are clean and ready to upload.
+2026-11-06 19:05:26,615 - INFO - Uploading 586 rules to staging table: ConsolidationRules_Staging...
+2026-11-06 19:05:26,766 - INFO - Upload to staging table complete.
+2026-11-06 19:05:26,772 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-06 19:06:59,835 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-06 19:06:59,835 - INFO - Reason logged to dbo.HS_Consolidation_Log: KS round 1: 2024 MaxPreps drift, same-school names (Christ Prep, Chaparral, Rural Vista, Riverside, South Sumner, KSD, Independent)
+2026-11-06 19:06:59,835 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-06 19:06:59,835 - INFO - Running post-consolidation safety check...
+2026-11-06 19:06:59,839 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+=== OK 2026-11-06 19:07:14

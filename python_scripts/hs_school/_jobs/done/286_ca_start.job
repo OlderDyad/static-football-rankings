@@ -1,0 +1,8 @@
+addstate CA
+report CA drift
+mapcheck CA --commit
+dedup CA
+review-pairs CA
+same-score-fix CA
+query CA ca_dump.sql
+query CA ca_names.sql

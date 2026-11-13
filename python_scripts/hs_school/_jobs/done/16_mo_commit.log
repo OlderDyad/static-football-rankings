@@ -1,0 +1,44 @@
+
+>>> commit MO
+
+DEDUP v4 MO - COMMIT
+ dedup_archive: 275 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_archive_COMMITTED_20261108_1928.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_review_COMMITTED_20261108_1928.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_summary_COMMITTED_20261108_1928.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  MO     103310        275                  2                ECF95477-93EB-4FD9-B5C3-DF43A7538942
+
+REVIEW-ONLY PAIRS MO - COMMIT
+ 2 pairs {'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_review_pairs_COMMITTED_20261108_1928.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  2         150D6D90-E67B-491B-80A4-A2100766A167  None
+
+>>> same-score-fix MO
+
+SAME-SCORE DOUBLE-BOOKINGS MO - PREVIEW (nothing changed)
+ 843 pairs {'DROP A': 258, 'DROP B': 260, 'UNDECIDED': 325} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_same_score_20261108_1930.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  516       None   None
+
+>>> report MO double-booked
+
+REPORT double-booked MO: 4831 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_double_booked_20261108_1931.csv
+   Kind             Team         Season  Gap  A_Date      A_Opp                                    A_Score  A_Source                                  A_Batch  B_Date      B_Opp                                     B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Adrian (MO)  1971    0    1971-10-29  Raymore-Peculiar (MO)                    6-47     30 Oct 1971 - 48 - The Kansas City Times  None     1971-10-29  Mexico (MO)                               6-14     30 Oct 1971 - Page 6 - St. Louis Post-Di  None     9C117871-61B0-4AD0-B59B-30E061E4E524  B317D816-EBB3-496E-B515-79A1202C23D0
+   DIFFERENT GAMES  Adrian (MO)  1972    0    1972-10-06  Saint Joseph Bishop LeBlond (MO)         27-6     07 Oct 1972 - Page 6 - St. Louis Post-Di  None     1972-10-06  Cleveland Midway (MO)                     14-6     07 Oct 1972 - 52 - The Kansas City Times  None     D37CF2A0-F92C-4B7A-B9D9-96C7D0050A43  8EA83A49-13DE-4DDE-BCDA-B2D546A2F58A
+   DIFFERENT GAMES  Adrian (MO)  1993    0    1993-09-03  Saint Mary's (MO)                        18-0     05 Sep 1993 - Page 72 - St. Louis Post-D  None     1993-09-03  Lockwood (MO)                             8-36     05 Sep 1993 - Page 72 - St. Louis Post-D  None     091A1823-FD0F-4212-AA3F-ABF2D3139E79  90DB2388-AD53-4A11-8851-CA018823985F
+   DIFFERENT GAMES  Adrian (MO)  1998    0    1998-09-25  Marionville (MO)                         40-0     https://www.newspapers.com/image/2076590  None     1998-09-25  Martinsville (MO)                         10-0     https://www.newspapers.com/image/6852578  None     A2CF3206-7FAC-4A9D-86F3-7CC2771F0017  743F26EE-A20A-4CB7-9B2F-8A472A90AAB6
+   DIFFERENT GAMES  Adrian (MO)  2000    0    2000-11-03  Rich Hill (MO)                           12-0     https://docs.google.com/document/d/1NOhR  None     2000-11-03  Lockwood (MO)                             41-12    04 Nov 2000 - 45 - The Kansas City Star   None     5D5E3A0E-54FE-4A27-961E-07EBE826B142  E725013F-B0D8-4AFA-A7FC-5A48014AB90E
+   DIFFERENT GAMES  Adrian (MO)  2000    0    2000-11-03  Rich Hill (MO)                           42-0     04 Nov 2000 - 45 - The Kansas City Star   None     2000-11-03  Lockwood (MO)                             41-12    04 Nov 2000 - 45 - The Kansas City Star   None     3CEE486D-44B5-4EEE-879D-063DED88B977  E725013F-B0D8-4AFA-A7FC-5A48014AB90E
+   DIFFERENT GAMES  Adrian (MO)  2019    1    2019-10-01  Jasper (MO)                              41-0     www.maxpreps.com                          None     2019-10-02  El Dorado Springs (MO)                    26-21    www.maxpreps.com                          None     52EA0C3E-6269-4D65-85CC-7D6872353B9D  83CB5175-6B09-4E92-A193-B91F84B0CEC7
+   DIFFERENT GAMES  Adrian (MO)  2019    2    2019-10-04  Diamond (MO)                             45-0     www.maxpreps.com                          None     2019-10-02  El Dorado Springs (MO)                    26-21    www.maxpreps.com                          None     AC98EDE6-5AD5-476A-8C0A-0BC9DAF7D480  83CB5175-6B09-4E92-A193-B91F84B0CEC7
+   DIFFERENT GAMES  Adrian (MO)  2019    0    2019-11-01  Archie (MO)                              53-21    www.maxpreps.com                          None     2019-11-01  Windsor Henry County (MO)                 19-20    www.maxpreps.com                          None     FE39D27C-C1BF-453A-B243-38CF3D50A927  9265DEF0-873C-47A6-8DA2-618B8A6F28EB
+   DIFFERENT GAMES  Albany (MO)  1975    0    1975-09-26  Grant City Worth County (MO)             14-46    27 Sep 1975 - Page 6 - St. Louis Post-Di  None     1975-09-26  Grant City Worth County-Northeast Nodawa  14-6     27 Sep 1975 - 56 - The Kansas City Times  None     EFDBECC8-520C-4333-9D2C-EE3C7F93EB93  CF9A7593-F41D-48DF-9994-FA4AB74A92A3
+   DIFFERENT GAMES  Albany (MO)  2003    0    2003-10-24  Tarkio (MO)                              6-7      01 Nov 2003 - 27 - St. Joseph News-Press  None     2003-10-24  Rock Port (MO)                            0-38     25 Oct 2003 - 27 - St. Joseph News-Press  None     5581CEB7-4045-479D-B186-3B9C33FEA635  B8E21A3A-4DA0-46DA-BBEB-A264D2C7DDBA
+   DIFFERENT GAMES  Albany (MO)  2015    1    2015-09-19  Graham Nodaway-Holt (MO)                 56-6     www.maxpreps.com                          None     2015-09-18  Oregon South Holt-Nodaway-Holt (MO)       44-42    www.maxpreps.com                          None     8DAF6A5B-974C-4DAE-AF76-0C28E3D65C1B  19DC4621-8214-4E64-ACDF-6F1257FFA1C4
+   DIFFERENT GAMES  Albany (MO)  2015    1    2015-10-09  Hopkins North Nodaway-West Nodaway (MO)  62-60    www.maxpreps.com                          None     2015-10-10  Hopkins North Nodaway (MO)                88-60    www.maxpreps.com                          None     FA4CAE5E-FBDF-4137-BCF5-CA200CFB6079  07D481AD-A2E2-4D82-ADE4-D728732B7BCB
+   DIFFERENT GAMES  Albany (MO)  2015    1    2015-10-17  Oregon South Holt (MO)                   60-12    www.maxpreps.com                          None     2015-10-16  Sedalia Sacred Heart (MO)                 53-34    www.maxpreps.com                          None     3801F4AC-E843-458D-A8B1-4C53F243E32F  DCBC8CE2-3DB9-4A5A-A8EF-DC11CF6B0978
+   DIFFERENT GAMES  Albany (MO)  2016    2    2016-09-23  Braymer-Breckenridge (MO)                58-12    www.maxpreps.com                          None     2016-09-25  Mound City (MO)                           34-16    www.maxpreps.com                          None     9F9724F9-570C-41A0-AC63-0C4F6C45339E  FAFFB35A-D8F7-4667-8C94-D2D709A605A9
+   ... 4816 more rows (see CSV)
+
+=== OK 2026-11-08 19:31:08

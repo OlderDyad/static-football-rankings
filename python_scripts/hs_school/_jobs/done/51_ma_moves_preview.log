@@ -1,0 +1,67 @@
+
+>>> move-team MA --from "Boston Latin School (MA)" --to "Dorchester Boston Latin Academy (MA)" --seasons 2025-2026 --reason "2025-2026 Boston Latin Academy games mis-mapped to Boston Latin School"
+
+MOVE Boston Latin School (MA) -> Dorchester Boston Latin Academy (MA), seasons 2025-2026 - PREVIEW (nothing changed)
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261109_0849.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261109_0849.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  17     True               None
+
+>>> move-team MA --from "Boston Latin (MA)" --to "Dorchester Boston Latin Academy (MA)" --seasons 2024-2024 --ids ma_bla_2024_ids.csv --reason "2024 Boston Latin Academy games mis-mapped to Boston Latin"
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\ma_bla_2024_ids.csv
+
+MOVE Boston Latin (MA) -> Dorchester Boston Latin Academy (MA), seasons 2024-2024 - PREVIEW (nothing changed)
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261109_0849.csv
+ move_by_season: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261109_0849.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  10     True               None
+
+>>> move-team MA --from "Boston College (MA)" --to "Boston College High (MA)" --seasons 2020-2026 --reason "2026 Boston College High games imported under Boston College"
+
+MOVE Boston College (MA) -> Boston College High (MA), seasons 2020-2026 - PREVIEW (nothing changed)
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261109_0849.csv
+ move_by_season: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261109_0849.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  3      True               None
+
+>>> move-team MA --from "Cambridge Rindge Tech (MA)" --to "Cambridge Rindge & Latin (MA)" --seasons 2024-2026 --reason "2024-2026 Cambridge Rindge & Latin games imported under Cambridge Rindge Tech"
+
+MOVE Cambridge Rindge Tech (MA) -> Cambridge Rindge & Latin (MA), seasons 2024-2026 - PREVIEW (nothing changed)
+ move_games: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261109_0849.csv
+ move_by_season: 118 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261109_0849.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  29     True               None
+
+>>> move-team MA --from "Springfield (MA)" --to "Springfield Sci-Tech (MA)" --seasons 2024-2026 --reason "2024-2026 Springfield International/Sci-Tech co-op games imported under Springfield"
+
+MOVE Springfield (MA) -> Springfield Sci-Tech (MA), seasons 2024-2026 - PREVIEW (nothing changed)
+ move_games: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261109_0849.csv
+ move_by_season: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261109_0849.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  24     True               None
+
+>>> move-team MA --from "Carlisle (MA)" --to "Carlisle (OH)" --seasons 1974-1974 --reason "1974 Dayton Jefferson Township (OH) vs Carlisle (OH) mislabeled as Carlisle (MA)"
+
+MOVE Carlisle (MA) -> Carlisle (OH), seasons 1974-1974 - PREVIEW (nothing changed)
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261109_0849.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261109_0849.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  1      True               None
+
+>>> archive-ids MA --ids ma_everett_1938_ids.csv --reason "1937 Everett schedule duplicated under Season=1938 with Dec 1938-Feb 1939 synthetic dates (Classmates yearbook)"
+
+ARCHIVE LISTED GAMES MA - PREVIEW (nothing changed)
+ 8 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_archive_ids_20261109_0849.csv
+   Season  Date        Home                     Home_Score  Visitor          Visitor_Score  Source                                    Access_ID  ID                                  
+   1938    1938-12-30  Concord (MA)             6           Everett (MA)     6              http://www.classmates.com/yearbooks/Ever  None       6A4641D8-E7F0-4EC4-8C0E-7670FEC25080
+   1938    1939-01-06  Salem (MA)               0           Everett (MA)     0              http://www.classmates.com/yearbooks/Ever  None       E137083C-3557-4E62-A88F-1A4A27BFA23B
+   1938    1939-01-13  Everett (MA)             6           Newton (MA)      0              http://www.classmates.com/yearbooks/Ever  None       7C3E542E-0353-42F3-A970-D64D8259D113
+   1938    1939-01-20  Manchester Central (NH)  0           Everett (MA)     0              http://www.classmates.com/yearbooks/Ever  None       66971BA3-3C3A-48A6-A41C-69FA82D33021
+   1938    1939-01-27  Everett (MA)             20          Revere (MA)      0              http://www.classmates.com/yearbooks/Ever  None       68CF3740-D984-41B3-BC03-C66BBD0E0558
+   1938    1939-02-03  Everett (MA)             20          Providence (RI)  0              http://www.classmates.com/yearbooks/Ever  None       3B869277-87EF-4F28-9354-CF0600242099
+   1938    1939-02-10  Malden (MA)              0           Everett (MA)     0              http://www.classmates.com/yearbooks/Ever  None       3F80285B-2ED0-4B5E-B040-A972CD7BE828
+   1938    1939-02-17  Chelsea (MA)             6           Everett (MA)     0              http://www.classmates.com/yearbooks/Ever  None       F7943F32-6414-4670-9E2C-AB7981ABD527
+   Status                     Listed  Found  RunID  Err 
+   PREVIEW (nothing changed)  8       8      None   None
+
+=== OK 2026-11-09 08:49:34

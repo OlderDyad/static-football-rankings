@@ -1,0 +1,35 @@
+
+>>> import-games AR --file hsfha_import_AR.csv --reason "HSFHA-AR (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+
+IMPORT GAMES AR - COMMIT from hsfha_import_AR.csv (14994 rows)
+   Skip                                Games
+   a team already has a game that day  568  
+   IMPORT                              14374
+   name not in HS_Team_Names           52   
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_import_skipped_20261111_0826.csv
+   Status     Imported  BatchID  Err 
+   COMMITTED  14374     198      None
+
+>>> same-score-fix AR
+ 533 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS AR - PREVIEW (nothing changed)
+ 95 pairs {'DROP B': 2, 'DROP A': 2, 'UNDECIDED': 91} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_same_score_20261111_0827.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  4         None   None
+
+>>> dedup AR
+
+DEDUP v4 AR - PREVIEW (nothing changed)
+ dedup_archive: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_dedup_archive_20261111_0827.csv
+ dedup_review: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_dedup_review_20261111_0827.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_dedup_summary_20261111_0827.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  AR     89027         6                    13               None 
+
+>>> review-pairs AR
+
+REVIEW-ONLY PAIRS AR - PREVIEW (nothing changed)
+ 3 pairs {'LONG': 2, 'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_review_pairs_20261111_0827.csv
+
+=== OK 2026-11-11 08:27:42

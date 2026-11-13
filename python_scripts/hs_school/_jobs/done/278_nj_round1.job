@@ -1,0 +1,20 @@
+remap NJ --url "https://www.maxpreps.com/nj/belvidere/belvidere-county-seaters/football/schedule/" --to "Belvidere (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/buena/buena-chiefs/football/schedule/" --to "Buena Regional (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/chester/west-morris-central-wolfpack/football/schedule/" --to "Chester West Morris Central (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/mt-holly/rancocas-valley-red-devils/football/schedule/" --to "Mount Holly Rancocas Valley Regional (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/neptune/neptune-scarlet-fliers/football/schedule/" --to "Neptune (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/nutley/nutley-maroon-raiders/football/schedule/" --to "Nutley (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/west-caldwell/caldwell-chiefs/football/schedule/" --to "West Caldwell (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/clark/johnson-crusaders/football/schedule/" --to "Clark Arthur L. Johnson Regional (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/edison/jp-stevens-hawks/football/schedule/" --to "Edison John P. Stevens (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/hightstown/peddie-falcons/football/schedule/" --to "Hightstown The Peddie School (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/old-tappan/nv-old-tappan-golden-knights/football/schedule/" --to "Old Tappan Northern Valley (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/point-pleasant/point-pleasant-boro-panthers/football/schedule/" --to "Point Pleasant Borough (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/princeton/hun-raiders/football/schedule/" --to "Princeton Hun School (NJ)" --commit
+remap NJ --url "https://www.maxpreps.com/nj/springfield/dayton-bulldogs/football/schedule/" --to "Springfield Jonathan Dayton Regional (NJ)" --commit
+mapcheck NJ --commit
+consolidate NJ --reason "NJ round 1: 2024 MaxPreps short names; same-school pairs from PSU team pages (Englewood Dwight Morrow, Emerson, Brick Township, Chatham); renames to latest (Woodrow Wilson -> Camden Eastside, East Paterson -> Elmwood Park)"
+dedup NJ --commit
+review-pairs NJ --commit
+same-score-fix NJ
+query NJ nj_dump.sql

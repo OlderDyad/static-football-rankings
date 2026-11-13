@@ -1,0 +1,472 @@
+
+>>> addstate CT
+Tracker rows ready for CT
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report CT names
+
+REPORT names CT: 474 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_names_20261109_1016.csv
+   Name                                 Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   All-Hartfords (CT)                   1      1923         1923        0            0     
+   American School for the Deaf (CT)    153    1905         1980        1            0     
+   Amherst College JV (CT)              1      1942         1942        1            0     
+   Ansonia (CT)                         995    1902         2026        1            1     
+   Ansonia O'Brien RVT (CT)             125    2011         2023        1            0     
+   Ansonia Obrien Rvt (CT)              25     2024         2026        1            1     
+   Arnold College (CT)                  11     1930         1948        1            0     
+   Arnold College Frosh (CT)            1      1950         1950        1            0     
+   Avon (CT)                            592    1952         2026        1            1     
+   Avon Old (CT)                        28     2024         2026        1            1     
+   Avon Old Farms (CT)                  532    1952         2023        1            0     
+   Barre Goddard Seminary (CT)          4      1921         1926        1            0     
+   Beacon Falls Woodland Regional (CT)  217    2002         2026        1            1     
+   Berlin (CT)                          715    1927         2026        1            1     
+   Bethel (CT)                          572    1958         2026        1            1     
+   ... 459 more rows (see CSV)
+
+>>> report CT drift
+
+REPORT drift CT: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_drift_20261109_1017.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                                   N_Games  N_First  N_Last  N_Mapped
+   Ansonia O'Brien RVT (CT)                  125      2011     2023    0         Ansonia Obrien Rvt (CT)                   25       2024     2026    1       
+   Avon Old Farms (CT)                       532      1952     2023    0         Avon Old (CT)                             28       2024     2026    1       
+   Bristol St. Paul Catholic (CT)            375      1968     2025    1         None                                      None     None     None    0       
+   Bulkeley-Hartford Magnet Trinity College  24       2015     2019    0         None                                      None     None     None    0       
+   Canton (CT)                               198      1948     2018    0         None                                      None     None     None    0       
+   Clinton Morgan (CT)                       488      1964     2025    1         None                                      None     None     None    0       
+   Colchester Bacon Academy (CT)             233      2000     2024    1         None                                      None     None     None    0       
+   Coventry-Windham RVT-Bolton (CT)          118      2004     2023    0         None                                      None     None     None    0       
+   Coventry-Windham RVT-Bolton-Lyman Memori  52       2000     2023    0         None                                      None     None     None    0       
+   Cromwell (CT)                             141      1972     2018    0         None                                      None     None     None    0       
+   Danbury Immaculate (CT)                   445      1957     2016    0         Danbury ATI [Abbott RVT-Immaculate] (CT)  81       2014     2026    1       
+   Danielson Killingly (CT)                  656      1928     2023    0         None                                      None     None     None    0       
+   Deep River Valley Regional-Old Lyme (CT)  135      2006     2023    0         None                                      None     None     None    0       
+   Durham Coginchaug Regional-East Hampton-  34       2018     2023    0         None                                      None     None     None    0       
+   Ellington-Somers (CT)                     63       2007     2016    0         None                                      None     None     None    0       
+   ... 42 more rows (see CSV)
+
+>>> report CT same-town
+
+REPORT same-town CT: 148 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_same_town_20261109_1017.csv
+   A                               B                                Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Lakeville Hotchkiss (CT)        Lakeville Hotchkiss School (CT)  139   56       1944         2023        654      286    
+   Norwalk (CT)                    Norwalk McMahon (CT)             95    45       1961         2025        719      642    
+   Waterbury Holy Cross (CT)       Waterbury Wilby (CT)             82    41       1972         2026        500      583    
+   Stamford Trinity Catholic (CT)  Stamford Westhill (CT)           71    30       1972         2016        576      491    
+   Wallingford Lyman Hall (CT)     Wallingford Sheehan (CT)         70    38       1971         2025        618      506    
+   Waterbury Crosby (CT)           Waterbury Kennedy (CT)           70    43       1970         2025        665      471    
+   Pomfret (CT)                    Pomfret School (CT)              66    29       1945         2003        280      307    
+   Stratford (CT)                  Stratford Bunnell (CT)           63    38       1964         2026        806      609    
+   Waterbury Crosby (CT)           Waterbury Wilby (CT)             62    44       1941         2026        665      583    
+   Bridgeport Central (CT)         Bridgeport Harding (CT)          59    47       1931         2024        660      717    
+   Bristol Central (CT)            Bristol Eastern (CT)             59    34       1961         2024        694      558    
+   Meriden Maloney (CT)            Meriden Platt (CT)               58    41       1958         2026        773      596    
+   Waterbury Kennedy (CT)          Waterbury Sacred Heart (CT)      58    35       1966         2013        471      433    
+   New Fairfield (CT)              New Milford (CT)                 56    28       1976         2025        444      481    
+   West Hartford Conard (CT)       West Hartford Hall (CT)          54    36       1960         2025        618      451    
+   ... 133 more rows (see CSV)
+
+>>> mapcheck CT
+
+MAPPING CHECK CT - PREVIEW (nothing changed)
+ 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_mapcheck_20261109_1017.csv
+   URL                                       ProperName                      Team_ID  NameID  Problem                          Team_ID_Name                       
+   https://www.maxpreps.com/ct/bridgeport/b  Bridgeport Bullard Havens (CT)  28532    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/ct/hartford/pri  Hartford Prince RVT (CT)        38323    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/ct/hartford/spo  Hartford Sports And (CT)        44994    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/ct/meriden/wilc  Meriden Wilcox Tech (CT)        26521    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/ct/norwich/tham  Norwich Thames River (CT)       1798     None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/ct/oakdale/st-t  Oakdale St. Thomas (CT)         46312    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/ct/putnam/quine  Putnam Quinebaug Valley (CT)    40708    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/ct/stamford/kin  Stamford King (CT)              23633    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/ct/washington/f  Washington Frederick Gunn (CT)  8568     None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/ct/bridgeport/b  Bridgeport Bassick (CT)         59906    59905   Team_ID points to another name   Bridgeport Bullard Havens Tech (CT)
+   https://www.maxpreps.com/ct/norwich/norw  Norwich Free Academy (CT)       66108    66107   Team_ID points to another name   Norwich Thames River Academy (CT)  
+   https://www.maxpreps.com/ct/suffield/suf  Suffield Academy (CT)           70828    68561   Team_ID points to another name   Thompson Marianapolis Prep (CT)    
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  3        None
+
+>>> dedup CT
+
+DEDUP v4 CT - PREVIEW (nothing changed)
+ dedup_archive: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_dedup_archive_20261109_1017.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_dedup_review_20261109_1017.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_dedup_summary_20261109_1017.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  CT     51532         4                    1                None 
+
+>>> review-pairs CT
+
+REVIEW-ONLY PAIRS CT - PREVIEW (nothing changed)
+ 1 pairs {'LONG': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_review_pairs_20261109_1017.csv
+
+>>> same-score-fix CT
+
+SAME-SCORE DOUBLE-BOOKINGS CT - PREVIEW (nothing changed)
+ 584 pairs {'DROP B': 177, 'DROP A': 155, 'UNDECIDED': 252} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_same_score_20261109_1019.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  331       None   None
+
+>>> report CT double-booked
+
+REPORT double-booked CT: 2158 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_double_booked_20261109_1019.csv
+   Kind             Team                               Season  Gap  A_Date      A_Opp                                    A_Score  A_Source                                  A_Batch  B_Date      B_Opp                                  B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  American School for the Deaf (CT)  1951    2    1951-10-26  New Jersey School for the Deaf (NJ)      0-12     https://digital.libraries.psu.edu/digita  None     1951-10-28  New York School for the Deaf (NY)      0-33     Hartford_Courant_1951_10_28_62.csv        171      C0EDF499-0F02-49FB-8486-3555EB0D1822  8CF4A3A5-F27E-45E9-AE53-6801424D9CBF
+   DIFFERENT GAMES  American School for the Deaf (CT)  1955    2    1955-10-30  New York School for the Deaf (NY)        0-34     Hartford_Courant_1955_10_30_67.csv        171      1955-10-28  New Jersey School for the Deaf (NJ)    14-16    https://digital.libraries.psu.edu/digita  None     6D5AFFDB-FE02-4F83-9071-56D39557F3D4  991F9AB9-D379-4898-85C0-B70102AE700D
+   DIFFERENT GAMES  American School for the Deaf (CT)  1972    2    1972-09-17  Mount Everett (MA)                       40-6     Connecticut_Post_1972_09_17_69.csv        53       1972-09-15  Pennsylvania School for the Deaf (PA)  28-12    https://digital.libraries.psu.edu/digita  None     3DBB0FA4-07C3-445F-9ED0-2F437952D0D1  7C7E17F3-0F4F-4FB7-9004-60119E59AFF5
+   DIFFERENT GAMES  American School for the Deaf (CT)  1973    2    1973-09-14  Pennsylvania School for the Deaf (PA)    8-26     https://digital.libraries.psu.edu/digita  None     1973-09-16  Griswold (CT)                          8-41     Connecticut_Post_1973_09_16_62.csv        53       3553EE17-182A-4C82-9278-869588AB892D  A32C23C5-EEE6-4DB3-823F-D300A31D9AA8
+   DIFFERENT GAMES  American School for the Deaf (CT)  1974    2    1974-09-13  Pennsylvania School for the Deaf (PA)    6-2      https://digital.libraries.psu.edu/digita  None     1974-09-15  Griswold (CT)                          6-14     Connecticut_Post_1974_09_15_53.csv        53       CFCD22B8-5908-4489-A49E-24A7525AE186  6EAA8C2C-6C9A-44BF-9DB4-7EEED5C46CA3
+   DIFFERENT GAMES  American School for the Deaf (CT)  1975    1    1975-10-27  Great Barrington Monument Mountain (MA)  6-8      North Adams Transcript                    None     1975-10-26  Putnam (CT)                            0-7      Hartford Courant                          None     88F140E9-1320-40C0-8865-E589202E46C8  E47DB076-3944-4247-8589-F06A733711A1
+   DIFFERENT GAMES  Ansonia (CT)                       1936    1    1936-09-26  Derby (CT)                               13-7     http:--pucciblognhr.blogspot.com-2012-09  None     1936-09-27  West Haven (CT)                        7-6      Hartford_Courant_1936_09_27_47.csv        171      452E5EDA-ECC2-4195-9BBC-0D68CFEC5AB4  20339109-1EDE-4CC9-90F7-85EC0FFF6DC1
+   DIFFERENT GAMES  Ansonia (CT)                       1937    1    1937-10-02  Derby (CT)                               6-6      http:--pucciblognhr.blogspot.com-2012-09  None     1937-10-03  Torrington (CT)                        40-0     Hartford_Courant_1937_10_03_47.csv        171      F60D9E7C-C1E1-4220-ADC3-92B0B075A359  B4554C0C-D356-42E7-BB22-B1A46FB31709
+   DIFFERENT GAMES  Ansonia (CT)                       1938    1    1938-10-01  Derby (CT)                               0-0      http:--pucciblognhr.blogspot.com-2012-09  None     1938-10-02  Torrington (CT)                        13-6     Hartford_Courant_1938_10_02_55.csv        171      40E17EBB-6482-478D-B969-0CB2196BD729  DB5E2655-5552-4A3F-8346-6BE3EEBD5A8A
+   DIFFERENT GAMES  Ansonia (CT)                       1939    1    1939-09-30  Derby (CT)                               7-0      http:--pucciblognhr.blogspot.com-2012-09  None     1939-10-01  Torrington (CT)                        6-0      Hartford_Courant_1939_10_01_47.csv        171      6074C564-6902-42B0-AD74-565EF043E7FE  482D2036-6543-4FA1-B0BD-72F03479B8E3
+   DIFFERENT GAMES  Ansonia (CT)                       1941    1    1941-09-27  Derby (CT)                               42-0     http:--pucciblognhr.blogspot.com-2012-09  None     1941-09-28  Waterbury Crosby (CT)                  7-6      Hartford_Courant_1941_09_28_43.csv        171      B8BC76D3-E9D0-4A35-84E6-6A6B1EC39AF6  6DA93AF7-5D9F-40D5-8357-8AEC3CF88C94
+   DIFFERENT GAMES  Ansonia (CT)                       1943    1    1943-10-02  Derby (CT)                               49-0     http:--pucciblognhr.blogspot.com-2012-09  None     1943-10-03  Waterbury Wilby (CT)                   25-0     Hartford_Courant_1943_10_03_41.csv        171      DCD2067D-402B-48D4-AFC6-084C6A952D17  EAFAC993-1F15-4CF1-A111-3C70C8EAEC7F
+   DIFFERENT GAMES  Ansonia (CT)                       1956    1    1956-09-29  Derby (CT)                               40-0     http:--pucciblognhr.blogspot.com-2012-09  None     1956-09-30  Waterbury Crosby (CT)                  27-7     Hartford_Courant_1956_09_30_70.csv        171      6A580E82-6C3C-4023-85FF-0287F4AF0F8C  23A6A1F1-E436-4704-ADC1-2F8ABFA061F6
+   DIFFERENT GAMES  Ansonia (CT)                       1960    1    1960-10-01  Derby (CT)                               6-12     http:--pucciblognhr.blogspot.com-2012-09  None     1960-10-02  Stamford (CT)                          6-36     Connecticut_Post_1960_10_02_61.csv        53       185FA02E-05F4-4498-9380-4EDF6F230E5B  FE4770EE-1429-430F-AB98-FF3145C7EC54
+   DIFFERENT GAMES  Ansonia (CT)                       1961    1    1961-09-24  Shelton (CT)                             22-8     Connecticut_Post_1961_09_24_61.csv        53       1961-09-25  Elmsford Alexander Hamilton (NY)       0-30     The_Daily_Item_1961_09_25_15.csv          28       436BD633-FBE5-4D78-8EC0-6B6D4C86015A  472094EF-1837-4240-BE2A-96A9838A8214
+   ... 2143 more rows (see CSV)
+
+>>> query CT season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_q_season_date_1_20261109_1019.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_q_season_date_2_20261109_1019.csv
+
+>>> query CT forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_q_forfeits_1_20261109_1020.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_q_forfeits_2_20261109_1020.csv
+
+>>> query CT college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_q_college_check_1_20261109_1020.csv
+ set 2: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_q_college_check_2_20261109_1020.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_q_college_check_3_20261109_1020.csv
+ set 4: 357 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_q_college_check_4_20261109_1020.csv
+
+>>> addstate NH
+Tracker rows ready for NH
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report NH names
+
+REPORT names NH: 155 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_names_20261109_1020.csv
+   Name                             Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   Alstead Fall Mountain (NH)       466    1968         2026        1            1     
+   Amherst Souhegan (NH)            347    1992         2026        1            1     
+   Andover JV (NH)                  2      1960         1970        1            0     
+   Andover Proctor Academy (NH)     338    1942         2026        1            1     
+   Andover Proctor Academy JV (NH)  1      1952         1952        0            0     
+   Bedford (NH)                     196    2008         2026        1            1     
+   Belmont-Gilford (NH)             79     2016         2024        1            0     
+   Berlin (NH)                      159    1927         1981        1            0     
+   Berlin GI (NH)                   2      1946         1946        1            0     
+   Bow (NH)                         271    1997         2026        1            1     
+   Brattleboro (NH)                 2      2023         2023        1            0     
+   Bristol Newfound Regional (NH)   182    2004         2026        1            1     
+   Brockton (NH)                    1      2023         2023        1            0     
+   Brunswick School (NH)            1      2023         2023        1            0     
+   Canaan (NH)                      2      1930         1932        1            0     
+   ... 140 more rows (see CSV)
+
+>>> report NH drift
+
+REPORT drift NH: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_drift_20261109_1021.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                    N_Games  N_First  N_Last  N_Mapped
+   Belmont-Gilford (NH)                      79       2016     2024    0         None                       None     None     None    0       
+   Franklin (NH)                             516      1936     2025    1         None                       None     None     None    0       
+   Gilford (NH)                              117      2004     2016    0         None                       None     None     None    0       
+   Hillsboro-Deering (NH)                    11       2017     2024    1         None                       None     None     None    0       
+   Hillsboro-Deering-Hopkinton (NH)          63       2016     2022    0         None                       None     None     None    0       
+   Langdon Fall Mountain (NH)                58       1968     2023    0         None                       None     None     None    0       
+   Meredith Inter-Lakes-Moultonborough Acad  138      2008     2023    0         Meredith Inter Lakes (NH)  27       2024     2026    1       
+   North Sutton Kearsarge-Mount Royal Acade  18       2018     2019    0         None                       None     None     None    0       
+   Phillips Exeter Academy (NH)              751      1877     2023    0         None                       None     None     None    0       
+   Portsmouth (NH)                           583      1913     2017    0         None                       None     None     None    0       
+   Tilton School (NH)                        356      1911     2021    0         None                       None     None     None    0       
+   Tilton Winnisquam (NH)                    173      2005     2025    1         None                       None     None     None    0       
+
+>>> report NH same-town
+
+REPORT same-town NH: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_same_town_20261109_1022.csv
+   A                               B                              Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Manchester Central (NH)         Manchester Memorial (NH)       93    41       1941         2025        655      552    
+   Manchester Central (NH)         Manchester West (NH)           67    33       1946         2013        655      525    
+   Manchester Memorial (NH)        Manchester Trinity (NH)        48    16       1982         2020        552      476    
+   Nashua Bishop Guertin (NH)      Nashua South (NH)              35    14       2011         2026        505      241    
+   Manchester Memorial (NH)        Manchester West (NH)           34    26       1971         2009        552      525    
+   Manchester Central (NH)         Manchester Trinity (NH)        30    11       1977         2005        655      476    
+   Nashua North (NH)               Nashua South (NH)              28    15       2004         2026        234      241    
+   Manchester Trinity (NH)         Manchester West (NH)           24    17       1970         2026        476      525    
+   Nashua Bishop Guertin (NH)      Nashua North (NH)              19    15       2004         2026        505      234    
+   Tilton (NH)                     Tilton School (NH)             8     7        1946         2001        46       356    
+   Nashua (NH)                     Nashua Bishop Guertin (NH)     7     7        1973         1992        434      505    
+   Manchester Bishop Bradley (NH)  Manchester Central (NH)        5     5        1953         1967        64       655    
+   Exeter (NH)                     Exeter Phillips Exeter (NH)    4     4        1927         1980        755      179    
+   Dover (NH)                      Dover St. Thomas Aquinas (NH)  3     2        1970         1971        738      521    
+   New Hampton (NH)                New Hampton School (NH)        3     3        1966         1995        48       419    
+   ... 2 more rows (see CSV)
+
+>>> mapcheck NH
+
+MAPPING CHECK NH - PREVIEW (nothing changed)
+ 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_mapcheck_20261109_1022.csv
+   URL                                       ProperName                      Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/nh/belmont/belm  Belmont Gilford (NH)            19247    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/nh/hillsboro/hi  Hillsboro Deering (NH)          16732    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/nh/peterborough  Peterborough ConVal (NH)        3998     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/nh/hanover/hano  Hanover (NH)                    71910    62832   Team_ID points to another name   Hillsboro-Deering (NH)                  
+   https://www.maxpreps.com/nh/penacook/mer  Penacook Merrimack Valley (NH)  66685    66635   Team_ID points to another name   Peterborough Contoocook Valley Regional 
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  2        None
+
+>>> dedup NH
+
+DEDUP v4 NH - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_dedup_archive_20261109_1022.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_dedup_review_20261109_1022.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_dedup_summary_20261109_1022.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  NH     16749         0                    0                None 
+
+>>> review-pairs NH
+
+REVIEW-ONLY PAIRS NH - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_review_pairs_20261109_1022.csv
+
+>>> same-score-fix NH
+
+SAME-SCORE DOUBLE-BOOKINGS NH - PREVIEW (nothing changed)
+ 124 pairs {'DROP B': 31, 'DROP A': 29, 'UNDECIDED': 64} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_same_score_20261109_1022.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  60        None   None
+
+>>> report NH double-booked
+
+REPORT double-booked NH: 464 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_double_booked_20261109_1023.csv
+   Kind             Team                          Season  Gap  A_Date      A_Opp                                     A_Score  A_Source                            A_Batch  B_Date      B_Opp                               B_Score  B_Source                                B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Alstead Fall Mountain (NH)    1986    0    1986-10-27  Bellows Falls (VT)                        0-16     Valley News                         None     1986-10-27  White River Junction Hartford (VT)  16-33    Valley News                             None     BC781EFC-1F97-4D80-BD92-5F2AF2F3CB8B  AF4F4712-62A3-438D-AA11-D116F0799FBD
+   DIFFERENT GAMES  Alstead Fall Mountain (NH)    2016    2    2016-09-24  East Swanzey Monadnock (NH)               0-40     www.maxpreps.com                    None     2016-09-26  Gilford (NH)                        0-41     www.maxpreps.com                        None     29DE49E0-05CD-4B4A-8DCD-31CE27687095  510B7911-7492-4C7C-B3FC-CCB305F4750B
+   DIFFERENT GAMES  Alstead Fall Mountain (NH)    2017    2    2017-09-21  Meredith Inter-Lakes-Moultonborough Acad  14-60    www.maxpreps.com                    None     2017-09-23  East Swanzey Monadnock (NH)         0-63     www.maxpreps.com                        None     FF41EF20-EB37-448E-958F-3B68A4064661  8A7C7604-E76E-4FFA-AB66-641BBD6A7424
+   DIFFERENT GAMES  Alstead Fall Mountain (NH)    2019    2    2019-10-02  Bristol Newfound Regional (NH)            28-8     www.maxpreps.com                    None     2019-10-04  Concord Bishop Brady (NH)           42-6     www.maxpreps.com                        None     DF4DC425-092F-411A-9E59-5101E1FD9781  8C1B730D-5AFC-4E2E-B06A-9917F8E0C10B
+   DIFFERENT GAMES  Alstead Fall Mountain (NH)    2019    1    2019-10-02  Bristol Newfound Regional (NH)            28-8     www.maxpreps.com                    None     2019-10-01  Canaan Mascoma (NH)                 21-0     www.maxpreps.com                        None     DF4DC425-092F-411A-9E59-5101E1FD9781  A2090315-44FE-41C0-ACBF-A26EE294F435
+   DIFFERENT GAMES  Amherst Souhegan (NH)         1992    0    1992-11-15  Newport (NH)                              19-14    Concord Monitor                     None     1992-11-15  Somersworth (NH)                    34-36    Concord Monitor                         None     1555DB11-5E5C-4142-8F03-6C0864998D9F  F4B0EDB1-9857-4F0F-BF26-860012BD76D5
+   DIFFERENT GAMES  Amherst Souhegan (NH)         2019    0    2019-10-01  Hollis-Brookline (NH)                     7-27     www.maxpreps.com                    None     2019-10-01  Pelham (NH)                         20-21    www.maxpreps.com                        None     FEA0FA6A-D212-46EC-B2A9-13DD5D3EEF9F  FD58B2F3-A5CB-4844-9EBE-97D9B08499CC
+   DIFFERENT GAMES  Andover Proctor Academy (NH)  1951    0    1951-10-28  �cole secondaire Westmount (QC)           5-49     The_Boston_Globe_1951_10_28_49.csv  84       1951-10-28  Westford Academy (MA)               5-13     The_Boston_Globe_1951_10_28_49 (2).csv  187      00A65730-A234-49A1-BC54-7DB5A8959209  46DB401D-AE1C-4AD1-B2ED-8BD3FFF70532
+   DIFFERENT GAMES  Andover Proctor Academy (NH)  1978    0    1978-11-12  Phillips Exeter Academy (NH)              8-0      The Boston Globe                    None     1978-11-12  Plymouth Holderness (NH)            33-0     The Boston Globe                        None     AFA2EBAA-16DC-4811-89D0-7203AC037158  27E7CA85-3E86-4D0A-9DF4-947FA57546BD
+   DIFFERENT GAMES  Andover Proctor Academy (NH)  2014    1    2014-11-01  West Hartford Kingswood-Oxford (CT)       8-32     www.maxpreps.com                    None     2014-11-02  Northfield Mount Hermon (MA)        21-20    www.maxpreps.com                        None     E73E79AA-8EDB-4FBC-BA07-2069483D25F9  90AD510A-7EC7-4C28-85CE-27B880B9331E
+   DIFFERENT GAMES  Andover Proctor Academy (NH)  2015    2    2015-10-31  South Hamilton Pingree (MA)               14-59    www.maxpreps.com                    None     2015-11-02  Northfield Mount Hermon (MA)        21-20    www.maxpreps.com                        None     298E10C3-3C0C-4E4C-925B-8E9DC8D9A0CE  2624BB88-F471-4D29-8C3A-9AE6BCA11BD7
+   DIFFERENT GAMES  Andover Proctor Academy (NH)  2019    1    2019-11-01  South Hamilton Pingree (MA)               12-34    www.maxpreps.com                    None     2019-11-02  New Hampton School (NH)             19-6     www.maxpreps.com                        None     B7E088B2-789D-4326-B5D8-23FA0D5243F3  665BEA61-352B-479E-963E-DCEC6DC2875D
+   DIFFERENT GAMES  Bedford (NH)                  2019    0    2019-10-01  Londonderry (NH)                          0-35     www.maxpreps.com                    None     2019-10-01  Salem (NH)                          3-34     www.maxpreps.com                        None     C437BF92-E482-4E0C-91AE-483850E9B441  124CFA21-36AF-4CBA-83F4-C222DB29915B
+   DIFFERENT GAMES  Belmont-Gilford (NH)          2016    1    2016-10-14  Hanover (NH)                              6-35     www.maxpreps.com                    None     2016-10-15  Pembroke (NH)                       40-0     www.maxpreps.com                        None     7E879ECD-DF0E-4D5E-826C-0F1EC6B827B7  37231EF2-A2D2-48D8-9213-D948550ECCC9
+   DIFFERENT GAMES  Bow (NH)                      2015    1    2015-10-31  Farmington-Nute (NH)                      50-0     www.maxpreps.com                    None     2015-10-30  Somersworth (NH)                    23-0     www.maxpreps.com                        None     34A0C5A4-3ED9-4294-9365-3A09FA5EAA78  36BBE18D-9222-40D9-9339-D0D802D28660
+   ... 449 more rows (see CSV)
+
+>>> query NH season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_season_date_1_20261109_1023.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_season_date_2_20261109_1023.csv
+
+>>> query NH forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_forfeits_1_20261109_1023.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_forfeits_2_20261109_1023.csv
+
+>>> query NH college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_college_check_1_20261109_1023.csv
+ set 2: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_college_check_2_20261109_1023.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_college_check_3_20261109_1023.csv
+ set 4: 284 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_college_check_4_20261109_1023.csv
+
+>>> addstate RI
+Tracker rows ready for RI
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report RI names
+
+REPORT names RI: 125 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_names_20261109_1024.csv
+   Name                                      Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   Barrington (RI)                           576    1933         2026        1            1     
+   Barrington St. Andrew's School (RI)       6      1941         1959        0            0     
+   Barrington St. Andrews School (RI)        4      1950         1952        1            0     
+   Barrington Vocational (RI)                1      1957         1957        0            0     
+   Bristol (RI)                              105    1924         1992        1            0     
+   Bristol Colt Memorial (RI)                64     1925         1958        1            0     
+   Bristol Mt. Hope (RI)                     303    1949         2026        1            1     
+   Brown University (RI)                     2      1906         1943        0            0     
+   Brown University Frosh (RI)               15     1908         1953        1            0     
+   Brown University Frosh B (RI)             1      1949         1949        0            0     
+   Brown University JV (RI)                  3      1942         1949        0            0     
+   Central Falls (RI)                        296    1925         2026        1            1     
+   Central Falls Central Falls (RI)          7      2024         2024        1            1     
+   Central Falls-Blackstone Valley Prep (RI  8      2021         2021        1            0     
+   Central Falls-Blackstone Valley Prep-Ach  4      2023         2023        1            0     
+   ... 110 more rows (see CSV)
+
+>>> report RI drift
+
+REPORT drift RI: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_drift_20261109_1025.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                           N_Games  N_First  N_Last  N_Mapped
+   East Providence Country Day-Wheeler-Sanc  119      2010     2022    0         None                              None     None     None    0       
+   Exeter-West Greenwich (RI)                165      1938     2017    0         None                              None     None     None    0       
+   Exeter-West Greenwich-Prout (RI)          50       2018     2023    0         None                              None     None     None    0       
+   Lincoln Davies Career & Tech (RI)         33       2019     2023    0         Lincoln Davies Career (RI)        29       2024     2026    1       
+   North Smithfield-Mount St. Charles Acade  79       2016     2023    0         None                              None     None     None    0       
+   Pawtucket Shea (RI)                       297      1977     2024    1         None                              None     None     None    0       
+   Providence Lasalle Academy (RI)           596      1920     2025    0         Providence Hope St. Academy (RI)  9        2024     2024    1       
+   Warwick Veterans Memorial (RI)            339      1915     2020    1         None                              None     None     None    0       
+   Woonsocket (RI)                           950      1915     2023    0         Woonsocket Villa (RI)             31       2024     2026    1       
+
+>>> report RI same-town
+
+REPORT same-town RI: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_same_town_20261109_1025.csv
+   A                                   B                                   Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Cranston East (RI)                  Cranston West (RI)                  51    20       1933         2021        876      550    
+   North Scituate Scituate (RI)        North Smithfield (RI)               31    11       2006         2026        200      209    
+   Providence Central (RI)             Providence Lasalle Academy (RI)     30    22       1934         2025        512      596    
+   Providence Central (RI)             Providence Mt. Pleasant (RI)        28    18       1938         2023        512      478    
+   North Providence (RI)               North Scituate Scituate (RI)        25    12       2006         2023        356      200    
+   Providence Moses Brown (RI)         Providence Mt. Pleasant (RI)        25    10       2006         2026        495      478    
+   Providence Hope (RI)                Providence Mt. Pleasant (RI)        24    18       1939         2026        388      478    
+   Providence Hope (RI)                Providence Lasalle Academy (RI)     21    19       1932         1966        388      596    
+   Providence Central (RI)             Providence Hope (RI)                20    17       1933         2013        512      388    
+   North Providence (RI)               North Smithfield (RI)               19    10       1988         2014        356      209    
+   Pawtucket St. Raphael Academy (RI)  Pawtucket West (RI)                 19    14       1943         1968        512      103    
+   Providence Classical (RI)           Providence Hope (RI)                16    11       1917         2025        389      388    
+   Warwick Bishop Hendricken (RI)      Warwick Veterans Memorial (RI)      16    12       1963         2014        452      339    
+   Warwick Toll Gate (RI)              Warwick Veterans Memorial (RI)      15    11       1972         2013        333      339    
+   Pawtucket Shea (RI)                 Pawtucket St. Raphael Academy (RI)  15    10       2006         2019        297      512    
+   ... 46 more rows (see CSV)
+
+>>> mapcheck RI
+
+MAPPING CHECK RI - PREVIEW (nothing changed)
+ 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_mapcheck_20261109_1025.csv
+   URL                                       ProperName                Team_ID  NameID  Problem                          Team_ID_Name                  
+   https://www.maxpreps.com/ri/providence/l  Providence La Salle (RI)  30989    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/ri/warwick/toll  Warwick Toll Gate (RI)    29256    69455   Team_ID points to another name   Warwick Veterans Memorial (RI)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  1        None
+
+>>> dedup RI
+
+DEDUP v4 RI - PREVIEW (nothing changed)
+ dedup_archive: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_dedup_archive_20261109_1025.csv
+ dedup_review: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_dedup_review_20261109_1025.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_dedup_summary_20261109_1025.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  RI     11256         19                   30               None 
+
+>>> review-pairs RI
+
+REVIEW-ONLY PAIRS RI - PREVIEW (nothing changed)
+ 30 pairs {'LONG': 2, 'SHORT': 28} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_review_pairs_20261109_1025.csv
+
+>>> same-score-fix RI
+
+SAME-SCORE DOUBLE-BOOKINGS RI - PREVIEW (nothing changed)
+ 74 pairs {'DROP B': 12, 'DROP A': 13, 'UNDECIDED': 49} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_same_score_20261109_1026.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  25        None   None
+
+>>> report RI double-booked
+
+REPORT double-booked RI: 422 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_double_booked_20261109_1026.csv
+   Kind             Team                        Season  Gap  A_Date      A_Opp                          A_Score  A_Source                                A_Batch  B_Date      B_Opp                               B_Score  B_Source                                B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Barrington (RI)             1951    0    1951-10-28  Scituate (MA)                  25-12    The_Boston_Globe_1951_10_28_49 (2).csv  187      1951-10-28  North Kingstown (RI)                25-6     The_Boston_Globe_1951_10_28_49.csv      83       E8531C61-83E6-4199-AF01-1306F19ED614  B1DAF8F6-F478-4482-A315-8966D6E228CB
+   DIFFERENT GAMES  Barrington (RI)             1951    0    1951-11-11  Harrisville Burrillville (RI)  7-63     The_Boston_Globe_1951_11_11_54 (1).csv  187      1951-11-11  Warwick Lockwood (RI)               7-48     The_Boston_Globe_1951_11_11_54.csv      84       9FFDC52B-7B44-422B-844D-8612B58A0BB4  E8074BDC-ED0A-4419-B76E-C386DD131C3D
+   DIFFERENT GAMES  Barrington (RI)             2017    0    2017-10-13  Schaumburg (IL)                48-20    www.maxpreps.com                        None     2017-10-13  Pawtucket Tolman (RI)               12-7     www.maxpreps.com                        None     54E47E69-7DBA-484D-86F5-06E157DF0E2B  5D4480FB-E6C6-4010-B5F0-0BFA768CF9B5
+   DIFFERENT GAMES  Barrington (RI)             2017    1    2017-11-02  Bristol Mt. Hope (RI)          20-14    www.maxpreps.com                        None     2017-11-03  Pawtucket St. Raphael Academy (RI)  24-15    www.maxpreps.com                        None     3475D1E7-AF31-4C00-BF90-77632B5B5CA6  9C8B4A10-C97B-460F-A611-FCA72955EDA3
+   DIFFERENT GAMES  Barrington (RI)             2019    0    2019-11-01  Cumberland (RI)                6-35     www.maxpreps.com                        None     2019-11-01  Providence Lasalle Academy (RI)     7-48     www.maxpreps.com                        None     B71ABE05-3FCF-4598-A44E-7B1A27A9AEBC  AA6E4254-B6B4-4C0D-B6EF-D8FA47E9AF2F
+   DIFFERENT GAMES  Barrington (RI)             2019    1    2019-11-01  Cumberland (RI)                6-35     www.maxpreps.com                        None     2019-11-02  Bristol Mt. Hope (RI)               22-6     www.maxpreps.com                        None     B71ABE05-3FCF-4598-A44E-7B1A27A9AEBC  6010DC9B-91BA-4373-B468-CAA3148E4E69
+   DIFFERENT GAMES  Barrington (RI)             2019    1    2019-11-02  Bristol Mt. Hope (RI)          22-6     www.maxpreps.com                        None     2019-11-01  Providence Lasalle Academy (RI)     7-48     www.maxpreps.com                        None     6010DC9B-91BA-4373-B468-CAA3148E4E69  AA6E4254-B6B4-4C0D-B6EF-D8FA47E9AF2F
+   DIFFERENT GAMES  Bristol Colt Memorial (RI)  1951    0    1951-10-28  East Greenwich (RI)            26-0     The_Boston_Globe_1951_10_28_49.csv      83       1951-10-28  Taunton (MA)                        26-6     The_Boston_Globe_1951_10_28_49 (2).csv  187      5F21E086-2F1B-45D8-BF51-528192AA41DA  CE5D3AEF-5424-4D1C-8E34-9C44DA7E18B1
+   DIFFERENT GAMES  Bristol Colt Memorial (RI)  1951    0    1951-11-11  Coventry (RI)                  6-13     The_Boston_Globe_1951_11_11_54.csv      84       1951-11-11  Warren (RI)                         6-0      The_Boston_Globe_1951_11_11_54.csv      83       AB42B851-4CEA-4B31-B0BB-09D29628A358  C624D126-99E5-49F4-9EE6-901D1FFC7AD6
+   DIFFERENT GAMES  Bristol Mt. Hope (RI)       2016    1    2016-09-17  Providence Classical (RI)      16-7     www.maxpreps.com                        None     2016-09-18  Newport Rogers (RI)                 29-0     www.maxpreps.com                        None     6FE19D15-573E-4CCC-8CB7-B8C08E36DEC2  B970E85B-98D6-4383-AE85-E0A281BC6D5B
+   DIFFERENT GAMES  Bristol Mt. Hope (RI)       2017    1    2017-11-01  Providence Moses Brown (RI)    35-55    www.maxpreps.com                        None     2017-11-02  Barrington (RI)                     14-20    www.maxpreps.com                        None     25DC6D83-E48C-4526-B451-5F456B4F252A  3475D1E7-AF31-4C00-BF90-77632B5B5CA6
+   DIFFERENT GAMES  Bristol Mt. Hope (RI)       2017    2    2017-11-01  Providence Moses Brown (RI)    35-55    www.maxpreps.com                        None     2017-11-03  Providence Classical (RI)           23-0     www.maxpreps.com                        None     25DC6D83-E48C-4526-B451-5F456B4F252A  4933D664-6ADE-4F55-8B2F-C662AEEE9F5A
+   DIFFERENT GAMES  Bristol Mt. Hope (RI)       2017    1    2017-11-02  Barrington (RI)                14-20    www.maxpreps.com                        None     2017-11-03  Providence Classical (RI)           23-0     www.maxpreps.com                        None     3475D1E7-AF31-4C00-BF90-77632B5B5CA6  4933D664-6ADE-4F55-8B2F-C662AEEE9F5A
+   DIFFERENT GAMES  Bristol Mt. Hope (RI)       2019    1    2019-10-02  Middletown (RI)                12-61    www.maxpreps.com                        None     2019-10-01  West Warwick (RI)                   46-16    www.maxpreps.com                        None     20FA8C7C-A21D-44E7-B9D1-2A2E325634EA  DF99B868-DE1B-42A3-B1F8-C15363E3B35D
+   DIFFERENT GAMES  Bristol Mt. Hope (RI)       2019    1    2019-11-01  Johnston (RI)                  32-18    www.maxpreps.com                        None     2019-11-02  Barrington (RI)                     6-22     www.maxpreps.com                        None     31BE5119-7093-4576-8456-650FF2C94660  6010DC9B-91BA-4373-B468-CAA3148E4E69
+   ... 407 more rows (see CSV)
+
+>>> query RI season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_q_season_date_1_20261109_1026.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_q_season_date_2_20261109_1026.csv
+
+>>> query RI forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_q_forfeits_1_20261109_1026.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_q_forfeits_2_20261109_1026.csv
+
+>>> query RI college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_q_college_check_1_20261109_1027.csv
+ set 2: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_q_college_check_2_20261109_1027.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_q_college_check_3_20261109_1027.csv
+ set 4: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_q_college_check_4_20261109_1027.csv
+
+=== OK 2026-11-09 10:27:17

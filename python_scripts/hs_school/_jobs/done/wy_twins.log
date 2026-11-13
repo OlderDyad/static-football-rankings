@@ -1,0 +1,17 @@
+
+>>> dedup MT --commit
+
+DEDUP v4 MT - COMMIT
+ dedup_archive: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_dedup_archive_COMMITTED_20261106_0757.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_dedup_review_COMMITTED_20261106_0757.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_dedup_summary_COMMITTED_20261106_0757.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  MT     41198         19                   1                CDCA2D7C-DD65-4DA6-A5CF-ADA66DDC59AF
+   (tracker: no row for MT step 2.1; run: EXEC dbo.HS_Cleanup_AddState 'MT')
+
+>>> query WY wy_twin_games.sql
+
+[stderr]
+refused: C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\queries\wy_twin_games.sql contains "DELETE" - query files must be read-only
+
+=== FAILED (exit 1) 2026-11-06 07:57:06

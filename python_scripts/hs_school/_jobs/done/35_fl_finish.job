@@ -1,0 +1,10 @@
+archive-ids FL --ids FL_college_archive_ids.csv --reason "University of Miami 1949 (Rollins, Florida), 1955 Alabama, 1961 Georgia, 1965 Boston College, 1969 NC State: college games, copies in College_Scores (names match)" --commit
+step FL 1.1 "in progress" "round 1 (34 rules: 2010-14 MaxPreps short names, Forrest->Westside and Lee->Riverside renames, Saint/St. twins, FSU High, FAMU High, Benjamin, Rutherford) + round 2 (5)"
+step FL 1.2 done "18 URLs remapped; mapcheck fixed 47 Team_IDs; 27 mapped ProperNames do not exist (importer 'St' bug, e.g. 'Fort Lauderdale St. ranahan Mighty') - for David"
+step FL 2.1 done "dedup 498 + 102"
+step FL 2.2 done "review pairs 489 + 28 (classmates yearbook copies vs newspapers)"
+step FL 2.3 "in progress" "same-score 281 archived; 245 undecided"
+step FL 3.1 "in progress" "3 dates: 2001/2002 FHSAA finals dated February; Miami Senior v Louisville Male 1952 dated 1951"
+step FL 3.2 done "forfeit flags consistent except NULL on 2026 weekly imports"
+step FL 5.0 "in progress" "6 Miami college copies archived; FL_for_college_chat.csv"
+report FL double-booked

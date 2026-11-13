@@ -1,0 +1,42 @@
+
+>>> same-score-fix IA --commit
+ 1429 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IA - COMMIT
+ 2580 pairs {'DROP B': 877, 'DROP A': 910, 'UNDECIDED': 793} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_COMMITTED_20261112_0534.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1760      70427731-10CE-47CA-9FD5-EC8177454BC0  None
+
+>>> query IA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_season_date_1_20261112_0534.csv
+ set 2: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_season_date_2_20261112_0534.csv
+
+>>> query IA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_forfeits_1_20261112_0534.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_forfeits_2_20261112_0534.csv
+
+>>> query IA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_college_check_1_20261112_0535.csv
+ set 2: 124 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_college_check_2_20261112_0535.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_college_check_3_20261112_0535.csv
+ set 4: 349 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_college_check_4_20261112_0535.csv
+
+>>> step IA 1.1 done "2026-11-12: 21 rules: 2024 MaxPreps drift names (Ames Little, CB Lincoln/Jefferson, Jesup J, Beckman, Coon Rapids, Center Point...), same-school spellings (De Witt/DeWitt Central, Kuemper, WACO, Benton, NESCO, Twin Rivers, Cedar Valley, BCL, Sergeant Bluff-Luton, Iowa City-City), Grandview Park Baptist -> Grand View Christian"
+Tracker updated: IA 1.1 -> done
+
+>>> step IA 1.2 done "2026-11-12: 11 URLs remapped (incl. AHSTW, Jefferson-Scranton), mapcheck"
+Tracker updated: IA 1.2 -> done
+
+>>> step IA 2.1 done "2026-11-12: dedup 511"
+Tracker updated: IA 2.1 -> done
+
+>>> step IA 2.2 done "2026-11-12: review pairs 7"
+Tracker updated: IA 2.2 -> done
+
+=== OK 2026-11-12 05:35:00

@@ -1,0 +1,104 @@
+
+>>> addstate TX
+Tracker rows ready for TX
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report TX drift
+
+REPORT drift TX: 639 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_drift_20261112_1343.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                              N_Games  N_First  N_Last  N_Mapped
+   Afton Patton Springs (TX)                 564      1938     2024    1         None                                 None     None     None    0       
+   Alba-Golden (TX)                          383      1984     2023    0         None                                 None     None     None    0       
+   Alvin Living Stones Christian (TX)        120      1983     2023    1         None                                 None     None     None    0       
+   Arlington Texas Leadership Charter Acade  12       2018     2020    0         None                                 None     None     None    0       
+   Athens Christian Preparatory Academy (TX  56       2009     2024    0         None                                 None     None     None    0       
+   Austin Capital Christian HomeSchool (TX)  117      2005     2016    0         Austin Achieve (TX)                  71       2016     2026    1       
+   Austin Capital Christian HomeSchool (TX)  117      2005     2016    0         Austin Brentwood Christian (TX)      112      2015     2026    1       
+   Austin Capital Christian HomeSchool (TX)  117      2005     2016    0         Austin Royals HomeSchool (TX)        87       2017     2026    1       
+   Austin Eastside Memorial (TX)             74       2009     2020    0         Austin Royals HomeSchool (TX)        87       2017     2026    1       
+   Austin Eastside Memorial (TX)             74       2009     2020    0         Austin Eastside Early College (TX)   48       2021     2026    1       
+   Austin Eastside Memorial (TX)             74       2009     2020    0         Austin Navarro (TX)                  58       2019     2026    1       
+   Austin Eastside Memorial (TX)             74       2009     2020    0         Austin Northeast Early College (TX)  68       2019     2026    1       
+   Austin Eastside Memorial (TX)             74       2009     2020    0         Austin Achieve (TX)                  71       2016     2026    1       
+   Austin Eastside Memorial (TX)             74       2009     2020    0         Austin Valor South (TX)              23       2022     2026    1       
+   Austin Hill Country Christian School of   232      2002     2023    0         Austin Navarro (TX)                  58       2019     2026    1       
+   ... 624 more rows (see CSV)
+
+>>> mapcheck TX --commit
+
+MAPPING CHECK TX - COMMIT (Team_ID set to the ProperName ID)
+ 128 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_mapcheck_COMMITTED_20261112_1343.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name
+   https://www.maxpreps.com/tx/athens/athen  Athens Christian (TX)                     48405    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/bulverde/glo  Bulverde Gloria Deo (TX)                  46628    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/bulverde/liv  Bulverde Living Rock (TX)                 40903    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/fort-worth/p  Fort Worth Polytechnic (TX)               43365    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/houston/cris  Houston Cristo Rey (TX)                   26546    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/houston/kipp  Houston Kipp Generations (TX)             29628    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/houston/moun  Houston Mount Carmel Academy (TX)         15669    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/houston/nort  Houston North Shore (TX)                  17117    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/houston/pro-  Houston Pro Vision (TX)                   22027    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/houston/seco  Houston Second Baptist University-Model   7820     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/leveretts-ch  Leveretts Chapel (TX)                     21815    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/mesquite/fou  Mesquite Founders Classical (TX)          41687    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/mt-belvieu/b  Mount Belvieu Barbers Hill (TX)           23511    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/mt-enterpris  Mount Enterprise Mt. Enterprise (TX)      3630     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/new-braunfel  New Braunfels Calvary Baptist (TX)        45719    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/omaha/pewitt  Omaha Pewitt (TX)                         42129    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/san-antonio/  San Antonio Somerset Academy Collegiate   34285    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/scurry/scurr  Scurry Rosser (TX)                        45984    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/shiner/st-pa  Shiner Saint Paul (TX)                    19684    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/tx/skidmore/ski  Skidmore Tynan (TX)                       25711    None    ProperName not in HS_Team_Names  None        
+   ... 108 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  94       None
+
+>>> dedup TX
+
+DEDUP v4 TX - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_dedup_archive_20261112_1343.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_dedup_review_20261112_1343.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_dedup_summary_20261112_1343.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  TX     500065        0                    2                None 
+
+>>> review-pairs TX
+
+REVIEW-ONLY PAIRS TX - PREVIEW (nothing changed)
+ 2 pairs {'LONG': 1, 'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_review_pairs_20261112_1343.csv
+
+>>> same-score-fix TX
+
+SAME-SCORE DOUBLE-BOOKINGS TX - PREVIEW (nothing changed)
+ 3420 pairs {'DROP A': 821, 'DROP B': 848, 'UNDECIDED': 1751} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_same_score_20261112_1347.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1644      None   None
+
+>>> query TX tx_dump.sql
+
+QUERY tx_dump (1 result sets)
+ set 1: 500070 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_tx_dump_1_20261112_1347.csv
+
+>>> query TX tx_names.sql
+
+QUERY tx_names (1 result sets)
+ set 1: 4010 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_tx_names_1_20261112_1347.csv
+
+=== OK 2026-11-12 13:47:55

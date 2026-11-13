@@ -1,0 +1,7 @@
+same-score-fix TX --commit
+consolidate TX --reason "TX round 2 (2026-11-13): same-school names, see _coop_scripts/TX_cfg.py"
+move-team TX --from "Wellman (TX)" --to "Wellman-Union (TX)" --seasons 1973-1996 --ids coop_ids/TX_c3_000.csv --reason "TX co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup TX --commit
+review-pairs TX --commit
+same-score-fix TX
+query TX tx_dump.sql

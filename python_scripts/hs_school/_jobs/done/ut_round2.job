@@ -1,0 +1,13 @@
+consolidate UT --reason "UT round 2: Stansbury Park, Roosevelt, Moab, Westminster College"
+dedup UT --commit
+same-score-fix UT --commit
+archive-ids UT --ids UT_college_archive_ids.csv --reason "BYU 1947 and 1965 college games; copies in College_Scores" --commit
+step UT 1.1 "in progress" "round 1 (16 rules: 2024 drift, same-school, 2023 out-of-state names) + round 2"
+step UT 1.2 done "5 URLs remapped (3 ProperNames did not exist); mapcheck fixed 7 Team_IDs"
+step UT 1.3 done "same-town pairs are real separate schools"
+step UT 1.4 "in progress" "Grantsville 1926-69 held Granite (SLC) games: 151 moved"
+step UT 2.1 done "dedup 9 + 21 + round 2"
+step UT 3.1 done "0 season/date mismatches"
+step UT 3.2 done "forfeit flags consistent"
+step UT 5.0 "in progress" "2 BYU games archived; UT_for_college_chat.csv"
+report UT double-booked

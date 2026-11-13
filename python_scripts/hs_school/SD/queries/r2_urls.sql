@@ -1,0 +1,1 @@
+SELECT URL, ProperName, Team_ID FROM dbo.URL_ProperName_Mapping WHERE ProperName IN ('Hamlin (SD)','Harding County (SD)','Todd County (SD)','Andes Central (SD)','Sturgis (SD)','Elder Douglas (SD)','Stephan Crow Creek Tribal (SD)','Hendrick (MN)','Pipestone (MN)','Argyle (MN)','Detroit Lakes Ulen-Hitterdal (MN)');

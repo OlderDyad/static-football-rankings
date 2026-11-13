@@ -1,0 +1,13 @@
+set-dates NC --file nc_fix_1444.csv --reason "year typo in imported HSFHA date" --commit
+archive-ids NC --ids nc_college_dup_ids.csv --reason "Post-1940 college games confirmed present in College_Scores (names+scores match)" --commit
+step NC 1.1 done "2026-11-10: HSFHA-NC match; ~70 alias rules incl. 2024 MaxPreps short names; renames to latest name (Vance->Chambers, Wake Forest-Rolesville->Wake Forest, Boyden->Salisbury, Hobgood Charter); Mount Tabor/Mount Zion spelled out"
+step NC 1.2 done "2026-11-10: 14 URLs remapped; mapcheck clean"
+step NC 1.3 done "2026-11-10: per-game school fixes via HSFHA codes (16 groups + 12 lineage pairs, ~750 games)"
+step NC 1.4 done "2026-11-10: consolidation splits by year: Grainger (Kinston) to 1969, Marshall to 1972, Ahoskie to 1987, Sylva-Webster to 1987, Candler to 1954"
+step NC 2.1 done "2026-11-10: dedup 232 + 610 + 8"
+step NC 2.2 done "2026-11-10: review pairs 2 + 135 + 8"
+step NC 2.3 done "2026-11-10: same-score 264 archived using HSFHA decisions"
+step NC 3.1 done "2026-11-10: 1 HSFHA date typo (1444) fixed"
+step NC 3.2 done "2026-11-10: 27 games 2-0 without forfeit flag (mostly HSFHA imports) left as-is"
+step NC 4.3 done "2026-11-10: HSFHA-NC compare: 252 dates, 2 scores set; 10,078 HSFHA games imported (BatchID 197)"
+step NC 5.0 done "2026-11-10: 3 college copies archived"

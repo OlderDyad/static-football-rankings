@@ -1,0 +1,38 @@
+
+>>> move-team NE --from "North Platte St. Patrick's (NE)" --to "O'Neill Saint Mary's (NE)" --seasons 1960-2005 --ids NE_npsp_to_onsm_ids.csv --reason "NP St. Patrick's games vs north/northeast NE schools are O'Neill St. Mary's (St. Patrick's/St. Mary's mix-up)" --commit
+ only the 216 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_npsp_to_onsm_ids.csv
+
+MOVE North Platte St. Patrick's (NE) -> O'Neill Saint Mary's (NE), seasons 1960-2005 - COMMIT
+ move_games: 216 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_1221.csv
+ move_by_season: 85 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_1221.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  216    1                  None
+
+>>> move-team NE --from "Kimball (NE)" --to "Kimball (SD)" --seasons 1930-2010 --ids NE_kimball_to_sd_ids.csv --reason "Kimball (NE) games vs South Dakota schools are Kimball (SD)" --commit
+ only the 126 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_kimball_to_sd_ids.csv
+
+MOVE Kimball (NE) -> Kimball (SD), seasons 1930-2010 - COMMIT
+ move_games: 126 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_1221.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_1221.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  126    1                  None
+
+>>> dedup NE
+
+DEDUP v4 NE - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_archive_20261106_1221.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_review_20261106_1221.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_summary_20261106_1221.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  NE     100566        0                    0                None 
+
+>>> dedup SD
+
+DEDUP v4 SD - PREVIEW (nothing changed)
+ dedup_archive: 43 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_archive_20261106_1221.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_review_20261106_1221.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_summary_20261106_1221.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  SD     57417         43                   0                None 
+
+=== OK 2026-11-06 12:21:43

@@ -1,0 +1,117 @@
+
+>>> fix-dates MA --commit
+
+FIX DATES MA - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_fix_dates_COMMITTED_20261109_0930.csv
+   Season  OldDate     NewDate     DayShift  Home         Home_Score  Visitor                       Visitor_Score  KeepSource                                ArchivedSource                          KeepID                                ArchiveRunID                        
+   1946    1946-10-11  1946-10-20  9         Quincy (MA)  12          South Weymouth Weymouth (MA)  7              http://www.e-yearbook.com/sp/eybb?school  The_Boston_Globe_1946_10_20_26 (2).csv  F1C13AB9-AABF-46B0-84BF-B1B717295FAA  D187ED28-7523-4692-9C05-C3070B71650E
+   1947    1947-10-10  1947-10-19  9         Quincy (MA)  19          South Weymouth Weymouth (MA)  14             http://www.e-yearbook.com/sp/eybb?school  The_Boston_Globe_1947_10_19_31 (1).csv  C0F62C93-0F2B-4C1C-A324-4D60F777A690  D187ED28-7523-4692-9C05-C3070B71650E
+   Status     Updated  Err 
+   COMMITTED  2        None
+
+>>> query MA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_1_20261109_0930.csv
+ set 2: 114 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_2_20261109_0930.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_3_20261109_0930.csv
+ set 4: 652 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_college_check_4_20261109_0930.csv
+
+>>> query MA ma_roadmap_check.sql
+
+QUERY ma_roadmap_check (1 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_ma_roadmap_check_1_20261109_0930.csv
+
+>>> report MA names
+
+REPORT names MA: 761 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_names_20261109_0931.csv
+   Name                                      Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   Abington (MA)                             828    1903         2026        1            1     
+   Acton (MA)                                2      1969         1970        1            0     
+   Acton-Boxborough (MA)                     542    1965         2025        1            1     
+   Adams Academy (MA)                        2      1900         1901        1            0     
+   Adams Memorial (MA)                       118    1919         1970        1            0     
+   Agawam (MA)                               593    1929         2026        1            1     
+   Allen School (MA)                         1      1918         1918        1            0     
+   American International College (MA)       2      1966         1986        1            0     
+   American International College Frosh (MA  2      1947         1969        0            0     
+   Amesbury (MA)                             773    1919         2026        1            1     
+   Amesbury Academy of Strategic Learning (  1      2016         2016        1            0     
+   Amherst (MA)                              1      1954         1954        1            0     
+   Amherst College (MA)                      3      1952         1977        1            0     
+   Amherst College Frosh (MA)                25     1927         1982        1            0     
+   Amherst College JV (MA)                   6      1942         1983        1            0     
+   ... 746 more rows (see CSV)
+
+>>> report MA double-booked
+
+REPORT double-booked MA: 4511 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_double_booked_20261109_0931.csv
+   Kind             Team                   Season  Gap  A_Date      A_Opp                               A_Score  A_Source                                  A_Batch  B_Date      B_Opp                               B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Abington (MA)          1946    2    1946-10-11  Stoughton (MA)                      0-13     https://archive.org/stream/stoughtonhigh  None     1946-10-13  Hingham (MA)                        0-8      The_Boston_Globe_1946_10_13_31.csv        187      EAEEE3A3-3E39-4AB8-B366-12D0CE4494DD  5D207805-BF51-483A-AC85-1919C518626C
+   DIFFERENT GAMES  Abington (MA)          1947    2    1947-10-12  Hingham (MA)                        6-18     The_Boston_Globe_1947_10_12_31.csv        187      1947-10-10  Stoughton (MA)                      0-13     https://archive.org/stream/stoughtonhigh  None     82F4768B-73ED-4F84-8937-7780425E619D  278FA450-0B9C-4B1F-AF2E-FD46E8F89DC6
+   DIFFERENT GAMES  Abington (MA)          1949    2    1949-10-28  Rockland (MA)                       26-6     https://archive.org/stream/rpslibrary_ro  None     1949-10-30  West Bridgewater (MA)               7-32     The_Boston_Globe_1949_10_30_47 (1).csv    187      8B51385C-0A83-4F7B-9054-191D59425C89  47FD5D4E-3C9A-4810-8808-B9D2944ACAB3
+   DIFFERENT GAMES  Abington (MA)          1951    0    1951-09-30  Hyannis Barnstable (MA)             7-14     The_Boston_Globe_1951_09_30_47 (1).csv    187      1951-09-30  Woburn Memorial (MA)                7-27     The_Boston_Globe_1951_09_30_47 (1).csv    83       0C34F0FC-F334-4687-B4CA-6827800C7D5B  311957C7-71CC-42DF-B8CA-6FA486698D35
+   DIFFERENT GAMES  Abington (MA)          1951    0    1951-10-28  Pittsfield (MA)                     55-0     The_Boston_Globe_1951_10_28_49 (2).csv    187      1951-10-28  West Bridgewater (MA)               55-13    The_Boston_Globe_1951_10_28_49.csv        83       5DCB4C99-15F1-4FBE-9D71-0BA64C67FAC3  9A9191E6-37C2-4BF1-B327-66E3BC2822BE
+   DIFFERENT GAMES  Abington (MA)          1954    2    1954-10-03  West Bridgewater (MA)               13-7     The_Boston_Globe_1954_10_03_57 (1).csv    187      1954-10-01  Stoughton (MA)                      14-32    https://archive.org/stream/stoughtonhigh  None     F6BFD4F6-EBEE-460B-B68E-5BE354D9F9F8  A7DAE8FC-95F2-403D-B19C-765A60616091
+   DIFFERENT GAMES  Abington (MA)          1982    2    1982-10-22  Duxbury (MA)                        0-28     https://archive.org/stream/partridge1983  None     1982-10-24  Hanover (MA)                        3-27     The Boston Globe                          None     F9AB609D-65DF-4C06-8686-2D172A984384  88398CF1-EBDB-475D-B570-B56E166CC0C0
+   DIFFERENT GAMES  Abington (MA)          1984    2    1984-10-28  Holbrook (MA)                       35-8     The Boston Globe                          None     1984-10-26  Whitman-Hanson Regional (MA)        6-7      https://archive.org/stream/whitmanhanson  None     EC1FA931-D99B-47E5-AD3C-217FC26FC52E  7D8F86F6-927A-40D3-9E9D-D8D12F1F2AC0
+   DIFFERENT GAMES  Abington (MA)          2015    0    2015-10-16  East Bridgewater (MA)               0-21     www.maxpreps.com                          None     2015-10-16  Norwell (MA)                        29-21    www.maxpreps.com                          None     080172BB-2A1D-4DE9-A7C6-B07AA9475BFE  9BB15C6A-E4CB-4B9F-A23D-C405C381BFC3
+   DIFFERENT GAMES  Abington (MA)          2017    1    2017-11-02  Whitman-Hanson Regional (MA)        23-12    www.maxpreps.com                          None     2017-11-03  Nantucket (MA)                      28-13    www.maxpreps.com                          None     DD55A4A6-029C-4915-9C2C-0C7BF9DE03E4  A282AECB-2E13-4E88-94E3-3220B9AC61C1
+   DIFFERENT GAMES  Abington (MA)          2018    0    2018-11-02  Whitman-Hanson Regional (MA)        0-16     www.maxpreps.com                          None     2018-11-02  Nantucket (MA)                      36-14    www.maxpreps.com                          None     3675676E-E41C-487F-B056-6D84222F9DBA  B2978F79-3160-48A2-9847-E9DB4AA179FE
+   DIFFERENT GAMES  Abington (MA)          2019    1    2019-11-01  Nantucket (MA)                      41-7     www.maxpreps.com                          None     2019-11-02  Whitman-Hanson Regional (MA)        27-14    www.maxpreps.com                          None     2E3919E6-8462-4F32-97AD-215ACB25CFF7  1814DD42-6A59-4CF2-92BB-E9C976310306
+   DIFFERENT GAMES  Abington (MA)          2019    0    2019-11-01  Nantucket (MA)                      41-7     www.maxpreps.com                          None     2019-11-01  South Easton Southeastern RVT (MA)  48-0     www.maxpreps.com                          None     2E3919E6-8462-4F32-97AD-215ACB25CFF7  2079DEC3-EC31-41D7-A0AB-2C458AD32710
+   DIFFERENT GAMES  Abington (MA)          2019    1    2019-11-01  South Easton Southeastern RVT (MA)  48-0     www.maxpreps.com                          None     2019-11-02  Whitman-Hanson Regional (MA)        27-14    www.maxpreps.com                          None     2079DEC3-EC31-41D7-A0AB-2C458AD32710  1814DD42-6A59-4CF2-92BB-E9C976310306
+   DIFFERENT GAMES  Acton-Boxborough (MA)  2016    1    2016-10-29  Danvers St. John's Prep (MA)        7-32     www.maxpreps.com                          None     2016-10-28  Lincoln-Sudbury (MA)                20-21    www.maxpreps.com                          None     B7929A2E-063A-466A-86AE-157B4B62AA14  1813D330-8470-4CA7-B7F3-1D998539526B
+   ... 4496 more rows (see CSV)
+
+>>> step MA 1.1 "in progress" "round 1 2026-11-09: 70 new rules + 18 updated rules (MaxPreps short/mascot names, regional/co-op splits, Roxbury O'Bryant, Pittsfield St. Joseph Central, South Weymouth Weymouth)"
+Tracker updated: MA 1.1 -> in progress
+
+>>> step MA 1.2 done "20 URLs remapped; mapcheck fixed 9 Team_IDs"
+Tracker updated: MA 1.2 -> done
+
+>>> step MA 1.3 done "same-town reviewed; Boston Latin/BLA, Boston/Springfield Commerce, Cambridge Rindge splits resolved"
+Tracker updated: MA 1.3 -> done
+
+>>> step MA 1.4 done "move-team: Boston Latin->BLA (27), Boston College->BC High (3), Cambridge Rindge Tech->Rindge & Latin (29), Springfield->Sci-Tech (24), Carlisle MA->OH (1), Boston Commerce->Springfield Commerce 1970-2005 (17)"
+Tracker updated: MA 1.4 -> done
+
+>>> step MA 2.1 done "dedup 338 archived (RunID D187ED28...); 8 1938 Everett synthetic yearbook dups archived"
+Tracker updated: MA 2.1 -> done
+
+>>> step MA 2.2 done "review pairs 137 archived (3 LONG, 134 SHORT); fix-dates 2 updated"
+Tracker updated: MA 2.2 -> done
+
+>>> step MA 2.3 "in progress" "same-score 185 archived (RunID C2BF922A...); 145 undecided (mostly CT/NH prep school aliases)"
+Tracker updated: MA 2.3 -> in progress
+
+>>> step MA 3.1 "in progress" "2 odd dates: 1899 Brockton v Hyde Park dated 1999; 1882 Andover v Exeter filed as Season 1982"
+Tracker updated: MA 3.1 -> in progress
+
+>>> step MA 3.2 done "forfeit flags consistent except NULL on 2026 weekly imports"
+Tracker updated: MA 3.2 -> done
+
+>>> step MA 5.0 "in progress" "3 college copies archived (AIC 1954/1985, Brandeis Club 1971); MA_for_college_chat.csv"
+Tracker updated: MA 5.0 -> in progress
+
+>>> status MA
+   StepNo  Step                     Status       Updated     RunIDs                                    Notes                                   
+   0.0     College-link collisions  not started  None        None                                      None                                    
+   1.1     Name inventory           in progress  2026-11-09  None                                      consolidation 2026-11-09: MA Round 1: Ma
+   1.2     MaxPreps drift           done         2026-11-09  None                                      20 URLs remapped; mapcheck fixed 9 Team_
+   1.3     Same-town same-opponent  done         2026-11-09  None                                      same-town reviewed; Boston Latin/BLA, Bo
+   1.4     Split two-school names   done         2026-11-09  None                                      2026-11-09: moved 17 games Boston Latin 
+   2.1     Dedup v4                 done         2026-11-09  D187ED28-7523-4692-9C05-C3070B71650E      2026-11-09: 338 archived | dedup 338 arc
+   2.2     Review-only pairs        done         2026-11-09  3588BE1E-2A3D-4F9E-AC00-18721563AD0B      2026-11-09: 137 archived {'LONG': 3, 'SH
+   2.3     Double-booked dates      in progress  2026-11-09  7A6933A2-4EC6-4F88-AB78-B0807E466535; C2  2026-11-09: block-dups archived 0 | 2026
+   3.1     Season vs date           in progress  2026-11-09  None                                      2 odd dates: 1899 Brockton v Hyde Park d
+   3.2     Forfeits                 done         2026-11-09  None                                      forfeit flags consistent except NULL on 
+   4.1     Source histograms        not started  None        None                                      None                                    
+   4.2     Phantom pair scan        not started  None        None                                      None                                    
+   4.3     Outside-source compare   not started  None        None                                      None                                    
+   5.0     College games            in progress  2026-11-09  None                                      3 college copies archived (AIC 1954/1985
+   6.0     Re-rate dirty seasons    not started  None        None                                      None                                    
+   7.0     Residuals                not started  None        None                                      None                                    
+   8.0     Gap audit                not started  None        None                                      None                                    
+
+=== OK 2026-11-09 09:31:55

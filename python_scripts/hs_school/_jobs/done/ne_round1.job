@@ -1,0 +1,14 @@
+# NE round 1: point 2024+ MaxPreps URLs back at the long-standing names, fix Team_IDs, then merges + dedup previews
+remap NE --url "https://www.maxpreps.com/ne/lincoln/lincoln-north-star-navigators/football/schedule/" --to "Lincoln North Star (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/omaha/elkhorn-south-storm/football/schedule/" --to "Omaha Elkhorn South (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/north-bend/north-bend-central-tigers/football/schedule/" --to "North Bend Central (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/west-point/west-point-beemer-cadets/football/schedule/" --to "West Point-Beemer (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/humphrey/humphrey-lindsay-bulldogs/football/schedule/" --to "Humphrey-Lindsay Holy Family (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/columbus/scotus-shamrocks/football/schedule/" --to "Columbus Scotus Central Catholic (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/elgin/elgin-pope-john-wolfpack/football/schedule/" --to "Elgin Pope John XXIII (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/elkhorn/mount-michael-benedictine-knights/football/schedule/" --to "Elkhorn Mt. Michael Benedictine (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/humboldt/humboldt-table-rock-steinauer-titans/football/schedule/" --to "Humboldt-Table Rock-Steinauer (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/papillion/papillion-lavista-monarchs/football/schedule/" --to "Papillion-La Vista (NE)" --commit
+remap NE --url "https://www.maxpreps.com/ne/papillion/papillion-lavista-south-titans/football/schedule/" --to "Papillion-La Vista South (NE)" --commit
+mapcheck NE --commit
+round NE --reason "NE round 1: 2024 MaxPreps drift names, same-school, typos, wrong-state names"

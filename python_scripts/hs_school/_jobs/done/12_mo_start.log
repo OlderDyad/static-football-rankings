@@ -1,0 +1,176 @@
+
+>>> addstate MO
+Tracker rows ready for MO
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report MO names
+
+REPORT names MO: 1040 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_names_20261108_1914.csv
+   Name                                    Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   �Culver-Stockton College (MO)           1      1955         1955        0            0     
+   A.T. Still University Osteopathic (MO)  1      1927         1927        0            0     
+   Adrian (MO)                             703    1926         2026        1            1     
+   Alba (MO)                               8      1948         1950        1            0     
+   Albany (MO)                             663    1927         2026        1            1     
+   Alma Santa Fe (MO)                      488    1967         2026        1            1     
+   Altamont (MO)                           3      1952         1972        1            0     
+   Alton (MO)                              7      1919         2019        1            0     
+   Amity (MO)                              1      1956         1956        0            0     
+   Amoret Miami (MO)                       240    1956         2010        1            0     
+   Amsterdam Miami (MO)                    2      2002         2002        1            0     
+   Anderson McDonald County (MO)           513    1920         2026        1            1     
+   Anna (MO)                               1      1981         1981        1            0     
+   Appleton City (MO)                      515    1929         2026        1            1     
+   Appleton City-Montrose (MO)             58     2015         2020        1            0     
+   ... 1025 more rows (see CSV)
+
+>>> report MO drift
+
+REPORT drift MO: 211 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_drift_20261108_1915.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started           N_Games  N_First  N_Last  N_Mapped
+   Appleton City-Montrose (MO)               58       2015     2020    0         None              None     None     None    0       
+   Arnold Central HomeSchool (MO)            32       2014     2017    0         None              None     None     None    0       
+   Aurora (MO)                               681      1913     2023    0         Aurora Houn (MO)  41       2022     2026    1       
+   Barnard South Nodaway-Jefferson (MO)      55       2014     2022    1         None              None     None     None    0       
+   Battle-Columbia Independent (MO)          10       2023     2023    0         None              None     None     None    0       
+   Braymer-Breckenridge (MO)                 32       2016     2020    0         None              None     None     None    0       
+   Brentwood (MO)                            444      1947     2022    1         None              None     None     None    0       
+   Centerview Crest Ridge-Chilhowee (MO)     15       2021     2022    0         None              None     None     None    0       
+   Chaffee (MO)                              503      1935     2024    1         None              None     None     None    0       
+   Chilhowee-Leeton (MO)                     41       2014     2019    0         None              None     None     None    0       
+   Clarksville Clopton-Elsberry (MO)         126      2008     2020    0         None              None     None     None    0       
+   Columbia Battle-Columbia Independent (MO  27       2022     2024    1         None              None     None     None    0       
+   Craig-Fairfax (MO)                        87       2008     2016    0         None              None     None     None    0       
+   Dardenne Prairie Barat Academy (MO)       26       2010     2016    0         None              None     None     None    0       
+   DeSoto-Kingston (MO)                      602      1920     2023    0         None              None     None     None    0       
+   ... 196 more rows (see CSV)
+
+>>> report MO same-town
+
+REPORT same-town MO: 1244 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_same_town_20261108_1916.csv
+   A                                         B                                       Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Saint Joseph Benton (MO)                  Saint Joseph Lafayette (MO)             148   58       1942         2025        681      632    
+   Saint Charles Francis Howel (MO)          Saint Charles Francis Howel North (MO)  112   30       1993         2026        715      308    
+   Springfield Kickapoo (MO)                 Springfield Parkview (MO)               107   36       1972         2023        510      565    
+   Kansas City Center (MO)                   Kansas City Ruskin (MO)                 92    43       1948         2015        720      650    
+   Kansas City Central (MO)                  Kansas City Northeast (MO)              92    51       1922         2026        765      1023   
+   Saint Louis Christian Brothers College (  Saint Louis University (MO)             90    53       1925         2023        681      859    
+   Blue Springs (MO)                         Blue Springs South (MO)                 83    30       1992         2026        835      404    
+   Raytown (MO)                              Raytown South (MO)                      83    31       1969         2026        785      598    
+   Independence Chrisman (MO)                Independence Fort Osage (MO)            74    37       1960         2026        803      743    
+   Springfield Glendale (MO)                 Springfield Kickapoo (MO)               74    35       1975         2026        538      510    
+   Kansas City Oak Park (MO)                 Kansas City Park Hill (MO)              73    35       1971         2026        639      672    
+   Saint Louis DeSmet Jesuit (MO)            Saint Louis University (MO)             72    36       1971         2023        536      859    
+   Mountain Grove (MO)                       Mountain View Liberty (MO)              71    26       1950         2026        570      442    
+   Springfield Central (MO)                  Springfield Glendale (MO)               71    30       1964         2019        802      538    
+   Concordia (MO)                            Concordia St. Paul Lutheran (MO)        69    36       1971         2026        487      453    
+   ... 1229 more rows (see CSV)
+
+>>> mapcheck MO
+
+MAPPING CHECK MO - PREVIEW (nothing changed)
+ 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_mapcheck_20261108_1916.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/mo/columbia/bat  Columbia Battle Columbia (MO)             36462    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/kansas-city/  Kansas City Hogan Prep Charter (MO)       28519    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/kansas-city/  Kansas City Kansas City (MO)              118      None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/kirkwood/via  Kirkwood Vianney (MO)                     35835    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/st-louis/chr  Saint Louis Christian Brothers (MO)       8086     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/st-louis/mic  Saint Louis MICDS (MO)                    25979    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/st-charles/h  St. Charles Howell (MO)                   43427    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/st-charles/h  St. Charles Howell Central (MO)           21762    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/st-charles/h  St. Charles Howell North (MO)             33509    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/wentzville/t  Wentzville Timberland T (MO)              9122     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mo/barnard/plat  Barnard Platte Valley co-op [South Nodaw  43893    15372   Team_ID points to another name   Barnard South Nodaway-Jefferson (MO)    
+   https://www.maxpreps.com/mo/columbia/bat  Columbia Battle (MO)                      70141    60952   Team_ID points to another name   Columbia Battle-Columbia Independent (MO
+   https://www.maxpreps.com/mo/gallatin/gal  Gallatin Tri (MO)                         42009    47321   Team_ID points to another name   Gallatin-Tri-County (MO)                
+   https://www.maxpreps.com/mo/hardin/hardi  Hardin Central (MO)                       23366    40186   Team_ID points to another name   Hardin-Central (MO)                     
+   https://www.maxpreps.com/mo/mexico/mexic  Mexico (MO)                               71170    65142   Team_ID points to another name   Mexico McMillan (MO)                    
+   https://www.maxpreps.com/mo/nevada/nevad  Nevada (MO)                               65825    65744   Team_ID points to another name   New Madrid County Central (MO)          
+   https://www.maxpreps.com/mo/st-louis/cha  Saint Louis Chaminade (MO)                67672    67671   Team_ID points to another name   Saint Louis Christian Brothers College (
+   https://www.maxpreps.com/mo/st-louis/cha  Saint Louis Chaminade (MO)                67672    67671   Team_ID points to another name   Saint Louis Christian Brothers College (
+   https://www.maxpreps.com/mo/st-louis/mil  Saint Louis Miller Career Academy-Vashon  67694    72192   Team_ID points to another name   Saint Louis Miller Career Academy (MO)  
+   https://www.maxpreps.com/mo/springfield/  Springfield Parkview (MO)                 67602    68368   Team_ID points to another name   Saint Charles Francis Howel (MO)        
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  10       None
+
+>>> dedup MO
+
+DEDUP v4 MO - PREVIEW (nothing changed)
+ dedup_archive: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_archive_20261108_1916.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_review_20261108_1916.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_summary_20261108_1916.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MO     103310        1                    0                None 
+
+>>> review-pairs MO
+
+REVIEW-ONLY PAIRS MO - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_review_pairs_20261108_1916.csv
+
+>>> same-score-fix MO
+
+SAME-SCORE DOUBLE-BOOKINGS MO - PREVIEW (nothing changed)
+ 1086 pairs {'DROP A': 285, 'DROP B': 279, 'UNDECIDED': 522} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_same_score_20261108_1918.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  560       None   None
+
+>>> report MO double-booked
+
+REPORT double-booked MO: 5086 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_double_booked_20261108_1919.csv
+   Kind             Team         Season  Gap  A_Date      A_Opp                                    A_Score  A_Source                                  A_Batch  B_Date      B_Opp                                     B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Adrian (MO)  1971    0    1971-10-29  Raymore-Peculiar (MO)                    6-47     30 Oct 1971 - 48 - The Kansas City Times  None     1971-10-29  Mexico (MO)                               6-14     30 Oct 1971 - Page 6 - St. Louis Post-Di  None     9C117871-61B0-4AD0-B59B-30E061E4E524  B317D816-EBB3-496E-B515-79A1202C23D0
+   DIFFERENT GAMES  Adrian (MO)  1972    0    1972-10-06  Saint Joseph Bishop LeBlond (MO)         27-6     07 Oct 1972 - Page 6 - St. Louis Post-Di  None     1972-10-06  Cleveland Midway (MO)                     14-6     07 Oct 1972 - 52 - The Kansas City Times  None     D37CF2A0-F92C-4B7A-B9D9-96C7D0050A43  8EA83A49-13DE-4DDE-BCDA-B2D546A2F58A
+   DIFFERENT GAMES  Adrian (MO)  1993    0    1993-09-03  Saint Mary's (MO)                        18-0     05 Sep 1993 - Page 72 - St. Louis Post-D  None     1993-09-03  Lockwood (MO)                             8-36     05 Sep 1993 - Page 72 - St. Louis Post-D  None     091A1823-FD0F-4212-AA3F-ABF2D3139E79  90DB2388-AD53-4A11-8851-CA018823985F
+   DIFFERENT GAMES  Adrian (MO)  1998    0    1998-09-25  Marionville (MO)                         40-0     https://www.newspapers.com/image/2076590  None     1998-09-25  Martinsville (MO)                         10-0     https://www.newspapers.com/image/6852578  None     A2CF3206-7FAC-4A9D-86F3-7CC2771F0017  743F26EE-A20A-4CB7-9B2F-8A472A90AAB6
+   DIFFERENT GAMES  Adrian (MO)  2000    0    2000-11-03  Rich Hill (MO)                           12-0     https://docs.google.com/document/d/1NOhR  None     2000-11-03  Lockwood (MO)                             41-12    04 Nov 2000 - 45 - The Kansas City Star   None     5D5E3A0E-54FE-4A27-961E-07EBE826B142  E725013F-B0D8-4AFA-A7FC-5A48014AB90E
+   DIFFERENT GAMES  Adrian (MO)  2000    0    2000-11-03  Rich Hill (MO)                           42-0     04 Nov 2000 - 45 - The Kansas City Star   None     2000-11-03  Lockwood (MO)                             41-12    04 Nov 2000 - 45 - The Kansas City Star   None     3CEE486D-44B5-4EEE-879D-063DED88B977  E725013F-B0D8-4AFA-A7FC-5A48014AB90E
+   DIFFERENT GAMES  Adrian (MO)  2019    1    2019-10-01  Jasper (MO)                              41-0     www.maxpreps.com                          None     2019-10-02  El Dorado Springs (MO)                    26-21    www.maxpreps.com                          None     52EA0C3E-6269-4D65-85CC-7D6872353B9D  83CB5175-6B09-4E92-A193-B91F84B0CEC7
+   DIFFERENT GAMES  Adrian (MO)  2019    2    2019-10-04  Diamond (MO)                             45-0     www.maxpreps.com                          None     2019-10-02  El Dorado Springs (MO)                    26-21    www.maxpreps.com                          None     AC98EDE6-5AD5-476A-8C0A-0BC9DAF7D480  83CB5175-6B09-4E92-A193-B91F84B0CEC7
+   DIFFERENT GAMES  Adrian (MO)  2019    0    2019-11-01  Archie (MO)                              53-21    www.maxpreps.com                          None     2019-11-01  Windsor Henry County (MO)                 19-20    www.maxpreps.com                          None     FE39D27C-C1BF-453A-B243-38CF3D50A927  9265DEF0-873C-47A6-8DA2-618B8A6F28EB
+   DIFFERENT GAMES  Albany (MO)  1975    0    1975-09-26  Grant City Worth County (MO)             14-46    27 Sep 1975 - Page 6 - St. Louis Post-Di  None     1975-09-26  Grant City Worth County-Northeast Nodawa  14-6     27 Sep 1975 - 56 - The Kansas City Times  None     EFDBECC8-520C-4333-9D2C-EE3C7F93EB93  CF9A7593-F41D-48DF-9994-FA4AB74A92A3
+   DIFFERENT GAMES  Albany (MO)  2003    0    2003-10-24  Tarkio (MO)                              6-7      01 Nov 2003 - 27 - St. Joseph News-Press  None     2003-10-24  Rock Port (MO)                            0-38     25 Oct 2003 - 27 - St. Joseph News-Press  None     5581CEB7-4045-479D-B186-3B9C33FEA635  B8E21A3A-4DA0-46DA-BBEB-A264D2C7DDBA
+   DIFFERENT GAMES  Albany (MO)  2015    1    2015-09-19  Graham Nodaway-Holt (MO)                 56-6     www.maxpreps.com                          None     2015-09-18  Oregon South Holt-Nodaway-Holt (MO)       44-42    www.maxpreps.com                          None     8DAF6A5B-974C-4DAE-AF76-0C28E3D65C1B  19DC4621-8214-4E64-ACDF-6F1257FFA1C4
+   DIFFERENT GAMES  Albany (MO)  2015    1    2015-10-09  Hopkins North Nodaway-West Nodaway (MO)  62-60    www.maxpreps.com                          None     2015-10-10  Hopkins North Nodaway (MO)                88-60    www.maxpreps.com                          None     FA4CAE5E-FBDF-4137-BCF5-CA200CFB6079  07D481AD-A2E2-4D82-ADE4-D728732B7BCB
+   DIFFERENT GAMES  Albany (MO)  2015    1    2015-10-17  Oregon South Holt (MO)                   60-12    www.maxpreps.com                          None     2015-10-16  Sedalia Sacred Heart (MO)                 53-34    www.maxpreps.com                          None     3801F4AC-E843-458D-A8B1-4C53F243E32F  DCBC8CE2-3DB9-4A5A-A8EF-DC11CF6B0978
+   DIFFERENT GAMES  Albany (MO)  2016    2    2016-09-23  Braymer-Breckenridge (MO)                58-12    www.maxpreps.com                          None     2016-09-25  Mound City (MO)                           34-16    www.maxpreps.com                          None     9F9724F9-570C-41A0-AC63-0C4F6C45339E  FAFFB35A-D8F7-4667-8C94-D2D709A605A9
+   ... 5071 more rows (see CSV)
+
+>>> query MO season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_season_date_1_20261108_1919.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_season_date_2_20261108_1919.csv
+
+>>> query MO forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_forfeits_1_20261108_1919.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_forfeits_2_20261108_1919.csv
+
+>>> query MO college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_college_check_1_20261108_1919.csv
+ set 2: 125 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_college_check_2_20261108_1919.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_college_check_3_20261108_1919.csv
+ set 4: 2011 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_college_check_4_20261108_1919.csv
+
+=== OK 2026-11-08 19:19:35

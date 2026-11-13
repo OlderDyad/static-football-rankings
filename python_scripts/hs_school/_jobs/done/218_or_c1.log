@@ -1,0 +1,48 @@
+
+>>> commit OR
+
+DEDUP v4 OR - COMMIT
+ dedup_archive: 1134 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_archive_COMMITTED_20261111_1930.csv
+ dedup_review: 219 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_review_COMMITTED_20261111_1930.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_summary_COMMITTED_20261111_1930.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  OR     74559         1134                 219              B9F227D8-8F3E-41DD-83FC-8A623FBBEF39
+
+REVIEW-ONLY PAIRS OR - COMMIT
+ 217 pairs {'LONG': 8, 'SHORT': 209} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_review_pairs_COMMITTED_20261111_1931.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  217       D9D3E235-BD4F-4556-93E2-5E8A95936107  None
+
+>>> same-score-fix OR --commit
+
+SAME-SCORE DOUBLE-BOOKINGS OR - COMMIT
+ 467 pairs {'DROP B': 119, 'DROP A': 116, 'UNDECIDED': 232} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_same_score_COMMITTED_20261111_1932.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  234       C466F5B9-CF73-4520-9F4E-F15AF90B283A  None
+
+>>> query OR season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_season_date_1_20261111_1932.csv
+ set 2: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_season_date_2_20261111_1932.csv
+
+>>> query OR forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_forfeits_1_20261111_1932.csv
+ set 2: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_forfeits_2_20261111_1932.csv
+
+>>> query OR college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_college_check_1_20261111_1932.csv
+ set 2: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_college_check_2_20261111_1932.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_college_check_3_20261111_1932.csv
+ set 4: 237 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_college_check_4_20261111_1932.csv
+
+>>> query OR or_dump.sql
+
+QUERY or_dump (1 result sets)
+ set 1: 72976 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_or_dump_1_20261111_1932.csv
+
+=== OK 2026-11-11 19:32:43

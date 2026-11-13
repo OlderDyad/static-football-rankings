@@ -1,0 +1,745 @@
+
+>>> move-team NE --from "Albion (NE)" --to "Albion Boone Central (NE)" --seasons 2001-2030 --reason "NE co-op split by year: Albion Boone Central (NE) from 2001" --commit
+
+MOVE Albion (NE) -> Albion Boone Central (NE), seasons 2001-2030 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team NE --from "Albion Boone Central (NE)" --to "Albion (NE)" --seasons 1880-2000 --reason "NE co-op split by year: Albion Boone Central (NE) from 2001" --commit
+
+MOVE Albion Boone Central (NE) -> Albion (NE), seasons 1880-2000 - COMMIT
+ move_games: 56 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  56     1                  None
+
+>>> move-team NE --from "Ansley (NE)" --to "Ansley-Litchfield (NE)" --seasons 2012-2030 --reason "NE co-op split by year: Ansley-Litchfield (NE) from 2012" --commit
+
+MOVE Ansley (NE) -> Ansley-Litchfield (NE), seasons 2012-2030 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 97 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team NE --from "Ansley-Litchfield (NE)" --to "Ansley (NE)" --seasons 1880-2011 --reason "NE co-op split by year: Ansley-Litchfield (NE) from 2012" --commit
+
+MOVE Ansley-Litchfield (NE) -> Ansley (NE), seasons 1880-2011 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 97 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team NE --from "Bruning (NE)" --to "Bruning-Davenport-Shickley (NE)" --seasons 1989-2030 --reason "NE co-op split by year: Bruning-Davenport-Shickley (NE) from 1989" --commit
+
+MOVE Bruning (NE) -> Bruning-Davenport-Shickley (NE), seasons 1989-2030 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 75 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> move-team NE --from "Bruning-Davenport-Shickley (NE)" --to "Bruning (NE)" --seasons 1880-1988 --reason "NE co-op split by year: Bruning-Davenport-Shickley (NE) from 1989" --commit
+
+MOVE Bruning-Davenport-Shickley (NE) -> Bruning (NE), seasons 1880-1988 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 75 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team NE --from "Chambers (NE)" --to "Chambers-Wheeler Central (NE)" --seasons 2012-2030 --reason "NE co-op split by year: Chambers-Wheeler Central (NE) from 2012" --commit
+
+MOVE Chambers (NE) -> Chambers-Wheeler Central (NE), seasons 2012-2030 - COMMIT
+ move_games: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  13     1                  None
+
+>>> move-team NE --from "Chambers-Wheeler Central (NE)" --to "Chambers (NE)" --seasons 1880-2011 --reason "NE co-op split by year: Chambers-Wheeler Central (NE) from 2012" --commit
+
+MOVE Chambers-Wheeler Central (NE) -> Chambers (NE), seasons 1880-2011 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team NE --from "Diller (NE)" --to "Diller-Odell (NE)" --seasons 1998-2030 --reason "NE co-op split by year: Diller-Odell (NE) from 1998" --commit
+
+MOVE Diller (NE) -> Diller-Odell (NE), seasons 1998-2030 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team NE --from "Diller-Odell (NE)" --to "Diller (NE)" --seasons 1880-1997 --reason "NE co-op split by year: Diller-Odell (NE) from 1998" --commit
+
+MOVE Diller-Odell (NE) -> Diller (NE), seasons 1880-1997 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0832.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0832.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team NE --from "Elmwood (NE)" --to "Elmwood-Murdock (NE)" --seasons 1988-2030 --reason "NE co-op split by year: Elmwood-Murdock (NE) from 1988" --commit
+
+MOVE Elmwood (NE) -> Elmwood-Murdock (NE), seasons 1988-2030 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 91 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team NE --from "Elmwood-Murdock (NE)" --to "Elmwood (NE)" --seasons 1880-1987 --reason "NE co-op split by year: Elmwood-Murdock (NE) from 1988" --commit
+
+MOVE Elmwood-Murdock (NE) -> Elmwood (NE), seasons 1880-1987 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 91 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team NE --from "Hartington (NE)" --to "Hartington-Newcastle (NE)" --seasons 2014-2030 --reason "NE co-op split by year: Hartington-Newcastle (NE) from 2014" --commit
+
+MOVE Hartington (NE) -> Hartington-Newcastle (NE), seasons 2014-2030 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> move-team NE --from "Hartington-Newcastle (NE)" --to "Hartington (NE)" --seasons 1880-2013 --reason "NE co-op split by year: Hartington-Newcastle (NE) from 2014" --commit
+
+MOVE Hartington-Newcastle (NE) -> Hartington (NE), seasons 1880-2013 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team NE --from "Howells (NE)" --to "Howells-Dodge (NE)" --seasons 2006-2030 --reason "NE co-op split by year: Howells-Dodge (NE) from 2006" --commit
+
+MOVE Howells (NE) -> Howells-Dodge (NE), seasons 2006-2030 - COMMIT
+ move_games: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  26     1                  None
+
+>>> move-team NE --from "Howells-Dodge (NE)" --to "Howells (NE)" --seasons 1880-2005 --reason "NE co-op split by year: Howells-Dodge (NE) from 2006" --commit
+
+MOVE Howells-Dodge (NE) -> Howells (NE), seasons 1880-2005 - COMMIT
+ move_games: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  14     1                  None
+
+>>> move-team NE --from "Laurel (NE)" --to "Laurel-Concord (NE)" --seasons 1997-2030 --reason "NE co-op split by year: Laurel-Concord (NE) from 1997" --commit
+
+MOVE Laurel (NE) -> Laurel-Concord (NE), seasons 1997-2030 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 87 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team NE --from "Laurel-Concord (NE)" --to "Laurel (NE)" --seasons 1880-1996 --reason "NE co-op split by year: Laurel-Concord (NE) from 1997" --commit
+
+MOVE Laurel-Concord (NE) -> Laurel (NE), seasons 1880-1996 - COMMIT
+ move_games: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 87 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  21     1                  None
+
+>>> move-team NE --from "Lawrence (NE)" --to "Lawrence-Nelson (NE)" --seasons 1999-2030 --reason "NE co-op split by year: Lawrence-Nelson (NE) from 1999" --commit
+
+MOVE Lawrence (NE) -> Lawrence-Nelson (NE), seasons 1999-2030 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 80 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team NE --from "Lawrence-Nelson (NE)" --to "Lawrence (NE)" --seasons 1880-1998 --reason "NE co-op split by year: Lawrence-Nelson (NE) from 1999" --commit
+
+MOVE Lawrence-Nelson (NE) -> Lawrence (NE), seasons 1880-1998 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 80 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team NE --from "Neligh (NE)" --to "Neligh-Oakdale (NE)" --seasons 1970-2030 --reason "NE co-op split by year: Neligh-Oakdale (NE) from 1970" --commit
+
+MOVE Neligh (NE) -> Neligh-Oakdale (NE), seasons 1970-2030 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team NE --from "Neligh-Oakdale (NE)" --to "Neligh (NE)" --seasons 1880-1969 --reason "NE co-op split by year: Neligh-Oakdale (NE) from 1970" --commit
+
+MOVE Neligh-Oakdale (NE) -> Neligh (NE), seasons 1880-1969 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team NE --from "Oakland (NE)" --to "Oakland-Craig (NE)" --seasons 1969-2030 --reason "NE co-op split by year: Oakland-Craig (NE) from 1969" --commit
+
+MOVE Oakland (NE) -> Oakland-Craig (NE), seasons 1969-2030 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team NE --from "Oakland-Craig (NE)" --to "Oakland (NE)" --seasons 1880-1968 --reason "NE co-op split by year: Oakland-Craig (NE) from 1969" --commit
+
+MOVE Oakland-Craig (NE) -> Oakland (NE), seasons 1880-1968 - COMMIT
+ move_games: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  25     1                  None
+
+>>> move-team NE --from "Tekamah (NE)" --to "Tekamah-Herman (NE)" --seasons 1969-2030 --reason "NE co-op split by year: Tekamah-Herman (NE) from 1969" --commit
+
+MOVE Tekamah (NE) -> Tekamah-Herman (NE), seasons 1969-2030 - COMMIT
+ move_games: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  26     1                  None
+
+>>> move-team NE --from "Tekamah-Herman (NE)" --to "Tekamah (NE)" --seasons 1880-1968 --reason "NE co-op split by year: Tekamah-Herman (NE) from 1969" --commit
+
+MOVE Tekamah-Herman (NE) -> Tekamah (NE), seasons 1880-1968 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team NE --from "Wauneta (NE)" --to "Wauneta-Palisade (NE)" --seasons 1990-2030 --reason "NE co-op split by year: Wauneta-Palisade (NE) from 1990" --commit
+
+MOVE Wauneta (NE) -> Wauneta-Palisade (NE), seasons 1990-2030 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 91 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team NE --from "Wauneta-Palisade (NE)" --to "Wauneta (NE)" --seasons 1880-1989 --reason "NE co-op split by year: Wauneta-Palisade (NE) from 1990" --commit
+
+MOVE Wauneta-Palisade (NE) -> Wauneta (NE), seasons 1880-1989 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 91 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team NE --from "Wilber (NE)" --to "Wilber-Clatonia (NE)" --seasons 1970-2030 --reason "NE co-op split by year: Wilber-Clatonia (NE) from 1970" --commit
+
+MOVE Wilber (NE) -> Wilber-Clatonia (NE), seasons 1970-2030 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team NE --from "Wilber-Clatonia (NE)" --to "Wilber (NE)" --seasons 1880-1969 --reason "NE co-op split by year: Wilber-Clatonia (NE) from 1970" --commit
+
+MOVE Wilber-Clatonia (NE) -> Wilber (NE), seasons 1880-1969 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team NE --from "Dawson (NE)" --to "Dawson-Verdon (NE)" --seasons 1959-2030 --reason "NE co-op split by year: Dawson-Verdon (NE) from 1959" --commit
+
+MOVE Dawson (NE) -> Dawson-Verdon (NE), seasons 1959-2030 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team NE --from "Dawson-Verdon (NE)" --to "Dawson (NE)" --seasons 1880-1958 --reason "NE co-op split by year: Dawson-Verdon (NE) from 1959" --commit
+
+MOVE Dawson-Verdon (NE) -> Dawson (NE), seasons 1880-1958 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0833.csv
+ move_by_season: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0833.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team NE --from "Albion Boone Central (NE)" --to "Albion Boone Central-Newman Grove (NE)" --seasons 2012-2030 --reason "NE co-op split by year: Albion Boone Central-Newman Grove (NE) from 2012" --commit
+
+MOVE Albion Boone Central (NE) -> Albion Boone Central-Newman Grove (NE), seasons 2012-2030 - COMMIT
+ move_games: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0834.csv
+ move_by_season: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0834.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  67     1                  None
+
+>>> move-team NE --from "Albion Boone Central-Newman Grove (NE)" --to "Albion Boone Central (NE)" --seasons 1880-2011 --reason "NE co-op split by year: Albion Boone Central-Newman Grove (NE) from 2012" --commit
+
+MOVE Albion Boone Central-Newman Grove (NE) -> Albion Boone Central (NE), seasons 1880-2011 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_0834.csv
+ move_by_season: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_0834.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> consolidate NE --reason "NE round 2: town names of county schools (Arthur, Benedict, Harrisburg, Harrison, Valley)"
+Consolidating NE from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\NE_Alias_Rules.csv
+
+[stderr]
+2026-11-06 08:34:01,458 - INFO - Starting consolidation for state: (NE) using staging table method.
+2026-11-06 08:34:01,469 - WARNING - WARNING: 413 row(s) have identical OldName and NewName (no-op rules).
+2026-11-06 08:34:01,469 - WARNING -   'Omaha Central (NE)' -> 'Omaha Central (NE)' (no change)
+2026-11-06 08:34:01,469 - WARNING -   'Lincoln (NE)' -> 'Lincoln (NE)' (no change)
+2026-11-06 08:34:01,469 - WARNING -   'Scottsbluff (NE)' -> 'Scottsbluff (NE)' (no change)
+2026-11-06 08:34:01,469 - WARNING -   'Grand Island (NE)' -> 'Grand Island (NE)' (no change)
+2026-11-06 08:34:01,470 - WARNING -   'North Platte (NE)' -> 'North Platte (NE)' (no change)
+2026-11-06 08:34:01,470 - WARNING -   'Kearney (NE)' -> 'Kearney (NE)' (no change)
+2026-11-06 08:34:01,470 - WARNING -   'Omaha Creighton Prep (NE)' -> 'Omaha Creighton Prep (NE)' (no change)
+2026-11-06 08:34:01,470 - WARNING -   'Omaha Westside (NE)' -> 'Omaha Westside (NE)' (no change)
+2026-11-06 08:34:01,470 - WARNING -   'David City Aquinas (NE)' -> 'David City Aquinas (NE)' (no change)
+2026-11-06 08:34:01,470 - WARNING -   'Gretna (NE)' -> 'Gretna (NE)' (no change)
+2026-11-06 08:34:01,470 - WARNING -   'McCook (NE)' -> 'McCook (NE)' (no change)
+2026-11-06 08:34:01,470 - WARNING -   'Wahoo Bishop Neumann (NE)' -> 'Wahoo Bishop Neumann (NE)' (no change)
+2026-11-06 08:34:01,470 - WARNING -   'Boys Town (NE)' -> 'Boys Town (NE)' (no change)
+2026-11-06 08:34:01,471 - WARNING -   'Lincoln Southeast (NE)' -> 'Lincoln Southeast (NE)' (no change)
+2026-11-06 08:34:01,471 - WARNING -   'Hastings (NE)' -> 'Hastings (NE)' (no change)
+2026-11-06 08:34:01,471 - WARNING -   'Omaha South (NE)' -> 'Omaha South (NE)' (no change)
+2026-11-06 08:34:01,471 - WARNING -   'Aurora (NE)' -> 'Aurora (NE)' (no change)
+2026-11-06 08:34:01,471 - WARNING -   'Bancroft-Rosalie (NE)' -> 'Bancroft-Rosalie (NE)' (no change)
+2026-11-06 08:34:01,471 - WARNING -   'Kimball (NE)' -> 'Kimball (NE)' (no change)
+2026-11-06 08:34:01,471 - WARNING -   'Omaha North (NE)' -> 'Omaha North (NE)' (no change)
+2026-11-06 08:34:01,471 - WARNING -   'Elkhorn (NE)' -> 'Elkhorn (NE)' (no change)
+2026-11-06 08:34:01,471 - WARNING -   'Norfolk (NE)' -> 'Norfolk (NE)' (no change)
+2026-11-06 08:34:01,472 - WARNING -   'Falls City Sacred Heart (NE)' -> 'Falls City Sacred Heart (NE)' (no change)
+2026-11-06 08:34:01,472 - WARNING -   'Beatrice (NE)' -> 'Beatrice (NE)' (no change)
+2026-11-06 08:34:01,472 - WARNING -   'Crete (NE)' -> 'Crete (NE)' (no change)
+2026-11-06 08:34:01,472 - WARNING -   'Alliance (NE)' -> 'Alliance (NE)' (no change)
+2026-11-06 08:34:01,472 - WARNING -   'West Point (NE)' -> 'West Point (NE)' (no change)
+2026-11-06 08:34:01,472 - WARNING -   'Chadron (NE)' -> 'Chadron (NE)' (no change)
+2026-11-06 08:34:01,472 - WARNING -   'Fremont (NE)' -> 'Fremont (NE)' (no change)
+2026-11-06 08:34:01,472 - WARNING -   'Lexington (NE)' -> 'Lexington (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Columbus (NE)' -> 'Columbus (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Norfolk Catholic (NE)' -> 'Norfolk Catholic (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Omaha Benson (NE)' -> 'Omaha Benson (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Blair (NE)' -> 'Blair (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'York (NE)' -> 'York (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Lincoln Northeast (NE)' -> 'Lincoln Northeast (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Lincoln Pius X (NE)' -> 'Lincoln Pius X (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Waverly (NE)' -> 'Waverly (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Pierce (NE)' -> 'Pierce (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Fremont Archbishop Bergan (NE)' -> 'Fremont Archbishop Bergan (NE)' (no change)
+2026-11-06 08:34:01,473 - WARNING -   'Wahoo (NE)' -> 'Wahoo (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Ord (NE)' -> 'Ord (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Gothenburg (NE)' -> 'Gothenburg (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Pender (NE)' -> 'Pender (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Sidney (NE)' -> 'Sidney (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Valentine (NE)' -> 'Valentine (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Plattsmouth (NE)' -> 'Plattsmouth (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Seward (NE)' -> 'Seward (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Mitchell (NE)' -> 'Mitchell (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Cozad (NE)' -> 'Cozad (NE)' (no change)
+2026-11-06 08:34:01,474 - WARNING -   'Cambridge (NE)' -> 'Cambridge (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Schuyler (NE)' -> 'Schuyler (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Battle Creek (NE)' -> 'Battle Creek (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Holdrege (NE)' -> 'Holdrege (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Falls City (NE)' -> 'Falls City (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Saint Edward (NE)' -> 'Saint Edward (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Bennington (NE)' -> 'Bennington (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Gering (NE)' -> 'Gering (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Central City (NE)' -> 'Central City (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Minden (NE)' -> 'Minden (NE)' (no change)
+2026-11-06 08:34:01,475 - WARNING -   'Springfield Platteview (NE)' -> 'Springfield Platteview (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Creighton (NE)' -> 'Creighton (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Fairbury (NE)' -> 'Fairbury (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Auburn (NE)' -> 'Auburn (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Bloomfield (NE)' -> 'Bloomfield (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Nebraska City (NE)' -> 'Nebraska City (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Stanton (NE)' -> 'Stanton (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Broken Bow (NE)' -> 'Broken Bow (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Omaha Burke (NE)' -> 'Omaha Burke (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Arapahoe (NE)' -> 'Arapahoe (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Louisville (NE)' -> 'Louisville (NE)' (no change)
+2026-11-06 08:34:01,476 - WARNING -   'Columbus Scotus Central Catholic (NE)' -> 'Columbus Scotus Central Catholic (NE)' (no change)
+2026-11-06 08:34:01,477 - WARNING -   'Ogallala (NE)' -> 'Ogallala (NE)' (no change)
+2026-11-06 08:34:01,477 - WARNING -   'Sutton (NE)' -> 'Sutton (NE)' (no change)
+2026-11-06 08:34:01,477 - WARNING -   'Randolph (NE)' -> 'Randolph (NE)' (no change)
+2026-11-06 08:34:01,477 - WARNING -   'Oakland-Craig (NE)' -> 'Oakland-Craig (NE)' (no change)
+2026-11-06 08:34:01,477 - WARNING -   'Grand Island Northwest (NE)' -> 'Grand Island Northwest (NE)' (no change)
+2026-11-06 08:34:01,477 - WARNING -   'Superior (NE)' -> 'Superior (NE)' (no change)
+2026-11-06 08:34:01,477 - WARNING -   'Blue Hill (NE)' -> 'Blue Hill (NE)' (no change)
+2026-11-06 08:34:01,477 - WARNING -   'Mullen (NE)' -> 'Mullen (NE)' (no change)
+2026-11-06 08:34:01,477 - WARNING -   'Syracuse (NE)' -> 'Syracuse (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'Red Cloud (NE)' -> 'Red Cloud (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'Plainview (NE)' -> 'Plainview (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'David City (NE)' -> 'David City (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'Grant Perkins County (NE)' -> 'Grant Perkins County (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'Fairfield Sandy Creek (NE)' -> 'Fairfield Sandy Creek (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'Ralston (NE)' -> 'Ralston (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'Oshkosh Garden County (NE)' -> 'Oshkosh Garden County (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'Imperial Chase County (NE)' -> 'Imperial Chase County (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'Bertrand (NE)' -> 'Bertrand (NE)' (no change)
+2026-11-06 08:34:01,478 - WARNING -   'North Bend Central (NE)' -> 'North Bend Central (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Arlington (NE)' -> 'Arlington (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Burwell (NE)' -> 'Burwell (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Bridgeport (NE)' -> 'Bridgeport (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Wakefield (NE)' -> 'Wakefield (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Fullerton (NE)' -> 'Fullerton (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Kenesaw (NE)' -> 'Kenesaw (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Wayne (NE)' -> 'Wayne (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Pawnee City (NE)' -> 'Pawnee City (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Giltner (NE)' -> 'Giltner (NE)' (no change)
+2026-11-06 08:34:01,479 - WARNING -   'Wisner-Pilger (NE)' -> 'Wisner-Pilger (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Firth Norris (NE)' -> 'Firth Norris (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Hartington Cedar Catholic (NE)' -> 'Hartington Cedar Catholic (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Hastings Adams Central (NE)' -> 'Hastings Adams Central (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Overton (NE)' -> 'Overton (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Yutan (NE)' -> 'Yutan (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Ainsworth (NE)' -> 'Ainsworth (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Kearney Catholic (NE)' -> 'Kearney Catholic (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Harvard (NE)' -> 'Harvard (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Loomis (NE)' -> 'Loomis (NE)' (no change)
+2026-11-06 08:34:01,480 - WARNING -   'Morrill (NE)' -> 'Morrill (NE)' (no change)
+2026-11-06 08:34:01,481 - WARNING -   'Bayard (NE)' -> 'Bayard (NE)' (no change)
+2026-11-06 08:34:01,481 - WARNING -   'Hemingford (NE)' -> 'Hemingford (NE)' (no change)
+2026-11-06 08:34:01,481 - WARNING -   'Mead (NE)' -> 'Mead (NE)' (no change)
+2026-11-06 08:34:01,481 - WARNING -   'Ravenna (NE)' -> 'Ravenna (NE)' (no change)
+2026-11-06 08:34:01,481 - WARNING -   'Utica Centennial (NE)' -> 'Utica Centennial (NE)' (no change)
+2026-11-06 08:34:01,481 - WARNING -   'Lincoln East (NE)' -> 'Lincoln East (NE)' (no change)
+2026-11-06 08:34:01,481 - WARNING -   'Madison (NE)' -> 'Madison (NE)' (no change)
+2026-11-06 08:34:01,481 - WARNING -   'Columbus Lakeview (NE)' -> 'Columbus Lakeview (NE)' (no change)
+2026-11-06 08:34:01,481 - WARNING -   'Gibbon (NE)' -> 'Gibbon (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'Crawford (NE)' -> 'Crawford (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'Crofton (NE)' -> 'Crofton (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'Elm Creek (NE)' -> 'Elm Creek (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'South Sioux City (NE)' -> 'South Sioux City (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'Nebraska City Lourdes Central Catholic (NE)' -> 'Nebraska City Lourdes Central Catholic (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'Grand Island Central Catholic (NE)' -> 'Grand Island Central Catholic (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'Elwood (NE)' -> 'Elwood (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'Weeping Water (NE)' -> 'Weeping Water (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'Saint Paul (NE)' -> 'Saint Paul (NE)' (no change)
+2026-11-06 08:34:01,482 - WARNING -   'Palmer (NE)' -> 'Palmer (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'Deshler (NE)' -> 'Deshler (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'Amherst (NE)' -> 'Amherst (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'Johnson-Brock (NE)' -> 'Johnson-Brock (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'Sterling (NE)' -> 'Sterling (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'Brainard East Butler (NE)' -> 'Brainard East Butler (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'Ponca (NE)' -> 'Ponca (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'Cedar Bluffs (NE)' -> 'Cedar Bluffs (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'Axtell (NE)' -> 'Axtell (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'Wood River (NE)' -> 'Wood River (NE)' (no change)
+2026-11-06 08:34:01,483 - WARNING -   'West Point Guardian Angels Central Catholic (NE)' -> 'West Point Guardian Angels Central Catholic (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Maxwell (NE)' -> 'Maxwell (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Wilber-Clatonia (NE)' -> 'Wilber-Clatonia (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Tilden Elkhorn Valley (NE)' -> 'Tilden Elkhorn Valley (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Franklin (NE)' -> 'Franklin (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Alma (NE)' -> 'Alma (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Pleasanton (NE)' -> 'Pleasanton (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Homer (NE)' -> 'Homer (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Winside (NE)' -> 'Winside (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Cairo Centura (NE)' -> 'Cairo Centura (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Fort Calhoun (NE)' -> 'Fort Calhoun (NE)' (no change)
+2026-11-06 08:34:01,484 - WARNING -   'Anselmo-Merna (NE)' -> 'Anselmo-Merna (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'Hampton (NE)' -> 'Hampton (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'Osceola (NE)' -> 'Osceola (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'O'Neill (NE)' -> 'O'Neill (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'Palmyra (NE)' -> 'Palmyra (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'Sutherland (NE)' -> 'Sutherland (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'Omaha Gross Catholic (NE)' -> 'Omaha Gross Catholic (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'Omaha Millard North (NE)' -> 'Omaha Millard North (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'Malcolm (NE)' -> 'Malcolm (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'Shelton (NE)' -> 'Shelton (NE)' (no change)
+2026-11-06 08:34:01,485 - WARNING -   'Wallace (NE)' -> 'Wallace (NE)' (no change)
+2026-11-06 08:34:01,486 - WARNING -   'Dalton Leyton (NE)' -> 'Dalton Leyton (NE)' (no change)
+2026-11-06 08:34:01,486 - WARNING -   'Tekamah-Herman (NE)' -> 'Tekamah-Herman (NE)' (no change)
+2026-11-06 08:34:01,486 - WARNING -   'Hooper Logan View (NE)' -> 'Hooper Logan View (NE)' (no change)
+2026-11-06 08:34:01,486 - WARNING -   'Hay Springs (NE)' -> 'Hay Springs (NE)' (no change)
+2026-11-06 08:34:01,486 - WARNING -   'Raymond Central (NE)' -> 'Raymond Central (NE)' (no change)
+2026-11-06 08:34:01,486 - WARNING -   'Curtis Medicine Valley (NE)' -> 'Curtis Medicine Valley (NE)' (no change)
+2026-11-06 08:34:01,486 - WARNING -   'Osmond (NE)' -> 'Osmond (NE)' (no change)
+2026-11-06 08:34:01,486 - WARNING -   'Wausa (NE)' -> 'Wausa (NE)' (no change)
+2026-11-06 08:34:01,486 - WARNING -   'Hershey (NE)' -> 'Hershey (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Bellevue West (NE)' -> 'Bellevue West (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Wynot (NE)' -> 'Wynot (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Minatare (NE)' -> 'Minatare (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Elgin Pope John XXIII (NE)' -> 'Elgin Pope John XXIII (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Neligh-Oakdale (NE)' -> 'Neligh-Oakdale (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Hyannis (NE)' -> 'Hyannis (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Atkinson West Holt (NE)' -> 'Atkinson West Holt (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Omaha Northwest (NE)' -> 'Omaha Northwest (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Omaha Bryan (NE)' -> 'Omaha Bryan (NE)' (no change)
+2026-11-06 08:34:01,487 - WARNING -   'Paxton (NE)' -> 'Paxton (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Arthur County (NE)' -> 'Arthur County (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Walthill (NE)' -> 'Walthill (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Wymore Southern (NE)' -> 'Wymore Southern (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Milford-Dorchester (NE)' -> 'Milford-Dorchester (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Stuart (NE)' -> 'Stuart (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Lewiston (NE)' -> 'Lewiston (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Shelby-Rising City (NE)' -> 'Shelby-Rising City (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Valley Douglas County West (NE)' -> 'Valley Douglas County West (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Omaha Millard South (NE)' -> 'Omaha Millard South (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Emerson-Hubbard (NE)' -> 'Emerson-Hubbard (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Omaha Roncalli Catholic (NE)' -> 'Omaha Roncalli Catholic (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Lyons-Decatur Northeast (NE)' -> 'Lyons-Decatur Northeast (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Harrisburg Banner County (NE)' -> 'Harrisburg Banner County (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Winnebago (NE)' -> 'Winnebago (NE)' (no change)
+2026-11-06 08:34:01,488 - WARNING -   'Friend (NE)' -> 'Friend (NE)' (no change)
+2026-11-06 08:34:01,489 - WARNING -   'McCool Junction (NE)' -> 'McCool Junction (NE)' (no change)
+2026-11-06 08:34:01,489 - WARNING -   'Central City Nebraska Christian (NE)' -> 'Central City Nebraska Christian (NE)' (no change)
+2026-11-06 08:34:01,489 - WARNING -   'Allen (NE)' -> 'Allen (NE)' (no change)
+2026-11-06 08:34:01,489 - WARNING -   'Daykin Meridian (NE)' -> 'Daykin Meridian (NE)' (no change)
+2026-11-06 08:34:01,489 - WARNING -   'Cody-Kilgore (NE)' -> 'Cody-Kilgore (NE)' (no change)
+2026-11-06 08:34:01,489 - WARNING -   'Papillion-La Vista (NE)' -> 'Papillion-La Vista (NE)' (no change)
+2026-11-06 08:34:01,489 - WARNING -   'Sumner-Eddyville-Miller (NE)' -> 'Sumner-Eddyville-Miller (NE)' (no change)
+2026-11-06 08:34:01,489 - WARNING -   'Harrison Sioux County (NE)' -> 'Harrison Sioux County (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'Brady (NE)' -> 'Brady (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'Bellevue East (NE)' -> 'Bellevue East (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'DeWitt Tri County (NE)' -> 'DeWitt Tri County (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'Hayes Center (NE)' -> 'Hayes Center (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'Ansley (NE)' -> 'Ansley (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'Newcastle (NE)' -> 'Newcastle (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'Omaha Brownell Talbot College Prep (NE)' -> 'Omaha Brownell Talbot College Prep (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'Coleridge (NE)' -> 'Coleridge (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'Dorchester (NE)' -> 'Dorchester (NE)' (no change)
+2026-11-06 08:34:01,490 - WARNING -   'Polk-Hordville (NE)' -> 'Polk-Hordville (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Dodge (NE)' -> 'Dodge (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Clarkson (NE)' -> 'Clarkson (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Howells (NE)' -> 'Howells (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Spalding Academy (NE)' -> 'Spalding Academy (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Murray Conestoga (NE)' -> 'Murray Conestoga (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Scribner-Snyder (NE)' -> 'Scribner-Snyder (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Sargent (NE)' -> 'Sargent (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Loup City (NE)' -> 'Loup City (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Hartington (NE)' -> 'Hartington (NE)' (no change)
+2026-11-06 08:34:01,491 - WARNING -   'Waco Nebraska Lutheran (NE)' -> 'Waco Nebraska Lutheran (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Maywood (NE)' -> 'Maywood (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Stapleton-McPherson County (NE)' -> 'Stapleton-McPherson County (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Humphrey (NE)' -> 'Humphrey (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Tecumseh (NE)' -> 'Tecumseh (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Shickley (NE)' -> 'Shickley (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Clay Center (NE)' -> 'Clay Center (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Macy Omaha Nation (NE)' -> 'Macy Omaha Nation (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Newman Grove (NE)' -> 'Newman Grove (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Leigh (NE)' -> 'Leigh (NE)' (no change)
+2026-11-06 08:34:01,492 - WARNING -   'Lindsay Holy Family (NE)' -> 'Lindsay Holy Family (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Omaha Tech (NE)' -> 'Omaha Tech (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Elba (NE)' -> 'Elba (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Ashland-Greenwood (NE)' -> 'Ashland-Greenwood (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Bruning-Davenport-Shickley (NE)' -> 'Bruning-Davenport-Shickley (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Arnold (NE)' -> 'Arnold (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Roseland Silver Lake (NE)' -> 'Roseland Silver Lake (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Elmwood-Murdock (NE)' -> 'Elmwood-Murdock (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Greeley Central Valley (NE)' -> 'Greeley Central Valley (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Arcadia (NE)' -> 'Arcadia (NE)' (no change)
+2026-11-06 08:34:01,493 - WARNING -   'Chappell (NE)' -> 'Chappell (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Omaha Skutt Catholic (NE)' -> 'Omaha Skutt Catholic (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Albion (NE)' -> 'Albion (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Beemer (NE)' -> 'Beemer (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Callaway (NE)' -> 'Callaway (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Omaha Millard West (NE)' -> 'Omaha Millard West (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Chambers (NE)' -> 'Chambers (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Elgin (NE)' -> 'Elgin (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Benkelman Dundy County-Stratton (NE)' -> 'Benkelman Dundy County-Stratton (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Ewing (NE)' -> 'Ewing (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'North Loup-Scotia (NE)' -> 'North Loup-Scotia (NE)' (no change)
+2026-11-06 08:34:01,494 - WARNING -   'Gordon (NE)' -> 'Gordon (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Tryon McPherson County (NE)' -> 'Tryon McPherson County (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Geneva (NE)' -> 'Geneva (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Rushville (NE)' -> 'Rushville (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Lawrence (NE)' -> 'Lawrence (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Hebron (NE)' -> 'Hebron (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Bartlett Wheeler Central (NE)' -> 'Bartlett Wheeler Central (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Verdigre (NE)' -> 'Verdigre (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Prague (NE)' -> 'Prague (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Papillion (NE)' -> 'Papillion (NE)' (no change)
+2026-11-06 08:34:01,495 - WARNING -   'Potter-Dix (NE)' -> 'Potter-Dix (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Orchard (NE)' -> 'Orchard (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Stella Southeast Nebraska Consolidated (NE)' -> 'Stella Southeast Nebraska Consolidated (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Nelson (NE)' -> 'Nelson (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Wauneta-Palisade (NE)' -> 'Wauneta-Palisade (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Taylor Loup County (NE)' -> 'Taylor Loup County (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Hildreth (NE)' -> 'Hildreth (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Cook Nemaha Valley (NE)' -> 'Cook Nemaha Valley (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Thedford (NE)' -> 'Thedford (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Butte (NE)' -> 'Butte (NE)' (no change)
+2026-11-06 08:34:01,496 - WARNING -   'Cedar Rapids Riverside (NE)' -> 'Cedar Rapids Riverside (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Humboldt (NE)' -> 'Humboldt (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Eustis-Farnam (NE)' -> 'Eustis-Farnam (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Madrid Wheatland (NE)' -> 'Madrid Wheatland (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Doniphan (NE)' -> 'Doniphan (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Bassett Rock County (NE)' -> 'Bassett Rock County (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Indianola Republican Valley (NE)' -> 'Indianola Republican Valley (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Litchfield (NE)' -> 'Litchfield (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Clearwater (NE)' -> 'Clearwater (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Stromsburg (NE)' -> 'Stromsburg (NE)' (no change)
+2026-11-06 08:34:01,497 - WARNING -   'Milligan (NE)' -> 'Milligan (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Clarks Public (NE)' -> 'Clarks Public (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Lynch (NE)' -> 'Lynch (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Spencer Boyd County (NE)' -> 'Spencer Boyd County (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Laurel (NE)' -> 'Laurel (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Dunning Sandhills (NE)' -> 'Dunning Sandhills (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Lyman (NE)' -> 'Lyman (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Omaha Christian Academy (NE)' -> 'Omaha Christian Academy (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Lodgepole (NE)' -> 'Lodgepole (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Silver Creek (NE)' -> 'Silver Creek (NE)' (no change)
+2026-11-06 08:34:01,498 - WARNING -   'Lawrence-Nelson (NE)' -> 'Lawrence-Nelson (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Rising City (NE)' -> 'Rising City (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Oxford Southern Valley (NE)' -> 'Oxford Southern Valley (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Lincoln Christian (NE)' -> 'Lincoln Christian (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Culbertson (NE)' -> 'Culbertson (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Lincoln Lutheran (NE)' -> 'Lincoln Lutheran (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Trumbull (NE)' -> 'Trumbull (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Springview Keya Paha (NE)' -> 'Springview Keya Paha (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Henderson (NE)' -> 'Henderson (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Wilcox (NE)' -> 'Wilcox (NE)' (no change)
+2026-11-06 08:34:01,499 - WARNING -   'Benedict Consolidated (NE)' -> 'Benedict Consolidated (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Genoa (NE)' -> 'Genoa (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Big Springs South Platte (NE)' -> 'Big Springs South Platte (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Adams Freeman (NE)' -> 'Adams Freeman (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Henderson Heartland (NE)' -> 'Henderson Heartland (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Guide Rock (NE)' -> 'Guide Rock (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Niobrara (NE)' -> 'Niobrara (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Doniphan-Trumbull (NE)' -> 'Doniphan-Trumbull (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Hebron Thayer Central (NE)' -> 'Hebron Thayer Central (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Geneva Fillmore Central (NE)' -> 'Geneva Fillmore Central (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Lincoln Southwest (NE)' -> 'Lincoln Southwest (NE)' (no change)
+2026-11-06 08:34:01,500 - WARNING -   'Howells-Dodge (NE)' -> 'Howells-Dodge (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Diller-Odell (NE)' -> 'Diller-Odell (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Diller (NE)' -> 'Diller (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Petersburg (NE)' -> 'Petersburg (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Monroe (NE)' -> 'Monroe (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Odell (NE)' -> 'Odell (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Table Rock (NE)' -> 'Table Rock (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Stromsburg Cross County (NE)' -> 'Stromsburg Cross County (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Papillion-La Vista South (NE)' -> 'Papillion-La Vista South (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Ashland (NE)' -> 'Ashland (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Fairmont (NE)' -> 'Fairmont (NE)' (no change)
+2026-11-06 08:34:01,501 - WARNING -   'Bradshaw (NE)' -> 'Bradshaw (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Wolbach (NE)' -> 'Wolbach (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Wilcox-Hildreth (NE)' -> 'Wilcox-Hildreth (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Scribner (NE)' -> 'Scribner (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Lincoln Parkview Christian (NE)' -> 'Lincoln Parkview Christian (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Beaver City (NE)' -> 'Beaver City (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Sidney St. Patrick's Academy (NE)' -> 'Sidney St. Patrick's Academy (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Oxford Community (NE)' -> 'Oxford Community (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Dawson-Verdon (NE)' -> 'Dawson-Verdon (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Humboldt-Table Rock-Steinauer (NE)' -> 'Humboldt-Table Rock-Steinauer (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Norfolk Lutheran-Northeast (NE)' -> 'Norfolk Lutheran-Northeast (NE)' (no change)
+2026-11-06 08:34:01,502 - WARNING -   'Polk High Plains (NE)' -> 'Polk High Plains (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Chester-Hubbell-Byron (NE)' -> 'Chester-Hubbell-Byron (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Adams (NE)' -> 'Adams (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Orleans (NE)' -> 'Orleans (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Trenton (NE)' -> 'Trenton (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Genoa Twin River (NE)' -> 'Genoa Twin River (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Trenton Hitchcock County USD (NE)' -> 'Trenton Hitchcock County USD (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Exeter (NE)' -> 'Exeter (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Gordon-Rushville (NE)' -> 'Gordon-Rushville (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Lincoln North Star (NE)' -> 'Lincoln North Star (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Bruning (NE)' -> 'Bruning (NE)' (no change)
+2026-11-06 08:34:01,503 - WARNING -   'Santee (NE)' -> 'Santee (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Campbell (NE)' -> 'Campbell (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Dunning Sandhills-Thedford (NE)' -> 'Dunning Sandhills-Thedford (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Chappell Creek Valley (NE)' -> 'Chappell Creek Valley (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Davenport (NE)' -> 'Davenport (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Dix (NE)' -> 'Dix (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Stratton (NE)' -> 'Stratton (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Exeter-Milligan (NE)' -> 'Exeter-Milligan (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'West Point-Beemer (NE)' -> 'West Point-Beemer (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Bartley Southwest (NE)' -> 'Bartley Southwest (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Filley (NE)' -> 'Filley (NE)' (no change)
+2026-11-06 08:34:01,504 - WARNING -   'Laurel-Concord (NE)' -> 'Laurel-Concord (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Albion Boone Central (NE)' -> 'Albion Boone Central (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Bellevue (NE)' -> 'Bellevue (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Marquette (NE)' -> 'Marquette (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Elmwood (NE)' -> 'Elmwood (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Farnam (NE)' -> 'Farnam (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Bladen (NE)' -> 'Bladen (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Omaha Concordia (NE)' -> 'Omaha Concordia (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Lexington St. Ann's (NE)' -> 'Lexington St. Ann's (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Omaha Millard (NE)' -> 'Omaha Millard (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Potter (NE)' -> 'Potter (NE)' (no change)
+2026-11-06 08:34:01,505 - WARNING -   'Eustis Public (NE)' -> 'Eustis Public (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Bartley (NE)' -> 'Bartley (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Roseland (NE)' -> 'Roseland (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Bassett North Central (NE)' -> 'Bassett North Central (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Omaha Archbishop Ryan (NE)' -> 'Omaha Archbishop Ryan (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Tecumseh Johnson County Central (NE)' -> 'Tecumseh Johnson County Central (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Omaha Elkhorn South (NE)' -> 'Omaha Elkhorn South (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Grand Island Heartland Lutheran (NE)' -> 'Grand Island Heartland Lutheran (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Spalding (NE)' -> 'Spalding (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Lewellen Rural (NE)' -> 'Lewellen Rural (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Wauneta (NE)' -> 'Wauneta (NE)' (no change)
+2026-11-06 08:34:01,506 - WARNING -   'Murdock (NE)' -> 'Murdock (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Omaha Holy Name (NE)' -> 'Omaha Holy Name (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Venango (NE)' -> 'Venango (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Sargent Twin Loup (NE)' -> 'Sargent Twin Loup (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Lebanon Beaver Valley (NE)' -> 'Lebanon Beaver Valley (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Arnold-Callaway South Loup co-op (NE)' -> 'Arnold-Callaway South Loup co-op (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Big Springs (NE)' -> 'Big Springs (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Benkelman (NE)' -> 'Benkelman (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Palisade (NE)' -> 'Palisade (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Clarkson-Leigh (NE)' -> 'Clarkson-Leigh (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Holbrook (NE)' -> 'Holbrook (NE)' (no change)
+2026-11-06 08:34:01,507 - WARNING -   'Brule (NE)' -> 'Brule (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Spencer-Naper (NE)' -> 'Spencer-Naper (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Ansley-Litchfield (NE)' -> 'Ansley-Litchfield (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Clearwater-Orchard (NE)' -> 'Clearwater-Orchard (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Bancroft (NE)' -> 'Bancroft (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Remsen Niobrara-Verdigre (NE)' -> 'Remsen Niobrara-Verdigre (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Decatur (NE)' -> 'Decatur (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Arcadia-Loup City (NE)' -> 'Arcadia-Loup City (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'De Witt Tri-County (NE)' -> 'De Witt Tri-County (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Laurel-Concord-Coleridge (NE)' -> 'Laurel-Concord-Coleridge (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Hartington-Newcastle (NE)' -> 'Hartington-Newcastle (NE)' (no change)
+2026-11-06 08:34:01,508 - WARNING -   'Chambers-Wheeler Central (NE)' -> 'Chambers-Wheeler Central (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'Ruskin (NE)' -> 'Ruskin (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'Curtis Nebraska School of Agriculture (NE)' -> 'Curtis Nebraska School of Agriculture (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'Maywood-Hayes Center (NE)' -> 'Maywood-Hayes Center (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'O'Neill Saint Mary's (NE)' -> 'O'Neill Saint Mary's (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'Omaha St. Joseph (NE)' -> 'Omaha St. Joseph (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'Sumner Eddyville (NE)' -> 'Sumner Eddyville (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'Wymore (NE)' -> 'Wymore (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'Juanita (NE)' -> 'Juanita (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'Chadron Assumption Academy (NE)' -> 'Chadron Assumption Academy (NE)' (no change)
+2026-11-06 08:34:01,509 - WARNING -   'Eustis Hi-Line [Eustis-Farnam-Elwood] (NE)' -> 'Eustis Hi-Line [Eustis-Farnam-Elwood] (NE)' (no change)
+2026-11-06 08:34:01,509 - INFO - Validation passed: 506 rules are clean and ready to upload.
+2026-11-06 08:34:01,528 - INFO - Uploading 506 rules to staging table: ConsolidationRules_Staging...
+2026-11-06 08:34:01,661 - INFO - Upload to staging table complete.
+2026-11-06 08:34:01,667 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-06 08:35:22,096 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-06 08:35:22,096 - INFO - Reason logged to dbo.HS_Consolidation_Log: NE round 2: town names of county schools (Arthur, Benedict, Harrisburg, Harrison, Valley)
+2026-11-06 08:35:22,096 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-06 08:35:22,096 - INFO - Running post-consolidation safety check...
+2026-11-06 08:35:22,101 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> commit NE
+
+DEDUP v4 NE - COMMIT
+ dedup_archive: 187 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_archive_COMMITTED_20261106_0835.csv
+ dedup_review: 32 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_review_COMMITTED_20261106_0835.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_summary_COMMITTED_20261106_0835.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NE     101425        187                  32               7966D964-2AB9-4728-8A3C-E7B331A12395
+
+REVIEW-ONLY PAIRS NE - COMMIT
+ 32 pairs {'SHORT': 32} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_review_pairs_COMMITTED_20261106_0835.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  32        5137385C-B94B-47F4-A977-085DE87B57C3  None
+
+>>> same-score-fix NE
+
+SAME-SCORE DOUBLE-BOOKINGS NE - PREVIEW (nothing changed)
+ 810 pairs {'DROP A': 203, 'DROP B': 204, 'UNDECIDED': 403} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_same_score_20261106_0837.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  400       None   None
+
+>>> report NE double-booked
+
+REPORT double-booked NE: 4319 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_double_booked_20261106_0837.csv
+   Kind             Team                        Season  Gap  A_Date      A_Opp                  A_Score  A_Source                                  A_Batch  B_Date      B_Opp                                 B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Adams (NE)                  1959    0    1959-10-31  Sterling (NE)          7-26     Omaha_World_Herald_1959_10_31_10.csv      138      1959-10-31  Roseland (NE)                         7-19     Lincoln_Journal_Star_1959_10_31_7.csv     139      15B84A9D-DA29-4D13-B4C9-35C9A4088636  BB17AC3A-643A-4F93-96BD-42F1A650319A
+   DIFFERENT GAMES  Adams (NE)                  1980    1    1980-10-30  Elmwood (NE)           44-12    31 Oct 1980 - 19 - Lincoln Journal Star   None     1980-10-31  Beemer (NE)                           40-15    http://nsaahome.org/textfile/fbl/fball.h  None     3A50A444-DDB2-4CC4-92EC-518444D06B5B  E4757134-8975-4EA2-AB03-FC835FF28F4C
+   DIFFERENT GAMES  Adams (NE)                  1981    2    1981-10-28  Elmwood (NE)           26-20    29 Oct 1981 - 43 - Omaha World-Herald at  None     1981-10-30  Sidney St. Patrick's Academy (NE)     28-24    http://nsaahome.org/textfile/fbl/fball.h  None     53912C94-5A32-4155-BFB0-1A5DA6C3B2B6  564C9ECF-AD22-4273-A924-73A07174009C
+   DIFFERENT GAMES  Adams (NE)                  1993    1    1993-11-11  Sterling (NE)          49-34    0                                         None     1993-11-12  Osmond (NE)                           56-19    0                                         None     F35CB8D9-E579-4B8B-A54F-6F6A84D2534F  46037A1A-47B3-4444-90F7-CC6BF6F4DA25
+   DIFFERENT GAMES  Adams County Holstein (NE)  1967    0    1967-10-07  Giltner (NE)           6-58     Star_Herald_1967_10_07_8.csv              48       1967-10-07  Doniphan (NE)                         6-76     Star_Herald_1967_10_07_8.csv              48       475F26E0-A9FE-4FC0-A637-CF5E9680A3EA  D1FB74A5-CC13-41AD-844C-ED0654C09686
+   DIFFERENT GAMES  Adams Freeman (NE)          2011    1    2011-11-03  Bancroft-Rosalie (NE)  63-28    0                                         None     2011-11-02  Bruning-Davenport-Shickley (NE)       20-22    www.maxpreps.com                          None     7D3F55B0-30EE-4347-9D82-4DBF4F60A19D  6703C0C8-1AEB-494B-BE5B-854401D50B55
+   DIFFERENT GAMES  Adams Freeman (NE)          2019    1    2019-10-01  Syracuse (NE)          13-0     www.maxpreps.com                          None     2019-10-02  Murray Conestoga (NE)                 35-8     www.maxpreps.com                          None     35A6C8ED-13A5-4629-9940-03C11AE84BD0  2A777030-8D96-4E43-8BD7-6B5F3486B5D1
+   DIFFERENT GAMES  Adams Freeman (NE)          2019    0    2019-10-01  Syracuse (NE)          13-0     www.maxpreps.com                          None     2019-10-01  Tecumseh Johnson County Central (NE)  20-47    www.maxpreps.com                          None     35A6C8ED-13A5-4629-9940-03C11AE84BD0  327D2410-174D-4A34-8524-FC1998589D86
+   DIFFERENT GAMES  Adams Freeman (NE)          2019    2    2019-10-02  Murray Conestoga (NE)  35-8     www.maxpreps.com                          None     2019-10-04  Malcolm (NE)                          6-34     www.maxpreps.com                          None     2A777030-8D96-4E43-8BD7-6B5F3486B5D1  370F5882-F4B4-47FB-9B9B-6C5B32E32B30
+   DIFFERENT GAMES  Adams Freeman (NE)          2019    1    2019-10-02  Murray Conestoga (NE)  35-8     www.maxpreps.com                          None     2019-10-01  Tecumseh Johnson County Central (NE)  20-47    www.maxpreps.com                          None     2A777030-8D96-4E43-8BD7-6B5F3486B5D1  327D2410-174D-4A34-8524-FC1998589D86
+   DIFFERENT GAMES  Ainsworth (NE)              1957    0    1957-09-14  Hyannis (NE)           0-6      Lincoln_Journal_Star_1957_09_14_7 (1).cs  144      1957-09-14  Alliance (NE)                         0-32     Omaha_World_Herald_1957_09_14_12.csv      140      6FBBD8A8-95ED-41E0-8004-173FF3CD16B4  FC0C9EF6-392C-408F-9169-9BD58673B4FF
+   DIFFERENT GAMES  Ainsworth (NE)              1957    0    1957-10-05  Valentine (NE)         13-33    Lincoln_Journal_Star_1957_10_05_7 (1).cs  144      1957-10-05  Morning Sun (IA)                      19-0     The_Des_Moines_Register_1957_10_05_Page_  155      6E3E9FC6-EB42-45C8-BD0C-5C07425B5472  C5E0511F-2628-44FD-9F9A-A81795CC93BB
+   DIFFERENT GAMES  Ainsworth (NE)              1958    0    1958-10-11  O'Neill (NE)           0-19     Omaha_World_Herald_1958_10_11_10 (1).csv  141      1958-10-11  Brighton (IA)                         19-18    The_Des_Moines_Register_1958_10_11_Page_  155      78D2033C-E637-415E-A682-56830CC126EC  7CC3203E-5089-4735-B1F4-AC7F5C01871B
+   DIFFERENT GAMES  Ainsworth (NE)              1959    0    1959-09-19  Gregory (SD)           0-6      Argus_Leader_1959_09_19_Page_3.csv        162      1959-09-19  Mediapolis (IA)                       12-35    The_Des_Moines_Register_1959_09_19_Page_  155      D5E40C10-E274-47BA-8526-08D4E4FA7F5D  7BA4233E-347E-4668-876B-69A6A6F2F08C
+   DIFFERENT GAMES  Ainsworth (NE)              1959    0    1959-10-17  Wayland (IA)           12-44    The_Des_Moines_Register_1959_10_17_Page_  155      1959-10-17  Bassett Rock County (NE)              20-0     Lincoln_Journal_Star_1959_10_17_7 (1).cs  139      C089D58C-3EC8-4E90-9569-2E63F9B55E55  91084B5C-AB31-49B5-850E-CF992E3BD9F1
+   ... 4304 more rows (see CSV)
+
+=== OK 2026-11-06 08:37:56

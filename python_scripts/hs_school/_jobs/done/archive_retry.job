@@ -1,0 +1,4 @@
+# archive-ids failed before (KeptID NOT NULL) - retry WY and the two earlier CO runs (rows already gone are simply not found)
+archive-ids WY --ids WY_college_archive_ids.csv --reason "1946 Bethany-Midland college game (copy in College_Scores) + 1904 University of Wyoming self-game" --commit
+archive-ids CO --ids CO_longmont_christian_ids.csv --reason "MaxPreps 'TBA Opponent' games; old macro import filled in Longmont" --commit
+archive-ids CO --ids CO_college_cc_archive_ids.csv --reason "1940+ college vs college; copy already in College_Scores" --commit

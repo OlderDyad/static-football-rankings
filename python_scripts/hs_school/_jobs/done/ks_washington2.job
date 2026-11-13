@@ -1,0 +1,4 @@
+move-team KS --from "Washington County (KS)" --to "Washington (KS)" --seasons 1900-2005 --reason "split by year: Washington HS to 2005, Washington County from 2006 (KFH team page note)" --commit
+dedup KS
+same-score-fix KS
+query KS ks_washington.sql

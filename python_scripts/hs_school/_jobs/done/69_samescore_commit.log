@@ -1,0 +1,30 @@
+
+>>> same-score-fix MA --commit
+
+SAME-SCORE DOUBLE-BOOKINGS MA - COMMIT
+ 73 pairs {'DROP A': 1, 'DROP B': 1, 'UNDECIDED': 71} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_same_score_COMMITTED_20261110_0425.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  2         32566B15-E480-4C50-A0EA-52A51F448329  None
+
+>>> same-score-fix CT --commit
+
+SAME-SCORE DOUBLE-BOOKINGS CT - COMMIT
+ 422 pairs {'DROP B': 172, 'DROP A': 155, 'UNDECIDED': 95} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_same_score_COMMITTED_20261110_0426.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  326       03C367C0-5920-4B3E-BC1D-4B2FEA8F8876  None
+
+>>> same-score-fix NH --commit
+
+SAME-SCORE DOUBLE-BOOKINGS NH - COMMIT
+ 27 pairs {'DROP B': 12, 'DROP A': 7, 'UNDECIDED': 8} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_same_score_COMMITTED_20261110_0427.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  19        A9BC9FAF-7E47-4C4A-AC5A-FB65D59C8991  None
+
+>>> same-score-fix RI --commit
+
+SAME-SCORE DOUBLE-BOOKINGS RI - COMMIT
+ 29 pairs {'DROP B': 11, 'DROP A': 9, 'UNDECIDED': 9} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_same_score_COMMITTED_20261110_0427.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  20        4B14CBAA-5413-4A30-A246-2DAD6236DDBE  None
+
+=== OK 2026-11-10 04:27:31

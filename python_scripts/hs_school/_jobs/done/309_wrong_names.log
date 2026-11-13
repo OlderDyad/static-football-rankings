@@ -1,0 +1,321 @@
+
+>>> move-team SD --from "Gary (SD)" --to "Gayville-Volin (SD)" --seasons 1982-1986 --ids coop_ids/SD_wrong_000.csv --reason "SD: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_wrong_000.csv
+
+MOVE Gary (SD) -> Gayville-Volin (SD), seasons 1982-1986 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1722.csv
+ move_by_season: 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1722.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team SD --from "Ramona-Rutland (SD)" --to "Rapid City Stevens (SD)" --seasons 1977-2000 --ids coop_ids/SD_wrong_001.csv --reason "SD: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\coop_ids/SD_wrong_001.csv
+
+MOVE Ramona-Rutland (SD) -> Rapid City Stevens (SD), seasons 1977-2000 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_games_COMMITTED_20261112_1722.csv
+ move_by_season: 58 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_move_by_season_COMMITTED_20261112_1722.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> dedup SD --commit
+
+DEDUP v4 SD - COMMIT
+ dedup_archive: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_archive_COMMITTED_20261112_1722.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_review_COMMITTED_20261112_1722.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_summary_COMMITTED_20261112_1722.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  SD     55066         2                    1                01451CB6-2D05-4F7F-AD45-857DEA79651E
+
+>>> same-score-fix SD
+ 1296 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS SD - PREVIEW (nothing changed)
+ 247 pairs {'DROP A': 12, 'DROP B': 7, 'UNDECIDED': 228} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_same_score_20261112_1723.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  19        None   None
+
+>>> move-team MN --from "Newfolden Marshall County Central (MN)" --to "Slayton Murray County Central (MN)" --seasons 1998-1998 --ids coop_ids/MN_wrong_000.csv --reason "MN: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\coop_ids/MN_wrong_000.csv
+
+MOVE Newfolden Marshall County Central (MN) -> Slayton Murray County Central (MN), seasons 1998-1998 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_move_games_COMMITTED_20261112_1723.csv
+ move_by_season: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_move_by_season_COMMITTED_20261112_1723.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team MN --from "Saint Louis Park (MN)" --to "Cottage Grove Park (MN)" --seasons 1992-1998 --ids coop_ids/MN_wrong_001.csv --reason "MN: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\coop_ids/MN_wrong_001.csv
+
+MOVE Saint Louis Park (MN) -> Cottage Grove Park (MN), seasons 1992-1998 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_move_games_COMMITTED_20261112_1723.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_move_by_season_COMMITTED_20261112_1723.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team MN --from "Two Harbors (MN)" --to "Tyler (MN)" --seasons 1956-1956 --ids coop_ids/MN_wrong_002.csv --reason "MN: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\coop_ids/MN_wrong_002.csv
+
+MOVE Two Harbors (MN) -> Tyler (MN), seasons 1956-1956 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_move_games_COMMITTED_20261112_1723.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_move_by_season_COMMITTED_20261112_1723.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> dedup MN --commit
+
+DEDUP v4 MN - COMMIT
+ dedup_archive: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_dedup_archive_COMMITTED_20261112_1723.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_dedup_review_COMMITTED_20261112_1723.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_dedup_summary_COMMITTED_20261112_1723.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  MN     135565        2                    1                F73263F2-0893-47BF-AB76-AE849AC1B307
+
+>>> same-score-fix MN
+ 1233 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS MN - PREVIEW (nothing changed)
+ 265 pairs {'DROP B': 2, 'UNDECIDED': 263} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_same_score_20261112_1724.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  2         None   None
+
+>>> move-team IA --from "Columbus Junction (IA)" --to "Waterloo Columbus (IA)" --seasons 1971-1987 --ids coop_ids/IA_wrong_000.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_wrong_000.csv
+
+MOVE Columbus Junction (IA) -> Waterloo Columbus (IA), seasons 1971-1987 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1724.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1724.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IA --from "Estherville Lincoln Central (IA)" --to "Gruver Lincoln Central (IA)" --seasons 1973-1986 --ids coop_ids/IA_wrong_001.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_wrong_001.csv
+
+MOVE Estherville Lincoln Central (IA) -> Gruver Lincoln Central (IA), seasons 1973-1986 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1724.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1724.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IA --from "Fairmont (MN)" --to "Fairfield (IA)" --seasons 1931-1969 --ids coop_ids/IA_wrong_002.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_wrong_002.csv
+
+MOVE Fairmont (MN) -> Fairfield (IA), seasons 1931-1969 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1724.csv
+ move_by_season: 109 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1724.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IA --from "Jefferson (IA)" --to "Cedar Rapids Jefferson (IA)" --seasons 1977-1989 --ids coop_ids/IA_wrong_003.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_wrong_003.csv
+
+MOVE Jefferson (IA) -> Cedar Rapids Jefferson (IA), seasons 1977-1989 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1724.csv
+ move_by_season: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1724.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IA --from "Milan (MO)" --to "Milford (IA)" --seasons 1927-1969 --ids coop_ids/IA_wrong_004.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_wrong_004.csv
+
+MOVE Milan (MO) -> Milford (IA), seasons 1927-1969 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1724.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1724.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IA --from "Prairie City (IA)" --to "Cedar Rapids Prairie (IA)" --seasons 1973-1976 --ids coop_ids/IA_wrong_005.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_wrong_005.csv
+
+MOVE Prairie City (IA) -> Cedar Rapids Prairie (IA), seasons 1973-1976 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1724.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1724.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IA --from "Stuart West Central Valley (IA)" --to "Maynard West Central (IA)" --seasons 1981-1999 --ids coop_ids/IA_wrong_006.csv --reason "IA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_wrong_006.csv
+
+MOVE Stuart West Central Valley (IA) -> Maynard West Central (IA), seasons 1981-1999 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1724.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1724.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> dedup IA --commit
+
+DEDUP v4 IA - COMMIT
+ dedup_archive: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_archive_COMMITTED_20261112_1724.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_review_COMMITTED_20261112_1724.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_summary_COMMITTED_20261112_1724.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  IA     132278        6                    1                35BF6C99-38E4-46D5-9901-B298020DB09E
+
+>>> same-score-fix IA
+ 1429 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IA - PREVIEW (nothing changed)
+ 314 pairs {'DROP B': 5, 'DROP A': 3, 'UNDECIDED': 306} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_20261112_1725.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  8         None   None
+
+>>> move-team IL --from "Alton Marquette Catholic (IL)" --to "Ottawa Marquette Academy (IL)" --seasons 1960-1982 --ids coop_ids/IL_wrong_000.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_000.csv
+
+MOVE Alton Marquette Catholic (IL) -> Ottawa Marquette Academy (IL), seasons 1960-1982 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1725.csv
+ move_by_season: 95 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1725.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IL --from "Aurora Waubonsie Valley (IL)" --to "Fairview Valley (IL)" --seasons 1960-1964 --ids coop_ids/IL_wrong_001.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_001.csv
+
+MOVE Aurora Waubonsie Valley (IL) -> Fairview Valley (IL), seasons 1960-1964 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1725.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1725.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IL --from "Barry Western Community (IL)" --to "Buda Western (IL)" --seasons 1963-1982 --ids coop_ids/IL_wrong_002.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_002.csv
+
+MOVE Barry Western Community (IL) -> Buda Western (IL), seasons 1963-1982 - COMMIT
+ move_games: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1725.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1725.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  13     1                  None
+
+>>> move-team IL --from "Carbondale University High (IL)" --to "Tolono Unity (IL)" --seasons 1959-1965 --ids coop_ids/IL_wrong_003.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_003.csv
+
+MOVE Carbondale University High (IL) -> Tolono Unity (IL), seasons 1959-1965 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IL --from "Chicago Parker (IL)" --to "Paris (IL)" --seasons 1958-1964 --ids coop_ids/IL_wrong_004.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_004.csv
+
+MOVE Chicago Parker (IL) -> Paris (IL), seasons 1958-1964 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 110 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IL --from "Chicago St. Joseph (IL)" --to "Westchester St. Joseph (IL)" --seasons 1979-2003 --ids coop_ids/IL_wrong_005.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_005.csv
+
+MOVE Chicago St. Joseph (IL) -> Westchester St. Joseph (IL), seasons 1979-2003 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IL --from "Decatur Eisenhower (IL)" --to "Blue Island Eisenhower (IL)" --seasons 1995-2003 --ids coop_ids/IL_wrong_006.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_006.csv
+
+MOVE Decatur Eisenhower (IL) -> Blue Island Eisenhower (IL), seasons 1995-2003 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team IL --from "East St. Louis Lincoln (IL)" --to "Lincoln (IL)" --seasons 1954-1991 --ids coop_ids/IL_wrong_007.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_007.csv
+
+MOVE East St. Louis Lincoln (IL) -> Lincoln (IL), seasons 1954-1991 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Monmouth (IL)" --to "Alexis United (IL)" --seasons 1969-1969 --ids coop_ids/IL_wrong_008.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_008.csv
+
+MOVE Monmouth (IL) -> Alexis United (IL), seasons 1969-1969 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 114 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IL --from "Newman (IL)" --to "Sterling Newman Central Catholic (IL)" --seasons 1956-1993 --ids coop_ids/IL_wrong_009.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_009.csv
+
+MOVE Newman (IL) -> Sterling Newman Central Catholic (IL), seasons 1956-1993 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IL --from "Niantic Sangamon Valley (IL)" --to "London Mills Spoon River Valley (IL)" --seasons 1980-1993 --ids coop_ids/IL_wrong_010.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_010.csv
+
+MOVE Niantic Sangamon Valley (IL) -> London Mills Spoon River Valley (IL), seasons 1980-1993 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 34 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IL --from "Paris (IL)" --to "Pana Coop (IL)" --seasons 1939-1964 --ids coop_ids/IL_wrong_011.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_011.csv
+
+MOVE Paris (IL) -> Pana Coop (IL), seasons 1939-1964 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IL --from "River Forest Trinity (IL)" --to "Bloomington Trinity (IL)" --seasons 1929-1966 --ids coop_ids/IL_wrong_012.csv --reason "IL: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_wrong_012.csv
+
+MOVE River Forest Trinity (IL) -> Bloomington Trinity (IL), seasons 1929-1966 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1726.csv
+ move_by_season: 42 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1726.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> dedup IL --commit
+
+DEDUP v4 IL - COMMIT
+ dedup_archive: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_archive_COMMITTED_20261112_1726.csv
+ dedup_review: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_review_COMMITTED_20261112_1726.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_summary_COMMITTED_20261112_1726.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  IL     197783        23                   3                11B84E10-A5DE-4457-824E-5F78422A4673
+
+>>> same-score-fix IL
+ 1923 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IL - PREVIEW (nothing changed)
+ 509 pairs {'DROP B': 10, 'DROP A': 6, 'UNDECIDED': 493} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_20261112_1727.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  16        None   None
+
+>>> move-team VA --from "Salem (VA)" --to "Virginia Beach Salem (VA)" --seasons 2000-2000 --ids coop_ids/VA_wrong_000.csv --reason "VA: opponent name misread in newspaper (game is against the right school's usual opponents) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_wrong_000.csv
+
+MOVE Salem (VA) -> Virginia Beach Salem (VA), seasons 2000-2000 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1727.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1727.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> dedup VA --commit
+
+DEDUP v4 VA - COMMIT
+ dedup_archive: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_dedup_archive_COMMITTED_20261112_1728.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_dedup_review_COMMITTED_20261112_1728.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_dedup_summary_COMMITTED_20261112_1728.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  VA     131486        1                    0                EBE53863-D5A9-4EE5-9760-96C82133D08F
+
+>>> same-score-fix VA
+ 5777 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS VA - PREVIEW (nothing changed)
+ 635 pairs {'DROP B': 9, 'DROP A': 10, 'UNDECIDED': 616} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_same_score_20261112_1729.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  19        None   None
+
+=== OK 2026-11-12 17:29:15

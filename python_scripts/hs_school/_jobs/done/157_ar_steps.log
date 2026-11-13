@@ -1,0 +1,44 @@
+
+>>> archive-ids AR --ids ar_college_dup_ids.csv --reason "Post-1940 college game confirmed present in College_Scores (names+scores match)" --commit
+
+ARCHIVE LISTED GAMES AR - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_archive_ids_COMMITTED_20261111_0831.csv
+   Season  Date        Home                           Home_Score  Visitor                          Visitor_Score  Source                               Access_ID  ID                                  
+   1961    1961-11-04  Arkansas Tech University (AR)  30          Henderson State University (AR)  0              Des_Moines_Tribune_1961_11_04_9.csv  None       39E15B08-600C-4EDA-B4B4-7CD9364821E9
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       1      BC3C9450-C61A-40DF-8CAA-E6A610CEF476  None
+
+>>> step AR 1.1 done "2026-11-11: HSFHA-AR match; ~30 alias rules (2024 MaxPreps short names, Fort Smith->Northside, HWH Central variants, Des Arc); wrong old rules fixed (Arkansas School for the Deaf, LR Southwest, college Aggies)"
+Tracker updated: AR 1.1 -> done
+
+>>> step AR 1.2 done "2026-11-11: 5 URLs remapped, mapcheck"
+Tracker updated: AR 1.2 -> done
+
+>>> step AR 1.3 done "2026-11-11: 21 per-game school fix groups via HSFHA codes (Lake Village/Hot Springs Lakeside, FS Northside/Southside, White Hall/LR Hall, Elkins/Atkins, TX/LA/KS twins)"
+Tracker updated: AR 1.3 -> done
+
+>>> step AR 1.4 done "2026-11-11: Amity, LR Southwest (2020+), West Helena Woodruff, Hartman per-game; Palestine split to 1986. Consolidations kept separate (Glenwood, Ola, Yellville, Wilson, Helena)"
+Tracker updated: AR 1.4 -> done
+
+>>> step AR 2.1 done "2026-11-11: dedup 591 + 6"
+Tracker updated: AR 2.1 -> done
+
+>>> step AR 2.2 done "2026-11-11: review pairs 34 + 13"
+Tracker updated: AR 2.2 -> done
+
+>>> step AR 2.3 done "2026-11-11: same-score 341 + 4 + 3 archived (HSFHA decisions)"
+Tracker updated: AR 2.3 -> done
+
+>>> step AR 3.1 done "2026-11-11: 1 HSFHA game season/date mismatch (Brinkley-West Helena 1928 dated 1927) left"
+Tracker updated: AR 3.1 -> done
+
+>>> step AR 3.2 done "2026-11-11: 27 2-0 games without forfeit flag left as-is"
+Tracker updated: AR 3.2 -> done
+
+>>> step AR 4.3 done "2026-11-11: HSFHA-AR compare: 243 dates, 3 scores set; 14,374 HSFHA games imported (BatchID 198)"
+Tracker updated: AR 4.3 -> done
+
+>>> step AR 5.0 done "2026-11-11: 1 college copy archived (Arkansas Tech-Henderson State 1961)"
+Tracker updated: AR 5.0 -> done
+
+=== OK 2026-11-11 08:31:16

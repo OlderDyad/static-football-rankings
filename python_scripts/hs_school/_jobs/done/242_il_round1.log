@@ -1,0 +1,1160 @@
+
+>>> remap IL --url "https://www.maxpreps.com/il/barrington/barrington-fillies-broncos/football/schedule/" --to "Barrington (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/barrington/barrington-fillies-broncos/football/schedule/ -> Barrington (IL) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName    NewTeam_ID
+   https://www.maxpreps.com/il/barrington/b  Barrington Fillies (IL)  19997    Barrington (IL)  59382     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/bloomington/bloomington-central-catholic-saints/football/schedule/" --to "Bloomington Central Catholic (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/bloomington/bloomington-central-catholic-saints/football/schedule/ -> Bloomington Central Catholic (IL) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/il/bloomington/  Bloomington Central (IL)  35337    Bloomington Central Catholic (IL)  59760     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/canton/canton-little-giants/football/schedule/" --to "Canton (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/canton/canton-little-giants/football/schedule/ -> Canton (IL) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/il/canton/canto  Canton Little (IL)  37726    Canton (IL)    60213     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/carlyle/carlyle-indians-lady-indians/football/schedule/" --to "Carlyle (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/carlyle/carlyle-indians-lady-indians/football/schedule/ -> Carlyle (IL) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/il/carlyle/carl  Carlyle Indians (IL)  4722     Carlyle (IL)   60254     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago/chicago-mt-carmel-caravan/football/schedule/" --to "Chicago Mt. Carmel (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago/chicago-mt-carmel-caravan/football/schedule/ -> Chicago Mt. Carmel (IL) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName            NewTeam_ID
+   https://www.maxpreps.com/il/chicago/chic  Chicago Mt. Carava (IL)  17478    Chicago Mt. Carmel (IL)  60625     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago/christian-fenger-academy-titans/football/schedule/" --to "Chicago Fenger (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago/christian-fenger-academy-titans/football/schedule/ -> Chicago Fenger (IL) - COMMIT
+   URL                                       ProperName                             Team_ID  NewProperName        NewTeam_ID
+   https://www.maxpreps.com/il/chicago/chri  Chicago Christian Fenger Academy (IL)  70729    Chicago Fenger (IL)  60590     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago/depaul-college-prep-rams/football/schedule/" --to "Chicago DePaul College Prep (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago/depaul-college-prep-rams/football/schedule/ -> Chicago DePaul College Prep (IL) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/il/chicago/depa  Chicago Depaul College (IL)  12218    Chicago DePaul College Prep (IL)  60581     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago/solorio-sun-warriors/football/schedule/" --to "Chicago Eric Solorio Academy (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago/solorio-sun-warriors/football/schedule/ -> Chicago Eric Solorio Academy (IL) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/il/chicago/solo  Chicago Solorio Sun (IL)  14887    Chicago Eric Solorio Academy (IL)  60588     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago/uic-college-prep-firecats/football/schedule/" --to "Chicago University of Illinois Prep (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago/uic-college-prep-firecats/football/schedule/ -> Chicago University of Illinois Prep (IL) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/il/chicago/uic-  Chicago Uic College (IL)  6641     Chicago University of Illinois Prep (IL)  11998     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/dixon/dixon-dukes-and-duchesses/football/schedule/" --to "Dixon (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/dixon/dixon-dukes-and-duchesses/football/schedule/ -> Dixon (IL) - COMMIT
+   URL                                       ProperName        Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/il/dixon/dixon-  Dixon Dukes (IL)  27147    Dixon (IL)     61528     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/east-moline/east-moline-united-panthers/football/schedule/" --to "East Moline United Township (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/east-moline/east-moline-united-panthers/football/schedule/ -> East Moline United Township (IL) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/il/east-moline/  East Moline East Moline (IL)  19679    East Moline United Township (IL)  61650     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/effingham/effingham-flaming-hearts/football/schedule/" --to "Effingham (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/effingham/effingham-flaming-hearts/football/schedule/ -> Effingham (IL) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName   NewTeam_ID
+   https://www.maxpreps.com/il/effingham/ef  Effingham Flaming (IL)  33701    Effingham (IL)  61729     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/geneseo/geneseo-maple-leafs/football/schedule/" --to "Geneseo (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/geneseo/geneseo-maple-leafs/football/schedule/ -> Geneseo (IL) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/il/geneseo/gene  Geneseo Maple (IL)  17665    Geneseo (IL)   47187     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/gibson-city/gibson-city-melvin-sibley-falcons/football/schedule/" --to "Gibson City-Melvin-Sibley (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/gibson-city/gibson-city-melvin-sibley-falcons/football/schedule/ -> Gibson City-Melvin-Sibley (IL) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/il/gibson-city/  Gibson City Gibson City (IL)  32266    Gibson City-Melvin-Sibley (IL)  62470     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/lockport/lockport-porters/football/schedule/" --to "Lockport Township (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/lockport/lockport-porters/football/schedule/ -> Lockport Township (IL) - COMMIT
+   URL                                       ProperName     Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/il/lockport/loc  Lockport (IL)  14171    Lockport Township (IL)  64422     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/niles/niles-notre-dame-dons/football/schedule/" --to "Niles Notre Dame (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/niles/niles-notre-dame-dons/football/schedule/ -> Niles Notre Dame (IL) - COMMIT
+   URL                                       ProperName        Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/il/niles/niles-  Niles Notre (IL)  40776    Niles Notre Dame (IL)  65971     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/oak-park/oak-park-river-forest-huskies/football/schedule/" --to "Oak Park-River Forest (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/oak-park/oak-park-river-forest-huskies/football/schedule/ -> Oak Park-River Forest (IL) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/il/oak-park/oak  Oak Park Oak Park (IL)  19087    Oak Park-River Forest (IL)  31278     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/oneida/rowva-williamsfield-cougars/football/schedule/" --to "Oneida ROWVA-Williamsfield (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/oneida/rowva-williamsfield-cougars/football/schedule/ -> Oneida ROWVA-Williamsfield (IL) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/il/oneida/rowva  Oneida Rowva Williamsfield (IL)  18950    Oneida ROWVA-Williamsfield (IL)  17773     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/ottawa/ottawa-pirates/football/schedule/" --to "Ottawa Township (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/ottawa/ottawa-pirates/football/schedule/ -> Ottawa Township (IL) - COMMIT
+   URL                                       ProperName   Team_ID  NewProperName         NewTeam_ID
+   https://www.maxpreps.com/il/ottawa/ottaw  Ottawa (IL)  43929    Ottawa Township (IL)  66400     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/springfield/sacred-heart-griffin-cyclones/football/schedule/" --to "Springfield Sacred Heart-Griffin (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/springfield/sacred-heart-griffin-cyclones/football/schedule/ -> Springfield Sacred Heart-Griffin (IL) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/il/springfield/  Springfield Sacred Heart (IL)  39156    Springfield Sacred Heart-Griffin (IL)  68370     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/streator/streator-bulldogs/football/schedule/" --to "Streator Township (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/streator/streator-bulldogs/football/schedule/ -> Streator Township (IL) - COMMIT
+   URL                                       ProperName     Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/il/streator/str  Streator (IL)  22620    Streator Township (IL)  68539     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/west-frankfort/frankfort-redbirds/football/schedule/" --to "West Frankfort (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/west-frankfort/frankfort-redbirds/football/schedule/ -> West Frankfort (IL) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName        NewTeam_ID
+   https://www.maxpreps.com/il/west-frankfo  West Frankfort Frankfort (IL)  19939    West Frankfort (IL)  69624     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/astoria/astoria-vit-rebels/football/schedule/" --to "Astoria-Table Grove VIT (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/astoria/astoria-vit-rebels/football/schedule/ -> Astoria-Table Grove VIT (IL) - COMMIT
+   URL                                       ProperName        Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/il/astoria/asto  Astoria Vit (IL)  12969    Astoria-Table Grove VIT (IL)  59152     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/aurora/marmion-cadets/football/schedule/" --to "Aurora Marmion Military Academy (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/aurora/marmion-cadets/football/schedule/ -> Aurora Marmion Military Academy (IL) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/il/aurora/marmi  Aurora Marmion Academy (IL)  13096    Aurora Marmion Military Academy (IL)  59216     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago/corliss-butler-college-prep/football/schedule/" --to "Chicago Corliss-Butler College Prep (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago/corliss-butler-college-prep/football/schedule/ -> Chicago Corliss-Butler College Prep (IL) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/il/chicago/corl  Chicago Corliss Butler (IL)  30283    Chicago Corliss-Butler College Prep (IL)  71616     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago-heights/bloom-blazing-trojan/football/schedule/" --to "Chicago Heights Bloom Township (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago-heights/bloom-blazing-trojan/football/schedule/ -> Chicago Heights Bloom Township (IL) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/il/chicago-heig  Chicago Heights Bloom (IL)  15619    Chicago Heights Bloom Township (IL)  60599     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago/rowe-clark-masai-lions/football/schedule/" --to "Chicago Rowe-Clark Math & Science Academy (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago/rowe-clark-masai-lions/football/schedule/ -> Chicago Rowe-Clark Math & Science Academy (IL) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/il/chicago/rowe  Chicago Rowe Clark (IL)  40143    Chicago Rowe-Clark Math & Science Academ  60641     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago/westinghouse-warriors/football/schedule/" --to "Chicago Westinghouse College Prep (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago/westinghouse-warriors/football/schedule/ -> Chicago Westinghouse College Prep (IL) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                           NewTeam_ID
+   https://www.maxpreps.com/il/chicago/west  Chicago Westinghouse (IL)  30867    Chicago Westinghouse College Prep (IL)  60661     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/chicago/whitney-young-dolphins/football/schedule/" --to "Chicago Whitney M. Young Magnet (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/chicago/whitney-young-dolphins/football/schedule/ -> Chicago Whitney M. Young Magnet (IL) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/il/chicago/whit  Chicago Whitney Young (IL)  5600     Chicago Whitney M. Young Magnet (IL)  60662     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/elgin/st-edward-green-wave/football/schedule/" --to "Elgin St. Edward Central Catholic (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/elgin/st-edward-green-wave/football/schedule/ -> Elgin St. Edward Central Catholic (IL) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                           NewTeam_ID
+   https://www.maxpreps.com/il/elgin/st-edw  Elgin Saint Edward (IL)  42163    Elgin St. Edward Central Catholic (IL)  61751     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/erie/erie-prophetstown-panthers/football/schedule/" --to "Erie-Prophetstown Coop (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/erie/erie-prophetstown-panthers/football/schedule/ -> Erie-Prophetstown Coop (IL) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/il/erie/erie-pr  Erie Prophetstown (IL)  10436    Erie-Prophetstown Coop (IL)  61878     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/greenfield/greenfield-northwestern-tigers/football/schedule/" --to "Greenfield-Northwestern Coop (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/greenfield/greenfield-northwestern-tigers/football/schedule/ -> Greenfield-Northwestern Coop (IL) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/il/greenfield/g  Greenfield Northwestern (IL)  27731    Greenfield-Northwestern Coop (IL)  62668     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/harvey/thornton-wildcats/football/schedule/" --to "Harvey Thornton Township (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/harvey/thornton-wildcats/football/schedule/ -> Harvey Thornton Township (IL) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/il/harvey/thorn  Harvey Thornton (IL)  11815    Harvey Thornton Township (IL)  18398     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/lemont/lemont-lemont-hs/football/schedule/" --to "Lemont (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/lemont/lemont-lemont-hs/football/schedule/ -> Lemont (IL) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/il/lemont/lemon  Lemont Lemont (IL)  30457    Lemont (IL)    64239     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/leroy/leroy-panthers/football/schedule/" --to "LeRoy Coop (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/leroy/leroy-panthers/football/schedule/ -> LeRoy Coop (IL) - COMMIT
+   URL                                       ProperName  Team_ID  NewProperName    NewTeam_ID
+   https://www.maxpreps.com/il/leroy/leroy-  LeRoy (IL)  4214     LeRoy Coop (IL)  13914     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/mt-carmel/mt-carmel-golden-aces/football/schedule/" --to "Mount Carmel (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/mt-carmel/mt-carmel-golden-aces/football/schedule/ -> Mount Carmel (IL) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName      NewTeam_ID
+   https://www.maxpreps.com/il/mt-carmel/mt  Mount Carmel Mt. Carmel (IL)  16036    Mount Carmel (IL)  65547     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/normal/normal-university-pioneers/football/schedule/" --to "Normal University High (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/normal/normal-university-pioneers/football/schedule/ -> Normal University High (IL) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/il/normal/norma  Normal University (IL)  31709    Normal University High (IL)  66002     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/orland-park/sandburg-eagles/football/schedule/" --to "Orland Park Carl Sandburg (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/orland-park/sandburg-eagles/football/schedule/ -> Orland Park Carl Sandburg (IL) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/il/orland-park/  Orland Park Sandburg (IL)  33982    Orland Park Carl Sandburg (IL)  66323     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/ottawa/marquette-crusaders/football/schedule/" --to "Ottawa Marquette Academy (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/ottawa/marquette-crusaders/football/schedule/ -> Ottawa Marquette Academy (IL) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/il/ottawa/marqu  Ottawa Marquette (IL)  39609    Ottawa Marquette Academy (IL)  18529     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/peoria/manual-rams/football/schedule/" --to "Peoria Manual Academy (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/peoria/manual-rams/football/schedule/ -> Peoria Manual Academy (IL) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/il/peoria/manua  Peoria Manual (IL)  41154    Peoria Manual Academy (IL)  66661     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/spring-valley/hall-putnam-county-red-devils/football/schedule/" --to "Spring Valley Hall-Putnam County (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/spring-valley/hall-putnam-county-red-devils/football/schedule/ -> Spring Valley Hall-Putnam County (IL) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/il/spring-valle  Spring Valley Hall Putnam (IL)  424      Spring Valley Hall-Putnam County (IL)  32607     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap IL --url "https://www.maxpreps.com/il/sullivan/sullivan-okaw-valley-bethany-redskins/football/schedule/" --to "Sullivan-Okaw Valley-Bethany (IL)" --commit
+
+REMAP https://www.maxpreps.com/il/sullivan/sullivan-okaw-valley-bethany-redskins/football/schedule/ -> Sullivan-Okaw Valley-Bethany (IL) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/il/sullivan/sul  Sullivan Okaw (IL)  34074    Sullivan-Okaw Valley-Bethany (IL)  27182     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck IL --commit
+
+MAPPING CHECK IL - COMMIT (Team_ID set to the ProperName ID)
+ 43 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_mapcheck_COMMITTED_20261112_0646.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                         
+   https://www.maxpreps.com/il/hebron/alden  Alden-Hebron (IL)                         20334    None    ProperName not in HS_Team_Names  None                                 
+   https://www.maxpreps.com/il/chicago/morg  Chicago Morgan Park (IL)                  48636    None    ProperName not in HS_Team_Names  None                                 
+   https://www.maxpreps.com/il/chicago/pers  Chicago Perspectives Leadership Iit-Math  29403    None    ProperName not in HS_Team_Names  None                                 
+   https://www.maxpreps.com/il/chicago/sain  Chicago Saint Ignatius (IL)               35289    None    ProperName not in HS_Team_Names  None                                 
+   https://www.maxpreps.com/il/elmhurst/ic-  Elmhurst Ic Catholic (IL)                 44337    None    ProperName not in HS_Team_Names  None                                 
+   https://www.maxpreps.com/il/flora/flora-  Flora (IL)                                8268     None    ProperName not in HS_Team_Names  None                                 
+   https://www.maxpreps.com/il/hamilton/ham  Hamilton Warsaw (IL)                      14414    None    ProperName not in HS_Team_Names  None                                 
+   https://www.maxpreps.com/il/savanna/west  Savanna West Carroll (IL)                 33297    None    ProperName not in HS_Team_Names  None                                 
+   https://www.maxpreps.com/il/winchester/w  Winchester West Central (IL)              34243    None    ProperName not in HS_Team_Names  None                                 
+   https://www.maxpreps.com/il/albion/edwar  Albion Edwards County-Grayville (IL)      58842    58825   Team_ID points to another name   Alden-Hebron-Faith Lutheran (IL)     
+   https://www.maxpreps.com/il/aurora/auror  Aurora East (IL)                          59216    59214   Team_ID points to another name   Aurora Marmion Military Academy (IL) 
+   https://www.maxpreps.com/il/bridgeport/r  Bridgeport Red Hill (IL)                  71709    59908   Team_ID points to another name   Broadlands A-B-L (IL)                
+   https://www.maxpreps.com/il/cahokia/caho  Cahokia (IL)                              71828    45547   Team_ID points to another name   Cahokia St. Catherine LaBoure (IL)   
+   https://www.maxpreps.com/il/carpentersvi  Carpentersville Dundee-Crown (IL)         60269    60271   Team_ID points to another name   Carpentersville Crown (IL)           
+   https://www.maxpreps.com/il/champaign/ch  Champaign Central (IL)                    70550    60404   Team_ID points to another name   Chapin-Triopia (IL)                  
+   https://www.maxpreps.com/il/chicago/amun  Chicago Amundsen (IL)                     58679    60562   Team_ID points to another name   Chicago Austin Poly (IL)             
+   https://www.maxpreps.com/il/chicago/math  Chicago Mather (IL)                       60621    60620   Team_ID points to another name   Chicago Mendel Catholic Prep (IL)    
+   https://www.maxpreps.com/il/chicago/chic  Chicago Vocational (IL)                   60656    60655   Team_ID points to another name   Chicago Von Steuben (IL)             
+   https://www.maxpreps.com/il/chicago/von-  Chicago Von Steuben (IL)                  60657    60656   Team_ID points to another name   Chicago Waller (IL)                  
+   https://www.maxpreps.com/il/country-club  Country Club Hills Hillcrest (IL)         60578    36451   Team_ID points to another name   Chicago Crane-Talent Development (IL)
+   ... 23 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  34       None
+
+>>> consolidate IL --reason "IL round 1: 2024 MaxPreps short names (Barrington Fillies, Canton Little, Carlyle Indians, Mt. Carava, Solorio Sun, Uic College, Dixon Dukes, Effingham Flaming, Geneseo Maple, Niles Notre, Oak Park Oak Park, Lockport, Ottawa, Streator...), same-school variants (Al Raby, Savanna Community, Spring Valley Hall, Marian Central Catholic, Winola, Sidell Jamaica, McLeansboro Hamilton County), renames to latest (Lincoln-Way -> Lincoln-Way Central, Gordon Tech -> DePaul College Prep, Marine Military -> Marine Leadership Academy)"
+Consolidating IL from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\IL_Alias_Rules.csv
+
+[stderr]
+2026-11-12 06:46:52,846 - INFO - Starting consolidation for state: (IL) using staging table method.
+2026-11-12 06:46:52,859 - WARNING - WARNING: 763 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 06:46:52,859 - WARNING -   'Abingdon-Avon (IL)' -> 'Abingdon-Avon (IL)' (no change)
+2026-11-12 06:46:52,859 - WARNING -   'Addison Driscoll Catholic (IL)' -> 'Addison Driscoll Catholic (IL)' (no change)
+2026-11-12 06:46:52,859 - WARNING -   'Addison Trail (IL)' -> 'Addison Trail (IL)' (no change)
+2026-11-12 06:46:52,859 - WARNING -   'Albion Edwards County (IL)' -> 'Albion Edwards County (IL)' (no change)
+2026-11-12 06:46:52,859 - WARNING -   'Albion Edwards County-Grayville (IL)' -> 'Albion Edwards County-Grayville (IL)' (no change)
+2026-11-12 06:46:52,860 - WARNING -   'Alden-Hebron-Faith Lutheran (IL)' -> 'Alden-Hebron-Faith Lutheran (IL)' (no change)
+2026-11-12 06:46:52,860 - WARNING -   'Aledo Mercer County (IL)' -> 'Aledo Mercer County (IL)' (no change)
+2026-11-12 06:46:52,860 - WARNING -   'Alexis United (IL)' -> 'Alexis United (IL)' (no change)
+2026-11-12 06:46:52,860 - WARNING -   'Algonquin Jacobs (IL)' -> 'Algonquin Jacobs (IL)' (no change)
+2026-11-12 06:46:52,860 - WARNING -   'Alton (IL)' -> 'Alton (IL)' (no change)
+2026-11-12 06:46:52,860 - WARNING -   'Alton Marquette Catholic (IL)' -> 'Alton Marquette Catholic (IL)' (no change)
+2026-11-12 06:46:52,860 - WARNING -   'Alton Western Military Academy (IL)' -> 'Alton Western Military Academy (IL)' (no change)
+2026-11-12 06:46:52,860 - WARNING -   'Amboy (IL)' -> 'Amboy (IL)' (no change)
+2026-11-12 06:46:52,861 - WARNING -   'Amboy-LaMoille (IL)' -> 'Amboy-LaMoille (IL)' (no change)
+2026-11-12 06:46:52,861 - WARNING -   'Anna-Jonesboro (IL)' -> 'Anna-Jonesboro (IL)' (no change)
+2026-11-12 06:46:52,861 - WARNING -   'Annawan (IL)' -> 'Annawan (IL)' (no change)
+2026-11-12 06:46:52,861 - WARNING -   'Antioch (IL)' -> 'Antioch (IL)' (no change)
+2026-11-12 06:46:52,861 - WARNING -   'Arcola (IL)' -> 'Arcola (IL)' (no change)
+2026-11-12 06:46:52,861 - WARNING -   'Argenta-Oreana (IL)' -> 'Argenta-Oreana (IL)' (no change)
+2026-11-12 06:46:52,861 - WARNING -   'Arlington Heights (IL)' -> 'Arlington Heights (IL)' (no change)
+2026-11-12 06:46:52,861 - WARNING -   'Arlington Heights Christian Liberty Academy (IL)' -> 'Arlington Heights Christian Liberty Academy (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Arlington Heights Forest View (IL)' -> 'Arlington Heights Forest View (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Arlington Heights Hersey (IL)' -> 'Arlington Heights Hersey (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Arlington Heights St. Viator (IL)' -> 'Arlington Heights St. Viator (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Ashton (IL)' -> 'Ashton (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Ashton-Franklin Center (IL)' -> 'Ashton-Franklin Center (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Assumption (IL)' -> 'Assumption (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Astoria (IL)' -> 'Astoria (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Astoria-Table Grove VIT (IL)' -> 'Astoria-Table Grove VIT (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Athens (IL)' -> 'Athens (IL)' (no change)
+2026-11-12 06:46:52,862 - WARNING -   'Atkinson (IL)' -> 'Atkinson (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Atwood-Hammond (IL)' -> 'Atwood-Hammond (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Auburn (IL)' -> 'Auburn (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Aurora Central Catholic (IL)' -> 'Aurora Central Catholic (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Aurora Christian (IL)' -> 'Aurora Christian (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Aurora East (IL)' -> 'Aurora East (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Aurora Marmion Military Academy (IL)' -> 'Aurora Marmion Military Academy (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Aurora Metea Valley (IL)' -> 'Aurora Metea Valley (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Aurora Waubonsie Valley (IL)' -> 'Aurora Waubonsie Valley (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Avon (IL)' -> 'Avon (IL)' (no change)
+2026-11-12 06:46:52,863 - WARNING -   'Barrington (IL)' -> 'Barrington (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Barry Western Community (IL)' -> 'Barry Western Community (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Bartlett (IL)' -> 'Bartlett (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Bartonville Limestone (IL)' -> 'Bartonville Limestone (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Batavia (IL)' -> 'Batavia (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Beardstown (IL)' -> 'Beardstown (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Belleville (IL)' -> 'Belleville (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Belleville Althoff Catholic (IL)' -> 'Belleville Althoff Catholic (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Belleville East (IL)' -> 'Belleville East (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Belleville West (IL)' -> 'Belleville West (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Belvidere (IL)' -> 'Belvidere (IL)' (no change)
+2026-11-12 06:46:52,864 - WARNING -   'Belvidere North (IL)' -> 'Belvidere North (IL)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Bement (IL)' -> 'Bement (IL)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Bensenville Fenton (IL)' -> 'Bensenville Fenton (IL)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Benton (IL)' -> 'Benton (IL)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Benton-Scales Mound (IL)' -> 'Benton-Scales Mound (IL)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Benton-Scales Mound (IL)-Shullsburg (WI)' -> 'Benton-Scales Mound (IL)-Shullsburg (WI)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Berwyn Morton West (IL)' -> 'Berwyn Morton West (IL)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Bethalto Civic Memorial (IL)' -> 'Bethalto Civic Memorial (IL)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Bethany (IL)' -> 'Bethany (IL)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Biggsville Union (IL)' -> 'Biggsville Union (IL)' (no change)
+2026-11-12 06:46:52,865 - WARNING -   'Biggsville West Central (IL)' -> 'Biggsville West Central (IL)' (no change)
+2026-11-12 06:46:52,866 - WARNING -   'Bismarck-Henning (IL)' -> 'Bismarck-Henning (IL)' (no change)
+2026-11-12 06:46:52,866 - WARNING -   'Bloomington (IL)' -> 'Bloomington (IL)' (no change)
+2026-11-12 06:46:52,866 - WARNING -   'Bloomington Central Catholic (IL)' -> 'Bloomington Central Catholic (IL)' (no change)
+2026-11-12 06:46:52,866 - WARNING -   'Bloomington Trinity (IL)' -> 'Bloomington Trinity (IL)' (no change)
+2026-11-12 06:46:52,866 - WARNING -   'Blue Island Community (IL)' -> 'Blue Island Community (IL)' (no change)
+2026-11-12 06:46:52,866 - WARNING -   'Blue Island Eisenhower (IL)' -> 'Blue Island Eisenhower (IL)' (no change)
+2026-11-12 06:46:52,866 - WARNING -   'Bolingbrook (IL)' -> 'Bolingbrook (IL)' (no change)
+2026-11-12 06:46:52,866 - WARNING -   'Bradford (IL)' -> 'Bradford (IL)' (no change)
+2026-11-12 06:46:52,867 - WARNING -   'Bradley-Bourbonnais Coummunity (IL)' -> 'Bradley-Bourbonnais Coummunity (IL)' (no change)
+2026-11-12 06:46:52,867 - WARNING -   'Braidwood Reed-Custer (IL)' -> 'Braidwood Reed-Custer (IL)' (no change)
+2026-11-12 06:46:52,867 - WARNING -   'Breese Central (IL)' -> 'Breese Central (IL)' (no change)
+2026-11-12 06:46:52,867 - WARNING -   'Breese Mater Dei (IL)' -> 'Breese Mater Dei (IL)' (no change)
+2026-11-12 06:46:52,867 - WARNING -   'Bridgeport (IL)' -> 'Bridgeport (IL)' (no change)
+2026-11-12 06:46:52,867 - WARNING -   'Bridgeport Red Hill (IL)' -> 'Bridgeport Red Hill (IL)' (no change)
+2026-11-12 06:46:52,867 - WARNING -   'Broadlands A-B-L (IL)' -> 'Broadlands A-B-L (IL)' (no change)
+2026-11-12 06:46:52,867 - WARNING -   'Broadlands Heritage (IL)' -> 'Broadlands Heritage (IL)' (no change)
+2026-11-12 06:46:52,867 - WARNING -   'Buda Western (IL)' -> 'Buda Western (IL)' (no change)
+2026-11-12 06:46:52,868 - WARNING -   'Buffalo Grove (IL)' -> 'Buffalo Grove (IL)' (no change)
+2026-11-12 06:46:52,868 - WARNING -   'Bunker Hill (IL)' -> 'Bunker Hill (IL)' (no change)
+2026-11-12 06:46:52,868 - WARNING -   'Burbank Reavis (IL)' -> 'Burbank Reavis (IL)' (no change)
+2026-11-12 06:46:52,868 - WARNING -   'Burbank St. Laurence (IL)' -> 'Burbank St. Laurence (IL)' (no change)
+2026-11-12 06:46:52,868 - WARNING -   'Burlington Central (IL)' -> 'Burlington Central (IL)' (no change)
+2026-11-12 06:46:52,868 - WARNING -   'Bushnell Prairie City (IL)' -> 'Bushnell Prairie City (IL)' (no change)
+2026-11-12 06:46:52,868 - WARNING -   'Bushnell-Prairie City-Avon (IL)' -> 'Bushnell-Prairie City-Avon (IL)' (no change)
+2026-11-12 06:46:52,868 - WARNING -   'Byron (IL)' -> 'Byron (IL)' (no change)
+2026-11-12 06:46:52,869 - WARNING -   'Cahokia (IL)' -> 'Cahokia (IL)' (no change)
+2026-11-12 06:46:52,869 - WARNING -   'Cairo (IL)' -> 'Cairo (IL)' (no change)
+2026-11-12 06:46:52,869 - WARNING -   'Cairo Meridian Coop (IL)' -> 'Cairo Meridian Coop (IL)' (no change)
+2026-11-12 06:46:52,869 - WARNING -   'Calumet City Thornton Fractional North (IL)' -> 'Calumet City Thornton Fractional North (IL)' (no change)
+2026-11-12 06:46:52,869 - WARNING -   'Cambridge (IL)' -> 'Cambridge (IL)' (no change)
+2026-11-12 06:46:52,869 - WARNING -   'Camp Point Central-Southeastern (IL)' -> 'Camp Point Central-Southeastern (IL)' (no change)
+2026-11-12 06:46:52,869 - WARNING -   'Canton (IL)' -> 'Canton (IL)' (no change)
+2026-11-12 06:46:52,869 - WARNING -   'Carbondale (IL)' -> 'Carbondale (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carlinville (IL)' -> 'Carlinville (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carlyle (IL)' -> 'Carlyle (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carmi (IL)' -> 'Carmi (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carmi-White County (IL)' -> 'Carmi-White County (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carol Stream Glenbard North (IL)' -> 'Carol Stream Glenbard North (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carpentersville Crown (IL)' -> 'Carpentersville Crown (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carpentersville Dundee (IL)' -> 'Carpentersville Dundee (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carpentersville Dundee-Crown (IL)' -> 'Carpentersville Dundee-Crown (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carrollton (IL)' -> 'Carrollton (IL)' (no change)
+2026-11-12 06:46:52,870 - WARNING -   'Carterville (IL)' -> 'Carterville (IL)' (no change)
+2026-11-12 06:46:52,871 - WARNING -   'Carthage & Hancock Central (IL)' -> 'Carthage & Hancock Central (IL)' (no change)
+2026-11-12 06:46:52,871 - WARNING -   'Carthage (IL)' -> 'Carthage (IL)' (no change)
+2026-11-12 06:46:52,871 - WARNING -   'Carthage Illini West (IL)' -> 'Carthage Illini West (IL)' (no change)
+2026-11-12 06:46:52,871 - WARNING -   'Cary-Grove (IL)' -> 'Cary-Grove (IL)' (no change)
+2026-11-12 06:46:52,871 - WARNING -   'Casey (IL)' -> 'Casey (IL)' (no change)
+2026-11-12 06:46:52,871 - WARNING -   'Casey-Westfield (IL)' -> 'Casey-Westfield (IL)' (no change)
+2026-11-12 06:46:52,871 - WARNING -   'Catlin (IL)' -> 'Catlin (IL)' (no change)
+2026-11-12 06:46:52,871 - WARNING -   'Centralia (IL)' -> 'Centralia (IL)' (no change)
+2026-11-12 06:46:52,871 - WARNING -   'Cerro Gordo-DeLand-Weldon-Bement (IL)' -> 'Cerro Gordo-DeLand-Weldon-Bement (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Champaign Centennial (IL)' -> 'Champaign Centennial (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Champaign Central (IL)' -> 'Champaign Central (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Chapin-Triopia (IL)' -> 'Chapin-Triopia (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Charleston (IL)' -> 'Charleston (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Chatham Glenwood (IL)' -> 'Chatham Glenwood (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Chatsworth (IL)' -> 'Chatsworth (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Chenoa (IL)' -> 'Chenoa (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Chester (IL)' -> 'Chester (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Chicago Academy (IL)' -> 'Chicago Academy (IL)' (no change)
+2026-11-12 06:46:52,872 - WARNING -   'Chicago Agricultural Science (IL)' -> 'Chicago Agricultural Science (IL)' (no change)
+2026-11-12 06:46:52,873 - WARNING -   'Chicago Amundsen (IL)' -> 'Chicago Amundsen (IL)' (no change)
+2026-11-12 06:46:52,873 - WARNING -   'Chicago Austin Poly (IL)' -> 'Chicago Austin Poly (IL)' (no change)
+2026-11-12 06:46:52,873 - WARNING -   'Chicago Austin Poly (IL)' -> 'Chicago Austin Poly (IL)' (no change)
+2026-11-12 06:46:52,873 - WARNING -   'Chicago Back of the Yards College Prep (IL)' -> 'Chicago Back of the Yards College Prep (IL)' (no change)
+2026-11-12 06:46:52,873 - WARNING -   'Chicago Bogan (IL)' -> 'Chicago Bogan (IL)' (no change)
+2026-11-12 06:46:52,873 - WARNING -   'Chicago Bowen (IL)' -> 'Chicago Bowen (IL)' (no change)
+2026-11-12 06:46:52,873 - WARNING -   'Chicago Bowen-Baker College Prep (IL)' -> 'Chicago Bowen-Baker College Prep (IL)' (no change)
+2026-11-12 06:46:52,873 - WARNING -   'Chicago Brooks College Prep (IL)' -> 'Chicago Brooks College Prep (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Brother Rice (IL)' -> 'Chicago Brother Rice (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Bulls College Prep (IL)' -> 'Chicago Bulls College Prep (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Calumet (IL)' -> 'Chicago Calumet (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Carver (IL)' -> 'Chicago Carver (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Catalyst-Maria (IL)' -> 'Chicago Catalyst-Maria (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Christ the King (IL)' -> 'Chicago Christ the King (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Clark Prep (IL)' -> 'Chicago Clark Prep (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Clemente (IL)' -> 'Chicago Clemente (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Collins Academy (IL)' -> 'Chicago Collins Academy (IL)' (no change)
+2026-11-12 06:46:52,874 - WARNING -   'Chicago Comer Prep (IL)' -> 'Chicago Comer Prep (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago Corliss (IL)' -> 'Chicago Corliss (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago Corliss-Butler College Prep (IL)' -> 'Chicago Corliss-Butler College Prep (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago Curie (IL)' -> 'Chicago Curie (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago De La Salle (IL)' -> 'Chicago De La Salle (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago DePaul College Prep (IL)' -> 'Chicago DePaul College Prep (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago DRW College Prep (IL)' -> 'Chicago DRW College Prep (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago Dunbar (IL)' -> 'Chicago Dunbar (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago DuSable (IL)' -> 'Chicago DuSable (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago Dyett (IL)' -> 'Chicago Dyett (IL)' (no change)
+2026-11-12 06:46:52,875 - WARNING -   'Chicago Englewood (IL)' -> 'Chicago Englewood (IL)' (no change)
+2026-11-12 06:46:52,876 - WARNING -   'Chicago Englewood (IL)' -> 'Chicago Englewood (IL)' (no change)
+2026-11-12 06:46:52,876 - WARNING -   'Chicago Englewood Stem (IL)' -> 'Chicago Englewood Stem (IL)' (no change)
+2026-11-12 06:46:52,876 - WARNING -   'Chicago Eric Solorio Academy (IL)' -> 'Chicago Eric Solorio Academy (IL)' (no change)
+2026-11-12 06:46:52,876 - WARNING -   'Chicago Farragut (IL)' -> 'Chicago Farragut (IL)' (no change)
+2026-11-12 06:46:52,876 - WARNING -   'Chicago Fenger (IL)' -> 'Chicago Fenger (IL)' (no change)
+2026-11-12 06:46:52,876 - WARNING -   'Chicago Foreman (IL)' -> 'Chicago Foreman (IL)' (no change)
+2026-11-12 06:46:52,876 - WARNING -   'Chicago Forestville (IL)' -> 'Chicago Forestville (IL)' (no change)
+2026-11-12 06:46:52,876 - WARNING -   'Chicago Gage Park (IL)' -> 'Chicago Gage Park (IL)' (no change)
+2026-11-12 06:46:52,876 - WARNING -   'Chicago Goode STEM Academy (IL)' -> 'Chicago Goode STEM Academy (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Hales Franciscan (IL)' -> 'Chicago Hales Franciscan (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Harlan (IL)' -> 'Chicago Harlan (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Harper (IL)' -> 'Chicago Harper (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Harrison Tech (IL)' -> 'Chicago Harrison Tech (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Heights Bloom Township (IL)' -> 'Chicago Heights Bloom Township (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Heights Bloom Trail (IL)' -> 'Chicago Heights Bloom Trail (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Heights Marian Catholic (IL)' -> 'Chicago Heights Marian Catholic (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Hirsch (IL)' -> 'Chicago Hirsch (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Hope Academy (IL)' -> 'Chicago Hope Academy (IL)' (no change)
+2026-11-12 06:46:52,877 - WARNING -   'Chicago Hubbard (IL)' -> 'Chicago Hubbard (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago Hyde Park (IL)' -> 'Chicago Hyde Park (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago Hyde Park (IL)' -> 'Chicago Hyde Park (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago International Charter-Longwood Academy (IL)' -> 'Chicago International Charter-Longwood Academy (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago ITW David Speer Academy (IL)' -> 'Chicago ITW David Speer Academy (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago John Hope College Prep (IL)' -> 'Chicago John Hope College Prep (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago Johnson College Prep (IL)' -> 'Chicago Johnson College Prep (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago Juarez (IL)' -> 'Chicago Juarez (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago Julian (IL)' -> 'Chicago Julian (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago Kelly (IL)' -> 'Chicago Kelly (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago Kelvyn Park (IL)' -> 'Chicago Kelvyn Park (IL)' (no change)
+2026-11-12 06:46:52,878 - WARNING -   'Chicago Kennedy (IL)' -> 'Chicago Kennedy (IL)' (no change)
+2026-11-12 06:46:52,879 - WARNING -   'Chicago Kenwood (IL)' -> 'Chicago Kenwood (IL)' (no change)
+2026-11-12 06:46:52,879 - WARNING -   'Chicago King (IL)' -> 'Chicago King (IL)' (no change)
+2026-11-12 06:46:52,879 - WARNING -   'Chicago Lake View (IL)' -> 'Chicago Lake View (IL)' (no change)
+2026-11-12 06:46:52,879 - WARNING -   'Chicago Lane Tech (IL)' -> 'Chicago Lane Tech (IL)' (no change)
+2026-11-12 06:46:52,879 - WARNING -   'Chicago Leo (IL)' -> 'Chicago Leo (IL)' (no change)
+2026-11-12 06:46:52,879 - WARNING -   'Chicago Lincoln Park (IL)' -> 'Chicago Lincoln Park (IL)' (no change)
+2026-11-12 06:46:52,879 - WARNING -   'Chicago Lindblom (IL)' -> 'Chicago Lindblom (IL)' (no change)
+2026-11-12 06:46:52,879 - WARNING -   'Chicago Little Village Lawndale (IL)' -> 'Chicago Little Village Lawndale (IL)' (no change)
+2026-11-12 06:46:52,879 - WARNING -   'Chicago Luther North (IL)' -> 'Chicago Luther North (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Luthern South (IL)' -> 'Chicago Luthern South (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Manley (IL)' -> 'Chicago Manley (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Marine Leadership Academy (IL)' -> 'Chicago Marine Leadership Academy (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Marist (IL)' -> 'Chicago Marist (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Marshall (IL)' -> 'Chicago Marshall (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Mather (IL)' -> 'Chicago Mather (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Mendel Catholic Prep (IL)' -> 'Chicago Mendel Catholic Prep (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Military Academy (IL)' -> 'Chicago Military Academy (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Military Academy-Bronzeville (IL)' -> 'Chicago Military Academy-Bronzeville (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Morgan Park Academy (IL)' -> 'Chicago Morgan Park Academy (IL)' (no change)
+2026-11-12 06:46:52,880 - WARNING -   'Chicago Mt. Carmel (IL)' -> 'Chicago Mt. Carmel (IL)' (no change)
+2026-11-12 06:46:52,881 - WARNING -   'Chicago Muchin College Prep (IL)' -> 'Chicago Muchin College Prep (IL)' (no change)
+2026-11-12 06:46:52,881 - WARNING -   'Chicago Near North Career Metropolitan (IL)' -> 'Chicago Near North Career Metropolitan (IL)' (no change)
+2026-11-12 06:46:52,881 - WARNING -   'Chicago North Lawndale College Prep (IL)' -> 'Chicago North Lawndale College Prep (IL)' (no change)
+2026-11-12 06:46:52,881 - WARNING -   'Chicago Orr (IL)' -> 'Chicago Orr (IL)' (no change)
+2026-11-12 06:46:52,881 - WARNING -   'Chicago Parker (IL)' -> 'Chicago Parker (IL)' (no change)
+2026-11-12 06:46:52,881 - WARNING -   'Chicago Payton College Prep (IL)' -> 'Chicago Payton College Prep (IL)' (no change)
+2026-11-12 06:46:52,881 - WARNING -   'Chicago Perspectives Leadership-IIT-Joslin-Tech (IL)' -> 'Chicago Perspectives Leadership-IIT-Joslin-Tech (IL)' (no change)
+2026-11-12 06:46:52,881 - WARNING -   'Chicago Phillips (IL)' -> 'Chicago Phillips (IL)' (no change)
+2026-11-12 06:46:52,881 - WARNING -   'Chicago Phoenix Military Academy (IL)' -> 'Chicago Phoenix Military Academy (IL)' (no change)
+2026-11-12 06:46:52,882 - WARNING -   'Chicago Pritzker College Prep (IL)' -> 'Chicago Pritzker College Prep (IL)' (no change)
+2026-11-12 06:46:52,882 - WARNING -   'Chicago Prosser (IL)' -> 'Chicago Prosser (IL)' (no change)
+2026-11-12 06:46:52,882 - WARNING -   'Chicago Rauner College Prep (IL)' -> 'Chicago Rauner College Prep (IL)' (no change)
+2026-11-12 06:46:52,882 - WARNING -   'Chicago Robeson (IL)' -> 'Chicago Robeson (IL)' (no change)
+2026-11-12 06:46:52,882 - WARNING -   'Chicago Roosevelt (IL)' -> 'Chicago Roosevelt (IL)' (no change)
+2026-11-12 06:46:52,882 - WARNING -   'Chicago Rowe-Clark Math & Science Academy (IL)' -> 'Chicago Rowe-Clark Math & Science Academy (IL)' (no change)
+2026-11-12 06:46:52,882 - WARNING -   'Chicago Schurz (IL)' -> 'Chicago Schurz (IL)' (no change)
+2026-11-12 06:46:52,882 - WARNING -   'Chicago Senn (IL)' -> 'Chicago Senn (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago Simeon (IL)' -> 'Chicago Simeon (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago South Shore International (IL)' -> 'Chicago South Shore International (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago St. Rita (IL)' -> 'Chicago St. Rita (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago Steinmetz College Prep (IL)' -> 'Chicago Steinmetz College Prep (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago Sullivan (IL)' -> 'Chicago Sullivan (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago Taft (IL)' -> 'Chicago Taft (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago The Noble Academy (IL)' -> 'Chicago The Noble Academy (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago Tilden (IL)' -> 'Chicago Tilden (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago Uplift (IL)' -> 'Chicago Uplift (IL)' (no change)
+2026-11-12 06:46:52,883 - WARNING -   'Chicago Vocational (IL)' -> 'Chicago Vocational (IL)' (no change)
+2026-11-12 06:46:52,884 - WARNING -   'Chicago Von Steuben (IL)' -> 'Chicago Von Steuben (IL)' (no change)
+2026-11-12 06:46:52,884 - WARNING -   'Chicago Waller (IL)' -> 'Chicago Waller (IL)' (no change)
+2026-11-12 06:46:52,884 - WARNING -   'Chicago Washington (IL)' -> 'Chicago Washington (IL)' (no change)
+2026-11-12 06:46:52,884 - WARNING -   'Chicago Weber (IL)' -> 'Chicago Weber (IL)' (no change)
+2026-11-12 06:46:52,884 - WARNING -   'Chicago Wells (IL)' -> 'Chicago Wells (IL)' (no change)
+2026-11-12 06:46:52,884 - WARNING -   'Chicago Westinghouse College Prep (IL)' -> 'Chicago Westinghouse College Prep (IL)' (no change)
+2026-11-12 06:46:52,884 - WARNING -   'Chicago Whitney M. Young Magnet (IL)' -> 'Chicago Whitney M. Young Magnet (IL)' (no change)
+2026-11-12 06:46:52,884 - WARNING -   'Chillicothe Illinois Valley Central (IL)' -> 'Chillicothe Illinois Valley Central (IL)' (no change)
+2026-11-12 06:46:52,884 - WARNING -   'Chillicothe Township (IL)' -> 'Chillicothe Township (IL)' (no change)
+2026-11-12 06:46:52,885 - WARNING -   'Christopher (IL)' -> 'Christopher (IL)' (no change)
+2026-11-12 06:46:52,885 - WARNING -   'Christopher Zeigler-Royalton Coop (IL)' -> 'Christopher Zeigler-Royalton Coop (IL)' (no change)
+2026-11-12 06:46:52,885 - WARNING -   'Cicero Morton East (IL)' -> 'Cicero Morton East (IL)' (no change)
+2026-11-12 06:46:52,885 - WARNING -   'Cicero Morton East Opp ""St. John"" (IL)' -> 'Cicero Morton East Opp ""St. John"" (IL)' (no change)
+2026-11-12 06:46:52,885 - WARNING -   'Clifton Central (IL)' -> 'Clifton Central (IL)' (no change)
+2026-11-12 06:46:52,885 - WARNING -   'Clinton (IL)' -> 'Clinton (IL)' (no change)
+2026-11-12 06:46:52,885 - WARNING -   'Coal City (IL)' -> 'Coal City (IL)' (no change)
+2026-11-12 06:46:52,885 - WARNING -   'Colfax Octavia (IL)' -> 'Colfax Octavia (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Colfax Ridgeview (IL)' -> 'Colfax Ridgeview (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Colfax Ridgeview-Lexington (IL)' -> 'Colfax Ridgeview-Lexington (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Collinsville (IL)' -> 'Collinsville (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Columbia (IL)' -> 'Columbia (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Concord Triopia-Meredosia-Chambersburg-Virginia (IL)' -> 'Concord Triopia-Meredosia-Chambersburg-Virginia (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Country Club Hills Hillcrest (IL)' -> 'Country Club Hills Hillcrest (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Crete-Monee (IL)' -> 'Crete-Monee (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Crystal Lake Central (IL)' -> 'Crystal Lake Central (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Crystal Lake Prairie Ridge (IL)' -> 'Crystal Lake Prairie Ridge (IL)' (no change)
+2026-11-12 06:46:52,886 - WARNING -   'Crystal Lake South (IL)' -> 'Crystal Lake South (IL)' (no change)
+2026-11-12 06:46:52,887 - WARNING -   'Cuba (IL)' -> 'Cuba (IL)' (no change)
+2026-11-12 06:46:52,887 - WARNING -   'Cuba-Spoon River Valley (IL)' -> 'Cuba-Spoon River Valley (IL)' (no change)
+2026-11-12 06:46:52,887 - WARNING -   'Cullom Tri-Point (IL)' -> 'Cullom Tri-Point (IL)' (no change)
+2026-11-12 06:46:52,887 - WARNING -   'Dakota (IL)' -> 'Dakota (IL)' (no change)
+2026-11-12 06:46:52,887 - WARNING -   'Danville (IL)' -> 'Danville (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Danville Schlarman (IL)' -> 'Danville Schlarman (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Danville Schlarman Academy (IL)' -> 'Danville Schlarman Academy (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Darien Hinsdale South (IL)' -> 'Darien Hinsdale South (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Decatur (IL)' -> 'Decatur (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Decatur Eisenhower (IL)' -> 'Decatur Eisenhower (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Decatur Lakeview (IL)' -> 'Decatur Lakeview (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Decatur MacArthur (IL)' -> 'Decatur MacArthur (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Decatur Stephen Decatur (IL)' -> 'Decatur Stephen Decatur (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Deer Creek-Mackinaw (IL)' -> 'Deer Creek-Mackinaw (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'Deerfield (IL)' -> 'Deerfield (IL)' (no change)
+2026-11-12 06:46:52,888 - WARNING -   'DeKalb (IL)' -> 'DeKalb (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'DeLand-Weldon (IL)' -> 'DeLand-Weldon (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'DePue (IL)' -> 'DePue (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'Des Plaines Maine West (IL)' -> 'Des Plaines Maine West (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'Dixon (IL)' -> 'Dixon (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'Dolton Thornridge (IL)' -> 'Dolton Thornridge (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'Downers Grove (IL)' -> 'Downers Grove (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'Downers Grove North (IL)' -> 'Downers Grove North (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'Downers Grove South (IL)' -> 'Downers Grove South (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'Downs Tri-Valley (IL)' -> 'Downs Tri-Valley (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'Dunlap (IL)' -> 'Dunlap (IL)' (no change)
+2026-11-12 06:46:52,889 - WARNING -   'Dupo (IL)' -> 'Dupo (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'DuQuoin (IL)' -> 'DuQuoin (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'Durand (IL)' -> 'Durand (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'Durand-Pecatonica (IL)' -> 'Durand-Pecatonica (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'Dwight-Gardner-South Wilmington (IL)' -> 'Dwight-Gardner-South Wilmington (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'East Alton-Wood River (IL)' -> 'East Alton-Wood River (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'East Dubuque (IL)' -> 'East Dubuque (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'East Moline United Township (IL)' -> 'East Moline United Township (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'East Peoria (IL)' -> 'East Peoria (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'East St. Louis (IL)' -> 'East St. Louis (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'Edwardsville (IL)' -> 'Edwardsville (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'Edwardsville Metro-East Lutheran (IL)' -> 'Edwardsville Metro-East Lutheran (IL)' (no change)
+2026-11-12 06:46:52,890 - WARNING -   'Effingham (IL)' -> 'Effingham (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'El Paso (IL)' -> 'El Paso (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'El Paso-Gridley (IL)' -> 'El Paso-Gridley (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'Eldorado (IL)' -> 'Eldorado (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'Elgin (IL)' -> 'Elgin (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'Elgin Larkin (IL)' -> 'Elgin Larkin (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'Elgin St. Edward Central Catholic (IL)' -> 'Elgin St. Edward Central Catholic (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'Elk Grove Village (IL)' -> 'Elk Grove Village (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'Elkville Elverado-Trico (IL)' -> 'Elkville Elverado-Trico (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'Elkville-Elverado (IL)' -> 'Elkville-Elverado (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'Elmhurst Immaculate Conception (IL)' -> 'Elmhurst Immaculate Conception (IL)' (no change)
+2026-11-12 06:46:52,891 - WARNING -   'Elmhurst York (IL)' -> 'Elmhurst York (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Elmwood Coop (IL)' -> 'Elmwood Coop (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Elmwood Park (IL)' -> 'Elmwood Park (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Elmwood-Brimfield Coop (IL)' -> 'Elmwood-Brimfield Coop (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Erie Community (IL)' -> 'Erie Community (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Erie-Prophetstown Coop (IL)' -> 'Erie-Prophetstown Coop (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Eureka (IL)' -> 'Eureka (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Evanston (IL)' -> 'Evanston (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Evanston Academy (IL)' -> 'Evanston Academy (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Evergreen Park (IL)' -> 'Evergreen Park (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Fairbury Prairie Central (IL)' -> 'Fairbury Prairie Central (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Fairbury-Cropsey (IL)' -> 'Fairbury-Cropsey (IL)' (no change)
+2026-11-12 06:46:52,892 - WARNING -   'Fairfield (IL)' -> 'Fairfield (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Farmer City Blue Ridge (IL)' -> 'Farmer City Blue Ridge (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Farmington (IL)' -> 'Farmington (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Fisher (IL)' -> 'Fisher (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Fithian Oakwood (IL)' -> 'Fithian Oakwood (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Fithian Oakwood-Armstrong (IL)' -> 'Fithian Oakwood-Armstrong (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Flanagan (IL)' -> 'Flanagan (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Flanagan-Woodland (IL)' -> 'Flanagan-Woodland (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Flora Coop (IL)' -> 'Flora Coop (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Flora-North Clay (IL)' -> 'Flora-North Clay (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Forrest (IL)' -> 'Forrest (IL)' (no change)
+2026-11-12 06:46:52,893 - WARNING -   'Forreston (IL)' -> 'Forreston (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Forrest-Strawn-Wing (IL)' -> 'Forrest-Strawn-Wing (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Fox Lake Grant Community (IL)' -> 'Fox Lake Grant Community (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Frankfort Lincoln-Way (IL)' -> 'Frankfort Lincoln-Way (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Frankfort Lincoln-Way East (IL)' -> 'Frankfort Lincoln-Way East (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Franklin Grove Center (IL)' -> 'Franklin Grove Center (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Franklin Park East Leyden (IL)' -> 'Franklin Park East Leyden (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Franklin Park-Northlake Leyden (IL)' -> 'Franklin Park-Northlake Leyden (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Freeburg (IL)' -> 'Freeburg (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Freeport (IL)' -> 'Freeport (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Freeport Aquin Catholic (IL)' -> 'Freeport Aquin Catholic (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Fulton (IL)' -> 'Fulton (IL)' (no change)
+2026-11-12 06:46:52,894 - WARNING -   'Galena (IL)' -> 'Galena (IL)' (no change)
+2026-11-12 06:46:52,895 - WARNING -   'Galesburg (IL)' -> 'Galesburg (IL)' (no change)
+2026-11-12 06:46:52,895 - WARNING -   'Galva (IL)' -> 'Galva (IL)' (no change)
+2026-11-12 06:46:52,895 - WARNING -   'Geneseo (IL)' -> 'Geneseo (IL)' (no change)
+2026-11-12 06:46:52,895 - WARNING -   'Geneva (IL)' -> 'Geneva (IL)' (no change)
+2026-11-12 06:46:52,895 - WARNING -   'Genoa-Kingston (IL)' -> 'Genoa-Kingston (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Georgetown (IL)' -> 'Georgetown (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Georgetown-Ridge Farm (IL)' -> 'Georgetown-Ridge Farm (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Gibson City (IL)' -> 'Gibson City (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Gibson City-Melvin-Sibley (IL)' -> 'Gibson City-Melvin-Sibley (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Gillespie (IL)' -> 'Gillespie (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Gilman (IL)' -> 'Gilman (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Gilman Iroquois West-Crescent-Iroquois (IL)' -> 'Gilman Iroquois West-Crescent-Iroquois (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Girard (IL)' -> 'Girard (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Glen Ellyn Glenbard (IL)' -> 'Glen Ellyn Glenbard (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Glen Ellyn Glenbard South (IL)' -> 'Glen Ellyn Glenbard South (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Glen Ellyn Glenbard West (IL)' -> 'Glen Ellyn Glenbard West (IL)' (no change)
+2026-11-12 06:46:52,896 - WARNING -   'Glenview Glenbrook South (IL)' -> 'Glenview Glenbrook South (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Granite City (IL)' -> 'Granite City (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Grayslake (IL)' -> 'Grayslake (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Grayslake Central (IL)' -> 'Grayslake Central (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Grayslake North (IL)' -> 'Grayslake North (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Greenfield-Northwestern Coop (IL)' -> 'Greenfield-Northwestern Coop (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Greenville (IL)' -> 'Greenville (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Gridley (IL)' -> 'Gridley (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Gurnee Warren Township (IL)' -> 'Gurnee Warren Township (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Hamilton (IL)' -> 'Hamilton (IL)' (no change)
+2026-11-12 06:46:52,897 - WARNING -   'Hamilton-Warsaw West Hancock co-op (IL)' -> 'Hamilton-Warsaw West Hancock co-op (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Hampshire (IL)' -> 'Hampshire (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Hanover River Ridge (IL)' -> 'Hanover River Ridge (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Hardin Calhoun (IL)' -> 'Hardin Calhoun (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Hardin Calhoun-Brussels (IL)' -> 'Hardin Calhoun-Brussels (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Harrisburg (IL)' -> 'Harrisburg (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Harvard (IL)' -> 'Harvard (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Harvey Thornton Township (IL)' -> 'Harvey Thornton Township (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Havana (IL)' -> 'Havana (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Herrin (IL)' -> 'Herrin (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Herscher (IL)' -> 'Herscher (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Heyworth (IL)' -> 'Heyworth (IL)' (no change)
+2026-11-12 06:46:52,898 - WARNING -   'Highland (IL)' -> 'Highland (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Highland Park (IL)' -> 'Highland Park (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Hillsboro (IL)' -> 'Hillsboro (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Hillside Proviso West (IL)' -> 'Hillside Proviso West (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Hinsdale Central (IL)' -> 'Hinsdale Central (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Hoffman Estates (IL)' -> 'Hoffman Estates (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Hoffman Estates Conant (IL)' -> 'Hoffman Estates Conant (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Homer (IL)' -> 'Homer (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Homewood-Flossmoor (IL)' -> 'Homewood-Flossmoor (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Hoopeston (IL)' -> 'Hoopeston (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Hoopeston-East Lynn (IL)' -> 'Hoopeston-East Lynn (IL)' (no change)
+2026-11-12 06:46:52,899 - WARNING -   'Huntley (IL)' -> 'Huntley (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Hutsonville-Palestine (IL)' -> 'Hutsonville-Palestine (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Illinois School for the Deaf (IL)' -> 'Illinois School for the Deaf (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Illiopolis Coop (IL)' -> 'Illiopolis Coop (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Jacksonville (IL)' -> 'Jacksonville (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Jacksonville Routt Catholic (IL)' -> 'Jacksonville Routt Catholic (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Jacksonville Routt Catholic-Westfair Christian Academy (IL)' -> 'Jacksonville Routt Catholic-Westfair Christian Academy (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Jerseyville (IL)' -> 'Jerseyville (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Jerseyville Jersey (IL)' -> 'Jerseyville Jersey (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Johnsburg (IL)' -> 'Johnsburg (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Johnston City (IL)' -> 'Johnston City (IL)' (no change)
+2026-11-12 06:46:52,900 - WARNING -   'Joliet (IL)' -> 'Joliet (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Joliet Catholic Academy (IL)' -> 'Joliet Catholic Academy (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Joliet East (IL)' -> 'Joliet East (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Joliet Township (IL)' -> 'Joliet Township (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Joliet West (IL)' -> 'Joliet West (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Joy Westmer (IL)' -> 'Joy Westmer (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Kankakee (IL)' -> 'Kankakee (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Kankakee Bishop McNamara (IL)' -> 'Kankakee Bishop McNamara (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Kankakee Eastridge (IL)' -> 'Kankakee Eastridge (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Kankakee Westview (IL)' -> 'Kankakee Westview (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Kansas Tri-County [Kansas-Shiloh-Oakland] (IL)' -> 'Kansas Tri-County [Kansas-Shiloh-Oakland] (IL)' (no change)
+2026-11-12 06:46:52,901 - WARNING -   'Kewanee Coop (IL)' -> 'Kewanee Coop (IL)' (no change)
+2026-11-12 06:46:52,902 - WARNING -   'Kewanee Wethersfield (IL)' -> 'Kewanee Wethersfield (IL)' (no change)
+2026-11-12 06:46:52,902 - WARNING -   'Kewanee Wethersfield-Annawan (IL)' -> 'Kewanee Wethersfield-Annawan (IL)' (no change)
+2026-11-12 06:46:52,902 - WARNING -   'Kincaid (IL)' -> 'Kincaid (IL)' (no change)
+2026-11-12 06:46:52,902 - WARNING -   'Kincaid South Fork (IL)' -> 'Kincaid South Fork (IL)' (no change)
+2026-11-12 06:46:52,902 - WARNING -   'Kincaid South Fork-Edinburg-Morrisonville (IL)' -> 'Kincaid South Fork-Edinburg-Morrisonville (IL)' (no change)
+2026-11-12 06:46:52,902 - WARNING -   'Kirkland Hiawatha (IL)' -> 'Kirkland Hiawatha (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'Knoxville (IL)' -> 'Knoxville (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'La Moille Community (IL)' -> 'La Moille Community (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'La Salle-Peru (IL)' -> 'La Salle-Peru (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'LaGrange Lyons (IL)' -> 'LaGrange Lyons (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'LaGrange Park Nazareth Academy (IL)' -> 'LaGrange Park Nazareth Academy (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'LaHarpe (IL)' -> 'LaHarpe (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'Lake Forest (IL)' -> 'Lake Forest (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'Lake Forest Academy (IL)' -> 'Lake Forest Academy (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'Lake Villa Lakes (IL)' -> 'Lake Villa Lakes (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'Lake Zurich (IL)' -> 'Lake Zurich (IL)' (no change)
+2026-11-12 06:46:52,903 - WARNING -   'Lanark (IL)' -> 'Lanark (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Lanark Eastland (IL)' -> 'Lanark Eastland (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Lansing Thornton Fractional South (IL)' -> 'Lansing Thornton Fractional South (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Lawrenceville (IL)' -> 'Lawrenceville (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Leaf River (IL)' -> 'Leaf River (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Lemont (IL)' -> 'Lemont (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Lemont Township (IL)' -> 'Lemont Township (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Lena-Winslow (IL)' -> 'Lena-Winslow (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'LeRoy Coop (IL)' -> 'LeRoy Coop (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Lewistown (IL)' -> 'Lewistown (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Lexington (IL)' -> 'Lexington (IL)' (no change)
+2026-11-12 06:46:52,904 - WARNING -   'Libertyville (IL)' -> 'Libertyville (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Lincoln (IL)' -> 'Lincoln (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Lincolnshire Stevenson (IL)' -> 'Lincolnshire Stevenson (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Lisle (IL)' -> 'Lisle (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Lisle Benet Academy (IL)' -> 'Lisle Benet Academy (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Litchfield (IL)' -> 'Litchfield (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Litchfield-Mt. Olive (IL)' -> 'Litchfield-Mt. Olive (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Lockport Township (IL)' -> 'Lockport Township (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Lombard Glenbard East (IL)' -> 'Lombard Glenbard East (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Lombard Montini Catholic (IL)' -> 'Lombard Montini Catholic (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'London Mills Spoon River Valley (IL)' -> 'London Mills Spoon River Valley (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Lovington (IL)' -> 'Lovington (IL)' (no change)
+2026-11-12 06:46:52,905 - WARNING -   'Machesney Park Harlem (IL)' -> 'Machesney Park Harlem (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Macomb (IL)' -> 'Macomb (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Macon (IL)' -> 'Macon (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Macon Meridian (IL)' -> 'Macon Meridian (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Madison (IL)' -> 'Madison (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Mahomet-Seymour (IL)' -> 'Mahomet-Seymour (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Manlius (IL)' -> 'Manlius (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Manlius Bureau Valley (IL)' -> 'Manlius Bureau Valley (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Manteno (IL)' -> 'Manteno (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Maple Park Kaneland (IL)' -> 'Maple Park Kaneland (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Marengo (IL)' -> 'Marengo (IL)' (no change)
+2026-11-12 06:46:52,906 - WARNING -   'Marian Central Catholic (IL)' -> 'Marian Central Catholic (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Marion (IL)' -> 'Marion (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Maroa (IL)' -> 'Maroa (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Maroa-Forsyth (IL)' -> 'Maroa-Forsyth (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Marseilles (IL)' -> 'Marseilles (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Marshall (IL)' -> 'Marshall (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Martinsville (IL)' -> 'Martinsville (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Mascoutah (IL)' -> 'Mascoutah (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Mattoon (IL)' -> 'Mattoon (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Maywood Proviso East (IL)' -> 'Maywood Proviso East (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'McHenry (IL)' -> 'McHenry (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'McLeansboro Hamilton County (IL)' -> 'McLeansboro Hamilton County (IL)' (no change)
+2026-11-12 06:46:52,907 - WARNING -   'Melrose Park Walther Christian Academy (IL)' -> 'Melrose Park Walther Christian Academy (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Melrose Park Walther Lutheran (IL)' -> 'Melrose Park Walther Lutheran (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Mendon Unity (IL)' -> 'Mendon Unity (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Mendon Unity-Seymour (IL)' -> 'Mendon Unity-Seymour (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Mendota (IL)' -> 'Mendota (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Meredosia (IL)' -> 'Meredosia (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Meredosia-Chambersburg (IL)' -> 'Meredosia-Chambersburg (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Metamora (IL)' -> 'Metamora (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Metropolis Massac County (IL)' -> 'Metropolis Massac County (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Midlothian Bremen (IL)' -> 'Midlothian Bremen (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Milford Township (IL)' -> 'Milford Township (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Milford-Cissna Park (IL)' -> 'Milford-Cissna Park (IL)' (no change)
+2026-11-12 06:46:52,908 - WARNING -   'Milledgeville (IL)' -> 'Milledgeville (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Minonk Fieldcrest (IL)' -> 'Minonk Fieldcrest (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Minonk-Dana-Rutland (IL)' -> 'Minonk-Dana-Rutland (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Minooka (IL)' -> 'Minooka (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Moline (IL)' -> 'Moline (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Momence Coop (IL)' -> 'Momence Coop (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Monmouth (IL)' -> 'Monmouth (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Monmouth Warren (IL)' -> 'Monmouth Warren (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Monmouth Yorkwood (IL)' -> 'Monmouth Yorkwood (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Monmouth-Roseville (IL)' -> 'Monmouth-Roseville (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Monticello (IL)' -> 'Monticello (IL)' (no change)
+2026-11-12 06:46:52,909 - WARNING -   'Mooseheart (IL)' -> 'Mooseheart (IL)' (no change)
+2026-11-12 06:46:52,910 - WARNING -   'Morris (IL)' -> 'Morris (IL)' (no change)
+2026-11-12 06:46:52,910 - WARNING -   'Morrison (IL)' -> 'Morrison (IL)' (no change)
+2026-11-12 06:46:52,910 - WARNING -   'Morton (IL)' -> 'Morton (IL)' (no change)
+2026-11-12 06:46:52,910 - WARNING -   'Mount Carmel (IL)' -> 'Mount Carmel (IL)' (no change)
+2026-11-12 06:46:52,910 - WARNING -   'Mount Carroll Coop (IL)' -> 'Mount Carroll Coop (IL)' (no change)
+2026-11-12 06:46:52,910 - WARNING -   'Mount Morris (IL)' -> 'Mount Morris (IL)' (no change)
+2026-11-12 06:46:52,910 - WARNING -   'Mount Olive Coop (IL)' -> 'Mount Olive Coop (IL)' (no change)
+2026-11-12 06:46:52,910 - WARNING -   'Mount Prospect (IL)' -> 'Mount Prospect (IL)' (no change)
+2026-11-12 06:46:52,910 - WARNING -   'Mount Sterling Brown County (IL)' -> 'Mount Sterling Brown County (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Mount Vernon (IL)' -> 'Mount Vernon (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Mount Zion (IL)' -> 'Mount Zion (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Moweaqua (IL)' -> 'Moweaqua (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Moweaqua Central A&M (IL)' -> 'Moweaqua Central A&M (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Mundelein (IL)' -> 'Mundelein (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Mundelein Carmel (IL)' -> 'Mundelein Carmel (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Murphysboro (IL)' -> 'Murphysboro (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Naperville Central (IL)' -> 'Naperville Central (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Naperville Neuqua Valley (IL)' -> 'Naperville Neuqua Valley (IL)' (no change)
+2026-11-12 06:46:52,911 - WARNING -   'Naperville North (IL)' -> 'Naperville North (IL)' (no change)
+2026-11-12 06:46:52,912 - WARNING -   'Nashville (IL)' -> 'Nashville (IL)' (no change)
+2026-11-12 06:46:52,912 - WARNING -   'New Berlin (IL)' -> 'New Berlin (IL)' (no change)
+2026-11-12 06:46:52,912 - WARNING -   'New Berlin-Franklin-Waverly (IL)' -> 'New Berlin-Franklin-Waverly (IL)' (no change)
+2026-11-12 06:46:52,912 - WARNING -   'New Lenox Lincoln-Way Central (IL)' -> 'New Lenox Lincoln-Way Central (IL)' (no change)
+2026-11-12 06:46:52,912 - WARNING -   'New Lenox Lincoln-Way West (IL)' -> 'New Lenox Lincoln-Way West (IL)' (no change)
+2026-11-12 06:46:52,912 - WARNING -   'New Lenox Providence Catholic (IL)' -> 'New Lenox Providence Catholic (IL)' (no change)
+2026-11-12 06:46:52,912 - WARNING -   'Newman (IL)' -> 'Newman (IL)' (no change)
+2026-11-12 06:46:52,912 - WARNING -   'Newton (IL)' -> 'Newton (IL)' (no change)
+2026-11-12 06:46:52,913 - WARNING -   'Niantic Tri-City-Sangamon Valley (IL)' -> 'Niantic Tri-City-Sangamon Valley (IL)' (no change)
+2026-11-12 06:46:52,913 - WARNING -   'Niantic-Harristown (IL)' -> 'Niantic-Harristown (IL)' (no change)
+2026-11-12 06:46:52,913 - WARNING -   'Niles Notre Dame (IL)' -> 'Niles Notre Dame (IL)' (no change)
+2026-11-12 06:46:52,913 - WARNING -   'Nokomis-Ramsey-Lincolnwood (IL)' -> 'Nokomis-Ramsey-Lincolnwood (IL)' (no change)
+2026-11-12 06:46:52,913 - WARNING -   'Normal Community (IL)' -> 'Normal Community (IL)' (no change)
+2026-11-12 06:46:52,914 - WARNING -   'Normal University High (IL)' -> 'Normal University High (IL)' (no change)
+2026-11-12 06:46:52,914 - WARNING -   'Normal West (IL)' -> 'Normal West (IL)' (no change)
+2026-11-12 06:46:52,914 - WARNING -   'Norridge Ridgewood (IL)' -> 'Norridge Ridgewood (IL)' (no change)
+2026-11-12 06:46:52,914 - WARNING -   'North Chicago (IL)' -> 'North Chicago (IL)' (no change)
+2026-11-12 06:46:52,914 - WARNING -   'Northbrook Glenbrook North (IL)' -> 'Northbrook Glenbrook North (IL)' (no change)
+2026-11-12 06:46:52,914 - WARNING -   'Northfield New Trier West (IL)' -> 'Northfield New Trier West (IL)' (no change)
+2026-11-12 06:46:52,914 - WARNING -   'Northlake West Leyden (IL)' -> 'Northlake West Leyden (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Oak Forest (IL)' -> 'Oak Forest (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Oak Lawn (IL)' -> 'Oak Lawn (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Oak Lawn Richards (IL)' -> 'Oak Lawn Richards (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Oak Park Fenwick (IL)' -> 'Oak Park Fenwick (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Oak Park-River Forest (IL)' -> 'Oak Park-River Forest (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Oakland (IL)' -> 'Oakland (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Oblong (IL)' -> 'Oblong (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'O'Fallon (IL)' -> 'O'Fallon (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Ohio Community (IL)' -> 'Ohio Community (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Olney East Richland (IL)' -> 'Olney East Richland (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Olympia Fields Rich Central (IL)' -> 'Olympia Fields Rich Central (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Onarga (IL)' -> 'Onarga (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Oneida ROWVA (IL)' -> 'Oneida ROWVA (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Orangeville (IL)' -> 'Orangeville (IL)' (no change)
+2026-11-12 06:46:52,915 - WARNING -   'Oregon (IL)' -> 'Oregon (IL)' (no change)
+2026-11-12 06:46:52,916 - WARNING -   'Orion (IL)' -> 'Orion (IL)' (no change)
+2026-11-12 06:46:52,916 - WARNING -   'Orland Park Carl Sandburg (IL)' -> 'Orland Park Carl Sandburg (IL)' (no change)
+2026-11-12 06:46:52,916 - WARNING -   'Oswego (IL)' -> 'Oswego (IL)' (no change)
+2026-11-12 06:46:52,916 - WARNING -   'Oswego East (IL)' -> 'Oswego East (IL)' (no change)
+2026-11-12 06:46:52,916 - WARNING -   'Ottawa Marquette Academy (IL)' -> 'Ottawa Marquette Academy (IL)' (no change)
+2026-11-12 06:46:52,916 - WARNING -   'Ottawa Township (IL)' -> 'Ottawa Township (IL)' (no change)
+2026-11-12 06:46:52,916 - WARNING -   'Palatine (IL)' -> 'Palatine (IL)' (no change)
+2026-11-12 06:46:52,916 - WARNING -   'Palatine Fremd (IL)' -> 'Palatine Fremd (IL)' (no change)
+2026-11-12 06:46:52,916 - WARNING -   'Palestine Coop (IL)' -> 'Palestine Coop (IL)' (no change)
+2026-11-12 06:46:52,917 - WARNING -   'Palmyra Northwestern (IL)' -> 'Palmyra Northwestern (IL)' (no change)
+2026-11-12 06:46:52,917 - WARNING -   'Palos Heights Chicago Christian (IL)' -> 'Palos Heights Chicago Christian (IL)' (no change)
+2026-11-12 06:46:52,917 - WARNING -   'Palos Heights Shepard (IL)' -> 'Palos Heights Shepard (IL)' (no change)
+2026-11-12 06:46:52,917 - WARNING -   'Palos Hills Stagg (IL)' -> 'Palos Hills Stagg (IL)' (no change)
+2026-11-12 06:46:52,917 - WARNING -   'Pana Coop (IL)' -> 'Pana Coop (IL)' (no change)
+2026-11-12 06:46:52,917 - WARNING -   'Paris (IL)' -> 'Paris (IL)' (no change)
+2026-11-12 06:46:52,917 - WARNING -   'Park Forest Rich East (IL)' -> 'Park Forest Rich East (IL)' (no change)
+2026-11-12 06:46:52,917 - WARNING -   'Park Ridge Maine East (IL)' -> 'Park Ridge Maine East (IL)' (no change)
+2026-11-12 06:46:52,917 - WARNING -   'Park Ridge Maine South (IL)' -> 'Park Ridge Maine South (IL)' (no change)
+2026-11-12 06:46:52,918 - WARNING -   'Pawnee Coop (IL)' -> 'Pawnee Coop (IL)' (no change)
+2026-11-12 06:46:52,918 - WARNING -   'Paxton (IL)' -> 'Paxton (IL)' (no change)
+2026-11-12 06:46:52,918 - WARNING -   'Paxton-Buckley-Loda (IL)' -> 'Paxton-Buckley-Loda (IL)' (no change)
+2026-11-12 06:46:52,918 - WARNING -   'Pearl City (IL)' -> 'Pearl City (IL)' (no change)
+2026-11-12 06:46:52,918 - WARNING -   'Pearl City Eastland Coop (IL)' -> 'Pearl City Eastland Coop (IL)' (no change)
+2026-11-12 06:46:52,918 - WARNING -   'Pecatonica (IL)' -> 'Pecatonica (IL)' (no change)
+2026-11-12 06:46:52,918 - WARNING -   'Pekin (IL)' -> 'Pekin (IL)' (no change)
+2026-11-12 06:46:52,918 - WARNING -   'Peoria (IL)' -> 'Peoria (IL)' (no change)
+2026-11-12 06:46:52,918 - WARNING -   'Peoria Bergan (IL)' -> 'Peoria Bergan (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Peoria Heights (IL)' -> 'Peoria Heights (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Peoria Manual Academy (IL)' -> 'Peoria Manual Academy (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Peoria Notre Dame (IL)' -> 'Peoria Notre Dame (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Peoria Richwoods (IL)' -> 'Peoria Richwoods (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Peoria Spalding Institute (IL)' -> 'Peoria Spalding Institute (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Peoria Woodruff (IL)' -> 'Peoria Woodruff (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Peotone Coop (IL)' -> 'Peotone Coop (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Petersburg Porta Ashland (IL)' -> 'Petersburg Porta Ashland (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Petersburg PORTA-Ashland-Chandlerville Central (IL)' -> 'Petersburg PORTA-Ashland-Chandlerville Central (IL)' (no change)
+2026-11-12 06:46:52,919 - WARNING -   'Piasa Southwestern (IL)' -> 'Piasa Southwestern (IL)' (no change)
+2026-11-12 06:46:52,920 - WARNING -   'Pinckneyville (IL)' -> 'Pinckneyville (IL)' (no change)
+2026-11-12 06:46:52,920 - WARNING -   'Piper City Ford Central (IL)' -> 'Piper City Ford Central (IL)' (no change)
+2026-11-12 06:46:52,920 - WARNING -   'Pittsfield Coop (IL)' -> 'Pittsfield Coop (IL)' (no change)
+2026-11-12 06:46:52,920 - WARNING -   'Pittsfield Griggsville-Perry Coop (IL)' -> 'Pittsfield Griggsville-Perry Coop (IL)' (no change)
+2026-11-12 06:46:52,920 - WARNING -   'Plainfield (IL)' -> 'Plainfield (IL)' (no change)
+2026-11-12 06:46:52,920 - WARNING -   'Plainfield Central (IL)' -> 'Plainfield Central (IL)' (no change)
+2026-11-12 06:46:52,920 - WARNING -   'Plainfield East (IL)' -> 'Plainfield East (IL)' (no change)
+2026-11-12 06:46:52,920 - WARNING -   'Plainfield North (IL)' -> 'Plainfield North (IL)' (no change)
+2026-11-12 06:46:52,920 - WARNING -   'Plainfield South (IL)' -> 'Plainfield South (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Plano (IL)' -> 'Plano (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Pleasant Hill Coop (IL)' -> 'Pleasant Hill Coop (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Pleasant Hill-Western (IL)' -> 'Pleasant Hill-Western (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Pleasant Plains (IL)' -> 'Pleasant Plains (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Polo (IL)' -> 'Polo (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Pontiac (IL)' -> 'Pontiac (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Poplar Grove North Boone (IL)' -> 'Poplar Grove North Boone (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Port Byron Riverdale (IL)' -> 'Port Byron Riverdale (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Princeton Coop (IL)' -> 'Princeton Coop (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Princeville (IL)' -> 'Princeville (IL)' (no change)
+2026-11-12 06:46:52,921 - WARNING -   'Prophetstown (IL)' -> 'Prophetstown (IL)' (no change)
+2026-11-12 06:46:52,922 - WARNING -   'Quincy (IL)' -> 'Quincy (IL)' (no change)
+2026-11-12 06:46:52,922 - WARNING -   'Quincy Notre Dame (IL)' -> 'Quincy Notre Dame (IL)' (no change)
+2026-11-12 06:46:52,922 - WARNING -   'Rantoul (IL)' -> 'Rantoul (IL)' (no change)
+2026-11-12 06:46:52,922 - WARNING -   'Red Bud (IL)' -> 'Red Bud (IL)' (no change)
+2026-11-12 06:46:52,922 - WARNING -   'Reddick (IL)' -> 'Reddick (IL)' (no change)
+2026-11-12 06:46:52,922 - WARNING -   'Richmond-Burton (IL)' -> 'Richmond-Burton (IL)' (no change)
+2026-11-12 06:46:52,922 - WARNING -   'Richton Park Rich South (IL)' -> 'Richton Park Rich South (IL)' (no change)
+2026-11-12 06:46:52,922 - WARNING -   'Rio-Oneida-Wataga-Victoria-Altona-Galva-Williamsfield (IL)' -> 'Rio-Oneida-Wataga-Victoria-Altona-Galva-Williamsfield (IL)' (no change)
+2026-11-12 06:46:52,922 - WARNING -   'River Grove Holy Cross (IL)' -> 'River Grove Holy Cross (IL)' (no change)
+2026-11-12 06:46:52,923 - WARNING -   'Riverside-Brookfield (IL)' -> 'Riverside-Brookfield (IL)' (no change)
+2026-11-12 06:46:52,923 - WARNING -   'Riverton (IL)' -> 'Riverton (IL)' (no change)
+2026-11-12 06:46:52,923 - WARNING -   'Robinson (IL)' -> 'Robinson (IL)' (no change)
+2026-11-12 06:46:52,923 - WARNING -   'Rochelle (IL)' -> 'Rochelle (IL)' (no change)
+2026-11-12 06:46:52,923 - WARNING -   'Rochester (IL)' -> 'Rochester (IL)' (no change)
+2026-11-12 06:46:52,923 - WARNING -   'Rock Falls (IL)' -> 'Rock Falls (IL)' (no change)
+2026-11-12 06:46:52,923 - WARNING -   'Rock Island (IL)' -> 'Rock Island (IL)' (no change)
+2026-11-12 06:46:52,923 - WARNING -   'Rock Island Alleman (IL)' -> 'Rock Island Alleman (IL)' (no change)
+2026-11-12 06:46:52,924 - WARNING -   'Rockford Auburn (IL)' -> 'Rockford Auburn (IL)' (no change)
+2026-11-12 06:46:52,924 - WARNING -   'Rockford Boylan Catholic (IL)' -> 'Rockford Boylan Catholic (IL)' (no change)
+2026-11-12 06:46:52,924 - WARNING -   'Rockford Christian (IL)' -> 'Rockford Christian (IL)' (no change)
+2026-11-12 06:46:52,924 - WARNING -   'Rockford Christian Life (IL)' -> 'Rockford Christian Life (IL)' (no change)
+2026-11-12 06:46:52,924 - WARNING -   'Rockford East (IL)' -> 'Rockford East (IL)' (no change)
+2026-11-12 06:46:52,924 - WARNING -   'Rockford Guilford (IL)' -> 'Rockford Guilford (IL)' (no change)
+2026-11-12 06:46:52,924 - WARNING -   'Rockford Jefferson (IL)' -> 'Rockford Jefferson (IL)' (no change)
+2026-11-12 06:46:52,924 - WARNING -   'Rockford Lutheran (IL)' -> 'Rockford Lutheran (IL)' (no change)
+2026-11-12 06:46:52,924 - WARNING -   'Rockford Our Lady of the Sacred Heart Academy (IL)' -> 'Rockford Our Lady of the Sacred Heart Academy (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Rockford West (IL)' -> 'Rockford West (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Rockton Hononegah (IL)' -> 'Rockton Hononegah (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Rolling Meadows (IL)' -> 'Rolling Meadows (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Romeoville (IL)' -> 'Romeoville (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Roselle Lake Park (IL)' -> 'Roselle Lake Park (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Roseville (IL)' -> 'Roseville (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Rossville Alvin (IL)' -> 'Rossville Alvin (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Round Lake (IL)' -> 'Round Lake (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Roxana (IL)' -> 'Roxana (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Rushville (IL)' -> 'Rushville (IL)' (no change)
+2026-11-12 06:46:52,925 - WARNING -   'Rushville-Industry Coop (IL)' -> 'Rushville-Industry Coop (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Saint Charles East (IL)' -> 'Saint Charles East (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Saint Charles North (IL)' -> 'Saint Charles North (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Saint Charles Valley Lutheran (IL)' -> 'Saint Charles Valley Lutheran (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Saint Joseph-Ogden (IL)' -> 'Saint Joseph-Ogden (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Salem (IL)' -> 'Salem (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Sandwich (IL)' -> 'Sandwich (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Savanna Community (IL)' -> 'Savanna Community (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Savanna West Carroll Coop (IL)' -> 'Savanna West Carroll Coop (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Schaumburg (IL)' -> 'Schaumburg (IL)' (no change)
+2026-11-12 06:46:52,926 - WARNING -   'Sciota Northwestern (IL)' -> 'Sciota Northwestern (IL)' (no change)
+2026-11-12 06:46:52,927 - WARNING -   'Sciota West Prairie (IL)' -> 'Sciota West Prairie (IL)' (no change)
+2026-11-12 06:46:52,927 - WARNING -   'Seneca (IL)' -> 'Seneca (IL)' (no change)
+2026-11-12 06:46:52,927 - WARNING -   'Sesser-Valier (IL)' -> 'Sesser-Valier (IL)' (no change)
+2026-11-12 06:46:52,927 - WARNING -   'Sesser-Valier-Waltonville-Woodlawn (IL)' -> 'Sesser-Valier-Waltonville-Woodlawn (IL)' (no change)
+2026-11-12 06:46:52,927 - WARNING -   'Shelbyville Coop (IL)' -> 'Shelbyville Coop (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'Sherrard (IL)' -> 'Sherrard (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'Sidell Jamaica-Catlin (IL)' -> 'Sidell Jamaica-Catlin (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'Sidell Salt Fork (IL)' -> 'Sidell Salt Fork (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'Skokie Niles East (IL)' -> 'Skokie Niles East (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'Skokie Niles North (IL)' -> 'Skokie Niles North (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'Skokie Niles West (IL)' -> 'Skokie Niles West (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'South Beloit (IL)' -> 'South Beloit (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'South Elgin (IL)' -> 'South Elgin (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'South Holland Thornwood (IL)' -> 'South Holland Thornwood (IL)' (no change)
+2026-11-12 06:46:52,928 - WARNING -   'Sparta-Steeleville (IL)' -> 'Sparta-Steeleville (IL)' (no change)
+2026-11-12 06:46:52,929 - WARNING -   'Spring Valley Hall (IL)' -> 'Spring Valley Hall (IL)' (no change)
+2026-11-12 06:46:52,929 - WARNING -   'Spring Valley Hall-Putnam County (IL)' -> 'Spring Valley Hall-Putnam County (IL)' (no change)
+2026-11-12 06:46:52,929 - WARNING -   'Springfield (IL)' -> 'Springfield (IL)' (no change)
+2026-11-12 06:46:52,929 - WARNING -   'Springfield Lanphier (IL)' -> 'Springfield Lanphier (IL)' (no change)
+2026-11-12 06:46:52,929 - WARNING -   'Springfield Sacred Heart-Griffin (IL)' -> 'Springfield Sacred Heart-Griffin (IL)' (no change)
+2026-11-12 06:46:52,929 - WARNING -   'Springfield Southeast (IL)' -> 'Springfield Southeast (IL)' (no change)
+2026-11-12 06:46:52,929 - WARNING -   'St. Elmo (IL)' -> 'St. Elmo (IL)' (no change)
+2026-11-12 06:46:52,929 - WARNING -   'St. Jacob-Triad (IL)' -> 'St. Jacob-Triad (IL)' (no change)
+2026-11-12 06:46:52,930 - WARNING -   'Stanford Olympia (IL)' -> 'Stanford Olympia (IL)' (no change)
+2026-11-12 06:46:52,930 - WARNING -   'Staunton (IL)' -> 'Staunton (IL)' (no change)
+2026-11-12 06:46:52,930 - WARNING -   'Staunton-Bunker Hill (IL)' -> 'Staunton-Bunker Hill (IL)' (no change)
+2026-11-12 06:46:52,930 - WARNING -   'Sterling (IL)' -> 'Sterling (IL)' (no change)
+2026-11-12 06:46:52,930 - WARNING -   'Sterling Newman Central Catholic (IL)' -> 'Sterling Newman Central Catholic (IL)' (no change)
+2026-11-12 06:46:52,930 - WARNING -   'Stillman Valley (IL)' -> 'Stillman Valley (IL)' (no change)
+2026-11-12 06:46:52,930 - WARNING -   'Stockton (IL)' -> 'Stockton (IL)' (no change)
+2026-11-12 06:46:52,930 - WARNING -   'Streamwood (IL)' -> 'Streamwood (IL)' (no change)
+2026-11-12 06:46:52,931 - WARNING -   'Streator Township (IL)' -> 'Streator Township (IL)' (no change)
+2026-11-12 06:46:52,931 - WARNING -   'Streator Woodland (IL)' -> 'Streator Woodland (IL)' (no change)
+2026-11-12 06:46:52,931 - WARNING -   'Stronghurst Southern (IL)' -> 'Stronghurst Southern (IL)' (no change)
+2026-11-12 06:46:52,931 - WARNING -   'Sullivan Coop (IL)' -> 'Sullivan Coop (IL)' (no change)
+2026-11-12 06:46:52,932 - WARNING -   'Sullivan-Okaw Valley Coop (IL)' -> 'Sullivan-Okaw Valley Coop (IL)' (no change)
+2026-11-12 06:46:52,932 - WARNING -   'Summit Argo (IL)' -> 'Summit Argo (IL)' (no change)
+2026-11-12 06:46:52,932 - WARNING -   'Sycamore (IL)' -> 'Sycamore (IL)' (no change)
+2026-11-12 06:46:52,932 - WARNING -   'Table Grove VIT (IL)' -> 'Table Grove VIT (IL)' (no change)
+2026-11-12 06:46:52,932 - WARNING -   'Tampico (IL)' -> 'Tampico (IL)' (no change)
+2026-11-12 06:46:52,932 - WARNING -   'Taylor Ridge Rockridge (IL)' -> 'Taylor Ridge Rockridge (IL)' (no change)
+2026-11-12 06:46:52,933 - WARNING -   'Taylorville (IL)' -> 'Taylorville (IL)' (no change)
+2026-11-12 06:46:52,933 - WARNING -   'Tinley Park (IL)' -> 'Tinley Park (IL)' (no change)
+2026-11-12 06:46:52,933 - WARNING -   'Tinley Park Andrew (IL)' -> 'Tinley Park Andrew (IL)' (no change)
+2026-11-12 06:46:52,933 - WARNING -   'Tiskilwa (IL)' -> 'Tiskilwa (IL)' (no change)
+2026-11-12 06:46:52,933 - WARNING -   'Toledo Cumberland (IL)' -> 'Toledo Cumberland (IL)' (no change)
+2026-11-12 06:46:52,933 - WARNING -   'Tolono Unity (IL)' -> 'Tolono Unity (IL)' (no change)
+2026-11-12 06:46:52,933 - WARNING -   'Toulon (IL)' -> 'Toulon (IL)' (no change)
+2026-11-12 06:46:52,933 - WARNING -   'Toulon Stark County (IL)' -> 'Toulon Stark County (IL)' (no change)
+2026-11-12 06:46:52,934 - WARNING -   'Tremont (IL)' -> 'Tremont (IL)' (no change)
+2026-11-12 06:46:52,934 - WARNING -   'Trenton Wesclin (IL)' -> 'Trenton Wesclin (IL)' (no change)
+2026-11-12 06:46:52,934 - WARNING -   'Troy Triad (IL)' -> 'Troy Triad (IL)' (no change)
+2026-11-12 06:46:52,934 - WARNING -   'Tuscola (IL)' -> 'Tuscola (IL)' (no change)
+2026-11-12 06:46:52,934 - WARNING -   'Urbana (IL)' -> 'Urbana (IL)' (no change)
+2026-11-12 06:46:52,934 - WARNING -   'Vandalia Coop (IL)' -> 'Vandalia Coop (IL)' (no change)
+2026-11-12 06:46:52,934 - WARNING -   'Varna River Valley [Midland-Henry-Senachwine-Lowpoint-Washburn] (IL)' -> 'Varna River Valley [Midland-Henry-Senachwine-Lowpoint-Washburn] (IL)' (no change)
+2026-11-12 06:46:52,934 - WARNING -   'Vernon Hills (IL)' -> 'Vernon Hills (IL)' (no change)
+2026-11-12 06:46:52,934 - WARNING -   'Vienna-Goreville (IL)' -> 'Vienna-Goreville (IL)' (no change)
+2026-11-12 06:46:52,935 - WARNING -   'Villa Grove-Heritage (IL)' -> 'Villa Grove-Heritage (IL)' (no change)
+2026-11-12 06:46:52,935 - WARNING -   'Villa Park Willowbrook (IL)' -> 'Villa Park Willowbrook (IL)' (no change)
+2026-11-12 06:46:52,935 - WARNING -   'Viola Winola (IL)' -> 'Viola Winola (IL)' (no change)
+2026-11-12 06:46:52,935 - WARNING -   'Virden (IL)' -> 'Virden (IL)' (no change)
+2026-11-12 06:46:52,935 - WARNING -   'Virden North Mac (IL)' -> 'Virden North Mac (IL)' (no change)
+2026-11-12 06:46:52,935 - WARNING -   'Virginia Coop (IL)' -> 'Virginia Coop (IL)' (no change)
+2026-11-12 06:46:52,935 - WARNING -   'Walnut Community (IL)' -> 'Walnut Community (IL)' (no change)
+2026-11-12 06:46:52,935 - WARNING -   'Warren (IL)' -> 'Warren (IL)' (no change)
+2026-11-12 06:46:52,935 - WARNING -   'Warrensburg-Latham (IL)' -> 'Warrensburg-Latham (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'Warsaw (IL)' -> 'Warsaw (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'Washington (IL)' -> 'Washington (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'Waterloo (IL)' -> 'Waterloo (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'Watseka Coop (IL)' -> 'Watseka Coop (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'Wauconda (IL)' -> 'Wauconda (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'Waukegan (IL)' -> 'Waukegan (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'Waukegan East (IL)' -> 'Waukegan East (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'Waukegan West (IL)' -> 'Waukegan West (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'West Chicago (IL)' -> 'West Chicago (IL)' (no change)
+2026-11-12 06:46:52,936 - WARNING -   'West Chicago Wheaton Academy (IL)' -> 'West Chicago Wheaton Academy (IL)' (no change)
+2026-11-12 06:46:52,937 - WARNING -   'West Frankfort (IL)' -> 'West Frankfort (IL)' (no change)
+2026-11-12 06:46:52,937 - WARNING -   'Westchester St. Joseph (IL)' -> 'Westchester St. Joseph (IL)' (no change)
+2026-11-12 06:46:52,937 - WARNING -   'Western-Wyanet-DePue (IL)' -> 'Western-Wyanet-DePue (IL)' (no change)
+2026-11-12 06:46:52,937 - WARNING -   'Westmont (IL)' -> 'Westmont (IL)' (no change)
+2026-11-12 06:46:52,937 - WARNING -   'Westville (IL)' -> 'Westville (IL)' (no change)
+2026-11-12 06:46:52,937 - WARNING -   'Wheaton (IL)' -> 'Wheaton (IL)' (no change)
+2026-11-12 06:46:52,937 - WARNING -   'Wheaton Central (IL)' -> 'Wheaton Central (IL)' (no change)
+2026-11-12 06:46:52,937 - WARNING -   'Wheaton North (IL)' -> 'Wheaton North (IL)' (no change)
+2026-11-12 06:46:52,937 - WARNING -   'Wheaton Warrenville South (IL)' -> 'Wheaton Warrenville South (IL)' (no change)
+2026-11-12 06:46:52,938 - WARNING -   'Wheeling (IL)' -> 'Wheeling (IL)' (no change)
+2026-11-12 06:46:52,938 - WARNING -   'White Hall North Greene (IL)' -> 'White Hall North Greene (IL)' (no change)
+2026-11-12 06:46:52,938 - WARNING -   'Williamsville (IL)' -> 'Williamsville (IL)' (no change)
+2026-11-12 06:46:52,938 - WARNING -   'Wilmette Loyola Academy (IL)' -> 'Wilmette Loyola Academy (IL)' (no change)
+2026-11-12 06:46:52,938 - WARNING -   'Wilmington (IL)' -> 'Wilmington (IL)' (no change)
+2026-11-12 06:46:52,938 - WARNING -   'Winchester (IL)' -> 'Winchester (IL)' (no change)
+2026-11-12 06:46:52,938 - WARNING -   'Winchester West Central Coop (IL)' -> 'Winchester West Central Coop (IL)' (no change)
+2026-11-12 06:46:52,938 - WARNING -   'Winchester-Bluffs West Central co-op (IL)' -> 'Winchester-Bluffs West Central co-op (IL)' (no change)
+2026-11-12 06:46:52,938 - WARNING -   'Winnebago (IL)' -> 'Winnebago (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Winnetka New Trier East (IL)' -> 'Winnetka New Trier East (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Winnetka North Shore Country Day (IL)' -> 'Winnetka North Shore Country Day (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Woodhull AlWood (IL)' -> 'Woodhull AlWood (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Woodhull Ridgewood [AlWood-Cambridge] (IL)' -> 'Woodhull Ridgewood [AlWood-Cambridge] (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Woodstock (IL)' -> 'Woodstock (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Woodstock North (IL)' -> 'Woodstock North (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Wyanet (IL)' -> 'Wyanet (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Wyoming Community (IL)' -> 'Wyoming Community (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Yorkville (IL)' -> 'Yorkville (IL)' (no change)
+2026-11-12 06:46:52,939 - WARNING -   'Zeigler-Royalton (IL)' -> 'Zeigler-Royalton (IL)' (no change)
+2026-11-12 06:46:52,940 - WARNING -   'Zion-Benton (IL)' -> 'Zion-Benton (IL)' (no change)
+2026-11-12 06:46:52,940 - INFO - Validation passed: 1030 rules are clean and ready to upload.
+2026-11-12 06:46:52,962 - INFO - Uploading 1030 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 06:46:53,138 - INFO - Upload to staging table complete.
+2026-11-12 06:46:53,143 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 06:49:39,663 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 06:49:39,663 - INFO - Reason logged to dbo.HS_Consolidation_Log: IL round 1: 2024 MaxPreps short names (Barrington Fillies, Canton Little, Carlyle Indians, Mt. Carava, Solorio Sun, Uic College, Dixon Dukes, Effingham Flaming, Geneseo Maple, Niles Notre, Oak Park Oak Park, Lockport, Ottawa, Streator...), same-school variants (Al Raby, Savanna Community, Spring Valley Hall, Marian Central Catholic, Winola, Sidell Jamaica, McLeansboro Hamilton County), renames to latest (Lincoln-Way -> Lincoln-Way Central, Gordon Tech -> DePaul College Prep, Marine Military -> Marine Leadership Academy)
+2026-11-12 06:49:39,663 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 06:49:39,663 - INFO - Running post-consolidation safety check...
+2026-11-12 06:49:39,669 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup IL
+
+DEDUP v4 IL - PREVIEW (nothing changed)
+ dedup_archive: 582 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_archive_20261112_0649.csv
+ dedup_review: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_review_20261112_0649.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_summary_20261112_0649.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  IL     201940        582                  14               None 
+
+>>> review-pairs IL
+
+REVIEW-ONLY PAIRS IL - PREVIEW (nothing changed)
+ 14 pairs {'SHORT': 14} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_review_pairs_20261112_0649.csv
+
+=== OK 2026-11-12 06:49:56

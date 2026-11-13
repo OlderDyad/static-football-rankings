@@ -1,0 +1,33 @@
+
+>>> move-team KS --from "Washington County (KS)" --to "Washington (KS)" --seasons 1900-2005 --reason "split by year: Washington HS to 2005, Washington County from 2006 (KFH team page note)" --commit
+
+MOVE Washington County (KS) -> Washington (KS), seasons 1900-2005 - COMMIT
+ move_games: 147 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_move_games_COMMITTED_20261107_0620.csv
+ move_by_season: 97 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_move_by_season_COMMITTED_20261107_0620.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  147    1                  None
+
+>>> dedup KS
+
+DEDUP v4 KS - PREVIEW (nothing changed)
+ dedup_archive: 189 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_archive_20261107_0620.csv
+ dedup_review: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_review_20261107_0620.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_summary_20261107_0620.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  KS     125767        189                  55               None 
+
+>>> same-score-fix KS
+ 98 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS KS - PREVIEW (nothing changed)
+ 242 pairs {'DROP B': 2, 'DROP A': 2, 'UNDECIDED': 238} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_same_score_20261107_0621.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  4         None   None
+
+>>> query KS ks_washington.sql
+
+QUERY ks_washington (2 result sets)
+ set 1: 551 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_ks_washington_1_20261107_0621.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_ks_washington_2_20261107_0621.csv
+
+=== OK 2026-11-07 06:21:29

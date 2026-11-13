@@ -1,0 +1,849 @@
+
+>>> move-team OK --from "Joiner Shawnee (AR)" --to "Shawnee (OK)" --seasons 1880-2026 --ids ok_twin_00.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Shawnee (OK)" --commit
+ only the 69 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_00.csv
+
+MOVE Joiner Shawnee (AR) -> Shawnee (OK), seasons 1880-2026 - COMMIT
+ move_games: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 113 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  69     1                  None
+
+>>> move-team OK --from "Kiowa (KS)" --to "Kiowa (OK)" --seasons 1880-2026 --ids ok_twin_01.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Kiowa (OK)" --commit
+ only the 60 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_01.csv
+
+MOVE Kiowa (KS) -> Kiowa (OK), seasons 1880-2026 - COMMIT
+ move_games: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 47 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  60     1                  None
+
+>>> move-team OK --from "Pawnee (OK)" --to "Grover Pawnee (CO)" --seasons 1880-2026 --ids ok_twin_02.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Grover Pawnee (CO)" --commit
+ only the 55 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_02.csv
+
+MOVE Pawnee (OK) -> Grover Pawnee (CO), seasons 1880-2026 - COMMIT
+ move_games: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  55     1                  None
+
+>>> move-team OK --from "Ada (OK)" --to "Ada (KS)" --seasons 1880-2026 --ids ok_twin_03.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Ada (KS)" --commit
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_03.csv
+
+MOVE Ada (OK) -> Ada (KS), seasons 1880-2026 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 110 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team OK --from "Chelsea (OK)" --to "Chesnee (SC)" --seasons 1880-2026 --ids ok_twin_04.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Chesnee (SC)" --commit
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_04.csv
+
+MOVE Chelsea (OK) -> Chesnee (SC), seasons 1880-2026 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team OK --from "Marshall (AR)" --to "Marshall (OK)" --seasons 1880-2026 --ids ok_twin_05.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Marshall (OK)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_05.csv
+
+MOVE Marshall (AR) -> Marshall (OK), seasons 1880-2026 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team OK --from "Perry (KS)" --to "Perry (OK)" --seasons 1880-2026 --ids ok_twin_06.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Perry (OK)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_06.csv
+
+MOVE Perry (KS) -> Perry (OK), seasons 1880-2026 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 115 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team OK --from "El Dorado (AR)" --to "Eldorado (OK)" --seasons 1880-2026 --ids ok_twin_07.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Eldorado (OK)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_07.csv
+
+MOVE El Dorado (AR) -> Eldorado (OK), seasons 1880-2026 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team OK --from "Altus (AR)" --to "Altus (OK)" --seasons 1880-2026 --ids ok_twin_08.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Altus (OK)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_08.csv
+
+MOVE Altus (AR) -> Altus (OK), seasons 1880-2026 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 110 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team OK --from "Elk City (KS)" --to "Elk City (OK)" --seasons 1880-2026 --ids ok_twin_09.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Elk City (OK)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_09.csv
+
+MOVE Elk City (KS) -> Elk City (OK), seasons 1880-2026 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team OK --from "Claremore Verdigris (TX)" --to "Claremore Verdigris (OK)" --seasons 1880-2026 --ids ok_twin_10.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Claremore Verdigris (OK)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_10.csv
+
+MOVE Claremore Verdigris (TX) -> Claremore Verdigris (OK), seasons 1880-2026 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team OK --from "Wilson (AR)" --to "Wilson (OK)" --seasons 1880-2026 --ids ok_twin_11.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Wilson (OK)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_11.csv
+
+MOVE Wilson (AR) -> Wilson (OK), seasons 1880-2026 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team OK --from "Inola (TX)" --to "Inola (OK)" --seasons 1880-2026 --ids ok_twin_12.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Inola (OK)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_12.csv
+
+MOVE Inola (TX) -> Inola (OK), seasons 1880-2026 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1604.csv
+ move_by_season: 58 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team OK --from "Haskell (TX)" --to "Haskell (OK)" --seasons 1880-2026 --ids ok_twin_13.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Haskell (OK)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_13.csv
+
+MOVE Haskell (TX) -> Haskell (OK), seasons 1880-2026 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 111 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team OK --from "Commerce (TX)" --to "Commerce (OK)" --seasons 1880-2026 --ids ok_twin_14.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Commerce (OK)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_14.csv
+
+MOVE Commerce (TX) -> Commerce (OK), seasons 1880-2026 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 114 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team OK --from "Heavener (GA)" --to "Heavener (OK)" --seasons 1880-2026 --ids ok_twin_15.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Heavener (OK)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_15.csv
+
+MOVE Heavener (GA) -> Heavener (OK), seasons 1880-2026 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team OK --from "Checotah (TX)" --to "Checotah (OK)" --seasons 1880-2026 --ids ok_twin_16.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Checotah (OK)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_16.csv
+
+MOVE Checotah (TX) -> Checotah (OK), seasons 1880-2026 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team OK --from "Sulphur (LA)" --to "Sulphur (OK)" --seasons 1880-2026 --ids ok_twin_17.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Sulphur (OK)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_17.csv
+
+MOVE Sulphur (LA) -> Sulphur (OK), seasons 1880-2026 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team OK --from "Temple (TX)" --to "Temple (OK)" --seasons 1880-2026 --ids ok_twin_18.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Temple (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_18.csv
+
+MOVE Temple (TX) -> Temple (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 120 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Chelsea (KS)" --to "Chelsea (OK)" --seasons 1880-2026 --ids ok_twin_19.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Chelsea (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_19.csv
+
+MOVE Chelsea (KS) -> Chelsea (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Tulsa Metro Christian (TX)" --to "Tulsa Metro Christian (OK)" --seasons 1880-2026 --ids ok_twin_20.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Tulsa Metro Christian (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_20.csv
+
+MOVE Tulsa Metro Christian (TX) -> Tulsa Metro Christian (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 53 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Hobart (IN)" --to "Hobart (OK)" --seasons 1880-2026 --ids ok_twin_21.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Hobart (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_21.csv
+
+MOVE Hobart (IN) -> Hobart (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 110 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Vinita (TX)" --to "Vinita (OK)" --seasons 1880-2026 --ids ok_twin_22.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Vinita (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_22.csv
+
+MOVE Vinita (TX) -> Vinita (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 113 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Minco (TX)" --to "Minco (OK)" --seasons 1880-2026 --ids ok_twin_23.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Minco (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_23.csv
+
+MOVE Minco (TX) -> Minco (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Carnegie (TX)" --to "Carnegie (OK)" --seasons 1880-2026 --ids ok_twin_24.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Carnegie (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_24.csv
+
+MOVE Carnegie (TX) -> Carnegie (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Macomb (IL)" --to "Macomb (OK)" --seasons 1880-2026 --ids ok_twin_25.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Macomb (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_25.csv
+
+MOVE Macomb (IL) -> Macomb (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Tipton (IA)" --to "Tipton (OK)" --seasons 1880-2026 --ids ok_twin_26.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Tipton (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_26.csv
+
+MOVE Tipton (IA) -> Tipton (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 112 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Lexington (MO)" --to "Lexington (OK)" --seasons 1880-2026 --ids ok_twin_27.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Lexington (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_27.csv
+
+MOVE Lexington (MO) -> Lexington (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 100 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Bristow (TX)" --to "Bristow (OK)" --seasons 1880-2026 --ids ok_twin_28.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Bristow (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_28.csv
+
+MOVE Bristow (TX) -> Bristow (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Maud (TX)" --to "Maud (OK)" --seasons 1880-2026 --ids ok_twin_29.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Maud (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_29.csv
+
+MOVE Maud (TX) -> Maud (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Del City Christian Heritage (TX)" --to "Del City Christian Heritage (OK)" --seasons 1880-2026 --ids ok_twin_30.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Del City Christian Heritage (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_30.csv
+
+MOVE Del City Christian Heritage (TX) -> Del City Christian Heritage (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 47 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Weatherford (TX)" --to "Weatherford (OK)" --seasons 1880-2026 --ids ok_twin_31.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Weatherford (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_31.csv
+
+MOVE Weatherford (TX) -> Weatherford (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 117 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Maysville (MO)" --to "Maysville (OK)" --seasons 1880-2026 --ids ok_twin_32.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Maysville (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_32.csv
+
+MOVE Maysville (MO) -> Maysville (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 97 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Norman Community Christian (TX)" --to "Norman Community Christian (OK)" --seasons 1880-2026 --ids ok_twin_33.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Norman Community Christian (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_33.csv
+
+MOVE Norman Community Christian (TX) -> Norman Community Christian (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 39 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Stigler (TX)" --to "Stigler (OK)" --seasons 1880-2026 --ids ok_twin_34.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Stigler (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_34.csv
+
+MOVE Stigler (TX) -> Stigler (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Kingfisher (TX)" --to "Kingfisher (OK)" --seasons 1880-2026 --ids ok_twin_35.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Kingfisher (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_35.csv
+
+MOVE Kingfisher (TX) -> Kingfisher (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 109 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Dewey (TX)" --to "Dewey (OK)" --seasons 1880-2026 --ids ok_twin_36.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Dewey (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_36.csv
+
+MOVE Dewey (TX) -> Dewey (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 112 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Clinton (IL)" --to "Clinton (OK)" --seasons 1880-2026 --ids ok_twin_37.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Clinton (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_37.csv
+
+MOVE Clinton (IL) -> Clinton (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 115 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Apache (TX)" --to "Apache (OK)" --seasons 1880-2026 --ids ok_twin_38.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Apache (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_38.csv
+
+MOVE Apache (TX) -> Apache (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Perkins-Tryon (TX)" --to "Perkins-Tryon (OK)" --seasons 1880-2026 --ids ok_twin_39.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Perkins-Tryon (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_39.csv
+
+MOVE Perkins-Tryon (TX) -> Perkins-Tryon (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Allen (TX)" --to "Allen (OK)" --seasons 1880-2026 --ids ok_twin_40.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Allen (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_40.csv
+
+MOVE Allen (TX) -> Allen (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 95 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Mountain View (AR)" --to "Mountain View (OK)" --seasons 1880-2026 --ids ok_twin_41.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Mountain View (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_41.csv
+
+MOVE Mountain View (AR) -> Mountain View (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team OK --from "Fairfax (MO)" --to "Fairfax (OK)" --seasons 1880-2026 --ids ok_twin_42.csv --reason "Same-named town in another state: game vs Oklahoma opponents belongs to Fairfax (OK)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\ok_twin_42.csv
+
+MOVE Fairfax (MO) -> Fairfax (OK), seasons 1880-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_games_COMMITTED_20261110_1605.csv
+ move_by_season: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_move_by_season_COMMITTED_20261110_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> mapcheck OK --commit
+
+MAPPING CHECK OK - COMMIT (Team_ID set to the ProperName ID)
+ 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_mapcheck_COMMITTED_20261110_1605.csv
+   URL                                       ProperName                         Team_ID  NameID  Problem                         Team_ID_Name                            
+   https://www.maxpreps.com/ok/durant/duran  Durant (OK)                        12770    18774   Team_ID points to another name  Durant Victory Life Academy (OK)        
+   https://www.maxpreps.com/ok/oklahoma-cit  Oklahoma City Westmoore (OK)       66211    66210   Team_ID points to another name  Oklahoma City Windsor Hills Baptist (OK)
+   https://www.maxpreps.com/ok/sulphur/okla  Oklahoma School for the Deaf (OK)  21825    66212   Team_ID points to another name  Oklahoma State School of Mines (OK)     
+   https://www.maxpreps.com/ok/tyrone/tyron  Tyrone (OK)                        32124    25144   Team_ID points to another name  University of Oklahoma JV (OK)          
+   Status     Fixable  Err 
+   COMMITTED  4        None
+
+>>> consolidate OK --reason "OK round 1: out-of-state towns filed as (OK) (Fort Smith, Springdale, Gentry...), 2024 MaxPreps names (Atoka Wampus, OKC Grant, Weleetka Graham), Sharon-Mutual"
+Consolidating OK from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\OK_Alias_Rules.csv
+
+[stderr]
+2026-11-10 16:05:54,040 - INFO - Starting consolidation for state: (OK) using staging table method.
+2026-11-10 16:05:54,051 - WARNING - WARNING: 390 row(s) have identical OldName and NewName (no-op rules).
+2026-11-10 16:05:54,052 - WARNING -   'Ada (OK)' -> 'Ada (OK)' (no change)
+2026-11-10 16:05:54,052 - WARNING -   'Adair (OK)' -> 'Adair (OK)' (no change)
+2026-11-10 16:05:54,052 - WARNING -   'Afton (OK)' -> 'Afton (OK)' (no change)
+2026-11-10 16:05:54,052 - WARNING -   'Alex (OK)' -> 'Alex (OK)' (no change)
+2026-11-10 16:05:54,052 - WARNING -   'Allen (OK)' -> 'Allen (OK)' (no change)
+2026-11-10 16:05:54,052 - WARNING -   'Altus (OK)' -> 'Altus (OK)' (no change)
+2026-11-10 16:05:54,052 - WARNING -   'Alva (OK)' -> 'Alva (OK)' (no change)
+2026-11-10 16:05:54,052 - WARNING -   'Anadarko (OK)' -> 'Anadarko (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Anadarko Riverside Indian (OK)' -> 'Anadarko Riverside Indian (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Antlers (OK)' -> 'Antlers (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Apache (OK)' -> 'Apache (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Ardmore (OK)' -> 'Ardmore (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Ardmore Dickson (OK)' -> 'Ardmore Dickson (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Ardmore Plainview (OK)' -> 'Ardmore Plainview (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Arkoma (OK)' -> 'Arkoma (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Atoka (OK)' -> 'Atoka (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Balko (OK)' -> 'Balko (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Barnsdall (OK)' -> 'Barnsdall (OK)' (no change)
+2026-11-10 16:05:54,053 - WARNING -   'Bartlesville (OK)' -> 'Bartlesville (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Bartlesville Wesleyan Christian (OK)' -> 'Bartlesville Wesleyan Christian (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Beaver (OK)' -> 'Beaver (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Beggs (OK)' -> 'Beggs (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Bethany (OK)' -> 'Bethany (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Billings (OK)' -> 'Billings (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Bixby (OK)' -> 'Bixby (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Blackwell (OK)' -> 'Blackwell (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Blanchard (OK)' -> 'Blanchard (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Blanchard Bridge Creek (OK)' -> 'Blanchard Bridge Creek (OK)' (no change)
+2026-11-10 16:05:54,054 - WARNING -   'Bluejacket (OK)' -> 'Bluejacket (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Boise City (OK)' -> 'Boise City (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Bokoshe (OK)' -> 'Bokoshe (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Bowlegs (OK)' -> 'Bowlegs (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Braman (OK)' -> 'Braman (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Bray (OK)' -> 'Bray (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Bray-Doyle (OK)' -> 'Bray-Doyle (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Bristow (OK)' -> 'Bristow (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Broken Arrow (OK)' -> 'Broken Arrow (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Broken Arrow Grace Christian (OK)' -> 'Broken Arrow Grace Christian (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Broken Arrow Summit Christian Academy (OK)' -> 'Broken Arrow Summit Christian Academy (OK)' (no change)
+2026-11-10 16:05:54,055 - WARNING -   'Broken Bow (OK)' -> 'Broken Bow (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Buffalo (OK)' -> 'Buffalo (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Bunch Cave Springs (OK)' -> 'Bunch Cave Springs (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Burns Flat Community (OK)' -> 'Burns Flat Community (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Burns Flat-Dill City (OK)' -> 'Burns Flat-Dill City (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Cache (OK)' -> 'Cache (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Caddo (OK)' -> 'Caddo (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Canadian (OK)' -> 'Canadian (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Canton (OK)' -> 'Canton (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Carnegie (OK)' -> 'Carnegie (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Cashion (OK)' -> 'Cashion (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Catoosa (OK)' -> 'Catoosa (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Chandler (OK)' -> 'Chandler (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Checotah (OK)' -> 'Checotah (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Chelsea (OK)' -> 'Chelsea (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Cherokee (OK)' -> 'Cherokee (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Chickasha (OK)' -> 'Chickasha (OK)' (no change)
+2026-11-10 16:05:54,056 - WARNING -   'Choctaw (OK)' -> 'Choctaw (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Chouteau (OK)' -> 'Chouteau (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Chouteau-Mazie (OK)' -> 'Chouteau-Mazie (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Claremore (OK)' -> 'Claremore (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Claremore Christian (OK)' -> 'Claremore Christian (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Claremore Sequoyah (OK)' -> 'Claremore Sequoyah (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Claremore Sequoyah Christian (OK)' -> 'Claremore Sequoyah Christian (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Claremore Verdigris (OK)' -> 'Claremore Verdigris (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Cleveland (OK)' -> 'Cleveland (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Clinton (OK)' -> 'Clinton (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Coalgate (OK)' -> 'Coalgate (OK)' (no change)
+2026-11-10 16:05:54,058 - WARNING -   'Coffeyville South (OK)' -> 'Coffeyville South (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Colcord (OK)' -> 'Colcord (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Collinsville (OK)' -> 'Collinsville (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Comanche (OK)' -> 'Comanche (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Commerce (OK)' -> 'Commerce (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Copan (OK)' -> 'Copan (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Cordell (OK)' -> 'Cordell (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Corn Bible Academy (OK)' -> 'Corn Bible Academy (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Council Hill Midway (OK)' -> 'Council Hill Midway (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Covington (OK)' -> 'Covington (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Covington-Douglas (OK)' -> 'Covington-Douglas (OK)' (no change)
+2026-11-10 16:05:54,059 - WARNING -   'Coweta (OK)' -> 'Coweta (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Coyle (OK)' -> 'Coyle (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Crescent (OK)' -> 'Crescent (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Cromwell Butner (OK)' -> 'Cromwell Butner (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Cushing (OK)' -> 'Cushing (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Cyril (OK)' -> 'Cyril (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Davenport (OK)' -> 'Davenport (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Davis (OK)' -> 'Davis (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Deer Creek-Lamont (OK)' -> 'Deer Creek-Lamont (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Del City (OK)' -> 'Del City (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Del City Christian Heritage (OK)' -> 'Del City Christian Heritage (OK)' (no change)
+2026-11-10 16:05:54,060 - WARNING -   'Del City Destiny Christian (OK)' -> 'Del City Destiny Christian (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Depew (OK)' -> 'Depew (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Dewar (OK)' -> 'Dewar (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Dewey (OK)' -> 'Dewey (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Dibble (OK)' -> 'Dibble (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Drumright (OK)' -> 'Drumright (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Duke (OK)' -> 'Duke (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Duncan (OK)' -> 'Duncan (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Duncan Empire (OK)' -> 'Duncan Empire (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Durant (OK)' -> 'Durant (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Durant Victory Life Academy (OK)' -> 'Durant Victory Life Academy (OK)' (no change)
+2026-11-10 16:05:54,061 - WARNING -   'Edmond Deer Creek (OK)' -> 'Edmond Deer Creek (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'Edmond Memorial (OK)' -> 'Edmond Memorial (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'Edmond North (OK)' -> 'Edmond North (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'Edmond Oklahoma Christian Academy (OK)' -> 'Edmond Oklahoma Christian Academy (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'Edmond Santa Fe (OK)' -> 'Edmond Santa Fe (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'El Reno (OK)' -> 'El Reno (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'Elgin (OK)' -> 'Elgin (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'Elk City (OK)' -> 'Elk City (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'Elk City Merritt (OK)' -> 'Elk City Merritt (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'Elmore City (OK)' -> 'Elmore City (OK)' (no change)
+2026-11-10 16:05:54,062 - WARNING -   'Elmore City-Pernell (OK)' -> 'Elmore City-Pernell (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Enid (OK)' -> 'Enid (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Enid Chisholm (OK)' -> 'Enid Chisholm (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Enid Oklahoma Bible (OK)' -> 'Enid Oklahoma Bible (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Eufaula (OK)' -> 'Eufaula (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Fairfax (OK)' -> 'Fairfax (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Fairfax Woodland (OK)' -> 'Fairfax Woodland (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Fairland (OK)' -> 'Fairland (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Fairview (OK)' -> 'Fairview (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Forgan (OK)' -> 'Forgan (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Fort Gibson (OK)' -> 'Fort Gibson (OK)' (no change)
+2026-11-10 16:05:54,063 - WARNING -   'Fox (OK)' -> 'Fox (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Foyil (OK)' -> 'Foyil (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Frederick (OK)' -> 'Frederick (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Freedom (OK)' -> 'Freedom (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Gans (OK)' -> 'Gans (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Garber (OK)' -> 'Garber (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Geary (OK)' -> 'Geary (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Glenpool (OK)' -> 'Glenpool (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Goodwell-Yarbrough (OK)' -> 'Goodwell-Yarbrough (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Gore (OK)' -> 'Gore (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Grandfield (OK)' -> 'Grandfield (OK)' (no change)
+2026-11-10 16:05:54,064 - WARNING -   'Grove (OK)' -> 'Grove (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Guthrie (OK)' -> 'Guthrie (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Guymon (OK)' -> 'Guymon (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Haileyville (OK)' -> 'Haileyville (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Harrah (OK)' -> 'Harrah (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Hartshorne (OK)' -> 'Hartshorne (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Haskell (OK)' -> 'Haskell (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Healdton (OK)' -> 'Healdton (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Heavener (OK)' -> 'Heavener (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Helena (OK)' -> 'Helena (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Helena Timberlake (OK)' -> 'Helena Timberlake (OK)' (no change)
+2026-11-10 16:05:54,065 - WARNING -   'Hennessey (OK)' -> 'Hennessey (OK)' (no change)
+2026-11-10 16:05:54,066 - WARNING -   'Henryetta (OK)' -> 'Henryetta (OK)' (no change)
+2026-11-10 16:05:54,066 - WARNING -   'Hinton (OK)' -> 'Hinton (OK)' (no change)
+2026-11-10 16:05:54,066 - WARNING -   'Hobart (OK)' -> 'Hobart (OK)' (no change)
+2026-11-10 16:05:54,066 - WARNING -   'Holdenville (OK)' -> 'Holdenville (OK)' (no change)
+2026-11-10 16:05:54,066 - WARNING -   'Hollis (OK)' -> 'Hollis (OK)' (no change)
+2026-11-10 16:05:54,066 - WARNING -   'Hominy (OK)' -> 'Hominy (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Hooker (OK)' -> 'Hooker (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Hugo (OK)' -> 'Hugo (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Hulbert (OK)' -> 'Hulbert (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Idabel (OK)' -> 'Idabel (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Inola (OK)' -> 'Inola (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Jay (OK)' -> 'Jay (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Jenks (OK)' -> 'Jenks (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Jet-Nash (OK)' -> 'Jet-Nash (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Jones (OK)' -> 'Jones (OK)' (no change)
+2026-11-10 16:05:54,067 - WARNING -   'Kansas (OK)' -> 'Kansas (OK)' (no change)
+2026-11-10 16:05:54,068 - WARNING -   'Kellyville (OK)' -> 'Kellyville (OK)' (no change)
+2026-11-10 16:05:54,068 - WARNING -   'Keota (OK)' -> 'Keota (OK)' (no change)
+2026-11-10 16:05:54,068 - WARNING -   'Ketchum (OK)' -> 'Ketchum (OK)' (no change)
+2026-11-10 16:05:54,068 - WARNING -   'Kiefer (OK)' -> 'Kiefer (OK)' (no change)
+2026-11-10 16:05:54,068 - WARNING -   'Kingfisher (OK)' -> 'Kingfisher (OK)' (no change)
+2026-11-10 16:05:54,068 - WARNING -   'Kingston (OK)' -> 'Kingston (OK)' (no change)
+2026-11-10 16:05:54,068 - WARNING -   'Konawa (OK)' -> 'Konawa (OK)' (no change)
+2026-11-10 16:05:54,068 - WARNING -   'Kremlin (OK)' -> 'Kremlin (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Kremlin-Hillsdale (OK)' -> 'Kremlin-Hillsdale (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Laverne (OK)' -> 'Laverne (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Lawton (OK)' -> 'Lawton (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Lawton Eisenhower (OK)' -> 'Lawton Eisenhower (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Lawton MacArthur (OK)' -> 'Lawton MacArthur (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Lexington (OK)' -> 'Lexington (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Lindsay (OK)' -> 'Lindsay (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Locust Grove (OK)' -> 'Locust Grove (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Lone Grove (OK)' -> 'Lone Grove (OK)' (no change)
+2026-11-10 16:05:54,069 - WARNING -   'Lone Wolf (OK)' -> 'Lone Wolf (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'Luther (OK)' -> 'Luther (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'Madill (OK)' -> 'Madill (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'Mangum (OK)' -> 'Mangum (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'Mannford (OK)' -> 'Mannford (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'Marietta (OK)' -> 'Marietta (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'Marlow (OK)' -> 'Marlow (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'Marlow Central (OK)' -> 'Marlow Central (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'Maud (OK)' -> 'Maud (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'Maysville (OK)' -> 'Maysville (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'McAlester (OK)' -> 'McAlester (OK)' (no change)
+2026-11-10 16:05:54,070 - WARNING -   'McLoud (OK)' -> 'McLoud (OK)' (no change)
+2026-11-10 16:05:54,071 - WARNING -   'Medford (OK)' -> 'Medford (OK)' (no change)
+2026-11-10 16:05:54,071 - WARNING -   'Meeker (OK)' -> 'Meeker (OK)' (no change)
+2026-11-10 16:05:54,071 - WARNING -   'Miami (OK)' -> 'Miami (OK)' (no change)
+2026-11-10 16:05:54,071 - WARNING -   'Midwest City (OK)' -> 'Midwest City (OK)' (no change)
+2026-11-10 16:05:54,071 - WARNING -   'Midwest City Carl Albert (OK)' -> 'Midwest City Carl Albert (OK)' (no change)
+2026-11-10 16:05:54,071 - WARNING -   'Minco (OK)' -> 'Minco (OK)' (no change)
+2026-11-10 16:05:54,071 - WARNING -   'Moore (OK)' -> 'Moore (OK)' (no change)
+2026-11-10 16:05:54,071 - WARNING -   'Moore Southmoore (OK)' -> 'Moore Southmoore (OK)' (no change)
+2026-11-10 16:05:54,071 - WARNING -   'Moore Southwest Christian Academy (OK)' -> 'Moore Southwest Christian Academy (OK)' (no change)
+2026-11-10 16:05:54,072 - WARNING -   'Mooreland (OK)' -> 'Mooreland (OK)' (no change)
+2026-11-10 16:05:54,072 - WARNING -   'Morris (OK)' -> 'Morris (OK)' (no change)
+2026-11-10 16:05:54,072 - WARNING -   'Morrison (OK)' -> 'Morrison (OK)' (no change)
+2026-11-10 16:05:54,072 - WARNING -   'Mounds (OK)' -> 'Mounds (OK)' (no change)
+2026-11-10 16:05:54,072 - WARNING -   'Mounds Liberty (OK)' -> 'Mounds Liberty (OK)' (no change)
+2026-11-10 16:05:54,072 - WARNING -   'Mountain View (OK)' -> 'Mountain View (OK)' (no change)
+2026-11-10 16:05:54,072 - WARNING -   'Mountain View-Gotebo (OK)' -> 'Mountain View-Gotebo (OK)' (no change)
+2026-11-10 16:05:54,072 - WARNING -   'Muldrow (OK)' -> 'Muldrow (OK)' (no change)
+2026-11-10 16:05:54,072 - WARNING -   'Muskogee (OK)' -> 'Muskogee (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Muskogee Hilldale (OK)' -> 'Muskogee Hilldale (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Muskogee St. Joseph (OK)' -> 'Muskogee St. Joseph (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Mustang (OK)' -> 'Mustang (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Mutual Sharon-Mutual (OK)' -> 'Mutual Sharon-Mutual (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Newcastle (OK)' -> 'Newcastle (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Newkirk (OK)' -> 'Newkirk (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Noble (OK)' -> 'Noble (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Norman (OK)' -> 'Norman (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Norman Community Christian (OK)' -> 'Norman Community Christian (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Norman Little Axe (OK)' -> 'Norman Little Axe (OK)' (no change)
+2026-11-10 16:05:54,073 - WARNING -   'Norman North (OK)' -> 'Norman North (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Nowata (OK)' -> 'Nowata (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Oaks (OK)' -> 'Oaks (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Oaks-Mission (OK)' -> 'Oaks-Mission (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Oilton (OK)' -> 'Oilton (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Okeene (OK)' -> 'Okeene (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Okemah (OK)' -> 'Okemah (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Oklahoma City Bishop McGuinness (OK)' -> 'Oklahoma City Bishop McGuinness (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Oklahoma City Capitol Hill (OK)' -> 'Oklahoma City Capitol Hill (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Oklahoma City Casady (OK)' -> 'Oklahoma City Casady (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Oklahoma City Central (OK)' -> 'Oklahoma City Central (OK)' (no change)
+2026-11-10 16:05:54,074 - WARNING -   'Oklahoma City Crooked Oak (OK)' -> 'Oklahoma City Crooked Oak (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Crossings Christian (OK)' -> 'Oklahoma City Crossings Christian (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Douglass (OK)' -> 'Oklahoma City Douglass (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Heritage Hall (OK)' -> 'Oklahoma City Heritage Hall (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Life Christian (OK)' -> 'Oklahoma City Life Christian (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Marshall (OK)' -> 'Oklahoma City Marshall (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Millwood (OK)' -> 'Oklahoma City Millwood (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Mount St. Mary (OK)' -> 'Oklahoma City Mount St. Mary (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Northeast (OK)' -> 'Oklahoma City Northeast (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Northwest Classen (OK)' -> 'Oklahoma City Northwest Classen (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Oklahoma Centennial (OK)' -> 'Oklahoma City Oklahoma Centennial (OK)' (no change)
+2026-11-10 16:05:54,075 - WARNING -   'Oklahoma City Patriots HomeSchool (OK)' -> 'Oklahoma City Patriots HomeSchool (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma City Putnam City (OK)' -> 'Oklahoma City Putnam City (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma City Putnam City North (OK)' -> 'Oklahoma City Putnam City North (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma City Putnam City West (OK)' -> 'Oklahoma City Putnam City West (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma City Southeast (OK)' -> 'Oklahoma City Southeast (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma City St. Mary's (OK)' -> 'Oklahoma City St. Mary's (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma City U.S. Grant (OK)' -> 'Oklahoma City U.S. Grant (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma City Western Heights (OK)' -> 'Oklahoma City Western Heights (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma City Westmoore (OK)' -> 'Oklahoma City Westmoore (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma City Windsor Hills Baptist (OK)' -> 'Oklahoma City Windsor Hills Baptist (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma School for the Deaf (OK)' -> 'Oklahoma School for the Deaf (OK)' (no change)
+2026-11-10 16:05:54,076 - WARNING -   'Oklahoma State School of Mines (OK)' -> 'Oklahoma State School of Mines (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Okmulgee (OK)' -> 'Okmulgee (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Oologah (OK)' -> 'Oologah (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Owasso (OK)' -> 'Owasso (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Owasso Rejoice Christian (OK)' -> 'Owasso Rejoice Christian (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Panama (OK)' -> 'Panama (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Paoli (OK)' -> 'Paoli (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Park Hill Keys (OK)' -> 'Park Hill Keys (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Pauls Valley (OK)' -> 'Pauls Valley (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Pawhuska (OK)' -> 'Pawhuska (OK)' (no change)
+2026-11-10 16:05:54,077 - WARNING -   'Pawnee (OK)' -> 'Pawnee (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Perkins (OK)' -> 'Perkins (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Perkins-Tryon (OK)' -> 'Perkins-Tryon (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Perry (OK)' -> 'Perry (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Picher (OK)' -> 'Picher (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Piedmont (OK)' -> 'Piedmont (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Pocola (OK)' -> 'Pocola (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Ponca City (OK)' -> 'Ponca City (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Ponca City Military Academy (OK)' -> 'Ponca City Military Academy (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Pond Creek (OK)' -> 'Pond Creek (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Pond Creek-Hunter (OK)' -> 'Pond Creek-Hunter (OK)' (no change)
+2026-11-10 16:05:54,078 - WARNING -   'Porter (OK)' -> 'Porter (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Porum (OK)' -> 'Porum (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Poteau (OK)' -> 'Poteau (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Prague (OK)' -> 'Prague (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Prue (OK)' -> 'Prue (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Pryor (OK)' -> 'Pryor (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Purcell (OK)' -> 'Purcell (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Quapaw (OK)' -> 'Quapaw (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Quinton (OK)' -> 'Quinton (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Ramona Caney Valley (OK)' -> 'Ramona Caney Valley (OK)' (no change)
+2026-11-10 16:05:54,079 - WARNING -   'Red Rock Noble County (OK)' -> 'Red Rock Noble County (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Ringling (OK)' -> 'Ringling (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Ringwood (OK)' -> 'Ringwood (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Roland (OK)' -> 'Roland (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Rush Springs (OK)' -> 'Rush Springs (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Ryan (OK)' -> 'Ryan (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Salina (OK)' -> 'Salina (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Sallisaw (OK)' -> 'Sallisaw (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Sallisaw Central (OK)' -> 'Sallisaw Central (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Sand Springs Charles Page (OK)' -> 'Sand Springs Charles Page (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Sapulpa (OK)' -> 'Sapulpa (OK)' (no change)
+2026-11-10 16:05:54,080 - WARNING -   'Sapulpa Euchee Indian (OK)' -> 'Sapulpa Euchee Indian (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Sasakwa (OK)' -> 'Sasakwa (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Savanna (OK)' -> 'Savanna (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Sayre (OK)' -> 'Sayre (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Seiling (OK)' -> 'Seiling (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Seminole (OK)' -> 'Seminole (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Seminole Strother (OK)' -> 'Seminole Strother (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Shattuck (OK)' -> 'Shattuck (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Shawnee (OK)' -> 'Shawnee (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Shawnee Bethel (OK)' -> 'Shawnee Bethel (OK)' (no change)
+2026-11-10 16:05:54,081 - WARNING -   'Shawnee North Rock Creek (OK)' -> 'Shawnee North Rock Creek (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'Shidler (OK)' -> 'Shidler (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'Skiatook (OK)' -> 'Skiatook (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'Snyder (OK)' -> 'Snyder (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'South Coffeyville Oklahoma Union (OK)' -> 'South Coffeyville Oklahoma Union (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'South Coffeyville-Copan (OK)' -> 'South Coffeyville-Copan (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'Spencer Star-Spencer (OK)' -> 'Spencer Star-Spencer (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'Sperry (OK)' -> 'Sperry (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'Spiro (OK)' -> 'Spiro (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'St. Gregory's University (OK)' -> 'St. Gregory's University (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'Stigler (OK)' -> 'Stigler (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'Stillwater (OK)' -> 'Stillwater (OK)' (no change)
+2026-11-10 16:05:54,082 - WARNING -   'Stilwell (OK)' -> 'Stilwell (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Stratford (OK)' -> 'Stratford (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Stroud (OK)' -> 'Stroud (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Sulphur (OK)' -> 'Sulphur (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Tahlequah (OK)' -> 'Tahlequah (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Tahlequah Sequoyah (OK)' -> 'Tahlequah Sequoyah (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Talihina (OK)' -> 'Talihina (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Tecumseh (OK)' -> 'Tecumseh (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Temple (OK)' -> 'Temple (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Texhoma (OK)' -> 'Texhoma (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Thackerville (OK)' -> 'Thackerville (OK)' (no change)
+2026-11-10 16:05:54,083 - WARNING -   'Thomas (OK)' -> 'Thomas (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Thomas-Fay-Custer (OK)' -> 'Thomas-Fay-Custer (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Tipton (OK)' -> 'Tipton (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Tishomingo (OK)' -> 'Tishomingo (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Tonkawa (OK)' -> 'Tonkawa (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Tonkawa Prep School (OK)' -> 'Tonkawa Prep School (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Tulsa Berryhill (OK)' -> 'Tulsa Berryhill (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Tulsa Bishop Kelley (OK)' -> 'Tulsa Bishop Kelley (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Tulsa Booker T. Washington (OK)' -> 'Tulsa Booker T. Washington (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Tulsa Cascia Hall (OK)' -> 'Tulsa Cascia Hall (OK)' (no change)
+2026-11-10 16:05:54,084 - WARNING -   'Tulsa Central (OK)' -> 'Tulsa Central (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa East Central (OK)' -> 'Tulsa East Central (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa Edison (OK)' -> 'Tulsa Edison (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa Hale (OK)' -> 'Tulsa Hale (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa Holland Hall (OK)' -> 'Tulsa Holland Hall (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa Lincoln Christian (OK)' -> 'Tulsa Lincoln Christian (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa McLain Science & Tech (OK)' -> 'Tulsa McLain Science & Tech (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa Memorial (OK)' -> 'Tulsa Memorial (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa Metro Christian (OK)' -> 'Tulsa Metro Christian (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa NOAH HomeSchool (OK)' -> 'Tulsa NOAH HomeSchool (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa Regent Prep (OK)' -> 'Tulsa Regent Prep (OK)' (no change)
+2026-11-10 16:05:54,085 - WARNING -   'Tulsa St. Monica Catholic (OK)' -> 'Tulsa St. Monica Catholic (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Tulsa Union (OK)' -> 'Tulsa Union (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Tulsa Victory Christian (OK)' -> 'Tulsa Victory Christian (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Tulsa Webster (OK)' -> 'Tulsa Webster (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Tulsa Will Rogers College (OK)' -> 'Tulsa Will Rogers College (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Turpin (OK)' -> 'Turpin (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Tuttle (OK)' -> 'Tuttle (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Tyrone (OK)' -> 'Tyrone (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'University of Oklahoma JV (OK)' -> 'University of Oklahoma JV (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Valliant (OK)' -> 'Valliant (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Velma-Alma (OK)' -> 'Velma-Alma (OK)' (no change)
+2026-11-10 16:05:54,086 - WARNING -   'Vian (OK)' -> 'Vian (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Vinita (OK)' -> 'Vinita (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Vinita White Oak (OK)' -> 'Vinita White Oak (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Wagoner (OK)' -> 'Wagoner (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Wagoner Lincoln Academy (OK)' -> 'Wagoner Lincoln Academy (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Wakita (OK)' -> 'Wakita (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Walters (OK)' -> 'Walters (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Warner (OK)' -> 'Warner (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Washington (OK)' -> 'Washington (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Watonga (OK)' -> 'Watonga (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Watts (OK)' -> 'Watts (OK)' (no change)
+2026-11-10 16:05:54,087 - WARNING -   'Waukomis (OK)' -> 'Waukomis (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Waukomis Pioneer (OK)' -> 'Waukomis Pioneer (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Waukomis Pioneer-Pleasant Vale (OK)' -> 'Waukomis Pioneer-Pleasant Vale (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Waurika (OK)' -> 'Waurika (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Wayne (OK)' -> 'Wayne (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Waynoka (OK)' -> 'Waynoka (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Weatherford (OK)' -> 'Weatherford (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Webbers Falls (OK)' -> 'Webbers Falls (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Welch (OK)' -> 'Welch (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Weleetka (OK)' -> 'Weleetka (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Wellston (OK)' -> 'Wellston (OK)' (no change)
+2026-11-10 16:05:54,088 - WARNING -   'Westville (OK)' -> 'Westville (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Wetumka (OK)' -> 'Wetumka (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Wewoka (OK)' -> 'Wewoka (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Wilburton (OK)' -> 'Wilburton (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Wilson (OK)' -> 'Wilson (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Woodward (OK)' -> 'Woodward (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Wyandotte (OK)' -> 'Wyandotte (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Wynnewood (OK)' -> 'Wynnewood (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Yale (OK)' -> 'Yale (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Yukon (OK)' -> 'Yukon (OK)' (no change)
+2026-11-10 16:05:54,089 - WARNING -   'Yukon Southwest Covenant (OK)' -> 'Yukon Southwest Covenant (OK)' (no change)
+2026-11-10 16:05:54,089 - INFO - Validation passed: 469 rules are clean and ready to upload.
+2026-11-10 16:05:54,107 - INFO - Uploading 469 rules to staging table: ConsolidationRules_Staging...
+2026-11-10 16:05:54,238 - INFO - Upload to staging table complete.
+2026-11-10 16:05:54,243 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-10 16:07:13,404 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-10 16:07:13,404 - INFO - Reason logged to dbo.HS_Consolidation_Log: OK round 1: out-of-state towns filed as (OK) (Fort Smith, Springdale, Gentry...), 2024 MaxPreps names (Atoka Wampus, OKC Grant, Weleetka Graham), Sharon-Mutual
+2026-11-10 16:07:13,404 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-10 16:07:13,404 - INFO - Running post-consolidation safety check...
+2026-11-10 16:07:13,408 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup OK
+
+DEDUP v4 OK - PREVIEW (nothing changed)
+ dedup_archive: 251 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_dedup_archive_20261110_1607.csv
+ dedup_review: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_dedup_review_20261110_1607.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_dedup_summary_20261110_1607.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  OK     126214        251                  9                None 
+
+>>> review-pairs OK
+
+REVIEW-ONLY PAIRS OK - PREVIEW (nothing changed)
+ 9 pairs {'LONG': 1, 'SHORT': 8} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_review_pairs_20261110_1607.csv
+
+>>> same-score-fix OK
+
+SAME-SCORE DOUBLE-BOOKINGS OK - PREVIEW (nothing changed)
+ 530 pairs {'DROP B': 142, 'DROP A': 134, 'UNDECIDED': 254} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_same_score_20261110_1608.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  274       None   None
+
+>>> report OK double-booked
+
+REPORT double-booked OK: 5880 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_double_booked_20261110_1609.csv
+   Kind             Team      Season  Gap  A_Date      A_Opp              A_Score  A_Source                                  A_Batch  B_Date      B_Opp              B_Score  B_Source                           B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Ada (OK)  1929    0    1929-09-28  Tecumseh (OK)      0-25     Tulsa_World_1929_09_28_19.csv             173      1929-09-28  Locust Grove (OK)  49-0     Tulsa_World_1929_09_28_19.csv      173      9EBC4670-F704-4F77-9196-6E7E5C046167  DD1FF9B1-C928-4F6A-BA9E-D27A97399BC4
+   DIFFERENT GAMES  Ada (OK)  1930    0    1930-11-15  Holdenville (OK)   14-38    Times_Record_1930_11_15_7 (1).csv         172      1930-11-15  Salina (OK)        0-12     Times_Record_1930_11_15_7 (1).csv  172      D5F2C3D6-26FD-4C82-9599-267A92ABC19E  BE18EA9B-9B5C-4879-AB4C-929C57E0A759
+   DIFFERENT GAMES  Ada (OK)  1944    1    1944-09-30  Durant (OK)        51-6     Tulsa_World_1944_09_30_8.csv              173      1944-09-29  Pauls Valley (OK)  28-6     http://www.iwasatthegame.com/      None     F634FDF8-7063-4749-8033-25ED71BAE5F2  944B3473-005E-460B-A6F4-A883E0BEA039
+   DIFFERENT GAMES  Ada (OK)  1944    1    1944-11-04  Henryetta (OK)     19-7     Tulsa_World_1944_11_04_8.csv              173      1944-11-03  McAlester (OK)     44-17    http://www.iwasatthegame.com/      None     60407AAE-FA5C-4C16-8937-085908886BC2  9006B362-BD20-40A6-9C42-367329D67A22
+   DIFFERENT GAMES  Ada (OK)  1945    1    1945-10-05  Ardmore (OK)       0-13     http://www.iwasatthegame.com/             None     1945-10-06  Pauls Valley (OK)  20-14    Tulsa_World_1945_10_06_8.csv       173      87087EBC-7D25-4473-A343-20B68F4A2D58  01EBDA84-3D78-40C9-8646-4597374A1D07
+   DIFFERENT GAMES  Ada (OK)  1945    1    1945-11-16  Tishomingo (OK)    45-0     http://www.iwasatthegame.com/             None     1945-11-17  Holdenville (OK)   19-12    Tulsa_World_1945_11_17_11.csv      173      5345A862-1544-4344-83F9-852AEC6E070C  792FDB36-D8E4-4AEB-A86E-A743B357BDB5
+   DIFFERENT GAMES  Ada (OK)  1946    1    1946-09-20  Pauls Valley (OK)  6-6      http://www.iwasatthegame.com/             None     1946-09-21  Purcell (OK)       6-0      Tulsa_World_1946_09_21_10.csv      173      3B7DD0F6-9A68-4C42-8C6D-08F329DAC31B  0104042B-6C8F-459B-9FE6-AD3822BF7E9C
+   DIFFERENT GAMES  Ada (OK)  1946    1    1946-11-02  Henryetta (OK)     13-19    Tulsa_World_1946_11_02_8.csv              173      1946-11-01  Holdenville (OK)   20-6     http://www.iwasatthegame.com/      None     D7ECFEC5-9F83-4FAB-ACC5-12ACC32EEB1B  2F662F44-4187-4718-8B0A-5C8C65928C30
+   DIFFERENT GAMES  Ada (OK)  1947    0    1947-09-26  Durant (OK)        13-0     https://www.newspapers.com/image/6366114  None     1947-09-26  Ardmore (OK)       21-0     http://www.iwasatthegame.com/      None     A8C1F4C8-5798-49F5-8B3E-4DE1127D436E  328A853D-289D-41F8-84F5-7008BAB3D547
+   DIFFERENT GAMES  Ada (OK)  1947    1    1947-09-27  Durant (OK)        13-6     Tulsa_World_1947_09_27_10.csv             173      1947-09-26  Ardmore (OK)       21-0     http://www.iwasatthegame.com/      None     4C065265-09BE-43D4-84A9-31C52AC95763  328A853D-289D-41F8-84F5-7008BAB3D547
+   DIFFERENT GAMES  Ada (OK)  1947    1    1947-10-31  Holdenville (OK)   7-0      http://www.iwasatthegame.com/             None     1947-11-01  Henryetta (OK)     0-7      Tulsa_World_1947_11_01_13.csv      173      58E44E05-E39B-4602-92AD-02A410ECD8C1  3BC747C0-EFBE-428E-A55C-03BFAD738991
+   DIFFERENT GAMES  Ada (OK)  1948    1    1948-10-01  Wewoka (OK)        20-25    http://www.iwasatthegame.com/             None     1948-10-02  Pauls Valley (OK)  26-6     Tulsa_World_1948_10_02_15.csv      173      E70A5992-DAF1-47A5-9867-87819F79A696  1FFEE41B-9C45-41C6-A49D-FD2303FC42D1
+   DIFFERENT GAMES  Ada (OK)  1948    1    1948-10-16  Wewoka (OK)        20-26    Tulsa_World_1948_10_16_13.csv             173      1948-10-15  Henryetta (OK)     20-0     http://www.iwasatthegame.com/      None     6A1A2613-63C7-417D-98C5-41866E028C21  CDFF67C9-166C-4747-9426-42C710D67A2A
+   DIFFERENT GAMES  Ada (OK)  1948    1    1948-10-23  Seminole (OK)      7-14     Tulsa_World_1948_10_23_10.csv             173      1948-10-22  McAlester (OK)     41-0     http://www.iwasatthegame.com/      None     97EA0F6A-514D-430E-8043-1BD999AD75FE  560303B8-3672-451B-B3ED-7CE836F02A4B
+   DIFFERENT GAMES  Ada (OK)  1950    0    1950-09-22  Purcell (OK)       28-13    1951 Purcell (OK) Yearbook                None     1950-09-22  Durant (OK)        20-6     http://www.iwasatthegame.com/      None     D0367471-027C-46DB-B5D3-299D7CFC3129  D128714C-8822-44C2-8902-AE45128CBF1C
+   ... 5865 more rows (see CSV)
+
+=== OK 2026-11-10 16:09:21

@@ -1,0 +1,81 @@
+
+>>> archive-ids MA --ids ma_college_dup_ids.csv --reason "Post-1940 college games confirmed present in College_Scores" --commit
+
+ARCHIVE LISTED GAMES MA - COMMIT
+ 3 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_archive_ids_COMMITTED_20261109_0927.csv
+   Season  Date        Home                                   Home_Score  Visitor                              Visitor_Score  Source                                    Access_ID  ID                                  
+   1954    1954-11-14  New Haven State Teachers College (CT)  20          American International College (MA)  20             The_Boston_Globe_1954_11_14_50.csv        None       2955BB34-0E30-47F0-A7BE-0A5483592BC2
+   1971    1971-10-10  New Hampton School (NH)                32          Brandeis University Club Team (MA)   13             None                                      None       B52D54FD-F49D-4F5A-AF3D-A87D84CDC780
+   1985    1985-10-11  American International College (MA)    33          The College of New Jersey (NJ)       7              https://digital.libraries.psu.edu/digita  None       77FDD810-D0B0-405E-95E7-E471AB7558BD
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  3       3      7DBD6E19-8518-403C-960C-24E1F1143CF4  None
+
+>>> dedup MA --commit
+
+DEDUP v4 MA - COMMIT
+ dedup_archive: 338 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_archive_COMMITTED_20261109_0927.csv
+ dedup_review: 137 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_review_COMMITTED_20261109_0927.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_summary_COMMITTED_20261109_0927.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  MA     96952         338                  137              D187ED28-7523-4692-9C05-C3070B71650E
+
+>>> review-pairs MA --commit
+
+REVIEW-ONLY PAIRS MA - COMMIT
+ 137 pairs {'LONG': 3, 'SHORT': 134} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_review_pairs_COMMITTED_20261109_0927.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  137       3588BE1E-2A3D-4F9E-AC00-18721563AD0B  None
+
+>>> block-dups MA --commit
+
+ONE-DATE SOURCE BLOCKS MA - COMMIT
+ blocks: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_blocks_COMMITTED_20261109_0927.csv
+ block_dups: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_block_dups_COMMITTED_20261109_0927.csv
+   Source                                  Season  BlockDate   RepeatTeams  Games  CopiedElsewhere
+   The_Boston_Globe_1943_10_03_25.csv      1943    1943-10-03  3            28     0              
+   The_Boston_Globe_1948_10_24_37 (1).csv  1948    1948-10-24  3            25     0              
+   The_Boston_Globe_1951_09_30_47 (1).csv  1951    1951-09-30  39           71     0              
+   The_Boston_Globe_1951_11_11_54.csv      1951    1951-11-11  19           64     0              
+   The_Boston_Globe_1953_11_01_47.csv      1953    1953-11-01  3            43     0              
+   The_Boston_Globe_1954_10_17_61 (4).csv  1954    1954-10-17  4            12     0              
+   The_Boston_Globe_1956_09_30_62.csv      1956    1956-09-30  3            63     0              
+   The_Boston_Globe_1956_10_21_59.csv      1956    1956-10-21  5            55     0              
+   The_Boston_Globe_1956_11_11_47.csv      1956    1956-11-11  5            59     0              
+   The_Boston_Globe_1957_09_29_47.csv      1957    1957-09-29  4            55     0              
+   The_Boston_Globe_1957_10_13_63.csv      1957    1957-10-13  3            46     0              
+   The_Boston_Globe_1958_10_12_82.csv      1958    1958-10-12  3            65     0              
+   The_Boston_Globe_1958_10_19_76.csv      1958    1958-10-19  3            53     0              
+   The_Boston_Globe_1959_09_27_76.csv      1959    1959-09-27  3            72     0              
+   The_Boston_Globe_1959_10_11_82.csv      1959    1959-10-11  5            78     0              
+   The_Boston_Globe_1959_10_18_81.csv      1959    1959-10-18  4            74     0              
+   The Boston Globe                        1977    1977-09-18  4            69     0              
+   The Boston Globe                        1977    1977-10-02  3            93     0              
+   The Boston Globe                        1977    1977-10-09  4            95     0              
+   The Boston Globe                        1977    1977-10-23  5            107    0              
+   The Boston Globe                        1977    1977-10-30  3            97     0              
+   The Boston Globe                        1977    1977-11-06  3            100    0              
+   The Boston Globe                        1977    1977-11-13  4            91     0              
+   The Boston Globe                        1977    1977-11-25  5            98     0              
+   The Boston Globe                        1978    1978-09-17  5            83     0              
+   ... 58 more rows (see CSV)
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         7A6933A2-4EC6-4F88-AB78-B0807E466535  None
+
+>>> same-score-fix MA --commit
+
+SAME-SCORE DOUBLE-BOOKINGS MA - COMMIT
+ 330 pairs {'DROP A': 91, 'DROP B': 94, 'UNDECIDED': 145} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_same_score_COMMITTED_20261109_0928.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  185       C2BF922A-D159-4450-8527-1D2D3B35A7F5  None
+
+>>> fix-dates MA
+
+FIX DATES MA - PREVIEW (nothing changed)
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_fix_dates_20261109_0928.csv
+   Season  OldDate     NewDate     DayShift  Home         Home_Score  Visitor                       Visitor_Score  KeepSource                                ArchivedSource                          KeepID                                ArchiveRunID                        
+   1946    1946-10-11  1946-10-20  9         Quincy (MA)  12          South Weymouth Weymouth (MA)  7              http://www.e-yearbook.com/sp/eybb?school  The_Boston_Globe_1946_10_20_26 (2).csv  F1C13AB9-AABF-46B0-84BF-B1B717295FAA  D187ED28-7523-4692-9C05-C3070B71650E
+   1947    1947-10-10  1947-10-19  9         Quincy (MA)  19          South Weymouth Weymouth (MA)  14             http://www.e-yearbook.com/sp/eybb?school  The_Boston_Globe_1947_10_19_31 (1).csv  C0F62C93-0F2B-4C1C-A324-4D60F777A690  D187ED28-7523-4692-9C05-C3070B71650E
+   Status                     Updated  Err 
+   PREVIEW (nothing changed)  2        None
+
+=== OK 2026-11-09 09:28:59

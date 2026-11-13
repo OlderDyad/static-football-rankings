@@ -1,0 +1,12 @@
+remap MN --url "https://www.maxpreps.com/mn/pipestone/pipestone-arrows/football/schedule/" --to "Pipestone Area (MN)" --commit
+move-team MN --from "Lakeville (MN)" --to "Lakeville North (MN)" --seasons 1880-2004 --reason "Lakeville High became Lakeville North when Lakeville South opened (2005); pre-split games under the continuation name" --commit
+mapcheck SD --commit
+consolidate SD --reason "SD round 2: same-school name variants found in same-score pairs (SD: Hayti Hamlin, Harding County, Todd County, Lake Andes Central, Sturgis Brown, Box Elder Douglas, Crow Creek; MN: Hendricks, Pipestone Area, Argyle Central, Ulen-Hitterdal)"
+dedup SD --commit
+review-pairs SD --commit
+same-score-fix SD --commit
+mapcheck MN --commit
+consolidate MN --reason "MN round 2: same-school name variants found in same-score pairs (SD: Hayti Hamlin, Harding County, Todd County, Lake Andes Central, Sturgis Brown, Box Elder Douglas, Crow Creek; MN: Hendricks, Pipestone Area, Argyle Central, Ulen-Hitterdal)"
+dedup MN --commit
+review-pairs MN --commit
+same-score-fix MN --commit

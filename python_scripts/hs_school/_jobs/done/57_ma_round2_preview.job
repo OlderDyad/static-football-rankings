@@ -1,0 +1,7 @@
+move-team MA --from "Boston Commerce (MA)" --to "Springfield Commerce (MA)" --seasons 1970-2005 --reason "1977-2001 Western Mass games of Springfield Commerce mis-tagged as Boston Commerce in Boston Globe" --commit
+archive-ids MA --ids ma_college_dup_ids.csv --reason "Post-1940 college games confirmed present in College_Scores"
+dedup MA
+review-pairs MA
+block-dups MA
+same-score-fix MA
+fix-dates MA

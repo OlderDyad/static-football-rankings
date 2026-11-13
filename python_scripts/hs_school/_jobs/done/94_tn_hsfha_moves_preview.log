@@ -1,0 +1,380 @@
+
+>>> move-team TN --from "Chapel Hill (NC)" --to "Chapel Hill Forrest (TN)" --seasons 1880-2026 --ids hsfha_mv_00.csv --reason "HSFHA-TN match: game belongs to Chapel Hill Forrest (TN) (hsfha.org school code)"
+ only the 144 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_00.csv
+
+MOVE Chapel Hill (NC) -> Chapel Hill Forrest (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 144 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  144    True               None
+
+>>> move-team TN --from "Chattanooga Howard Tech (TN)" --to "Nashville Howard (TN)" --seasons 1880-2026 --ids hsfha_mv_01.csv --reason "HSFHA-TN match: game belongs to Nashville Howard (TN) (hsfha.org school code)"
+ only the 119 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_01.csv
+
+MOVE Chattanooga Howard Tech (TN) -> Nashville Howard (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 119 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  119    True               None
+
+>>> move-team TN --from "Nashville Tennessee Industrial School (TN)" --to "Sweetwater Tennessee Military Institute (TN)" --seasons 1880-2026 --ids hsfha_mv_02.csv --reason "HSFHA-TN match: game belongs to Sweetwater Tennessee Military Institute (TN) (hsfha.org school code)"
+ only the 107 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_02.csv
+
+MOVE Nashville Tennessee Industrial School (TN) -> Sweetwater Tennessee Military Institute (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  107    True               None
+
+>>> move-team TN --from "Fulton City (KY)" --to "Knoxville Fulton (TN)" --seasons 1880-2026 --ids hsfha_mv_03.csv --reason "HSFHA-TN match: game belongs to Knoxville Fulton (TN) (hsfha.org school code)"
+ only the 101 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_03.csv
+
+MOVE Fulton City (KY) -> Knoxville Fulton (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 100 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  101    True               None
+
+>>> move-team TN --from "Dayton (KY)" --to "Rhea Central (TN)" --seasons 1880-2026 --ids hsfha_mv_04.csv --reason "HSFHA-TN match: game belongs to Rhea Central (TN) (hsfha.org school code)"
+ only the 80 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_04.csv
+
+MOVE Dayton (KY) -> Rhea Central (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 80 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  80     True               None
+
+>>> move-team TN --from "Blountville Sullivan Central (TN)" --to "Sullivan West (TN)" --seasons 1880-2026 --ids hsfha_mv_05.csv --reason "HSFHA-TN match: game belongs to Sullivan West (TN) (hsfha.org school code)"
+ only the 78 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_05.csv
+
+MOVE Blountville Sullivan Central (TN) -> Sullivan West (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  78     True               None
+
+>>> move-team TN --from "Nashville West (TN)" --to "Knoxville West (TN)" --seasons 1880-2026 --ids hsfha_mv_06.csv --reason "HSFHA-TN match: game belongs to Knoxville West (TN) (hsfha.org school code)"
+ only the 78 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_06.csv
+
+MOVE Nashville West (TN) -> Knoxville West (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 86 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  78     True               None
+
+>>> move-team TN --from "Nashville East (TN)" --to "Knoxville East (TN)" --seasons 1880-2026 --ids hsfha_mv_07.csv --reason "HSFHA-TN match: game belongs to Knoxville East (TN) (hsfha.org school code)"
+ only the 72 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_07.csv
+
+MOVE Nashville East (TN) -> Knoxville East (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  72     True               None
+
+>>> move-team TN --from "Trenton Peabody (TN)" --to "Nashville Peabody (TN)" --seasons 1880-2026 --ids hsfha_mv_08.csv --reason "HSFHA-TN match: game belongs to Nashville Peabody (TN) (hsfha.org school code)"
+ only the 54 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_08.csv
+
+MOVE Trenton Peabody (TN) -> Nashville Peabody (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  54     False              None
+
+>>> move-team TN --from "Morristown-Hamblen West (TN)" --to "Knoxville West (TN)" --seasons 1880-2026 --ids hsfha_mv_09.csv --reason "HSFHA-TN match: game belongs to Knoxville West (TN) (hsfha.org school code)"
+ only the 39 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_09.csv
+
+MOVE Morristown-Hamblen West (TN) -> Knoxville West (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 39 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 77 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  39     True               None
+
+>>> move-team TN --from "Bell Buckle The Webb School (TN)" --to "Knoxville Webb (TN)" --seasons 1880-2026 --ids hsfha_mv_10.csv --reason "HSFHA-TN match: game belongs to Knoxville Webb (TN) (hsfha.org school code)"
+ only the 37 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_10.csv
+
+MOVE Bell Buckle The Webb School (TN) -> Knoxville Webb (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  37     True               None
+
+>>> move-team TN --from "Memphis Trezevant (TN)" --to "Trezevant (TN)" --seasons 1880-2026 --ids hsfha_mv_11.csv --reason "HSFHA-TN match: game belongs to Trezevant (TN) (hsfha.org school code)"
+ only the 35 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_11.csv
+
+MOVE Memphis Trezevant (TN) -> Trezevant (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 35 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  35     False              None
+
+>>> move-team TN --from "Campbellsville (KY)" --to "Campbellsville (TN)" --seasons 1880-2026 --ids hsfha_mv_12.csv --reason "HSFHA-TN match: game belongs to Campbellsville (TN) (hsfha.org school code)"
+ only the 33 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_12.csv
+
+MOVE Campbellsville (KY) -> Campbellsville (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 33 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  33     True               None
+
+>>> move-team TN --from "Pikeville (KY)" --to "Pikeville Bledsoe County (TN)" --seasons 1880-2026 --ids hsfha_mv_13.csv --reason "HSFHA-TN match: game belongs to Pikeville Bledsoe County (TN) (hsfha.org school code)"
+ only the 30 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_13.csv
+
+MOVE Pikeville (KY) -> Pikeville Bledsoe County (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  30     True               None
+
+>>> move-team TN --from "Knoxville Central (TN)" --to "Nashville Central (TN)" --seasons 1880-2026 --ids hsfha_mv_14.csv --reason "HSFHA-TN match: game belongs to Nashville Central (TN) (hsfha.org school code)"
+ only the 26 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_14.csv
+
+MOVE Knoxville Central (TN) -> Nashville Central (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 117 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  26     True               None
+
+>>> move-team TN --from "Knox Central (KY)" --to "Knoxville Central (TN)" --seasons 1880-2026 --ids hsfha_mv_15.csv --reason "HSFHA-TN match: game belongs to Knoxville Central (TN) (hsfha.org school code)"
+ only the 25 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_15.csv
+
+MOVE Knox Central (KY) -> Knoxville Central (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 117 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  25     True               None
+
+>>> move-team TN --from "Decatur County-Riverside (TN)" --to "Chattanooga Riverside (TN)" --seasons 1880-2026 --ids hsfha_mv_16.csv --reason "HSFHA-TN match: game belongs to Chattanooga Riverside (TN) (hsfha.org school code)"
+ only the 22 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_16.csv
+
+MOVE Decatur County-Riverside (TN) -> Chattanooga Riverside (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  22     True               None
+
+>>> move-team TN --from "Pikeville Taft Youth Center (TN)" --to "Nashville Tennessee Youth Center (TN)" --seasons 1880-2026 --ids hsfha_mv_17.csv --reason "HSFHA-TN match: game belongs to Nashville Tennessee Youth Center (TN) (hsfha.org school code)"
+ only the 22 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_17.csv
+
+MOVE Pikeville Taft Youth Center (TN) -> Nashville Tennessee Youth Center (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 47 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  22     False              None
+
+>>> move-team TN --from "Knoxville Powell (KY)" --to "Powell (TN)" --seasons 1880-2026 --ids hsfha_mv_18.csv --reason "HSFHA-TN match: game belongs to Powell (TN) (hsfha.org school code)"
+ only the 18 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_18.csv
+
+MOVE Knoxville Powell (KY) -> Powell (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 91 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  18     True               None
+
+>>> move-team TN --from "Gallatin (TN)" --to "Gallatin Union (TN)" --seasons 1880-2026 --ids hsfha_mv_19.csv --reason "HSFHA-TN match: game belongs to Gallatin Union (TN) (hsfha.org school code)"
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_19.csv
+
+MOVE Gallatin (TN) -> Gallatin Union (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 97 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  17     True               None
+
+>>> move-team TN --from "Tazewell (VA)" --to "New Tazewell Claiborne (TN)" --seasons 1880-2026 --ids hsfha_mv_20.csv --reason "HSFHA-TN match: game belongs to New Tazewell Claiborne (TN) (hsfha.org school code)"
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_20.csv
+
+MOVE Tazewell (VA) -> New Tazewell Claiborne (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  17     True               None
+
+>>> move-team TN --from "Byrdstown Pickett County (TN)" --to "Byrdstown (TN)" --seasons 1880-2026 --ids hsfha_mv_21.csv --reason "HSFHA-TN match: game belongs to Byrdstown (TN) (hsfha.org school code)"
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_21.csv
+
+MOVE Byrdstown Pickett County (TN) -> Byrdstown (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 32 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  15     True               None
+
+>>> move-team TN --from "Nashville John Overton (TN)" --to "Memphis Overton (TN)" --seasons 1880-2026 --ids hsfha_mv_22.csv --reason "HSFHA-TN match: game belongs to Memphis Overton (TN) (hsfha.org school code)"
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_22.csv
+
+MOVE Nashville John Overton (TN) -> Memphis Overton (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  13     True               None
+
+>>> move-team TN --from "Memphis Treadwell (TN)" --to "Memphis Trezevant (TN)" --seasons 1880-2026 --ids hsfha_mv_23.csv --reason "HSFHA-TN match: game belongs to Memphis Trezevant (TN) (hsfha.org school code)"
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_23.csv
+
+MOVE Memphis Treadwell (TN) -> Memphis Trezevant (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0855.csv
+ move_by_season: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0855.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  13     True               None
+
+>>> move-team TN --from "Nashville Central (NC)" --to "Nashville Central (TN)" --seasons 1880-2026 --ids hsfha_mv_24.csv --reason "HSFHA-TN match: game belongs to Nashville Central (TN) (hsfha.org school code)"
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_24.csv
+
+MOVE Nashville Central (NC) -> Nashville Central (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  11     True               None
+
+>>> move-team TN --from "Elkton Todd County Central (KY)" --to "Elkton (TN)" --seasons 1880-2026 --ids hsfha_mv_25.csv --reason "HSFHA-TN match: game belongs to Elkton (TN) (hsfha.org school code)"
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_25.csv
+
+MOVE Elkton Todd County Central (KY) -> Elkton (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 86 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  10     True               None
+
+>>> move-team TN --from "Knoxville Central (TN)" --to "Harrison Chattanooga Central (TN)" --seasons 1880-2026 --ids hsfha_mv_26.csv --reason "HSFHA-TN match: game belongs to Harrison Chattanooga Central (TN) (hsfha.org school code)"
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_26.csv
+
+MOVE Knoxville Central (TN) -> Harrison Chattanooga Central (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 120 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  9      True               None
+
+>>> move-team TN --from "Somerville Fayette County (TN)" --to "Somerville Fayette Ware (TN)" --seasons 1880-2026 --ids hsfha_mv_27.csv --reason "HSFHA-TN match: game belongs to Somerville Fayette Ware (TN) (hsfha.org school code)"
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_27.csv
+
+MOVE Somerville Fayette County (TN) -> Somerville Fayette Ware (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 89 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  8      True               None
+
+>>> move-team TN --from "New Market Buckhorn (AL)" --to "New Market (TN)" --seasons 1880-2026 --ids hsfha_mv_28.csv --reason "HSFHA-TN match: game belongs to New Market (TN) (hsfha.org school code)"
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_28.csv
+
+MOVE New Market Buckhorn (AL) -> New Market (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  7      True               None
+
+>>> move-team TN --from "Harrison Chattanooga Central (TN)" --to "Chattanooga City (TN)" --seasons 1880-2026 --ids hsfha_mv_29.csv --reason "HSFHA-TN match: game belongs to Chattanooga City (TN) (hsfha.org school code)"
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_29.csv
+
+MOVE Harrison Chattanooga Central (TN) -> Chattanooga City (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 120 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  7      True               None
+
+>>> move-team TN --from "Madisonville Grace Baptist (KY)" --to "Chattanooga Grace Baptist Academy (TN)" --seasons 1880-2026 --ids hsfha_mv_30.csv --reason "HSFHA-TN match: game belongs to Chattanooga Grace Baptist Academy (TN) (hsfha.org school code)"
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_30.csv
+
+MOVE Madisonville Grace Baptist (KY) -> Chattanooga Grace Baptist Academy (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  7      True               None
+
+>>> move-team TN --from "DeKalb County (AL)" --to "Smithville DeKalb County (TN)" --seasons 1880-2026 --ids hsfha_mv_31.csv --reason "HSFHA-TN match: game belongs to Smithville DeKalb County (TN) (hsfha.org school code)"
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_31.csv
+
+MOVE DeKalb County (AL) -> Smithville DeKalb County (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  7      True               None
+
+>>> move-team TN --from "Knoxville (TN)" --to "Knoxville Central (TN)" --seasons 1880-2026 --ids hsfha_mv_32.csv --reason "HSFHA-TN match: game belongs to Knoxville Central (TN) (hsfha.org school code)"
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_32.csv
+
+MOVE Knoxville (TN) -> Knoxville Central (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 118 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  6      True               None
+
+>>> move-team TN --from "Nashville Hume Fogg (TN)" --to "Memphis Humes Prep (TN)" --seasons 1880-2026 --ids hsfha_mv_33.csv --reason "HSFHA-TN match: game belongs to Memphis Humes Prep (TN) (hsfha.org school code)"
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_33.csv
+
+MOVE Nashville Hume Fogg (TN) -> Memphis Humes Prep (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  6      True               None
+
+>>> move-team TN --from "Franklin (TN)" --to "Winchester Franklin County (TN)" --seasons 1880-2026 --ids hsfha_mv_34.csv --reason "HSFHA-TN match: game belongs to Winchester Franklin County (TN) (hsfha.org school code)"
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_34.csv
+
+MOVE Franklin (TN) -> Winchester Franklin County (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  6      True               None
+
+>>> move-team TN --from "Chattanooga City (TN)" --to "Harrison Chattanooga Central (TN)" --seasons 1880-2026 --ids hsfha_mv_35.csv --reason "HSFHA-TN match: game belongs to Harrison Chattanooga Central (TN) (hsfha.org school code)"
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_35.csv
+
+MOVE Chattanooga City (TN) -> Harrison Chattanooga Central (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 120 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  6      True               None
+
+>>> move-team TN --from "London (KY)" --to "Loudon (TN)" --seasons 1880-2026 --ids hsfha_mv_36.csv --reason "HSFHA-TN match: game belongs to Loudon (TN) (hsfha.org school code)"
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_36.csv
+
+MOVE London (KY) -> Loudon (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  6      True               None
+
+>>> move-team TN --from "Knoxville Halls (TN)" --to "Halls (TN)" --seasons 1880-2026 --ids hsfha_mv_37.csv --reason "HSFHA-TN match: game belongs to Halls (TN) (hsfha.org school code)"
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_37.csv
+
+MOVE Knoxville Halls (TN) -> Halls (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 95 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  5      True               None
+
+>>> move-team TN --from "Brentwood (TN)" --to "Brentwood Academy (TN)" --seasons 1880-2026 --ids hsfha_mv_38.csv --reason "HSFHA-TN match: game belongs to Brentwood Academy (TN) (hsfha.org school code)"
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_38.csv
+
+MOVE Brentwood (TN) -> Brentwood Academy (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  5      True               None
+
+>>> move-team TN --from "Memphis Frayser (TN)" --to "Frayser Baptist (TN)" --seasons 1880-2026 --ids hsfha_mv_39.csv --reason "HSFHA-TN match: game belongs to Frayser Baptist (TN) (hsfha.org school code)"
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_39.csv
+
+MOVE Memphis Frayser (TN) -> Frayser Baptist (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  5      True               None
+
+>>> move-team TN --from "Nashville Tennessee Industrial School (TN)" --to "Bristol Tennessee (TN)" --seasons 1880-2026 --ids hsfha_mv_40.csv --reason "HSFHA-TN match: game belongs to Bristol Tennessee (TN) (hsfha.org school code)"
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_40.csv
+
+MOVE Nashville Tennessee Industrial School (TN) -> Bristol Tennessee (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 117 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  5      True               None
+
+>>> move-team TN --from "Birmingham West End (AL)" --to "Nashville West (TN)" --seasons 1880-2026 --ids hsfha_mv_41.csv --reason "HSFHA-TN match: game belongs to Nashville West (TN) (hsfha.org school code)"
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\hsfha_mv_41.csv
+
+MOVE Birmingham West End (AL) -> Nashville West (TN), seasons 1880-2026 - PREVIEW (nothing changed)
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_20261110_0856.csv
+ move_by_season: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_20261110_0856.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  5      True               None
+
+=== OK 2026-11-10 08:56:03

@@ -1,0 +1,25 @@
+
+>>> same-score-fix NJ --commit
+ 1250 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS NJ - COMMIT
+ 2504 pairs {'DROP B': 668, 'DROP A': 693, 'UNDECIDED': 1143} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_same_score_COMMITTED_20261112_1342.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1326      FA987C67-FA4D-4F9A-B883-515E8EDE33C5  None
+
+>>> query NJ season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_season_date_1_20261112_1342.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_season_date_2_20261112_1342.csv
+
+>>> query NJ forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_forfeits_1_20261112_1342.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_forfeits_2_20261112_1342.csv
+
+>>> step NJ 1.1 done "2026-11-12: 7 MaxPreps short names; PSU same-school pairs (Englewood Dwight Morrow, Emerson, Brick Township, Chatham); renames to latest (Woodrow Wilson -> Camden Eastside, East Paterson -> Elmwood Park); 7 URLs whose ProperName did not exist remapped"
+Tracker updated: NJ 1.1 -> done
+
+=== OK 2026-11-12 13:42:12

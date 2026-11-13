@@ -1,0 +1,12 @@
+set-dates OK --file ok_season_date_fix.csv --reason "yearbook estimated date had wrong year" --commit
+archive-ids OK --ids ok_college_dup_ids.csv --reason "Post-1940 college game confirmed present in College_Scores (names+scores match)" --commit
+step OK 1.1 done "2026-11-10: ~35 out-of-state towns written as (OK) merged to real state; 2024 MaxPreps names (Atoka Wampus, OKC Grant, Weleetka Graham); Oklahoma City Northwest -> Northwest Classen"
+step OK 1.2 done "2026-11-10: mapcheck 4 fixed; South Coffeyville URL remapped"
+step OK 1.3 done "2026-11-10: wrong-state twins moved per game (Joiner Shawnee AR->Shawnee 69, Kiowa KS->Kiowa OK 60, Pawnee OK->Grover Pawnee CO 55, Ada KS 17, Chesnee SC 17, ~35 small)"
+step OK 1.4 done "2026-11-10: South Coffeyville split from Oklahoma Union (321 games, opponent clustering); NW Classen pre-1955 -> Classen (167); Tulsa pre-1935 -> Tulsa Central (66)"
+step OK 2.1 done "2026-11-10: dedup 131+251+122 (mostly double MaxPreps imports)"
+step OK 2.2 done "2026-11-10: review pairs 5+9+23"
+step OK 2.3 done "2026-11-10: same-score 273 archived (254 undecided); iwasatthegame added as estimated-date source (all Fridays); double-booked 5,997 -> about 2,300"
+step OK 3.1 done "2026-11-10: 8 yearbook dates with wrong year fixed; fix-dates 2"
+step OK 3.2 done "2026-11-10: 25 2-0 games without forfeit flag left as-is"
+step OK 5.0 done "2026-11-10: 1 college copy archived (Tulsa-Arkansas 1943)"

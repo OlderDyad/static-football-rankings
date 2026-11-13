@@ -1,0 +1,43 @@
+
+>>> import-games TN --file hsfha_import_TN.csv --reason "HSFHA-TN (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+
+IMPORT GAMES TN - COMMIT from hsfha_import_TN.csv (26239 rows)
+   Skip                                Games
+   a team already has a game that day  1252 
+   IMPORT                              24161
+   name not in HS_Team_Names           741  
+   teams already meet that season      85   
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_import_skipped_20261110_1142.csv
+   Status     Imported  BatchID  Err 
+   COMMITTED  24161     196      None
+
+>>> same-score-fix TN
+ 362 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS TN - PREVIEW (nothing changed)
+ 228 pairs {'DROP A': 35, 'DROP B': 28, 'UNDECIDED': 165} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_same_score_20261110_1143.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  63        None   None
+
+>>> report TN double-booked
+
+REPORT double-booked TN: 1295 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_double_booked_20261110_1144.csv
+   Kind             Team                                  Season  Gap  A_Date      A_Opp                                     A_Score  A_Source                         A_Batch  B_Date      B_Opp                                     B_Score  B_Source                         B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Adamsville (TN)                       2019    2    2019-10-02  Decatur County-Riverside (TN)             7-0      www.maxpreps.com                 None     2019-10-04  Halls (TN)                                28-9     www.maxpreps.com                 None     F4FCF45A-69E6-4ABD-B5EC-A559149BB352  3EC56CD0-9873-4BE8-8CC4-E28DCA8D2663
+   DIFFERENT GAMES  Afton Chuckey-Doak (TN)               2015    1    2015-10-08  Erwin Unicoi County (TN)                  44-33    www.maxpreps.com                 None     2015-10-09  Kodak Northview Academy (TN)              28-46    www.maxpreps.com                 None     13C77C06-EF66-4242-821E-A2A466E7AF5F  15EEB0E3-2998-4390-BC42-E62B7871E611
+   DIFFERENT GAMES  Alamo Crockett County (TN)            2016    1    2016-09-16  Savannah Hardin County (TN)               13-31    www.maxpreps.com                 None     2016-09-15  Dyersburg (TN)                            49-14    www.maxpreps.com                 None     F017E78C-D31B-43EB-8B78-86D94DB1DDD5  BFFD5539-7617-4E81-A7E1-9E8FF5F43C8A
+   DIFFERENT GAMES  Alamo Crockett County (TN)            2019    2    2019-10-02  Jackson University School of Jackson (TN  21-11    www.maxpreps.com                 None     2019-10-04  Troy Obion County (TN)                    41-21    www.maxpreps.com                 None     DB1C0E64-6E2E-466F-A910-874DFF358AE1  9A8E4700-E953-4DBB-86C6-AE334F235B76
+   DIFFERENT GAMES  Alcoa (TN)                            1935    1    1935-10-31  Knoxville Young (TN)                      0-13     hsfha.org HSFHA-TN game 1172783  196      1935-11-01  Maryville Everett (TN)                    0-25     hsfha.org HSFHA-TN game 1515844  196      7291F761-851B-4A32-BBF3-28FECC13AEEB  B9B4464D-1306-4A74-8785-A809FFF97DC0
+   DIFFERENT GAMES  Alcoa (TN)                            2014    2    2014-08-21  Carthage Smith County (TN)                54-13    www.maxpreps.com                 None     2014-08-23  Morristown-Hamblen East (TN)              42-14    www.maxpreps.com                 None     D2F77921-A5A8-431A-9717-904DA884FDAF  BED71C87-D1C5-4020-93B9-EF62E48A1C52
+   DIFFERENT GAMES  Alcoa (TN)                            2015    2    2015-10-27  Englewood McMinn Central (TN)             38-7     www.maxpreps.com                 None     2015-10-29  Christian Academy of Knoxville (TN)       33-7     www.maxpreps.com                 None     E95B2C78-2552-4994-8387-4A57759A158D  00FDF438-5034-4AF3-A3DA-B0ACFBB77005
+   DIFFERENT GAMES  Alcoa (TN)                            2016    1    2016-09-26  Maryville Heritage (TN)                   41-14    www.maxpreps.com                 None     2016-09-27  Loudon (TN)                               41-7     www.maxpreps.com                 None     3B729D57-8C8E-43FC-B2A6-A6BB6B48A79C  EA96D184-59C0-497B-99F9-FC89EDD200ED
+   DIFFERENT GAMES  Alcoa (TN)                            2019    2    2019-10-02  Gatlinburg-Pittman (TN)                   49-0     www.maxpreps.com                 None     2019-10-04  Kodak Northview Academy (TN)              60-0     www.maxpreps.com                 None     816953D6-8C77-4F00-92DB-1CABB358FD31  DD5D8CE7-1D72-40D9-A63E-4E86D164EAE2
+   DIFFERENT GAMES  Alcoa (TN)                            2019    0    2019-11-01  Gatlinburg-Pittman (TN)                   58-0     www.maxpreps.com                 None     2019-11-01  Kingsport Dobyns-Bennett (TN)             21-6     www.maxpreps.com                 None     4E581474-331E-4179-ABD2-CAED3155D974  5E6773E9-596E-48B0-8FCB-E04A84E12408
+   DIFFERENT GAMES  Alcoa (TN)                            2019    1    2019-11-01  Gatlinburg-Pittman (TN)                   58-0     www.maxpreps.com                 None     2019-11-02  Knoxville Austin-East (TN)                56-28    www.maxpreps.com                 None     4E581474-331E-4179-ABD2-CAED3155D974  1EF013DF-C0D8-4B36-B099-DD25D5C290C4
+   DIFFERENT GAMES  Alcoa (TN)                            2019    1    2019-11-02  Knoxville Austin-East (TN)                56-28    www.maxpreps.com                 None     2019-11-01  Kingsport Dobyns-Bennett (TN)             21-6     www.maxpreps.com                 None     1EF013DF-C0D8-4B36-B099-DD25D5C290C4  5E6773E9-596E-48B0-8FCB-E04A84E12408
+   DIFFERENT GAMES  Antioch (TN)                          2015    0    2015-10-16  Mount Juliet (TN)                         7-35     www.maxpreps.com                 None     2015-10-16  Lebanon (TN)                              14-34    www.maxpreps.com                 None     1E3CCBA7-ABB1-46BD-85C8-5E192C1DB8DC  60306963-42C2-44D1-AA4D-A1DFD296E17F
+   DIFFERENT GAMES  Antioch (TN)                          2018    0    2018-09-21  Lebanon (NH)                              12-6     www.maxpreps.com                 None     2018-09-21  Lebanon (TN)                              14-31    www.maxpreps.com                 None     E552F9CE-229D-4CF7-B075-91A9F017BE34  A91C4D5B-89A3-4515-8537-B494C0F56DA6
+   DIFFERENT GAMES  Antioch Ezell-Harding Christian (TN)  2019    0    2019-11-01  Huntsville Freedom Academy (AL)           72-28    www.maxpreps.com                 None     2019-11-01  Fayetteville Riverside Christian Academy  72-34    www.maxpreps.com                 None     F09A5544-825C-41A9-8838-61485BDBA30B  1C46FD74-1FD4-4E36-AB9C-FF858D57ED08
+   ... 1280 more rows (see CSV)
+
+=== OK 2026-11-10 11:44:04

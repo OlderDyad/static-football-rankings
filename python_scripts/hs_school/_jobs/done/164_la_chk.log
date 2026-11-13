@@ -1,0 +1,36 @@
+
+>>> dedup LA
+
+DEDUP v4 LA - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_archive_20261111_0849.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_review_20261111_0849.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_summary_20261111_0849.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  LA     103020        0                    0                None 
+
+>>> review-pairs LA
+
+REVIEW-ONLY PAIRS LA - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_review_pairs_20261111_0849.csv
+
+>>> query LA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_season_date_1_20261111_0849.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_season_date_2_20261111_0849.csv
+
+>>> query LA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_forfeits_1_20261111_0849.csv
+ set 2: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_forfeits_2_20261111_0849.csv
+
+>>> query LA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_college_check_1_20261111_0850.csv
+ set 2: 52 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_college_check_2_20261111_0850.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_college_check_3_20261111_0850.csv
+ set 4: 1522 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_college_check_4_20261111_0850.csv
+
+=== OK 2026-11-11 08:50:04

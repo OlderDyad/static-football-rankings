@@ -1,0 +1,25 @@
+
+>>> same-score-fix MO --commit
+ 1 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS MO - COMMIT
+ 326 pairs {'DROP A': 5, 'DROP B': 4, 'UNDECIDED': 317} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_same_score_COMMITTED_20261108_2001.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  9         16E51FEE-7AC1-4683-AB6E-5A0DAECF953D  None
+
+>>> same-score-fix KS --commit
+ 98 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS KS - COMMIT
+ 210 pairs {'DROP B': 2, 'DROP A': 2, 'UNDECIDED': 206} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_same_score_COMMITTED_20261108_2002.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  4         69D68A23-FC0B-46DD-91F9-B811F6B469EC  None
+
+>>> same-score-fix NE --commit
+
+SAME-SCORE DOUBLE-BOOKINGS NE - COMMIT
+ 273 pairs {'DROP A': 7, 'DROP B': 7, 'UNDECIDED': 259} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_same_score_COMMITTED_20261108_2003.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  14        EA8C9A06-341F-4EBF-AA92-20C35076D5FC  None
+
+=== OK 2026-11-08 20:03:29

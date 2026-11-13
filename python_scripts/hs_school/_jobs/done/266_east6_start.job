@@ -1,0 +1,48 @@
+addstate KY
+report KY drift
+mapcheck KY --commit
+dedup KY --commit
+review-pairs KY --commit
+same-score-fix KY
+query KY ky_dump.sql
+query KY ky_names.sql
+addstate WV
+report WV drift
+mapcheck WV --commit
+dedup WV --commit
+review-pairs WV --commit
+same-score-fix WV
+query WV wv_dump.sql
+query WV wv_names.sql
+addstate VA
+report VA drift
+mapcheck VA --commit
+dedup VA --commit
+review-pairs VA --commit
+same-score-fix VA
+query VA va_dump.sql
+query VA va_names.sql
+addstate MD
+report MD drift
+mapcheck MD --commit
+dedup MD --commit
+review-pairs MD --commit
+same-score-fix MD
+query MD md_dump.sql
+query MD md_names.sql
+addstate IN
+report IN drift
+mapcheck IN --commit
+dedup IN --commit
+review-pairs IN --commit
+same-score-fix IN
+query IN in_dump.sql
+query IN in_names.sql
+addstate NY
+report NY drift
+mapcheck NY --commit
+dedup NY --commit
+review-pairs NY --commit
+same-score-fix NY
+query NY ny_dump.sql
+query NY ny_names.sql

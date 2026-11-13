@@ -1,0 +1,8 @@
+same-score-fix MI --commit
+query MI season_date.sql
+query MI forfeits.sql
+query MI college_check.sql
+step MI 1.1 done "2026-11-12: 30 rules: 2024 MaxPreps short names (Forest Hills Eastern, Huron River, Calumet Copper, Detroit Central/Ford/King/U of D, Grosse Pointe North/South, Norrix, Wayland, Dowagiac, Flint Southwestern), same-school variants (Mount Morris EA Johnson, St. Ignace LaSalle, Ironwood LL Wright, Canton-Salem, Middleton Fulton, Petersburg-Summerfield, Vandercook Lake, Ogemaw Heights, Central Montcalm, Mason County Central, Highland Milford), renames to latest (Montrose -> Hill-McCloy, Western State High -> University High)"
+step MI 1.2 done "2026-11-12: 31 URLs remapped (13 ProperNames did not exist), mapcheck 62"
+step MI 2.1 done "2026-11-12: dedup 730"
+step MI 2.2 done "2026-11-12: review pairs 19"

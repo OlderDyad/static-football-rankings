@@ -1,0 +1,37 @@
+move-team GA --from "Jonesboro Mount Zion (GA)" --to "Carroll Mount Zion (GA)" --seasons 1880-2026 --ids hsfha_mv_00.csv --reason "HSFHA-GA match: game belongs to Carroll Mount Zion (GA) (hsfha.org school code)" --commit
+move-team GA --from "Macon Howard (GA)" --to "Atlanta Howard (GA)" --seasons 1880-2026 --ids hsfha_mv_01.csv --reason "HSFHA-GA match: game belongs to Atlanta Howard (GA) (hsfha.org school code)" --commit
+move-team GA --from "Garden City Groves (GA)" --to "Savannah Commercial (GA)" --seasons 1880-2026 --ids hsfha_mv_02.csv --reason "HSFHA-GA match: game belongs to Savannah Commercial (GA) (hsfha.org school code)" --commit
+move-team GA --from "Augusta Westminster Schools of Augusta (GA)" --to "Watkinsville Westminster Christian Academy (GA)" --seasons 1880-2026 --ids hsfha_mv_03.csv --reason "HSFHA-GA match: game belongs to Watkinsville Westminster Christian Academy (GA) (hsfha.org school code)" --commit
+move-team GA --from "Moultrie Bryant (GA)" --to "Moultrie High School for Negro Youth (GA)" --seasons 1880-2026 --ids hsfha_mv_04.csv --reason "HSFHA-GA match: game belongs to Moultrie High School for Negro Youth (GA) (hsfha.org school code)" --commit
+move-team GA --from "Sparta John Hancock Academy (GA)" --to "Hancock Academy (GA)" --seasons 1880-2026 --ids hsfha_mv_05.csv --reason "HSFHA-GA match: game belongs to Hancock Academy (GA) (hsfha.org school code)" --commit
+move-team GA --from "Flowery Branch Lanier Christian Academy (GA)" --to "Flowery Branch Lanier Christian (GA)" --seasons 1880-2026 --ids hsfha_mv_06.csv --reason "HSFHA-GA match: game belongs to Flowery Branch Lanier Christian (GA) (hsfha.org school code)" --commit
+move-team GA --from "Calhoun Gordon Central (GA)" --to "Gordon (GA)" --seasons 1880-2026 --ids hsfha_mv_10.csv --reason "HSFHA-GA match: game belongs to Gordon (GA) (hsfha.org school code)" --commit
+move-team GA --from "LaGrange Dawson Street Christian (GA)" --to "Newnan Greater Bethlehem Temple Christian (GA)" --seasons 1880-2026 --ids hsfha_mv_13.csv --reason "HSFHA-GA match: game belongs to Newnan Greater Bethlehem Temple Christian (GA) (hsfha.org school code)" --commit
+move-team GA --from "St. Andrews (SC)" --to "Savannah St. Andrew's (GA)" --seasons 1880-2026 --ids hsfha_mv_15.csv --reason "HSFHA-GA match: game belongs to Savannah St. Andrew's (GA) (hsfha.org school code)" --commit
+move-team GA --from "Athens Monsignor Donovan Catholic (GA)" --to "Siloam Nathanael Greene Academy (GA)" --seasons 1880-2026 --ids hsfha_mv_w1.csv --reason "HSFHA-GA school code + geography check: Nathanael Greene Academy 1973-2003 games filed under Monsignor Donovan" --commit
+move-team GA --from "Sugar Hill Lanier (GA)" --to "Macon Lanier (GA)" --seasons 1880-2009 --reason "HSFHA-GA school code + geography check: Lanier (Macon) 1911-1969 games filed under Sugar Hill Lanier (opened 2010)" --commit
+move-team GA --from "Lawrenceville Archer (GA)" --to "Atlanta Archer (GA)" --seasons 1880-2005 --reason "HSFHA-GA school code + geography check: Archer (Atlanta) 1957-1990s games filed under Lawrenceville Archer (opened 2009)" --commit
+move-team GA --from "Rome (GA)" --to "Old Rome (GA)" --seasons 1880-1960 --reason "HSFHA-GA school code + geography check: old Rome High (to 1957) games filed under Rome (new school 1992)" --commit
+move-team GA --from "Atlanta Hapeville Charter (GA)" --to "Hapeville (GA)" --seasons 1880-2000 --reason "HSFHA-GA school code + geography check: Hapeville High (to 1980s) games filed under Hapeville Charter (2000s)" --commit
+remap GA --url "https://www.maxpreps.com/ga/atlanta/north-atlanta-warriors/football/schedule/" --to "Atlanta North Atlanta (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/calhoun/calhoun-yellow-jackets/football/schedule/" --to "Calhoun (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/columbus/st-anne-pacelli-vikings/football/schedule/" --to "Columbus St. Anne-Pacelli (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/douglas/citizens-christian-academy-patriots/football/schedule/" --to "Douglas Citizens Christian Academy (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/east-dublin/east-laurens-falcons/football/schedule/" --to "East Dublin East Laurens (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/fairburn/st-marys-academy-bobcats/football/schedule/" --to "Fairburn Our Lady of Mercy (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/fort-oglethorpe/lakeview-fort-oglethorpe-warriors/football/schedule/" --to "Lakeview-Fort Oglethorpe (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/johns-creek/mount-pisgah-christian-patriots/football/schedule/" --to "Johns Creek Mount Pisgah Christian (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/jonesboro/mt-zion-bulldogs/football/schedule/" --to "Jonesboro Mount Zion (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/loganville/loganville-christian-academy-lions/football/schedule/" --to "Loganville Christian Academy (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/louisville/thomas-jefferson-academy-jaguars/football/schedule/" --to "Louisville Thomas Jefferson Academy (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/lyons/robert-toombs-christian-academy-crusaders/football/schedule/" --to "Lyons Robert Toombs Christian Academy (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/mcdonough/creekside-christian-academy-cougars/football/schedule/" --to "McDonough Creekside Christian Academy (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/mt-zion/mt-zion-eagles/football/schedule/" --to "Carroll Mount Zion (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/savannah/benedictine-cadets/football/schedule/" --to "Savannah Benedictine Military (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/st-simons-island/frederica-academy/football/schedule/" --to "St. Simons Island Frederica Academy (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/sugar-hill/georgia-force-christian-blue-knights/football/schedule/" --to "Sugar Hill Georgia Force Christian (GA)" --commit
+remap GA --url "https://www.maxpreps.com/ga/waynesboro/edmund-burke-academy-spartans/football/schedule/" --to "Waynesboro Edmund Burke Academy (GA)" --commit
+mapcheck GA --commit
+consolidate GA --reason "GA round 1: HSFHA-GA same-school name variants (typos, Atlanta X -> city-first), renames to the latest name per David's rule (Grady->Midtown, Southside->Jackson, Pacelli->St. Anne-Pacelli, Northwest Georgia->Dade County, Erwin...), GMA->Woodward; county consolidations left split"
+dedup GA
+review-pairs GA

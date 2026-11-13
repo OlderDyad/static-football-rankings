@@ -1,0 +1,17 @@
+remap IA --url "https://www.maxpreps.com/ia/ames/ames-little-cyclones/football/schedule/" --to "Ames (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/center-point/center-point-urbana-stormin-pointers/football/schedule/" --to "Center Point-Urbana (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/coon-rapids/coon-rapids-bayard-crusaders/football/schedule/" --to "Coon Rapids-Bayard (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/council-bluffs/jefferson-yellowjackets/football/schedule/" --to "Council Bluffs Thomas Jefferson (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/council-bluffs/lincoln-lynx/football/schedule/" --to "Council Bluffs Abraham Lincoln (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/des-moines/grand-view-christian-thunder/football/schedule/" --to "Grand View Christian (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/dyersville/beckman-trailblazers/football/schedule/" --to "Dyersville Beckman Catholic (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/jesup/jesup-j-hawks/football/schedule/" --to "Jesup (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/sergeant-bluff/sergeant-bluff-luton-warriors/football/schedule/" --to "Sergeant Bluffs-Luton (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/avoca/ahstw-vikings/football/schedule/" --to "Avoca-Hancock-Shelby-Tennant-Walnut (IA)" --commit
+remap IA --url "https://www.maxpreps.com/ia/jefferson/jefferson-scranton-rams/football/schedule/" --to "Jefferson-Scranton (IA)" --commit
+mapcheck IA --commit
+consolidate IA --reason "IA round 1: 2024 MaxPreps drift names (Ames Little, Council Bluffs Lincoln/Jefferson, Jesup J, Dyersville Beckman, Coon Rapids, Center Point...), same-school spellings (De Witt/DeWitt Central, Kuemper Catholic, WACO, Benton, NESCO, Twin Rivers, Cedar Valley, BCL, Sergeant Bluff-Luton, Iowa City-City), Grandview Park Baptist -> Grand View Christian (rename)"
+dedup IA
+review-pairs IA
+same-score-fix IA
+query IA ia_dump.sql

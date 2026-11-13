@@ -1,0 +1,112 @@
+
+>>> set-dates SC --file hsfha_dates_scfh.csv --reason "scfootballhistory date (week-based, mostly 7 or 14 days late) replaced by HSFHA-SC game date: same teams + same score" --commit
+
+SET DATES SC - COMMIT
+ 31148 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_set_dates_COMMITTED_20261111_1653.csv
+   Season  OldDate     NewDate     DayShift  Home                        Home_Score  Visitor                           Visitor_Score  Source                     Note                                      ID                                  
+   1960    1960-09-02  1960-09-01  -1        Belton (SC)                 7           Due West Dixie (SC)               7              www.scfootballhistory.com  hsfha.org game 1409225 (both teams + sco  8FFA81D6-AAB3-438A-A627-62AEEC95A712
+   1960    1960-09-02  1960-09-01  -1        Pickens (SC)                13          Greer (SC)                        6              www.scfootballhistory.com  hsfha.org game 1491664 (both teams + sco  09353F5E-4ADF-4B87-88D3-B4DA8381D1DF
+   1960    1960-09-02  1960-09-03  1         Central Daniel (SC)         19          Pendleton (SC)                    7              www.scfootballhistory.com  hsfha.org game 1492230 (both teams + sco  B2ABF9DA-41B4-4571-80A0-7672032645E5
+   1960    1960-09-02  1960-09-03  1         Brookland-Cayce (SC)        31          Columbia AC Flora (SC)            6              www.scfootballhistory.com  hsfha.org game 1203009 (both teams + sco  68DA5B8E-E1A8-41DF-B79F-486594AE0E83
+   1960    1960-09-02  1960-09-03  1         York Comprehensive (SC)     19          Saluda (SC)                       12             www.scfootballhistory.com  hsfha.org game 1498616 (both teams + sco  9F2ED8B3-9847-4060-81D6-507A38D33DBF
+   1960    1960-09-09  1960-09-08  -1        Greenville (SC)             21          Greenville Carolina Academy (SC)  0              www.scfootballhistory.com  hsfha.org game 1459607 (both teams + sco  EA41BEA3-11C7-4984-BBD6-116D23E91E42
+   1960    1960-09-09  1960-09-08  -1        Due West Dixie (SC)         7           Piedmont Ellen Woodside (SC)      0              www.scfootballhistory.com  hsfha.org game 1409226 (both teams + sco  29A33006-5DF6-43D7-8350-07B98B96DD49
+   1960    1960-09-16  1960-09-15  -1        Calhoun Falls Charter (SC)  14          Due West Dixie (SC)               0              www.scfootballhistory.com  hsfha.org game 1409306 (both teams + sco  04724143-BB3C-4ADA-AF65-3BE313567739
+   1960    1960-09-16  1960-09-15  -1        Camden Jackson (SC)         12          Cordova Edisto (SC)               12             www.scfootballhistory.com  hsfha.org game 1488185 (both teams + sco  FED4A65D-AB22-47D8-A169-24DB508F68FF
+   1960    1960-09-16  1960-09-17  1         Duncan Byrnes (SC)          14          Woodruff (SC)                     0              www.scfootballhistory.com  hsfha.org game 1501658 (both teams + sco  61CF8402-D9A7-472F-80E3-BA75A0F967B6
+   ... 31138 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  31148   31148    None
+
+>>> set-dates SC --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-SC date: same teams + same score in season" --commit
+
+SET DATES SC - COMMIT
+ 99 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_set_dates_COMMITTED_20261111_1653.csv
+   Season  OldDate     NewDate     DayShift  Home                         Home_Score  Visitor                      Visitor_Score  Source                                    Note                                      ID                                  
+   1924    1924-10-24  1924-11-07  14        Hartsville (SC)              66          Chesterfield (SC)            0              http://www.classmates.com/siteui/yearboo  hsfha.org game 1441298 (same teams+score  D6D6417B-2C44-4634-9884-77A33A3ECA05
+   1926    1926-09-24  1926-10-22  28        Spartanburg (SC)             41          Greer (SC)                   7              http://www.classmates.com/yearbooks/Spar  hsfha.org game 1500232 (same teams+score  77D183CF-C781-474D-B29B-A7FCFCFA2186
+   1926    1926-10-15  1926-11-26  42        Greenville (SC)              7           Spartanburg (SC)             7              http://www.classmates.com/yearbooks/Spar  hsfha.org game 1500234 (same teams+score  9E329C53-CFA3-4A3E-B176-EB7712DC3AE2
+   1930    1930-10-31  1930-11-14  14        Andrews (SC)                 18          Hartsville (SC)              12             http://www.classmates.com/siteui/yearboo  hsfha.org game 1202854 (same teams+score  8952A047-93B9-4ADD-A679-A814DEC742F9
+   1938    1938-09-30  1938-09-16  -14       Summerville (SC)             7           Moncks Corner Berkeley (SC)  0              http://www.classmates.com/siteui/yearboo  hsfha.org game 1445811 (same teams+score  D9FE4E57-0960-4461-86E1-B8D0F55E6180
+   1938    1938-10-07  1938-09-23  -14       Kingstree (SC)               27          Moncks Corner Berkeley (SC)  7              http://www.classmates.com/siteui/yearboo  hsfha.org game 1180447 (same teams+score  D3888481-A049-4AB3-964D-F8675B79D796
+   1938    1938-10-14  1938-09-30  -14       Moncks Corner Berkeley (SC)  12          Timmonsville (SC)            9              http://www.classmates.com/siteui/yearboo  hsfha.org game 1421574 (same teams+score  A69663CF-B4AE-465B-9109-9D48DB7358AA
+   1938    1938-11-11  1938-10-14  -28       Moncks Corner Berkeley (SC)  13          North Charleston (SC)        13             http://www.classmates.com/siteui/yearboo  hsfha.org game 1446610 (same teams+score  463CF83E-06A1-44BA-A48F-77F280840A91
+   1938    1938-11-11  1938-10-21  -21       Orangeburg (SC)              18          Hartsville (SC)              6              http://www.classmates.com/siteui/yearboo  hsfha.org game 1486710 (same teams+score  3423E2DA-1057-4E1D-9A58-EBC2D848ADD2
+   1938    1938-10-28  1938-11-18  21        Moncks Corner Berkeley (SC)  72          St. Stephen (SC)             0              http://www.classmates.com/siteui/yearboo  hsfha.org game 1421352 (same teams+score  44CBD6B8-FA1A-483F-82BA-FEDE8C7121F3
+   ... 89 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  99      99       None
+
+>>> set-scores SC --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-SC score (David 2026-11-10 rule)" --commit
+
+SET SCORES SC - COMMIT
+ 43 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_set_scores_COMMITTED_20261111_1653.csv
+   ID                                    Season  Date        Home                         OldHS  NewHS  Visitor                       OldVS  NewVS  Source                                    Note                  
+   5A8E9B1E-BC19-46A0-8CCE-33C1DE55564A  1927    1927-10-07  Hartsville (SC)              12     12     Rockingham (NC)               7      6      http://www.classmates.com/siteui/yearboo  hsfha.org game 1440692
+   A6E9C608-E86B-4A4D-A08B-E9E85BAD5439  1933    1933-11-17  Hartsville (SC)              13     14     Bennettsville (SC)            0      0      http://www.classmates.com/siteui/yearboo  hsfha.org game 1440717
+   39427C16-6824-409F-8BEC-635C95B9DD9C  1934    1934-10-12  Hartsville (SC)              19     18     Cheraw (SC)                   14     14     http://www.classmates.com/siteui/yearboo  hsfha.org game 1426538
+   0FAD73AE-8560-415F-8870-5F8996162107  1938    1938-10-28  Hartsville (SC)              20     28     Brookland-Cayce (SC)          0      0      http://www.classmates.com/siteui/yearboo  hsfha.org game 1440726
+   C715E499-9A0D-4FA6-A5D6-463A279DA068  1939    1939-10-20  Raleigh (NC)                 32     32     Spartanburg (SC)              1      0      http://www.classmates.com/yearbooks/Spar  hsfha.org game 784984 
+   F673B7D9-F7E3-4D2C-B1F0-64E55F7B08FE  1940    1940-09-27  Cheraw (SC)                  32     34     Hartsville (SC)               0      0      http://www.classmates.com/siteui/yearboo  hsfha.org game 1441228
+   4D95B64A-4DD6-4939-A4BB-C812495251AD  1940    1940-10-11  Mullins (SC)                 26     32     Hartsville (SC)               7      7      http://www.classmates.com/siteui/yearboo  hsfha.org game 1440914
+   8B8F6A85-E403-4FFD-BE48-81951B04EB5A  1940    1940-10-18  Orangeburg (SC)              37     39     Hartsville (SC)               6      6      http://www.classmates.com/siteui/yearboo  hsfha.org game 1486712
+   25CA9388-2DAA-4F0D-A50C-5162D1B44B88  1941    1941-09-12  Moncks Corner Berkeley (SC)  32     39     Yonges Island St. Pauls (SC)  0      0      http://www.classmates.com/siteui/yearboo  hsfha.org game 1421811
+   344029A5-CBFD-4AA3-8F00-4388844B29AE  1941    1941-10-03  Moncks Corner Berkeley (SC)  54     45     Lake City (SC)                6      7      http://www.classmates.com/siteui/yearboo  hsfha.org game 1451105
+   ... 33 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  43      43       None
+
+>>> same-score-fix SC --commit
+ 829 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS SC - COMMIT
+ 749 pairs {'DROP B': 298, 'DROP A': 324, 'UNDECIDED': 127} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_same_score_COMMITTED_20261111_1654.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  612       725B816A-C409-4BFB-8275-B7EB2FCEE0AA  None
+
+>>> import-games SC --file hsfha_import_SC.csv --reason "HSFHA-SC (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+
+IMPORT GAMES SC - COMMIT from hsfha_import_SC.csv (13573 rows)
+   Skip                                Games
+   a team already has a game that day  535  
+   IMPORT                              12519
+   name not in HS_Team_Names           519  
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_import_skipped_20261111_1655.csv
+   Status     Imported  BatchID  Err 
+   COMMITTED  12519     203      None
+
+>>> dedup SC
+
+DEDUP v4 SC - PREVIEW (nothing changed)
+ dedup_archive: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_dedup_archive_20261111_1655.csv
+ dedup_review: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_dedup_review_20261111_1655.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_dedup_summary_20261111_1655.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  SC     102200        22                   19               None 
+
+>>> review-pairs SC
+
+REVIEW-ONLY PAIRS SC - PREVIEW (nothing changed)
+ 17 pairs {'LONG': 3, 'SHORT': 14} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_review_pairs_20261111_1655.csv
+
+>>> query SC season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_season_date_1_20261111_1655.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_season_date_2_20261111_1655.csv
+
+>>> query SC forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_forfeits_1_20261111_1655.csv
+ set 2: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_forfeits_2_20261111_1655.csv
+
+>>> query SC college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_college_check_1_20261111_1655.csv
+ set 2: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_college_check_2_20261111_1655.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_college_check_3_20261111_1655.csv
+ set 4: 121 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_college_check_4_20261111_1655.csv
+
+=== OK 2026-11-11 16:55:49

@@ -1,0 +1,42 @@
+
+>>> same-score-fix OH --commit
+ 1248 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS OH - COMMIT
+ 2670 pairs {'DROP B': 913, 'DROP A': 901, 'UNDECIDED': 856} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_same_score_COMMITTED_20261112_0607.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1789      AFFB4E3C-4900-459C-90D6-6E5DA2CA16B2  None
+
+>>> query OH season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_season_date_1_20261112_0607.csv
+ set 2: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_season_date_2_20261112_0607.csv
+
+>>> query OH forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_forfeits_1_20261112_0607.csv
+ set 2: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_forfeits_2_20261112_0607.csv
+
+>>> query OH college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 51 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_college_check_1_20261112_0608.csv
+ set 2: 170 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_college_check_2_20261112_0608.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_college_check_3_20261112_0608.csv
+ set 4: 2023 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_college_check_4_20261112_0608.csv
+
+>>> step OH 1.1 done "2026-11-12: 26 rules: 2024 MaxPreps short names (Fremont Ross Little, Jackson Ironman, Medina Battling, Oberlin The, Cincinnati Country/North College, Villa Angela, The Athens...), city variants (Bexley, Reading, Columbus Academy, East Clinton, Graham Local, Highland -> Marengo, Fenwick -> Franklin), Moeller typo; Lima Central 2024+ -> Lima Catholic Central (35)"
+Tracker updated: OH 1.1 -> done
+
+>>> step OH 1.2 done "2026-11-12: 28 URLs remapped (incl. 6 ProperNames that did not exist: Waite, Harding, Beaver Local, Western Brown, United Local, Garfield CLC), mapcheck"
+Tracker updated: OH 1.2 -> done
+
+>>> step OH 2.1 done "2026-11-12: dedup 527"
+Tracker updated: OH 2.1 -> done
+
+>>> step OH 2.2 done "2026-11-12: review pairs 48"
+Tracker updated: OH 2.2 -> done
+
+=== OK 2026-11-12 06:08:23

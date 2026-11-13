@@ -1,0 +1,3 @@
+import-games TN --file hsfha_import_TN.csv --reason "HSFHA-TN (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+same-score-fix TN
+report TN double-booked

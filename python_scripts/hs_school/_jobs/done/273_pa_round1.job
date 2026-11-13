@@ -1,0 +1,35 @@
+remap PA --url "https://www.maxpreps.com/pa/allentown/allentown-central-catholic-vikings/football/schedule/" --to "Allentown Central Catholic (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/altoona/altoona-mountain-lions/football/schedule/" --to "Altoona (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/beaver/beaver-bobcats/football/schedule/" --to "Beaver Area (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/carmichaels/carmichaels-mighty-mikes/football/schedule/" --to "Carmichaels (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/cranberry-township/north-catholic-trojans/football/schedule/" --to "Cranberry Township North Catholic (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/derry/derry-trojans/football/schedule/" --to "Derry Area (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/drexel-hill/monsignor-bonner-archbishop-prendergast-catholic-friars-pandas/football/schedule/" --to "Drexel Hill Monsignor Bonner-Archbishop Prendergast (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/east-stroudsburg/east-stroudsburg-south-cavaliers/football/schedule/" --to "East Stroudsburg South (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/folsom/ridley-raiders/football/schedule/" --to "Folsom Ridley Township (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/greensburg/greensburg-central-catholic-centurions/football/schedule/" --to "Greensburg Central Catholic (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/hermitage/kennedy-catholic/football/schedule/" --to "Hermitage Kennedy Catholic (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/holland/council-rock-south-golden-hawks/football/schedule/" --to "Holland Council Rock South (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/indiana/indiana-little-indians/football/schedule/" --to "Indiana (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/johnstown/richland-rams/football/schedule/" --to "Richland Township (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/kittanning/armstrong-river-hawks/football/schedule/" --to "Kittanning Armstrong (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/minersville/minersville-battlin-miners/football/schedule/" --to "Minersville (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/nanticoke/greater-nanticoke-area-trojans/football/schedule/" --to "Nanticoke Greater Nanticoke Area (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/northampton/northampton-konkrete-kids/football/schedule/" --to "Northampton (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/philadelphia/mastery-charter-north-pickett-pumas/football/schedule/" --to "Philadelphia Mastery Charter North - Pickett (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/philadelphia/vaux-big-picture/football/schedule/" --to "Philadelphia Vaux Big Picture (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/plymouth/wyoming-valley-west-spartans/football/schedule/" --to "Plymouth Wyoming Valley West (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/warrington/central-bucks-south-titans/football/schedule/" --to "Warrington Central Bucks South (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/wyndmoor/la-salle-college-explorers/football/schedule/" --to "Wyndmoor La Salle College (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/hookstown/south-side-rams/football/schedule/" --to "Hookstown South Side Beaver (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/philadelphia/dobbins-randolph-vo-tech-mustangs/football/schedule/" --to "Philadelphia Murrell Dobbins Vo-Tech (PA)" --commit
+remap PA --url "https://www.maxpreps.com/pa/philadelphia/jules-e-mastbaum-vo-tech-panthers/football/schedule/" --to "Philadelphia Jules E. Mastbaum Vo-Tech (PA)" --commit
+move-team PA --from "East Stroudsburg (PA)" --to "East Stroudsburg South (PA)" --seasons 1880-2001 --reason "East Stroudsburg High became East Stroudsburg South when North opened (2002); pre-split games under the continuation name" --commit
+move-team PA --from "Downingtown (PA)" --to "Downingtown West (PA)" --seasons 1880-2003 --reason "Downingtown High became Downingtown West when East opened (2004); pre-split games under the continuation name" --commit
+move-team PA --from "Newtown Council Rock (PA)" --to "Newtown Council Rock North (PA)" --seasons 1880-2001 --reason "Council Rock High became Council Rock North when South opened (2002); pre-split games under the continuation name" --commit
+mapcheck PA --commit
+consolidate PA --reason "PA round 1: 2024 MaxPreps short names; same-school pairs from two digital.libraries.psu.edu team pages (Ridley, Wilson Area, Springfield, Haverford Township, Waynesburg Central, Richland, Dunbar Township, Bonner-Prendergast); renames to latest (North Catholic -> Cranberry, Edison-Fareira -> Thomas A. Edison, Dobbins)"
+dedup PA --commit
+review-pairs PA --commit
+same-score-fix PA
+query PA pa_dump.sql

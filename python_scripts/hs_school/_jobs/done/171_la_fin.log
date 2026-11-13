@@ -1,0 +1,35 @@
+
+>>> same-score-fix LA --commit
+ 1132 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS LA - COMMIT
+ 188 pairs {'DROP A': 7, 'DROP B': 9, 'UNDECIDED': 172} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_same_score_COMMITTED_20261111_0910.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  16        2816BA6A-509B-492E-978E-66E99C287078  None
+
+>>> commit LA
+
+DEDUP v4 LA - COMMIT
+ dedup_archive: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_archive_COMMITTED_20261111_0910.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_review_COMMITTED_20261111_0910.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_summary_COMMITTED_20261111_0910.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  LA     111227        16                   2                1F2088DD-CA6A-484D-AD0A-9C299BFEE8C4
+
+REVIEW-ONLY PAIRS LA - COMMIT
+ 2 pairs {'LONG': 1, 'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_review_pairs_COMMITTED_20261111_0911.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  2         ED99AEFF-6CDD-436B-BE37-EE7505BF97B1  None
+
+>>> query LA la_dump.sql
+
+QUERY la_dump (1 result sets)
+ set 1: 111212 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_la_dump_1_20261111_0911.csv
+
+>>> query LA la_export.sql
+
+QUERY la_export (2 result sets)
+ set 1: 111212 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_la_export_1_20261111_0911.csv
+ set 2: 1092 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_la_export_2_20261111_0911.csv
+
+=== OK 2026-11-11 09:11:16

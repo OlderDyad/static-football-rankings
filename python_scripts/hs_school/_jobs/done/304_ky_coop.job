@@ -1,0 +1,13 @@
+same-score-fix KY --commit
+consolidate KY --reason "KY co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/KY_cfg.py"
+move-team KY --from "Lexington (KY)" --to "Lexington Henry Clay (KY)" --seasons 1880-1942 --reason "KY same school, older name -> later name for 1880-1942 (2026-11-12)" --commit
+move-team KY --from "Corbin Lynn Camp (KY)" --to "Corbin (KY)" --seasons 1941-1961 --ids coop_ids/KY_mv_000.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team KY --from "Danville Boyle County (KY)" --to "Danville (KY)" --seasons 1927-1958 --ids coop_ids/KY_mv_001.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team KY --from "Harlan County (KY)" --to "Harlan (KY)" --seasons 1930-1997 --ids coop_ids/KY_mv_002.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team KY --from "Louisa Lawrence County (KY)" --to "Louisa (KY)" --seasons 1923-1973 --ids coop_ids/KY_mv_003.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team KY --from "Mount Sterling Montgomery County (KY)" --to "Mount Sterling (KY)" --seasons 1934-1962 --ids coop_ids/KY_mv_004.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team KY --from "Richmond Madison Central (KY)" --to "Richmond Madison (KY)" --seasons 1935-1970 --ids coop_ids/KY_mv_005.csv --reason "KY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup KY --commit
+review-pairs KY --commit
+same-score-fix KY
+query KY ky_dump.sql

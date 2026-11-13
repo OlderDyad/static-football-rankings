@@ -1,0 +1,20 @@
+
+>>> archive-ids NE --ids NE_college_archive_ids.csv --reason "1953 UNO-Doane college game; copy in College_Scores" --commit
+
+ARCHIVE LISTED GAMES NE - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_archive_ids_COMMITTED_20261106_1233.csv
+   Season  Date        Home                               Home_Score  Visitor                Visitor_Score  Source                                    Access_ID  ID                                  
+   1953    1953-11-14  University of Nebraska Omaha (NE)  41          Doane University (NE)  6              The_Orlando_Sentinel_1953_11_14_Page_6.c  None       CCB27548-8E09-4162-BC05-5445A7EC9DC1
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       1      AC162BBE-7F60-4D7A-9B52-03086D5B480E  None
+
+>>> step NE 3.1 done "0 season/date mismatches"
+Tracker updated: NE 3.1 -> done
+
+>>> step NE 3.2 done "forfeit flags consistent; 2025-26 MaxPreps imports leave Forfeit NULL"
+Tracker updated: NE 3.2 -> done
+
+>>> step NE 5.0 "in progress" "1 archived; NE_for_college_chat.csv"
+Tracker updated: NE 5.0 -> in progress
+
+=== OK 2026-11-06 12:33:31

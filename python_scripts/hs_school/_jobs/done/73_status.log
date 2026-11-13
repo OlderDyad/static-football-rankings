@@ -1,0 +1,87 @@
+
+>>> status MA
+   StepNo  Step                     Status       Updated     RunIDs                                    Notes                                   
+   0.0     College-link collisions  not started  None        None                                      None                                    
+   1.1     Name inventory           in progress  2026-11-09  None                                      consolidation 2026-11-09: MA Round 1: Ma
+   1.2     MaxPreps drift           done         2026-11-09  None                                      20 URLs remapped; mapcheck fixed 9 Team_
+   1.3     Same-town same-opponent  done         2026-11-09  None                                      same-town reviewed; Boston Latin/BLA, Bo
+   1.4     Split two-school names   in progress  2026-11-10  None                                      2026-11-09: moved 17 games Boston Latin 
+   2.1     Dedup v4                 done         2026-11-10  D187ED28-7523-4692-9C05-C3070B71650E; 46  2026-11-09: 338 archived | dedup 338 arc
+   2.2     Review-only pairs        done         2026-11-10  3588BE1E-2A3D-4F9E-AC00-18721563AD0B; 34  2026-11-09: 137 archived {'LONG': 3, 'SH
+   2.3     Double-booked dates      in progress  2026-11-10  7A6933A2-4EC6-4F88-AB78-B0807E466535; C2  2026-11-09: block-dups archived 0 | 2026
+   3.1     Season vs date           in progress  2026-11-09  None                                      2 odd dates: 1899 Brockton v Hyde Park d
+   3.2     Forfeits                 done         2026-11-09  None                                      forfeit flags consistent except NULL on 
+   4.1     Source histograms        not started  None        None                                      None                                    
+   4.2     Phantom pair scan        not started  None        None                                      None                                    
+   4.3     Outside-source compare   not started  None        None                                      None                                    
+   5.0     College games            in progress  2026-11-09  None                                      3 college copies archived (AIC 1954/1985
+   6.0     Re-rate dirty seasons    not started  None        None                                      None                                    
+   7.0     Residuals                not started  None        None                                      None                                    
+   8.0     Gap audit                not started  None        None                                      None                                    
+
+>>> status CT
+   StepNo  Step                     Status       Updated     RunIDs                                Notes                                   
+   0.0     College-link collisions  not started  None        None                                  None                                    
+   1.1     Name inventory           not started  2026-11-10  None                                  consolidation 2026-11-10: CT round 1 (Ge
+   1.2     MaxPreps drift           not started  None        None                                  None                                    
+   1.3     Same-town same-opponent  not started  None        None                                  None                                    
+   1.4     Split two-school names   in progress  2026-11-09  None                                  2026-11-09: moved 23 games New London Bu
+   2.1     Dedup v4                 done         2026-11-10  DF0F56E7-7EBF-4C4F-AE3A-684064F29CD8  2026-11-10: 450 archived                
+   2.2     Review-only pairs        done         2026-11-10  2D351BDC-5F79-43CF-904E-1CBA9BD92F0E  2026-11-10: 198 archived {'LONG': 6, 'SH
+   2.3     Double-booked dates      in progress  2026-11-10  03C367C0-5920-4B3E-BC1D-4B2FEA8F8876  2026-11-10: same-score fix archived 326 
+   3.1     Season vs date           not started  None        None                                  None                                    
+   3.2     Forfeits                 not started  None        None                                  None                                    
+   4.1     Source histograms        not started  None        None                                  None                                    
+   4.2     Phantom pair scan        not started  None        None                                  None                                    
+   4.3     Outside-source compare   not started  None        None                                  None                                    
+   5.0     College games            not started  None        None                                  None                                    
+   6.0     Re-rate dirty seasons    not started  None        None                                  None                                    
+   7.0     Residuals                not started  None        None                                  None                                    
+   8.0     Gap audit                not started  None        None                                  None                                    
+
+>>> status NH
+   StepNo  Step                     Status       Updated     RunIDs                                Notes                                   
+   0.0     College-link collisions  not started  None        None                                  None                                    
+   1.1     Name inventory           not started  2026-11-10  None                                  consolidation 2026-11-10: NH round 1 (Ge
+   1.2     MaxPreps drift           not started  None        None                                  None                                    
+   1.3     Same-town same-opponent  not started  None        None                                  None                                    
+   1.4     Split two-school names   not started  None        None                                  None                                    
+   2.1     Dedup v4                 done         2026-11-10  B0649B87-12B4-46D4-A9BC-042D36AD30C5  2026-11-10: 178 archived                
+   2.2     Review-only pairs        done         2026-11-10  3598CEDD-B1AA-4D63-BD29-2D3720BCB487  2026-11-10: 57 archived {'LONG': 1, 'SHO
+   2.3     Double-booked dates      in progress  2026-11-10  A9BC9FAF-7E47-4C4A-AC5A-FB65D59C8991  2026-11-10: same-score fix archived 19  
+   3.1     Season vs date           not started  None        None                                  None                                    
+   3.2     Forfeits                 not started  None        None                                  None                                    
+   4.1     Source histograms        not started  None        None                                  None                                    
+   4.2     Phantom pair scan        not started  None        None                                  None                                    
+   4.3     Outside-source compare   not started  None        None                                  None                                    
+   5.0     College games            not started  None        None                                  None                                    
+   6.0     Re-rate dirty seasons    not started  None        None                                  None                                    
+   7.0     Residuals                not started  None        None                                  None                                    
+   8.0     Gap audit                not started  None        None                                  None                                    
+
+>>> status RI
+   StepNo  Step                     Status       Updated     RunIDs                                Notes                                   
+   0.0     College-link collisions  not started  None        None                                  None                                    
+   1.1     Name inventory           not started  2026-11-10  None                                  consolidation 2026-11-10: RI round 1 (Ge
+   1.2     MaxPreps drift           not started  None        None                                  None                                    
+   1.3     Same-town same-opponent  not started  None        None                                  None                                    
+   1.4     Split two-school names   in progress  2026-11-09  None                                  2026-11-09: moved 38 games Bristol Mt. H
+   2.1     Dedup v4                 done         2026-11-10  5C1DA3E6-1F59-48DF-B56B-925CCAE1D7B9  2026-11-10: 62 archived                 
+   2.2     Review-only pairs        done         2026-11-10  49D2AE82-1076-4C09-A108-F982EC6743EC  2026-11-10: 35 archived {'LONG': 2, 'SHO
+   2.3     Double-booked dates      in progress  2026-11-10  4B14CBAA-5413-4A30-A246-2DAD6236DDBE  2026-11-10: same-score fix archived 20  
+   3.1     Season vs date           not started  None        None                                  None                                    
+   3.2     Forfeits                 not started  None        None                                  None                                    
+   4.1     Source histograms        not started  None        None                                  None                                    
+   4.2     Phantom pair scan        not started  None        None                                  None                                    
+   4.3     Outside-source compare   not started  None        None                                  None                                    
+   5.0     College games            not started  None        None                                  None                                    
+   6.0     Re-rate dirty seasons    not started  None        None                                  None                                    
+   7.0     Residuals                not started  None        None                                  None                                    
+   8.0     Gap audit                not started  None        None                                  None                                    
+
+>>> query NH cl_cols.sql
+
+QUERY cl_cols (1 result sets)
+ set 1: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_cl_cols_1_20261110_0431.csv
+
+=== OK 2026-11-10 04:31:38

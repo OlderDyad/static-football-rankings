@@ -1,0 +1,40 @@
+addstate AK
+report AK drift
+mapcheck AK
+dedup AK
+review-pairs AK
+same-score-fix AK
+query AK ak_dump.sql
+query AK ak_names.sql
+addstate HI
+report HI drift
+mapcheck HI
+dedup HI
+review-pairs HI
+same-score-fix HI
+query HI hi_dump.sql
+query HI hi_names.sql
+addstate DC
+report DC drift
+mapcheck DC
+dedup DC
+review-pairs DC
+same-score-fix DC
+query DC dc_dump.sql
+query DC dc_names.sql
+addstate DE
+report DE drift
+mapcheck DE
+dedup DE
+review-pairs DE
+same-score-fix DE
+query DE de_dump.sql
+query DE de_names.sql
+addstate NV
+report NV drift
+mapcheck NV
+dedup NV
+review-pairs NV
+same-score-fix NV
+query NV nv_dump.sql
+query NV nv_names.sql

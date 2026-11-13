@@ -1,0 +1,11 @@
+set-dates AL --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-AL game date (both teams + score match)" --commit
+set-dates AL --file hsfha_dates_blank.csv --reason "no-source date replaced by HSFHA-AL game date (both teams + score match)" --commit
+set-dates AL --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-AL date: same teams + same score in season" --commit
+same-score-fix AL --decisions AL_same_score_decisions.csv --commit
+import-games AL --file hsfha_import_AL.csv --reason "HSFHA-AL (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell"
+import-games AL --file hsfha_import_AL.csv --reason "HSFHA-AL (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+dedup AL
+review-pairs AL
+query AL season_date.sql
+query AL forfeits.sql
+query AL college_check.sql

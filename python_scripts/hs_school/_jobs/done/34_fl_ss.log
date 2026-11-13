@@ -1,0 +1,17 @@
+
+>>> same-score-fix FL --commit
+
+SAME-SCORE DOUBLE-BOOKINGS FL - COMMIT
+ 527 pairs {'DROP A': 164, 'DROP B': 118, 'UNDECIDED': 245} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_same_score_COMMITTED_20261108_2033.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  281       37D4A668-0D72-4102-B710-3DEC1EFEED7D  None
+
+>>> fix-dates FL --commit
+
+FIX DATES FL - COMMIT
+ 0 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_fix_dates_COMMITTED_20261108_2033.csv
+   (no rows)
+   Status     Updated  Err 
+   COMMITTED  0        None
+
+=== OK 2026-11-08 20:33:45

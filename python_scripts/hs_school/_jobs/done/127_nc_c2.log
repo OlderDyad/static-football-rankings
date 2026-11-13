@@ -1,0 +1,21 @@
+
+>>> commit NC
+
+DEDUP v4 NC - COMMIT
+ dedup_archive: 610 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_dedup_archive_COMMITTED_20261110_1521.csv
+ dedup_review: 140 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_dedup_review_COMMITTED_20261110_1521.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_dedup_summary_COMMITTED_20261110_1521.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NC     134024        610                  140              9B481150-2452-4F28-9470-9FDE2CF8E996
+
+REVIEW-ONLY PAIRS NC - COMMIT
+ 137 pairs {'LONG': 1, 'SHORT': 136} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_review_pairs_COMMITTED_20261110_1521.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  137       A28EB1F8-EEF6-4DEF-A49C-6BF8BD7028D5  None
+
+>>> query NC nc_dump.sql
+
+QUERY nc_dump (1 result sets)
+ set 1: 133277 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_nc_dump_1_20261110_1521.csv
+
+=== OK 2026-11-10 15:21:38

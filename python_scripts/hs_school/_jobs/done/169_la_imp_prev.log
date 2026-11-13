@@ -1,0 +1,13 @@
+
+>>> import-games LA --file hsfha_import_LA.csv --reason "HSFHA-LA (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell"
+
+IMPORT GAMES LA - PREVIEW (nothing changed) from hsfha_import_LA.csv (9856 rows)
+   Skip                                Games
+   a team already has a game that day  1291 
+   IMPORT                              8397 
+   name not in HS_Team_Names           168  
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_import_skipped_20261111_0906.csv
+   Status                     Imported  BatchID  Err 
+   PREVIEW (nothing changed)  8397      None     None
+
+=== OK 2026-11-11 09:06:14

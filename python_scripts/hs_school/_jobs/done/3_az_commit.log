@@ -1,0 +1,70 @@
+
+>>> review-pairs AZ
+
+REVIEW-ONLY PAIRS AZ - PREVIEW (nothing changed)
+ 880 pairs {'LONG': 343, 'SHORT': 537} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_review_pairs_20261108_1839.csv
+
+>>> commit AZ
+
+DEDUP v4 AZ - COMMIT
+ dedup_archive: 1704 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_archive_COMMITTED_20261108_1839.csv
+ dedup_review: 890 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_review_COMMITTED_20261108_1839.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_summary_COMMITTED_20261108_1839.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  AZ     59426         1704                 890              D9277821-5524-4AAE-884E-92D130D0E5B0
+
+REVIEW-ONLY PAIRS AZ - COMMIT
+ 885 pairs {'LONG': 344, 'SHORT': 541} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_review_pairs_COMMITTED_20261108_1839.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  885       1380BFDA-8AF8-4AC2-A35A-694945C3AFCD  None
+
+>>> same-score-fix AZ
+
+SAME-SCORE DOUBLE-BOOKINGS AZ - PREVIEW (nothing changed)
+ 101 pairs {'DROP A': 20, 'DROP B': 17, 'UNDECIDED': 64} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_same_score_20261108_1840.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  37        None   None
+
+>>> report AZ double-booked
+
+REPORT double-booked AZ: 7994 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_double_booked_20261108_1841.csv
+   Kind             Team      Season  Gap  A_Date      A_Opp                        A_Score  A_Source                                  A_Batch  B_Date      B_Opp                        B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Ajo (AZ)  1940    1    1940-09-27  Casa Grande (AZ)             13-27    http://www.azfootballarchives.com/indtea  None     1940-09-28  Nogales (AZ)                 6-13     Arizona_Daily_Star_1940_09_28_Page_12.cs  191      B22881DD-267E-4607-9A3F-0D8643E0F9D5  D471BCE4-FE4C-4DFC-BB06-ED4678E6EB4E
+   DIFFERENT GAMES  Ajo (AZ)  1946    1    1946-09-20  Casa Grande (AZ)             13-20    http://www.azfootballarchives.com/indtea  None     1946-09-21  Coolidge (AZ)                13-31    Arizona_Daily_Star_1946_09_21_Page_6.csv  191      E94F7A6C-D627-444F-AF13-0AA72A9DCCCA  05C9FE8C-C67C-49BC-8DC1-881BFDF12E74
+   DIFFERENT GAMES  Ajo (AZ)  1952    1    1952-10-03  Casa Grande (AZ)             0-49     http://www.azfootballarchives.com/indtea  None     1952-10-04  Tolleson (AZ)                7-6      Arizona_Daily_Star_1952_10_04_Page_12.cs  191      76E14A89-72B2-424B-92CD-060269DE4E29  3D3182CF-72F9-440D-98EF-2EEEBA84CB4B
+   DIFFERENT GAMES  Ajo (AZ)  1953    1    1953-10-02  Casa Grande (AZ)             21-74    http://www.azfootballarchives.com/indtea  None     1953-10-03  Tolleson (AZ)                7-6      Arizona_Daily_Star_1953_10_03_Page_10.cs  191      0F84651B-F437-4096-A561-13463169E0D1  FC62177D-DC53-4291-954E-A5C0F9CED75E
+   DIFFERENT GAMES  Ajo (AZ)  1955    1    1955-09-24  Douglas (AZ)                 37-6     Arizona_Daily_Star_1955_09_24_Page_13.cs  191      1955-09-23  Casa Grande (AZ)             21-6     http://www.azfootballarchives.com/indtea  None     B4FB8C8D-9986-4CFD-AF66-BF7383591FAA  90D4EAC7-9499-4729-AD1A-D4EE7435109A
+   DIFFERENT GAMES  Ajo (AZ)  1956    1    1956-09-21  Casa Grande (AZ)             19-27    http://www.azfootballarchives.com/indtea  None     1956-09-22  Eloy Santa Cruz Valley (AZ)  12-0     Arizona_Daily_Star_1956_09_22_Page_13.cs  191      8883D308-E1CF-4016-8175-6546CAE865E0  E8CF5F4B-3A5F-4AE4-9D12-EEF99CD17A55
+   DIFFERENT GAMES  Ajo (AZ)  1969    0    1969-09-05  El Mirage Dysart (AZ)        28-12    http://www.azfootballarchives.com/indtea  None     1969-09-05  Coolidge (AZ)                36-22    http://www.azfootballarchives.com/indtea  None     27C4867E-CA14-49C8-8E35-10F78A73CB69  07527426-17E2-413C-A64B-618521642D75
+   DIFFERENT GAMES  Ajo (AZ)  1970    0    1970-09-11  Buckeye (AZ)                 6-7      http://www.azfootballarchives.com/indtea  None     1970-09-11  Peoria (AZ)                  21-7     http://www.azfootballarchives.com/indtea  None     A9D90A66-BF24-4519-9BDA-099FCF0E30E5  D2240989-D7F8-4560-B5DF-7A0F22F4962A
+   DIFFERENT GAMES  Ajo (AZ)  1971    0    1971-09-03  Eloy Santa Cruz Valley (AZ)  25-0     http://www.azfootballarchives.com/indtea  None     1971-09-03  Glendale Apollo (AZ)         20-0     http://www.azfootballarchives.com/indtea  None     6F8316E7-8F82-42E7-9356-456570F1B46D  2AFDEEBB-4DEF-43A8-BA73-63A6F562267A
+   DIFFERENT GAMES  Ajo (AZ)  1971    0    1971-09-17  Peoria (AZ)                  27-8     http://www.azfootballarchives.com/indtea  None     1971-09-17  Buckeye (AZ)                 7-7      http://www.azfootballarchives.com/indtea  None     EDF4A890-6464-42B4-B99C-39BF8BA524DC  DDED11AC-A9EF-4D0F-BF8C-5F432D956F00
+   DIFFERENT GAMES  Ajo (AZ)  1972    0    1972-10-13  Eloy Santa Cruz Valley (AZ)  13-16    http://www.azfootballarchives.com/indtea  None     1972-10-13  Phoenix Gerard (AZ)          6-7      http://www.azfootballarchives.com/indtea  None     55E2B929-D0A4-418E-8F88-393AD35EBBA2  39B8B8E6-019D-4619-9DB0-D407F45ED289
+   DIFFERENT GAMES  Ajo (AZ)  1972    0    1972-10-13  Gilbert (AZ)                 7-6      http://www.azfootballarchives.com/indtea  None     1972-10-13  Phoenix Gerard (AZ)          6-7      http://www.azfootballarchives.com/indtea  None     6F431D47-8556-45D5-A468-2FDBA344A2D7  39B8B8E6-019D-4619-9DB0-D407F45ED289
+   DIFFERENT GAMES  Ajo (AZ)  1972    0    1972-10-13  Gilbert (AZ)                 7-6      http://www.azfootballarchives.com/indtea  None     1972-10-13  Eloy Santa Cruz Valley (AZ)  13-16    http://www.azfootballarchives.com/indtea  None     6F431D47-8556-45D5-A468-2FDBA344A2D7  55E2B929-D0A4-418E-8F88-393AD35EBBA2
+   DIFFERENT GAMES  Ajo (AZ)  1973    0    1973-10-12  Gilbert (AZ)                 0-48     http://www.azfootballarchives.com/indtea  None     1973-10-12  Phoenix Gerard (AZ)          12-14    http://www.azfootballarchives.com/indtea  None     51A23093-5C57-4ABA-914F-4D27FEC7595A  E9F2482F-4A9B-48A9-918D-B9584D803629
+   DIFFERENT GAMES  Ajo (AZ)  1973    0    1973-10-12  Eloy Santa Cruz Valley (AZ)  0-35     http://www.azfootballarchives.com/indtea  None     1973-10-12  Gilbert (AZ)                 0-48     http://www.azfootballarchives.com/indtea  None     5183B613-E37C-4281-8B84-2F4666047E8E  51A23093-5C57-4ABA-914F-4D27FEC7595A
+   ... 7979 more rows (see CSV)
+
+>>> report AZ names
+
+REPORT names AZ: 477 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_names_20261108_1841.csv
+   Name                                      Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   10th Artillery (AZ)                       2      1917         1917        1            0     
+   11th Artillery (AZ)                       2      1917         1917        1            0     
+   11th Infantry (AZ)                        1      1915         1915        1            0     
+   13th Calvery (AZ)                         4      1914         1914        1            0     
+   13th Infantry (AZ)                        1      1915         1915        1            0     
+   18th Infantry (AZ)                        1      1915         1915        1            0     
+   19th Infantry (AZ)                        1      1919         1919        1            0     
+   22nd Infantry (AZ)                        1      1915         1915        1            0     
+   6th Artillery (AZ)                        3      1915         1916        1            0     
+   Ajo (AZ)                                  469    1935         2026        1            1     
+   Anthem Boulder Creek (AZ)                 209    2005         2026        1            1     
+   Anthem Prep (AZ)                          55     2013         2023        1            0     
+   Apache Junction (AZ)                      551    1965         2026        1            1     
+   Apache Junction Apache Trail (AZ)         30     2009         2013        1            0     
+   Apache Junction Imagine Prep Superstitio  56     2010         2026        1            1     
+   ... 462 more rows (see CSV)
+
+=== OK 2026-11-08 18:41:48

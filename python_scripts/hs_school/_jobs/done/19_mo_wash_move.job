@@ -1,0 +1,3 @@
+move-team MO --from "Washington (MO)" --to "Kansas City Washington (KS)" --seasons 1900-2026 --ids MO_washington_to_kcw_ids.csv --reason "Washington (MO) games vs Kansas / Kansas City opponents and KFH KC Washington score matches are KC Washington's (Washington MO = Franklin County)" --commit
+dedup MO
+dedup KS

@@ -1,0 +1,4 @@
+# 1951 Grantsville and West yearbooks show Grantsville really played Cyprus, Bingham, Murray and West: undo the Grantsville->Granite move except 14 games another source names as Granite
+move-team UT --from "Salt Lake City Granite (UT)" --to "Grantsville (UT)" --seasons 1920-1975 --ids UT_granite_back_to_grantsville_ids.csv --reason "undo 2026-11-06 Grantsville->Granite move: 1952 Grantsville and SLC West yearbooks show Grantsville played Salt Lake valley schools" --commit
+dedup UT
+report UT double-booked

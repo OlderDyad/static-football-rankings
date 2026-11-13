@@ -1,0 +1,52 @@
+
+>>> move-team TN --from "Knoxville Halls (TN)" --to "Halls (TN)" --seasons 1900-2026 --ids khalls_to_halls.csv --reason "Halls (Lauderdale Co., West TN) games tagged Knoxville Halls: opponent in West TN / western KY" --commit
+ only the 518 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\khalls_to_halls.csv
+
+MOVE Knoxville Halls (TN) -> Halls (TN), seasons 1900-2026 - COMMIT
+ move_games: 518 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_COMMITTED_20261110_0506.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_COMMITTED_20261110_0506.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  518    1                  None
+
+>>> move-team TN --from "Knoxville Halls (TN)" --to "Harlan Grays Knob Hall (KY)" --seasons 1900-1963 --ids khalls_to_hallky.csv --reason "Hall (Grays Knob, Harlan Co. KY) games tagged Knoxville Halls: Harlan-area KY league opponents" --commit
+ only the 66 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\khalls_to_hallky.csv
+
+MOVE Knoxville Halls (TN) -> Harlan Grays Knob Hall (KY), seasons 1900-1963 - COMMIT
+ move_games: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_COMMITTED_20261110_0506.csv
+ move_by_season: 93 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_COMMITTED_20261110_0506.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  66     1                  None
+
+>>> move-team TN --from "Halls (TN)" --to "Harlan Grays Knob Hall (KY)" --seasons 1900-1963 --ids halls_to_hallky.csv --reason "Hall (Grays Knob, Harlan Co. KY) games tagged Halls (TN) (Lexington Herald): Harlan-area KY league opponents" --commit
+ only the 65 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\halls_to_hallky.csv
+
+MOVE Halls (TN) -> Harlan Grays Knob Hall (KY), seasons 1900-1963 - COMMIT
+ move_games: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_COMMITTED_20261110_0506.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_COMMITTED_20261110_0506.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  65     1                  None
+
+>>> move-team TN --from "Halls (TN)" --to "Knoxville Halls (TN)" --seasons 1900-2026 --ids halls_to_khalls.csv --reason "Knoxville Halls games tagged Halls (TN): East TN opponents" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\halls_to_khalls.csv
+
+MOVE Halls (TN) -> Knoxville Halls (TN), seasons 1900-2026 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_games_COMMITTED_20261110_0506.csv
+ move_by_season: 95 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_move_by_season_COMMITTED_20261110_0506.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> dedup TN
+
+DEDUP v4 TN - PREVIEW (nothing changed)
+ dedup_archive: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_archive_20261110_0506.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_review_20261110_0506.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_summary_20261110_0506.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  TN     124849        12                   1                None 
+
+>>> review-pairs TN
+
+REVIEW-ONLY PAIRS TN - PREVIEW (nothing changed)
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_review_pairs_20261110_0507.csv
+
+=== OK 2026-11-10 05:07:03

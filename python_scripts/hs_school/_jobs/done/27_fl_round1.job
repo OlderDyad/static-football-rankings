@@ -1,0 +1,16 @@
+remap FL --url "https://www.maxpreps.com/fl/boca-raton/st-john-paul-ii-academy-eagles/football/schedule/" --to "Boca Raton St. John Paul II Academy (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/delray-beach/atlantic-eagles/football/schedule/" --to "Delray Beach Atlantic Community (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/fort-lauderdale/nsu-university-sharks/football/schedule/" --to "Fort Lauderdale University School (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/fort-myers/south-fort-myers-wolfpack/football/schedule/" --to "South Fort Myers (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/gainesville/pk-yonge-blue-wave/football/schedule/" --to "Gainesville P.K. Yonge (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/gainesville/saint-francis-catholic-academy-wolves/football/schedule/" --to "Gainesville St.Francis Catholic (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/lakeland/george-jenkins-eagles/football/schedule/" --to "Lakeland George Jenkins (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/naples/community-school-of-naples-seahawks/football/schedule/" --to "Naples Community School of Naples (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/niceville/rocky-bayou-christian-knights/football/schedule/" --to "Niceville Rocky Bayou Christian (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/palm-beach-gardens/palm-beach-gardens-gators/football/schedule/" --to "Palm Beach Gardens (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/royal-palm-beach/royal-palm-beach-wildcats/football/schedule/" --to "Royal Palm Beach (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-johns/creekside-knights/football/schedule/" --to "Saint Johns Creekside (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/tallahassee/st-john-paul-ii-panthers/football/schedule/" --to "Tallahassee John Paul II Catholic (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/winter-garden/foundation-academy-lions/football/schedule/" --to "Winter Garden Foundation Academy (FL)" --commit
+mapcheck FL --commit
+round FL --reason "FL round 1: 2010-14 MaxPreps short names (Atlantic, Jenkins, Rocky Bayou, Community School of Naples, NSU University, South Fort Myers...), Forrest -> Westside and Lee -> Riverside (renames), Saint/St. twins, Benjamin, Rutherford, FSU High, FAMU High"

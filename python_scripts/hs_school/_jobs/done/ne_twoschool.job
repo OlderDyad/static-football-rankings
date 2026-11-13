@@ -1,0 +1,5 @@
+# North Platte St. Patrick's 1960-2005 games vs north/northeast Nebraska schools are O'Neill St. Mary's; Kimball (NE) games vs SD schools are Kimball (SD)
+move-team NE --from "North Platte St. Patrick's (NE)" --to "O'Neill Saint Mary's (NE)" --seasons 1960-2005 --ids NE_npsp_to_onsm_ids.csv --reason "NP St. Patrick's games vs north/northeast NE schools are O'Neill St. Mary's (St. Patrick's/St. Mary's mix-up)" --commit
+move-team NE --from "Kimball (NE)" --to "Kimball (SD)" --seasons 1930-2010 --ids NE_kimball_to_sd_ids.csv --reason "Kimball (NE) games vs South Dakota schools are Kimball (SD)" --commit
+dedup NE
+dedup SD

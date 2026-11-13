@@ -1,0 +1,9 @@
+addstate GA
+report GA drift
+mapcheck GA
+dedup GA
+review-pairs GA
+same-score-fix GA
+query GA ga_dump.sql
+query GA ga_geo_all.sql
+query GA ga_names.sql

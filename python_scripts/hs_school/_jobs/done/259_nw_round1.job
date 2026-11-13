@@ -1,0 +1,68 @@
+remap MN --url "https://www.maxpreps.com/mn/jordan/jordan-hubmen-jaguars-panthers/football/schedule/" --to "Jordan (MN)" --commit
+remap MN --url "https://www.maxpreps.com/mn/park-rapids/park-rapids-panthers/football/schedule/" --to "Park Rapids Area (MN)" --commit
+remap MN --url "https://www.maxpreps.com/mn/paynesville/paynesville-bulldogs/football/schedule/" --to "Paynesville Area (MN)" --commit
+remap MN --url "https://www.maxpreps.com/mn/renville/renville-county-west-jaguars/football/schedule/" --to "Renville County West (MN)" --commit
+remap MN --url "https://www.maxpreps.com/mn/spring-lake-park/spring-lake-park-panthers/football/schedule/" --to "Spring Lake Park (MN)" --commit
+remap MN --url "https://www.maxpreps.com/mn/stillwater/stillwater-ponies/football/schedule/" --to "Stillwater Area (MN)" --commit
+remap MN --url "https://www.maxpreps.com/mn/thief-river-falls/thief-river-falls-prowlers/football/schedule/" --to "Thief River Falls (MN)" --commit
+remap MT --url "https://www.maxpreps.com/mt/bigfork/bigfork-vikings-and-valkyries/football/schedule/" --to "Bigfork (MT)" --commit
+remap MT --url "https://www.maxpreps.com/mt/joliet/joliet-j-hawks/football/schedule/" --to "Joliet (MT)" --commit
+remap MT --url "https://www.maxpreps.com/mt/st-regis/st-regis-tigers/football/schedule/" --to "Saint Regis (MT)" --commit
+remap ND --url "https://www.maxpreps.com/nd/des-lacs/des-lacs-burlington-lakers/football/schedule/" --to "Des Lacs-Burlington (ND)" --commit
+remap ND --url "https://www.maxpreps.com/nd/fort-totten/four-winds-indians/football/schedule/" --to "Fort Totten Four Winds-Warwick (ND)" --commit
+remap ND --url "https://www.maxpreps.com/nd/new-rockford/new-rockford-sheyenne-maddock/football/schedule/" --to "New Rockford-Sheyenne (ND)" --commit
+remap ND --url "https://www.maxpreps.com/nd/renville/mohall-lansford-sherwood-mavericks/football/schedule/" --to "Renville Mohall-Lansford-Sherwood (ND)" --commit
+remap SD --url "https://www.maxpreps.com/sd/canton/canton-c-hawks/football/schedule/" --to "Canton (SD)" --commit
+remap SD --url "https://www.maxpreps.com/sd/elk-point/elk-point-jefferson-huskies/football/schedule/" --to "Elk Point-Jefferson (SD)" --commit
+remap SD --url "https://www.maxpreps.com/sd/st-francis/st-francis-indian-warriors/football/schedule/" --to "Saint Francis Indian (SD)" --commit
+remap WA --url "https://www.maxpreps.com/wa/chelan/chelan-mountain-goats/football/schedule/" --to "Chelan (WA)" --commit
+remap WA --url "https://www.maxpreps.com/wa/reardan/reardan-screaming-eagles/football/schedule/" --to "Reardan (WA)" --commit
+remap WA --url "https://www.maxpreps.com/wa/tacoma/life-christian-academy-eagles/football/schedule/" --to "Tacoma Life Christian Academy (WA)" --commit
+remap WI --url "https://www.maxpreps.com/wi/alma-center/alma-center-lincoln-hornets/football/schedule/" --to "Alma Center Lincoln (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/greenfield/greenfield-hustlin-hawks/football/schedule/" --to "Greenfield (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/kaukauna/kaukauna-galloping-ghosts/football/schedule/" --to "Kaukauna (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/kenosha/kenosha-christian-life-eagles/football/schedule/" --to "Kenosha Christian Life (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/milwaukee/milwaukee-academy-of-science/football/schedule/" --to "Milwaukee Academy of Science (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/milwaukee/milwaukee-king-generals/football/schedule/" --to "Milwaukee Rufus King (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/mount-horeb/mount-horeb-barneveld-vikings/football/schedule/" --to "Mount Horeb-Barneveld (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/new-glarus/new-glarus-glarner-knights/football/schedule/" --to "New Glarus-Monticello (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/north-fond-du-lac/north-fond-du-lac-orioles/football/schedule/" --to "North Fond du Lac (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/racine/racine-park-panthers/football/schedule/" --to "Racine Washington Park (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/st-croix-falls/st-croix-falls-saints/football/schedule/" --to "Saint Croix Falls (WI)" --commit
+remap WI --url "https://www.maxpreps.com/wi/wisconsin-rapids/assumption-royals/football/schedule/" --to "Wisconsin Rapids Assumption (WI)" --commit
+mapcheck WA --commit
+consolidate WA --reason "WA round 1: 2024 MaxPreps short names (mascot fragments / doubled town names) merged to the long-standing names; renames to latest (SD Red Cloud -> Mahpiya Luta, WI Madison Memorial -> Vel Phillips Memorial)"
+dedup WA --commit
+review-pairs WA --commit
+same-score-fix WA --commit
+query WA wa_dump.sql
+mapcheck MT --commit
+consolidate MT --reason "MT round 1: 2024 MaxPreps short names (mascot fragments / doubled town names) merged to the long-standing names; renames to latest (SD Red Cloud -> Mahpiya Luta, WI Madison Memorial -> Vel Phillips Memorial)"
+dedup MT --commit
+review-pairs MT --commit
+same-score-fix MT --commit
+query MT mt_dump.sql
+mapcheck ND --commit
+consolidate ND --reason "ND round 1: 2024 MaxPreps short names (mascot fragments / doubled town names) merged to the long-standing names; renames to latest (SD Red Cloud -> Mahpiya Luta, WI Madison Memorial -> Vel Phillips Memorial)"
+dedup ND --commit
+review-pairs ND --commit
+same-score-fix ND --commit
+query ND nd_dump.sql
+mapcheck SD --commit
+consolidate SD --reason "SD round 1: 2024 MaxPreps short names (mascot fragments / doubled town names) merged to the long-standing names; renames to latest (SD Red Cloud -> Mahpiya Luta, WI Madison Memorial -> Vel Phillips Memorial)"
+dedup SD --commit
+review-pairs SD --commit
+same-score-fix SD --commit
+query SD sd_dump.sql
+mapcheck MN --commit
+consolidate MN --reason "MN round 1: 2024 MaxPreps short names (mascot fragments / doubled town names) merged to the long-standing names; renames to latest (SD Red Cloud -> Mahpiya Luta, WI Madison Memorial -> Vel Phillips Memorial)"
+dedup MN --commit
+review-pairs MN --commit
+same-score-fix MN --commit
+query MN mn_dump.sql
+mapcheck WI --commit
+consolidate WI --reason "WI round 1: 2024 MaxPreps short names (mascot fragments / doubled town names) merged to the long-standing names; renames to latest (SD Red Cloud -> Mahpiya Luta, WI Madison Memorial -> Vel Phillips Memorial)"
+dedup WI --commit
+review-pairs WI --commit
+same-score-fix WI --commit
+query WI wi_dump.sql

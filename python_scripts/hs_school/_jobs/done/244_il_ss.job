@@ -1,0 +1,8 @@
+same-score-fix IL --commit
+query IL season_date.sql
+query IL forfeits.sql
+query IL college_check.sql
+step IL 1.1 done "2026-11-12: 31 rules: 2024 MaxPreps short names (Barrington Fillies, Canton Little, Mt. Carava, Solorio Sun, Dixon Dukes, Geneseo Maple, Niles Notre, Oak Park Oak Park, Lockport, Ottawa, Streator...), same-school variants (Al Raby, Savanna Community, Spring Valley Hall, Marian Central Catholic, Winola, Sidell Jamaica, McLeansboro Hamilton County), renames to latest (Lincoln-Way Central, DePaul College Prep, Marine Leadership Academy)"
+step IL 1.2 done "2026-11-12: 42 URLs remapped (20 ProperNames did not exist), mapcheck 34"
+step IL 2.1 done "2026-11-12: dedup 582"
+step IL 2.2 done "2026-11-12: review pairs 14"

@@ -1,0 +1,174 @@
+
+>>> addstate AZ
+Tracker rows ready for AZ
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report AZ names
+
+REPORT names AZ: 511 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_names_20261107_0812.csv
+   Name                                      Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   10th Artillery (AZ)                       2      1917         1917        1            0     
+   11th Artillery (AZ)                       2      1917         1917        1            0     
+   11th Infantry (AZ)                        1      1915         1915        1            0     
+   13th Calvery (AZ)                         4      1914         1914        1            0     
+   13th Infantry (AZ)                        1      1915         1915        1            0     
+   18th Infantry (AZ)                        1      1915         1915        1            0     
+   19th Infantry (AZ)                        1      1919         1919        1            0     
+   22nd Infantry (AZ)                        1      1915         1915        1            0     
+   6th Artillery (AZ)                        3      1915         1916        1            0     
+   Ajo (AZ)                                  480    1935         2026        1            1     
+   American Leadership Academy - Gilbert No  29     2017         2022        1            0     
+   American Leadership Academy - Ironwood (  20     2018         2022        1            0     
+   Anthem Boulder Creek (AZ)                 209    2005         2026        1            1     
+   Anthem Prep (AZ)                          55     2013         2023        1            0     
+   Apache Junction (AZ)                      578    1965         2026        1            1     
+   ... 496 more rows (see CSV)
+
+>>> report AZ drift
+
+REPORT drift AZ: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_drift_20261107_0813.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                             N_Games  N_First  N_Last  N_Mapped
+   American Leadership Academy - Gilbert No  29       2017     2022    0         None                                None     None     None    0       
+   American Leadership Academy - Ironwood (  20       2018     2022    0         None                                None     None     None    0       
+   Anthem Prep (AZ)                          55       2013     2023    0         None                                None     None     None    0       
+   Bowie-San Simon (AZ)                      11       2012     2018    0         None                                None     None     None    0       
+   Chandler Arizona College Prep (AZ)        38       2013     2023    0         Chandler Skyline - Gila River (AZ)  20       2023     2026    1       
+   Chandler Arizona College Prep (AZ)        38       2013     2023    0         Chandler Arizona College (AZ)       36       2024     2026    1       
+   Chandler Lincoln Prep (AZ)                25       2019     2023    0         Chandler Arizona College (AZ)       36       2024     2026    1       
+   Chandler Lincoln Prep (AZ)                25       2019     2023    0         Chandler Skyline - Gila River (AZ)  20       2023     2026    1       
+   Chinle Rough Rock (AZ)                    114      2001     2024    1         None                                None     None     None    0       
+   Cibecue-Dischii Biko (AZ)                 11       2019     2023    1         None                                None     None     None    0       
+   Colorado City El Capitan (AZ)             53       2015     2025    1         None                                None     None     None    0       
+   Elfrida Valley Union (AZ)                 232      1935     2025    1         None                                None     None     None    0       
+   Fredonia (AZ)                             171      1957     2023    1         None                                None     None     None    0       
+   Gila Bend (AZ)                            262      1948     2023    0         Gila Bend Gila Bend (AZ)            21       2024     2026    1       
+   Gilbert North American Leadership Academ  10       2023     2023    0         Gilbert Ala Gilbert (AZ)            36       2024     2026    1       
+   ... 58 more rows (see CSV)
+
+>>> report AZ same-town
+
+REPORT same-town AZ: 863 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_same_town_20261107_0814.csv
+   A                               B                                Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Page (AZ)                       Page Sand (AZ)                   153   37       1964         2003        434      385    
+   Phoenix Camelback (AZ)          Phoenix Central (AZ)             139   55       1958         2026        742      699    
+   Phoenix North (AZ)              Phoenix South Mountain (AZ)      116   52       1954         2026        804      725    
+   Flagstaff (AZ)                  Flagstaff Coconino (AZ)          112   49       1968         2026        1145     660    
+   Phoenix Camelback (AZ)          Phoenix South Mountain (AZ)      110   52       1954         2026        742      725    
+   Phoenix Central (AZ)            Phoenix South Mountain (AZ)      109   53       1958         2026        699      725    
+   Mohave River Valley (AZ)        Mohave Valley River Valley (AZ)  105   16       1992         2007        144      282    
+   Phoenix Moon Valley (AZ)        Phoenix Thunderbird (AZ)         94    34       1972         2026        685      600    
+   Mesa (AZ)                       Mesa Westwood (AZ)               92    54       1963         2026        1035     646    
+   Tucson Palo Verde (AZ)          Tucson Santa Rita (AZ)           90    36       1974         2026        687      589    
+   Phoenix Central (AZ)            Phoenix Maryvale (AZ)            88    38       1967         2024        699      734    
+   Phoenix Central (AZ)            Phoenix North (AZ)               87    44       1958         2026        699      804    
+   Tucson High Magnet School (AZ)  Tucson Salpointe Catholic (AZ)   85    47       1953         2024        813      684    
+   Tucson Canyon del Oro (AZ)      Tucson Flowing Wells (AZ)        82    37       1966         2024        663      716    
+   Yuma (AZ)                       Yuma Kofa (AZ)                   80    40       1962         2026        810      654    
+   ... 848 more rows (see CSV)
+
+>>> mapcheck AZ
+
+MAPPING CHECK AZ - PREVIEW (nothing changed)
+ 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_mapcheck_20261107_0814.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/az/bullhead-cit  Bullhead City Mohave (AZ)                 21142    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/az/goodyear/mil  Goodyear Millennium (AZ)                  5639     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/az/maricopa/seq  Maricopa Sequoia Pathway (AZ)             31955    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/az/phoenix/mary  Phoenix Maryvale Prep (AZ)                25114    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/az/phoenix/para  Phoenix Paradise Valley Christian Prep (  6132     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/az/scottsdale/c  Scottsdale Cicero Prep (AZ)               36331    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/az/scottsdale/s  Scottsdale Preparatory (AZ)               25710    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/az/tempe/james-  Tempe James Madison (AZ)                  5936     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/az/chino-valley  Chino Valley (AZ)                         22017    60683   Team_ID points to another name   Cibecue-Dischii Biko (AZ)               
+   https://www.maxpreps.com/az/lake-havasu-  Lake Havasu City (AZ)                     71121    63964   Team_ID points to another name   Lake Havasu City Desert Tech Public Char
+   https://www.maxpreps.com/az/maricopa/mar  Maricopa (AZ)                             44192    64821   Team_ID points to another name   Maricopa Sequoia Pathway Academy (AZ)   
+   https://www.maxpreps.com/az/phoenix/nort  Phoenix North Canyon (AZ)                 66762    66761   Team_ID points to another name   Phoenix North Pointe Prep (AZ)          
+   https://www.maxpreps.com/az/st-johns/st-  Saint Johns (AZ)                          67725    67643   Team_ID points to another name   Saint Michael (AZ)                      
+   https://www.maxpreps.com/az/scottsdale/c  Scottsdale Chaparral (AZ)                 67991    67990   Team_ID points to another name   Scottsdale Cicero Prep Academy (AZ)     
+   https://www.maxpreps.com/az/scottsdale/n  Scottsdale Notre Dame Prep (AZ)           67996    67995   Team_ID points to another name   Scottsdale Prep Academy (AZ)            
+   https://www.maxpreps.com/az/tempe/tempe-  Tempe (AZ)                                68800    68799   Team_ID points to another name   Tempe Corona Del Sol (AZ)               
+   https://www.maxpreps.com/az/tempe/corona  Tempe Corona Del Sol (AZ)                 68801    68800   Team_ID points to another name   Tempe James Madison Prep (AZ)           
+   https://www.maxpreps.com/az/tucson/tanqu  Tucson Tanque Verde (AZ)                  71034    43286   Team_ID points to another name   University of Arizona Frosh (AZ)        
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  10       None
+
+>>> dedup AZ
+
+DEDUP v4 AZ - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_archive_20261107_0814.csv
+ dedup_review: 622 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_review_20261107_0814.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_summary_20261107_0814.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  AZ     59417         0                    622              None 
+
+>>> review-pairs AZ
+
+REVIEW-ONLY PAIRS AZ - PREVIEW (nothing changed)
+ 622 pairs {'LONG': 332, 'SHORT': 290} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_review_pairs_20261107_0814.csv
+
+>>> same-score-fix AZ
+
+SAME-SCORE DOUBLE-BOOKINGS AZ - PREVIEW (nothing changed)
+ 1134 pairs {'DROP B': 150, 'DROP A': 186, 'UNDECIDED': 798} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_same_score_20261107_0816.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  334       None   None
+
+>>> report AZ double-booked
+
+REPORT double-booked AZ: 10056 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_double_booked_20261107_0816.csv
+   Kind             Team      Season  Gap  A_Date      A_Opp                        A_Score  A_Source                                  A_Batch  B_Date      B_Opp                             B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Ajo (AZ)  1940    1    1940-09-27  Casa Grande (AZ)             13-27    http://www.azfootballarchives.com/indtea  None     1940-09-28  Nogales (AZ)                      6-13     Arizona_Daily_Star_1940_09_28_Page_12.cs  191      B22881DD-267E-4607-9A3F-0D8643E0F9D5  D471BCE4-FE4C-4DFC-BB06-ED4678E6EB4E
+   DIFFERENT GAMES  Ajo (AZ)  1946    1    1946-09-20  Casa Grande (AZ)             13-20    http://www.azfootballarchives.com/indtea  None     1946-09-21  Coolidge (AZ)                     13-31    Arizona_Daily_Star_1946_09_21_Page_6.csv  191      E94F7A6C-D627-444F-AF13-0AA72A9DCCCA  05C9FE8C-C67C-49BC-8DC1-881BFDF12E74
+   DIFFERENT GAMES  Ajo (AZ)  1952    1    1952-10-03  Casa Grande (AZ)             0-49     http://www.azfootballarchives.com/indtea  None     1952-10-04  Tolleson (AZ)                     7-6      Arizona_Daily_Star_1952_10_04_Page_12.cs  191      76E14A89-72B2-424B-92CD-060269DE4E29  3D3182CF-72F9-440D-98EF-2EEEBA84CB4B
+   DIFFERENT GAMES  Ajo (AZ)  1953    1    1953-10-02  Casa Grande (AZ)             21-74    http://www.azfootballarchives.com/indtea  None     1953-10-03  Tolleson (AZ)                     7-6      Arizona_Daily_Star_1953_10_03_Page_10.cs  191      0F84651B-F437-4096-A561-13463169E0D1  FC62177D-DC53-4291-954E-A5C0F9CED75E
+   DIFFERENT GAMES  Ajo (AZ)  1954    1    1954-09-24  Casa Grande (AZ)             21-27    http://www.azfootballarchives.com/indtea  None     1954-09-25  Douglas (AZ)                      19-27    Arizona_Daily_Star_1954_09_25_Page_13.cs  191      7DBBFBEA-A4A1-4ED9-9DB7-3C500F10A59B  B47EC90C-F75E-41EE-B913-9161D82164C4
+   DIFFERENT GAMES  Ajo (AZ)  1955    1    1955-09-24  Douglas (AZ)                 37-6     Arizona_Daily_Star_1955_09_24_Page_13.cs  191      1955-09-23  Casa Grande (AZ)                  21-6     http://www.azfootballarchives.com/indtea  None     B4FB8C8D-9986-4CFD-AF66-BF7383591FAA  90D4EAC7-9499-4729-AD1A-D4EE7435109A
+   DIFFERENT GAMES  Ajo (AZ)  1956    1    1956-09-21  Casa Grande (AZ)             19-27    http://www.azfootballarchives.com/indtea  None     1956-09-22  Eloy Santa Cruz Valley (AZ)       12-0     Arizona_Daily_Star_1956_09_22_Page_13.cs  191      8883D308-E1CF-4016-8175-6546CAE865E0  E8CF5F4B-3A5F-4AE4-9D12-EEF99CD17A55
+   DIFFERENT GAMES  Ajo (AZ)  1958    1    1958-09-19  Casa Grande (AZ)             7-21     http://www.azfootballarchives.com/indtea  None     1958-09-20  Eloy Santa Cruz Valley (AZ)       13-20    Arizona_Daily_Star_1958_09_20_Page_14.cs  191      DEC52A59-494A-4260-A9F6-4635F7469FA1  F39F7B2E-05FD-4F94-BC29-5A77C103E44B
+   DIFFERENT GAMES  Ajo (AZ)  1958    1    1958-10-10  Douglas (AZ)                 20-19    http://www.azfootballarchives.com/indtea  None     1958-10-11  Tucson Salpointe Catholic (AZ)    23-7     Arizona_Daily_Star_1958_10_11_Page_13.cs  191      09CDE3B4-DF4E-455B-8A52-CCEDD4A920E6  560CF987-9097-4A81-AE15-CE3ACFFA2156
+   DIFFERENT GAMES  Ajo (AZ)  1959    1    1959-09-18  Casa Grande (AZ)             14-13    http://www.azfootballarchives.com/indtea  None     1959-09-19  Eloy Santa Cruz Valley (AZ)       12-7     Arizona_Daily_Star_1959_09_19_Page_15.cs  191      3994D7DE-C4BA-4310-AD76-8CCCF4B9ECBA  EA611C2E-A0AC-4A33-8A58-FD663F633B97
+   DIFFERENT GAMES  Ajo (AZ)  1959    1    1959-10-09  Douglas (AZ)                 14-6     http://www.azfootballarchives.com/indtea  None     1959-10-10  Phoenix Brophy College Prep (AZ)  0-13     Arizona_Daily_Star_1959_10_10_Page_14.cs  191      413B6CF5-FA67-4872-9F03-5E2DA498DB7A  880C42B0-6515-4449-8602-9E8901F6986A
+   DIFFERENT GAMES  Ajo (AZ)  1969    0    1969-09-05  El Mirage Dysart (AZ)        28-12    http://www.azfootballarchives.com/indtea  None     1969-09-05  Coolidge (AZ)                     36-22    http://www.azfootballarchives.com/indtea  None     27C4867E-CA14-49C8-8E35-10F78A73CB69  07527426-17E2-413C-A64B-618521642D75
+   DIFFERENT GAMES  Ajo (AZ)  1970    0    1970-09-11  Buckeye (AZ)                 6-7      http://www.azfootballarchives.com/indtea  None     1970-09-11  Peoria (AZ)                       21-7     http://www.azfootballarchives.com/indtea  None     A9D90A66-BF24-4519-9BDA-099FCF0E30E5  D2240989-D7F8-4560-B5DF-7A0F22F4962A
+   DIFFERENT GAMES  Ajo (AZ)  1971    0    1971-09-03  Eloy Santa Cruz Valley (AZ)  25-0     http://www.azfootballarchives.com/indtea  None     1971-09-03  Glendale Apollo (AZ)              20-0     http://www.azfootballarchives.com/indtea  None     6F8316E7-8F82-42E7-9356-456570F1B46D  2AFDEEBB-4DEF-43A8-BA73-63A6F562267A
+   DIFFERENT GAMES  Ajo (AZ)  1971    0    1971-09-17  Peoria (AZ)                  27-8     http://www.azfootballarchives.com/indtea  None     1971-09-17  Buckeye (AZ)                      7-7      http://www.azfootballarchives.com/indtea  None     EDF4A890-6464-42B4-B99C-39BF8BA524DC  DDED11AC-A9EF-4D0F-BF8C-5F432D956F00
+   ... 10041 more rows (see CSV)
+
+>>> query AZ season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_season_date_1_20261107_0816.csv
+ set 2: 35 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_season_date_2_20261107_0816.csv
+
+>>> query AZ forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_forfeits_1_20261107_0816.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_forfeits_2_20261107_0816.csv
+
+>>> query AZ college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_1_20261107_0817.csv
+ set 2: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_2_20261107_0817.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_3_20261107_0817.csv
+ set 4: 206 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_4_20261107_0817.csv
+
+=== OK 2026-11-07 08:17:18

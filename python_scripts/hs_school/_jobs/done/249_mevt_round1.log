@@ -1,0 +1,406 @@
+
+>>> remap ME --url "https://www.maxpreps.com/me/auburn/edward-little-red-eddies/football/schedule/" --to "Auburn Edward Little (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/auburn/edward-little-red-eddies/football/schedule/ -> Auburn Edward Little (ME) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/me/auburn/edwar  Auburn Little (ME)  59189    Auburn Edward Little (ME)  58714     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/bangor/john-bapst-memorial-crusaders/football/schedule/" --to "Bangor John Bapst Memorial (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/bangor/john-bapst-memorial-crusaders/football/schedule/ -> Bangor John Bapst Memorial (ME) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/me/bangor/john-  Bangor John Bapst (ME)  19143    Bangor John Bapst Memorial (ME)  59354     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/fryeburg/fryeburg-raiders/football/schedule/" --to "Fryeburg Academy (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/fryeburg/fryeburg-raiders/football/schedule/ -> Fryeburg Academy (ME) - COMMIT
+   URL                                       ProperName     Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/me/fryeburg/fry  Fryeburg (ME)  18837    Fryeburg Academy (ME)  45387     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/kittery/traip-rangers/football/schedule/" --to "Kittery Traip Academy (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/kittery/traip-rangers/football/schedule/ -> Kittery Traip Academy (ME) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/me/kittery/trai  Kittery Traip (ME)  63812    Kittery Traip Academy (ME)  63813     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/lincoln/mattanawcook-lee-academy-penobscot-valley/football/schedule/" --to "Lincoln Mattanawcook-Lee Academy-Penobscot Valley (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/lincoln/mattanawcook-lee-academy-penobscot-valley/football/schedule/ -> Lincoln Mattanawcook-Lee Academy-Penobscot Valley (ME) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/me/lincoln/matt  Lincoln Mattanawcook Lee (ME)  29763    Lincoln Mattanawcook-Lee Academy-Penobsc  43302     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/mount-desert/mount-desert-island-trojans/football/schedule/" --to "Bar Harbor Mount Desert Island (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/mount-desert/mount-desert-island-trojans/football/schedule/ -> Bar Harbor Mount Desert Island (ME) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/me/mount-desert  Mount Desert Island (ME)  33979    Bar Harbor Mount Desert Island (ME)  59359     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/skowhegan/skowhegan-river-hawks/football/schedule/" --to "Skowhegan (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/skowhegan/skowhegan-river-hawks/football/schedule/ -> Skowhegan (ME) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName   NewTeam_ID
+   https://www.maxpreps.com/me/skowhegan/sk  Skowhegan River (ME)  556      Skowhegan (ME)  68190     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap VT --url "https://www.maxpreps.com/vt/fairfax/bellows-free-academy-lamoille/football/schedule/" --to "Fairfax Bellows Free Academy-Lamoille (VT)" --commit
+
+REMAP https://www.maxpreps.com/vt/fairfax/bellows-free-academy-lamoille/football/schedule/ -> Fairfax Bellows Free Academy-Lamoille (VT) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/vt/fairfax/bell  Fairfax Bellows Free (VT)  42950    Fairfax Bellows Free Academy-Lamoille (V  30455     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/ellsworth/ellsworth-sumner-stevens-academy/football/schedule/" --to "Ellsworth-Sumner (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/ellsworth/ellsworth-sumner-stevens-academy/football/schedule/ -> Ellsworth-Sumner (ME) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/me/ellsworth/el  Ellsworth Sumner Academy (ME)  3328     Ellsworth-Sumner (ME)  19176     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/lisbon-falls/lisbon-st-dominic/football/schedule/" --to "Lisbon Falls-St. Dominic (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/lisbon-falls/lisbon-st-dominic/football/schedule/ -> Lisbon Falls-St. Dominic (ME) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/me/lisbon-falls  Lisbon Falls Lisbon St. (ME)  11924    Lisbon Falls-St. Dominic (ME)  7213      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/madison/madison-carrabec-valley/football/schedule/" --to "Madison-Carrabec-Valley (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/madison/madison-carrabec-valley/football/schedule/ -> Madison-Carrabec-Valley (ME) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/me/madison/madi  Madison Carrabec (ME)  40978    Madison-Carrabec-Valley (ME)  19652     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap ME --url "https://www.maxpreps.com/me/yarmouth/yarmouth-north-yarmouth-academy/football/schedule/" --to "Yarmouth-North Academy (ME)" --commit
+
+REMAP https://www.maxpreps.com/me/yarmouth/yarmouth-north-yarmouth-academy/football/schedule/ -> Yarmouth-North Academy (ME) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/me/yarmouth/yar  Yarmouth North Academy (ME)  22723    Yarmouth-North Academy (ME)  30721     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap VT --url "https://www.maxpreps.com/vt/bennington/mount-anthony-patriots/football/schedule/" --to "Bennington Mt. Anthony (VT)" --commit
+
+REMAP https://www.maxpreps.com/vt/bennington/mount-anthony-patriots/football/schedule/ -> Bennington Mt. Anthony (VT) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/vt/bennington/m  Bennington Mount Anthony (VT)  22983    Bennington Mt. Anthony (VT)  59603     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap VT --url "https://www.maxpreps.com/vt/bristol/mt-abraham-eagles/football/schedule/" --to "Bristol Mt. Abraham-Vergennes (VT)" --commit
+
+REMAP https://www.maxpreps.com/vt/bristol/mt-abraham-eagles/football/schedule/ -> Bristol Mt. Abraham-Vergennes (VT) - COMMIT
+   URL                                       ProperName                            Team_ID  NewProperName                       NewTeam_ID
+   https://www.maxpreps.com/vt/bristol/mt-a  Bristol Mount Abraham-Vergennes (VT)  33783    Bristol Mt. Abraham-Vergennes (VT)  59936     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck ME --commit
+
+MAPPING CHECK ME - COMMIT (Team_ID set to the ProperName ID)
+ 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_mapcheck_COMMITTED_20261112_0722.csv
+   URL                                       ProperName                     Team_ID  NameID  Problem                         Team_ID_Name                       
+   https://www.maxpreps.com/me/north-berwic  Berwick Noble (ME)             59655    59647   Team_ID points to another name  Bethel Gould Academy (ME)          
+   https://www.maxpreps.com/me/biddeford/bi  Biddeford (ME)                 15698    59671   Team_ID points to another name  Biddeford St. Francis (ME)         
+   https://www.maxpreps.com/me/boothbay-har  Boothbay Harbor Boothbay (ME)  59831    59818   Team_ID points to another name  Bowdoin College Frosh (ME)         
+   https://www.maxpreps.com/me/cape-elizabe  Cape Elizabeth (ME)            6197     60235   Team_ID points to another name  Castine Maine Maritime Academy (ME)
+   Status     Fixable  Err 
+   COMMITTED  4        None
+
+>>> consolidate ME --reason "ME round 1: same-school variants and 2024 MaxPreps short names"
+Consolidating ME from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\ME_Alias_Rules.csv
+
+[stderr]
+2026-11-12 07:22:38,057 - INFO - Starting consolidation for state: (ME) using staging table method.
+2026-11-12 07:22:38,066 - WARNING - WARNING: 107 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 07:22:38,067 - WARNING -   'Auburn Edward Little (ME)' -> 'Auburn Edward Little (ME)' (no change)
+2026-11-12 07:22:38,067 - WARNING -   'Augusta Cony (ME)' -> 'Augusta Cony (ME)' (no change)
+2026-11-12 07:22:38,067 - WARNING -   'Bangor (ME)' -> 'Bangor (ME)' (no change)
+2026-11-12 07:22:38,067 - WARNING -   'Bangor John Bapst Memorial (ME)' -> 'Bangor John Bapst Memorial (ME)' (no change)
+2026-11-12 07:22:38,067 - WARNING -   'Bath Hyde (ME)' -> 'Bath Hyde (ME)' (no change)
+2026-11-12 07:22:38,067 - WARNING -   'Bath Morse (ME)' -> 'Bath Morse (ME)' (no change)
+2026-11-12 07:22:38,067 - WARNING -   'Belfast (ME)' -> 'Belfast (ME)' (no change)
+2026-11-12 07:22:38,067 - WARNING -   'Belfast Area (ME)' -> 'Belfast Area (ME)' (no change)
+2026-11-12 07:22:38,067 - WARNING -   'Berwick Noble (ME)' -> 'Berwick Noble (ME)' (no change)
+2026-11-12 07:22:38,068 - WARNING -   'Bethel Gould Academy (ME)' -> 'Bethel Gould Academy (ME)' (no change)
+2026-11-12 07:22:38,068 - WARNING -   'Bethel Telstar (ME)' -> 'Bethel Telstar (ME)' (no change)
+2026-11-12 07:22:38,068 - WARNING -   'Biddeford (ME)' -> 'Biddeford (ME)' (no change)
+2026-11-12 07:22:38,068 - WARNING -   'Biddeford St. Louis (ME)' -> 'Biddeford St. Louis (ME)' (no change)
+2026-11-12 07:22:38,068 - WARNING -   'Boothbay Harbor Boothbay (ME)' -> 'Boothbay Harbor Boothbay (ME)' (no change)
+2026-11-12 07:22:38,068 - WARNING -   'Bowdoin College Frosh (ME)' -> 'Bowdoin College Frosh (ME)' (no change)
+2026-11-12 07:22:38,068 - WARNING -   'Brewer (ME)' -> 'Brewer (ME)' (no change)
+2026-11-12 07:22:38,068 - WARNING -   'Bridgton Academy (ME)' -> 'Bridgton Academy (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Brunswick (ME)' -> 'Brunswick (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Bucksport (ME)' -> 'Bucksport (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Cape Elizabeth (ME)' -> 'Cape Elizabeth (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Colby College (ME)' -> 'Colby College (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Cornish Sacopee Valley (ME)' -> 'Cornish Sacopee Valley (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Cumberland Center Greely (ME)' -> 'Cumberland Center Greely (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Dexter Regional (ME)' -> 'Dexter Regional (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Dixfield Dirigo (ME)' -> 'Dixfield Dirigo (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Ellsworth-Sumner (ME)' -> 'Ellsworth-Sumner (ME)' (no change)
+2026-11-12 07:22:38,069 - WARNING -   'Fairfield Lawrence (ME)' -> 'Fairfield Lawrence (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Falmouth (ME)' -> 'Falmouth (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Farmingdale Hall-Dale (ME)' -> 'Farmingdale Hall-Dale (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Farmington Mt. Blue (ME)' -> 'Farmington Mt. Blue (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Freeport (ME)' -> 'Freeport (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Fryeburg Academy (ME)' -> 'Fryeburg Academy (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Gardiner (ME)' -> 'Gardiner (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Gorham (ME)' -> 'Gorham (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Gray-New Gloucester (ME)' -> 'Gray-New Gloucester (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Hampden (ME)' -> 'Hampden (ME)' (no change)
+2026-11-12 07:22:38,070 - WARNING -   'Hebron Academy (ME)' -> 'Hebron Academy (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Hermon (ME)' -> 'Hermon (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Houlton-Hodgdon-Greater Houlton Christian Academy (ME)' -> 'Houlton-Hodgdon-Greater Houlton Christian Academy (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Jay (ME)' -> 'Jay (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Jay Spruce Mountain (ME)' -> 'Jay Spruce Mountain (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Kennebunk (ME)' -> 'Kennebunk (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Kittery Traip Academy (ME)' -> 'Kittery Traip Academy (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Lewiston (ME)' -> 'Lewiston (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Lincoln Mattanawcook (ME)' -> 'Lincoln Mattanawcook (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Lisbon Falls (ME)' -> 'Lisbon Falls (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Lisbon Falls Lisbon (ME)' -> 'Lisbon Falls Lisbon (ME)' (no change)
+2026-11-12 07:22:38,071 - WARNING -   'Lisbon Falls-St. Dominic (ME)' -> 'Lisbon Falls-St. Dominic (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Livermore Falls (ME)' -> 'Livermore Falls (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Madison (ME)' -> 'Madison (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Madison-Carrabec (ME)' -> 'Madison-Carrabec (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Mexico (ME)' -> 'Mexico (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Millinocket Stearns (ME)' -> 'Millinocket Stearns (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Naples Lake Region (ME)' -> 'Naples Lake Region (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Newport Nokomis (ME)' -> 'Newport Nokomis (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'North Yarmouth Academy (ME)' -> 'North Yarmouth Academy (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Norway (ME)' -> 'Norway (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Oakland Messalonskee (ME)' -> 'Oakland Messalonskee (ME)' (no change)
+2026-11-12 07:22:38,072 - WARNING -   'Old Orchard Beach (ME)' -> 'Old Orchard Beach (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Old Town (ME)' -> 'Old Town (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Orono (ME)' -> 'Orono (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Pittsfield Maine Central Institute (ME)' -> 'Pittsfield Maine Central Institute (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Poland (ME)' -> 'Poland (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Portland (ME)' -> 'Portland (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Portland Cheverus (ME)' -> 'Portland Cheverus (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Portland Deering (ME)' -> 'Portland Deering (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Readfield Kents Hill School (ME)' -> 'Readfield Kents Hill School (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Readfield Maranacook (ME)' -> 'Readfield Maranacook (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Rockland (ME)' -> 'Rockland (ME)' (no change)
+2026-11-12 07:22:38,073 - WARNING -   'Rockland Oceanside (ME)' -> 'Rockland Oceanside (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'Rockport Camden Hills (ME)' -> 'Rockport Camden Hills (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'Rumford (ME)' -> 'Rumford (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'Rumford Mountain Valley (ME)' -> 'Rumford Mountain Valley (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'Sabattus Oak Hill (ME)' -> 'Sabattus Oak Hill (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'Saco Thornton Academy (ME)' -> 'Saco Thornton Academy (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'Sanford (ME)' -> 'Sanford (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'Scarborough (ME)' -> 'Scarborough (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'Skowhegan (ME)' -> 'Skowhegan (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'South Berwick Academy (ME)' -> 'South Berwick Academy (ME)' (no change)
+2026-11-12 07:22:38,074 - WARNING -   'South Berwick Marshwood (ME)' -> 'South Berwick Marshwood (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'South Paris Oxford Hills (ME)' -> 'South Paris Oxford Hills (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'South Portland (ME)' -> 'South Portland (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'Standish Bonny Eagle (ME)' -> 'Standish Bonny Eagle (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'Thorndike Mount View (ME)' -> 'Thorndike Mount View (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'Topsham Mt. Ararat (ME)' -> 'Topsham Mt. Ararat (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'Turner Leavitt (ME)' -> 'Turner Leavitt (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'Waldoboro Medomak Valley (ME)' -> 'Waldoboro Medomak Valley (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'Wales Oak Hill (ME)' -> 'Wales Oak Hill (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'Waterboro Massabesic (ME)' -> 'Waterboro Massabesic (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'Waterville (ME)' -> 'Waterville (ME)' (no change)
+2026-11-12 07:22:38,075 - WARNING -   'Wells (ME)' -> 'Wells (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'Westbrook (ME)' -> 'Westbrook (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'Wilton Academy (ME)' -> 'Wilton Academy (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'Windham (ME)' -> 'Windham (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'Winslow (ME)' -> 'Winslow (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'Winthrop (ME)' -> 'Winthrop (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'Winthrop-Monmouth Academy-Hall-Dale (ME)' -> 'Winthrop-Monmouth Academy-Hall-Dale (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'Yarmouth (ME)' -> 'Yarmouth (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'Yarmouth-North Academy (ME)' -> 'Yarmouth-North Academy (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'York (ME)' -> 'York (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'Monmouth (ME)' -> 'Monmouth (ME)' (no change)
+2026-11-12 07:22:38,076 - WARNING -   'East Machias Washington Academy (ME)' -> 'East Machias Washington Academy (ME)' (no change)
+2026-11-12 07:22:38,077 - WARNING -   'Greenville (ME)' -> 'Greenville (ME)' (no change)
+2026-11-12 07:22:38,077 - WARNING -   'Charleston Higgins Classical Institute (ME)' -> 'Charleston Higgins Classical Institute (ME)' (no change)
+2026-11-12 07:22:38,077 - WARNING -   'Bridgton (ME)' -> 'Bridgton (ME)' (no change)
+2026-11-12 07:22:38,077 - WARNING -   'Sanford St. Ignatius (ME)' -> 'Sanford St. Ignatius (ME)' (no change)
+2026-11-12 07:22:38,077 - WARNING -   'Rumford Stephens (ME)' -> 'Rumford Stephens (ME)' (no change)
+2026-11-12 07:22:38,077 - INFO - Validation passed: 151 rules are clean and ready to upload.
+2026-11-12 07:22:38,097 - INFO - Uploading 151 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 07:22:38,209 - INFO - Upload to staging table complete.
+2026-11-12 07:22:38,215 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 07:23:06,836 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 07:23:06,836 - INFO - Reason logged to dbo.HS_Consolidation_Log: ME round 1: same-school variants and 2024 MaxPreps short names
+2026-11-12 07:23:06,836 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 07:23:06,836 - INFO - Running post-consolidation safety check...
+2026-11-12 07:23:06,842 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup ME --commit
+
+DEDUP v4 ME - COMMIT
+ dedup_archive: 189 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_dedup_archive_COMMITTED_20261112_0723.csv
+ dedup_review: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_dedup_review_COMMITTED_20261112_0723.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_dedup_summary_COMMITTED_20261112_0723.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  ME     25009         189                  17               62866C3E-0985-4E16-B7FB-97C1F6EA869A
+
+>>> review-pairs ME --commit
+
+REVIEW-ONLY PAIRS ME - COMMIT
+ 17 pairs {'LONG': 1, 'SHORT': 16} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_review_pairs_COMMITTED_20261112_0723.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  17        5ACCBC0A-CE01-498C-8C61-E950FD3EE0D0  None
+
+>>> same-score-fix ME --commit
+
+SAME-SCORE DOUBLE-BOOKINGS ME - COMMIT
+ 51 pairs {'DROP A': 23, 'DROP B': 11, 'UNDECIDED': 17} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_same_score_COMMITTED_20261112_0724.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  34        FF6AE2FA-7398-48AC-8599-500E2A1F02DA  None
+
+>>> query ME season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_season_date_1_20261112_0724.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_season_date_2_20261112_0724.csv
+
+>>> query ME forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_forfeits_1_20261112_0724.csv
+ set 2: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_forfeits_2_20261112_0724.csv
+
+>>> query ME college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_college_check_1_20261112_0724.csv
+ set 2: 48 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_college_check_2_20261112_0724.csv
+ set 3: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_college_check_3_20261112_0724.csv
+ set 4: 311 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_college_check_4_20261112_0724.csv
+
+>>> mapcheck VT --commit
+
+MAPPING CHECK VT - COMMIT (Team_ID set to the ProperName ID)
+ 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_mapcheck_COMMITTED_20261112_0724.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                         Team_ID_Name              
+   https://www.maxpreps.com/vt/brattleboro/  Brattleboro (VT)                     59935    59884   Team_ID points to another name  Bristol Mt. Abraham (VT)  
+   https://www.maxpreps.com/vt/north-claren  North Clarendon Mill River (VT)      71171    9715    Team_ID points to another name  Norwich University JV (VT)
+   https://www.maxpreps.com/vt/south-burlin  South Burlington Rice Memorial (VT)  68312    10944   Team_ID points to another name  Spaulding (NH)            
+   Status     Fixable  Err 
+   COMMITTED  3        None
+
+>>> consolidate VT --reason "VT round 1: same-school variants and 2024 MaxPreps short names"
+Consolidating VT from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\VT_Alias_Rules.csv
+
+[stderr]
+2026-11-12 07:24:38,694 - INFO - Starting consolidation for state: (VT) using staging table method.
+2026-11-12 07:24:38,702 - WARNING - WARNING: 44 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 07:24:38,703 - WARNING -   'Barre Spaulding (VT)' -> 'Barre Spaulding (VT)' (no change)
+2026-11-12 07:24:38,703 - WARNING -   'Bellows Falls (VT)' -> 'Bellows Falls (VT)' (no change)
+2026-11-12 07:24:38,703 - WARNING -   'Bellows Free Academy of St. Albans (VT)' -> 'Bellows Free Academy of St. Albans (VT)' (no change)
+2026-11-12 07:24:38,703 - WARNING -   'Bennington (VT)' -> 'Bennington (VT)' (no change)
+2026-11-12 07:24:38,703 - WARNING -   'Bradford Oxbow (VT)' -> 'Bradford Oxbow (VT)' (no change)
+2026-11-12 07:24:38,703 - WARNING -   'Brandon Otter Valley (VT)' -> 'Brandon Otter Valley (VT)' (no change)
+2026-11-12 07:24:38,703 - WARNING -   'Brattleboro (VT)' -> 'Brattleboro (VT)' (no change)
+2026-11-12 07:24:38,703 - WARNING -   'Bristol Mt. Abraham (VT)' -> 'Bristol Mt. Abraham (VT)' (no change)
+2026-11-12 07:24:38,703 - WARNING -   'Bristol Mt. Abraham-Vergennes (VT)' -> 'Bristol Mt. Abraham-Vergennes (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Burlington (VT)' -> 'Burlington (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Burlington-South Burlington (VT)' -> 'Burlington-South Burlington (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Colchester (VT)' -> 'Colchester (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Enosburg Falls (VT)' -> 'Enosburg Falls (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Essex Junction (VT)' -> 'Essex Junction (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Fair Haven (VT)' -> 'Fair Haven (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Fairfax Bellows Free Academy (VT)' -> 'Fairfax Bellows Free Academy (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Green Mountain Junior College (VT)' -> 'Green Mountain Junior College (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Hinesburg Champlain Valley Union (VT)' -> 'Hinesburg Champlain Valley Union (VT)' (no change)
+2026-11-12 07:24:38,704 - WARNING -   'Lyndon Center Lyndon Institute (VT)' -> 'Lyndon Center Lyndon Institute (VT)' (no change)
+2026-11-12 07:24:38,705 - WARNING -   'Manchester Burr & Burton (VT)' -> 'Manchester Burr & Burton (VT)' (no change)
+2026-11-12 07:24:38,705 - WARNING -   'Middlebury (VT)' -> 'Middlebury (VT)' (no change)
+2026-11-12 07:24:38,705 - WARNING -   'Middlebury College Frosh (VT)' -> 'Middlebury College Frosh (VT)' (no change)
+2026-11-12 07:24:38,705 - WARNING -   'Milton (VT)' -> 'Milton (VT)' (no change)
+2026-11-12 07:24:38,705 - WARNING -   'Montpelier (VT)' -> 'Montpelier (VT)' (no change)
+2026-11-12 07:24:38,705 - WARNING -   'Montpelier U-32 (VT)' -> 'Montpelier U-32 (VT)' (no change)
+2026-11-12 07:24:38,705 - WARNING -   'Mount Mansfield Union (VT)' -> 'Mount Mansfield Union (VT)' (no change)
+2026-11-12 07:24:38,705 - WARNING -   'Newport North Country Union (VT)' -> 'Newport North Country Union (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'North Clarendon Mill River (VT)' -> 'North Clarendon Mill River (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'Norwich University Frosh (VT)' -> 'Norwich University Frosh (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'Norwich University JV (VT)' -> 'Norwich University JV (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'Poultney (VT)' -> 'Poultney (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'Rutland (VT)' -> 'Rutland (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'Rutland Mt. St. Joseph Academy (VT)' -> 'Rutland Mt. St. Joseph Academy (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'Saint Johnsbury Academy (VT)' -> 'Saint Johnsbury Academy (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'Saxtons River Vermont Academy (VT)' -> 'Saxtons River Vermont Academy (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'South Burlington (VT)' -> 'South Burlington (VT)' (no change)
+2026-11-12 07:24:38,706 - WARNING -   'South Burlington Rice Memorial (VT)' -> 'South Burlington Rice Memorial (VT)' (no change)
+2026-11-12 07:24:38,707 - WARNING -   'Springfield (VT)' -> 'Springfield (VT)' (no change)
+2026-11-12 07:24:38,707 - WARNING -   'Swanton Missisquoi Valley (VT)' -> 'Swanton Missisquoi Valley (VT)' (no change)
+2026-11-12 07:24:38,707 - WARNING -   'White River Junction Hartford (VT)' -> 'White River Junction Hartford (VT)' (no change)
+2026-11-12 07:24:38,707 - WARNING -   'Windsor (VT)' -> 'Windsor (VT)' (no change)
+2026-11-12 07:24:38,707 - WARNING -   'Winooski (VT)' -> 'Winooski (VT)' (no change)
+2026-11-12 07:24:38,707 - WARNING -   'Woodstock (VT)' -> 'Woodstock (VT)' (no change)
+2026-11-12 07:24:38,707 - WARNING -   'West Rutland (VT)' -> 'West Rutland (VT)' (no change)
+2026-11-12 07:24:38,707 - INFO - Validation passed: 72 rules are clean and ready to upload.
+2026-11-12 07:24:38,726 - INFO - Uploading 72 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 07:24:38,822 - INFO - Upload to staging table complete.
+2026-11-12 07:24:38,828 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 07:24:55,675 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 07:24:55,675 - INFO - Reason logged to dbo.HS_Consolidation_Log: VT round 1: same-school variants and 2024 MaxPreps short names
+2026-11-12 07:24:55,675 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 07:24:55,675 - INFO - Running post-consolidation safety check...
+2026-11-12 07:24:55,679 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup VT --commit
+
+DEDUP v4 VT - COMMIT
+ dedup_archive: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_dedup_archive_COMMITTED_20261112_0725.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_dedup_review_COMMITTED_20261112_0725.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_dedup_summary_COMMITTED_20261112_0725.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  VT     9431          29                   2                F5AFA60F-4974-4B34-AEA0-1C5B918A19C5
+
+>>> review-pairs VT --commit
+
+REVIEW-ONLY PAIRS VT - COMMIT
+ 2 pairs {'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_review_pairs_COMMITTED_20261112_0725.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  2         869C5A54-5DE7-4F43-90C5-000A84C2309D  None
+
+>>> same-score-fix VT --commit
+
+SAME-SCORE DOUBLE-BOOKINGS VT - COMMIT
+ 60 pairs {'DROP A': 17, 'DROP B': 17, 'UNDECIDED': 26} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_same_score_COMMITTED_20261112_0725.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  34        BAA1531C-545A-4BF8-94A0-B4348D182A12  None
+
+>>> query VT season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_season_date_1_20261112_0725.csv
+ set 2: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_season_date_2_20261112_0725.csv
+
+>>> query VT forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_forfeits_1_20261112_0725.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_forfeits_2_20261112_0725.csv
+
+>>> query VT college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_college_check_1_20261112_0725.csv
+ set 2: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_college_check_2_20261112_0725.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_college_check_3_20261112_0725.csv
+ set 4: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_college_check_4_20261112_0725.csv
+
+=== OK 2026-11-12 07:25:57

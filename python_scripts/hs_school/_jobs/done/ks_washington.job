@@ -1,0 +1,7 @@
+# Washington (KS) held Kansas City Washington and Washington (town) games; sorted with kansashsfootballhistory.com team pages (KC Washington id=41, Washington County id=155) and opponent history
+move-team KS --from "Washington (KS)" --to "Kansas City Washington (KS)" --seasons 1900-2026 --ids KS_washington_to_kcw_ids.csv --reason "Washington (KS) games on the KFH KC Washington page (score match) or with KC Washington opponents" --commit
+move-team KS --from "Washington (KS)" --to "Washington County (KS)" --seasons 2006-2026 --ids KS_washington_to_wco2006_ids.csv --reason "Washington town school games from 2006 = Washington County (consolidated with North Central 2006, per KFH)" --commit
+move-team KS --from "Washington County (KS)" --to "Washington (KS)" --seasons 1900-2005 --reason "split by year: Washington HS to 2005, Washington County from 2006 (KFH team page note)" --commit
+dedup KS
+same-score-fix KS
+query KS ks_washington.sql

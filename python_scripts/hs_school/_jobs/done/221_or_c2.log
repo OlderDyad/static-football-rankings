@@ -1,0 +1,26 @@
+
+>>> commit OR
+
+DEDUP v4 OR - COMMIT
+ dedup_archive: 167 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_archive_COMMITTED_20261111_2005.csv
+ dedup_review: 402 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_review_COMMITTED_20261111_2005.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_summary_COMMITTED_20261111_2005.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  OR     72974         167                  402              4269699D-1092-4EB9-810D-068C3B757583
+
+REVIEW-ONLY PAIRS OR - COMMIT
+ 402 pairs {'LONG': 133, 'SHORT': 269} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_review_pairs_COMMITTED_20261111_2005.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  402       7B3DAE6B-5751-42B1-A6F6-8067F9EC8854  None
+
+>>> same-score-fix OR --commit
+
+SAME-SCORE DOUBLE-BOOKINGS OR - COMMIT
+ 200 pairs {'DROP B': 3, 'DROP A': 6, 'UNDECIDED': 191} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_same_score_COMMITTED_20261111_2006.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  9         38F6DBED-4E6F-4139-BFED-70A17D697FFE  None
+
+>>> step OR 1.4 done "2026-11-11: Medford lineage (David): South Medford <=1985 (660 games) -> North Medford (old Medford High); South Medford from 1986"
+Tracker updated: OR 1.4 -> done
+
+=== OK 2026-11-11 20:06:49

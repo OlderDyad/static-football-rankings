@@ -1,0 +1,12 @@
+addstate FL
+report FL names
+report FL drift
+report FL same-town
+mapcheck FL
+dedup FL
+review-pairs FL
+same-score-fix FL
+report FL double-booked
+query FL season_date.sql
+query FL forfeits.sql
+query FL college_check.sql

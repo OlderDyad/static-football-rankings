@@ -1,0 +1,47 @@
+remap DE --url "https://www.maxpreps.com/de/georgetown/fca-bucks-bucks/football/schedule/" --to "Georgetown FCA Bucks (DE)" --commit
+remap HI --url "https://www.maxpreps.com/hi/honolulu/kamehameha-kapalama-warriors/football/schedule/" --to "Honolulu Kamehameha-Kapalama (HI)" --commit
+remap NV --url "https://www.maxpreps.com/nv/dayton/dayton-dust-devils/football/schedule/" --to "Dayton (NV)" --commit
+remap NV --url "https://www.maxpreps.com/nv/las-vegas/the-meadows-school-mustangs/football/schedule/" --to "Las Vegas The Meadows School (NV)" --commit
+remap NV --url "https://www.maxpreps.com/nv/las-vegas/word-of-life-christian-academy/football/schedule/" --to "Las Vegas Word of Life Christian Academy (NV)" --commit
+remap DE --url "https://www.maxpreps.com/de/wilmington/mount-pleasant-green-knights/football/schedule/" --to "Wilmington Mt. Pleasant (DE)" --commit
+remap DC --url "https://www.maxpreps.com/dc/washington/paul-public-charter-international-pirates/football/schedule/" --to "Washington Paul Public Charter (DC)" --commit
+mapcheck AK --commit
+consolidate AK --reason "AK round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+dedup AK --commit
+review-pairs AK --commit
+same-score-fix AK --commit
+query AK season_date.sql
+query AK forfeits.sql
+query AK college_check.sql
+mapcheck HI --commit
+consolidate HI --reason "HI round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+dedup HI --commit
+review-pairs HI --commit
+same-score-fix HI --commit
+query HI season_date.sql
+query HI forfeits.sql
+query HI college_check.sql
+mapcheck DC --commit
+consolidate DC --reason "DC round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+dedup DC --commit
+review-pairs DC --commit
+same-score-fix DC --commit
+query DC season_date.sql
+query DC forfeits.sql
+query DC college_check.sql
+mapcheck DE --commit
+consolidate DE --reason "DE round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+dedup DE --commit
+review-pairs DE --commit
+same-score-fix DE --commit
+query DE season_date.sql
+query DE forfeits.sql
+query DE college_check.sql
+mapcheck NV --commit
+consolidate NV --reason "NV round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+dedup NV --commit
+review-pairs NV --commit
+same-score-fix NV --commit
+query NV season_date.sql
+query NV forfeits.sql
+query NV college_check.sql

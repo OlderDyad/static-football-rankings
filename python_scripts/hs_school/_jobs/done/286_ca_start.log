@@ -1,0 +1,104 @@
+
+>>> addstate CA
+Tracker rows ready for CA
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report CA drift
+
+REPORT drift CA: 457 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_drift_20261112_1427.csv
+   Stopped                               S_Games  S_First  S_Last  S_Mapped  Started                            N_Games  N_First  N_Last  N_Mapped
+   Albany (CA)                           619      1937     2022    0         None                               None     None     None    0       
+   Anaheim Fairmont Prep (CA)            209      1999     2020    0         None                               None     None     None    0       
+   Animo South Los Angeles (CA)          84       2008     2016    1         None                               None     None     None    0       
+   Atherton Menlo (CA)                   268      1922     2023    0         Atherton Menlo Atherton (CA)       36       2024     2026    1       
+   Bakersfield East (CA)                 209      1957     2023    0         Bakersfield Del Oro (CA)           30       2024     2026    1       
+   Bakersfield East (CA)                 209      1957     2023    0         Bakersfield Kern Resource (CA)     9        2024     2024    1       
+   Bakersfield East (CA)                 209      1957     2023    0         Bakersfield Legacy Christian (CA)  20       2024     2026    1       
+   Bakersfield East (CA)                 209      1957     2023    0         Bakersfield Ridgeview Wolf (CA)    32       2024     2026    1       
+   Bakersfield Life Academy (CA)         37       2013     2018    0         None                               None     None     None    0       
+   Bakersfield Northwest Christian (CA)  95       2006     2015    0         None                               None     None     None    0       
+   Bakersfield Ridgeview (CA)            319      1995     2023    0         Bakersfield Ridgeview Wolf (CA)    32       2024     2026    1       
+   Bakersfield Ridgeview (CA)            319      1995     2023    0         Bakersfield Legacy Christian (CA)  20       2024     2026    1       
+   Bakersfield Ridgeview (CA)            319      1995     2023    0         Bakersfield Kern Resource (CA)     9        2024     2024    1       
+   Bakersfield Ridgeview (CA)            319      1995     2023    0         Bakersfield Del Oro (CA)           30       2024     2026    1       
+   Bellflower St. John Bosco (CA)        690      1957     2023    1         Bellflower St. John (CA)           34       2024     2026    1       
+   ... 442 more rows (see CSV)
+
+>>> mapcheck CA --commit
+
+MAPPING CHECK CA - COMMIT (Team_ID set to the ProperName ID)
+ 40 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_mapcheck_COMMITTED_20261112_1427.csv
+   URL                                       ProperName                        Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/ca/carlsbad/arm  Carlsbad Army Navy (CA)           14295    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ca/la-canada/la  La Canada (CA)                    12369    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ca/la-jolla/bis  La Jolla Bishops (CA)             41034    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ca/los-angeles/  Los Angeles Fremont (CA)          19005    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ca/mountain-vie  Mountain View Saint Francis (CA)  1182     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ca/santa-maria/  Santa Maria St. Joseph (CA)       2686     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ca/temecula/sai  Temecula Saint Jeanne (CA)        40039    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ca/anaheim/magn  Anaheim Magnolia (CA)             58954    58953   Team_ID points to another name   Anaheim Melodyland Christian (CA)       
+   https://www.maxpreps.com/ca/angels-camp/  Angels Camp Bret Harte (CA)       407      58971   Team_ID points to another name   Animo South Los Angeles (CA)            
+   https://www.maxpreps.com/ca/bellflower/b  Bellflower (CA)                   59565    14814   Team_ID points to another name   Bellflower St. John Bosco (CA)          
+   https://www.maxpreps.com/ca/california-c  California City (CA)              71345    60151   Team_ID points to another name   California State Polytechnic University-
+   https://www.maxpreps.com/ca/carmel/carme  Carmel (CA)                       21193    60255   Team_ID points to another name   Carmel-By-The-Sea Carmel Valley (CA)    
+   https://www.maxpreps.com/ca/chico/pleasa  Chico Pleasant Valley (CA)        71862    60667   Team_ID points to another name   Chico State College (CA)                
+   https://www.maxpreps.com/ca/chula-vista/  Chula Vista Otay Ranch (CA)       70194    60700   Team_ID points to another name   Chula Vista Pacific Coast Christian Prep
+   https://www.maxpreps.com/ca/colton/colto  Colton (CA)                       47639    60944   Team_ID points to another name   Colton Christian Center Academy (CA)    
+   https://www.maxpreps.com/ca/corona/cente  Corona Centennial (CA)            15380    61088   Team_ID points to another name   Corona Christian Heritage (CA)          
+   https://www.maxpreps.com/ca/covina/covin  Covina (CA)                       6544     61137   Team_ID points to another name   Covina California Christian Frosh (CA)  
+   https://www.maxpreps.com/ca/culver-city/  Culver City (CA)                  8498     61195   Team_ID points to another name   Culver City Pacific Military Academy (CA
+   https://www.maxpreps.com/ca/downey/calva  Downey Calvary Chapel (CA)        27660    61562   Team_ID points to another name   Downey St. Pius X-St. Matthias Academy (
+   https://www.maxpreps.com/ca/exeter/exete  Exeter (CA)                       47544    61959   Team_ID points to another name   Fair Oaks Bella Vista JV (CA)           
+   ... 20 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  33       None
+
+>>> dedup CA
+
+DEDUP v4 CA - PREVIEW (nothing changed)
+ dedup_archive: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_dedup_archive_20261112_1427.csv
+ dedup_review: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_dedup_review_20261112_1427.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_dedup_summary_20261112_1427.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  CA     345454        1                    6                None 
+
+>>> review-pairs CA
+
+REVIEW-ONLY PAIRS CA - PREVIEW (nothing changed)
+ 6 pairs {'SHORT': 6} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_review_pairs_20261112_1427.csv
+
+>>> same-score-fix CA
+
+SAME-SCORE DOUBLE-BOOKINGS CA - PREVIEW (nothing changed)
+ 4333 pairs {'DROP A': 1060, 'DROP B': 1030, 'UNDECIDED': 2243} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_same_score_20261112_1433.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  2057      None   None
+
+>>> query CA ca_dump.sql
+
+QUERY ca_dump (1 result sets)
+ set 1: 345459 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_ca_dump_1_20261112_1433.csv
+
+>>> query CA ca_names.sql
+
+QUERY ca_names (1 result sets)
+ set 1: 3879 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_ca_names_1_20261112_1433.csv
+
+=== OK 2026-11-12 14:33:33

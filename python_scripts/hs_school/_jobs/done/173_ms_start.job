@@ -1,0 +1,8 @@
+addstate MS
+report MS drift
+mapcheck MS
+dedup MS
+review-pairs MS
+same-score-fix MS
+query MS ms_dump.sql
+query MS ms_geo_all.sql

@@ -1,0 +1,5 @@
+move-team OK --from "South Coffeyville Oklahoma Union (OK)" --to "South Coffeyville (OK)" --seasons 1880-2026 --ids ok_south_coffeyville_ids.csv --reason "Two schools under one name: games vs South Coffeyville's (8-man/small-school) opponent group moved; date-conflict clustering" --commit
+remap OK --url "https://www.maxpreps.com/ok/south-coffeyville/south-coffeyville-lions/football/schedule/" --to "South Coffeyville (OK)" --commit
+consolidate OK --reason "OK round 1b: Coffeyville South -> South Coffeyville"
+commit OK
+report OK double-booked

@@ -1,0 +1,11 @@
+dedup NE --commit
+step NE 1.1 "in progress" "round 1 (26 rules) + round 2 (town names of county schools) 2026-11-06"
+step NE 1.2 done "11 MaxPreps URLs pointed back at long-standing names"
+step NE 1.3 done "same-town pairs are real separate schools (Omaha/Lincoln); West Point CC -> Guardian Angels merged"
+step NE 1.4 "in progress" "co-ops split by year (17 families); NP St. Patrick's -> O'Neill St. Mary's 338; Kimball (NE) -> Kimball (SD) 126; Polk-Hordville 1970-85 left"
+step NE 2.1 done "dedup 133 + 187 + 2"
+step NE 2.2 done "review pairs 4 + 32"
+step NE 2.3 "in progress" "same-score 514 archived; Source '0' import (2015-17) misnames opponents"
+query NE season_date.sql
+query NE forfeits.sql
+query NE college_check.sql

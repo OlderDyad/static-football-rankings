@@ -1,0 +1,9 @@
+addstate SC
+report SC drift
+mapcheck SC
+dedup SC
+review-pairs SC
+same-score-fix SC
+query SC sc_dump.sql
+query SC sc_geo_all.sql
+query SC sc_names.sql

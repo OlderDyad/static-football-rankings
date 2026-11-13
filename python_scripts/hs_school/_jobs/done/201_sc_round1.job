@@ -1,0 +1,44 @@
+move-team SC --from "Wade Hampton (SC)" --to "Hampton (SC)" --seasons 1880-2026 --ids hsfha_mv_00.csv --reason "HSFHA-SC match: game belongs to Hampton (SC) (hsfha.org school code)" --commit
+move-team SC --from "Sumter (SC)" --to "Sumter Edmunds (SC)" --seasons 1880-2026 --ids hsfha_mv_01.csv --reason "HSFHA-SC match: game belongs to Sumter Edmunds (SC) (hsfha.org school code)" --commit
+move-team SC --from "North Charleston (SC)" --to "North Charleston Cooper River (SC)" --seasons 1880-2026 --ids hsfha_mv_02.csv --reason "HSFHA-SC match: game belongs to North Charleston Cooper River (SC) (hsfha.org school code)" --commit
+move-team SC --from "Johnston Strom Thurmond (SC)" --to "Johnston (SC)" --seasons 1880-2026 --ids hsfha_mv_03.csv --reason "HSFHA-SC match: game belongs to Johnston (SC) (hsfha.org school code)" --commit
+move-team SC --from "Marion (NC)" --to "Marion (SC)" --seasons 1880-2026 --ids hsfha_mv_04.csv --reason "HSFHA-SC match: game belongs to Marion (SC) (hsfha.org school code)" --commit
+move-team SC --from "Camden Jackson (SC)" --to "Cameron (SC)" --seasons 1880-2026 --ids hsfha_mv_05.csv --reason "HSFHA-SC match: game belongs to Cameron (SC) (hsfha.org school code)" --commit
+move-team SC --from "Clinton (NC)" --to "Clinton (SC)" --seasons 1880-2026 --ids hsfha_mv_06.csv --reason "HSFHA-SC match: game belongs to Clinton (SC) (hsfha.org school code)" --commit
+move-team SC --from "Beaufort (NC)" --to "Beaufort (SC)" --seasons 1880-2026 --ids hsfha_mv_07.csv --reason "HSFHA-SC match: game belongs to Beaufort (SC) (hsfha.org school code)" --commit
+move-team SC --from "Bells (SC)" --to "Ruffin (SC)" --seasons 1880-2026 --ids hsfha_mv_08.csv --reason "HSFHA-SC match: game belongs to Ruffin (SC) (hsfha.org school code)" --commit
+move-team SC --from "Columbia CA Johnson (SC)" --to "Johnston (SC)" --seasons 1880-2026 --ids hsfha_mv_09.csv --reason "HSFHA-SC match: game belongs to Johnston (SC) (hsfha.org school code)" --commit
+move-team SC --from "Simpsonville Hillcrest (SC)" --to "Hillcrest Dalzell (SC)" --seasons 1880-2026 --ids hsfha_mv_10.csv --reason "HSFHA-SC match: game belongs to Hillcrest Dalzell (SC) (hsfha.org school code)" --commit
+move-team SC --from "Charleston (SC)" --to "Charleston Burke (SC)" --seasons 1880-2026 --ids hsfha_mv_11.csv --reason "HSFHA-SC match: game belongs to Charleston Burke (SC) (hsfha.org school code)" --commit
+move-team SC --from "Hickory St. Stephens (NC)" --to "Saint Stephen (SC)" --seasons 1880-2026 --ids hsfha_mv_12.csv --reason "HSFHA-SC match: game belongs to Saint Stephen (SC) (hsfha.org school code)" --commit
+move-team SC --from "Wade Hampton (SC)" --to "Varnville Hampton County (SC)" --seasons 1880-2026 --ids hsfha_mv_14.csv --reason "HSFHA-SC match: game belongs to Varnville Hampton County (SC) (hsfha.org school code)" --commit
+move-team SC --from "Hendersonville Blue Ridge (NC)" --to "Greer Blue Ridge (SC)" --seasons 1880-2026 --ids hsfha_mv_15.csv --reason "HSFHA-SC match: game belongs to Greer Blue Ridge (SC) (hsfha.org school code)" --commit
+move-team SC --from "Gastonia Mount Zion (NC)" --to "Winnsboro Mt. Zion Institute (SC)" --seasons 1880-2026 --ids hsfha_mv_16.csv --reason "HSFHA-SC match: game belongs to Winnsboro Mt. Zion Institute (SC) (hsfha.org school code)" --commit
+move-team SC --from "Tomball Christian HomeSchool (TX)" --to "Darlington Trinity-Byrnes (SC)" --seasons 1880-2026 --ids hsfha_mv_22.csv --reason "HSFHA-SC match: game belongs to Darlington Trinity-Byrnes (SC) (hsfha.org school code)" --commit
+move-team SC --from "Greenville (NC)" --to "Greenville (SC)" --seasons 1880-2026 --ids hsfha_mv_23.csv --reason "HSFHA-SC match: game belongs to Greenville (SC) (hsfha.org school code)" --commit
+move-team SC --from "Mount Pleasant (NC)" --to "Mount Pleasant Moultrie (SC)" --seasons 1880-2026 --ids hsfha_mv_24.csv --reason "HSFHA-SC match: game belongs to Mount Pleasant Moultrie (SC) (hsfha.org school code)" --commit
+move-team SC --from "Saint Matthews Calhoun Academy (SC)" --to "Saint Matthews Calhoun County (SC)" --seasons 1880-2026 --ids hsfha_mv_w1.csv --reason "HSFHA-SC school code + geography check: Calhoun County High (public) games merged into Calhoun Academy by an old wrong rule" --commit
+move-team SC --from "Darlington (SC)" --to "Darlington St Johns (SC)" --seasons 1880-2026 --ids hsfha_mv_w2.csv --reason "HSFHA-SC school code + geography check: St. John's (Darlington) 1927-1970 games filed under Darlington" --commit
+move-team SC --from "Georgetown (SC)" --to "Georgetown Winyah (SC)" --seasons 1880-2026 --ids hsfha_mv_w3.csv --reason "HSFHA-SC school code + geography check: Winyah 1932-1971 games filed under Georgetown" --commit
+move-team SC --from "Winnsboro (SC)" --to "Winnsboro Mt. Zion Institute (SC)" --seasons 1880-2026 --ids hsfha_mv_w4.csv --reason "HSFHA-SC school code + geography check: Mount Zion Institute 1928-1959 games filed under Winnsboro" --commit
+move-team SC --from "Florence (SC)" --to "Florence McClenaghan (SC)" --seasons 1880-2026 --ids hsfha_mv_w5.csv --reason "HSFHA-SC school code + geography check: McClenaghan 1945-1974 games filed under Florence" --commit
+remap SC --url "https://www.maxpreps.com/sc/charleston/porter-gaud-cyclones/football/schedule/" --to "Charleston Porter-Gaud (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/columbia/providence-athletic-club-panthers/football/schedule/" --to "Columbia Providence HomeSchool (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/duncan/james-f-byrnes-rebels/football/schedule/" --to "Duncan Byrnes (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/ehrhardt/andrew-jackson-academy-warriors/football/schedule/" --to "Ehrhardt Andrew Jackson Academy (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/greenville/wade-hampton-generals/football/schedule/" --to "Greenville Wade Hampton (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/greer/greer-yellow-jackets/football/schedule/" --to "Greer (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/hilton-head-island/hilton-head-christian-academy-eagles/football/schedule/" --to "Hilton Head Christian Academy (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/holly-hill/holly-hill-academy-raiders/football/schedule/" --to "Holly Hill Academy (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/honea-path/belton-honea-path-bears/football/schedule/" --to "Belton-Honea Path (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/lamar/lamar-silver-foxes/football/schedule/" --to "Lamar (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/little-river/north-myrtle-beach-chiefs/football/schedule/" --to "North Myrtle Beach Little River (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/marion/marion-swamp-foxes/football/schedule/" --to "Marion (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/monetta/ridge-spring-monetta-trojans/football/schedule/" --to "Ridge Spring-Monetta (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/neeses/hunter-kinard-tyler-trojans/football/schedule/" --to "Norway Hunter Kinard Tyler (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/spartanburg/south-carolina-school-for-the-deaf-and-blind-hornets/football/schedule/" --to "Spartanburg South Carolina School for the Deaf (SC)" --commit
+remap SC --url "https://www.maxpreps.com/sc/york/york-cougars/football/schedule/" --to "York Comprehensive (SC)" --commit
+mapcheck SC --commit
+consolidate SC --reason "SC round 1: HSFHA-SC same-school name variants (city-first, Mount/Saint spelled out, typos), renames merged; consolidations left split; fixed old wrong rule Calhoun County -> Calhoun Academy; Wade Hampton (SC) -> Greenville Wade Hampton after Hampton games moved out"
+dedup SC
+review-pairs SC

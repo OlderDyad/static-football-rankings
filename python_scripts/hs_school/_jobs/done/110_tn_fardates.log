@@ -1,0 +1,35 @@
+
+>>> set-dates TN --file hsfha_dates_far.csv --reason "estimated date (wrong week, >10 days off) replaced by HSFHA-TN date: same teams + same score in season" --commit
+
+SET DATES TN - COMMIT
+ 14353 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_set_dates_COMMITTED_20261110_1131.csv
+   Season  OldDate     NewDate     DayShift  Home                                    Home_Score  Visitor                                 Visitor_Score  Source                             Note                                      ID                                  
+   1900    1900-09-28  1900-11-17  50        Nashville Montgomery Bell Academy (TN)  6           Nashville Wallace Academy (TN)          0              www.hsfdatabase.com-tennessee.htm  hsfha.org game 1178732 (same teams+score  64ECDCDC-1676-4688-B3AD-768D9FF24882
+   1901    1901-08-23  1901-10-18  56        Nashville Montgomery Bell Academy (TN)  5           Nashville Wallace Academy (TN)          0              www.hsfdatabase.com-tennessee.htm  hsfha.org game 1177807 (same teams+score  8AA647C7-4B29-4D41-A207-E64AC184034E
+   1901    1901-08-30  1901-10-25  56        Nashville Montgomery Bell Academy (TN)  17          Nashville Hume Fogg (TN)                0              www.hsfdatabase.com-tennessee.htm  hsfha.org game 1185557 (same teams+score  0FD63A3B-C088-4BEF-BB0F-D4A87C45213E
+   1902    1902-08-22  1902-10-25  64        Franklin Battle Ground Academy (TN)     12          Nashville Montgomery Bell Academy (TN)  6              None                               hsfha.org game 1625201 (same teams+score  D2A31B46-FDDC-4D8E-B56D-2F94DAA9A510
+   1903    1903-08-21  1903-10-17  57        Sewanee Grammar (TN)                    5           Nashville Montgomery Bell Academy (TN)  0              www.hsfdatabase.com-tennessee.htm  hsfha.org game 1205472 (same teams+score  A778D5C9-F5EA-47C2-918E-5C3FEAC455AB
+   1903    1903-09-18  1903-11-06  49        Nashville Hume Fogg (TN)                5           Nashville Montgomery Bell Academy (TN)  4              None                               hsfha.org game 1204234 (same teams+score  0ADD7490-E0CD-4D26-B9E2-2DA44CF3FE3D
+   1904    1904-08-19  1904-09-24  36        Petersburg Morgan School for Boys (TN)  34          Nashville Montgomery Bell Academy (TN)  0              None                               hsfha.org game 1192469 (same teams+score  55CB8B88-03EB-4DE8-93E7-2D527A46CA6E
+   1904    1904-09-02  1904-10-22  50        Nashville Montgomery Bell Academy (TN)  18          Nashville Wallace Academy (TN)          6              www.hsfdatabase.com-tennessee.htm  hsfha.org game 1180193 (same teams+score  061A681B-9C63-400E-BD4C-63A8A7F072E9
+   1905    1905-08-25  1905-10-07  43        Chattanooga McCallie (TN)               0           Petersburg Morgan School for Boys (TN)  0              None                               hsfha.org game 1695683 (same teams+score  C33F2324-EDEE-4845-AA93-0BF75E0DB29E
+   1905    1905-09-08  1905-10-14  36        Petersburg Morgan School for Boys (TN)  33          Nashville Montgomery Bell Academy (TN)  0              None                               hsfha.org game 1192071 (same teams+score  37AD2A30-B713-4FFC-B805-E17F5BEB1602
+   ... 14343 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  14353   14353    None
+
+>>> dedup TN
+
+DEDUP v4 TN - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_archive_20261110_1131.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_review_20261110_1131.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_summary_20261110_1131.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  TN     121623        0                    0                None 
+
+>>> review-pairs TN
+
+REVIEW-ONLY PAIRS TN - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_review_pairs_20261110_1132.csv
+
+=== OK 2026-11-10 11:32:00

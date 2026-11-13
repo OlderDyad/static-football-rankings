@@ -1,0 +1,21 @@
+
+>>> archive-ids WY --ids WY_college_archive_ids.csv --reason "1946 Bethany-Midland college game (copy in College_Scores) + 1904 University of Wyoming self-game" --commit
+
+ARCHIVE LISTED GAMES WY - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_archive_ids_COMMITTED_20261106_0801.csv
+   Season  Date        Home                        Home_Score  Visitor                     Visitor_Score  Source                              Access_ID  ID                                  
+   1904    1904-11-08  University of Wyoming (WY)  6           University of Wyoming (WY)  12             http:-/wyoming-football.com/        None       C9C0361B-625F-45C8-9E51-589D0CE8E117
+   1946    1946-09-21  Bethany College (WY)        13          Midland University (IA)     4              Star_Tribune_1946_09_21_Page_9.csv  None       8ACFF2BA-25A3-45E9-8E52-434E785466E0
+   Status       Listed  Found  RunID  Err                                     
+   ROLLED BACK  2       2      None   Cannot insert the value NULL into column
+
+>>> step WY 3.1 done "0 season/date mismatches"
+Tracker updated: WY 3.1 -> done
+
+>>> step WY 3.2 done "forfeit flags consistent (2 unflagged 1-0 1989-92, rule drops them)"
+Tracker updated: WY 3.2 -> done
+
+>>> step WY 5.0 "in progress" "2 archived; WY_for_college_chat.csv for the college chat"
+Tracker updated: WY 5.0 -> in progress
+
+=== OK 2026-11-06 08:01:42

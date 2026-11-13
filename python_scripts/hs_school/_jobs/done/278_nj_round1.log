@@ -1,0 +1,617 @@
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/belvidere/belvidere-county-seaters/football/schedule/" --to "Belvidere (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/belvidere/belvidere-county-seaters/football/schedule/ -> Belvidere (NJ) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName   NewTeam_ID
+   https://www.maxpreps.com/nj/belvidere/be  Belvidere County (NJ)  10482    Belvidere (NJ)  32759     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/buena/buena-chiefs/football/schedule/" --to "Buena Regional (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/buena/buena-chiefs/football/schedule/ -> Buena Regional (NJ) - COMMIT
+   URL                                       ProperName  Team_ID  NewProperName        NewTeam_ID
+   https://www.maxpreps.com/nj/buena/buena-  Buena (NJ)  26557    Buena Regional (NJ)  60025     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/chester/west-morris-central-wolfpack/football/schedule/" --to "Chester West Morris Central (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/chester/west-morris-central-wolfpack/football/schedule/ -> Chester West Morris Central (NJ) - COMMIT
+   URL                                       ProperName         Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/nj/chester/west  Chester West (NJ)  43692    Chester West Morris Central (NJ)  60541     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/mt-holly/rancocas-valley-red-devils/football/schedule/" --to "Mount Holly Rancocas Valley Regional (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/mt-holly/rancocas-valley-red-devils/football/schedule/ -> Mount Holly Rancocas Valley Regional (NJ) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/nj/mt-holly/ran  Mount Holly Rancocas Valley (NJ)  31479    Mount Holly Rancocas Valley Regional (NJ  65561     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/neptune/neptune-scarlet-fliers/football/schedule/" --to "Neptune (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/neptune/neptune-scarlet-fliers/football/schedule/ -> Neptune (NJ) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/nj/neptune/nept  Neptune Scarlet (NJ)  29190    Neptune (NJ)   12130     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/nutley/nutley-maroon-raiders/football/schedule/" --to "Nutley (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/nutley/nutley-maroon-raiders/football/schedule/ -> Nutley (NJ) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/nj/nutley/nutle  Nutley Maroon (NJ)  20029    Nutley (NJ)    36558     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/west-caldwell/caldwell-chiefs/football/schedule/" --to "West Caldwell (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/west-caldwell/caldwell-chiefs/football/schedule/ -> West Caldwell (NJ) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName       NewTeam_ID
+   https://www.maxpreps.com/nj/west-caldwel  West Caldwell Caldwell (NJ)  43871    West Caldwell (NJ)  69614     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/clark/johnson-crusaders/football/schedule/" --to "Clark Arthur L. Johnson Regional (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/clark/johnson-crusaders/football/schedule/ -> Clark Arthur L. Johnson Regional (NJ) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/nj/clark/johnso  Clark Johnson (NJ)  1489     Clark Arthur L. Johnson Regional (NJ)  8007      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/edison/jp-stevens-hawks/football/schedule/" --to "Edison John P. Stevens (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/edison/jp-stevens-hawks/football/schedule/ -> Edison John P. Stevens (NJ) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/nj/edison/jp-st  Edison Jp St. evens (NJ)  2658     Edison John P. Stevens (NJ)  61701     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/hightstown/peddie-falcons/football/schedule/" --to "Hightstown The Peddie School (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/hightstown/peddie-falcons/football/schedule/ -> Hightstown The Peddie School (NJ) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/nj/hightstown/p  Hightstown Peddie (NJ)  41535    Hightstown The Peddie School (NJ)  63100     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/old-tappan/nv-old-tappan-golden-knights/football/schedule/" --to "Old Tappan Northern Valley (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/old-tappan/nv-old-tappan-golden-knights/football/schedule/ -> Old Tappan Northern Valley (NJ) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/nj/old-tappan/n  Old Tappan Nv Old (NJ)  44429    Old Tappan Northern Valley (NJ)  66230     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/point-pleasant/point-pleasant-boro-panthers/football/schedule/" --to "Point Pleasant Borough (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/point-pleasant/point-pleasant-boro-panthers/football/schedule/ -> Point Pleasant Borough (NJ) - COMMIT
+   URL                                       ProperName                          Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/nj/point-pleasa  Point Pleasant Point Pleasant (NJ)  32803    Point Pleasant Borough (NJ)  66917     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/princeton/hun-raiders/football/schedule/" --to "Princeton Hun School (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/princeton/hun-raiders/football/schedule/ -> Princeton Hun School (NJ) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/nj/princeton/hu  Princeton Hun (NJ)  4686     Princeton Hun School (NJ)  17661     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NJ --url "https://www.maxpreps.com/nj/springfield/dayton-bulldogs/football/schedule/" --to "Springfield Jonathan Dayton Regional (NJ)" --commit
+
+REMAP https://www.maxpreps.com/nj/springfield/dayton-bulldogs/football/schedule/ -> Springfield Jonathan Dayton Regional (NJ) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/nj/springfield/  Springfield Dayton (NJ)  13789    Springfield Jonathan Dayton Regional (NJ  68360     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck NJ --commit
+
+MAPPING CHECK NJ - COMMIT (Team_ID set to the ProperName ID)
+ 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_mapcheck_COMMITTED_20261112_1331.csv
+   URL                                       ProperName                          Team_ID  NameID  Problem                          Team_ID_Name
+   https://www.maxpreps.com/nj/flanders/mou  Flanders Mount Olive (NJ)           13695    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nj/plainsboro/w  Plainsboro West Windsor North (NJ)  33157    None    ProperName not in HS_Team_Names  None        
+   Status     Fixable  Err 
+   COMMITTED  0        None
+
+>>> consolidate NJ --reason "NJ round 1: 2024 MaxPreps short names; same-school pairs from PSU team pages (Englewood Dwight Morrow, Emerson, Brick Township, Chatham); renames to latest (Woodrow Wilson -> Camden Eastside, East Paterson -> Elmwood Park)"
+Consolidating NJ from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\NJ_Alias_Rules.csv
+
+[stderr]
+2026-11-12 13:31:16,685 - INFO - Starting consolidation for state: (NJ) using staging table method.
+2026-11-12 13:31:16,695 - WARNING - WARNING: 449 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 13:31:16,696 - WARNING -   'Aberdeen Matawan Regional (NJ)' -> 'Aberdeen Matawan Regional (NJ)' (no change)
+2026-11-12 13:31:16,696 - WARNING -   'Absecon Holy Spirit (NJ)' -> 'Absecon Holy Spirit (NJ)' (no change)
+2026-11-12 13:31:16,696 - WARNING -   'Allendale Northern Highlands (NJ)' -> 'Allendale Northern Highlands (NJ)' (no change)
+2026-11-12 13:31:16,696 - WARNING -   'Allentown (NJ)' -> 'Allentown (NJ)' (no change)
+2026-11-12 13:31:16,696 - WARNING -   'Annandale North Hunterdon (NJ)' -> 'Annandale North Hunterdon (NJ)' (no change)
+2026-11-12 13:31:16,696 - WARNING -   'Asbury Park (NJ)' -> 'Asbury Park (NJ)' (no change)
+2026-11-12 13:31:16,696 - WARNING -   'Atco Edgewood Regional (NJ)' -> 'Atco Edgewood Regional (NJ)' (no change)
+2026-11-12 13:31:16,696 - WARNING -   'Atco Winslow Township (NJ)' -> 'Atco Winslow Township (NJ)' (no change)
+2026-11-12 13:31:16,696 - WARNING -   'Atlantic City (NJ)' -> 'Atlantic City (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Atlantic City JV (NJ)' -> 'Atlantic City JV (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Atlantic Highlands (NJ)' -> 'Atlantic Highlands (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Audubon (NJ)' -> 'Audubon (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Barnegat (NJ)' -> 'Barnegat (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Basking Ridge (NJ)' -> 'Basking Ridge (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Bayley-Ellard (NJ)' -> 'Bayley-Ellard (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Bayonne (NJ)' -> 'Bayonne (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Bayonne Marist (NJ)' -> 'Bayonne Marist (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Bayville Central Regional (NJ)' -> 'Bayville Central Regional (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Belleville (NJ)' -> 'Belleville (NJ)' (no change)
+2026-11-12 13:31:16,697 - WARNING -   'Belvidere (NJ)' -> 'Belvidere (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Bergen Community College (NJ)' -> 'Bergen Community College (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Bergenfield (NJ)' -> 'Bergenfield (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Berkeley Heights Governor Livingston (NJ)' -> 'Berkeley Heights Governor Livingston (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Bernardsville Bernards (NJ)' -> 'Bernardsville Bernards (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Blackwood Highland Regional (NJ)' -> 'Blackwood Highland Regional (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Blairstown Blair Academy (NJ)' -> 'Blairstown Blair Academy (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Blairstown North Warren Regional (NJ)' -> 'Blairstown North Warren Regional (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Bloomfield (NJ)' -> 'Bloomfield (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Bloomfield Voc-Tech (NJ)' -> 'Bloomfield Voc-Tech (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Bogota (NJ)' -> 'Bogota (NJ)' (no change)
+2026-11-12 13:31:16,698 - WARNING -   'Boonton (NJ)' -> 'Boonton (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Bordentown (NJ)' -> 'Bordentown (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Bordentown Manual Training (NJ)' -> 'Bordentown Manual Training (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Bordentown Military Institute (NJ)' -> 'Bordentown Military Institute (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Bound Brook (NJ)' -> 'Bound Brook (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Brick Memorial (NJ)' -> 'Brick Memorial (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Brick Township (NJ)' -> 'Brick Township (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Bridgeton (NJ)' -> 'Bridgeton (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Bridgewater-Raritan (NJ)' -> 'Bridgewater-Raritan (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Bridgewater-Raritan East (NJ)' -> 'Bridgewater-Raritan East (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Bridgewater-Raritan West (NJ)' -> 'Bridgewater-Raritan West (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Buena Regional (NJ)' -> 'Buena Regional (NJ)' (no change)
+2026-11-12 13:31:16,699 - WARNING -   'Burlington All Saints (NJ)' -> 'Burlington All Saints (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Burlington Township (NJ)' -> 'Burlington Township (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Butler (NJ)' -> 'Butler (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Camden (NJ)' -> 'Camden (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Camden Kipp Cooper (NJ)' -> 'Camden Kipp Cooper (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Camden St. Joseph (NJ)' -> 'Camden St. Joseph (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Cape May Court House Middle Township (NJ)' -> 'Cape May Court House Middle Township (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Cape May Lower Cape (NJ)' -> 'Cape May Lower Cape (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Carneys Point Penns Grove (NJ)' -> 'Carneys Point Penns Grove (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Carneys Point St. James (NJ)' -> 'Carneys Point St. James (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Carteret (NJ)' -> 'Carteret (NJ)' (no change)
+2026-11-12 13:31:16,700 - WARNING -   'Cedar Grove (NJ)' -> 'Cedar Grove (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Central (NJ)' -> 'Central (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Chatham (NJ)' -> 'Chatham (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Chatham Township (NJ)' -> 'Chatham Township (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Cherry Hill Camden Catholic (NJ)' -> 'Cherry Hill Camden Catholic (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Cherry Hill East (NJ)' -> 'Cherry Hill East (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Cherry Hill West (NJ)' -> 'Cherry Hill West (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Chester West Morris Central (NJ)' -> 'Chester West Morris Central (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Cinnaminson (NJ)' -> 'Cinnaminson (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Clark Arthur L. Johnson Regional (NJ)' -> 'Clark Arthur L. Johnson Regional (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Clayton (NJ)' -> 'Clayton (NJ)' (no change)
+2026-11-12 13:31:16,701 - WARNING -   'Cliffside Park (NJ)' -> 'Cliffside Park (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Clifton (NJ)' -> 'Clifton (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Clifton Paul VI Regional (NJ)' -> 'Clifton Paul VI Regional (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Collingswood (NJ)' -> 'Collingswood (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Colonia (NJ)' -> 'Colonia (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Colts Neck (NJ)' -> 'Colts Neck (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Columbus Northern Burlington (NJ)' -> 'Columbus Northern Burlington (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Cranford (NJ)' -> 'Cranford (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Cresskill (NJ)' -> 'Cresskill (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Delran (NJ)' -> 'Delran (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Delran Holy Cross (NJ)' -> 'Delran Holy Cross (NJ)' (no change)
+2026-11-12 13:31:16,702 - WARNING -   'Demarest Northern Valley Regional (NJ)' -> 'Demarest Northern Valley Regional (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'Demarest Northern Valley Regional JV (NJ)' -> 'Demarest Northern Valley Regional JV (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'Denville Morris Catholic (NJ)' -> 'Denville Morris Catholic (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'Deptford (NJ)' -> 'Deptford (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'Dover (NJ)' -> 'Dover (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'Dumont (NJ)' -> 'Dumont (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'Dunellen (NJ)' -> 'Dunellen (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'Dwight-Englewood (NJ)' -> 'Dwight-Englewood (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'East Brunswick (NJ)' -> 'East Brunswick (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'East Hanover Hanover Park (NJ)' -> 'East Hanover Hanover Park (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'East Orange (NJ)' -> 'East Orange (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'East Orange Campus (NJ)' -> 'East Orange Campus (NJ)' (no change)
+2026-11-12 13:31:16,703 - WARNING -   'East Orange Clifford J. Scott (NJ)' -> 'East Orange Clifford J. Scott (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'East Rutherford (NJ)' -> 'East Rutherford (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'East Rutherford Becton (NJ)' -> 'East Rutherford Becton (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'Edison (NJ)' -> 'Edison (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'Edison Bishop Ahr (NJ)' -> 'Edison Bishop Ahr (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'Edison John P. Stevens (NJ)' -> 'Edison John P. Stevens (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'Edison St. Thomas Aquinas (NJ)' -> 'Edison St. Thomas Aquinas (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'Edison Wardlaw-Hartridge (NJ)' -> 'Edison Wardlaw-Hartridge (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'Egg Harbor City Cedar Creek (NJ)' -> 'Egg Harbor City Cedar Creek (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'Egg Harbor Township (NJ)' -> 'Egg Harbor Township (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'Elizabeth (NJ)' -> 'Elizabeth (NJ)' (no change)
+2026-11-12 13:31:16,704 - WARNING -   'Elizabeth Battin (NJ)' -> 'Elizabeth Battin (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Elizabeth St. Mary of the Assumption (NJ)' -> 'Elizabeth St. Mary of the Assumption (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Elmwood Park (NJ)' -> 'Elmwood Park (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Emerson (NJ)' -> 'Emerson (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Englewood Dwight Morrow (NJ)' -> 'Englewood Dwight Morrow (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Englewood St. Cecilia (NJ)' -> 'Englewood St. Cecilia (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Englishtown Manalapan (NJ)' -> 'Englishtown Manalapan (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Erial Timber Creek Regional (NJ)' -> 'Erial Timber Creek Regional (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Essex Fells Kingsley (NJ)' -> 'Essex Fells Kingsley (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Fair Lawn (NJ)' -> 'Fair Lawn (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Farmingdale Howell (NJ)' -> 'Farmingdale Howell (NJ)' (no change)
+2026-11-12 13:31:16,705 - WARNING -   'Flanders Mt. Olive (NJ)' -> 'Flanders Mt. Olive (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Flemington Hunterdon Central (NJ)' -> 'Flemington Hunterdon Central (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Florence Township Memorial (NJ)' -> 'Florence Township Memorial (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Fort Lee (NJ)' -> 'Fort Lee (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Franklin Borough (NJ)' -> 'Franklin Borough (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Franklin Lakes Ramapo (NJ)' -> 'Franklin Lakes Ramapo (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Franklinville Delsea (NJ)' -> 'Franklinville Delsea (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Freehold Boro (NJ)' -> 'Freehold Boro (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Freehold Township (NJ)' -> 'Freehold Township (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Frenchtown Delaware Valley (NJ)' -> 'Frenchtown Delaware Valley (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Galloway Absegami (NJ)' -> 'Galloway Absegami (NJ)' (no change)
+2026-11-12 13:31:16,706 - WARNING -   'Garfield (NJ)' -> 'Garfield (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Gladstone Gill St. Bernard's (NJ)' -> 'Gladstone Gill St. Bernard's (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Glassboro (NJ)' -> 'Glassboro (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Glen Gardner Voorhees (NJ)' -> 'Glen Gardner Voorhees (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Glen Ridge (NJ)' -> 'Glen Ridge (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Glen Rock (NJ)' -> 'Glen Rock (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Gloucester Catholic (NJ)' -> 'Gloucester Catholic (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Gloucester City (NJ)' -> 'Gloucester City (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Gloucester City Catholic (NJ)' -> 'Gloucester City Catholic (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Green Brook (NJ)' -> 'Green Brook (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Hackensack (NJ)' -> 'Hackensack (NJ)' (no change)
+2026-11-12 13:31:16,707 - WARNING -   'Hackensack Bergen Tech (NJ)' -> 'Hackensack Bergen Tech (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Hackensack Holy Trinity (NJ)' -> 'Hackensack Holy Trinity (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Hackettstown (NJ)' -> 'Hackettstown (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Hackettstown Centenary Collegiate Institute (NJ)' -> 'Hackettstown Centenary Collegiate Institute (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Haddon Heights (NJ)' -> 'Haddon Heights (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Haddonfield (NJ)' -> 'Haddonfield (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Haddonfield Paul VI (NJ)' -> 'Haddonfield Paul VI (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Haddonfield St. John's Military Academy (NJ)' -> 'Haddonfield St. John's Military Academy (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Haledon Manchester Regional (NJ)' -> 'Haledon Manchester Regional (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Hamburg Wallkill Valley (NJ)' -> 'Hamburg Wallkill Valley (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Hamilton (NJ)' -> 'Hamilton (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Hamilton East (NJ)' -> 'Hamilton East (NJ)' (no change)
+2026-11-12 13:31:16,708 - WARNING -   'Hamilton Nottingham (NJ)' -> 'Hamilton Nottingham (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Hamilton Steinert (NJ)' -> 'Hamilton Steinert (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Hamilton West (NJ)' -> 'Hamilton West (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Hammonton (NJ)' -> 'Hammonton (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Hammonton St. Joseph (NJ)' -> 'Hammonton St. Joseph (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Harrison (NJ)' -> 'Harrison (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Hasbrouck Heights (NJ)' -> 'Hasbrouck Heights (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Hawthorne (NJ)' -> 'Hawthorne (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Hazlet Raritan (NJ)' -> 'Hazlet Raritan (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Highland Park (NJ)' -> 'Highland Park (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Hightstown (NJ)' -> 'Hightstown (NJ)' (no change)
+2026-11-12 13:31:16,709 - WARNING -   'Hightstown The Peddie School (NJ)' -> 'Hightstown The Peddie School (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Hillsborough (NJ)' -> 'Hillsborough (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Hillsdale Pascack Valley (NJ)' -> 'Hillsdale Pascack Valley (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Hillside (NJ)' -> 'Hillside (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Ho Ho Kus St. Lukes (NJ)' -> 'Ho Ho Kus St. Lukes (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Ho Ho Kus St. Lukes JV (NJ)' -> 'Ho Ho Kus St. Lukes JV (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Hoboken (NJ)' -> 'Hoboken (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Hoboken Stevens Academy (NJ)' -> 'Hoboken Stevens Academy (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Holmdel (NJ)' -> 'Holmdel (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Holmdel St. John-Vianney (NJ)' -> 'Holmdel St. John-Vianney (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Hopatcong (NJ)' -> 'Hopatcong (NJ)' (no change)
+2026-11-12 13:31:16,710 - WARNING -   'Immaculate Conception (NJ)' -> 'Immaculate Conception (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Irvington (NJ)' -> 'Irvington (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Iselin Kennedy Memorial (NJ)' -> 'Iselin Kennedy Memorial (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Jackson Liberty (NJ)' -> 'Jackson Liberty (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Jackson Township Jackson Memorial (NJ)' -> 'Jackson Township Jackson Memorial (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Jamesburg New Jersey Training (NJ)' -> 'Jamesburg New Jersey Training (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Jersey City Dickinson (NJ)' -> 'Jersey City Dickinson (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Jersey City Ferris (NJ)' -> 'Jersey City Ferris (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Jersey City Hudson Catholic (NJ)' -> 'Jersey City Hudson Catholic (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Jersey City Lincoln (NJ)' -> 'Jersey City Lincoln (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Jersey City Snyder (NJ)' -> 'Jersey City Snyder (NJ)' (no change)
+2026-11-12 13:31:16,711 - WARNING -   'Jersey City St. Anthony (NJ)' -> 'Jersey City St. Anthony (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Jersey City St. Joseph (NJ)' -> 'Jersey City St. Joseph (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Jersey City St. Peters Prep (NJ)' -> 'Jersey City St. Peters Prep (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Keansburg (NJ)' -> 'Keansburg (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Kearny (NJ)' -> 'Kearny (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Kenilworth Brearley (NJ)' -> 'Kenilworth Brearley (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Keyport (NJ)' -> 'Keyport (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Keyport-Hudson Regional (NJ)' -> 'Keyport-Hudson Regional (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Kinnelon (NJ)' -> 'Kinnelon (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Lakehurst Manchester Township (NJ)' -> 'Lakehurst Manchester Township (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Lakewood (NJ)' -> 'Lakewood (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Lambertville South Hunterdon (NJ)' -> 'Lambertville South Hunterdon (NJ)' (no change)
+2026-11-12 13:31:16,712 - WARNING -   'Lanoka Harbor Lacey Township (NJ)' -> 'Lanoka Harbor Lacey Township (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Lawrenceville Lawrence (NJ)' -> 'Lawrenceville Lawrence (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Lawrenceville Notre Dame (NJ)' -> 'Lawrenceville Notre Dame (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Lawrenceville School (NJ)' -> 'Lawrenceville School (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Leonia (NJ)' -> 'Leonia (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Linden (NJ)' -> 'Linden (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Lindenwold (NJ)' -> 'Lindenwold (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Linwood Mainland Regional (NJ)' -> 'Linwood Mainland Regional (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Little Falls Passaic Valley (NJ)' -> 'Little Falls Passaic Valley (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Little Silver Red Bank Regional (NJ)' -> 'Little Silver Red Bank Regional (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Livingston (NJ)' -> 'Livingston (NJ)' (no change)
+2026-11-12 13:31:16,713 - WARNING -   'Livingston Newark Academy (NJ)' -> 'Livingston Newark Academy (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Lodi (NJ)' -> 'Lodi (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Long Branch (NJ)' -> 'Long Branch (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Lower Cape May Regional (NJ)' -> 'Lower Cape May Regional (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Lyndhurst (NJ)' -> 'Lyndhurst (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Madison (NJ)' -> 'Madison (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Madison Bayley-Ellard (NJ)' -> 'Madison Bayley-Ellard (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Madison Township (NJ)' -> 'Madison Township (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Mahwah (NJ)' -> 'Mahwah (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Manahawkin Southern Regional (NJ)' -> 'Manahawkin Southern Regional (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Manasquan (NJ)' -> 'Manasquan (NJ)' (no change)
+2026-11-12 13:31:16,714 - WARNING -   'Manville (NJ)' -> 'Manville (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Maple Shade (NJ)' -> 'Maple Shade (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Maplewood Columbia (NJ)' -> 'Maplewood Columbia (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Marlboro (NJ)' -> 'Marlboro (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Marlton Cherokee (NJ)' -> 'Marlton Cherokee (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Martinsville The Pingry School (NJ)' -> 'Martinsville The Pingry School (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Mays Landing Atlantic County Vo-Tech (NJ)' -> 'Mays Landing Atlantic County Vo-Tech (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Mays Landing Oakcrest (NJ)' -> 'Mays Landing Oakcrest (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Medford Lenape (NJ)' -> 'Medford Lenape (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Medford Shawnee (NJ)' -> 'Medford Shawnee (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Merchantville (NJ)' -> 'Merchantville (NJ)' (no change)
+2026-11-12 13:31:16,715 - WARNING -   'Metuchen (NJ)' -> 'Metuchen (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Metuchen St. Joseph (NJ)' -> 'Metuchen St. Joseph (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Middlesex (NJ)' -> 'Middlesex (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Middletown North (NJ)' -> 'Middletown North (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Middletown South (NJ)' -> 'Middletown South (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Midland Park (NJ)' -> 'Midland Park (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Millburn (NJ)' -> 'Millburn (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Millville (NJ)' -> 'Millville (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Monmouth Junction South Brunswick (NJ)' -> 'Monmouth Junction South Brunswick (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Monroe Township (NJ)' -> 'Monroe Township (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Montclair (NJ)' -> 'Montclair (NJ)' (no change)
+2026-11-12 13:31:16,716 - WARNING -   'Montclair Immaculate Conception (NJ)' -> 'Montclair Immaculate Conception (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Montclair Kimberley Academy (NJ)' -> 'Montclair Kimberley Academy (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Montclair State University (NJ)' -> 'Montclair State University (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Montclair State University Frosh (NJ)' -> 'Montclair State University Frosh (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Montvale Pascack Hills (NJ)' -> 'Montvale Pascack Hills (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Montvale St. Joseph Regional (NJ)' -> 'Montvale St. Joseph Regional (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Montville (NJ)' -> 'Montville (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Moorestown (NJ)' -> 'Moorestown (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Morristown (NJ)' -> 'Morristown (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Morristown Delbarton (NJ)' -> 'Morristown Delbarton (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Morristown-Beard (NJ)' -> 'Morristown-Beard (NJ)' (no change)
+2026-11-12 13:31:16,717 - WARNING -   'Mount Holly Academy (NJ)' -> 'Mount Holly Academy (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'Mountain Lakes (NJ)' -> 'Mountain Lakes (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'Mullica Hill Clearview (NJ)' -> 'Mullica Hill Clearview (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'Neptune (NJ)' -> 'Neptune (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'Netcong (NJ)' -> 'Netcong (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'New Brunswick St. Peter's (NJ)' -> 'New Brunswick St. Peter's (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'New Egypt (NJ)' -> 'New Egypt (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'New Jersey School for the Deaf (NJ)' -> 'New Jersey School for the Deaf (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'New Milford (NJ)' -> 'New Milford (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'New Monmouth Mater Dei (NJ)' -> 'New Monmouth Mater Dei (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'New Providence (NJ)' -> 'New Providence (NJ)' (no change)
+2026-11-12 13:31:16,718 - WARNING -   'Newark Barringer (NJ)' -> 'Newark Barringer (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark Central (NJ)' -> 'Newark Central (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark Collegiate Academy (NJ)' -> 'Newark Collegiate Academy (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark East Side (NJ)' -> 'Newark East Side (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark Essex Catholic (NJ)' -> 'Newark Essex Catholic (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark Shabazz (NJ)' -> 'Newark Shabazz (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark Shabazz-South Side (NJ)' -> 'Newark Shabazz-South Side (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark South Side (NJ)' -> 'Newark South Side (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark St. Benedict's Prep JV (NJ)' -> 'Newark St. Benedict's Prep JV (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark Vailsburg (NJ)' -> 'Newark Vailsburg (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark Weequahic (NJ)' -> 'Newark Weequahic (NJ)' (no change)
+2026-11-12 13:31:16,719 - WARNING -   'Newark West Side (NJ)' -> 'Newark West Side (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'NewBrunswick (NJ)' -> 'NewBrunswick (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'Newton (NJ)' -> 'Newton (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'Newton Kittatinny Regional (NJ)' -> 'Newton Kittatinny Regional (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'North Arlington (NJ)' -> 'North Arlington (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'North Arlington Queen of Peace (NJ)' -> 'North Arlington Queen of Peace (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'North Bergen (NJ)' -> 'North Bergen (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'North Brunswick (NJ)' -> 'North Brunswick (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'North Caldwell West Essex (NJ)' -> 'North Caldwell West Essex (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'North Plainfield (NJ)' -> 'North Plainfield (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'Nutley (NJ)' -> 'Nutley (NJ)' (no change)
+2026-11-12 13:31:16,720 - WARNING -   'Oak Ridge Jefferson Township (NJ)' -> 'Oak Ridge Jefferson Township (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Oakhurst Ocean Township (NJ)' -> 'Oakhurst Ocean Township (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Oakland Indian Hills (NJ)' -> 'Oakland Indian Hills (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Ocean City (NJ)' -> 'Ocean City (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Old Bridge (NJ)' -> 'Old Bridge (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Old Bridge Cedar Ridge (NJ)' -> 'Old Bridge Cedar Ridge (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Old Bridge Madison Central (NJ)' -> 'Old Bridge Madison Central (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Old Tappan Northern Valley (NJ)' -> 'Old Tappan Northern Valley (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Oradell Bergen Catholic (NJ)' -> 'Oradell Bergen Catholic (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Oradell River Dell (NJ)' -> 'Oradell River Dell (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Orange (NJ)' -> 'Orange (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Orange Carteret Academy (NJ)' -> 'Orange Carteret Academy (NJ)' (no change)
+2026-11-12 13:31:16,721 - WARNING -   'Orange Our Lady of the Valley (NJ)' -> 'Orange Our Lady of the Valley (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Palisades Park-Leonia (NJ)' -> 'Palisades Park-Leonia (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Palmyra (NJ)' -> 'Palmyra (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Paramus (NJ)' -> 'Paramus (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Paramus Catholic (NJ)' -> 'Paramus Catholic (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Park Ridge (NJ)' -> 'Park Ridge (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Parlin Sayreville (NJ)' -> 'Parlin Sayreville (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Parsippany (NJ)' -> 'Parsippany (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Parsippany Hills (NJ)' -> 'Parsippany Hills (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Passaic (NJ)' -> 'Passaic (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Passaic Pope Pius XII (NJ)' -> 'Passaic Pope Pius XII (NJ)' (no change)
+2026-11-12 13:31:16,722 - WARNING -   'Paterson Central (NJ)' -> 'Paterson Central (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Paterson Eastside (NJ)' -> 'Paterson Eastside (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Paterson Kennedy (NJ)' -> 'Paterson Kennedy (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Paulsboro (NJ)' -> 'Paulsboro (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Pemberton (NJ)' -> 'Pemberton (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Pennington (NJ)' -> 'Pennington (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Pennington Hopewell Valley Central (NJ)' -> 'Pennington Hopewell Valley Central (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Pennington School (NJ)' -> 'Pennington School (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Pennsauken (NJ)' -> 'Pennsauken (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Pennsauken Bishop Eustace Prep (NJ)' -> 'Pennsauken Bishop Eustace Prep (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Pennsville Memorial (NJ)' -> 'Pennsville Memorial (NJ)' (no change)
+2026-11-12 13:31:16,723 - WARNING -   'Perth Amboy (NJ)' -> 'Perth Amboy (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Phillipsburg (NJ)' -> 'Phillipsburg (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Phillipsburg Catholic (NJ)' -> 'Phillipsburg Catholic (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Phillipsburgh Saints Philip & James School (NJ)' -> 'Phillipsburgh Saints Philip & James School (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Pine Beach Admiral Farragut Academy (NJ)' -> 'Pine Beach Admiral Farragut Academy (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Pine Hill Overbrook (NJ)' -> 'Pine Hill Overbrook (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Piscataway (NJ)' -> 'Piscataway (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Piscataway St. Pius X (NJ)' -> 'Piscataway St. Pius X (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Pitman (NJ)' -> 'Pitman (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Pittsgrove Schalick (NJ)' -> 'Pittsgrove Schalick (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Plainfield (NJ)' -> 'Plainfield (NJ)' (no change)
+2026-11-12 13:31:16,724 - WARNING -   'Plainsboro West Windsor North West (NJ)' -> 'Plainsboro West Windsor North West (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Pleasantville (NJ)' -> 'Pleasantville (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Point Pleasant Beach (NJ)' -> 'Point Pleasant Beach (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Point Pleasant Borough (NJ)' -> 'Point Pleasant Borough (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Pompton Lakes (NJ)' -> 'Pompton Lakes (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Pompton Plains Pequannock (NJ)' -> 'Pompton Plains Pequannock (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Princeton (NJ)' -> 'Princeton (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Princeton Day School (NJ)' -> 'Princeton Day School (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Princeton Hun School (NJ)' -> 'Princeton Hun School (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Princeton Junction West Windsor-Plainsboro South (NJ)' -> 'Princeton Junction West Windsor-Plainsboro South (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Princeton Prep (NJ)' -> 'Princeton Prep (NJ)' (no change)
+2026-11-12 13:31:16,725 - WARNING -   'Princeton University Frosh (NJ)' -> 'Princeton University Frosh (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Rahway (NJ)' -> 'Rahway (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Ramsey (NJ)' -> 'Ramsey (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Ramsey Don Bosco Prep (NJ)' -> 'Ramsey Don Bosco Prep (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Randolph (NJ)' -> 'Randolph (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Red Bank Catholic (NJ)' -> 'Red Bank Catholic (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Ridgefield Memorial (NJ)' -> 'Ridgefield Memorial (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Ridgefield Park (NJ)' -> 'Ridgefield Park (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Ridgewood (NJ)' -> 'Ridgewood (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Riverside (NJ)' -> 'Riverside (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Robbinsville (NJ)' -> 'Robbinsville (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Rockaway (NJ)' -> 'Rockaway (NJ)' (no change)
+2026-11-12 13:31:16,726 - WARNING -   'Rockaway Morris Hills (NJ)' -> 'Rockaway Morris Hills (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Rockaway Morris Knolls (NJ)' -> 'Rockaway Morris Knolls (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Roselle Abraham Clark (NJ)' -> 'Roselle Abraham Clark (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Roselle Park (NJ)' -> 'Roselle Park (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Rumson-Fair Haven (NJ)' -> 'Rumson-Fair Haven (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Runnemede Triton (NJ)' -> 'Runnemede Triton (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Rutgers Prep School (NJ)' -> 'Rutgers Prep School (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Rutherford (NJ)' -> 'Rutherford (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Rutherford St. Mary (NJ)' -> 'Rutherford St. Mary (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Saddle Brook (NJ)' -> 'Saddle Brook (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Salem (NJ)' -> 'Salem (NJ)' (no change)
+2026-11-12 13:31:16,727 - WARNING -   'Scotch Plains-Fanwood (NJ)' -> 'Scotch Plains-Fanwood (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'Seabrook Cumberland (NJ)' -> 'Seabrook Cumberland (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'Secaucus (NJ)' -> 'Secaucus (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'Sewell Washington Township (NJ)' -> 'Sewell Washington Township (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'Skillman Montgomery (NJ)' -> 'Skillman Montgomery (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'Somerdale Sterling (NJ)' -> 'Somerdale Sterling (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'Somerset County Lloyd Mccorkle Training School For Boys And Girls (NJ)' -> 'Somerset County Lloyd Mccorkle Training School For Boys And Girls (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'Somerset Franklin (NJ)' -> 'Somerset Franklin (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'Somerville (NJ)' -> 'Somerville (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'Somerville Immaculata (NJ)' -> 'Somerville Immaculata (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'South Amboy Cardinal McCarrick (NJ)' -> 'South Amboy Cardinal McCarrick (NJ)' (no change)
+2026-11-12 13:31:16,728 - WARNING -   'South Amboy St. Mary's Regional (NJ)' -> 'South Amboy St. Mary's Regional (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'South Plainfield (NJ)' -> 'South Plainfield (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'South River (NJ)' -> 'South River (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'Sparta (NJ)' -> 'Sparta (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'Sparta Pope John XXIII (NJ)' -> 'Sparta Pope John XXIII (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'Sparta Sussex County Tech (NJ)' -> 'Sparta Sussex County Tech (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'Spotswood (NJ)' -> 'Spotswood (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'Springfield Jonathan Dayton Regional (NJ)' -> 'Springfield Jonathan Dayton Regional (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'Stanhope Lenape Valley (NJ)' -> 'Stanhope Lenape Valley (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'Succasunna Roxbury (NJ)' -> 'Succasunna Roxbury (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'Summit (NJ)' -> 'Summit (NJ)' (no change)
+2026-11-12 13:31:16,729 - WARNING -   'Summit Oratory Catholic Prep (NJ)' -> 'Summit Oratory Catholic Prep (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Sussex County Franklin (NJ)' -> 'Sussex County Franklin (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Sussex High Point (NJ)' -> 'Sussex High Point (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Swedesboro Kingsway Regional (NJ)' -> 'Swedesboro Kingsway Regional (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Tabernacle Seneca (NJ)' -> 'Tabernacle Seneca (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Teaneck (NJ)' -> 'Teaneck (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Tenafly (NJ)' -> 'Tenafly (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'The College of New Jersey (NJ)' -> 'The College of New Jersey (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Tinton Falls Monmouth Regional (NJ)' -> 'Tinton Falls Monmouth Regional (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Toms River East (NJ)' -> 'Toms River East (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Toms River Monsignor Donovan Catholic (NJ)' -> 'Toms River Monsignor Donovan Catholic (NJ)' (no change)
+2026-11-12 13:31:16,730 - WARNING -   'Toms River North (NJ)' -> 'Toms River North (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Toms River South (NJ)' -> 'Toms River South (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Trenton Catholic (NJ)' -> 'Trenton Catholic (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Trenton Catholic-Immaculate Conception (NJ)' -> 'Trenton Catholic-Immaculate Conception (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Trenton Central (NJ)' -> 'Trenton Central (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Trenton Ewing (NJ)' -> 'Trenton Ewing (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Trenton Hamilton North-Nottingham (NJ)' -> 'Trenton Hamilton North-Nottingham (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Trenton McCorristin Catholic (NJ)' -> 'Trenton McCorristin Catholic (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Tuckerton Pinelands Regional (NJ)' -> 'Tuckerton Pinelands Regional (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Union (NJ)' -> 'Union (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Union City (NJ)' -> 'Union City (NJ)' (no change)
+2026-11-12 13:31:16,731 - WARNING -   'Union City Emerson (NJ)' -> 'Union City Emerson (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Union City St. Michael's (NJ)' -> 'Union City St. Michael's (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Union City Union Hill (NJ)' -> 'Union City Union Hill (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Upsala College Frosh (NJ)' -> 'Upsala College Frosh (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Vernon (NJ)' -> 'Vernon (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Verona (NJ)' -> 'Verona (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Vineland (NJ)' -> 'Vineland (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Voorhees Eastern (NJ)' -> 'Voorhees Eastern (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Waldwick-Midland Park (NJ)' -> 'Waldwick-Midland Park (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Wall Township (NJ)' -> 'Wall Township (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Wallington (NJ)' -> 'Wallington (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Wanaque Lakeland Regional (NJ)' -> 'Wanaque Lakeland Regional (NJ)' (no change)
+2026-11-12 13:31:16,732 - WARNING -   'Warren Watchung Hills Regional (NJ)' -> 'Warren Watchung Hills Regional (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'Washington Township Westwood (NJ)' -> 'Washington Township Westwood (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'Washington Warren Hills Regional (NJ)' -> 'Washington Warren Hills Regional (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'Wayne DePaul Catholic (NJ)' -> 'Wayne DePaul Catholic (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'Wayne Hills (NJ)' -> 'Wayne Hills (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'Wayne Neumann Prep (NJ)' -> 'Wayne Neumann Prep (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'Wayne Passaic County Tech (NJ)' -> 'Wayne Passaic County Tech (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'Wayne Valley (NJ)' -> 'Wayne Valley (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'Weehawken (NJ)' -> 'Weehawken (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'Wenonah Military Academy (NJ)' -> 'Wenonah Military Academy (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'West Caldwell (NJ)' -> 'West Caldwell (NJ)' (no change)
+2026-11-12 13:31:16,733 - WARNING -   'West Long Branch Shore Regional (NJ)' -> 'West Long Branch Shore Regional (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'West Milford (NJ)' -> 'West Milford (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'West Morris Mendham (NJ)' -> 'West Morris Mendham (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'West New York Memorial (NJ)' -> 'West New York Memorial (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'West Orange (NJ)' -> 'West Orange (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'West Orange Carteret Prep (NJ)' -> 'West Orange Carteret Prep (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'West Orange Mountain (NJ)' -> 'West Orange Mountain (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'West Orange Seton Hall Prep (NJ)' -> 'West Orange Seton Hall Prep (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'West Windsor-Plainsboro North (NJ)' -> 'West Windsor-Plainsboro North (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'West Windsor-Plainsboro North-South (NJ)' -> 'West Windsor-Plainsboro North-South (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'Westfield (NJ)' -> 'Westfield (NJ)' (no change)
+2026-11-12 13:31:16,734 - WARNING -   'Westmont Haddon Township (NJ)' -> 'Westmont Haddon Township (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Westville West Deptford (NJ)' -> 'Westville West Deptford (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Wharton (NJ)' -> 'Wharton (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Whippany Park (NJ)' -> 'Whippany Park (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Wildwood (NJ)' -> 'Wildwood (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Williamstown (NJ)' -> 'Williamstown (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Willingboro (NJ)' -> 'Willingboro (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Willingboro Kennedy (NJ)' -> 'Willingboro Kennedy (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Wood Ridge Wood-Ridge (NJ)' -> 'Wood Ridge Wood-Ridge (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Woodbine Baron De Hirsch Agricultural School (NJ)' -> 'Woodbine Baron De Hirsch Agricultural School (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Woodbridge (NJ)' -> 'Woodbridge (NJ)' (no change)
+2026-11-12 13:31:16,735 - WARNING -   'Woodbury (NJ)' -> 'Woodbury (NJ)' (no change)
+2026-11-12 13:31:16,736 - WARNING -   'Woodbury Heights Gateway Regional (NJ)' -> 'Woodbury Heights Gateway Regional (NJ)' (no change)
+2026-11-12 13:31:16,736 - WARNING -   'Wood-Ridge (NJ)' -> 'Wood-Ridge (NJ)' (no change)
+2026-11-12 13:31:16,736 - WARNING -   'Woodstown (NJ)' -> 'Woodstown (NJ)' (no change)
+2026-11-12 13:31:16,736 - WARNING -   'Woolwich Township Kingsway (NJ)' -> 'Woolwich Township Kingsway (NJ)' (no change)
+2026-11-12 13:31:16,736 - INFO - Validation passed: 642 rules are clean and ready to upload.
+2026-11-12 13:31:16,753 - INFO - Uploading 642 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 13:31:16,887 - INFO - Upload to staging table complete.
+2026-11-12 13:31:16,892 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 13:32:54,427 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 13:32:54,427 - INFO - Reason logged to dbo.HS_Consolidation_Log: NJ round 1: 2024 MaxPreps short names; same-school pairs from PSU team pages (Englewood Dwight Morrow, Emerson, Brick Township, Chatham); renames to latest (Woodrow Wilson -> Camden Eastside, East Paterson -> Elmwood Park)
+2026-11-12 13:32:54,427 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 13:32:54,427 - INFO - Running post-consolidation safety check...
+2026-11-12 13:32:54,431 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup NJ --commit
+
+DEDUP v4 NJ - COMMIT
+ dedup_archive: 496 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_dedup_archive_COMMITTED_20261112_1333.csv
+ dedup_review: 1172 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_dedup_review_COMMITTED_20261112_1333.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_dedup_summary_COMMITTED_20261112_1333.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NJ     161522        496                  1172             8531630C-4990-4C6E-B534-257CBE86D2BB
+
+>>> review-pairs NJ --commit
+
+REVIEW-ONLY PAIRS NJ - COMMIT
+ 1172 pairs {'LONG': 288, 'SHORT': 884} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_review_pairs_COMMITTED_20261112_1333.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1172      82674783-D2B8-4048-A710-4F9E5B370659  None
+
+>>> same-score-fix NJ
+
+SAME-SCORE DOUBLE-BOOKINGS NJ - PREVIEW (nothing changed)
+ 2504 pairs {'DROP B': 617, 'DROP A': 637, 'UNDECIDED': 1250} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_same_score_20261112_1335.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1221      None   None
+
+>>> query NJ nj_dump.sql
+
+QUERY nj_dump (1 result sets)
+ set 1: 159857 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_nj_dump_1_20261112_1335.csv
+
+=== OK 2026-11-12 13:35:53

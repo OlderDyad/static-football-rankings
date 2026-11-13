@@ -1,0 +1,13 @@
+same-score-fix MI --commit
+consolidate MI --reason "MI round 2 (2026-11-13): same-school names, see _coop_scripts/MI_cfg.py"
+move-team MI --from "Detroit Northwestern (MI)" --to "Detroit Collegiate Prep (MI)" --seasons 2017-2026 --reason "MI same school, older name -> later name for 2017-2026 (2026-11-12)" --commit
+move-team MI --from "Bessemer Gogebic [Johnston-Wakefield-Wright] (MI)" --to "Bessemer (MI)" --seasons 2021-2021 --ids coop_ids/MI_c3_000.csv --reason "MI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MI --from "Flint Southwestern Academy-Northwestern (MI)" --to "Flint Southwestern Classical Academy (MI)" --seasons 2017-2019 --ids coop_ids/MI_c3_001.csv --reason "MI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MI --from "Flint Southwestern Classical Academy (MI)" --to "Flint Southwestern Academy-Northwestern (MI)" --seasons 2021-2021 --ids coop_ids/MI_c3_002.csv --reason "MI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MI --from "Muskegon Heights (MI)" --to "Muskegon Heights Academy (MI)" --seasons 2024-2025 --ids coop_ids/MI_c3_003.csv --reason "MI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MI --from "Southfield (MI)" --to "Southfield Arts & Tech (MI)" --seasons 2017-2023 --ids coop_ids/MI_c3_004.csv --reason "MI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MI --from "Taylor Truman-Kennedy (MI)" --to "Taylor (MI)" --seasons 2018-2018 --ids coop_ids/MI_c3_005.csv --reason "MI co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup MI --commit
+review-pairs MI --commit
+same-score-fix MI
+query MI mi_dump.sql

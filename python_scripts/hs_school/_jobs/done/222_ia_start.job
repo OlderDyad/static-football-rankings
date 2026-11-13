@@ -1,0 +1,9 @@
+addstate IA
+report IA drift
+mapcheck IA
+dedup IA
+review-pairs IA
+same-score-fix IA
+query IA ia_dump.sql
+query IA ia_names.sql
+query IA ia_geo_all.sql

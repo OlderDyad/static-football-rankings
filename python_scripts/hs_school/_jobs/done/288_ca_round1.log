@@ -1,0 +1,1734 @@
+
+>>> remap CA --url "https://www.maxpreps.com/ca/bakersfield/ridgeview-wolf-pack/football/schedule/" --to "Bakersfield Ridgeview (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/bakersfield/ridgeview-wolf-pack/football/schedule/ -> Bakersfield Ridgeview (CA) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/ca/bakersfield/  Bakersfield Ridgeview Wolf (CA)  5592     Bakersfield Ridgeview (CA)  9206      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/bellflower/st-john-bosco-braves/football/schedule/" --to "Bellflower St. John Bosco (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/bellflower/st-john-bosco-braves/football/schedule/ -> Bellflower St. John Bosco (CA) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/ca/bellflower/s  Bellflower St. John (CA)  36127    Bellflower St. John Bosco (CA)  59565     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/big-bear-city/big-bear/football/schedule/" --to "Big Bear City (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/big-bear-city/big-bear/football/schedule/ -> Big Bear City (CA) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName       NewTeam_ID
+   https://www.maxpreps.com/ca/big-bear-cit  Big Bear City Big Bear (CA)  28368    Big Bear City (CA)  37836     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/coalinga/coalinga-horned-toads/football/schedule/" --to "Coalinga (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/coalinga/coalinga-horned-toads/football/schedule/ -> Coalinga (CA) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/ca/coalinga/coa  Coalinga Horned (CA)  33989    Coalinga (CA)  60873     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/desert-hot-springs/desert-hot-springs-golden-eagles/football/schedule/" --to "Desert Hot Springs (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/desert-hot-springs/desert-hot-springs-golden-eagles/football/schedule/ -> Desert Hot Springs (CA) - COMMIT
+   URL                                       ProperName                          Team_ID  NewProperName            NewTeam_ID
+   https://www.maxpreps.com/ca/desert-hot-s  Desert Hot Springs Desert Hot (CA)  35507    Desert Hot Springs (CA)  40972     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/downey/downey-vikings/football/schedule/" --to "Downey (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/downey/downey-vikings/football/schedule/ -> Downey (CA) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/ca/downey/downe  Downey Downey (CA)  16418    Downey (CA)    61560     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/fresno/san-joaquin-memorial-panthers/football/schedule/" --to "Fresno San Joaquin Memorial (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/fresno/san-joaquin-memorial-panthers/football/schedule/ -> Fresno San Joaquin Memorial (CA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/ca/fresno/san-j  Fresno San Joaquin (CA)  15953    Fresno San Joaquin Memorial (CA)  43948     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/granada-hills/granada-hills-charter-highlanders/football/schedule/" --to "Granada Hills Charter (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/granada-hills/granada-hills-charter-highlanders/football/schedule/ -> Granada Hills Charter (CA) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/ca/granada-hill  Granada Hills (CA)  22369    Granada Hills Charter (CA)  4077      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/half-moon-bay/half-moon-bay-cougars/football/schedule/" --to "Half Moon Bay (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/half-moon-bay/half-moon-bay-cougars/football/schedule/ -> Half Moon Bay (CA) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName       NewTeam_ID
+   https://www.maxpreps.com/ca/half-moon-ba  Half Moon Bay Half Moon (CA)  47055    Half Moon Bay (CA)  8529      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/hamilton-city/hamilton-braves/football/schedule/" --to "Hamilton City (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/hamilton-city/hamilton-braves/football/schedule/ -> Hamilton City (CA) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName       NewTeam_ID
+   https://www.maxpreps.com/ca/hamilton-cit  Hamilton City Hamilton (CA)  13263    Hamilton City (CA)  16413     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/jurupa-valley/rubidoux-falcons/football/schedule/" --to "Jurupa Valley Rubidoux (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/jurupa-valley/rubidoux-falcons/football/schedule/ -> Jurupa Valley Rubidoux (CA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/ca/jurupa-valle  Riverside Rubidoux (CA)  17516    Jurupa Valley Rubidoux (CA)  11835     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/la-canada/flintridge-prep-wolves/football/schedule/" --to "La Cañada Flintridge Prep (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/la-canada/flintridge-prep-wolves/football/schedule/ -> La Ca�ada Flintridge Prep (CA) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/ca/la-canada/fl  La Canada Flintridge Prep (CA)  9286     La Ca�ada Flintridge Prep (CA)  63864     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/merced/stone-ridge-christian-knights/football/schedule/" --to "Merced Stone Ridge Christian (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/merced/stone-ridge-christian-knights/football/schedule/ -> Merced Stone Ridge Christian (CA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ca/merced/stone  Merced St. one Ridge (CA)  40830    Merced Stone Ridge Christian (CA)  9659      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/modesto/grace-davis-spartans/football/schedule/" --to "Modesto Davis (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/modesto/grace-davis-spartans/football/schedule/ -> Modesto Davis (CA) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName       NewTeam_ID
+   https://www.maxpreps.com/ca/modesto/grac  Modesto Grace Davis (CA)  11165    Modesto Davis (CA)  15580     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/montebello/cantwell-sacred-heart-of-mary-cardinals/football/schedule/" --to "Montebello Cantwell-Sacred Heart of Mary (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/montebello/cantwell-sacred-heart-of-mary-cardinals/football/schedule/ -> Montebello Cantwell-Sacred Heart of Mary (CA) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ca/montebello/c  Montebello Cantwell Sacred (CA)  7381     Montebello Cantwell-Sacred Heart of Mary  11003     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/moreno-valley/vista-del-lago-ravens/football/schedule/" --to "Moreno Valley Vista del Lago (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/moreno-valley/vista-del-lago-ravens/football/schedule/ -> Moreno Valley Vista del Lago (CA) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ca/moreno-valle  Moreno Valley Vista Del (CA)  14811    Moreno Valley Vista del Lago (CA)  28740     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/mountain-view/saint-francis-lancers/football/schedule/" --to "Mountain View St.Francis (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/mountain-view/saint-francis-lancers/football/schedule/ -> Mountain View St.Francis (CA) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/ca/mountain-vie  Mountain View Saint Francis (CA)  1182     Mountain View St.Francis (CA)  65612     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/mt-shasta/mt-shasta-bears/football/schedule/" --to "Mount Shasta (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/mt-shasta/mt-shasta-bears/football/schedule/ -> Mount Shasta (CA) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName      NewTeam_ID
+   https://www.maxpreps.com/ca/mt-shasta/mt  Mount Shasta Mt. Shasta (CA)  7047     Mount Shasta (CA)  36483     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/napa/justin-siena-braves/football/schedule/" --to "Napa Justin-Siena (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/napa/justin-siena-braves/football/schedule/ -> Napa Justin-Siena (CA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/ca/napa/justin-  Napa Justin Siena (CA)  26213    Napa Justin-Siena (CA)  32052     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/newport-beach/corona-del-mar-sea-kings/football/schedule/" --to "Newport Beach Corona del Mar (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/newport-beach/corona-del-mar-sea-kings/football/schedule/ -> Newport Beach Corona del Mar (CA) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ca/newport-beac  Newport Beach Corona Del (CA)  43809    Newport Beach Corona del Mar (CA)  13473     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/northridge/heritage-christian-warriors/football/schedule/" --to "North Hills Heritage Christian (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/northridge/heritage-christian-warriors/football/schedule/ -> North Hills Heritage Christian (CA) - COMMIT
+   URL                                       ProperName                          Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/ca/northridge/h  Northridge Heritage Christian (CA)  29669    North Hills Heritage Christian (CA)  5085      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/oakland/bishop-odowd-dragons/football/schedule/" --to "Oakland Bishop O'Dowd (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/oakland/bishop-odowd-dragons/football/schedule/ -> Oakland Bishop O'Dowd (CA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/ca/oakland/bish  Oakland Bishop Odowd (CA)  9741     Oakland Bishop O'Dowd (CA)  9740      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/pacific-palisades/palisades-dolphins/football/schedule/" --to "Pacific Palisades (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/pacific-palisades/palisades-dolphins/football/schedule/ -> Pacific Palisades (CA) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/ca/pacific-pali  Pacific Palisades Palisades (CA)  48105    Pacific Palisades (CA)  22389     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/palos-verdes-estates/palos-verdes-sea-kings/football/schedule/" --to "Palos Verdes Estates (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/palos-verdes-estates/palos-verdes-sea-kings/football/schedule/ -> Palos Verdes Estates (CA) - COMMIT
+   URL                                       ProperName                              Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/ca/palos-verdes  Palos Verdes Estates Palos Verdes (CA)  47461    Palos Verdes Estates (CA)  31724     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/pebble-beach/stevenson-pirates/football/schedule/" --to "Pebble Beach Robert Louis Stevenson (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/pebble-beach/stevenson-pirates/football/schedule/ -> Pebble Beach Robert Louis Stevenson (CA) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ca/pebble-beach  Pebble Beach Stevenson (CA)  29011    Pebble Beach Robert Louis Stevenson (CA)  25328     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/perris/california-military-institute-rough-riders/football/schedule/" --to "Perris California Military Institute (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/perris/california-military-institute-rough-riders/football/schedule/ -> Perris California Military Institute (CA) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ca/perris/calif  Perris California Military (CA)  19941    Perris California Military Institute (CA  38865     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/rancho-cucamonga/united-christian-academy-eagles/football/schedule/" --to "Rancho Cucamonga United Christian Academy (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/rancho-cucamonga/united-christian-academy-eagles/football/schedule/ -> Rancho Cucamonga United Christian Academy (CA) - COMMIT
+   URL                                       ProperName                              Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ca/rancho-cucam  Rancho Cucamonga United Christian (CA)  22341    Rancho Cucamonga United Christian Academ  20979     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/redlands/redlands-east-valley-wildcats/football/schedule/" --to "Redlands East Valley (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/redlands/redlands-east-valley-wildcats/football/schedule/ -> Redlands East Valley (CA) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/ca/redlands/red  Redlands East (CA)  40497    Redlands East Valley (CA)  42757     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/richmond/salesian-college-preparatory-pride/football/schedule/" --to "Richmond Salesian College Preparatory (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/richmond/salesian-college-preparatory-pride/football/schedule/ -> Richmond Salesian College Preparatory (CA) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ca/richmond/sal  Richmond Salesian College (CA)  11485    Richmond Salesian College Preparatory (C  15265     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/riverside/california-school-for-the-deaf-riverside-cubs/football/schedule/" --to "Riverside California School for the Deaf (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/riverside/california-school-for-the-deaf-riverside-cubs/football/schedule/ -> Riverside California School for the Deaf (CA) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ca/riverside/ca  Riverside California School (CA)  10205    Riverside California School for the Deaf  19183     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/rocklin/western-sierra-collegiate-academy-wolves/football/schedule/" --to "Rocklin Western Sierra Collegiate Academy (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/rocklin/western-sierra-collegiate-academy-wolves/football/schedule/ -> Rocklin Western Sierra Collegiate Academy (CA) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ca/rocklin/west  Rocklin Western Sierra (CA)  12910    Rocklin Western Sierra Collegiate Academ  37517     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/rowland-heights/southlands-christian-eagles/football/schedule/" --to "Walnut Southlands Christian (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/rowland-heights/southlands-christian-eagles/football/schedule/ -> Walnut Southlands Christian (CA) - COMMIT
+   URL                                       ProperName                                Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/ca/rowland-heig  Rowland Heights Southlands Christian (CA  2200     Walnut Southlands Christian (CA)  15358     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/sacramento/grant-pacers/football/schedule/" --to "Sacramento Grant Union (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/sacramento/grant-pacers/football/schedule/ -> Sacramento Grant Union (CA) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/ca/sacramento/g  Sacramento Grant (CA)  35845    Sacramento Grant Union (CA)  21698     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/salinas/rancho-san-juan-trailblazers/football/schedule/" --to "Salinas Rancho San Juan (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/salinas/rancho-san-juan-trailblazers/football/schedule/ -> Salinas Rancho San Juan (CA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/ca/salinas/ranc  Salinas Rancho San (CA)  8925     Salinas Rancho San Juan (CA)  11227     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/san-diego/ocean-view-christian-patriots/football/schedule/" --to "San Diego Ocean View Christian (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/san-diego/ocean-view-christian-patriots/football/schedule/ -> San Diego Ocean View Christian (CA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/ca/san-diego/oc  San Diego Ocean View (CA)  14408    San Diego Ocean View Christian (CA)  24202     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/san-diego/ofarrell-charter-falcons/football/schedule/" --to "San Diego O'Farrell Charter (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/san-diego/ofarrell-charter-falcons/football/schedule/ -> San Diego O'Farrell Charter (CA) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/ca/san-diego/of  San Diego Ofarrell Charter (CA)  37735    San Diego O'Farrell Charter (CA)  37728     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/san-francisco/st-ignatius-college-preparatory-wildcats/football/schedule/" --to "San Francisco St. Ignatius College Prep (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/san-francisco/st-ignatius-college-preparatory-wildcats/football/schedule/ -> San Francisco St. Ignatius College Prep (CA) - COMMIT
+   URL                                       ProperName                                Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ca/san-francisc  San Francisco Saint Ignatius College Pre  42829    San Francisco St. Ignatius College Prep   39729     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/san-jose/bellarmine-college-prep-bells/football/schedule/" --to "San Jose Bellarmine College Prep (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/san-jose/bellarmine-college-prep-bells/football/schedule/ -> San Jose Bellarmine College Prep (CA) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/ca/san-jose/bel  San Jose Bellarmine College (CA)  42744    San Jose Bellarmine College Prep (CA)  37261     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/san-pedro/mary-star-of-the-sea-stars/football/schedule/" --to "San Pedro Mary Star of the Sea (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/san-pedro/mary-star-of-the-sea-stars/football/schedule/ -> San Pedro Mary Star of the Sea (CA) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/ca/san-pedro/ma  San Pedro Mary Star (CA)  14984    San Pedro Mary Star of the Sea (CA)  11243     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/san-pedro/rolling-hills-prep-huskies/football/schedule/" --to "San Pedro Rolling Hills Prep (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/san-pedro/rolling-hills-prep-huskies/football/schedule/ -> San Pedro Rolling Hills Prep (CA) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ca/san-pedro/ro  San Pedro Rolling Hills (CA)  9422     San Pedro Rolling Hills Prep (CA)  33313     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/simi-valley/grace-lancers/football/schedule/" --to "Simi Valley Grace Brethren (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/simi-valley/grace-lancers/football/schedule/ -> Simi Valley Grace Brethren (CA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/ca/simi-valley/  Simi Valley Grace (CA)  36783    Simi Valley Grace Brethren (CA)  68172     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/south-el-monte/south-el-monte-eagles/football/schedule/" --to "South El Monte (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/south-el-monte/south-el-monte-eagles/football/schedule/ -> South El Monte (CA) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName        NewTeam_ID
+   https://www.maxpreps.com/ca/south-el-mon  South El Monte South El (CA)  22695    South El Monte (CA)  25007     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/sunnyvale/kings-academy-knights/football/schedule/" --to "Sunnyvale King's Academy (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/sunnyvale/kings-academy-knights/football/schedule/ -> Sunnyvale King's Academy (CA) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/ca/sunnyvale/ki  Sunnyvale Kings Academy (CA)  37434    Sunnyvale King's Academy (CA)  37429     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/upland/upland-highlanders-scots/football/schedule/" --to "Upland (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/upland/upland-highlanders-scots/football/schedule/ -> Upland (CA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/ca/upland/uplan  Upland Highlanders (CA)  2708     Upland (CA)    69187     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/visalia/central-valley-christian-cavaliers/football/schedule/" --to "Visalia Central Valley Christian (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/visalia/central-valley-christian-cavaliers/football/schedule/ -> Visalia Central Valley Christian (CA) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/ca/visalia/cent  Visalia Central Valley (CA)  18734    Visalia Central Valley Christian (CA)  31343     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/vista/rancho-buena-vista-longhorns/football/schedule/" --to "Vista Rancho Buena Vista (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/vista/rancho-buena-vista-longhorns/football/schedule/ -> Vista Rancho Buena Vista (CA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/ca/vista/rancho  Vista Rancho Buena (CA)  8309     Vista Rancho Buena Vista (CA)  44956     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/vista/tri-city-christian-eagles/football/schedule/" --to "Vista Tri-City Christian (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/vista/tri-city-christian-eagles/football/schedule/ -> Vista Tri-City Christian (CA) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/ca/vista/tri-ci  Vista Tri City (CA)  32853    Vista Tri-City Christian (CA)  14645     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CA --url "https://www.maxpreps.com/ca/westlake-village/westlake-warriors/football/schedule/" --to "Westlake Village (CA)" --commit
+
+REMAP https://www.maxpreps.com/ca/westlake-village/westlake-warriors/football/schedule/ -> Westlake Village (CA) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/ca/westlake-vil  Westlake Village Westlake (CA)  11878    Westlake Village (CA)  44949     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck CA --commit
+
+MAPPING CHECK CA - COMMIT (Team_ID set to the ProperName ID)
+ 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_mapcheck_COMMITTED_20261112_1439.csv
+   URL                                       ProperName                   Team_ID  NameID  Problem                          Team_ID_Name
+   https://www.maxpreps.com/ca/carlsbad/arm  Carlsbad Army Navy (CA)      14295    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/ca/la-canada/la  La Canada (CA)               12369    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/ca/la-jolla/bis  La Jolla Bishops (CA)        41034    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/ca/los-angeles/  Los Angeles Fremont (CA)     19005    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/ca/santa-maria/  Santa Maria St. Joseph (CA)  2686     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/ca/temecula/sai  Temecula Saint Jeanne (CA)   40039    None    ProperName not in HS_Team_Names  None        
+   Status     Fixable  Err 
+   COMMITTED  0        None
+
+>>> consolidate CA --reason "CA round 1: 2024 MaxPreps short names; renames to latest (University of San Diego High -> Cathedral Catholic, Chatsworth/Granada Hills -> Charter, Sepulveda Monroe -> North Hills Monroe, Riverside Rubidoux -> Jurupa Valley); same-school variants"
+Consolidating CA from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\CA_Alias_Rules.csv
+
+[stderr]
+2026-11-12 14:39:08,332 - INFO - Starting consolidation for state: (CA) using staging table method.
+2026-11-12 14:39:08,347 - WARNING - WARNING: 1290 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 14:39:08,347 - WARNING -   'Acton Vasquez (CA)' -> 'Acton Vasquez (CA)' (no change)
+2026-11-12 14:39:08,347 - WARNING -   'Adelanto (CA)' -> 'Adelanto (CA)' (no change)
+2026-11-12 14:39:08,347 - WARNING -   'Agoura (CA)' -> 'Agoura (CA)' (no change)
+2026-11-12 14:39:08,347 - WARNING -   'Alameda (CA)' -> 'Alameda (CA)' (no change)
+2026-11-12 14:39:08,347 - WARNING -   'Alameda Encinal (CA)' -> 'Alameda Encinal (CA)' (no change)
+2026-11-12 14:39:08,347 - WARNING -   'Albany (CA)' -> 'Albany (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'Albany St. Marys (CA)' -> 'Albany St. Marys (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'Alhambra (CA)' -> 'Alhambra (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'Alhambra Mark Keppel (CA)' -> 'Alhambra Mark Keppel (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'Aliso Viejo Aliso Niguel (CA)' -> 'Aliso Viejo Aliso Niguel (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'Alpaugh (CA)' -> 'Alpaugh (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'Alta Loma (CA)' -> 'Alta Loma (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'Alturas Modoc (CA)' -> 'Alturas Modoc (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'American Canyon (CA)' -> 'American Canyon (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'Anaheim (CA)' -> 'Anaheim (CA)' (no change)
+2026-11-12 14:39:08,348 - WARNING -   'Anaheim Canyon (CA)' -> 'Anaheim Canyon (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anaheim Esperanza (CA)' -> 'Anaheim Esperanza (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anaheim Fairmont Prep (CA)' -> 'Anaheim Fairmont Prep (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anaheim Katella (CA)' -> 'Anaheim Katella (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anaheim Loara (CA)' -> 'Anaheim Loara (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anaheim Magnolia (CA)' -> 'Anaheim Magnolia (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anaheim Melodyland Christian (CA)' -> 'Anaheim Melodyland Christian (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anaheim Savanna (CA)' -> 'Anaheim Savanna (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anaheim Servite (CA)' -> 'Anaheim Servite (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anaheim Western (CA)' -> 'Anaheim Western (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Anderson (CA)' -> 'Anderson (CA)' (no change)
+2026-11-12 14:39:08,349 - WARNING -   'Angels Camp Bret Harte (CA)' -> 'Angels Camp Bret Harte (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Animo South Los Angeles (CA)' -> 'Animo South Los Angeles (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Antelope (CA)' -> 'Antelope (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Antelope Center (CA)' -> 'Antelope Center (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Antioch (CA)' -> 'Antioch (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Antioch Deer Valley (CA)' -> 'Antioch Deer Valley (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Anza Hamilton (CA)' -> 'Anza Hamilton (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Apple Valley (CA)' -> 'Apple Valley (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Apple Valley Granite Hills (CA)' -> 'Apple Valley Granite Hills (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Aptos (CA)' -> 'Aptos (CA)' (no change)
+2026-11-12 14:39:08,350 - WARNING -   'Arbuckle Pierce (CA)' -> 'Arbuckle Pierce (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Arcadia (CA)' -> 'Arcadia (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Arcadia Rio Hondo Prep (CA)' -> 'Arcadia Rio Hondo Prep (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Arcata (CA)' -> 'Arcata (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Arleta (CA)' -> 'Arleta (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Arroyo Grande (CA)' -> 'Arroyo Grande (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Arvin (CA)' -> 'Arvin (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Atascadero (CA)' -> 'Atascadero (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Atherton Menlo (CA)' -> 'Atherton Menlo (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Atherton Menlo School (CA)' -> 'Atherton Menlo School (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Atherton Sacred Heart Prep (CA)' -> 'Atherton Sacred Heart Prep (CA)' (no change)
+2026-11-12 14:39:08,351 - WARNING -   'Atwater (CA)' -> 'Atwater (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Atwater Buhach Colony (CA)' -> 'Atwater Buhach Colony (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Auburn Placer (CA)' -> 'Auburn Placer (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Avalon (CA)' -> 'Avalon (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Avenal (CA)' -> 'Avenal (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Azusa (CA)' -> 'Azusa (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Azusa Gladstone (CA)' -> 'Azusa Gladstone (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Bakersfield (CA)' -> 'Bakersfield (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Bakersfield Centennial (CA)' -> 'Bakersfield Centennial (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Bakersfield Christian (CA)' -> 'Bakersfield Christian (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Bakersfield East (CA)' -> 'Bakersfield East (CA)' (no change)
+2026-11-12 14:39:08,352 - WARNING -   'Bakersfield East Bakersfield (CA)' -> 'Bakersfield East Bakersfield (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield Foothill (CA)' -> 'Bakersfield Foothill (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield Frontier (CA)' -> 'Bakersfield Frontier (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield Garces Memorial (CA)' -> 'Bakersfield Garces Memorial (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield Golden Valley (CA)' -> 'Bakersfield Golden Valley (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield Highland (CA)' -> 'Bakersfield Highland (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield Independence (CA)' -> 'Bakersfield Independence (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield Liberty (CA)' -> 'Bakersfield Liberty (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield Mira Monte (CA)' -> 'Bakersfield Mira Monte (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield North (CA)' -> 'Bakersfield North (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield Ridgeview (CA)' -> 'Bakersfield Ridgeview (CA)' (no change)
+2026-11-12 14:39:08,353 - WARNING -   'Bakersfield South (CA)' -> 'Bakersfield South (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Bakersfield Stockdale (CA)' -> 'Bakersfield Stockdale (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Bakersfield West (CA)' -> 'Bakersfield West (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Baldwin Park (CA)' -> 'Baldwin Park (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Baldwin Park Sierra Vista (CA)' -> 'Baldwin Park Sierra Vista (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Banning (CA)' -> 'Banning (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Banning Twin Pines (CA)' -> 'Banning Twin Pines (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Barstow (CA)' -> 'Barstow (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Barstow John F. Kennedy (CA)' -> 'Barstow John F. Kennedy (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Beaumont (CA)' -> 'Beaumont (CA)' (no change)
+2026-11-12 14:39:08,354 - WARNING -   'Bell (CA)' -> 'Bell (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Bell Gardens (CA)' -> 'Bell Gardens (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Bellflower (CA)' -> 'Bellflower (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Belmont Carlmont (CA)' -> 'Belmont Carlmont (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Benicia (CA)' -> 'Benicia (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Berkeley (CA)' -> 'Berkeley (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Berkeley St. Mary's College High (CA)' -> 'Berkeley St. Mary's College High (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Bermuda Dunes Desert Christian Academy (CA)' -> 'Bermuda Dunes Desert Christian Academy (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Beverly Hills (CA)' -> 'Beverly Hills (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Bieber Big Valley (CA)' -> 'Bieber Big Valley (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Bieber Big Valley Christian (CA)' -> 'Bieber Big Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,355 - WARNING -   'Big Bear City (CA)' -> 'Big Bear City (CA)' (no change)
+2026-11-12 14:39:08,356 - WARNING -   'Big Pine (CA)' -> 'Big Pine (CA)' (no change)
+2026-11-12 14:39:08,356 - WARNING -   'Biggs (CA)' -> 'Biggs (CA)' (no change)
+2026-11-12 14:39:08,356 - WARNING -   'Bishop Union (CA)' -> 'Bishop Union (CA)' (no change)
+2026-11-12 14:39:08,356 - WARNING -   'Bloomington (CA)' -> 'Bloomington (CA)' (no change)
+2026-11-12 14:39:08,356 - WARNING -   'Bloomington Christian (CA)' -> 'Bloomington Christian (CA)' (no change)
+2026-11-12 14:39:08,356 - WARNING -   'Blythe Palo Verde Valley (CA)' -> 'Blythe Palo Verde Valley (CA)' (no change)
+2026-11-12 14:39:08,356 - WARNING -   'Bonita Vista (CA)' -> 'Bonita Vista (CA)' (no change)
+2026-11-12 14:39:08,356 - WARNING -   'Boonville Anderson Valley (CA)' -> 'Boonville Anderson Valley (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Boron (CA)' -> 'Boron (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Borrego Springs (CA)' -> 'Borrego Springs (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Brawley (CA)' -> 'Brawley (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Brea Olinda (CA)' -> 'Brea Olinda (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Brentwood Heritage (CA)' -> 'Brentwood Heritage (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Brentwood Liberty (CA)' -> 'Brentwood Liberty (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Buena Park (CA)' -> 'Buena Park (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Burbank (CA)' -> 'Burbank (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Burbank Bellarmine-Jefferson (CA)' -> 'Burbank Bellarmine-Jefferson (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Burbank Burroughs (CA)' -> 'Burbank Burroughs (CA)' (no change)
+2026-11-12 14:39:08,357 - WARNING -   'Burlingame (CA)' -> 'Burlingame (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'Burney (CA)' -> 'Burney (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'Calabasas (CA)' -> 'Calabasas (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'Calabasas Viewpoint (CA)' -> 'Calabasas Viewpoint (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'Calexico (CA)' -> 'Calexico (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'Calexico Vincent Memorial (CA)' -> 'Calexico Vincent Memorial (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'California City (CA)' -> 'California City (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'California State Normal College (CA)' -> 'California State Normal College (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'Calipatria (CA)' -> 'Calipatria (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'Calistoga (CA)' -> 'Calistoga (CA)' (no change)
+2026-11-12 14:39:08,358 - WARNING -   'Camarillo (CA)' -> 'Camarillo (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Cambria Coast Union (CA)' -> 'Cambria Coast Union (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Campbell (CA)' -> 'Campbell (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Campbell Westmont (CA)' -> 'Campbell Westmont (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Canoga Park (CA)' -> 'Canoga Park (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Canoga Park Faith Baptist (CA)' -> 'Canoga Park Faith Baptist (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Canyon Country Santa Clarita Christian (CA)' -> 'Canyon Country Santa Clarita Christian (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Capistrano Valley Christian (CA)' -> 'Capistrano Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Carlsbad (CA)' -> 'Carlsbad (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Carlsbad Army & Navy Academy (CA)' -> 'Carlsbad Army & Navy Academy (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Carlsbad La Costa Canyon (CA)' -> 'Carlsbad La Costa Canyon (CA)' (no change)
+2026-11-12 14:39:08,359 - WARNING -   'Carmel (CA)' -> 'Carmel (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Carmel-By-The-Sea Carmel Valley (CA)' -> 'Carmel-By-The-Sea Carmel Valley (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Carmichael Jesuit (CA)' -> 'Carmichael Jesuit (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Carmichael La Sierra (CA)' -> 'Carmichael La Sierra (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Carpinteria (CA)' -> 'Carpinteria (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Carpinteria Cate (CA)' -> 'Carpinteria Cate (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Carson (CA)' -> 'Carson (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Caruthers (CA)' -> 'Caruthers (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Castro Valley (CA)' -> 'Castro Valley (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Castroville North Monterey County (CA)' -> 'Castroville North Monterey County (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Cathedral City (CA)' -> 'Cathedral City (CA)' (no change)
+2026-11-12 14:39:08,360 - WARNING -   'Ceres (CA)' -> 'Ceres (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Ceres Central Valley (CA)' -> 'Ceres Central Valley (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Cerritos (CA)' -> 'Cerritos (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Cerritos Gahr (CA)' -> 'Cerritos Gahr (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Cerritos Valley Christian (CA)' -> 'Cerritos Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Chatsworth Charter (CA)' -> 'Chatsworth Charter (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Chatsworth Sierra Canyon (CA)' -> 'Chatsworth Sierra Canyon (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Chester (CA)' -> 'Chester (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Chico (CA)' -> 'Chico (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Chico Champion Christian (CA)' -> 'Chico Champion Christian (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Chico Pleasant Valley (CA)' -> 'Chico Pleasant Valley (CA)' (no change)
+2026-11-12 14:39:08,361 - WARNING -   'Chino (CA)' -> 'Chino (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chino Don Lugo (CA)' -> 'Chino Don Lugo (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chino Hills (CA)' -> 'Chino Hills (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chino Hills Ayala (CA)' -> 'Chino Hills Ayala (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chowchilla (CA)' -> 'Chowchilla (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chula Vista (CA)' -> 'Chula Vista (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chula Vista Bonita Vista (CA)' -> 'Chula Vista Bonita Vista (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chula Vista Calvary Christian Academy (CA)' -> 'Chula Vista Calvary Christian Academy (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chula Vista Castle Park (CA)' -> 'Chula Vista Castle Park (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chula Vista Eastlake (CA)' -> 'Chula Vista Eastlake (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chula Vista Hilltop (CA)' -> 'Chula Vista Hilltop (CA)' (no change)
+2026-11-12 14:39:08,362 - WARNING -   'Chula Vista Lutheran (CA)' -> 'Chula Vista Lutheran (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'Chula Vista Mater Dei Catholic (CA)' -> 'Chula Vista Mater Dei Catholic (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'Chula Vista Olympian (CA)' -> 'Chula Vista Olympian (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'Chula Vista Otay Ranch (CA)' -> 'Chula Vista Otay Ranch (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'Chula Vista Pacific Coast Christian Prep (CA)' -> 'Chula Vista Pacific Coast Christian Prep (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'Chula Vista Victory Christian Academy (CA)' -> 'Chula Vista Victory Christian Academy (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'Citrus Heights Mesa Verde (CA)' -> 'Citrus Heights Mesa Verde (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'Citrus Heights San Juan (CA)' -> 'Citrus Heights San Juan (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'City of Industry Workman (CA)' -> 'City of Industry Workman (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'Claremont (CA)' -> 'Claremont (CA)' (no change)
+2026-11-12 14:39:08,363 - WARNING -   'Claremont The Webb Schools (CA)' -> 'Claremont The Webb Schools (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Clarksburg (CA)' -> 'Clarksburg (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Clarksburg Delta (CA)' -> 'Clarksburg Delta (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Cloverdale (CA)' -> 'Cloverdale (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Clovis (CA)' -> 'Clovis (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Clovis Buchanan (CA)' -> 'Clovis Buchanan (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Clovis East (CA)' -> 'Clovis East (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Coalinga (CA)' -> 'Coalinga (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Coleville (CA)' -> 'Coleville (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Colfax (CA)' -> 'Colfax (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Colton (CA)' -> 'Colton (CA)' (no change)
+2026-11-12 14:39:08,364 - WARNING -   'Colton Christian Center Academy (CA)' -> 'Colton Christian Center Academy (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Colusa (CA)' -> 'Colusa (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Compton (CA)' -> 'Compton (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Compton Centennial (CA)' -> 'Compton Centennial (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Compton Dominguez (CA)' -> 'Compton Dominguez (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Concord (CA)' -> 'Concord (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Concord Clayton Valley Charter (CA)' -> 'Concord Clayton Valley Charter (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Concord De La Salle (CA)' -> 'Concord De La Salle (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Concord Mt. Diablo (CA)' -> 'Concord Mt. Diablo (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Concord Ygnacio Valley (CA)' -> 'Concord Ygnacio Valley (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Corcoran (CA)' -> 'Corcoran (CA)' (no change)
+2026-11-12 14:39:08,365 - WARNING -   'Corning (CA)' -> 'Corning (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Corona (CA)' -> 'Corona (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Corona Centennial (CA)' -> 'Corona Centennial (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Corona Christian Heritage (CA)' -> 'Corona Christian Heritage (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Corona Santiago (CA)' -> 'Corona Santiago (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Coronado (CA)' -> 'Coronado (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Costa Mesa (CA)' -> 'Costa Mesa (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Costa Mesa Estancia (CA)' -> 'Costa Mesa Estancia (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Cottonwood West Valley (CA)' -> 'Cottonwood West Valley (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Country Canyon (CA)' -> 'Country Canyon (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Courtland Union (CA)' -> 'Courtland Union (CA)' (no change)
+2026-11-12 14:39:08,366 - WARNING -   'Covelo Round Valley (CA)' -> 'Covelo Round Valley (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Covina (CA)' -> 'Covina (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Covina California Christian Frosh (CA)' -> 'Covina California Christian Frosh (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Covina Charter Oak (CA)' -> 'Covina Charter Oak (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Covina Gladstone (CA)' -> 'Covina Gladstone (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Covina Northview (CA)' -> 'Covina Northview (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Covina Royal Oak (CA)' -> 'Covina Royal Oak (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Covina Western Christian (CA)' -> 'Covina Western Christian (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Crescent City Del Norte (CA)' -> 'Crescent City Del Norte (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Crockett Swett (CA)' -> 'Crockett Swett (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Culver City (CA)' -> 'Culver City (CA)' (no change)
+2026-11-12 14:39:08,367 - WARNING -   'Culver City Pacific Military Academy (CA)' -> 'Culver City Pacific Military Academy (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Cupertino (CA)' -> 'Cupertino (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Cupertino Homestead (CA)' -> 'Cupertino Homestead (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Cupertino Monta Vista (CA)' -> 'Cupertino Monta Vista (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Cypress (CA)' -> 'Cypress (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Daly City Jefferson (CA)' -> 'Daly City Jefferson (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Daly City Westmoor (CA)' -> 'Daly City Westmoor (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Dana Point Dana Hills (CA)' -> 'Dana Point Dana Hills (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Danville Monte Vista (CA)' -> 'Danville Monte Vista (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Danville San Ramon Valley (CA)' -> 'Danville San Ramon Valley (CA)' (no change)
+2026-11-12 14:39:08,368 - WARNING -   'Davis (CA)' -> 'Davis (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Delano (CA)' -> 'Delano (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Delano Chavez (CA)' -> 'Delano Chavez (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Delano Kennedy (CA)' -> 'Delano Kennedy (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Delhi (CA)' -> 'Delhi (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Denair (CA)' -> 'Denair (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Desert Hot Springs (CA)' -> 'Desert Hot Springs (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Diamond Bar (CA)' -> 'Diamond Bar (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Dinuba (CA)' -> 'Dinuba (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Dixon (CA)' -> 'Dixon (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Dorris Butte Valley (CA)' -> 'Dorris Butte Valley (CA)' (no change)
+2026-11-12 14:39:08,369 - WARNING -   'Dos Palos (CA)' -> 'Dos Palos (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Downey (CA)' -> 'Downey (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Downey Ambassador Christian (CA)' -> 'Downey Ambassador Christian (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Downey Calvary Chapel (CA)' -> 'Downey Calvary Chapel (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Downey St. Pius X (CA)' -> 'Downey St. Pius X (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Downey St. Pius X-St. Matthias Academy (CA)' -> 'Downey St. Pius X-St. Matthias Academy (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Downey Warren (CA)' -> 'Downey Warren (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Duarte (CA)' -> 'Duarte (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Dublin (CA)' -> 'Dublin (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Dunsmuir (CA)' -> 'Dunsmuir (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Durham (CA)' -> 'Durham (CA)' (no change)
+2026-11-12 14:39:08,370 - WARNING -   'Eagle Mountain (CA)' -> 'Eagle Mountain (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'East Palo Alto Ravenswood (CA)' -> 'East Palo Alto Ravenswood (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'Eastvale Roosevelt (CA)' -> 'Eastvale Roosevelt (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'Edwards AFB Desert (CA)' -> 'Edwards AFB Desert (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'El Cajon Christian (CA)' -> 'El Cajon Christian (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'El Cajon Foothills Christian (CA)' -> 'El Cajon Foothills Christian (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'El Cajon Granite Hills (CA)' -> 'El Cajon Granite Hills (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'El Cajon Grossmont (CA)' -> 'El Cajon Grossmont (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'El Cajon Valhalla (CA)' -> 'El Cajon Valhalla (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'El Cajon Valley (CA)' -> 'El Cajon Valley (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'El Centro Central (CA)' -> 'El Centro Central (CA)' (no change)
+2026-11-12 14:39:08,371 - WARNING -   'El Centro Central Union (CA)' -> 'El Centro Central Union (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'El Cerrito (CA)' -> 'El Cerrito (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'El Dorado Hills Oak Ridge (CA)' -> 'El Dorado Hills Oak Ridge (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'El Dorado Union Mine (CA)' -> 'El Dorado Union Mine (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'El Monte (CA)' -> 'El Monte (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'El Monte Arroyo (CA)' -> 'El Monte Arroyo (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'El Monte Mountain View (CA)' -> 'El Monte Mountain View (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'El Segundo (CA)' -> 'El Segundo (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'El Sobrante De Anza (CA)' -> 'El Sobrante De Anza (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'Elk Creek (CA)' -> 'Elk Creek (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'Elk Grove (CA)' -> 'Elk Grove (CA)' (no change)
+2026-11-12 14:39:08,372 - WARNING -   'Elk Grove Cosumnes Oaks (CA)' -> 'Elk Grove Cosumnes Oaks (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Elk Grove Franklin (CA)' -> 'Elk Grove Franklin (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Elk Grove Laguna Creek (CA)' -> 'Elk Grove Laguna Creek (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Elk Grove Monterey Trail (CA)' -> 'Elk Grove Monterey Trail (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Elk Grove Pleasant Grove (CA)' -> 'Elk Grove Pleasant Grove (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Emeryville Emery (CA)' -> 'Emeryville Emery (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Encinitas San Dieguito Academy (CA)' -> 'Encinitas San Dieguito Academy (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Encino Crespi (CA)' -> 'Encino Crespi (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Encino Westmark (CA)' -> 'Encino Westmark (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Escalon (CA)' -> 'Escalon (CA)' (no change)
+2026-11-12 14:39:08,373 - WARNING -   'Escondido (CA)' -> 'Escondido (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Escondido Calvin Christian (CA)' -> 'Escondido Calvin Christian (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Escondido Charter (CA)' -> 'Escondido Charter (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Escondido Classical Academy (CA)' -> 'Escondido Classical Academy (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Escondido Orange Glen (CA)' -> 'Escondido Orange Glen (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Escondido San Pasqual (CA)' -> 'Escondido San Pasqual (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Escondido San Pasqual Academy (CA)' -> 'Escondido San Pasqual Academy (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Esparto (CA)' -> 'Esparto (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Etiwanda (CA)' -> 'Etiwanda (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Etna (CA)' -> 'Etna (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Eureka (CA)' -> 'Eureka (CA)' (no change)
+2026-11-12 14:39:08,374 - WARNING -   'Eureka St. Bernard's (CA)' -> 'Eureka St. Bernard's (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Exeter (CA)' -> 'Exeter (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Fair Oaks Bella Vista (CA)' -> 'Fair Oaks Bella Vista (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Fair Oaks Bella Vista JV (CA)' -> 'Fair Oaks Bella Vista JV (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Fair Oaks Del Campo (CA)' -> 'Fair Oaks Del Campo (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Fairfield (CA)' -> 'Fairfield (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Fairfield Armijo (CA)' -> 'Fairfield Armijo (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Fairfield Rodriguez (CA)' -> 'Fairfield Rodriguez (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Fairfield Vanden (CA)' -> 'Fairfield Vanden (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Fallbrook (CA)' -> 'Fallbrook (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Farmersville (CA)' -> 'Farmersville (CA)' (no change)
+2026-11-12 14:39:08,375 - WARNING -   'Felton San Lorenzo Valley (CA)' -> 'Felton San Lorenzo Valley (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Ferndale (CA)' -> 'Ferndale (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Fillmore (CA)' -> 'Fillmore (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Firebaugh (CA)' -> 'Firebaugh (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Folsom (CA)' -> 'Folsom (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Folsom Vista del Lago (CA)' -> 'Folsom Vista del Lago (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Fontana (CA)' -> 'Fontana (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Fontana Jurupa Hills (CA)' -> 'Fontana Jurupa Hills (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Fontana Kaiser (CA)' -> 'Fontana Kaiser (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Fontana Miller (CA)' -> 'Fontana Miller (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Fontana Summit (CA)' -> 'Fontana Summit (CA)' (no change)
+2026-11-12 14:39:08,376 - WARNING -   'Foresthill (CA)' -> 'Foresthill (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Forestville El Molino (CA)' -> 'Forestville El Molino (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fort Bragg (CA)' -> 'Fort Bragg (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fort Jones (CA)' -> 'Fort Jones (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fortuna (CA)' -> 'Fortuna (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fountain Valley (CA)' -> 'Fountain Valley (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fountain Valley Los Amigos (CA)' -> 'Fountain Valley Los Amigos (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fowler (CA)' -> 'Fowler (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fremont American (CA)' -> 'Fremont American (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fremont California School for the Deaf (CA)' -> 'Fremont California School for the Deaf (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fremont Irvington (CA)' -> 'Fremont Irvington (CA)' (no change)
+2026-11-12 14:39:08,377 - WARNING -   'Fremont Kennedy (CA)' -> 'Fremont Kennedy (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fremont Mission San Jose (CA)' -> 'Fremont Mission San Jose (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fremont Washington (CA)' -> 'Fremont Washington (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fresno (CA)' -> 'Fresno (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fresno Bullard (CA)' -> 'Fresno Bullard (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fresno Central (CA)' -> 'Fresno Central (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fresno Christian (CA)' -> 'Fresno Christian (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fresno Clovis North (CA)' -> 'Fresno Clovis North (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fresno Clovis West (CA)' -> 'Fresno Clovis West (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fresno Edison (CA)' -> 'Fresno Edison (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fresno Hoover (CA)' -> 'Fresno Hoover (CA)' (no change)
+2026-11-12 14:39:08,378 - WARNING -   'Fresno McLane (CA)' -> 'Fresno McLane (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Fresno Roosevelt (CA)' -> 'Fresno Roosevelt (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Fresno San Joaquin Memorial (CA)' -> 'Fresno San Joaquin Memorial (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Fresno Sunnyside (CA)' -> 'Fresno Sunnyside (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Fresno Washington Union (CA)' -> 'Fresno Washington Union (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Fullerton (CA)' -> 'Fullerton (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Fullerton Sunny Hills (CA)' -> 'Fullerton Sunny Hills (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Fullerton Troy (CA)' -> 'Fullerton Troy (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Galt (CA)' -> 'Galt (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Galt Liberty Ranch (CA)' -> 'Galt Liberty Ranch (CA)' (no change)
+2026-11-12 14:39:08,379 - WARNING -   'Garden Grove (CA)' -> 'Garden Grove (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Garden Grove Bolsa Grande (CA)' -> 'Garden Grove Bolsa Grande (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Garden Grove Pacifica (CA)' -> 'Garden Grove Pacifica (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Garden Grove Rancho Alamitos (CA)' -> 'Garden Grove Rancho Alamitos (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Garden Grove Santiago (CA)' -> 'Garden Grove Santiago (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Garden Valley Golden Sierra (CA)' -> 'Garden Valley Golden Sierra (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Gardena (CA)' -> 'Gardena (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Gardena Masada (CA)' -> 'Gardena Masada (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Gardena Serra (CA)' -> 'Gardena Serra (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Gardena Southern California Christian Academy (CA)' -> 'Gardena Southern California Christian Academy (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Gilroy (CA)' -> 'Gilroy (CA)' (no change)
+2026-11-12 14:39:08,380 - WARNING -   'Gilroy Christopher (CA)' -> 'Gilroy Christopher (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Glendale (CA)' -> 'Glendale (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Glendale Hoover (CA)' -> 'Glendale Hoover (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Glendora (CA)' -> 'Glendora (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Glendora Brown Military Academy (CA)' -> 'Glendora Brown Military Academy (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Goleta Dos Pueblos (CA)' -> 'Goleta Dos Pueblos (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Gonzales (CA)' -> 'Gonzales (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Granada Hills Kennedy (CA)' -> 'Granada Hills Kennedy (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Grand Terrace (CA)' -> 'Grand Terrace (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Granite Bay (CA)' -> 'Granite Bay (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Grass Valley Bear River (CA)' -> 'Grass Valley Bear River (CA)' (no change)
+2026-11-12 14:39:08,381 - WARNING -   'Grass Valley Nevada Union (CA)' -> 'Grass Valley Nevada Union (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Greenfield (CA)' -> 'Greenfield (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Greenville (CA)' -> 'Greenville (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Gridley (CA)' -> 'Gridley (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Gustine (CA)' -> 'Gustine (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Hacienda Heights Los Altos (CA)' -> 'Hacienda Heights Los Altos (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Hacienda Heights Wilson (CA)' -> 'Hacienda Heights Wilson (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Half Moon Bay (CA)' -> 'Half Moon Bay (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Hamilton City (CA)' -> 'Hamilton City (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Hanford (CA)' -> 'Hanford (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Hanford Sierra Pacific (CA)' -> 'Hanford Sierra Pacific (CA)' (no change)
+2026-11-12 14:39:08,382 - WARNING -   'Hanford West (CA)' -> 'Hanford West (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Happy Camp (CA)' -> 'Happy Camp (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Harbor City Narbonne (CA)' -> 'Harbor City Narbonne (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Hawthorne (CA)' -> 'Hawthorne (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Hayfork (CA)' -> 'Hayfork (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Hayward (CA)' -> 'Hayward (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Hayward Moreau Catholic (CA)' -> 'Hayward Moreau Catholic (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Hayward Mt. Eden (CA)' -> 'Hayward Mt. Eden (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Hayward Sunset (CA)' -> 'Hayward Sunset (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Hayward Tennyson (CA)' -> 'Hayward Tennyson (CA)' (no change)
+2026-11-12 14:39:08,383 - WARNING -   'Healdsburg (CA)' -> 'Healdsburg (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Helendale Academy of Careers & Exploration (CA)' -> 'Helendale Academy of Careers & Exploration (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Hemet (CA)' -> 'Hemet (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Hemet Tahquitz (CA)' -> 'Hemet Tahquitz (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Hemet West Valley (CA)' -> 'Hemet West Valley (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Hercules (CA)' -> 'Hercules (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Herlong (CA)' -> 'Herlong (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Hesperia (CA)' -> 'Hesperia (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Hesperia Christian (CA)' -> 'Hesperia Christian (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Hesperia Oak Hills (CA)' -> 'Hesperia Oak Hills (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Hesperia Sultana (CA)' -> 'Hesperia Sultana (CA)' (no change)
+2026-11-12 14:39:08,384 - WARNING -   'Hesperia University Careers & Sports Academy (CA)' -> 'Hesperia University Careers & Sports Academy (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Highland (CA)' -> 'Highland (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Hillsborough Crystal Springs Uplands (CA)' -> 'Hillsborough Crystal Springs Uplands (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Hilltop (CA)' -> 'Hilltop (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Hilmar (CA)' -> 'Hilmar (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Hollister San Benito (CA)' -> 'Hollister San Benito (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Hollywood Bernstein (CA)' -> 'Hollywood Bernstein (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Holtville (CA)' -> 'Holtville (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Hoopa Valley (CA)' -> 'Hoopa Valley (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Hoover JV (CA)' -> 'Hoover JV (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Hughson (CA)' -> 'Hughson (CA)' (no change)
+2026-11-12 14:39:08,385 - WARNING -   'Huntington Beach (CA)' -> 'Huntington Beach (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Huntington Beach Brethren Christian (CA)' -> 'Huntington Beach Brethren Christian (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Huntington Beach Edison (CA)' -> 'Huntington Beach Edison (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Huntington Beach Liberty Christian (CA)' -> 'Huntington Beach Liberty Christian (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Huntington Beach Marina (CA)' -> 'Huntington Beach Marina (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Huntington Beach Ocean View (CA)' -> 'Huntington Beach Ocean View (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Huntington Park (CA)' -> 'Huntington Park (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Huntington Park Marquez (CA)' -> 'Huntington Park Marquez (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Imperial (CA)' -> 'Imperial (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Imperial Beach Mar Vista (CA)' -> 'Imperial Beach Mar Vista (CA)' (no change)
+2026-11-12 14:39:08,386 - WARNING -   'Independence Owens Valley (CA)' -> 'Independence Owens Valley (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Indio (CA)' -> 'Indio (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Indio Shadow Hills (CA)' -> 'Indio Shadow Hills (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Inglewood (CA)' -> 'Inglewood (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Inglewood Animo Leadership (CA)' -> 'Inglewood Animo Leadership (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Inglewood Morningside (CA)' -> 'Inglewood Morningside (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Ione (CA)' -> 'Ione (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Irvine (CA)' -> 'Irvine (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Irvine Beckman (CA)' -> 'Irvine Beckman (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Irvine Crean Lutheran (CA)' -> 'Irvine Crean Lutheran (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Irvine Northwood (CA)' -> 'Irvine Northwood (CA)' (no change)
+2026-11-12 14:39:08,387 - WARNING -   'Irvine University (CA)' -> 'Irvine University (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'Irvine Woodbridge (CA)' -> 'Irvine Woodbridge (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'Jackson (CA)' -> 'Jackson (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'Jackson Argonaut (CA)' -> 'Jackson Argonaut (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'Julian (CA)' -> 'Julian (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'Jurupa Valley (CA)' -> 'Jurupa Valley (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'Kelseyville (CA)' -> 'Kelseyville (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'Kentfield Marin Catholic (CA)' -> 'Kentfield Marin Catholic (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'Kerman (CA)' -> 'Kerman (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'King City (CA)' -> 'King City (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'Kingsburg (CA)' -> 'Kingsburg (CA)' (no change)
+2026-11-12 14:39:08,388 - WARNING -   'La Costa Canyon (CA)' -> 'La Costa Canyon (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Crescenta Valley (CA)' -> 'La Crescenta Valley (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Habra (CA)' -> 'La Habra (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Habra Sonora (CA)' -> 'La Habra Sonora (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Habra Whittier Christian (CA)' -> 'La Habra Whittier Christian (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Jolla (CA)' -> 'La Jolla (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Jolla Country Day (CA)' -> 'La Jolla Country Day (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Jolla The Bishop's School (CA)' -> 'La Jolla The Bishop's School (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Mesa Helix (CA)' -> 'La Mesa Helix (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Mirada (CA)' -> 'La Mirada (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Mirada Neff (CA)' -> 'La Mirada Neff (CA)' (no change)
+2026-11-12 14:39:08,389 - WARNING -   'La Palma Kennedy (CA)' -> 'La Palma Kennedy (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'La Puente (CA)' -> 'La Puente (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'La Puente Bassett (CA)' -> 'La Puente Bassett (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'La Puente Bishop Amat (CA)' -> 'La Puente Bishop Amat (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'La Puente Nogales (CA)' -> 'La Puente Nogales (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'La Verne Bonita (CA)' -> 'La Verne Bonita (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'La Verne Calvary Baptist (CA)' -> 'La Verne Calvary Baptist (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'La Verne Damien (CA)' -> 'La Verne Damien (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'Lafayette Acalanes (CA)' -> 'Lafayette Acalanes (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'Laguna Beach (CA)' -> 'Laguna Beach (CA)' (no change)
+2026-11-12 14:39:08,390 - WARNING -   'Laguna Hills (CA)' -> 'Laguna Hills (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lake Arrowhead Rim of the World (CA)' -> 'Lake Arrowhead Rim of the World (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lake Balboa Birmingham (CA)' -> 'Lake Balboa Birmingham (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lake Elsinore Lakeside (CA)' -> 'Lake Elsinore Lakeside (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lake Elsinore Naval & Military (CA)' -> 'Lake Elsinore Naval & Military (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lake Elsinore Temescal Canyon (CA)' -> 'Lake Elsinore Temescal Canyon (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lake Forest El Toro (CA)' -> 'Lake Forest El Toro (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lake Isabella Kern Valley (CA)' -> 'Lake Isabella Kern Valley (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lakeport Clear Lake (CA)' -> 'Lakeport Clear Lake (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lakeside El Capitan (CA)' -> 'Lakeside El Capitan (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lakewood (CA)' -> 'Lakewood (CA)' (no change)
+2026-11-12 14:39:08,391 - WARNING -   'Lakewood Artesia (CA)' -> 'Lakewood Artesia (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lakewood Mayfair (CA)' -> 'Lakewood Mayfair (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lancaster (CA)' -> 'Lancaster (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lancaster Antelope Valley (CA)' -> 'Lancaster Antelope Valley (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lancaster Antelope Valley Christian (CA)' -> 'Lancaster Antelope Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lancaster Baptist (CA)' -> 'Lancaster Baptist (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lancaster Bethel Christian (CA)' -> 'Lancaster Bethel Christian (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lancaster Desert Christian (CA)' -> 'Lancaster Desert Christian (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lancaster Eastside (CA)' -> 'Lancaster Eastside (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lancaster Paraclete (CA)' -> 'Lancaster Paraclete (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Larkspur Redwood (CA)' -> 'Larkspur Redwood (CA)' (no change)
+2026-11-12 14:39:08,392 - WARNING -   'Lathrop (CA)' -> 'Lathrop (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'Laton (CA)' -> 'Laton (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'LaVerne Lutheran (CA)' -> 'LaVerne Lutheran (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'Lawndale (CA)' -> 'Lawndale (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'Lawndale Leuzinger (CA)' -> 'Lawndale Leuzinger (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'Laytonville (CA)' -> 'Laytonville (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'Le Grand (CA)' -> 'Le Grand (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'Lebec Frazier Mountain (CA)' -> 'Lebec Frazier Mountain (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'Lee Vining (CA)' -> 'Lee Vining (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'Lemoore (CA)' -> 'Lemoore (CA)' (no change)
+2026-11-12 14:39:08,393 - WARNING -   'Lemoore Kings Christian (CA)' -> 'Lemoore Kings Christian (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Lennox (CA)' -> 'Lennox (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Lincoln (CA)' -> 'Lincoln (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Linden (CA)' -> 'Linden (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Lindsay (CA)' -> 'Lindsay (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Littlerock (CA)' -> 'Littlerock (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Live Oak (CA)' -> 'Live Oak (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Livermore (CA)' -> 'Livermore (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Livermore Del Valle (CA)' -> 'Livermore Del Valle (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Livermore Granada (CA)' -> 'Livermore Granada (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Livingston (CA)' -> 'Livingston (CA)' (no change)
+2026-11-12 14:39:08,394 - WARNING -   'Lodi (CA)' -> 'Lodi (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Lodi Elliot Christian (CA)' -> 'Lodi Elliot Christian (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Lodi Tokay (CA)' -> 'Lodi Tokay (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Lompoc (CA)' -> 'Lompoc (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Lompoc Cabrillo (CA)' -> 'Lompoc Cabrillo (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Lone Pine (CA)' -> 'Lone Pine (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Long Beach Jordan (CA)' -> 'Long Beach Jordan (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Long Beach Millikan (CA)' -> 'Long Beach Millikan (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Long Beach Poly (CA)' -> 'Long Beach Poly (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Long Beach Rancho Dominguez Prep (CA)' -> 'Long Beach Rancho Dominguez Prep (CA)' (no change)
+2026-11-12 14:39:08,395 - WARNING -   'Long Beach Woodrow Wilson (CA)' -> 'Long Beach Woodrow Wilson (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Loomis Del Oro (CA)' -> 'Loomis Del Oro (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Alamitos (CA)' -> 'Los Alamitos (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Altos (CA)' -> 'Los Altos (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Altos Hills Pinewood (CA)' -> 'Los Altos Hills Pinewood (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Angeles (CA)' -> 'Los Angeles (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Angeles Animo Robinson (CA)' -> 'Los Angeles Animo Robinson (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Angeles Belmont (CA)' -> 'Los Angeles Belmont (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Angeles Brentwood School (CA)' -> 'Los Angeles Brentwood School (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Angeles Cathedral (CA)' -> 'Los Angeles Cathedral (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Angeles Contreras (CA)' -> 'Los Angeles Contreras (CA)' (no change)
+2026-11-12 14:39:08,396 - WARNING -   'Los Angeles Crenshaw (CA)' -> 'Los Angeles Crenshaw (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Daniel Murphy Catholic (CA)' -> 'Los Angeles Daniel Murphy Catholic (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Diego Rivera Learning Complex (CA)' -> 'Los Angeles Diego Rivera Learning Complex (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Dorsey (CA)' -> 'Los Angeles Dorsey (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Dr. Maya Angelou Community (CA)' -> 'Los Angeles Dr. Maya Angelou Community (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Eagle Rock (CA)' -> 'Los Angeles Eagle Rock (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Fairfax (CA)' -> 'Los Angeles Fairfax (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Franklin (CA)' -> 'Los Angeles Franklin (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Garfield (CA)' -> 'Los Angeles Garfield (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles George Washington Prep (CA)' -> 'Los Angeles George Washington Prep (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Hamilton (CA)' -> 'Los Angeles Hamilton (CA)' (no change)
+2026-11-12 14:39:08,397 - WARNING -   'Los Angeles Harvard Military Academy (CA)' -> 'Los Angeles Harvard Military Academy (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles Hawkins (CA)' -> 'Los Angeles Hawkins (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles Hollywood (CA)' -> 'Los Angeles Hollywood (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles Jacob A. Riis (CA)' -> 'Los Angeles Jacob A. Riis (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles Jefferson (CA)' -> 'Los Angeles Jefferson (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles John C. Fremont (CA)' -> 'Los Angeles John C. Fremont (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles Jordan (CA)' -> 'Los Angeles Jordan (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles King-Drew (CA)' -> 'Los Angeles King-Drew (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles Lincoln (CA)' -> 'Los Angeles Lincoln (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles Locke (CA)' -> 'Los Angeles Locke (CA)' (no change)
+2026-11-12 14:39:08,398 - WARNING -   'Los Angeles Loyola (CA)' -> 'Los Angeles Loyola (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Lutheran (CA)' -> 'Los Angeles Lutheran (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Manual Arts (CA)' -> 'Los Angeles Manual Arts (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Marshall (CA)' -> 'Los Angeles Marshall (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Military Academy (CA)' -> 'Los Angeles Military Academy (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Milken (CA)' -> 'Los Angeles Milken (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Mt. Carmel (CA)' -> 'Los Angeles Mt. Carmel (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Pater Noster (CA)' -> 'Los Angeles Pater Noster (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Pilgrim (CA)' -> 'Los Angeles Pilgrim (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Poly (CA)' -> 'Los Angeles Poly (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Price (CA)' -> 'Los Angeles Price (CA)' (no change)
+2026-11-12 14:39:08,399 - WARNING -   'Los Angeles Ribet Academy (CA)' -> 'Los Angeles Ribet Academy (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles Roosevelt (CA)' -> 'Los Angeles Roosevelt (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles Roybal (CA)' -> 'Los Angeles Roybal (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles Salesian (CA)' -> 'Los Angeles Salesian (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles Santee (CA)' -> 'Los Angeles Santee (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles Sotomayor (CA)' -> 'Los Angeles Sotomayor (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles Torres (CA)' -> 'Los Angeles Torres (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles University (CA)' -> 'Los Angeles University (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles Venice (CA)' -> 'Los Angeles Venice (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles Verbum Dei (CA)' -> 'Los Angeles Verbum Dei (CA)' (no change)
+2026-11-12 14:39:08,400 - WARNING -   'Los Angeles View Park (CA)' -> 'Los Angeles View Park (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Los Angeles West Adams Prep (CA)' -> 'Los Angeles West Adams Prep (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Los Angeles Westchester (CA)' -> 'Los Angeles Westchester (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Los Angeles Wilson (CA)' -> 'Los Angeles Wilson (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Los Angeles Windward (CA)' -> 'Los Angeles Windward (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Los Banos (CA)' -> 'Los Banos (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Los Banos Pacheco (CA)' -> 'Los Banos Pacheco (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Los Gatos (CA)' -> 'Los Gatos (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Los Molinos (CA)' -> 'Los Molinos (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Lower Lake (CA)' -> 'Lower Lake (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Loyalton (CA)' -> 'Loyalton (CA)' (no change)
+2026-11-12 14:39:08,401 - WARNING -   'Lucerne Valley (CA)' -> 'Lucerne Valley (CA)' (no change)
+2026-11-12 14:39:08,402 - WARNING -   'Lynwood (CA)' -> 'Lynwood (CA)' (no change)
+2026-11-12 14:39:08,402 - WARNING -   'Lynwood Firebaugh (CA)' -> 'Lynwood Firebaugh (CA)' (no change)
+2026-11-12 14:39:08,402 - WARNING -   'Madera (CA)' -> 'Madera (CA)' (no change)
+2026-11-12 14:39:08,402 - WARNING -   'Madera Liberty (CA)' -> 'Madera Liberty (CA)' (no change)
+2026-11-12 14:39:08,402 - WARNING -   'Madera South (CA)' -> 'Madera South (CA)' (no change)
+2026-11-12 14:39:08,402 - WARNING -   'Malibu (CA)' -> 'Malibu (CA)' (no change)
+2026-11-12 14:39:08,402 - WARNING -   'Malibu Kilpatrick (CA)' -> 'Malibu Kilpatrick (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Mammoth Lakes (CA)' -> 'Mammoth Lakes (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Manhattan Beach Mira Costa (CA)' -> 'Manhattan Beach Mira Costa (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Manteca (CA)' -> 'Manteca (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Manteca East Union (CA)' -> 'Manteca East Union (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Manteca Sierra (CA)' -> 'Manteca Sierra (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Mar Vista JV (CA)' -> 'Mar Vista JV (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Maricopa (CA)' -> 'Maricopa (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Marina (CA)' -> 'Marina (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Mariposa (CA)' -> 'Mariposa (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Mariposa County (CA)' -> 'Mariposa County (CA)' (no change)
+2026-11-12 14:39:08,403 - WARNING -   'Martinez Alhambra (CA)' -> 'Martinez Alhambra (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'Marysville (CA)' -> 'Marysville (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'Maxwell (CA)' -> 'Maxwell (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'McArthur Fall River (CA)' -> 'McArthur Fall River (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'McCloud (CA)' -> 'McCloud (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'McFarland (CA)' -> 'McFarland (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'McKinleyville (CA)' -> 'McKinleyville (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'Mendocino (CA)' -> 'Mendocino (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'Mendota (CA)' -> 'Mendota (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'Menifee Paloma Valley (CA)' -> 'Menifee Paloma Valley (CA)' (no change)
+2026-11-12 14:39:08,404 - WARNING -   'Menifee Santa Rosa Academy (CA)' -> 'Menifee Santa Rosa Academy (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Menlo-Atherton (CA)' -> 'Menlo-Atherton (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Merced (CA)' -> 'Merced (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Merced El Capitan (CA)' -> 'Merced El Capitan (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Merced Golden Valley (CA)' -> 'Merced Golden Valley (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Merced Stone Ridge Christian (CA)' -> 'Merced Stone Ridge Christian (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Middletown (CA)' -> 'Middletown (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Midway Baptist (CA)' -> 'Midway Baptist (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Mill Valley Tamalpais (CA)' -> 'Mill Valley Tamalpais (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Millbrae Mills (CA)' -> 'Millbrae Mills (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Milpitas (CA)' -> 'Milpitas (CA)' (no change)
+2026-11-12 14:39:08,405 - WARNING -   'Mira Mesa (CA)' -> 'Mira Mesa (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Miranda South Fork (CA)' -> 'Miranda South Fork (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Mission Bay (CA)' -> 'Mission Bay (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Mission Hills Alemany (CA)' -> 'Mission Hills Alemany (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Mission Viejo (CA)' -> 'Mission Viejo (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Mission Viejo Capistrano Valley (CA)' -> 'Mission Viejo Capistrano Valley (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Mission Viejo Trabuco Hills (CA)' -> 'Mission Viejo Trabuco Hills (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Modesto (CA)' -> 'Modesto (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Modesto Beyer (CA)' -> 'Modesto Beyer (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Modesto Big Valley Christian (CA)' -> 'Modesto Big Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,406 - WARNING -   'Modesto Central Catholic (CA)' -> 'Modesto Central Catholic (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Modesto Christian (CA)' -> 'Modesto Christian (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Modesto Davis (CA)' -> 'Modesto Davis (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Modesto Downey (CA)' -> 'Modesto Downey (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Modesto Enochs (CA)' -> 'Modesto Enochs (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Modesto Gregori (CA)' -> 'Modesto Gregori (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Modesto Johansen (CA)' -> 'Modesto Johansen (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Mojave (CA)' -> 'Mojave (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Monrovia (CA)' -> 'Monrovia (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Montclair (CA)' -> 'Montclair (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Montebello (CA)' -> 'Montebello (CA)' (no change)
+2026-11-12 14:39:08,407 - WARNING -   'Montebello Cantwell (CA)' -> 'Montebello Cantwell (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Montebello Cantwell-Sacred Heart of Mary (CA)' -> 'Montebello Cantwell-Sacred Heart of Mary (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Montebello Schurr (CA)' -> 'Montebello Schurr (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Monterey (CA)' -> 'Monterey (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Monterey Trinity Christian (CA)' -> 'Monterey Trinity Christian (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Moorpark (CA)' -> 'Moorpark (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Moraga Campolindo (CA)' -> 'Moraga Campolindo (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Moreno Valley (CA)' -> 'Moreno Valley (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Moreno Valley Canyon Springs (CA)' -> 'Moreno Valley Canyon Springs (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Moreno Valley Rancho Verde (CA)' -> 'Moreno Valley Rancho Verde (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Moreno Valley Valley View (CA)' -> 'Moreno Valley Valley View (CA)' (no change)
+2026-11-12 14:39:08,408 - WARNING -   'Moreno Valley Vista del Lago (CA)' -> 'Moreno Valley Vista del Lago (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Morgan Hill Ann Sobrato (CA)' -> 'Morgan Hill Ann Sobrato (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Morgan Hill Live Oak (CA)' -> 'Morgan Hill Live Oak (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Morro Bay (CA)' -> 'Morro Bay (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Mount Shasta (CA)' -> 'Mount Shasta (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Mountain House (CA)' -> 'Mountain House (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Mountain View (CA)' -> 'Mountain View (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Mountain View Awalt (CA)' -> 'Mountain View Awalt (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Murrieta Calvary Chapel (CA)' -> 'Murrieta Calvary Chapel (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Murrieta Mesa (CA)' -> 'Murrieta Mesa (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Murrieta Valley (CA)' -> 'Murrieta Valley (CA)' (no change)
+2026-11-12 14:39:08,409 - WARNING -   'Napa (CA)' -> 'Napa (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'Napa Justin-Siena (CA)' -> 'Napa Justin-Siena (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'Napa Vintage (CA)' -> 'Napa Vintage (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'National City Sweetwater (CA)' -> 'National City Sweetwater (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'Needles (CA)' -> 'Needles (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'New Cuyama Cuyama Valley (CA)' -> 'New Cuyama Cuyama Valley (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'Newark Memorial (CA)' -> 'Newark Memorial (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'Newbury Park (CA)' -> 'Newbury Park (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'Newhall Hart (CA)' -> 'Newhall Hart (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'Newman Orestimba (CA)' -> 'Newman Orestimba (CA)' (no change)
+2026-11-12 14:39:08,410 - WARNING -   'Newport Beach Corona del Mar (CA)' -> 'Newport Beach Corona del Mar (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'Newport Beach Sage Hill (CA)' -> 'Newport Beach Sage Hill (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'Newport Harbor Beach (CA)' -> 'Newport Harbor Beach (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'Nicolaus East (CA)' -> 'Nicolaus East (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'Nicolaus East Nicolaus (CA)' -> 'Nicolaus East Nicolaus (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'Nipomo (CA)' -> 'Nipomo (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'Norco (CA)' -> 'Norco (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'North Highlands (CA)' -> 'North Highlands (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'North Highlands Highlands (CA)' -> 'North Highlands Highlands (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'North Hills Heritage Christian (CA)' -> 'North Hills Heritage Christian (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'North Hills Los Angeles Baptist (CA)' -> 'North Hills Los Angeles Baptist (CA)' (no change)
+2026-11-12 14:39:08,411 - WARNING -   'North Hills Monroe (CA)' -> 'North Hills Monroe (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'North Hollywood (CA)' -> 'North Hollywood (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'North Hollywood Campbell Hall (CA)' -> 'North Hollywood Campbell Hall (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'North Hollywood East Valley (CA)' -> 'North Hollywood East Valley (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'North Hollywood Harvard (CA)' -> 'North Hollywood Harvard (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'North Salinas (CA)' -> 'North Salinas (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'Norwalk (CA)' -> 'Norwalk (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'Norwalk Excelsior Union (CA)' -> 'Norwalk Excelsior Union (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'Norwalk Glenn (CA)' -> 'Norwalk Glenn (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'Novato (CA)' -> 'Novato (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'Novato San Marin (CA)' -> 'Novato San Marin (CA)' (no change)
+2026-11-12 14:39:08,412 - WARNING -   'Nuevo Nuview Bridge (CA)' -> 'Nuevo Nuview Bridge (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oak Park (CA)' -> 'Oak Park (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oakdale (CA)' -> 'Oakdale (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oakhurst Yosemite (CA)' -> 'Oakhurst Yosemite (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oakland (CA)' -> 'Oakland (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oakland Bishop O'Dowd (CA)' -> 'Oakland Bishop O'Dowd (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oakland Castlemont (CA)' -> 'Oakland Castlemont (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oakland Fremont (CA)' -> 'Oakland Fremont (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oakland McClymonds (CA)' -> 'Oakland McClymonds (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oakland Skyline (CA)' -> 'Oakland Skyline (CA)' (no change)
+2026-11-12 14:39:08,413 - WARNING -   'Oakland St. Elizabeth (CA)' -> 'Oakland St. Elizabeth (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Oakland Tech (CA)' -> 'Oakland Tech (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Oakley Freedom (CA)' -> 'Oakley Freedom (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Oceanside (CA)' -> 'Oceanside (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Oceanside El Camino (CA)' -> 'Oceanside El Camino (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Ojai Nordhoff (CA)' -> 'Ojai Nordhoff (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Ojai Thacher (CA)' -> 'Ojai Thacher (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Ojai Villanova Prep (CA)' -> 'Ojai Villanova Prep (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Olivehurst Lindhurst (CA)' -> 'Olivehurst Lindhurst (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'O'Neals Minarets (CA)' -> 'O'Neals Minarets (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Ontario (CA)' -> 'Ontario (CA)' (no change)
+2026-11-12 14:39:08,414 - WARNING -   'Ontario Chaffey (CA)' -> 'Ontario Chaffey (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Ontario Christian (CA)' -> 'Ontario Christian (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Ontario Colony (CA)' -> 'Ontario Colony (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Orange (CA)' -> 'Orange (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Orange Cove (CA)' -> 'Orange Cove (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Orange El Modena (CA)' -> 'Orange El Modena (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Orange Lutheran (CA)' -> 'Orange Lutheran (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Orangevale Casa Roble (CA)' -> 'Orangevale Casa Roble (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Orcutt Academy (CA)' -> 'Orcutt Academy (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Orinda Miramonte (CA)' -> 'Orinda Miramonte (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Orland (CA)' -> 'Orland (CA)' (no change)
+2026-11-12 14:39:08,415 - WARNING -   'Oro Grande Riverside Prep (CA)' -> 'Oro Grande Riverside Prep (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Orosi (CA)' -> 'Orosi (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Oroville (CA)' -> 'Oroville (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Oroville Las Plumas (CA)' -> 'Oroville Las Plumas (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Oxnard (CA)' -> 'Oxnard (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Oxnard Channel Islands (CA)' -> 'Oxnard Channel Islands (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Oxnard Hueneme (CA)' -> 'Oxnard Hueneme (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Oxnard Pacifica (CA)' -> 'Oxnard Pacifica (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Oxnard Rio Mesa (CA)' -> 'Oxnard Rio Mesa (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Oxnard Santa Clara (CA)' -> 'Oxnard Santa Clara (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Pacific (CA)' -> 'Pacific (CA)' (no change)
+2026-11-12 14:39:08,416 - WARNING -   'Pacific Grove (CA)' -> 'Pacific Grove (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Pacific Palisades (CA)' -> 'Pacific Palisades (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Pacifica (CA)' -> 'Pacifica (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Pacifica Oceana (CA)' -> 'Pacifica Oceana (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Pacifica Terra Nova (CA)' -> 'Pacifica Terra Nova (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Pacoima Discovery (CA)' -> 'Pacoima Discovery (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Palm Desert (CA)' -> 'Palm Desert (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Palm Desert Xavier Prep (CA)' -> 'Palm Desert Xavier Prep (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Palm Springs (CA)' -> 'Palm Springs (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Palm Springs Desert Chapel (CA)' -> 'Palm Springs Desert Chapel (CA)' (no change)
+2026-11-12 14:39:08,417 - WARNING -   'Palmdale (CA)' -> 'Palmdale (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palmdale Highland (CA)' -> 'Palmdale Highland (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palmdale Knight (CA)' -> 'Palmdale Knight (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palo Alto (CA)' -> 'Palo Alto (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palo Alto Cubberley (CA)' -> 'Palo Alto Cubberley (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palo Alto Gunn (CA)' -> 'Palo Alto Gunn (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palo Cedro Bishop Quinn (CA)' -> 'Palo Cedro Bishop Quinn (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palo Cedro Foothill (CA)' -> 'Palo Cedro Foothill (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palo Cedro Redding Christian (CA)' -> 'Palo Cedro Redding Christian (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palos Verdes Estates (CA)' -> 'Palos Verdes Estates (CA)' (no change)
+2026-11-12 14:39:08,418 - WARNING -   'Palos Verdes Peninsula Chadwick (CA)' -> 'Palos Verdes Peninsula Chadwick (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Panorama City Panorama (CA)' -> 'Panorama City Panorama (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Panorama City St. Genevieve (CA)' -> 'Panorama City St. Genevieve (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Paradise (CA)' -> 'Paradise (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Paramount (CA)' -> 'Paramount (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Paramount Brethren (CA)' -> 'Paramount Brethren (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Parlier (CA)' -> 'Parlier (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Pasadena (CA)' -> 'Pasadena (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Pasadena Blair (CA)' -> 'Pasadena Blair (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Pasadena La Salle (CA)' -> 'Pasadena La Salle (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Pasadena Maranatha (CA)' -> 'Pasadena Maranatha (CA)' (no change)
+2026-11-12 14:39:08,419 - WARNING -   'Pasadena Marshall Fundamental (CA)' -> 'Pasadena Marshall Fundamental (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Pasadena Muir (CA)' -> 'Pasadena Muir (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Pasadena Polytechnic (CA)' -> 'Pasadena Polytechnic (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Paso Robles (CA)' -> 'Paso Robles (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Patterson (CA)' -> 'Patterson (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Pebble Beach Robert Louis Stevenson (CA)' -> 'Pebble Beach Robert Louis Stevenson (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Perris (CA)' -> 'Perris (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Perris California Military Institute (CA)' -> 'Perris California Military Institute (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Perris Citrus Hill (CA)' -> 'Perris Citrus Hill (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Perris Orange Vista (CA)' -> 'Perris Orange Vista (CA)' (no change)
+2026-11-12 14:39:08,420 - WARNING -   'Petaluma (CA)' -> 'Petaluma (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Petaluma Casa Grande (CA)' -> 'Petaluma Casa Grande (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Petaluma St. Vincent de Paul (CA)' -> 'Petaluma St. Vincent de Paul (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Phelan Serrano (CA)' -> 'Phelan Serrano (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Pico Rivera El Rancho (CA)' -> 'Pico Rivera El Rancho (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Piedmont (CA)' -> 'Piedmont (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Pine Valley Mountain Empire (CA)' -> 'Pine Valley Mountain Empire (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Pinole Valley (CA)' -> 'Pinole Valley (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Pittsburg (CA)' -> 'Pittsburg (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Placentia El Dorado (CA)' -> 'Placentia El Dorado (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Placentia Valencia (CA)' -> 'Placentia Valencia (CA)' (no change)
+2026-11-12 14:39:08,421 - WARNING -   'Placerville El Dorado (CA)' -> 'Placerville El Dorado (CA)' (no change)
+2026-11-12 14:39:08,422 - WARNING -   'Playa del Rey St. Bernard (CA)' -> 'Playa del Rey St. Bernard (CA)' (no change)
+2026-11-12 14:39:08,422 - WARNING -   'Pleasant Hill (CA)' -> 'Pleasant Hill (CA)' (no change)
+2026-11-12 14:39:08,422 - WARNING -   'Pleasant Hill College Park (CA)' -> 'Pleasant Hill College Park (CA)' (no change)
+2026-11-12 14:39:08,422 - WARNING -   'Pleasanton Amador Valley (CA)' -> 'Pleasanton Amador Valley (CA)' (no change)
+2026-11-12 14:39:08,422 - WARNING -   'Pleasanton Foothill (CA)' -> 'Pleasanton Foothill (CA)' (no change)
+2026-11-12 14:39:08,422 - WARNING -   'Point Arena (CA)' -> 'Point Arena (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Pomona (CA)' -> 'Pomona (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Pomona Diamond Ranch (CA)' -> 'Pomona Diamond Ranch (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Pomona Ganesha (CA)' -> 'Pomona Ganesha (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Pomona Garey (CA)' -> 'Pomona Garey (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Porterville (CA)' -> 'Porterville (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Porterville Granite Hills (CA)' -> 'Porterville Granite Hills (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Porterville Monache (CA)' -> 'Porterville Monache (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Portola (CA)' -> 'Portola (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Portola Valley Woodside Priory (CA)' -> 'Portola Valley Woodside Priory (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Potter Valley (CA)' -> 'Potter Valley (CA)' (no change)
+2026-11-12 14:39:08,423 - WARNING -   'Poway (CA)' -> 'Poway (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Princeton (CA)' -> 'Princeton (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Quartz Hill (CA)' -> 'Quartz Hill (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Quincy (CA)' -> 'Quincy (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Ramona (CA)' -> 'Ramona (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Ramona Sun Valley (CA)' -> 'Ramona Sun Valley (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Rancho Cordova (CA)' -> 'Rancho Cordova (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Rancho Cucamonga (CA)' -> 'Rancho Cucamonga (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Rancho Cucamonga Los Osos (CA)' -> 'Rancho Cucamonga Los Osos (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Rancho Cucamonga Upland Christian Academy (CA)' -> 'Rancho Cucamonga Upland Christian Academy (CA)' (no change)
+2026-11-12 14:39:08,424 - WARNING -   'Rancho Mirage (CA)' -> 'Rancho Mirage (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Rancho Palos Verdes Miraleste (CA)' -> 'Rancho Palos Verdes Miraleste (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Rancho Santa Margarita (CA)' -> 'Rancho Santa Margarita (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Rancho Santa Margarita Tesoro (CA)' -> 'Rancho Santa Margarita Tesoro (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Red Bluff (CA)' -> 'Red Bluff (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Red Bluff Mercy (CA)' -> 'Red Bluff Mercy (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Redding Enterprise (CA)' -> 'Redding Enterprise (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Redding Shasta (CA)' -> 'Redding Shasta (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Redding University Prep (CA)' -> 'Redding University Prep (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Redlands (CA)' -> 'Redlands (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Redlands Arrowhead Christian (CA)' -> 'Redlands Arrowhead Christian (CA)' (no change)
+2026-11-12 14:39:08,425 - WARNING -   'Redlands Citrus Valley (CA)' -> 'Redlands Citrus Valley (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Redlands East Valley (CA)' -> 'Redlands East Valley (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Redondo Beach Aviation (CA)' -> 'Redondo Beach Aviation (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Redondo Beach Redondo Union (CA)' -> 'Redondo Beach Redondo Union (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Redwood City Sequoia (CA)' -> 'Redwood City Sequoia (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Reedley (CA)' -> 'Reedley (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Reedley Immanuel (CA)' -> 'Reedley Immanuel (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Reseda (CA)' -> 'Reseda (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Reseda Cleveland (CA)' -> 'Reseda Cleveland (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Reseda Sherman Oaks CES (CA)' -> 'Reseda Sherman Oaks CES (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Rialto (CA)' -> 'Rialto (CA)' (no change)
+2026-11-12 14:39:08,426 - WARNING -   'Rialto Carter (CA)' -> 'Rialto Carter (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Rialto Eisenhower (CA)' -> 'Rialto Eisenhower (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Richmond (CA)' -> 'Richmond (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Richmond Harry Ells (CA)' -> 'Richmond Harry Ells (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Richmond Kennedy (CA)' -> 'Richmond Kennedy (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Richmond Salesian College Prep (CA)' -> 'Richmond Salesian College Prep (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Richmond Salesian College Preparatory (CA)' -> 'Richmond Salesian College Preparatory (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Ridgecrest Burroughs (CA)' -> 'Ridgecrest Burroughs (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Ridgecrest Immanuel Christian (CA)' -> 'Ridgecrest Immanuel Christian (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Rio Linda (CA)' -> 'Rio Linda (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Rio Vista (CA)' -> 'Rio Vista (CA)' (no change)
+2026-11-12 14:39:08,427 - WARNING -   'Ripon (CA)' -> 'Ripon (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Ripon Christian (CA)' -> 'Ripon Christian (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Riverbank (CA)' -> 'Riverbank (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Riverdale (CA)' -> 'Riverdale (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Riverdale Christian (CA)' -> 'Riverdale Christian (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Riverside Arlington (CA)' -> 'Riverside Arlington (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Riverside California School for the Deaf (CA)' -> 'Riverside California School for the Deaf (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Riverside Christian (CA)' -> 'Riverside Christian (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Riverside Hillcrest (CA)' -> 'Riverside Hillcrest (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Riverside JW North (CA)' -> 'Riverside JW North (CA)' (no change)
+2026-11-12 14:39:08,428 - WARNING -   'Riverside King (CA)' -> 'Riverside King (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Riverside La Sierra (CA)' -> 'Riverside La Sierra (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Riverside Norte Vista (CA)' -> 'Riverside Norte Vista (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Riverside Notre Dame (CA)' -> 'Riverside Notre Dame (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Riverside Patriot (CA)' -> 'Riverside Patriot (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Riverside Poly (CA)' -> 'Riverside Poly (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Riverside Ramona (CA)' -> 'Riverside Ramona (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Riverside Sherman Indian (CA)' -> 'Riverside Sherman Indian (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Rocklin (CA)' -> 'Rocklin (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Rocklin Whitney (CA)' -> 'Rocklin Whitney (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Rohnert Park Rancho Cotate (CA)' -> 'Rohnert Park Rancho Cotate (CA)' (no change)
+2026-11-12 14:39:08,429 - WARNING -   'Rolling Hills Estates (CA)' -> 'Rolling Hills Estates (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Rolling Hills Estates Palos Verdes Peninsula (CA)' -> 'Rolling Hills Estates Palos Verdes Peninsula (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Romoland Heritage (CA)' -> 'Romoland Heritage (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Rosamond (CA)' -> 'Rosamond (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Rosemead (CA)' -> 'Rosemead (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Rosemead Bosco Tech (CA)' -> 'Rosemead Bosco Tech (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Roseville (CA)' -> 'Roseville (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Roseville Oakmont (CA)' -> 'Roseville Oakmont (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Roseville Valley Christian (CA)' -> 'Roseville Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Roseville Woodcreek (CA)' -> 'Roseville Woodcreek (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Rowland Heights Rowland (CA)' -> 'Rowland Heights Rowland (CA)' (no change)
+2026-11-12 14:39:08,430 - WARNING -   'Sacramento (CA)' -> 'Sacramento (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Bishop Armstrong (CA)' -> 'Sacramento Bishop Armstrong (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Bradshaw Christian (CA)' -> 'Sacramento Bradshaw Christian (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Burbank (CA)' -> 'Sacramento Burbank (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Capital Christian (CA)' -> 'Sacramento Capital Christian (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Christian Brothers (CA)' -> 'Sacramento Christian Brothers (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento El Camino (CA)' -> 'Sacramento El Camino (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Encina Prep (CA)' -> 'Sacramento Encina Prep (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Florin (CA)' -> 'Sacramento Florin (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Foothill (CA)' -> 'Sacramento Foothill (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Grant Union (CA)' -> 'Sacramento Grant Union (CA)' (no change)
+2026-11-12 14:39:08,431 - WARNING -   'Sacramento Inderkum (CA)' -> 'Sacramento Inderkum (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento Johnson (CA)' -> 'Sacramento Johnson (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento Kennedy (CA)' -> 'Sacramento Kennedy (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento McClatchy (CA)' -> 'Sacramento McClatchy (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento Mira Loma (CA)' -> 'Sacramento Mira Loma (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento Natomas (CA)' -> 'Sacramento Natomas (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento Norte Del Rio (CA)' -> 'Sacramento Norte Del Rio (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento Rio Americano (CA)' -> 'Sacramento Rio Americano (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento Rosemont (CA)' -> 'Sacramento Rosemont (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento Sheldon (CA)' -> 'Sacramento Sheldon (CA)' (no change)
+2026-11-12 14:39:08,432 - WARNING -   'Sacramento Valley (CA)' -> 'Sacramento Valley (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'Sacramento West Campus (CA)' -> 'Sacramento West Campus (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'Salesian (CA)' -> 'Salesian (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'Salinas (CA)' -> 'Salinas (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'Salinas Alisal (CA)' -> 'Salinas Alisal (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'Salinas Everett Alvarez (CA)' -> 'Salinas Everett Alvarez (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'Salinas Palma (CA)' -> 'Salinas Palma (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'Salton City West Shores (CA)' -> 'Salton City West Shores (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'San Andreas Calaveras (CA)' -> 'San Andreas Calaveras (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'San Andreas Sierra Ridge-Rite of Passage (CA)' -> 'San Andreas Sierra Ridge-Rite of Passage (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'San Anselmo Sir Francis Drake (CA)' -> 'San Anselmo Sir Francis Drake (CA)' (no change)
+2026-11-12 14:39:08,433 - WARNING -   'San Bernardino (CA)' -> 'San Bernardino (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Bernardino Aquinas (CA)' -> 'San Bernardino Aquinas (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Bernardino Arroyo Valley (CA)' -> 'San Bernardino Arroyo Valley (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Bernardino Cajon (CA)' -> 'San Bernardino Cajon (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Bernardino Indian Springs (CA)' -> 'San Bernardino Indian Springs (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Bernardino Pacific (CA)' -> 'San Bernardino Pacific (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Bernardino San Gorgonio (CA)' -> 'San Bernardino San Gorgonio (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Bruno Capuchino (CA)' -> 'San Bruno Capuchino (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Bruno Crestmoor (CA)' -> 'San Bruno Crestmoor (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Carlos (CA)' -> 'San Carlos (CA)' (no change)
+2026-11-12 14:39:08,434 - WARNING -   'San Clemente (CA)' -> 'San Clemente (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego (CA)' -> 'San Diego (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego Cathedral Catholic (CA)' -> 'San Diego Cathedral Catholic (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego Christian (CA)' -> 'San Diego Christian (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego Clairemont (CA)' -> 'San Diego Clairemont (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego Crawford (CA)' -> 'San Diego Crawford (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego Del Norte (CA)' -> 'San Diego Del Norte (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego Francis Parker (CA)' -> 'San Diego Francis Parker (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego Hoover (CA)' -> 'San Diego Hoover (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego Horizon Christian (CA)' -> 'San Diego Horizon Christian (CA)' (no change)
+2026-11-12 14:39:08,435 - WARNING -   'San Diego Horizon Christian Academy (CA)' -> 'San Diego Horizon Christian Academy (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Jewish Academy (CA)' -> 'San Diego Jewish Academy (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Kearny (CA)' -> 'San Diego Kearny (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Lincoln (CA)' -> 'San Diego Lincoln (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Madison (CA)' -> 'San Diego Madison (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Maranatha Christian (CA)' -> 'San Diego Maranatha Christian (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Military Academy (CA)' -> 'San Diego Military Academy (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Mira Mesa (CA)' -> 'San Diego Mira Mesa (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Mission Bay (CA)' -> 'San Diego Mission Bay (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Montgomery (CA)' -> 'San Diego Montgomery (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Morse (CA)' -> 'San Diego Morse (CA)' (no change)
+2026-11-12 14:39:08,436 - WARNING -   'San Diego Mt. Carmel (CA)' -> 'San Diego Mt. Carmel (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego Ocean View Christian (CA)' -> 'San Diego Ocean View Christian (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego Patrick Henry (CA)' -> 'San Diego Patrick Henry (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego Point Loma (CA)' -> 'San Diego Point Loma (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego Rancho Bernardo (CA)' -> 'San Diego Rancho Bernardo (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego Rock Academy (CA)' -> 'San Diego Rock Academy (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego San Ysidro (CA)' -> 'San Diego San Ysidro (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego Scripps Ranch (CA)' -> 'San Diego Scripps Ranch (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego Serra (CA)' -> 'San Diego Serra (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego Southwest (CA)' -> 'San Diego Southwest (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego St. Augustine (CA)' -> 'San Diego St. Augustine (CA)' (no change)
+2026-11-12 14:39:08,437 - WARNING -   'San Diego Torrey Pines (CA)' -> 'San Diego Torrey Pines (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Diego University City (CA)' -> 'San Diego University City (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Diego Westview (CA)' -> 'San Diego Westview (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Dimas (CA)' -> 'San Dimas (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Fernando (CA)' -> 'San Fernando (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Fernando Chavez (CA)' -> 'San Fernando Chavez (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Francisco Archbishop Riordan (CA)' -> 'San Francisco Archbishop Riordan (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Francisco Balboa (CA)' -> 'San Francisco Balboa (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Francisco Burton (CA)' -> 'San Francisco Burton (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Francisco Galileo (CA)' -> 'San Francisco Galileo (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Francisco J. Eugene McAteer (CA)' -> 'San Francisco J. Eugene McAteer (CA)' (no change)
+2026-11-12 14:39:08,438 - WARNING -   'San Francisco Lincoln (CA)' -> 'San Francisco Lincoln (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco Lowell (CA)' -> 'San Francisco Lowell (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco Marshall (CA)' -> 'San Francisco Marshall (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco Mission (CA)' -> 'San Francisco Mission (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco Poly (CA)' -> 'San Francisco Poly (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco Sacred Heart (CA)' -> 'San Francisco Sacred Heart (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco Sacred Heart Cathedral Prep (CA)' -> 'San Francisco Sacred Heart Cathedral Prep (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco St. Ignatius College Prep (CA)' -> 'San Francisco St. Ignatius College Prep (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco Stuart Hall (CA)' -> 'San Francisco Stuart Hall (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco Washington (CA)' -> 'San Francisco Washington (CA)' (no change)
+2026-11-12 14:39:08,439 - WARNING -   'San Francisco Woodrow Wilson (CA)' -> 'San Francisco Woodrow Wilson (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Gabriel (CA)' -> 'San Gabriel (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Gabriel Gabrielino (CA)' -> 'San Gabriel Gabrielino (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Jacinto (CA)' -> 'San Jacinto (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Jacinto Noli Indian (CA)' -> 'San Jacinto Noli Indian (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Jacinto Valley Academy (CA)' -> 'San Jacinto Valley Academy (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Jose (CA)' -> 'San Jose (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Jose Archbishop Mitty (CA)' -> 'San Jose Archbishop Mitty (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Jose Bellarmine College Prep (CA)' -> 'San Jose Bellarmine College Prep (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Jose Blackford (CA)' -> 'San Jose Blackford (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Jose Branham (CA)' -> 'San Jose Branham (CA)' (no change)
+2026-11-12 14:39:08,440 - WARNING -   'San Jose Camden (CA)' -> 'San Jose Camden (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Del Mar (CA)' -> 'San Jose Del Mar (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Evergreen Valley (CA)' -> 'San Jose Evergreen Valley (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Gunderson (CA)' -> 'San Jose Gunderson (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Harker (CA)' -> 'San Jose Harker (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Hill (CA)' -> 'San Jose Hill (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Independence (CA)' -> 'San Jose Independence (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose James Lick (CA)' -> 'San Jose James Lick (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Leigh (CA)' -> 'San Jose Leigh (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Leland (CA)' -> 'San Jose Leland (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Lincoln (CA)' -> 'San Jose Lincoln (CA)' (no change)
+2026-11-12 14:39:08,441 - WARNING -   'San Jose Lynbrook (CA)' -> 'San Jose Lynbrook (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Mt. Pleasant (CA)' -> 'San Jose Mt. Pleasant (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Oak Grove (CA)' -> 'San Jose Oak Grove (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Overfelt (CA)' -> 'San Jose Overfelt (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Piedmont Hills (CA)' -> 'San Jose Piedmont Hills (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Pioneer (CA)' -> 'San Jose Pioneer (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Santa Teresa (CA)' -> 'San Jose Santa Teresa (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Silver Creek (CA)' -> 'San Jose Silver Creek (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Valley Christian (CA)' -> 'San Jose Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Willow Glen (CA)' -> 'San Jose Willow Glen (CA)' (no change)
+2026-11-12 14:39:08,442 - WARNING -   'San Jose Yerba Buena (CA)' -> 'San Jose Yerba Buena (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Juan Bautista Anzar (CA)' -> 'San Juan Bautista Anzar (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Juan Capistrano Capistrano Valley Christian (CA)' -> 'San Juan Capistrano Capistrano Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Juan Capistrano JSerra Catholic (CA)' -> 'San Juan Capistrano JSerra Catholic (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Juan Capistrano Saddleback Valley Christian (CA)' -> 'San Juan Capistrano Saddleback Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Juan Capistrano San Juan Hills (CA)' -> 'San Juan Capistrano San Juan Hills (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Juan Capistrano St. Margaret's (CA)' -> 'San Juan Capistrano St. Margaret's (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Leandro (CA)' -> 'San Leandro (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Lorenzo (CA)' -> 'San Lorenzo (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Lorenzo Arroyo (CA)' -> 'San Lorenzo Arroyo (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Luis Obispo (CA)' -> 'San Luis Obispo (CA)' (no change)
+2026-11-12 14:39:08,443 - WARNING -   'San Luis Obispo Mission College Prep (CA)' -> 'San Luis Obispo Mission College Prep (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Marcos (CA)' -> 'San Marcos (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Marcos Mission Hills (CA)' -> 'San Marcos Mission Hills (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Marcos St. Joseph Academy (CA)' -> 'San Marcos St. Joseph Academy (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Marino (CA)' -> 'San Marino (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Mateo (CA)' -> 'San Mateo (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Mateo Aragon (CA)' -> 'San Mateo Aragon (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Mateo Hillsdale (CA)' -> 'San Mateo Hillsdale (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Mateo Junipero Serra (CA)' -> 'San Mateo Junipero Serra (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Mateo Junipero Serra JV (CA)' -> 'San Mateo Junipero Serra JV (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Miguel (CA)' -> 'San Miguel (CA)' (no change)
+2026-11-12 14:39:08,444 - WARNING -   'San Miguel School (CA)' -> 'San Miguel School (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'San Pedro (CA)' -> 'San Pedro (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'San Pedro Mary Star of the Sea (CA)' -> 'San Pedro Mary Star of the Sea (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'San Pedro Rolling Hills Prep (CA)' -> 'San Pedro Rolling Hills Prep (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'San Rafael (CA)' -> 'San Rafael (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'San Rafael Military Academy (CA)' -> 'San Rafael Military Academy (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'San Rafael Terra Linda (CA)' -> 'San Rafael Terra Linda (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'San Ramon California (CA)' -> 'San Ramon California (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'San Ramon Dougherty Valley (CA)' -> 'San Ramon Dougherty Valley (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'Sanger (CA)' -> 'Sanger (CA)' (no change)
+2026-11-12 14:39:08,445 - WARNING -   'Santa Ana (CA)' -> 'Santa Ana (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Ana Calvary Chapel (CA)' -> 'Santa Ana Calvary Chapel (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Ana Century (CA)' -> 'Santa Ana Century (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Ana Foothill (CA)' -> 'Santa Ana Foothill (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Ana Godinez Fundamental (CA)' -> 'Santa Ana Godinez Fundamental (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Ana Mater Dei (CA)' -> 'Santa Ana Mater Dei (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Ana Saddleback (CA)' -> 'Santa Ana Saddleback (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Ana Segerstrom (CA)' -> 'Santa Ana Segerstrom (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Ana Valley (CA)' -> 'Santa Ana Valley (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Barbara (CA)' -> 'Santa Barbara (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Barbara Bishop Diego (CA)' -> 'Santa Barbara Bishop Diego (CA)' (no change)
+2026-11-12 14:39:08,446 - WARNING -   'Santa Barbara Laguna Blanca (CA)' -> 'Santa Barbara Laguna Blanca (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Barbara San Marcos (CA)' -> 'Santa Barbara San Marcos (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Clara (CA)' -> 'Santa Clara (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Clara Buchser (CA)' -> 'Santa Clara Buchser (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Clara St. Lawrence Academy (CA)' -> 'Santa Clara St. Lawrence Academy (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Clara Wilcox (CA)' -> 'Santa Clara Wilcox (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Clarita Golden Valley (CA)' -> 'Santa Clarita Golden Valley (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Cruz (CA)' -> 'Santa Cruz (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Cruz Harbor (CA)' -> 'Santa Cruz Harbor (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Fe Christian (CA)' -> 'Santa Fe Christian (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Fe Springs (CA)' -> 'Santa Fe Springs (CA)' (no change)
+2026-11-12 14:39:08,447 - WARNING -   'Santa Fe Springs St. Paul (CA)' -> 'Santa Fe Springs St. Paul (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Maria (CA)' -> 'Santa Maria (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Maria Pioneer Valley (CA)' -> 'Santa Maria Pioneer Valley (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Maria Righetti (CA)' -> 'Santa Maria Righetti (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Maria St.Joseph (CA)' -> 'Santa Maria St.Joseph (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Maria Valley Christian Academy (CA)' -> 'Santa Maria Valley Christian Academy (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Monica (CA)' -> 'Santa Monica (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Monica Lighthouse Christian (CA)' -> 'Santa Monica Lighthouse Christian (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Monica Pacific Christian (CA)' -> 'Santa Monica Pacific Christian (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Monica St. Monica (CA)' -> 'Santa Monica St. Monica (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Paula (CA)' -> 'Santa Paula (CA)' (no change)
+2026-11-12 14:39:08,448 - WARNING -   'Santa Rosa (CA)' -> 'Santa Rosa (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santa Rosa Cardinal Newman (CA)' -> 'Santa Rosa Cardinal Newman (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santa Rosa Elsie Allen (CA)' -> 'Santa Rosa Elsie Allen (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santa Rosa Maria Carrillo (CA)' -> 'Santa Rosa Maria Carrillo (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santa Rosa Montgomery (CA)' -> 'Santa Rosa Montgomery (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santa Rosa Piner (CA)' -> 'Santa Rosa Piner (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santa Rosa Rincon Valley Christian (CA)' -> 'Santa Rosa Rincon Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santa Rosa Roseland University Prep (CA)' -> 'Santa Rosa Roseland University Prep (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santa Ynez (CA)' -> 'Santa Ynez (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santee Bible Missionary Fellowship Christian (CA)' -> 'Santee Bible Missionary Fellowship Christian (CA)' (no change)
+2026-11-12 14:39:08,449 - WARNING -   'Santee Santana (CA)' -> 'Santee Santana (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Santee West Hills (CA)' -> 'Santee West Hills (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Saratoga (CA)' -> 'Saratoga (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Saratoga Prospect (CA)' -> 'Saratoga Prospect (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Saugus (CA)' -> 'Saugus (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Scotts Valley (CA)' -> 'Scotts Valley (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Seaside (CA)' -> 'Seaside (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Sebastopol Analy (CA)' -> 'Sebastopol Analy (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Selma (CA)' -> 'Selma (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Shafter (CA)' -> 'Shafter (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Shandon (CA)' -> 'Shandon (CA)' (no change)
+2026-11-12 14:39:08,450 - WARNING -   'Shasta Lake Central Valley (CA)' -> 'Shasta Lake Central Valley (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Sherman Oaks Buckley (CA)' -> 'Sherman Oaks Buckley (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Sherman Oaks Notre Dame (CA)' -> 'Sherman Oaks Notre Dame (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Shingle Springs Ponderosa (CA)' -> 'Shingle Springs Ponderosa (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Shoshone Death Valley Academy (CA)' -> 'Shoshone Death Valley Academy (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Silverado St. Michael's Prep (CA)' -> 'Silverado St. Michael's Prep (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Simi Valley (CA)' -> 'Simi Valley (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Simi Valley Grace Brethren (CA)' -> 'Simi Valley Grace Brethren (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Simi Valley Royal (CA)' -> 'Simi Valley Royal (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Solana Beach Santa Fe Christian (CA)' -> 'Solana Beach Santa Fe Christian (CA)' (no change)
+2026-11-12 14:39:08,451 - WARNING -   'Soledad (CA)' -> 'Soledad (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'Sonoma Valley (CA)' -> 'Sonoma Valley (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'Sonora (CA)' -> 'Sonora (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'Soquel (CA)' -> 'Soquel (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'South El Monte (CA)' -> 'South El Monte (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'South Gate (CA)' -> 'South Gate (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'South Gate Legacy (CA)' -> 'South Gate Legacy (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'South Gate South East (CA)' -> 'South Gate South East (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'South Lake Tahoe (CA)' -> 'South Lake Tahoe (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'South Pasadena (CA)' -> 'South Pasadena (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'South San Francisco (CA)' -> 'South San Francisco (CA)' (no change)
+2026-11-12 14:39:08,452 - WARNING -   'South San Francisco El Camino (CA)' -> 'South San Francisco El Camino (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'South Torrance (CA)' -> 'South Torrance (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'Southern California Christian (CA)' -> 'Southern California Christian (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'Southwest-El Centro (CA)' -> 'Southwest-El Centro (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'Spring Valley Monte Vista (CA)' -> 'Spring Valley Monte Vista (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'Spring Valley Mount Miguel (CA)' -> 'Spring Valley Mount Miguel (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'Spring Valley Steele Canyon (CA)' -> 'Spring Valley Steele Canyon (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'St. Helena (CA)' -> 'St. Helena (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'Stockton Bear Creek (CA)' -> 'Stockton Bear Creek (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'Stockton Brookside Christian (CA)' -> 'Stockton Brookside Christian (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'Stockton Chavez (CA)' -> 'Stockton Chavez (CA)' (no change)
+2026-11-12 14:39:08,453 - WARNING -   'Stockton Edison (CA)' -> 'Stockton Edison (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Stockton Franklin (CA)' -> 'Stockton Franklin (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Stockton Lincoln (CA)' -> 'Stockton Lincoln (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Stockton McNair (CA)' -> 'Stockton McNair (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Stockton Stagg (CA)' -> 'Stockton Stagg (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Stockton Weston Ranch (CA)' -> 'Stockton Weston Ranch (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Strathmore (CA)' -> 'Strathmore (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Studio City Harvard-Westlake (CA)' -> 'Studio City Harvard-Westlake (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Summerville Union (CA)' -> 'Summerville Union (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Sun Valley Poly (CA)' -> 'Sun Valley Poly (CA)' (no change)
+2026-11-12 14:39:08,454 - WARNING -   'Sun Valley Valley Oaks (CA)' -> 'Sun Valley Valley Oaks (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Sun Valley Village Christian (CA)' -> 'Sun Valley Village Christian (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Sunnyvale (CA)' -> 'Sunnyvale (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Sunnyvale Fremont (CA)' -> 'Sunnyvale Fremont (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Sunnyvale King's Academy (CA)' -> 'Sunnyvale King's Academy (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Susanville Lassen (CA)' -> 'Susanville Lassen (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Sutter (CA)' -> 'Sutter (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Sutter Creek Amador (CA)' -> 'Sutter Creek Amador (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Sylmar (CA)' -> 'Sylmar (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Taft (CA)' -> 'Taft (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Tahoe City North Tahoe (CA)' -> 'Tahoe City North Tahoe (CA)' (no change)
+2026-11-12 14:39:08,455 - WARNING -   'Tehachapi (CA)' -> 'Tehachapi (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Temecula Chaparral (CA)' -> 'Temecula Chaparral (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Temecula Great Oak (CA)' -> 'Temecula Great Oak (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Temecula Linfield Christian (CA)' -> 'Temecula Linfield Christian (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Temecula Rancho Christian (CA)' -> 'Temecula Rancho Christian (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Temecula Saint Jeanne de Lestonnac Catholic School (CA)' -> 'Temecula Saint Jeanne de Lestonnac Catholic School (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Temecula Valley (CA)' -> 'Temecula Valley (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Temple City (CA)' -> 'Temple City (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Templeton (CA)' -> 'Templeton (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Thermal Coachella Valley (CA)' -> 'Thermal Coachella Valley (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Thermal Desert Mirage (CA)' -> 'Thermal Desert Mirage (CA)' (no change)
+2026-11-12 14:39:08,456 - WARNING -   'Thousand Oaks (CA)' -> 'Thousand Oaks (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Thousand Oaks Hillcrest Christian (CA)' -> 'Thousand Oaks Hillcrest Christian (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Tollhouse Sierra (CA)' -> 'Tollhouse Sierra (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Tomales (CA)' -> 'Tomales (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Torrance (CA)' -> 'Torrance (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Torrance Bishop Montgomery (CA)' -> 'Torrance Bishop Montgomery (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Torrance North (CA)' -> 'Torrance North (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Torrance South (CA)' -> 'Torrance South (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Torrance West (CA)' -> 'Torrance West (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Tracy (CA)' -> 'Tracy (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Tracy Kimball (CA)' -> 'Tracy Kimball (CA)' (no change)
+2026-11-12 14:39:08,457 - WARNING -   'Tracy Millennium (CA)' -> 'Tracy Millennium (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Tracy West (CA)' -> 'Tracy West (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Tranquillity (CA)' -> 'Tranquillity (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Trona (CA)' -> 'Trona (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Truckee (CA)' -> 'Truckee (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Tujunga Verdugo Hills (CA)' -> 'Tujunga Verdugo Hills (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Tulare Mission Oak (CA)' -> 'Tulare Mission Oak (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Tulare Union (CA)' -> 'Tulare Union (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Tulare Western (CA)' -> 'Tulare Western (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Tulelake (CA)' -> 'Tulelake (CA)' (no change)
+2026-11-12 14:39:08,458 - WARNING -   'Tuolumne Summerville (CA)' -> 'Tuolumne Summerville (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'Turlock (CA)' -> 'Turlock (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'Turlock Christian (CA)' -> 'Turlock Christian (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'Turlock Pitman (CA)' -> 'Turlock Pitman (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'Tustin (CA)' -> 'Tustin (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'Twentynine Palms (CA)' -> 'Twentynine Palms (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'Ukiah (CA)' -> 'Ukiah (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'Union City James Logan (CA)' -> 'Union City James Logan (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'Union City Logan (CA)' -> 'Union City Logan (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'University of California-Davis Frosh (CA)' -> 'University of California-Davis Frosh (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'University of Southern California Frosh (CA)' -> 'University of Southern California Frosh (CA)' (no change)
+2026-11-12 14:39:08,459 - WARNING -   'Upland (CA)' -> 'Upland (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Upland Western Christian (CA)' -> 'Upland Western Christian (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Upper Lake (CA)' -> 'Upper Lake (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Vacaville (CA)' -> 'Vacaville (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Vacaville Christian (CA)' -> 'Vacaville Christian (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Vacaville Wood (CA)' -> 'Vacaville Wood (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Valencia (CA)' -> 'Valencia (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Valencia Trinity Classical Academy (CA)' -> 'Valencia Trinity Classical Academy (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Valencia West Ranch (CA)' -> 'Valencia West Ranch (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Vallejo (CA)' -> 'Vallejo (CA)' (no change)
+2026-11-12 14:39:08,460 - WARNING -   'Vallejo Bethel (CA)' -> 'Vallejo Bethel (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Vallejo Hogan (CA)' -> 'Vallejo Hogan (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Vallejo St. Patrick (CA)' -> 'Vallejo St. Patrick (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Vallejo St. Patrick-St. Vincent (CA)' -> 'Vallejo St. Patrick-St. Vincent (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Valley Center (CA)' -> 'Valley Center (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Van Nuys (CA)' -> 'Van Nuys (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Van Nuys Fulton (CA)' -> 'Van Nuys Fulton (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Van Nuys Grant (CA)' -> 'Van Nuys Grant (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Van Nuys Montclair Prep (CA)' -> 'Van Nuys Montclair Prep (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Ventura (CA)' -> 'Ventura (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Ventura Buena (CA)' -> 'Ventura Buena (CA)' (no change)
+2026-11-12 14:39:08,461 - WARNING -   'Victorville Excelsior Charter (CA)' -> 'Victorville Excelsior Charter (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Victorville Silverado (CA)' -> 'Victorville Silverado (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Victorville Victor Valley (CA)' -> 'Victorville Victor Valley (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Victorville Victor Valley Christian (CA)' -> 'Victorville Victor Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Villa Park (CA)' -> 'Villa Park (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Visalia Central Valley Christian (CA)' -> 'Visalia Central Valley Christian (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Visalia El Diamante (CA)' -> 'Visalia El Diamante (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Visalia Golden West (CA)' -> 'Visalia Golden West (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Visalia Mt. Whitney (CA)' -> 'Visalia Mt. Whitney (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Visalia Redwood (CA)' -> 'Visalia Redwood (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Vista (CA)' -> 'Vista (CA)' (no change)
+2026-11-12 14:39:08,462 - WARNING -   'Vista Calvary Christian (CA)' -> 'Vista Calvary Christian (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Vista Murrieta (CA)' -> 'Vista Murrieta (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Vista Rancho Buena Vista (CA)' -> 'Vista Rancho Buena Vista (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Vista Tri-City Christian (CA)' -> 'Vista Tri-City Christian (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Walnut (CA)' -> 'Walnut (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Walnut Creek Berean Christian (CA)' -> 'Walnut Creek Berean Christian (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Walnut Creek Las Lomas (CA)' -> 'Walnut Creek Las Lomas (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Walnut Creek Northgate (CA)' -> 'Walnut Creek Northgate (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Walnut Southlands Christian (CA)' -> 'Walnut Southlands Christian (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Warner Springs (CA)' -> 'Warner Springs (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Wasco (CA)' -> 'Wasco (CA)' (no change)
+2026-11-12 14:39:08,463 - WARNING -   'Waterford (CA)' -> 'Waterford (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'Watsonville (CA)' -> 'Watsonville (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'Watsonville Monte Vista Christian (CA)' -> 'Watsonville Monte Vista Christian (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'Watsonville Pajaro Valley (CA)' -> 'Watsonville Pajaro Valley (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'Watsonville St. Francis (CA)' -> 'Watsonville St. Francis (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'Weaverville Trinity (CA)' -> 'Weaverville Trinity (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'Weed (CA)' -> 'Weed (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'West Covina (CA)' -> 'West Covina (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'West Covina Edgewood (CA)' -> 'West Covina Edgewood (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'West Covina South Hills (CA)' -> 'West Covina South Hills (CA)' (no change)
+2026-11-12 14:39:08,464 - WARNING -   'West Hills (CA)' -> 'West Hills (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'West Hills Chaminade (CA)' -> 'West Hills Chaminade (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'West Sacramento James Marshall (CA)' -> 'West Sacramento James Marshall (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'West Sacramento River City (CA)' -> 'West Sacramento River City (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'West Sacramento Washington (CA)' -> 'West Sacramento Washington (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'Westlake Village (CA)' -> 'Westlake Village (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'Westlake Village Oaks Christian (CA)' -> 'Westlake Village Oaks Christian (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'Westminster (CA)' -> 'Westminster (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'Westminster La Quinta (CA)' -> 'Westminster La Quinta (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'Westwood (CA)' -> 'Westwood (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'Wheatland (CA)' -> 'Wheatland (CA)' (no change)
+2026-11-12 14:39:08,465 - WARNING -   'Whittier (CA)' -> 'Whittier (CA)' (no change)
+2026-11-12 14:39:08,466 - WARNING -   'Whittier California (CA)' -> 'Whittier California (CA)' (no change)
+2026-11-12 14:39:08,466 - WARNING -   'Whittier F.C. Nelles (CA)' -> 'Whittier F.C. Nelles (CA)' (no change)
+2026-11-12 14:39:08,466 - WARNING -   'Whittier La Serna (CA)' -> 'Whittier La Serna (CA)' (no change)
+2026-11-12 14:39:08,466 - WARNING -   'Whittier Lowell (CA)' -> 'Whittier Lowell (CA)' (no change)
+2026-11-12 14:39:08,466 - WARNING -   'Whittier Pioneer (CA)' -> 'Whittier Pioneer (CA)' (no change)
+2026-11-12 14:39:08,466 - WARNING -   'Whittier Sierra (CA)' -> 'Whittier Sierra (CA)' (no change)
+2026-11-12 14:39:08,467 - WARNING -   'Wildomar California Lutheran (CA)' -> 'Wildomar California Lutheran (CA)' (no change)
+2026-11-12 14:39:08,467 - WARNING -   'Wildomar Cornerstone Christian (CA)' -> 'Wildomar Cornerstone Christian (CA)' (no change)
+2026-11-12 14:39:08,467 - WARNING -   'Wildomar Elsinore (CA)' -> 'Wildomar Elsinore (CA)' (no change)
+2026-11-12 14:39:08,467 - WARNING -   'Williams (CA)' -> 'Williams (CA)' (no change)
+2026-11-12 14:39:08,467 - WARNING -   'Willits (CA)' -> 'Willits (CA)' (no change)
+2026-11-12 14:39:08,467 - WARNING -   'Willows (CA)' -> 'Willows (CA)' (no change)
+2026-11-12 14:39:08,467 - WARNING -   'Wilmington Banning (CA)' -> 'Wilmington Banning (CA)' (no change)
+2026-11-12 14:39:08,467 - WARNING -   'Winchester Temecula Prep (CA)' -> 'Winchester Temecula Prep (CA)' (no change)
+2026-11-12 14:39:08,467 - WARNING -   'Windsor (CA)' -> 'Windsor (CA)' (no change)
+2026-11-12 14:39:08,468 - WARNING -   'Winterhaven San Pasqual Valley (CA)' -> 'Winterhaven San Pasqual Valley (CA)' (no change)
+2026-11-12 14:39:08,468 - WARNING -   'Winters (CA)' -> 'Winters (CA)' (no change)
+2026-11-12 14:39:08,468 - WARNING -   'Woodlake (CA)' -> 'Woodlake (CA)' (no change)
+2026-11-12 14:39:08,468 - WARNING -   'Woodland (CA)' -> 'Woodland (CA)' (no change)
+2026-11-12 14:39:08,468 - WARNING -   'Woodland Christian (CA)' -> 'Woodland Christian (CA)' (no change)
+2026-11-12 14:39:08,468 - WARNING -   'Woodland Hills El Camino Real (CA)' -> 'Woodland Hills El Camino Real (CA)' (no change)
+2026-11-12 14:39:08,468 - WARNING -   'Woodland Hills Taft (CA)' -> 'Woodland Hills Taft (CA)' (no change)
+2026-11-12 14:39:08,468 - WARNING -   'Woodland JV (CA)' -> 'Woodland JV (CA)' (no change)
+2026-11-12 14:39:08,468 - WARNING -   'Woodland Pioneer (CA)' -> 'Woodland Pioneer (CA)' (no change)
+2026-11-12 14:39:08,469 - WARNING -   'Woodland Ramblers (CA)' -> 'Woodland Ramblers (CA)' (no change)
+2026-11-12 14:39:08,469 - WARNING -   'Woodside (CA)' -> 'Woodside (CA)' (no change)
+2026-11-12 14:39:08,469 - WARNING -   'Yermo Silver Valley (CA)' -> 'Yermo Silver Valley (CA)' (no change)
+2026-11-12 14:39:08,469 - WARNING -   'Yorba Linda (CA)' -> 'Yorba Linda (CA)' (no change)
+2026-11-12 14:39:08,469 - WARNING -   'Yreka (CA)' -> 'Yreka (CA)' (no change)
+2026-11-12 14:39:08,469 - WARNING -   'Yuba City (CA)' -> 'Yuba City (CA)' (no change)
+2026-11-12 14:39:08,469 - WARNING -   'Yuba City River Valley (CA)' -> 'Yuba City River Valley (CA)' (no change)
+2026-11-12 14:39:08,469 - WARNING -   'Yucaipa (CA)' -> 'Yucaipa (CA)' (no change)
+2026-11-12 14:39:08,469 - WARNING -   'Yucca Valley (CA)' -> 'Yucca Valley (CA)' (no change)
+2026-11-12 14:39:08,470 - WARNING -   'Yucca Valley Joshua Springs (CA)' -> 'Yucca Valley Joshua Springs (CA)' (no change)
+2026-11-12 14:39:08,470 - INFO - Validation passed: 1509 rules are clean and ready to upload.
+2026-11-12 14:39:08,488 - INFO - Uploading 1509 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 14:39:08,715 - INFO - Upload to staging table complete.
+2026-11-12 14:39:08,721 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 14:42:51,722 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 14:42:51,722 - INFO - Reason logged to dbo.HS_Consolidation_Log: CA round 1: 2024 MaxPreps short names; renames to latest (University of San Diego High -> Cathedral Catholic, Chatsworth/Granada Hills -> Charter, Sepulveda Monroe -> North Hills Monroe, Riverside Rubidoux -> Jurupa Valley); same-school variants
+2026-11-12 14:42:51,722 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 14:42:51,722 - INFO - Running post-consolidation safety check...
+2026-11-12 14:42:51,727 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup CA --commit
+
+DEDUP v4 CA - COMMIT
+ dedup_archive: 886 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_dedup_archive_COMMITTED_20261112_1443.csv
+ dedup_review: 52 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_dedup_review_COMMITTED_20261112_1443.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_dedup_summary_COMMITTED_20261112_1443.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  CA     345454        886                  52               3A730781-6EC6-4865-9196-CFFFDE835024
+
+>>> review-pairs CA --commit
+
+REVIEW-ONLY PAIRS CA - COMMIT
+ 52 pairs {'SHORT': 52} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_review_pairs_COMMITTED_20261112_1443.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  52        7717B717-85BD-40C3-A980-C528295F0ED0  None
+
+>>> same-score-fix CA
+
+SAME-SCORE DOUBLE-BOOKINGS CA - PREVIEW (nothing changed)
+ 3579 pairs {'DROP A': 982, 'DROP B': 963, 'UNDECIDED': 1634} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_same_score_20261112_1447.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1923      None   None
+
+>>> query CA ca_dump.sql
+
+QUERY ca_dump (1 result sets)
+ set 1: 344521 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_ca_dump_1_20261112_1448.csv
+
+=== OK 2026-11-12 14:48:02

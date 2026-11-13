@@ -1,0 +1,5 @@
+consolidate VA --reason "VA round 2: same-school names (James River Midlothian, Richmond Kennedy/JFK, Patrick Henry Glade Spring/Ashland, Matthew Whaley -> James Blair, Roanoke Henry, Norton Central -> Wise Central)"
+dedup VA --commit
+review-pairs VA --commit
+same-score-fix VA
+query VA va_dump.sql

@@ -1,0 +1,21 @@
+
+>>> same-score-fix NC --commit
+ 471 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS NC - COMMIT
+ 325 pairs {'DROP B': 123, 'DROP A': 141, 'UNDECIDED': 61} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_same_score_COMMITTED_20261110_1529.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  264       8397ED17-DB13-489B-82E4-E2465882ABB5  None
+
+>>> import-games NC --file hsfha_import_NC.csv --reason "HSFHA-NC (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell"
+
+IMPORT GAMES NC - PREVIEW (nothing changed) from hsfha_import_NC.csv (11486 rows)
+   Skip                                Games
+   a team already has a game that day  535  
+   IMPORT                              10078
+   name not in HS_Team_Names           873  
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_import_skipped_20261110_1529.csv
+   Status                     Imported  BatchID  Err 
+   PREVIEW (nothing changed)  10078     None     None
+
+=== OK 2026-11-10 15:29:50

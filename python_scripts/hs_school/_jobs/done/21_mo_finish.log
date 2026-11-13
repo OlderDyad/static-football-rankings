@@ -1,0 +1,56 @@
+
+>>> archive-ids MO --ids MO_college_archive_ids.csv --reason "1942 Tulsa-Saint Louis U, 1947 Washington U-Arkansas St, 1949 Washington U-Missouri Mines: college games, copies in College_Scores (names match)" --commit
+
+ARCHIVE LISTED GAMES MO - COMMIT
+ 3 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_archive_ids_COMMITTED_20261108_1938.csv
+   Season  Date        Home                        Home_Score  Visitor                                 Visitor_Score  Source                                    Access_ID  ID                                  
+   1942    1942-10-24  Tulsa University (OK)       41          Saint Louis University University (MO)  0              Tulsa_World_1942_10_24_9.csv              None       171479A6-7D5D-451A-89C3-2A77A9797ADF
+   1947    1947-10-19  Washington University (MO)  40          Arkansas State University (AR)          14             St_Louis_Post_Dispatch_1947_10_19_Page_2  None       6379DC0E-0DAF-411B-B856-750D0364C4A0
+   1949    1949-09-25  Washington University (MO)  28          Missouri School of Mines (MO)           13             St_Louis_Post_Dispatch_1949_09_25_Page_5  None       6DADE014-AC39-4720-8A47-3AF42B2D9FBF
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  3       3      FD56CECF-B689-466E-B68D-97C569FC8549  None
+
+>>> fix-dates MO --commit
+
+FIX DATES MO - COMMIT
+ 17 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_fix_dates_COMMITTED_20261108_1938.csv
+   Season  OldDate     NewDate     DayShift  Home                                Home_Score  Visitor                         Visitor_Score  KeepSource                        ArchivedSource                            KeepID                                ArchiveRunID                        
+   1930    1930-10-17  1930-10-25  8         Overland Park Shawnee Mission (KS)  12          Excelsior Springs (MO)          0              http://kansasfootballhistory.com  The_Kansas_City_Times_1930_10_25_18.csv   49041024-6AF2-4C4B-ACE1-21B060B8B8DB  0B3068CD-F63B-45A3-8320-B5ECC3CE7B6B
+   1933    1933-10-13  1933-10-21  8         Kansas City Washington (KS)         12          Raytown (MO)                    0              http://kansasfootballhistory.com  The_Kansas_City_Times_1933_10_21_16.csv   68A98667-43AF-49B7-8773-64CF3761D869  86E42BE1-B713-4A41-A176-9CADD20CF335
+   1936    1936-11-06  1936-11-21  15        Overland Park Shawnee Mission (KS)  6           Independence Chrisman (MO)      6              http://kansasfootballhistory.com  The_Kansas_City_Times_1936_11_21_17.csv   5E5F3EEA-A706-4021-BC15-FB83FB8FEBA4  CC358AAF-23D5-46CE-BDA3-6C5D6F10FF28
+   1938    1938-10-07  1938-10-22  15        Kansas City Northeast (MO)          12          Kansas City Washington (KS)     0              http://kansasfootballhistory.com  The_Kansas_City_Times_1938_10_22_21.csv   42B04076-8F5A-4EC3-AF6F-AF0AA047F036  3D8660B6-F7C4-49C0-9669-4EDEDD65CA0E
+   1938    1938-10-07  1938-10-15  8         Overland Park Shawnee Mission (KS)  6           Independence Chrisman (MO)      0              http://kansasfootballhistory.com  The_Kansas_City_Times_1938_10_15_19.csv   C6D1A231-DD4B-400A-B144-72CAA48D8340  0B3068CD-F63B-45A3-8320-B5ECC3CE7B6B
+   1943    1943-10-08  1943-10-23  15        Kansas City Bishop Lillis (MO)      6           Kansas City Washington (KS)     0              http://kansasfootballhistory.com  The_Kansas_City_Times_1943_10_23_15.csv   57A4AE1D-5612-400B-AA3D-2450FD91F7D3  3D8660B6-F7C4-49C0-9669-4EDEDD65CA0E
+   1944    1944-10-13  1944-10-21  8         Kansas City Washington (KS)         6           Kansas City Bishop Lillis (MO)  0              http://kansasfootballhistory.com  The_Kansas_City_Times_1944_10_21_13.csv   D005522B-480A-45A0-9A79-AA34B967D72E  86E42BE1-B713-4A41-A176-9CADD20CF335
+   1946    1946-11-08  1946-11-16  8         Overland Park Shawnee Mission (KS)  48          Kansas City Rockhurst (MO)      0              http://kansasfootballhistory.com  St_Joseph_News_Press_1946_11_16_7.csv     51E5062E-6831-40EF-A87D-7F7518CB1970  0B3068CD-F63B-45A3-8320-B5ECC3CE7B6B
+   1957    1957-09-27  1957-10-19  22        Overland Park Shawnee Mission (KS)  23          Kansas City Westport (MO)       0              http://kansasfootballhistory.com  St_Joseph_News_Press_1957_10_19_9.csv     58C2763C-74EB-48E9-83BA-D1035FB3A20D  CC358AAF-23D5-46CE-BDA3-6C5D6F10FF28
+   1977    1977-09-16  1977-09-22  6         Raytown (MO)                        30          Kansas City Washington (KS)     0              http://kansasfootballhistory.com  25 Sep 1977 - 183 - The Kansas City Star  909F6CAD-CA7C-47A1-AA31-4C578B45CE91  BBDD6D4E-81BF-4E76-8DCF-F590A3FD03DF
+   ... 7 more rows (see CSV)
+   Status     Updated  Err 
+   COMMITTED  17       None
+
+>>> step MO 1.1 "in progress" "round 1: 22 rules (2022/2024 MaxPreps drift: Aurora, Ste. Genevieve, Warrenton, Windsor, New Madrid, St. Clair, SLUH, University City, Lincoln College Prep...; Sedalia, Cass Midway, Rogersville, DeSoto, St. Mary's South Side)"
+Tracker updated: MO 1.1 -> in progress
+
+>>> step MO 1.2 done "22 URLs remapped (10 ProperNames did not exist); mapcheck fixed 10 Team_IDs"
+Tracker updated: MO 1.2 -> done
+
+>>> step MO 1.4 "in progress" "splits: Battle-Columbia Independent 2022-24, Gallatin-Tri-County 2022+, Park Hill South 1998+, Unionville Putnam County 1943+; Washington (MO) 198 KC Washington games moved to KS"
+Tracker updated: MO 1.4 -> in progress
+
+>>> step MO 2.1 done "dedup 275 + 7 (+95 KC Washington copies in KS)"
+Tracker updated: MO 2.1 -> done
+
+>>> step MO 2.3 "in progress" "same-score 513 archived (94 border-twin decisions overridden: Fort Scott, Lansing, Atchison, KC Washington...); 328 undecided"
+Tracker updated: MO 2.3 -> in progress
+
+>>> step MO 3.1 done "2 yearbook dates 1912-13"
+Tracker updated: MO 3.1 -> done
+
+>>> step MO 3.2 done "forfeit flags consistent except 2 'The Sun' 2-0 games and NULL on 2026 weekly imports"
+Tracker updated: MO 3.2 -> done
+
+>>> step MO 5.0 "in progress" "3 college copies archived; MO_for_college_chat.csv"
+Tracker updated: MO 5.0 -> in progress
+
+=== OK 2026-11-08 19:38:20

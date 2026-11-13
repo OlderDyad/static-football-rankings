@@ -1,0 +1,104 @@
+
+>>> addstate MI
+Tracker rows ready for MI
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report MI drift
+
+REPORT drift MI: 206 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_drift_20261112_0610.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                         N_Games  N_First  N_Last  N_Mapped
+   Ada Forest Hills Eastern (MI)             19       2024     2025    0         Ada Forest Hills (MI)           30       2024     2026    1       
+   Akron- Fairgrove (MI)                     644      1952     2025    0         None                            None     None     None    0       
+   Ann Arbor Huron (MI)                      529      1967     2025    0         Ann Arbor Huron River (MI)      27       2024     2026    1       
+   Ashley (MI)                               415      1959     2024    1         None                            None     None     None    0       
+   Baraga (MI)                               439      1936     2019    0         None                            None     None     None    0       
+   Bark River-Harris (MI)                    595      1955     2025    0         None                            None     None     None    0       
+   Bessemer (MI)                             580      1903     2025    0         Bessemer Gogebic Johnston (MI)  17       2024     2025    1       
+   Bessemer Gogebic [Johnston-Wakefield-Wri  23       2018     2021    0         None                            None     None     None    0       
+   Bessemer Gogebic Johnston (MI)            17       2024     2025    1         None                            None     None     None    0       
+   Bessemer Johnston (MI)                    63       2004     2017    0         None                            None     None     None    0       
+   Big Rapids Crossroads Charter Academy (M  109      2007     2019    0         None                            None     None     None    0       
+   Birmingham Detroit Country Day (MI)       720      1932     2025    0         None                            None     None     None    0       
+   Bloomfield Hills Brother Rice (MI)        244      2004     2025    0         None                            None     None     None    0       
+   Bloomingdale (MI)                         620      1924     2025    1         None                            None     None     None    0       
+   Brethren (MI)                             527      1964     2025    0         None                            None     None     None    0       
+   ... 191 more rows (see CSV)
+
+>>> mapcheck MI
+
+MAPPING CHECK MI - PREVIEW (nothing changed)
+ 77 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_mapcheck_20261112_0610.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                          Team_ID_Name                  
+   https://www.maxpreps.com/mi/bay-city/gle  Bay City Glenn (MI)                  1082     None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/byron/byron-  Byron (MI)                           38146    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/carson-city/  Carson City Carson City (MI)         4753     None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/detroit/cons  Detroit Consortium College (MI)      21931    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/iron-river/w  Iron River West Iron (MI)            12502    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/madison-heig  Madison Heights Bishop Foley (MI)    21963    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/mt-pleasant/  Mount Pleasant Sacred Heart (MI)     19747    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/norton-shore  Norton Shores Mona Shores (MI)       3806     None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/novi/catholi  Novi Catholic Central (MI)           45423    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/otisville/la  Otisville Lakeville (MI)             17049    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/parma/wester  Parma Western (MI)                   23454    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/scottville/m  Scottville Mason County (MI)         22365    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/sebewaing/un  Sebewaing Unionville Sebewaing (MI)  4935     None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/standish/sta  Standish St. erling (MI)             6671     None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/westland/gle  Westland Glenn (MI)                  27402    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/mi/addison/addi  Addison (MI)                         70134    58760   Team_ID points to another name   Adrian B (MI)                 
+   https://www.maxpreps.com/mi/ann-arbor/sk  Ann Arbor Skyline (MI)               58979    58978   Team_ID points to another name   Ann Arbor University High (MI)
+   https://www.maxpreps.com/mi/auburn/bay-c  Auburn Bay City (MI)                 59460    18601   Team_ID points to another name   Bay City St. Mary (MI)        
+   https://www.maxpreps.com/mi/bay-city/cen  Bay City Central (MI)                59458    59455   Team_ID points to another name   Bay City St. James (MI)       
+   https://www.maxpreps.com/mi/benton-harbo  Benton Harbor (MI)                   59617    59616   Team_ID points to another name   Benton Harbor St. John (MI)   
+   ... 57 more rows (see CSV)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  62       None
+
+>>> dedup MI
+
+DEDUP v4 MI - PREVIEW (nothing changed)
+ dedup_archive: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_dedup_archive_20261112_0610.csv
+ dedup_review: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_dedup_review_20261112_0610.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_dedup_summary_20261112_0610.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MI     209901        28                   5                None 
+
+>>> review-pairs MI
+
+REVIEW-ONLY PAIRS MI - PREVIEW (nothing changed)
+ 5 pairs {'LONG': 2, 'SHORT': 3} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_review_pairs_20261112_0610.csv
+
+>>> same-score-fix MI
+
+SAME-SCORE DOUBLE-BOOKINGS MI - PREVIEW (nothing changed)
+ 2374 pairs {'DROP B': 437, 'DROP A': 407, 'UNDECIDED': 1530} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_same_score_20261112_0613.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  836       None   None
+
+>>> query MI mi_dump.sql
+
+QUERY mi_dump (1 result sets)
+ set 1: 209904 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_mi_dump_1_20261112_0613.csv
+
+>>> query MI mi_names.sql
+
+QUERY mi_names (1 result sets)
+ set 1: 1528 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_mi_names_1_20261112_0613.csv
+
+=== OK 2026-11-12 06:13:14

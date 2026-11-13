@@ -1,0 +1,35 @@
+
+>>> same-score-fix AL --commit
+ 1907 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS AL - COMMIT
+ 1433 pairs {'DROP A': 440, 'DROP B': 452, 'UNDECIDED': 541} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_same_score_COMMITTED_20261111_1221.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  892       EF77D283-E2AD-4783-A96D-DDBCE429FFAE  None
+
+>>> commit AL
+
+DEDUP v4 AL - COMMIT
+ dedup_archive: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_archive_COMMITTED_20261111_1221.csv
+ dedup_review: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_review_COMMITTED_20261111_1221.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_summary_COMMITTED_20261111_1221.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  AL     197020        63                   82               CFA18D50-5AEF-4A45-B3E5-576F6165A87A
+
+REVIEW-ONLY PAIRS AL - COMMIT
+ 22 pairs {'LONG': 7, 'SHORT': 15} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_review_pairs_COMMITTED_20261111_1221.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  22        4DE2BD71-13E1-475B-8DF7-7740F9DA5708  None
+
+>>> query AL al_dump.sql
+
+QUERY al_dump (1 result sets)
+ set 1: 196937 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_al_dump_1_20261111_1221.csv
+
+>>> query AL al_export.sql
+
+QUERY al_export (2 result sets)
+ set 1: 196937 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_al_export_1_20261111_1221.csv
+ set 2: 1820 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_al_export_2_20261111_1221.csv
+
+=== OK 2026-11-11 12:21:59

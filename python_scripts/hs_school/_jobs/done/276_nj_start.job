@@ -1,0 +1,8 @@
+addstate NJ
+report NJ drift
+mapcheck NJ --commit
+dedup NJ
+review-pairs NJ
+same-score-fix NJ
+query NJ nj_dump.sql
+query NJ nj_names.sql

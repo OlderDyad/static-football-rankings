@@ -1,0 +1,63 @@
+
+>>> set-dates MS --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-MS game date (both teams + score match)" --commit
+
+SET DATES MS - COMMIT
+ 17 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_set_dates_COMMITTED_20261111_1018.csv
+   Season  OldDate     NewDate     DayShift  Home                                 Home_Score  Visitor                              Visitor_Score  Source                                    Note                   ID                                  
+   1956    1956-08-31  1956-09-07  7         Corinth (MS)                         28          Jackson (TN)                         6              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 399729  6276DAF7-986E-459A-8439-3B3F5E7CEB05
+   1963    1963-08-30  1963-09-06  7         Jackson (TN)                         6           Tupelo (MS)                          0              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 399726  6FC2BF1E-6F09-463E-95EF-33B047D39966
+   1993    1993-09-10  1993-09-17  7         Collinwood (TN)                      40          Booneville Thrasher (MS)             14             http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 397115  AE1FC947-18E7-4E48-97B1-63407BAD47C1
+   1995    1995-09-29  1995-09-22  -7        Millington Central (TN)              26          Yazoo City (MS)                      6              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 401840  E192443B-E6D4-4B35-B857-ECBFE7FB811D
+   1996    1996-09-06  1996-09-13  7         Southaven Northpoint Christian (MS)  27          Greenwood Pillow Academy (MS)        21             www.hsfdatabase.com/tennessee.htm         hsfha.org game 289781  45FCC03F-ECF0-4E90-A523-531E8966D9C8
+   1996    1996-09-13  1996-09-20  7         Southaven Northpoint Christian (MS)  35          Columbus Heritage Academy (MS)       34             www.hsfdatabase.com/tennessee.htm         hsfha.org game 289651  43BD2B00-31AA-4C4D-BE64-E5A508A7C902
+   1996    1996-10-25  1996-11-01  7         Southaven Northpoint Christian (MS)  30          Clarksdale Lee Academy (MS)          0              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 288900  28124B76-248F-4F5C-80E1-20A352B917FB
+   1996    1996-11-01  1996-11-08  7         Southaven Northpoint Christian (MS)  35          Starkville Academy (MS)              7              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 288764  2EA7C8AC-86D5-429A-8623-E2F29EBE1F31
+   1997    1997-09-05  1997-09-12  7         Greenwood Pillow Academy (MS)        30          Southaven Northpoint Christian (MS)  12             www.hsfdatabase.com/tennessee.htm         hsfha.org game 288329  0DA78365-53D2-4DB7-B54A-9451AF533F07
+   1997    1997-10-10  1997-10-17  7         Southaven Northpoint Christian (MS)  22          Holly Springs Marshall Academy (MS)  6              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 287682  DCB58D35-1E3D-4CF0-A53C-02B716F7745C
+   ... 7 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  17      17       None
+
+>>> set-dates MS --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-MS date: same teams + same score in season" --commit
+
+SET DATES MS - COMMIT
+ 310 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_set_dates_COMMITTED_20261111_1018.csv
+   Season  OldDate     NewDate     DayShift  Home                  Home_Score  Visitor                     Visitor_Score  Source                                    Note                                      ID                                  
+   1917    1917-10-12  1917-11-09  28        Greenwood (MS)        7           Clarksdale (MS)             6              http://www.classmates.com/siteui/yearboo  hsfha.org game 366984 (same teams+score)  15270C34-FB64-4220-8D52-0CBEBF71529D
+   1922    1922-11-17  1922-11-30  13        Biloxi (MS)           15          Mobile Barton Academy (AL)  3              http://www.classmates.com/siteui/yearboo  hsfha.org game 395178 (same teams+score)  D7BCC3AC-1010-4970-A19D-531C5104FB3E
+   1923    1923-11-09  1923-11-23  14        Hattiesburg (MS)      42          Biloxi (MS)                 6              http://www.classmates.com/siteui/yearboo  hsfha.org game 366662 (same teams+score)  63268AE0-C141-48B2-B66F-E80A0B934589
+   1936    1936-09-25  1936-10-23  28        Vicksburg (MS)        20          Meridian (MS)               6              http://www.classmates.com/yearbooks/Meri  hsfha.org game 364086 (same teams+score)  103C47EB-AA91-4F01-9135-58269AFB1D17
+   1936    1936-10-02  1936-10-30  28        Hattiesburg (MS)      8           Meridian (MS)               7              http://www.classmates.com/yearbooks/Meri  hsfha.org game 364068 (same teams+score)  0B534BCE-95FC-4639-8FBC-45D12665F681
+   1938    1938-10-14  1938-09-30  -14       Greenwood (MS)        52          Belzoni (MS)                0              http://www.classmates.com/siteui/yearboo  hsfha.org game 363530 (same teams+score)  D6AF3E65-5D41-44F3-95E0-6813DA7C8E5A
+   1938    1938-10-28  1938-10-14  -14       Meridian (MS)         13          Jackson Central (MS)        7              http://www.classmates.com/yearbooks/Meri  hsfha.org game 376379 (same teams+score)  2D60AB48-FDF9-41A9-B997-AB50B2344347
+   1938    1938-11-04  1938-10-21  -14       Jackson Central (MS)  34          Brookhaven (MS)             7              https://www.classmates.com/siteui/yearbo  hsfha.org game 376388 (same teams+score)  6191753A-D16E-4214-B20E-67D51BF4B58C
+   1938    1938-11-18  1938-11-05  -13       Greenwood (MS)        26          Leland (MS)                 13             http://www.classmates.com/siteui/yearboo  hsfha.org game 363359 (same teams+score)  F46288A3-55CA-4110-BE8F-4E84B7276B4D
+   1938    1938-11-25  1938-11-11  -14       Clarksdale (MS)       38          Greenwood (MS)              0              http://www.classmates.com/siteui/yearboo  hsfha.org game 376383 (same teams+score)  8EB8582A-6066-47C8-A889-3E37D641CF64
+   ... 300 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  321     310      None
+
+>>> set-scores MS --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-MS score (David 2026-11-10 rule)" --commit
+
+SET SCORES MS - COMMIT
+ 5 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_set_scores_COMMITTED_20261111_1018.csv
+   ID                                    Season  Date        Home                                OldHS  NewHS  Visitor                              OldVS  NewVS  Source                             Note                 
+   023F60D8-EB5D-4C13-A5FB-3B2020A0BDE0  1997    1997-09-12  Columbus Heritage Academy (MS)      21     24     Southaven Northpoint Christian (MS)  14     14     www.hsfdatabase.com/tennessee.htm  hsfha.org game 288198
+   1EC8E61E-4897-478C-B183-1FD827113F59  2003    2003-09-05  Learned Rebul Academy (MS)          2      2      Pine Hills Academy (MS)              1      0      None                               hsfha.org game 377030
+   CE7DBEAE-D6C5-4BFC-B03F-1145A91DBD80  2003    2003-09-26  Natchez Trinity Episcopal Day (MS)  2      2      Pine Hills Academy (MS)              1      0      None                               hsfha.org game 377031
+   1CA074E1-8520-4B9A-80BD-C1C771D7B9D5  2003    2003-10-31  Olive Branch (MS)                   23     14     Columbus (MS)                        29     27     None                               hsfha.org game 379972
+   CAAEFA56-A587-47C0-B99E-27D1DF20D172  2003    2003-11-07  Jackson Provine (MS)                33     35     Oxford Lafayette (MS)                12     12     None                               hsfha.org game 278003
+   Status     Listed  Updated  Err 
+   COMMITTED  5       5        None
+
+>>> import-games MS --file hsfha_import_MS.csv --reason "HSFHA-MS (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell"
+
+IMPORT GAMES MS - PREVIEW (nothing changed) from hsfha_import_MS.csv (2711 rows)
+   Skip                                Games
+   a team already has a game that day  503  
+   IMPORT                              2208 
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_import_skipped_20261111_1018.csv
+   Status                     Imported  BatchID  Err 
+   PREVIEW (nothing changed)  2208      None     None
+
+=== OK 2026-11-11 10:18:55

@@ -1,0 +1,32 @@
+
+>>> query FL fl_stpete_names.sql
+
+QUERY fl_stpete_names (6 result sets)
+ set 1: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_stpete_names_1_20261109_0810.csv
+ set 2: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_stpete_names_2_20261109_0810.csv
+ set 3: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_stpete_names_3_20261109_0810.csv
+ set 4: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_stpete_names_4_20261109_0810.csv
+ set 5: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_stpete_names_5_20261109_0810.csv
+ set 6: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_stpete_names_6_20261109_0810.csv
+
+>>> status FL
+   StepNo  Step                     Status       Updated     RunIDs                                    Notes                                   
+   0.0     College-link collisions  not started  None        None                                      None                                    
+   1.1     Name inventory           in progress  2026-11-08  None                                      consolidation 2026-11-08: FL round 1: 20
+   1.2     MaxPreps drift           done         2026-11-08  None                                      18 URLs remapped; mapcheck fixed 47 Team
+   1.3     Same-town same-opponent  not started  None        None                                      None                                    
+   1.4     Split two-school names   not started  None        None                                      None                                    
+   2.1     Dedup v4                 done         2026-11-08  7F68DFE3-D102-435F-A82A-F1C098836D0F; 05  2026-11-08: 498 archived | 2026-11-08: 1
+   2.2     Review-only pairs        done         2026-11-08  20568AA2-E3AC-492D-A74A-BC77FA47521C; 8C  2026-11-08: 489 archived {'LONG': 13, 'S
+   2.3     Double-booked dates      in progress  2026-11-08  37D4A668-0D72-4102-B710-3DEC1EFEED7D      2026-11-08: same-score fix archived 281 
+   3.1     Season vs date           in progress  2026-11-08  None                                      3 dates: 2001/2002 FHSAA finals dated Fe
+   3.2     Forfeits                 done         2026-11-08  None                                      forfeit flags consistent except NULL on 
+   4.1     Source histograms        not started  None        None                                      None                                    
+   4.2     Phantom pair scan        not started  None        None                                      None                                    
+   4.3     Outside-source compare   not started  None        None                                      None                                    
+   5.0     College games            in progress  2026-11-08  None                                      6 Miami college copies archived; FL_for_
+   6.0     Re-rate dirty seasons    not started  None        None                                      None                                    
+   7.0     Residuals                not started  None        None                                      None                                    
+   8.0     Gap audit                not started  None        None                                      None                                    
+
+=== OK 2026-11-09 08:10:27

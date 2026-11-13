@@ -1,0 +1,682 @@
+
+>>> remap DE --url "https://www.maxpreps.com/de/georgetown/fca-bucks-bucks/football/schedule/" --to "Georgetown FCA Bucks (DE)" --commit
+
+REMAP https://www.maxpreps.com/de/georgetown/fca-bucks-bucks/football/schedule/ -> Georgetown FCA Bucks (DE) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/de/georgetown/f  Georgetown Fca (DE)  20840    Georgetown FCA Bucks (DE)  35000     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap HI --url "https://www.maxpreps.com/hi/honolulu/kamehameha-kapalama-warriors/football/schedule/" --to "Honolulu Kamehameha-Kapalama (HI)" --commit
+
+REMAP https://www.maxpreps.com/hi/honolulu/kamehameha-kapalama-warriors/football/schedule/ -> Honolulu Kamehameha-Kapalama (HI) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/hi/honolulu/kam  Honolulu Kapalama (HI)  32193    Honolulu Kamehameha-Kapalama (HI)  63201     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NV --url "https://www.maxpreps.com/nv/dayton/dayton-dust-devils/football/schedule/" --to "Dayton (NV)" --commit
+
+REMAP https://www.maxpreps.com/nv/dayton/dayton-dust-devils/football/schedule/ -> Dayton (NV) - COMMIT
+   URL                                       ProperName        Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/nv/dayton/dayto  Dayton Dust (NV)  9217     Dayton (NV)    61294     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NV --url "https://www.maxpreps.com/nv/las-vegas/the-meadows-school-mustangs/football/schedule/" --to "Las Vegas The Meadows School (NV)" --commit
+
+REMAP https://www.maxpreps.com/nv/las-vegas/the-meadows-school-mustangs/football/schedule/ -> Las Vegas The Meadows School (NV) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/nv/las-vegas/th  Las Vegas The Meadows (NV)  8731     Las Vegas The Meadows School (NV)  64120     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NV --url "https://www.maxpreps.com/nv/las-vegas/word-of-life-christian-academy/football/schedule/" --to "Las Vegas Word of Life Christian Academy (NV)" --commit
+
+REMAP https://www.maxpreps.com/nv/las-vegas/word-of-life-christian-academy/football/schedule/ -> Las Vegas Word of Life Christian Academy (NV) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/nv/las-vegas/wo  Las Vegas Word Of (NV)  41214    Las Vegas Word of Life Christian Academy  7834      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap DE --url "https://www.maxpreps.com/de/wilmington/mount-pleasant-green-knights/football/schedule/" --to "Wilmington Mt. Pleasant (DE)" --commit
+
+REMAP https://www.maxpreps.com/de/wilmington/mount-pleasant-green-knights/football/schedule/ -> Wilmington Mt. Pleasant (DE) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/de/wilmington/m  Wilmington Mount Pleasant (DE)  27120    Wilmington Mt. Pleasant (DE)  25463     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap DC --url "https://www.maxpreps.com/dc/washington/paul-public-charter-international-pirates/football/schedule/" --to "Washington Paul Public Charter (DC)" --commit
+
+REMAP https://www.maxpreps.com/dc/washington/paul-public-charter-international-pirates/football/schedule/ -> Washington Paul Public Charter (DC) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/dc/washington/p  Washington Paul Public (DC)  28193    Washington Paul Public Charter (DC)  69487     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck AK --commit
+
+MAPPING CHECK AK - COMMIT (Team_ID set to the ProperName ID)
+ 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_mapcheck_COMMITTED_20261112_0756.csv
+   URL                                       ProperName                       Team_ID  NameID  Problem                          Team_ID_Name
+   https://www.maxpreps.com/ak/mississauga/  Mississauga Clarkson North (AK)  22876    None    ProperName not in HS_Team_Names  None        
+   Status     Fixable  Err 
+   COMMITTED  0        None
+
+>>> consolidate AK --reason "AK round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+Consolidating AK from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\AK_Alias_Rules.csv
+
+[stderr]
+2026-11-12 07:56:24,273 - INFO - Starting consolidation for state: (AK) using staging table method.
+2026-11-12 07:56:24,283 - WARNING - WARNING: 29 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 07:56:24,283 - WARNING -   'Anchorage Bartlett (AK)' -> 'Anchorage Bartlett (AK)' (no change)
+2026-11-12 07:56:24,283 - WARNING -   'Anchorage Dimond (AK)' -> 'Anchorage Dimond (AK)' (no change)
+2026-11-12 07:56:24,283 - WARNING -   'Anchorage Service (AK)' -> 'Anchorage Service (AK)' (no change)
+2026-11-12 07:56:24,283 - WARNING -   'Anchorage South (AK)' -> 'Anchorage South (AK)' (no change)
+2026-11-12 07:56:24,284 - WARNING -   'Anchorage West (AK)' -> 'Anchorage West (AK)' (no change)
+2026-11-12 07:56:24,284 - WARNING -   'Barrow (AK)' -> 'Barrow (AK)' (no change)
+2026-11-12 07:56:24,284 - WARNING -   'Big Lake Houston (AK)' -> 'Big Lake Houston (AK)' (no change)
+2026-11-12 07:56:24,284 - WARNING -   'Eagle River (AK)' -> 'Eagle River (AK)' (no change)
+2026-11-12 07:56:24,284 - WARNING -   'Eagle River Chugiak (AK)' -> 'Eagle River Chugiak (AK)' (no change)
+2026-11-12 07:56:24,284 - WARNING -   'East Anchorage Bettye Davis (AK)' -> 'East Anchorage Bettye Davis (AK)' (no change)
+2026-11-12 07:56:24,284 - WARNING -   'Eielson AFB Ben Eielson (AK)' -> 'Eielson AFB Ben Eielson (AK)' (no change)
+2026-11-12 07:56:24,284 - WARNING -   'Fairbanks Lathrop (AK)' -> 'Fairbanks Lathrop (AK)' (no change)
+2026-11-12 07:56:24,284 - WARNING -   'Fairbanks Monroe Catholic (AK)' -> 'Fairbanks Monroe Catholic (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'Fairbanks West Valley (AK)' -> 'Fairbanks West Valley (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'Homer (AK)' -> 'Homer (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'Juneau-Douglas (AK)' -> 'Juneau-Douglas (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'Kenai Central (AK)' -> 'Kenai Central (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'Ketchikan (AK)' -> 'Ketchikan (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'Kodiak (AK)' -> 'Kodiak (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'Lathrop East (AK)' -> 'Lathrop East (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'Nikiski (AK)' -> 'Nikiski (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'North Pole (AK)' -> 'North Pole (AK)' (no change)
+2026-11-12 07:56:24,285 - WARNING -   'Palmer (AK)' -> 'Palmer (AK)' (no change)
+2026-11-12 07:56:24,286 - WARNING -   'Palmer Colony (AK)' -> 'Palmer Colony (AK)' (no change)
+2026-11-12 07:56:24,286 - WARNING -   'Seward (AK)' -> 'Seward (AK)' (no change)
+2026-11-12 07:56:24,286 - WARNING -   'Soldotna (AK)' -> 'Soldotna (AK)' (no change)
+2026-11-12 07:56:24,286 - WARNING -   'Soldotna Skyview (AK)' -> 'Soldotna Skyview (AK)' (no change)
+2026-11-12 07:56:24,286 - WARNING -   'Valdez (AK)' -> 'Valdez (AK)' (no change)
+2026-11-12 07:56:24,286 - WARNING -   'Wasilla (AK)' -> 'Wasilla (AK)' (no change)
+2026-11-12 07:56:24,286 - INFO - Validation passed: 33 rules are clean and ready to upload.
+2026-11-12 07:56:24,309 - INFO - Uploading 33 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 07:56:24,415 - INFO - Upload to staging table complete.
+2026-11-12 07:56:24,420 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 07:56:35,169 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 07:56:35,169 - INFO - Reason logged to dbo.HS_Consolidation_Log: AK round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)
+2026-11-12 07:56:35,169 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 07:56:35,169 - INFO - Running post-consolidation safety check...
+2026-11-12 07:56:35,174 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup AK --commit
+
+DEDUP v4 AK - COMMIT
+ dedup_archive: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_dedup_archive_COMMITTED_20261112_0756.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_dedup_review_COMMITTED_20261112_0756.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_dedup_summary_COMMITTED_20261112_0756.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  AK     4528          7                    0                48CBF92E-E563-41C2-8DB5-C33BD9102C51
+
+>>> review-pairs AK --commit
+
+REVIEW-ONLY PAIRS AK - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_review_pairs_COMMITTED_20261112_0756.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         AA7D1698-DACD-4452-B6E8-2636ACB69F1D  None
+
+>>> same-score-fix AK --commit
+
+SAME-SCORE DOUBLE-BOOKINGS AK - COMMIT
+ 19 pairs {'DROP A': 6, 'DROP B': 5, 'UNDECIDED': 8} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_same_score_COMMITTED_20261112_0757.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  11        64FE16F1-90B6-425E-A760-191F5A58D2DA  None
+
+>>> query AK season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_season_date_1_20261112_0757.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_season_date_2_20261112_0757.csv
+
+>>> query AK forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_forfeits_1_20261112_0757.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_forfeits_2_20261112_0757.csv
+
+>>> query AK college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_college_check_1_20261112_0757.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_college_check_2_20261112_0757.csv
+ set 3: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_college_check_3_20261112_0757.csv
+ set 4: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_college_check_4_20261112_0757.csv
+
+>>> mapcheck HI --commit
+
+MAPPING CHECK HI - COMMIT (Team_ID set to the ProperName ID)
+ 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_mapcheck_COMMITTED_20261112_0757.csv
+   URL                                       ProperName                      Team_ID  NameID  Problem                          Team_ID_Name             
+   https://www.maxpreps.com/hi/pago-pago/ta  Pago Pago Tafuna American (HI)  43467    None    ProperName not in HS_Team_Names  None                     
+   https://www.maxpreps.com/hi/honolulu/roo  Honolulu Roosevelt (HI)         63208    63207   Team_ID points to another name   Honolulu St. Francis (HI)
+   https://www.maxpreps.com/hi/lihue/kauai-  Lihue Kauai (HI)                32506    64322   Team_ID points to another name   Maui Kahului (HI)        
+   https://www.maxpreps.com/hi/waianae/nana  Waianae Nanakuli (HI)           69360    69359   Team_ID points to another name   Wailuku Baldwin (HI)     
+   https://www.maxpreps.com/hi/wailuku/bald  Wailuku Baldwin (HI)            40036    69360   Team_ID points to another name   Wailuku St. Anthony (HI) 
+   Status     Fixable  Err 
+   COMMITTED  4        None
+
+>>> consolidate HI --reason "HI round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+Consolidating HI from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\HI_Alias_Rules.csv
+
+[stderr]
+2026-11-12 07:57:34,404 - INFO - Starting consolidation for state: (HI) using staging table method.
+2026-11-12 07:57:34,413 - WARNING - WARNING: 50 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 07:57:34,413 - WARNING -   ''Aiea (HI)' -> ''Aiea (HI)' (no change)
+2026-11-12 07:57:34,413 - WARNING -   'Ewa Beach Campbell (HI)' -> 'Ewa Beach Campbell (HI)' (no change)
+2026-11-12 07:57:34,413 - WARNING -   'Hilo (HI)' -> 'Hilo (HI)' (no change)
+2026-11-12 07:57:34,413 - WARNING -   'Hilo Waiakea (HI)' -> 'Hilo Waiakea (HI)' (no change)
+2026-11-12 07:57:34,413 - WARNING -   'Honoka'a (HI)' -> 'Honoka'a (HI)' (no change)
+2026-11-12 07:57:34,413 - WARNING -   'Honolulu Damien (HI)' -> 'Honolulu Damien (HI)' (no change)
+2026-11-12 07:57:34,413 - WARNING -   'Honolulu Farrington (HI)' -> 'Honolulu Farrington (HI)' (no change)
+2026-11-12 07:57:34,413 - WARNING -   'Honolulu 'Iolani (HI)' -> 'Honolulu 'Iolani (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu Kaimuki (HI)' -> 'Honolulu Kaimuki (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu Kaiser (HI)' -> 'Honolulu Kaiser (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu Kalani (HI)' -> 'Honolulu Kalani (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu Kamehameha-Kapalama (HI)' -> 'Honolulu Kamehameha-Kapalama (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu McKinley (HI)' -> 'Honolulu McKinley (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu Moanalua (HI)' -> 'Honolulu Moanalua (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu Pac-Five (HI)' -> 'Honolulu Pac-Five (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu Punahou (HI)' -> 'Honolulu Punahou (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu Radford (HI)' -> 'Honolulu Radford (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu Roosevelt (HI)' -> 'Honolulu Roosevelt (HI)' (no change)
+2026-11-12 07:57:34,414 - WARNING -   'Honolulu St. Francis (HI)' -> 'Honolulu St. Francis (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Honolulu St. Louis (HI)' -> 'Honolulu St. Louis (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kahuku (HI)' -> 'Kahuku (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kahului Maui (HI)' -> 'Kahului Maui (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kailua (HI)' -> 'Kailua (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kailua Kalaheo (HI)' -> 'Kailua Kalaheo (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kailua-Kona Kealakehe (HI)' -> 'Kailua-Kona Kealakehe (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kamuela Hawaii Prep (HI)' -> 'Kamuela Hawaii Prep (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kaneohe Castle (HI)' -> 'Kaneohe Castle (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kapa'a (HI)' -> 'Kapa'a (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kapaau Kohala (HI)' -> 'Kapaau Kohala (HI)' (no change)
+2026-11-12 07:57:34,415 - WARNING -   'Kapolei (HI)' -> 'Kapolei (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Kea'au (HI)' -> 'Kea'au (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Kea'au Kamehameha (HI)' -> 'Kea'au Kamehameha (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Kealakekua Konawaena (HI)' -> 'Kealakekua Konawaena (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Lahaina Lahainaluna (HI)' -> 'Lahaina Lahainaluna (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Lanai City (HI)' -> 'Lanai City (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Lihue Kauai (HI)' -> 'Lihue Kauai (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Maui Kahului Ka'Ahamanu (HI)' -> 'Maui Kahului Ka'Ahamanu (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Mililani (HI)' -> 'Mililani (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Pahala Ka'u (HI)' -> 'Pahala Ka'u (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Pearl City (HI)' -> 'Pearl City (HI)' (no change)
+2026-11-12 07:57:34,416 - WARNING -   'Pukalani Kamehameha Maui (HI)' -> 'Pukalani Kamehameha Maui (HI)' (no change)
+2026-11-12 07:57:34,417 - WARNING -   'Pukalani King Kekaulike (HI)' -> 'Pukalani King Kekaulike (HI)' (no change)
+2026-11-12 07:57:34,417 - WARNING -   'Wahiawa Leilehua (HI)' -> 'Wahiawa Leilehua (HI)' (no change)
+2026-11-12 07:57:34,417 - WARNING -   'Waialua (HI)' -> 'Waialua (HI)' (no change)
+2026-11-12 07:57:34,417 - WARNING -   'Wai'anae (HI)' -> 'Wai'anae (HI)' (no change)
+2026-11-12 07:57:34,417 - WARNING -   'Waianae Nanakuli (HI)' -> 'Waianae Nanakuli (HI)' (no change)
+2026-11-12 07:57:34,417 - WARNING -   'Wailuku Baldwin (HI)' -> 'Wailuku Baldwin (HI)' (no change)
+2026-11-12 07:57:34,417 - WARNING -   'Wailuku St. Anthony (HI)' -> 'Wailuku St. Anthony (HI)' (no change)
+2026-11-12 07:57:34,417 - WARNING -   'Waimea (HI)' -> 'Waimea (HI)' (no change)
+2026-11-12 07:57:34,417 - WARNING -   'Waipahu (HI)' -> 'Waipahu (HI)' (no change)
+2026-11-12 07:57:34,417 - INFO - Validation passed: 74 rules are clean and ready to upload.
+2026-11-12 07:57:34,435 - INFO - Uploading 74 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 07:57:34,541 - INFO - Upload to staging table complete.
+2026-11-12 07:57:34,546 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 07:57:52,683 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 07:57:52,683 - INFO - Reason logged to dbo.HS_Consolidation_Log: HI round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)
+2026-11-12 07:57:52,683 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 07:57:52,683 - INFO - Running post-consolidation safety check...
+2026-11-12 07:57:52,687 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup HI --commit
+
+DEDUP v4 HI - COMMIT
+ dedup_archive: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_dedup_archive_COMMITTED_20261112_0758.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_dedup_review_COMMITTED_20261112_0758.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_dedup_summary_COMMITTED_20261112_0758.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  HI     10867         61                   1                2F59A53D-C6E4-4E36-8860-40CDE621F7FC
+
+>>> review-pairs HI --commit
+
+REVIEW-ONLY PAIRS HI - COMMIT
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_review_pairs_COMMITTED_20261112_0758.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1         7D6933B8-E09C-4DA7-9ED0-708894A1D1EC  None
+
+>>> same-score-fix HI --commit
+
+SAME-SCORE DOUBLE-BOOKINGS HI - COMMIT
+ 46 pairs {'DROP A': 7, 'DROP B': 8, 'UNDECIDED': 31} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_same_score_COMMITTED_20261112_0758.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  15        9B4EA964-D890-4436-88B6-08B00A281026  None
+
+>>> query HI season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_season_date_1_20261112_0758.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_season_date_2_20261112_0758.csv
+
+>>> query HI forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_forfeits_1_20261112_0758.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_forfeits_2_20261112_0758.csv
+
+>>> query HI college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_college_check_1_20261112_0759.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_college_check_2_20261112_0759.csv
+ set 3: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_college_check_3_20261112_0759.csv
+ set 4: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_college_check_4_20261112_0759.csv
+
+>>> mapcheck DC --commit
+
+MAPPING CHECK DC - COMMIT (Team_ID set to the ProperName ID)
+ 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_mapcheck_COMMITTED_20261112_0759.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/dc/washington/k  Washington Kipp College (DC)              26073    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/dc/washington/k  Washington Kipp DC Legacy College Prep (  16255    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/dc/washington/b  Washington Bell (DC)                      70551    69468   Team_ID points to another name   Washington Business College (DC)        
+   https://www.maxpreps.com/dc/washington/c  Washington Coolidge (DC)                  69475    69471   Team_ID points to another name   Washington Devitt Prep (DC)             
+   https://www.maxpreps.com/dc/washington/g  Washington Gonzaga (DC)                   69481    69480   Team_ID points to another name   Washington Jackson-Reed (DC)            
+   https://www.maxpreps.com/dc/washington/j  Washington Jackson-Reed (DC)              69482    69481   Team_ID points to another name   Washington KIPP College Prep (DC)       
+   https://www.maxpreps.com/dc/washington/m  Washington McKinley Tech (DC)             69486    69484   Team_ID points to another name   Washington National Training School for 
+   https://www.maxpreps.com/dc/washington/m  Washington Model School for the Deaf (DC  69487    69485   Team_ID points to another name   Washington Paul Public Charter (DC)     
+   https://www.maxpreps.com/dc/washington/s  Washington St. Albans (DC)                28965    69497   Team_ID points to another name   Washington St. John's College (DC)      
+   https://www.maxpreps.com/dc/washington/w  Washington Woodson (DC)                   70145    47729   Team_ID points to another name   Washinton Catholic University of America
+   Status     Fixable  Err 
+   COMMITTED  8        None
+
+>>> consolidate DC --reason "DC round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+Consolidating DC from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\DC_Alias_Rules.csv
+
+[stderr]
+2026-11-12 07:59:11,606 - INFO - Starting consolidation for state: (DC) using staging table method.
+2026-11-12 07:59:11,615 - WARNING - WARNING: 33 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 07:59:11,615 - WARNING -   'Washington Anacostia (DC)' -> 'Washington Anacostia (DC)' (no change)
+2026-11-12 07:59:11,615 - WARNING -   'Washington Archbishop Carroll (DC)' -> 'Washington Archbishop Carroll (DC)' (no change)
+2026-11-12 07:59:11,615 - WARNING -   'Washington Ballou (DC)' -> 'Washington Ballou (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Bell (DC)' -> 'Washington Bell (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Business College (DC)' -> 'Washington Business College (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Cardozo (DC)' -> 'Washington Cardozo (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Central (DC)' -> 'Washington Central (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Columbian Prep (DC)' -> 'Washington Columbian Prep (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Coolidge (DC)' -> 'Washington Coolidge (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Devitt Prep (DC)' -> 'Washington Devitt Prep (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Dunbar (DC)' -> 'Washington Dunbar (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Eastern (DC)' -> 'Washington Eastern (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Friendship Collegiate Academy (DC)' -> 'Washington Friendship Collegiate Academy (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Gonzaga (DC)' -> 'Washington Gonzaga (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Jackson-Reed (DC)' -> 'Washington Jackson-Reed (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington KIPP College Prep (DC)' -> 'Washington KIPP College Prep (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Maret (DC)' -> 'Washington Maret (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington McKinley Tech (DC)' -> 'Washington McKinley Tech (DC)' (no change)
+2026-11-12 07:59:11,616 - WARNING -   'Washington Model School for the Deaf (DC)' -> 'Washington Model School for the Deaf (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington National Training School for Boys (DC)' -> 'Washington National Training School for Boys (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington Perry Street Prep (DC)' -> 'Washington Perry Street Prep (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington Phelps Architecture, Construction & Engineering (DC)' -> 'Washington Phelps Architecture, Construction & Engineering (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington Phelps Voc (DC)' -> 'Washington Phelps Voc (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington Richard Wright Public Charter School (DC)' -> 'Washington Richard Wright Public Charter School (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington Ron Brown (DC)' -> 'Washington Ron Brown (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington Roosevelt (DC)' -> 'Washington Roosevelt (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington Sidwell Friends (DC)' -> 'Washington Sidwell Friends (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington Spingarn (DC)' -> 'Washington Spingarn (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington St. Albans (DC)' -> 'Washington St. Albans (DC)' (no change)
+2026-11-12 07:59:11,617 - WARNING -   'Washington St. John's College (DC)' -> 'Washington St. John's College (DC)' (no change)
+2026-11-12 07:59:11,618 - WARNING -   'Washington St. Stephen's & St. Agnes (DC)' -> 'Washington St. Stephen's & St. Agnes (DC)' (no change)
+2026-11-12 07:59:11,618 - WARNING -   'Washington Western (DC)' -> 'Washington Western (DC)' (no change)
+2026-11-12 07:59:11,618 - WARNING -   'Washington Woodson (DC)' -> 'Washington Woodson (DC)' (no change)
+2026-11-12 07:59:11,618 - INFO - Validation passed: 65 rules are clean and ready to upload.
+2026-11-12 07:59:11,636 - INFO - Uploading 65 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 07:59:11,740 - INFO - Upload to staging table complete.
+2026-11-12 07:59:11,746 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 07:59:28,381 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 07:59:28,381 - INFO - Reason logged to dbo.HS_Consolidation_Log: DC round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)
+2026-11-12 07:59:28,381 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 07:59:28,381 - INFO - Running post-consolidation safety check...
+2026-11-12 07:59:28,386 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup DC --commit
+
+DEDUP v4 DC - COMMIT
+ dedup_archive: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_dedup_archive_COMMITTED_20261112_0759.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_dedup_review_COMMITTED_20261112_0759.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_dedup_summary_COMMITTED_20261112_0759.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  DC     6858          15                   1                268CE2F3-CF56-4464-9083-9ECD660500C9
+
+>>> review-pairs DC --commit
+
+REVIEW-ONLY PAIRS DC - COMMIT
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_review_pairs_COMMITTED_20261112_0759.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1         684EC4E7-D394-4D67-BCD1-AE503EDAC709  None
+
+>>> same-score-fix DC --commit
+
+SAME-SCORE DOUBLE-BOOKINGS DC - COMMIT
+ 64 pairs {'DROP A': 4, 'DROP B': 5, 'UNDECIDED': 55} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_same_score_COMMITTED_20261112_0800.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  9         6CB7996F-8DED-4E47-8B7A-CC3532C8EAAF  None
+
+>>> query DC season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_season_date_1_20261112_0800.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_season_date_2_20261112_0800.csv
+
+>>> query DC forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_forfeits_1_20261112_0800.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_forfeits_2_20261112_0800.csv
+
+>>> query DC college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_college_check_1_20261112_0800.csv
+ set 2: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_college_check_2_20261112_0800.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_college_check_3_20261112_0800.csv
+ set 4: 59 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_college_check_4_20261112_0800.csv
+
+>>> mapcheck DE --commit
+
+MAPPING CHECK DE - COMMIT (Team_ID set to the ProperName ID)
+ 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_mapcheck_COMMITTED_20261112_0800.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                         Team_ID_Name                       
+   https://www.maxpreps.com/de/clayton/firs  Clayton First State Military Academy (DE  13193    60797   Team_ID points to another name  Colora West Nottingham Academy (MD)
+   https://www.maxpreps.com/de/wilmington/s  Wilmington St. Mark's (DE)                71044    24925   Team_ID points to another name  Wilmington St. Matthew (DE)        
+   Status     Fixable  Err 
+   COMMITTED  2        None
+
+>>> consolidate DE --reason "DE round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+Consolidating DE from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\DE_Alias_Rules.csv
+
+[stderr]
+2026-11-12 08:00:31,860 - INFO - Starting consolidation for state: (DE) using staging table method.
+2026-11-12 08:00:31,868 - WARNING - WARNING: 63 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 08:00:31,868 - WARNING -   'Bear Caravel (DE)' -> 'Bear Caravel (DE)' (no change)
+2026-11-12 08:00:31,868 - WARNING -   'Bear Red Lion Christian Academy (DE)' -> 'Bear Red Lion Christian Academy (DE)' (no change)
+2026-11-12 08:00:31,868 - WARNING -   'Bridgeville Woodbridge (DE)' -> 'Bridgeville Woodbridge (DE)' (no change)
+2026-11-12 08:00:31,868 - WARNING -   'Camden Caesar Rodney (DE)' -> 'Camden Caesar Rodney (DE)' (no change)
+2026-11-12 08:00:31,869 - WARNING -   'Claymont (DE)' -> 'Claymont (DE)' (no change)
+2026-11-12 08:00:31,869 - WARNING -   'Claymont Archmere Academy (DE)' -> 'Claymont Archmere Academy (DE)' (no change)
+2026-11-12 08:00:31,869 - WARNING -   'Clayton First State Military Academy (DE)' -> 'Clayton First State Military Academy (DE)' (no change)
+2026-11-12 08:00:31,869 - WARNING -   'Dagsboro Indian River (DE)' -> 'Dagsboro Indian River (DE)' (no change)
+2026-11-12 08:00:31,869 - WARNING -   'Delaware City Gunning Bedford (DE)' -> 'Delaware City Gunning Bedford (DE)' (no change)
+2026-11-12 08:00:31,869 - WARNING -   'Delmar (DE)' -> 'Delmar (DE)' (no change)
+2026-11-12 08:00:31,869 - WARNING -   'Dover (DE)' -> 'Dover (DE)' (no change)
+2026-11-12 08:00:31,869 - WARNING -   'Dover Air Force Base (DE)' -> 'Dover Air Force Base (DE)' (no change)
+2026-11-12 08:00:31,869 - WARNING -   'Felton Lake Forest (DE)' -> 'Felton Lake Forest (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Georgetown (DE)' -> 'Georgetown (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Georgetown Sussex Central (DE)' -> 'Georgetown Sussex Central (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Georgetown Sussex Tech (DE)' -> 'Georgetown Sussex Tech (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Hockessin Sanford Prep (DE)' -> 'Hockessin Sanford Prep (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Laurel (DE)' -> 'Laurel (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Lewes (DE)' -> 'Lewes (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Lewes Cape Henlopen (DE)' -> 'Lewes Cape Henlopen (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Middletown (DE)' -> 'Middletown (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Middletown St. Andrew's (DE)' -> 'Middletown St. Andrew's (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Middletown St. Georges Tech (DE)' -> 'Middletown St. Georges Tech (DE)' (no change)
+2026-11-12 08:00:31,870 - WARNING -   'Milford (DE)' -> 'Milford (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'Millsboro (DE)' -> 'Millsboro (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'Milton (DE)' -> 'Milton (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'New Castle DeLaWarr (DE)' -> 'New Castle DeLaWarr (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'New Castle St. Peter Catholic (DE)' -> 'New Castle St. Peter Catholic (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'New Castle William Penn (DE)' -> 'New Castle William Penn (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'Newark (DE)' -> 'Newark (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'Newark Christiana (DE)' -> 'Newark Christiana (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'Newark Glasgow (DE)' -> 'Newark Glasgow (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'Newark Hodgson Vo-Tech (DE)' -> 'Newark Hodgson Vo-Tech (DE)' (no change)
+2026-11-12 08:00:31,871 - WARNING -   'Seaford (DE)' -> 'Seaford (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'Smyrna (DE)' -> 'Smyrna (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'Unicersity of Delaware Frosh (DE)' -> 'Unicersity of Delaware Frosh (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'West Middletown Appoquinimink (DE)' -> 'West Middletown Appoquinimink (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'Wilmington (DE)' -> 'Wilmington (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'Wilmington Alexis I. DuPont (DE)' -> 'Wilmington Alexis I. DuPont (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'Wilmington Brandywine (DE)' -> 'Wilmington Brandywine (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'Wilmington Brown Vo-Tech (DE)' -> 'Wilmington Brown Vo-Tech (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'Wilmington Charter (DE)' -> 'Wilmington Charter (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'Wilmington Concord (DE)' -> 'Wilmington Concord (DE)' (no change)
+2026-11-12 08:00:31,872 - WARNING -   'Wilmington Conference Academy (DE)' -> 'Wilmington Conference Academy (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington Conrad (DE)' -> 'Wilmington Conrad (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington Conrad Science (DE)' -> 'Wilmington Conrad Science (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington Delaware Military Academy (DE)' -> 'Wilmington Delaware Military Academy (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington Delcastle Technical (DE)' -> 'Wilmington Delcastle Technical (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington Dickinson (DE)' -> 'Wilmington Dickinson (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington DuPont (DE)' -> 'Wilmington DuPont (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington Friends (DE)' -> 'Wilmington Friends (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington Howard (DE)' -> 'Wilmington Howard (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington McKean (DE)' -> 'Wilmington McKean (DE)' (no change)
+2026-11-12 08:00:31,873 - WARNING -   'Wilmington Moyer Academy (DE)' -> 'Wilmington Moyer Academy (DE)' (no change)
+2026-11-12 08:00:31,874 - WARNING -   'Wilmington Mt. Pleasant (DE)' -> 'Wilmington Mt. Pleasant (DE)' (no change)
+2026-11-12 08:00:31,874 - WARNING -   'Wilmington P.S. DuPont (DE)' -> 'Wilmington P.S. DuPont (DE)' (no change)
+2026-11-12 08:00:31,874 - WARNING -   'Wilmington Salesianum (DE)' -> 'Wilmington Salesianum (DE)' (no change)
+2026-11-12 08:00:31,874 - WARNING -   'Wilmington St. Elizabeth (DE)' -> 'Wilmington St. Elizabeth (DE)' (no change)
+2026-11-12 08:00:31,874 - WARNING -   'Wilmington St. Johns (DE)' -> 'Wilmington St. Johns (DE)' (no change)
+2026-11-12 08:00:31,874 - WARNING -   'Wilmington St. Mark's (DE)' -> 'Wilmington St. Mark's (DE)' (no change)
+2026-11-12 08:00:31,874 - WARNING -   'Wilmington Tatnall (DE)' -> 'Wilmington Tatnall (DE)' (no change)
+2026-11-12 08:00:31,874 - WARNING -   'Wilmington Tower Hill (DE)' -> 'Wilmington Tower Hill (DE)' (no change)
+2026-11-12 08:00:31,874 - WARNING -   'Woodside Polytech (DE)' -> 'Woodside Polytech (DE)' (no change)
+2026-11-12 08:00:31,874 - INFO - Validation passed: 100 rules are clean and ready to upload.
+2026-11-12 08:00:31,893 - INFO - Uploading 100 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 08:00:31,993 - INFO - Upload to staging table complete.
+2026-11-12 08:00:31,998 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 08:00:51,720 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 08:00:51,720 - INFO - Reason logged to dbo.HS_Consolidation_Log: DE round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)
+2026-11-12 08:00:51,720 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 08:00:51,720 - INFO - Running post-consolidation safety check...
+2026-11-12 08:00:51,724 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup DE --commit
+
+DEDUP v4 DE - COMMIT
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_dedup_archive_COMMITTED_20261112_0800.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_dedup_review_COMMITTED_20261112_0800.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_dedup_summary_COMMITTED_20261112_0800.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   COMMITTED  DE     13231         0                    0                None 
+
+>>> review-pairs DE --commit
+
+REVIEW-ONLY PAIRS DE - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_review_pairs_COMMITTED_20261112_0801.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         85FDDFF6-E517-47EA-BCC1-59B46BF912BB  None
+
+>>> same-score-fix DE --commit
+
+SAME-SCORE DOUBLE-BOOKINGS DE - COMMIT
+ 11 pairs {'DROP A': 4, 'DROP B': 4, 'UNDECIDED': 3} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_same_score_COMMITTED_20261112_0801.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  8         1ED81A23-90EC-4A9B-84CC-26C3A0CC7F87  None
+
+>>> query DE season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_season_date_1_20261112_0801.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_season_date_2_20261112_0801.csv
+
+>>> query DE forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_forfeits_1_20261112_0801.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_forfeits_2_20261112_0801.csv
+
+>>> query DE college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_college_check_1_20261112_0801.csv
+ set 2: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_college_check_2_20261112_0801.csv
+ set 3: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_college_check_3_20261112_0801.csv
+ set 4: 117 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_college_check_4_20261112_0801.csv
+
+>>> mapcheck NV --commit
+
+MAPPING CHECK NV - COMMIT (Team_ID set to the ProperName ID)
+ 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_mapcheck_COMMITTED_20261112_0801.csv
+   URL                                       ProperName              Team_ID  NameID  Problem                         Team_ID_Name                            
+   https://www.maxpreps.com/nv/las-vegas/bo  Las Vegas Bonanza (NV)  64105    64104   Team_ID points to another name  Las Vegas Calvary Chapel Christian (NV) 
+   https://www.maxpreps.com/nv/las-vegas/we  Las Vegas Western (NV)  7834     64122   Team_ID points to another name  Las Vegas Word of Life Christian Academy
+   Status     Fixable  Err 
+   COMMITTED  2        None
+
+>>> consolidate NV --reason "NV round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)"
+Consolidating NV from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\NV_Alias_Rules.csv
+
+[stderr]
+2026-11-12 08:02:00,333 - INFO - Starting consolidation for state: (NV) using staging table method.
+2026-11-12 08:02:00,341 - WARNING - WARNING: 94 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 08:02:00,342 - WARNING -   'Alamo Pahranagat Valley (NV)' -> 'Alamo Pahranagat Valley (NV)' (no change)
+2026-11-12 08:02:00,342 - WARNING -   'Battle Mountain (NV)' -> 'Battle Mountain (NV)' (no change)
+2026-11-12 08:02:00,342 - WARNING -   'Beatty (NV)' -> 'Beatty (NV)' (no change)
+2026-11-12 08:02:00,342 - WARNING -   'Boulder City (NV)' -> 'Boulder City (NV)' (no change)
+2026-11-12 08:02:00,342 - WARNING -   'Carlin (NV)' -> 'Carlin (NV)' (no change)
+2026-11-12 08:02:00,342 - WARNING -   'Carson City Carson (NV)' -> 'Carson City Carson (NV)' (no change)
+2026-11-12 08:02:00,342 - WARNING -   'Dayton (NV)' -> 'Dayton (NV)' (no change)
+2026-11-12 08:02:00,342 - WARNING -   'East Las Vegas Mater Academy (NV)' -> 'East Las Vegas Mater Academy (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Elko (NV)' -> 'Elko (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Ely White Pine (NV)' -> 'Ely White Pine (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Eureka (NV)' -> 'Eureka (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Fallon Churchill County (NV)' -> 'Fallon Churchill County (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Fernley (NV)' -> 'Fernley (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Hawthorne Mineral County (NV)' -> 'Hawthorne Mineral County (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Henderson Basic (NV)' -> 'Henderson Basic (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Henderson Coronado (NV)' -> 'Henderson Coronado (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Henderson Foothill (NV)' -> 'Henderson Foothill (NV)' (no change)
+2026-11-12 08:02:00,343 - WARNING -   'Henderson Green Valley (NV)' -> 'Henderson Green Valley (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Henderson Lake Mead Academy (NV)' -> 'Henderson Lake Mead Academy (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Henderson Liberty (NV)' -> 'Henderson Liberty (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Henderson Sports Leadership & Management (NV)' -> 'Henderson Sports Leadership & Management (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Incline Village Incline (NV)' -> 'Incline Village Incline (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Indian Springs (NV)' -> 'Indian Springs (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Las Vegas (NV)' -> 'Las Vegas (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Las Vegas Arbor View (NV)' -> 'Las Vegas Arbor View (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Las Vegas Bishop Gorman (NV)' -> 'Las Vegas Bishop Gorman (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Las Vegas Bonanza (NV)' -> 'Las Vegas Bonanza (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Las Vegas Calvary Chapel Christian (NV)' -> 'Las Vegas Calvary Chapel Christian (NV)' (no change)
+2026-11-12 08:02:00,344 - WARNING -   'Las Vegas Centennial (NV)' -> 'Las Vegas Centennial (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Chaparral (NV)' -> 'Las Vegas Chaparral (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Cimarron-Memorial (NV)' -> 'Las Vegas Cimarron-Memorial (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Clark (NV)' -> 'Las Vegas Clark (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Del Sol (NV)' -> 'Las Vegas Del Sol (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Democracy Prep Agassi Campus (NV)' -> 'Las Vegas Democracy Prep Agassi Campus (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Desert Oasis (NV)' -> 'Las Vegas Desert Oasis (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Desert Pines (NV)' -> 'Las Vegas Desert Pines (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Durango (NV)' -> 'Las Vegas Durango (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Eldorado (NV)' -> 'Las Vegas Eldorado (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Faith Lutheran (NV)' -> 'Las Vegas Faith Lutheran (NV)' (no change)
+2026-11-12 08:02:00,345 - WARNING -   'Las Vegas Mountain View Christian (NV)' -> 'Las Vegas Mountain View Christian (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Palo Verde (NV)' -> 'Las Vegas Palo Verde (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Rancho (NV)' -> 'Las Vegas Rancho (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Shadow Ridge (NV)' -> 'Las Vegas Shadow Ridge (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Sierra Vista (NV)' -> 'Las Vegas Sierra Vista (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Silverado (NV)' -> 'Las Vegas Silverado (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Spring Mountain (NV)' -> 'Las Vegas Spring Mountain (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Spring Valley (NV)' -> 'Las Vegas Spring Valley (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Sunrise Mountain (NV)' -> 'Las Vegas Sunrise Mountain (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas The Meadows School (NV)' -> 'Las Vegas The Meadows School (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Valley (NV)' -> 'Las Vegas Valley (NV)' (no change)
+2026-11-12 08:02:00,346 - WARNING -   'Las Vegas Western (NV)' -> 'Las Vegas Western (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'Las Vegas Word of Life Christian Academy (NV)' -> 'Las Vegas Word of Life Christian Academy (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'Laughlin (NV)' -> 'Laughlin (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'Lovelock Pershing County (NV)' -> 'Lovelock Pershing County (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'Mcdermitt (NV)' -> 'Mcdermitt (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'Mesquite Virgin Valley (NV)' -> 'Mesquite Virgin Valley (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'Minden Douglas (NV)' -> 'Minden Douglas (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'Nixon Pyramid Lake (NV)' -> 'Nixon Pyramid Lake (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'North Las Vegas Canyon Springs (NV)' -> 'North Las Vegas Canyon Springs (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'North Las Vegas Cheyenne (NV)' -> 'North Las Vegas Cheyenne (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'North Las Vegas Legacy (NV)' -> 'North Las Vegas Legacy (NV)' (no change)
+2026-11-12 08:02:00,347 - WARNING -   'North Las Vegas Mojave (NV)' -> 'North Las Vegas Mojave (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'North Las Vegas Somerset Academy (NV)' -> 'North Las Vegas Somerset Academy (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Overton Moapa Valley (NV)' -> 'Overton Moapa Valley (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Owyhee (NV)' -> 'Owyhee (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Pahrump Valley (NV)' -> 'Pahrump Valley (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Panaca Lincoln County (NV)' -> 'Panaca Lincoln County (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Reno (NV)' -> 'Reno (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Reno Bishop Manogue (NV)' -> 'Reno Bishop Manogue (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Reno Coral Academy of Science (NV)' -> 'Reno Coral Academy of Science (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Reno Damonte Ranch (NV)' -> 'Reno Damonte Ranch (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Reno Galena (NV)' -> 'Reno Galena (NV)' (no change)
+2026-11-12 08:02:00,348 - WARNING -   'Reno Hug (NV)' -> 'Reno Hug (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Reno McQueen (NV)' -> 'Reno McQueen (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Reno North Valleys (NV)' -> 'Reno North Valleys (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Reno Wooster (NV)' -> 'Reno Wooster (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Reno Wooster JV (NV)' -> 'Reno Wooster JV (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Round Mountain (NV)' -> 'Round Mountain (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Sandy Valley (NV)' -> 'Sandy Valley (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Silver Springs Silver Stage (NV)' -> 'Silver Springs Silver Stage (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Smith Valley (NV)' -> 'Smith Valley (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Sparks (NV)' -> 'Sparks (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Sparks Reed (NV)' -> 'Sparks Reed (NV)' (no change)
+2026-11-12 08:02:00,349 - WARNING -   'Sparks Spanish Springs (NV)' -> 'Sparks Spanish Springs (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'Spring Creek (NV)' -> 'Spring Creek (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'Tonopah (NV)' -> 'Tonopah (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'Virginia City (NV)' -> 'Virginia City (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'Wells (NV)' -> 'Wells (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'West Wendover (NV)' -> 'West Wendover (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'Winnemucca Lowry (NV)' -> 'Winnemucca Lowry (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'Yerington (NV)' -> 'Yerington (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'Yerington Silver State Academy-ROP (NV)' -> 'Yerington Silver State Academy-ROP (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'Zephyr Cove Whittell (NV)' -> 'Zephyr Cove Whittell (NV)' (no change)
+2026-11-12 08:02:00,350 - WARNING -   'Las Vegas Bishop Gorman (NV)' -> 'Las Vegas Bishop Gorman (NV)' (no change)
+2026-11-12 08:02:00,350 - INFO - Validation passed: 118 rules are clean and ready to upload.
+2026-11-12 08:02:00,369 - INFO - Uploading 118 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 08:02:00,470 - INFO - Upload to staging table complete.
+2026-11-12 08:02:00,475 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 08:02:23,724 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 08:02:23,724 - INFO - Reason logged to dbo.HS_Consolidation_Log: NV round 1: same-school variants, 2024 MaxPreps short names, renames to latest (DC Wilson -> Jackson-Reed, HI Kamehameha -> Kamehameha-Kapalama, NV Agassi Prep -> Democracy Prep Agassi Campus)
+2026-11-12 08:02:23,724 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 08:02:23,725 - INFO - Running post-consolidation safety check...
+2026-11-12 08:02:23,729 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup NV --commit
+
+DEDUP v4 NV - COMMIT
+ dedup_archive: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_dedup_archive_COMMITTED_20261112_0802.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_dedup_review_COMMITTED_20261112_0802.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_dedup_summary_COMMITTED_20261112_0802.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NV     14539         46                   0                13EB9C82-F83A-4558-92D9-BA6CA58994A3
+
+>>> review-pairs NV --commit
+
+REVIEW-ONLY PAIRS NV - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_review_pairs_COMMITTED_20261112_0802.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         F5523D12-3EBD-4CBC-97E7-4105E19E80B1  None
+
+>>> same-score-fix NV --commit
+
+SAME-SCORE DOUBLE-BOOKINGS NV - COMMIT
+ 26 pairs {'DROP A': 8, 'DROP B': 9, 'UNDECIDED': 9} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_same_score_COMMITTED_20261112_0803.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  17        BA17FC4A-0E5E-4DF1-9020-17E0561A515A  None
+
+>>> query NV season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_season_date_1_20261112_0803.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_season_date_2_20261112_0803.csv
+
+>>> query NV forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_forfeits_1_20261112_0803.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_forfeits_2_20261112_0803.csv
+
+>>> query NV college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_college_check_1_20261112_0803.csv
+ set 2: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_college_check_2_20261112_0803.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_college_check_3_20261112_0803.csv
+ set 4: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_college_check_4_20261112_0803.csv
+
+=== OK 2026-11-12 08:03:37

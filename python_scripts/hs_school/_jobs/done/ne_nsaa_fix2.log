@@ -1,0 +1,38 @@
+
+>>> move-team NE --from "Chappell (NE)" --to "Imperial Chase County (NE)" --seasons 1997-1997 --ids NE_nsaa_fix_x1.csv --reason "NSAA playoff page: 1997 Aquinas 26-14 Chase County" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_nsaa_fix_x1.csv
+
+MOVE Chappell (NE) -> Imperial Chase County (NE), seasons 1997-1997 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_1453.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_1453.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team NE --from "Waco Evangelical Lutheran (NE)" --to "Norfolk Lutheran-Northeast (NE)" --seasons 2013-2013 --ids NE_nsaa_fix_x2.csv --reason "NSAA: Lutheran High Northeast (Norfolk) 28-27 Hartington CC" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_nsaa_fix_x2.csv
+
+MOVE Waco Evangelical Lutheran (NE) -> Norfolk Lutheran-Northeast (NE), seasons 2013-2013 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_1453.csv
+ move_by_season: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_1453.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team NE --from "Table Rock (NE)" --to "Table Rock-Steinauer (NE)" --seasons 1995-1995 --ids NE_nsaa_fix_x3.csv --reason "1995 Table Rock-Steinauer 40-0 Shickley (copy under old name)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_nsaa_fix_x3.csv
+
+MOVE Table Rock (NE) -> Table Rock-Steinauer (NE), seasons 1995-1995 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_games_COMMITTED_20261106_1453.csv
+ move_by_season: 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_move_by_season_COMMITTED_20261106_1453.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> dedup NE --commit
+
+DEDUP v4 NE - COMMIT
+ dedup_archive: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_archive_COMMITTED_20261106_1453.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_review_COMMITTED_20261106_1453.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_dedup_summary_COMMITTED_20261106_1453.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NE     100560        3                    2                9EC4ED08-4EF7-4D01-8807-FEE91EDB5CB1
+
+=== OK 2026-11-06 14:53:23

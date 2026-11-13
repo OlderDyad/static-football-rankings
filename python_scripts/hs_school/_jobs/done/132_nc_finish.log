@@ -1,0 +1,47 @@
+
+>>> commit NC
+
+DEDUP v4 NC - COMMIT
+ dedup_archive: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_dedup_archive_COMMITTED_20261110_1532.csv
+ dedup_review: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_dedup_review_COMMITTED_20261110_1532.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_dedup_summary_COMMITTED_20261110_1532.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NC     143091        8                    8                7309CF7E-0D29-44DE-AC84-FF8D60122F79
+
+REVIEW-ONLY PAIRS NC - COMMIT
+ 8 pairs {'LONG': 3, 'SHORT': 5} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_review_pairs_COMMITTED_20261110_1532.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  8         B1826EC1-26DB-4C6C-9DAD-1E7C1980E8A7  None
+
+>>> query NC season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_season_date_1_20261110_1532.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_season_date_2_20261110_1532.csv
+
+>>> query NC forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_forfeits_1_20261110_1533.csv
+ set 2: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_forfeits_2_20261110_1533.csv
+
+>>> query NC college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 31 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_college_check_1_20261110_1533.csv
+ set 2: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_college_check_2_20261110_1533.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_college_check_3_20261110_1533.csv
+ set 4: 994 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_college_check_4_20261110_1533.csv
+
+>>> query NC nc_dump.sql
+
+QUERY nc_dump (1 result sets)
+ set 1: 143075 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_nc_dump_1_20261110_1533.csv
+
+>>> query NC nc_export.sql
+
+QUERY nc_export (2 result sets)
+ set 1: 143075 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_nc_export_1_20261110_1533.csv
+ set 2: 1355 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_q_nc_export_2_20261110_1533.csv
+
+=== OK 2026-11-10 15:33:36

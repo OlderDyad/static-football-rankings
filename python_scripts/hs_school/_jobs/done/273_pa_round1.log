@@ -1,0 +1,1283 @@
+
+>>> remap PA --url "https://www.maxpreps.com/pa/allentown/allentown-central-catholic-vikings/football/schedule/" --to "Allentown Central Catholic (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/allentown/allentown-central-catholic-vikings/football/schedule/ -> Allentown Central Catholic (PA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/pa/allentown/al  Allentown Central (PA)  37346    Allentown Central Catholic (PA)  58884     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/altoona/altoona-mountain-lions/football/schedule/" --to "Altoona (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/altoona/altoona-mountain-lions/football/schedule/ -> Altoona (PA) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/pa/altoona/alto  Altoona Mountain (PA)  24645    Altoona (PA)   58918     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/beaver/beaver-bobcats/football/schedule/" --to "Beaver Area (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/beaver/beaver-bobcats/football/schedule/ -> Beaver Area (PA) - COMMIT
+   URL                                       ProperName   Team_ID  NewProperName     NewTeam_ID
+   https://www.maxpreps.com/pa/beaver/beave  Beaver (PA)  2820     Beaver Area (PA)  17009     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/carmichaels/carmichaels-mighty-mikes/football/schedule/" --to "Carmichaels (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/carmichaels/carmichaels-mighty-mikes/football/schedule/ -> Carmichaels (PA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName     NewTeam_ID
+   https://www.maxpreps.com/pa/carmichaels/  Carmichaels Mighty (PA)  14032    Carmichaels (PA)  60258     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/cranberry-township/north-catholic-trojans/football/schedule/" --to "Cranberry Township North Catholic (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/cranberry-township/north-catholic-trojans/football/schedule/ -> Cranberry Township North Catholic (PA) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                           NewTeam_ID
+   https://www.maxpreps.com/pa/cranberry-to  Pittsburgh North Catholic (PA)  44218    Cranberry Township North Catholic (PA)  41490     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/derry/derry-trojans/football/schedule/" --to "Derry Area (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/derry/derry-trojans/football/schedule/ -> Derry Area (PA) - COMMIT
+   URL                                       ProperName  Team_ID  NewProperName    NewTeam_ID
+   https://www.maxpreps.com/pa/derry/derry-  Derry (PA)  34870    Derry Area (PA)  21012     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/drexel-hill/monsignor-bonner-archbishop-prendergast-catholic-friars-pandas/football/schedule/" --to "Drexel Hill Monsignor Bonner-Archbishop Prendergast (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/drexel-hill/monsignor-bonner-archbishop-prendergast-catholic-friars-pandas/football/schedule/ -> Drexel Hill Monsignor Bonner-Archbishop Prendergast (PA) - COMMIT
+   URL                                       ProperName                                Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/pa/drexel-hill/  Monsignor Bonner-Archbishop Prendergast   27258    Drexel Hill Monsignor Bonner-Archbishop   61578     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/east-stroudsburg/east-stroudsburg-south-cavaliers/football/schedule/" --to "East Stroudsburg South (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/east-stroudsburg/east-stroudsburg-south-cavaliers/football/schedule/ -> East Stroudsburg South (PA) - COMMIT
+   URL                                       ProperName                                Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/pa/east-strouds  East Stroudsburg East St. roudsburg (PA)  23604    East Stroudsburg South (PA)  61662     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/folsom/ridley-raiders/football/schedule/" --to "Folsom Ridley Township (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/folsom/ridley-raiders/football/schedule/ -> Folsom Ridley Township (PA) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/pa/folsom/ridle  Folsom Ridley (PA)  27357    Folsom Ridley Township (PA)  14090     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/greensburg/greensburg-central-catholic-centurions/football/schedule/" --to "Greensburg Central Catholic (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/greensburg/greensburg-central-catholic-centurions/football/schedule/ -> Greensburg Central Catholic (PA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/pa/greensburg/g  Greensburg Central (PA)  7446     Greensburg Central Catholic (PA)  3429      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/hermitage/kennedy-catholic/football/schedule/" --to "Hermitage Kennedy Catholic (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/hermitage/kennedy-catholic/football/schedule/ -> Hermitage Kennedy Catholic (PA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/pa/hermitage/ke  Hermitage Kennedy (PA)  12654    Hermitage Kennedy Catholic (PA)  63051     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/holland/council-rock-south-golden-hawks/football/schedule/" --to "Holland Council Rock South (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/holland/council-rock-south-golden-hawks/football/schedule/ -> Holland Council Rock South (PA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/pa/holland/coun  Holland Council Rock (PA)  22853    Holland Council Rock South (PA)  63154     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/indiana/indiana-little-indians/football/schedule/" --to "Indiana (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/indiana/indiana-little-indians/football/schedule/ -> Indiana (PA) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/pa/indiana/indi  Indiana Little (PA)  41069    Indiana (PA)   63361     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/johnstown/richland-rams/football/schedule/" --to "Richland Township (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/johnstown/richland-rams/football/schedule/ -> Richland Township (PA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/pa/johnstown/ri  Johnstown Richland (PA)  63558    Richland Township (PA)  23160     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/kittanning/armstrong-river-hawks/football/schedule/" --to "Kittanning Armstrong (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/kittanning/armstrong-river-hawks/football/schedule/ -> Kittanning Armstrong (PA) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/pa/kittanning/a  Kittanning Armstrong River (PA)  16176    Kittanning Armstrong (PA)  12993     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/minersville/minersville-battlin-miners/football/schedule/" --to "Minersville (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/minersville/minersville-battlin-miners/football/schedule/ -> Minersville (PA) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName     NewTeam_ID
+   https://www.maxpreps.com/pa/minersville/  Minersville Battlin (PA)  4669     Minersville (PA)  65305     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/nanticoke/greater-nanticoke-area-trojans/football/schedule/" --to "Nanticoke Greater Nanticoke Area (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/nanticoke/greater-nanticoke-area-trojans/football/schedule/ -> Nanticoke Greater Nanticoke Area (PA) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/pa/nanticoke/gr  Nanticoke Greater Nanticoke (PA)  27536    Nanticoke Greater Nanticoke Area (PA)  65668     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/northampton/northampton-konkrete-kids/football/schedule/" --to "Northampton (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/northampton/northampton-konkrete-kids/football/schedule/ -> Northampton (PA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName     NewTeam_ID
+   https://www.maxpreps.com/pa/northampton/  Northampton Konkrete (PA)  34850    Northampton (PA)  66080     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/philadelphia/mastery-charter-north-pickett-pumas/football/schedule/" --to "Philadelphia Mastery Charter North - Pickett (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/philadelphia/mastery-charter-north-pickett-pumas/football/schedule/ -> Philadelphia Mastery Charter North - Pickett (PA) - COMMIT
+   URL                                       ProperName                               Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/pa/philadelphia  Philadelphia Mastery Charter North (PA)  28032    Philadelphia Mastery Charter North - Pic  44851     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/philadelphia/vaux-big-picture/football/schedule/" --to "Philadelphia Vaux Big Picture (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/philadelphia/vaux-big-picture/football/schedule/ -> Philadelphia Vaux Big Picture (PA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                       NewTeam_ID
+   https://www.maxpreps.com/pa/philadelphia  Philadelphia Vaux (PA)  29679    Philadelphia Vaux Big Picture (PA)  11558     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/plymouth/wyoming-valley-west-spartans/football/schedule/" --to "Plymouth Wyoming Valley West (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/plymouth/wyoming-valley-west-spartans/football/schedule/ -> Plymouth Wyoming Valley West (PA) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/pa/plymouth/wyo  Plymouth Wyoming Valley (PA)  18993    Plymouth Wyoming Valley West (PA)  66913     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/warrington/central-bucks-south-titans/football/schedule/" --to "Warrington Central Bucks South (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/warrington/central-bucks-south-titans/football/schedule/ -> Warrington Central Bucks South (PA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/pa/warrington/c  Warrington Central (PA)  2759     Warrington Central Bucks South (PA)  69445     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/wyndmoor/la-salle-college-explorers/football/schedule/" --to "Wyndmoor La Salle College (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/wyndmoor/la-salle-college-explorers/football/schedule/ -> Wyndmoor La Salle College (PA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/pa/wyndmoor/la-  Wyndmoor La Salle (PA)  40691    Wyndmoor La Salle College (PA)  70020     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/hookstown/south-side-rams/football/schedule/" --to "Hookstown South Side Beaver (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/hookstown/south-side-rams/football/schedule/ -> Hookstown South Side Beaver (PA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/pa/hookstown/so  Hookstown South Side (PA)  33573    Hookstown South Side Beaver (PA)  63213     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/philadelphia/dobbins-randolph-vo-tech-mustangs/football/schedule/" --to "Philadelphia Murrell Dobbins Vo-Tech (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/philadelphia/dobbins-randolph-vo-tech-mustangs/football/schedule/ -> Philadelphia Murrell Dobbins Vo-Tech (PA) - COMMIT
+   URL                                       ProperName                          Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/pa/philadelphia  Philadelphia Dobbins Randolph (PA)  22202    Philadelphia Murrell Dobbins Vo-Tech (PA  13277     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap PA --url "https://www.maxpreps.com/pa/philadelphia/jules-e-mastbaum-vo-tech-panthers/football/schedule/" --to "Philadelphia Jules E. Mastbaum Vo-Tech (PA)" --commit
+
+REMAP https://www.maxpreps.com/pa/philadelphia/jules-e-mastbaum-vo-tech-panthers/football/schedule/ -> Philadelphia Jules E. Mastbaum Vo-Tech (PA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/pa/philadelphia  Philadelphia Jules E (PA)  22877    Philadelphia Jules E. Mastbaum Vo-Tech (  32781     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> move-team PA --from "East Stroudsburg (PA)" --to "East Stroudsburg South (PA)" --seasons 1880-2001 --reason "East Stroudsburg High became East Stroudsburg South when North opened (2002); pre-split games under the continuation name" --commit
+
+MOVE East Stroudsburg (PA) -> East Stroudsburg South (PA), seasons 1880-2001 - COMMIT
+ move_games: 375 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_move_games_COMMITTED_20261112_1257.csv
+ move_by_season: 85 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_move_by_season_COMMITTED_20261112_1257.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  375    1                  None
+
+>>> move-team PA --from "Downingtown (PA)" --to "Downingtown West (PA)" --seasons 1880-2003 --reason "Downingtown High became Downingtown West when East opened (2004); pre-split games under the continuation name" --commit
+
+MOVE Downingtown (PA) -> Downingtown West (PA), seasons 1880-2003 - COMMIT
+ move_games: 481 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_move_games_COMMITTED_20261112_1257.csv
+ move_by_season: 118 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_move_by_season_COMMITTED_20261112_1257.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  481    1                  None
+
+>>> move-team PA --from "Newtown Council Rock (PA)" --to "Newtown Council Rock North (PA)" --seasons 1880-2001 --reason "Council Rock High became Council Rock North when South opened (2002); pre-split games under the continuation name" --commit
+
+MOVE Newtown Council Rock (PA) -> Newtown Council Rock North (PA), seasons 1880-2001 - COMMIT
+ move_games: 410 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_move_games_COMMITTED_20261112_1257.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_move_by_season_COMMITTED_20261112_1257.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  410    1                  None
+
+>>> mapcheck PA --commit
+
+MAPPING CHECK PA - COMMIT (Team_ID set to the ProperName ID)
+ 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_mapcheck_COMMITTED_20261112_1257.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name
+   https://www.maxpreps.com/pa/pittsburgh/b  Pittsburgh Bishiop Canevin Catholic (PA)  36757    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/pa/pottsville/n  Pottsville Nativity BVM (PA)              38333    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/pa/saltsburg/ki  Saltsburg Kiski School (PA)               32954    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/pa/wyalusing/wy  Wyalusing Valley (PA)                     40170    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/pa/york/york-co  York County (PA)                          31926    None    ProperName not in HS_Team_Names  None        
+   Status     Fixable  Err 
+   COMMITTED  0        None
+
+>>> consolidate PA --reason "PA round 1: 2024 MaxPreps short names; same-school pairs from two digital.libraries.psu.edu team pages (Ridley, Wilson Area, Springfield, Haverford Township, Waynesburg Central, Richland, Dunbar Township, Bonner-Prendergast); renames to latest (North Catholic -> Cranberry, Edison-Fareira -> Thomas A. Edison, Dobbins)"
+Consolidating PA from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\PA_Alias_Rules.csv
+
+[stderr]
+2026-11-12 12:57:30,649 - INFO - Starting consolidation for state: (PA) using staging table method.
+2026-11-12 12:57:30,662 - WARNING - WARNING: 992 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 12:57:30,662 - WARNING -   'Abington (PA)' -> 'Abington (PA)' (no change)
+2026-11-12 12:57:30,662 - WARNING -   'Albion Northwestern (PA)' -> 'Albion Northwestern (PA)' (no change)
+2026-11-12 12:57:30,662 - WARNING -   'Albright College Frosh (PA)' -> 'Albright College Frosh (PA)' (no change)
+2026-11-12 12:57:30,663 - WARNING -   'Alexandria Juniata Valley (PA)' -> 'Alexandria Juniata Valley (PA)' (no change)
+2026-11-12 12:57:30,663 - WARNING -   'Aliquippa (PA)' -> 'Aliquippa (PA)' (no change)
+2026-11-12 12:57:30,663 - WARNING -   'Aliquippa Hopewell (PA)' -> 'Aliquippa Hopewell (PA)' (no change)
+2026-11-12 12:57:30,663 - WARNING -   'Allegheny Clarion Valley (PA)' -> 'Allegheny Clarion Valley (PA)' (no change)
+2026-11-12 12:57:30,663 - WARNING -   'Allentown Central Catholic (PA)' -> 'Allentown Central Catholic (PA)' (no change)
+2026-11-12 12:57:30,663 - WARNING -   'Allentown Executive Education Academy Charter School (PA)' -> 'Allentown Executive Education Academy Charter School (PA)' (no change)
+2026-11-12 12:57:30,663 - WARNING -   'Allentown Louis E. Dieruff (PA)' -> 'Allentown Louis E. Dieruff (PA)' (no change)
+2026-11-12 12:57:30,663 - WARNING -   'Allentown Parkland (PA)' -> 'Allentown Parkland (PA)' (no change)
+2026-11-12 12:57:30,664 - WARNING -   'Allentown Prep (PA)' -> 'Allentown Prep (PA)' (no change)
+2026-11-12 12:57:30,664 - WARNING -   'Allentown Salisbury Township (PA)' -> 'Allentown Salisbury Township (PA)' (no change)
+2026-11-12 12:57:30,664 - WARNING -   'Allentown William Allen (PA)' -> 'Allentown William Allen (PA)' (no change)
+2026-11-12 12:57:30,664 - WARNING -   'Allison Park Hampton (PA)' -> 'Allison Park Hampton (PA)' (no change)
+2026-11-12 12:57:30,664 - WARNING -   'Altoona (PA)' -> 'Altoona (PA)' (no change)
+2026-11-12 12:57:30,664 - WARNING -   'Altoona Bishop Guilfoyle (PA)' -> 'Altoona Bishop Guilfoyle (PA)' (no change)
+2026-11-12 12:57:30,664 - WARNING -   'Alverton East Huntingdon (PA)' -> 'Alverton East Huntingdon (PA)' (no change)
+2026-11-12 12:57:30,664 - WARNING -   'Alverton Southmoreland (PA)' -> 'Alverton Southmoreland (PA)' (no change)
+2026-11-12 12:57:30,665 - WARNING -   'Ambler Wissahickon (PA)' -> 'Ambler Wissahickon (PA)' (no change)
+2026-11-12 12:57:30,665 - WARNING -   'Ambridge (PA)' -> 'Ambridge (PA)' (no change)
+2026-11-12 12:57:30,665 - WARNING -   'Annville-Cleona (PA)' -> 'Annville-Cleona (PA)' (no change)
+2026-11-12 12:57:30,665 - WARNING -   'Apollo (PA)' -> 'Apollo (PA)' (no change)
+2026-11-12 12:57:30,665 - WARNING -   'Archbald Valley View (PA)' -> 'Archbald Valley View (PA)' (no change)
+2026-11-12 12:57:30,665 - WARNING -   'Ardmore Lower Merion (PA)' -> 'Ardmore Lower Merion (PA)' (no change)
+2026-11-12 12:57:30,665 - WARNING -   'Armagh United (PA)' -> 'Armagh United (PA)' (no change)
+2026-11-12 12:57:30,665 - WARNING -   'Arnold (PA)' -> 'Arnold (PA)' (no change)
+2026-11-12 12:57:30,665 - WARNING -   'Ashland (PA)' -> 'Ashland (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Ashland Cardinal Brennan (PA)' -> 'Ashland Cardinal Brennan (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Ashland North Schuylkill (PA)' -> 'Ashland North Schuylkill (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Ashley (PA)' -> 'Ashley (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Aspinwall (PA)' -> 'Aspinwall (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Aston Sun Valley (PA)' -> 'Aston Sun Valley (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Atglen Octorara Area (PA)' -> 'Atglen Octorara Area (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Athens (PA)' -> 'Athens (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Audubon St. Gabriel's Hall (PA)' -> 'Audubon St. Gabriel's Hall (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Avalon (PA)' -> 'Avalon (PA)' (no change)
+2026-11-12 12:57:30,666 - WARNING -   'Avella (PA)' -> 'Avella (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Avoca (PA)' -> 'Avoca (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Baden Quigley Catholic (PA)' -> 'Baden Quigley Catholic (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Bangor (PA)' -> 'Bangor (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Bangor Pius X (PA)' -> 'Bangor Pius X (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Barnesboro (PA)' -> 'Barnesboro (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Beaver Area (PA)' -> 'Beaver Area (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Beaver Falls (PA)' -> 'Beaver Falls (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Beaver Falls Blackhawk (PA)' -> 'Beaver Falls Blackhawk (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Bedford (PA)' -> 'Bedford (PA)' (no change)
+2026-11-12 12:57:30,667 - WARNING -   'Bedford Replogle (PA)' -> 'Bedford Replogle (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Belle Vernon (PA)' -> 'Belle Vernon (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Belle Vernon Area (PA)' -> 'Belle Vernon Area (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Belle Vernon Bellmar (PA)' -> 'Belle Vernon Bellmar (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Belle Vernon Borough (PA)' -> 'Belle Vernon Borough (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Belle Vernon Rostraver (PA)' -> 'Belle Vernon Rostraver (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Bellefonte (PA)' -> 'Bellefonte (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Bellefonte Academy (PA)' -> 'Bellefonte Academy (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Bellevue (PA)' -> 'Bellevue (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Bellwood-Antis (PA)' -> 'Bellwood-Antis (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Bensalem (PA)' -> 'Bensalem (PA)' (no change)
+2026-11-12 12:57:30,668 - WARNING -   'Bensalem St. Francis Voc (PA)' -> 'Bensalem St. Francis Voc (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Bentleyville (PA)' -> 'Bentleyville (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Bentleyville Bentworth (PA)' -> 'Bentleyville Bentworth (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Berlin Brothersvalley (PA)' -> 'Berlin Brothersvalley (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Berwick (PA)' -> 'Berwick (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Berwyn Conestoga (PA)' -> 'Berwyn Conestoga (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Bessemer Mohawk Area (PA)' -> 'Bessemer Mohawk Area (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Bethel Park (PA)' -> 'Bethel Park (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Bethlehem Freedom (PA)' -> 'Bethlehem Freedom (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Bethlehem Liberty (PA)' -> 'Bethlehem Liberty (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Bethlehem Moravian Catholic (PA)' -> 'Bethlehem Moravian Catholic (PA)' (no change)
+2026-11-12 12:57:30,669 - WARNING -   'Bethlehem Moravian Prep (PA)' -> 'Bethlehem Moravian Prep (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Biglerville (PA)' -> 'Biglerville (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Birdsboro Daniel Boone (PA)' -> 'Birdsboro Daniel Boone (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Blairsville (PA)' -> 'Blairsville (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Bloomsburg (PA)' -> 'Bloomsburg (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Bloomsburg Central Columbia (PA)' -> 'Bloomsburg Central Columbia (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Bloomsburg ColumbiaMontour Vo-Tech (PA)' -> 'Bloomsburg ColumbiaMontour Vo-Tech (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Blossburg North Penn (PA)' -> 'Blossburg North Penn (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Boiling Springs (PA)' -> 'Boiling Springs (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Boothwyn Chichester (PA)' -> 'Boothwyn Chichester (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Boswell North Star (PA)' -> 'Boswell North Star (PA)' (no change)
+2026-11-12 12:57:30,670 - WARNING -   'Boyertown (PA)' -> 'Boyertown (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Braddock (PA)' -> 'Braddock (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Bradford (PA)' -> 'Bradford (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Bradford Central Christian (PA)' -> 'Bradford Central Christian (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Bridgeport (PA)' -> 'Bridgeport (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Bridgeville (PA)' -> 'Bridgeville (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Bridgeville Chartiers Valley (PA)' -> 'Bridgeville Chartiers Valley (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Bristol (PA)' -> 'Bristol (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Bristol Delhaas (PA)' -> 'Bristol Delhaas (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Brockway (PA)' -> 'Brockway (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Brodheadsville Pleasant Valley (PA)' -> 'Brodheadsville Pleasant Valley (PA)' (no change)
+2026-11-12 12:57:30,671 - WARNING -   'Brookville (PA)' -> 'Brookville (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Brownsville (PA)' -> 'Brownsville (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Bryn Athyn Academy of the New Church (PA)' -> 'Bryn Athyn Academy of the New Church (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Bucknell University Frosh (PA)' -> 'Bucknell University Frosh (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Burgettstown (PA)' -> 'Burgettstown (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Butler (PA)' -> 'Butler (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Cairnbrook Shade (PA)' -> 'Cairnbrook Shade (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Cambridge Springs (PA)' -> 'Cambridge Springs (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Camp Hill - Cedar Cliff (PA)' -> 'Camp Hill - Cedar Cliff (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Camp Hill (PA)' -> 'Camp Hill (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Camp Hill Trinity (PA)' -> 'Camp Hill Trinity (PA)' (no change)
+2026-11-12 12:57:30,672 - WARNING -   'Canonsburg Canon-McMillan (PA)' -> 'Canonsburg Canon-McMillan (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Canton (PA)' -> 'Canton (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Carbondale (PA)' -> 'Carbondale (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Carlisle (PA)' -> 'Carlisle (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Carlisle Indians JV (PA)' -> 'Carlisle Indians JV (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Carmichaels (PA)' -> 'Carmichaels (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Carnegie (PA)' -> 'Carnegie (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Carnegie Carlynton (PA)' -> 'Carnegie Carlynton (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Carnegie St. Luke School (PA)' -> 'Carnegie St. Luke School (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Carrolltown John Carroll (PA)' -> 'Carrolltown John Carroll (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Catasauqua (PA)' -> 'Catasauqua (PA)' (no change)
+2026-11-12 12:57:30,673 - WARNING -   'Catawissa Southern Columbia Area (PA)' -> 'Catawissa Southern Columbia Area (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Cecil Township (PA)' -> 'Cecil Township (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Center Valley Southern Lehigh (PA)' -> 'Center Valley Southern Lehigh (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Centerville (PA)' -> 'Centerville (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Central York (PA)' -> 'Central York (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Chambersburg (PA)' -> 'Chambersburg (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Charleroi (PA)' -> 'Charleroi (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Cherry Tree (PA)' -> 'Cherry Tree (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Chester (PA)' -> 'Chester (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Chester St. James (PA)' -> 'Chester St. James (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Cheswick West Deer (PA)' -> 'Cheswick West Deer (PA)' (no change)
+2026-11-12 12:57:30,674 - WARNING -   'Clairton (PA)' -> 'Clairton (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Claridge Penn Joint (PA)' -> 'Claridge Penn Joint (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Clarion (PA)' -> 'Clarion (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Clarks Summit (PA)' -> 'Clarks Summit (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Clarks Summit Abington Heights (PA)' -> 'Clarks Summit Abington Heights (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Claysburg (PA)' -> 'Claysburg (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Claysburg-Kimmel (PA)' -> 'Claysburg-Kimmel (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Claysville McGuffey (PA)' -> 'Claysville McGuffey (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Clearfield (PA)' -> 'Clearfield (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Clearfield St. Francis (PA)' -> 'Clearfield St. Francis (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Clifton Heights (PA)' -> 'Clifton Heights (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Clymer Penns Manor (PA)' -> 'Clymer Penns Manor (PA)' (no change)
+2026-11-12 12:57:30,675 - WARNING -   'Coal Center California (PA)' -> 'Coal Center California (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Coal Township (PA)' -> 'Coal Township (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Coal Township Our Lady of Lourdes Regional (PA)' -> 'Coal Township Our Lady of Lourdes Regional (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Coal Township Shamokin Area (PA)' -> 'Coal Township Shamokin Area (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Coaldale (PA)' -> 'Coaldale (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Coaldale St. Marys (PA)' -> 'Coaldale St. Marys (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Coatesville (PA)' -> 'Coatesville (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Cochranton (PA)' -> 'Cochranton (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Collegeville (PA)' -> 'Collegeville (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Collegeville Perkiomen Valley (PA)' -> 'Collegeville Perkiomen Valley (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Collingdale (PA)' -> 'Collingdale (PA)' (no change)
+2026-11-12 12:57:30,676 - WARNING -   'Columbia (PA)' -> 'Columbia (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Commodore Purchase Line (PA)' -> 'Commodore Purchase Line (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Concordville Glen Mills (PA)' -> 'Concordville Glen Mills (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Conemaugh East (PA)' -> 'Conemaugh East (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Confluence Turkeyfoot Valley Area (PA)' -> 'Confluence Turkeyfoot Valley Area (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Conneaut Lake (PA)' -> 'Conneaut Lake (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Conneautville Conneaut Valley (PA)' -> 'Conneautville Conneaut Valley (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Connellsville (PA)' -> 'Connellsville (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Connellsville Geibel Catholic (PA)' -> 'Connellsville Geibel Catholic (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Conshohocken (PA)' -> 'Conshohocken (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Conshohocken Archbishop Kennedy (PA)' -> 'Conshohocken Archbishop Kennedy (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Conshohocken St. Matthews (PA)' -> 'Conshohocken St. Matthews (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Coplay (PA)' -> 'Coplay (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Coraopolis (PA)' -> 'Coraopolis (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Coraopolis Cornell (PA)' -> 'Coraopolis Cornell (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Coraopolis Our Lady of the Sacred Heart (PA)' -> 'Coraopolis Our Lady of the Sacred Heart (PA)' (no change)
+2026-11-12 12:57:30,677 - WARNING -   'Corry (PA)' -> 'Corry (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Coudersport (PA)' -> 'Coudersport (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Covington Township North Pocono (PA)' -> 'Covington Township North Pocono (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Crafton (PA)' -> 'Crafton (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Creighton East Deer Frazer (PA)' -> 'Creighton East Deer Frazer (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Cresson Joint (PA)' -> 'Cresson Joint (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Cresson Penn Cambria (PA)' -> 'Cresson Penn Cambria (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Curwensville (PA)' -> 'Curwensville (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Dallas (PA)' -> 'Dallas (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Dallas Borough (PA)' -> 'Dallas Borough (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Dallas Township-Franklin Township (PA)' -> 'Dallas Township-Franklin Township (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Dallastown (PA)' -> 'Dallastown (PA)' (no change)
+2026-11-12 12:57:30,678 - WARNING -   'Danville (PA)' -> 'Danville (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Darby-Colwyn (PA)' -> 'Darby-Colwyn (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Darlington Northwestern (PA)' -> 'Darlington Northwestern (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Davidsville Conemaugh Township (PA)' -> 'Davidsville Conemaugh Township (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Delancey School (PA)' -> 'Delancey School (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Denver Cocalico (PA)' -> 'Denver Cocalico (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Derry Area (PA)' -> 'Derry Area (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Derry Borough (PA)' -> 'Derry Borough (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Derry Township (PA)' -> 'Derry Township (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Devon Episcopal Academy (PA)' -> 'Devon Episcopal Academy (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Dickinson College Frosh (PA)' -> 'Dickinson College Frosh (PA)' (no change)
+2026-11-12 12:57:30,679 - WARNING -   'Dickson City (PA)' -> 'Dickson City (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Dillsburg Northern York (PA)' -> 'Dillsburg Northern York (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Dingmans Ferry East Stroudsburg North (PA)' -> 'Dingmans Ferry East Stroudsburg North (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Donora (PA)' -> 'Donora (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Dormont Keystone Oaks (PA)' -> 'Dormont Keystone Oaks (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Dover (PA)' -> 'Dover (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Downingtown (PA)' -> 'Downingtown (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Downingtown Bishop Shanahan (PA)' -> 'Downingtown Bishop Shanahan (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Downingtown West (PA)' -> 'Downingtown West (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Doylestown Central Bucks East (PA)' -> 'Doylestown Central Bucks East (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Doylestown Central Bucks West (PA)' -> 'Doylestown Central Bucks West (PA)' (no change)
+2026-11-12 12:57:30,680 - WARNING -   'Doylestown National Farm School (PA)' -> 'Doylestown National Farm School (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'Drexel Hill Monsignor Bonner-Archbishop Prendergast (PA)' -> 'Drexel Hill Monsignor Bonner-Archbishop Prendergast (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'Drexel Hill St. Andrew School (PA)' -> 'Drexel Hill St. Andrew School (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'Drexel Hill Upper Darby (PA)' -> 'Drexel Hill Upper Darby (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'DuBois (PA)' -> 'DuBois (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'Duke Center Otto-Eldred (PA)' -> 'Duke Center Otto-Eldred (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'Duncannon (PA)' -> 'Duncannon (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'Duncannon Susquenita (PA)' -> 'Duncannon Susquenita (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'Dunmore (PA)' -> 'Dunmore (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'Dunmore Bishop O'Hara (PA)' -> 'Dunmore Bishop O'Hara (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'Dunmore Holy Cross (PA)' -> 'Dunmore Holy Cross (PA)' (no change)
+2026-11-12 12:57:30,681 - WARNING -   'DuPont (PA)' -> 'DuPont (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'Duquesne (PA)' -> 'Duquesne (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'Duquesne Prep (PA)' -> 'Duquesne Prep (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'Duquesne University Frosh (PA)' -> 'Duquesne University Frosh (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'Duryea (PA)' -> 'Duryea (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'East Brady (PA)' -> 'East Brady (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'East Greenville (PA)' -> 'East Greenville (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'East McKeesport (PA)' -> 'East McKeesport (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'East Pike RunTownship (PA)' -> 'East Pike RunTownship (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'East Pittsburgh (PA)' -> 'East Pittsburgh (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'East Stroudsburg (PA)' -> 'East Stroudsburg (PA)' (no change)
+2026-11-12 12:57:30,682 - WARNING -   'East Stroudsburg Normal Collerge (PA)' -> 'East Stroudsburg Normal Collerge (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'East Stroudsburg South (PA)' -> 'East Stroudsburg South (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'East Stroudsburg University (PA)' -> 'East Stroudsburg University (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'East Stroudsburg University Frosh (PA)' -> 'East Stroudsburg University Frosh (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'East Stroudsburg University JV (PA)' -> 'East Stroudsburg University JV (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'Easton Area (PA)' -> 'Easton Area (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'Easton Notre Dame-Green Pond (PA)' -> 'Easton Notre Dame-Green Pond (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'Easton Wilson Area (PA)' -> 'Easton Wilson Area (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'Ebensburg Beaverdale (PA)' -> 'Ebensburg Beaverdale (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'Ebensburg Bishop Carroll (PA)' -> 'Ebensburg Bishop Carroll (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'Ebensburg Central Cambria (PA)' -> 'Ebensburg Central Cambria (PA)' (no change)
+2026-11-12 12:57:30,683 - WARNING -   'Eddystone (PA)' -> 'Eddystone (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Edgewood (PA)' -> 'Edgewood (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Edinboro General McLane (PA)' -> 'Edinboro General McLane (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Edwardsville (PA)' -> 'Edwardsville (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Elders Ridge (PA)' -> 'Elders Ridge (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Elizabeth Forward (PA)' -> 'Elizabeth Forward (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Elizabethtown (PA)' -> 'Elizabethtown (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Elizabethville Upper Dauphin Area (PA)' -> 'Elizabethville Upper Dauphin Area (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Elliottsburg West Perry (PA)' -> 'Elliottsburg West Perry (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Ellsworth (PA)' -> 'Ellsworth (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Ellwood City Lincoln (PA)' -> 'Ellwood City Lincoln (PA)' (no change)
+2026-11-12 12:57:30,684 - WARNING -   'Ellwood City Riverside (PA)' -> 'Ellwood City Riverside (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Elverson Twin Valley (PA)' -> 'Elverson Twin Valley (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Emlenton (PA)' -> 'Emlenton (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Emmaus (PA)' -> 'Emmaus (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Emporium Cameron County (PA)' -> 'Emporium Cameron County (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Enola East Pennsboro (PA)' -> 'Enola East Pennsboro (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Ephrata (PA)' -> 'Ephrata (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Erdenheim Springfield Township (PA)' -> 'Erdenheim Springfield Township (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Erie (PA)' -> 'Erie (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Erie Academy (PA)' -> 'Erie Academy (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Erie Cathedral Prep (PA)' -> 'Erie Cathedral Prep (PA)' (no change)
+2026-11-12 12:57:30,685 - WARNING -   'Erie Central Tech (PA)' -> 'Erie Central Tech (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Erie Central-Old (PA)' -> 'Erie Central-Old (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Erie East (PA)' -> 'Erie East (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Erie Iroquois (PA)' -> 'Erie Iroquois (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Erie Lawrence Park (PA)' -> 'Erie Lawrence Park (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Erie McDowell (PA)' -> 'Erie McDowell (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Erie Mercyhurst Prep (PA)' -> 'Erie Mercyhurst Prep (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Erie Seneca (PA)' -> 'Erie Seneca (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Erie Strong Vincent (PA)' -> 'Erie Strong Vincent (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Erie Tech (PA)' -> 'Erie Tech (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Essington Pennsylvania Military College Prep (PA)' -> 'Essington Pennsylvania Military College Prep (PA)' (no change)
+2026-11-12 12:57:30,686 - WARNING -   'Etna (PA)' -> 'Etna (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Evans City (PA)' -> 'Evans City (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Everett (PA)' -> 'Everett (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Exeter St. Cecilia (PA)' -> 'Exeter St. Cecilia (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Exeter Wyoming Area (PA)' -> 'Exeter Wyoming Area (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Exton Downingtown East (PA)' -> 'Exton Downingtown East (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Factoryville Lackawanna Trail (PA)' -> 'Factoryville Lackawanna Trail (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Fairchance (PA)' -> 'Fairchance (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Fairfield (PA)' -> 'Fairfield (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Fairless Hills Bishop Egan (PA)' -> 'Fairless Hills Bishop Egan (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Fairless Hills Conwell-Egan Catholic (PA)' -> 'Fairless Hills Conwell-Egan Catholic (PA)' (no change)
+2026-11-12 12:57:30,687 - WARNING -   'Fairless Hills Pennsbury (PA)' -> 'Fairless Hills Pennsbury (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Fairless Hills Pennsbury Falls Township (PA)' -> 'Fairless Hills Pennsbury Falls Township (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Fairview (PA)' -> 'Fairview (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Farrell (PA)' -> 'Farrell (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Farwell Bucktail (PA)' -> 'Farwell Bucktail (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Fawn Grove Kennard-Dale (PA)' -> 'Fawn Grove Kennard-Dale (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Findlay Township (PA)' -> 'Findlay Township (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Fleetwood (PA)' -> 'Fleetwood (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Flinton Glendale (PA)' -> 'Flinton Glendale (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Folsom Ridley Township (PA)' -> 'Folsom Ridley Township (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Ford City (PA)' -> 'Ford City (PA)' (no change)
+2026-11-12 12:57:30,688 - WARNING -   'Fort Washington Germantown Academy (PA)' -> 'Fort Washington Germantown Academy (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Fort Washington Upper Dublin (PA)' -> 'Fort Washington Upper Dublin (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Forty Fort (PA)' -> 'Forty Fort (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Foxburg Allegheny-Clarion Valley (PA)' -> 'Foxburg Allegheny-Clarion Valley (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Frackville (PA)' -> 'Frackville (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Franklin & Marshall College (PA)' -> 'Franklin & Marshall College (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Franklin (PA)' -> 'Franklin (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Franklin Boro (PA)' -> 'Franklin Boro (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Fredericksburg Northern Lebanon (PA)' -> 'Fredericksburg Northern Lebanon (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Fredericktown Bethlehem Center (PA)' -> 'Fredericktown Bethlehem Center (PA)' (no change)
+2026-11-12 12:57:30,689 - WARNING -   'Fredericktown East Bethlehem Township (PA)' -> 'Fredericktown East Bethlehem Township (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Freedom Area (PA)' -> 'Freedom Area (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Freeland (PA)' -> 'Freeland (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Freeland Mining & Mechanical Institute (PA)' -> 'Freeland Mining & Mechanical Institute (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Freeport (PA)' -> 'Freeport (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Galeton (PA)' -> 'Galeton (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Gallitzin (PA)' -> 'Gallitzin (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Germantown Friends (PA)' -> 'Germantown Friends (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Gettysburg (PA)' -> 'Gettysburg (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Gettysburg Academy (PA)' -> 'Gettysburg Academy (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Gibsonia Pine-Richland (PA)' -> 'Gibsonia Pine-Richland (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Girard (PA)' -> 'Girard (PA)' (no change)
+2026-11-12 12:57:30,690 - WARNING -   'Glassport (PA)' -> 'Glassport (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Glen Lyon Newport Township (PA)' -> 'Glen Lyon Newport Township (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Glen Mills Garnet Valley (PA)' -> 'Glen Mills Garnet Valley (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Glen Rock Susquehannock (PA)' -> 'Glen Rock Susquehannock (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Glenolden Darby Township (PA)' -> 'Glenolden Darby Township (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Glenolden Glen-Nor (PA)' -> 'Glenolden Glen-Nor (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Greater Johnstown (PA)' -> 'Greater Johnstown (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Greater Johnstown Voc-Tech (PA)' -> 'Greater Johnstown Voc-Tech (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Greater Latrobe (PA)' -> 'Greater Latrobe (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Greencastle-Antrim (PA)' -> 'Greencastle-Antrim (PA)' (no change)
+2026-11-12 12:57:30,691 - WARNING -   'Greensboro Mapletown (PA)' -> 'Greensboro Mapletown (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Greensburg (PA)' -> 'Greensburg (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Greensburg Hempfield Area (PA)' -> 'Greensburg Hempfield Area (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Greensburg Salem (PA)' -> 'Greensburg Salem (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Greenville (PA)' -> 'Greenville (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Greenville Reynolds (PA)' -> 'Greenville Reynolds (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Grove City (PA)' -> 'Grove City (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Guys Mills Maplewood (PA)' -> 'Guys Mills Maplewood (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Halifax (PA)' -> 'Halifax (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Hamburg (PA)' -> 'Hamburg (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Hanover (PA)' -> 'Hanover (PA)' (no change)
+2026-11-12 12:57:30,692 - WARNING -   'Hanover South Western (PA)' -> 'Hanover South Western (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Hanover Township (PA)' -> 'Hanover Township (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Hanover Township Hanover Area (PA)' -> 'Hanover Township Hanover Area (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Harborcreek (PA)' -> 'Harborcreek (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Harmony Seneca Valley (PA)' -> 'Harmony Seneca Valley (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Harrisburg (PA)' -> 'Harrisburg (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Harrisburg Academy (PA)' -> 'Harrisburg Academy (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Harrisburg Bishop McDevitt (PA)' -> 'Harrisburg Bishop McDevitt (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Harrisburg Central (PA)' -> 'Harrisburg Central (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Harrisburg Central Dauphin (PA)' -> 'Harrisburg Central Dauphin (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Harrisburg Central Dauphin East (PA)' -> 'Harrisburg Central Dauphin East (PA)' (no change)
+2026-11-12 12:57:30,693 - WARNING -   'Harrisburg Dauphin County Tech (PA)' -> 'Harrisburg Dauphin County Tech (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Harrisburg John Harris (PA)' -> 'Harrisburg John Harris (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Harrisburg Lower Paxton (PA)' -> 'Harrisburg Lower Paxton (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Harrisburg Susquehanna Township (PA)' -> 'Harrisburg Susquehanna Township (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Harrisburg Tech (PA)' -> 'Harrisburg Tech (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Harrisburg William Penn (PA)' -> 'Harrisburg William Penn (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Harrison City Penn-Trafford (PA)' -> 'Harrison City Penn-Trafford (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Hastings (PA)' -> 'Hastings (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Hatboro-Horsham (PA)' -> 'Hatboro-Horsham (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Haverford College Frosh (PA)' -> 'Haverford College Frosh (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Haverford School (PA)' -> 'Haverford School (PA)' (no change)
+2026-11-12 12:57:30,694 - WARNING -   'Havertown Haverford (PA)' -> 'Havertown Haverford (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Havertown Haverford Township (PA)' -> 'Havertown Haverford Township (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Hawley Wallenpaupack Area (PA)' -> 'Hawley Wallenpaupack Area (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Hazleton (PA)' -> 'Hazleton (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Hazleton Bishop Hafey (PA)' -> 'Hazleton Bishop Hafey (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Hazleton Hazle Township (PA)' -> 'Hazleton Hazle Township (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Hazleton St. Gabriel's (PA)' -> 'Hazleton St. Gabriel's (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Hegins Tri-Valley (PA)' -> 'Hegins Tri-Valley (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Hellertown Saucon Valley (PA)' -> 'Hellertown Saucon Valley (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Herman Summit Academy (PA)' -> 'Herman Summit Academy (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Herminie Yough (PA)' -> 'Herminie Yough (PA)' (no change)
+2026-11-12 12:57:30,695 - WARNING -   'Hermitage Hickory (PA)' -> 'Hermitage Hickory (PA)' (no change)
+2026-11-12 12:57:30,696 - WARNING -   'Hermitage Kennedy Catholic (PA)' -> 'Hermitage Kennedy Catholic (PA)' (no change)
+2026-11-12 12:57:30,696 - WARNING -   'Hermitage Kennedy Christian (PA)' -> 'Hermitage Kennedy Christian (PA)' (no change)
+2026-11-12 12:57:30,696 - WARNING -   'Herndon Line Mountain (PA)' -> 'Herndon Line Mountain (PA)' (no change)
+2026-11-12 12:57:30,696 - WARNING -   'Herndon Mahanoy Joint (PA)' -> 'Herndon Mahanoy Joint (PA)' (no change)
+2026-11-12 12:57:30,696 - WARNING -   'Hershey (PA)' -> 'Hershey (PA)' (no change)
+2026-11-12 12:57:30,696 - WARNING -   'Hershey Industrial (PA)' -> 'Hershey Industrial (PA)' (no change)
+2026-11-12 12:57:30,696 - WARNING -   'Highspire Athletic Club (PA)' -> 'Highspire Athletic Club (PA)' (no change)
+2026-11-12 12:57:30,696 - WARNING -   'Holland Council Rock South (PA)' -> 'Holland Council Rock South (PA)' (no change)
+2026-11-12 12:57:30,696 - WARNING -   'Hollidaysburg (PA)' -> 'Hollidaysburg (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Homer City Homer-Center (PA)' -> 'Homer City Homer-Center (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Homestead (PA)' -> 'Homestead (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Homestead Bishop Boyle (PA)' -> 'Homestead Bishop Boyle (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Honesdale (PA)' -> 'Honesdale (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Hookstown South Side Beaver (PA)' -> 'Hookstown South Side Beaver (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Houston Chartiers-Houston (PA)' -> 'Houston Chartiers-Houston (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Houtzdale Moshannon Valley (PA)' -> 'Houtzdale Moshannon Valley (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Hughesville (PA)' -> 'Hughesville (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Hummelstown Lower Dauphin (PA)' -> 'Hummelstown Lower Dauphin (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Huntingdon (PA)' -> 'Huntingdon (PA)' (no change)
+2026-11-12 12:57:30,697 - WARNING -   'Huntingdon Valley Lower Moreland (PA)' -> 'Huntingdon Valley Lower Moreland (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Imperial West Allegheny (PA)' -> 'Imperial West Allegheny (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Indiana (PA)' -> 'Indiana (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Industry Western Beaver (PA)' -> 'Industry Western Beaver (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Jeannette (PA)' -> 'Jeannette (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Jefferson Hills Thomas Jefferson (PA)' -> 'Jefferson Hills Thomas Jefferson (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Jefferson-Morgan (PA)' -> 'Jefferson-Morgan (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Jenkins Township (PA)' -> 'Jenkins Township (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Jenkintown (PA)' -> 'Jenkintown (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Jenner-Boswell (PA)' -> 'Jenner-Boswell (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Jermyn Lakeland (PA)' -> 'Jermyn Lakeland (PA)' (no change)
+2026-11-12 12:57:30,698 - WARNING -   'Jersey Shore (PA)' -> 'Jersey Shore (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Jessup (PA)' -> 'Jessup (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Jim Thorpe (PA)' -> 'Jim Thorpe (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Jim Thorpe Mauch Chunk Catholic (PA)' -> 'Jim Thorpe Mauch Chunk Catholic (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Johnsonburg (PA)' -> 'Johnsonburg (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Johnstown Bishop McCort (PA)' -> 'Johnstown Bishop McCort (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Johnstown Central Catholic (PA)' -> 'Johnstown Central Catholic (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Johnstown Conemaugh Valley (PA)' -> 'Johnstown Conemaugh Valley (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Johnstown Dale (PA)' -> 'Johnstown Dale (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Johnstown Ferndale (PA)' -> 'Johnstown Ferndale (PA)' (no change)
+2026-11-12 12:57:30,699 - WARNING -   'Johnstown Southmont (PA)' -> 'Johnstown Southmont (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Johnstown Westmont Hilltop (PA)' -> 'Johnstown Westmont Hilltop (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Johnstown Westmont Upper Yoder (PA)' -> 'Johnstown Westmont Upper Yoder (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Kane (PA)' -> 'Kane (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Kantner Forbes (PA)' -> 'Kantner Forbes (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Karns City (PA)' -> 'Karns City (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Kennett Square Kennett (PA)' -> 'Kennett Square Kennett (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Kennett Square Unionville (PA)' -> 'Kennett Square Unionville (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Keystone Academy (PA)' -> 'Keystone Academy (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'King of Prussia Upper Merion Area (PA)' -> 'King of Prussia Upper Merion Area (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Kings College (PA)' -> 'Kings College (PA)' (no change)
+2026-11-12 12:57:30,700 - WARNING -   'Kingston (PA)' -> 'Kingston (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Kingston Bishop O'Reilly (PA)' -> 'Kingston Bishop O'Reilly (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Kingston Township (PA)' -> 'Kingston Township (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Kingston West Side Area Voc-Tech (PA)' -> 'Kingston West Side Area Voc-Tech (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Kingston Wyoming Seminary (PA)' -> 'Kingston Wyoming Seminary (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Kintnersville Palisades (PA)' -> 'Kintnersville Palisades (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Kinzers Pequea Valley (PA)' -> 'Kinzers Pequea Valley (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Kittanning (PA)' -> 'Kittanning (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Knox Keystone (PA)' -> 'Knox Keystone (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Kulpmont (PA)' -> 'Kulpmont (PA)' (no change)
+2026-11-12 12:57:30,701 - WARNING -   'Kutztown (PA)' -> 'Kutztown (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Kutztown Normal College (PA)' -> 'Kutztown Normal College (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lafayette College Frosh (PA)' -> 'Lafayette College Frosh (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lafayette College JV (PA)' -> 'Lafayette College JV (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lake Ariel Western Wayne (PA)' -> 'Lake Ariel Western Wayne (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lake-Lehman (PA)' -> 'Lake-Lehman (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lampeter-Strasburg (PA)' -> 'Lampeter-Strasburg (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lancaster Catholic (PA)' -> 'Lancaster Catholic (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lancaster Conestoga Valley (PA)' -> 'Lancaster Conestoga Valley (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lancaster Franklin & Marshall Academy (PA)' -> 'Lancaster Franklin & Marshall Academy (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lancaster J.P. McCaskey (PA)' -> 'Lancaster J.P. McCaskey (PA)' (no change)
+2026-11-12 12:57:30,702 - WARNING -   'Lancaster Manheim Township (PA)' -> 'Lancaster Manheim Township (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Lancaster Stevens Trade (PA)' -> 'Lancaster Stevens Trade (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Landisville Hempfield (PA)' -> 'Landisville Hempfield (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Langhorne Neshaminy (PA)' -> 'Langhorne Neshaminy (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Lansdale Catholic (PA)' -> 'Lansdale Catholic (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Lansdale North Penn (PA)' -> 'Lansdale North Penn (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Lansdowne Penn Wood (PA)' -> 'Lansdowne Penn Wood (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Lansdowne-Aldan (PA)' -> 'Lansdowne-Aldan (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Lansford (PA)' -> 'Lansford (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Lansford Panther Valley (PA)' -> 'Lansford Panther Valley (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Larksville (PA)' -> 'Larksville (PA)' (no change)
+2026-11-12 12:57:30,703 - WARNING -   'Latrobe St. Vincent Prep (PA)' -> 'Latrobe St. Vincent Prep (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Laureldale Muhlenberg (PA)' -> 'Laureldale Muhlenberg (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Lebanon (PA)' -> 'Lebanon (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Lebanon Catholic (PA)' -> 'Lebanon Catholic (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Lebanon Cedar Crest (PA)' -> 'Lebanon Cedar Crest (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Leechburg (PA)' -> 'Leechburg (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Leesport Schuylkill Valley (PA)' -> 'Leesport Schuylkill Valley (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Leetsdale (PA)' -> 'Leetsdale (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Leetsdale Quaker Valley (PA)' -> 'Leetsdale Quaker Valley (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Lehighton (PA)' -> 'Lehighton (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Lehman Lake-Lehman (PA)' -> 'Lehman Lake-Lehman (PA)' (no change)
+2026-11-12 12:57:30,704 - WARNING -   'Leisenring Dunbar Township (PA)' -> 'Leisenring Dunbar Township (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Lemoyne (PA)' -> 'Lemoyne (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Lemoyne West Shore (PA)' -> 'Lemoyne West Shore (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Levittown Harry S. Truman (PA)' -> 'Levittown Harry S. Truman (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Levittown Truman (PA)' -> 'Levittown Truman (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Levittown Woodrow Wilson (PA)' -> 'Levittown Woodrow Wilson (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Lewisberry Red Land (PA)' -> 'Lewisberry Red Land (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Lewisburg (PA)' -> 'Lewisburg (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Lewistown (PA)' -> 'Lewistown (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Lewistown Chief Logan (PA)' -> 'Lewistown Chief Logan (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Lewistown Indian Valley (PA)' -> 'Lewistown Indian Valley (PA)' (no change)
+2026-11-12 12:57:30,705 - WARNING -   'Lewistown Mifflin County (PA)' -> 'Lewistown Mifflin County (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Library South Park (PA)' -> 'Library South Park (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Ligonier Valley (PA)' -> 'Ligonier Valley (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Lilly (PA)' -> 'Lilly (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Linesville (PA)' -> 'Linesville (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Linesville Conneaut Area (PA)' -> 'Linesville Conneaut Area (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Lititz Warwick (PA)' -> 'Lititz Warwick (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Littlestown (PA)' -> 'Littlestown (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Lock Haven (PA)' -> 'Lock Haven (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Lower Burrell (PA)' -> 'Lower Burrell (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Loysburg Northern Bedford County (PA)' -> 'Loysburg Northern Bedford County (PA)' (no change)
+2026-11-12 12:57:30,706 - WARNING -   'Luzerne (PA)' -> 'Luzerne (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'Lykens (PA)' -> 'Lykens (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'Mahanoy City Mahanoy Area (PA)' -> 'Mahanoy City Mahanoy Area (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'Mahanoy Joint (PA)' -> 'Mahanoy Joint (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'Mahanoy Township (PA)' -> 'Mahanoy Township (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'MahanoyCity (PA)' -> 'MahanoyCity (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'Malvern Great Valley (PA)' -> 'Malvern Great Valley (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'Malvern Prep (PA)' -> 'Malvern Prep (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'Malvern School (PA)' -> 'Malvern School (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'Manchester Northeastern (PA)' -> 'Manchester Northeastern (PA)' (no change)
+2026-11-12 12:57:30,707 - WARNING -   'Manheim Central (PA)' -> 'Manheim Central (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'Marianna West Bethlehem (PA)' -> 'Marianna West Bethlehem (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'Marion Center (PA)' -> 'Marion Center (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'Mars (PA)' -> 'Mars (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'Martinsburg Central (PA)' -> 'Martinsburg Central (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'Marysville (PA)' -> 'Marysville (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'Masontown (PA)' -> 'Masontown (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'Masontown All-Saints (PA)' -> 'Masontown All-Saints (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'McAdoo (PA)' -> 'McAdoo (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'McAlisterville East Juniata (PA)' -> 'McAlisterville East Juniata (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'McCann's Business College (PA)' -> 'McCann's Business College (PA)' (no change)
+2026-11-12 12:57:30,708 - WARNING -   'McClellandtown German Township (PA)' -> 'McClellandtown German Township (PA)' (no change)
+2026-11-12 12:57:30,709 - WARNING -   'McDonald (PA)' -> 'McDonald (PA)' (no change)
+2026-11-12 12:57:30,709 - WARNING -   'McDonald Fort Cherry (PA)' -> 'McDonald Fort Cherry (PA)' (no change)
+2026-11-12 12:57:30,709 - WARNING -   'McDonald South Fayette (PA)' -> 'McDonald South Fayette (PA)' (no change)
+2026-11-12 12:57:30,709 - WARNING -   'McKees Rocks (PA)' -> 'McKees Rocks (PA)' (no change)
+2026-11-12 12:57:30,709 - WARNING -   'McKees Rocks Montour (PA)' -> 'McKees Rocks Montour (PA)' (no change)
+2026-11-12 12:57:30,709 - WARNING -   'McKees Rocks Sto-Rox (PA)' -> 'McKees Rocks Sto-Rox (PA)' (no change)
+2026-11-12 12:57:30,709 - WARNING -   'McKeesport (PA)' -> 'McKeesport (PA)' (no change)
+2026-11-12 12:57:30,709 - WARNING -   'McKeesport Serra Catholic (PA)' -> 'McKeesport Serra Catholic (PA)' (no change)
+2026-11-12 12:57:30,710 - WARNING -   'McKeesport South Allegheny (PA)' -> 'McKeesport South Allegheny (PA)' (no change)
+2026-11-12 12:57:30,710 - WARNING -   'McMurray Peters Township (PA)' -> 'McMurray Peters Township (PA)' (no change)
+2026-11-12 12:57:30,710 - WARNING -   'McSherrystown Delone Catholic (PA)' -> 'McSherrystown Delone Catholic (PA)' (no change)
+2026-11-12 12:57:30,710 - WARNING -   'Meadville (PA)' -> 'Meadville (PA)' (no change)
+2026-11-12 12:57:30,710 - WARNING -   'Mechanicsburg (PA)' -> 'Mechanicsburg (PA)' (no change)
+2026-11-12 12:57:30,710 - WARNING -   'Mechanicsburg Cumberland Valley (PA)' -> 'Mechanicsburg Cumberland Valley (PA)' (no change)
+2026-11-12 12:57:30,710 - WARNING -   'Media (PA)' -> 'Media (PA)' (no change)
+2026-11-12 12:57:30,710 - WARNING -   'Media Penncrest (PA)' -> 'Media Penncrest (PA)' (no change)
+2026-11-12 12:57:30,710 - WARNING -   'Mercer (PA)' -> 'Mercer (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Mercersburg Academy (PA)' -> 'Mercersburg Academy (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Mercersburg James Buchanan (PA)' -> 'Mercersburg James Buchanan (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Merion Station Episcopal Academy (PA)' -> 'Merion Station Episcopal Academy (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Meyersdale (PA)' -> 'Meyersdale (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Middleburg Midd-West (PA)' -> 'Middleburg Midd-West (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Middletown (PA)' -> 'Middletown (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Midland Lincoln (PA)' -> 'Midland Lincoln (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Midway (PA)' -> 'Midway (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Mifflinburg (PA)' -> 'Mifflinburg (PA)' (no change)
+2026-11-12 12:57:30,711 - WARNING -   'Mifflintown Juniata (PA)' -> 'Mifflintown Juniata (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Milford Delaware Valley (PA)' -> 'Milford Delaware Valley (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Mill Hall Bald Eagle-Nittany (PA)' -> 'Mill Hall Bald Eagle-Nittany (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Mill Hall Central Mountain (PA)' -> 'Mill Hall Central Mountain (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Millersburg (PA)' -> 'Millersburg (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Millersville Penn Manor (PA)' -> 'Millersville Penn Manor (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Millersville State Normal College (PA)' -> 'Millersville State Normal College (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Millvale (PA)' -> 'Millvale (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Millville Area (PA)' -> 'Millville Area (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Milton (PA)' -> 'Milton (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Milton Hershey (PA)' -> 'Milton Hershey (PA)' (no change)
+2026-11-12 12:57:30,712 - WARNING -   'Minersville (PA)' -> 'Minersville (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Minersville Cass Township (PA)' -> 'Minersville Cass Township (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Monaca (PA)' -> 'Monaca (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Monaca Center (PA)' -> 'Monaca Center (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Monaca Central Valley (PA)' -> 'Monaca Central Valley (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Monessen (PA)' -> 'Monessen (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Monongahela (PA)' -> 'Monongahela (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Monongahela Ringgold (PA)' -> 'Monongahela Ringgold (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Monongahela Valley Catholic (PA)' -> 'Monongahela Valley Catholic (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Monroeville Gateway (PA)' -> 'Monroeville Gateway (PA)' (no change)
+2026-11-12 12:57:30,713 - WARNING -   'Montgomery (PA)' -> 'Montgomery (PA)' (no change)
+2026-11-12 12:57:30,714 - WARNING -   'Montgomery County Springfield Township (PA)' -> 'Montgomery County Springfield Township (PA)' (no change)
+2026-11-12 12:57:30,714 - WARNING -   'Montoursville (PA)' -> 'Montoursville (PA)' (no change)
+2026-11-12 12:57:30,714 - WARNING -   'Montrose (PA)' -> 'Montrose (PA)' (no change)
+2026-11-12 12:57:30,714 - WARNING -   'Moon Township Moon Area (PA)' -> 'Moon Township Moon Area (PA)' (no change)
+2026-11-12 12:57:30,714 - WARNING -   'Morris Township (PA)' -> 'Morris Township (PA)' (no change)
+2026-11-12 12:57:30,714 - WARNING -   'Morrisdale West Branch (PA)' -> 'Morrisdale West Branch (PA)' (no change)
+2026-11-12 12:57:30,714 - WARNING -   'Morrisville (PA)' -> 'Morrisville (PA)' (no change)
+2026-11-12 12:57:30,714 - WARNING -   'Moshannon Joint (PA)' -> 'Moshannon Joint (PA)' (no change)
+2026-11-12 12:57:30,714 - WARNING -   'Mount Carmel (PA)' -> 'Mount Carmel (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Mount Carmel Catholic (PA)' -> 'Mount Carmel Catholic (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Mount Carmel Township (PA)' -> 'Mount Carmel Township (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Mount Joy Donegal (PA)' -> 'Mount Joy Donegal (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Mount Morris (PA)' -> 'Mount Morris (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Mount Pleasant (PA)' -> 'Mount Pleasant (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Mount Union (PA)' -> 'Mount Union (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Mountain Top Crestwood (PA)' -> 'Mountain Top Crestwood (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Mt. Pleasant Hurst (PA)' -> 'Mt. Pleasant Hurst (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Muhlenberg College Frosh (PA)' -> 'Muhlenberg College Frosh (PA)' (no change)
+2026-11-12 12:57:30,715 - WARNING -   'Muncy (PA)' -> 'Muncy (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Munhall (PA)' -> 'Munhall (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Munhall Homestead (PA)' -> 'Munhall Homestead (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Munhall Steel Valley (PA)' -> 'Munhall Steel Valley (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Murrysville Franklin Regional (PA)' -> 'Murrysville Franklin Regional (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Myerstown Eastern Lebanon County (PA)' -> 'Myerstown Eastern Lebanon County (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Nanticoke Greater Nanticoke Area (PA)' -> 'Nanticoke Greater Nanticoke Area (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Nanty Glo Blacklick Valley (PA)' -> 'Nanty Glo Blacklick Valley (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Nanty Glo United Valley co-op [Blacklick Valley-United] (PA)' -> 'Nanty Glo United Valley co-op [Blacklick Valley-United] (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Nanty-Glo (PA)' -> 'Nanty-Glo (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Natrona Heights Har-Brack (PA)' -> 'Natrona Heights Har-Brack (PA)' (no change)
+2026-11-12 12:57:30,716 - WARNING -   'Natrona Heights Highlands (PA)' -> 'Natrona Heights Highlands (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'Nazareth Area (PA)' -> 'Nazareth Area (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'Nesquehoning (PA)' -> 'Nesquehoning (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'Neville Island (PA)' -> 'Neville Island (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'New Bethlehem Redbank Valley (PA)' -> 'New Bethlehem Redbank Valley (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'New Bloomfield Carson Long Military Academy (PA)' -> 'New Bloomfield Carson Long Military Academy (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'New Bloomfield Perry (PA)' -> 'New Bloomfield Perry (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'New Brighton (PA)' -> 'New Brighton (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'New Castle (PA)' -> 'New Castle (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'New Castle Laurel (PA)' -> 'New Castle Laurel (PA)' (no change)
+2026-11-12 12:57:30,717 - WARNING -   'New Castle Neshannock (PA)' -> 'New Castle Neshannock (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Castle Shenango (PA)' -> 'New Castle Shenango (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Castle Union Area (PA)' -> 'New Castle Union Area (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Cumberland (PA)' -> 'New Cumberland (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Florence Laurel Valley (PA)' -> 'New Florence Laurel Valley (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Holland Garden Spot (PA)' -> 'New Holland Garden Spot (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Hope (PA)' -> 'New Hope (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Hope Solebury (PA)' -> 'New Hope Solebury (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Kensington (PA)' -> 'New Kensington (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Kensington Valley (PA)' -> 'New Kensington Valley (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Oxford (PA)' -> 'New Oxford (PA)' (no change)
+2026-11-12 12:57:30,718 - WARNING -   'New Paris Chestnut Ridge (PA)' -> 'New Paris Chestnut Ridge (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'New Philadelphia Blythe Township (PA)' -> 'New Philadelphia Blythe Township (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'New Tripoli Northwestern Lehigh (PA)' -> 'New Tripoli Northwestern Lehigh (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'New Wilmington Area (PA)' -> 'New Wilmington Area (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'Newport (PA)' -> 'Newport (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'Newtown Council Rock (PA)' -> 'Newtown Council Rock (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'Newtown Council Rock North (PA)' -> 'Newtown Council Rock North (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'Newtown George School (PA)' -> 'Newtown George School (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'Newtown Square Delaware County Christian (PA)' -> 'Newtown Square Delaware County Christian (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'Newtown Square Marple (PA)' -> 'Newtown Square Marple (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'Newville Big Spring (PA)' -> 'Newville Big Spring (PA)' (no change)
+2026-11-12 12:57:30,719 - WARNING -   'Norristown (PA)' -> 'Norristown (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'Norristown Bishop Kenrick (PA)' -> 'Norristown Bishop Kenrick (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'Norristown Bishop Kenrick-St. Patrick's (PA)' -> 'Norristown Bishop Kenrick-St. Patrick's (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'Norristown Kennedy-Kenrick Catholic (PA)' -> 'Norristown Kennedy-Kenrick Catholic (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'Norristown Methacton (PA)' -> 'Norristown Methacton (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'North Braddock Scott (PA)' -> 'North Braddock Scott (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'North East (PA)' -> 'North East (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'North Huntingdon Norwin (PA)' -> 'North Huntingdon Norwin (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'North Penn-Mansfield (PA)' -> 'North Penn-Mansfield (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'North Versailles East Allegheny (PA)' -> 'North Versailles East Allegheny (PA)' (no change)
+2026-11-12 12:57:30,720 - WARNING -   'Northampton (PA)' -> 'Northampton (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Northern Cambria (PA)' -> 'Northern Cambria (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Northumberland (PA)' -> 'Northumberland (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Oakmont (PA)' -> 'Oakmont (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Oakmont Riverview (PA)' -> 'Oakmont Riverview (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Oil City (PA)' -> 'Oil City (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Oil City Venango Christian (PA)' -> 'Oil City Venango Christian (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Old Forge (PA)' -> 'Old Forge (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Olyphant (PA)' -> 'Olyphant (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Orbisonia (PA)' -> 'Orbisonia (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Osceola Mills (PA)' -> 'Osceola Mills (PA)' (no change)
+2026-11-12 12:57:30,721 - WARNING -   'Oxford (PA)' -> 'Oxford (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Palmerton (PA)' -> 'Palmerton (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Palmyra (PA)' -> 'Palmyra (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Patrick Business Institute College (PA)' -> 'Patrick Business Institute College (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Patton (PA)' -> 'Patton (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Patton Cambria Heights (PA)' -> 'Patton Cambria Heights (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Patton School (PA)' -> 'Patton School (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Peckville Blakely (PA)' -> 'Peckville Blakely (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Pen Argyl (PA)' -> 'Pen Argyl (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Pennsburg Perkiomen (PA)' -> 'Pennsburg Perkiomen (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Pennsburg Upper Perkiomen (PA)' -> 'Pennsburg Upper Perkiomen (PA)' (no change)
+2026-11-12 12:57:30,722 - WARNING -   'Pennsylvania School for the Deaf (PA)' -> 'Pennsylvania School for the Deaf (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Pennsylvania School for the Deaf JV (PA)' -> 'Pennsylvania School for the Deaf JV (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Perkasie Pennridge (PA)' -> 'Perkasie Pennridge (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Perryopolis Frazier (PA)' -> 'Perryopolis Frazier (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Philadelphia Abraham Lincoln (PA)' -> 'Philadelphia Abraham Lincoln (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Philadelphia Academy at Palumbo (PA)' -> 'Philadelphia Academy at Palumbo (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Philadelphia Archbishop Ryan (PA)' -> 'Philadelphia Archbishop Ryan (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Philadelphia Benjamin Franklin (PA)' -> 'Philadelphia Benjamin Franklin (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Philadelphia Boys' Latin Charter (PA)' -> 'Philadelphia Boys' Latin Charter (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Philadelphia Brown Prep (PA)' -> 'Philadelphia Brown Prep (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Philadelphia Calvary Christian Academy (PA)' -> 'Philadelphia Calvary Christian Academy (PA)' (no change)
+2026-11-12 12:57:30,723 - WARNING -   'Philadelphia Cardinal Dougherty (PA)' -> 'Philadelphia Cardinal Dougherty (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia Central (PA)' -> 'Philadelphia Central (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia Central Manual (PA)' -> 'Philadelphia Central Manual (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia Chestnut Hill Academy (PA)' -> 'Philadelphia Chestnut Hill Academy (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia Edward Bok Vo-Tech (PA)' -> 'Philadelphia Edward Bok Vo-Tech (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia Father Judge (PA)' -> 'Philadelphia Father Judge (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia George Washington (PA)' -> 'Philadelphia George Washington (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia Germantown (PA)' -> 'Philadelphia Germantown (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia Imhotep Charter (PA)' -> 'Philadelphia Imhotep Charter (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia John Bartram (PA)' -> 'Philadelphia John Bartram (PA)' (no change)
+2026-11-12 12:57:30,724 - WARNING -   'Philadelphia Jules E. Mastbaum Vo-Tech (PA)' -> 'Philadelphia Jules E. Mastbaum Vo-Tech (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Kensington (PA)' -> 'Philadelphia Kensington (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia KIPP DuBois Collegiate Academy (PA)' -> 'Philadelphia KIPP DuBois Collegiate Academy (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Martin L. King (PA)' -> 'Philadelphia Martin L. King (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Martin Luther King (PA)' -> 'Philadelphia Martin Luther King (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Murrell Dobbins Vo-Tech (PA)' -> 'Philadelphia Murrell Dobbins Vo-Tech (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Neumann-Goretti (PA)' -> 'Philadelphia Neumann-Goretti (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Northeast (PA)' -> 'Philadelphia Northeast (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Northeast Catholic (PA)' -> 'Philadelphia Northeast Catholic (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Olney (PA)' -> 'Philadelphia Olney (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Overbrook (PA)' -> 'Philadelphia Overbrook (PA)' (no change)
+2026-11-12 12:57:30,725 - WARNING -   'Philadelphia Prep Charter (PA)' -> 'Philadelphia Prep Charter (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia Roman Catholic (PA)' -> 'Philadelphia Roman Catholic (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia Roxborough (PA)' -> 'Philadelphia Roxborough (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia Samuel Fels (PA)' -> 'Philadelphia Samuel Fels (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia Simon Gratz (PA)' -> 'Philadelphia Simon Gratz (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia Southern (PA)' -> 'Philadelphia Southern (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia Springside Chestnut Hill Academy (PA)' -> 'Philadelphia Springside Chestnut Hill Academy (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia St. John Neumann (PA)' -> 'Philadelphia St. John Neumann (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia St. John the Baptist (PA)' -> 'Philadelphia St. John the Baptist (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia St. Joseph's Prep (PA)' -> 'Philadelphia St. Joseph's Prep (PA)' (no change)
+2026-11-12 12:57:30,726 - WARNING -   'Philadelphia St. Thomas More (PA)' -> 'Philadelphia St. Thomas More (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Philadelphia Thomas A. Edison (PA)' -> 'Philadelphia Thomas A. Edison (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Philadelphia University City (PA)' -> 'Philadelphia University City (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Philadelphia West Catholic (PA)' -> 'Philadelphia West Catholic (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Philadelphia William Penn (PA)' -> 'Philadelphia William Penn (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Philadelphia William Penn Charter (PA)' -> 'Philadelphia William Penn Charter (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Philipsburg (PA)' -> 'Philipsburg (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Philipsburg-Osceola (PA)' -> 'Philipsburg-Osceola (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Phoenixville (PA)' -> 'Phoenixville (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Pine Grove (PA)' -> 'Pine Grove (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Pitcairn (PA)' -> 'Pitcairn (PA)' (no change)
+2026-11-12 12:57:30,727 - WARNING -   'Pittsburgh Allderdice (PA)' -> 'Pittsburgh Allderdice (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh Allegheny (PA)' -> 'Pittsburgh Allegheny (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh Avonworth (PA)' -> 'Pittsburgh Avonworth (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh Baldwin (PA)' -> 'Pittsburgh Baldwin (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh Bishop Canevin Catholic (PA)' -> 'Pittsburgh Bishop Canevin Catholic (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh Brashear (PA)' -> 'Pittsburgh Brashear (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh Brentwood (PA)' -> 'Pittsburgh Brentwood (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh Carrick (PA)' -> 'Pittsburgh Carrick (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh Central Catholic (PA)' -> 'Pittsburgh Central Catholic (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh Churchill Area (PA)' -> 'Pittsburgh Churchill Area (PA)' (no change)
+2026-11-12 12:57:30,728 - WARNING -   'Pittsburgh College JV (PA)' -> 'Pittsburgh College JV (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh Fifth Avenue (PA)' -> 'Pittsburgh Fifth Avenue (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh Fox Chapel (PA)' -> 'Pittsburgh Fox Chapel (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh Gladstone (PA)' -> 'Pittsburgh Gladstone (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh Keystone Oaks (PA)' -> 'Pittsburgh Keystone Oaks (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh Knoxville (PA)' -> 'Pittsburgh Knoxville (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh Langley (PA)' -> 'Pittsburgh Langley (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh Mt. Lebanon (PA)' -> 'Pittsburgh Mt. Lebanon (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh North Hills (PA)' -> 'Pittsburgh North Hills (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh Northgate (PA)' -> 'Pittsburgh Northgate (PA)' (no change)
+2026-11-12 12:57:30,729 - WARNING -   'Pittsburgh Oliver (PA)' -> 'Pittsburgh Oliver (PA)' (no change)
+2026-11-12 12:57:30,730 - WARNING -   'Pittsburgh Peabody (PA)' -> 'Pittsburgh Peabody (PA)' (no change)
+2026-11-12 12:57:30,730 - WARNING -   'Pittsburgh Penn Hills (PA)' -> 'Pittsburgh Penn Hills (PA)' (no change)
+2026-11-12 12:57:30,730 - WARNING -   'Pittsburgh Perry Traditional Academy (PA)' -> 'Pittsburgh Perry Traditional Academy (PA)' (no change)
+2026-11-12 12:57:30,730 - WARNING -   'Pittsburgh Plum (PA)' -> 'Pittsburgh Plum (PA)' (no change)
+2026-11-12 12:57:30,730 - WARNING -   'Pittsburgh Schenley (PA)' -> 'Pittsburgh Schenley (PA)' (no change)
+2026-11-12 12:57:30,730 - WARNING -   'Pittsburgh Seton LaSalle (PA)' -> 'Pittsburgh Seton LaSalle (PA)' (no change)
+2026-11-12 12:57:30,730 - WARNING -   'Pittsburgh Shady Side Academy (PA)' -> 'Pittsburgh Shady Side Academy (PA)' (no change)
+2026-11-12 12:57:30,730 - WARNING -   'Pittsburgh Shaler Area (PA)' -> 'Pittsburgh Shaler Area (PA)' (no change)
+2026-11-12 12:57:30,730 - WARNING -   'Pittsburgh South (PA)' -> 'Pittsburgh South (PA)' (no change)
+2026-11-12 12:57:30,731 - WARNING -   'Pittsburgh South Hills (PA)' -> 'Pittsburgh South Hills (PA)' (no change)
+2026-11-12 12:57:30,731 - WARNING -   'Pittsburgh South Vo-Tech (PA)' -> 'Pittsburgh South Vo-Tech (PA)' (no change)
+2026-11-12 12:57:30,731 - WARNING -   'Pittsburgh St. John the Baptist (PA)' -> 'Pittsburgh St. John the Baptist (PA)' (no change)
+2026-11-12 12:57:30,731 - WARNING -   'Pittsburgh St. Mary of the Mount (PA)' -> 'Pittsburgh St. Mary of the Mount (PA)' (no change)
+2026-11-12 12:57:30,731 - WARNING -   'Pittsburgh Taylor Allderdice (PA)' -> 'Pittsburgh Taylor Allderdice (PA)' (no change)
+2026-11-12 12:57:30,731 - WARNING -   'Pittsburgh Westinghouse (PA)' -> 'Pittsburgh Westinghouse (PA)' (no change)
+2026-11-12 12:57:30,731 - WARNING -   'Pittsburgh Woodland Hills (PA)' -> 'Pittsburgh Woodland Hills (PA)' (no change)
+2026-11-12 12:57:30,731 - WARNING -   'Pittston (PA)' -> 'Pittston (PA)' (no change)
+2026-11-12 12:57:30,731 - WARNING -   'Pittston St. Johns (PA)' -> 'Pittston St. Johns (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Pittston Township (PA)' -> 'Pittston Township (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Plains (PA)' -> 'Plains (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Plains Sacred Heart (PA)' -> 'Plains Sacred Heart (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Pleasantville Clark (PA)' -> 'Pleasantville Clark (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Plymouth (PA)' -> 'Plymouth (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Plymouth Meeting Plymouth Whitemarsh (PA)' -> 'Plymouth Meeting Plymouth Whitemarsh (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Plymouth Wyoming Valley West (PA)' -> 'Plymouth Wyoming Valley West (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Pocono Summit Pocono Mountain West (PA)' -> 'Pocono Summit Pocono Mountain West (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Point Marion (PA)' -> 'Point Marion (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Port Allegany (PA)' -> 'Port Allegany (PA)' (no change)
+2026-11-12 12:57:30,732 - WARNING -   'Port Carbon St. Stephen School (PA)' -> 'Port Carbon St. Stephen School (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Portage (PA)' -> 'Portage (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Portage Township (PA)' -> 'Portage Township (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Pottsgrove (PA)' -> 'Pottsgrove (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Pottstown (PA)' -> 'Pottstown (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Pottstown Coventry (PA)' -> 'Pottstown Coventry (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Pottstown Hill School (PA)' -> 'Pottstown Hill School (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Pottstown Owen J. Roberts (PA)' -> 'Pottstown Owen J. Roberts (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Pottstown St. Pius X (PA)' -> 'Pottstown St. Pius X (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Pottsville (PA)' -> 'Pottsville (PA)' (no change)
+2026-11-12 12:57:30,733 - WARNING -   'Pottsville Nativity Blessed Virgin Mary (PA)' -> 'Pottsville Nativity Blessed Virgin Mary (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Prospect Park (PA)' -> 'Prospect Park (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Prospect Park Interboro (PA)' -> 'Prospect Park Interboro (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Punxsutawney (PA)' -> 'Punxsutawney (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Quakertown (PA)' -> 'Quakertown (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Quarryville Solanco (PA)' -> 'Quarryville Solanco (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Radnor (PA)' -> 'Radnor (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Radnor Archbishop Carroll (PA)' -> 'Radnor Archbishop Carroll (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Rankin (PA)' -> 'Rankin (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Reading (PA)' -> 'Reading (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Reading Berks Catholic (PA)' -> 'Reading Berks Catholic (PA)' (no change)
+2026-11-12 12:57:30,734 - WARNING -   'Reading Central Catholic (PA)' -> 'Reading Central Catholic (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Reading Exeter Township (PA)' -> 'Reading Exeter Township (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Reading Holy Name (PA)' -> 'Reading Holy Name (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Red Lion (PA)' -> 'Red Lion (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Reedsville Kishacoquillas (PA)' -> 'Reedsville Kishacoquillas (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Renovo Bucktail Area (PA)' -> 'Renovo Bucktail Area (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Republic Redstone Township (PA)' -> 'Republic Redstone Township (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Reynoldsville (PA)' -> 'Reynoldsville (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Reynoldsville Falls Creek (PA)' -> 'Reynoldsville Falls Creek (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Richland Township (PA)' -> 'Richland Township (PA)' (no change)
+2026-11-12 12:57:30,735 - WARNING -   'Ridgway-Johnsonburg (PA)' -> 'Ridgway-Johnsonburg (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Ridley Park (PA)' -> 'Ridley Park (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Rimersburg Union (PA)' -> 'Rimersburg Union (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Roaring Spring (PA)' -> 'Roaring Spring (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Robertsdale (PA)' -> 'Robertsdale (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Robesonia Conrad Weiser (PA)' -> 'Robesonia Conrad Weiser (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Rochester (PA)' -> 'Rochester (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Rockwood (PA)' -> 'Rockwood (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Rosemont Harriton (PA)' -> 'Rosemont Harriton (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Roseto Pius X (PA)' -> 'Roseto Pius X (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Royersford Pope John Paul II (PA)' -> 'Royersford Pope John Paul II (PA)' (no change)
+2026-11-12 12:57:30,736 - WARNING -   'Royersford Spring-Ford (PA)' -> 'Royersford Spring-Ford (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Rural Valley Shannock Valley (PA)' -> 'Rural Valley Shannock Valley (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Rural Valley West Shamokin (PA)' -> 'Rural Valley West Shamokin (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Russell Eisenhower (PA)' -> 'Russell Eisenhower (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Russellton Deer Lakes (PA)' -> 'Russellton Deer Lakes (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Saegertown (PA)' -> 'Saegertown (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Saint Clair (PA)' -> 'Saint Clair (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Saint Marys (PA)' -> 'Saint Marys (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Saint Marys Elk County Catholic (PA)' -> 'Saint Marys Elk County Catholic (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Salina Bell Township (PA)' -> 'Salina Bell Township (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Salina Bell-Avon (PA)' -> 'Salina Bell-Avon (PA)' (no change)
+2026-11-12 12:57:30,737 - WARNING -   'Saltsburg (PA)' -> 'Saltsburg (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Saltsburg Kiski Prep (PA)' -> 'Saltsburg Kiski Prep (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Saltsburg Kiskiminetas Springs (PA)' -> 'Saltsburg Kiskiminetas Springs (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Saxonburg Knoch (PA)' -> 'Saxonburg Knoch (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Saxton Liberty (PA)' -> 'Saxton Liberty (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Saxton Tussey Mountain (PA)' -> 'Saxton Tussey Mountain (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Sayer's Business College (PA)' -> 'Sayer's Business College (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Sayre (PA)' -> 'Sayre (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Schisslers Business College (PA)' -> 'Schisslers Business College (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Schuylkill Haven (PA)' -> 'Schuylkill Haven (PA)' (no change)
+2026-11-12 12:57:30,738 - WARNING -   'Schuylkill Haven Blue Mountain (PA)' -> 'Schuylkill Haven Blue Mountain (PA)' (no change)
+2026-11-12 12:57:30,739 - WARNING -   'Schwenksville (PA)' -> 'Schwenksville (PA)' (no change)
+2026-11-12 12:57:30,739 - WARNING -   'Scotland (PA)' -> 'Scotland (PA)' (no change)
+2026-11-12 12:57:30,739 - WARNING -   'Scotland School for Veteran's Children (PA)' -> 'Scotland School for Veteran's Children (PA)' (no change)
+2026-11-12 12:57:30,739 - WARNING -   'Scottdale (PA)' -> 'Scottdale (PA)' (no change)
+2026-11-12 12:57:30,739 - WARNING -   'Scranton (PA)' -> 'Scranton (PA)' (no change)
+2026-11-12 12:57:30,739 - WARNING -   'Scranton Central (PA)' -> 'Scranton Central (PA)' (no change)
+2026-11-12 12:57:30,739 - WARNING -   'Scranton Prep (PA)' -> 'Scranton Prep (PA)' (no change)
+2026-11-12 12:57:30,739 - WARNING -   'ScrantonTech (PA)' -> 'ScrantonTech (PA)' (no change)
+2026-11-12 12:57:30,739 - WARNING -   'Selinsgrove (PA)' -> 'Selinsgrove (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Sewickley (PA)' -> 'Sewickley (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Sewickley Area (PA)' -> 'Sewickley Area (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Shamokin Our Lady of Lourdes Regional (PA)' -> 'Shamokin Our Lady of Lourdes Regional (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Sharon (PA)' -> 'Sharon (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Sharon Hill (PA)' -> 'Sharon Hill (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Sharon Hill Academy Park (PA)' -> 'Sharon Hill Academy Park (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Sharpsburg (PA)' -> 'Sharpsburg (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Sharpsville (PA)' -> 'Sharpsville (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Sheffield (PA)' -> 'Sheffield (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Shenandoah Catholic (PA)' -> 'Shenandoah Catholic (PA)' (no change)
+2026-11-12 12:57:30,740 - WARNING -   'Shenandoah West Mahanoy Township (PA)' -> 'Shenandoah West Mahanoy Township (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'ShenandoahValley (PA)' -> 'ShenandoahValley (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'Shickshinny Northwest Area (PA)' -> 'Shickshinny Northwest Area (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'Shillington Governor Mifflin (PA)' -> 'Shillington Governor Mifflin (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'Shippensburg (PA)' -> 'Shippensburg (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'Sidman Adams Summerhill (PA)' -> 'Sidman Adams Summerhill (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'Sidman Forest Hills (PA)' -> 'Sidman Forest Hills (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'Slatington Northern Lehigh (PA)' -> 'Slatington Northern Lehigh (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'Slippery Rock (PA)' -> 'Slippery Rock (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'Smethport (PA)' -> 'Smethport (PA)' (no change)
+2026-11-12 12:57:30,741 - WARNING -   'Somerset (PA)' -> 'Somerset (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'Souderton (PA)' -> 'Souderton (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'South Fork (PA)' -> 'South Fork (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'South Huntingdon (PA)' -> 'South Huntingdon (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'South Philadelphia (PA)' -> 'South Philadelphia (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'South Williamsport (PA)' -> 'South Williamsport (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'Spangler (PA)' -> 'Spangler (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'Spring Church Apollo Ridge (PA)' -> 'Spring Church Apollo Ridge (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'Spring City (PA)' -> 'Spring City (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'Spring Grove (PA)' -> 'Spring Grove (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'Spring Grove St. Francis Prep (PA)' -> 'Spring Grove St. Francis Prep (PA)' (no change)
+2026-11-12 12:57:30,742 - WARNING -   'Spring Mills Penns Valley Area (PA)' -> 'Spring Mills Penns Valley Area (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'Springdale (PA)' -> 'Springdale (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'Springfield (PA)' -> 'Springfield (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'Springfield Cardinal O'Hara (PA)' -> 'Springfield Cardinal O'Hara (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'Springfield Delaware County (PA)' -> 'Springfield Delaware County (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'St. Marys Elk County Christian (PA)' -> 'St. Marys Elk County Christian (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'State College (PA)' -> 'State College (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'Steelton-Highspire (PA)' -> 'Steelton-Highspire (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'Stoneboro Lakeview (PA)' -> 'Stoneboro Lakeview (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'Stowe Township (PA)' -> 'Stowe Township (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'Strattanville Clarion-Limestone (PA)' -> 'Strattanville Clarion-Limestone (PA)' (no change)
+2026-11-12 12:57:30,743 - WARNING -   'Stroudsburg (PA)' -> 'Stroudsburg (PA)' (no change)
+2026-11-12 12:57:30,744 - WARNING -   'Summit Hill (PA)' -> 'Summit Hill (PA)' (no change)
+2026-11-12 12:57:30,744 - WARNING -   'Sunbury (PA)' -> 'Sunbury (PA)' (no change)
+2026-11-12 12:57:30,744 - WARNING -   'Sunbury Shikellamy (PA)' -> 'Sunbury Shikellamy (PA)' (no change)
+2026-11-12 12:57:30,744 - WARNING -   'Susquehanna (PA)' -> 'Susquehanna (PA)' (no change)
+2026-11-12 12:57:30,744 - WARNING -   'Swarthmore (PA)' -> 'Swarthmore (PA)' (no change)
+2026-11-12 12:57:30,744 - WARNING -   'Swarthmore College Frosh (PA)' -> 'Swarthmore College Frosh (PA)' (no change)
+2026-11-12 12:57:30,744 - WARNING -   'Swarthmore Prep (PA)' -> 'Swarthmore Prep (PA)' (no change)
+2026-11-12 12:57:30,744 - WARNING -   'Swiftwater Pocono Mountain (PA)' -> 'Swiftwater Pocono Mountain (PA)' (no change)
+2026-11-12 12:57:30,744 - WARNING -   'Swiftwater Pocono Mountain East (PA)' -> 'Swiftwater Pocono Mountain East (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Swissvale (PA)' -> 'Swissvale (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Swoyersville (PA)' -> 'Swoyersville (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Sykesville (PA)' -> 'Sykesville (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Tamaqua (PA)' -> 'Tamaqua (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Tamaqua Marian Catholic (PA)' -> 'Tamaqua Marian Catholic (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Tamaqua St. Jerome Regional (PA)' -> 'Tamaqua St. Jerome Regional (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Tarentum (PA)' -> 'Tarentum (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Taylor Riverside (PA)' -> 'Taylor Riverside (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Three Springs Southern Huntingdon County (PA)' -> 'Three Springs Southern Huntingdon County (PA)' (no change)
+2026-11-12 12:57:30,745 - WARNING -   'Throop Mid Valley (PA)' -> 'Throop Mid Valley (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Titusville (PA)' -> 'Titusville (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Towanda (PA)' -> 'Towanda (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Tower City Porter Tower (PA)' -> 'Tower City Porter Tower (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Tower City Williams Valley (PA)' -> 'Tower City Williams Valley (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Townville (PA)' -> 'Townville (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Trafford (PA)' -> 'Trafford (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Trevorton (PA)' -> 'Trevorton (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Troy (PA)' -> 'Troy (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Tunkhannock (PA)' -> 'Tunkhannock (PA)' (no change)
+2026-11-12 12:57:30,746 - WARNING -   'Turbotville Warrior Run (PA)' -> 'Turbotville Warrior Run (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'Turtle Creek (PA)' -> 'Turtle Creek (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'Tyrone (PA)' -> 'Tyrone (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'Union City (PA)' -> 'Union City (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'Uniontown (PA)' -> 'Uniontown (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'Uniontown Albert Gallatin (PA)' -> 'Uniontown Albert Gallatin (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'Uniontown Fairchance-Georges (PA)' -> 'Uniontown Fairchance-Georges (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'Uniontown Laurel Highlands (PA)' -> 'Uniontown Laurel Highlands (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'Uniontown North Union (PA)' -> 'Uniontown North Union (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'Uniontown South Union (PA)' -> 'Uniontown South Union (PA)' (no change)
+2026-11-12 12:57:30,747 - WARNING -   'University of Pennsylvania Frosh (PA)' -> 'University of Pennsylvania Frosh (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'University of Pittsburgh Frosh (PA)' -> 'University of Pittsburgh Frosh (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'University of Villanova Frosh (PA)' -> 'University of Villanova Frosh (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'Upper Saint Clair (PA)' -> 'Upper Saint Clair (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'Vandergrift (PA)' -> 'Vandergrift (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'Vandergrift Kiski Area (PA)' -> 'Vandergrift Kiski Area (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'Verona (PA)' -> 'Verona (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'Villanova Academy of Notre Dame (PA)' -> 'Villanova Academy of Notre Dame (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'Wallingford Nether Providence (PA)' -> 'Wallingford Nether Providence (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'Wallingford Strath Haven (PA)' -> 'Wallingford Strath Haven (PA)' (no change)
+2026-11-12 12:57:30,748 - WARNING -   'Warminster Archbishop Wood (PA)' -> 'Warminster Archbishop Wood (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Warminster William Tennent (PA)' -> 'Warminster William Tennent (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Warren (PA)' -> 'Warren (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Warrington Central Bucks South (PA)' -> 'Warrington Central Bucks South (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Washington & Jefferson College Frosh (PA)' -> 'Washington & Jefferson College Frosh (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Washington (PA)' -> 'Washington (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Washington East (PA)' -> 'Washington East (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Washington Township (PA)' -> 'Washington Township (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Washington Trinity (PA)' -> 'Washington Trinity (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Waterford Fort LeBoeuf (PA)' -> 'Waterford Fort LeBoeuf (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Wayne Valley Forge Military Academy (PA)' -> 'Wayne Valley Forge Military Academy (PA)' (no change)
+2026-11-12 12:57:30,749 - WARNING -   'Waynesboro (PA)' -> 'Waynesboro (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'Waynesburg West Greene (PA)' -> 'Waynesburg West Greene (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'WaynesburgCentral (PA)' -> 'WaynesburgCentral (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'Weatherly Area (PA)' -> 'Weatherly Area (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'Wellsboro (PA)' -> 'Wellsboro (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'Wesleyville (PA)' -> 'Wesleyville (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'West Chester (PA)' -> 'West Chester (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'West Chester Bayard Rustin (PA)' -> 'West Chester Bayard Rustin (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'West Chester Bishop Shanahan (PA)' -> 'West Chester Bishop Shanahan (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'West Chester East (PA)' -> 'West Chester East (PA)' (no change)
+2026-11-12 12:57:30,750 - WARNING -   'West Chester Henderson (PA)' -> 'West Chester Henderson (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Grove Avon Grove (PA)' -> 'West Grove Avon Grove (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Hazleton (PA)' -> 'West Hazleton (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Middlesex (PA)' -> 'West Middlesex (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Mifflin (PA)' -> 'West Mifflin (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Mifflin North (PA)' -> 'West Mifflin North (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Mifflin South (PA)' -> 'West Mifflin South (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Mifflin-Old (PA)' -> 'West Mifflin-Old (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Newton (PA)' -> 'West Newton (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Norriton Township Cheltenham Military Academy (PA)' -> 'West Norriton Township Cheltenham Military Academy (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Philadelphia (PA)' -> 'West Philadelphia (PA)' (no change)
+2026-11-12 12:57:30,751 - WARNING -   'West Pittston (PA)' -> 'West Pittston (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'West Reading (PA)' -> 'West Reading (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'West Scranton (PA)' -> 'West Scranton (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'West Sunbury Moniteau (PA)' -> 'West Sunbury Moniteau (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'West Wyoming (PA)' -> 'West Wyoming (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'West York Area (PA)' -> 'West York Area (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'Westfield CowanesqueValley (PA)' -> 'Westfield CowanesqueValley (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'Wexford North Allegheny (PA)' -> 'Wexford North Allegheny (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'Whitehall (PA)' -> 'Whitehall (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'Wilkes-Barre Elmer L. Meyers (PA)' -> 'Wilkes-Barre Elmer L. Meyers (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'Wilkes-Barre GAR Memorial (PA)' -> 'Wilkes-Barre GAR Memorial (PA)' (no change)
+2026-11-12 12:57:30,752 - WARNING -   'Wilkes-Barre Holy Redeemer (PA)' -> 'Wilkes-Barre Holy Redeemer (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Wilkes-Barre James M. Coughlin (PA)' -> 'Wilkes-Barre James M. Coughlin (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Wilkinsburg (PA)' -> 'Wilkinsburg (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Williamsburg (PA)' -> 'Williamsburg (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Williamson School (PA)' -> 'Williamson School (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Williamson Training School (PA)' -> 'Williamson Training School (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Williamsport (PA)' -> 'Williamsport (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Williamsport Loyalsock Township (PA)' -> 'Williamsport Loyalsock Township (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Williamstown (PA)' -> 'Williamstown (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Willow Grove Upper Moreland (PA)' -> 'Willow Grove Upper Moreland (PA)' (no change)
+2026-11-12 12:57:30,753 - WARNING -   'Wilmerding Westinghouse Memorial (PA)' -> 'Wilmerding Westinghouse Memorial (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Wilson West Lawn (PA)' -> 'Wilson West Lawn (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Winburne Cooper Township (PA)' -> 'Winburne Cooper Township (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Wind Ridge Richhill Township (PA)' -> 'Wind Ridge Richhill Township (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Windber (PA)' -> 'Windber (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Wingate Bald Eagle Area (PA)' -> 'Wingate Bald Eagle Area (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Wrightsville Eastern (PA)' -> 'Wrightsville Eastern (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Wrightsville Eastern York (PA)' -> 'Wrightsville Eastern York (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Wyalusing Valley Area (PA)' -> 'Wyalusing Valley Area (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Wyncote Bishop McDevitt (PA)' -> 'Wyncote Bishop McDevitt (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Wyncote Cheltenham (PA)' -> 'Wyncote Cheltenham (PA)' (no change)
+2026-11-12 12:57:30,754 - WARNING -   'Wyndmoor La Salle College (PA)' -> 'Wyndmoor La Salle College (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'Wyndmoor La Salle College Prep (PA)' -> 'Wyndmoor La Salle College Prep (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'Wynnewood Friends Central School (PA)' -> 'Wynnewood Friends Central School (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'Wyomissing (PA)' -> 'Wyomissing (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'Yeadon (PA)' -> 'Yeadon (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'Yeagertown (PA)' -> 'Yeagertown (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'Yeagertown Derry Township (PA)' -> 'Yeagertown Derry Township (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'York Catholic (PA)' -> 'York Catholic (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'York Collegiate Institute (PA)' -> 'York Collegiate Institute (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'York Country Day (PA)' -> 'York Country Day (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'York County Area Vo-Tech (PA)' -> 'York County Area Vo-Tech (PA)' (no change)
+2026-11-12 12:57:30,755 - WARNING -   'York County Tech (PA)' -> 'York County Tech (PA)' (no change)
+2026-11-12 12:57:30,756 - WARNING -   'York High (PA)' -> 'York High (PA)' (no change)
+2026-11-12 12:57:30,756 - WARNING -   'York Run Georges Township (PA)' -> 'York Run Georges Township (PA)' (no change)
+2026-11-12 12:57:30,756 - WARNING -   'York Springs Bermudian Springs (PA)' -> 'York Springs Bermudian Springs (PA)' (no change)
+2026-11-12 12:57:30,756 - WARNING -   'York Suburban (PA)' -> 'York Suburban (PA)' (no change)
+2026-11-12 12:57:30,756 - WARNING -   'York William Penn (PA)' -> 'York William Penn (PA)' (no change)
+2026-11-12 12:57:30,756 - WARNING -   'Youngsville (PA)' -> 'Youngsville (PA)' (no change)
+2026-11-12 12:57:30,756 - WARNING -   'Youngwood (PA)' -> 'Youngwood (PA)' (no change)
+2026-11-12 12:57:30,756 - WARNING -   'Zelienople (PA)' -> 'Zelienople (PA)' (no change)
+2026-11-12 12:57:30,756 - WARNING -   'Berwick (PA)' -> 'Berwick (PA)' (no change)
+2026-11-12 12:57:30,756 - INFO - Validation passed: 1321 rules are clean and ready to upload.
+2026-11-12 12:57:30,778 - INFO - Uploading 1321 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 12:57:30,971 - INFO - Upload to staging table complete.
+2026-11-12 12:57:30,977 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 13:00:53,003 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 13:00:53,003 - INFO - Reason logged to dbo.HS_Consolidation_Log: PA round 1: 2024 MaxPreps short names; same-school pairs from two digital.libraries.psu.edu team pages (Ridley, Wilson Area, Springfield, Haverford Township, Waynesburg Central, Richland, Dunbar Township, Bonner-Prendergast); renames to latest (North Catholic -> Cranberry, Edison-Fareira -> Thomas A. Edison, Dobbins)
+2026-11-12 13:00:53,004 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 13:00:53,004 - INFO - Running post-consolidation safety check...
+2026-11-12 13:00:53,491 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup PA --commit
+
+DEDUP v4 PA - COMMIT
+ dedup_archive: 1725 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_dedup_archive_COMMITTED_20261112_1301.csv
+ dedup_review: 3431 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_dedup_review_COMMITTED_20261112_1301.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_dedup_summary_COMMITTED_20261112_1301.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  PA     333097        1725                 3431             7B55FA4F-8527-4F43-A881-8C69273A30BC
+
+>>> review-pairs PA --commit
+
+REVIEW-ONLY PAIRS PA - COMMIT
+ 3396 pairs {'LONG': 747, 'SHORT': 2649} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_review_pairs_COMMITTED_20261112_1301.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  3396      4F538FF6-5082-4637-A9A0-825A8AE57C5E  None
+
+>>> same-score-fix PA
+
+SAME-SCORE DOUBLE-BOOKINGS PA - PREVIEW (nothing changed)
+ 3848 pairs {'DROP A': 1006, 'DROP B': 991, 'UNDECIDED': 1851} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_same_score_20261112_1305.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1946      None   None
+
+>>> query PA pa_dump.sql
+
+QUERY pa_dump (1 result sets)
+ set 1: 327979 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_pa_dump_1_20261112_1305.csv
+
+=== OK 2026-11-12 13:05:30

@@ -1,0 +1,1131 @@
+
+>>> move-team OH --from "Lima Central (OH)" --to "Lima Catholic Central (OH)" --seasons 2020-2026 --reason "2024+ MaxPreps short name Lima Central = Lima Central Catholic; Lima Central (OH) before 1960 is the old public Lima Central High" --commit
+
+MOVE Lima Central (OH) -> Lima Catholic Central (OH), seasons 2020-2026 - COMMIT
+ move_games: 35 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_move_games_COMMITTED_20261112_0549.csv
+ move_by_season: 112 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_move_by_season_COMMITTED_20261112_0549.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  35     1                  None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/chardon/notre-dame-cathedral-latin-lions/football/schedule/" --to "Chardon Notre Dame-Cathedral Latin (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/chardon/notre-dame-cathedral-latin-lions/football/schedule/ -> Chardon Notre Dame-Cathedral Latin (OH) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                            NewTeam_ID
+   https://www.maxpreps.com/oh/chardon/notr  Chardon Notre Dame (OH)  1071     Chardon Notre Dame-Cathedral Latin (OH)  60426     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/cincinnati/cincinnati-country-day-nighthawks/football/schedule/" --to "Cincinnati Country Day (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/cincinnati/cincinnati-country-day-nighthawks/football/schedule/ -> Cincinnati Country Day (OH) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/oh/cincinnati/c  Cincinnati Country (OH)  5757     Cincinnati Country Day (OH)  60711     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/cincinnati/north-college-hill-trojans/football/schedule/" --to "Cincinnati North College Hill (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/cincinnati/north-college-hill-trojans/football/schedule/ -> Cincinnati North College Hill (OH) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                       NewTeam_ID
+   https://www.maxpreps.com/oh/cincinnati/n  Cincinnati North College (OH)  43719    Cincinnati North College Hill (OH)  60728     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/cincinnati/roger-bacon-spartans/football/schedule/" --to "Saint Bernard Roger Bacon (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/cincinnati/roger-bacon-spartans/football/schedule/ -> Saint Bernard Roger Bacon (OH) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/oh/cincinnati/r  Cincinnati Roger Bacon (OH)  29285    Saint Bernard Roger Bacon (OH)  67596     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/cleveland/villa-angela-st-joseph-vikings/football/schedule/" --to "Cleveland Villa Angela-Saint Joseph (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/cleveland/villa-angela-st-joseph-vikings/football/schedule/ -> Cleveland Villa Angela-Saint Joseph (OH) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/oh/cleveland/vi  Cleveland Villa Angela (OH)  195      Cleveland Villa Angela-Saint Joseph (OH)  60840     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/columbus/bexley-lions/football/schedule/" --to "Bexley (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/columbus/bexley-lions/football/schedule/ -> Bexley (OH) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/oh/columbus/bex  Columbus Bexley (OH)  14680    Bexley (OH)    42770     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/columbus/grandview-heights-bobcats/football/schedule/" --to "Grandview Heights (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/columbus/grandview-heights-bobcats/football/schedule/ -> Grandview Heights (OH) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/oh/columbus/gra  Columbus Grandview Heights (OH)  60994    Grandview Heights (OH)  37624     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/cuyahoga-falls/cuyahoga-valley-christian-academy-royals/football/schedule/" --to "Cuyahoga Valley Christian Academy (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/cuyahoga-falls/cuyahoga-valley-christian-academy-royals/football/schedule/ -> Cuyahoga Valley Christian Academy (OH) - COMMIT
+   URL                                       ProperName                           Team_ID  NewProperName                           NewTeam_ID
+   https://www.maxpreps.com/oh/cuyahoga-fal  Cuyahoga Falls Cuyahoga Valley (OH)  21668    Cuyahoga Valley Christian Academy (OH)  61216     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/fremont/ross-little-giants/football/schedule/" --to "Fremont Ross (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/fremont/ross-little-giants/football/schedule/ -> Fremont Ross (OH) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName      NewTeam_ID
+   https://www.maxpreps.com/oh/fremont/ross  Fremont Ross Little (OH)  7745     Fremont Ross (OH)  62345     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/jackson/jackson-ironman-ironladies/football/schedule/" --to "Jackson (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/jackson/jackson-ironman-ironladies/football/schedule/ -> Jackson (OH) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/oh/jackson/jack  Jackson Ironman (OH)  2196     Jackson (OH)   15059     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/lima/lima-central-catholic-thunderbirds/football/schedule/" --to "Lima Catholic Central (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/lima/lima-central-catholic-thunderbirds/football/schedule/ -> Lima Catholic Central (OH) - COMMIT
+   URL                                       ProperName         Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/oh/lima/lima-ce  Lima Central (OH)  47299    Lima Catholic Central (OH)  64325     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/medina/medina-battling-bees/football/schedule/" --to "Medina (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/medina/medina-battling-bees/football/schedule/ -> Medina (OH) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/oh/medina/medin  Medina Battling (OH)  48160    Medina (OH)    25560     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/mt-gilead/mt-gilead-indians/football/schedule/" --to "Mount Gilead (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/mt-gilead/mt-gilead-indians/football/schedule/ -> Mount Gilead (OH) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName      NewTeam_ID
+   https://www.maxpreps.com/oh/mt-gilead/mt  Mount Gilead Mt. Gilead (OH)  29521    Mount Gilead (OH)  65557     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/oberlin/oberlin-the-phoenix/football/schedule/" --to "Oberlin (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/oberlin/oberlin-the-phoenix/football/schedule/ -> Oberlin (OH) - COMMIT
+   URL                                       ProperName        Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/oh/oberlin/ober  Oberlin The (OH)  25492    Oberlin (OH)   66150     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/sabina/east-clinton-astros/football/schedule/" --to "Lees Creek East Clinton (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/sabina/east-clinton-astros/football/schedule/ -> Lees Creek East Clinton (OH) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/oh/sabina/east-  Sabina East Clinton (OH)  552      Lees Creek East Clinton (OH)  64210     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/st-bernard/st-bernard-elmwood-place-titans/football/schedule/" --to "Saint Bernard-Elmwood Place (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/st-bernard/st-bernard-elmwood-place-titans/football/schedule/ -> Saint Bernard-Elmwood Place (OH) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/oh/st-bernard/s  Saint Bernard St. Bernard (OH)  17897    Saint Bernard-Elmwood Place (OH)  67597     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/st-paris/graham-local-falcons/football/schedule/" --to "St. Paris Graham Local (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/st-paris/graham-local-falcons/football/schedule/ -> St. Paris Graham Local (OH) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/oh/st-paris/gra  Saint Paris Graham Local (OH)  17825    St. Paris Graham Local (OH)  68406     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/the-plains/athens-bulldogs/football/schedule/" --to "The Plains Athens (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/the-plains/athens-bulldogs/football/schedule/ -> The Plains Athens (OH) - COMMIT
+   URL                                       ProperName       Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/oh/the-plains/a  The Athens (OH)  12468    The Plains Athens (OH)  68838     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/west-alexandria/twin-valley-south-panthers/football/schedule/" --to "West Alexandria Twin Valley South (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/west-alexandria/twin-valley-south-panthers/football/schedule/ -> West Alexandria Twin Valley South (OH) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName                           NewTeam_ID
+   https://www.maxpreps.com/oh/west-alexand  West Alexandria Twin Valley (OH)  29627    West Alexandria Twin Valley South (OH)  69610     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/west-liberty/west-liberty-salem-tigers/football/schedule/" --to "West Liberty-Salem (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/west-liberty/west-liberty-salem-tigers/football/schedule/ -> West Liberty-Salem (OH) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName            NewTeam_ID
+   https://www.maxpreps.com/oh/west-liberty  West Liberty West Liberty (OH)  25404    West Liberty-Salem (OH)  69637     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/west-portsmouth/portsmouth-west-senators/football/schedule/" --to "Portsmouth West (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/west-portsmouth/portsmouth-west-senators/football/schedule/ -> Portsmouth West (OH) - COMMIT
+   URL                                       ProperName                            Team_ID  NewProperName         NewTeam_ID
+   https://www.maxpreps.com/oh/west-portsmo  West Portsmouth Portsmouth West (OH)  48092    Portsmouth West (OH)  27575     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/akron/garfield-community-learning-center-golden-rams/football/schedule/" --to "Akron Garfield Community Learning Center (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/akron/garfield-community-learning-center-golden-rams/football/schedule/ -> Akron Garfield Community Learning Center (OH) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/oh/akron/garfie  Akron Garfield Community (OH)  31174    Akron Garfield Community Learning Center  32105     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/hanoverton/united-golden-eagles/football/schedule/" --to "Hanoverton United Local (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/hanoverton/united-golden-eagles/football/schedule/ -> Hanoverton United Local (OH) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/oh/hanoverton/u  Hanoverton United (OH)  36817    Hanoverton United Local (OH)  62839     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/lisbon/beaver-beavers/football/schedule/" --to "Lisbon Beaver Local (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/lisbon/beaver-beavers/football/schedule/ -> Lisbon Beaver Local (OH) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/oh/lisbon/beave  Lisbon Beaver (OH)  16051    Lisbon Beaver Local (OH)  39297     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/mt-orab/western-brown-broncos/football/schedule/" --to "Mount Orab Western Brown (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/mt-orab/western-brown-broncos/football/schedule/ -> Mount Orab Western Brown (OH) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/oh/mt-orab/west  Mount Orab Western (OH)  37017    Mount Orab Western Brown (OH)  65577     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/toledo/waite-indians/football/schedule/" --to "Toledo MR Waite (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/toledo/waite-indians/football/schedule/ -> Toledo MR Waite (OH) - COMMIT
+   URL                                       ProperName         Team_ID  NewProperName         NewTeam_ID
+   https://www.maxpreps.com/oh/toledo/waite  Toledo Waite (OH)  12588    Toledo MR Waite (OH)  68911     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap OH --url "https://www.maxpreps.com/oh/warren/harding-raiders/football/schedule/" --to "Warren G. Harding (OH)" --commit
+
+REMAP https://www.maxpreps.com/oh/warren/harding-raiders/football/schedule/ -> Warren G. Harding (OH) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/oh/warren/hardi  Warren Harding (OH)  24481    Warren G. Harding (OH)  69428     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck OH --commit
+
+MAPPING CHECK OH - COMMIT (Team_ID set to the ProperName ID)
+ 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_mapcheck_COMMITTED_20261112_0550.csv
+   URL                                       ProperName                 Team_ID  NameID  Problem                          Team_ID_Name                  
+   https://www.maxpreps.com/oh/columbus/st-  Columbus St. Francis (OH)  15866    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/leavittsburg  Leavittsburg LaBrae (OH)   27053    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/middletown/m  Middletown Madison (OH)    3861     71674   Team_ID points to another name   Middletown Madison Senior (OH)
+   Status     Fixable  Err 
+   COMMITTED  1        None
+
+>>> consolidate OH --reason "OH round 1: 2024 MaxPreps short names (Fremont Ross Little, Jackson Ironman, Medina Battling, Oberlin The, Cincinnati Country, North College, Villa Angela...), same-school city variants (Bexley, Reading, Columbus Academy, East Clinton, Graham Local, Highland, Fenwick -> Franklin), Moeller typo"
+Consolidating OH from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\OH_Alias_Rules.csv
+
+[stderr]
+2026-11-12 05:50:03,121 - INFO - Starting consolidation for state: (OH) using staging table method.
+2026-11-12 05:50:03,135 - WARNING - WARNING: 852 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 05:50:03,135 - WARNING -   'Massillon Washington (OH)' -> 'Massillon Washington (OH)' (no change)
+2026-11-12 05:50:03,135 - WARNING -   'Canton McKinley (OH)' -> 'Canton McKinley (OH)' (no change)
+2026-11-12 05:50:03,135 - WARNING -   'Canton McKinley (OH)' -> 'Canton McKinley (OH)' (no change)
+2026-11-12 05:50:03,135 - WARNING -   'Steubenville (OH)' -> 'Steubenville (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Cleveland St. Ignatius (OH)' -> 'Cleveland St. Ignatius (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Jackson (OH)' -> 'Jackson (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Lakewood (OH)' -> 'Lakewood (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Piqua (OH)' -> 'Piqua (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Middletown (OH)' -> 'Middletown (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Orrville (OH)' -> 'Orrville (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Cincinnati Elder (OH)' -> 'Cincinnati Elder (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Saint Marys Memorial (OH)' -> 'Saint Marys Memorial (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Dover (OH)' -> 'Dover (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Louisville (OH)' -> 'Louisville (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Findlay (OH)' -> 'Findlay (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Elyria (OH)' -> 'Elyria (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'New Philadelphia (OH)' -> 'New Philadelphia (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Warren G. Harding (OH)' -> 'Warren G. Harding (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Fremont Ross (OH)' -> 'Fremont Ross (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Akron Archbishop Hoban (OH)' -> 'Akron Archbishop Hoban (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Toledo Central Catholic (OH)' -> 'Toledo Central Catholic (OH)' (no change)
+2026-11-12 05:50:03,136 - WARNING -   'Troy (OH)' -> 'Troy (OH)' (no change)
+2026-11-12 05:50:03,137 - WARNING -   'Tiffin Calvert (OH)' -> 'Tiffin Calvert (OH)' (no change)
+2026-11-12 05:50:03,137 - WARNING -   'Alliance (OH)' -> 'Alliance (OH)' (no change)
+2026-11-12 05:50:03,137 - WARNING -   'Portsmouth (OH)' -> 'Portsmouth (OH)' (no change)
+2026-11-12 05:50:03,137 - WARNING -   'Toledo Whitmer (OH)' -> 'Toledo Whitmer (OH)' (no change)
+2026-11-12 05:50:03,137 - WARNING -   'Ironton (OH)' -> 'Ironton (OH)' (no change)
+2026-11-12 05:50:03,137 - WARNING -   'Avon Lake (OH)' -> 'Avon Lake (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Cleveland Heights (OH)' -> 'Cleveland Heights (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Lancaster (OH)' -> 'Lancaster (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Columbus Upper Arlington (OH)' -> 'Columbus Upper Arlington (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Mentor (OH)' -> 'Mentor (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Cincinnati St. Xavier (OH)' -> 'Cincinnati St. Xavier (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'North Canton Hoover (OH)' -> 'North Canton Hoover (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Liberty Center (OH)' -> 'Liberty Center (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Wooster (OH)' -> 'Wooster (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Euclid (OH)' -> 'Euclid (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Fostoria (OH)' -> 'Fostoria (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Lorain (OH)' -> 'Lorain (OH)' (no change)
+2026-11-12 05:50:03,138 - WARNING -   'Centerville (OH)' -> 'Centerville (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'McComb (OH)' -> 'McComb (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Marietta (OH)' -> 'Marietta (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Copley (OH)' -> 'Copley (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Lakewood St. Edward (OH)' -> 'Lakewood St. Edward (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Youngstown Boardman (OH)' -> 'Youngstown Boardman (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Hudson (OH)' -> 'Hudson (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Niles McKinley (OH)' -> 'Niles McKinley (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Sandusky (OH)' -> 'Sandusky (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'East Liverpool (OH)' -> 'East Liverpool (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Bellevue (OH)' -> 'Bellevue (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Zanesville (OH)' -> 'Zanesville (OH)' (no change)
+2026-11-12 05:50:03,139 - WARNING -   'Cincinnati Wyoming (OH)' -> 'Cincinnati Wyoming (OH)' (no change)
+2026-11-12 05:50:03,140 - WARNING -   'Hamilton (OH)' -> 'Hamilton (OH)' (no change)
+2026-11-12 05:50:03,140 - WARNING -   'Martins Ferry (OH)' -> 'Martins Ferry (OH)' (no change)
+2026-11-12 05:50:03,140 - WARNING -   'Campbell Memorial (OH)' -> 'Campbell Memorial (OH)' (no change)
+2026-11-12 05:50:03,140 - WARNING -   'Mansfield Senior (OH)' -> 'Mansfield Senior (OH)' (no change)
+2026-11-12 05:50:03,140 - WARNING -   'Barberton (OH)' -> 'Barberton (OH)' (no change)
+2026-11-12 05:50:03,140 - WARNING -   'Cincinnati Purcell Marian (OH)' -> 'Cincinnati Purcell Marian (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Newark (OH)' -> 'Newark (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Wadsworth (OH)' -> 'Wadsworth (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Sidney (OH)' -> 'Sidney (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Greenville (OH)' -> 'Greenville (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Saint Bernard Roger Bacon (OH)' -> 'Saint Bernard Roger Bacon (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Marion Harding (OH)' -> 'Marion Harding (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Youngstown Austintown-Fitch (OH)' -> 'Youngstown Austintown-Fitch (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Toledo MR Waite (OH)' -> 'Toledo MR Waite (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Richfield Revere (OH)' -> 'Richfield Revere (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Columbus Bishop Watterson (OH)' -> 'Columbus Bishop Watterson (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Youngstown Ursuline (OH)' -> 'Youngstown Ursuline (OH)' (no change)
+2026-11-12 05:50:03,141 - WARNING -   'Wapakoneta (OH)' -> 'Wapakoneta (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Dayton Oakwood (OH)' -> 'Dayton Oakwood (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Uniontown Green (OH)' -> 'Uniontown Green (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Van Wert (OH)' -> 'Van Wert (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Fairfield (OH)' -> 'Fairfield (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Columbiana (OH)' -> 'Columbiana (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Xenia (OH)' -> 'Xenia (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Granville (OH)' -> 'Granville (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Maria Stein Marion Local (OH)' -> 'Maria Stein Marion Local (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Salem (OH)' -> 'Salem (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Cincinnati Archbishop Moeller (OH)' -> 'Cincinnati Archbishop Moeller (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Cincinnati Princeton (OH)' -> 'Cincinnati Princeton (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Youngstown Cardinal Mooney (OH)' -> 'Youngstown Cardinal Mooney (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Massillon Jackson (OH)' -> 'Massillon Jackson (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Gallipolis Gallia Academy (OH)' -> 'Gallipolis Gallia Academy (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Columbus East (OH)' -> 'Columbus East (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Chillicothe (OH)' -> 'Chillicothe (OH)' (no change)
+2026-11-12 05:50:03,142 - WARNING -   'Coldwater (OH)' -> 'Coldwater (OH)' (no change)
+2026-11-12 05:50:03,143 - WARNING -   'Defiance (OH)' -> 'Defiance (OH)' (no change)
+2026-11-12 05:50:03,143 - WARNING -   'Huber Heights Wayne (OH)' -> 'Huber Heights Wayne (OH)' (no change)
+2026-11-12 05:50:03,143 - WARNING -   'Coshocton (OH)' -> 'Coshocton (OH)' (no change)
+2026-11-12 05:50:03,143 - WARNING -   'Celina (OH)' -> 'Celina (OH)' (no change)
+2026-11-12 05:50:03,143 - WARNING -   'Girard (OH)' -> 'Girard (OH)' (no change)
+2026-11-12 05:50:03,143 - WARNING -   'Cuyahoga Falls (OH)' -> 'Cuyahoga Falls (OH)' (no change)
+2026-11-12 05:50:03,143 - WARNING -   'The Plains Athens (OH)' -> 'The Plains Athens (OH)' (no change)
+2026-11-12 05:50:03,143 - WARNING -   'Urbana (OH)' -> 'Urbana (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Perry (OH)' -> 'Perry (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Cleveland Benedictine (OH)' -> 'Cleveland Benedictine (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Mogadore (OH)' -> 'Mogadore (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Bellaire (OH)' -> 'Bellaire (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Dayton Chaminade-Julienne (OH)' -> 'Dayton Chaminade-Julienne (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Lima Senior (OH)' -> 'Lima Senior (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Cincinnati Colerain (OH)' -> 'Cincinnati Colerain (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Bellefontaine (OH)' -> 'Bellefontaine (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Lisbon Beaver Local (OH)' -> 'Lisbon Beaver Local (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Arlington (OH)' -> 'Arlington (OH)' (no change)
+2026-11-12 05:50:03,144 - WARNING -   'Miamisburg (OH)' -> 'Miamisburg (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'Dayton Northridge (OH)' -> 'Dayton Northridge (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'East Cleveland Shaw (OH)' -> 'East Cleveland Shaw (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'Kenton (OH)' -> 'Kenton (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'Canton South (OH)' -> 'Canton South (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'Uniontown Lake (OH)' -> 'Uniontown Lake (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'Norwood (OH)' -> 'Norwood (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'Struthers (OH)' -> 'Struthers (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'Medina Highland (OH)' -> 'Medina Highland (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'Columbus West (OH)' -> 'Columbus West (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'Huron (OH)' -> 'Huron (OH)' (no change)
+2026-11-12 05:50:03,145 - WARNING -   'East Palestine (OH)' -> 'East Palestine (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Medina (OH)' -> 'Medina (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Trotwood-Madison (OH)' -> 'Trotwood-Madison (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Tiffin Columbian (OH)' -> 'Tiffin Columbian (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Versailles (OH)' -> 'Versailles (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Norton (OH)' -> 'Norton (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Toronto (OH)' -> 'Toronto (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Cincinnati Oak Hills (OH)' -> 'Cincinnati Oak Hills (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Hubbard (OH)' -> 'Hubbard (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Cincinnati Sycamore (OH)' -> 'Cincinnati Sycamore (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Macedonia Nordonia (OH)' -> 'Macedonia Nordonia (OH)' (no change)
+2026-11-12 05:50:03,146 - WARNING -   'Ravenna (OH)' -> 'Ravenna (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Lima Shawnee (OH)' -> 'Lima Shawnee (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Reynoldsburg (OH)' -> 'Reynoldsburg (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Toledo Woodward (OH)' -> 'Toledo Woodward (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Vandalia Butler (OH)' -> 'Vandalia Butler (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Strongsville (OH)' -> 'Strongsville (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Heath (OH)' -> 'Heath (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Toledo Scott (OH)' -> 'Toledo Scott (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Toledo Scott (OH)' -> 'Toledo Scott (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Glouster Trimble (OH)' -> 'Glouster Trimble (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Pickerington Central (OH)' -> 'Pickerington Central (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Holland Springfield (OH)' -> 'Holland Springfield (OH)' (no change)
+2026-11-12 05:50:03,147 - WARNING -   'Leipsic (OH)' -> 'Leipsic (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'Grove City (OH)' -> 'Grove City (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'London (OH)' -> 'London (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'New Lexington (OH)' -> 'New Lexington (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'Columbus South (OH)' -> 'Columbus South (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'Akron Garfield (OH)' -> 'Akron Garfield (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'Springfield (OH)' -> 'Springfield (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'Cincinnati Withrow (OH)' -> 'Cincinnati Withrow (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'Wellsville (OH)' -> 'Wellsville (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'Kettering Fairmont (OH)' -> 'Kettering Fairmont (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'Canal Fulton Northwest (OH)' -> 'Canal Fulton Northwest (OH)' (no change)
+2026-11-12 05:50:03,148 - WARNING -   'Franklin (OH)' -> 'Franklin (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Upper Sandusky (OH)' -> 'Upper Sandusky (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Clayton Northmont (OH)' -> 'Clayton Northmont (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Pandora-Gilboa (OH)' -> 'Pandora-Gilboa (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Youngstown Chaney (OH)' -> 'Youngstown Chaney (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Norwalk (OH)' -> 'Norwalk (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Bedford (OH)' -> 'Bedford (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Tipp City Tippecanoe (OH)' -> 'Tipp City Tippecanoe (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Akron Buchtel (OH)' -> 'Akron Buchtel (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Cambridge (OH)' -> 'Cambridge (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Minerva (OH)' -> 'Minerva (OH)' (no change)
+2026-11-12 05:50:03,149 - WARNING -   'Bellville Clear Fork (OH)' -> 'Bellville Clear Fork (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Shelby (OH)' -> 'Shelby (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Lebanon (OH)' -> 'Lebanon (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Van Buren (OH)' -> 'Van Buren (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Tallmadge (OH)' -> 'Tallmadge (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Cincinnati Anderson (OH)' -> 'Cincinnati Anderson (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Marysville (OH)' -> 'Marysville (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Vanlue (OH)' -> 'Vanlue (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Brookville (OH)' -> 'Brookville (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Arcadia (OH)' -> 'Arcadia (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Findlay Liberty-Benton (OH)' -> 'Findlay Liberty-Benton (OH)' (no change)
+2026-11-12 05:50:03,150 - WARNING -   'Covington (OH)' -> 'Covington (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'Canton Central Catholic (OH)' -> 'Canton Central Catholic (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'Leetonia (OH)' -> 'Leetonia (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'Willard (OH)' -> 'Willard (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'Bucyrus (OH)' -> 'Bucyrus (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'West Milton-Union (OH)' -> 'West Milton-Union (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'Delphos St. John's (OH)' -> 'Delphos St. John's (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'Sunbury Big Walnut (OH)' -> 'Sunbury Big Walnut (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'Akron Coventry (OH)' -> 'Akron Coventry (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'Solon (OH)' -> 'Solon (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'West Jefferson (OH)' -> 'West Jefferson (OH)' (no change)
+2026-11-12 05:50:03,151 - WARNING -   'Galion (OH)' -> 'Galion (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Bluffton (OH)' -> 'Bluffton (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Brookfield (OH)' -> 'Brookfield (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Thornville Sheridan (OH)' -> 'Thornville Sheridan (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Lima Bath (OH)' -> 'Lima Bath (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Port Clinton (OH)' -> 'Port Clinton (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Carrollton (OH)' -> 'Carrollton (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Olmsted Falls (OH)' -> 'Olmsted Falls (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Columbus Eastmoor Academy (OH)' -> 'Columbus Eastmoor Academy (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Mount Cory-Rawson (OH)' -> 'Mount Cory-Rawson (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Germantown Valley View (OH)' -> 'Germantown Valley View (OH)' (no change)
+2026-11-12 05:50:03,152 - WARNING -   'Ada (OH)' -> 'Ada (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Akron East (OH)' -> 'Akron East (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Lyndhurst Brush (OH)' -> 'Lyndhurst Brush (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Maple Heights (OH)' -> 'Maple Heights (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Cincinnati Mt. Healthy (OH)' -> 'Cincinnati Mt. Healthy (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Dola Hardin Northern (OH)' -> 'Dola Hardin Northern (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Alliance Marlington (OH)' -> 'Alliance Marlington (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Chagrin Falls (OH)' -> 'Chagrin Falls (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Kent Roosevelt (OH)' -> 'Kent Roosevelt (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Minster (OH)' -> 'Minster (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Wellston (OH)' -> 'Wellston (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Cincinnati Hughes (OH)' -> 'Cincinnati Hughes (OH)' (no change)
+2026-11-12 05:50:03,153 - WARNING -   'Chardon (OH)' -> 'Chardon (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Circleville (OH)' -> 'Circleville (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Massillon Perry (OH)' -> 'Massillon Perry (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Pemberville Eastwood (OH)' -> 'Pemberville Eastwood (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Chagrin Falls Kenston (OH)' -> 'Chagrin Falls Kenston (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'West Carrollton (OH)' -> 'West Carrollton (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Ashland (OH)' -> 'Ashland (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Carey (OH)' -> 'Carey (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Oregon Clay (OH)' -> 'Oregon Clay (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Perrysburg (OH)' -> 'Perrysburg (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Kansas Lakota (OH)' -> 'Kansas Lakota (OH)' (no change)
+2026-11-12 05:50:03,154 - WARNING -   'Harrison (OH)' -> 'Harrison (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Cincinnati La Salle (OH)' -> 'Cincinnati La Salle (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Bowling Green (OH)' -> 'Bowling Green (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Gahanna-Lincoln (OH)' -> 'Gahanna-Lincoln (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Saint Clairsville (OH)' -> 'Saint Clairsville (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Painesville Riverside (OH)' -> 'Painesville Riverside (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Elida (OH)' -> 'Elida (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Rocky River (OH)' -> 'Rocky River (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Cincinnati Deer Park (OH)' -> 'Cincinnati Deer Park (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Cincinnati Walnut Hills (OH)' -> 'Cincinnati Walnut Hills (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Cincinnati Western Hills (OH)' -> 'Cincinnati Western Hills (OH)' (no change)
+2026-11-12 05:50:03,155 - WARNING -   'Cincinnati Woodward (OH)' -> 'Cincinnati Woodward (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Crooksville (OH)' -> 'Crooksville (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Wilmington (OH)' -> 'Wilmington (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Columbus Grove (OH)' -> 'Columbus Grove (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Mayfield (OH)' -> 'Mayfield (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Lorain Clearview (OH)' -> 'Lorain Clearview (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Milford (OH)' -> 'Milford (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Cincinnati Madeira (OH)' -> 'Cincinnati Madeira (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Columbus Mifflin (OH)' -> 'Columbus Mifflin (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Duncan Falls Philo (OH)' -> 'Duncan Falls Philo (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Bryan (OH)' -> 'Bryan (OH)' (no change)
+2026-11-12 05:50:03,156 - WARNING -   'Saint Henry (OH)' -> 'Saint Henry (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Shadyside (OH)' -> 'Shadyside (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Kettering Archbishop Alter (OH)' -> 'Kettering Archbishop Alter (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Wickliffe (OH)' -> 'Wickliffe (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Cleveland Cuyahoga Heights (OH)' -> 'Cleveland Cuyahoga Heights (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Maumee (OH)' -> 'Maumee (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Brunswick (OH)' -> 'Brunswick (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Logan (OH)' -> 'Logan (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Oberlin (OH)' -> 'Oberlin (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Lockland (OH)' -> 'Lockland (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Cleveland Glenville (OH)' -> 'Cleveland Glenville (OH)' (no change)
+2026-11-12 05:50:03,157 - WARNING -   'Vermilion (OH)' -> 'Vermilion (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'North Royalton (OH)' -> 'North Royalton (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Loveland (OH)' -> 'Loveland (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Lodi Cloverleaf (OH)' -> 'Lodi Cloverleaf (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Akron North (OH)' -> 'Akron North (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Franklin Bishop Fenwick (OH)' -> 'Franklin Bishop Fenwick (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'New Concord John Glenn (OH)' -> 'New Concord John Glenn (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Columbus Bishop Hartley (OH)' -> 'Columbus Bishop Hartley (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'North Olmsted (OH)' -> 'North Olmsted (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'McDonald (OH)' -> 'McDonald (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Conneaut (OH)' -> 'Conneaut (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Hillsboro (OH)' -> 'Hillsboro (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Rossford (OH)' -> 'Rossford (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Wheelersburg (OH)' -> 'Wheelersburg (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Garfield Heights (OH)' -> 'Garfield Heights (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Warren Howland (OH)' -> 'Warren Howland (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Rockford Parkway (OH)' -> 'Rockford Parkway (OH)' (no change)
+2026-11-12 05:50:03,158 - WARNING -   'Napoleon (OH)' -> 'Napoleon (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'Oak Harbor (OH)' -> 'Oak Harbor (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'Eaton (OH)' -> 'Eaton (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'Aurora (OH)' -> 'Aurora (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'New Carlisle Tecumseh (OH)' -> 'New Carlisle Tecumseh (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'Beaver Creek (OH)' -> 'Beaver Creek (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'Magnolia Sandy Valley (OH)' -> 'Magnolia Sandy Valley (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'Peninsula Woodridge (OH)' -> 'Peninsula Woodridge (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'Newton Falls (OH)' -> 'Newton Falls (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'Geneva (OH)' -> 'Geneva (OH)' (no change)
+2026-11-12 05:50:03,159 - WARNING -   'Pomeroy Meigs (OH)' -> 'Pomeroy Meigs (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Westlake (OH)' -> 'Westlake (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Wellington (OH)' -> 'Wellington (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Steubenville Catholic Central (OH)' -> 'Steubenville Catholic Central (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Cincinnati Indian Hill (OH)' -> 'Cincinnati Indian Hill (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Marion Pleasant (OH)' -> 'Marion Pleasant (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Springfield Shawnee (OH)' -> 'Springfield Shawnee (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Delaware Hayes (OH)' -> 'Delaware Hayes (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Springboro (OH)' -> 'Springboro (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Shaker Heights (OH)' -> 'Shaker Heights (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Crestline (OH)' -> 'Crestline (OH)' (no change)
+2026-11-12 05:50:03,160 - WARNING -   'Pepper Pike Orange (OH)' -> 'Pepper Pike Orange (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Vincent Warren (OH)' -> 'Vincent Warren (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Dresden Tri-Valley (OH)' -> 'Dresden Tri-Valley (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Cincinnati North College Hill (OH)' -> 'Cincinnati North College Hill (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Akron Manchester (OH)' -> 'Akron Manchester (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Fredericktown (OH)' -> 'Fredericktown (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Reading (OH)' -> 'Reading (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Newark Licking Valley (OH)' -> 'Newark Licking Valley (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Painesville Harvey (OH)' -> 'Painesville Harvey (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Mechanicsburg (OH)' -> 'Mechanicsburg (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Circleville Logan Elm (OH)' -> 'Circleville Logan Elm (OH)' (no change)
+2026-11-12 05:50:03,161 - WARNING -   'Hanoverton United Local (OH)' -> 'Hanoverton United Local (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'Navarre Fairless (OH)' -> 'Navarre Fairless (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'Lima Perry (OH)' -> 'Lima Perry (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'McConnelsville Morgan (OH)' -> 'McConnelsville Morgan (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'Cuyahoga Falls Walsh Jesuit (OH)' -> 'Cuyahoga Falls Walsh Jesuit (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'Riverside Stebbins (OH)' -> 'Riverside Stebbins (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'Kirtland (OH)' -> 'Kirtland (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'Medina Buckeye (OH)' -> 'Medina Buckeye (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'East Canton (OH)' -> 'East Canton (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'Oxford Talawanda (OH)' -> 'Oxford Talawanda (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'New Albany (OH)' -> 'New Albany (OH)' (no change)
+2026-11-12 05:50:03,162 - WARNING -   'Columbus Hamilton Township (OH)' -> 'Columbus Hamilton Township (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Genoa Area (OH)' -> 'Genoa Area (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Ottawa-Glandorf (OH)' -> 'Ottawa-Glandorf (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Independence (OH)' -> 'Independence (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Cincinnati Glen Este (OH)' -> 'Cincinnati Glen Este (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Mansfield Madison Comprehensive (OH)' -> 'Mansfield Madison Comprehensive (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Cleveland Collinwood (OH)' -> 'Cleveland Collinwood (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Loudonville (OH)' -> 'Loudonville (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Parma Senior (OH)' -> 'Parma Senior (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Lewis Center Olentangy (OH)' -> 'Lewis Center Olentangy (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Carlisle (OH)' -> 'Carlisle (OH)' (no change)
+2026-11-12 05:50:03,163 - WARNING -   'Akron St. Vincent-St. Mary (OH)' -> 'Akron St. Vincent-St. Mary (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Clyde (OH)' -> 'Clyde (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Columbus Marion-Franklin (OH)' -> 'Columbus Marion-Franklin (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Swanton (OH)' -> 'Swanton (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Avon (OH)' -> 'Avon (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'New Lebanon Dixie (OH)' -> 'New Lebanon Dixie (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Greenfield McClain (OH)' -> 'Greenfield McClain (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Springfield Catholic Central (OH)' -> 'Springfield Catholic Central (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Twinsburg (OH)' -> 'Twinsburg (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Waverly (OH)' -> 'Waverly (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Lima Catholic Central (OH)' -> 'Lima Catholic Central (OH)' (no change)
+2026-11-12 05:50:03,164 - WARNING -   'Willoughby South (OH)' -> 'Willoughby South (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Springfield Northeastern (OH)' -> 'Springfield Northeastern (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Cleveland East Tech (OH)' -> 'Cleveland East Tech (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Millersburg West Holmes (OH)' -> 'Millersburg West Holmes (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Delta (OH)' -> 'Delta (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Whitehouse Anthony Wayne (OH)' -> 'Whitehouse Anthony Wayne (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Youngstown East (OH)' -> 'Youngstown East (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Doylestown Chippewa (OH)' -> 'Doylestown Chippewa (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Warren John F. Kennedy Catholic (OH)' -> 'Warren John F. Kennedy Catholic (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Wauseon (OH)' -> 'Wauseon (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Smithville (OH)' -> 'Smithville (OH)' (no change)
+2026-11-12 05:50:03,165 - WARNING -   'Atwater Waterloo (OH)' -> 'Atwater Waterloo (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Lowellville (OH)' -> 'Lowellville (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Delphos Jefferson (OH)' -> 'Delphos Jefferson (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Amherst Steele (OH)' -> 'Amherst Steele (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Canfield South Range (OH)' -> 'Canfield South Range (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Poland Seminary (OH)' -> 'Poland Seminary (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Springfield Greenon (OH)' -> 'Springfield Greenon (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Montpelier (OH)' -> 'Montpelier (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Canfield (OH)' -> 'Canfield (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Madison (OH)' -> 'Madison (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Massillon Tuslaw (OH)' -> 'Massillon Tuslaw (OH)' (no change)
+2026-11-12 05:50:03,166 - WARNING -   'Toledo Ottawa Hills (OH)' -> 'Toledo Ottawa Hills (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Akron Ellet (OH)' -> 'Akron Ellet (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Rittman (OH)' -> 'Rittman (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Bridgeport (OH)' -> 'Bridgeport (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Berea (OH)' -> 'Berea (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Canton Timken (OH)' -> 'Canton Timken (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Mount Blanchard Riverdale (OH)' -> 'Mount Blanchard Riverdale (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Dalton (OH)' -> 'Dalton (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Manchester (OH)' -> 'Manchester (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Plain City Jonathan Alder (OH)' -> 'Plain City Jonathan Alder (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Belpre (OH)' -> 'Belpre (OH)' (no change)
+2026-11-12 05:50:03,167 - WARNING -   'Bethel-Tate (OH)' -> 'Bethel-Tate (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Castalia Margaretta (OH)' -> 'Castalia Margaretta (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Canton GlenOak (OH)' -> 'Canton GlenOak (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Mason (OH)' -> 'Mason (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Ansonia (OH)' -> 'Ansonia (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Cincinnati Archbishop McNicholas (OH)' -> 'Cincinnati Archbishop McNicholas (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Columbus Walnut Ridge (OH)' -> 'Columbus Walnut Ridge (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Cleveland John Marshall (OH)' -> 'Cleveland John Marshall (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Spencerville (OH)' -> 'Spencerville (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Racine Southern (OH)' -> 'Racine Southern (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Utica (OH)' -> 'Utica (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Barnesville (OH)' -> 'Barnesville (OH)' (no change)
+2026-11-12 05:50:03,168 - WARNING -   'Bradford (OH)' -> 'Bradford (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Chesapeake (OH)' -> 'Chesapeake (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Columbiana Crestview (OH)' -> 'Columbiana Crestview (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Bellbrook (OH)' -> 'Bellbrook (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Rootstown (OH)' -> 'Rootstown (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Columbus Franklin Heights (OH)' -> 'Columbus Franklin Heights (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Cedarville (OH)' -> 'Cedarville (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Brooklyn (OH)' -> 'Brooklyn (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Casstown Miami East (OH)' -> 'Casstown Miami East (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Sidney Lehman Catholic (OH)' -> 'Sidney Lehman Catholic (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Clarksville Clinton-Massie (OH)' -> 'Clarksville Clinton-Massie (OH)' (no change)
+2026-11-12 05:50:03,169 - WARNING -   'Caldwell (OH)' -> 'Caldwell (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Washington Court House Washington (OH)' -> 'Washington Court House Washington (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Collins Western Reserve (OH)' -> 'Collins Western Reserve (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Springfield Northwestern (OH)' -> 'Springfield Northwestern (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'New Bremen (OH)' -> 'New Bremen (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Beloit West Branch (OH)' -> 'Beloit West Branch (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Columbus Whetstone (OH)' -> 'Columbus Whetstone (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Windham (OH)' -> 'Windham (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Youngstown Liberty (OH)' -> 'Youngstown Liberty (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Columbus Northland (OH)' -> 'Columbus Northland (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Grafton Midview (OH)' -> 'Grafton Midview (OH)' (no change)
+2026-11-12 05:50:03,170 - WARNING -   'Canal Winchester (OH)' -> 'Canal Winchester (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Eastlake North (OH)' -> 'Eastlake North (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Mogadore Field (OH)' -> 'Mogadore Field (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Washington Court House Miami Trace (OH)' -> 'Washington Court House Miami Trace (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Ashville Teays Valley (OH)' -> 'Ashville Teays Valley (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Cincinnati Taft (OH)' -> 'Cincinnati Taft (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Gahanna Columbus Academy (OH)' -> 'Gahanna Columbus Academy (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Uhrichsville Claymont (OH)' -> 'Uhrichsville Claymont (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Leavittsburg La Brae (OH)' -> 'Leavittsburg La Brae (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Mount Gilead (OH)' -> 'Mount Gilead (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Chesterland West Geauga (OH)' -> 'Chesterland West Geauga (OH)' (no change)
+2026-11-12 05:50:03,171 - WARNING -   'Gibsonburg (OH)' -> 'Gibsonburg (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Zanesville West Muskingum (OH)' -> 'Zanesville West Muskingum (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Toledo Libbey (OH)' -> 'Toledo Libbey (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Jamestown Greeneview (OH)' -> 'Jamestown Greeneview (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Cortland Lakeview (OH)' -> 'Cortland Lakeview (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Fremont St. Joseph Central Catholic (OH)' -> 'Fremont St. Joseph Central Catholic (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Sandusky Perkins (OH)' -> 'Sandusky Perkins (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Mineral Ridge (OH)' -> 'Mineral Ridge (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Goshen (OH)' -> 'Goshen (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Hamilton Ross (OH)' -> 'Hamilton Ross (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Cincinnati Finneytown (OH)' -> 'Cincinnati Finneytown (OH)' (no change)
+2026-11-12 05:50:03,172 - WARNING -   'Elyria Catholic (OH)' -> 'Elyria Catholic (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Kings Mills Kings (OH)' -> 'Kings Mills Kings (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Archbold (OH)' -> 'Archbold (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'South Point (OH)' -> 'South Point (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Toledo Rogers (OH)' -> 'Toledo Rogers (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Hamilton Badin (OH)' -> 'Hamilton Badin (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Morrow Little Miami (OH)' -> 'Morrow Little Miami (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Danville (OH)' -> 'Danville (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Dayton Carroll (OH)' -> 'Dayton Carroll (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Trenton Edgewood (OH)' -> 'Trenton Edgewood (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Lewistown Indian Lake (OH)' -> 'Lewistown Indian Lake (OH)' (no change)
+2026-11-12 05:50:03,173 - WARNING -   'Paulding (OH)' -> 'Paulding (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Youngstown Rayen (OH)' -> 'Youngstown Rayen (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Westerville South (OH)' -> 'Westerville South (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Columbus Bishop Ready (OH)' -> 'Columbus Bishop Ready (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Fairborn (OH)' -> 'Fairborn (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Cincinnati Northwest (OH)' -> 'Cincinnati Northwest (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Louisville Aquinas (OH)' -> 'Louisville Aquinas (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Hamler Patrick Henry (OH)' -> 'Hamler Patrick Henry (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Baltimore Liberty Union (OH)' -> 'Baltimore Liberty Union (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Portsmouth West (OH)' -> 'Portsmouth West (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Hannibal River (OH)' -> 'Hannibal River (OH)' (no change)
+2026-11-12 05:50:03,174 - WARNING -   'Richwood North Union (OH)' -> 'Richwood North Union (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Bloomdale Elmwood (OH)' -> 'Bloomdale Elmwood (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Wooster Triway (OH)' -> 'Wooster Triway (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Waynesville (OH)' -> 'Waynesville (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'North Jackson-Milton (OH)' -> 'North Jackson-Milton (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Pataskala Watkins Memorial (OH)' -> 'Pataskala Watkins Memorial (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Youngstown South (OH)' -> 'Youngstown South (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Chillicothe Southeastern (OH)' -> 'Chillicothe Southeastern (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Centerburg (OH)' -> 'Centerburg (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Dayton Dunbar (OH)' -> 'Dayton Dunbar (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Blanchester (OH)' -> 'Blanchester (OH)' (no change)
+2026-11-12 05:50:03,175 - WARNING -   'Middletown Madison Senior (OH)' -> 'Middletown Madison Senior (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Columbus Linden-McKinley (OH)' -> 'Columbus Linden-McKinley (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'New London (OH)' -> 'New London (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Bainbridge Paint Valley (OH)' -> 'Bainbridge Paint Valley (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Parma Heights Valley Forge (OH)' -> 'Parma Heights Valley Forge (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Sugar Grove Berne Union (OH)' -> 'Sugar Grove Berne Union (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Northridgeville (OH)' -> 'Northridgeville (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Warren Champion (OH)' -> 'Warren Champion (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Mansfield Ontario (OH)' -> 'Mansfield Ontario (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Delaware Buckeye Valley (OH)' -> 'Delaware Buckeye Valley (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Marion Elgin (OH)' -> 'Marion Elgin (OH)' (no change)
+2026-11-12 05:50:03,176 - WARNING -   'Byesville Meadowbrook (OH)' -> 'Byesville Meadowbrook (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'Cleveland Rhodes (OH)' -> 'Cleveland Rhodes (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'Galion Northmor (OH)' -> 'Galion Northmor (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'New Richmond (OH)' -> 'New Richmond (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'Newcomerstown (OH)' -> 'Newcomerstown (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'Oberlin Firelands (OH)' -> 'Oberlin Firelands (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'Cincinnati Aiken (OH)' -> 'Cincinnati Aiken (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'Sullivan Black River (OH)' -> 'Sullivan Black River (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'Streetsboro (OH)' -> 'Streetsboro (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'North Baltimore (OH)' -> 'North Baltimore (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'Warsaw River View (OH)' -> 'Warsaw River View (OH)' (no change)
+2026-11-12 05:50:03,177 - WARNING -   'Creston Norwayne (OH)' -> 'Creston Norwayne (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'Springfield South (OH)' -> 'Springfield South (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'Amanda-Clearcreek (OH)' -> 'Amanda-Clearcreek (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'Mantua Crestwood (OH)' -> 'Mantua Crestwood (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'Zanesville Maysville (OH)' -> 'Zanesville Maysville (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'Milan Edison (OH)' -> 'Milan Edison (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'Apple Creek Waynedale (OH)' -> 'Apple Creek Waynedale (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'McArthur Vinton County (OH)' -> 'McArthur Vinton County (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'La Grange Keystone (OH)' -> 'La Grange Keystone (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'Mentor Lake Catholic (OH)' -> 'Mentor Lake Catholic (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'Lancaster Fairfield Union (OH)' -> 'Lancaster Fairfield Union (OH)' (no change)
+2026-11-12 05:50:03,178 - WARNING -   'North Robinson Colonel Crawford (OH)' -> 'North Robinson Colonel Crawford (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'Millersport (OH)' -> 'Millersport (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'Morral Ridgedale (OH)' -> 'Morral Ridgedale (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'London Madison Plains (OH)' -> 'London Madison Plains (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'Cleveland Villa Angela-Saint Joseph (OH)' -> 'Cleveland Villa Angela-Saint Joseph (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'Plymouth (OH)' -> 'Plymouth (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'North Lewisburg Triad (OH)' -> 'North Lewisburg Triad (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'Stow-Munroe Falls (OH)' -> 'Stow-Munroe Falls (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'West Lafayette Ridgewood (OH)' -> 'West Lafayette Ridgewood (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'Camden Preble Shawnee (OH)' -> 'Camden Preble Shawnee (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'Bellaire St. John's Central (OH)' -> 'Bellaire St. John's Central (OH)' (no change)
+2026-11-12 05:50:03,179 - WARNING -   'Burton Berkshire (OH)' -> 'Burton Berkshire (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Westerville North (OH)' -> 'Westerville North (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'West Salem Northwestern (OH)' -> 'West Salem Northwestern (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Cleveland Cathedral Latin (OH)' -> 'Cleveland Cathedral Latin (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Lexington (OH)' -> 'Lexington (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Toledo Start (OH)' -> 'Toledo Start (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Bay Village Bay (OH)' -> 'Bay Village Bay (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Bucyrus Wynford (OH)' -> 'Bucyrus Wynford (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Ironton Rock Hill (OH)' -> 'Ironton Rock Hill (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Columbus Beechcroft (OH)' -> 'Columbus Beechcroft (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Toledo Bowsher (OH)' -> 'Toledo Bowsher (OH)' (no change)
+2026-11-12 05:50:03,180 - WARNING -   'Toledo St. John's Jesuit (OH)' -> 'Toledo St. John's Jesuit (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Cincinnati Turpin (OH)' -> 'Cincinnati Turpin (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Parma Normandy (OH)' -> 'Parma Normandy (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Fairport Harbor Harding (OH)' -> 'Fairport Harbor Harding (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Akron Kenmore (OH)' -> 'Akron Kenmore (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Piketon (OH)' -> 'Piketon (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Ashtabula (OH)' -> 'Ashtabula (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Frankfort Adena (OH)' -> 'Frankfort Adena (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'West Alexandria Twin Valley South (OH)' -> 'West Alexandria Twin Valley South (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Columbus Brookhaven (OH)' -> 'Columbus Brookhaven (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Cincinnati Mariemont (OH)' -> 'Cincinnati Mariemont (OH)' (no change)
+2026-11-12 05:50:03,181 - WARNING -   'Akron Firestone (OH)' -> 'Akron Firestone (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Vienna Mathews (OH)' -> 'Vienna Mathews (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Dayton Meadowdale (OH)' -> 'Dayton Meadowdale (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Cleveland South (OH)' -> 'Cleveland South (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Monroeville (OH)' -> 'Monroeville (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Bellefontaine Benjamin Logan (OH)' -> 'Bellefontaine Benjamin Logan (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Hicksville (OH)' -> 'Hicksville (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Dayton Belmont (OH)' -> 'Dayton Belmont (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Proctorville Fairland (OH)' -> 'Proctorville Fairland (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Tontogany Otsego (OH)' -> 'Tontogany Otsego (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Cleveland East (OH)' -> 'Cleveland East (OH)' (no change)
+2026-11-12 05:50:03,182 - WARNING -   'Beverly Fort Frye (OH)' -> 'Beverly Fort Frye (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Parma Heights Holy Name (OH)' -> 'Parma Heights Holy Name (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Belmont Union Local (OH)' -> 'Belmont Union Local (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Minford (OH)' -> 'Minford (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Springfield North (OH)' -> 'Springfield North (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Fairview Park (OH)' -> 'Fairview Park (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Ravenna Southeast (OH)' -> 'Ravenna Southeast (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Sherwood Fairview (OH)' -> 'Sherwood Fairview (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Albany Alexander (OH)' -> 'Albany Alexander (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Williamsport Westfall (OH)' -> 'Williamsport Westfall (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Cincinnati Country Day (OH)' -> 'Cincinnati Country Day (OH)' (no change)
+2026-11-12 05:50:03,183 - WARNING -   'Cleveland John Adams (OH)' -> 'Cleveland John Adams (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Sylvania Northview (OH)' -> 'Sylvania Northview (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Parma Padua Franciscan (OH)' -> 'Parma Padua Franciscan (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Elmore Woodmore (OH)' -> 'Elmore Woodmore (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Newark Catholic (OH)' -> 'Newark Catholic (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Middlefield Cardinal (OH)' -> 'Middlefield Cardinal (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Ashtabula Edgewood (OH)' -> 'Ashtabula Edgewood (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Hebron Lakewood (OH)' -> 'Hebron Lakewood (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Jeromesville Hillsdale (OH)' -> 'Jeromesville Hillsdale (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Beallsville (OH)' -> 'Beallsville (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Lees Creek East Clinton (OH)' -> 'Lees Creek East Clinton (OH)' (no change)
+2026-11-12 05:50:03,184 - WARNING -   'Akron South (OH)' -> 'Akron South (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Akron Central (OH)' -> 'Akron Central (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Berlin Center Western Reserve (OH)' -> 'Berlin Center Western Reserve (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'New Matamoras Frontier (OH)' -> 'New Matamoras Frontier (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Edon (OH)' -> 'Edon (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Sandusky St. Mary Central Catholic (OH)' -> 'Sandusky St. Mary Central Catholic (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Ashland Crestview (OH)' -> 'Ashland Crestview (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Lucasville Valley (OH)' -> 'Lucasville Valley (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Howard East Knox (OH)' -> 'Howard East Knox (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Stewart Federal Hocking (OH)' -> 'Stewart Federal Hocking (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Coal Grove Dawson-Bryant (OH)' -> 'Coal Grove Dawson-Bryant (OH)' (no change)
+2026-11-12 05:50:03,185 - WARNING -   'Cleves Taylor (OH)' -> 'Cleves Taylor (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Bascom Hopewell-Loudon (OH)' -> 'Bascom Hopewell-Loudon (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Johnstown-Monroe (OH)' -> 'Johnstown-Monroe (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Williamsburg (OH)' -> 'Williamsburg (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Milford Center Fairbanks (OH)' -> 'Milford Center Fairbanks (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Cleveland John F. Kennedy (OH)' -> 'Cleveland John F. Kennedy (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Cardington-Lincoln (OH)' -> 'Cardington-Lincoln (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Northwood (OH)' -> 'Northwood (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Sylvania Southview (OH)' -> 'Sylvania Southview (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Brecksville (OH)' -> 'Brecksville (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Harrod Allen East (OH)' -> 'Harrod Allen East (OH)' (no change)
+2026-11-12 05:50:03,186 - WARNING -   'Hamilton New Miami (OH)' -> 'Hamilton New Miami (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Bloom-Carroll (OH)' -> 'Bloom-Carroll (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Sugarcreek Garaway (OH)' -> 'Sugarcreek Garaway (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Chillicothe Unioto (OH)' -> 'Chillicothe Unioto (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Orwell Grand Valley (OH)' -> 'Orwell Grand Valley (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Salineville Southern (OH)' -> 'Salineville Southern (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Springfield Kenton Ridge (OH)' -> 'Springfield Kenton Ridge (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Batavia Clermont Northeastern (OH)' -> 'Batavia Clermont Northeastern (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Columbus Centennial (OH)' -> 'Columbus Centennial (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Columbus Independence (OH)' -> 'Columbus Independence (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Metamora Evergreen (OH)' -> 'Metamora Evergreen (OH)' (no change)
+2026-11-12 05:50:03,187 - WARNING -   'Andover Pymatuning Valley (OH)' -> 'Andover Pymatuning Valley (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Ashland Mapleton (OH)' -> 'Ashland Mapleton (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'West Liberty-Salem (OH)' -> 'West Liberty-Salem (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Chillicothe Zane Trace (OH)' -> 'Chillicothe Zane Trace (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Oak Hill (OH)' -> 'Oak Hill (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Reedsville Eastern (OH)' -> 'Reedsville Eastern (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Columbus Briggs (OH)' -> 'Columbus Briggs (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Greenwich South Central (OH)' -> 'Greenwich South Central (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Lucas (OH)' -> 'Lucas (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Millbury Lake (OH)' -> 'Millbury Lake (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Union City Mississinawa Valley (OH)' -> 'Union City Mississinawa Valley (OH)' (no change)
+2026-11-12 05:50:03,188 - WARNING -   'Arcanum (OH)' -> 'Arcanum (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'Cleveland John Hay (OH)' -> 'Cleveland John Hay (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'Mount Orab Western Brown (OH)' -> 'Mount Orab Western Brown (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'Youngstown Wilson (OH)' -> 'Youngstown Wilson (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'West Chester Lakota West (OH)' -> 'West Chester Lakota West (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'Hilliard (OH)' -> 'Hilliard (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'New Washington Buckeye Central (OH)' -> 'New Washington Buckeye Central (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'Lorain Admiral King (OH)' -> 'Lorain Admiral King (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'Attica Seneca East (OH)' -> 'Attica Seneca East (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'Groveport (OH)' -> 'Groveport (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'Jefferson (OH)' -> 'Jefferson (OH)' (no change)
+2026-11-12 05:50:03,189 - WARNING -   'Summit Station Licking Heights (OH)' -> 'Summit Station Licking Heights (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Hunting Valley University School (OH)' -> 'Hunting Valley University School (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Columbus Worthington Kilbourne (OH)' -> 'Columbus Worthington Kilbourne (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Sebring (OH)' -> 'Sebring (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Akron Springfield (OH)' -> 'Akron Springfield (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Batavia Amelia (OH)' -> 'Batavia Amelia (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Defiance Tinora (OH)' -> 'Defiance Tinora (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Toledo DeVilbiss (OH)' -> 'Toledo DeVilbiss (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'New Paris National Trail (OH)' -> 'New Paris National Trail (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Lewisburg Tri-County North (OH)' -> 'Lewisburg Tri-County North (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Haviland Wayne Trace (OH)' -> 'Haviland Wayne Trace (OH)' (no change)
+2026-11-12 05:50:03,190 - WARNING -   'Willow Wood Symmes Valley (OH)' -> 'Willow Wood Symmes Valley (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Worthington (OH)' -> 'Worthington (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Oregon Cardinal Stritch (OH)' -> 'Oregon Cardinal Stritch (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Sheffield Brookside (OH)' -> 'Sheffield Brookside (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Monroe (OH)' -> 'Monroe (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Newbury (OH)' -> 'Newbury (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Portsmouth Notre Dame (OH)' -> 'Portsmouth Notre Dame (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'McDermott Northwest (OH)' -> 'McDermott Northwest (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Caledonia River Valley (OH)' -> 'Caledonia River Valley (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Gnadenhutten Indian Valley (OH)' -> 'Gnadenhutten Indian Valley (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Cleveland St. Joseph (OH)' -> 'Cleveland St. Joseph (OH)' (no change)
+2026-11-12 05:50:03,191 - WARNING -   'Franklin Furnace Green (OH)' -> 'Franklin Furnace Green (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Middleburg Heights Midpark (OH)' -> 'Middleburg Heights Midpark (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Columbia Station Columbia (OH)' -> 'Columbia Station Columbia (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Rayland Buckeye Local (OH)' -> 'Rayland Buckeye Local (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Cincinnati Summit Country Day (OH)' -> 'Cincinnati Summit Country Day (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'South Charleston Southeastern Local (OH)' -> 'South Charleston Southeastern Local (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Malvern (OH)' -> 'Malvern (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Warrensville Heights (OH)' -> 'Warrensville Heights (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Waterford (OH)' -> 'Waterford (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'McGuffey Upper Scioto Valley (OH)' -> 'McGuffey Upper Scioto Valley (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Galloway Westland (OH)' -> 'Galloway Westland (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Sycamore Mohawk (OH)' -> 'Sycamore Mohawk (OH)' (no change)
+2026-11-12 05:50:03,192 - WARNING -   'Waynesfield-Goshen (OH)' -> 'Waynesfield-Goshen (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'Rocky River Lutheran West (OH)' -> 'Rocky River Lutheran West (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'Bexley (OH)' -> 'Bexley (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'Defiance Ayersville (OH)' -> 'Defiance Ayersville (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'Dublin Coffman (OH)' -> 'Dublin Coffman (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'Gates Mills Gilmour Academy (OH)' -> 'Gates Mills Gilmour Academy (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'Cadiz (OH)' -> 'Cadiz (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'Strasburg-Franklin (OH)' -> 'Strasburg-Franklin (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'West Unity Hilltop (OH)' -> 'West Unity Hilltop (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'Johnstown Northridge (OH)' -> 'Johnstown Northridge (OH)' (no change)
+2026-11-12 05:50:03,193 - WARNING -   'St. Paris Graham Local (OH)' -> 'St. Paris Graham Local (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'De Graff Riverside (OH)' -> 'De Graff Riverside (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Zoarville Tuscarawas Valley (OH)' -> 'Zoarville Tuscarawas Valley (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Akron St. Vincent (OH)' -> 'Akron St. Vincent (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Hilliard Davidson (OH)' -> 'Hilliard Davidson (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Cincinnati Winton Woods (OH)' -> 'Cincinnati Winton Woods (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Batavia (OH)' -> 'Batavia (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Lancaster Fisher Catholic (OH)' -> 'Lancaster Fisher Catholic (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Zanesville Bishop Rosecrans (OH)' -> 'Zanesville Bishop Rosecrans (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Lakeside Danbury (OH)' -> 'Lakeside Danbury (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Richmond Heights (OH)' -> 'Richmond Heights (OH)' (no change)
+2026-11-12 05:50:03,194 - WARNING -   'Canton Lincoln (OH)' -> 'Canton Lincoln (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Fort Recovery (OH)' -> 'Fort Recovery (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Thomas Worthington (OH)' -> 'Thomas Worthington (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Mingo Junction (OH)' -> 'Mingo Junction (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Fostoria St. Wendelin (OH)' -> 'Fostoria St. Wendelin (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Lore City Buckeye Trail (OH)' -> 'Lore City Buckeye Trail (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Cleveland Central Catholic (OH)' -> 'Cleveland Central Catholic (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Dublin (OH)' -> 'Dublin (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Antwerp (OH)' -> 'Antwerp (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Lisbon (OH)' -> 'Lisbon (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Dublin Scioto (OH)' -> 'Dublin Scioto (OH)' (no change)
+2026-11-12 05:50:03,195 - WARNING -   'Beachwood (OH)' -> 'Beachwood (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Bowerston Conotton Valley (OH)' -> 'Bowerston Conotton Valley (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Amherst (OH)' -> 'Amherst (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Columbus North (OH)' -> 'Columbus North (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Woodsfield Monroe Central (OH)' -> 'Woodsfield Monroe Central (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Canal Winchester Harvest Prep (OH)' -> 'Canal Winchester Harvest Prep (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Edgerton (OH)' -> 'Edgerton (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Holgate (OH)' -> 'Holgate (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Gates Mills Hawken (OH)' -> 'Gates Mills Hawken (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Columbus Central (OH)' -> 'Columbus Central (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Corning Miller (OH)' -> 'Corning Miller (OH)' (no change)
+2026-11-12 05:50:03,196 - WARNING -   'Sarahsville Shenandoah (OH)' -> 'Sarahsville Shenandoah (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Wintersville Indian Creek (OH)' -> 'Wintersville Indian Creek (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Wintersville (OH)' -> 'Wintersville (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Garfield Heights Trinity (OH)' -> 'Garfield Heights Trinity (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Whitehall (OH)' -> 'Whitehall (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Richmond Edison (OH)' -> 'Richmond Edison (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Hilliard Darby (OH)' -> 'Hilliard Darby (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Greenhills (OH)' -> 'Greenhills (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'New Philadelphia Tuscarawas Central Catholic (OH)' -> 'New Philadelphia Tuscarawas Central Catholic (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Tipp City Bethel (OH)' -> 'Tipp City Bethel (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Cleveland Lincoln West (OH)' -> 'Cleveland Lincoln West (OH)' (no change)
+2026-11-12 05:50:03,197 - WARNING -   'Groveport-Madison (OH)' -> 'Groveport-Madison (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Cincinnati Hills Christian Academy (OH)' -> 'Cincinnati Hills Christian Academy (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Anna (OH)' -> 'Anna (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'New Middletown Springfield (OH)' -> 'New Middletown Springfield (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Mount Victory Ridgemont (OH)' -> 'Mount Victory Ridgemont (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Jefferson Area (OH)' -> 'Jefferson Area (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Cincinnati Landmark Christian (OH)' -> 'Cincinnati Landmark Christian (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Dayton Jefferson Township (OH)' -> 'Dayton Jefferson Township (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Lemon-Monroe (OH)' -> 'Lemon-Monroe (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Garrettsville Garfield (OH)' -> 'Garrettsville Garfield (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Chillicothe Huntington (OH)' -> 'Chillicothe Huntington (OH)' (no change)
+2026-11-12 05:50:03,198 - WARNING -   'Convoy Crestview (OH)' -> 'Convoy Crestview (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Whitehall-Yearling (OH)' -> 'Whitehall-Yearling (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Liberty Township Lakota East (OH)' -> 'Liberty Township Lakota East (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Crown City South Gallia (OH)' -> 'Crown City South Gallia (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Hudson Western Reserve Academy (OH)' -> 'Hudson Western Reserve Academy (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Cleveland Heights Lutheran East (OH)' -> 'Cleveland Heights Lutheran East (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Warren Western Reserve (OH)' -> 'Warren Western Reserve (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Sebring McKinley (OH)' -> 'Sebring McKinley (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Fairview (OH)' -> 'Fairview (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Ashtabula St. John (OH)' -> 'Ashtabula St. John (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Powell Olentangy Liberty (OH)' -> 'Powell Olentangy Liberty (OH)' (no change)
+2026-11-12 05:50:03,199 - WARNING -   'Cleveland West Tech (OH)' -> 'Cleveland West Tech (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Bidwell River Valley (OH)' -> 'Bidwell River Valley (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Southington Chalker (OH)' -> 'Southington Chalker (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Cadiz Harrison Central (OH)' -> 'Cadiz Harrison Central (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Lisbon David Anderson (OH)' -> 'Lisbon David Anderson (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Troy Christian (OH)' -> 'Troy Christian (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Pickerington North (OH)' -> 'Pickerington North (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Chardon Notre Dame-Cathedral Latin (OH)' -> 'Chardon Notre Dame-Cathedral Latin (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Cuyahoga Valley Christian Academy (OH)' -> 'Cuyahoga Valley Christian Academy (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Garrettsville (OH)' -> 'Garrettsville (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Toledo Christian (OH)' -> 'Toledo Christian (OH)' (no change)
+2026-11-12 05:50:03,200 - WARNING -   'Portsmouth East (OH)' -> 'Portsmouth East (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Lorain Southview (OH)' -> 'Lorain Southview (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Dayton Stivers (OH)' -> 'Dayton Stivers (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Ashtabula Lakeside (OH)' -> 'Ashtabula Lakeside (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Bedford Heights St. Peter Chanel (OH)' -> 'Bedford Heights St. Peter Chanel (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Westerville Central (OH)' -> 'Westerville Central (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Grove City Central Crossing (OH)' -> 'Grove City Central Crossing (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Fort Loramie (OH)' -> 'Fort Loramie (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Galena Columbus Crusaders (OH)' -> 'Galena Columbus Crusaders (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Dublin Jerome (OH)' -> 'Dublin Jerome (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'Bay Village (OH)' -> 'Bay Village (OH)' (no change)
+2026-11-12 05:50:03,201 - WARNING -   'North Bend Taylor (OH)' -> 'North Bend Taylor (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Dayton Colonel White (OH)' -> 'Dayton Colonel White (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Yellow Springs (OH)' -> 'Yellow Springs (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Miamisburg Dayton Christian (OH)' -> 'Miamisburg Dayton Christian (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Sciotoville East (OH)' -> 'Sciotoville East (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Greensburg Green (OH)' -> 'Greensburg Green (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Columbus Africentric Early College (OH)' -> 'Columbus Africentric Early College (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Dayton Thurgood Marshall (OH)' -> 'Dayton Thurgood Marshall (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Dayton Kiser (OH)' -> 'Dayton Kiser (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Canton Lehman (OH)' -> 'Canton Lehman (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Cincinnati Shroder Paideia Academy (OH)' -> 'Cincinnati Shroder Paideia Academy (OH)' (no change)
+2026-11-12 05:50:03,202 - WARNING -   'Marion Catholic (OH)' -> 'Marion Catholic (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Thompson Ledgemont (OH)' -> 'Thompson Ledgemont (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Brecksville-Broadview Heights (OH)' -> 'Brecksville-Broadview Heights (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Dayton Chaminade (OH)' -> 'Dayton Chaminade (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Woodsfield (OH)' -> 'Woodsfield (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Dayton Roosevelt (OH)' -> 'Dayton Roosevelt (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Uhrichsville (OH)' -> 'Uhrichsville (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'West Chester Lakota (OH)' -> 'West Chester Lakota (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Grandview Heights (OH)' -> 'Grandview Heights (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Mariemont (OH)' -> 'Mariemont (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Grove City Christian (OH)' -> 'Grove City Christian (OH)' (no change)
+2026-11-12 05:50:03,203 - WARNING -   'Kettering Fairmont East (OH)' -> 'Kettering Fairmont East (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Kettering Fairmont West (OH)' -> 'Kettering Fairmont West (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Lima South (OH)' -> 'Lima South (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Lewis Center Olentangy Orange (OH)' -> 'Lewis Center Olentangy Orange (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Richmond Jefferson Union (OH)' -> 'Richmond Jefferson Union (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Mansfield Malabar (OH)' -> 'Mansfield Malabar (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Hilliard Bradley (OH)' -> 'Hilliard Bradley (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Lancaster Fairfield Christian Academy (OH)' -> 'Lancaster Fairfield Christian Academy (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Akron Central-Hower (OH)' -> 'Akron Central-Hower (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Franklin Middletown Christian (OH)' -> 'Franklin Middletown Christian (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Columbus Mohawk (OH)' -> 'Columbus Mohawk (OH)' (no change)
+2026-11-12 05:50:03,204 - WARNING -   'Akron West (OH)' -> 'Akron West (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Lorain Catholic (OH)' -> 'Lorain Catholic (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Columbus Father Wehrle (OH)' -> 'Columbus Father Wehrle (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Dayton Wilbur Wright (OH)' -> 'Dayton Wilbur Wright (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Cincinnati Clark Montessori (OH)' -> 'Cincinnati Clark Montessori (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Hamilton Garfield (OH)' -> 'Hamilton Garfield (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Hemlock Miller (OH)' -> 'Hemlock Miller (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Berea-Midpark (OH)' -> 'Berea-Midpark (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Dayton Ponitz Career Tech (OH)' -> 'Dayton Ponitz Career Tech (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Jewett-Scio (OH)' -> 'Jewett-Scio (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'South Amherst (OH)' -> 'South Amherst (OH)' (no change)
+2026-11-12 05:50:03,205 - WARNING -   'Fayetteville-Perry (OH)' -> 'Fayetteville-Perry (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Cleveland West (OH)' -> 'Cleveland West (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Dayton Steele (OH)' -> 'Dayton Steele (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Bedford Chanel (OH)' -> 'Bedford Chanel (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Cheshire Kyger Creek (OH)' -> 'Cheshire Kyger Creek (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Cincinnati Forest Park (OH)' -> 'Cincinnati Forest Park (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Cleveland Lincoln (OH)' -> 'Cleveland Lincoln (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Hamilton Taft (OH)' -> 'Hamilton Taft (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Cincinnati Miami Valley Christian Academy (OH)' -> 'Cincinnati Miami Valley Christian Academy (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Ridgeway Ridgemont (OH)' -> 'Ridgeway Ridgemont (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Cincinnati Gamble Montessori (OH)' -> 'Cincinnati Gamble Montessori (OH)' (no change)
+2026-11-12 05:50:03,206 - WARNING -   'Vinton North Gallia (OH)' -> 'Vinton North Gallia (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Twinsburg Chamberlin (OH)' -> 'Twinsburg Chamberlin (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Washington (OH)' -> 'Washington (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Cincinnati College Prep Academy (OH)' -> 'Cincinnati College Prep Academy (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Shenandoah (OH)' -> 'Shenandoah (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Worthington Christian (OH)' -> 'Worthington Christian (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Saint Bernard-Elmwood Place (OH)' -> 'Saint Bernard-Elmwood Place (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Patriot Southwestern (OH)' -> 'Patriot Southwestern (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Toledo St. John Jesuit (OH)' -> 'Toledo St. John Jesuit (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Fairfield Cincinnati Christian (OH)' -> 'Fairfield Cincinnati Christian (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Akron Hower Vocational (OH)' -> 'Akron Hower Vocational (OH)' (no change)
+2026-11-12 05:50:03,207 - WARNING -   'Dayton Patterson (OH)' -> 'Dayton Patterson (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Cincinnati Hillcrest Academy (OH)' -> 'Cincinnati Hillcrest Academy (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Gallowa Westland (OH)' -> 'Gallowa Westland (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'New Madison Tri-Village (OH)' -> 'New Madison Tri-Village (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Youngstown Valley Christian (OH)' -> 'Youngstown Valley Christian (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Ironton St. Joseph's (OH)' -> 'Ironton St. Joseph's (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Youngstown Christian (OH)' -> 'Youngstown Christian (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Richmond Dale Southeastern (OH)' -> 'Richmond Dale Southeastern (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Hammondsville Stanton (OH)' -> 'Hammondsville Stanton (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Cincinnati Academy of Physical Education (OH)' -> 'Cincinnati Academy of Physical Education (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Beaver Eastern (OH)' -> 'Beaver Eastern (OH)' (no change)
+2026-11-12 05:50:03,208 - WARNING -   'Marengo Highland (OH)' -> 'Marengo Highland (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Xenia Woodrow Wilson (OH)' -> 'Xenia Woodrow Wilson (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Marion River Valley (OH)' -> 'Marion River Valley (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Cincinnati Riverview East Academy (OH)' -> 'Cincinnati Riverview East Academy (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Ashtabula Sts. John & Paul (OH)' -> 'Ashtabula Sts. John & Paul (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Ohio School for the Deaf (OH)' -> 'Ohio School for the Deaf (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Columbus Holy Rosary Roman Catholic (OH)' -> 'Columbus Holy Rosary Roman Catholic (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Toledo Maumee Valley (OH)' -> 'Toledo Maumee Valley (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Columbus KIPP (OH)' -> 'Columbus KIPP (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Akron St. Mary's (OH)' -> 'Akron St. Mary's (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Columbus St. Thomas Aquinas (OH)' -> 'Columbus St. Thomas Aquinas (OH)' (no change)
+2026-11-12 05:50:03,209 - WARNING -   'Lorain St. Mary Academy (OH)' -> 'Lorain St. Mary Academy (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Tiffin Junior Order Orphans (OH)' -> 'Tiffin Junior Order Orphans (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Warren St. Mary's (OH)' -> 'Warren St. Mary's (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Lancaster Boys' Industrial School (OH)' -> 'Lancaster Boys' Industrial School (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Dover St. Joseph's (OH)' -> 'Dover St. Joseph's (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Dennison St. Mary's (OH)' -> 'Dennison St. Mary's (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Parma Byzantine Catholic (OH)' -> 'Parma Byzantine Catholic (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Irondale Local (OH)' -> 'Irondale Local (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Loveland-Hurst (OH)' -> 'Loveland-Hurst (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Wayne Montgomery Local (OH)' -> 'Wayne Montgomery Local (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'North Royalton Ernest E. Root (OH)' -> 'North Royalton Ernest E. Root (OH)' (no change)
+2026-11-12 05:50:03,210 - WARNING -   'Dayton Archbishop Alter (OH)' -> 'Dayton Archbishop Alter (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Cincinnati Jacobs Center (OH)' -> 'Cincinnati Jacobs Center (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Oberlin Academy (OH)' -> 'Oberlin Academy (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Malta & McConnelsville (OH)' -> 'Malta & McConnelsville (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Canal Winchester World Harvest Christian Academy (OH)' -> 'Canal Winchester World Harvest Christian Academy (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Mount Vernon St. Vincent de Paul School (OH)' -> 'Mount Vernon St. Vincent de Paul School (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Austinburg Grand River Institute (OH)' -> 'Austinburg Grand River Institute (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Dayton Shawn Acres Orphanage (OH)' -> 'Dayton Shawn Acres Orphanage (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Cincinnati St. Rita School for the Deaf (OH)' -> 'Cincinnati St. Rita School for the Deaf (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Massillon Reserves (OH)' -> 'Massillon Reserves (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Cleveland Spencerian Commercial (OH)' -> 'Cleveland Spencerian Commercial (OH)' (no change)
+2026-11-12 05:50:03,211 - WARNING -   'Dayton St. Mary's (OH)' -> 'Dayton St. Mary's (OH)' (no change)
+2026-11-12 05:50:03,212 - WARNING -   'Cleveland Heights University for Boys (OH)' -> 'Cleveland Heights University for Boys (OH)' (no change)
+2026-11-12 05:50:03,212 - INFO - Validation passed: 1279 rules are clean and ready to upload.
+2026-11-12 05:50:03,234 - INFO - Uploading 1279 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 05:50:03,437 - INFO - Upload to staging table complete.
+2026-11-12 05:50:03,442 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 05:53:45,997 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 05:53:45,997 - INFO - Reason logged to dbo.HS_Consolidation_Log: OH round 1: 2024 MaxPreps short names (Fremont Ross Little, Jackson Ironman, Medina Battling, Oberlin The, Cincinnati Country, North College, Villa Angela...), same-school city variants (Bexley, Reading, Columbus Academy, East Clinton, Graham Local, Highland, Fenwick -> Franklin), Moeller typo
+2026-11-12 05:53:45,997 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 05:53:45,998 - INFO - Running post-consolidation safety check...
+2026-11-12 05:53:46,002 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup OH
+
+DEDUP v4 OH - PREVIEW (nothing changed)
+ dedup_archive: 527 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_dedup_archive_20261112_0553.csv
+ dedup_review: 48 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_dedup_review_20261112_0553.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_dedup_summary_20261112_0553.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  OH     248694        527                  48               None 
+
+>>> review-pairs OH
+
+REVIEW-ONLY PAIRS OH - PREVIEW (nothing changed)
+ 48 pairs {'LONG': 1, 'SHORT': 47} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_review_pairs_20261112_0554.csv
+
+>>> same-score-fix OH
+
+SAME-SCORE DOUBLE-BOOKINGS OH - PREVIEW (nothing changed)
+ 2671 pairs {'DROP B': 691, 'DROP A': 732, 'UNDECIDED': 1248} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_same_score_20261112_0556.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1402      None   None
+
+>>> query OH oh_dump.sql
+
+QUERY oh_dump (1 result sets)
+ set 1: 248696 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_oh_dump_1_20261112_0556.csv
+
+=== OK 2026-11-12 05:56:57

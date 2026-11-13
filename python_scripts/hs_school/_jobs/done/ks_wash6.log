@@ -1,0 +1,23 @@
+
+>>> move-team KS --from "Washington (KS)" --to "Kansas City Washington (KS)" --seasons 1900-2026 --ids KS_washington_to_kcw_ids_3.csv --reason "KFH KC Washington page games (1947 Olathe, 1947/1948 Turner, 1970 Sumner) that matched the Washington page by score only" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_washington_to_kcw_ids_3.csv
+
+MOVE Washington (KS) -> Kansas City Washington (KS), seasons 1900-2026 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_move_games_COMMITTED_20261107_0737.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_move_by_season_COMMITTED_20261107_0737.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> archive-ids KS --ids KS_washington_archive_ids.csv --reason "Washington: 1959 Union (MO) 69-51 basketball score; KFH copies with wrong scores (2002 Jackson Heights 0-40, Mercury says 8-40; 1984 KCW-Sumner 21-6, Mercury says 25-6; 1990 Frankfort 6-39, KFH page 6-36)" --commit
+
+ARCHIVE LISTED GAMES KS - COMMIT
+ 4 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_archive_ids_COMMITTED_20261107_0738.csv
+   Season  Date        Home                         Home_Score  Visitor                          Visitor_Score  Source                            Access_ID  ID                                  
+   1959    1959-11-14  Washington (KS)              69          Union (MO)                       51             None                              None       09A00C9A-4E8B-4124-912F-F954428C6828
+   1984    1984-09-28  Kansas City Washington (KS)  21          Kansas City Sumner Academy (KS)  6              http://kansasfootballhistory.com  None       51CC36B1-50AC-4E4C-BF31-A5910096F337
+   1990    1990-10-05  Frankfort (KS)               39          Washington (KS)                  6              http://kansasfootballhistory.com  None       5EFE748B-AC9B-47C3-981D-109D7198C58F
+   2002    2002-11-01  Holton Jackson Heights (KS)  40          Washington (KS)                  0              http://kansasfootballhistory.com  None       0627DA55-EDC5-400C-89BB-1224394FBEB2
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  4       4      151B077D-EA6C-444D-814D-02A2C9262ECD  None
+
+=== OK 2026-11-07 07:38:05

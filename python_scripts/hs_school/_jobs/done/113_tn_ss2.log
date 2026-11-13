@@ -1,0 +1,13 @@
+
+>>> same-score-fix TN --commit
+ 368 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS TN - COMMIT
+ 228 pairs {'DROP A': 38, 'DROP B': 28, 'UNDECIDED': 162} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_same_score_COMMITTED_20261110_1145.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  66        978E9231-71D7-4D29-9230-7A44DC146BF4  None
+
+>>> step TN 4.3 done "2026-11-10: HSFHA-TN compare - 14,353 more estimated dates set (same teams+score); 24,161 HSFHA games imported (BatchID 196); 5,250 score disagreements listed in TN_score_disagreements.csv"
+Tracker updated: TN 4.3 -> done
+
+=== OK 2026-11-10 11:45:42

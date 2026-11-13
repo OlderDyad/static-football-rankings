@@ -1,0 +1,11 @@
+remap TN --url "https://www.maxpreps.com/tn/bell-buckle/the-webb-school-feet/football/schedule/" --to "Bell Buckle The Webb School (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/memphis/booker-t-washington-warriors/football/schedule/" --to "Memphis Washington (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/memphis/freedom-prep-academy-eagles/football/schedule/" --to "Memphis Freedom Prep Academy (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/morristown/morristown-hamblen-west-trojans/football/schedule/" --to "Morristown-Hamblen West (TN)" --commit
+remap TN --url "https://www.maxpreps.com/tn/white-house/christian-community-colts/football/schedule/" --to "White House Christian Community School (TN)" --commit
+mapcheck TN --commit
+consolidate TN --reason "TN round 1b: Memphis B.T./Booker T. Washington -> Memphis Washington"
+dedup TN
+review-pairs TN
+report TN double-booked
+same-score-fix TN

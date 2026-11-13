@@ -1,0 +1,5 @@
+WRONG=[]
+ALIAS=[('McLoughlin-Griswold','Milton-Freewater McLoughlin-Griswold'),('Myrtle Creek','Myrtle Creek South Umpqua'),('Moro','Moro Sherman'),('Maupin','Maupin South Wasco')]
+COOP=[('Coquille','Coquille-Pacific')]
+PREF=[('Portland Washington-Monroe','Portland Washington',1981)]
+MOVE=[]

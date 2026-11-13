@@ -1,0 +1,3 @@
+set-dates LA --file hsfha_dates_blank.csv --reason "no-source estimated date replaced by HSFHA-LA game date (both teams + score match)" --commit
+set-dates LA --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-LA date: same teams + same score in season" --commit
+same-score-fix LA --commit

@@ -1,0 +1,294 @@
+
+>>> move-team LA --from "Tallulah Academy (LA)" --to "Tallulah Madison (LA)" --seasons 1880-2026 --ids la_rev_mv_00.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Tallulah Madison (LA)" --commit
+ only the 235 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_00.csv
+
+MOVE Tallulah Academy (LA) -> Tallulah Madison (LA), seasons 1880-2026 - COMMIT
+ move_games: 235 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0901.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0901.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  235    1                  None
+
+>>> move-team LA --from "Shreveport Huntington (LA)" --to "Huntington Academy (LA)" --seasons 1880-2026 --ids la_rev_mv_01.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Huntington Academy (LA)" --commit
+ only the 149 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_01.csv
+
+MOVE Shreveport Huntington (LA) -> Huntington Academy (LA), seasons 1880-2026 - COMMIT
+ move_games: 149 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0901.csv
+ move_by_season: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0901.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  149    1                  None
+
+>>> move-team LA --from "Jefferson Riverdale (LA)" --to "Coushatta Riverdale Academy (LA)" --seasons 1880-2026 --ids la_rev_mv_02.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Coushatta Riverdale Academy (LA)" --commit
+ only the 142 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_02.csv
+
+MOVE Jefferson Riverdale (LA) -> Coushatta Riverdale Academy (LA), seasons 1880-2026 - COMMIT
+ move_games: 142 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0901.csv
+ move_by_season: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0901.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  142    1                  None
+
+>>> move-team LA --from "Natchitoches Central (LA)" --to "Baton Rouge Central (LA)" --seasons 1880-2026 --ids la_rev_mv_03.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Baton Rouge Central (LA)" --commit
+ only the 95 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_03.csv
+
+MOVE Natchitoches Central (LA) -> Baton Rouge Central (LA), seasons 1880-2026 - COMMIT
+ move_games: 95 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0901.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0901.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  95     1                  None
+
+>>> move-team LA --from "Shreveport Woodlawn (LA)" --to "Baton Rouge Woodlawn (LA)" --seasons 1880-2026 --ids la_rev_mv_04.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Baton Rouge Woodlawn (LA)" --commit
+ only the 82 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_04.csv
+
+MOVE Shreveport Woodlawn (LA) -> Baton Rouge Woodlawn (LA), seasons 1880-2026 - COMMIT
+ move_games: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0901.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0901.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  82     1                  None
+
+>>> move-team LA --from "New Orleans Jesuit (LA)" --to "Shreveport Loyola College Prep (LA)" --seasons 1880-2026 --ids la_rev_mv_05.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Shreveport Loyola College Prep (LA)" --commit
+ only the 60 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_05.csv
+
+MOVE New Orleans Jesuit (LA) -> Shreveport Loyola College Prep (LA), seasons 1880-2026 - COMMIT
+ move_games: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0901.csv
+ move_by_season: 115 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0901.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  60     1                  None
+
+>>> move-team LA --from "Walker (LA)" --to "New Orleans O.P. Walker (LA)" --seasons 1880-2026 --ids la_rev_mv_06.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to New Orleans O.P. Walker (LA) (pre-2013 Landry-Walker merger)" --commit
+ only the 62 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_06.csv
+
+MOVE Walker (LA) -> New Orleans O.P. Walker (LA), seasons 1880-2026 - COMMIT
+ move_games: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0901.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0901.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  62     1                  None
+
+>>> move-team LA --from "Eunice (LA)" --to "Lafayette Judice (LA)" --seasons 1880-2026 --ids la_rev_mv_07.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Lafayette Judice (LA)" --commit
+ only the 41 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_07.csv
+
+MOVE Eunice (LA) -> Lafayette Judice (LA), seasons 1880-2026 - COMMIT
+ move_games: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0901.csv
+ move_by_season: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0901.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  41     1                  None
+
+>>> move-team LA --from "Gretna Thomas Jefferson (LA)" --to "Franklinton Thomas (LA)" --seasons 1880-2026 --ids la_rev_mv_08.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Franklinton Thomas (LA)" --commit
+ only the 43 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_08.csv
+
+MOVE Gretna Thomas Jefferson (LA) -> Franklinton Thomas (LA), seasons 1880-2026 - COMMIT
+ move_games: 43 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 38 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  43     1                  None
+
+>>> move-team LA --from "Shreveport Jesuit (LA)" --to "New Orleans Jesuit (LA)" --seasons 1880-2026 --ids la_rev_mv_09.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to New Orleans Jesuit (LA)" --commit
+ only the 33 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_09.csv
+
+MOVE Shreveport Jesuit (LA) -> New Orleans Jesuit (LA), seasons 1880-2026 - COMMIT
+ move_games: 33 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 113 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  33     1                  None
+
+>>> move-team LA --from "Baton Rouge Redemptorist (LA)" --to "New Orleans Redeemer (LA)" --seasons 1880-2026 --ids la_rev_mv_10.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to New Orleans Redeemer (LA)" --commit
+ only the 34 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_10.csv
+
+MOVE Baton Rouge Redemptorist (LA) -> New Orleans Redeemer (LA), seasons 1880-2026 - COMMIT
+ move_games: 34 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  34     1                  None
+
+>>> move-team LA --from "Shreveport Southwood (LA)" --to "Hammond Southwood Academy (LA)" --seasons 1880-2026 --ids la_rev_mv_11.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Hammond Southwood Academy (LA)" --commit
+ only the 30 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_11.csv
+
+MOVE Shreveport Southwood (LA) -> Hammond Southwood Academy (LA), seasons 1880-2026 - COMMIT
+ move_games: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  30     1                  None
+
+>>> move-team LA --from "New Orleans Landry (LA)" --to "Lake Charles Landry Memorial (LA)" --seasons 1880-2026 --ids la_rev_mv_12.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Lake Charles Landry Memorial (LA)" --commit
+ only the 25 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_12.csv
+
+MOVE New Orleans Landry (LA) -> Lake Charles Landry Memorial (LA), seasons 1880-2026 - COMMIT
+ move_games: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  25     1                  None
+
+>>> move-team LA --from "Youngsville Southside (LA)" --to "Monroe Southside (LA)" --seasons 1880-2026 --ids la_rev_mv_13.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Monroe Southside (LA)" --commit
+ only the 28 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_13.csv
+
+MOVE Youngsville Southside (LA) -> Monroe Southside (LA), seasons 1880-2026 - COMMIT
+ move_games: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status   Games  ToNameInTeamNames  Err                                     
+   NOT RUN  0      0                  target name is not in HS_Team_Names - ch
+
+>>> move-team LA --from "Plaquemine St. John The Evangelist (LA)" --to "Shreveport Loyola College Prep (LA)" --seasons 1880-2026 --ids la_rev_mv_14.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Shreveport Loyola College Prep (LA)" --commit
+ only the 31 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_14.csv
+
+MOVE Plaquemine St. John The Evangelist (LA) -> Shreveport Loyola College Prep (LA), seasons 1880-2026 - COMMIT
+ move_games: 31 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  31     1                  None
+
+>>> move-team LA --from "Baton Rouge Woodlawn (LA)" --to "Shreveport Woodlawn (LA)" --seasons 1880-2026 --ids la_rev_mv_15.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Shreveport Woodlawn (LA)" --commit
+ only the 25 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_15.csv
+
+MOVE Baton Rouge Woodlawn (LA) -> Shreveport Woodlawn (LA), seasons 1880-2026 - COMMIT
+ move_games: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  25     1                  None
+
+>>> move-team LA --from "Plaquemine St. John The Evangelist (LA)" --to "New Orleans St. John Vianney Prep (LA)" --seasons 1880-2026 --ids la_rev_mv_16.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to New Orleans St. John Vianney Prep (LA)" --commit
+ only the 26 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_16.csv
+
+MOVE Plaquemine St. John The Evangelist (LA) -> New Orleans St. John Vianney Prep (LA), seasons 1880-2026 - COMMIT
+ move_games: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 77 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  26     1                  None
+
+>>> move-team LA --from "Slidell Salmen (LA)" --to "St. Amant (LA)" --seasons 1880-2026 --ids la_rev_mv_17.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to St. Amant (LA)" --commit
+ only the 27 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_17.csv
+
+MOVE Slidell Salmen (LA) -> St. Amant (LA), seasons 1880-2026 - COMMIT
+ move_games: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  27     1                  None
+
+>>> move-team LA --from "Lena Northwood (LA)" --to "Shreveport Northwood (LA)" --seasons 1880-2026 --ids la_rev_mv_18.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Shreveport Northwood (LA)" --commit
+ only the 19 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_18.csv
+
+MOVE Lena Northwood (LA) -> Shreveport Northwood (LA), seasons 1880-2026 - COMMIT
+ move_games: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  19     1                  None
+
+>>> move-team LA --from "Plain Dealing Louisiana New Tech (LA)" --to "Plain Dealing Academy (LA)" --seasons 1880-2026 --ids la_rev_mv_19.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Plain Dealing Academy (LA)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_19.csv
+
+MOVE Plain Dealing Louisiana New Tech (LA) -> Plain Dealing Academy (LA), seasons 1880-2026 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 80 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> move-team LA --from "Shreveport Booker T. Washington (LA)" --to "New Orleans Booker T. Washington (LA)" --seasons 1880-2026 --ids la_rev_mv_20.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to New Orleans Booker T. Washington (LA)" --commit
+ only the 19 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_20.csv
+
+MOVE Shreveport Booker T. Washington (LA) -> New Orleans Booker T. Washington (LA), seasons 1880-2026 - COMMIT
+ move_games: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  19     1                  None
+
+>>> move-team LA --from "New Orleans McDonogh (LA)" --to "New Orleans McDonogh 35 (LA)" --seasons 1880-2026 --ids la_rev_mv_21.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to New Orleans McDonogh 35 (LA)" --commit
+ only the 19 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_21.csv
+
+MOVE New Orleans McDonogh (LA) -> New Orleans McDonogh 35 (LA), seasons 1880-2026 - COMMIT
+ move_games: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  19     1                  None
+
+>>> move-team LA --from "Metairie Park Country Day (LA)" --to "Shreveport Country Day (LA)" --seasons 1880-2026 --ids la_rev_mv_22.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Shreveport Country Day (LA)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_22.csv
+
+MOVE Metairie Park Country Day (LA) -> Shreveport Country Day (LA), seasons 1880-2026 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team LA --from "Hammond Southwood Academy (LA)" --to "Shreveport Southwood (LA)" --seasons 1880-2026 --ids la_rev_mv_23.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Shreveport Southwood (LA)" --commit
+ only the 16 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_23.csv
+
+MOVE Hammond Southwood Academy (LA) -> Shreveport Southwood (LA), seasons 1880-2026 - COMMIT
+ move_games: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  16     1                  None
+
+>>> move-team LA --from "New Orleans Booker T. Washington (LA)" --to "Lake Charles Washington (LA)" --seasons 1880-2026 --ids la_rev_mv_24.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Lake Charles Washington (LA)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_24.csv
+
+MOVE New Orleans Booker T. Washington (LA) -> Lake Charles Washington (LA), seasons 1880-2026 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team LA --from "Monroe Ouachita Christian (LA)" --to "Monroe Ouachita Parish (LA)" --seasons 1880-2026 --ids la_rev_mv_25.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Monroe Ouachita Parish (LA)" --commit
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_25.csv
+
+MOVE Monroe Ouachita Christian (LA) -> Monroe Ouachita Parish (LA), seasons 1880-2026 - COMMIT
+ move_games: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 95 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  13     1                  None
+
+>>> move-team LA --from "Tallulah Madison (LA)" --to "Tallulah Academy (LA)" --seasons 1880-2026 --ids la_rev_mv_26.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Tallulah Academy (LA)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_26.csv
+
+MOVE Tallulah Madison (LA) -> Tallulah Academy (LA), seasons 1880-2026 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0902.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0902.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team LA --from "Baton Rouge Catholic (LA)" --to "New Iberia Catholic (LA)" --seasons 1880-2026 --ids la_rev_mv_27.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to New Iberia Catholic (LA)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_27.csv
+
+MOVE Baton Rouge Catholic (LA) -> New Iberia Catholic (LA), seasons 1880-2026 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0903.csv
+ move_by_season: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0903.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team LA --from "Franklin (LA)" --to "New Orleans Benjamin Franklin (LA)" --seasons 1880-2026 --ids la_rev_mv_28.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to New Orleans Benjamin Franklin (LA)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_28.csv
+
+MOVE Franklin (LA) -> New Orleans Benjamin Franklin (LA), seasons 1880-2026 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0903.csv
+ move_by_season: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0903.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team LA --from "New Orleans Landry-Walker (LA)" --to "New Orleans Landry (LA)" --seasons 1880-2012 --ids la_rev_mv_29.csv --reason "Landry-Walker formed 2013 (merger); earlier games are L.B. Landry" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_29.csv
+
+MOVE New Orleans Landry-Walker (LA) -> New Orleans Landry (LA), seasons 1880-2012 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0903.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0903.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> dedup LA
+
+DEDUP v4 LA - PREVIEW (nothing changed)
+ dedup_archive: 170 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_archive_20261111_0903.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_review_20261111_0903.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_summary_20261111_0903.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  LA     103018        170                  2                None 
+
+>>> review-pairs LA
+
+REVIEW-ONLY PAIRS LA - PREVIEW (nothing changed)
+ 2 pairs {'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_review_pairs_20261111_0903.csv
+
+>>> same-score-fix LA
+ 1128 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS LA - PREVIEW (nothing changed)
+ 184 pairs {'DROP A': 6, 'DROP B': 6, 'UNDECIDED': 172} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_same_score_20261111_0904.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  12        None   None
+
+=== OK 2026-11-11 09:04:09

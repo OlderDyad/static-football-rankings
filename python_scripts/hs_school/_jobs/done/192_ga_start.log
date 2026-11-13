@@ -1,0 +1,108 @@
+
+>>> addstate GA
+Tracker rows ready for GA
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report GA drift
+
+REPORT drift GA: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_drift_20261111_1235.csv
+   Stopped                                 S_Games  S_First  S_Last  S_Mapped  Started                         N_Games  N_First  N_Last  N_Mapped
+   Albany (GA)                             1044     1913     2017    0         None                            None     None     None    0       
+   Albany Life Christian Academy (GA)      21       2011     2019    0         None                            None     None     None    0       
+   Americus-Sumter (GA)                    205      2004     2023    0         None                            None     None     None    0       
+   Atlanta Grady (GA)                      825      1947     2023    0         Atlanta Midtown (GA)            48       2021     2026    1       
+   Atlanta Howard (GA)                     320      1932     2019    0         Atlanta Midtown (GA)            48       2021     2026    1       
+   Atlanta North Atlanta (GA)              336      1991     2023    0         Atlanta Midtown (GA)            48       2021     2026    1       
+   Augusta Curtis Baptist (GA)             245      1991     2016    0         None                            None     None     None    0       
+   Baxley Appling Christian Academy (GA)   97       2006     2016    0         None                            None     None     None    0       
+   Calhoun (GA)                            973      1925     2023    0         Calhoun Yellow (GA)             37       2024     2026    1       
+   Canton North Georgia (GA)               201      2006     2023    0         None                            None     None     None    0       
+   Columbus Saint Anne-Pacelli (GA)        36       2021     2023    0         Columbus St. Anne (GA)          34       2024     2026    1       
+   Columbus St. Anne-Pacelli (GA)          98       2014     2022    0         Columbus St. Anne (GA)          34       2024     2026    1       
+   Conyers East Atlanta (GA)               389      1959     2017    0         None                            None     None     None    0       
+   Cumming Horizon Christian Academy (GA)  120      2009     2023    0         Cumming Fideles Christian (GA)  50       2020     2026    1       
+   Cumming Horizon Christian Academy (GA)  120      2009     2023    0         Cumming Horizon Christian (GA)  23       2024     2026    1       
+   ... 55 more rows (see CSV)
+
+>>> mapcheck GA
+
+MAPPING CHECK GA - PREVIEW (nothing changed)
+ 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_mapcheck_20261111_1235.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/ga/duluth/notre  Duluth Notre Dame (GA)                    2155     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ga/martinez/aug  Martinez Augusta (GA)                     13179    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ga/bainbridge/b  Bainbridge (GA)                           59273    59271   Team_ID points to another name   Bainbridge Grace Christian Academy (GA) 
+   https://www.maxpreps.com/ga/bainbridge/g  Bainbridge Grace Christian Academy (GA)   42015    59273   Team_ID points to another name   Bamberg Carlisle Military (SC)          
+   https://www.maxpreps.com/ga/bethlehem/be  Bethlehem Christian Academy (GA)          34048    59663   Team_ID points to another name   Biloxi Notre Dame (MS)                  
+   https://www.maxpreps.com/ga/chatsworth/n  Chatsworth North Murray (GA)              3825     60474   Team_ID points to another name   Chattahoochee (FL)                      
+   https://www.maxpreps.com/ga/colquitt/mil  Colquitt Miller County (GA)               60969    60942   Team_ID points to another name   Columbia Military Academy (TN)          
+   https://www.maxpreps.com/ga/conyers/youn  Conyers Young Americans Christian (GA)    26061    61052   Team_ID points to another name   Cope Harvest Christian Academy (SC)     
+   https://www.maxpreps.com/ga/dawsonville/  Dawsonville Dawson County (GA)            15489    61290   Team_ID points to another name   Dayton (TN)                             
+   https://www.maxpreps.com/ga/donalsonvill  Donalsonville Seminole County (GA)        32145    61539   Team_ID points to another name   Donalsonville Seminole County Training (
+   https://www.maxpreps.com/ga/gainesville/  Gainesville Riverside Military Academy (  70800    62390   Team_ID points to another name   Gainesville Riverside Military Academy B
+   https://www.maxpreps.com/ga/milledgevill  Milledgeville Baldwin (GA)                65246    34716   Team_ID points to another name   Milledgeville Georgia Military Academy (
+   https://www.maxpreps.com/ga/milledgevill  Milledgeville Georgia Military College (  71525    4734    Team_ID points to another name   Milledgeville Georgia Military College B
+   https://www.maxpreps.com/ga/monticello/p  Monticello Piedmont Academy (GA)          65488    65441   Team_ID points to another name   Morganton East Fannin (GA)              
+   https://www.maxpreps.com/ga/ocilla/irwin  Ocilla Irwin County (GA)                  71835    66164   Team_ID points to another name   Oglethorpe University B (GA)            
+   https://www.maxpreps.com/ga/savannah/win  Savannah Windsor Forest (GA)              70621    67963   Team_ID points to another name   Savannah YMCA Frosh (GA)                
+   https://www.maxpreps.com/ga/sugar-hill/l  Sugar Hill Lanier (GA)                    72019    68570   Team_ID points to another name   Sugar Hill Lanier B (GA)                
+   https://www.maxpreps.com/ga/talbotton/ce  Talbotton Central (GA)                    22878    68714   Team_ID points to another name   Tallahassee Florida High (FL)           
+   https://www.maxpreps.com/ga/woodstock/et  Woodstock Etowah (GA)                     1570     69985   Team_ID points to another name   Woodstock Northside Christian Academy (G
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  17       None
+
+>>> dedup GA
+
+DEDUP v4 GA - PREVIEW (nothing changed)
+ dedup_archive: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_dedup_archive_20261111_1235.csv
+ dedup_review: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_dedup_review_20261111_1235.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_dedup_summary_20261111_1235.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  GA     163321        1                    4                None 
+
+>>> review-pairs GA
+
+REVIEW-ONLY PAIRS GA - PREVIEW (nothing changed)
+ 4 pairs {'LONG': 1, 'SHORT': 3} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_review_pairs_20261111_1235.csv
+
+>>> same-score-fix GA
+
+SAME-SCORE DOUBLE-BOOKINGS GA - PREVIEW (nothing changed)
+ 3214 pairs {'DROP B': 176, 'DROP A': 172, 'UNDECIDED': 2866} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_same_score_20261111_1239.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  309       None   None
+
+>>> query GA ga_dump.sql
+
+QUERY ga_dump (1 result sets)
+ set 1: 163321 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_ga_dump_1_20261111_1239.csv
+
+>>> query GA ga_geo_all.sql
+
+QUERY ga_geo_all (2 result sets)
+ set 1: 36437 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_ga_geo_all_1_20261111_1239.csv
+ set 2: 163321 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_ga_geo_all_2_20261111_1239.csv
+
+>>> query GA ga_names.sql
+
+QUERY ga_names (1 result sets)
+ set 1: 2102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_ga_names_1_20261111_1239.csv
+
+=== OK 2026-11-11 12:39:09

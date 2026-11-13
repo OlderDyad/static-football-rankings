@@ -1,0 +1,89 @@
+
+>>> report FL drift
+
+REPORT drift FL: 154 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_drift_20261111_1813.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                                N_Games  N_First  N_Last  N_Mapped
+   Auburndale Jordan Christian Prep (FL)     47       2015     2024    1         None                                   None     None     None    0       
+   Auburndale Kingdom Prep (FL)              15       2017     2018    0         Auburndale Jordan Christian Prep (FL)  47       2015     2024    1       
+   Boynton Beach Somerset Academy - Canyons  64       2016     2023    0         Boynton Beach Somerset Academy (FL)    33       2024     2026    1       
+   Bradenton IMG Academy Blue (FL)           25       2021     2024    1         None                                   None     None     None    0       
+   Brandon Faith Baptist Christian (FL)      33       2008     2022    0         None                                   None     None     None    0       
+   Brandon Families Instructing Students Ho  66       2009     2016    1         None                                   None     None     None    0       
+   Bunnell First Baptist Christian Academy   17       2018     2020    0         None                                   None     None     None    0       
+   Clearwater Academy International (FL)     161      2008     2023    1         None                                   None     None     None    0       
+   Clearwater American Collegiate Academy (  25       2019     2023    0         None                                   None     None     None    0       
+   Clearwater Superior Collegiate (FL)       16       2017     2018    0         None                                   None     None     None    0       
+   Deerfield Beach Somerset Academy (FL)     37       2019     2025    1         None                                   None     None     None    0       
+   Deerfield Beach Zion Lutheran (FL)        161      1991     2015    1         None                                   None     None     None    0       
+   DeLand Lighthouse Christian (FL)          50       2006     2017    0         None                                   None     None     None    0       
+   Delray Beach Village Academy (FL)         119      2009     2020    1         None                                   None     None     None    0       
+   Deltona Trinity Christian Academy (FL)    212      2004     2025    1         None                                   None     None     None    0       
+   ... 139 more rows (see CSV)
+
+>>> mapcheck FL
+
+MAPPING CHECK FL - PREVIEW (nothing changed)
+ 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_mapcheck_20261111_1813.csv
+   URL                                       ProperName                              Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/fl/dover/strawb  Dover Strawberry Crest (FL)             25176    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/fl/kissimmee/vi  Kissimmee Victory Charter (FL)          49527    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/fl/tallahassee/  Tallahassee Rickards (FL)               40561    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/fl/coral-gables  Coral Gables (FL)                       48492    61068   Team_ID points to another name   Coral Gables St. Theresa Catholic (FL)  
+   https://www.maxpreps.com/fl/dade-city/pa  Dade City Pasco (FL)                    61280    61219   Team_ID points to another name   Davenport Ridge Community (FL)          
+   https://www.maxpreps.com/fl/dover/specia  Dover Specially Fit (FL)                61554    4485    Team_ID points to another name   Dover Specially Fit Academy (FL)        
+   https://www.maxpreps.com/fl/eastpoint/fr  Eastpoint Franklin County (FL)          61680    61673   Team_ID points to another name   Eatonville Wymore Tech (FL)             
+   https://www.maxpreps.com/fl/englewood/le  Englewood Lemon Bay (FL)                69403    61852   Team_ID points to another name   Walnut Hill Ernest Ward (FL)            
+   https://www.maxpreps.com/fl/fernandina-b  Fernandina Beach (FL)                   72404    62078   Team_ID points to another name   Saint Petersburg Florida Military Academ
+   https://www.maxpreps.com/fl/fernandina-b  Fernandina Beach (FL)                   72404    62078   Team_ID points to another name   Saint Petersburg Florida Military Academ
+   https://www.maxpreps.com/fl/gibsonton/ea  Gibsonton East Bay (FL)                 62516    62473   Team_ID points to another name   Glen St. Mary Baker County (FL)         
+   https://www.maxpreps.com/fl/harmony/harm  Harmony (FL)                            70904    62859   Team_ID points to another name   Hastings Walter E. Harris (FL)          
+   https://www.maxpreps.com/fl/jacksonville  Jacksonville University Christian (FL)  63496    63495   Team_ID points to another name   Jacksonville Victory Christian Academy (
+   https://www.maxpreps.com/fl/jacksonville  Jacksonville University Christian (FL)  63496    63495   Team_ID points to another name   Jacksonville Victory Christian Academy (
+   https://www.maxpreps.com/fl/key-west/key  Key West (FL)                           70907    63738   Team_ID points to another name   Key West Mary Immaculate Star of The Sea
+   https://www.maxpreps.com/fl/lynn-haven/m  Lynn Haven Mosley (FL)                  64658    64646   Team_ID points to another name   Macclenny Baker County (FL)             
+   https://www.maxpreps.com/fl/miami/braddo  Miami Braddock (FL)                     70195    65149   Team_ID points to another name   Miami BridgePrep Village (FL)           
+   https://www.maxpreps.com/fl/miami-garden  Miami Gardens Tru Prep Academy (FL)     70170    65161   Team_ID points to another name   Miami Gesu Catholic (FL)                
+   https://www.maxpreps.com/fl/north-fort-m  North Fort Myers North Fort (FL)        66039    47871   Team_ID points to another name   North Fort Myers (FL)                   
+   https://www.maxpreps.com/fl/orlando/free  Orlando Freedom (FL)                    66334    66333   Team_ID points to another name   Orlando Heritage Prep (FL)              
+   ... 9 more rows (see CSV)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  26       None
+
+>>> dedup FL
+
+DEDUP v4 FL - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_archive_20261111_1813.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_review_20261111_1813.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_summary_20261111_1813.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  FL     129382        0                    2                None 
+
+>>> review-pairs FL
+
+REVIEW-ONLY PAIRS FL - PREVIEW (nothing changed)
+ 2 pairs {'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_review_pairs_20261111_1813.csv
+
+>>> same-score-fix FL
+
+SAME-SCORE DOUBLE-BOOKINGS FL - PREVIEW (nothing changed)
+ 225 pairs {'DROP A': 9, 'DROP B': 9, 'UNDECIDED': 207} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_same_score_20261111_1814.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  18        None   None
+
+>>> query FL fl_dump.sql
+
+QUERY fl_dump (1 result sets)
+ set 1: 129383 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_dump_1_20261111_1814.csv
+
+>>> query FL fl_geo_all.sql
+
+QUERY fl_geo_all (2 result sets)
+ set 1: 36437 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_geo_all_1_20261111_1814.csv
+ set 2: 129383 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_geo_all_2_20261111_1814.csv
+
+>>> query FL fl_names.sql
+
+QUERY fl_names (1 result sets)
+ set 1: 1753 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_names_1_20261111_1814.csv
+
+=== OK 2026-11-11 18:14:16

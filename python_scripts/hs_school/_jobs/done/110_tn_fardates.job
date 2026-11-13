@@ -1,0 +1,3 @@
+set-dates TN --file hsfha_dates_far.csv --reason "estimated date (wrong week, >10 days off) replaced by HSFHA-TN date: same teams + same score in season" --commit
+dedup TN
+review-pairs TN

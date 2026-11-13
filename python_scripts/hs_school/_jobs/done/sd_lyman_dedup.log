@@ -1,0 +1,12 @@
+
+>>> dedup SD --commit
+
+DEDUP v4 SD - COMMIT
+ dedup_archive: 56 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_archive_COMMITTED_20261106_0747.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_review_COMMITTED_20261106_0747.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_summary_COMMITTED_20261106_0747.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  SD     57495         56                   0                B601B2AE-AA54-4CEC-B312-66C77EA06626
+   (tracker: no row for SD step 2.1; run: EXEC dbo.HS_Cleanup_AddState 'SD')
+
+=== OK 2026-11-06 07:47:55

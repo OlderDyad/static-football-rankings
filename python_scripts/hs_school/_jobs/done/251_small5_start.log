@@ -1,0 +1,402 @@
+
+>>> addstate AK
+Tracker rows ready for AK
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report AK drift
+
+REPORT drift AK: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_drift_20261112_0747.csv
+   Stopped                               S_Games  S_First  S_Last  S_Mapped  Started  N_Games  N_First  N_Last  N_Mapped
+   East Anchorage Bettye Davis (AK)      416      1961     2023    0         None     None     None     None    0       
+   Eielson AFB Ben Eielson (AK)          339      1977     2023    0         None     None     None     None    0       
+   Fritz Creek Voznesenka (AK)           39       2013     2018    0         None     None     None     None    0       
+   Juneau Thunder Mountain (AK)          78       2009     2018    0         None     None     None     None    0       
+   Juneau-Douglas-Thunder Mountain (AK)  51       2018     2023    0         None     None     None     None    0       
+   Ketchikan (AK)                        117      2000     2020    0         None     None     None     None    0       
+   Sitka (AK)                            83       2000     2018    0         None     None     None     None    0       
+
+>>> mapcheck AK
+
+MAPPING CHECK AK - PREVIEW (nothing changed)
+ 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_mapcheck_20261112_0747.csv
+   URL                                       ProperName                       Team_ID  NameID  Problem                          Team_ID_Name
+   https://www.maxpreps.com/ak/mississauga/  Mississauga Clarkson North (AK)  22876    None    ProperName not in HS_Team_Names  None        
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  0        None
+
+>>> dedup AK
+
+DEDUP v4 AK - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_dedup_archive_20261112_0747.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_dedup_review_20261112_0747.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_dedup_summary_20261112_0747.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  AK     4528          0                    0                None 
+
+>>> review-pairs AK
+
+REVIEW-ONLY PAIRS AK - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_review_pairs_20261112_0748.csv
+
+>>> same-score-fix AK
+
+SAME-SCORE DOUBLE-BOOKINGS AK - PREVIEW (nothing changed)
+ 26 pairs {'DROP A': 6, 'DROP B': 8, 'UNDECIDED': 12} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_same_score_20261112_0748.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  14        None   None
+
+>>> query AK ak_dump.sql
+
+QUERY ak_dump (1 result sets)
+ set 1: 4528 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_ak_dump_1_20261112_0748.csv
+
+>>> query AK ak_names.sql
+
+QUERY ak_names (1 result sets)
+ set 1: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_ak_names_1_20261112_0748.csv
+
+>>> addstate HI
+Tracker rows ready for HI
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report HI drift
+
+REPORT drift HI: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_drift_20261112_0749.csv
+   Stopped                            S_Games  S_First  S_Last  S_Mapped  Started                 N_Games  N_First  N_Last  N_Mapped
+   Hana (HI)                          51       2012     2023    0         None                    None     None     None    0       
+   Honolulu 'Anuenue (HI)             84       2006     2015    0         None                    None     None     None    0       
+   Honolulu Kamehameha (HI)           621      1929     2023    0         Honolulu Kapalama (HI)  37       2023     2026    1       
+   Honolulu Kamehameha-Kapalama (HI)  47       1974     2023    0         Honolulu Kapalama (HI)  37       2023     2026    1       
+   Honolulu St. Francis (HI)          58       2013     2018    1         None                    None     None     None    0       
+   Lahaina Lahainaluna (HI)           266      1939     2023    0         None                    None     None     None    0       
+   Lanai City (HI)                    32       2014     2022    0         None                    None     None     None    0       
+   Makawao Seabury Hall (HI)          50       2012     2025    1         None                    None     None     None    0       
+
+>>> mapcheck HI
+
+MAPPING CHECK HI - PREVIEW (nothing changed)
+ 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_mapcheck_20261112_0749.csv
+   URL                                       ProperName                      Team_ID  NameID  Problem                          Team_ID_Name             
+   https://www.maxpreps.com/hi/pago-pago/ta  Pago Pago Tafuna American (HI)  43467    None    ProperName not in HS_Team_Names  None                     
+   https://www.maxpreps.com/hi/honolulu/roo  Honolulu Roosevelt (HI)         63208    63207   Team_ID points to another name   Honolulu St. Francis (HI)
+   https://www.maxpreps.com/hi/lihue/kauai-  Lihue Kauai (HI)                32506    64322   Team_ID points to another name   Maui Kahului (HI)        
+   https://www.maxpreps.com/hi/waianae/nana  Waianae Nanakuli (HI)           69360    69359   Team_ID points to another name   Wailuku Baldwin (HI)     
+   https://www.maxpreps.com/hi/wailuku/bald  Wailuku Baldwin (HI)            40036    69360   Team_ID points to another name   Wailuku St. Anthony (HI) 
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  4        None
+
+>>> dedup HI
+
+DEDUP v4 HI - PREVIEW (nothing changed)
+ dedup_archive: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_dedup_archive_20261112_0749.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_dedup_review_20261112_0749.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_dedup_summary_20261112_0749.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  HI     10867         2                    1                None 
+
+>>> review-pairs HI
+
+REVIEW-ONLY PAIRS HI - PREVIEW (nothing changed)
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_review_pairs_20261112_0749.csv
+
+>>> same-score-fix HI
+
+SAME-SCORE DOUBLE-BOOKINGS HI - PREVIEW (nothing changed)
+ 98 pairs {'DROP A': 10, 'DROP B': 9, 'UNDECIDED': 79} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_same_score_20261112_0749.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  19        None   None
+
+>>> query HI hi_dump.sql
+
+QUERY hi_dump (1 result sets)
+ set 1: 10867 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_hi_dump_1_20261112_0749.csv
+
+>>> query HI hi_names.sql
+
+QUERY hi_names (1 result sets)
+ set 1: 116 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_hi_names_1_20261112_0749.csv
+
+>>> addstate DC
+Tracker rows ready for DC
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report DC drift
+
+REPORT drift DC: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_drift_20261112_0750.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                              N_Games  N_First  N_Last  N_Mapped
+   Washington Chavez (DC)                    82       2007     2019    0         Washington Ron Brown (DC)            75       2018     2026    1       
+   Washington Kingsman Academy (DC)          24       2015     2018    0         Washington Ron Brown (DC)            75       2018     2026    1       
+   Washington Kingsman Academy (DC)          24       2015     2018    0         Washington Paul Public Charter (DC)  63       2014     2024    1       
+   Washington Kingsman Academy (DC)          24       2015     2018    0         Washington St. Johns (DC)            32       2014     2026    1       
+   Washington National Collegiate Prep (DC)  40       2014     2018    0         Washington Ron Brown (DC)            75       2018     2026    1       
+   Washington National Collegiate Prep (DC)  40       2014     2018    0         Washington St. Johns (DC)            32       2014     2026    1       
+   Washington National Collegiate Prep (DC)  40       2014     2018    0         Washington Paul Public Charter (DC)  63       2014     2024    1       
+   Washington Options Charter (DC)           68       2010     2018    0         Washington Paul Public Charter (DC)  63       2014     2024    1       
+   Washington Options Charter (DC)           68       2010     2018    0         Washington St. Johns (DC)            32       2014     2026    1       
+   Washington Options Charter (DC)           68       2010     2018    0         Washington Ron Brown (DC)            75       2018     2026    1       
+   Washington Parkside (DC)                  30       2016     2021    0         Washington Ron Brown (DC)            75       2018     2026    1       
+   Washington Parkside (DC)                  30       2016     2021    0         Washington Jackson-Reed (DC)         43       2022     2026    1       
+   Washington Paul Public Charter (DC)       63       2014     2024    1         Washington Digital Pioneers (DC)     35       2024     2026    1       
+   Washington Paul Public Charter (DC)       63       2014     2024    1         Washington Jackson-Reed (DC)         43       2022     2026    1       
+   Washington Paul Public Charter (DC)       63       2014     2024    1         Washington Kipp College (DC)         1        2026     2026    0       
+   ... 11 more rows (see CSV)
+
+>>> mapcheck DC
+
+MAPPING CHECK DC - PREVIEW (nothing changed)
+ 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_mapcheck_20261112_0750.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/dc/washington/k  Washington Kipp College (DC)              26073    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/dc/washington/k  Washington Kipp DC Legacy College Prep (  16255    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/dc/washington/p  Washington Paul Public (DC)               28193    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/dc/washington/b  Washington Bell (DC)                      70551    69468   Team_ID points to another name   Washington Business College (DC)        
+   https://www.maxpreps.com/dc/washington/c  Washington Coolidge (DC)                  69475    69471   Team_ID points to another name   Washington Devitt Prep (DC)             
+   https://www.maxpreps.com/dc/washington/g  Washington Gonzaga (DC)                   69481    69480   Team_ID points to another name   Washington Jackson-Reed (DC)            
+   https://www.maxpreps.com/dc/washington/j  Washington Jackson-Reed (DC)              69482    69481   Team_ID points to another name   Washington KIPP College Prep (DC)       
+   https://www.maxpreps.com/dc/washington/m  Washington McKinley Tech (DC)             69486    69484   Team_ID points to another name   Washington National Training School for 
+   https://www.maxpreps.com/dc/washington/m  Washington Model School for the Deaf (DC  69487    69485   Team_ID points to another name   Washington Paul Public Charter (DC)     
+   https://www.maxpreps.com/dc/washington/s  Washington St. Albans (DC)                28965    69497   Team_ID points to another name   Washington St. John's College (DC)      
+   https://www.maxpreps.com/dc/washington/w  Washington Woodson (DC)                   70145    47729   Team_ID points to another name   Washinton Catholic University of America
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  8        None
+
+>>> dedup DC
+
+DEDUP v4 DC - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_dedup_archive_20261112_0750.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_dedup_review_20261112_0750.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_dedup_summary_20261112_0750.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  DC     6858          0                    0                None 
+
+>>> review-pairs DC
+
+REVIEW-ONLY PAIRS DC - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_review_pairs_20261112_0751.csv
+
+>>> same-score-fix DC
+
+SAME-SCORE DOUBLE-BOOKINGS DC - PREVIEW (nothing changed)
+ 75 pairs {'DROP A': 4, 'DROP B': 6, 'UNDECIDED': 65} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_same_score_20261112_0751.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  10        None   None
+
+>>> query DC dc_dump.sql
+
+QUERY dc_dump (1 result sets)
+ set 1: 6858 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_dc_dump_1_20261112_0751.csv
+
+>>> query DC dc_names.sql
+
+QUERY dc_names (1 result sets)
+ set 1: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_dc_names_1_20261112_0751.csv
+
+>>> addstate DE
+Tracker rows ready for DE
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report DE drift
+
+REPORT drift DE: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_drift_20261112_0752.csv
+   Stopped                                  S_Games  S_First  S_Last  S_Mapped  Started              N_Games  N_First  N_Last  N_Mapped
+   Bear Caravel (DE)                        426      1982     2025    1         None                 None     None     None    0       
+   Georgetown FCA Bucks (DE)                30       2017     2023    0         Georgetown Fca (DE)  14       2024     2026    1       
+   Greenwood Eastern Shore HomeSchool (DE)  19       2013     2015    0         None                 None     None     None    0       
+   Milford Eastern Shore HomeSchool (DE)    28       2016     2018    0         None                 None     None     None    0       
+   Wilmington Ferris (DE)                   18       1937     2016    0         None                 None     None     None    0       
+
+>>> mapcheck DE
+
+MAPPING CHECK DE - PREVIEW (nothing changed)
+ 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_mapcheck_20261112_0752.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                       
+   https://www.maxpreps.com/de/wilmington/m  Wilmington Mount Pleasant (DE)            27120    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/de/clayton/firs  Clayton First State Military Academy (DE  13193    60797   Team_ID points to another name   Colora West Nottingham Academy (MD)
+   https://www.maxpreps.com/de/wilmington/s  Wilmington St. Mark's (DE)                71044    24925   Team_ID points to another name   Wilmington St. Matthew (DE)        
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  2        None
+
+>>> dedup DE
+
+DEDUP v4 DE - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_dedup_archive_20261112_0752.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_dedup_review_20261112_0752.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_dedup_summary_20261112_0752.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  DE     13232         0                    0                None 
+
+>>> review-pairs DE
+
+REVIEW-ONLY PAIRS DE - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_review_pairs_20261112_0752.csv
+
+>>> same-score-fix DE
+
+SAME-SCORE DOUBLE-BOOKINGS DE - PREVIEW (nothing changed)
+ 11 pairs {'DROP A': 4, 'DROP B': 4, 'UNDECIDED': 3} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_same_score_20261112_0752.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  8         None   None
+
+>>> query DE de_dump.sql
+
+QUERY de_dump (1 result sets)
+ set 1: 13233 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_de_dump_1_20261112_0752.csv
+
+>>> query DE de_names.sql
+
+QUERY de_names (1 result sets)
+ set 1: 169 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_de_names_1_20261112_0752.csv
+
+>>> addstate NV
+Tracker rows ready for NV
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report NV drift
+
+REPORT drift NV: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_drift_20261112_0753.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                                   N_Games  N_First  N_Last  N_Mapped
+   Coral Academy of Science - Reno (NV)      58       2017     2023    0         None                                      None     None     None    0       
+   Dayton (NV)                               187      1982     2023    0         Dayton Dust (NV)                          29       2024     2026    1       
+   Elko Independence (NV)                    69       1997     2019    0         None                                      None     None     None    0       
+   Henderson Pinecrest Academy Cadence (NV)  25       2020     2023    0         None                                      None     None     None    0       
+   Las Vegas Agassi Prep (NV)                144      2006     2023    0         Las Vegas The Meadows (NV)                24       2024     2026    1       
+   Las Vegas Agassi Prep (NV)                144      2006     2023    0         Las Vegas Word of Life Christian Academy  11       2022     2024    1       
+   Las Vegas Calvary Chapel Christian (NV)   153      1998     2022    1         Las Vegas Word of Life Christian Academy  11       2022     2024    1       
+   Las Vegas Calvary Chapel Christian (NV)   153      1998     2022    1         Las Vegas The Meadows (NV)                24       2024     2026    1       
+   Las Vegas Democracy Prep Agassi Campus (  70       2017     2025    1         Las Vegas The Meadows (NV)                24       2024     2026    1       
+   Las Vegas Democracy Prep Agassi Campus (  70       2017     2025    1         Las Vegas Word of Life Christian Academy  11       2022     2024    1       
+   Las Vegas Mountain View Christian (NV)    176      2001     2022    0         Las Vegas Word of Life Christian Academy  11       2022     2024    1       
+   Las Vegas Mountain View Christian (NV)    176      2001     2022    0         Las Vegas The Meadows (NV)                24       2024     2026    1       
+   Las Vegas The Meadows School (NV)         212      1998     2023    0         Las Vegas Word of Life Christian Academy  11       2022     2024    1       
+   Las Vegas The Meadows School (NV)         212      1998     2023    0         Las Vegas The Meadows (NV)                24       2024     2026    1       
+   Las Vegas Word of Life Christian Academy  11       2022     2024    1         Las Vegas The Meadows (NV)                24       2024     2026    1       
+   ... 3 more rows (see CSV)
+
+>>> mapcheck NV
+
+MAPPING CHECK NV - PREVIEW (nothing changed)
+ 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_mapcheck_20261112_0753.csv
+   URL                                       ProperName              Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/nv/las-vegas/wo  Las Vegas Word Of (NV)  41214    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/nv/las-vegas/bo  Las Vegas Bonanza (NV)  64105    64104   Team_ID points to another name   Las Vegas Calvary Chapel Christian (NV) 
+   https://www.maxpreps.com/nv/las-vegas/we  Las Vegas Western (NV)  7834     64122   Team_ID points to another name   Las Vegas Word of Life Christian Academy
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  2        None
+
+>>> dedup NV
+
+DEDUP v4 NV - PREVIEW (nothing changed)
+ dedup_archive: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_dedup_archive_20261112_0753.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_dedup_review_20261112_0753.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_dedup_summary_20261112_0753.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  NV     14540         1                    0                None 
+
+>>> review-pairs NV
+
+REVIEW-ONLY PAIRS NV - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_review_pairs_20261112_0753.csv
+
+>>> same-score-fix NV
+
+SAME-SCORE DOUBLE-BOOKINGS NV - PREVIEW (nothing changed)
+ 63 pairs {'DROP A': 9, 'DROP B': 9, 'UNDECIDED': 45} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_same_score_20261112_0754.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  18        None   None
+
+>>> query NV nv_dump.sql
+
+QUERY nv_dump (1 result sets)
+ set 1: 14540 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_nv_dump_1_20261112_0754.csv
+
+>>> query NV nv_names.sql
+
+QUERY nv_names (1 result sets)
+ set 1: 236 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_nv_names_1_20261112_0754.csv
+
+=== OK 2026-11-12 07:54:26

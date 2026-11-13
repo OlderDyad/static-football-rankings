@@ -1,0 +1,64 @@
+
+>>> commit NM
+
+DEDUP v4 NM - COMMIT
+ dedup_archive: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_archive_COMMITTED_20261106_1506.csv
+ dedup_review: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_review_COMMITTED_20261106_1506.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_summary_COMMITTED_20261106_1506.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NM     38219         62                   26               1F8390F3-0302-4C11-BAEE-0F782564E8EE
+
+REVIEW-ONLY PAIRS NM - COMMIT
+ 26 pairs {'LONG': 15, 'SHORT': 11} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_review_pairs_COMMITTED_20261106_1506.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  26        7F7516AC-AFC3-426D-81D5-D7F529355882  None
+
+>>> same-score-fix NM
+
+SAME-SCORE DOUBLE-BOOKINGS NM - PREVIEW (nothing changed)
+ 129 pairs {'DROP B': 51, 'DROP A': 48, 'UNDECIDED': 30} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_same_score_20261106_1507.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  99        None   None
+
+>>> report NM double-booked
+
+REPORT double-booked NM: 1025 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_double_booked_20261106_1508.csv
+   Kind             Team             Season  Gap  A_Date      A_Opp                      A_Score  A_Source                                  A_Batch  B_Date      B_Opp                  B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Alamogordo (NM)  1949    2    1949-10-21  Jefferson (TX)             21-6     http://lonestarfootball.net Team 985      14       1949-10-23  Silver City (NM)       14-12    Las_Cruces_Sun_News_1949_10_23_9.csv      183      6E1D9844-387A-476B-AB0C-162884F3656A  42141ED5-5C2F-4E00-A425-87608DF26A46
+   DIFFERENT GAMES  Alamogordo (NM)  1959    1    1959-09-11  El Paso Cathedral (TX)     12-6     http://lonestarfootball.net Team 977      14       1959-09-12  El Paso Burges (TX)    19-19    The_Albuquerque_Tribune_1959_09_12_9.csv  183      DA229C4F-D6DE-4956-8693-0B06EA2D132E  9BBFD6A1-2BDF-41C5-BEDA-198DC73DD6E6
+   DIFFERENT GAMES  Alamogordo (NM)  1959    0    1959-09-11  El Paso Cathedral (TX)     12-6     http://lonestarfootball.net Team 977      14       1959-09-11  Anthony Gadsden (NM)   19-0     http://lonestarfootball.net Team 2382     17       DA229C4F-D6DE-4956-8693-0B06EA2D132E  FDB37E6C-9149-4D8F-B681-ABE7DCA8F273
+   DIFFERENT GAMES  Alamogordo (NM)  1959    1    1959-09-12  El Paso Burges (TX)        19-19    The_Albuquerque_Tribune_1959_09_12_9.csv  183      1959-09-11  Anthony Gadsden (NM)   19-0     http://lonestarfootball.net Team 2382     17       9BBFD6A1-2BDF-41C5-BEDA-198DC73DD6E6  FDB37E6C-9149-4D8F-B681-ABE7DCA8F273
+   DIFFERENT GAMES  Alamogordo (NM)  1960    1    1960-09-10  El Paso Burges (TX)        52-20    Albuquerque_Journal_1960_09_10_Page_17.c  36       1960-09-09  El Paso Bel Air (TX)   19-7     http://lonestarfootball.net Team 2382     17       C4D5B6D1-E352-4429-844C-01825230DD31  AD251B9E-A73E-4EFB-9D4E-3AB45AF1FEAC
+   DIFFERENT GAMES  Alamogordo (NM)  1961    1    1961-09-08  El Paso Bel Air (TX)       6-25     http://lonestarfootball.net Team 2382     17       1961-09-09  El Paso Burges (TX)    19-0     Albuquerque_Journal_1961_09_09_Page_13.c  36       8C1DBC22-A957-45E3-9FFF-23B10EB07649  B28CEDA3-8868-4F6C-99C8-85E7FC2603A1
+   DIFFERENT GAMES  Alamogordo (NM)  1966    1    1966-09-09  El Paso Eastwood (TX)      7-6      http://lonestarfootball.net Team 2382     17       1966-09-10  El Paso Irvin (TX)     18-12    Albuquerque_Journal_1966_09_10_Page_21.c  36       5E3AC13F-7B52-4E4D-9E4A-C32253F1AE5C  E891C880-E709-4455-BD7B-EAA6189FF361
+   DIFFERENT GAMES  Alamogordo (NM)  1967    1    1967-09-16  El Paso Eastwood (TX)      33-6     Albuquerque_Journal_1967_09_16_Page_19.c  36       1967-09-15  El Paso Ysleta (TX)    32-12    http://lonestarfootball.net Team 2382     17       368515BD-802E-4A00-B603-2E383B2AA3DB  B096978D-ADE0-4253-AAA9-49CA413F744A
+   DIFFERENT GAMES  Alamogordo (NM)  1969    1    1969-09-12  El Paso Bel Air (TX)       0-28     http://lonestarfootball.net Team 2382     17       1969-09-13  El Paso Irvin (TX)     0-27     Albuquerque_Journal_1969_09_13_Page_21.c  36       3B708D49-9A7D-4417-9D18-441EED27DDF6  1683ED9E-7666-45CA-89DD-DFBC8EFE9EEB
+   DIFFERENT GAMES  Alamogordo (NM)  1970    1    1970-09-11  El Paso Jesus Chapel (TX)  30-13    http://lonestarfootball.net Team 2382     17       1970-09-12  El Paso Parkland (TX)  28-0     Albuquerque_Journal_1970_09_12_Page_19.c  36       D75C4D18-9BB9-4877-BF83-0455A3940CE5  317442DB-1138-41F4-BEC5-391B6031891D
+   DIFFERENT GAMES  Alamogordo (NM)  1971    1    1971-09-18  Lovington (NM)             0-7      Albuquerque_Journal_1971_09_18_Page_22.c  36       1971-09-17  El Paso Ysleta (TX)    6-20     http://lonestarfootball.net Team 2620     18       9DAC4F71-477B-4EF5-A2EA-63117557D653  D1C33ADE-D0B6-4FBF-AA4A-B966E960AFC9
+   DIFFERENT GAMES  Alamogordo (NM)  1971    1    1971-10-08  Cathedral (TX)             0-13     http://lonestarfootball.net Team 977      14       1971-10-09  Carlsbad (NM)          0-35     Albuquerque_Journal_1971_10_09_Page_28.c  36       090E4BA5-5471-4901-84D2-75B35A0A437C  50D38D53-D93B-4E92-94C6-B3E3A3AB463D
+   DIFFERENT GAMES  Alamogordo (NM)  1972    1    1972-09-15  El Paso Cathedral (TX)     14-0     http://lonestarfootball.net Team 2382     17       1972-09-16  Roswell Goddard (NM)   8-6      Albuquerque_Journal_1972_09_16_Page_30.c  36       270390CC-56B7-457D-8882-5190A917F0D6  76084B87-6CAA-4C0A-BC7D-F6EF18182D5D
+   DIFFERENT GAMES  Alamogordo (NM)  1972    1    1972-09-22  Riverside (TX)             0-6      http://lonestarfootball.net Team 989      14       1972-09-23  Roswell (NM)           21-8     Albuquerque_Journal_1972_09_23_Page_28.c  36       B3F6FABE-168B-401D-A5F1-0CE0CCE78584  AC1D779C-00A2-4D17-8C1E-41CD2EEDAF49
+   DIFFERENT GAMES  Alamogordo (NM)  1975    1    1975-09-20  Roswell Goddard (NM)       14-16    Albuquerque Journal                       None     1975-09-19  El Paso Irvin (TX)     19-35    http://lonestarfootball.net Team 984      14       2F1F15E2-1F5D-4B06-B74E-0BDC18003E8E  00D0B290-CD11-4A5C-BA62-69C4F929D897
+   ... 1010 more rows (see CSV)
+
+>>> query NM season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_season_date_1_20261106_1508.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_season_date_2_20261106_1508.csv
+
+>>> query NM forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_forfeits_1_20261106_1508.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_forfeits_2_20261106_1508.csv
+
+>>> query NM college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_college_check_1_20261106_1508.csv
+ set 2: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_college_check_2_20261106_1508.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_college_check_3_20261106_1508.csv
+ set 4: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_college_check_4_20261106_1508.csv
+
+=== OK 2026-11-06 15:08:38

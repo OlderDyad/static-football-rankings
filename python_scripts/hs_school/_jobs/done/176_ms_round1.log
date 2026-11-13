@@ -1,0 +1,635 @@
+
+>>> move-team MS --from "Homewood Rosedale (AL)" --to "Rosedale (MS)" --seasons 1880-2026 --ids ms_mv_00.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+ only the 442 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_00.csv
+
+MOVE Homewood Rosedale (AL) -> Rosedale (MS), seasons 1880-2026 - COMMIT
+ move_games: 442 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  442    1                  None
+
+>>> move-team MS --from "Decatur (AL)" --to "Decatur (MS)" --seasons 1880-2026 --ids ms_mv_01.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+ only the 400 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_01.csv
+
+MOVE Decatur (AL) -> Decatur (MS), seasons 1880-2026 - COMMIT
+ move_games: 400 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  400    1                  None
+
+>>> move-team MS --from "Montgomery Central Academy (AL)" --to "Macon Central Academy (MS)" --seasons 1880-2026 --ids ms_mv_02.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+ only the 333 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_02.csv
+
+MOVE Montgomery Central Academy (AL) -> Macon Central Academy (MS), seasons 1880-2026 - COMMIT
+ move_games: 333 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 48 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  333    1                  None
+
+>>> move-team MS --from "Tuskegee Macon Academy (AL)" --to "Macon (MS)" --seasons 1880-2026 --ids ms_mv_03.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+ only the 160 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_03.csv
+
+MOVE Tuskegee Macon Academy (AL) -> Macon (MS), seasons 1880-2026 - COMMIT
+ move_games: 160 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  160    1                  None
+
+>>> move-team MS --from "Camden Jackson (SC)" --to "Camden Velma Jackson (MS)" --seasons 1880-2026 --ids ms_mv_04.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_04.csv
+
+MOVE Camden Jackson (SC) -> Camden Velma Jackson (MS), seasons 1880-2026 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 85 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team MS --from "Montgomery Lanier (AL)" --to "Jackson Lanier (MS)" --seasons 1880-2026 --ids ms_mv_05.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_05.csv
+
+MOVE Montgomery Lanier (AL) -> Jackson Lanier (MS), seasons 1880-2026 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 117 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team MS --from "Huntsville Columbia (AL)" --to "Columbia (MS)" --seasons 1880-2026 --ids ms_mv_06.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_06.csv
+
+MOVE Huntsville Columbia (AL) -> Columbia (MS), seasons 1880-2026 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team MS --from "Calhoun City (MS)" --to "Calhoun (MS)" --seasons 1880-2026 --ids ms_mv_07.csv --reason "HSFHA-MS school code + geography/double-booking check: game belongs to Calhoun (MS)" --commit
+ only the 81 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_07.csv
+
+MOVE Calhoun City (MS) -> Calhoun (MS), seasons 1880-2026 - COMMIT
+ move_games: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 92 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  81     1                  None
+
+>>> move-team MS --from "Bay St. Louis St. Stanislaus (MS)" --to "Bay St. Louis Bay (MS)" --seasons 1880-2026 --ids ms_mv_08.csv --reason "HSFHA-MS school code + geography/double-booking check: game belongs to Bay St. Louis Bay (MS)" --commit
+ only the 55 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_08.csv
+
+MOVE Bay St. Louis St. Stanislaus (MS) -> Bay St. Louis Bay (MS), seasons 1880-2026 - COMMIT
+ move_games: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  55     1                  None
+
+>>> move-team MS --from "Liberty Amite County (MS)" --to "Liberty Amite School Center (MS)" --seasons 1880-2026 --ids ms_mv_09.csv --reason "HSFHA-MS school code + geography/double-booking check: game belongs to Liberty Amite School Center (MS)" --commit
+ only the 25 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_09.csv
+
+MOVE Liberty Amite County (MS) -> Liberty Amite School Center (MS), seasons 1880-2026 - COMMIT
+ move_games: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 59 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  25     1                  None
+
+>>> move-team MS --from "Woodville Wilkinson County Christian Academy (MS)" --to "Woodville Wilkinson County (MS)" --seasons 1880-2026 --ids ms_mv_10.csv --reason "HSFHA-MS school code + geography/double-booking check: game belongs to Woodville Wilkinson County (MS)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\ms_mv_10.csv
+
+MOVE Woodville Wilkinson County Christian Academy (MS) -> Woodville Wilkinson County (MS), seasons 1880-2026 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_games_COMMITTED_20261111_0956.csv
+ move_by_season: 58 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_move_by_season_COMMITTED_20261111_0956.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> remap MS --url "https://www.maxpreps.com/ms/bay-st-louis/bay-tigers/football/schedule/" --to "Bay St. Louis Bay (MS)" --commit
+
+REMAP https://www.maxpreps.com/ms/bay-st-louis/bay-tigers/football/schedule/ -> Bay St. Louis Bay (MS) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/ms/bay-st-louis  Bay Saint Louis Bay (MS)  43868    Bay St. Louis Bay (MS)  15112     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MS --url "https://www.maxpreps.com/ms/liberty/amite-school-center-rebels/football/schedule/" --to "Liberty Amite School Center (MS)" --commit
+
+REMAP https://www.maxpreps.com/ms/liberty/amite-school-center-rebels/football/schedule/ -> Liberty Amite School Center (MS) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/ms/liberty/amit  Liberty Amite (MS)  33552    Liberty Amite School Center (MS)  32826     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MS --url "https://www.maxpreps.com/ms/rolling-fork/sharkey-issaquena-academy-confederates/football/schedule/" --to "Rolling Fork Sharkey Issaquena Academy (MS)" --commit
+
+REMAP https://www.maxpreps.com/ms/rolling-fork/sharkey-issaquena-academy-confederates/football/schedule/ -> Rolling Fork Sharkey Issaquena Academy (MS) - COMMIT
+   URL                                       ProperName                           Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ms/rolling-fork  Rolling Fork Sharkey Issaquena (MS)  23295    Rolling Fork Sharkey Issaquena Academy (  12308     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MS --url "https://www.maxpreps.com/ms/vicksburg/st-aloysius-flashes/football/schedule/" --to "Vicksburg St. Aloysius (MS)" --commit
+
+REMAP https://www.maxpreps.com/ms/vicksburg/st-aloysius-flashes/football/schedule/ -> Vicksburg St. Aloysius (MS) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/ms/vicksburg/st  Vicksburg St. Aloysius (MS)  35481    Vicksburg St. Aloysius (MS)  72465     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck MS --commit
+
+MAPPING CHECK MS - COMMIT (Team_ID set to the ProperName ID)
+ 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_mapcheck_COMMITTED_20261111_0956.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                         Team_ID_Name                    
+   https://www.maxpreps.com/ms/amory/amory-  Amory (MS)                           71924    5524    Team_ID points to another name  Amory B (MS)                    
+   https://www.maxpreps.com/ms/clarksdale/c  Clarksdale (MS)                      72087    11730   Team_ID points to another name  Clarksdale B (MS)               
+   https://www.maxpreps.com/ms/columbia/col  Columbia Academy (MS)                71449    5907    Team_ID points to another name  Columbia B (MS)                 
+   https://www.maxpreps.com/ms/columbus/wes  Columbus West Lowndes (MS)           72133    29699   Team_ID points to another name  Copiah Academy (MS)             
+   https://www.maxpreps.com/ms/forest/fores  Forest (MS)                          71151    27121   Team_ID points to another name  Forest B (MS)                   
+   https://www.maxpreps.com/ms/greenville/g  Greenville (MS)                      72026    62683   Team_ID points to another name  Greenville B (MS)               
+   https://www.maxpreps.com/ms/greenville/o  Greenville O'Bannon (MS)             62699    62694   Team_ID points to another name  Greenville St. Joseph (MS)      
+   https://www.maxpreps.com/ms/greenville/s  Greenville St. Joseph (MS)           45499    62699   Team_ID points to another name  Greenville T.L. Weston (MS)     
+   https://www.maxpreps.com/ms/greenwood/am  Greenwood Amanda Elzy (MS)           71149    13408   Team_ID points to another name  Greenwood B (MS)                
+   https://www.maxpreps.com/ms/hattiesburg/  Hattiesburg (MS)                     62932    35644   Team_ID points to another name  Hattiesburg B (MS)              
+   https://www.maxpreps.com/ms/holly-spring  Holly Springs Marshall Academy (MS)  63170    19906   Team_ID points to another name  Holmes Academy (MS)             
+   https://www.maxpreps.com/ms/kossuth/koss  Kossuth (MS)                         70985    63851   Team_ID points to another name  Lafayette Academy (MS)          
+   https://www.maxpreps.com/ms/lake-cormora  Lake Cormorant (MS)                  47893    63957   Team_ID points to another name  Lamar Academy (MS)              
+   https://www.maxpreps.com/ms/laurel/laure  Laurel (MS)                          71422    17400   Team_ID points to another name  Laurel B (MS)                   
+   https://www.maxpreps.com/ms/madden/leake  Madden Leake Academy (MS)            71938    39840   Team_ID points to another name  Madison Academy (MS)            
+   https://www.maxpreps.com/ms/madison/germ  Madison Germantown (MS)              64702    29459   Team_ID points to another name  Madison St. Joseph Catholic (MS)
+   https://www.maxpreps.com/ms/mccomb/mccom  McComb (MS)                          71657    27669   Team_ID points to another name  McComb B (MS)                   
+   https://www.maxpreps.com/ms/meridian/mer  Meridian (MS)                        70999    29124   Team_ID points to another name  Meridian B (MS)                 
+   https://www.maxpreps.com/ms/mount-olive/  Mount Olive (MS)                     12519    65575   Team_ID points to another name  Mount Pleasant (MS)             
+   https://www.maxpreps.com/ms/natchez/cath  Natchez Cathedral (MS)               65716    65715   Team_ID points to another name  Natchez North Natchez (MS)      
+   ... 6 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  26       None
+
+>>> consolidate MS --reason "MS round 1: long-pending MS rules (AHS->Academy, B-team quotes, Saint->St. school names, Natchez, Greenville Weston...) + HSFHA-MS same-school variants; wrong old rules fixed (Bay HS vs St. Stanislaus, Baton Rouge Broadmoor LA, Vicksburg St. Aloysius spacing)"
+Consolidating MS from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\MS_Alias_Rules.csv
+
+[stderr]
+2026-11-11 09:56:59,669 - INFO - Starting consolidation for state: (MS) using staging table method.
+2026-11-11 09:56:59,680 - WARNING - WARNING: 443 row(s) have identical OldName and NewName (no-op rules).
+2026-11-11 09:56:59,680 - WARNING -   'Aberdeen (MS)' -> 'Aberdeen (MS)' (no change)
+2026-11-11 09:56:59,680 - WARNING -   'Ackerman (MS)' -> 'Ackerman (MS)' (no change)
+2026-11-11 09:56:59,680 - WARNING -   'Ackerman Choctaw County (MS)' -> 'Ackerman Choctaw County (MS)' (no change)
+2026-11-11 09:56:59,680 - WARNING -   'Amory (MS)' -> 'Amory (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Amory Hatley (MS)' -> 'Amory Hatley (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Anguilla (MS)' -> 'Anguilla (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Arcola Deer Creek (MS)' -> 'Arcola Deer Creek (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Ashland (MS)' -> 'Ashland (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Avon Riverside (MS)' -> 'Avon Riverside (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Baldwyn (MS)' -> 'Baldwyn (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Bassfield (MS)' -> 'Bassfield (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Batesville (MS)' -> 'Batesville (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Batesville North Delta (MS)' -> 'Batesville North Delta (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Batesville South Panola (MS)' -> 'Batesville South Panola (MS)' (no change)
+2026-11-11 09:56:59,681 - WARNING -   'Batesville West Panola Academy (MS)' -> 'Batesville West Panola Academy (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Bay Springs (MS)' -> 'Bay Springs (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Bay Springs Sylva Bay Academy (MS)' -> 'Bay Springs Sylva Bay Academy (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Bay St. Louis Bay (MS)' -> 'Bay St. Louis Bay (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Bay St. Louis St. Stanislaus (MS)' -> 'Bay St. Louis St. Stanislaus (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Beaumont (MS)' -> 'Beaumont (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Belden Tupelo Christian Prep (MS)' -> 'Belden Tupelo Christian Prep (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Belmont (MS)' -> 'Belmont (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Belzoni (MS)' -> 'Belzoni (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Belzoni Humphreys Academy (MS)' -> 'Belzoni Humphreys Academy (MS)' (no change)
+2026-11-11 09:56:59,682 - WARNING -   'Belzoni Humphreys County (MS)' -> 'Belzoni Humphreys County (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Benoit (MS)' -> 'Benoit (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Benoit Brooks (MS)' -> 'Benoit Brooks (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Benoit Nugent Center (MS)' -> 'Benoit Nugent Center (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Benton (MS)' -> 'Benton (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Benton Academy (MS)' -> 'Benton Academy (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Bentonia (MS)' -> 'Bentonia (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Biloxi (MS)' -> 'Biloxi (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Biloxi Mercy Cross (MS)' -> 'Biloxi Mercy Cross (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Biloxi Notre Dame (MS)' -> 'Biloxi Notre Dame (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Biloxi St. Patrick (MS)' -> 'Biloxi St. Patrick (MS)' (no change)
+2026-11-11 09:56:59,683 - WARNING -   'Blue Springs East Union (MS)' -> 'Blue Springs East Union (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Bogue Chitto (MS)' -> 'Bogue Chitto (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Booneville (MS)' -> 'Booneville (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Booneville Thrasher (MS)' -> 'Booneville Thrasher (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Brandon (MS)' -> 'Brandon (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Brandon Academy (MS)' -> 'Brandon Academy (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Brandon Northwest Rankin (MS)' -> 'Brandon Northwest Rankin (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Brookhaven (MS)' -> 'Brookhaven (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Brookhaven Academy (MS)' -> 'Brookhaven Academy (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Brookhaven Alexander (MS)' -> 'Brookhaven Alexander (MS)' (no change)
+2026-11-11 09:56:59,684 - WARNING -   'Brookhaven Enterprise (MS)' -> 'Brookhaven Enterprise (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Brookhaven Loyd Star (MS)' -> 'Brookhaven Loyd Star (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Brookhaven West Lincoln (MS)' -> 'Brookhaven West Lincoln (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Brooklyn Forrest County Agricultural (MS)' -> 'Brooklyn Forrest County Agricultural (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Bruce (MS)' -> 'Bruce (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Buckatunna (MS)' -> 'Buckatunna (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Burnsville (MS)' -> 'Burnsville (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Byhalia (MS)' -> 'Byhalia (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Byram (MS)' -> 'Byram (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Caledonia (MS)' -> 'Caledonia (MS)' (no change)
+2026-11-11 09:56:59,685 - WARNING -   'Calhoun City (MS)' -> 'Calhoun City (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Calhoun City Calhoun Academy (MS)' -> 'Calhoun City Calhoun Academy (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Camden Velma Jackson (MS)' -> 'Camden Velma Jackson (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Canton (MS)' -> 'Canton (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Canton Academy (MS)' -> 'Canton Academy (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Carriere Pearl River Central (MS)' -> 'Carriere Pearl River Central (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Carrollton Carroll Academy (MS)' -> 'Carrollton Carroll Academy (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Carthage (MS)' -> 'Carthage (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Carthage Edinburg (MS)' -> 'Carthage Edinburg (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Carthage Leake Central (MS)' -> 'Carthage Leake Central (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Carthage Thomastown (MS)' -> 'Carthage Thomastown (MS)' (no change)
+2026-11-11 09:56:59,686 - WARNING -   'Centreville (MS)' -> 'Centreville (MS)' (no change)
+2026-11-11 09:56:59,687 - WARNING -   'Centreville Academy (MS)' -> 'Centreville Academy (MS)' (no change)
+2026-11-11 09:56:59,687 - WARNING -   'Centreville William Winans (MS)' -> 'Centreville William Winans (MS)' (no change)
+2026-11-11 09:56:59,687 - WARNING -   'Charleston (MS)' -> 'Charleston (MS)' (no change)
+2026-11-11 09:56:59,687 - WARNING -   'Charleston East Tallahatchie (MS)' -> 'Charleston East Tallahatchie (MS)' (no change)
+2026-11-11 09:56:59,687 - WARNING -   'Charleston Strider Academy (MS)' -> 'Charleston Strider Academy (MS)' (no change)
+2026-11-11 09:56:59,687 - WARNING -   'Clara (MS)' -> 'Clara (MS)' (no change)
+2026-11-11 09:56:59,687 - WARNING -   'Clarke Enterprise (MS)' -> 'Clarke Enterprise (MS)' (no change)
+2026-11-11 09:56:59,687 - WARNING -   'Clarksdale (MS)' -> 'Clarksdale (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Clarksdale Coahoma Agricultural (MS)' -> 'Clarksdale Coahoma Agricultural (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Clarksdale Coahoma County (MS)' -> 'Clarksdale Coahoma County (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Clarksdale Lee Academy (MS)' -> 'Clarksdale Lee Academy (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Cleveland Bayou Academy (MS)' -> 'Cleveland Bayou Academy (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Cleveland Central (MS)' -> 'Cleveland Central (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Cleveland East Side (MS)' -> 'Cleveland East Side (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Clinton (MS)' -> 'Clinton (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Clinton Christian Academy (MS)' -> 'Clinton Christian Academy (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Clinton Sumner Hill (MS)' -> 'Clinton Sumner Hill (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Coffeeville (MS)' -> 'Coffeeville (MS)' (no change)
+2026-11-11 09:56:59,688 - WARNING -   'Coldwater (MS)' -> 'Coldwater (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Collins (MS)' -> 'Collins (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Collinsville West Lauderdale (MS)' -> 'Collinsville West Lauderdale (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Columbia (MS)' -> 'Columbia (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Columbia Academy (MS)' -> 'Columbia Academy (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Columbia East Marion (MS)' -> 'Columbia East Marion (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Columbus (MS)' -> 'Columbus (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Columbus Caldwell (MS)' -> 'Columbus Caldwell (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Columbus Heritage Academy (MS)' -> 'Columbus Heritage Academy (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Columbus Lee (MS)' -> 'Columbus Lee (MS)' (no change)
+2026-11-11 09:56:59,689 - WARNING -   'Columbus New Hope (MS)' -> 'Columbus New Hope (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Columbus Victory Christian Academy (MS)' -> 'Columbus Victory Christian Academy (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Columbus West Lowndes (MS)' -> 'Columbus West Lowndes (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Corinth (MS)' -> 'Corinth (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Corinth Biggersville (MS)' -> 'Corinth Biggersville (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Crawford Moor (MS)' -> 'Crawford Moor (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Crosby (MS)' -> 'Crosby (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Crowder (MS)' -> 'Crowder (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Cruger-Tchula Academy (MS)' -> 'Cruger-Tchula Academy (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Crystal Springs (MS)' -> 'Crystal Springs (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'De Kalb West Kemper (MS)' -> 'De Kalb West Kemper (MS)' (no change)
+2026-11-11 09:56:59,690 - WARNING -   'Decatur Newton County (MS)' -> 'Decatur Newton County (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'Decatur Newton County Academy (MS)' -> 'Decatur Newton County Academy (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'DeKalb (MS)' -> 'DeKalb (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'DeKalb Kemper Academy (MS)' -> 'DeKalb Kemper Academy (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'DeKalb Kemper County (MS)' -> 'DeKalb Kemper County (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'D'Iberville (MS)' -> 'D'Iberville (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'Drew (MS)' -> 'Drew (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'Drew North Sunflower Academy (MS)' -> 'Drew North Sunflower Academy (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'Drew-Hunter (MS)' -> 'Drew-Hunter (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'Dublin (MS)' -> 'Dublin (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'Durant (MS)' -> 'Durant (MS)' (no change)
+2026-11-11 09:56:59,691 - WARNING -   'Durant Williams Sullivan (MS)' -> 'Durant Williams Sullivan (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'East Oktibbeha County (MS)' -> 'East Oktibbeha County (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'Ecru North Pontotoc (MS)' -> 'Ecru North Pontotoc (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'Ellisville (MS)' -> 'Ellisville (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'Ellisville South Jones (MS)' -> 'Ellisville South Jones (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'Ethel (MS)' -> 'Ethel (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'Eupora (MS)' -> 'Eupora (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'Falkner (MS)' -> 'Falkner (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'Fayette Jefferson County (MS)' -> 'Fayette Jefferson County (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'Flora (MS)' -> 'Flora (MS)' (no change)
+2026-11-11 09:56:59,692 - WARNING -   'Flora East (MS)' -> 'Flora East (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Flora Tri-County Academy (MS)' -> 'Flora Tri-County Academy (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Florence (MS)' -> 'Florence (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Florence McLaurin (MS)' -> 'Florence McLaurin (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Flowood Hartfield Academy (MS)' -> 'Flowood Hartfield Academy (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Flowood University Christian (MS)' -> 'Flowood University Christian (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Forest (MS)' -> 'Forest (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Forest Scott Central (MS)' -> 'Forest Scott Central (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Foxworth West Marion (MS)' -> 'Foxworth West Marion (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'French Camp Academy (MS)' -> 'French Camp Academy (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Friars Point (MS)' -> 'Friars Point (MS)' (no change)
+2026-11-11 09:56:59,693 - WARNING -   'Fulton Itawamba Agricultural (MS)' -> 'Fulton Itawamba Agricultural (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Gallman Copiah Academy (MS)' -> 'Gallman Copiah Academy (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Gautier (MS)' -> 'Gautier (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Georgetown Union Academy (MS)' -> 'Georgetown Union Academy (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Glen Alcorn Central (MS)' -> 'Glen Alcorn Central (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Glen Allan (MS)' -> 'Glen Allan (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Gloster (MS)' -> 'Gloster (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Gloster Pine Hills Academy (MS)' -> 'Gloster Pine Hills Academy (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Greenville (MS)' -> 'Greenville (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Greenville Christian (MS)' -> 'Greenville Christian (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Greenville O'Bannon (MS)' -> 'Greenville O'Bannon (MS)' (no change)
+2026-11-11 09:56:59,694 - WARNING -   'Greenville St. Joseph (MS)' -> 'Greenville St. Joseph (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Greenville T.L. Weston (MS)' -> 'Greenville T.L. Weston (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Greenville Washington (MS)' -> 'Greenville Washington (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Greenwood (MS)' -> 'Greenwood (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Greenwood Amanda Elzy (MS)' -> 'Greenwood Amanda Elzy (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Greenwood Delta Streets Academy (MS)' -> 'Greenwood Delta Streets Academy (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Greenwood Pillow Academy (MS)' -> 'Greenwood Pillow Academy (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Grenada (MS)' -> 'Grenada (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Grenada Kirk Academy (MS)' -> 'Grenada Kirk Academy (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Gulf Coast Military Academy (MS)' -> 'Gulf Coast Military Academy (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Gulfport (MS)' -> 'Gulfport (MS)' (no change)
+2026-11-11 09:56:59,695 - WARNING -   'Gulfport Christian Collegiate Academy (MS)' -> 'Gulfport Christian Collegiate Academy (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Gulfport East (MS)' -> 'Gulfport East (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Gulfport Harrison Central (MS)' -> 'Gulfport Harrison Central (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Gulfport St. John (MS)' -> 'Gulfport St. John (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Gulfport West Harrison (MS)' -> 'Gulfport West Harrison (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Hamilton (MS)' -> 'Hamilton (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Hattiesburg (MS)' -> 'Hattiesburg (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Hattiesburg Eatonville (MS)' -> 'Hattiesburg Eatonville (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Hattiesburg North Forrest (MS)' -> 'Hattiesburg North Forrest (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Hattiesburg Oak Grove (MS)' -> 'Hattiesburg Oak Grove (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Hattiesburg Presbyterian Christian (MS)' -> 'Hattiesburg Presbyterian Christian (MS)' (no change)
+2026-11-11 09:56:59,696 - WARNING -   'Hattiesburg Sacred Heart (MS)' -> 'Hattiesburg Sacred Heart (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Hazlehurst (MS)' -> 'Hazlehurst (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Heidelberg (MS)' -> 'Heidelberg (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Heidelberg Academy (MS)' -> 'Heidelberg Academy (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Hernando (MS)' -> 'Hernando (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Hickory (MS)' -> 'Hickory (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Hollandale (MS)' -> 'Hollandale (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Hollandale Simmons (MS)' -> 'Hollandale Simmons (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Holly Springs (MS)' -> 'Holly Springs (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Holly Springs Byers (MS)' -> 'Holly Springs Byers (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Holly Springs Marshall Academy (MS)' -> 'Holly Springs Marshall Academy (MS)' (no change)
+2026-11-11 09:56:59,697 - WARNING -   'Horn Lake (MS)' -> 'Horn Lake (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Houston (MS)' -> 'Houston (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Independence (MS)' -> 'Independence (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Indianola (MS)' -> 'Indianola (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Indianola Academy (MS)' -> 'Indianola Academy (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Indianola Gentry (MS)' -> 'Indianola Gentry (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Inverness (MS)' -> 'Inverness (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Isola (MS)' -> 'Isola (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Itta Bena Leflore County (MS)' -> 'Itta Bena Leflore County (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Iuka (MS)' -> 'Iuka (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Iuka Tishomingo County (MS)' -> 'Iuka Tishomingo County (MS)' (no change)
+2026-11-11 09:56:59,698 - WARNING -   'Jackson Academy (MS)' -> 'Jackson Academy (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Bailey (MS)' -> 'Jackson Bailey (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Callaway (MS)' -> 'Jackson Callaway (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Central (MS)' -> 'Jackson Central (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Christ Missionary & Industrial (MS)' -> 'Jackson Christ Missionary & Industrial (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Forest Hill (MS)' -> 'Jackson Forest Hill (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Hillcrest Christian (MS)' -> 'Jackson Hillcrest Christian (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Jim Hill (MS)' -> 'Jackson Jim Hill (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Lanier (MS)' -> 'Jackson Lanier (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Magnolia Academy (MS)' -> 'Jackson Magnolia Academy (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson Manhattan Academy (MS)' -> 'Jackson Manhattan Academy (MS)' (no change)
+2026-11-11 09:56:59,699 - WARNING -   'Jackson McCluer Academy (MS)' -> 'Jackson McCluer Academy (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Jackson Mississippi Baptist (MS)' -> 'Jackson Mississippi Baptist (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Jackson Murrah (MS)' -> 'Jackson Murrah (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Jackson Prep (MS)' -> 'Jackson Prep (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Jackson Provine (MS)' -> 'Jackson Provine (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Jackson Wingfield (MS)' -> 'Jackson Wingfield (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Jackson Woodland Hills Academy (MS)' -> 'Jackson Woodland Hills Academy (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Kilmichael (MS)' -> 'Kilmichael (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Kilmichael Montgomery County (MS)' -> 'Kilmichael Montgomery County (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Kiln Hancock (MS)' -> 'Kiln Hancock (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Kosciusko (MS)' -> 'Kosciusko (MS)' (no change)
+2026-11-11 09:56:59,700 - WARNING -   'Kossuth (MS)' -> 'Kossuth (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Lake (MS)' -> 'Lake (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Lake Cormorant (MS)' -> 'Lake Cormorant (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Lambert (MS)' -> 'Lambert (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Laurel (MS)' -> 'Laurel (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Laurel Northeast Jones (MS)' -> 'Laurel Northeast Jones (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Laurel Watkins (MS)' -> 'Laurel Watkins (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Laurel West Jones (MS)' -> 'Laurel West Jones (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Leakesville (MS)' -> 'Leakesville (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Leakesville Greene County (MS)' -> 'Leakesville Greene County (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Learned Rebul Academy (MS)' -> 'Learned Rebul Academy (MS)' (no change)
+2026-11-11 09:56:59,701 - WARNING -   'Leland (MS)' -> 'Leland (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Lexington (MS)' -> 'Lexington (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Lexington Central Holmes Christian (MS)' -> 'Lexington Central Holmes Christian (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Lexington Holmes County Central (MS)' -> 'Lexington Holmes County Central (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Lexington Marshall (MS)' -> 'Lexington Marshall (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Lexington McClain (MS)' -> 'Lexington McClain (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Liberty (MS)' -> 'Liberty (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Liberty Amite County (MS)' -> 'Liberty Amite County (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Liberty Amite School Center (MS)' -> 'Liberty Amite School Center (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Linn (MS)' -> 'Linn (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Little Rock Beulah Hubbard (MS)' -> 'Little Rock Beulah Hubbard (MS)' (no change)
+2026-11-11 09:56:59,702 - WARNING -   'Long Beach (MS)' -> 'Long Beach (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Louisville (MS)' -> 'Louisville (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Louisville Nanih Waiya (MS)' -> 'Louisville Nanih Waiya (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Louisville Winston Academy (MS)' -> 'Louisville Winston Academy (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Lucedale George County (MS)' -> 'Lucedale George County (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Lula Rich (MS)' -> 'Lula Rich (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Lumberton (MS)' -> 'Lumberton (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Maben (MS)' -> 'Maben (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Maben Cumberland (MS)' -> 'Maben Cumberland (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Maben East Webster (MS)' -> 'Maben East Webster (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Maben West Oktibbeha (MS)' -> 'Maben West Oktibbeha (MS)' (no change)
+2026-11-11 09:56:59,703 - WARNING -   'Macon Central Academy (MS)' -> 'Macon Central Academy (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Macon Noxubee County (MS)' -> 'Macon Noxubee County (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Madden Leake Academy (MS)' -> 'Madden Leake Academy (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Madison Central (MS)' -> 'Madison Central (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Madison Germantown (MS)' -> 'Madison Germantown (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Madison-Ridgeland (MS)' -> 'Madison-Ridgeland (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Madison-Ridgeland Academy (MS)' -> 'Madison-Ridgeland Academy (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Magee (MS)' -> 'Magee (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Magnolia South Pike (MS)' -> 'Magnolia South Pike (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Mantachie (MS)' -> 'Mantachie (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Marks (MS)' -> 'Marks (MS)' (no change)
+2026-11-11 09:56:59,704 - WARNING -   'Marks Delta Academy (MS)' -> 'Marks Delta Academy (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'Marks Palmer (MS)' -> 'Marks Palmer (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'Marks Quitman County (MS)' -> 'Marks Quitman County (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'Mathiston (MS)' -> 'Mathiston (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'McAdams (MS)' -> 'McAdams (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'McComb (MS)' -> 'McComb (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'McComb Parklane Academy (MS)' -> 'McComb Parklane Academy (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'Mclain (MS)' -> 'Mclain (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'Meadville Franklin County (MS)' -> 'Meadville Franklin County (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'Mendenhall (MS)' -> 'Mendenhall (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'Mendenhall Simpson Academy (MS)' -> 'Mendenhall Simpson Academy (MS)' (no change)
+2026-11-11 09:56:59,705 - WARNING -   'Meridian (MS)' -> 'Meridian (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Meridian Clarkdale (MS)' -> 'Meridian Clarkdale (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Meridian Jefferson Davis Academy (MS)' -> 'Meridian Jefferson Davis Academy (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Meridian Lamar (MS)' -> 'Meridian Lamar (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Meridian Northeast Lauderdale (MS)' -> 'Meridian Northeast Lauderdale (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Meridian Russell Christian Academy (MS)' -> 'Meridian Russell Christian Academy (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Meridian Southeast Lauderdale (MS)' -> 'Meridian Southeast Lauderdale (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Mississippi College Frosh (MS)' -> 'Mississippi College Frosh (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Mississippi School for the Deaf (MS)' -> 'Mississippi School for the Deaf (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Mississippi State University Frosh (MS)' -> 'Mississippi State University Frosh (MS)' (no change)
+2026-11-11 09:56:59,706 - WARNING -   'Mize (MS)' -> 'Mize (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Monticello (MS)' -> 'Monticello (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Monticello Lawrence Academy (MS)' -> 'Monticello Lawrence Academy (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Monticello Lawrence County (MS)' -> 'Monticello Lawrence County (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Monticello Topeka Tilton (MS)' -> 'Monticello Topeka Tilton (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Mooreville (MS)' -> 'Mooreville (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Moorhead Agriculture (MS)' -> 'Moorhead Agriculture (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Morton (MS)' -> 'Morton (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Moselle (MS)' -> 'Moselle (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Moss Point (MS)' -> 'Moss Point (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Moss Point East Central (MS)' -> 'Moss Point East Central (MS)' (no change)
+2026-11-11 09:56:59,707 - WARNING -   'Moss Point Live Oak (MS)' -> 'Moss Point Live Oak (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Moss Point Magnolia (MS)' -> 'Moss Point Magnolia (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Motley (MS)' -> 'Motley (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Mound Bayou Kennedy (MS)' -> 'Mound Bayou Kennedy (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Mount Olive (MS)' -> 'Mount Olive (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Natchez (MS)' -> 'Natchez (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Natchez Adams County Christian (MS)' -> 'Natchez Adams County Christian (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Natchez Cathedral (MS)' -> 'Natchez Cathedral (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Natchez Thomas Jefferson Academy (MS)' -> 'Natchez Thomas Jefferson Academy (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Natchez Trinity Episcopal Day (MS)' -> 'Natchez Trinity Episcopal Day (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Natchez-Adams (MS)' -> 'Natchez-Adams (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'Nettleton (MS)' -> 'Nettleton (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'New Albany (MS)' -> 'New Albany (MS)' (no change)
+2026-11-11 09:56:59,708 - WARNING -   'New Augusta (MS)' -> 'New Augusta (MS)' (no change)
+2026-11-11 09:56:59,709 - WARNING -   'New Augusta Perry Central (MS)' -> 'New Augusta Perry Central (MS)' (no change)
+2026-11-11 09:56:59,709 - WARNING -   'New Hebron Attendence (MS)' -> 'New Hebron Attendence (MS)' (no change)
+2026-11-11 09:56:59,709 - WARNING -   'Newton (MS)' -> 'Newton (MS)' (no change)
+2026-11-11 09:56:59,709 - WARNING -   'North Carrollton J.Z. George (MS)' -> 'North Carrollton J.Z. George (MS)' (no change)
+2026-11-11 09:56:59,709 - WARNING -   'Noxapater (MS)' -> 'Noxapater (MS)' (no change)
+2026-11-11 09:56:59,709 - WARNING -   'Noxumbee (MS)' -> 'Noxumbee (MS)' (no change)
+2026-11-11 09:56:59,709 - WARNING -   'Oakland (MS)' -> 'Oakland (MS)' (no change)
+2026-11-11 09:56:59,709 - WARNING -   'Ocean Springs (MS)' -> 'Ocean Springs (MS)' (no change)
+2026-11-11 09:56:59,709 - WARNING -   'Ocean Springs St. Martin (MS)' -> 'Ocean Springs St. Martin (MS)' (no change)
+2026-11-11 09:56:59,710 - WARNING -   'Okolona (MS)' -> 'Okolona (MS)' (no change)
+2026-11-11 09:56:59,710 - WARNING -   'Olive Branch (MS)' -> 'Olive Branch (MS)' (no change)
+2026-11-11 09:56:59,710 - WARNING -   'Olive Branch Center Hill (MS)' -> 'Olive Branch Center Hill (MS)' (no change)
+2026-11-11 09:56:59,710 - WARNING -   'Olive Branch Lewisburg (MS)' -> 'Olive Branch Lewisburg (MS)' (no change)
+2026-11-11 09:56:59,710 - WARNING -   'Oxford (MS)' -> 'Oxford (MS)' (no change)
+2026-11-11 09:56:59,710 - WARNING -   'Oxford Lafayette (MS)' -> 'Oxford Lafayette (MS)' (no change)
+2026-11-11 09:56:59,710 - WARNING -   'Pachuta Clarke Academy (MS)' -> 'Pachuta Clarke Academy (MS)' (no change)
+2026-11-11 09:56:59,710 - WARNING -   'Pascagoula (MS)' -> 'Pascagoula (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Pascagoula Our Lady of Victories (MS)' -> 'Pascagoula Our Lady of Victories (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Pascagoula Resurrection Catholic (MS)' -> 'Pascagoula Resurrection Catholic (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Pass Christian (MS)' -> 'Pass Christian (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Pass Christian Hancock North Central (MS)' -> 'Pass Christian Hancock North Central (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Pearl (MS)' -> 'Pearl (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Pearl Park Place Christian Academy (MS)' -> 'Pearl Park Place Christian Academy (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Pelahatchie (MS)' -> 'Pelahatchie (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Pelahatchie East Rankin Academy (MS)' -> 'Pelahatchie East Rankin Academy (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Perkinston (MS)' -> 'Perkinston (MS)' (no change)
+2026-11-11 09:56:59,711 - WARNING -   'Perry County Runnelstown (MS)' -> 'Perry County Runnelstown (MS)' (no change)
+2026-11-11 09:56:59,712 - WARNING -   'Petal (MS)' -> 'Petal (MS)' (no change)
+2026-11-11 09:56:59,712 - WARNING -   'Pheba Hebron Christian (MS)' -> 'Pheba Hebron Christian (MS)' (no change)
+2026-11-11 09:56:59,712 - WARNING -   'Philadelphia (MS)' -> 'Philadelphia (MS)' (no change)
+2026-11-11 09:56:59,712 - WARNING -   'Philadelphia Choctaw Central (MS)' -> 'Philadelphia Choctaw Central (MS)' (no change)
+2026-11-11 09:56:59,712 - WARNING -   'Philadelphia Neshoba Central (MS)' -> 'Philadelphia Neshoba Central (MS)' (no change)
+2026-11-11 09:56:59,712 - WARNING -   'Picayune (MS)' -> 'Picayune (MS)' (no change)
+2026-11-11 09:56:59,713 - WARNING -   'Pinola (MS)' -> 'Pinola (MS)' (no change)
+2026-11-11 09:56:59,713 - WARNING -   'Pinola Simpson Central (MS)' -> 'Pinola Simpson Central (MS)' (no change)
+2026-11-11 09:56:59,713 - WARNING -   'Pontotoc (MS)' -> 'Pontotoc (MS)' (no change)
+2026-11-11 09:56:59,713 - WARNING -   'Pontotoc South Pontotoc (MS)' -> 'Pontotoc South Pontotoc (MS)' (no change)
+2026-11-11 09:56:59,713 - WARNING -   'Poplarville (MS)' -> 'Poplarville (MS)' (no change)
+2026-11-11 09:56:59,713 - WARNING -   'Port Gibson (MS)' -> 'Port Gibson (MS)' (no change)
+2026-11-11 09:56:59,714 - WARNING -   'Port Gibson Chamberlain-Hunt Academy (MS)' -> 'Port Gibson Chamberlain-Hunt Academy (MS)' (no change)
+2026-11-11 09:56:59,714 - WARNING -   'Potts Camp (MS)' -> 'Potts Camp (MS)' (no change)
+2026-11-11 09:56:59,714 - WARNING -   'Prentiss (MS)' -> 'Prentiss (MS)' (no change)
+2026-11-11 09:56:59,714 - WARNING -   'Prentiss Christian (MS)' -> 'Prentiss Christian (MS)' (no change)
+2026-11-11 09:56:59,714 - WARNING -   'Puckett (MS)' -> 'Puckett (MS)' (no change)
+2026-11-11 09:56:59,714 - WARNING -   'Purvis (MS)' -> 'Purvis (MS)' (no change)
+2026-11-11 09:56:59,714 - WARNING -   'Quitman (MS)' -> 'Quitman (MS)' (no change)
+2026-11-11 09:56:59,715 - WARNING -   'Raleigh (MS)' -> 'Raleigh (MS)' (no change)
+2026-11-11 09:56:59,715 - WARNING -   'Raymond (MS)' -> 'Raymond (MS)' (no change)
+2026-11-11 09:56:59,715 - WARNING -   'Raymond Central Hinds Academy (MS)' -> 'Raymond Central Hinds Academy (MS)' (no change)
+2026-11-11 09:56:59,715 - WARNING -   'Redwood (MS)' -> 'Redwood (MS)' (no change)
+2026-11-11 09:56:59,715 - WARNING -   'Richland (MS)' -> 'Richland (MS)' (no change)
+2026-11-11 09:56:59,715 - WARNING -   'Richton (MS)' -> 'Richton (MS)' (no change)
+2026-11-11 09:56:59,715 - WARNING -   'Ridgeland (MS)' -> 'Ridgeland (MS)' (no change)
+2026-11-11 09:56:59,715 - WARNING -   'Ridgeland Veritas (MS)' -> 'Ridgeland Veritas (MS)' (no change)
+2026-11-11 09:56:59,715 - WARNING -   'Ripley (MS)' -> 'Ripley (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Rolling Fork (MS)' -> 'Rolling Fork (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Rolling Fork Sharkey Issaquena Academy (MS)' -> 'Rolling Fork Sharkey Issaquena Academy (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Rolling Fork South Delta (MS)' -> 'Rolling Fork South Delta (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Rosedale West Bolivar (MS)' -> 'Rosedale West Bolivar (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Saltillo (MS)' -> 'Saltillo (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Sand Hill (MS)' -> 'Sand Hill (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Sandhill Pisgah (MS)' -> 'Sandhill Pisgah (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Sarah Strayhorn (MS)' -> 'Sarah Strayhorn (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Sardis North Panola (MS)' -> 'Sardis North Panola (MS)' (no change)
+2026-11-11 09:56:59,716 - WARNING -   'Sebastopol (MS)' -> 'Sebastopol (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Seminary (MS)' -> 'Seminary (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Senatobia (MS)' -> 'Senatobia (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Senatobia Magnolia Heights (MS)' -> 'Senatobia Magnolia Heights (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Shady Grove (MS)' -> 'Shady Grove (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Shannon (MS)' -> 'Shannon (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Shaw (MS)' -> 'Shaw (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Shelby (MS)' -> 'Shelby (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Shelby Broad Street (MS)' -> 'Shelby Broad Street (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Sledge (MS)' -> 'Sledge (MS)' (no change)
+2026-11-11 09:56:59,717 - WARNING -   'Smithville (MS)' -> 'Smithville (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'Soso (MS)' -> 'Soso (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'Southaven (MS)' -> 'Southaven (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'Southaven DeSoto Central (MS)' -> 'Southaven DeSoto Central (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'Southaven Northpoint Christian (MS)' -> 'Southaven Northpoint Christian (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'Southaven Southern Baptist (MS)' -> 'Southaven Southern Baptist (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'Star Rankin Academy (MS)' -> 'Star Rankin Academy (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'Starkville (MS)' -> 'Starkville (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'Starkville Academy (MS)' -> 'Starkville Academy (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'State Line (MS)' -> 'State Line (MS)' (no change)
+2026-11-11 09:56:59,718 - WARNING -   'Stringer (MS)' -> 'Stringer (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Sturgis (MS)' -> 'Sturgis (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Summit (MS)' -> 'Summit (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Summit North Pike (MS)' -> 'Summit North Pike (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Sumrall (MS)' -> 'Sumrall (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Taylorsville (MS)' -> 'Taylorsville (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Tchula Holmes County Central (MS)' -> 'Tchula Holmes County Central (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Terry (MS)' -> 'Terry (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Tishomingo (MS)' -> 'Tishomingo (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Tunica Academy (MS)' -> 'Tunica Academy (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Tunica County (MS)' -> 'Tunica County (MS)' (no change)
+2026-11-11 09:56:59,719 - WARNING -   'Tunica Institute of Learning (MS)' -> 'Tunica Institute of Learning (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Tunica Rosa Fort (MS)' -> 'Tunica Rosa Fort (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Tupelo (MS)' -> 'Tupelo (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Tupelo Military Institute (MS)' -> 'Tupelo Military Institute (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Tylertown (MS)' -> 'Tylertown (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Tylertown Dexter (MS)' -> 'Tylertown Dexter (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Tylertown Salem (MS)' -> 'Tylertown Salem (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Tylertown Walthall Academy (MS)' -> 'Tylertown Walthall Academy (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Union (MS)' -> 'Union (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Utica Consolidated (MS)' -> 'Utica Consolidated (MS)' (no change)
+2026-11-11 09:56:59,720 - WARNING -   'Utica Hinds County Agricultural (MS)' -> 'Utica Hinds County Agricultural (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Vaiden (MS)' -> 'Vaiden (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Vardaman (MS)' -> 'Vardaman (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Vicksburg (MS)' -> 'Vicksburg (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Vicksburg Culkin Academy (MS)' -> 'Vicksburg Culkin Academy (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Vicksburg Jett (MS)' -> 'Vicksburg Jett (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Vicksburg Porter's Chapel Academy (MS)' -> 'Vicksburg Porter's Chapel Academy (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Vicksburg St. Aloysius (MS)' -> 'Vicksburg St. Aloysius (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Vicksburg Warren Central (MS)' -> 'Vicksburg Warren Central (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Walnut (MS)' -> 'Walnut (MS)' (no change)
+2026-11-11 09:56:59,721 - WARNING -   'Walnut Grove Leake County (MS)' -> 'Walnut Grove Leake County (MS)' (no change)
+2026-11-11 09:56:59,722 - WARNING -   'Washington Academy (MS)' -> 'Washington Academy (MS)' (no change)
+2026-11-11 09:56:59,722 - WARNING -   'Water Valley (MS)' -> 'Water Valley (MS)' (no change)
+2026-11-11 09:56:59,722 - WARNING -   'Waynesboro (MS)' -> 'Waynesboro (MS)' (no change)
+2026-11-11 09:56:59,722 - WARNING -   'Waynesboro Beat Four (MS)' -> 'Waynesboro Beat Four (MS)' (no change)
+2026-11-11 09:56:59,722 - WARNING -   'Waynesboro Central (MS)' -> 'Waynesboro Central (MS)' (no change)
+2026-11-11 09:56:59,722 - WARNING -   'Waynesboro Wayne Academy (MS)' -> 'Waynesboro Wayne Academy (MS)' (no change)
+2026-11-11 09:56:59,722 - WARNING -   'Waynesboro Wayne County (MS)' -> 'Waynesboro Wayne County (MS)' (no change)
+2026-11-11 09:56:59,723 - WARNING -   'Webb West Tallahatchie (MS)' -> 'Webb West Tallahatchie (MS)' (no change)
+2026-11-11 09:56:59,723 - WARNING -   'Weir (MS)' -> 'Weir (MS)' (no change)
+2026-11-11 09:56:59,723 - WARNING -   'Wesson (MS)' -> 'Wesson (MS)' (no change)
+2026-11-11 09:56:59,723 - WARNING -   'West East Holmes Academy (MS)' -> 'West East Holmes Academy (MS)' (no change)
+2026-11-11 09:56:59,723 - WARNING -   'West Point (MS)' -> 'West Point (MS)' (no change)
+2026-11-11 09:56:59,723 - WARNING -   'West Point Oak Hill Academy (MS)' -> 'West Point Oak Hill Academy (MS)' (no change)
+2026-11-11 09:56:59,723 - WARNING -   'Wiggins Stone (MS)' -> 'Wiggins Stone (MS)' (no change)
+2026-11-11 09:56:59,723 - WARNING -   'Winona (MS)' -> 'Winona (MS)' (no change)
+2026-11-11 09:56:59,724 - WARNING -   'Winona Christian (MS)' -> 'Winona Christian (MS)' (no change)
+2026-11-11 09:56:59,724 - WARNING -   'Woodville (MS)' -> 'Woodville (MS)' (no change)
+2026-11-11 09:56:59,724 - WARNING -   'Woodville Wilkinson County (MS)' -> 'Woodville Wilkinson County (MS)' (no change)
+2026-11-11 09:56:59,724 - WARNING -   'Woodville Wilkinson County Christian Academy (MS)' -> 'Woodville Wilkinson County Christian Academy (MS)' (no change)
+2026-11-11 09:56:59,724 - WARNING -   'Yazoo City (MS)' -> 'Yazoo City (MS)' (no change)
+2026-11-11 09:56:59,724 - WARNING -   'Yazoo City Manchester Academy (MS)' -> 'Yazoo City Manchester Academy (MS)' (no change)
+2026-11-11 09:56:59,724 - WARNING -   'Yazoo City Yazoo County (MS)' -> 'Yazoo City Yazoo County (MS)' (no change)
+2026-11-11 09:56:59,724 - INFO - Validation passed: 613 rules are clean and ready to upload.
+2026-11-11 09:56:59,756 - INFO - Uploading 613 rules to staging table: ConsolidationRules_Staging...
+2026-11-11 09:56:59,896 - INFO - Upload to staging table complete.
+2026-11-11 09:56:59,902 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-11 09:58:42,644 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-11 09:58:42,644 - INFO - Reason logged to dbo.HS_Consolidation_Log: MS round 1: long-pending MS rules (AHS->Academy, B-team quotes, Saint->St. school names, Natchez, Greenville Weston...) + HSFHA-MS same-school variants; wrong old rules fixed (Bay HS vs St. Stanislaus, Baton Rouge Broadmoor LA, Vicksburg St. Aloysius spacing)
+2026-11-11 09:58:42,644 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-11 09:58:42,644 - INFO - Running post-consolidation safety check...
+2026-11-11 09:58:42,652 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup MS
+
+DEDUP v4 MS - PREVIEW (nothing changed)
+ dedup_archive: 2383 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_archive_20261111_0958.csv
+ dedup_review: 52 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_review_20261111_0958.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_summary_20261111_0958.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MS     140765        2383                 52               None 
+
+>>> review-pairs MS
+
+REVIEW-ONLY PAIRS MS - PREVIEW (nothing changed)
+ 47 pairs {'LONG': 2, 'SHORT': 45} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_review_pairs_20261111_0958.csv
+
+=== OK 2026-11-11 09:58:59

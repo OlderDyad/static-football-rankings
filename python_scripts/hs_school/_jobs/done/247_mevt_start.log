@@ -1,0 +1,174 @@
+
+>>> addstate ME
+Tracker rows ready for ME
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report ME drift
+
+REPORT drift ME: 35 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_drift_20261112_0717.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                 N_Games  N_First  N_Last  N_Mapped
+   Auburn Edward Little (ME)                 193      1943     2022    0         None                    None     None     None    0       
+   Bangor John Bapst Memorial (ME)           563      1929     2023    0         Bangor John Bapst (ME)  25       2024     2026    1       
+   Bath Hyde (ME)                            247      1966     2019    0         None                    None     None     None    0       
+   Belfast Area (ME)                         175      1995     2023    0         None                    None     None     None    0       
+   Dexter Regional (ME)                      519      1930     2024    1         None                    None     None     None    0       
+   Dover-Foxcroft (ME)                       572      1920     2023    0         None                    None     None     None    0       
+   Dover-Foxcroft Academy (ME)               25       1955     2022    0         None                    None     None     None    0       
+   Ellsworth-Sumner (ME)                     86       1920     2024    0         None                    None     None     None    0       
+   Falmouth-Greely (ME)                      15       2019     2021    0         None                    None     None     None    0       
+   Fryeburg Academy (ME)                     556      1904     2023    0         Fryeburg (ME)           32       2024     2026    1       
+   Hebron Academy (ME)                       589      1917     2025    1         None                    None     None     None    0       
+   Houlton (ME)                              41       1931     2017    0         None                    None     None     None    0       
+   Houlton Hodgdon (ME)                      10       2024     2024    1         None                    None     None     None    0       
+   Houlton-Hodgdon-Greater Houlton Christia  21       2018     2023    0         None                    None     None     None    0       
+   Lincoln Mattanawcook (ME)                 308      1962     2021    0         None                    None     None     None    0       
+   ... 20 more rows (see CSV)
+
+>>> mapcheck ME
+
+MAPPING CHECK ME - PREVIEW (nothing changed)
+ 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_mapcheck_20261112_0717.csv
+   URL                                       ProperName                     Team_ID  NameID  Problem                          Team_ID_Name                       
+   https://www.maxpreps.com/me/ellsworth/el  Ellsworth Sumner Academy (ME)  3328     None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/me/lisbon-falls  Lisbon Falls Lisbon St. (ME)   11924    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/me/madison/madi  Madison Carrabec (ME)          40978    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/me/yarmouth/yar  Yarmouth North Academy (ME)    22723    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/me/north-berwic  Berwick Noble (ME)             59655    59647   Team_ID points to another name   Bethel Gould Academy (ME)          
+   https://www.maxpreps.com/me/biddeford/bi  Biddeford (ME)                 15698    59671   Team_ID points to another name   Biddeford St. Francis (ME)         
+   https://www.maxpreps.com/me/boothbay-har  Boothbay Harbor Boothbay (ME)  59831    59818   Team_ID points to another name   Bowdoin College Frosh (ME)         
+   https://www.maxpreps.com/me/cape-elizabe  Cape Elizabeth (ME)            6197     60235   Team_ID points to another name   Castine Maine Maritime Academy (ME)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  4        None
+
+>>> dedup ME
+
+DEDUP v4 ME - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_dedup_archive_20261112_0717.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_dedup_review_20261112_0717.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_dedup_summary_20261112_0717.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  ME     25009         0                    0                None 
+
+>>> review-pairs ME
+
+REVIEW-ONLY PAIRS ME - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_review_pairs_20261112_0717.csv
+
+>>> same-score-fix ME
+
+SAME-SCORE DOUBLE-BOOKINGS ME - PREVIEW (nothing changed)
+ 125 pairs {'DROP A': 27, 'DROP B': 16, 'UNDECIDED': 82} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_same_score_20261112_0718.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  43        None   None
+
+>>> query ME me_dump.sql
+
+QUERY me_dump (1 result sets)
+ set 1: 25009 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_me_dump_1_20261112_0718.csv
+
+>>> query ME me_names.sql
+
+QUERY me_names (1 result sets)
+ set 1: 2286 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_me_names_1_20261112_0718.csv
+
+>>> addstate VT
+Tracker rows ready for VT
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report VT drift
+
+REPORT drift VT: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_drift_20261112_0719.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                    N_Games  N_First  N_Last  N_Mapped
+   Bradford Oxbow (VT)                       133      2007     2023    1         None                       None     None     None    0       
+   Bristol Mt. Abraham (VT)                  56       1999     2023    1         None                       None     None     None    0       
+   Burlington (VT)                           609      1904     2017    0         None                       None     None     None    0       
+   Burlington-South Burlington (VT)          44       2018     2023    0         None                       None     None     None    0       
+   Fairfax Bellows Free Academy (VT)         131      1978     2020    0         None                       None     None     None    0       
+   Fairfax Bellows Free Academy-Lamoille (V  19       2021     2022    0         Fairfax Bellows Free (VT)  27       2024     2026    1       
+   Jericho Mt. Mansfield (VT)                87       2014     2023    0         None                       None     None     None    0       
+   Poultney (VT)                             450      1935     2025    1         None                       None     None     None    0       
+   Poultney-Mt. St. Joseph Academy (VT)      17       2016     2017    0         None                       None     None     None    0       
+   Rutland Mt. St. Joseph Academy (VT)       688      1930     2020    0         None                       None     None     None    0       
+   Saint Johnsbury Academy (VT)              676      1919     2023    0         None                       None     None     None    0       
+   South Burlington (VT)                     388      1960     2017    0         None                       None     None     None    0       
+   Winooski (VT)                             286      1934     2015    0         None                       None     None     None    0       
+
+>>> mapcheck VT
+
+MAPPING CHECK VT - PREVIEW (nothing changed)
+ 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_mapcheck_20261112_0719.csv
+   URL                                       ProperName                            Team_ID  NameID  Problem                          Team_ID_Name              
+   https://www.maxpreps.com/vt/bennington/m  Bennington Mount Anthony (VT)         22983    None    ProperName not in HS_Team_Names  None                      
+   https://www.maxpreps.com/vt/bristol/mt-a  Bristol Mount Abraham-Vergennes (VT)  33783    None    ProperName not in HS_Team_Names  None                      
+   https://www.maxpreps.com/vt/brattleboro/  Brattleboro (VT)                      59935    59884   Team_ID points to another name   Bristol Mt. Abraham (VT)  
+   https://www.maxpreps.com/vt/north-claren  North Clarendon Mill River (VT)       71171    9715    Team_ID points to another name   Norwich University JV (VT)
+   https://www.maxpreps.com/vt/south-burlin  South Burlington Rice Memorial (VT)   68312    10944   Team_ID points to another name   Spaulding (NH)            
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  3        None
+
+>>> dedup VT
+
+DEDUP v4 VT - PREVIEW (nothing changed)
+ dedup_archive: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_dedup_archive_20261112_0719.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_dedup_review_20261112_0719.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_dedup_summary_20261112_0719.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  VT     9431          9                    2                None 
+
+>>> review-pairs VT
+
+REVIEW-ONLY PAIRS VT - PREVIEW (nothing changed)
+ 2 pairs {'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_review_pairs_20261112_0719.csv
+
+>>> same-score-fix VT
+
+SAME-SCORE DOUBLE-BOOKINGS VT - PREVIEW (nothing changed)
+ 80 pairs {'DROP A': 17, 'DROP B': 17, 'UNDECIDED': 46} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_same_score_20261112_0719.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  34        None   None
+
+>>> query VT vt_dump.sql
+
+QUERY vt_dump (1 result sets)
+ set 1: 9431 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_vt_dump_1_20261112_0719.csv
+
+>>> query VT vt_names.sql
+
+QUERY vt_names (1 result sets)
+ set 1: 2101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_vt_names_1_20261112_0719.csv
+
+=== OK 2026-11-12 07:19:49

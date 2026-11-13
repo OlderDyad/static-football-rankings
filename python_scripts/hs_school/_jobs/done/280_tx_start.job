@@ -1,0 +1,8 @@
+addstate TX
+report TX drift
+mapcheck TX --commit
+dedup TX
+review-pairs TX
+same-score-fix TX
+query TX tx_dump.sql
+query TX tx_names.sql

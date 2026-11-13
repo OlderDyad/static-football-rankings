@@ -1,0 +1,22 @@
+move-team IN --from "Bloomington (IN)" --to "Bloomington South (IN)" --seasons 1880-1971 --reason "Bloomington High became Bloomington South when Bloomington North opened (1972); pre-split games under the continuation name" --commit
+consolidate KY --reason "KY round 2: same-school variants and renames to latest found in same-score pairs (KY Sheldon Clark -> Martin County, Clark County -> George Rogers Clark; WV Putnam County Buffalo, Matewan Magnolia; VA Stuart -> Justice, R.B. Worthy, John S. Battle, Lane -> Charlottesville; IN Evansville -> Central, Boys Catholic/Memorial -> Reitz Memorial, Linton-Stockton; NY Canajoharie, Elmira-Southside, Fulton Bodley, Turner-Carroll)"
+dedup KY --commit
+review-pairs KY --commit
+consolidate WV --reason "WV round 2: same-school variants and renames to latest found in same-score pairs (KY Sheldon Clark -> Martin County, Clark County -> George Rogers Clark; WV Putnam County Buffalo, Matewan Magnolia; VA Stuart -> Justice, R.B. Worthy, John S. Battle, Lane -> Charlottesville; IN Evansville -> Central, Boys Catholic/Memorial -> Reitz Memorial, Linton-Stockton; NY Canajoharie, Elmira-Southside, Fulton Bodley, Turner-Carroll)"
+dedup WV --commit
+review-pairs WV --commit
+consolidate VA --reason "VA round 2: same-school variants and renames to latest found in same-score pairs (KY Sheldon Clark -> Martin County, Clark County -> George Rogers Clark; WV Putnam County Buffalo, Matewan Magnolia; VA Stuart -> Justice, R.B. Worthy, John S. Battle, Lane -> Charlottesville; IN Evansville -> Central, Boys Catholic/Memorial -> Reitz Memorial, Linton-Stockton; NY Canajoharie, Elmira-Southside, Fulton Bodley, Turner-Carroll)"
+dedup VA --commit
+review-pairs VA --commit
+consolidate IN --reason "IN round 2: same-school variants and renames to latest found in same-score pairs (KY Sheldon Clark -> Martin County, Clark County -> George Rogers Clark; WV Putnam County Buffalo, Matewan Magnolia; VA Stuart -> Justice, R.B. Worthy, John S. Battle, Lane -> Charlottesville; IN Evansville -> Central, Boys Catholic/Memorial -> Reitz Memorial, Linton-Stockton; NY Canajoharie, Elmira-Southside, Fulton Bodley, Turner-Carroll)"
+dedup IN --commit
+review-pairs IN --commit
+consolidate NY --reason "NY round 2: same-school variants and renames to latest found in same-score pairs (KY Sheldon Clark -> Martin County, Clark County -> George Rogers Clark; WV Putnam County Buffalo, Matewan Magnolia; VA Stuart -> Justice, R.B. Worthy, John S. Battle, Lane -> Charlottesville; IN Evansville -> Central, Boys Catholic/Memorial -> Reitz Memorial, Linton-Stockton; NY Canajoharie, Elmira-Southside, Fulton Bodley, Turner-Carroll)"
+dedup NY --commit
+review-pairs NY --commit
+same-score-fix KY --commit
+same-score-fix WV --commit
+same-score-fix VA --commit
+same-score-fix MD --commit
+same-score-fix IN --commit
+same-score-fix NY --commit

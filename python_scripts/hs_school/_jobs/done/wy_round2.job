@@ -1,0 +1,16 @@
+# WY round 2: St. Mary's merge + co-op names split by year (David 2026-11-06: split by year), then previews
+consolidate WY --reason "WY round 2: Saint Mary's -> Cheyenne St. Mary's"
+move-team WY --from "Clearmont (WY)" --to "Arvada-Clearmont (WY)" --seasons 1960-1971 --reason "WY co-op split by year: Arvada-Clearmont from 1960" --commit
+move-team WY --from "Cowley Rocky Mountain (WY)" --to "Cowley (WY)" --seasons 1900-1982 --reason "WY co-op split by year: Rocky Mountain from 1983; earlier games are Cowley" --commit
+move-team WY --from "Deaver (WY)" --to "Deaver-Frannie (WY)" --seasons 1938-1976 --reason "WY co-op split by year: Deaver-Frannie 1938-1976" --commit
+move-team WY --from "Farson-Eden (WY)" --to "Farson (WY)" --seasons 1900-2008 --reason "WY co-op split by year: Farson-Eden from 2009" --commit
+move-team WY --from "Farson (WY)" --to "Farson-Eden (WY)" --seasons 2009-2030 --reason "WY co-op split by year: Farson-Eden from 2009" --commit
+move-team WY --from "Guernsey (WY)" --to "Guernsey-Sunrise (WY)" --seasons 1963-2030 --reason "WY co-op split by year: Guernsey-Sunrise from 1963" --commit
+move-team WY --from "Lingle-Fort Laramie (WY)" --to "Lingle (WY)" --seasons 1900-2006 --reason "WY co-op split by year: Lingle-Fort Laramie from 2007" --commit
+move-team WY --from "Lingle (WY)" --to "Lingle-Fort Laramie (WY)" --seasons 2007-2030 --reason "WY co-op split by year: Lingle-Fort Laramie from 2007" --commit
+move-team WY --from "Manderson-Hyattville (WY)" --to "Manderson (WY)" --seasons 1968-1971 --reason "WY: Manderson-Hyattville 1968-71 games are Manderson's schedule" --commit
+move-team WY --from "Upton (WY)" --to "Upton-Sundance (WY)" --seasons 2012-2030 --reason "WY co-op split by year: Upton-Sundance from 2012" --commit
+dedup WY
+review-pairs WY
+same-score-fix WY
+report WY double-booked

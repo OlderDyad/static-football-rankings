@@ -1,0 +1,123 @@
+
+>>> addstate AR
+Tracker rows ready for AR
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report AR names
+
+REPORT names AR: 610 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_names_20261110_1631.csv
+   Name                               Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   All Stars Lonoke (AR)              1      1919         1919        1            0     
+   Allstars Little Rock Central (AR)  1      1921         1921        1            0     
+   Alma (AR)                          998    1922         2026        1            1     
+   Alma B (AR)                        1      1931         1931        0            0     
+   Altheimer (AR)                     211    1971         2005        1            0     
+   Altheimer-Sherrill (AR)            1      1988         1988        0            0     
+   Altus (AR)                         20     1953         1974        1            0     
+   Altus-Denning (AR)                 6      1967         1973        1            0     
+   Amity Centerpoint (AR)             348    1930         2026        1            1     
+   Anadark (AR)                       1      1969         1969        0            0     
+   Arkadelphia (AR)                   853    1920         2026        1            1     
+   Arkadelphia Industrial (AR)        2      1955         1959        0            0     
+   Arkadelphia Peake (AR)             2      1966         1968        1            0     
+   Arkansas A&M College (AR)          2      1912         1954        1            0     
+   Arkansas City (AR)                 1      1921         1921        1            0     
+   ... 595 more rows (see CSV)
+
+>>> report AR drift
+
+REPORT drift AR: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_drift_20261110_1632.csv
+   Stopped                                  S_Games  S_First  S_Last  S_Mapped  Started                        N_Games  N_First  N_Last  N_Mapped
+   Arkansas School for the Deaf (AR)        176      1932     2019    0         None                           None     None     None    0       
+   Augusta (AR)                             563      1921     2024    1         None                           None     None     None    0       
+   Conway (AR)                              949      1919     2023    0         Conway Wampus (AR)             34       2024     2026    1       
+   Danville (AR)                            606      1921     2023    0         Danville Little (AR)           29       2024     2026    1       
+   Decatur (AR)                             225      1959     2022    1         None                           None     None     None    0       
+   Foreman (AR)                             598      1921     2023    0         Foreman Gator (AR)             30       2024     2026    1       
+   Fort Smith Union Christian Academy (AR)  155      1982     2019    0         None                           None     None     None    0       
+   Gurdon (AR)                              697      1926     2023    0         Gurdon Go (AR)                 32       2024     2026    1       
+   Hartford (AR)                            398      1925     2016    0         None                           None     None     None    0       
+   Havana Western Yell County (AR)          187      1929     2020    0         None                           None     None     None    0       
+   Jacksonville North Pulaski (AR)          344      1977     2016    0         None                           None     None     None    0       
+   Little Rock Arkansas Baptist (AR)        191      1995     2025    0         None                           None     None     None    0       
+   Little Rock Fair (AR)                    329      1982     2019    0         Little Rock Baptist Prep (AR)  99       2015     2026    1       
+   Little Rock Hall (AR)                    621      1957     2025    1         None                           None     None     None    0       
+   Little Rock McClellan (AR)               541      1965     2019    0         Little Rock Baptist Prep (AR)  99       2015     2026    1       
+   ... 6 more rows (see CSV)
+
+>>> mapcheck AR
+
+MAPPING CHECK AR - PREVIEW (nothing changed)
+ 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_mapcheck_20261110_1632.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                          Team_ID_Name                   
+   https://www.maxpreps.com/ar/coal-hill/we  Coal Hill Westside (AR)              49491    None    ProperName not in HS_Team_Names  None                           
+   https://www.maxpreps.com/ar/des-arc/des-  Des Arc (AR)                         49500    None    ProperName not in HS_Team_Names  None                           
+   https://www.maxpreps.com/ar/little-rock/  Little Rock Arkansas School (AR)     49536    None    ProperName not in HS_Team_Names  None                           
+   https://www.maxpreps.com/ar/little-rock/  Little Rock Southwest (AR)           36033    None    ProperName not in HS_Team_Names  None                           
+   https://www.maxpreps.com/ar/north-little  North Little Rock North Little (AR)  49552    None    ProperName not in HS_Team_Names  None                           
+   https://www.maxpreps.com/ar/dermott/derm  Dermott (AR)                         10091    61434   Team_ID points to another name   DesArc (AR)                    
+   https://www.maxpreps.com/ar/mineral-spri  Mineral Springs (AR)                 23763    65302   Team_ID points to another name   Mississippi County (AR)        
+   https://www.maxpreps.com/ar/yellville/ye  Yellville-Summit (AR)                62911    70042   Team_ID points to another name   Hartman Coal Hill Westside (AR)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  3        None
+
+>>> report AR double-booked
+
+REPORT double-booked AR: 1576 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_double_booked_20261110_1633.csv
+   Kind             Team                               Season  Gap  A_Date      A_Opp                               A_Score  A_Source                                  A_Batch  B_Date      B_Opp                            B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Alma (AR)                          1938    0    1938-10-15  Wilson (OK)                         0-40     Tulsa_World_1938_10_15_15.csv             173      1938-10-15  Fayetteville (AR)                6-47     Times_Record_1938_10_15_3.csv             172      48787FF2-E474-41B0-BB0A-33404AAC69FB  AF257DB7-50B4-465A-BA11-ED3840F29BBD
+   DIFFERENT GAMES  Alma (AR)                          1941    0    1941-10-18  Addington Jefferson County (OK)     25-19    Tulsa_World_1941_10_18_10.csv             173      1941-10-18  Siloam Springs (AR)              19-0     Times_Record_1941_10_18_3.csv             172      C9AD5011-2771-416C-B42A-645E27385096  C5462945-E7F4-45EE-B888-891D649B99C4
+   DIFFERENT GAMES  Alma (AR)                          1941    0    1941-11-15  Springdale (AR)                     0-26     Times_Record_1941_11_15_3.csv             172      1941-11-15  Addington Jefferson County (OK)  18-28    Tulsa_World_1941_11_15_13.csv             173      14C7D339-D95A-410F-8AD3-287DF8CF5242  C9AE4EA4-EEEA-4CA9-B7EF-3B3813A75CDC
+   DIFFERENT GAMES  Alma (AR)                          1946    0    1946-11-02  Siloam Springs (AR)                 18-0     Times_Record_1946_11_02_3.csv             172      1946-11-02  Temple (OK)                      0-26     Tulsa_World_1946_11_02_8.csv              173      63878F06-E2E2-4C6A-A308-08CDC53F5168  A93FAF9F-92D5-491A-B8B6-D0D8D94B32BE
+   DIFFERENT GAMES  Alma (AR)                          1950    0    1950-10-28  Fort Smith St. Anne's Academy (AR)  0-19     Times_Record_1950_10_28_4.csv             172      1950-10-28  Siloam Springs (AR)              0-73     Times_Record_1950_10_28_4.csv             172      95B56910-6D54-442F-A520-6506AC982DB8  5B061F65-8897-4434-93DB-A168DEEE1C44
+   DIFFERENT GAMES  Alma (AR)                          1970    0    1970-11-07  Clinton (OK)                        27-6     Tulsa_World_1970_11_07_20.csv             38       1970-11-07  Clinton (AR)                     21-6     Hope_Star_1970_11_07_Page_7.csv           43       97E2F0D9-5B1B-4B3C-BDBA-2953106C0854  3BB13F50-9407-43A6-8F9D-BA9B848323AC
+   DIFFERENT GAMES  Alma (AR)                          1987    0    1987-10-02  Hot Springs Lakeside (AR)           25-0     https://www.newspapers.com/image/2115525  None     1987-10-02  Fort Smith Northside (AR)        12-28    https://www.newspapers.com/image/2114629  None     CE0D37E6-4B26-4BCE-A6DA-C6F9C2351F03  80B46B0F-EC6D-408E-A7DC-CC32838A93B9
+   DIFFERENT GAMES  Alma (AR)                          2015    2    2015-09-16  Fort Smith Southside (AR)           19-35    www.maxpreps.com                          None     2015-09-18  Harrison (AR)                    45-21    www.maxpreps.com                          None     E43BFB22-46E7-4CFA-AED6-333A304E1D4E  57858827-0F0C-44D8-98A0-53AB8E53FCFB
+   DIFFERENT GAMES  Altheimer (AR)                     1981    1    1981-11-06  Elaine (AR)                         32-6     https://www.newspapers.com/image/2165736  None     1981-11-07  Clarendon (AR)                   13-7     The Sun                                   None     19A43EF3-FA5F-4DF4-884E-54E6117D392D  66284007-8622-49E3-AE5A-F5B4BEA9BF4D
+   DIFFERENT GAMES  Arkadelphia (AR)                   1962    0    1962-11-17  Gurdon (AR)                         0-20     Northwest_Arkansas_Times_1962_11_17_Page  43       1962-11-17  Hope (AR)                        12-40    Northwest_Arkansas_Times_1962_11_17_Page  43       52AAC9D3-6814-4CAD-B311-0813C5FAC4CB  887BE859-A6AB-49BD-A3A7-BE4685E0A582
+   DIFFERENT GAMES  Arkadelphia (AR)                   1981    1    1981-11-06  Camden (AR)                         20-0     https://www.newspapers.com/image/2165736  None     1981-11-07  Camden Fairview (AR)             56-20    The Sun                                   None     66E73A58-357D-40F0-8D9A-0A413417D837  51C20FB7-9C01-472B-85F0-721DBECC23AD
+   DIFFERENT GAMES  Arkadelphia (AR)                   1982    0    1982-11-05  Pine Bluff Dollarway (AR)           17-14    http://online.flipbuilder.com/digitalpbj  None     1982-11-05  Camden Fairview (AR)             21-3     https://www.newspapers.com/image/2159376  None     854BFA8F-7AE7-429E-B2A7-12CE0C8A4DBB  5370FF7E-F8AE-4EFB-A541-6B1A7560B89A
+   DIFFERENT GAMES  Arkadelphia (AR)                   1987    0    1987-10-02  Magnolia (AR)                       17-0     https://www.newspapers.com/image/2115525  None     1987-10-02  Camden (AR)                      26-7     https://www.newspapers.com/image/2114629  None     FCAE3998-F9B1-4A2E-87D9-13DC16466EE5  B6FF9F1F-188F-473D-BDA7-5C3650769F9A
+   DIFFERENT GAMES  Arkansas School for the Deaf (AR)  1958    1    1958-10-18  Searcy Harding Academy (AR)         0-34     Hope_Star_1958_10_18_Page_4.csv           172      1958-10-17  Kansas School for the Deaf (KS)  6-42     #http://kansasfootballhistory.com#        None     E0E19FAA-ADF0-4E54-B3BD-BC0C97CFAA38  03B3EAD5-D6D7-427A-835E-D8AD15D12BE1
+   DIFFERENT GAMES  Ashdown (AR)                       1941    1    1941-09-27  Valliant (OK)                       18-0     Times_Record_1941_09_27_3.csv             172      1941-09-26  Simms James Bowie (TX)           20-12    http://lonestarfootball.net Team 1631     15       831B5184-FB51-4005-8E92-D0FF02127E6F  DDA02467-EFFA-412F-A30C-F6E2976FD795
+   ... 1561 more rows (see CSV)
+
+>>> dedup AR
+
+DEDUP v4 AR - PREVIEW (nothing changed)
+ dedup_archive: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_dedup_archive_20261110_1633.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_dedup_review_20261110_1633.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_dedup_summary_20261110_1633.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  AR     75513         2                    1                None 
+
+>>> review-pairs AR
+
+REVIEW-ONLY PAIRS AR - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_review_pairs_20261110_1633.csv
+
+>>> same-score-fix AR
+
+SAME-SCORE DOUBLE-BOOKINGS AR - PREVIEW (nothing changed)
+ 592 pairs {'DROP A': 204, 'DROP B': 218, 'UNDECIDED': 170} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_same_score_20261110_1634.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  421       None   None
+
+=== OK 2026-11-10 16:34:58

@@ -1,0 +1,462 @@
+
+>>> remap AZ --url "https://www.maxpreps.com/az/chandler/arizona-college-prep-knights/football/schedule/" --to "Chandler Arizona College Prep (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/chandler/arizona-college-prep-knights/football/schedule/ -> Chandler Arizona College Prep (AZ) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                       NewTeam_ID
+   https://www.maxpreps.com/az/chandler/ari  Chandler Arizona College (AZ)  48196    Chandler Arizona College Prep (AZ)  14884     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/florence/ala-anthem-south-titans/football/schedule/" --to "Florence American Leadership Academy - Anthem South (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/florence/ala-anthem-south-titans/football/schedule/ -> Florence American Leadership Academy - Anthem South (AZ) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/az/florence/ala  Florence Ala Anthem (AZ)  3583     Florence American Leadership Academy - A  17403     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/gila-bend/gila-bend-gila-monsters/football/schedule/" --to "Gila Bend (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/gila-bend/gila-bend-gila-monsters/football/schedule/ -> Gila Bend (AZ) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName   NewTeam_ID
+   https://www.maxpreps.com/az/gila-bend/gi  Gila Bend Gila Bend (AZ)  47404    Gila Bend (AZ)  46528     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/gilbert/ala-gilbert-north-eagles/football/schedule/" --to "Gilbert North American Leadership Academy (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/gilbert/ala-gilbert-north-eagles/football/schedule/ -> Gilbert North American Leadership Academy (AZ) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/az/gilbert/ala-  Gilbert Ala Gilbert (AZ)  18467    Gilbert North American Leadership Academ  11086     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/gilbert/san-tan-charter-roadrunners/football/schedule/" --to "Gilbert San Tan Charter (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/gilbert/san-tan-charter-roadrunners/football/schedule/ -> Gilbert San Tan Charter (AZ) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/az/gilbert/san-  Gilbert San Tan (AZ)  8386     Gilbert San Tan Charter (AZ)  47367     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/ironwood/ala-ironwood-warriors/football/schedule/" --to "Ironwood American Leadership Academy (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/ironwood/ala-ironwood-warriors/football/schedule/ -> Ironwood American Leadership Academy (AZ) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/az/ironwood/ala  Ironwood Ala Ironwood (AZ)  46748    Ironwood American Leadership Academy (AZ  14316     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/phoenix/phoenix-day-school-for-the-deaf-roadrunners/football/schedule/" --to "Phoenix Day School for the Deaf (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/phoenix/phoenix-day-school-for-the-deaf-roadrunners/football/schedule/ -> Phoenix Day School for the Deaf (AZ) - COMMIT
+   URL                                       ProperName        Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/az/phoenix/phoe  Phoenix Day (AZ)  43930    Phoenix Day School for the Deaf (AZ)  66748     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/phoenix/oconnor-eagles/football/schedule/" --to "Phoenix O'Connor (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/phoenix/oconnor-eagles/football/schedule/ -> Phoenix O'Connor (AZ) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/az/phoenix/ocon  Phoenix Oconnor (AZ)  2589     Phoenix O'Connor (AZ)  66764     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/queen-creek/ala-queen-creek-patriots/football/schedule/" --to "Queen Creek American Leadership Academy (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/queen-creek/ala-queen-creek-patriots/football/schedule/ -> Queen Creek American Leadership Academy (AZ) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/az/queen-creek/  Queen Creek Ala Queen (AZ)  30793    Queen Creek American Leadership Academy   47047     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/tempe/marcos-de-niza-padres/football/schedule/" --to "Tempe Marcos de Niza (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/tempe/marcos-de-niza-padres/football/schedule/ -> Tempe Marcos de Niza (AZ) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/az/tempe/marcos  Tempe Marcos De (AZ)  7642     Tempe Marcos de Niza (AZ)  68802     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/waddell/ala-west-foothills-guardians/football/schedule/" --to "Waddell American Leadership Academy - West Foothills (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/waddell/ala-west-foothills-guardians/football/schedule/ -> Waddell American Leadership Academy - West Foothills (AZ) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/az/waddell/ala-  Waddell Ala West (AZ)  35374    Waddell American Leadership Academy - We  27057     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/page/page-sand-devils/football/schedule/" --to "Page (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/page/page-sand-devils/football/schedule/ -> Page (AZ) - COMMIT
+   URL                                       ProperName      Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/az/page/page-sa  Page Sand (AZ)  66453    Page (AZ)      66451     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/bullhead-city/mohave-thunderbirds/football/schedule/" --to "Bullhead City Mohave Accelerated (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/bullhead-city/mohave-thunderbirds/football/schedule/ -> Bullhead City Mohave Accelerated (AZ) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/az/bullhead-cit  Bullhead City Mohave (AZ)  21142    Bullhead City Mohave Accelerated (AZ)  60059     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/goodyear/millennium-tigers/football/schedule/" --to "Goodyear Millenium (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/goodyear/millennium-tigers/football/schedule/ -> Goodyear Millenium (AZ) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName            NewTeam_ID
+   https://www.maxpreps.com/az/goodyear/mil  Goodyear Millennium (AZ)  5639     Goodyear Millenium (AZ)  62560     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/maricopa/sequoia-pathway-academy-pumas/football/schedule/" --to "Maricopa Sequoia Pathway Academy (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/maricopa/sequoia-pathway-academy-pumas/football/schedule/ -> Maricopa Sequoia Pathway Academy (AZ) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/az/maricopa/seq  Maricopa Sequoia Pathway (AZ)  31955    Maricopa Sequoia Pathway Academy (AZ)  44192     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/phoenix/paradise-valley-christian-prep-panthers/football/schedule/" --to "Paradise Valley Christian Prep (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/phoenix/paradise-valley-christian-prep-panthers/football/schedule/ -> Paradise Valley Christian Prep (AZ) - COMMIT
+   URL                                       ProperName                                Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/az/phoenix/para  Phoenix Paradise Valley Christian Prep (  6132     Paradise Valley Christian Prep (AZ)  9698      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/scottsdale/cicero-prep-academy-centurions/football/schedule/" --to "Scottsdale Cicero Prep Academy (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/scottsdale/cicero-prep-academy-centurions/football/schedule/ -> Scottsdale Cicero Prep Academy (AZ) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/az/scottsdale/c  Scottsdale Cicero Prep (AZ)  36331    Scottsdale Cicero Prep Academy (AZ)  67991     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/scottsdale/scottsdale-preparatory-academy-spartans/football/schedule/" --to "Scottsdale Prep Academy (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/scottsdale/scottsdale-preparatory-academy-spartans/football/schedule/ -> Scottsdale Prep Academy (AZ) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/az/scottsdale/s  Scottsdale Preparatory (AZ)  25710    Scottsdale Prep Academy (AZ)  67996     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AZ --url "https://www.maxpreps.com/az/tempe/james-madison-preparatory-school-patriots/football/schedule/" --to "Tempe James Madison Prep (AZ)" --commit
+
+REMAP https://www.maxpreps.com/az/tempe/james-madison-preparatory-school-patriots/football/schedule/ -> Tempe James Madison Prep (AZ) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/az/tempe/james-  Tempe James Madison (AZ)  5936     Tempe James Madison Prep (AZ)  68801     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck AZ --commit
+
+MAPPING CHECK AZ - COMMIT (Team_ID set to the ProperName ID)
+ 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_mapcheck_COMMITTED_20261108_1837.csv
+   URL                                       ProperName                       Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/az/phoenix/mary  Phoenix Maryvale Prep (AZ)       25114    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/az/chino-valley  Chino Valley (AZ)                22017    60683   Team_ID points to another name   Cibecue-Dischii Biko (AZ)               
+   https://www.maxpreps.com/az/lake-havasu-  Lake Havasu City (AZ)            71121    63964   Team_ID points to another name   Lake Havasu City Desert Tech Public Char
+   https://www.maxpreps.com/az/maricopa/mar  Maricopa (AZ)                    44192    64821   Team_ID points to another name   Maricopa Sequoia Pathway Academy (AZ)   
+   https://www.maxpreps.com/az/phoenix/nort  Phoenix North Canyon (AZ)        66762    66761   Team_ID points to another name   Phoenix North Pointe Prep (AZ)          
+   https://www.maxpreps.com/az/st-johns/st-  Saint Johns (AZ)                 67725    67643   Team_ID points to another name   Saint Michael (AZ)                      
+   https://www.maxpreps.com/az/scottsdale/c  Scottsdale Chaparral (AZ)        67991    67990   Team_ID points to another name   Scottsdale Cicero Prep Academy (AZ)     
+   https://www.maxpreps.com/az/scottsdale/n  Scottsdale Notre Dame Prep (AZ)  67996    67995   Team_ID points to another name   Scottsdale Prep Academy (AZ)            
+   https://www.maxpreps.com/az/tempe/tempe-  Tempe (AZ)                       68800    68799   Team_ID points to another name   Tempe Corona Del Sol (AZ)               
+   https://www.maxpreps.com/az/tempe/corona  Tempe Corona Del Sol (AZ)        68801    68800   Team_ID points to another name   Tempe James Madison Prep (AZ)           
+   https://www.maxpreps.com/az/tucson/tanqu  Tucson Tanque Verde (AZ)         71034    43286   Team_ID points to another name   University of Arizona Frosh (AZ)        
+   Status     Fixable  Err 
+   COMMITTED  10       None
+
+>>> move-team AZ --from "Tucson Rincon (AZ)" --to "Tucson Rincon-University (AZ)" --seasons 2014-2026 --reason "AZ co-op split by year: Rincon-University from 2014 (MaxPreps carried both names 2014-23)" --commit
+
+MOVE Tucson Rincon (AZ) -> Tucson Rincon-University (AZ), seasons 2014-2026 - COMMIT
+ move_games: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_move_games_COMMITTED_20261108_1837.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_move_by_season_COMMITTED_20261108_1837.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  67     1                  None
+
+>>> round AZ --reason "AZ round 1: azfootballarchives city-prefix twins (Cortez, Arcadia, CDO, Ironwood, River Valley, Desert Vista, Page...), 2024 drift, ALA names, Canyon State Academy, Phoenix Indian"
+Consolidating AZ from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\AZ_Alias_Rules.csv
+
+DEDUP v4 AZ - PREVIEW (nothing changed)
+ dedup_archive: 1704 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_archive_20261108_1838.csv
+ dedup_review: 890 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_review_20261108_1838.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_summary_20261108_1838.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  AZ     59426         1704                 890              None 
+
+REVIEW-ONLY PAIRS AZ - PREVIEW (nothing changed)
+ 880 pairs {'LONG': 343, 'SHORT': 537} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_review_pairs_20261108_1838.csv
+
+Nothing deleted yet. Check the CSVs (or ask Claude to), then run:  python hs_cleanup.py commit AZ
+
+[stderr]
+2026-11-08 18:37:29,769 - INFO - Starting consolidation for state: (AZ) using staging table method.
+2026-11-08 18:37:29,793 - WARNING - WARNING: 253 row(s) have identical OldName and NewName (no-op rules).
+2026-11-08 18:37:29,794 - WARNING -   'Ajo (AZ)' -> 'Ajo (AZ)' (no change)
+2026-11-08 18:37:29,794 - WARNING -   'Anthem Boulder Creek (AZ)' -> 'Anthem Boulder Creek (AZ)' (no change)
+2026-11-08 18:37:29,794 - WARNING -   'Apache Junction (AZ)' -> 'Apache Junction (AZ)' (no change)
+2026-11-08 18:37:29,794 - WARNING -   'Apache Junction Imagine Prep Superstition (AZ)' -> 'Apache Junction Imagine Prep Superstition (AZ)' (no change)
+2026-11-08 18:37:29,794 - WARNING -   'Avondale Agua Fria (AZ)' -> 'Avondale Agua Fria (AZ)' (no change)
+2026-11-08 18:37:29,794 - WARNING -   'Avondale La Joya Community (AZ)' -> 'Avondale La Joya Community (AZ)' (no change)
+2026-11-08 18:37:29,794 - WARNING -   'Avondale St. John Paul II Catholic (AZ)' -> 'Avondale St. John Paul II Catholic (AZ)' (no change)
+2026-11-08 18:37:29,794 - WARNING -   'Avondale Westview (AZ)' -> 'Avondale Westview (AZ)' (no change)
+2026-11-08 18:37:29,794 - WARNING -   'Bagdad (AZ)' -> 'Bagdad (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Benson (AZ)' -> 'Benson (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Bisbee (AZ)' -> 'Bisbee (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Buckeye (AZ)' -> 'Buckeye (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Buckeye Verrado (AZ)' -> 'Buckeye Verrado (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Buckeye Youngker (AZ)' -> 'Buckeye Youngker (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Bullhead City Mohave Accelerated (AZ)' -> 'Bullhead City Mohave Accelerated (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Camp Verde (AZ)' -> 'Camp Verde (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Casa Grande (AZ)' -> 'Casa Grande (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Casa Grande Mission Heights Prep (AZ)' -> 'Casa Grande Mission Heights Prep (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Casa Grande Vista Grande (AZ)' -> 'Casa Grande Vista Grande (AZ)' (no change)
+2026-11-08 18:37:29,795 - WARNING -   'Cave Creek Cactus Shadows (AZ)' -> 'Cave Creek Cactus Shadows (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chandler (AZ)' -> 'Chandler (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chandler AZ Compass Prep (AZ)' -> 'Chandler AZ Compass Prep (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chandler Basha (AZ)' -> 'Chandler Basha (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chandler Hamilton (AZ)' -> 'Chandler Hamilton (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chandler Prep (AZ)' -> 'Chandler Prep (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chandler Seton Catholic (AZ)' -> 'Chandler Seton Catholic (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chandler Skyline - Gila River (AZ)' -> 'Chandler Skyline - Gila River (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chandler Valley Christian (AZ)' -> 'Chandler Valley Christian (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chinle (AZ)' -> 'Chinle (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chinle Rough Rock (AZ)' -> 'Chinle Rough Rock (AZ)' (no change)
+2026-11-08 18:37:29,796 - WARNING -   'Chino Valley (AZ)' -> 'Chino Valley (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Cibecue-Dischii Biko (AZ)' -> 'Cibecue-Dischii Biko (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Clifton (AZ)' -> 'Clifton (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Coolidge (AZ)' -> 'Coolidge (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Cottonwood Mingus (AZ)' -> 'Cottonwood Mingus (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Douglas (AZ)' -> 'Douglas (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Duncan (AZ)' -> 'Duncan (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Eagar Round Valley (AZ)' -> 'Eagar Round Valley (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'El Mirage Dysart (AZ)' -> 'El Mirage Dysart (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Elfrida Valley Union (AZ)' -> 'Elfrida Valley Union (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Eloy Santa Cruz Valley (AZ)' -> 'Eloy Santa Cruz Valley (AZ)' (no change)
+2026-11-08 18:37:29,797 - WARNING -   'Flagstaff (AZ)' -> 'Flagstaff (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Flagstaff Coconino (AZ)' -> 'Flagstaff Coconino (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Flagstaff Sinagua (AZ)' -> 'Flagstaff Sinagua (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Florence (AZ)' -> 'Florence (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Fort Defiance Window Rock (AZ)' -> 'Fort Defiance Window Rock (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Fort Thomas (AZ)' -> 'Fort Thomas (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Fountain Hills (AZ)' -> 'Fountain Hills (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Fredonia (AZ)' -> 'Fredonia (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Ganado (AZ)' -> 'Ganado (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Gila Bend (AZ)' -> 'Gila Bend (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Gilbert (AZ)' -> 'Gilbert (AZ)' (no change)
+2026-11-08 18:37:29,798 - WARNING -   'Gilbert Arete Prep (AZ)' -> 'Gilbert Arete Prep (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Gilbert Campo Verde (AZ)' -> 'Gilbert Campo Verde (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Gilbert Christian (AZ)' -> 'Gilbert Christian (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Gilbert Highland (AZ)' -> 'Gilbert Highland (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Gilbert Higley (AZ)' -> 'Gilbert Higley (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Gilbert Mesquite (AZ)' -> 'Gilbert Mesquite (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Gilbert Perry (AZ)' -> 'Gilbert Perry (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Gilbert Williams Field (AZ)' -> 'Gilbert Williams Field (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Glendale (AZ)' -> 'Glendale (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Glendale Apollo (AZ)' -> 'Glendale Apollo (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Glendale Cactus (AZ)' -> 'Glendale Cactus (AZ)' (no change)
+2026-11-08 18:37:29,799 - WARNING -   'Glendale Copper Canyon (AZ)' -> 'Glendale Copper Canyon (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Glendale Deer Valley (AZ)' -> 'Glendale Deer Valley (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Glendale Desert Heights Prep (AZ)' -> 'Glendale Desert Heights Prep (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Glendale Independence (AZ)' -> 'Glendale Independence (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Glendale Ironwood (AZ)' -> 'Glendale Ironwood (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Glendale Kellis (AZ)' -> 'Glendale Kellis (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Glendale Mountain Ridge (AZ)' -> 'Glendale Mountain Ridge (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Glendale Prep Academy (AZ)' -> 'Glendale Prep Academy (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Globe (AZ)' -> 'Globe (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Goodyear Desert Edge (AZ)' -> 'Goodyear Desert Edge (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Goodyear Estrella Foothills (AZ)' -> 'Goodyear Estrella Foothills (AZ)' (no change)
+2026-11-08 18:37:29,800 - WARNING -   'Goodyear Millenium (AZ)' -> 'Goodyear Millenium (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Heber Mogollon (AZ)' -> 'Heber Mogollon (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Holbrook (AZ)' -> 'Holbrook (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Joseph City (AZ)' -> 'Joseph City (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Kayenta Monument Valley (AZ)' -> 'Kayenta Monument Valley (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Keams Canyon Hopi (AZ)' -> 'Keams Canyon Hopi (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Kearny Ray (AZ)' -> 'Kearny Ray (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Kingman (AZ)' -> 'Kingman (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Kingman Academy (AZ)' -> 'Kingman Academy (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Kingman Lee Williams (AZ)' -> 'Kingman Lee Williams (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Lake Havasu City (AZ)' -> 'Lake Havasu City (AZ)' (no change)
+2026-11-08 18:37:29,801 - WARNING -   'Lake Havasu City Desert Tech Public Charter (AZ)' -> 'Lake Havasu City Desert Tech Public Charter (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Lakeside Blue Ridge (AZ)' -> 'Lakeside Blue Ridge (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Laveen Cesar Chavez (AZ)' -> 'Laveen Cesar Chavez (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Laveen Fairfax (AZ)' -> 'Laveen Fairfax (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Littlefield Beaver Dam (AZ)' -> 'Littlefield Beaver Dam (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Many Farms (AZ)' -> 'Many Farms (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Maricopa (AZ)' -> 'Maricopa (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Maricopa Sequoia Pathway Academy (AZ)' -> 'Maricopa Sequoia Pathway Academy (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Mayer (AZ)' -> 'Mayer (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Mayer Orme (AZ)' -> 'Mayer Orme (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Mesa (AZ)' -> 'Mesa (AZ)' (no change)
+2026-11-08 18:37:29,802 - WARNING -   'Mesa Desert Ridge (AZ)' -> 'Mesa Desert Ridge (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mesa Dobson (AZ)' -> 'Mesa Dobson (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mesa Dobson JV (AZ)' -> 'Mesa Dobson JV (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mesa Heritage Academy (AZ)' -> 'Mesa Heritage Academy (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mesa Mountain View (AZ)' -> 'Mesa Mountain View (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mesa Mountain View Toros (AZ)' -> 'Mesa Mountain View Toros (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mesa Red Mountain (AZ)' -> 'Mesa Red Mountain (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mesa Sequoia (AZ)' -> 'Mesa Sequoia (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mesa Skyline (AZ)' -> 'Mesa Skyline (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mesa Westwood (AZ)' -> 'Mesa Westwood (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Miami (AZ)' -> 'Miami (AZ)' (no change)
+2026-11-08 18:37:29,803 - WARNING -   'Mohave Valley River Valley (AZ)' -> 'Mohave Valley River Valley (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Morenci (AZ)' -> 'Morenci (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Nogales (AZ)' -> 'Nogales (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Page (AZ)' -> 'Page (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Parker (AZ)' -> 'Parker (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Payson (AZ)' -> 'Payson (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Peoria (AZ)' -> 'Peoria (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Peoria Centennial (AZ)' -> 'Peoria Centennial (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Peoria Liberty (AZ)' -> 'Peoria Liberty (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Peoria Sunrise Mountain (AZ)' -> 'Peoria Sunrise Mountain (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Phoenix Alhambra (AZ)' -> 'Phoenix Alhambra (AZ)' (no change)
+2026-11-08 18:37:29,804 - WARNING -   'Phoenix Arcadia (AZ)' -> 'Phoenix Arcadia (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Arizona Lutheran Academy (AZ)' -> 'Phoenix Arizona Lutheran Academy (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Bourgade Catholic (AZ)' -> 'Phoenix Bourgade Catholic (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Brophy College Prep (AZ)' -> 'Phoenix Brophy College Prep (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Browne (AZ)' -> 'Phoenix Browne (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Camelback (AZ)' -> 'Phoenix Camelback (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Carl Hayden (AZ)' -> 'Phoenix Carl Hayden (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Central (AZ)' -> 'Phoenix Central (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Christian (AZ)' -> 'Phoenix Christian (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Cortez (AZ)' -> 'Phoenix Cortez (AZ)' (no change)
+2026-11-08 18:37:29,805 - WARNING -   'Phoenix Day School for the Deaf (AZ)' -> 'Phoenix Day School for the Deaf (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix Desert Vista (AZ)' -> 'Phoenix Desert Vista (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix East (AZ)' -> 'Phoenix East (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix Gerard (AZ)' -> 'Phoenix Gerard (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix Goldwater (AZ)' -> 'Phoenix Goldwater (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix Greenway (AZ)' -> 'Phoenix Greenway (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix Indian (AZ)' -> 'Phoenix Indian (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix Madison Highland Prep (AZ)' -> 'Phoenix Madison Highland Prep (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix Maryvale (AZ)' -> 'Phoenix Maryvale (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix Moon Valley (AZ)' -> 'Phoenix Moon Valley (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix Mountain Pointe (AZ)' -> 'Phoenix Mountain Pointe (AZ)' (no change)
+2026-11-08 18:37:29,806 - WARNING -   'Phoenix NFL Yet Academy (AZ)' -> 'Phoenix NFL Yet Academy (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix North (AZ)' -> 'Phoenix North (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix North Canyon (AZ)' -> 'Phoenix North Canyon (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix North Pointe Prep (AZ)' -> 'Phoenix North Pointe Prep (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix Northwest Christian (AZ)' -> 'Phoenix Northwest Christian (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix O'Connor (AZ)' -> 'Phoenix O'Connor (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix Paradise Valley (AZ)' -> 'Phoenix Paradise Valley (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix Pinnacle (AZ)' -> 'Phoenix Pinnacle (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix Scottsdale Christian Academy (AZ)' -> 'Phoenix Scottsdale Christian Academy (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix Shadow Mountain (AZ)' -> 'Phoenix Shadow Mountain (AZ)' (no change)
+2026-11-08 18:37:29,807 - WARNING -   'Phoenix Sierra Linda (AZ)' -> 'Phoenix Sierra Linda (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix Skyline Prep (AZ)' -> 'Phoenix Skyline Prep (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix South Mountain (AZ)' -> 'Phoenix South Mountain (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix South Pointe (AZ)' -> 'Phoenix South Pointe (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix Southwest Leadership Academy (AZ)' -> 'Phoenix Southwest Leadership Academy (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix St. Mary's (AZ)' -> 'Phoenix St. Mary's (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix Sunnyslope (AZ)' -> 'Phoenix Sunnyslope (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix Thunderbird (AZ)' -> 'Phoenix Thunderbird (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix Union (AZ)' -> 'Phoenix Union (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix Valley Lutheran (AZ)' -> 'Phoenix Valley Lutheran (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix Veritas Prep (AZ)' -> 'Phoenix Veritas Prep (AZ)' (no change)
+2026-11-08 18:37:29,808 - WARNING -   'Phoenix Washington (AZ)' -> 'Phoenix Washington (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Phoenix West (AZ)' -> 'Phoenix West (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Phoenix Westwind Prep Academy (AZ)' -> 'Phoenix Westwind Prep Academy (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Pima (AZ)' -> 'Pima (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Pinon (AZ)' -> 'Pinon (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Prescott (AZ)' -> 'Prescott (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Prescott Valley Bradshaw Mountain (AZ)' -> 'Prescott Valley Bradshaw Mountain (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Queen Creek (AZ)' -> 'Queen Creek (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Queen Creek Canyon State Academy (AZ)' -> 'Queen Creek Canyon State Academy (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Queen Creek Heritage Academy (AZ)' -> 'Queen Creek Heritage Academy (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Queen Creek San Tan Foothills (AZ)' -> 'Queen Creek San Tan Foothills (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Rio Rico (AZ)' -> 'Rio Rico (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Safford (AZ)' -> 'Safford (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Sahuarita (AZ)' -> 'Sahuarita (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Sahuarita Walden Grove (AZ)' -> 'Sahuarita Walden Grove (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Saint David (AZ)' -> 'Saint David (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Saint Johns (AZ)' -> 'Saint Johns (AZ)' (no change)
+2026-11-08 18:37:29,809 - WARNING -   'Salome (AZ)' -> 'Salome (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'San Carlos (AZ)' -> 'San Carlos (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'San Manuel (AZ)' -> 'San Manuel (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'San Tan Valley Poston Butte (AZ)' -> 'San Tan Valley Poston Butte (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'Sanders Valley (AZ)' -> 'Sanders Valley (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'Scottsdale (AZ)' -> 'Scottsdale (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'Scottsdale Chaparral (AZ)' -> 'Scottsdale Chaparral (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'Scottsdale Cicero Prep Academy (AZ)' -> 'Scottsdale Cicero Prep Academy (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'Scottsdale Coronado (AZ)' -> 'Scottsdale Coronado (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'Scottsdale Desert Mountain (AZ)' -> 'Scottsdale Desert Mountain (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'Scottsdale Horizon (AZ)' -> 'Scottsdale Horizon (AZ)' (no change)
+2026-11-08 18:37:29,810 - WARNING -   'Scottsdale Notre Dame Prep (AZ)' -> 'Scottsdale Notre Dame Prep (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Scottsdale Saguaro (AZ)' -> 'Scottsdale Saguaro (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Scottsdale Salt River (AZ)' -> 'Scottsdale Salt River (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Sedona Red Rock (AZ)' -> 'Sedona Red Rock (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Sells Baboquivari (AZ)' -> 'Sells Baboquivari (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Sells Tohono O'Odham (AZ)' -> 'Sells Tohono O'Odham (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Show Low (AZ)' -> 'Show Low (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Sierra Vista Buena (AZ)' -> 'Sierra Vista Buena (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Snowflake (AZ)' -> 'Snowflake (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Superior (AZ)' -> 'Superior (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Surprise Paradise Honors (AZ)' -> 'Surprise Paradise Honors (AZ)' (no change)
+2026-11-08 18:37:29,811 - WARNING -   'Surprise Shadow Ridge (AZ)' -> 'Surprise Shadow Ridge (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Surprise Valley Vista (AZ)' -> 'Surprise Valley Vista (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Surprise Willow Canyon (AZ)' -> 'Surprise Willow Canyon (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Teec Nos Pos Red Mesa (AZ)' -> 'Teec Nos Pos Red Mesa (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Tempe (AZ)' -> 'Tempe (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Tempe Corona del Sol (AZ)' -> 'Tempe Corona del Sol (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Tempe James Madison Prep (AZ)' -> 'Tempe James Madison Prep (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Tempe Marcos de Niza (AZ)' -> 'Tempe Marcos de Niza (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Tempe McClintock (AZ)' -> 'Tempe McClintock (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Tempe Prep (AZ)' -> 'Tempe Prep (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Thatcher (AZ)' -> 'Thatcher (AZ)' (no change)
+2026-11-08 18:37:29,812 - WARNING -   'Tolleson (AZ)' -> 'Tolleson (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tombstone (AZ)' -> 'Tombstone (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tonopah Valley (AZ)' -> 'Tonopah Valley (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tuba City (AZ)' -> 'Tuba City (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tuba City Greyhills Academy (AZ)' -> 'Tuba City Greyhills Academy (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tucson Amphitheater (AZ)' -> 'Tucson Amphitheater (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tucson Arizona School for the Deaf & Blind (AZ)' -> 'Tucson Arizona School for the Deaf & Blind (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tucson Canyon del Oro (AZ)' -> 'Tucson Canyon del Oro (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tucson Catalina (AZ)' -> 'Tucson Catalina (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tucson Catalina Foothills (AZ)' -> 'Tucson Catalina Foothills (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tucson Cholla (AZ)' -> 'Tucson Cholla (AZ)' (no change)
+2026-11-08 18:37:29,813 - WARNING -   'Tucson Desert View (AZ)' -> 'Tucson Desert View (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Empire (AZ)' -> 'Tucson Empire (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Flowing Wells (AZ)' -> 'Tucson Flowing Wells (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson High Magnet School (AZ)' -> 'Tucson High Magnet School (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Ironwood Ridge (AZ)' -> 'Tucson Ironwood Ridge (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Marana (AZ)' -> 'Tucson Marana (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Mountain View (AZ)' -> 'Tucson Mountain View (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Palo Verde (AZ)' -> 'Tucson Palo Verde (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Pueblo (AZ)' -> 'Tucson Pueblo (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Pusch Ridge Christian Academy (AZ)' -> 'Tucson Pusch Ridge Christian Academy (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Rincon (AZ)' -> 'Tucson Rincon (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Rincon-University (AZ)' -> 'Tucson Rincon-University (AZ)' (no change)
+2026-11-08 18:37:29,814 - WARNING -   'Tucson Sabino (AZ)' -> 'Tucson Sabino (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Tucson Sahuaro (AZ)' -> 'Tucson Sahuaro (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Tucson Salpointe Catholic (AZ)' -> 'Tucson Salpointe Catholic (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Tucson Santa Rita (AZ)' -> 'Tucson Santa Rita (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Tucson Sunnyside (AZ)' -> 'Tucson Sunnyside (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Tucson Tanque Verde (AZ)' -> 'Tucson Tanque Verde (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Vail Cienega (AZ)' -> 'Vail Cienega (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Wellton Antelope (AZ)' -> 'Wellton Antelope (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Whiteriver Alchesay (AZ)' -> 'Whiteriver Alchesay (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Wickenburg (AZ)' -> 'Wickenburg (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Willcox (AZ)' -> 'Willcox (AZ)' (no change)
+2026-11-08 18:37:29,815 - WARNING -   'Williams (AZ)' -> 'Williams (AZ)' (no change)
+2026-11-08 18:37:29,816 - WARNING -   'Winkelman Hayden (AZ)' -> 'Winkelman Hayden (AZ)' (no change)
+2026-11-08 18:37:29,816 - WARNING -   'Winslow (AZ)' -> 'Winslow (AZ)' (no change)
+2026-11-08 18:37:29,816 - WARNING -   'Yuma (AZ)' -> 'Yuma (AZ)' (no change)
+2026-11-08 18:37:29,816 - WARNING -   'Yuma Catholic (AZ)' -> 'Yuma Catholic (AZ)' (no change)
+2026-11-08 18:37:29,816 - WARNING -   'Yuma Cibola (AZ)' -> 'Yuma Cibola (AZ)' (no change)
+2026-11-08 18:37:29,816 - WARNING -   'Yuma Gila Ridge (AZ)' -> 'Yuma Gila Ridge (AZ)' (no change)
+2026-11-08 18:37:29,816 - WARNING -   'Yuma Harvest Prep Academy (AZ)' -> 'Yuma Harvest Prep Academy (AZ)' (no change)
+2026-11-08 18:37:29,816 - WARNING -   'Yuma Kofa (AZ)' -> 'Yuma Kofa (AZ)' (no change)
+2026-11-08 18:37:29,816 - INFO - Validation passed: 356 rules are clean and ready to upload.
+2026-11-08 18:37:29,846 - INFO - Uploading 356 rules to staging table: ConsolidationRules_Staging...
+2026-11-08 18:37:30,568 - INFO - Upload to staging table complete.
+2026-11-08 18:37:30,573 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-08 18:38:33,398 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-08 18:38:33,398 - INFO - Reason logged to dbo.HS_Consolidation_Log: AZ round 1: azfootballarchives city-prefix twins (Cortez, Arcadia, CDO, Ironwood, River Valley, Desert Vista, Page...), 2024 drift, ALA names, Canyon State Academy, Phoenix Indian
+2026-11-08 18:38:33,398 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-08 18:38:33,398 - INFO - Running post-consolidation safety check...
+2026-11-08 18:38:33,404 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+=== OK 2026-11-08 18:38:46

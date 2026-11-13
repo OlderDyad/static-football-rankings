@@ -1,0 +1,71 @@
+
+>>> commit AZ
+
+DEDUP v4 AZ - COMMIT
+ dedup_archive: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_archive_COMMITTED_20261108_1846.csv
+ dedup_review: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_review_COMMITTED_20261108_1846.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_dedup_summary_COMMITTED_20261108_1846.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  AZ     56794         24                   26               0890C024-8E33-40F6-95E7-AC1FC794DA5A
+
+REVIEW-ONLY PAIRS AZ - COMMIT
+ 26 pairs {'LONG': 10, 'SHORT': 16} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_review_pairs_COMMITTED_20261108_1846.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  26        755641A3-FCC0-4C1C-AFA4-CC3283537574  None
+
+>>> same-score-fix AZ
+
+SAME-SCORE DOUBLE-BOOKINGS AZ - PREVIEW (nothing changed)
+ 55 pairs {'DROP B': 1, 'DROP A': 1, 'UNDECIDED': 53} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_same_score_20261108_1847.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  2         None   None
+
+>>> fix-dates AZ
+
+FIX DATES AZ - PREVIEW (nothing changed)
+ 22 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_fix_dates_20261108_1847.csv
+   Season  OldDate     NewDate     DayShift  Home                Home_Score  Visitor              Visitor_Score  KeepSource                                ArchivedSource                            KeepID                                ArchiveRunID                        
+   1934    1934-10-26  1934-11-03  8         Phoenix Union (AZ)  30          El Paso Austin (TX)  0              http://lonestarfootball.net               Arizona_Daily_Star_1934_11_03_Page_15.cs  0B8365C1-109A-4925-A2B3-5137BE1FE5FF  CB11A318-ED0E-4CE9-A3CF-F9704B466CA1
+   1935    1935-09-13  1935-10-26  43        Las Cruces (NM)     0           Mesa (AZ)            27             http://lonestarfootball.net Team 1950     Arizona_Daily_Star_1935_10_26_Page_12.cs  3BE35EC0-496C-4518-9956-071160F759F6  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1936    1936-10-16  1936-10-24  8         Mesa (AZ)           20          El Paso Austin (TX)  0              http://lonestarfootball.net               Arizona_Daily_Star_1936_10_24_Page_13.cs  52C8EEA5-603B-463A-A816-78A3223D70B9  CB11A318-ED0E-4CE9-A3CF-F9704B466CA1
+   1938    1938-09-16  1938-10-22  36        Douglas (AZ)        6           Deming (NM)          6              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1938_10_22_Page_14.cs  FBACFD4A-EC55-480A-8E0D-82B519B6566D  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1939    1939-09-08  1939-10-14  36        Douglas (AZ)        44          Deming (NM)          0              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1939_10_14_Page_14.cs  6416310A-A2E4-4C54-AAF2-47C64865A265  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1939    1939-09-22  1939-10-28  36        Las Cruces (NM)     25          Douglas (AZ)         0              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1939_10_28_Page_14.cs  595A9BB9-241E-420A-A3EA-405595DC972E  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1940    1940-09-20  1940-10-26  36        Douglas (AZ)        25          Las Cruces (NM)      14             http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1940_10_26_Page_12.cs  B3E4462A-FA40-47CB-ADAB-6AEE38648F92  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1940    1940-10-11  1940-11-16  36        Douglas (AZ)        26          Lordsburg (NM)       7              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1940_11_16_Page_12.cs  4D62541A-E2D4-469C-AD39-6A78C5527976  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1941    1941-08-15  1941-09-20  36        Douglas (AZ)        0           Lordsburg (NM)       0              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1941_09_20_Page_10.cs  20808310-5F6B-4809-96B8-E3B56999FEA1  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1942    1942-09-11  1942-10-24  43        Douglas (AZ)        19          Las Cruces (NM)      12             http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1942_10_24_Page_8.csv  6C87E4B4-0145-41EC-98E4-BBE9CD306B30  7F7516AC-AFC3-426D-81D5-D7F529355882
+   ... 12 more rows (see CSV)
+   Status                     Updated  Err 
+   PREVIEW (nothing changed)  22       None
+
+>>> report AZ double-booked
+
+REPORT double-booked AZ: 7917 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_double_booked_20261108_1848.csv
+   Kind             Team      Season  Gap  A_Date      A_Opp                        A_Score  A_Source                                  A_Batch  B_Date      B_Opp                        B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Ajo (AZ)  1940    1    1940-09-27  Casa Grande (AZ)             13-27    http://www.azfootballarchives.com/indtea  None     1940-09-28  Nogales (AZ)                 6-13     Arizona_Daily_Star_1940_09_28_Page_12.cs  191      B22881DD-267E-4607-9A3F-0D8643E0F9D5  D471BCE4-FE4C-4DFC-BB06-ED4678E6EB4E
+   DIFFERENT GAMES  Ajo (AZ)  1946    1    1946-09-20  Casa Grande (AZ)             13-20    http://www.azfootballarchives.com/indtea  None     1946-09-21  Coolidge (AZ)                13-31    Arizona_Daily_Star_1946_09_21_Page_6.csv  191      E94F7A6C-D627-444F-AF13-0AA72A9DCCCA  05C9FE8C-C67C-49BC-8DC1-881BFDF12E74
+   DIFFERENT GAMES  Ajo (AZ)  1952    1    1952-10-03  Casa Grande (AZ)             0-49     http://www.azfootballarchives.com/indtea  None     1952-10-04  Tolleson (AZ)                7-6      Arizona_Daily_Star_1952_10_04_Page_12.cs  191      76E14A89-72B2-424B-92CD-060269DE4E29  3D3182CF-72F9-440D-98EF-2EEEBA84CB4B
+   DIFFERENT GAMES  Ajo (AZ)  1953    1    1953-10-02  Casa Grande (AZ)             21-74    http://www.azfootballarchives.com/indtea  None     1953-10-03  Tolleson (AZ)                7-6      Arizona_Daily_Star_1953_10_03_Page_10.cs  191      0F84651B-F437-4096-A561-13463169E0D1  FC62177D-DC53-4291-954E-A5C0F9CED75E
+   DIFFERENT GAMES  Ajo (AZ)  1955    1    1955-09-24  Douglas (AZ)                 37-6     Arizona_Daily_Star_1955_09_24_Page_13.cs  191      1955-09-23  Casa Grande (AZ)             21-6     http://www.azfootballarchives.com/indtea  None     B4FB8C8D-9986-4CFD-AF66-BF7383591FAA  90D4EAC7-9499-4729-AD1A-D4EE7435109A
+   DIFFERENT GAMES  Ajo (AZ)  1956    1    1956-09-21  Casa Grande (AZ)             19-27    http://www.azfootballarchives.com/indtea  None     1956-09-22  Eloy Santa Cruz Valley (AZ)  12-0     Arizona_Daily_Star_1956_09_22_Page_13.cs  191      8883D308-E1CF-4016-8175-6546CAE865E0  E8CF5F4B-3A5F-4AE4-9D12-EEF99CD17A55
+   DIFFERENT GAMES  Ajo (AZ)  1969    0    1969-09-05  El Mirage Dysart (AZ)        28-12    http://www.azfootballarchives.com/indtea  None     1969-09-05  Coolidge (AZ)                36-22    http://www.azfootballarchives.com/indtea  None     27C4867E-CA14-49C8-8E35-10F78A73CB69  07527426-17E2-413C-A64B-618521642D75
+   DIFFERENT GAMES  Ajo (AZ)  1970    0    1970-09-11  Buckeye (AZ)                 6-7      http://www.azfootballarchives.com/indtea  None     1970-09-11  Peoria (AZ)                  21-7     http://www.azfootballarchives.com/indtea  None     A9D90A66-BF24-4519-9BDA-099FCF0E30E5  D2240989-D7F8-4560-B5DF-7A0F22F4962A
+   DIFFERENT GAMES  Ajo (AZ)  1971    0    1971-09-03  Eloy Santa Cruz Valley (AZ)  25-0     http://www.azfootballarchives.com/indtea  None     1971-09-03  Glendale Apollo (AZ)         20-0     http://www.azfootballarchives.com/indtea  None     6F8316E7-8F82-42E7-9356-456570F1B46D  2AFDEEBB-4DEF-43A8-BA73-63A6F562267A
+   DIFFERENT GAMES  Ajo (AZ)  1971    0    1971-09-17  Peoria (AZ)                  27-8     http://www.azfootballarchives.com/indtea  None     1971-09-17  Buckeye (AZ)                 7-7      http://www.azfootballarchives.com/indtea  None     EDF4A890-6464-42B4-B99C-39BF8BA524DC  DDED11AC-A9EF-4D0F-BF8C-5F432D956F00
+   DIFFERENT GAMES  Ajo (AZ)  1972    0    1972-10-13  Eloy Santa Cruz Valley (AZ)  13-16    http://www.azfootballarchives.com/indtea  None     1972-10-13  Phoenix Gerard (AZ)          6-7      http://www.azfootballarchives.com/indtea  None     55E2B929-D0A4-418E-8F88-393AD35EBBA2  39B8B8E6-019D-4619-9DB0-D407F45ED289
+   DIFFERENT GAMES  Ajo (AZ)  1972    0    1972-10-13  Gilbert (AZ)                 7-6      http://www.azfootballarchives.com/indtea  None     1972-10-13  Phoenix Gerard (AZ)          6-7      http://www.azfootballarchives.com/indtea  None     6F431D47-8556-45D5-A468-2FDBA344A2D7  39B8B8E6-019D-4619-9DB0-D407F45ED289
+   DIFFERENT GAMES  Ajo (AZ)  1972    0    1972-10-13  Gilbert (AZ)                 7-6      http://www.azfootballarchives.com/indtea  None     1972-10-13  Eloy Santa Cruz Valley (AZ)  13-16    http://www.azfootballarchives.com/indtea  None     6F431D47-8556-45D5-A468-2FDBA344A2D7  55E2B929-D0A4-418E-8F88-393AD35EBBA2
+   DIFFERENT GAMES  Ajo (AZ)  1973    0    1973-10-12  Gilbert (AZ)                 0-48     http://www.azfootballarchives.com/indtea  None     1973-10-12  Phoenix Gerard (AZ)          12-14    http://www.azfootballarchives.com/indtea  None     51A23093-5C57-4ABA-914F-4D27FEC7595A  E9F2482F-4A9B-48A9-918D-B9584D803629
+   DIFFERENT GAMES  Ajo (AZ)  1973    0    1973-10-12  Eloy Santa Cruz Valley (AZ)  0-35     http://www.azfootballarchives.com/indtea  None     1973-10-12  Gilbert (AZ)                 0-48     http://www.azfootballarchives.com/indtea  None     5183B613-E37C-4281-8B84-2F4666047E8E  51A23093-5C57-4ABA-914F-4D27FEC7595A
+   ... 7902 more rows (see CSV)
+
+>>> query AZ college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_1_20261108_1848.csv
+ set 2: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_2_20261108_1848.csv
+ set 3: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_3_20261108_1848.csv
+ set 4: 174 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_4_20261108_1848.csv
+
+=== OK 2026-11-08 18:48:33

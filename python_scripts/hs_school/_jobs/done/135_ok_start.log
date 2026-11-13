@@ -1,0 +1,160 @@
+
+>>> addstate OK
+Tracker rows ready for OK
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> status OK
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report OK names
+
+REPORT names OK: 1112 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_names_20261110_1540.csv
+   Name                             Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   3rd Aero Squadron (OK)           1      1918         1918        1            0     
+   A. M. Freshman (OK)              1      1921         1921        1            0     
+   Ada (OK)                         1200   1916         2026        1            1     
+   Ada B (OK)                       2      1928         1945        0            0     
+   Ada Horace Mann (OK)             14     1927         1932        0            0     
+   Ada Junior High (OK)             2      1928         1929        0            0     
+   Ada JV (OK)                      1      1957         1957        1            0     
+   Ada Natier (OK)                  1      1952         1952        0            0     
+   Adair (OK)                       628    1927         2026        1            1     
+   Adair Lightweights (OK)          1      1958         1958        0            0     
+   Addington Jefferson County (OK)  3      1940         1941        0            0     
+   Afton (OK)                       719    1916         2026        1            1     
+   Agra (OK)                        63     2007         2013        1            0     
+   Alex (OK)                        576    1929         2026        1            1     
+   All-City Tulsa Rogers (OK)       1      1948         1948        1            0     
+   ... 1097 more rows (see CSV)
+
+>>> report OK drift
+
+REPORT drift OK: 40 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_drift_20261110_1541.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started            N_Games  N_First  N_Last  N_Mapped
+   Atoka (OK)                                702      1916     2023    0         Atoka Wampus (OK)  36       2019     2026    1       
+   Balko-Forgan (OK)                         58       2019     2023    0         None               None     None     None    0       
+   Bartlesville Wesleyan Christian (OK)      203      2006     2025    1         None               None     None     None    0       
+   Bethany Oklahoma City Legion (OK)         20       2013     2015    0         None               None     None     None    0       
+   Bokoshe (OK)                              110      1927     2017    0         None               None     None     None    0       
+   Broken Arrow Immanuel Lutheran Christian  48       2014     2019    0         None               None     None     None    0       
+   Burns Flat-Dill City (OK)                 262      1987     2023    0         None               None     None     None    0       
+   Cement (OK)                               90       1937     2016    0         None               None     None     None    0       
+   Choctaw Life Christian (OK)               32       1999     2021    0         None               None     None     None    0       
+   Deer Creek-Lamont (OK)                    404      1973     2021    0         None               None     None     None    0       
+   Deer Creek-Lamont-Billings (OK)           18       2019     2022    0         None               None     None     None    0       
+   Duke (OK)                                 121      1925     2015    0         None               None     None     None    0       
+   Durant Victory Life Academy (OK)          71       2003     2016    1         None               None     None     None    0       
+   Eucha Cross Christian Academy (OK)        47       2012     2024    1         None               None     None     None    0       
+   Haileyville (OK)                          502      1916     2019    0         None               None     None     None    0       
+   ... 25 more rows (see CSV)
+
+>>> mapcheck OK
+
+MAPPING CHECK OK - PREVIEW (nothing changed)
+ 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_mapcheck_20261110_1541.csv
+   URL                                       ProperName                         Team_ID  NameID  Problem                         Team_ID_Name                            
+   https://www.maxpreps.com/ok/durant/duran  Durant (OK)                        12770    18774   Team_ID points to another name  Durant Victory Life Academy (OK)        
+   https://www.maxpreps.com/ok/oklahoma-cit  Oklahoma City Westmoore (OK)       66211    66210   Team_ID points to another name  Oklahoma City Windsor Hills Baptist (OK)
+   https://www.maxpreps.com/ok/sulphur/okla  Oklahoma School for the Deaf (OK)  21825    66212   Team_ID points to another name  Oklahoma State School of Mines (OK)     
+   https://www.maxpreps.com/ok/tyrone/tyron  Tyrone (OK)                        32124    25144   Team_ID points to another name  University of Oklahoma JV (OK)          
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  4        None
+
+>>> report OK same-town
+
+REPORT same-town OK: 409 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_same_town_20261110_1541.csv
+   A                                 B                                     Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Tulsa Central (OK)                Tulsa Will Rogers College (OK)        92    47       1939         2019        1128     864    
+   Tulsa Central (OK)                Tulsa Edison (OK)                     86    52       1959         2026        1128     670    
+   Tulsa Edison (OK)                 Tulsa Hale (OK)                       86    42       1960         2026        670      642    
+   Tulsa East Central (OK)           Tulsa Memorial (OK)                   83    37       1964         2026        736      728    
+   Tulsa Hale (OK)                   Tulsa Memorial (OK)                   81    40       1962         2025        642      728    
+   Lawton (OK)                       Lawton Eisenhower (OK)                81    49       1963         2026        1325     698    
+   Oklahoma City Classen (OK)        Oklahoma City Northwest Classen (OK)  79    32       1928         1974        245      855    
+   Tulsa Hale (OK)                   Tulsa Will Rogers College (OK)        79    41       1959         2025        642      864    
+   Oklahoma City Capitol Hill (OK)   Oklahoma City Northwest Classen (OK)  73    41       1931         2024        878      855    
+   Oklahoma City Putnam City (OK)    Oklahoma City Putnam City North (OK)  73    35       1978         2026        1028     578    
+   Midwest City (OK)                 Midwest City Carl Albert (OK)         71    21       1963         2026        1058     817    
+   Tulsa Edison (OK)                 Tulsa Will Rogers College (OK)        69    33       1956         2021        670      864    
+   Tulsa Central (OK)                Tulsa Webster (OK)                    62    32       1944         2017        1128     746    
+   Tulsa McLain Science & Tech (OK)  Tulsa Memorial (OK)                   58    39       1962         2026        658      728    
+   Tulsa Memorial (OK)               Tulsa Will Rogers College (OK)        56    33       1962         2021        728      864    
+   ... 394 more rows (see CSV)
+
+>>> report OK double-booked
+
+REPORT double-booked OK: 5997 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_double_booked_20261110_1542.csv
+   Kind             Team      Season  Gap  A_Date      A_Opp              A_Score  A_Source                                  A_Batch  B_Date      B_Opp              B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Ada (OK)  1916    1    1916-11-10  Minneapolis (KS)   71-0     http://kansasfootballhistory.com          None     1916-11-09  Norman (OK)        0-79     https://www.newspapers.com/image/1746723  None     6013A27B-ECED-4170-85FB-605AB3E5C2F3  079E6CE9-CCD3-4711-9FD2-678AC6F63264
+   DIFFERENT GAMES  Ada (OK)  1926    1    1926-10-22  Minneapolis (KS)   7-0      http://kansasfootballhistory.com          None     1926-10-23  Weleetka (OK)      19-0     Tulsa_World_1926_10_23_13.csv             173      5348D193-6381-4A07-8109-717E5996E656  A72B1E4F-149B-49D2-AEAE-BEA640EAE686
+   DIFFERENT GAMES  Ada (OK)  1928    1    1928-11-02  Minneapolis (KS)   0-6      http://kansasfootballhistory.com          None     1928-11-03  Ardmore (OK)       13-20    Times_Record_1928_11_03_6.csv             172      225737F4-0474-48C3-88B3-928AA1848275  74C055CF-D822-4449-97FE-DFC6754B5592
+   DIFFERENT GAMES  Ada (OK)  1929    0    1929-09-28  Tecumseh (OK)      0-25     Tulsa_World_1929_09_28_19.csv             173      1929-09-28  Locust Grove (OK)  49-0     Tulsa_World_1929_09_28_19.csv             173      9EBC4670-F704-4F77-9196-6E7E5C046167  DD1FF9B1-C928-4F6A-BA9E-D27A97399BC4
+   DIFFERENT GAMES  Ada (OK)  1930    1    1930-11-14  Minneapolis (KS)   0-33     http://kansasfootballhistory.com          None     1930-11-15  Salina (OK)        0-12     Times_Record_1930_11_15_7 (1).csv         172      D69FE50C-FD1A-4BBC-A31B-50F75DDE920A  BE18EA9B-9B5C-4879-AB4C-929C57E0A759
+   DIFFERENT GAMES  Ada (OK)  1930    0    1930-11-15  Holdenville (OK)   14-38    Times_Record_1930_11_15_7 (1).csv         172      1930-11-15  Salina (OK)        0-12     Times_Record_1930_11_15_7 (1).csv         172      D5F2C3D6-26FD-4C82-9599-267A92ABC19E  BE18EA9B-9B5C-4879-AB4C-929C57E0A759
+   DIFFERENT GAMES  Ada (OK)  1930    1    1930-11-15  Holdenville (OK)   14-38    Times_Record_1930_11_15_7 (1).csv         172      1930-11-14  Minneapolis (KS)   0-33     http://kansasfootballhistory.com          None     D5F2C3D6-26FD-4C82-9599-267A92ABC19E  D69FE50C-FD1A-4BBC-A31B-50F75DDE920A
+   DIFFERENT GAMES  Ada (OK)  1933    1    1933-11-04  Madill (OK)        0-35     Muskogee_Daily_Phoenix_and_Times_Democra  173      1933-11-03  Minneapolis (KS)   19-0     http://kansasfootballhistory.com          None     DA5BD744-F3AA-4097-B68E-3CA09978623E  D327A3F5-0585-47CA-91D5-A4D794C973C1
+   DIFFERENT GAMES  Ada (OK)  1944    1    1944-09-30  Durant (OK)        51-6     Tulsa_World_1944_09_30_8.csv              173      1944-09-29  Pauls Valley (OK)  28-6     http://www.iwasatthegame.com/             None     F634FDF8-7063-4749-8033-25ED71BAE5F2  944B3473-005E-460B-A6F4-A883E0BEA039
+   DIFFERENT GAMES  Ada (OK)  1944    1    1944-11-04  Henryetta (OK)     19-7     Tulsa_World_1944_11_04_8.csv              173      1944-11-03  McAlester (OK)     44-17    http://www.iwasatthegame.com/             None     60407AAE-FA5C-4C16-8937-085908886BC2  9006B362-BD20-40A6-9C42-367329D67A22
+   DIFFERENT GAMES  Ada (OK)  1945    1    1945-10-05  Ardmore (OK)       0-13     http://www.iwasatthegame.com/             None     1945-10-06  Pauls Valley (OK)  20-14    Tulsa_World_1945_10_06_8.csv              173      87087EBC-7D25-4473-A343-20B68F4A2D58  01EBDA84-3D78-40C9-8646-4597374A1D07
+   DIFFERENT GAMES  Ada (OK)  1945    1    1945-11-16  Tishomingo (OK)    45-0     http://www.iwasatthegame.com/             None     1945-11-17  Holdenville (OK)   19-12    Tulsa_World_1945_11_17_11.csv             173      5345A862-1544-4344-83F9-852AEC6E070C  792FDB36-D8E4-4AEB-A86E-A743B357BDB5
+   DIFFERENT GAMES  Ada (OK)  1946    1    1946-09-20  Pauls Valley (OK)  6-6      http://www.iwasatthegame.com/             None     1946-09-21  Purcell (OK)       6-0      Tulsa_World_1946_09_21_10.csv             173      3B7DD0F6-9A68-4C42-8C6D-08F329DAC31B  0104042B-6C8F-459B-9FE6-AD3822BF7E9C
+   DIFFERENT GAMES  Ada (OK)  1946    1    1946-11-02  Henryetta (OK)     13-19    Tulsa_World_1946_11_02_8.csv              173      1946-11-01  Holdenville (OK)   20-6     http://www.iwasatthegame.com/             None     D7ECFEC5-9F83-4FAB-ACC5-12ACC32EEB1B  2F662F44-4187-4718-8B0A-5C8C65928C30
+   DIFFERENT GAMES  Ada (OK)  1947    0    1947-09-26  Durant (OK)        13-0     https://www.newspapers.com/image/6366114  None     1947-09-26  Ardmore (OK)       21-0     http://www.iwasatthegame.com/             None     A8C1F4C8-5798-49F5-8B3E-4DE1127D436E  328A853D-289D-41F8-84F5-7008BAB3D547
+   ... 5982 more rows (see CSV)
+
+>>> dedup OK
+
+DEDUP v4 OK - PREVIEW (nothing changed)
+ dedup_archive: 131 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_dedup_archive_20261110_1542.csv
+ dedup_review: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_dedup_review_20261110_1542.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_dedup_summary_20261110_1542.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  OK     126319        131                  5                None 
+
+>>> review-pairs OK
+
+REVIEW-ONLY PAIRS OK - PREVIEW (nothing changed)
+ 5 pairs {'LONG': 1, 'SHORT': 4} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_review_pairs_20261110_1542.csv
+
+>>> same-score-fix OK
+
+SAME-SCORE DOUBLE-BOOKINGS OK - PREVIEW (nothing changed)
+ 624 pairs {'DROP B': 183, 'DROP A': 179, 'UNDECIDED': 262} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_same_score_20261110_1544.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  360       None   None
+
+=== OK 2026-11-10 15:44:11

@@ -1,0 +1,10 @@
+same-score-fix WV --commit
+consolidate WV --reason "WV co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/WV_cfg.py"
+move-team WV --from "Hinton Summers County (WV)" --to "Hinton (WV)" --seasons 1911-1993 --ids coop_ids/WV_mv_000.csv --reason "WV co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team WV --from "Valley-Montgomery (WV)" --to "Montgomery (WV)" --seasons 1923-1976 --ids coop_ids/WV_mv_001.csv --reason "WV co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team WV --from "Valley-Montgomery (WV)" --to "Smithers Valley (WV)" --seasons 1976-2004 --ids coop_ids/WV_mv_002.csv --reason "WV co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team WV --from "Weston Lewis County (WV)" --to "Weston (WV)" --seasons 1912-1967 --ids coop_ids/WV_mv_003.csv --reason "WV co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup WV --commit
+review-pairs WV --commit
+same-score-fix WV
+query WV wv_dump.sql

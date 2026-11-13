@@ -1,0 +1,86 @@
+
+>>> commit MA
+
+DEDUP v4 MA - COMMIT
+ dedup_archive: 131 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_archive_COMMITTED_20261110_0421.csv
+ dedup_review: 42 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_review_COMMITTED_20261110_0421.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_summary_COMMITTED_20261110_0421.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  MA     96235         131                  42               463B774B-A51D-4A65-888C-F5C1B9CF6D66
+
+REVIEW-ONLY PAIRS MA - COMMIT
+ 42 pairs {'LONG': 1, 'SHORT': 41} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_review_pairs_COMMITTED_20261110_0421.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  42        3482D5BC-BBF3-490D-89C5-5939A29CCD4A  None
+
+>>> commit CT
+
+DEDUP v4 CT - COMMIT
+ dedup_archive: 450 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_dedup_archive_COMMITTED_20261110_0421.csv
+ dedup_review: 198 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_dedup_review_COMMITTED_20261110_0421.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_dedup_summary_COMMITTED_20261110_0421.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  CT     51373         450                  198              DF0F56E7-7EBF-4C4F-AE3A-684064F29CD8
+
+REVIEW-ONLY PAIRS CT - COMMIT
+ 198 pairs {'LONG': 6, 'SHORT': 192} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_review_pairs_COMMITTED_20261110_0421.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  198       2D351BDC-5F79-43CF-904E-1CBA9BD92F0E  None
+
+>>> commit NH
+
+DEDUP v4 NH - COMMIT
+ dedup_archive: 178 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_dedup_archive_COMMITTED_20261110_0422.csv
+ dedup_review: 58 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_dedup_review_COMMITTED_20261110_0422.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_dedup_summary_COMMITTED_20261110_0422.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NH     16712         178                  58               B0649B87-12B4-46D4-A9BC-042D36AD30C5
+
+REVIEW-ONLY PAIRS NH - COMMIT
+ 57 pairs {'LONG': 1, 'SHORT': 56} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_review_pairs_COMMITTED_20261110_0422.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  57        3598CEDD-B1AA-4D63-BD29-2D3720BCB487  None
+
+>>> commit RI
+
+DEDUP v4 RI - COMMIT
+ dedup_archive: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_dedup_archive_COMMITTED_20261110_0422.csv
+ dedup_review: 35 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_dedup_review_COMMITTED_20261110_0422.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_dedup_summary_COMMITTED_20261110_0422.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  RI     11231         62                   35               5C1DA3E6-1F59-48DF-B56B-925CCAE1D7B9
+
+REVIEW-ONLY PAIRS RI - COMMIT
+ 35 pairs {'LONG': 2, 'SHORT': 33} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_review_pairs_COMMITTED_20261110_0422.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  35        49D2AE82-1076-4C09-A108-F982EC6743EC  None
+
+>>> same-score-fix MA
+
+SAME-SCORE DOUBLE-BOOKINGS MA - PREVIEW (nothing changed)
+ 73 pairs {'DROP A': 1, 'DROP B': 1, 'UNDECIDED': 71} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_same_score_20261110_0423.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  2         None   None
+
+>>> same-score-fix CT
+
+SAME-SCORE DOUBLE-BOOKINGS CT - PREVIEW (nothing changed)
+ 422 pairs {'DROP B': 172, 'DROP A': 155, 'UNDECIDED': 95} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_same_score_20261110_0424.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  326       None   None
+
+>>> same-score-fix NH
+
+SAME-SCORE DOUBLE-BOOKINGS NH - PREVIEW (nothing changed)
+ 27 pairs {'DROP B': 12, 'DROP A': 7, 'UNDECIDED': 8} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_same_score_20261110_0424.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  19        None   None
+
+>>> same-score-fix RI
+
+SAME-SCORE DOUBLE-BOOKINGS RI - PREVIEW (nothing changed)
+ 29 pairs {'DROP B': 11, 'DROP A': 9, 'UNDECIDED': 9} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_same_score_20261110_0424.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  20        None   None
+
+=== OK 2026-11-10 04:24:40

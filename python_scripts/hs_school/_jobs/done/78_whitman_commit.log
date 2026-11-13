@@ -1,0 +1,16 @@
+
+>>> move-team MA --from "Whitman-Hanson Regional (MA)" --to "Whitman (MA)" --seasons 1900-1959 --reason "Whitman HS (town school) era; Whitman-Hanson Regional opened Sept 1960" --commit
+
+MOVE Whitman-Hanson Regional (MA) -> Whitman (MA), seasons 1900-1959 - COMMIT
+ move_games: 239 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0440.csv
+ move_by_season: 116 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0440.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  239    1                  None
+
+>>> step MA 1.4 done "co-op restore 2026-11-10 + Whitman (MA) 1900-1959 split from Whitman-Hanson Regional (regional opened 1960), 239 games"
+Tracker updated: MA 1.4 -> done
+
+>>> step NH 3.1 done "Andover-Exeter 1882 Season fixed by David 2026-11-10"
+Tracker updated: NH 3.1 -> done
+
+=== OK 2026-11-10 04:40:22

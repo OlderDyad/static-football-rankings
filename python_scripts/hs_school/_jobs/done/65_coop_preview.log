@@ -1,0 +1,154 @@
+
+>>> remap MA --url "https://www.maxpreps.com/ma/north-adams/drury-mount-greylock-regional/football/schedule/" --to "North Adams Drury-Mount Greylock Regional (MA)"
+
+REMAP https://www.maxpreps.com/ma/north-adams/drury-mount-greylock-regional/football/schedule/ -> North Adams Drury-Mount Greylock Regional (MA) - PREVIEW (nothing changed)
+   URL                                       ProperName              Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ma/north-adams/  North Adams Drury (MA)  48123    North Adams Drury-Mount Greylock Regiona  40148     
+   Status                     Rows  Err 
+   PREVIEW (nothing changed)  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/griswold/griswold-wheeler-wolverines/football/schedule/" --to "Griswold-Wheeler (CT)"
+
+REMAP https://www.maxpreps.com/ct/griswold/griswold-wheeler-wolverines/football/schedule/ -> Griswold-Wheeler (CT) - PREVIEW (nothing changed)
+   URL                                       ProperName     Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/ct/griswold/gri  Griswold (CT)  62716    Griswold-Wheeler (CT)  62717     
+   Status                     Rows  Err 
+   PREVIEW (nothing changed)  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/central-falls/central-falls-blackstone-valley-prep-achievement-first/football/schedule/" --to "Central Falls-Blackstone Valley Prep-Achievement First (RI)"
+
+REMAP https://www.maxpreps.com/ri/central-falls/central-falls-blackstone-valley-prep-achievement-first/football/schedule/ -> Central Falls-Blackstone Valley Prep-Achievement First (RI) - PREVIEW (nothing changed)
+   URL                                       ProperName          Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ri/central-fall  Central Falls (RI)  60376    Central Falls-Blackstone Valley Prep-Ach  22521     
+   Status                     Rows  Err 
+   PREVIEW (nothing changed)  1     None
+
+>>> move-team MA --from "Holbrook (MA)" --to "Holbrook-Avon (MA)" --seasons 1998-2020 --reason "co-op split by year: Holbrook-Avon (MA) 1998-2020 (undo co-op merge)"
+
+MOVE Holbrook (MA) -> Holbrook-Avon (MA), seasons 1998-2020 - PREVIEW (nothing changed)
+ move_games: 202 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  202    True               None
+
+>>> move-team MA --from "Manchester Essex (MA)" --to "Manchester Essex-Rockport (MA)" --seasons 1997-2020 --reason "co-op split by year: Manchester Essex-Rockport (MA) 1997-2020 (undo co-op merge)"
+
+MOVE Manchester Essex (MA) -> Manchester Essex-Rockport (MA), seasons 1997-2020 - PREVIEW (nothing changed)
+ move_games: 234 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  234    True               None
+
+>>> move-team MA --from "Ayer Shirley (MA)" --to "Ayer Shirley-Bromfield (MA)" --seasons 2017-2020 --reason "co-op split by year: Ayer Shirley-Bromfield (MA) 2017-2020 (undo co-op merge)"
+
+MOVE Ayer Shirley (MA) -> Ayer Shirley-Bromfield (MA), seasons 2017-2020 - PREVIEW (nothing changed)
+ move_games: 31 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  31     True               None
+
+>>> move-team MA --from "Maynard (MA)" --to "Maynard-Bromfield (MA)" --seasons 2011-2016 --reason "co-op split by year: Maynard-Bromfield (MA) 2011-2016 (undo co-op merge)"
+
+MOVE Maynard (MA) -> Maynard-Bromfield (MA), seasons 2011-2016 - PREVIEW (nothing changed)
+ move_games: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  76     True               None
+
+>>> move-team MA --from "Millis (MA)" --to "Millis-Hopedale (MA)" --seasons 2010-2018 --reason "co-op split by year: Millis-Hopedale (MA) 2010-2018 (undo co-op merge)"
+
+MOVE Millis (MA) -> Millis-Hopedale (MA), seasons 2010-2018 - PREVIEW (nothing changed)
+ move_games: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  102    True               None
+
+>>> move-team MA --from "Palmer (MA)" --to "Palmer-Monson (MA)" --seasons 2016-2023 --reason "co-op split by year: Palmer-Monson (MA) 2016-2023 (undo co-op merge)"
+
+MOVE Palmer (MA) -> Palmer-Monson (MA), seasons 2016-2023 - PREVIEW (nothing changed)
+ move_games: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  71     True               None
+
+>>> move-team MA --from "Sutton (MA)" --to "Sutton-Douglas (MA)" --seasons 2013-2020 --reason "co-op split by year: Sutton-Douglas (MA) 2013-2020 (undo co-op merge)"
+
+MOVE Sutton (MA) -> Sutton-Douglas (MA), seasons 2013-2020 - PREVIEW (nothing changed)
+ move_games: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  79     True               None
+
+>>> move-team MA --from "Worcester Holy Name Central Catholic (MA)" --to "Worcester Holy Name Central Catholic-St. Mary's (MA)" --seasons 2004-2015 --reason "co-op split by year: Worcester Holy Name Central Catholic-St. Mary's (MA) 2004-2015 (undo co-op merge)"
+
+MOVE Worcester Holy Name Central Catholic (MA) -> Worcester Holy Name Central Catholic-St. Mary's (MA), seasons 2004-2015 - PREVIEW (nothing changed)
+ move_games: 135 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 44 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  135    True               None
+
+>>> move-team MA --from "West Roxbury (MA)" --to "West Roxbury-Urban Science Academy (MA)" --seasons 2013-2018 --reason "co-op split by year: West Roxbury-Urban Science Academy (MA) 2013-2018 (undo co-op merge)"
+
+MOVE West Roxbury (MA) -> West Roxbury-Urban Science Academy (MA), seasons 2013-2018 - PREVIEW (nothing changed)
+ move_games: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 43 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  65     True               None
+
+>>> move-team MA --from "Brighton (MA)" --to "Brighton-Green Academy-Lyon Pilot (MA)" --seasons 2013-2020 --reason "co-op split by year: Brighton-Green Academy-Lyon Pilot (MA) 2013-2020 (undo co-op merge)"
+
+MOVE Brighton (MA) -> Brighton-Green Academy-Lyon Pilot (MA), seasons 2013-2020 - PREVIEW (nothing changed)
+ move_games: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 56 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  67     True               None
+
+>>> move-team MA --from "Dorchester Burke (MA)" --to "Dorchester Burke-Community Academy of Science & Health (MA)" --seasons 2013-2016 --reason "co-op split by year: Dorchester Burke-Community Academy of Science & Health (MA) 2013-2016 (undo co-op merge)"
+
+MOVE Dorchester Burke (MA) -> Dorchester Burke-Community Academy of Science & Health (MA), seasons 2013-2016 - PREVIEW (nothing changed)
+ move_games: 47 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 42 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  47     True               None
+
+>>> move-team MA --from "Springfield Commerce (MA)" --to "Commerce-Springfield Renaissance (MA)" --seasons 2013-2019 --reason "co-op split by year: Commerce-Springfield Renaissance (MA) 2013-2019 (undo co-op merge)"
+
+MOVE Springfield Commerce (MA) -> Commerce-Springfield Renaissance (MA), seasons 2013-2019 - PREVIEW (nothing changed)
+ move_games: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  73     True               None
+
+>>> move-team MA --from "Springfield Commerce (MA)" --to "Springfield Renaissance-Commerce (MA)" --seasons 2021-2021 --reason "co-op split by year: Springfield Renaissance-Commerce (MA) 2021-2021 (undo co-op merge)"
+
+MOVE Springfield Commerce (MA) -> Springfield Renaissance-Commerce (MA), seasons 2021-2021 - PREVIEW (nothing changed)
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  9      True               None
+
+>>> move-team MA --from "North Adams Drury (MA)" --to "North Adams Drury-Mount Greylock Regional (MA)" --seasons 2019-2024 --reason "co-op split by year: North Adams Drury-Mount Greylock Regional (MA) 2019-2024 (undo co-op merge)"
+
+MOVE North Adams Drury (MA) -> North Adams Drury-Mount Greylock Regional (MA), seasons 2019-2024 - PREVIEW (nothing changed)
+ move_games: 32 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  32     True               None
+
+>>> move-team MA --from "Northampton-Smith Vo-Tech (MA)" --to "Hatfield Smith Academy-Smith Vo-Tech (MA)" --seasons 2013-2020 --reason "co-op split by year: Hatfield Smith Academy-Smith Vo-Tech (MA) 2013-2020 (undo co-op merge)"
+
+MOVE Northampton-Smith Vo-Tech (MA) -> Hatfield Smith Academy-Smith Vo-Tech (MA), seasons 2013-2020 - PREVIEW (nothing changed)
+ move_games: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  71     True               None
+
+>>> move-team MA --from "West Boylston-Tahanto (MA)" --to "West Boylston (MA)" --seasons 1970-2003 --reason "co-op split by year: West Boylston (MA) 1970-2003 (undo co-op merge)"
+
+MOVE West Boylston-Tahanto (MA) -> West Boylston (MA), seasons 1970-2003 - PREVIEW (nothing changed)
+ move_games: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_20261110_0414.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_20261110_0414.csv
+   Status                     Games  ToNameInTeamNames  Err 
+   PREVIEW (nothing changed)  60     True               None
+
+=== OK 2026-11-10 04:14:10

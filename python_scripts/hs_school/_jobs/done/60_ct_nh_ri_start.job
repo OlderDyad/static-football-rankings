@@ -1,0 +1,36 @@
+addstate CT
+report CT names
+report CT drift
+report CT same-town
+mapcheck CT
+dedup CT
+review-pairs CT
+same-score-fix CT
+report CT double-booked
+query CT season_date.sql
+query CT forfeits.sql
+query CT college_check.sql
+addstate NH
+report NH names
+report NH drift
+report NH same-town
+mapcheck NH
+dedup NH
+review-pairs NH
+same-score-fix NH
+report NH double-booked
+query NH season_date.sql
+query NH forfeits.sql
+query NH college_check.sql
+addstate RI
+report RI names
+report RI drift
+report RI same-town
+mapcheck RI
+dedup RI
+review-pairs RI
+same-score-fix RI
+report RI double-booked
+query RI season_date.sql
+query RI forfeits.sql
+query RI college_check.sql

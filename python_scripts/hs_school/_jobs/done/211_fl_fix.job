@@ -1,0 +1,11 @@
+set-dates FL --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-FL game date (both teams + score match)" --commit
+set-dates FL --file hsfha_dates_blank.csv --reason "no-source date replaced by HSFHA-FL game date (both teams + score match)" --commit
+set-dates FL --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-FL date: same teams + same score in season" --commit
+set-scores FL --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-FL score (David 2026-11-10 rule)" --commit
+same-score-fix FL --commit
+import-games FL --file hsfha_import_FL.csv --reason "HSFHA-FL (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+dedup FL
+review-pairs FL
+query FL season_date.sql
+query FL forfeits.sql
+query FL college_check.sql

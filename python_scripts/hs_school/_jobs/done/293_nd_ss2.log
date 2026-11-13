@@ -1,0 +1,22 @@
+
+>>> same-score-fix ND --commit
+ 2478 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS ND - COMMIT
+ 238 pairs {'DROP A': 53, 'DROP B': 52, 'UNDECIDED': 133} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_same_score_COMMITTED_20261112_1515.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  100       5CABEC47-4AE6-40E1-92BF-84CE5D23178E  None
+
+>>> dedup ND
+
+DEDUP v4 ND - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_dedup_archive_20261112_1515.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_dedup_review_20261112_1515.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_dedup_summary_20261112_1515.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  ND     38806         0                    0                None 
+
+>>> step ND 2.3 done "2026-11-12: co-op round: 2,107 MaxPreps-vs-northdakotahsfootball same-score pairs (keep MaxPreps co-op name), 84 member->co-op moves for co-op seasons, dedup 1,215, Jamestown pre-2004, Fargo->Fargo Central <=1964, Dickinson Trinity merged"
+Tracker updated: ND 2.3 -> done
+
+=== OK 2026-11-12 15:15:05

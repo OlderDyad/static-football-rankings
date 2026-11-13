@@ -1,0 +1,640 @@
+
+>>> remap TN --url "https://www.maxpreps.com/tn/coalfield/coalfield-yellow-jackets/football/schedule/" --to "Coalfield (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/coalfield/coalfield-yellow-jackets/football/schedule/ -> Coalfield (TN) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName   NewTeam_ID
+   https://www.maxpreps.com/tn/coalfield/co  Coalfield Yellow (TN)  17969    Coalfield (TN)  60871     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/decaturville/riverside-panthers/football/schedule/" --to "Decatur County-Riverside (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/decaturville/riverside-panthers/football/schedule/ -> Decatur County-Riverside (TN) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/tn/decaturville  Decaturville Riverside (TN)  39964    Decatur County-Riverside (TN)  61346     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/nashville/east-nashville-magnet-eagles/football/schedule/" --to "Nashville East Nashville Magnet (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/nashville/east-nashville-magnet-eagles/football/schedule/ -> Nashville East Nashville Magnet (TN) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/tn/nashville/ea  East Nashville Magnet (TN)  16359    Nashville East Nashville Magnet (TN)  65695     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/greeneville/greeneville-greene-devils/football/schedule/" --to "Greeneville (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/greeneville/greeneville-greene-devils/football/schedule/ -> Greeneville (TN) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName     NewTeam_ID
+   https://www.maxpreps.com/tn/greeneville/  Greeneville Greene (TN)  151      Greeneville (TN)  27308     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/jackson/jackson-central-merry-cougars/football/schedule/" --to "Jackson Central-Merry (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/jackson/jackson-central-merry-cougars/football/schedule/ -> Jackson Central-Merry (TN) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/tn/jackson/jack  Jackson Central (TN)  3569     Jackson Central-Merry (TN)  47121     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/jackson/jackson-north-side-indians/football/schedule/" --to "Jackson North Side (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/jackson/jackson-north-side-indians/football/schedule/ -> Jackson North Side (TN) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName            NewTeam_ID
+   https://www.maxpreps.com/tn/jackson/jack  Jackson North (TN)  37192    Jackson North Side (TN)  31043     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/jackson/jackson-south-side-hawks/football/schedule/" --to "Jackson South Side (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/jackson/jackson-south-side-hawks/football/schedule/ -> Jackson South Side (TN) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName            NewTeam_ID
+   https://www.maxpreps.com/tn/jackson/jack  Jackson South (TN)  34639    Jackson South Side (TN)  15539     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/jackson/university-school-of-jackson-bruins/football/schedule/" --to "Jackson University School of Jackson (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/jackson/university-school-of-jackson-bruins/football/schedule/ -> Jackson University School of Jackson (TN) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/tn/jackson/univ  Jackson University School (TN)  19084    Jackson University School of Jackson (TN  63459     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/knoxville/austin-east-roadrunners/football/schedule/" --to "Knoxville Austin-East (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/knoxville/austin-east-roadrunners/football/schedule/ -> Knoxville Austin-East (TN) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/tn/knoxville/au  Knoxville Austin East (TN)  40558    Knoxville Austin-East (TN)  2593      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/murfreesboro/middle-tennessee-christian-cougars/football/schedule/" --to "Murfreesboro Middle Tennessee Christian (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/murfreesboro/middle-tennessee-christian-cougars/football/schedule/ -> Murfreesboro Middle Tennessee Christian (TN) - COMMIT
+   URL                                       ProperName                          Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/tn/murfreesboro  Murfreesboro Middle Tennessee (TN)  24733    Murfreesboro Middle Tennessee Christian   65641     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/nashville/overton-bobcats/football/schedule/" --to "Nashville John Overton (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/nashville/overton-bobcats/football/schedule/ -> Nashville John Overton (TN) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/tn/nashville/ov  Nashville Overton (TN)  24514    Nashville John Overton (TN)  65704     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/seymour/kings-academy-lions/football/schedule/" --to "Seymour King's Academy (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/seymour/kings-academy-lions/football/schedule/ -> Seymour King's Academy (TN) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/tn/seymour/king  Seymour Kings Academy (TN)  20368    Seymour King's Academy (TN)  20361     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/soddy-daisy/soddy-daisy-trojans/football/schedule/" --to "Soddy-Daisy (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/soddy-daisy/soddy-daisy-trojans/football/schedule/ -> Soddy-Daisy (TN) - COMMIT
+   URL                                       ProperName        Team_ID  NewProperName     NewTeam_ID
+   https://www.maxpreps.com/tn/soddy-daisy/  Soddy Daisy (TN)  20555    Soddy-Daisy (TN)  68222     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/unionville/community-vikings-viqueens/football/schedule/" --to "Unionville Community (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/unionville/community-vikings-viqueens/football/schedule/ -> Unionville Community (TN) - COMMIT
+   URL                                       ProperName                         Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/tn/unionville/c  Unionville Community Vikings (TN)  43823    Unionville Community (TN)  69178     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/watertown/watertown-purple-tigers/football/schedule/" --to "Watertown (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/watertown/watertown-purple-tigers/football/schedule/ -> Watertown (TN) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName   NewTeam_ID
+   https://www.maxpreps.com/tn/watertown/wa  Watertown Purple (TN)  28776    Watertown (TN)  69515     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/knoxville/christian-academy-of-knoxville-warriors/football/schedule/" --to "Christian Academy of Knoxville (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/knoxville/christian-academy-of-knoxville-warriors/football/schedule/ -> Christian Academy of Knoxville (TN) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/tn/knoxville/ch  Knoxville Christian Academy (TN)  262      Christian Academy of Knoxville (TN)  40640     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/knoxville/tennessee-school-for-the-deaf-vikings/football/schedule/" --to "Tennessee School for the Deaf (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/knoxville/tennessee-school-for-the-deaf-vikings/football/schedule/ -> Tennessee School for the Deaf (TN) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                       NewTeam_ID
+   https://www.maxpreps.com/tn/knoxville/te  Knoxville Tennessee School (TN)  7490     Tennessee School for the Deaf (TN)  68817     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap TN --url "https://www.maxpreps.com/tn/nashville/tennessee-heat/football/schedule/" --to "Mount Juliet Middle Tennessee Heat (TN)" --commit
+
+REMAP https://www.maxpreps.com/tn/nashville/tennessee-heat/football/schedule/ -> Mount Juliet Middle Tennessee Heat (TN) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                            NewTeam_ID
+   https://www.maxpreps.com/tn/nashville/te  Nashville Tennessee (TN)  2045     Mount Juliet Middle Tennessee Heat (TN)  65569     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck TN
+
+MAPPING CHECK TN - PREVIEW (nothing changed)
+ 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_mapcheck_20261110_0450.csv
+   URL                                       ProperName                               Team_ID  NameID  Problem                          Team_ID_Name                           
+   https://www.maxpreps.com/tn/bell-buckle/  Bell Buckle The Webb (TN)                48174    None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/memphis/book  Memphis Booker T (TN)                    44573    None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/memphis/free  Memphis Freedom Prep (TN)                3947     None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/morristown/m  Morristown Hamblen West (TN)             2878     None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/white-house/  White House Christian Community (TN)     3376     None    ProperName not in HS_Team_Names  None                                   
+   https://www.maxpreps.com/tn/brownsville/  Brownsville Haywood (TN)                 60004    28508   Team_ID points to another name   Bruceton Central (TN)                  
+   https://www.maxpreps.com/tn/chattanooga/  Chattanooga Brainerd (TN)                71839    60478   Team_ID points to another name   Chattanooga Central (TN)               
+   https://www.maxpreps.com/tn/memphis/memp  Memphis Academy of Health Sciences�(TN)  65046    44914   Team_ID points to another name   Memphis Academy of Health Sciences (TN)
+   https://www.maxpreps.com/tn/memphis/memp  Memphis University (TN)                  42629    36346   Team_ID points to another name   Memphis University School (TN)         
+   https://www.maxpreps.com/tn/memphis/wood  Memphis Wooddale (TN)                    72023    65082   Team_ID points to another name   Middle Tennessee State Univestity (TN) 
+   https://www.maxpreps.com/tn/sevierville/  Sevierville Sevier County (TN)           17673    68057   Team_ID points to another name   Sewanee (TN)                           
+   https://www.maxpreps.com/tn/south-pittsb  South Pittsburg (TN)                     40631    68272   Team_ID points to another name   South Pittsburg McReynolds (TN)        
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  7        None
+
+>>> round TN --reason "TN round 1: 2024 MaxPreps short/mascot names merged into long-standing names (Jackson, Knoxville, Nashville, Watertown...), Tennessee Heat, TSD, KY border names"
+Consolidating TN from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\TN_Alias_Rules.csv
+
+DEDUP v4 TN - PREVIEW (nothing changed)
+ dedup_archive: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_archive_20261110_0452.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_review_20261110_0452.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_summary_20261110_0452.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  TN     124980        6                    1                None 
+
+REVIEW-ONLY PAIRS TN - PREVIEW (nothing changed)
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_review_pairs_20261110_0452.csv
+
+Nothing deleted yet. Check the CSVs (or ask Claude to), then run:  python hs_cleanup.py commit TN
+
+[stderr]
+2026-11-10 04:50:30,086 - INFO - Starting consolidation for state: (TN) using staging table method.
+2026-11-10 04:50:30,097 - WARNING - WARNING: 446 row(s) have identical OldName and NewName (no-op rules).
+2026-11-10 04:50:30,098 - WARNING -   'Adamsville (TN)' -> 'Adamsville (TN)' (no change)
+2026-11-10 04:50:30,098 - WARNING -   'Afton Chuckey-Doak (TN)' -> 'Afton Chuckey-Doak (TN)' (no change)
+2026-11-10 04:50:30,098 - WARNING -   'Alamo Crockett County (TN)' -> 'Alamo Crockett County (TN)' (no change)
+2026-11-10 04:50:30,098 - WARNING -   'Alcoa (TN)' -> 'Alcoa (TN)' (no change)
+2026-11-10 04:50:30,098 - WARNING -   'Antioch (TN)' -> 'Antioch (TN)' (no change)
+2026-11-10 04:50:30,098 - WARNING -   'Antioch Ezell-Harding Christian (TN)' -> 'Antioch Ezell-Harding Christian (TN)' (no change)
+2026-11-10 04:50:30,098 - WARNING -   'Antioch Lighthouse Christian (TN)' -> 'Antioch Lighthouse Christian (TN)' (no change)
+2026-11-10 04:50:30,098 - WARNING -   'Arlington (TN)' -> 'Arlington (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Arlington Bolton (TN)' -> 'Arlington Bolton (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Ashland City Cheatham County Central (TN)' -> 'Ashland City Cheatham County Central (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Athens McMinn County (TN)' -> 'Athens McMinn County (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Atwood West Carroll (TN)' -> 'Atwood West Carroll (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Bartlett (TN)' -> 'Bartlett (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Baxter Upperman (TN)' -> 'Baxter Upperman (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Bell Buckle The Webb School (TN)' -> 'Bell Buckle The Webb School (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Bellevue (TN)' -> 'Bellevue (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Benton Polk County (TN)' -> 'Benton Polk County (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Blountville Sullivan Central (TN)' -> 'Blountville Sullivan Central (TN)' (no change)
+2026-11-10 04:50:30,099 - WARNING -   'Blountville Tri-Cities Christian (TN)' -> 'Blountville Tri-Cities Christian (TN)' (no change)
+2026-11-10 04:50:30,100 - WARNING -   'Bluff City Sullivan East (TN)' -> 'Bluff City Sullivan East (TN)' (no change)
+2026-11-10 04:50:30,100 - WARNING -   'Bolivar Central (TN)' -> 'Bolivar Central (TN)' (no change)
+2026-11-10 04:50:30,100 - WARNING -   'Brentwood (TN)' -> 'Brentwood (TN)' (no change)
+2026-11-10 04:50:30,100 - WARNING -   'Brentwood Academy (TN)' -> 'Brentwood Academy (TN)' (no change)
+2026-11-10 04:50:30,100 - WARNING -   'Brentwood Ravenwood (TN)' -> 'Brentwood Ravenwood (TN)' (no change)
+2026-11-10 04:50:30,100 - WARNING -   'Brighton (TN)' -> 'Brighton (TN)' (no change)
+2026-11-10 04:50:30,100 - WARNING -   'Bristol Tennessee (TN)' -> 'Bristol Tennessee (TN)' (no change)
+2026-11-10 04:50:30,100 - WARNING -   'Brownsville Haywood (TN)' -> 'Brownsville Haywood (TN)' (no change)
+2026-11-10 04:50:30,100 - WARNING -   'Byrdstown Pickett County (TN)' -> 'Byrdstown Pickett County (TN)' (no change)
+2026-11-10 04:50:30,101 - WARNING -   'Camden Central (TN)' -> 'Camden Central (TN)' (no change)
+2026-11-10 04:50:30,101 - WARNING -   'Carthage Smith County (TN)' -> 'Carthage Smith County (TN)' (no change)
+2026-11-10 04:50:30,101 - WARNING -   'Cedar Hill Jo Byrns (TN)' -> 'Cedar Hill Jo Byrns (TN)' (no change)
+2026-11-10 04:50:30,101 - WARNING -   'Celina (TN)' -> 'Celina (TN)' (no change)
+2026-11-10 04:50:30,101 - WARNING -   'Celina Clay County (TN)' -> 'Celina Clay County (TN)' (no change)
+2026-11-10 04:50:30,101 - WARNING -   'Centerville Hickman County (TN)' -> 'Centerville Hickman County (TN)' (no change)
+2026-11-10 04:50:30,101 - WARNING -   'Chapel Hill Forrest (TN)' -> 'Chapel Hill Forrest (TN)' (no change)
+2026-11-10 04:50:30,101 - WARNING -   'Charleston (TN)' -> 'Charleston (TN)' (no change)
+2026-11-10 04:50:30,101 - WARNING -   'Charlotte Creek Wood (TN)' -> 'Charlotte Creek Wood (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga Baylor (TN)' -> 'Chattanooga Baylor (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga Baylor Military Academy (TN)' -> 'Chattanooga Baylor Military Academy (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga Boyd-Buchanan (TN)' -> 'Chattanooga Boyd-Buchanan (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga Brainerd (TN)' -> 'Chattanooga Brainerd (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga Christian (TN)' -> 'Chattanooga Christian (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga City (TN)' -> 'Chattanooga City (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga East Ridge (TN)' -> 'Chattanooga East Ridge (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga Grace Baptist Academy (TN)' -> 'Chattanooga Grace Baptist Academy (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga Howard Tech (TN)' -> 'Chattanooga Howard Tech (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga Kirkman (TN)' -> 'Chattanooga Kirkman (TN)' (no change)
+2026-11-10 04:50:30,102 - WARNING -   'Chattanooga Lookout Valley (TN)' -> 'Chattanooga Lookout Valley (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Chattanooga McCallie (TN)' -> 'Chattanooga McCallie (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Chattanooga Notre Dame (TN)' -> 'Chattanooga Notre Dame (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Chattanooga Red Bank (TN)' -> 'Chattanooga Red Bank (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Chattanooga Silverdale Academy (TN)' -> 'Chattanooga Silverdale Academy (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Chattanooga Tyner Academy (TN)' -> 'Chattanooga Tyner Academy (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Christian Academy of Knoxville (TN)' -> 'Christian Academy of Knoxville (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Church Hill Volunteer (TN)' -> 'Church Hill Volunteer (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Clarksville (TN)' -> 'Clarksville (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Clarksville Academy (TN)' -> 'Clarksville Academy (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Clarksville Kenwood (TN)' -> 'Clarksville Kenwood (TN)' (no change)
+2026-11-10 04:50:30,103 - WARNING -   'Clarksville Northeast (TN)' -> 'Clarksville Northeast (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Clarksville Northwest (TN)' -> 'Clarksville Northwest (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Clarksville Rossview (TN)' -> 'Clarksville Rossview (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Clarksville West Creek (TN)' -> 'Clarksville West Creek (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Cleveland (TN)' -> 'Cleveland (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Cleveland Bradley Central (TN)' -> 'Cleveland Bradley Central (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Cleveland Walker Valley (TN)' -> 'Cleveland Walker Valley (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Clinton (TN)' -> 'Clinton (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Clinton Anderson County (TN)' -> 'Clinton Anderson County (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Coalfield (TN)' -> 'Coalfield (TN)' (no change)
+2026-11-10 04:50:30,104 - WARNING -   'Coalmont Grundy County (TN)' -> 'Coalmont Grundy County (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Collierville (TN)' -> 'Collierville (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Collierville St. George's (TN)' -> 'Collierville St. George's (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Collinwood (TN)' -> 'Collinwood (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Columbia Academy (TN)' -> 'Columbia Academy (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Columbia Central (TN)' -> 'Columbia Central (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Columbia Military Academy (TN)' -> 'Columbia Military Academy (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Columbia Spring Hill (TN)' -> 'Columbia Spring Hill (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Columbia Zion Christian Academy (TN)' -> 'Columbia Zion Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Cookeville (TN)' -> 'Cookeville (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Copperhill Copper Basin (TN)' -> 'Copperhill Copper Basin (TN)' (no change)
+2026-11-10 04:50:30,105 - WARNING -   'Cordova (TN)' -> 'Cordova (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Cordova Evangelical Christian (TN)' -> 'Cordova Evangelical Christian (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Cordova First Assembly Christian (TN)' -> 'Cordova First Assembly Christian (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Cordova St. Benedict at Auburndale (TN)' -> 'Cordova St. Benedict at Auburndale (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Cornersville (TN)' -> 'Cornersville (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Corryton Gibbs (TN)' -> 'Corryton Gibbs (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Cosby (TN)' -> 'Cosby (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Covington (TN)' -> 'Covington (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Covington Byars-Hall (TN)' -> 'Covington Byars-Hall (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Cross Plains East Robertson (TN)' -> 'Cross Plains East Robertson (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Crossville Cumberland County (TN)' -> 'Crossville Cumberland County (TN)' (no change)
+2026-11-10 04:50:30,106 - WARNING -   'Crossville Stone Memorial (TN)' -> 'Crossville Stone Memorial (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Cumberland (TN)' -> 'Cumberland (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Cumberland Gap (TN)' -> 'Cumberland Gap (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Cunningham Montgomery Central (TN)' -> 'Cunningham Montgomery Central (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Dandridge Jefferson County (TN)' -> 'Dandridge Jefferson County (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Decatur County-Riverside (TN)' -> 'Decatur County-Riverside (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Decatur Meigs County (TN)' -> 'Decatur Meigs County (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Decherd (TN)' -> 'Decherd (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Dickson County (TN)' -> 'Dickson County (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Donelson (TN)' -> 'Donelson (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Dover Stewart County (TN)' -> 'Dover Stewart County (TN)' (no change)
+2026-11-10 04:50:30,107 - WARNING -   'Doyle (TN)' -> 'Doyle (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Dresden (TN)' -> 'Dresden (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Dunlap Sequatchie County (TN)' -> 'Dunlap Sequatchie County (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'DuPont (TN)' -> 'DuPont (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Dyer Gibson County (TN)' -> 'Dyer Gibson County (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Dyersburg (TN)' -> 'Dyersburg (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Eads Briarcrest Christian (TN)' -> 'Eads Briarcrest Christian (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Eagleville (TN)' -> 'Eagleville (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Elizabethton (TN)' -> 'Elizabethton (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Elizabethton Happy Valley (TN)' -> 'Elizabethton Happy Valley (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Elizabethton Unaka (TN)' -> 'Elizabethton Unaka (TN)' (no change)
+2026-11-10 04:50:30,108 - WARNING -   'Elliston Baptist Academy (TN)' -> 'Elliston Baptist Academy (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Englewood McMinn Central (TN)' -> 'Englewood McMinn Central (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Erin Houston County (TN)' -> 'Erin Houston County (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Erwin Unicoi County (TN)' -> 'Erwin Unicoi County (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Evensville Rhea County (TN)' -> 'Evensville Rhea County (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Fairview (TN)' -> 'Fairview (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Fayetteville (TN)' -> 'Fayetteville (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Fayetteville Lincoln County (TN)' -> 'Fayetteville Lincoln County (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Fayetteville Riverside Christian Academy (TN)' -> 'Fayetteville Riverside Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Franklin (TN)' -> 'Franklin (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Franklin Battle Ground Academy (TN)' -> 'Franklin Battle Ground Academy (TN)' (no change)
+2026-11-10 04:50:30,109 - WARNING -   'Franklin Centennial (TN)' -> 'Franklin Centennial (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Franklin Christian Academy (TN)' -> 'Franklin Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Franklin Classical School (TN)' -> 'Franklin Classical School (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Franklin Grace Christian Academy (TN)' -> 'Franklin Grace Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Franklin Page (TN)' -> 'Franklin Page (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Friendsville (TN)' -> 'Friendsville (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Gainesboro Jackson County (TN)' -> 'Gainesboro Jackson County (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Gallatin (TN)' -> 'Gallatin (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Gallatin Station Camp (TN)' -> 'Gallatin Station Camp (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Gatlinburg-Pittman (TN)' -> 'Gatlinburg-Pittman (TN)' (no change)
+2026-11-10 04:50:30,110 - WARNING -   'Germantown (TN)' -> 'Germantown (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Germantown Houston (TN)' -> 'Germantown Houston (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Gleason (TN)' -> 'Gleason (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Goodlettsville (TN)' -> 'Goodlettsville (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Gordonsville (TN)' -> 'Gordonsville (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Gray Daniel Boone (TN)' -> 'Gray Daniel Boone (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Greenback (TN)' -> 'Greenback (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Greenbrier (TN)' -> 'Greenbrier (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Greeneville (TN)' -> 'Greeneville (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Greeneville North Greene (TN)' -> 'Greeneville North Greene (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Greeneville South Greene (TN)' -> 'Greeneville South Greene (TN)' (no change)
+2026-11-10 04:50:30,111 - WARNING -   'Greenfield (TN)' -> 'Greenfield (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Hall-Mood Junior College (TN)' -> 'Hall-Mood Junior College (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Hampton (TN)' -> 'Hampton (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Harriman (TN)' -> 'Harriman (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Harrison Chattanooga Central (TN)' -> 'Harrison Chattanooga Central (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Harrison-Chilhowee (TN)' -> 'Harrison-Chilhowee (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Hartsville Trousdale County (TN)' -> 'Hartsville Trousdale County (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Henderson Chester County (TN)' -> 'Henderson Chester County (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Hendersonville (TN)' -> 'Hendersonville (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Hendersonville Beech (TN)' -> 'Hendersonville Beech (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Hendersonville Pope John Paul II (TN)' -> 'Hendersonville Pope John Paul II (TN)' (no change)
+2026-11-10 04:50:30,112 - WARNING -   'Hixson (TN)' -> 'Hixson (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Hohenwald Lewis County (TN)' -> 'Hohenwald Lewis County (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Hollow Rock-Bruceton Central (TN)' -> 'Hollow Rock-Bruceton Central (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Holston (TN)' -> 'Holston (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Humboldt (TN)' -> 'Humboldt (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Huntingdon (TN)' -> 'Huntingdon (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Huntland (TN)' -> 'Huntland (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Huntsville Scott (TN)' -> 'Huntsville Scott (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Jacksboro Campbell County (TN)' -> 'Jacksboro Campbell County (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Jackson (TN)' -> 'Jackson (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Jackson Central-Merry (TN)' -> 'Jackson Central-Merry (TN)' (no change)
+2026-11-10 04:50:30,113 - WARNING -   'Jackson Christian (TN)' -> 'Jackson Christian (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jackson Liberty Tech Magnet (TN)' -> 'Jackson Liberty Tech Magnet (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jackson North Side (TN)' -> 'Jackson North Side (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jackson Sacred Heart of Jesus (TN)' -> 'Jackson Sacred Heart of Jesus (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jackson South Side (TN)' -> 'Jackson South Side (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jackson Trinity Christian Academy (TN)' -> 'Jackson Trinity Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jackson University School of Jackson (TN)' -> 'Jackson University School of Jackson (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jamestown York Institute (TN)' -> 'Jamestown York Institute (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jasper Marion County (TN)' -> 'Jasper Marion County (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jefferson (TN)' -> 'Jefferson (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jellico (TN)' -> 'Jellico (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Joelton (TN)' -> 'Joelton (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Johnson City Science Hill (TN)' -> 'Johnson City Science Hill (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jonesboro (TN)' -> 'Jonesboro (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Jonesborough David Crockett (TN)' -> 'Jonesborough David Crockett (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Ketron (TN)' -> 'Ketron (TN)' (no change)
+2026-11-10 04:50:30,114 - WARNING -   'Kingsport Dobyns-Bennett (TN)' -> 'Kingsport Dobyns-Bennett (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Kingsport Ketron (TN)' -> 'Kingsport Ketron (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Kingsport Lynn View (TN)' -> 'Kingsport Lynn View (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Kingsport Sullivan North (TN)' -> 'Kingsport Sullivan North (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Kingsport Sullivan South (TN)' -> 'Kingsport Sullivan South (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Kingston Midway (TN)' -> 'Kingston Midway (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Kingston Roane County (TN)' -> 'Kingston Roane County (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Kingston Springs Harpeth (TN)' -> 'Kingston Springs Harpeth (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Kirkman (TN)' -> 'Kirkman (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Knoxville (TN)' -> 'Knoxville (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Knoxville Austin-East (TN)' -> 'Knoxville Austin-East (TN)' (no change)
+2026-11-10 04:50:30,115 - WARNING -   'Knoxville Bearden (TN)' -> 'Knoxville Bearden (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Catholic (TN)' -> 'Knoxville Catholic (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Central (TN)' -> 'Knoxville Central (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Doyle (TN)' -> 'Knoxville Doyle (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Farragut (TN)' -> 'Knoxville Farragut (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Fulton (TN)' -> 'Knoxville Fulton (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Grace Christian Academy (TN)' -> 'Knoxville Grace Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Halls (TN)' -> 'Knoxville Halls (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Hardin Valley Academy (TN)' -> 'Knoxville Hardin Valley Academy (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Holston (TN)' -> 'Knoxville Holston (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Karns (TN)' -> 'Knoxville Karns (TN)' (no change)
+2026-11-10 04:50:30,116 - WARNING -   'Knoxville Rule (TN)' -> 'Knoxville Rule (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Knoxville South (TN)' -> 'Knoxville South (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Knoxville South-Doyle (TN)' -> 'Knoxville South-Doyle (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Knoxville South-Young (TN)' -> 'Knoxville South-Young (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Knoxville Webb (TN)' -> 'Knoxville Webb (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Knoxville West (TN)' -> 'Knoxville West (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Knoxville Young (TN)' -> 'Knoxville Young (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Kodak Northview Academy (TN)' -> 'Kodak Northview Academy (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'La Follette (TN)' -> 'La Follette (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Lafayette Macon County (TN)' -> 'Lafayette Macon County (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Lake City (TN)' -> 'Lake City (TN)' (no change)
+2026-11-10 04:50:30,117 - WARNING -   'Lanier (TN)' -> 'Lanier (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'LaVergne (TN)' -> 'LaVergne (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Lawrenceburg Lawrence County (TN)' -> 'Lawrenceburg Lawrence County (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Lebanon (TN)' -> 'Lebanon (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Lebanon Castle Heights Military (TN)' -> 'Lebanon Castle Heights Military (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Lebanon Friendship Christian (TN)' -> 'Lebanon Friendship Christian (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Lebanon Wilson Central (TN)' -> 'Lebanon Wilson Central (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Lenoir City (TN)' -> 'Lenoir City (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Lewisburg Marshall County (TN)' -> 'Lewisburg Marshall County (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Lexington (TN)' -> 'Lexington (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Linden Perry County (TN)' -> 'Linden Perry County (TN)' (no change)
+2026-11-10 04:50:30,118 - WARNING -   'Livingston Academy (TN)' -> 'Livingston Academy (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Loretto (TN)' -> 'Loretto (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Loudon (TN)' -> 'Loudon (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Lyles East Hickman County (TN)' -> 'Lyles East Hickman County (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Lynchburg Moore County (TN)' -> 'Lynchburg Moore County (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Lynn View (TN)' -> 'Lynn View (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Lynnville Richland (TN)' -> 'Lynnville Richland (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Madison (TN)' -> 'Madison (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Madison Goodpasture Christian (TN)' -> 'Madison Goodpasture Christian (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Madisonville (TN)' -> 'Madisonville (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Madisonville Sequoyah (TN)' -> 'Madisonville Sequoyah (TN)' (no change)
+2026-11-10 04:50:30,119 - WARNING -   'Manchester Coffee County Central (TN)' -> 'Manchester Coffee County Central (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'Martin Westview (TN)' -> 'Martin Westview (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'Maryville (TN)' -> 'Maryville (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'Maryville Eagleton College (TN)' -> 'Maryville Eagleton College (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'Maryville Everett (TN)' -> 'Maryville Everett (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'Maryville Heritage (TN)' -> 'Maryville Heritage (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'Maryville Poly (TN)' -> 'Maryville Poly (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'Maryville William Blount (TN)' -> 'Maryville William Blount (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'Maynardville Union County (TN)' -> 'Maynardville Union County (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'McEwen (TN)' -> 'McEwen (TN)' (no change)
+2026-11-10 04:50:30,120 - WARNING -   'McKenzie (TN)' -> 'McKenzie (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'McMinnville Warren County (TN)' -> 'McMinnville Warren County (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'McTyeire Training School (TN)' -> 'McTyeire Training School (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'Medina South Gibson (TN)' -> 'Medina South Gibson (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'Memphis Academy of Health Sciences (TN)' -> 'Memphis Academy of Health Sciences (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'Memphis B.T. Washington (TN)' -> 'Memphis B.T. Washington (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'Memphis Bishop Byrne (TN)' -> 'Memphis Bishop Byrne (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'Memphis Business Academy (TN)' -> 'Memphis Business Academy (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'Memphis Catholic (TN)' -> 'Memphis Catholic (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'Memphis Central (TN)' -> 'Memphis Central (TN)' (no change)
+2026-11-10 04:50:30,121 - WARNING -   'Memphis Christian Brothers (TN)' -> 'Memphis Christian Brothers (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis Craigmont (TN)' -> 'Memphis Craigmont (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis Douglass (TN)' -> 'Memphis Douglass (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis East (TN)' -> 'Memphis East (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis Elliston Baptist Academy (TN)' -> 'Memphis Elliston Baptist Academy (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis Fairley (TN)' -> 'Memphis Fairley (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis Frayser (TN)' -> 'Memphis Frayser (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis Freedom Prep Academy (TN)' -> 'Memphis Freedom Prep Academy (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis G.W. Carver (TN)' -> 'Memphis G.W. Carver (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis Hamilton (TN)' -> 'Memphis Hamilton (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis Harding Academy (TN)' -> 'Memphis Harding Academy (TN)' (no change)
+2026-11-10 04:50:30,122 - WARNING -   'Memphis Hillcrest (TN)' -> 'Memphis Hillcrest (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Humes Prep (TN)' -> 'Memphis Humes Prep (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Kingsbury (TN)' -> 'Memphis Kingsbury (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis KIPP Collegiate (TN)' -> 'Memphis KIPP Collegiate (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Kirby (TN)' -> 'Memphis Kirby (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Lausanne Collegiate (TN)' -> 'Memphis Lausanne Collegiate (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Macon Road Baptist (TN)' -> 'Memphis Macon Road Baptist (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Manassas (TN)' -> 'Memphis Manassas (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Melrose (TN)' -> 'Memphis Melrose (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Mitchell (TN)' -> 'Memphis Mitchell (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Northside (TN)' -> 'Memphis Northside (TN)' (no change)
+2026-11-10 04:50:30,123 - WARNING -   'Memphis Oakhaven (TN)' -> 'Memphis Oakhaven (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis Overton (TN)' -> 'Memphis Overton (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis PURE Academy (TN)' -> 'Memphis PURE Academy (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis Raleigh-Egypt (TN)' -> 'Memphis Raleigh-Egypt (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis Ridgeway (TN)' -> 'Memphis Ridgeway (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis Sheffield (TN)' -> 'Memphis Sheffield (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis Skyview Academy (TN)' -> 'Memphis Skyview Academy (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis Southern Baptist Educational Center (TN)' -> 'Memphis Southern Baptist Educational Center (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis Southside (TN)' -> 'Memphis Southside (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis Southwind (TN)' -> 'Memphis Southwind (TN)' (no change)
+2026-11-10 04:50:30,124 - WARNING -   'Memphis Treadwell (TN)' -> 'Memphis Treadwell (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Memphis Trezevant (TN)' -> 'Memphis Trezevant (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Memphis University School (TN)' -> 'Memphis University School (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Memphis Washington (TN)' -> 'Memphis Washington (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Memphis Westside (TN)' -> 'Memphis Westside (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Memphis Westwood (TN)' -> 'Memphis Westwood (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Memphis White Station (TN)' -> 'Memphis White Station (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Memphis Whitehaven (TN)' -> 'Memphis Whitehaven (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Memphis Wooddale (TN)' -> 'Memphis Wooddale (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Middleton (TN)' -> 'Middleton (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Milan (TN)' -> 'Milan (TN)' (no change)
+2026-11-10 04:50:30,125 - WARNING -   'Milligan College Frosh (TN)' -> 'Milligan College Frosh (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Millington Central (TN)' -> 'Millington Central (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Millington Tipton-Rosemark Academy (TN)' -> 'Millington Tipton-Rosemark Academy (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Monterey (TN)' -> 'Monterey (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Morristown (TN)' -> 'Morristown (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Morristown Lakeway Christian Academy (TN)' -> 'Morristown Lakeway Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Morristown-Hamblen East (TN)' -> 'Morristown-Hamblen East (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Morristown-Hamblen West (TN)' -> 'Morristown-Hamblen West (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Mosheim West Greene (TN)' -> 'Mosheim West Greene (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Mount Juliet (TN)' -> 'Mount Juliet (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Mount Juliet Christian Academy (TN)' -> 'Mount Juliet Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,126 - WARNING -   'Mount Juliet Middle Tennessee Heat (TN)' -> 'Mount Juliet Middle Tennessee Heat (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Mount Pleasant (TN)' -> 'Mount Pleasant (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Mountain City Johnson County (TN)' -> 'Mountain City Johnson County (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Munford (TN)' -> 'Munford (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Murfreesboro Blackman (TN)' -> 'Murfreesboro Blackman (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Murfreesboro Middle Tennessee Christian (TN)' -> 'Murfreesboro Middle Tennessee Christian (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Murfreesboro Oakland (TN)' -> 'Murfreesboro Oakland (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Murfreesboro Providence Christian Academy (TN)' -> 'Murfreesboro Providence Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Murfreesboro Riverdale (TN)' -> 'Murfreesboro Riverdale (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Murfreesboro Siegel (TN)' -> 'Murfreesboro Siegel (TN)' (no change)
+2026-11-10 04:50:30,127 - WARNING -   'Nashville Bellevue (TN)' -> 'Nashville Bellevue (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville Cane Ridge (TN)' -> 'Nashville Cane Ridge (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville Central (TN)' -> 'Nashville Central (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville Christ Presbyterian Academy (TN)' -> 'Nashville Christ Presbyterian Academy (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville Christian (TN)' -> 'Nashville Christian (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville Cohn (TN)' -> 'Nashville Cohn (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville Davidson Academy (TN)' -> 'Nashville Davidson Academy (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville Donelson Christian Academy (TN)' -> 'Nashville Donelson Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville East (TN)' -> 'Nashville East (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville East Nashville Magnet (TN)' -> 'Nashville East Nashville Magnet (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville Ensworth (TN)' -> 'Nashville Ensworth (TN)' (no change)
+2026-11-10 04:50:30,128 - WARNING -   'Nashville Father Ryan (TN)' -> 'Nashville Father Ryan (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville Franklin Road Academy (TN)' -> 'Nashville Franklin Road Academy (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville Glencliff (TN)' -> 'Nashville Glencliff (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville Hillsboro (TN)' -> 'Nashville Hillsboro (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville Hillwood (TN)' -> 'Nashville Hillwood (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville Hume Fogg (TN)' -> 'Nashville Hume Fogg (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville Hunters Lane (TN)' -> 'Nashville Hunters Lane (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville John Overton (TN)' -> 'Nashville John Overton (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville Lipscomb Academy (TN)' -> 'Nashville Lipscomb Academy (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville Litton (TN)' -> 'Nashville Litton (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville Maplewood (TN)' -> 'Nashville Maplewood (TN)' (no change)
+2026-11-10 04:50:30,129 - WARNING -   'Nashville McGavock (TN)' -> 'Nashville McGavock (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'Nashville Montgomery Bell Academy (TN)' -> 'Nashville Montgomery Bell Academy (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'Nashville North (TN)' -> 'Nashville North (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'Nashville Pearl-Cohn (TN)' -> 'Nashville Pearl-Cohn (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'Nashville Stratford (TN)' -> 'Nashville Stratford (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'Nashville Tennessee Industrial School (TN)' -> 'Nashville Tennessee Industrial School (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'Nashville Tennessee Preparatory School (TN)' -> 'Nashville Tennessee Preparatory School (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'New Tazewell Claiborne (TN)' -> 'New Tazewell Claiborne (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'Newbern Dyer County (TN)' -> 'Newbern Dyer County (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'Newport Cocke County (TN)' -> 'Newport Cocke County (TN)' (no change)
+2026-11-10 04:50:30,130 - WARNING -   'Nolensville (TN)' -> 'Nolensville (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Oak Ridge (TN)' -> 'Oak Ridge (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Oakdale (TN)' -> 'Oakdale (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Obion County Central (TN)' -> 'Obion County Central (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Oliver Springs (TN)' -> 'Oliver Springs (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Oneida (TN)' -> 'Oneida (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Ooltewah (TN)' -> 'Ooltewah (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Ooltewah East Hamilton (TN)' -> 'Ooltewah East Hamilton (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Paris Henry County (TN)' -> 'Paris Henry County (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Parsons-Riverside (TN)' -> 'Parsons-Riverside (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Pearl (TN)' -> 'Pearl (TN)' (no change)
+2026-11-10 04:50:30,131 - WARNING -   'Petersburg Morgan School for Boys (TN)' -> 'Petersburg Morgan School for Boys (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Pigeon Forge (TN)' -> 'Pigeon Forge (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Pikeville Bledsoe County (TN)' -> 'Pikeville Bledsoe County (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Pikeville Taft Youth Center (TN)' -> 'Pikeville Taft Youth Center (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Pleasant View Sycamore (TN)' -> 'Pleasant View Sycamore (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Porter (TN)' -> 'Porter (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Portland (TN)' -> 'Portland (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Powell (TN)' -> 'Powell (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Powell Valley (TN)' -> 'Powell Valley (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Pulaski Giles County (TN)' -> 'Pulaski Giles County (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Reagan Scotts Hill (TN)' -> 'Reagan Scotts Hill (TN)' (no change)
+2026-11-10 04:50:30,132 - WARNING -   'Red Boiling Springs (TN)' -> 'Red Boiling Springs (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Rhea Central (TN)' -> 'Rhea Central (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Ripley (TN)' -> 'Ripley (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Roan Mountain Cloudland (TN)' -> 'Roan Mountain Cloudland (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Rockwood (TN)' -> 'Rockwood (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Rogersville (TN)' -> 'Rogersville (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Rogersville Cherokee (TN)' -> 'Rogersville Cherokee (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Rossville Christian Academy (TN)' -> 'Rossville Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Rutledge Grainger (TN)' -> 'Rutledge Grainger (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Saint Andrews-Sewanee (TN)' -> 'Saint Andrews-Sewanee (TN)' (no change)
+2026-11-10 04:50:30,133 - WARNING -   'Sale Creek (TN)' -> 'Sale Creek (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Savannah Hardin County (TN)' -> 'Savannah Hardin County (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Selmer McNairy Central (TN)' -> 'Selmer McNairy Central (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Sevierville Sevier County (TN)' -> 'Sevierville Sevier County (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Seymour (TN)' -> 'Seymour (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Seymour King's Academy (TN)' -> 'Seymour King's Academy (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Shelbyville Central (TN)' -> 'Shelbyville Central (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Signal Mountain (TN)' -> 'Signal Mountain (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Smithville DeKalb County (TN)' -> 'Smithville DeKalb County (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Smyrna (TN)' -> 'Smyrna (TN)' (no change)
+2026-11-10 04:50:30,134 - WARNING -   'Smyrna Lancaster Christian Academy (TN)' -> 'Smyrna Lancaster Christian Academy (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'Smyrna Stewarts Creek (TN)' -> 'Smyrna Stewarts Creek (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'Sneedville Hancock County (TN)' -> 'Sneedville Hancock County (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'Soddy-Daisy (TN)' -> 'Soddy-Daisy (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'Somerville Fayette Academy (TN)' -> 'Somerville Fayette Academy (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'Somerville Fayette County (TN)' -> 'Somerville Fayette County (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'Somerville Fayette Ware (TN)' -> 'Somerville Fayette Ware (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'South Doyle (TN)' -> 'South Doyle (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'South Fulton (TN)' -> 'South Fulton (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'South Pittsburg (TN)' -> 'South Pittsburg (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'Sparta White County (TN)' -> 'Sparta White County (TN)' (no change)
+2026-11-10 04:50:30,135 - WARNING -   'Spring City (TN)' -> 'Spring City (TN)' (no change)
+2026-11-10 04:50:30,136 - WARNING -   'Spring Hill Summit (TN)' -> 'Spring Hill Summit (TN)' (no change)
+2026-11-10 04:50:30,136 - WARNING -   'Springfield (TN)' -> 'Springfield (TN)' (no change)
+2026-11-10 04:50:30,136 - WARNING -   'Springfield South Haven Christian (TN)' -> 'Springfield South Haven Christian (TN)' (no change)
+2026-11-10 04:50:30,136 - WARNING -   'St. Andrews Academy (TN)' -> 'St. Andrews Academy (TN)' (no change)
+2026-11-10 04:50:30,136 - WARNING -   'Strawberry Plains Carter (TN)' -> 'Strawberry Plains Carter (TN)' (no change)
+2026-11-10 04:50:30,136 - WARNING -   'Sullivan West (TN)' -> 'Sullivan West (TN)' (no change)
+2026-11-10 04:50:30,136 - WARNING -   'Summertown (TN)' -> 'Summertown (TN)' (no change)
+2026-11-10 04:50:30,136 - WARNING -   'Sunbright (TN)' -> 'Sunbright (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Sweetwater (TN)' -> 'Sweetwater (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Tellico Plains (TN)' -> 'Tellico Plains (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Tennessee Academy (TN)' -> 'Tennessee Academy (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Tennessee School for the Deaf (TN)' -> 'Tennessee School for the Deaf (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Tennessee Training School (TN)' -> 'Tennessee Training School (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Thompson's Station Independence (TN)' -> 'Thompson's Station Independence (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Tiptonville Lake County (TN)' -> 'Tiptonville Lake County (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Townsend (TN)' -> 'Townsend (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Trenton Peabody (TN)' -> 'Trenton Peabody (TN)' (no change)
+2026-11-10 04:50:30,137 - WARNING -   'Troy Obion County (TN)' -> 'Troy Obion County (TN)' (no change)
+2026-11-10 04:50:30,138 - WARNING -   'Tullahoma (TN)' -> 'Tullahoma (TN)' (no change)
+2026-11-10 04:50:30,138 - WARNING -   'Union City (TN)' -> 'Union City (TN)' (no change)
+2026-11-10 04:50:30,138 - WARNING -   'Unionville Community (TN)' -> 'Unionville Community (TN)' (no change)
+2026-11-10 04:50:30,138 - WARNING -   'University of Tennessee - Martin (TN)' -> 'University of Tennessee - Martin (TN)' (no change)
+2026-11-10 04:50:30,138 - WARNING -   'University of Tennessee Medics (TN)' -> 'University of Tennessee Medics (TN)' (no change)
+2026-11-10 04:50:30,138 - WARNING -   'Vonore (TN)' -> 'Vonore (TN)' (no change)
+2026-11-10 04:50:30,138 - WARNING -   'Walland (TN)' -> 'Walland (TN)' (no change)
+2026-11-10 04:50:30,138 - WARNING -   'Wartburg Central (TN)' -> 'Wartburg Central (TN)' (no change)
+2026-11-10 04:50:30,138 - WARNING -   'Wartrace Cascade (TN)' -> 'Wartrace Cascade (TN)' (no change)
+2026-11-10 04:50:30,139 - WARNING -   'Watertown (TN)' -> 'Watertown (TN)' (no change)
+2026-11-10 04:50:30,139 - WARNING -   'Waverly Central (TN)' -> 'Waverly Central (TN)' (no change)
+2026-11-10 04:50:30,139 - WARNING -   'Waynesboro Wayne County (TN)' -> 'Waynesboro Wayne County (TN)' (no change)
+2026-11-10 04:50:30,139 - WARNING -   'Westmoreland (TN)' -> 'Westmoreland (TN)' (no change)
+2026-11-10 04:50:30,139 - WARNING -   'White House (TN)' -> 'White House (TN)' (no change)
+2026-11-10 04:50:30,139 - WARNING -   'White House Christian Community School (TN)' -> 'White House Christian Community School (TN)' (no change)
+2026-11-10 04:50:30,139 - WARNING -   'White House-Heritage (TN)' -> 'White House-Heritage (TN)' (no change)
+2026-11-10 04:50:30,140 - WARNING -   'Whites Creek (TN)' -> 'Whites Creek (TN)' (no change)
+2026-11-10 04:50:30,140 - WARNING -   'Whitwell (TN)' -> 'Whitwell (TN)' (no change)
+2026-11-10 04:50:30,140 - WARNING -   'Winchester Franklin County (TN)' -> 'Winchester Franklin County (TN)' (no change)
+2026-11-10 04:50:30,140 - WARNING -   'Woodbury Cannon County (TN)' -> 'Woodbury Cannon County (TN)' (no change)
+2026-11-10 04:50:30,140 - WARNING -   'Nashville West B (TN)' -> 'Nashville West B (TN)' (no change)
+2026-11-10 04:50:30,140 - INFO - Validation passed: 595 rules are clean and ready to upload.
+2026-11-10 04:50:30,159 - INFO - Uploading 595 rules to staging table: ConsolidationRules_Staging...
+2026-11-10 04:50:30,298 - INFO - Upload to staging table complete.
+2026-11-10 04:50:30,303 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-10 04:52:03,375 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-10 04:52:03,376 - INFO - Reason logged to dbo.HS_Consolidation_Log: TN round 1: 2024 MaxPreps short/mascot names merged into long-standing names (Jackson, Knoxville, Nashville, Watertown...), Tennessee Heat, TSD, KY border names
+2026-11-10 04:52:03,376 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-10 04:52:03,376 - INFO - Running post-consolidation safety check...
+2026-11-10 04:52:03,381 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+=== OK 2026-11-10 04:52:16

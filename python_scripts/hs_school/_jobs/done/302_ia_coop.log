@@ -1,0 +1,1182 @@
+
+>>> same-score-fix IA --commit
+ 1429 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IA - COMMIT
+ 790 pairs {'DROP A': 58, 'DROP B': 37, 'UNDECIDED': 695} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_COMMITTED_20261112_1602.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  95        9750156E-8AD6-4CBC-A75C-63C505B8890F  None
+
+>>> consolidate IA --reason "IA co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/IA_cfg.py"
+Consolidating IA from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\IA_Alias_Rules.csv
+
+[stderr]
+2026-11-12 16:02:19,858 - INFO - Starting consolidation for state: (IA) using staging table method.
+2026-11-12 16:02:19,867 - WARNING - WARNING: 542 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 16:02:19,867 - WARNING -   'Iowa City (IA)' -> 'Iowa City (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Davenport Central (IA)' -> 'Davenport Central (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Grinnell (IA)' -> 'Grinnell (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Bettendorf (IA)' -> 'Bettendorf (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Boone (IA)' -> 'Boone (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Ames (IA)' -> 'Ames (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Cedar Falls (IA)' -> 'Cedar Falls (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Clinton (IA)' -> 'Clinton (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Sioux City Bishop Heelan Catholic (IA)' -> 'Sioux City Bishop Heelan Catholic (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Harlan (IA)' -> 'Harlan (IA)' (no change)
+2026-11-12 16:02:19,868 - WARNING -   'Sioux City East (IA)' -> 'Sioux City East (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'West Des Moines Valley (IA)' -> 'West Des Moines Valley (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'Oskaloosa (IA)' -> 'Oskaloosa (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'Council Bluffs Thomas Jefferson (IA)' -> 'Council Bluffs Thomas Jefferson (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'Dubuque Senior (IA)' -> 'Dubuque Senior (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'West Des Moines Dowling Catholic (IA)' -> 'West Des Moines Dowling Catholic (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'Packwood Pekin (IA)' -> 'Packwood Pekin (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'Inwood West Lyon (IA)' -> 'Inwood West Lyon (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'Marshalltown (IA)' -> 'Marshalltown (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'Johnston (IA)' -> 'Johnston (IA)' (no change)
+2026-11-12 16:02:19,869 - WARNING -   'Newton (IA)' -> 'Newton (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Emmetsburg (IA)' -> 'Emmetsburg (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Fort Dodge (IA)' -> 'Fort Dodge (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Des Moines East (IA)' -> 'Des Moines East (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Pella (IA)' -> 'Pella (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Ankeny (IA)' -> 'Ankeny (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Creston-Orient-Macksburg (IA)' -> 'Creston-Orient-Macksburg (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Cedar Rapids Washington (IA)' -> 'Cedar Rapids Washington (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Mason City (IA)' -> 'Mason City (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Spencer (IA)' -> 'Spencer (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Iowa Falls-Alden (IA)' -> 'Iowa Falls-Alden (IA)' (no change)
+2026-11-12 16:02:19,870 - WARNING -   'Urbandale (IA)' -> 'Urbandale (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Clear Lake (IA)' -> 'Clear Lake (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Waverly-Shell Rock (IA)' -> 'Waverly-Shell Rock (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Waterloo West (IA)' -> 'Waterloo West (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Manchester West Delaware (IA)' -> 'Manchester West Delaware (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Humboldt (IA)' -> 'Humboldt (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Washington (IA)' -> 'Washington (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Pleasant Hill Southeast Polk (IA)' -> 'Pleasant Hill Southeast Polk (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Ottumwa (IA)' -> 'Ottumwa (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Charles City (IA)' -> 'Charles City (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Webster City (IA)' -> 'Webster City (IA)' (no change)
+2026-11-12 16:02:19,871 - WARNING -   'Solon (IA)' -> 'Solon (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Atlantic (IA)' -> 'Atlantic (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Indianola (IA)' -> 'Indianola (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Le Mars (IA)' -> 'Le Mars (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Carroll (IA)' -> 'Carroll (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'West Branch (IA)' -> 'West Branch (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Madrid (IA)' -> 'Madrid (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Columbus Junction (IA)' -> 'Columbus Junction (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Davenport Assumption (IA)' -> 'Davenport Assumption (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Oelwein (IA)' -> 'Oelwein (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Spirit Lake (IA)' -> 'Spirit Lake (IA)' (no change)
+2026-11-12 16:02:19,872 - WARNING -   'Waterloo East (IA)' -> 'Waterloo East (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Audubon (IA)' -> 'Audubon (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'New Hampton (IA)' -> 'New Hampton (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Winterset (IA)' -> 'Winterset (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Council Bluffs Abraham Lincoln (IA)' -> 'Council Bluffs Abraham Lincoln (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Hawarden West Sioux (IA)' -> 'Hawarden West Sioux (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Des Moines Roosevelt (IA)' -> 'Des Moines Roosevelt (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Des Moines North (IA)' -> 'Des Moines North (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Storm Lake (IA)' -> 'Storm Lake (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Burlington (IA)' -> 'Burlington (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Clarinda (IA)' -> 'Clarinda (IA)' (no change)
+2026-11-12 16:02:19,873 - WARNING -   'Bedford (IA)' -> 'Bedford (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Fairbank Wapsie Valley (IA)' -> 'Fairbank Wapsie Valley (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Sheldon (IA)' -> 'Sheldon (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Independence (IA)' -> 'Independence (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Eldridge North Scott (IA)' -> 'Eldridge North Scott (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Marion (IA)' -> 'Marion (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Osage (IA)' -> 'Osage (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Cherokee Washington (IA)' -> 'Cherokee Washington (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Perry (IA)' -> 'Perry (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Ogden (IA)' -> 'Ogden (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Carlisle (IA)' -> 'Carlisle (IA)' (no change)
+2026-11-12 16:02:19,874 - WARNING -   'Decorah-North Winneshiek (IA)' -> 'Decorah-North Winneshiek (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Davenport West (IA)' -> 'Davenport West (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Marion Linn-Mar (IA)' -> 'Marion Linn-Mar (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Sioux Center (IA)' -> 'Sioux Center (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Mount Pleasant (IA)' -> 'Mount Pleasant (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Shenandoah (IA)' -> 'Shenandoah (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Chariton (IA)' -> 'Chariton (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Muscatine (IA)' -> 'Muscatine (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Mediapolis (IA)' -> 'Mediapolis (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Albia (IA)' -> 'Albia (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Missouri Valley (IA)' -> 'Missouri Valley (IA)' (no change)
+2026-11-12 16:02:19,875 - WARNING -   'Nevada (IA)' -> 'Nevada (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Tipton (IA)' -> 'Tipton (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Cresco Crestwood (IA)' -> 'Cresco Crestwood (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Knoxville (IA)' -> 'Knoxville (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Saint Ansgar (IA)' -> 'Saint Ansgar (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Iowa City Regina (IA)' -> 'Iowa City Regina (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Keokuk (IA)' -> 'Keokuk (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Des Moines Lincoln (IA)' -> 'Des Moines Lincoln (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Red Oak (IA)' -> 'Red Oak (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Algona (IA)' -> 'Algona (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'Pleasantville (IA)' -> 'Pleasantville (IA)' (no change)
+2026-11-12 16:02:19,876 - WARNING -   'West Liberty (IA)' -> 'West Liberty (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'Alleman North Polk (IA)' -> 'Alleman North Polk (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'Maquoketa (IA)' -> 'Maquoketa (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'State Central West Marshall (IA)' -> 'State Central West Marshall (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'Anamosa (IA)' -> 'Anamosa (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'Grundy Center (IA)' -> 'Grundy Center (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'Mount Vernon (IA)' -> 'Mount Vernon (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'Denver (IA)' -> 'Denver (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'West Union North Fayette Valley (IA)' -> 'West Union North Fayette Valley (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'Eagle Grove (IA)' -> 'Eagle Grove (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'Montezuma (IA)' -> 'Montezuma (IA)' (no change)
+2026-11-12 16:02:19,877 - WARNING -   'Wellman Mid-Prairie (IA)' -> 'Wellman Mid-Prairie (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Huxley Ballard (IA)' -> 'Huxley Ballard (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Lenox (IA)' -> 'Lenox (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Williamsburg (IA)' -> 'Williamsburg (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Glenwood (IA)' -> 'Glenwood (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Fairfield (IA)' -> 'Fairfield (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Griswold (IA)' -> 'Griswold (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Belle Plaine (IA)' -> 'Belle Plaine (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Traer North Tama (IA)' -> 'Traer North Tama (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Iowa City West (IA)' -> 'Iowa City West (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Pleasant Valley (IA)' -> 'Pleasant Valley (IA)' (no change)
+2026-11-12 16:02:19,878 - WARNING -   'Forest City (IA)' -> 'Forest City (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Marengo Iowa Valley (IA)' -> 'Marengo Iowa Valley (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Greenfield Nodaway Valley (IA)' -> 'Greenfield Nodaway Valley (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Hartwick-Ladora-Victor (IA)' -> 'Hartwick-Ladora-Victor (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Riceville (IA)' -> 'Riceville (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Des Moines Saydel (IA)' -> 'Des Moines Saydel (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Earlham (IA)' -> 'Earlham (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Wapello (IA)' -> 'Wapello (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Council Bluffs Lewis Central (IA)' -> 'Council Bluffs Lewis Central (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Camanche (IA)' -> 'Camanche (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Glidden-Ralston (IA)' -> 'Glidden-Ralston (IA)' (no change)
+2026-11-12 16:02:19,879 - WARNING -   'Postville Mott (IA)' -> 'Postville Mott (IA)' (no change)
+2026-11-12 16:02:19,880 - WARNING -   'Mount Ayr (IA)' -> 'Mount Ayr (IA)' (no change)
+2026-11-12 16:02:19,880 - WARNING -   'Waukon (IA)' -> 'Waukon (IA)' (no change)
+2026-11-12 16:02:19,880 - WARNING -   'Woodbine (IA)' -> 'Woodbine (IA)' (no change)
+2026-11-12 16:02:19,880 - WARNING -   'Wilton (IA)' -> 'Wilton (IA)' (no change)
+2026-11-12 16:02:19,880 - WARNING -   'Council Bluffs St. Albert (IA)' -> 'Council Bluffs St. Albert (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Bondurant-Farrar (IA)' -> 'Bondurant-Farrar (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Moville Woodbury Central (IA)' -> 'Moville Woodbury Central (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Rock Rapids Central Lyon-George-Little Rock (IA)' -> 'Rock Rapids Central Lyon-George-Little Rock (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Neola Tri-Center (IA)' -> 'Neola Tri-Center (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Treynor (IA)' -> 'Treynor (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Osceola Clarke (IA)' -> 'Osceola Clarke (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Norwalk (IA)' -> 'Norwalk (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Lake Mills (IA)' -> 'Lake Mills (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Northwood-Kensett (IA)' -> 'Northwood-Kensett (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Tabor Fremont-Mills (IA)' -> 'Tabor Fremont-Mills (IA)' (no change)
+2026-11-12 16:02:19,881 - WARNING -   'Hudson (IA)' -> 'Hudson (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Winthrop East Buchanan (IA)' -> 'Winthrop East Buchanan (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Wayland WACO (IA)' -> 'Wayland WACO (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Cedar Rapids Kennedy (IA)' -> 'Cedar Rapids Kennedy (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Troy Mills North Linn (IA)' -> 'Troy Mills North Linn (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Jackson Junction Turkey Valley (IA)' -> 'Jackson Junction Turkey Valley (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Lynnville-Sully (IA)' -> 'Lynnville-Sully (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Arcadia-Westside-Vail (IA)' -> 'Arcadia-Westside-Vail (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Pocahontas (IA)' -> 'Pocahontas (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Logan-Magnolia (IA)' -> 'Logan-Magnolia (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Cedar Rapids Prairie (IA)' -> 'Cedar Rapids Prairie (IA)' (no change)
+2026-11-12 16:02:19,882 - WARNING -   'Delhi Maquoketa Valley (IA)' -> 'Delhi Maquoketa Valley (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Stanton (IA)' -> 'Stanton (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Waterloo Columbus (IA)' -> 'Waterloo Columbus (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Afton East Union (IA)' -> 'Afton East Union (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Bloomfield Davis County (IA)' -> 'Bloomfield Davis County (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Waukee (IA)' -> 'Waukee (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Roland-Story (IA)' -> 'Roland-Story (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Monticello (IA)' -> 'Monticello (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Lisbon (IA)' -> 'Lisbon (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Underwood (IA)' -> 'Underwood (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Jewell South Hamilton (IA)' -> 'Jewell South Hamilton (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Algona Bishop Garrigan (IA)' -> 'Algona Bishop Garrigan (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Calmar South Winneshiek (IA)' -> 'Calmar South Winneshiek (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Brooklyn-Guernsey-Malcom (IA)' -> 'Brooklyn-Guernsey-Malcom (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'Tripoli (IA)' -> 'Tripoli (IA)' (no change)
+2026-11-12 16:02:19,883 - WARNING -   'New Sharon North Mahaska (IA)' -> 'New Sharon North Mahaska (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Fort Madison (IA)' -> 'Fort Madison (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Wyoming Midland (IA)' -> 'Wyoming Midland (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Dubuque Hempstead (IA)' -> 'Dubuque Hempstead (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Letts Louisa-Muscatine (IA)' -> 'Letts Louisa-Muscatine (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Kingsley-Pierson (IA)' -> 'Kingsley-Pierson (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Eldon Cardinal (IA)' -> 'Eldon Cardinal (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'North English Valleys (IA)' -> 'North English Valleys (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Alburnett (IA)' -> 'Alburnett (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Clarksville (IA)' -> 'Clarksville (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Gilbert (IA)' -> 'Gilbert (IA)' (no change)
+2026-11-12 16:02:19,884 - WARNING -   'Dubuque Wahlert (IA)' -> 'Dubuque Wahlert (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Lamoni (IA)' -> 'Lamoni (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'South Tama County (IA)' -> 'South Tama County (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Leon Central Decatur (IA)' -> 'Leon Central Decatur (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Truro Interstate 35 (IA)' -> 'Truro Interstate 35 (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Le Mars Gehlen Catholic (IA)' -> 'Le Mars Gehlen Catholic (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Guthrie Center (IA)' -> 'Guthrie Center (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Woodward-Granger (IA)' -> 'Woodward-Granger (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Dyersville Beckman Catholic (IA)' -> 'Dyersville Beckman Catholic (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Melcher-Dallas (IA)' -> 'Melcher-Dallas (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Jesup (IA)' -> 'Jesup (IA)' (no change)
+2026-11-12 16:02:19,885 - WARNING -   'Maynard West Central (IA)' -> 'Maynard West Central (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Dunkerton (IA)' -> 'Dunkerton (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Centerville (IA)' -> 'Centerville (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Rockford (IA)' -> 'Rockford (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Goose Lake Northeast (IA)' -> 'Goose Lake Northeast (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Dunlap Boyer Valley (IA)' -> 'Dunlap Boyer Valley (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Hinton (IA)' -> 'Hinton (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Garner-Hayfield-Ventura (IA)' -> 'Garner-Hayfield-Ventura (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Des Moines Hoover (IA)' -> 'Des Moines Hoover (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Western Dubuque Epworth (IA)' -> 'Western Dubuque Epworth (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Edgewood-Colesburg (IA)' -> 'Edgewood-Colesburg (IA)' (no change)
+2026-11-12 16:02:19,886 - WARNING -   'Lawton-Bronson (IA)' -> 'Lawton-Bronson (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Sioux City Central (IA)' -> 'Sioux City Central (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Adair-Casey (IA)' -> 'Adair-Casey (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Liberty Center Southeast Warren (IA)' -> 'Liberty Center Southeast Warren (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Janesville (IA)' -> 'Janesville (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Onawa West Monona (IA)' -> 'Onawa West Monona (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Sidney (IA)' -> 'Sidney (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Bussey Twin Cedars (IA)' -> 'Bussey Twin Cedars (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Elkader Central (IA)' -> 'Elkader Central (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Sioux City North (IA)' -> 'Sioux City North (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Winfield-Mount Union (IA)' -> 'Winfield-Mount Union (IA)' (no change)
+2026-11-12 16:02:19,887 - WARNING -   'Corydon Wayne (IA)' -> 'Corydon Wayne (IA)' (no change)
+2026-11-12 16:02:19,888 - WARNING -   'Thornburg Tri-County (IA)' -> 'Thornburg Tri-County (IA)' (no change)
+2026-11-12 16:02:19,888 - WARNING -   'Sloan Westwood (IA)' -> 'Sloan Westwood (IA)' (no change)
+2026-11-12 16:02:19,888 - WARNING -   'Keosauqua Van Buren (IA)' -> 'Keosauqua Van Buren (IA)' (no change)
+2026-11-12 16:02:19,888 - WARNING -   'Corning (IA)' -> 'Corning (IA)' (no change)
+2026-11-12 16:02:19,888 - WARNING -   'Fort Dodge Saint Edmond (IA)' -> 'Fort Dodge Saint Edmond (IA)' (no change)
+2026-11-12 16:02:19,888 - WARNING -   'Sioux City West (IA)' -> 'Sioux City West (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Murray (IA)' -> 'Murray (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Lone Tree (IA)' -> 'Lone Tree (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Bellevue (IA)' -> 'Bellevue (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Van Horne Benton (IA)' -> 'Van Horne Benton (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Mason City Newman Catholic (IA)' -> 'Mason City Newman Catholic (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Durant-Bennett (IA)' -> 'Durant-Bennett (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Allison-Bristow (IA)' -> 'Allison-Bristow (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Cedar Rapids Jefferson (IA)' -> 'Cedar Rapids Jefferson (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Van Meter (IA)' -> 'Van Meter (IA)' (no change)
+2026-11-12 16:02:19,889 - WARNING -   'Jefferson (IA)' -> 'Jefferson (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Essex-South Page (IA)' -> 'Essex-South Page (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Sioux Rapids Central (IA)' -> 'Sioux Rapids Central (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Arlington Starmont (IA)' -> 'Arlington Starmont (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Donnellson Central Lee (IA)' -> 'Donnellson Central Lee (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Cascade (IA)' -> 'Cascade (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Springville (IA)' -> 'Springville (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'New London (IA)' -> 'New London (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Modamin West Harrison (IA)' -> 'Modamin West Harrison (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Manning (IA)' -> 'Manning (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Harris-Lake Park (IA)' -> 'Harris-Lake Park (IA)' (no change)
+2026-11-12 16:02:19,890 - WARNING -   'Riverside Highland (IA)' -> 'Riverside Highland (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Britt West Hancock (IA)' -> 'Britt West Hancock (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Maurice-Orange City-Floyd Valley (IA)' -> 'Maurice-Orange City-Floyd Valley (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Garden Grove Mormon Trail (IA)' -> 'Garden Grove Mormon Trail (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Avoca-Hancock-Shelby-Tennant (IA)' -> 'Avoca-Hancock-Shelby-Tennant (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Central City (IA)' -> 'Central City (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Villisca (IA)' -> 'Villisca (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Waterloo Central (IA)' -> 'Waterloo Central (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Seymour (IA)' -> 'Seymour (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Stuart West Central Valley (IA)' -> 'Stuart West Central Valley (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Dallas Center-Grimes (IA)' -> 'Dallas Center-Grimes (IA)' (no change)
+2026-11-12 16:02:19,891 - WARNING -   'Sigourney-Keota (IA)' -> 'Sigourney-Keota (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Paullina South O'Brien (IA)' -> 'Paullina South O'Brien (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Lansing Kee (IA)' -> 'Lansing Kee (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Sac City (IA)' -> 'Sac City (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Rock Valley (IA)' -> 'Rock Valley (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Akron-Westfield (IA)' -> 'Akron-Westfield (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Adel-Desoto-Minburn (IA)' -> 'Adel-Desoto-Minburn (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Martensdale-Saint Mary's (IA)' -> 'Martensdale-Saint Mary's (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Gowrie Prairie Valley (IA)' -> 'Gowrie Prairie Valley (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Preston (IA)' -> 'Preston (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Ventura (IA)' -> 'Ventura (IA)' (no change)
+2026-11-12 16:02:19,892 - WARNING -   'Cumberland-Anita-Massena (IA)' -> 'Cumberland-Anita-Massena (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Moravia (IA)' -> 'Moravia (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Exira (IA)' -> 'Exira (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Lake City South Central Calhoun (IA)' -> 'Lake City South Central Calhoun (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Guttenberg Clayton Ridge (IA)' -> 'Guttenberg Clayton Ridge (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Oakland Riverside (IA)' -> 'Oakland Riverside (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Danville (IA)' -> 'Danville (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Elgin Valley (IA)' -> 'Elgin Valley (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Boyden-Hull-Rock Valley (IA)' -> 'Boyden-Hull-Rock Valley (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Sibley-Ocheyedan (IA)' -> 'Sibley-Ocheyedan (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Hartley-Melvin-Sanborn (IA)' -> 'Hartley-Melvin-Sanborn (IA)' (no change)
+2026-11-12 16:02:19,893 - WARNING -   'Colfax-Mingo (IA)' -> 'Colfax-Mingo (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Milford Okoboji (IA)' -> 'Milford Okoboji (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Greene (IA)' -> 'Greene (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Charter Oak-Ute (IA)' -> 'Charter Oak-Ute (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Newell-Fonda (IA)' -> 'Newell-Fonda (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Irwin-Kirkman-Manilla-Manning (IA)' -> 'Irwin-Kirkman-Manilla-Manning (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Gladbrook-Reinbeck (IA)' -> 'Gladbrook-Reinbeck (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Le Grand East Marshall (IA)' -> 'Le Grand East Marshall (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'West Bend-Mallard (IA)' -> 'West Bend-Mallard (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Monona-Farmersburg-Luana-Marquette-McGregor (IA)' -> 'Monona-Farmersburg-Luana-Marquette-McGregor (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Royal Clay Central-Everly (IA)' -> 'Royal Clay Central-Everly (IA)' (no change)
+2026-11-12 16:02:19,894 - WARNING -   'Farragut (IA)' -> 'Farragut (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Grand Junction East Greene (IA)' -> 'Grand Junction East Greene (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Spencer Denison-Schleswig (IA)' -> 'Spencer Denison-Schleswig (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'College Springs South Page (IA)' -> 'College Springs South Page (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Aplington-Parkersburg (IA)' -> 'Aplington-Parkersburg (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Wall Lake View-Auburn (IA)' -> 'Wall Lake View-Auburn (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Dike-New Hartford (IA)' -> 'Dike-New Hartford (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Hastings Nishna Valley (IA)' -> 'Hastings Nishna Valley (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Panora Panorama (IA)' -> 'Panora Panorama (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Buffalo Center North Iowa (IA)' -> 'Buffalo Center North Iowa (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Blairsburg Northeast Hamilton-Alden (IA)' -> 'Blairsburg Northeast Hamilton-Alden (IA)' (no change)
+2026-11-12 16:02:19,895 - WARNING -   'Bode Twin River Valley (IA)' -> 'Bode Twin River Valley (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Vinton-Shellsburg (IA)' -> 'Vinton-Shellsburg (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Manson-Northwest Webster (IA)' -> 'Manson-Northwest Webster (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Early Schaller-Crestland (IA)' -> 'Early Schaller-Crestland (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Coon Rapids-Bayard (IA)' -> 'Coon Rapids-Bayard (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Graettinger (IA)' -> 'Graettinger (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Prairie City-Monroe (IA)' -> 'Prairie City-Monroe (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Belmond-Klemme (IA)' -> 'Belmond-Klemme (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Davenport North (IA)' -> 'Davenport North (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Remsen-Union (IA)' -> 'Remsen-Union (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Fredericksburg (IA)' -> 'Fredericksburg (IA)' (no change)
+2026-11-12 16:02:19,896 - WARNING -   'Aurelia (IA)' -> 'Aurelia (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Odebolt-Arthur (IA)' -> 'Odebolt-Arthur (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Redfield (IA)' -> 'Redfield (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Malvern (IA)' -> 'Malvern (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Center Point-Urbana (IA)' -> 'Center Point-Urbana (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Manly North Central (IA)' -> 'Manly North Central (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Colo-Neveda-Collins (IA)' -> 'Colo-Neveda-Collins (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Olin (IA)' -> 'Olin (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Hamburg (IA)' -> 'Hamburg (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Farmington Harmony (IA)' -> 'Farmington Harmony (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Beaman-Conrad-Liscomb-Union-Whitten (IA)' -> 'Beaman-Conrad-Liscomb-Union-Whitten (IA)' (no change)
+2026-11-12 16:02:19,897 - WARNING -   'Green Mountain-Garwin (IA)' -> 'Green Mountain-Garwin (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Cedar Rapids Xavier (IA)' -> 'Cedar Rapids Xavier (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Denison (IA)' -> 'Denison (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Fenton Sentral (IA)' -> 'Fenton Sentral (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'West Burlington-Notre Dame (IA)' -> 'West Burlington-Notre Dame (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Parkersburg (IA)' -> 'Parkersburg (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Walnut (IA)' -> 'Walnut (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Alta (IA)' -> 'Alta (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Armstrong-Ringsted (IA)' -> 'Armstrong-Ringsted (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Tiffin Clear Creek-Amana (IA)' -> 'Tiffin Clear Creek-Amana (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Nashua-Plainfield (IA)' -> 'Nashua-Plainfield (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Waverly (IA)' -> 'Waverly (IA)' (no change)
+2026-11-12 16:02:19,898 - WARNING -   'Ackley-Geneva (IA)' -> 'Ackley-Geneva (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Marcus-Meriden-Cleghorn (IA)' -> 'Marcus-Meriden-Cleghorn (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Correctionville River Valley (IA)' -> 'Correctionville River Valley (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Rock Rapids Central Lyon (IA)' -> 'Rock Rapids Central Lyon (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Stanwood North Cedar (IA)' -> 'Stanwood North Cedar (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Estherville (IA)' -> 'Estherville (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Dike Community (IA)' -> 'Dike Community (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Nashua (IA)' -> 'Nashua (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Prairie City (IA)' -> 'Prairie City (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Whiting (IA)' -> 'Whiting (IA)' (no change)
+2026-11-12 16:02:19,899 - WARNING -   'Schleswig (IA)' -> 'Schleswig (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Miles East Central (IA)' -> 'Miles East Central (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Aplington (IA)' -> 'Aplington (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Coulter-Alexander-Latimer-Dows (IA)' -> 'Coulter-Alexander-Latimer-Dows (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Baxter (IA)' -> 'Baxter (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Collins-Maxwell-Baxter (IA)' -> 'Collins-Maxwell-Baxter (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Boyden-Hull (IA)' -> 'Boyden-Hull (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Cedar Rapids Regis (IA)' -> 'Cedar Rapids Regis (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Clarion (IA)' -> 'Clarion (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Russell (IA)' -> 'Russell (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Hampton-Dumont (IA)' -> 'Hampton-Dumont (IA)' (no change)
+2026-11-12 16:02:19,900 - WARNING -   'Remsen St. Marys (IA)' -> 'Remsen St. Marys (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Galva-Holstein (IA)' -> 'Galva-Holstein (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Nora Springs-Rock Falls (IA)' -> 'Nora Springs-Rock Falls (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Oakland (IA)' -> 'Oakland (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Laurens-Marathon (IA)' -> 'Laurens-Marathon (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'lowa School for the Deaf (IA)' -> 'lowa School for the Deaf (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Vinton (IA)' -> 'Vinton (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Gilbertville-Don Bosco (IA)' -> 'Gilbertville-Don Bosco (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Hampton (IA)' -> 'Hampton (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Clarion-Goldfield (IA)' -> 'Clarion-Goldfield (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Maurice-Orange City (IA)' -> 'Maurice-Orange City (IA)' (no change)
+2026-11-12 16:02:19,901 - WARNING -   'Sibley (IA)' -> 'Sibley (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Ida Grove (IA)' -> 'Ida Grove (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'West Burlington (IA)' -> 'West Burlington (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'West Bend (IA)' -> 'West Bend (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Wall Lake View (IA)' -> 'Wall Lake View (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Swea City North Kossuth (IA)' -> 'Swea City North Kossuth (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Elk Horn-Kimballton (IA)' -> 'Elk Horn-Kimballton (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Hull Western Christian (IA)' -> 'Hull Western Christian (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Ackley-Geneva-Wellsburg-Steamboat-Rock (IA)' -> 'Ackley-Geneva-Wellsburg-Steamboat-Rock (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Sigourney (IA)' -> 'Sigourney (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Manilla (IA)' -> 'Manilla (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Rockwell-Swaledale (IA)' -> 'Rockwell-Swaledale (IA)' (no change)
+2026-11-12 16:02:19,902 - WARNING -   'Britt (IA)' -> 'Britt (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Battle Creek (IA)' -> 'Battle Creek (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Manson (IA)' -> 'Manson (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Redfield-Dexfield (IA)' -> 'Redfield-Dexfield (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Stanwood-Lincoln (IA)' -> 'Stanwood-Lincoln (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Rockwell City (IA)' -> 'Rockwell City (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Corwith-Wesley-LuVerne (IA)' -> 'Corwith-Wesley-LuVerne (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Mapleton Maple Valley-Anthon-Oto (IA)' -> 'Mapleton Maple Valley-Anthon-Oto (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'New Hartford (IA)' -> 'New Hartford (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Mapleton Maple Valley (IA)' -> 'Mapleton Maple Valley (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Schaller (IA)' -> 'Schaller (IA)' (no change)
+2026-11-12 16:02:19,903 - WARNING -   'Alta-Aurelia (IA)' -> 'Alta-Aurelia (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Cedar Falls Northern University High (IA)' -> 'Cedar Falls Northern University High (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Belmond Community (IA)' -> 'Belmond Community (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Clarinda Academy (IA)' -> 'Clarinda Academy (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Lohrville (IA)' -> 'Lohrville (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Des Moines Christian (IA)' -> 'Des Moines Christian (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Pella Christian (IA)' -> 'Pella Christian (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Cairo Sumner (IA)' -> 'Cairo Sumner (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Lake City (IA)' -> 'Lake City (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Plainfield (IA)' -> 'Plainfield (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Alden (IA)' -> 'Alden (IA)' (no change)
+2026-11-12 16:02:19,904 - WARNING -   'Sutherland (IA)' -> 'Sutherland (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Newell-Providence (IA)' -> 'Newell-Providence (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Primghar (IA)' -> 'Primghar (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Paullina (IA)' -> 'Paullina (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Keota (IA)' -> 'Keota (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Pomeroy (IA)' -> 'Pomeroy (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Greene North Butler (IA)' -> 'Greene North Butler (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Radcliffe (IA)' -> 'Radcliffe (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Cedar Rapids La Salle (IA)' -> 'Cedar Rapids La Salle (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Eldora-New Providence (IA)' -> 'Eldora-New Providence (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'DeWitt Central (IA)' -> 'DeWitt Central (IA)' (no change)
+2026-11-12 16:02:19,905 - WARNING -   'Anita (IA)' -> 'Anita (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Graettinger-Terril-Ruthven-Ayrshire (IA)' -> 'Graettinger-Terril-Ruthven-Ayrshire (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Eddyville (IA)' -> 'Eddyville (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Sumner-Fredericksburg (IA)' -> 'Sumner-Fredericksburg (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Stuart-Menlo (IA)' -> 'Stuart-Menlo (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Monroe (IA)' -> 'Monroe (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Lake View East Sac County (IA)' -> 'Lake View East Sac County (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Rolfe (IA)' -> 'Rolfe (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Gladbrook (IA)' -> 'Gladbrook (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Center Point (IA)' -> 'Center Point (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Wellsburg (IA)' -> 'Wellsburg (IA)' (no change)
+2026-11-12 16:02:19,906 - WARNING -   'Colo (IA)' -> 'Colo (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Albert City-Truesdale (IA)' -> 'Albert City-Truesdale (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Panora-Linden (IA)' -> 'Panora-Linden (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Kanawha Community (IA)' -> 'Kanawha Community (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Reinbeck (IA)' -> 'Reinbeck (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Scranton (IA)' -> 'Scranton (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Hartley (IA)' -> 'Hartley (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Manly Central Springs (IA)' -> 'Manly Central Springs (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Malvern East Mills (IA)' -> 'Malvern East Mills (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'George (IA)' -> 'George (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Marcus Community (IA)' -> 'Marcus Community (IA)' (no change)
+2026-11-12 16:02:19,907 - WARNING -   'Laurens Northwest (IA)' -> 'Laurens Northwest (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'Dows (IA)' -> 'Dows (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'LeGrand-Dunbar-Ferguson (IA)' -> 'LeGrand-Dunbar-Ferguson (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'Orange City Unity Christian (IA)' -> 'Orange City Unity Christian (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'Hubbard South Hardin (IA)' -> 'Hubbard South Hardin (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'MallardCommunity (IA)' -> 'MallardCommunity (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'Eddyville-Blakesburg-Fremont (IA)' -> 'Eddyville-Blakesburg-Fremont (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'Carson-Macedonia (IA)' -> 'Carson-Macedonia (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'Holstein Ridge View (IA)' -> 'Holstein Ridge View (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'Milford (IA)' -> 'Milford (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'Clinton St. Mary's (IA)' -> 'Clinton St. Mary's (IA)' (no change)
+2026-11-12 16:02:19,908 - WARNING -   'New Market Community (IA)' -> 'New Market Community (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Sanborn (IA)' -> 'Sanborn (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Dallas Center (IA)' -> 'Dallas Center (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Galva (IA)' -> 'Galva (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Everly (IA)' -> 'Everly (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Bayard (IA)' -> 'Bayard (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Titonka (IA)' -> 'Titonka (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Morning Sun (IA)' -> 'Morning Sun (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Coon Rapids (IA)' -> 'Coon Rapids (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Tiffin Clear Creek (IA)' -> 'Tiffin Clear Creek (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Garwin (IA)' -> 'Garwin (IA)' (no change)
+2026-11-12 16:02:19,909 - WARNING -   'Des Moines Tech (IA)' -> 'Des Moines Tech (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Cumberland-Massena (IA)' -> 'Cumberland-Massena (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Bridgewater-Fontanelle (IA)' -> 'Bridgewater-Fontanelle (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Rockwell City-Lytton (IA)' -> 'Rockwell City-Lytton (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Battle Creek-Ida Grove-Odebolt-Arthur (IA)' -> 'Battle Creek-Ida Grove-Odebolt-Arthur (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Gruver Lincoln Central (IA)' -> 'Gruver Lincoln Central (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Correctionville Eastwood (IA)' -> 'Correctionville Eastwood (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Preston Easton Valley (IA)' -> 'Preston Easton Valley (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Colfax (IA)' -> 'Colfax (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Lytton (IA)' -> 'Lytton (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Sheffield West Fork (IA)' -> 'Sheffield West Fork (IA)' (no change)
+2026-11-12 16:02:19,910 - WARNING -   'Clarence-Lowden (IA)' -> 'Clarence-Lowden (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Akron (IA)' -> 'Akron (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Paton-Churdan (IA)' -> 'Paton-Churdan (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Gilman Semco (IA)' -> 'Gilman Semco (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Renwick Boone Valley (IA)' -> 'Renwick Boone Valley (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Eldora (IA)' -> 'Eldora (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Dysart-Geneseo (IA)' -> 'Dysart-Geneseo (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Gilmore City-Bradgate (IA)' -> 'Gilmore City-Bradgate (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Royal Clay Central (IA)' -> 'Royal Clay Central (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Sheffield-Chapin (IA)' -> 'Sheffield-Chapin (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Orient-Macksburg (IA)' -> 'Orient-Macksburg (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Hubbard-Radcliffe (IA)' -> 'Hubbard-Radcliffe (IA)' (no change)
+2026-11-12 16:02:19,911 - WARNING -   'Eddyville-Blakesburg (IA)' -> 'Eddyville-Blakesburg (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Exira-Elk Horn-Kimballton (IA)' -> 'Exira-Elk Horn-Kimballton (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Maxwell (IA)' -> 'Maxwell (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Holstein (IA)' -> 'Holstein (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Quimby Willow (IA)' -> 'Quimby Willow (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Armstrong (IA)' -> 'Armstrong (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Linn Grove Sioux Valley (IA)' -> 'Linn Grove Sioux Valley (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Pomeroy-Palmer (IA)' -> 'Pomeroy-Palmer (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Monona-Farmersburg-Luana (IA)' -> 'Monona-Farmersburg-Luana (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Tama Meskwaki Settlement (IA)' -> 'Tama Meskwaki Settlement (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Ruthven (IA)' -> 'Ruthven (IA)' (no change)
+2026-11-12 16:02:19,912 - WARNING -   'Irwin (IA)' -> 'Irwin (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Eldora South Hardin (IA)' -> 'Eldora South Hardin (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Meriden-Cleghorn (IA)' -> 'Meriden-Cleghorn (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Sumner (IA)' -> 'Sumner (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Meservey-Thornton (IA)' -> 'Meservey-Thornton (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Ankeny Centennial (IA)' -> 'Ankeny Centennial (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Shelby-Tennant (IA)' -> 'Shelby-Tennant (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Buffalo Center (IA)' -> 'Buffalo Center (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Zearing Nesco (IA)' -> 'Zearing Nesco (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Terril (IA)' -> 'Terril (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Dumont (IA)' -> 'Dumont (IA)' (no change)
+2026-11-12 16:02:19,913 - WARNING -   'Burnside Central Webster (IA)' -> 'Burnside Central Webster (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Sheffield Chapin-Meservey-Thornton (IA)' -> 'Sheffield Chapin-Meservey-Thornton (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Battle Creek-Ida Grove (IA)' -> 'Battle Creek-Ida Grove (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Yale-Jamaica-Bagley (IA)' -> 'Yale-Jamaica-Bagley (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Coulter-Alexander-Latimer (IA)' -> 'Coulter-Alexander-Latimer (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Hedrick Consolidated (IA)' -> 'Hedrick Consolidated (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Mingo (IA)' -> 'Mingo (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Corwith-Wesley (IA)' -> 'Corwith-Wesley (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Klemme (IA)' -> 'Klemme (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Fayette (IA)' -> 'Fayette (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Armstrong North Union (IA)' -> 'Armstrong North Union (IA)' (no change)
+2026-11-12 16:02:19,914 - WARNING -   'Alton Floyd Valley (IA)' -> 'Alton Floyd Valley (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Guttenberg Community (IA)' -> 'Guttenberg Community (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Jefferson Greene County (IA)' -> 'Jefferson Greene County (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Jefferson-Scranton-Paton-Churdan (IA)' -> 'Jefferson-Scranton-Paton-Churdan (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Corning Southwest Valley (IA)' -> 'Corning Southwest Valley (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Jefferson-Scranton (IA)' -> 'Jefferson-Scranton (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'New London-Danville (IA)' -> 'New London-Danville (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Union-WhittenCommunity (IA)' -> 'Union-WhittenCommunity (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Thompson-Woden-Crystal Lake (IA)' -> 'Thompson-Woden-Crystal Lake (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Woden-Crystal Lake (IA)' -> 'Woden-Crystal Lake (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Burnside Southeast Webster (IA)' -> 'Burnside Southeast Webster (IA)' (no change)
+2026-11-12 16:02:19,915 - WARNING -   'Woodward Academy (IA)' -> 'Woodward Academy (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Dunlap-Dow City-Arion (IA)' -> 'Dunlap-Dow City-Arion (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Battle Creek-Anthon-Oto (IA)' -> 'Battle Creek-Anthon-Oto (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Collins-Maxwell (IA)' -> 'Collins-Maxwell (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Woden-Crystal Lake-Titonka (IA)' -> 'Woden-Crystal Lake-Titonka (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Gillett Grove South Clay (IA)' -> 'Gillett Grove South Clay (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Farnhamville Cedar Valley (IA)' -> 'Farnhamville Cedar Valley (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Des Moines West (IA)' -> 'Des Moines West (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Gowrie Southeast Valley (IA)' -> 'Gowrie Southeast Valley (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Riverside Highland-Lone Tree (IA)' -> 'Riverside Highland-Lone Tree (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Moorhead East Monona (IA)' -> 'Moorhead East Monona (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Fonda (IA)' -> 'Fonda (IA)' (no change)
+2026-11-12 16:02:19,916 - WARNING -   'Wellsburg-Steamboat Rock (IA)' -> 'Wellsburg-Steamboat Rock (IA)' (no change)
+2026-11-12 16:02:19,917 - WARNING -   'Burnside Southeast Webster-Grand (IA)' -> 'Burnside Southeast Webster-Grand (IA)' (no change)
+2026-11-12 16:02:19,917 - WARNING -   'Granville Spalding Catholic (IA)' -> 'Granville Spalding Catholic (IA)' (no change)
+2026-11-12 16:02:19,917 - WARNING -   'Guthrie Center-Adair-Casey (IA)' -> 'Guthrie Center-Adair-Casey (IA)' (no change)
+2026-11-12 16:02:19,917 - WARNING -   'Adel-De Soto (IA)' -> 'Adel-De Soto (IA)' (no change)
+2026-11-12 16:02:19,917 - WARNING -   'Hartley-Melvin (IA)' -> 'Hartley-Melvin (IA)' (no change)
+2026-11-12 16:02:19,917 - WARNING -   'Lincoln Community (IA)' -> 'Lincoln Community (IA)' (no change)
+2026-11-12 16:02:19,917 - WARNING -   'Urbandale JV (IA)' -> 'Urbandale JV (IA)' (no change)
+2026-11-12 16:02:19,917 - WARNING -   'Neola Tri-Center JV (IA)' -> 'Neola Tri-Center JV (IA)' (no change)
+2026-11-12 16:02:19,917 - WARNING -   'LaporteCity Union (IA)' -> 'LaporteCity Union (IA)' (no change)
+2026-11-12 16:02:19,917 - INFO - Validation passed: 595 rules are clean and ready to upload.
+2026-11-12 16:02:19,935 - INFO - Uploading 595 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 16:02:20,066 - INFO - Upload to staging table complete.
+2026-11-12 16:02:20,072 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 16:03:52,693 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 16:03:52,693 - INFO - Reason logged to dbo.HS_Consolidation_Log: IA co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/IA_cfg.py
+2026-11-12 16:03:52,693 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 16:03:52,693 - INFO - Running post-consolidation safety check...
+2026-11-12 16:03:52,697 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team IA --from "Ackley Wellsburg-Steamboat Rock (IA)" --to "Wellsburg-Steamboat Rock (IA)" --seasons 1990-1994 --ids coop_ids/IA_mv_000.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_000.csv
+
+MOVE Ackley Wellsburg-Steamboat Rock (IA) -> Wellsburg-Steamboat Rock (IA), seasons 1990-1994 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1603.csv
+ move_by_season: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1603.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team IA --from "Adel-De Soto (IA)" --to "Adel-Desoto-Minburn (IA)" --seasons 1975-1990 --ids coop_ids/IA_mv_001.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_001.csv
+
+MOVE Adel-De Soto (IA) -> Adel-Desoto-Minburn (IA), seasons 1975-1990 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1603.csv
+ move_by_season: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1603.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IA --from "Adel-Desoto-Minburn (IA)" --to "Adel-De Soto (IA)" --seasons 1976-1979 --ids coop_ids/IA_mv_002.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_002.csv
+
+MOVE Adel-Desoto-Minburn (IA) -> Adel-De Soto (IA), seasons 1976-1979 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IA --from "Avoca-Hancock (IA)" --to "Avoca-Hancock-Shelby-Tennant (IA)" --seasons 1971-1989 --ids coop_ids/IA_mv_003.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 18 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_003.csv
+
+MOVE Avoca-Hancock (IA) -> Avoca-Hancock-Shelby-Tennant (IA), seasons 1971-1989 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> move-team IA --from "Avoca-Hancock-Shelby-Tennant (IA)" --to "Avoca-Hancock (IA)" --seasons 1976-1978 --ids coop_ids/IA_mv_004.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_004.csv
+
+MOVE Avoca-Hancock-Shelby-Tennant (IA) -> Avoca-Hancock (IA), seasons 1976-1978 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IA --from "Belmond Community (IA)" --to "Belmond-Klemme (IA)" --seasons 1989-1990 --ids coop_ids/IA_mv_005.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_005.csv
+
+MOVE Belmond Community (IA) -> Belmond-Klemme (IA), seasons 1989-1990 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IA --from "Belmond-Klemme (IA)" --to "Belmond Community (IA)" --seasons 1977-1977 --ids coop_ids/IA_mv_006.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_006.csv
+
+MOVE Belmond-Klemme (IA) -> Belmond Community (IA), seasons 1977-1977 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IA --from "Boyden-Hull-Rock Valley (IA)" --to "Rock Valley (IA)" --seasons 2003-2003 --ids coop_ids/IA_mv_007.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_007.csv
+
+MOVE Boyden-Hull-Rock Valley (IA) -> Rock Valley (IA), seasons 2003-2003 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IA --from "Buffalo Center (IA)" --to "Buffalo-Center-Rake-Lakota-Titonka (IA)" --seasons 1979-1982 --ids coop_ids/IA_mv_008.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_008.csv
+
+MOVE Buffalo Center (IA) -> Buffalo-Center-Rake-Lakota-Titonka (IA), seasons 1979-1982 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IA --from "Buffalo-Center-Rake-Lakota-Titonka (IA)" --to "Buffalo Center (IA)" --seasons 1978-1978 --ids coop_ids/IA_mv_009.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_009.csv
+
+MOVE Buffalo-Center-Rake-Lakota-Titonka (IA) -> Buffalo Center (IA), seasons 1978-1978 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IA --from "Cairo Sumner (IA)" --to "Sumner (IA)" --seasons 1990-1990 --ids coop_ids/IA_mv_010.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_010.csv
+
+MOVE Cairo Sumner (IA) -> Sumner (IA), seasons 1990-1990 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IA --from "Corydon (IA)" --to "Corydon Wayne (IA)" --seasons 1922-1956 --ids coop_ids/IA_mv_011.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_011.csv
+
+MOVE Corydon (IA) -> Corydon Wayne (IA), seasons 1922-1956 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IA --from "Corydon Wayne (IA)" --to "Corydon (IA)" --seasons 1958-1958 --ids coop_ids/IA_mv_012.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_012.csv
+
+MOVE Corydon Wayne (IA) -> Corydon (IA), seasons 1958-1958 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status   Games  ToNameInTeamNames  Err                                     
+   NOT RUN  0      0                  target name is not in HS_Team_Names - ch
+
+>>> move-team IA --from "Coulter-Alexander-Latimer-Dows (IA)" --to "Coulter-Alexander-Latimer (IA)" --seasons 1971-1985 --ids coop_ids/IA_mv_013.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 30 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_013.csv
+
+MOVE Coulter-Alexander-Latimer-Dows (IA) -> Coulter-Alexander-Latimer (IA), seasons 1971-1985 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team IA --from "Crestland (IA)" --to "Early Schaller-Crestland (IA)" --seasons 1971-1982 --ids coop_ids/IA_mv_014.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 29 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_014.csv
+
+MOVE Crestland (IA) -> Early Schaller-Crestland (IA), seasons 1971-1982 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team IA --from "Dow City (IA)" --to "Dunlap-Dow City-Arion (IA)" --seasons 1971-1979 --ids coop_ids/IA_mv_015.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_015.csv
+
+MOVE Dow City (IA) -> Dunlap-Dow City-Arion (IA), seasons 1971-1979 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team IA --from "Dunlap (IA)" --to "Dunlap Boyer Valley (IA)" --seasons 1944-1958 --ids coop_ids/IA_mv_016.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_016.csv
+
+MOVE Dunlap (IA) -> Dunlap Boyer Valley (IA), seasons 1944-1958 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team IA --from "Dunlap Boyer Valley (IA)" --to "Dunlap (IA)" --seasons 1952-1957 --ids coop_ids/IA_mv_017.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_017.csv
+
+MOVE Dunlap Boyer Valley (IA) -> Dunlap (IA), seasons 1952-1957 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status   Games  ToNameInTeamNames  Err                                     
+   NOT RUN  0      0                  target name is not in HS_Team_Names - ch
+
+>>> move-team IA --from "Dunlap-Dow City-Arion (IA)" --to "Dow City (IA)" --seasons 1970-1970 --ids coop_ids/IA_mv_018.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_018.csv
+
+MOVE Dunlap-Dow City-Arion (IA) -> Dow City (IA), seasons 1970-1970 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IA --from "Early Schaller-Crestland (IA)" --to "Crestland (IA)" --seasons 1970-1970 --ids coop_ids/IA_mv_019.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_019.csv
+
+MOVE Early Schaller-Crestland (IA) -> Crestland (IA), seasons 1970-1970 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IA --from "Elk Horn (IA)" --to "Elk Horn-Kimballton (IA)" --seasons 1971-1975 --ids coop_ids/IA_mv_020.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_020.csv
+
+MOVE Elk Horn (IA) -> Elk Horn-Kimballton (IA), seasons 1971-1975 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 45 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IA --from "Gilman Semco (IA)" --to "LeGrand LOF-Gilman SEMCO (IA)" --seasons 1979-1979 --ids coop_ids/IA_mv_021.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_021.csv
+
+MOVE Gilman Semco (IA) -> LeGrand LOF-Gilman SEMCO (IA), seasons 1979-1979 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IA --from "Gilmore City (IA)" --to "Gilmore City-Bradgate (IA)" --seasons 1969-1979 --ids coop_ids/IA_mv_022.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_022.csv
+
+MOVE Gilmore City (IA) -> Gilmore City-Bradgate (IA), seasons 1969-1979 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IA --from "Gowrie Prairie Valley (IA)" --to "Gowrie Prairie Valley-Farnhamville Cedar Valley (IA)" --seasons 1978-1988 --ids coop_ids/IA_mv_023.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_023.csv
+
+MOVE Gowrie Prairie Valley (IA) -> Gowrie Prairie Valley-Farnhamville Cedar Valley (IA), seasons 1978-1988 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IA --from "Gowrie Prairie Valley-Farnhamville Cedar Valley (IA)" --to "Gowrie Prairie Valley (IA)" --seasons 1970-1985 --ids coop_ids/IA_mv_024.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 35 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_024.csv
+
+MOVE Gowrie Prairie Valley-Farnhamville Cedar Valley (IA) -> Gowrie Prairie Valley (IA), seasons 1970-1985 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IA --from "Greenfield (IA)" --to "Greenfield Nodaway Valley (IA)" --seasons 1945-1959 --ids coop_ids/IA_mv_025.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 22 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_025.csv
+
+MOVE Greenfield (IA) -> Greenfield Nodaway Valley (IA), seasons 1945-1959 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1604.csv
+ move_by_season: 111 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1604.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team IA --from "Greenfield Nodaway Valley (IA)" --to "Greenfield (IA)" --seasons 1966-1966 --ids coop_ids/IA_mv_026.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_026.csv
+
+MOVE Greenfield Nodaway Valley (IA) -> Greenfield (IA), seasons 1966-1966 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 111 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IA --from "Guttenberg Clayton Ridge (IA)" --to "Guttenberg Community (IA)" --seasons 1990-1990 --ids coop_ids/IA_mv_027.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_027.csv
+
+MOVE Guttenberg Clayton Ridge (IA) -> Guttenberg Community (IA), seasons 1990-1990 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IA --from "Guttenberg Community (IA)" --to "Guttenberg Clayton Ridge (IA)" --seasons 1977-1994 --ids coop_ids/IA_mv_028.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 16 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_028.csv
+
+MOVE Guttenberg Community (IA) -> Guttenberg Clayton Ridge (IA), seasons 1977-1994 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team IA --from "Hawarden (IA)" --to "Hawarden West Sioux (IA)" --seasons 1925-1973 --ids coop_ids/IA_mv_029.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_029.csv
+
+MOVE Hawarden (IA) -> Hawarden West Sioux (IA), seasons 1925-1973 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team IA --from "Hawarden West Sioux (IA)" --to "Hawarden (IA)" --seasons 1931-1943 --ids coop_ids/IA_mv_030.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_030.csv
+
+MOVE Hawarden West Sioux (IA) -> Hawarden (IA), seasons 1931-1943 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IA --from "Irwin (IA)" --to "Irwin-Kirkman (IA)" --seasons 1982-1983 --ids coop_ids/IA_mv_031.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_031.csv
+
+MOVE Irwin (IA) -> Irwin-Kirkman (IA), seasons 1982-1983 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 31 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IA --from "Irwin-Kirkman (IA)" --to "Irwin (IA)" --seasons 1978-1978 --ids coop_ids/IA_mv_032.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_032.csv
+
+MOVE Irwin-Kirkman (IA) -> Irwin (IA), seasons 1978-1978 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 31 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IA --from "LeGrand LOF-Gilman SEMCO (IA)" --to "Gilman Semco (IA)" --seasons 1970-1988 --ids coop_ids/IA_mv_033.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_033.csv
+
+MOVE LeGrand LOF-Gilman SEMCO (IA) -> Gilman Semco (IA), seasons 1970-1988 - COMMIT
+ move_games: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  16     1                  None
+
+>>> move-team IA --from "Leon (IA)" --to "Leon Central Decatur (IA)" --seasons 1951-1959 --ids coop_ids/IA_mv_034.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_034.csv
+
+MOVE Leon (IA) -> Leon Central Decatur (IA), seasons 1951-1959 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team IA --from "Leon Central Decatur (IA)" --to "Leon (IA)" --seasons 1958-1958 --ids coop_ids/IA_mv_035.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_035.csv
+
+MOVE Leon Central Decatur (IA) -> Leon (IA), seasons 1958-1958 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status   Games  ToNameInTeamNames  Err                                     
+   NOT RUN  0      0                  target name is not in HS_Team_Names - ch
+
+>>> move-team IA --from "Maurice-Orange City (IA)" --to "Maurice-Orange City-Floyd Valley (IA)" --seasons 1986-1990 --ids coop_ids/IA_mv_036.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_036.csv
+
+MOVE Maurice-Orange City (IA) -> Maurice-Orange City-Floyd Valley (IA), seasons 1986-1990 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team IA --from "Maurice-Orange City-Floyd Valley (IA)" --to "Maurice-Orange City (IA)" --seasons 1960-1988 --ids coop_ids/IA_mv_037.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 36 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_037.csv
+
+MOVE Maurice-Orange City-Floyd Valley (IA) -> Maurice-Orange City (IA), seasons 1960-1988 - COMMIT
+ move_games: 36 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  36     1                  None
+
+>>> move-team IA --from "Monona-Farmersburg-Luana (IA)" --to "Monona-Farmersburg-Luana-Marquette-McGregor (IA)" --seasons 1988-1990 --ids coop_ids/IA_mv_038.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 14 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_038.csv
+
+MOVE Monona-Farmersburg-Luana (IA) -> Monona-Farmersburg-Luana-Marquette-McGregor (IA), seasons 1988-1990 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team IA --from "Monona-Farmersburg-Luana-Marquette-McGregor (IA)" --to "Monona-Farmersburg-Luana (IA)" --seasons 1970-1981 --ids coop_ids/IA_mv_039.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_039.csv
+
+MOVE Monona-Farmersburg-Luana-Marquette-McGregor (IA) -> Monona-Farmersburg-Luana (IA), seasons 1970-1981 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team IA --from "Newell (IA)" --to "Newell-Providence (IA)" --seasons 1970-1978 --ids coop_ids/IA_mv_040.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_040.csv
+
+MOVE Newell (IA) -> Newell-Providence (IA), seasons 1970-1978 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 43 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IA --from "Nora Springs (IA)" --to "Nora Springs-Rock Falls (IA)" --seasons 1969-1977 --ids coop_ids/IA_mv_041.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_041.csv
+
+MOVE Nora Springs (IA) -> Nora Springs-Rock Falls (IA), seasons 1969-1977 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IA --from "Nora Springs-Rock Falls (IA)" --to "Nora Springs (IA)" --seasons 1975-1975 --ids coop_ids/IA_mv_042.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_042.csv
+
+MOVE Nora Springs-Rock Falls (IA) -> Nora Springs (IA), seasons 1975-1975 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 78 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IA --from "Onawa (IA)" --to "Onawa West Monona (IA)" --seasons 1942-1978 --ids coop_ids/IA_mv_043.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 25 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_043.csv
+
+MOVE Onawa (IA) -> Onawa West Monona (IA), seasons 1942-1978 - COMMIT
+ move_games: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  23     1                  None
+
+>>> move-team IA --from "Onawa West Monona (IA)" --to "Onawa (IA)" --seasons 1954-1954 --ids coop_ids/IA_mv_044.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_044.csv
+
+MOVE Onawa West Monona (IA) -> Onawa (IA), seasons 1954-1954 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IA --from "Osceola (IA)" --to "Osceola Clarke (IA)" --seasons 1926-1975 --ids coop_ids/IA_mv_045.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 20 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_045.csv
+
+MOVE Osceola (IA) -> Osceola Clarke (IA), seasons 1926-1975 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1605.csv
+ move_by_season: 110 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1605.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team IA --from "Osceola Clarke (IA)" --to "Osceola (IA)" --seasons 1959-1959 --ids coop_ids/IA_mv_046.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_046.csv
+
+MOVE Osceola Clarke (IA) -> Osceola (IA), seasons 1959-1959 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 110 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IA --from "Paullina (IA)" --to "Paullina South O'Brien (IA)" --seasons 1988-1988 --ids coop_ids/IA_mv_047.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_047.csv
+
+MOVE Paullina (IA) -> Paullina South O'Brien (IA), seasons 1988-1988 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team IA --from "Paullina South O'Brien (IA)" --to "Paullina (IA)" --seasons 1954-1984 --ids coop_ids/IA_mv_048.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 35 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_048.csv
+
+MOVE Paullina South O'Brien (IA) -> Paullina (IA), seasons 1954-1984 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IA --from "Rock Rapids Central Lyon (IA)" --to "Rock Rapids Central Lyon-George-Little Rock (IA)" --seasons 1972-2000 --ids coop_ids/IA_mv_049.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 69 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_049.csv
+
+MOVE Rock Rapids Central Lyon (IA) -> Rock Rapids Central Lyon-George-Little Rock (IA), seasons 1972-2000 - COMMIT
+ move_games: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  54     1                  None
+
+>>> move-team IA --from "Rock Rapids Central Lyon-George-Little Rock (IA)" --to "Rock Rapids Central Lyon (IA)" --seasons 1966-1979 --ids coop_ids/IA_mv_050.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 28 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_050.csv
+
+MOVE Rock Rapids Central Lyon-George-Little Rock (IA) -> Rock Rapids Central Lyon (IA), seasons 1966-1979 - COMMIT
+ move_games: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  23     1                  None
+
+>>> move-team IA --from "Rock Valley (IA)" --to "Boyden-Hull-Rock Valley (IA)" --seasons 1990-2015 --ids coop_ids/IA_mv_051.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_051.csv
+
+MOVE Rock Valley (IA) -> Boyden-Hull-Rock Valley (IA), seasons 1990-2015 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team IA --from "Royal Clay Central (IA)" --to "Royal Clay Central-Everly (IA)" --seasons 1972-1989 --ids coop_ids/IA_mv_052.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 20 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_052.csv
+
+MOVE Royal Clay Central (IA) -> Royal Clay Central-Everly (IA), seasons 1972-1989 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IA --from "Royal Clay Central-Everly (IA)" --to "Royal Clay Central (IA)" --seasons 1970-1974 --ids coop_ids/IA_mv_053.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 18 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_053.csv
+
+MOVE Royal Clay Central-Everly (IA) -> Royal Clay Central (IA), seasons 1970-1974 - COMMIT
+ move_games: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  14     1                  None
+
+>>> move-team IA --from "Sigourney (IA)" --to "Sigourney-Keota (IA)" --seasons 1989-1989 --ids coop_ids/IA_mv_054.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_054.csv
+
+MOVE Sigourney (IA) -> Sigourney-Keota (IA), seasons 1989-1989 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IA --from "Sigourney-Keota (IA)" --to "Sigourney (IA)" --seasons 1948-1984 --ids coop_ids/IA_mv_055.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_055.csv
+
+MOVE Sigourney-Keota (IA) -> Sigourney (IA), seasons 1948-1984 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team IA --from "Sumner (IA)" --to "Cairo Sumner (IA)" --seasons 1928-1989 --ids coop_ids/IA_mv_056.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_056.csv
+
+MOVE Sumner (IA) -> Cairo Sumner (IA), seasons 1928-1989 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IA --from "Tabor (IA)" --to "Tabor Fremont-Mills (IA)" --seasons 1947-1956 --ids coop_ids/IA_mv_057.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_057.csv
+
+MOVE Tabor (IA) -> Tabor Fremont-Mills (IA), seasons 1947-1956 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IA --from "Tabor Fremont-Mills (IA)" --to "Tabor (IA)" --seasons 1948-1958 --ids coop_ids/IA_mv_058.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_058.csv
+
+MOVE Tabor Fremont-Mills (IA) -> Tabor (IA), seasons 1948-1958 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status   Games  ToNameInTeamNames  Err                                     
+   NOT RUN  0      0                  target name is not in HS_Team_Names - ch
+
+>>> move-team IA --from "Vinton (IA)" --to "Vinton-Shellsburg (IA)" --seasons 1989-2002 --ids coop_ids/IA_mv_059.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_059.csv
+
+MOVE Vinton (IA) -> Vinton-Shellsburg (IA), seasons 1989-2002 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IA --from "Vinton-Shellsburg (IA)" --to "Vinton (IA)" --seasons 1972-1982 --ids coop_ids/IA_mv_060.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_060.csv
+
+MOVE Vinton-Shellsburg (IA) -> Vinton (IA), seasons 1972-1982 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team IA --from "Waverly (IA)" --to "Waverly-Shell Rock (IA)" --seasons 1960-1979 --ids coop_ids/IA_mv_061.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 62 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_061.csv
+
+MOVE Waverly (IA) -> Waverly-Shell Rock (IA), seasons 1960-1979 - COMMIT
+ move_games: 61 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 111 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  61     1                  None
+
+>>> move-team IA --from "Wellsburg-Steamboat Rock (IA)" --to "Ackley Wellsburg-Steamboat Rock (IA)" --seasons 1988-1988 --ids coop_ids/IA_mv_062.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_062.csv
+
+MOVE Wellsburg-Steamboat Rock (IA) -> Ackley Wellsburg-Steamboat Rock (IA), seasons 1988-1988 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IA --from "Winfield (IA)" --to "Winfield-Mount Union (IA)" --seasons 1970-1978 --ids coop_ids/IA_mv_063.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_063.csv
+
+MOVE Winfield (IA) -> Winfield-Mount Union (IA), seasons 1970-1978 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 97 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IA --from "Winfield-Mount Union (IA)" --to "Winfield (IA)" --seasons 1977-1977 --ids coop_ids/IA_mv_064.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_064.csv
+
+MOVE Winfield-Mount Union (IA) -> Winfield (IA), seasons 1977-1977 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261112_1606.csv
+ move_by_season: 97 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261112_1606.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> dedup IA --commit
+
+DEDUP v4 IA - COMMIT
+ dedup_archive: 658 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_archive_COMMITTED_20261112_1607.csv
+ dedup_review: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_review_COMMITTED_20261112_1607.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_summary_COMMITTED_20261112_1607.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  IA     132944        658                  8                A8B7ED3E-4747-4A87-8217-931BF778E02E
+
+>>> review-pairs IA --commit
+
+REVIEW-ONLY PAIRS IA - COMMIT
+ 8 pairs {'LONG': 1, 'SHORT': 7} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_review_pairs_COMMITTED_20261112_1607.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  8         3DFB54A1-D720-4DE5-ADC9-143BFF3DB83D  None
+
+>>> same-score-fix IA
+ 1429 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IA - PREVIEW (nothing changed)
+ 312 pairs {'DROP B': 5, 'DROP A': 3, 'UNDECIDED': 304} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_20261112_1608.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  8         None   None
+
+>>> query IA ia_dump.sql
+
+QUERY ia_dump (1 result sets)
+ set 1: 132279 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_ia_dump_1_20261112_1608.csv
+
+=== OK 2026-11-12 16:08:28

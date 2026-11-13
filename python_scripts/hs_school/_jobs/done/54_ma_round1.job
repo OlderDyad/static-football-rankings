@@ -1,0 +1,26 @@
+remap MA --url "https://www.maxpreps.com/ma/arlington/arlington-spy-ponders/football/schedule/" --to "Arlington (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/boston/boston-college-high-eagles/football/schedule/" --to "Boston College High (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/dorchester/boston-latin-academy-dragons/football/schedule/" --to "Dorchester Boston Latin Academy (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/boxford/masconomet-regional-chieftains/football/schedule/" --to "Topsfield Masconomet Regional (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/brighton/brighton-kennedy-health-careers/football/schedule/" --to "Brighton (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/cambridge/cambridge-rindge-and-latin-falcons/football/schedule/" --to "Cambridge Rindge & Latin (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/harwich/cape-cod-rvt-crusaders/football/schedule/" --to "Harwich Cape Cod RVT (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/easthampton/williston-northampton-wildcats/football/schedule/" --to "Easthampton Williston Northampton School (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/fitchburg/montachusett-rvt-bulldogs/football/schedule/" --to "Fitchburg Montachusett RVT (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/groton/groton-dunstable-crusaders/football/schedule/" --to "Groton-Dunstable (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/holyoke/holyoke-purple-knights/football/schedule/" --to "Holyoke (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/hyannis/st-john-paul-ii-lions/football/schedule/" --to "Hyannis Pope John Paul II (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/lynn/kipp-academy-lynn-collegiate-panthers/football/schedule/" --to "Lynn Collegiate-KIPP Academy (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/milford/milford-scarlet-hawks/football/schedule/" --to "Milford (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/north-adams/drury-mount-greylock-regional/football/schedule/" --to "North Adams Drury (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/south-dartmouth/dartmouth-indians/football/schedule/" --to "Dartmouth (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/south-hamilton/hamilton-wenham-regional-generals/football/schedule/" --to "Hamilton-Wenham Regional (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/springfield/springfield-international/football/schedule/" --to "Springfield Sci-Tech (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/sudbury/lincoln-sudbury-warriors/football/schedule/" --to "Lincoln-Sudbury (MA)" --commit
+remap MA --url "https://www.maxpreps.com/ma/townsend/north-middlesex-regional-patriots/football/schedule/" --to "Townsend North Middlesex Regional (MA)" --commit
+mapcheck MA --commit
+consolidate MA --reason "MA Round 1: MaxPreps short-name/mascot drift, regional/co-op splits, and school renames"
+dedup MA
+review-pairs MA
+same-score-fix MA
+block-dups MA

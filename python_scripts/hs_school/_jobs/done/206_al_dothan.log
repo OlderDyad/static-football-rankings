@@ -1,0 +1,24 @@
+
+>>> move-team AL --from "Dothan (AL)" --to "Dothan Old (AL)" --seasons 1880-2018 --reason "Lineage split (consolidation: Dothan + Northview -> Dothan High 2019, HSFHA-AL; David 2026-11-11 name Dothan Old)" --commit
+
+MOVE Dothan (AL) -> Dothan Old (AL), seasons 1880-2018 - COMMIT
+ move_games: 1041 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1747.csv
+ move_by_season: 113 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1747.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1041   1                  None
+
+>>> dedup AL
+
+DEDUP v4 AL - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_archive_20261111_1747.csv
+ dedup_review: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_review_20261111_1747.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_summary_20261111_1747.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  AL     196961        0                    60               None 
+
+>>> review-pairs AL
+
+REVIEW-ONLY PAIRS AL - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_review_pairs_20261111_1747.csv
+
+=== OK 2026-11-11 17:47:12

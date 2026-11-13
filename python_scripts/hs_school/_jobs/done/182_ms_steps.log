@@ -1,0 +1,57 @@
+
+>>> commit MS
+
+DEDUP v4 MS - COMMIT
+ dedup_archive: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_archive_COMMITTED_20261111_1022.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_review_COMMITTED_20261111_1022.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_summary_COMMITTED_20261111_1022.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  MS     133704        5                    1                77C49FD2-BB6D-43FF-AD4C-BE56D1E53118
+
+REVIEW-ONLY PAIRS MS - COMMIT
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_review_pairs_COMMITTED_20261111_1022.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1         C6B0D706-449A-4248-90FD-9A80A151ED4C  None
+
+>>> query MS ms_dump.sql
+
+QUERY ms_dump (1 result sets)
+ set 1: 133700 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_ms_dump_1_20261111_1023.csv
+
+>>> query MS ms_export.sql
+
+QUERY ms_export (2 result sets)
+ set 1: 133700 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_ms_export_1_20261111_1023.csv
+ set 2: 1232 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_ms_export_2_20261111_1023.csv
+
+>>> step MS 1.1 done "2026-11-11: ~130 long-pending MS rules applied (AHS->Academy etc.) + ~45 HSFHA-MS same-school merges; wrong old rules fixed (Bay HS vs St. Stanislaus, Broadmoor LA, St. Aloysius)"
+Tracker updated: MS 1.1 -> done
+
+>>> step MS 1.2 done "2026-11-11: 4 URLs remapped, mapcheck"
+Tracker updated: MS 1.2 -> done
+
+>>> step MS 1.3 done "2026-11-11: MS schools under AL/SC names moved (Rosedale 442, Decatur 400, Macon Central Academy 333, Macon 160, +3 small); 4 reviewed per-game groups (Bay vs St. Stanislaus 55, Calhoun City 81...)"
+Tracker updated: MS 1.3 -> done
+
+>>> step MS 2.1 done "2026-11-11: dedup 102 + 2,383 (ahsfhs team-page copies under two name spellings) + 5"
+Tracker updated: MS 2.1 -> done
+
+>>> step MS 2.2 done "2026-11-11: review pairs 52 + 1"
+Tracker updated: MS 2.2 -> done
+
+>>> step MS 2.3 done "2026-11-11: same-score 51 + 6,835 (mostly the same ahsfhs game under two lineage names, e.g. Laurel/Laurel Watkins; kept the name used more in other seasons)"
+Tracker updated: MS 2.3 -> done
+
+>>> step MS 3.1 done "2026-11-11: 5 odd dates left (Corinth 1924 Feb 1925; 3 HSFHA imports with wrong-year dates)"
+Tracker updated: MS 3.1 -> done
+
+>>> step MS 3.2 done "2026-11-11: 4 2-0 games without forfeit flag left as-is"
+Tracker updated: MS 3.2 -> done
+
+>>> step MS 4.3 done "2026-11-11: 338 dates, 5 scores set from HSFHA; 2,208 HSFHA games imported (BatchID 200)"
+Tracker updated: MS 4.3 -> done
+
+>>> step MS 5.0 done "2026-11-11: no 1940+ college copies found by name match"
+Tracker updated: MS 5.0 -> done
+
+=== OK 2026-11-11 10:23:10

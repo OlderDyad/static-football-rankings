@@ -1,0 +1,42 @@
+
+>>> same-score-fix IL --commit
+ 1923 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IL - COMMIT
+ 3621 pairs {'DROP A': 1082, 'DROP B': 1180, 'UNDECIDED': 1359} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_COMMITTED_20261112_0702.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  2232      3FF2DE75-6D2C-4623-AE11-0AED0BD52548  None
+
+>>> query IL season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_season_date_1_20261112_0702.csv
+ set 2: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_season_date_2_20261112_0702.csv
+
+>>> query IL forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_forfeits_1_20261112_0702.csv
+ set 2: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_forfeits_2_20261112_0702.csv
+
+>>> query IL college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 75 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_college_check_1_20261112_0702.csv
+ set 2: 124 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_college_check_2_20261112_0702.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_college_check_3_20261112_0702.csv
+ set 4: 463 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_college_check_4_20261112_0702.csv
+
+>>> step IL 1.1 done "2026-11-12: 31 rules: 2024 MaxPreps short names (Barrington Fillies, Canton Little, Mt. Carava, Solorio Sun, Dixon Dukes, Geneseo Maple, Niles Notre, Oak Park Oak Park, Lockport, Ottawa, Streator...), same-school variants (Al Raby, Savanna Community, Spring Valley Hall, Marian Central Catholic, Winola, Sidell Jamaica, McLeansboro Hamilton County), renames to latest (Lincoln-Way Central, DePaul College Prep, Marine Leadership Academy)"
+Tracker updated: IL 1.1 -> done
+
+>>> step IL 1.2 done "2026-11-12: 42 URLs remapped (20 ProperNames did not exist), mapcheck 34"
+Tracker updated: IL 1.2 -> done
+
+>>> step IL 2.1 done "2026-11-12: dedup 582"
+Tracker updated: IL 2.1 -> done
+
+>>> step IL 2.2 done "2026-11-12: review pairs 14"
+Tracker updated: IL 2.2 -> done
+
+=== OK 2026-11-12 07:02:50

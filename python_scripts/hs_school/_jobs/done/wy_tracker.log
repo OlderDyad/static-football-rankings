@@ -1,0 +1,58 @@
+
+>>> addstate WY
+Tracker rows ready for WY
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> step WY 1.1 "in progress" "rounds 1-2 2026-11-06: 42 rules + St. Mary's merge"
+Tracker updated: WY 1.1 -> in progress
+
+>>> step WY 1.2 done "Casper/Kemmerer URLs remapped; mapcheck fixed 6 Team_IDs"
+Tracker updated: WY 1.2 -> done
+
+>>> step WY 1.4 "in progress" "co-op names split by year; Lyman (WY) -> Presho Lyman (SD) 161 + Lyman (NE) 10"
+Tracker updated: WY 1.4 -> in progress
+
+>>> step WY 2.1 done "dedup 235 + 296 (RunID 702A88C2...)"
+Tracker updated: WY 2.1 -> done
+
+>>> step WY 2.3 "in progress" "same-score-fix 595 archived (RunID CD69C69F...); 786 double-booked left"
+Tracker updated: WY 2.3 -> in progress
+
+>>> status WY
+   StepNo  Step                     Status       Updated     RunIDs  Notes                                   
+   0.0     College-link collisions  not started  None        None    None                                    
+   1.1     Name inventory           in progress  2026-11-06  None    rounds 1-2 2026-11-06: 42 rules + St. Ma
+   1.2     MaxPreps drift           done         2026-11-06  None    Casper/Kemmerer URLs remapped; mapcheck 
+   1.3     Same-town same-opponent  not started  None        None    None                                    
+   1.4     Split two-school names   in progress  2026-11-06  None    co-op names split by year; Lyman (WY) ->
+   2.1     Dedup v4                 done         2026-11-06  None    dedup 235 + 296 (RunID 702A88C2...)     
+   2.2     Review-only pairs        not started  None        None    None                                    
+   2.3     Double-booked dates      in progress  2026-11-06  None    same-score-fix 595 archived (RunID CD69C
+   3.1     Season vs date           not started  None        None    None                                    
+   3.2     Forfeits                 not started  None        None    None                                    
+   4.1     Source histograms        not started  None        None    None                                    
+   4.2     Phantom pair scan        not started  None        None    None                                    
+   4.3     Outside-source compare   not started  None        None    None                                    
+   5.0     College games            not started  None        None    None                                    
+   6.0     Re-rate dirty seasons    not started  None        None    None                                    
+   7.0     Residuals                not started  None        None    None                                    
+   8.0     Gap audit                not started  None        None    None                                    
+
+=== OK 2026-11-06 07:54:00

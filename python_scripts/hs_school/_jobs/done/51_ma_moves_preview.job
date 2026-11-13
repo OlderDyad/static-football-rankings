@@ -1,0 +1,7 @@
+move-team MA --from "Boston Latin School (MA)" --to "Dorchester Boston Latin Academy (MA)" --seasons 2025-2026 --reason "2025-2026 Boston Latin Academy games mis-mapped to Boston Latin School"
+move-team MA --from "Boston Latin (MA)" --to "Dorchester Boston Latin Academy (MA)" --seasons 2024-2024 --ids ma_bla_2024_ids.csv --reason "2024 Boston Latin Academy games mis-mapped to Boston Latin"
+move-team MA --from "Boston College (MA)" --to "Boston College High (MA)" --seasons 2020-2026 --reason "2026 Boston College High games imported under Boston College"
+move-team MA --from "Cambridge Rindge Tech (MA)" --to "Cambridge Rindge & Latin (MA)" --seasons 2024-2026 --reason "2024-2026 Cambridge Rindge & Latin games imported under Cambridge Rindge Tech"
+move-team MA --from "Springfield (MA)" --to "Springfield Sci-Tech (MA)" --seasons 2024-2026 --reason "2024-2026 Springfield International/Sci-Tech co-op games imported under Springfield"
+move-team MA --from "Carlisle (MA)" --to "Carlisle (OH)" --seasons 1974-1974 --reason "1974 Dayton Jefferson Township (OH) vs Carlisle (OH) mislabeled as Carlisle (MA)"
+archive-ids MA --ids ma_everett_1938_ids.csv --reason "1937 Everett schedule duplicated under Season=1938 with Dec 1938-Feb 1939 synthetic dates (Classmates yearbook)"

@@ -1,0 +1,4 @@
+set-dates AR --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-AR game date (both teams + score match)" --commit
+set-dates AR --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-AR date: same teams + same score in season" --commit
+set-scores AR --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-AR score (David 2026-11-10 rule)" --commit
+same-score-fix AR --commit

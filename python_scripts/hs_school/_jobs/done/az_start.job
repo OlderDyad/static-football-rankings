@@ -1,0 +1,13 @@
+# Arizona start - read-only while the HS rating batch runs (addstate only writes the tracker)
+addstate AZ
+report AZ names
+report AZ drift
+report AZ same-town
+mapcheck AZ
+dedup AZ
+review-pairs AZ
+same-score-fix AZ
+report AZ double-booked
+query AZ season_date.sql
+query AZ forfeits.sql
+query AZ college_check.sql

@@ -1,0 +1,209 @@
+
+>>> consolidate NM --reason "NM round 2: leading-space Albuquerque Highland"
+Consolidating NM from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\NM_Alias_Rules.csv
+
+[stderr]
+2026-11-06 15:09:49,278 - INFO - Starting consolidation for state: (NM) using staging table method.
+2026-11-06 15:09:49,287 - WARNING - WARNING: 121 row(s) have identical OldName and NewName (no-op rules).
+2026-11-06 15:09:49,287 - WARNING -   'Alamogordo (NM)' -> 'Alamogordo (NM)' (no change)
+2026-11-06 15:09:49,287 - WARNING -   'Albuquerque (NM)' -> 'Albuquerque (NM)' (no change)
+2026-11-06 15:09:49,287 - WARNING -   'Albuquerque Academy (NM)' -> 'Albuquerque Academy (NM)' (no change)
+2026-11-06 15:09:49,287 - WARNING -   'Albuquerque Atrisco Heritage Academy (NM)' -> 'Albuquerque Atrisco Heritage Academy (NM)' (no change)
+2026-11-06 15:09:49,287 - WARNING -   'Albuquerque Cibola (NM)' -> 'Albuquerque Cibola (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque Del Norte (NM)' -> 'Albuquerque Del Norte (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque Eldorado (NM)' -> 'Albuquerque Eldorado (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque Highland (NM)' -> 'Albuquerque Highland (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque Hope Christian (NM)' -> 'Albuquerque Hope Christian (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque La Cueva (NM)' -> 'Albuquerque La Cueva (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque Manzano (NM)' -> 'Albuquerque Manzano (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque Menaul (NM)' -> 'Albuquerque Menaul (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque Rio Grande (NM)' -> 'Albuquerque Rio Grande (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque Sandia (NM)' -> 'Albuquerque Sandia (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque St. Pius X (NM)' -> 'Albuquerque St. Pius X (NM)' (no change)
+2026-11-06 15:09:49,288 - WARNING -   'Albuquerque Valley (NM)' -> 'Albuquerque Valley (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Albuquerque Volcano Vista (NM)' -> 'Albuquerque Volcano Vista (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Albuquerque West Mesa (NM)' -> 'Albuquerque West Mesa (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Animas (NM)' -> 'Animas (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Anthony Gadsden (NM)' -> 'Anthony Gadsden (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Artesia (NM)' -> 'Artesia (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Aztec (NM)' -> 'Aztec (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Bayard Cobre (NM)' -> 'Bayard Cobre (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Belen (NM)' -> 'Belen (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Bernalillo (NM)' -> 'Bernalillo (NM)' (no change)
+2026-11-06 15:09:49,289 - WARNING -   'Bloomfield (NM)' -> 'Bloomfield (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Capitan (NM)' -> 'Capitan (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Carlsbad (NM)' -> 'Carlsbad (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Carrizozo (NM)' -> 'Carrizozo (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Chaparral (NM)' -> 'Chaparral (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Clayton (NM)' -> 'Clayton (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Cloudcroft (NM)' -> 'Cloudcroft (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Clovis (NM)' -> 'Clovis (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Crown Point (NM)' -> 'Crown Point (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Cuba (NM)' -> 'Cuba (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Deming (NM)' -> 'Deming (NM)' (no change)
+2026-11-06 15:09:49,290 - WARNING -   'Dexter (NM)' -> 'Dexter (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Dora (NM)' -> 'Dora (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Dulce (NM)' -> 'Dulce (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Espanola McCurdy (NM)' -> 'Espanola McCurdy (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Espanola Valley (NM)' -> 'Espanola Valley (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Estancia (NM)' -> 'Estancia (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Eunice (NM)' -> 'Eunice (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Farmington (NM)' -> 'Farmington (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Farmington Navajo Prep (NM)' -> 'Farmington Navajo Prep (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Farmington Piedra Vista (NM)' -> 'Farmington Piedra Vista (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Floyd (NM)' -> 'Floyd (NM)' (no change)
+2026-11-06 15:09:49,291 - WARNING -   'Fort Sumner (NM)' -> 'Fort Sumner (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Fort Sumner-House (NM)' -> 'Fort Sumner-House (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Fort Wingate (NM)' -> 'Fort Wingate (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Gallup (NM)' -> 'Gallup (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Gallup Miyamura (NM)' -> 'Gallup Miyamura (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Grants (NM)' -> 'Grants (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Hagerman (NM)' -> 'Hagerman (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Hatch Valley (NM)' -> 'Hatch Valley (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Hobbs (NM)' -> 'Hobbs (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Hondo (NM)' -> 'Hondo (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Jal (NM)' -> 'Jal (NM)' (no change)
+2026-11-06 15:09:49,292 - WARNING -   'Kirtland Central (NM)' -> 'Kirtland Central (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Lake Arthur (NM)' -> 'Lake Arthur (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Las Cruces (NM)' -> 'Las Cruces (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Las Cruces Centennial (NM)' -> 'Las Cruces Centennial (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Las Cruces Mayfield (NM)' -> 'Las Cruces Mayfield (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Las Cruces Mesilla Valley Christian (NM)' -> 'Las Cruces Mesilla Valley Christian (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Las Vegas Robertson (NM)' -> 'Las Vegas Robertson (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Logan (NM)' -> 'Logan (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Lordsburg (NM)' -> 'Lordsburg (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Los Alamos (NM)' -> 'Los Alamos (NM)' (no change)
+2026-11-06 15:09:49,293 - WARNING -   'Los Lunas (NM)' -> 'Los Lunas (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Los Lunas Valencia (NM)' -> 'Los Lunas Valencia (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Loving (NM)' -> 'Loving (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Lovington (NM)' -> 'Lovington (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Magdalena (NM)' -> 'Magdalena (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Magdalena Alamo Navajo (NM)' -> 'Magdalena Alamo Navajo (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Melrose (NM)' -> 'Melrose (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Mescalero Apache (NM)' -> 'Mescalero Apache (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Moriarty (NM)' -> 'Moriarty (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Mountainair (NM)' -> 'Mountainair (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'Navajo Pine (NM)' -> 'Navajo Pine (NM)' (no change)
+2026-11-06 15:09:49,294 - WARNING -   'New Laguna Acoma (NM)' -> 'New Laguna Acoma (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'New Mexico School for the Deaf (NM)' -> 'New Mexico School for the Deaf (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'New Mexico State University (NM)' -> 'New Mexico State University (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'Newcomb (NM)' -> 'Newcomb (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'Pojoaque Valley (NM)' -> 'Pojoaque Valley (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'Portales (NM)' -> 'Portales (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'Questa (NM)' -> 'Questa (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'Ramah (NM)' -> 'Ramah (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'Raton (NM)' -> 'Raton (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'Reserve (NM)' -> 'Reserve (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'Rio Rancho (NM)' -> 'Rio Rancho (NM)' (no change)
+2026-11-06 15:09:49,295 - WARNING -   'Rio Rancho Cleveland (NM)' -> 'Rio Rancho Cleveland (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Roswell (NM)' -> 'Roswell (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Roswell Gateway Christian (NM)' -> 'Roswell Gateway Christian (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Roswell Goddard (NM)' -> 'Roswell Goddard (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Roswell New Mexico Military Institute (NM)' -> 'Roswell New Mexico Military Institute (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Ruidoso (NM)' -> 'Ruidoso (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Santa Fe (NM)' -> 'Santa Fe (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Santa Fe Capital (NM)' -> 'Santa Fe Capital (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Santa Fe Indian (NM)' -> 'Santa Fe Indian (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Santa Fe St. Michaels (NM)' -> 'Santa Fe St. Michaels (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Santa Rosa (NM)' -> 'Santa Rosa (NM)' (no change)
+2026-11-06 15:09:49,296 - WARNING -   'Santa Teresa (NM)' -> 'Santa Teresa (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Shiprock (NM)' -> 'Shiprock (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Silver City (NM)' -> 'Silver City (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Socorro (NM)' -> 'Socorro (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Socorro JV (NM)' -> 'Socorro JV (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Springer (NM)' -> 'Springer (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Taos (NM)' -> 'Taos (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Tatum (NM)' -> 'Tatum (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Texico (NM)' -> 'Texico (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Thoreau (NM)' -> 'Thoreau (NM)' (no change)
+2026-11-06 15:09:49,297 - WARNING -   'Tierra Amarilla Escalante (NM)' -> 'Tierra Amarilla Escalante (NM)' (no change)
+2026-11-06 15:09:49,298 - WARNING -   'Tohatchi (NM)' -> 'Tohatchi (NM)' (no change)
+2026-11-06 15:09:49,298 - WARNING -   'Truth or Consequences Hot Springs (NM)' -> 'Truth or Consequences Hot Springs (NM)' (no change)
+2026-11-06 15:09:49,298 - WARNING -   'Tucumcari (NM)' -> 'Tucumcari (NM)' (no change)
+2026-11-06 15:09:49,298 - WARNING -   'Tularosa (NM)' -> 'Tularosa (NM)' (no change)
+2026-11-06 15:09:49,298 - WARNING -   'Vaughn (NM)' -> 'Vaughn (NM)' (no change)
+2026-11-06 15:09:49,298 - WARNING -   'West Las Vegas (NM)' -> 'West Las Vegas (NM)' (no change)
+2026-11-06 15:09:49,298 - WARNING -   'Zuni (NM)' -> 'Zuni (NM)' (no change)
+2026-11-06 15:09:49,298 - WARNING -   'Crownpoint (NM)' -> 'Crownpoint (NM)' (no change)
+2026-11-06 15:09:49,299 - WARNING -   ' Albuquerque Highland (NM)' -> 'Albuquerque Highland (NM)' (no change)
+2026-11-06 15:09:49,299 - INFO - Validation passed: 162 rules are clean and ready to upload.
+2026-11-06 15:09:49,316 - INFO - Uploading 162 rules to staging table: ConsolidationRules_Staging...
+2026-11-06 15:09:49,984 - INFO - Upload to staging table complete.
+2026-11-06 15:09:49,990 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-06 15:10:20,168 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-06 15:10:20,168 - INFO - Reason logged to dbo.HS_Consolidation_Log: NM round 2: leading-space Albuquerque Highland
+2026-11-06 15:10:20,168 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-06 15:10:20,168 - INFO - Running post-consolidation safety check...
+2026-11-06 15:10:20,172 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup NM --commit
+
+DEDUP v4 NM - COMMIT
+ dedup_archive: 44 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_archive_COMMITTED_20261106_1510.csv
+ dedup_review: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_review_COMMITTED_20261106_1510.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_summary_COMMITTED_20261106_1510.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NM     38131         44                   3                08EBE90E-12AE-4E39-96D4-A32F16544EE3
+
+>>> same-score-fix NM --commit
+
+SAME-SCORE DOUBLE-BOOKINGS NM - COMMIT
+ 118 pairs {'DROP B': 49, 'DROP A': 47, 'UNDECIDED': 22} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_same_score_COMMITTED_20261106_1511.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  96        803DF8F0-104A-451C-9E3E-D5EC4525A19A  None
+
+>>> archive-ids NM --ids NM_college_archive_ids.csv --reason "1954 Howard Payne-NMSU college game; copy in College_Scores" --commit
+
+ARCHIVE LISTED GAMES NM - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_archive_ids_COMMITTED_20261106_1511.csv
+   Season  Date        Home                       Home_Score  Visitor                           Visitor_Score  Source                                Access_ID  ID                                  
+   1954    1954-10-10  Howard Payne College (TX)  34          New Mexico State University (NM)  7              Las_Cruces_Sun_News_1954_10_10_5.csv  None       EDC0BD86-625B-40BD-BE29-DE1D156B4AF6
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       1      AE6C5B58-401A-4132-B0A5-86687324C3E3  None
+
+>>> step NM 1.1 "in progress" "round 1 (25 rules: Onate->Organ Mountain rename 2021, Hatch, T or C, typos, Illinois 2021 names) + leading-space Highland"
+Tracker updated: NM 1.1 -> in progress
+
+>>> step NM 1.2 done "NMSD URL remapped; Socorro Team_ID fixed"
+Tracker updated: NM 1.2 -> done
+
+>>> step NM 1.3 done "only Hatch / Hatch Valley (merged)"
+Tracker updated: NM 1.3 -> done
+
+>>> step NM 2.1 done "dedup 62 + round 2"
+Tracker updated: NM 2.1 -> done
+
+>>> step NM 2.2 done "review pairs 26"
+Tracker updated: NM 2.2 -> done
+
+>>> step NM 3.1 done "0 season/date mismatches"
+Tracker updated: NM 3.1 -> done
+
+>>> step NM 3.2 done "forfeit flags consistent"
+Tracker updated: NM 3.2 -> done
+
+>>> step NM 5.0 "in progress" "1954 archived; NM_for_college_chat.csv"
+Tracker updated: NM 5.0 -> in progress
+
+>>> report NM double-booked
+
+REPORT double-booked NM: 910 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_double_booked_20261106_1512.csv
+   Kind             Team             Season  Gap  A_Date      A_Opp                      A_Score  A_Source                                  A_Batch  B_Date      B_Opp                  B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Alamogordo (NM)  1949    2    1949-10-21  Jefferson (TX)             21-6     http://lonestarfootball.net Team 985      14       1949-10-23  Silver City (NM)       14-12    Las_Cruces_Sun_News_1949_10_23_9.csv      183      6E1D9844-387A-476B-AB0C-162884F3656A  42141ED5-5C2F-4E00-A425-87608DF26A46
+   DIFFERENT GAMES  Alamogordo (NM)  1959    1    1959-09-11  El Paso Cathedral (TX)     12-6     http://lonestarfootball.net Team 977      14       1959-09-12  El Paso Burges (TX)    19-19    The_Albuquerque_Tribune_1959_09_12_9.csv  183      DA229C4F-D6DE-4956-8693-0B06EA2D132E  9BBFD6A1-2BDF-41C5-BEDA-198DC73DD6E6
+   DIFFERENT GAMES  Alamogordo (NM)  1959    0    1959-09-11  El Paso Cathedral (TX)     12-6     http://lonestarfootball.net Team 977      14       1959-09-11  Anthony Gadsden (NM)   19-0     http://lonestarfootball.net Team 2382     17       DA229C4F-D6DE-4956-8693-0B06EA2D132E  FDB37E6C-9149-4D8F-B681-ABE7DCA8F273
+   DIFFERENT GAMES  Alamogordo (NM)  1959    1    1959-09-12  El Paso Burges (TX)        19-19    The_Albuquerque_Tribune_1959_09_12_9.csv  183      1959-09-11  Anthony Gadsden (NM)   19-0     http://lonestarfootball.net Team 2382     17       9BBFD6A1-2BDF-41C5-BEDA-198DC73DD6E6  FDB37E6C-9149-4D8F-B681-ABE7DCA8F273
+   DIFFERENT GAMES  Alamogordo (NM)  1960    1    1960-09-10  El Paso Burges (TX)        52-20    Albuquerque_Journal_1960_09_10_Page_17.c  36       1960-09-09  El Paso Bel Air (TX)   19-7     http://lonestarfootball.net Team 2382     17       C4D5B6D1-E352-4429-844C-01825230DD31  AD251B9E-A73E-4EFB-9D4E-3AB45AF1FEAC
+   DIFFERENT GAMES  Alamogordo (NM)  1961    1    1961-09-08  El Paso Bel Air (TX)       6-25     http://lonestarfootball.net Team 2382     17       1961-09-09  El Paso Burges (TX)    19-0     Albuquerque_Journal_1961_09_09_Page_13.c  36       8C1DBC22-A957-45E3-9FFF-23B10EB07649  B28CEDA3-8868-4F6C-99C8-85E7FC2603A1
+   DIFFERENT GAMES  Alamogordo (NM)  1966    1    1966-09-09  El Paso Eastwood (TX)      7-6      http://lonestarfootball.net Team 2382     17       1966-09-10  El Paso Irvin (TX)     18-12    Albuquerque_Journal_1966_09_10_Page_21.c  36       5E3AC13F-7B52-4E4D-9E4A-C32253F1AE5C  E891C880-E709-4455-BD7B-EAA6189FF361
+   DIFFERENT GAMES  Alamogordo (NM)  1967    1    1967-09-16  El Paso Eastwood (TX)      33-6     Albuquerque_Journal_1967_09_16_Page_19.c  36       1967-09-15  El Paso Ysleta (TX)    32-12    http://lonestarfootball.net Team 2382     17       368515BD-802E-4A00-B603-2E383B2AA3DB  B096978D-ADE0-4253-AAA9-49CA413F744A
+   DIFFERENT GAMES  Alamogordo (NM)  1969    1    1969-09-12  El Paso Bel Air (TX)       0-28     http://lonestarfootball.net Team 2382     17       1969-09-13  El Paso Irvin (TX)     0-27     Albuquerque_Journal_1969_09_13_Page_21.c  36       3B708D49-9A7D-4417-9D18-441EED27DDF6  1683ED9E-7666-45CA-89DD-DFBC8EFE9EEB
+   DIFFERENT GAMES  Alamogordo (NM)  1970    1    1970-09-11  El Paso Jesus Chapel (TX)  30-13    http://lonestarfootball.net Team 2382     17       1970-09-12  El Paso Parkland (TX)  28-0     Albuquerque_Journal_1970_09_12_Page_19.c  36       D75C4D18-9BB9-4877-BF83-0455A3940CE5  317442DB-1138-41F4-BEC5-391B6031891D
+   DIFFERENT GAMES  Alamogordo (NM)  1971    1    1971-09-18  Lovington (NM)             0-7      Albuquerque_Journal_1971_09_18_Page_22.c  36       1971-09-17  El Paso Ysleta (TX)    6-20     http://lonestarfootball.net Team 2620     18       9DAC4F71-477B-4EF5-A2EA-63117557D653  D1C33ADE-D0B6-4FBF-AA4A-B966E960AFC9
+   DIFFERENT GAMES  Alamogordo (NM)  1971    1    1971-10-08  Cathedral (TX)             0-13     http://lonestarfootball.net Team 977      14       1971-10-09  Carlsbad (NM)          0-35     Albuquerque_Journal_1971_10_09_Page_28.c  36       090E4BA5-5471-4901-84D2-75B35A0A437C  50D38D53-D93B-4E92-94C6-B3E3A3AB463D
+   DIFFERENT GAMES  Alamogordo (NM)  1972    1    1972-09-15  El Paso Cathedral (TX)     14-0     http://lonestarfootball.net Team 2382     17       1972-09-16  Roswell Goddard (NM)   8-6      Albuquerque_Journal_1972_09_16_Page_30.c  36       270390CC-56B7-457D-8882-5190A917F0D6  76084B87-6CAA-4C0A-BC7D-F6EF18182D5D
+   DIFFERENT GAMES  Alamogordo (NM)  1972    1    1972-09-22  Riverside (TX)             0-6      http://lonestarfootball.net Team 989      14       1972-09-23  Roswell (NM)           21-8     Albuquerque_Journal_1972_09_23_Page_28.c  36       B3F6FABE-168B-401D-A5F1-0CE0CCE78584  AC1D779C-00A2-4D17-8C1E-41CD2EEDAF49
+   DIFFERENT GAMES  Alamogordo (NM)  1975    1    1975-09-20  Roswell Goddard (NM)       14-16    Albuquerque Journal                       None     1975-09-19  El Paso Irvin (TX)     19-35    http://lonestarfootball.net Team 984      14       2F1F15E2-1F5D-4B06-B74E-0BDC18003E8E  00D0B290-CD11-4A5C-BA62-69C4F929D897
+   ... 895 more rows (see CSV)
+
+=== OK 2026-11-06 15:12:04

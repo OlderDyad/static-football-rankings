@@ -1,0 +1,6 @@
+set-dates NC --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-NC game date (both teams + score match)" --commit
+set-dates NC --file hsfha_dates_blank.csv --reason "no-source estimated date replaced by HSFHA-NC game date (both teams + score match)" --commit
+set-dates NC --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-NC date: same teams + same score in season" --commit
+set-scores NC --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-NC score (David 2026-11-10 rule)" --commit
+consolidate NC --reason "NC round 1b: Mount Zion cycle fixed, Warrenton->John Graham, Rutherfordton->R-S Central, Newton->Newton-Conover"
+same-score-fix NC

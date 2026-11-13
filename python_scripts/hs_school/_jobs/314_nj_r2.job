@@ -1,0 +1,13 @@
+same-score-fix NJ --commit
+consolidate NJ --reason "NJ round 2 (2026-11-13): same-school names, see _coop_scripts/NJ_cfg.py"
+move-team NJ --from "Atco Winslow Township (NJ)" --to "Atco Edgewood Regional (NJ)" --seasons 1959-1997 --ids coop_ids/NJ_c3_000.csv --reason "NJ co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NJ --from "Bridgewater-Raritan West (NJ)" --to "Bridgewater-Raritan (NJ)" --seasons 1967-2004 --ids coop_ids/NJ_c3_001.csv --reason "NJ co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NJ --from "East Rutherford (NJ)" --to "East Rutherford Becton (NJ)" --seasons 1923-1968 --ids coop_ids/NJ_c3_002.csv --reason "NJ co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NJ --from "East Rutherford Becton (NJ)" --to "East Rutherford (NJ)" --seasons 1950-1964 --ids coop_ids/NJ_c3_003.csv --reason "NJ co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NJ --from "Elizabeth Battin (NJ)" --to "Elizabeth (NJ)" --seasons 1907-1999 --ids coop_ids/NJ_c3_004.csv --reason "NJ co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NJ --from "Paterson Kennedy (NJ)" --to "Paterson Central (NJ)" --seasons 1918-1963 --ids coop_ids/NJ_c3_005.csv --reason "NJ co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NJ --from "Swedesboro Kingsway Regional (NJ)" --to "Woolwich Township Kingsway (NJ)" --seasons 1926-2000 --ids coop_ids/NJ_c3_006.csv --reason "NJ co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup NJ --commit
+review-pairs NJ --commit
+same-score-fix NJ
+query NJ nj_dump.sql

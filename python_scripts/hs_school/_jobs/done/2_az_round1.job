@@ -1,0 +1,23 @@
+# AZ round 1 - run only AFTER the HS rating batch finishes (writes HS_Scores / URL mapping)
+remap AZ --url "https://www.maxpreps.com/az/chandler/arizona-college-prep-knights/football/schedule/" --to "Chandler Arizona College Prep (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/florence/ala-anthem-south-titans/football/schedule/" --to "Florence American Leadership Academy - Anthem South (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/gila-bend/gila-bend-gila-monsters/football/schedule/" --to "Gila Bend (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/gilbert/ala-gilbert-north-eagles/football/schedule/" --to "Gilbert North American Leadership Academy (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/gilbert/san-tan-charter-roadrunners/football/schedule/" --to "Gilbert San Tan Charter (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/ironwood/ala-ironwood-warriors/football/schedule/" --to "Ironwood American Leadership Academy (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/phoenix/phoenix-day-school-for-the-deaf-roadrunners/football/schedule/" --to "Phoenix Day School for the Deaf (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/phoenix/oconnor-eagles/football/schedule/" --to "Phoenix O'Connor (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/queen-creek/ala-queen-creek-patriots/football/schedule/" --to "Queen Creek American Leadership Academy (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/tempe/marcos-de-niza-padres/football/schedule/" --to "Tempe Marcos de Niza (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/waddell/ala-west-foothills-guardians/football/schedule/" --to "Waddell American Leadership Academy - West Foothills (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/page/page-sand-devils/football/schedule/" --to "Page (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/bullhead-city/mohave-thunderbirds/football/schedule/" --to "Bullhead City Mohave Accelerated (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/goodyear/millennium-tigers/football/schedule/" --to "Goodyear Millenium (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/maricopa/sequoia-pathway-academy-pumas/football/schedule/" --to "Maricopa Sequoia Pathway Academy (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/phoenix/paradise-valley-christian-prep-panthers/football/schedule/" --to "Paradise Valley Christian Prep (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/scottsdale/cicero-prep-academy-centurions/football/schedule/" --to "Scottsdale Cicero Prep Academy (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/scottsdale/scottsdale-preparatory-academy-spartans/football/schedule/" --to "Scottsdale Prep Academy (AZ)" --commit
+remap AZ --url "https://www.maxpreps.com/az/tempe/james-madison-preparatory-school-patriots/football/schedule/" --to "Tempe James Madison Prep (AZ)" --commit
+mapcheck AZ --commit
+move-team AZ --from "Tucson Rincon (AZ)" --to "Tucson Rincon-University (AZ)" --seasons 2014-2026 --reason "AZ co-op split by year: Rincon-University from 2014 (MaxPreps carried both names 2014-23)" --commit
+round AZ --reason "AZ round 1: azfootballarchives city-prefix twins (Cortez, Arcadia, CDO, Ironwood, River Valley, Desert Vista, Page...), 2024 drift, ALA names, Canyon State Academy, Phoenix Indian"

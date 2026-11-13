@@ -1,0 +1,321 @@
+
+>>> same-score-fix OR --commit
+ 0 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS OR - COMMIT
+ 191 pairs {'UNDECIDED': 191} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_same_score_COMMITTED_20261112_1636.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         A9CDF86A-F117-400C-B64A-D87C8C36209C  None
+
+>>> consolidate OR --reason "OR co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/OR_cfg.py"
+Consolidating OR from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\OR_Alias_Rules.csv
+
+[stderr]
+2026-11-12 16:36:02,392 - INFO - Starting consolidation for state: (OR) using staging table method.
+2026-11-12 16:36:02,402 - WARNING - WARNING: 248 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 16:36:02,403 - WARNING -   'Adrian (OR)' -> 'Adrian (OR)' (no change)
+2026-11-12 16:36:02,403 - WARNING -   'Alsea (OR)' -> 'Alsea (OR)' (no change)
+2026-11-12 16:36:02,403 - WARNING -   'Amity (OR)' -> 'Amity (OR)' (no change)
+2026-11-12 16:36:02,403 - WARNING -   'Amity Perrydale (OR)' -> 'Amity Perrydale (OR)' (no change)
+2026-11-12 16:36:02,403 - WARNING -   'Arlington (OR)' -> 'Arlington (OR)' (no change)
+2026-11-12 16:36:02,403 - WARNING -   'Ashland (OR)' -> 'Ashland (OR)' (no change)
+2026-11-12 16:36:02,403 - WARNING -   'Astoria (OR)' -> 'Astoria (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Astoria Knappa (OR)' -> 'Astoria Knappa (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Athena Weston-McEwen-Griswold (OR)' -> 'Athena Weston-McEwen-Griswold (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Aurora North Marion (OR)' -> 'Aurora North Marion (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Baker (OR)' -> 'Baker (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Bandon-Pacific (OR)' -> 'Bandon-Pacific (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Banks (OR)' -> 'Banks (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Beaverton (OR)' -> 'Beaverton (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Beaverton Aloha (OR)' -> 'Beaverton Aloha (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Beaverton Southridge (OR)' -> 'Beaverton Southridge (OR)' (no change)
+2026-11-12 16:36:02,404 - WARNING -   'Beaverton Valley Catholic (OR)' -> 'Beaverton Valley Catholic (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Bend (OR)' -> 'Bend (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Bend Mountain View (OR)' -> 'Bend Mountain View (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Bend Summit (OR)' -> 'Bend Summit (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Blachly Triangle Lake (OR)' -> 'Blachly Triangle Lake (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Boardman Riverside (OR)' -> 'Boardman Riverside (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Bonanza (OR)' -> 'Bonanza (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Brookings-Harbor (OR)' -> 'Brookings-Harbor (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Burns (OR)' -> 'Burns (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Butte Falls (OR)' -> 'Butte Falls (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Camas Valley (OR)' -> 'Camas Valley (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Canby (OR)' -> 'Canby (OR)' (no change)
+2026-11-12 16:36:02,405 - WARNING -   'Cave Junction Illinois Valley (OR)' -> 'Cave Junction Illinois Valley (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Central Point Crater (OR)' -> 'Central Point Crater (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Chiloquin (OR)' -> 'Chiloquin (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Clackamas (OR)' -> 'Clackamas (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Clatskanie (OR)' -> 'Clatskanie (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Cloverdale Nestucca (OR)' -> 'Cloverdale Nestucca (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Colton (OR)' -> 'Colton (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Coos Bay Marshfield (OR)' -> 'Coos Bay Marshfield (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Coquille (OR)' -> 'Coquille (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Coquille-Pacific (OR)' -> 'Coquille-Pacific (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Corbett (OR)' -> 'Corbett (OR)' (no change)
+2026-11-12 16:36:02,406 - WARNING -   'Corvallis (OR)' -> 'Corvallis (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Corvallis Crescent Valley (OR)' -> 'Corvallis Crescent Valley (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Corvallis Santiam Christian (OR)' -> 'Corvallis Santiam Christian (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Cottage Grove (OR)' -> 'Cottage Grove (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Cove (OR)' -> 'Cove (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Crane (OR)' -> 'Crane (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Creswell (OR)' -> 'Creswell (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Culver (OR)' -> 'Culver (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Dallas (OR)' -> 'Dallas (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Days Creek (OR)' -> 'Days Creek (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Dayton (OR)' -> 'Dayton (OR)' (no change)
+2026-11-12 16:36:02,407 - WARNING -   'Dayville-Monument (OR)' -> 'Dayville-Monument (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Drain North Douglas (OR)' -> 'Drain North Douglas (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Dufur (OR)' -> 'Dufur (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Eagle Point (OR)' -> 'Eagle Point (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Echo (OR)' -> 'Echo (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Elgin (OR)' -> 'Elgin (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Elkton (OR)' -> 'Elkton (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Elmira (OR)' -> 'Elmira (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Enterprise (OR)' -> 'Enterprise (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Estacada (OR)' -> 'Estacada (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Eugene Churchill (OR)' -> 'Eugene Churchill (OR)' (no change)
+2026-11-12 16:36:02,408 - WARNING -   'Eugene Crow (OR)' -> 'Eugene Crow (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Eugene Marist (OR)' -> 'Eugene Marist (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Eugene North Eugene (OR)' -> 'Eugene North Eugene (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Eugene Sheldon (OR)' -> 'Eugene Sheldon (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Eugene Willamette (OR)' -> 'Eugene Willamette (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Falls City-Kings Valley Charter (OR)' -> 'Falls City-Kings Valley Charter (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Finn Rock McKenzie (OR)' -> 'Finn Rock McKenzie (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Florence Siuslaw (OR)' -> 'Florence Siuslaw (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Forest Grove (OR)' -> 'Forest Grove (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Gaston (OR)' -> 'Gaston (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Gervais (OR)' -> 'Gervais (OR)' (no change)
+2026-11-12 16:36:02,409 - WARNING -   'Gilchrist (OR)' -> 'Gilchrist (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Gladstone (OR)' -> 'Gladstone (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Glendale (OR)' -> 'Glendale (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Glide (OR)' -> 'Glide (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Gold Beach (OR)' -> 'Gold Beach (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Grants Pass (OR)' -> 'Grants Pass (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Grants Pass Hidden Valley (OR)' -> 'Grants Pass Hidden Valley (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Grants Pass North Valley (OR)' -> 'Grants Pass North Valley (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Gresham (OR)' -> 'Gresham (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Gresham Barlow (OR)' -> 'Gresham Barlow (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Gresham Centennial (OR)' -> 'Gresham Centennial (OR)' (no change)
+2026-11-12 16:36:02,410 - WARNING -   'Halfway Pine Eagle (OR)' -> 'Halfway Pine Eagle (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Halsey Central Linn (OR)' -> 'Halsey Central Linn (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Harrisburg (OR)' -> 'Harrisburg (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Heppner (OR)' -> 'Heppner (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Hermiston (OR)' -> 'Hermiston (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Hillsboro (OR)' -> 'Hillsboro (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Hillsboro Century (OR)' -> 'Hillsboro Century (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Hillsboro Glencoe (OR)' -> 'Hillsboro Glencoe (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Hillsboro Liberty (OR)' -> 'Hillsboro Liberty (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Hood River Valley (OR)' -> 'Hood River Valley (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Hood River Wy'east (OR)' -> 'Hood River Wy'east (OR)' (no change)
+2026-11-12 16:36:02,411 - WARNING -   'Imbler (OR)' -> 'Imbler (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Independence Central (OR)' -> 'Independence Central (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Ione (OR)' -> 'Ione (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Ione-Arlington (OR)' -> 'Ione-Arlington (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Irrigon (OR)' -> 'Irrigon (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Jefferson (OR)' -> 'Jefferson (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'John Day Grant Union (OR)' -> 'John Day Grant Union (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Jordan Valley (OR)' -> 'Jordan Valley (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Joseph (OR)' -> 'Joseph (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Junction City (OR)' -> 'Junction City (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Keizer McNary (OR)' -> 'Keizer McNary (OR)' (no change)
+2026-11-12 16:36:02,412 - WARNING -   'Klamath Falls Henley (OR)' -> 'Klamath Falls Henley (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'Klamath Falls Klamath Union (OR)' -> 'Klamath Falls Klamath Union (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'Klamath Falls Mazama (OR)' -> 'Klamath Falls Mazama (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'Klamath Falls Sacred Heart Academy (OR)' -> 'Klamath Falls Sacred Heart Academy (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'Klamath Falls Triad (OR)' -> 'Klamath Falls Triad (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'La Grande (OR)' -> 'La Grande (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'La Pine (OR)' -> 'La Pine (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'Lake Oswego (OR)' -> 'Lake Oswego (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'Lake Oswego Lakeridge (OR)' -> 'Lake Oswego Lakeridge (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'Lakeview-Paisley (OR)' -> 'Lakeview-Paisley (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'Lebanon (OR)' -> 'Lebanon (OR)' (no change)
+2026-11-12 16:36:02,413 - WARNING -   'Lincoln City Taft (OR)' -> 'Lincoln City Taft (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Lowell (OR)' -> 'Lowell (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Madras (OR)' -> 'Madras (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Mapleton (OR)' -> 'Mapleton (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Marcola Mohawk (OR)' -> 'Marcola Mohawk (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Maupin South Wasco (OR)' -> 'Maupin South Wasco (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'McMinnville (OR)' -> 'McMinnville (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Medford Cascade Christian (OR)' -> 'Medford Cascade Christian (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Medford St. Mary's (OR)' -> 'Medford St. Mary's (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Merrill Lost River (OR)' -> 'Merrill Lost River (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Mill City Santiam (OR)' -> 'Mill City Santiam (OR)' (no change)
+2026-11-12 16:36:02,414 - WARNING -   'Milton-Freewater McLoughlin (OR)' -> 'Milton-Freewater McLoughlin (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Milwaukie (OR)' -> 'Milwaukie (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Milwaukie Academy of the Arts (OR)' -> 'Milwaukie Academy of the Arts (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Milwaukie La Salle (OR)' -> 'Milwaukie La Salle (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Milwaukie Putnam (OR)' -> 'Milwaukie Putnam (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Mitchell-Spray (OR)' -> 'Mitchell-Spray (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Molalla (OR)' -> 'Molalla (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Monroe (OR)' -> 'Monroe (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Moro Sherman (OR)' -> 'Moro Sherman (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Moro Sherman-Condon (OR)' -> 'Moro Sherman-Condon (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Myrtle Creek South Umpqua (OR)' -> 'Myrtle Creek South Umpqua (OR)' (no change)
+2026-11-12 16:36:02,415 - WARNING -   'Myrtle Point (OR)' -> 'Myrtle Point (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'Newberg (OR)' -> 'Newberg (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'Newport (OR)' -> 'Newport (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'North Bend-Oregon Coast Tech (OR)' -> 'North Bend-Oregon Coast Tech (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'North Medford (OR)' -> 'North Medford (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'North Powder Powder Valley (OR)' -> 'North Powder Powder Valley (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'Nyssa (OR)' -> 'Nyssa (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'Oakland (OR)' -> 'Oakland (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'Oakridge (OR)' -> 'Oakridge (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'Odell (OR)' -> 'Odell (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'Ontario (OR)' -> 'Ontario (OR)' (no change)
+2026-11-12 16:36:02,416 - WARNING -   'Oregon City (OR)' -> 'Oregon City (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Pendleton (OR)' -> 'Pendleton (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Philomath (OR)' -> 'Philomath (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Phoenix (OR)' -> 'Phoenix (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Pilot Rock-Nixyaawii Community (OR)' -> 'Pilot Rock-Nixyaawii Community (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Pleasant Hill (OR)' -> 'Pleasant Hill (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Portland Adams (OR)' -> 'Portland Adams (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Portland Benson Poly (OR)' -> 'Portland Benson Poly (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Portland Benson Tech (OR)' -> 'Portland Benson Tech (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Portland Central Catholic (OR)' -> 'Portland Central Catholic (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Portland Christian (OR)' -> 'Portland Christian (OR)' (no change)
+2026-11-12 16:36:02,417 - WARNING -   'Portland Cleveland (OR)' -> 'Portland Cleveland (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Columbia Prep (OR)' -> 'Portland Columbia Prep (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland David Douglas (OR)' -> 'Portland David Douglas (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Franklin (OR)' -> 'Portland Franklin (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Grant (OR)' -> 'Portland Grant (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Hill Military Academy (OR)' -> 'Portland Hill Military Academy (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Ida B. Wells (OR)' -> 'Portland Ida B. Wells (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Jackson (OR)' -> 'Portland Jackson (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Jefferson (OR)' -> 'Portland Jefferson (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Jesuit (OR)' -> 'Portland Jesuit (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Lincoln (OR)' -> 'Portland Lincoln (OR)' (no change)
+2026-11-12 16:36:02,418 - WARNING -   'Portland Marshall (OR)' -> 'Portland Marshall (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Portland Parkrose (OR)' -> 'Portland Parkrose (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Portland Roosevelt (OR)' -> 'Portland Roosevelt (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Portland St. John's (OR)' -> 'Portland St. John's (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Portland Sunset (OR)' -> 'Portland Sunset (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Portland Washington (OR)' -> 'Portland Washington (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Portland Westview (OR)' -> 'Portland Westview (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Powers (OR)' -> 'Powers (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Prairie City (OR)' -> 'Prairie City (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Prineville Crook County (OR)' -> 'Prineville Crook County (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Prospect (OR)' -> 'Prospect (OR)' (no change)
+2026-11-12 16:36:02,419 - WARNING -   'Prospect-Butte Falls (OR)' -> 'Prospect-Butte Falls (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Rainier (OR)' -> 'Rainier (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Redmond (OR)' -> 'Redmond (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Redmond Ridgeview (OR)' -> 'Redmond Ridgeview (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Reedsport Charter (OR)' -> 'Reedsport Charter (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Riddle (OR)' -> 'Riddle (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Rockaway Beach Neah-Kah-Nie (OR)' -> 'Rockaway Beach Neah-Kah-Nie (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Rogue River (OR)' -> 'Rogue River (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Roseburg (OR)' -> 'Roseburg (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Saint Paul (OR)' -> 'Saint Paul (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Salem Academy-Willamette Valley Christian (OR)' -> 'Salem Academy-Willamette Valley Christian (OR)' (no change)
+2026-11-12 16:36:02,420 - WARNING -   'Salem Blanchet Catholic (OR)' -> 'Salem Blanchet Catholic (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Salem Chemawa (OR)' -> 'Salem Chemawa (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Salem Chemawa Indian (OR)' -> 'Salem Chemawa Indian (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Salem McKay (OR)' -> 'Salem McKay (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Salem Sprague (OR)' -> 'Salem Sprague (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Sandy (OR)' -> 'Sandy (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Scappoose (OR)' -> 'Scappoose (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Scio (OR)' -> 'Scio (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Seaside (OR)' -> 'Seaside (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Seaside Jewell (OR)' -> 'Seaside Jewell (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Sheridan-Sheridan Japanese (OR)' -> 'Sheridan-Sheridan Japanese (OR)' (no change)
+2026-11-12 16:36:02,421 - WARNING -   'Sherwood (OR)' -> 'Sherwood (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'Siletz Valley (OR)' -> 'Siletz Valley (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'Silver Lake North Lake (OR)' -> 'Silver Lake North Lake (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'Silverton (OR)' -> 'Silverton (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'Sisters (OR)' -> 'Sisters (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'South Albany (OR)' -> 'South Albany (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'South Eugene (OR)' -> 'South Eugene (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'South Medford (OR)' -> 'South Medford (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'South Salem (OR)' -> 'South Salem (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'Springfield (OR)' -> 'Springfield (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'Springfield Thurston (OR)' -> 'Springfield Thurston (OR)' (no change)
+2026-11-12 16:36:02,422 - WARNING -   'Stanfield (OR)' -> 'Stanfield (OR)' (no change)
+2026-11-12 16:36:02,423 - WARNING -   'Stayton (OR)' -> 'Stayton (OR)' (no change)
+2026-11-12 16:36:02,423 - WARNING -   'Stayton Regis (OR)' -> 'Stayton Regis (OR)' (no change)
+2026-11-12 16:36:02,423 - WARNING -   'Sutherlin (OR)' -> 'Sutherlin (OR)' (no change)
+2026-11-12 16:36:02,423 - WARNING -   'Sweet Home (OR)' -> 'Sweet Home (OR)' (no change)
+2026-11-12 16:36:02,423 - WARNING -   'The Dalles (OR)' -> 'The Dalles (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'The Dalles-Wahtonka (OR)' -> 'The Dalles-Wahtonka (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'The Dalles-Wahtonka-South Wasco County (OR)' -> 'The Dalles-Wahtonka-South Wasco County (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'Tigard (OR)' -> 'Tigard (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'Tillamook (OR)' -> 'Tillamook (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'Toledo (OR)' -> 'Toledo (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'Troutdale Columbia (OR)' -> 'Troutdale Columbia (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'Troutdale Reynolds (OR)' -> 'Troutdale Reynolds (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'Tualatin (OR)' -> 'Tualatin (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'Turner Cascade (OR)' -> 'Turner Cascade (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'Umatilla (OR)' -> 'Umatilla (OR)' (no change)
+2026-11-12 16:36:02,424 - WARNING -   'Union (OR)' -> 'Union (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'University of Oregon Frosh (OR)' -> 'University of Oregon Frosh (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'Vale (OR)' -> 'Vale (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'Vernonia (OR)' -> 'Vernonia (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'Waldport (OR)' -> 'Waldport (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'Wallowa (OR)' -> 'Wallowa (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'Warrenton (OR)' -> 'Warrenton (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'West Albany (OR)' -> 'West Albany (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'West Albany Town Team (OR)' -> 'West Albany Town Team (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'West Linn (OR)' -> 'West Linn (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'West Salem (OR)' -> 'West Salem (OR)' (no change)
+2026-11-12 16:36:02,425 - WARNING -   'Willamina (OR)' -> 'Willamina (OR)' (no change)
+2026-11-12 16:36:02,426 - WARNING -   'Wilsonville (OR)' -> 'Wilsonville (OR)' (no change)
+2026-11-12 16:36:02,426 - WARNING -   'Winston Douglas (OR)' -> 'Winston Douglas (OR)' (no change)
+2026-11-12 16:36:02,426 - WARNING -   'Woodburn (OR)' -> 'Woodburn (OR)' (no change)
+2026-11-12 16:36:02,426 - WARNING -   'Yamhill-Carlton (OR)' -> 'Yamhill-Carlton (OR)' (no change)
+2026-11-12 16:36:02,426 - WARNING -   'Yoncalla (OR)' -> 'Yoncalla (OR)' (no change)
+2026-11-12 16:36:02,426 - INFO - Validation passed: 318 rules are clean and ready to upload.
+2026-11-12 16:36:02,445 - INFO - Uploading 318 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 16:36:02,559 - INFO - Upload to staging table complete.
+2026-11-12 16:36:02,564 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 16:36:55,568 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 16:36:55,569 - INFO - Reason logged to dbo.HS_Consolidation_Log: OR co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/OR_cfg.py
+2026-11-12 16:36:55,569 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 16:36:55,569 - INFO - Running post-consolidation safety check...
+2026-11-12 16:36:55,574 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team OR --from "Coquille-Pacific (OR)" --to "Coquille (OR)" --seasons 2015-2024 --ids coop_ids/OR_mv_000.csv --reason "OR co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 18 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\coop_ids/OR_mv_000.csv
+
+MOVE Coquille-Pacific (OR) -> Coquille (OR), seasons 2015-2024 - COMMIT
+ move_games: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_move_games_COMMITTED_20261112_1636.csv
+ move_by_season: 112 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_move_by_season_COMMITTED_20261112_1636.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  18     1                  None
+
+>>> move-team OR --from "Portland Washington (OR)" --to "Portland Washington-Monroe (OR)" --seasons 1978-1980 --ids coop_ids/OR_mv_001.csv --reason "OR co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\coop_ids/OR_mv_001.csv
+
+MOVE Portland Washington (OR) -> Portland Washington-Monroe (OR), seasons 1978-1980 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_move_games_COMMITTED_20261112_1637.csv
+ move_by_season: 74 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_move_by_season_COMMITTED_20261112_1637.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> dedup OR --commit
+
+DEDUP v4 OR - COMMIT
+ dedup_archive: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_archive_COMMITTED_20261112_1637.csv
+ dedup_review: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_review_COMMITTED_20261112_1637.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_summary_COMMITTED_20261112_1637.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  OR     72319         65                   3                68FED66B-ED72-4090-B8D2-581B125C0F07
+
+>>> review-pairs OR --commit
+
+REVIEW-ONLY PAIRS OR - COMMIT
+ 3 pairs {'SHORT': 3} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_review_pairs_COMMITTED_20261112_1637.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  3         86BE5EC3-8579-4C49-A0AB-6B0C07416CC9  None
+
+>>> same-score-fix OR
+ 0 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS OR - PREVIEW (nothing changed)
+ 131 pairs {'DROP B': 1, 'UNDECIDED': 130} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_same_score_20261112_1638.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1         None   None
+
+>>> query OR or_dump.sql
+
+QUERY or_dump (1 result sets)
+ set 1: 72253 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_or_dump_1_20261112_1638.csv
+
+=== OK 2026-11-12 16:38:11

@@ -1,0 +1,104 @@
+
+>>> addstate PA
+Tracker rows ready for PA
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report PA drift
+
+REPORT drift PA: 134 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_drift_20261112_1241.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                                   N_Games  N_First  N_Last  N_Mapped
+   Abington (PA)                             1325     1912     2023    0         None                                      None     None     None    0       
+   Allentown Central Catholic (PA)           1049     1926     2023    0         Allentown Central (PA)                    34       2024     2026    1       
+   Allentown Central Catholic (PA)           1049     1926     2023    0         Allentown Executive Education Academy Ch  59       2021     2026    1       
+   Altoona (PA)                              1265     1898     2023    0         Altoona Mountain (PA)                     31       2024     2026    1       
+   Armagh United (PA)                        791      1940     2021    0         None                                      None     None     None    0       
+   Beaver Area (PA)                          1189     1899     2023    0         Beaver (PA)                               33       2024     2026    1       
+   Blairsville (PA)                          982      1904     2020    0         Blairsville River Valley (PA)             62       2021     2026    1       
+   Blossburg North Penn (PA)                 266      1963     2021    0         None                                      None     None     None    0       
+   Boalsburg St. Joseph's Catholic Academy   54       2013     2018    0         None                                      None     None     None    0       
+   Cairnbrook Shade (PA)                     915      1924     2020    0         None                                      None     None     None    0       
+   Carmichaels (PA)                          1021     1923     2023    0         Carmichaels Mighty (PA)                   28       2024     2026    1       
+   Central Clarion [Clarion-Clarion-Limesto  39       2020     2023    0         None                                      None     None     None    0       
+   Clarion (PA)                              864      1927     2023    0         Clarion Central Clarion (PA)              38       2024     2026    1       
+   Concordville Glen Mills (PA)              473      1906     2018    0         None                                      None     None     None    0       
+   Cranberry Township North Catholic (PA)    69       2017     2022    0         None                                      None     None     None    0       
+   ... 119 more rows (see CSV)
+
+>>> mapcheck PA --commit
+
+MAPPING CHECK PA - COMMIT (Team_ID set to the ProperName ID)
+ 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_mapcheck_COMMITTED_20261112_1241.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/pa/hookstown/so  Hookstown South Side (PA)                 33573    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/pa/philadelphia  Philadelphia Dobbins Randolph (PA)        22202    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/pa/philadelphia  Philadelphia Jules E (PA)                 22877    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/pa/pittsburgh/b  Pittsburgh Bishiop Canevin Catholic (PA)  36757    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/pa/pottsville/n  Pottsville Nativity BVM (PA)              38333    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/pa/saltsburg/ki  Saltsburg Kiski School (PA)               32954    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/pa/wyalusing/wy  Wyalusing Valley (PA)                     40170    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/pa/york/york-co  York County (PA)                          31926    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/pa/aliquippa/ho  Aliquippa Hopewell (PA)                   58877    58875   Team_ID points to another name   Allegheny Clarion Valley (PA)           
+   https://www.maxpreps.com/pa/athens/athen  Athens (PA)                               59194    59162   Team_ID points to another name   Audubon St. Gabriel's Hall (PA)         
+   https://www.maxpreps.com/pa/bensalem/ben  Bensalem (PA)                             59606    59605   Team_ID points to another name   Bensalem St. Francis Voc (PA)           
+   https://www.maxpreps.com/pa/bethlehem/li  Bethlehem Liberty (PA)                    43433    59665   Team_ID points to another name   Bethlehem Moravian Catholic (PA)        
+   https://www.maxpreps.com/pa/everett/ever  Everett (PA)                              61961    61951   Team_ID points to another name   Exeter St. Cecilia (PA)                 
+   https://www.maxpreps.com/pa/jim-thorpe/j  Jim Thorpe (PA)                           63545    63544   Team_ID points to another name   Jim Thorpe Mauch Chunk Catholic (PA)    
+   https://www.maxpreps.com/pa/johnstown/bi  Johnstown Bishop McCort (PA)              9654     63555   Team_ID points to another name   Johnstown Central Catholic (PA)         
+   https://www.maxpreps.com/pa/manheim/manh  Manheim Central (PA)                      71017    64761   Team_ID points to another name   Mansfield University of Pennsylvania (PA
+   https://www.maxpreps.com/pa/millersville  Millersville Penn Manor (PA)              71963    65254   Team_ID points to another name   Millersville State Normal College JV (PA
+   https://www.maxpreps.com/pa/monongahela/  Monongahela Ringgold (PA)                 14521    65386   Team_ID points to another name   Monongahela Valley Catholic (PA)        
+   https://www.maxpreps.com/pa/mt-pleasant/  Mount Pleasant (PA)                       65582    39978   Team_ID points to another name   Mount Pleasant Ramsay (PA)              
+   https://www.maxpreps.com/pa/palmyra/palm  Palmyra (PA)                              70631    66484   Team_ID points to another name   Patrick Business Institute College (PA) 
+   ... 10 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  22       None
+
+>>> dedup PA
+
+DEDUP v4 PA - PREVIEW (nothing changed)
+ dedup_archive: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_dedup_archive_20261112_1241.csv
+ dedup_review: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_dedup_review_20261112_1241.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_dedup_summary_20261112_1241.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  PA     333097        4                    3                None 
+
+>>> review-pairs PA
+
+REVIEW-ONLY PAIRS PA - PREVIEW (nothing changed)
+ 3 pairs {'SHORT': 3} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_review_pairs_20261112_1241.csv
+
+>>> same-score-fix PA
+
+SAME-SCORE DOUBLE-BOOKINGS PA - PREVIEW (nothing changed)
+ 4599 pairs {'DROP A': 1191, 'DROP B': 1169, 'UNDECIDED': 2239} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_same_score_20261112_1245.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  2294      None   None
+
+>>> query PA pa_dump.sql
+
+QUERY pa_dump (1 result sets)
+ set 1: 333100 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_pa_dump_1_20261112_1246.csv
+
+>>> query PA pa_names.sql
+
+QUERY pa_names (1 result sets)
+ set 1: 2920 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_pa_names_1_20261112_1246.csv
+
+=== OK 2026-11-12 12:46:02

@@ -1,0 +1,21 @@
+
+>>> commit LA
+
+DEDUP v4 LA - COMMIT
+ dedup_archive: 428 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_archive_COMMITTED_20261111_0845.csv
+ dedup_review: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_review_COMMITTED_20261111_0845.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_summary_COMMITTED_20261111_0845.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  LA     104213        428                  26               98ED4243-6E46-4CD4-B32A-33A0EF02B8A5
+
+REVIEW-ONLY PAIRS LA - COMMIT
+ 26 pairs {'SHORT': 26} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_review_pairs_COMMITTED_20261111_0845.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  26        D7C440CE-4B14-428C-A892-96022D2044D1  None
+
+>>> query LA la_dump.sql
+
+QUERY la_dump (1 result sets)
+ set 1: 103762 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_la_dump_1_20261111_0845.csv
+
+=== OK 2026-11-11 08:45:51

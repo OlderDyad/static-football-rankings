@@ -1,0 +1,28 @@
+remap MO --url "https://www.maxpreps.com/mo/aurora/aurora-houn-dawgs/football/schedule/" --to "Aurora (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/kansas-city/lincoln-college-prep-blue-tigers/football/schedule/" --to "Kansas City Lincoln College Prep (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/new-madrid/new-madrid-county-central-eagles/football/schedule/" --to "New Madrid County Central (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/st-clair/st-clair-bulldogs/football/schedule/" --to "Saint Clair (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/st-louis/university-city-lions/football/schedule/" --to "University City (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/st-louis/university-city-maplewood-richmond-heights/football/schedule/" --to "Saint Louis University City-Maplewood-Richmond Heights (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/st-louis/vashon-miller-career-academy-wolverine/football/schedule/" --to "Saint Louis Vashon-Miller Career Academy (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/ste-genevieve/ste-genevieve-dragons/football/schedule/" --to "Ste. Genevieve (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/warrenton/warrenton-warriors/football/schedule/" --to "Warrenton Warren County (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/windsor/windsor-greyhounds/football/schedule/" --to "Windsor Henry County (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/kansas-city/northland-christian/football/schedule/" --to "Kansas City Northland Christian (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/paris/paris-madison-faith-walk-academy/football/schedule/" --to "Paris-Madison-Faith Walk Academy (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/st-louis/st-louis-university-junior-bills/football/schedule/" --to "Saint Louis University (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/columbia/battle-columbia-independent-spartans/football/schedule/" --to "Columbia Battle-Columbia Independent (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/kansas-city/hogan-prep-charter-rams/football/schedule/" --to "Kansas City Hogan Prep Academy (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/kansas-city/kansas-city-east-christian-academy-lions/football/schedule/" --to "Kansas City East Christian Academy (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/kirkwood/vianney-golden-griffins/football/schedule/" --to "Kirkwood St. John Vianney (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/st-louis/christian-brothers-cadets/football/schedule/" --to "Saint Louis Christian Brothers College (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/st-louis/micds-rams/football/schedule/" --to "Saint Louis Mary Institute and Country Day (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/st-charles/howell-vikings/football/schedule/" --to "Saint Charles Francis Howel (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/st-charles/howell-north-knights/football/schedule/" --to "Saint Charles Francis Howel North (MO)" --commit
+remap MO --url "https://www.maxpreps.com/mo/wentzville/timberland-t-wolves/football/schedule/" --to "Wentzville Timberland (MO)" --commit
+mapcheck MO --commit
+move-team MO --from "Columbia Battle (MO)" --to "Columbia Battle-Columbia Independent (MO)" --seasons 2022-2024 --reason "MO co-op split by year: Battle-Columbia Independent 2022-2024 (MaxPreps carried both names)" --commit
+move-team MO --from "Gallatin (MO)" --to "Gallatin-Tri-County (MO)" --seasons 2022-2026 --reason "MO co-op split by year: Gallatin-Tri-County from 2022" --commit
+move-team MO --from "Riverside Park Hill South (MO)" --to "Kansas City Park Hill South (MO)" --seasons 1998-2026 --reason "MO: Park Hill South (opened 1998) under two names" --commit
+move-team MO --from "Unionville (MO)" --to "Unionville Putnam County (MO)" --seasons 1943-2026 --reason "MO split by year: Putnam County from 1943" --commit
+round MO --reason "MO round 1: 2022/2024 MaxPreps drift (Aurora, Ste. Genevieve, Warrenton, Windsor, New Madrid, St. Clair, SLUH, University City...), same-school twins (Sedalia, Cass Midway, Rogersville, DeSoto, St. Mary's South Side)"

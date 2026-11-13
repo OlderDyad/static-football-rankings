@@ -1,0 +1,20 @@
+same-score-fix IN --commit
+consolidate IN --reason "IN round 2 (2026-11-13): same-school names, see _coop_scripts/IN_cfg.py"
+move-team IN --from "Bloomington (IN)" --to "Bloomington South (IN)" --seasons 1972-2026 --reason "IN same school, older name -> later name for 1972-2026 (2026-11-12)" --commit
+move-team IN --from "Aurora South Dearborn (IN)" --to "Aurora (IN)" --seasons 1946-1972 --ids coop_ids/IN_c3_000.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "Bedford North Lawrence (IN)" --to "Bedford (IN)" --seasons 1948-1974 --ids coop_ids/IN_c3_001.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "Bloomfield Eastern Greene (IN)" --to "Bloomfield (IN)" --seasons 1924-1942 --ids coop_ids/IN_c3_002.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "Brazil Northview (IN)" --to "Brazil (IN)" --seasons 1921-1962 --ids coop_ids/IN_c3_003.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "Fort Branch Gibson Southern (IN)" --to "Fort Branch (IN)" --seasons 1968-1973 --ids coop_ids/IN_c3_004.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "Gary Calumet (IN)" --to "Gary Calumet New Tech (IN)" --seasons 1960-2024 --ids coop_ids/IN_c3_005.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "Gary Calumet New Tech (IN)" --to "Gary Calumet (IN)" --seasons 1959-1973 --ids coop_ids/IN_c3_006.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "Hammond Central (IN)" --to "Hammond (IN)" --seasons 1923-1997 --ids coop_ids/IN_c3_007.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "Huntington North (IN)" --to "Huntington (IN)" --seasons 1924-1959 --ids coop_ids/IN_c3_008.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "New Carlisle New Prairie (IN)" --to "New Carlisle (IN)" --seasons 1955-1966 --ids coop_ids/IN_c3_009.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "North Judson (IN)" --to "North Judson-San Pierre (IN)" --seasons 1950-1962 --ids coop_ids/IN_c3_010.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "North Judson-San Pierre (IN)" --to "North Judson (IN)" --seasons 1966-1980 --ids coop_ids/IN_c3_011.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team IN --from "North Vernon Jennings County (IN)" --to "North Vernon (IN)" --seasons 1950-1959 --ids coop_ids/IN_c3_012.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup IN --commit
+review-pairs IN --commit
+same-score-fix IN
+query IN in_dump.sql

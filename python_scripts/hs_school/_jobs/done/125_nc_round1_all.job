@@ -1,0 +1,35 @@
+move-team NC --from "Wadesboro Anson (NC)" --to "Wadesboro Bowman (NC)" --seasons 1880-2026 --ids hsfha_lin_00.csv --reason "HSFHA-NC school code: game belongs to Wadesboro Bowman (NC)" --commit
+move-team NC --from "Nashville Nash Central (NC)" --to "Nashville (NC)" --seasons 1880-2026 --ids hsfha_lin_01.csv --reason "HSFHA-NC school code: game belongs to Nashville (NC)" --commit
+move-team NC --from "Burlington (NC)" --to "Burlington Walter M. Williams (NC)" --seasons 1880-2026 --ids hsfha_lin_02.csv --reason "HSFHA-NC school code: game belongs to Burlington Walter M. Williams (NC)" --commit
+move-team NC --from "Burlington Walter M. Williams (NC)" --to "Burlington (NC)" --seasons 1880-2026 --ids hsfha_lin_03.csv --reason "HSFHA-NC school code: game belongs to Burlington (NC)" --commit
+move-team NC --from "Warrenton Warren County (NC)" --to "Warrenton John Graham (NC)" --seasons 1880-2026 --ids hsfha_lin_04.csv --reason "HSFHA-NC school code: game belongs to Warrenton John Graham (NC)" --commit
+move-team NC --from "Edenton (NC)" --to "Edenton John A. Holmes (NC)" --seasons 1880-2026 --ids hsfha_lin_05.csv --reason "HSFHA-NC school code: game belongs to Edenton John A. Holmes (NC)" --commit
+move-team NC --from "Laurinburg (NC)" --to "Laurinburg Scotland (NC)" --seasons 1880-2026 --ids hsfha_lin_06.csv --reason "HSFHA-NC school code: game belongs to Laurinburg Scotland (NC)" --commit
+move-team NC --from "Wilson (NC)" --to "Wilson Coon (NC)" --seasons 1880-2026 --ids hsfha_lin_07.csv --reason "HSFHA-NC school code: game belongs to Wilson Coon (NC)" --commit
+move-team NC --from "Wilson (NC)" --to "Wilson Fike (NC)" --seasons 1880-2026 --ids hsfha_lin_08.csv --reason "HSFHA-NC school code: game belongs to Wilson Fike (NC)" --commit
+move-team NC --from "Greenville (NC)" --to "Greenville J.H. Rose (NC)" --seasons 1880-2026 --ids hsfha_lin_09.csv --reason "HSFHA-NC school code: game belongs to Greenville J.H. Rose (NC)" --commit
+move-team NC --from "Greenville (NC)" --to "Greenville (SC)" --seasons 1880-2026 --ids hsfha_lin_10.csv --reason "HSFHA-NC school code: game belongs to Greenville (SC)" --commit
+move-team NC --from "Winston-Salem (NC)" --to "Winston-Salem R.J. Reynolds (NC)" --seasons 1880-2026 --ids hsfha_lin_11.csv --reason "HSFHA-NC school code: game belongs to Winston-Salem R.J. Reynolds (NC)" --commit
+move-team NC --from "Kinston (NC)" --to "Kinston Grainger (NC)" --seasons 1880-1969 --reason "Lineage split (consolidation, HSFHA-NC): Kinston Grainger (NC) era" --commit
+move-team NC --from "Marshall Madison (NC)" --to "Marshall (NC)" --seasons 1880-1972 --reason "Lineage split (consolidation, HSFHA-NC): Marshall (NC) era" --commit
+move-team NC --from "Ahoskie Hertford County (NC)" --to "Ahoskie (NC)" --seasons 1880-1987 --reason "Lineage split (consolidation, HSFHA-NC): Ahoskie (NC) era" --commit
+move-team NC --from "Sylva Smoky Mountain (NC)" --to "Sylva-Webster (NC)" --seasons 1880-1987 --reason "Lineage split (consolidation, HSFHA-NC): Sylva-Webster (NC) era" --commit
+move-team NC --from "Candler Enka (NC)" --to "Candler (NC)" --seasons 1880-1954 --reason "Lineage split (consolidation, HSFHA-NC): Candler (NC) era" --commit
+remap NC --url "https://www.maxpreps.com/nc/asheville/tc-roberson-rams/football/schedule/" --to "Asheville T.C. Roberson (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/hickory/hickory-christian-academy-knights/football/schedule/" --to "Hickory Christian Academy (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/kannapolis/al-brown-wonders/football/schedule/" --to "Kannapolis A.L. Brown (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/mooresboro/thomas-jefferson-gryphons/football/schedule/" --to "Mooresboro Thomas Jefferson Classical Academy (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/huntersville/lake-norman-charter-knights/football/schedule/" --to "Huntersville Lake Norman Charter (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/mooresville/pine-lake-preparatory-pride/football/schedule/" --to "Mooresville Pine Lake Prep (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/oxford/jf-webb-warriors/football/schedule/" --to "Oxford J.F. Webb (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/rutherfordton/r-s-central-hilltoppers/football/schedule/" --to "Rutherfordton-Spindale Central (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/williamston/bear-grass-charter-bears/football/schedule/" --to "Williamston Bear Grass Charter School (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/wilmington/ea-laney-buccaneers/football/schedule/" --to "Wilmington E.A. Laney (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/wilson/hunt-warriors/football/schedule/" --to "Wilson James B. Hunt (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/winston-salem/rj-reynolds-demons/football/schedule/" --to "Winston-Salem R.J. Reynolds (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/winston-salem/winston-salem-preparatory-academy-phoenix/football/schedule/" --to "Winston-Salem Prep (NC)" --commit
+remap NC --url "https://www.maxpreps.com/nc/winston-salem/mount-tabor-spartans/football/schedule/" --to "Winston-Salem Mount Tabor (NC)" --commit
+mapcheck NC --commit
+consolidate NC --reason "NC round 1: HSFHA-NC school-code match - 2024 MaxPreps short names, same-school variants, renames to latest name (Vance->Chambers, Wake Forest-Rolesville->Wake Forest, Boyden->Salisbury, Hobgood Charter), Mount Tabor/Mount Zion spelled out"
+dedup NC
+review-pairs NC

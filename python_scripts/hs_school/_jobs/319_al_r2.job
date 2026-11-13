@@ -1,0 +1,8 @@
+same-score-fix AL --commit
+consolidate AL --reason "AL round 2 (2026-11-13): same-school names, see _coop_scripts/AL_cfg.py"
+move-team AL --from "Birmingham Shades Valley (AL)" --to "Shades Cahaba (AL)" --seasons 1921-1944 --ids coop_ids/AL_c3_000.csv --reason "AL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team AL --from "Troy (AL)" --to "Troy Charles Henderson (AL)" --seasons 1924-1938 --ids coop_ids/AL_c3_001.csv --reason "AL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup AL --commit
+review-pairs AL --commit
+same-score-fix AL
+query AL al_dump.sql

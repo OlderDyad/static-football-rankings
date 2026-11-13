@@ -1,0 +1,3 @@
+move-team NE --from "North Platte St. Patrick's (NE)" --to "O'Neill Saint Mary's (NE)" --seasons 2000-2026 --ids NE_npsp_late_to_onsm_ids.csv --reason "NP St. Patrick's 2000+ games vs north/northeast NE schools are O'Neill St. Mary's (old MaxPreps layer mix-up)" --commit
+dedup NE
+report NE double-booked

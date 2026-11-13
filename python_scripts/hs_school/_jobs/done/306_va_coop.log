@@ -1,0 +1,717 @@
+
+>>> same-score-fix VA --commit
+ 5777 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS VA - COMMIT
+ 2817 pairs {'DROP A': 24, 'DROP B': 22, 'UNDECIDED': 2771} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_same_score_COMMITTED_20261112_1630.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  46        957C480E-16D2-4F5F-A61F-D6D513B41CA9  None
+
+>>> consolidate VA --reason "VA co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/VA_cfg.py"
+Consolidating VA from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\VA_Alias_Rules.csv
+
+[stderr]
+2026-11-12 16:30:25,368 - INFO - Starting consolidation for state: (VA) using staging table method.
+2026-11-12 16:30:25,379 - WARNING - WARNING: 466 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 16:30:25,379 - WARNING -   'Abingdon (VA)' -> 'Abingdon (VA)' (no change)
+2026-11-12 16:30:25,379 - WARNING -   'Aldie John Champe (VA)' -> 'Aldie John Champe (VA)' (no change)
+2026-11-12 16:30:25,379 - WARNING -   'Alexandria Bishop Ireton (VA)' -> 'Alexandria Bishop Ireton (VA)' (no change)
+2026-11-12 16:30:25,379 - WARNING -   'Alexandria Edison (VA)' -> 'Alexandria Edison (VA)' (no change)
+2026-11-12 16:30:25,379 - WARNING -   'Alexandria Episcopal (VA)' -> 'Alexandria Episcopal (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria Fort Hunt (VA)' -> 'Alexandria Fort Hunt (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria Francis Hammond (VA)' -> 'Alexandria Francis Hammond (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria George Washington (VA)' -> 'Alexandria George Washington (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria Groveton (VA)' -> 'Alexandria Groveton (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria Hayfield (VA)' -> 'Alexandria Hayfield (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria Jefferson (VA)' -> 'Alexandria Jefferson (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria Mount Vernon (VA)' -> 'Alexandria Mount Vernon (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria St.Stephen's & St. Agnes (VA)' -> 'Alexandria St.Stephen's & St. Agnes (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria Thomas Jefferson Science & Technology (VA)' -> 'Alexandria Thomas Jefferson Science & Technology (VA)' (no change)
+2026-11-12 16:30:25,380 - WARNING -   'Alexandria West Potomac (VA)' -> 'Alexandria West Potomac (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Altavista Combined School (VA)' -> 'Altavista Combined School (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Amelia Court House Amelia County (VA)' -> 'Amelia Court House Amelia County (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Amherst County (VA)' -> 'Amherst County (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Annandale (VA)' -> 'Annandale (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Appalachia (VA)' -> 'Appalachia (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Appomattox County (VA)' -> 'Appomattox County (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Apprentice 150 lb (VA)' -> 'Apprentice 150 lb (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Arlington Bishop O'Connell (VA)' -> 'Arlington Bishop O'Connell (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Arlington Wakefield (VA)' -> 'Arlington Wakefield (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Arlington Washington & Lee (VA)' -> 'Arlington Washington & Lee (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Arlington Washington-Liberty (VA)' -> 'Arlington Washington-Liberty (VA)' (no change)
+2026-11-12 16:30:25,381 - WARNING -   'Arlington Yorktown (VA)' -> 'Arlington Yorktown (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Ashburn Briar Woods (VA)' -> 'Ashburn Briar Woods (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Ashburn Broad Run (VA)' -> 'Ashburn Broad Run (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Ashburn Stone Bridge (VA)' -> 'Ashburn Stone Bridge (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Ashland Henry Clay (VA)' -> 'Ashland Henry Clay (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Ashland Patrick Henry (VA)' -> 'Ashland Patrick Henry (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Augusta Military (VA)' -> 'Augusta Military (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Bassett (VA)' -> 'Bassett (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Bealeton Liberty (VA)' -> 'Bealeton Liberty (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Beaumont Industrial School (VA)' -> 'Beaumont Industrial School (VA)' (no change)
+2026-11-12 16:30:25,382 - WARNING -   'Bedford (VA)' -> 'Bedford (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Bedford Liberty (VA)' -> 'Bedford Liberty (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Berryville Clarke County (VA)' -> 'Berryville Clarke County (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Big Stone Gap (VA)' -> 'Big Stone Gap (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Big Stone Gap Powell Valley (VA)' -> 'Big Stone Gap Powell Valley (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Blacksburg (VA)' -> 'Blacksburg (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Blackstone (VA)' -> 'Blackstone (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Blackstone Kenston Forest (VA)' -> 'Blackstone Kenston Forest (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Blackstone Military Academy (VA)' -> 'Blackstone Military Academy (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Bland-Rocky Gap (VA)' -> 'Bland-Rocky Gap (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Bluefield Graham (VA)' -> 'Bluefield Graham (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Bridgewater Turner Ashby (VA)' -> 'Bridgewater Turner Ashby (VA)' (no change)
+2026-11-12 16:30:25,383 - WARNING -   'Bristol John S. Battle (VA)' -> 'Bristol John S. Battle (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Bristol Virginia (VA)' -> 'Bristol Virginia (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Broadway (VA)' -> 'Broadway (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Buchanan James River (VA)' -> 'Buchanan James River (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Buckingham (VA)' -> 'Buckingham (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Buena Vista McCluer (VA)' -> 'Buena Vista McCluer (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Burke Lake Braddock (VA)' -> 'Burke Lake Braddock (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Cape Charles (VA)' -> 'Cape Charles (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Castlewood (VA)' -> 'Castlewood (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Chantilly (VA)' -> 'Chantilly (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Chantilly St. Paul VI (VA)' -> 'Chantilly St. Paul VI (VA)' (no change)
+2026-11-12 16:30:25,384 - WARNING -   'Chantilly Westfield (VA)' -> 'Chantilly Westfield (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Charles City (VA)' -> 'Charles City (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Charlotte Court House Randolph-Henry (VA)' -> 'Charlotte Court House Randolph-Henry (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Charlottesville (VA)' -> 'Charlottesville (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Charlottesville Albemarle (VA)' -> 'Charlottesville Albemarle (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Charlottesville Covenant (VA)' -> 'Charlottesville Covenant (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Charlottesville Miller School of Albemarle (VA)' -> 'Charlottesville Miller School of Albemarle (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Charlottesville Monticello (VA)' -> 'Charlottesville Monticello (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Charlottesville St. Anne's-Belfield (VA)' -> 'Charlottesville St. Anne's-Belfield (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Charlottesville St.Anne's-Belfield (VA)' -> 'Charlottesville St.Anne's-Belfield (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Chatham (VA)' -> 'Chatham (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Chatham Hargrave Military Academy (VA)' -> 'Chatham Hargrave Military Academy (VA)' (no change)
+2026-11-12 16:30:25,385 - WARNING -   'Chesapeake Atlantic Shores Christian (VA)' -> 'Chesapeake Atlantic Shores Christian (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake Deep Creek (VA)' -> 'Chesapeake Deep Creek (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake George Washington Carver (VA)' -> 'Chesapeake George Washington Carver (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake Grassfield (VA)' -> 'Chesapeake Grassfield (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake Great Bridge (VA)' -> 'Chesapeake Great Bridge (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake Greenbrier Christian Academy (VA)' -> 'Chesapeake Greenbrier Christian Academy (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake Hickory (VA)' -> 'Chesapeake Hickory (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake Indian River (VA)' -> 'Chesapeake Indian River (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake Oscar Smith (VA)' -> 'Chesapeake Oscar Smith (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake Portlock (VA)' -> 'Chesapeake Portlock (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chesapeake Western Branch (VA)' -> 'Chesapeake Western Branch (VA)' (no change)
+2026-11-12 16:30:25,386 - WARNING -   'Chester Life Christian Academy (VA)' -> 'Chester Life Christian Academy (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Chester Thomas Dale (VA)' -> 'Chester Thomas Dale (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Chesterfield Bird (VA)' -> 'Chesterfield Bird (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Chesterfield James River (VA)' -> 'Chesterfield James River (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Chesterfield Matoaca (VA)' -> 'Chesterfield Matoaca (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Chilhowie (VA)' -> 'Chilhowie (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Chincoteague (VA)' -> 'Chincoteague (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Christchurch School (VA)' -> 'Christchurch School (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Christiansburg (VA)' -> 'Christiansburg (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Clearbrook Stonewall Jackson (VA)' -> 'Clearbrook Stonewall Jackson (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Clifton Centreville (VA)' -> 'Clifton Centreville (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Clifton Forge (VA)' -> 'Clifton Forge (VA)' (no change)
+2026-11-12 16:30:25,387 - WARNING -   'Clinchport Rye Cove (VA)' -> 'Clinchport Rye Cove (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Clintwood (VA)' -> 'Clintwood (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Clintwood Ridgeview (VA)' -> 'Clintwood Ridgeview (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Coeburn (VA)' -> 'Coeburn (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Coeburn Eastside [Coeburn-Saint Paul] (VA)' -> 'Coeburn Eastside [Coeburn-Saint Paul] (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Colonial Beach (VA)' -> 'Colonial Beach (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Colonial Heights (VA)' -> 'Colonial Heights (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Courtland Southampton (VA)' -> 'Courtland Southampton (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Courtland Southampton Academy (VA)' -> 'Courtland Southampton Academy (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Covington (VA)' -> 'Covington (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Covington Alleghany (VA)' -> 'Covington Alleghany (VA)' (no change)
+2026-11-12 16:30:25,388 - WARNING -   'Crewe (VA)' -> 'Crewe (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Crozet Western Albemarle (VA)' -> 'Crozet Western Albemarle (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Culpeper County (VA)' -> 'Culpeper County (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Culpeper Eastern View (VA)' -> 'Culpeper Eastern View (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Cumberland (VA)' -> 'Cumberland (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Daleville Lord Botetourt (VA)' -> 'Daleville Lord Botetourt (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Damascus (VA)' -> 'Damascus (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Damascus Holston (VA)' -> 'Damascus Holston (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Danville George Washington (VA)' -> 'Danville George Washington (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Danville School for Boys (VA)' -> 'Danville School for Boys (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Danville Schoolfield (VA)' -> 'Danville Schoolfield (VA)' (no change)
+2026-11-12 16:30:25,389 - WARNING -   'Dendron Surry County (VA)' -> 'Dendron Surry County (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Dinwiddie (VA)' -> 'Dinwiddie (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Dry Fork Tunstall (VA)' -> 'Dry Fork Tunstall (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Dublin (VA)' -> 'Dublin (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Dublin Pulaski County (VA)' -> 'Dublin Pulaski County (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Dumfries Potomac (VA)' -> 'Dumfries Potomac (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'East Stone Gap (VA)' -> 'East Stone Gap (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Eastville Northampton (VA)' -> 'Eastville Northampton (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Elkton (VA)' -> 'Elkton (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Elkton East Rockingham (VA)' -> 'Elkton East Rockingham (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Elliston Eastern Montgomery (VA)' -> 'Elliston Eastern Montgomery (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Emory & Henry College Frosh (VA)' -> 'Emory & Henry College Frosh (VA)' (no change)
+2026-11-12 16:30:25,390 - WARNING -   'Emporia (VA)' -> 'Emporia (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Emporia Greensville County (VA)' -> 'Emporia Greensville County (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Ewing Thomas Walker (VA)' -> 'Ewing Thomas Walker (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Exmore Broadwater Academy (VA)' -> 'Exmore Broadwater Academy (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Fairfax (VA)' -> 'Fairfax (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Fairfax Robinson (VA)' -> 'Fairfax Robinson (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Fairfax Woodson (VA)' -> 'Fairfax Woodson (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Fairfield Rockbridge (VA)' -> 'Fairfield Rockbridge (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Falls Church (VA)' -> 'Falls Church (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Falls Church Congressional (VA)' -> 'Falls Church Congressional (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Falls Church George C. Marshall (VA)' -> 'Falls Church George C. Marshall (VA)' (no change)
+2026-11-12 16:30:25,391 - WARNING -   'Falls Church Justice (VA)' -> 'Falls Church Justice (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Falls Church Marshall (VA)' -> 'Falls Church Marshall (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Falls Church Mason (VA)' -> 'Falls Church Mason (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Falmouth Stafford (VA)' -> 'Falmouth Stafford (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Farmville (VA)' -> 'Farmville (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Farmville Fuqua (VA)' -> 'Farmville Fuqua (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Farmville Prince Edward County (VA)' -> 'Farmville Prince Edward County (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Fieldale-Collinsville (VA)' -> 'Fieldale-Collinsville (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Fishersville Wilson Memorial (VA)' -> 'Fishersville Wilson Memorial (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Floyd County (VA)' -> 'Floyd County (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Fort Defiance (VA)' -> 'Fort Defiance (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Fort Defiance Augusta Military Academy (VA)' -> 'Fort Defiance Augusta Military Academy (VA)' (no change)
+2026-11-12 16:30:25,392 - WARNING -   'Franktown (VA)' -> 'Franktown (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Fredericksburg (VA)' -> 'Fredericksburg (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Fredericksburg Chancellor (VA)' -> 'Fredericksburg Chancellor (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Fredericksburg Christian (VA)' -> 'Fredericksburg Christian (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Fredericksburg James Monroe (VA)' -> 'Fredericksburg James Monroe (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Fredericksburg Riverbend (VA)' -> 'Fredericksburg Riverbend (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Fredericksburg St. Michael the Archangel (VA)' -> 'Fredericksburg St. Michael the Archangel (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Fries (VA)' -> 'Fries (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Front Royal Mosby Academy (VA)' -> 'Front Royal Mosby Academy (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Front Royal Randolph-Macon Academy (VA)' -> 'Front Royal Randolph-Macon Academy (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Front Royal Randolph-Macon Academy JV (VA)' -> 'Front Royal Randolph-Macon Academy JV (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Front Royal Skyline (VA)' -> 'Front Royal Skyline (VA)' (no change)
+2026-11-12 16:30:25,393 - WARNING -   'Front Royal Warren County (VA)' -> 'Front Royal Warren County (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Galax (VA)' -> 'Galax (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Gate City (VA)' -> 'Gate City (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Glade Spring (VA)' -> 'Glade Spring (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Glade Spring Patrick Henry (VA)' -> 'Glade Spring Patrick Henry (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Glen Allen (VA)' -> 'Glen Allen (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Glen Allen Deep Run (VA)' -> 'Glen Allen Deep Run (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Gloucester (VA)' -> 'Gloucester (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Goochland (VA)' -> 'Goochland (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Gretna (VA)' -> 'Gretna (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Grundy (VA)' -> 'Grundy (VA)' (no change)
+2026-11-12 16:30:25,394 - WARNING -   'Hampton (VA)' -> 'Hampton (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Hampton Bethel (VA)' -> 'Hampton Bethel (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Hampton Kecoughtan (VA)' -> 'Hampton Kecoughtan (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Hampton Phoebus (VA)' -> 'Hampton Phoebus (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Harrisonburg (VA)' -> 'Harrisonburg (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Haymarket Battlefield (VA)' -> 'Haymarket Battlefield (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Haysi (VA)' -> 'Haysi (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Heathsville Northumberland (VA)' -> 'Heathsville Northumberland (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Henrico J.R. Tucker (VA)' -> 'Henrico J.R. Tucker (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Herndon (VA)' -> 'Herndon (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Highland Springs (VA)' -> 'Highland Springs (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Hillsville (VA)' -> 'Hillsville (VA)' (no change)
+2026-11-12 16:30:25,395 - WARNING -   'Hillsville Carroll County (VA)' -> 'Hillsville Carroll County (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Honaker (VA)' -> 'Honaker (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Hopewell (VA)' -> 'Hopewell (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Hot Springs Bath County (VA)' -> 'Hot Springs Bath County (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Hurley (VA)' -> 'Hurley (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Independence (VA)' -> 'Independence (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Independence Grayson County (VA)' -> 'Independence Grayson County (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Isle of Wight Academy (VA)' -> 'Isle of Wight Academy (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Jefferson Forest (VA)' -> 'Jefferson Forest (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Jonesville (VA)' -> 'Jonesville (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Jonesville Lee (VA)' -> 'Jonesville Lee (VA)' (no change)
+2026-11-12 16:30:25,396 - WARNING -   'Kenbridge (VA)' -> 'Kenbridge (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'King & Queen Central (VA)' -> 'King & Queen Central (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'King George (VA)' -> 'King George (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'King William (VA)' -> 'King William (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'Lancaster (VA)' -> 'Lancaster (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'Lawrenceville Brunswick (VA)' -> 'Lawrenceville Brunswick (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'Lawrenceville Brunswick Academy (VA)' -> 'Lawrenceville Brunswick Academy (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'Lebanon (VA)' -> 'Lebanon (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'Leesburg Heritage (VA)' -> 'Leesburg Heritage (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'Leesburg Loudoun County (VA)' -> 'Leesburg Loudoun County (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'Leesburg Tuscarora (VA)' -> 'Leesburg Tuscarora (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'Lexington (VA)' -> 'Lexington (VA)' (no change)
+2026-11-12 16:30:25,397 - WARNING -   'Lexington Rockbridge County (VA)' -> 'Lexington Rockbridge County (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Lorton South County (VA)' -> 'Lorton South County (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Lovingston Nelson County (VA)' -> 'Lovingston Nelson County (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Low Moor Central (VA)' -> 'Low Moor Central (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Luray (VA)' -> 'Luray (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Lynchburg Brookville (VA)' -> 'Lynchburg Brookville (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Lynchburg Glass (VA)' -> 'Lynchburg Glass (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Lynchburg Heritage (VA)' -> 'Lynchburg Heritage (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Lynchburg Holy Cross Regional Catholic (VA)' -> 'Lynchburg Holy Cross Regional Catholic (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Lynchburg Liberty Christian (VA)' -> 'Lynchburg Liberty Christian (VA)' (no change)
+2026-11-12 16:30:25,398 - WARNING -   'Lynchburg Virginia Episcopal School (VA)' -> 'Lynchburg Virginia Episcopal School (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Lynchburg Virginia Episcopal School JV (VA)' -> 'Lynchburg Virginia Episcopal School JV (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Madison County (VA)' -> 'Madison County (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Manassas Charles J. Colgan (VA)' -> 'Manassas Charles J. Colgan (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Manassas Northern Virginia HomeSchool (VA)' -> 'Manassas Northern Virginia HomeSchool (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Manassas Osbourn (VA)' -> 'Manassas Osbourn (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Manassas Osbourn Park (VA)' -> 'Manassas Osbourn Park (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Manassas Park (VA)' -> 'Manassas Park (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Manassas State Voc (VA)' -> 'Manassas State Voc (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Manassas Stonewall Jackson (VA)' -> 'Manassas Stonewall Jackson (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Marion (VA)' -> 'Marion (VA)' (no change)
+2026-11-12 16:30:25,399 - WARNING -   'Martinsville (VA)' -> 'Martinsville (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'Martinsville Laurel Park (VA)' -> 'Martinsville Laurel Park (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'Mathews (VA)' -> 'Mathews (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'Max Meadows Fort Chiswell (VA)' -> 'Max Meadows Fort Chiswell (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'McGuire's Prep School (VA)' -> 'McGuire's Prep School (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'McLean (VA)' -> 'McLean (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'McLean Langley (VA)' -> 'McLean Langley (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'McLean Potomac School (VA)' -> 'McLean Potomac School (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'Meadowview (VA)' -> 'Meadowview (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'Mechanicsville Atlee (VA)' -> 'Mechanicsville Atlee (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'Mechanicsville Hanover (VA)' -> 'Mechanicsville Hanover (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'Mechanicsville Lee-Davis (VA)' -> 'Mechanicsville Lee-Davis (VA)' (no change)
+2026-11-12 16:30:25,400 - WARNING -   'Midlothian (VA)' -> 'Midlothian (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Midlothian Clover Hill (VA)' -> 'Midlothian Clover Hill (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Midlothian Cosby (VA)' -> 'Midlothian Cosby (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Midlothian James River (VA)' -> 'Midlothian James River (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Midlothian Manchester (VA)' -> 'Midlothian Manchester (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Milford Caroline (VA)' -> 'Milford Caroline (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Mineral Louisa County (VA)' -> 'Mineral Louisa County (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Moneta Smith Mountain Lake Christian Academy (VA)' -> 'Moneta Smith Mountain Lake Christian Academy (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Moneta Staunton River (VA)' -> 'Moneta Staunton River (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Montross Washington & Lee (VA)' -> 'Montross Washington & Lee (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Mount Jackson Stonewall Jackson (VA)' -> 'Mount Jackson Stonewall Jackson (VA)' (no change)
+2026-11-12 16:30:25,401 - WARNING -   'Nansemond-Suffolk Academy (VA)' -> 'Nansemond-Suffolk Academy (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Narrows (VA)' -> 'Narrows (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Naruna Campbell (VA)' -> 'Naruna Campbell (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Natural Bridge Boys Camp (VA)' -> 'Natural Bridge Boys Camp (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Natural Bridge Station (VA)' -> 'Natural Bridge Station (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'New Castle Craig County (VA)' -> 'New Castle Craig County (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'New Kent (VA)' -> 'New Kent (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Newport News (VA)' -> 'Newport News (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Newport News Apprentices (VA)' -> 'Newport News Apprentices (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Newport News Denbigh (VA)' -> 'Newport News Denbigh (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Newport News Hampton Roads Academy (VA)' -> 'Newport News Hampton Roads Academy (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Newport News Heritage (VA)' -> 'Newport News Heritage (VA)' (no change)
+2026-11-12 16:30:25,402 - WARNING -   'Newport News Homer L. Ferguson (VA)' -> 'Newport News Homer L. Ferguson (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Newport News Menchville (VA)' -> 'Newport News Menchville (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Newport News Warwick (VA)' -> 'Newport News Warwick (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Newport News Woodside (VA)' -> 'Newport News Woodside (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Nickelsville Twin Springs (VA)' -> 'Nickelsville Twin Springs (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Nokesville Brentsville District (VA)' -> 'Nokesville Brentsville District (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Nokesville Kettle Run (VA)' -> 'Nokesville Kettle Run (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Nokesville Patriot (VA)' -> 'Nokesville Patriot (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Nora Ervinton (VA)' -> 'Nora Ervinton (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Norfolk Academy (VA)' -> 'Norfolk Academy (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Norfolk Christian (VA)' -> 'Norfolk Christian (VA)' (no change)
+2026-11-12 16:30:25,403 - WARNING -   'Norfolk Douglas MacArthur Academy (VA)' -> 'Norfolk Douglas MacArthur Academy (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Norfolk Granby (VA)' -> 'Norfolk Granby (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Norfolk Lake Taylor (VA)' -> 'Norfolk Lake Taylor (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Norfolk Maury (VA)' -> 'Norfolk Maury (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Norfolk Norview (VA)' -> 'Norfolk Norview (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Norfolk St. Mary Academy (VA)' -> 'Norfolk St. Mary Academy (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Norfolk Washington (VA)' -> 'Norfolk Washington (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'North Stafford (VA)' -> 'North Stafford (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Norton Burton (VA)' -> 'Norton Burton (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Nottoway (VA)' -> 'Nottoway (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Oak Hall Arcadia (VA)' -> 'Oak Hall Arcadia (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Oakton Flint Hill (VA)' -> 'Oakton Flint Hill (VA)' (no change)
+2026-11-12 16:30:25,404 - WARNING -   'Oakwood Garden (VA)' -> 'Oakwood Garden (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Onley Nandua (VA)' -> 'Onley Nandua (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Orange County (VA)' -> 'Orange County (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Palmyra Fluvanna County (VA)' -> 'Palmyra Fluvanna County (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Park View-Sterling (VA)' -> 'Park View-Sterling (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Patrick Henry-Ashland (VA)' -> 'Patrick Henry-Ashland (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Patrick Henry-Glade Spring (VA)' -> 'Patrick Henry-Glade Spring (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Pearisburg (VA)' -> 'Pearisburg (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Pearisburg Giles (VA)' -> 'Pearisburg Giles (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Pembroke (VA)' -> 'Pembroke (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Penn Laird Montevideo (VA)' -> 'Penn Laird Montevideo (VA)' (no change)
+2026-11-12 16:30:25,405 - WARNING -   'Penn Laird Spotswood (VA)' -> 'Penn Laird Spotswood (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Pennington Gap Pennington (VA)' -> 'Pennington Gap Pennington (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Petersburg (VA)' -> 'Petersburg (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Pilgrims Knob Twin Valley (VA)' -> 'Pilgrims Knob Twin Valley (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Pocahontas (VA)' -> 'Pocahontas (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Poquoson (VA)' -> 'Poquoson (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Portsmouth Christian (VA)' -> 'Portsmouth Christian (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Portsmouth Churchland (VA)' -> 'Portsmouth Churchland (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Portsmouth Cradock (VA)' -> 'Portsmouth Cradock (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Portsmouth Manor (VA)' -> 'Portsmouth Manor (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Portsmouth Norcom (VA)' -> 'Portsmouth Norcom (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Portsmouth Wilson (VA)' -> 'Portsmouth Wilson (VA)' (no change)
+2026-11-12 16:30:25,406 - WARNING -   'Pound (VA)' -> 'Pound (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Powhatan (VA)' -> 'Powhatan (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Powhatan Blessed Sacrament-Huguenot (VA)' -> 'Powhatan Blessed Sacrament-Huguenot (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Prince George (VA)' -> 'Prince George (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Pulaski (VA)' -> 'Pulaski (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Pulaski All Town Team (VA)' -> 'Pulaski All Town Team (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Purcellville Loudoun Valley (VA)' -> 'Purcellville Loudoun Valley (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Purcellville Woodgrove (VA)' -> 'Purcellville Woodgrove (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Quantico (VA)' -> 'Quantico (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Quicksburg Stonewall Jackson (VA)' -> 'Quicksburg Stonewall Jackson (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Radford (VA)' -> 'Radford (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Randolph-Macon College (VA)' -> 'Randolph-Macon College (VA)' (no change)
+2026-11-12 16:30:25,407 - WARNING -   'Reston South Lakes (VA)' -> 'Reston South Lakes (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richlands (VA)' -> 'Richlands (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Armstrong (VA)' -> 'Richmond Armstrong (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Armstrong-Kennedy (VA)' -> 'Richmond Armstrong-Kennedy (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Benedictine (VA)' -> 'Richmond Benedictine (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Central Virginia Disciples HomeSchool (VA)' -> 'Richmond Central Virginia Disciples HomeSchool (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Collegiate (VA)' -> 'Richmond Collegiate (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Freeman (VA)' -> 'Richmond Freeman (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Godwin (VA)' -> 'Richmond Godwin (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Henrico (VA)' -> 'Richmond Henrico (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Hermitage (VA)' -> 'Richmond Hermitage (VA)' (no change)
+2026-11-12 16:30:25,408 - WARNING -   'Richmond Huguenot (VA)' -> 'Richmond Huguenot (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond Jefferson JV (VA)' -> 'Richmond Jefferson JV (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond John F. Kennedy (VA)' -> 'Richmond John F. Kennedy (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond Kennedy (VA)' -> 'Richmond Kennedy (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond Maggie L. Walker (VA)' -> 'Richmond Maggie L. Walker (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond Marshall (VA)' -> 'Richmond Marshall (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond McGuire's University School (VA)' -> 'Richmond McGuire's University School (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond Meadowbrook (VA)' -> 'Richmond Meadowbrook (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond Monacan (VA)' -> 'Richmond Monacan (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond St. Christopher's (VA)' -> 'Richmond St. Christopher's (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond Thomas Jefferson (VA)' -> 'Richmond Thomas Jefferson (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond Trinity Episcopal (VA)' -> 'Richmond Trinity Episcopal (VA)' (no change)
+2026-11-12 16:30:25,409 - WARNING -   'Richmond Varina (VA)' -> 'Richmond Varina (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Richmond Wythe (VA)' -> 'Richmond Wythe (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Ridgeway Drewry Mason (VA)' -> 'Ridgeway Drewry Mason (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Ridgeway Magna Vista (VA)' -> 'Ridgeway Magna Vista (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Riner Auburn (VA)' -> 'Riner Auburn (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Ringgold Dan River (VA)' -> 'Ringgold Dan River (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Roanoke Catholic (VA)' -> 'Roanoke Catholic (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Roanoke Cave Spring (VA)' -> 'Roanoke Cave Spring (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Roanoke Fleming (VA)' -> 'Roanoke Fleming (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Roanoke Henry (VA)' -> 'Roanoke Henry (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Roanoke Hidden Valley (VA)' -> 'Roanoke Hidden Valley (VA)' (no change)
+2026-11-12 16:30:25,410 - WARNING -   'Roanoke Jefferson (VA)' -> 'Roanoke Jefferson (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Roanoke North Cross (VA)' -> 'Roanoke North Cross (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Roanoke Northside (VA)' -> 'Roanoke Northside (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Rocky Mount Franklin County (VA)' -> 'Rocky Mount Franklin County (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Rural Retreat (VA)' -> 'Rural Retreat (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Rustburg (VA)' -> 'Rustburg (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Salem (VA)' -> 'Salem (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Salem Andrew Lewis (VA)' -> 'Salem Andrew Lewis (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Salem Glenvar (VA)' -> 'Salem Glenvar (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Saltville Northwood (VA)' -> 'Saltville Northwood (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Saltville R.B. Worthy (VA)' -> 'Saltville R.B. Worthy (VA)' (no change)
+2026-11-12 16:30:25,411 - WARNING -   'Saltville Rich Valley (VA)' -> 'Saltville Rich Valley (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'Saluda Middlesex (VA)' -> 'Saluda Middlesex (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'Shawsville (VA)' -> 'Shawsville (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'Shenandoah (VA)' -> 'Shenandoah (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'Shenandoah Collegiate (VA)' -> 'Shenandoah Collegiate (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'Shenandoah Page County (VA)' -> 'Shenandoah Page County (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'Skipwith Bluestone (VA)' -> 'Skipwith Bluestone (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'Smithfield (VA)' -> 'Smithfield (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'South Boston C. H. Friend (VA)' -> 'South Boston C. H. Friend (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'South Boston Halifax County (VA)' -> 'South Boston Halifax County (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'South Hill Park View (VA)' -> 'South Hill Park View (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'South Riding Freedom (VA)' -> 'South Riding Freedom (VA)' (no change)
+2026-11-12 16:30:25,412 - WARNING -   'Spotsylvania (VA)' -> 'Spotsylvania (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'Spotsylvania Courtland (VA)' -> 'Spotsylvania Courtland (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'Spotsylvania Massaponax (VA)' -> 'Spotsylvania Massaponax (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'Springfield The St. James Performance Academy Strivers (VA)' -> 'Springfield The St. James Performance Academy Strivers (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'St. Paul (VA)' -> 'St. Paul (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'Stafford Brooke Point (VA)' -> 'Stafford Brooke Point (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'Stafford Colonial Forge (VA)' -> 'Stafford Colonial Forge (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'Stafford Mountain View (VA)' -> 'Stafford Mountain View (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'Stanardsville Monroe (VA)' -> 'Stanardsville Monroe (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'Staunton Riverheads (VA)' -> 'Staunton Riverheads (VA)' (no change)
+2026-11-12 16:30:25,413 - WARNING -   'Stephens City Sherando (VA)' -> 'Stephens City Sherando (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Sterling Dominion (VA)' -> 'Sterling Dominion (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Sterling Potomac Falls (VA)' -> 'Sterling Potomac Falls (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Stonewall Jackson-Quicksburg (VA)' -> 'Stonewall Jackson-Quicksburg (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Strasburg (VA)' -> 'Strasburg (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Stuart Patrick County (VA)' -> 'Stuart Patrick County (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Stuarts Draft (VA)' -> 'Stuarts Draft (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Suffolk (VA)' -> 'Suffolk (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Suffolk Forest Glen (VA)' -> 'Suffolk Forest Glen (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Suffolk John Yeates (VA)' -> 'Suffolk John Yeates (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Suffolk Kennedy (VA)' -> 'Suffolk Kennedy (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Suffolk King's Fork (VA)' -> 'Suffolk King's Fork (VA)' (no change)
+2026-11-12 16:30:25,414 - WARNING -   'Suffolk Lakeland (VA)' -> 'Suffolk Lakeland (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Suffolk Nansemond River (VA)' -> 'Suffolk Nansemond River (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Sussex Central (VA)' -> 'Sussex Central (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Swoope Buffalo Gap (VA)' -> 'Swoope Buffalo Gap (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Tappahannock (VA)' -> 'Tappahannock (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Tappahannock Essex (VA)' -> 'Tappahannock Essex (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Tazewell (VA)' -> 'Tazewell (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Triangular Mountain Institute (VA)' -> 'Triangular Mountain Institute (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Union [Appalachia-Powell Valley] (VA)' -> 'Union [Appalachia-Powell Valley] (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Victoria (VA)' -> 'Victoria (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Victoria Lunenburg Central (VA)' -> 'Victoria Lunenburg Central (VA)' (no change)
+2026-11-12 16:30:25,415 - WARNING -   'Vienna Madison (VA)' -> 'Vienna Madison (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Vienna Oakton (VA)' -> 'Vienna Oakton (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Vinton Byrd (VA)' -> 'Vinton Byrd (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach (VA)' -> 'Virginia Beach (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach Bayside (VA)' -> 'Virginia Beach Bayside (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach Cox (VA)' -> 'Virginia Beach Cox (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach First Colonial (VA)' -> 'Virginia Beach First Colonial (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach Green Run (VA)' -> 'Virginia Beach Green Run (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach Kellam (VA)' -> 'Virginia Beach Kellam (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach Kempsville (VA)' -> 'Virginia Beach Kempsville (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach Landstown (VA)' -> 'Virginia Beach Landstown (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach Ocean Lakes (VA)' -> 'Virginia Beach Ocean Lakes (VA)' (no change)
+2026-11-12 16:30:25,416 - WARNING -   'Virginia Beach Oceana (VA)' -> 'Virginia Beach Oceana (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Virginia Beach Princess Anne (VA)' -> 'Virginia Beach Princess Anne (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Virginia Beach Salem (VA)' -> 'Virginia Beach Salem (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Virginia Beach Tallwood (VA)' -> 'Virginia Beach Tallwood (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Virginia School for the Deaf & Blind (VA)' -> 'Virginia School for the Deaf & Blind (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Virginia Tech University Frosh (VA)' -> 'Virginia Tech University Frosh (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Warrenton (VA)' -> 'Warrenton (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Warrenton Fauquier (VA)' -> 'Warrenton Fauquier (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Warsaw Rappahannock (VA)' -> 'Warsaw Rappahannock (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Washington & Lee Unversity JV (VA)' -> 'Washington & Lee Unversity JV (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Washington Rappahannock County (VA)' -> 'Washington Rappahannock County (VA)' (no change)
+2026-11-12 16:30:25,417 - WARNING -   'Waynesboro (VA)' -> 'Waynesboro (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'Waynesboro Fishburne Military Academy (VA)' -> 'Waynesboro Fishburne Military Academy (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'West Point (VA)' -> 'West Point (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'West Springfield (VA)' -> 'West Springfield (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'William & Mary College (VA)' -> 'William & Mary College (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'William & Mary College JV (VA)' -> 'William & Mary College JV (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'Williamsburg Bruton (VA)' -> 'Williamsburg Bruton (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'Williamsburg James Blair (VA)' -> 'Williamsburg James Blair (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'Williamsburg Jamestown (VA)' -> 'Williamsburg Jamestown (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'Williamsburg Lafayette (VA)' -> 'Williamsburg Lafayette (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'Williamsburg Matthew Whaley (VA)' -> 'Williamsburg Matthew Whaley (VA)' (no change)
+2026-11-12 16:30:25,418 - WARNING -   'Williamsburg Warhill (VA)' -> 'Williamsburg Warhill (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Winchester Handley (VA)' -> 'Winchester Handley (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Winchester Millbrook (VA)' -> 'Winchester Millbrook (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Windsor (VA)' -> 'Windsor (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Wise Central [Kelly-Pound] (VA)' -> 'Wise Central [Kelly-Pound] (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Wise Kelly (VA)' -> 'Wise Kelly (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Woodberry Forest (VA)' -> 'Woodberry Forest (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Woodbridge (VA)' -> 'Woodbridge (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Woodbridge Forest Park (VA)' -> 'Woodbridge Forest Park (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Woodbridge Freedom (VA)' -> 'Woodbridge Freedom (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Woodbridge Gar-Field (VA)' -> 'Woodbridge Gar-Field (VA)' (no change)
+2026-11-12 16:30:25,419 - WARNING -   'Woodbridge Hylton (VA)' -> 'Woodbridge Hylton (VA)' (no change)
+2026-11-12 16:30:25,420 - WARNING -   'Woodstock Central (VA)' -> 'Woodstock Central (VA)' (no change)
+2026-11-12 16:30:25,420 - WARNING -   'Woodstock Massanutten Military Academy (VA)' -> 'Woodstock Massanutten Military Academy (VA)' (no change)
+2026-11-12 16:30:25,420 - WARNING -   'Wytheville Wythe (VA)' -> 'Wytheville Wythe (VA)' (no change)
+2026-11-12 16:30:25,420 - WARNING -   'Yorktown Grafton (VA)' -> 'Yorktown Grafton (VA)' (no change)
+2026-11-12 16:30:25,420 - WARNING -   'Yorktown Tabb (VA)' -> 'Yorktown Tabb (VA)' (no change)
+2026-11-12 16:30:25,420 - WARNING -   'Yorktown York (VA)' -> 'Yorktown York (VA)' (no change)
+2026-11-12 16:30:25,420 - WARNING -   'Annandale (VA)' -> 'Annandale (VA)' (no change)
+2026-11-12 16:30:25,420 - INFO - Validation passed: 655 rules are clean and ready to upload.
+2026-11-12 16:30:25,438 - INFO - Uploading 655 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 16:30:25,578 - INFO - Upload to staging table complete.
+2026-11-12 16:30:25,584 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 16:32:12,202 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 16:32:12,203 - INFO - Reason logged to dbo.HS_Consolidation_Log: VA co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/VA_cfg.py
+2026-11-12 16:32:12,203 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 16:32:12,203 - INFO - Running post-consolidation safety check...
+2026-11-12 16:32:12,208 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team VA --from "Fredericksburg (VA)" --to "Fredericksburg James Monroe (VA)" --seasons 1880-1940 --reason "VA same school, older name -> later name for 1880-1940 (2026-11-12)" --commit
+
+MOVE Fredericksburg (VA) -> Fredericksburg James Monroe (VA), seasons 1880-1940 - COMMIT
+ move_games: 124 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 110 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  124    1                  None
+
+>>> move-team VA --from "Alexandria (VA)" --to "Alexandria George Washington (VA)" --seasons 1880-1934 --reason "VA same school, older name -> later name for 1880-1934 (2026-11-12)" --commit
+
+MOVE Alexandria (VA) -> Alexandria George Washington (VA), seasons 1880-1934 - COMMIT
+ move_games: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 59 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  60     1                  None
+
+>>> move-team VA --from "Ashland Patrick Henry (VA)" --to "Ashland Henry Clay (VA)" --seasons 1935-1958 --ids coop_ids/VA_mv_000.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 87 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_000.csv
+
+MOVE Ashland Patrick Henry (VA) -> Ashland Henry Clay (VA), seasons 1935-1958 - COMMIT
+ move_games: 87 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 93 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  87     1                  None
+
+>>> move-team VA --from "Ashland Patrick Henry (VA)" --to "Patrick Henry-Ashland (VA)" --seasons 2018-2023 --ids coop_ids/VA_mv_001.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 39 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_001.csv
+
+MOVE Ashland Patrick Henry (VA) -> Patrick Henry-Ashland (VA), seasons 2018-2023 - COMMIT
+ move_games: 39 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 92 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  39     1                  None
+
+>>> move-team VA --from "Bedford Liberty (VA)" --to "Bedford (VA)" --seasons 1924-1954 --ids coop_ids/VA_mv_002.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 74 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_002.csv
+
+MOVE Bedford Liberty (VA) -> Bedford (VA), seasons 1924-1954 - COMMIT
+ move_games: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  71     1                  None
+
+>>> move-team VA --from "Chesterfield James River (VA)" --to "Midlothian James River (VA)" --seasons 2004-2004 --ids coop_ids/VA_mv_003.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_003.csv
+
+MOVE Chesterfield James River (VA) -> Midlothian James River (VA), seasons 2004-2004 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 34 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team VA --from "Damascus Holston (VA)" --to "Damascus (VA)" --seasons 1937-1963 --ids coop_ids/VA_mv_004.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 135 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_004.csv
+
+MOVE Damascus Holston (VA) -> Damascus (VA), seasons 1937-1963 - COMMIT
+ move_games: 135 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 87 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  135    1                  None
+
+>>> move-team VA --from "Dublin Pulaski County (VA)" --to "Pulaski (VA)" --seasons 1916-1972 --ids coop_ids/VA_mv_005.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 166 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_005.csv
+
+MOVE Dublin Pulaski County (VA) -> Pulaski (VA), seasons 1916-1972 - COMMIT
+ move_games: 52 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 113 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  52     1                  None
+
+>>> move-team VA --from "Elliston Eastern Montgomery (VA)" --to "Shawsville (VA)" --seasons 1968-1999 --ids coop_ids/VA_mv_006.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 280 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_006.csv
+
+MOVE Elliston Eastern Montgomery (VA) -> Shawsville (VA), seasons 1968-1999 - COMMIT
+ move_games: 244 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  244    1                  None
+
+>>> move-team VA --from "Emporia Greensville County (VA)" --to "Emporia (VA)" --seasons 1915-1951 --ids coop_ids/VA_mv_007.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 48 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_007.csv
+
+MOVE Emporia Greensville County (VA) -> Emporia (VA), seasons 1915-1951 - COMMIT
+ move_games: 48 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  48     1                  None
+
+>>> move-team VA --from "Glade Spring Patrick Henry (VA)" --to "Glade Spring (VA)" --seasons 1929-1958 --ids coop_ids/VA_mv_008.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 44 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_008.csv
+
+MOVE Glade Spring Patrick Henry (VA) -> Glade Spring (VA), seasons 1929-1958 - COMMIT
+ move_games: 40 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  40     1                  None
+
+>>> move-team VA --from "Hillsville Carroll County (VA)" --to "Hillsville (VA)" --seasons 1928-1968 --ids coop_ids/VA_mv_009.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 241 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_009.csv
+
+MOVE Hillsville Carroll County (VA) -> Hillsville (VA), seasons 1928-1968 - COMMIT
+ move_games: 211 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  211    1                  None
+
+>>> move-team VA --from "Lawrenceville Brunswick Academy (VA)" --to "Lawrenceville Brunswick (VA)" --seasons 1916-1957 --ids coop_ids/VA_mv_010.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 66 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_010.csv
+
+MOVE Lawrenceville Brunswick Academy (VA) -> Lawrenceville Brunswick (VA), seasons 1916-1957 - COMMIT
+ move_games: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1632.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1632.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  54     1                  None
+
+>>> move-team VA --from "Lexington Rockbridge County (VA)" --to "Fairfield Rockbridge (VA)" --seasons 1961-1991 --ids coop_ids/VA_mv_011.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 163 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_011.csv
+
+MOVE Lexington Rockbridge County (VA) -> Fairfield Rockbridge (VA), seasons 1961-1991 - COMMIT
+ move_games: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1633.csv
+ move_by_season: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1633.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  71     1                  None
+
+>>> move-team VA --from "Manassas Osbourn Park (VA)" --to "Manassas Osbourn (VA)" --seasons 1939-1974 --ids coop_ids/VA_mv_012.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 225 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_012.csv
+
+MOVE Manassas Osbourn Park (VA) -> Manassas Osbourn (VA), seasons 1939-1974 - COMMIT
+ move_games: 223 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1633.csv
+ move_by_season: 91 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1633.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  223    1                  None
+
+>>> move-team VA --from "Mechanicsville Lee-Davis (VA)" --to "Mechanicsville Battlefield Park (VA)" --seasons 1950-1957 --ids coop_ids/VA_mv_013.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_013.csv
+
+MOVE Mechanicsville Lee-Davis (VA) -> Mechanicsville Battlefield Park (VA), seasons 1950-1957 - COMMIT
+ move_games: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1633.csv
+ move_by_season: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1633.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  13     1                  None
+
+>>> move-team VA --from "Patrick Henry-Ashland (VA)" --to "Ashland Patrick Henry (VA)" --seasons 1958-2004 --ids coop_ids/VA_mv_014.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 184 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_014.csv
+
+MOVE Patrick Henry-Ashland (VA) -> Ashland Patrick Henry (VA), seasons 1958-2004 - COMMIT
+ move_games: 111 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1633.csv
+ move_by_season: 92 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1633.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  111    1                  None
+
+>>> move-team VA --from "Patrick Henry-Glade Spring (VA)" --to "Glade Spring Patrick Henry (VA)" --seasons 1961-2023 --ids coop_ids/VA_mv_015.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 54 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_015.csv
+
+MOVE Patrick Henry-Glade Spring (VA) -> Glade Spring Patrick Henry (VA), seasons 1961-2023 - COMMIT
+ move_games: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1633.csv
+ move_by_season: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1633.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  41     1                  None
+
+>>> move-team VA --from "Richmond Hermitage (VA)" --to "Glen Allen (VA)" --seasons 1940-1949 --ids coop_ids/VA_mv_016.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 50 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_016.csv
+
+MOVE Richmond Hermitage (VA) -> Glen Allen (VA), seasons 1940-1949 - COMMIT
+ move_games: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1633.csv
+ move_by_season: 87 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1633.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  50     1                  None
+
+>>> move-team VA --from "Richmond Kennedy (VA)" --to "Richmond John F. Kennedy (VA)" --seasons 1969-2002 --ids coop_ids/VA_mv_017.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 123 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_017.csv
+
+MOVE Richmond Kennedy (VA) -> Richmond John F. Kennedy (VA), seasons 1969-2002 - COMMIT
+ move_games: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1633.csv
+ move_by_season: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1633.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  108    1                  None
+
+>>> move-team VA --from "South Hill Park View (VA)" --to "South Hill (VA)" --seasons 1929-1949 --ids coop_ids/VA_mv_018.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 19 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_018.csv
+
+MOVE South Hill Park View (VA) -> South Hill (VA), seasons 1929-1949 - COMMIT
+ move_games: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1633.csv
+ move_by_season: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1633.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  19     1                  None
+
+>>> move-team VA --from "Victoria Lunenburg Central (VA)" --to "Victoria (VA)" --seasons 1927-1957 --ids coop_ids/VA_mv_019.csv --reason "VA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 142 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\coop_ids/VA_mv_019.csv
+
+MOVE Victoria Lunenburg Central (VA) -> Victoria (VA), seasons 1927-1957 - COMMIT
+ move_games: 142 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_games_COMMITTED_20261112_1633.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_move_by_season_COMMITTED_20261112_1633.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  142    1                  None
+
+>>> dedup VA --commit
+
+DEDUP v4 VA - COMMIT
+ dedup_archive: 2514 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_dedup_archive_COMMITTED_20261112_1633.csv
+ dedup_review: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_dedup_review_COMMITTED_20261112_1633.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_dedup_summary_COMMITTED_20261112_1633.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  VA     134035        2514                 37               D9FD9538-ACA2-4C20-ADF7-F47FA53392BE
+
+>>> review-pairs VA --commit
+
+REVIEW-ONLY PAIRS VA - COMMIT
+ 35 pairs {'LONG': 6, 'SHORT': 29} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_review_pairs_COMMITTED_20261112_1633.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  35        5E11D713-E3DE-44E9-A18A-826E58CF7D1D  None
+
+>>> same-score-fix VA
+ 5777 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS VA - PREVIEW (nothing changed)
+ 635 pairs {'DROP B': 9, 'DROP A': 10, 'UNDECIDED': 616} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_same_score_20261112_1635.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  19        None   None
+
+>>> query VA va_dump.sql
+
+QUERY va_dump (1 result sets)
+ set 1: 131488 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_va_dump_1_20261112_1635.csv
+
+=== OK 2026-11-12 16:35:11

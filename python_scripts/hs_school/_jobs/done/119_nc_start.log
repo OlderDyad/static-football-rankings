@@ -1,0 +1,150 @@
+
+>>> addstate NC
+Tracker rows ready for NC
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report NC names
+
+REPORT names NC: 1273 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_names_20261110_1437.csv
+   Name                          Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   ?Eastern (NC)                 1      1984         1984        1            0     
+   Aberdeen (NC)                 91     1924         1968        1            0     
+   Acme (NC)                     2      1939         1957        0            0     
+   Acme-Delco (NC)               132    1937         1991        1            0     
+   Advance Davie Pride (NC)      3      2017         2018        1            0     
+   Ahoskie (NC)                  304    1926         1988        1            0     
+   Ahoskie Aulander (NC)         22     1927         1958        1            0     
+   Ahoskie Hertford County (NC)  541    1930         2026        1            1     
+   Albemarle (NC)                929    1927         2026        1            1     
+   Alexander (NC)                1      1957         1957        0            0     
+   Anderson (NC)                 2      1962         1965        1            0     
+   Andrews (NC)                  793    1930         2026        1            1     
+   Angier (NC)                   46     1960         1976        1            0     
+   Angier Harnett Central (NC)   551    1932         2026        1            1     
+   Apex (NC)                     726    1927         2026        1            1     
+   ... 1258 more rows (see CSV)
+
+>>> report NC drift
+
+REPORT drift NC: 90 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_drift_20261110_1438.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                           N_Games  N_First  N_Last  N_Mapped
+   Asheville A.C. Reynolds (NC)              723      1959     2023    0         Asheville Ac Reynolds (NC)        34       2024     2026    1       
+   Asheville Carolina Gladiators (NC)        30       2014     2017    0         None                              None     None     None    0       
+   Asheville Gladiator Sports Academy (NC)   12       2018     2020    0         None                              None     None     None    0       
+   Asheville Saints (NC)                     51       2009     2020    0         None                              None     None     None    0       
+   Biscoe East Montgomery (NC)               650      1951     2018    0         None                              None     None     None    0       
+   Buxton Cape Hatteras (NC)                 128      2000     2016    0         None                              None     None     None    0       
+   Cabarrus [Cannon-Concord First Assembly   26       2019     2022    0         None                              None     None     None    0       
+   Camp Lejeune (NC)                         662      1949     2023    0         Camp Lejeune Lejeune Devil (NC)   27       2024     2026    1       
+   Cannon [Cannon-Concord Academy] (NC)      10       2023     2023    0         None                              None     None     None    0       
+   Chapel Hill Carrboro (NC)                 184      2007     2023    0         Chapel Hill East Chapel (NC)      28       2024     2026    1       
+   Charlotte Carolina Bearcats (NC)          29       2019     2024    1         Charlotte Ballantyne Ridge (NC)   29       2024     2026    1       
+   Charlotte Carolina Bearcats (NC)          29       2019     2024    1         Charlotte Chambers (NC)           72       2021     2026    1       
+   Charlotte Carolina Bearcats (NC)          29       2019     2024    1         Charlotte Corvian Community (NC)  44       2022     2026    1       
+   Charlotte Carolina Bearcats (NC)          29       2019     2024    1         Charlotte Palisades (NC)          54       2022     2026    1       
+   Charlotte Carolina Pride (NC)             177      2006     2022    0         Charlotte Palisades (NC)          54       2022     2026    1       
+   ... 75 more rows (see CSV)
+
+>>> mapcheck NC
+
+MAPPING CHECK NC - PREVIEW (nothing changed)
+ 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_mapcheck_20261110_1438.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name
+   https://www.maxpreps.com/nc/asheville/tc  Asheville Tc Roberson (NC)                6381     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/hickory/hick  Hickory Christian (NC)                    18306    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/kannapolis/a  Kannapolis Al (NC)                        32981    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/mooresboro/t  Mooresboro Thomas Jefferson Academy (NC)  21964    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/huntersville  Mooresville Lake Norman Charter (NC)      9376     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/mooresville/  Mooresville Pine Lake (NC)                20152    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/oxford/jf-we  Oxford Jf Webb (NC)                       9687     None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/rutherfordto  Rutherfordton R S (NC)                    26160    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/williamston/  Williamston Bear Grass (NC)               48520    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/wilmington/e  Wilmington Ea Laney (NC)                  40329    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/wilson/hunt-  Wilson Hunt (NC)                          26035    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/winston-sale  Winston Salem Rj Reynolds (NC)            32395    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/winston-sale  Winston Salem Winston Salem (NC)          27453    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/nc/winston-sale  Winston-Salem Mount Tabor (NC)            94       None    ProperName not in HS_Team_Names  None        
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  0        None
+
+>>> report NC same-town
+
+REPORT same-town NC: 582 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_same_town_20261110_1439.csv
+   A                                B                                 Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Rocky Mount (NC)                 Rocky Mount Northern Nash (NC)    215   54       1973         2026        1057     654    
+   Concord (NC)                     Concord Northwest Cabarrus (NC)   162   48       1977         2026        956      672    
+   Fayetteville Pine Forest (NC)    Fayetteville Seventy-First (NC)   149   46       1962         2026        724      765    
+   Raleigh Broughton (NC)           Raleigh Enloe (NC)                146   53       1963         2026        952      671    
+   Charlotte Garinger (NC)          Charlotte West Mecklenburg (NC)   146   44       1959         2026        755      758    
+   Wilson Fike (NC)                 Wilson James B. Hunt (NC)         142   41       1979         2026        734      560    
+   Gastonia Ashbrook (NC)           Gastonia Huss (NC)                139   49       1970         2026        669      686    
+   Fayetteville E.E. Smith (NC)     Fayetteville Pine Forest (NC)     134   37       1975         2026        724      724    
+   Thomasville East Davidson (NC)   Thomasville Ledford (NC)          134   49       1961         2024        678      722    
+   Charlotte East Mecklenburg (NC)  Charlotte South Mecklenburg (NC)  131   54       1960         2025        833      718    
+   Fayetteville Cape Fear (NC)      Fayetteville Terry Sanford (NC)   129   37       1971         2026        624      767    
+   Raleigh Millbrook (NC)           Raleigh Sanderson (NC)            129   46       1973         2020        772      614    
+   Charlotte Olympic (NC)           Charlotte South Mecklenburg (NC)  128   43       1967         2024        664      718    
+   Charlotte Independence (NC)      Charlotte Myers Park (NC)         125   43       1967         2020        712      868    
+   Monroe (NC)                      Monroe Parkwood (NC)              125   48       1966         2026        934      676    
+   ... 567 more rows (see CSV)
+
+>>> report NC double-booked
+
+REPORT double-booked NC: 1891 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_double_booked_20261110_1440.csv
+   Kind             Team                             Season  Gap  A_Date      A_Opp                                    A_Score  A_Source                                  A_Batch  B_Date      B_Opp                                     B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Albemarle (NC)                   1959    1    1959-11-20  Hickory (NC)                             13-34    http://www.nchsaa.org/sites/default/file  None     1959-11-21  Winston-Salem Children's Home (NC)        6-0      The_Charlotte_Observer_1959_11_21_16.csv  185      92053A06-5B70-46F9-A9C7-12BB7D66B51E  0AF0899C-FA5E-40BE-A1BB-A750F971B849
+   DIFFERENT GAMES  Albemarle (NC)                   2004    0    2004-09-03  New London North Stanly (NC)             72-0     www.maxpreps.com                          None     2004-09-03  Oakboro West Stanly (NC)                  31-21    http://carolinapreps.com/teams/frontend/  None     DD977326-A2B8-4F43-97D3-053756A3B06F  6543674C-7A66-49B9-BD4C-1A0C60A37E4B
+   DIFFERENT GAMES  Angier Harnett Central (NC)      2016    1    2016-09-16  Knightdale (NC)                          27-0     www.maxpreps.com                          None     2016-09-17  Erwin Triton (NC)                         7-55     www.maxpreps.com                          None     45414790-B024-46C1-891A-5AB59D2CD640  30767629-A27F-4044-A444-FED9557F127C
+   DIFFERENT GAMES  Apex (NC)                        1992    0    1992-09-11  Fayetteville Cape Fear (NC)              28-6     http://carolinapreps.com/teams/frontend/  None     1992-09-11  Raleigh Millbrook (NC)                    7-24     http://carolinapreps.com/teams/frontend/  None     6756BD72-9FF5-4997-B149-45F0414EF2A8  281C20B0-7A5E-4CC8-9D2A-8E162A7E83E4
+   DIFFERENT GAMES  Apex (NC)                        1996    0    1996-10-04  Garner Magnet (NC)                       19-30    https://www.flickr.com/photos/26888038@N  None     1996-10-04  Four Oaks South Johnston (NC)             34-8     http://carolinapreps.com/teams/frontend/  None     6439C739-18C2-4D42-A6CB-2F2B159100DC  43A6818B-84C9-4FA1-9223-CD82F01FD92A
+   DIFFERENT GAMES  Apex (NC)                        2004    1    2004-09-24  Raleigh Athens Drive (NC)                34-7     www.maxpreps.com                          None     2004-09-23  Raleigh Millbrook (NC)                    21-14    www.maxpreps.com                          None     6DE1B4F2-0E15-4FE3-B255-0F59469FAF07  45F5952D-E97E-4032-98E7-D35B4D357D47
+   DIFFERENT GAMES  Apex (NC)                        2016    1    2016-09-16  Cary (NC)                                35-34    www.maxpreps.com                          None     2016-09-17  Raleigh Sanderson (NC)                    6-48     www.maxpreps.com                          None     1067C2FF-AB16-41A6-865C-3017CEFFAFD5  14D6954E-1D11-4903-BBA4-6D08689E1905
+   DIFFERENT GAMES  Apex (NC)                        2017    0    2017-10-02  Apex Middle Creek (NC)                   6-41     www.maxpreps.com                          None     2017-10-02  Garner Magnet (NC)                        0-48     www.maxpreps.com                          None     C7C73F74-E3FA-435F-A0B8-7CC128D2CEC7  93B6E0D3-6A2F-4B8E-AD20-C21EDE7D1E3E
+   DIFFERENT GAMES  Apex Middle Creek (NC)           2004    1    2004-09-24  Sanford Lee County (NC)                  26-30    www.maxpreps.com                          None     2004-09-23  Raleigh Wakefield (NC)                    43-28    www.maxpreps.com                          None     BE9A1EDE-63E1-4102-B4CF-28B9FFCFCB72  86DD834B-89F0-4B43-A74B-763D14488281
+   DIFFERENT GAMES  Apex South Wake HomeSchool (NC)  2014    1    2014-09-20  Concord Greater Cabarrus Stallions (NC)  6-8      www.maxpreps.com                          None     2014-09-19  Durham Kestrel Heights (NC)               21-6     www.maxpreps.com                          None     10A5FF2E-8444-45DF-89DF-56FC9DCF77A1  288E728F-8AC9-4B93-AE4E-635714B04602
+   DIFFERENT GAMES  Apex South Wake HomeSchool (NC)  2015    2    2015-09-13  Davidson Lake Norman Storm (NC)          34-62    www.maxpreps.com                          None     2015-09-11  Fayetteville Village Christian Academy (  6-55     www.maxpreps.com                          None     81AB518F-1427-4B74-B262-9D544C0F121D  414555E4-58DB-4D4E-825D-B8503D74F8B2
+   DIFFERENT GAMES  Arden Christ School (NC)         1971    0    1971-10-22  Rosman (NC)                              6-12     http://carolinapreps.com/teams/frontend/  None     1971-10-22  Anderson McDuffie (SC)                    7-6      www.scfootballhistory.com                 None     A011C4EF-F0D2-49BD-BC1B-423CA067F77C  67D909C1-B92B-429F-B8C9-D9B0C4FFB315
+   DIFFERENT GAMES  Arden Christ School (NC)         1977    0    1977-09-30  Rosman (NC)                              43-19    http://carolinapreps.com/teams/frontend/  None     1977-09-30  Charleston Porter Gaud (SC)               12-7     www.scfootballhistory.com                 None     8019798B-8532-421F-B971-9D99B397A715  88F8755B-CDE7-4EDC-B5C2-D5B74423D2EA
+   DIFFERENT GAMES  Arden Christ School (NC)         1988    0    1988-09-23  Greenville Christ Church Episcopal (SC)  18-0     www.scfootballhistory.com                 None     1988-09-23  Rosman (NC)                               6-9      http://carolinapreps.com/teams/frontend/  None     83946216-849C-45B6-8A7E-030F59DE5F88  6BDFB419-F56F-4A98-ADB5-431226818A1C
+   DIFFERENT GAMES  Arden Christ School (NC)         1989    1    1989-09-30  Charlotte Country Day (NC)               18-21    http://carolinapreps.com/teams/frontend/  None     1989-09-29  Greenville Christ Church Episcopal (SC)   13-0     www.scfootballhistory.com                 None     2C19AA2D-7AE3-489B-BA97-3F248723CF0D  28D12923-2949-4C80-A6F6-4FC638D51AA5
+   ... 1876 more rows (see CSV)
+
+>>> dedup NC
+
+DEDUP v4 NC - PREVIEW (nothing changed)
+ dedup_archive: 232 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_dedup_archive_20261110_1440.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_dedup_review_20261110_1440.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_dedup_summary_20261110_1440.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  NC     134258        232                  2                None 
+
+>>> review-pairs NC
+
+REVIEW-ONLY PAIRS NC - PREVIEW (nothing changed)
+ 2 pairs {'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_review_pairs_20261110_1440.csv
+
+>>> same-score-fix NC
+
+SAME-SCORE DOUBLE-BOOKINGS NC - PREVIEW (nothing changed)
+ 582 pairs {'DROP B': 110, 'DROP A': 108, 'UNDECIDED': 364} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_same_score_20261110_1441.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  218       None   None
+
+=== OK 2026-11-10 14:41:27

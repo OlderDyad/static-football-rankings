@@ -1,0 +1,57 @@
+
+>>> set-dates OK --file ok_season_date_fix.csv --reason "yearbook estimated date had wrong year" --commit
+
+SET DATES OK - COMMIT
+ 8 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_set_dates_COMMITTED_20261110_1620.csv
+   Season  OldDate     NewDate     DayShift  Home                    Home_Score  Visitor                               Visitor_Score  Source                                    Note                                      ID                                  
+   1953    1952-09-11  1953-09-11  365       Seminole (OK)           33          Tulsa Cascia Hall (OK)                12             Seminole High School - Chieftain Yearboo  estimated yearbook date: year set to sea  99BE0399-F74B-4C87-8620-CDBAD65AAD48
+   1953    1952-09-18  1953-09-18  365       Duncan (OK)             20          Seminole (OK)                         7              Seminole High School - Chieftain Yearboo  estimated yearbook date: year set to sea  DD558937-5156-4830-AF87-547F50B65666
+   1953    1952-10-02  1953-10-02  365       Seminole (OK)           18          Sulphur (OK)                          0              Seminole High School - Chieftain Yearboo  estimated yearbook date: year set to sea  DB7910D8-DAFA-437F-B8DB-F492B8ED44E0
+   1953    1952-10-09  1953-10-09  365       Seminole (OK)           64          Henryetta (OK)                        24             Seminole High School - Chieftain Yearboo  estimated yearbook date: year set to sea  9290C3E9-CF7E-4FCA-9A85-5371AB3B3EC2
+   1953    1952-10-23  1953-10-23  365       Seminole (OK)           31          Wewoka (OK)                           6              Seminole High School - Chieftain Yearboo  estimated yearbook date: year set to sea  8D30CA8A-0B51-46FF-A0BA-E065962B0D85
+   1953    1952-10-30  1953-10-30  365       Seminole (OK)           27          Oklahoma City Southeast (OK)          13             Seminole High School - Chieftain Yearboo  estimated yearbook date: year set to sea  1E344506-6151-4950-8BC7-035C4A793F4B
+   1989    1990-10-12  1989-10-12  -365      Lawton Eisenhower (OK)  69          Oklahoma City Northwest Classen (OK)  0              http://www.classmates.com/siteui/yearboo  estimated yearbook date: year set to sea  0C0AB51C-DAAC-4109-9033-26CCF7C7F89E
+   1989    1990-11-09  1989-11-09  -365      Lawton Eisenhower (OK)  28          Oklahoma City Putnam City West (OK)   14             http://www.classmates.com/siteui/yearboo  estimated yearbook date: year set to sea  B11053B1-2610-4E79-8D34-75429739A55E
+   Status     Listed  Updated  Err 
+   COMMITTED  8       8        None
+
+>>> archive-ids OK --ids ok_college_dup_ids.csv --reason "Post-1940 college game confirmed present in College_Scores (names+scores match)" --commit
+
+ARCHIVE LISTED GAMES OK - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_archive_ids_COMMITTED_20261110_1621.csv
+   Season  Date        Home                      Home_Score  Visitor                      Visitor_Score  Source                                    Access_ID  ID                                  
+   1943    1943-11-26  University of Tulsa (OK)  61          University of Arkansas (AR)  0              Lexington_Herald_Leader_1943_11_26_7 (1)  None       6E259654-4541-4F53-BBB8-6D39112DE733
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       1      3FE0C65A-FD95-4E97-ABF6-8820CCCB33E8  None
+
+>>> step OK 1.1 done "2026-11-10: ~35 out-of-state towns written as (OK) merged to real state; 2024 MaxPreps names (Atoka Wampus, OKC Grant, Weleetka Graham); Oklahoma City Northwest -> Northwest Classen"
+Tracker updated: OK 1.1 -> done
+
+>>> step OK 1.2 done "2026-11-10: mapcheck 4 fixed; South Coffeyville URL remapped"
+Tracker updated: OK 1.2 -> done
+
+>>> step OK 1.3 done "2026-11-10: wrong-state twins moved per game (Joiner Shawnee AR->Shawnee 69, Kiowa KS->Kiowa OK 60, Pawnee OK->Grover Pawnee CO 55, Ada KS 17, Chesnee SC 17, ~35 small)"
+Tracker updated: OK 1.3 -> done
+
+>>> step OK 1.4 done "2026-11-10: South Coffeyville split from Oklahoma Union (321 games, opponent clustering); NW Classen pre-1955 -> Classen (167); Tulsa pre-1935 -> Tulsa Central (66)"
+Tracker updated: OK 1.4 -> done
+
+>>> step OK 2.1 done "2026-11-10: dedup 131+251+122 (mostly double MaxPreps imports)"
+Tracker updated: OK 2.1 -> done
+
+>>> step OK 2.2 done "2026-11-10: review pairs 5+9+23"
+Tracker updated: OK 2.2 -> done
+
+>>> step OK 2.3 done "2026-11-10: same-score 273 archived (254 undecided); iwasatthegame added as estimated-date source (all Fridays); double-booked 5,997 -> about 2,300"
+Tracker updated: OK 2.3 -> done
+
+>>> step OK 3.1 done "2026-11-10: 8 yearbook dates with wrong year fixed; fix-dates 2"
+Tracker updated: OK 3.1 -> done
+
+>>> step OK 3.2 done "2026-11-10: 25 2-0 games without forfeit flag left as-is"
+Tracker updated: OK 3.2 -> done
+
+>>> step OK 5.0 done "2026-11-10: 1 college copy archived (Tulsa-Arkansas 1943)"
+Tracker updated: OK 5.0 -> done
+
+=== OK 2026-11-10 16:21:05

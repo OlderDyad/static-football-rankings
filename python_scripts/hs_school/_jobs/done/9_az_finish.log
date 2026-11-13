@@ -1,0 +1,48 @@
+
+>>> fix-dates AZ --commit
+
+FIX DATES AZ - COMMIT
+ 22 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_fix_dates_COMMITTED_20261108_1854.csv
+   Season  OldDate     NewDate     DayShift  Home                Home_Score  Visitor              Visitor_Score  KeepSource                                ArchivedSource                            KeepID                                ArchiveRunID                        
+   1934    1934-10-26  1934-11-03  8         Phoenix Union (AZ)  30          El Paso Austin (TX)  0              http://lonestarfootball.net               Arizona_Daily_Star_1934_11_03_Page_15.cs  0B8365C1-109A-4925-A2B3-5137BE1FE5FF  CB11A318-ED0E-4CE9-A3CF-F9704B466CA1
+   1935    1935-09-13  1935-10-26  43        Las Cruces (NM)     0           Mesa (AZ)            27             http://lonestarfootball.net Team 1950     Arizona_Daily_Star_1935_10_26_Page_12.cs  3BE35EC0-496C-4518-9956-071160F759F6  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1936    1936-10-16  1936-10-24  8         Mesa (AZ)           20          El Paso Austin (TX)  0              http://lonestarfootball.net               Arizona_Daily_Star_1936_10_24_Page_13.cs  52C8EEA5-603B-463A-A816-78A3223D70B9  CB11A318-ED0E-4CE9-A3CF-F9704B466CA1
+   1938    1938-09-16  1938-10-22  36        Douglas (AZ)        6           Deming (NM)          6              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1938_10_22_Page_14.cs  FBACFD4A-EC55-480A-8E0D-82B519B6566D  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1939    1939-09-08  1939-10-14  36        Douglas (AZ)        44          Deming (NM)          0              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1939_10_14_Page_14.cs  6416310A-A2E4-4C54-AAF2-47C64865A265  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1939    1939-09-22  1939-10-28  36        Las Cruces (NM)     25          Douglas (AZ)         0              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1939_10_28_Page_14.cs  595A9BB9-241E-420A-A3EA-405595DC972E  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1940    1940-09-20  1940-10-26  36        Douglas (AZ)        25          Las Cruces (NM)      14             http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1940_10_26_Page_12.cs  B3E4462A-FA40-47CB-ADAB-6AEE38648F92  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1940    1940-10-11  1940-11-16  36        Douglas (AZ)        26          Lordsburg (NM)       7              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1940_11_16_Page_12.cs  4D62541A-E2D4-469C-AD39-6A78C5527976  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1941    1941-08-15  1941-09-20  36        Douglas (AZ)        0           Lordsburg (NM)       0              http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1941_09_20_Page_10.cs  20808310-5F6B-4809-96B8-E3B56999FEA1  7F7516AC-AFC3-426D-81D5-D7F529355882
+   1942    1942-09-11  1942-10-24  43        Douglas (AZ)        19          Las Cruces (NM)      12             http://www.azfootballarchives.com/indtea  Arizona_Daily_Star_1942_10_24_Page_8.csv  6C87E4B4-0145-41EC-98E4-BBE9CD306B30  7F7516AC-AFC3-426D-81D5-D7F529355882
+   ... 12 more rows (see CSV)
+   Status     Updated  Err 
+   COMMITTED  22       None
+
+>>> step AZ 1.1 "in progress" "round 1 (34 rules: azfootballarchives city-prefix twins, 2024 drift, ALA names, Canyon State, Phoenix Indian) + round 2 (3)"
+Tracker updated: AZ 1.1 -> in progress
+
+>>> step AZ 1.2 done "19 URLs remapped (8 ProperNames did not exist); mapcheck fixed 10 Team_IDs"
+Tracker updated: AZ 1.2 -> done
+
+>>> step AZ 1.4 "in progress" "Rincon-University co-op from 2014 (67 moved)"
+Tracker updated: AZ 1.4 -> in progress
+
+>>> step AZ 2.1 done "dedup 1704 + 24"
+Tracker updated: AZ 2.1 -> done
+
+>>> step AZ 2.2 done "review pairs 885 + 26 (azfootballarchives estimated dates now rank below newspapers)"
+Tracker updated: AZ 2.2 -> done
+
+>>> step AZ 2.3 "in progress" "same-score 37 archived, 53 undecided; 6 self-games archived; ~8,000 different-game pairs = azfootballarchives estimated dates"
+Tracker updated: AZ 2.3 -> in progress
+
+>>> step AZ 3.1 "in progress" "35 championship-page games (indchd6) with Season = date year + 1: which season?"
+Tracker updated: AZ 3.1 -> in progress
+
+>>> step AZ 3.2 done "forfeit flags consistent except NULL on 2026 weekly imports"
+Tracker updated: AZ 3.2 -> done
+
+>>> step AZ 5.0 "in progress" "no 1940+ college-vs-college games; AZ_for_college_chat.csv (174)"
+Tracker updated: AZ 5.0 -> in progress
+
+=== OK 2026-11-08 18:54:23

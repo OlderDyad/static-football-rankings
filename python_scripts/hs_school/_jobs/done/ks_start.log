@@ -1,0 +1,145 @@
+
+>>> addstate KS
+Tracker rows ready for KS
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report KS names
+
+REPORT names KS: 1167 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_names_20261106_1859.csv
+   Name                         Games  FirstSeason  LastSeason  InTeamNames  Mapped
+   AAAAA Regional SMS OPP (KS)  1      1975         1975        1            0     
+   Abbyville (KS)               1      1929         1929        1            0     
+   Abilene (KS)                 1048   1906         2026        1            0     
+   Abilene All-Stars (KS)       1      1916         1916        1            0     
+   Abilene Alumni (KS)          2      1922         1931        1            0     
+   Abline (KS)                  1      1971         1971        1            0     
+   Acchs (KS)                   16     1951         1984        1            0     
+   Agenda Republic County (KS)  1      1924         1924        0            0     
+   Agra Eastern Heights (KS)    89     1937         2007        1            1     
+   Alden (KS)                   5      1927         1964        1            0     
+   Allen Northern Heights (KS)  591    1957         2026        1            1     
+   Alma (KS)                    205    1913         2001        1            0     
+   Alma Wabaunsee (KS)          468    1972         2026        1            1     
+   Almena Northern Valley (KS)  624    1955         2026        1            1     
+   Alta Vista (KS)              160    1920         1968        1            0     
+   ... 1152 more rows (see CSV)
+
+>>> report KS drift
+
+REPORT drift KS: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_drift_20261106_1900.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                                   N_Games  N_First  N_Last  N_Mapped
+   Anthony Chaparral (KS)                    19       2021     2022    0         None                                      None     None     None    0       
+   Argonia (KS)                              202      1919     2019    0         None                                      None     None     None    0       
+   Atchison Maur Hill Prep-Mount Academy (K  177      1939     2023    0         None                                      None     None     None    0       
+   Attica (KS)                               192      1919     2021    0         None                                      None     None     None    0       
+   Attica-Argonia (KS)                       118      2013     2023    0         None                                      None     None     None    0       
+   Beloit St. John's-Tipton Catholic (KS)    161      1972     2023    0         None                                      None     None     None    0       
+   Burrton (KS)                              453      1917     2024    1         None                                      None     None     None    0       
+   Caldwell (KS)                             604      1910     2021    0         Caldwell South Sumner [Caldwell-South Ha  35       2023     2026    1       
+   Cedar Vale-Dexter (KS)                    122      2010     2023    0         None                                      None     None     None    0       
+   Claflin Central Plains (KS)               129      2011     2023    0         None                                      None     None     None    0       
+   Colby Heartland Christian (KS)            36       2007     2015    0         None                                      None     None     None    0       
+   Cygne Prairie View (KS)                   629      1919     2023    0         None                                      None     None     None    0       
+   Dighton-Healy (KS)                        17       2014     2015    0         None                                      None     None     None    0       
+   Downs (KS)                                142      1921     2015    0         None                                      None     None     None    0       
+   Fowler (KS)                               383      1921     2021    0         None                                      None     None     None    0       
+   ... 40 more rows (see CSV)
+
+>>> report KS same-town
+
+REPORT same-town KS: 265 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_same_town_20261106_1901.csv
+   A                                 B                               Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   Shawnee Mission North (KS)        Shawnee Mission West (KS)       231   57       1960         2026        776      770    
+   Shawnee Mission North (KS)        Shawnee Mission Northwest (KS)  180   50       1969         2025        776      640    
+   Wichita East (KS)                 Wichita North (KS)              161   73       1930         2025        1124     965    
+   Shawnee Mission Northwest (KS)    Shawnee Mission West (KS)       157   48       1956         2026        640      770    
+   Shawnee Mission East (KS)         Shawnee Mission South (KS)      155   55       1966         2026        748      710    
+   Olathe North (KS)                 Olathe South (KS)               153   35       1981         2026        576      541    
+   Topeka Highland Park (KS)         Topeka Seaman (KS)              150   68       1935         2025        824      915    
+   Wichita South (KS)                Wichita Southeast (KS)          146   58       1959         2026        649      847    
+   Topeka (KS)                       Topeka West (KS)                143   48       1963         2021        1246     677    
+   Topeka Seaman (KS)                Topeka Washburn Rural (KS)      143   66       1929         2021        915      825    
+   Wichita East (KS)                 Wichita Heights (KS)            142   51       1962         2026        1124     663    
+   Wichita Kapaun Mount Carmel (KS)  Wichita North (KS)              140   59       1961         2026        796      965    
+   Shawnee Mission Northwest (KS)    Shawnee Mission South (KS)      138   45       1969         2026        640      710    
+   Wichita South (KS)                Wichita West (KS)               135   55       1959         2026        649      747    
+   Shawnee Mission East (KS)         Shawnee Mission North (KS)      132   50       1958         2026        748      776    
+   ... 250 more rows (see CSV)
+
+>>> mapcheck KS
+
+MAPPING CHECK KS - PREVIEW (nothing changed)
+ 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_mapcheck_20261106_1901.csv
+   URL                                       ProperName                       Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/ks/melvern/mara  Melvern Marais Des (KS)          43641    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ks/overland-par  Overland Park Saint Thomas (KS)  25528    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ks/wichita/kapa  Wichita Kapaun Mt. Crusad (KS)   47742    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ks/abilene/abil  Abilene (KS)                     25772    58711   Team_ID points to another name   Agra Eastern Heights (KS)               
+   https://www.maxpreps.com/ks/ashland/ashl  Ashland (KS)                     71790    59113   Team_ID points to another name   Assaria Southeast of Saline (KS)        
+   https://www.maxpreps.com/ks/caney/caney-  Caney Valley (KS)                60226    60200   Team_ID points to another name   Canton-Galva (KS)                       
+   https://www.maxpreps.com/ks/canton/canto  Canton-Galva (KS)                60243    60226   Team_ID points to another name   Carbondale Santa Fe Trail (KS)          
+   https://www.maxpreps.com/ks/carbondale/s  Carbondale Santa Fe Trail (KS)   60325    60243   Team_ID points to another name   Cawker City Waconda East (KS)           
+   https://www.maxpreps.com/ks/chapman/chap  Chapman (KS)                     71424    60421   Team_ID points to another name   Chapman-Dickinson County (KS)           
+   https://www.maxpreps.com/ks/clearwater/c  Clearwater (KS)                  60847    60806   Team_ID points to another name   Clifton Rural (KS)                      
+   https://www.maxpreps.com/ks/dodge-city/d  Dodge City (KS)                  61533    61532   Team_ID points to another name   Dodge City St. Mary of The Plains Academ
+   https://www.maxpreps.com/ks/emporia/empo  Emporia (KS)                     71617    61845   Team_ID points to another name   Emporia State University B (KS)         
+   https://www.maxpreps.com/ks/eureka/eurek  Eureka (KS)                      71088    61924   Team_ID points to another name   Fairmount College Reserves (KS)         
+   https://www.maxpreps.com/ks/hays/hays-in  Hays (KS)                        29552    62961   Team_ID points to another name   Hays St. Joseph's Military Academy (KS) 
+   https://www.maxpreps.com/ks/lacrosse/lac  LaCrosse (KS)                    72167    5105    Team_ID points to another name   Lafayette St. Joseph  (KS)              
+   https://www.maxpreps.com/ks/medicine-lod  Medicine Lodge (KS)              65040    65020   Team_ID points to another name   Melvern Marais Des Cygne Valley (KS)    
+   https://www.maxpreps.com/ks/mulvane/mulv  Mulvane (KS)                     3223     65629   Team_ID points to another name   Nashville-Zenda (KS)                    
+   https://www.maxpreps.com/ks/ottawa/ottaw  Ottawa (KS)                      72021    66390   Team_ID points to another name   Ottawa University Academy (KS)          
+   https://www.maxpreps.com/ks/st-francis/s  Saint Francis (KS)               67624    67621   Team_ID points to another name   Saint George (KS)                       
+   https://www.maxpreps.com/ks/salina/south  Salina South (KS)                67781    67780   Team_ID points to another name   Salina St.John's Military (KS)          
+   ... 4 more rows (see CSV)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  21       None
+
+>>> dedup KS
+
+DEDUP v4 KS - PREVIEW (nothing changed)
+ dedup_archive: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_archive_20261106_1901.csv
+ dedup_review: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_review_20261106_1901.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_summary_20261106_1901.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  KS     127474        15                   9                None 
+
+>>> report KS double-booked
+
+REPORT double-booked KS: 14059 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_double_booked_20261106_1902.csv
+   Kind             Team          Season  Gap  A_Date      A_Opp               A_Score  A_Source                                 A_Batch  B_Date      B_Opp                B_Score  B_Source                                 B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Abilene (KS)  1915    0    1915-10-08  Clay Center (KS)    0-51     http://kansasfootballhistory.com         None     1915-10-08  Manhattan (KS)       0-47     http://kansasfootballhistory.com         None     1A4506B7-0A7F-4B53-83CB-1E8FFE7700E1  FED2EE2C-3702-4F2D-84D3-8B0F815B36A7
+   DIFFERENT GAMES  Abilene (KS)  1917    0    1917-10-26  Manhattan (KS)      0-14     #http://kansasfootballhistory.com#       None     1917-10-26  Salina Central (KS)  24-0     http://kansasfootballhistory.com         None     1B0A4588-D9E8-4C87-9345-AA14BDFBB0C2  6DF35204-0302-4450-A86A-E10D7E02D50F
+   DIFFERENT GAMES  Abilene (KS)  1922    0    1922-10-13  McPherson (KS)      7-13     http://kansasfootballhistory.com         None     1922-10-13  Emporia (KS)         0-13     http://kansasfootballhistory.com         None     72833561-EC72-4844-92F7-26A5F04B432B  1CD0D49D-7545-4DDC-B9F4-FA9F81C97B85
+   DIFFERENT GAMES  Abilene (KS)  1926    1    1926-10-09  Manhattan (KS)      10-7     The_Kansas_City_Times_1926_10_09_14.csv  189      1926-10-08  Herington (KS)       7-6      http://kansasfootballhistory.com         None     806766E0-7BD9-4C93-B02F-06EDE9E2EE3B  6385BD1F-D89E-49A7-A349-8C2DD2141108
+   DIFFERENT GAMES  Abilene (KS)  1926    1    1926-10-16  Junction City (KS)  3-0      The_Kansas_City_Times_1926_10_16_18.csv  189      1926-10-15  Lindsborg (KS)       35-7     http://kansasfootballhistory.com         None     8678C88A-DB48-440B-BFF9-8A7C01FC418C  CBB82714-F9FF-4806-ACCE-BEC6761D6B22
+   DIFFERENT GAMES  Abilene (KS)  1927    1    1927-10-22  Herington (KS)      19-0     The_Kansas_City_Times_1927_10_22_20.csv  189      1927-10-21  Lindsborg (KS)       33-0     http://kansasfootballhistory.com         None     446A367D-1566-420B-8F0D-1E21C029DBCB  6765B28C-1ADA-4AFA-B577-FD9951DE2306
+   DIFFERENT GAMES  Abilene (KS)  1928    1    1928-10-05  Ellsworth (KS)      0-14     http://kansasfootballhistory.com         None     1928-10-06  Manhattan (KS)       27-8     The_Kansas_City_Times_1928_10_06_16.csv  189      DDA8EFA1-B011-4BA4-BA1E-18791C991CE6  6BBC69AE-5D2F-4D72-ACAD-BAC874CF13F7
+   DIFFERENT GAMES  Abilene (KS)  1928    1    1928-10-27  Concordia (KS)      33-0     The_Kansas_City_Times_1928_10_27_18.csv  189      1928-10-26  Chapman (KS)         56-0     http://kansasfootballhistory.com         None     E0F95D19-00C1-4183-B6BB-5D8F8684BE94  3CD891E0-1E33-4A20-9FD5-60F709AB155D
+   DIFFERENT GAMES  Abilene (KS)  1931    1    1931-09-26  Lindsborg (KS)      2-6      The_Kansas_City_Times_1931_09_26_16.csv  189      1931-09-25  Herington (KS)       7-7      http://kansasfootballhistory.com         None     A81ED1FD-2876-4444-8582-4B2C990C5D76  49AD0C62-497A-47BC-A4FE-C9E7F51547FA
+   DIFFERENT GAMES  Abilene (KS)  1931    0    1931-10-02  Ellsworth (KS)      14-0     http://kansasfootballhistory.com         None     1931-10-02  Clay Center (KS)     6-18     http://kansasfootballhistory.com         None     C34FD3D9-43AA-44C4-B71F-2E811F76956A  F5CEB23A-1943-4BFA-B170-4D1DBB774F50
+   DIFFERENT GAMES  Abilene (KS)  1932    0    1932-09-02  Lindsborg (KS)      12-0     http://kansasfootballhistory.com         None     1932-09-02  Herington (KS)       7-0      http://kansasfootballhistory.com         None     CE0DB5B7-D479-4C93-BDBB-22887F071D4B  0E8136A5-F984-400B-B70E-F91512985487
+   DIFFERENT GAMES  Abilene (KS)  1932    1    1932-10-22  Clay Center (KS)    13-19    The_Kansas_City_Times_1932_10_22_18.csv  189      1932-10-21  McPherson (KS)       0-2      http://kansasfootballhistory.com         None     FB7FF39B-0370-446E-94FE-94E112C920D9  2A178659-9135-466F-A1D5-C458886B7678
+   DIFFERENT GAMES  Abilene (KS)  1935    1    1935-10-12  Ellsworth (KS)      28-0     The_Kansas_City_Times_1935_10_12_18.csv  189      1935-10-11  Salina Central (KS)  37-7     http://kansasfootballhistory.com         None     B6EDA583-38F3-45D2-AF0F-35F4B449C72D  D8E75FFF-C539-4D0A-B4DE-83698E2040DB
+   DIFFERENT GAMES  Abilene (KS)  1935    1    1935-10-26  Junction City (KS)  6-13     The_Kansas_City_Times_1935_10_26_18.csv  189      1935-10-25  McPherson (KS)       18-0     http://kansasfootballhistory.com         None     36F9E1DF-8F54-4C72-A3A8-04044594B98F  0760162F-B085-4654-BC36-28C8CE796F17
+   DIFFERENT GAMES  Abilene (KS)  1936    0    1936-10-09  McPherson (KS)      0-38     http://kansasfootballhistory.com         None     1936-10-09  Salina Central (KS)  0-27     http://kansasfootballhistory.com         None     D2B63737-3B8F-4138-BA5A-0C00802CCD3B  B088661B-E8D6-4FE0-A3AF-D63F4F9B0FC3
+   ... 14044 more rows (see CSV)
+
+=== OK 2026-11-06 19:02:22

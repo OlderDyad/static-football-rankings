@@ -1,0 +1,55 @@
+
+>>> same-score-fix AR --commit
+ 534 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS AR - COMMIT
+ 95 pairs {'DROP B': 3, 'DROP A': 1, 'UNDECIDED': 91} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_same_score_COMMITTED_20261111_0829.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  4         E56E38D8-247F-4D47-B19A-B2BE4861F069  None
+
+>>> commit AR
+
+DEDUP v4 AR - COMMIT
+ dedup_archive: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_dedup_archive_COMMITTED_20261111_0829.csv
+ dedup_review: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_dedup_review_COMMITTED_20261111_0829.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_dedup_summary_COMMITTED_20261111_0829.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  AR     89023         6                    13               B9EE0F8B-987F-439B-96DE-E15B5BA92888
+
+REVIEW-ONLY PAIRS AR - COMMIT
+ 3 pairs {'LONG': 2, 'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_review_pairs_COMMITTED_20261111_0829.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  3         74973B39-973A-4711-902C-FF021F14647F  None
+
+>>> query AR season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_season_date_1_20261111_0829.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_season_date_2_20261111_0829.csv
+
+>>> query AR forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_forfeits_1_20261111_0829.csv
+ set 2: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_forfeits_2_20261111_0829.csv
+
+>>> query AR college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_college_check_1_20261111_0830.csv
+ set 2: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_college_check_2_20261111_0830.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_college_check_3_20261111_0830.csv
+ set 4: 195 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_college_check_4_20261111_0830.csv
+
+>>> query AR ar_dump.sql
+
+QUERY ar_dump (1 result sets)
+ set 1: 89014 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_ar_dump_1_20261111_0830.csv
+
+>>> query AR ar_export.sql
+
+QUERY ar_export (2 result sets)
+ set 1: 89014 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_ar_export_1_20261111_0830.csv
+ set 2: 520 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AR\AR_q_ar_export_2_20261111_0830.csv
+
+=== OK 2026-11-11 08:30:18

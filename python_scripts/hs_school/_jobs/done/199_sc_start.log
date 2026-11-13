@@ -1,0 +1,101 @@
+
+>>> addstate SC
+Tracker rows ready for SC
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report SC drift
+
+REPORT drift SC: 58 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_drift_20261111_1546.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                                  N_Games  N_First  N_Last  N_Mapped
+   Allendale (SC)                            63       1940     2020    0         None                                     None     None     None    0       
+   Beaufort Holy Trinity Classical Christia  14       2022     2023    0         None                                     None     None     None    0       
+   Belton-Honea Path (SC)                    650      1966     2023    0         None                                     None     None     None    0       
+   Bowman Academy (SC)                       562      1951     2022    0         None                                     None     None     None    0       
+   Charleston Math & Science (SC)            40       2016     2020    0         Charleston Philip Simmons (SC)           97       2018     2026    1       
+   Charleston Porter-Gaud (SC)               242      1964     2023    0         None                                     None     None     None    0       
+   Columbia New Hope Leadership Academy (SC  15       2020     2023    0         Columbia Providence Athletic Club (SC)   41       2023     2026    1       
+   Columbia Providence HomeSchool (SC)       52       2014     2022    0         Columbia Providence Athletic Club (SC)   41       2023     2026    1       
+   Conway Christian (SC)                     37       2019     2024    1         Conway Atlantic Collegiate Academy (SC)  35       2023     2026    1       
+   Cope Harvest Christian Academy (SC)       19       1998     2024    1         None                                     None     None     None    0       
+   Darlington Trinity-Byrnes (SC)            173      2009     2023    0         Darlington Trinity Collegiate (SC)       62       2021     2026    1       
+   Duncan Byrnes (SC)                        844      1935     2023    0         None                                     None     None     None    0       
+   Ehrhardt Andrew Jackson Academy (SC)      213      2004     2023    0         None                                     None     None     None    0       
+   Estill (SC)                               725      1940     2022    0         None                                     None     None     None    0       
+   Fountain Inn Christian (SC)               77       2007     2021    0         None                                     None     None     None    0       
+   ... 43 more rows (see CSV)
+
+>>> mapcheck SC
+
+MAPPING CHECK SC - PREVIEW (nothing changed)
+ 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_mapcheck_20261111_1546.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/sc/cope/harvest  Cope Harvest Christian (SC)          4836     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/sc/st-matthews/  Saint Matthews Calhoun County (SC)   1848     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/sc/aiken/silver  Aiken Silver Bluff (SC)              58782    42109   Team_ID points to another name   Aiken St. Angela (SC)                   
+   https://www.maxpreps.com/sc/charleston/p  Charleston Porter Gaud (SC)          41842    60442   Team_ID points to another name   Charleston Porter Military Academy (SC) 
+   https://www.maxpreps.com/sc/cross/cross-  Cross (SC)                           70533    1538    Team_ID points to another name   Cross Creek (GA)                        
+   https://www.maxpreps.com/sc/greenwood/gr  Greenwood (SC)                       44782    62704   Team_ID points to another name   Greenwood Bailey Military Institute (SC)
+   https://www.maxpreps.com/sc/pageland/cen  Pageland Central (SC)                28714    66455   Team_ID points to another name   Pageland JV (SC)                        
+   https://www.maxpreps.com/sc/richburg/lew  Richburg Lewisville (SC)             67278    67268   Team_ID points to another name   Richmond Academy B (GA)                 
+   https://www.maxpreps.com/sc/rock-hill/so  Rock Hill South Pointe (SC)          67389    67388   Team_ID points to another name   Rock Hill Winthrop Training School (SC) 
+   https://www.maxpreps.com/sc/st-matthews/  Saint Matthews Calhoun Academy (SC)  67724    67723   Team_ID points to another name   Saint Matthews Ford (SC)                
+   https://www.maxpreps.com/sc/santee/lake-  Santee Lake Marion (SC)              2254     67915   Team_ID points to another name   Savannah Arnold (GA)                    
+   https://www.maxpreps.com/sc/union/union-  Union County (SC)                    41462    69164   Team_ID points to another name   Virginia Beach (VA)                     
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  10       None
+
+>>> dedup SC
+
+DEDUP v4 SC - PREVIEW (nothing changed)
+ dedup_archive: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_dedup_archive_20261111_1547.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_dedup_review_20261111_1547.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_dedup_summary_20261111_1547.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  SC     92662         11                   2                None 
+
+>>> review-pairs SC
+
+REVIEW-ONLY PAIRS SC - PREVIEW (nothing changed)
+ 2 pairs {'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_review_pairs_20261111_1547.csv
+
+>>> same-score-fix SC
+
+SAME-SCORE DOUBLE-BOOKINGS SC - PREVIEW (nothing changed)
+ 3061 pairs {'DROP B': 240, 'DROP A': 229, 'UNDECIDED': 2592} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_same_score_20261111_1550.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  458       None   None
+
+>>> query SC sc_dump.sql
+
+QUERY sc_dump (1 result sets)
+ set 1: 92664 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_sc_dump_1_20261111_1550.csv
+
+>>> query SC sc_geo_all.sql
+
+QUERY sc_geo_all (2 result sets)
+ set 1: 36437 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_sc_geo_all_1_20261111_1550.csv
+ set 2: 92664 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_sc_geo_all_2_20261111_1550.csv
+
+>>> query SC sc_names.sql
+
+QUERY sc_names (1 result sets)
+ set 1: 843 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_sc_names_1_20261111_1550.csv
+
+=== OK 2026-11-11 15:50:33

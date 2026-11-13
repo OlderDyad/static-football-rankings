@@ -1,0 +1,30 @@
+remap ME --url "https://www.maxpreps.com/me/auburn/edward-little-red-eddies/football/schedule/" --to "Auburn Edward Little (ME)" --commit
+remap ME --url "https://www.maxpreps.com/me/bangor/john-bapst-memorial-crusaders/football/schedule/" --to "Bangor John Bapst Memorial (ME)" --commit
+remap ME --url "https://www.maxpreps.com/me/fryeburg/fryeburg-raiders/football/schedule/" --to "Fryeburg Academy (ME)" --commit
+remap ME --url "https://www.maxpreps.com/me/kittery/traip-rangers/football/schedule/" --to "Kittery Traip Academy (ME)" --commit
+remap ME --url "https://www.maxpreps.com/me/lincoln/mattanawcook-lee-academy-penobscot-valley/football/schedule/" --to "Lincoln Mattanawcook-Lee Academy-Penobscot Valley (ME)" --commit
+remap ME --url "https://www.maxpreps.com/me/mount-desert/mount-desert-island-trojans/football/schedule/" --to "Bar Harbor Mount Desert Island (ME)" --commit
+remap ME --url "https://www.maxpreps.com/me/skowhegan/skowhegan-river-hawks/football/schedule/" --to "Skowhegan (ME)" --commit
+remap VT --url "https://www.maxpreps.com/vt/fairfax/bellows-free-academy-lamoille/football/schedule/" --to "Fairfax Bellows Free Academy-Lamoille (VT)" --commit
+remap ME --url "https://www.maxpreps.com/me/ellsworth/ellsworth-sumner-stevens-academy/football/schedule/" --to "Ellsworth-Sumner (ME)" --commit
+remap ME --url "https://www.maxpreps.com/me/lisbon-falls/lisbon-st-dominic/football/schedule/" --to "Lisbon Falls-St. Dominic (ME)" --commit
+remap ME --url "https://www.maxpreps.com/me/madison/madison-carrabec-valley/football/schedule/" --to "Madison-Carrabec-Valley (ME)" --commit
+remap ME --url "https://www.maxpreps.com/me/yarmouth/yarmouth-north-yarmouth-academy/football/schedule/" --to "Yarmouth-North Academy (ME)" --commit
+remap VT --url "https://www.maxpreps.com/vt/bennington/mount-anthony-patriots/football/schedule/" --to "Bennington Mt. Anthony (VT)" --commit
+remap VT --url "https://www.maxpreps.com/vt/bristol/mt-abraham-eagles/football/schedule/" --to "Bristol Mt. Abraham-Vergennes (VT)" --commit
+mapcheck ME --commit
+consolidate ME --reason "ME round 1: same-school variants and 2024 MaxPreps short names" 
+dedup ME --commit
+review-pairs ME --commit
+same-score-fix ME --commit
+query ME season_date.sql
+query ME forfeits.sql
+query ME college_check.sql
+mapcheck VT --commit
+consolidate VT --reason "VT round 1: same-school variants and 2024 MaxPreps short names" 
+dedup VT --commit
+review-pairs VT --commit
+same-score-fix VT --commit
+query VT season_date.sql
+query VT forfeits.sql
+query VT college_check.sql

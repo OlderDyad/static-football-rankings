@@ -1,0 +1,34 @@
+move-team OH --from "Lima Central (OH)" --to "Lima Catholic Central (OH)" --seasons 2020-2026 --reason "2024+ MaxPreps short name Lima Central = Lima Central Catholic; Lima Central (OH) before 1960 is the old public Lima Central High" --commit
+remap OH --url "https://www.maxpreps.com/oh/chardon/notre-dame-cathedral-latin-lions/football/schedule/" --to "Chardon Notre Dame-Cathedral Latin (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/cincinnati/cincinnati-country-day-nighthawks/football/schedule/" --to "Cincinnati Country Day (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/cincinnati/north-college-hill-trojans/football/schedule/" --to "Cincinnati North College Hill (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/cincinnati/roger-bacon-spartans/football/schedule/" --to "Saint Bernard Roger Bacon (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/cleveland/villa-angela-st-joseph-vikings/football/schedule/" --to "Cleveland Villa Angela-Saint Joseph (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/columbus/bexley-lions/football/schedule/" --to "Bexley (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/columbus/grandview-heights-bobcats/football/schedule/" --to "Grandview Heights (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/cuyahoga-falls/cuyahoga-valley-christian-academy-royals/football/schedule/" --to "Cuyahoga Valley Christian Academy (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/fremont/ross-little-giants/football/schedule/" --to "Fremont Ross (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/jackson/jackson-ironman-ironladies/football/schedule/" --to "Jackson (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/lima/lima-central-catholic-thunderbirds/football/schedule/" --to "Lima Catholic Central (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/medina/medina-battling-bees/football/schedule/" --to "Medina (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/mt-gilead/mt-gilead-indians/football/schedule/" --to "Mount Gilead (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/oberlin/oberlin-the-phoenix/football/schedule/" --to "Oberlin (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/sabina/east-clinton-astros/football/schedule/" --to "Lees Creek East Clinton (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/st-bernard/st-bernard-elmwood-place-titans/football/schedule/" --to "Saint Bernard-Elmwood Place (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/st-paris/graham-local-falcons/football/schedule/" --to "St. Paris Graham Local (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/the-plains/athens-bulldogs/football/schedule/" --to "The Plains Athens (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/west-alexandria/twin-valley-south-panthers/football/schedule/" --to "West Alexandria Twin Valley South (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/west-liberty/west-liberty-salem-tigers/football/schedule/" --to "West Liberty-Salem (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/west-portsmouth/portsmouth-west-senators/football/schedule/" --to "Portsmouth West (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/akron/garfield-community-learning-center-golden-rams/football/schedule/" --to "Akron Garfield Community Learning Center (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/hanoverton/united-golden-eagles/football/schedule/" --to "Hanoverton United Local (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/lisbon/beaver-beavers/football/schedule/" --to "Lisbon Beaver Local (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/mt-orab/western-brown-broncos/football/schedule/" --to "Mount Orab Western Brown (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/toledo/waite-indians/football/schedule/" --to "Toledo MR Waite (OH)" --commit
+remap OH --url "https://www.maxpreps.com/oh/warren/harding-raiders/football/schedule/" --to "Warren G. Harding (OH)" --commit
+mapcheck OH --commit
+consolidate OH --reason "OH round 1: 2024 MaxPreps short names (Fremont Ross Little, Jackson Ironman, Medina Battling, Oberlin The, Cincinnati Country, North College, Villa Angela...), same-school city variants (Bexley, Reading, Columbus Academy, East Clinton, Graham Local, Highland, Fenwick -> Franklin), Moeller typo"
+dedup OH
+review-pairs OH
+same-score-fix OH
+query OH oh_dump.sql

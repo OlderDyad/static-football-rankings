@@ -1,0 +1,57 @@
+
+>>> commit OK
+
+DEDUP v4 OK - COMMIT
+ dedup_archive: 122 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_dedup_archive_COMMITTED_20261110_1619.csv
+ dedup_review: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_dedup_review_COMMITTED_20261110_1619.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_dedup_summary_COMMITTED_20261110_1619.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  OK     125681        122                  23               AB0FD8DB-B14D-46BC-BFC0-9E5826B251F6
+
+REVIEW-ONLY PAIRS OK - COMMIT
+ 23 pairs {'LONG': 1, 'SHORT': 22} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_review_pairs_COMMITTED_20261110_1619.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  23        FB4F5E8D-C553-4FEA-BEA8-2FFB37945761  None
+
+>>> query OK season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_q_season_date_1_20261110_1619.csv
+ set 2: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_q_season_date_2_20261110_1619.csv
+
+>>> query OK forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_q_forfeits_1_20261110_1619.csv
+ set 2: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_q_forfeits_2_20261110_1619.csv
+
+>>> query OK college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_q_college_check_1_20261110_1619.csv
+ set 2: 92 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_q_college_check_2_20261110_1619.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_q_college_check_3_20261110_1619.csv
+ set 4: 1067 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_q_college_check_4_20261110_1619.csv
+
+>>> report OK double-booked
+
+REPORT double-booked OK: 1992 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OK\OK_double_booked_20261110_1620.csv
+   Kind             Team        Season  Gap  A_Date      A_Opp                   A_Score  A_Source                                  A_Batch  B_Date      B_Opp                B_Score  B_Source                          B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Ada (OK)    1929    0    1929-09-28  Tecumseh (OK)           0-25     Tulsa_World_1929_09_28_19.csv             173      1929-09-28  Locust Grove (OK)    49-0     Tulsa_World_1929_09_28_19.csv     173      9EBC4670-F704-4F77-9196-6E7E5C046167  DD1FF9B1-C928-4F6A-BA9E-D27A97399BC4
+   DIFFERENT GAMES  Ada (OK)    1950    1    1950-09-22  Purcell (OK)            28-13    1951 Purcell (OK) Yearbook                None     1950-09-23  Durant (OK)          26-6     Tulsa_World_1950_09_23_9.csv      173      D0367471-027C-46DB-B5D3-299D7CFC3129  B66E30A2-5F9F-41CA-91F4-6CA0A3431665
+   DIFFERENT GAMES  Ada (OK)    1951    0    1951-11-10  Broken Bow Dunbar (OK)  8-28     Tulsa_World_1951_11_10_11.csv             173      1951-11-10  McAlester (OK)       40-7     Tulsa_World_1951_11_10_11.csv     173      57E1A234-FD9E-4427-ABB8-0DBAF2B21689  3F503929-4738-451C-8C9E-1F5EE28A2513
+   DIFFERENT GAMES  Ada (OK)    1993    0    1993-12-05  Broken Bow (OK)         36-8     The Daily Oklahoman                       None     1993-12-05  Clinton (OK)         21-14    The Daily Oklahoman               None     3045EB90-8D76-456F-84F9-48A8F9F09670  F82588A4-C986-48F7-956A-5467787B8437
+   DIFFERENT GAMES  Ada (OK)    2017    1    2017-11-03  Harrah (OK)             31-13    www.maxpreps.com                          None     2017-11-02  Bethany (OK)         26-22    www.maxpreps.com                  None     0B75F9EB-1894-47E5-8B8A-14FE3E023BFE  461B4BE9-FCB3-4B18-AE16-544E5DB279DD
+   DIFFERENT GAMES  Adair (OK)  2019    1    2019-11-01  Nowata (OK)             46-13    https://www.maxpreps.com/ok/adair/adair-  26       2019-11-02  Vian (OK)            0-45     www.maxpreps.com                  None     067FCC0D-A9D5-4E94-9040-079A7455FCCD  9408D405-B2B9-44F5-9995-6D272B528626
+   DIFFERENT GAMES  Afton (OK)  1953    1    1953-09-25  Baxter Springs (KS)     20-0     http://kansasfootballhistory.com          None     1953-09-26  Commerce (OK)        6-7      Tulsa_World_1953_09_26_9.csv      173      23DA1329-FA35-4957-9F56-7E574931F2A7  22D4F098-7837-4C7D-8DEA-E564FF4E774E
+   DIFFERENT GAMES  Afton (OK)  1954    1    1954-09-18  Ketchum (OK)            32-0     Tulsa_World_1954_09_18_10.csv             173      1954-09-17  Baxter Springs (KS)  0-34     http://kansasfootballhistory.com  None     20B9FC53-0E65-42E8-81AC-5094D339F7D0  80FAB8D6-A42A-45B0-AF78-D0DEA65C7A03
+   DIFFERENT GAMES  Afton (OK)  1971    1    1971-09-18  Grove (OK)              6-27     Tulsa_World_1971_09_18_23.csv             38       1971-09-17  Oswego (KS)          0-6      http://kansasfootballhistory.com  None     B8B3EC7B-74B1-4B57-AB13-8854AEA7335A  27B24560-EB3E-4BA2-A1DE-926AB6F9F4B3
+   DIFFERENT GAMES  Afton (OK)  1988    0    1988-09-11  Quapaw (OK)             0-17     The Daily Oklahoman                       None     1988-09-11  Foyil (OK)           22-20    The Daily Oklahoman               None     66127516-3837-47EA-A8EA-7C0CEF78A247  567EC4A0-2E1E-443B-9618-9C04490747EE
+   DIFFERENT GAMES  Afton (OK)  2016    0    2016-11-11  Warner (OK)             83-0     www.maxpreps.com                          None     2016-11-11  Cashion (OK)         32-30    www.maxpreps.com                  None     C2F889FD-C81C-4F3C-971E-3DB7CE2FDB54  D7DF8678-1ABB-4627-B460-98A354DA1224
+   DIFFERENT GAMES  Allen (OK)  1975    0    1975-11-01  Cromwell Butner (OK)    30-8     The Daily Oklahoman                       None     1975-11-01  Fairland (OK)        20-14    The Daily Oklahoman               None     99E2ED08-BB37-4FD6-89FF-4C67A6ABA653  18167B80-0383-472F-8352-C13CF876F5CF
+   DIFFERENT GAMES  Allen (OK)  1975    0    1975-11-08  Quapaw (OK)             7-24     The Daily Oklahoman                       None     1975-11-08  Talihina (OK)        8-28     The Daily Oklahoman               None     19DF1FBE-AC96-405E-866C-258D2A295FB5  F402B0D0-A585-4796-B074-668ED4D45F2E
+   DIFFERENT GAMES  Allen (OK)  1993    0    1993-12-05  Dewar (OK)              19-7     The Daily Oklahoman                       None     1993-12-05  Texhoma (OK)         18-41    The Daily Oklahoman               None     9999FA83-C533-48CB-A9BB-263B345C2527  7828A641-3BF4-4592-B8B8-56726D8C7356
+   DIFFERENT GAMES  Altus (OK)  1935    1    1935-09-21  Granite (OK)            33-0     Muskogee_Daily_Phoenix_and_Times_Democra  173      1935-09-20  Vernon (TX)          0-25     http://lonestarfootball.net       None     5369871E-212F-4C8A-8610-621728EB5FAA  020AD3FD-A300-415E-925C-98ECCB96B9E3
+   ... 1977 more rows (see CSV)
+
+=== OK 2026-11-10 16:20:44

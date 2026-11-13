@@ -1,0 +1,948 @@
+
+>>> move-team GA --from "Jonesboro Mount Zion (GA)" --to "Carroll Mount Zion (GA)" --seasons 1880-2026 --ids hsfha_mv_00.csv --reason "HSFHA-GA match: game belongs to Carroll Mount Zion (GA) (hsfha.org school code)" --commit
+ only the 195 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_00.csv
+
+MOVE Jonesboro Mount Zion (GA) -> Carroll Mount Zion (GA), seasons 1880-2026 - COMMIT
+ move_games: 195 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  195    1                  None
+
+>>> move-team GA --from "Macon Howard (GA)" --to "Atlanta Howard (GA)" --seasons 1880-2026 --ids hsfha_mv_01.csv --reason "HSFHA-GA match: game belongs to Atlanta Howard (GA) (hsfha.org school code)" --commit
+ only the 85 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_01.csv
+
+MOVE Macon Howard (GA) -> Atlanta Howard (GA), seasons 1880-2026 - COMMIT
+ move_games: 85 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 53 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  85     1                  None
+
+>>> move-team GA --from "Garden City Groves (GA)" --to "Savannah Commercial (GA)" --seasons 1880-2026 --ids hsfha_mv_02.csv --reason "HSFHA-GA match: game belongs to Savannah Commercial (GA) (hsfha.org school code)" --commit
+ only the 79 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_02.csv
+
+MOVE Garden City Groves (GA) -> Savannah Commercial (GA), seasons 1880-2026 - COMMIT
+ move_games: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 80 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  79     1                  None
+
+>>> move-team GA --from "Augusta Westminster Schools of Augusta (GA)" --to "Watkinsville Westminster Christian Academy (GA)" --seasons 1880-2026 --ids hsfha_mv_03.csv --reason "HSFHA-GA match: game belongs to Watkinsville Westminster Christian Academy (GA) (hsfha.org school code)" --commit
+ only the 55 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_03.csv
+
+MOVE Augusta Westminster Schools of Augusta (GA) -> Watkinsville Westminster Christian Academy (GA), seasons 1880-2026 - COMMIT
+ move_games: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  55     1                  None
+
+>>> move-team GA --from "Moultrie Bryant (GA)" --to "Moultrie High School for Negro Youth (GA)" --seasons 1880-2026 --ids hsfha_mv_04.csv --reason "HSFHA-GA match: game belongs to Moultrie High School for Negro Youth (GA) (hsfha.org school code)" --commit
+ only the 41 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_04.csv
+
+MOVE Moultrie Bryant (GA) -> Moultrie High School for Negro Youth (GA), seasons 1880-2026 - COMMIT
+ move_games: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  41     1                  None
+
+>>> move-team GA --from "Sparta John Hancock Academy (GA)" --to "Hancock Academy (GA)" --seasons 1880-2026 --ids hsfha_mv_05.csv --reason "HSFHA-GA match: game belongs to Hancock Academy (GA) (hsfha.org school code)" --commit
+ only the 24 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_05.csv
+
+MOVE Sparta John Hancock Academy (GA) -> Hancock Academy (GA), seasons 1880-2026 - COMMIT
+ move_games: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  24     1                  None
+
+>>> move-team GA --from "Flowery Branch Lanier Christian Academy (GA)" --to "Flowery Branch Lanier Christian (GA)" --seasons 1880-2026 --ids hsfha_mv_06.csv --reason "HSFHA-GA match: game belongs to Flowery Branch Lanier Christian (GA) (hsfha.org school code)" --commit
+ only the 21 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_06.csv
+
+MOVE Flowery Branch Lanier Christian Academy (GA) -> Flowery Branch Lanier Christian (GA), seasons 1880-2026 - COMMIT
+ move_games: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  21     1                  None
+
+>>> move-team GA --from "Calhoun Gordon Central (GA)" --to "Gordon (GA)" --seasons 1880-2026 --ids hsfha_mv_10.csv --reason "HSFHA-GA match: game belongs to Gordon (GA) (hsfha.org school code)" --commit
+ only the 16 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_10.csv
+
+MOVE Calhoun Gordon Central (GA) -> Gordon (GA), seasons 1880-2026 - COMMIT
+ move_games: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  16     1                  None
+
+>>> move-team GA --from "LaGrange Dawson Street Christian (GA)" --to "Newnan Greater Bethlehem Temple Christian (GA)" --seasons 1880-2026 --ids hsfha_mv_13.csv --reason "HSFHA-GA match: game belongs to Newnan Greater Bethlehem Temple Christian (GA) (hsfha.org school code)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_13.csv
+
+MOVE LaGrange Dawson Street Christian (GA) -> Newnan Greater Bethlehem Temple Christian (GA), seasons 1880-2026 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team GA --from "St. Andrews (SC)" --to "Savannah St. Andrew's (GA)" --seasons 1880-2026 --ids hsfha_mv_15.csv --reason "HSFHA-GA match: game belongs to Savannah St. Andrew's (GA) (hsfha.org school code)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_15.csv
+
+MOVE St. Andrews (SC) -> Savannah St. Andrew's (GA), seasons 1880-2026 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team GA --from "Athens Monsignor Donovan Catholic (GA)" --to "Siloam Nathanael Greene Academy (GA)" --seasons 1880-2026 --ids hsfha_mv_w1.csv --reason "HSFHA-GA school code + geography check: Nathanael Greene Academy 1973-2003 games filed under Monsignor Donovan" --commit
+ only the 101 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\hsfha_mv_w1.csv
+
+MOVE Athens Monsignor Donovan Catholic (GA) -> Siloam Nathanael Greene Academy (GA), seasons 1880-2026 - COMMIT
+ move_games: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 53 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  101    1                  None
+
+>>> move-team GA --from "Sugar Hill Lanier (GA)" --to "Macon Lanier (GA)" --seasons 1880-2009 --reason "HSFHA-GA school code + geography check: Lanier (Macon) 1911-1969 games filed under Sugar Hill Lanier (opened 2010)" --commit
+
+MOVE Sugar Hill Lanier (GA) -> Macon Lanier (GA), seasons 1880-2009 - COMMIT
+ move_games: 265 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1527.csv
+ move_by_season: 75 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1527.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  265    1                  None
+
+>>> move-team GA --from "Lawrenceville Archer (GA)" --to "Atlanta Archer (GA)" --seasons 1880-2005 --reason "HSFHA-GA school code + geography check: Archer (Atlanta) 1957-1990s games filed under Lawrenceville Archer (opened 2009)" --commit
+
+MOVE Lawrenceville Archer (GA) -> Atlanta Archer (GA), seasons 1880-2005 - COMMIT
+ move_games: 388 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1528.csv
+ move_by_season: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1528.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  388    1                  None
+
+>>> move-team GA --from "Rome (GA)" --to "Old Rome (GA)" --seasons 1880-1960 --reason "HSFHA-GA school code + geography check: old Rome High (to 1957) games filed under Rome (new school 1992)" --commit
+
+MOVE Rome (GA) -> Old Rome (GA), seasons 1880-1960 - COMMIT
+ move_games: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1528.csv
+ move_by_season: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1528.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  103    1                  None
+
+>>> move-team GA --from "Atlanta Hapeville Charter (GA)" --to "Hapeville (GA)" --seasons 1880-2000 --reason "HSFHA-GA school code + geography check: Hapeville High (to 1980s) games filed under Hapeville Charter (2000s)" --commit
+
+MOVE Atlanta Hapeville Charter (GA) -> Hapeville (GA), seasons 1880-2000 - COMMIT
+ move_games: 213 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_games_COMMITTED_20261111_1528.csv
+ move_by_season: 59 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_move_by_season_COMMITTED_20261111_1528.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  213    1                  None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/atlanta/north-atlanta-warriors/football/schedule/" --to "Atlanta North Atlanta (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/atlanta/north-atlanta-warriors/football/schedule/ -> Atlanta North Atlanta (GA) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/ga/atlanta/nort  North Atlanta (GA)  19344    Atlanta North Atlanta (GA)  29999     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/calhoun/calhoun-yellow-jackets/football/schedule/" --to "Calhoun (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/calhoun/calhoun-yellow-jackets/football/schedule/ -> Calhoun (GA) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/ga/calhoun/calh  Calhoun Yellow (GA)  15315    Calhoun (GA)   32437     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/columbus/st-anne-pacelli-vikings/football/schedule/" --to "Columbus St. Anne-Pacelli (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/columbus/st-anne-pacelli-vikings/football/schedule/ -> Columbus St. Anne-Pacelli (GA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/ga/columbus/st-  Columbus St. Anne (GA)  34411    Columbus St. Anne-Pacelli (GA)  14068     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/douglas/citizens-christian-academy-patriots/football/schedule/" --to "Douglas Citizens Christian Academy (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/douglas/citizens-christian-academy-patriots/football/schedule/ -> Douglas Citizens Christian Academy (GA) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                            NewTeam_ID
+   https://www.maxpreps.com/ga/douglas/citi  Douglas Citizens Christian (GA)  19134    Douglas Citizens Christian Academy (GA)  46708     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/east-dublin/east-laurens-falcons/football/schedule/" --to "East Dublin East Laurens (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/east-dublin/east-laurens-falcons/football/schedule/ -> East Dublin East Laurens (GA) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/ga/east-dublin/  Dublin East Laurens (GA)  45320    East Dublin East Laurens (GA)  12992     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/fairburn/st-marys-academy-bobcats/football/schedule/" --to "Fairburn Our Lady of Mercy (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/fairburn/st-marys-academy-bobcats/football/schedule/ -> Fairburn Our Lady of Mercy (GA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/ga/fairburn/st-  Fairburn St. Marys (GA)  16663    Fairburn Our Lady of Mercy (GA)  32941     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/fort-oglethorpe/lakeview-fort-oglethorpe-warriors/football/schedule/" --to "Lakeview-Fort Oglethorpe (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/fort-oglethorpe/lakeview-fort-oglethorpe-warriors/football/schedule/ -> Lakeview-Fort Oglethorpe (GA) - COMMIT
+   URL                                       ProperName                          Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/ga/fort-ogletho  Fort Oglethorpe Lakeview Fort (GA)  12320    Lakeview-Fort Oglethorpe (GA)  64009     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/johns-creek/mount-pisgah-christian-patriots/football/schedule/" --to "Johns Creek Mount Pisgah Christian (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/johns-creek/mount-pisgah-christian-patriots/football/schedule/ -> Johns Creek Mount Pisgah Christian (GA) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                            NewTeam_ID
+   https://www.maxpreps.com/ga/johns-creek/  Johns Creek Mount Pisgah (GA)  1524     Johns Creek Mount Pisgah Christian (GA)  38361     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/jonesboro/mt-zion-bulldogs/football/schedule/" --to "Jonesboro Mount Zion (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/jonesboro/mt-zion-bulldogs/football/schedule/ -> Jonesboro Mount Zion (GA) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/ga/jonesboro/mt  Jonesboro Mt. Zion (GA)  29802    Jonesboro Mount Zion (GA)  63574     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/loganville/loganville-christian-academy-lions/football/schedule/" --to "Loganville Christian Academy (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/loganville/loganville-christian-academy-lions/football/schedule/ -> Loganville Christian Academy (GA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ga/loganville/l  Loganville Christian (GA)  22739    Loganville Christian Academy (GA)  27409     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/louisville/thomas-jefferson-academy-jaguars/football/schedule/" --to "Louisville Thomas Jefferson Academy (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/louisville/thomas-jefferson-academy-jaguars/football/schedule/ -> Louisville Thomas Jefferson Academy (GA) - COMMIT
+   URL                                       ProperName                         Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ga/louisville/t  Louisville Jefferson Academy (GA)  28589    Louisville Thomas Jefferson Academy (GA)  34066     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/lyons/robert-toombs-christian-academy-crusaders/football/schedule/" --to "Lyons Robert Toombs Christian Academy (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/lyons/robert-toombs-christian-academy-crusaders/football/schedule/ -> Lyons Robert Toombs Christian Academy (GA) - COMMIT
+   URL                                       ProperName                           Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ga/lyons/robert  Lyons Toombs Christian Academy (GA)  2151     Lyons Robert Toombs Christian Academy (G  6991      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/mcdonough/creekside-christian-academy-cougars/football/schedule/" --to "McDonough Creekside Christian Academy (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/mcdonough/creekside-christian-academy-cougars/football/schedule/ -> McDonough Creekside Christian Academy (GA) - COMMIT
+   URL                                       ProperName                          Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ga/mcdonough/cr  Mcdonough Creekside Christian (GA)  15132    McDonough Creekside Christian Academy (G  13570     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/mt-zion/mt-zion-eagles/football/schedule/" --to "Carroll Mount Zion (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/mt-zion/mt-zion-eagles/football/schedule/ -> Carroll Mount Zion (GA) - COMMIT
+   URL                                       ProperName       Team_ID  NewProperName            NewTeam_ID
+   https://www.maxpreps.com/ga/mt-zion/mt-z  Mount Zion (GA)  2833     Carroll Mount Zion (GA)  60276     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/savannah/benedictine-cadets/football/schedule/" --to "Savannah Benedictine Military (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/savannah/benedictine-cadets/football/schedule/ -> Savannah Benedictine Military (GA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                       NewTeam_ID
+   https://www.maxpreps.com/ga/savannah/ben  Savannah Benedictine (GA)  9324     Savannah Benedictine Military (GA)  44482     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/st-simons-island/frederica-academy/football/schedule/" --to "St. Simons Island Frederica Academy (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/st-simons-island/frederica-academy/football/schedule/ -> St. Simons Island Frederica Academy (GA) - COMMIT
+   URL                                       ProperName                                Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ga/st-simons-is  Saint Simons Island Frederica Academy (G  9826     St. Simons Island Frederica Academy (GA)  42553     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/sugar-hill/georgia-force-christian-blue-knights/football/schedule/" --to "Sugar Hill Georgia Force Christian (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/sugar-hill/georgia-force-christian-blue-knights/football/schedule/ -> Sugar Hill Georgia Force Christian (GA) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                            NewTeam_ID
+   https://www.maxpreps.com/ga/sugar-hill/g  Sugar Hill Georgia Force (GA)  7358     Sugar Hill Georgia Force Christian (GA)  68569     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap GA --url "https://www.maxpreps.com/ga/waynesboro/edmund-burke-academy-spartans/football/schedule/" --to "Waynesboro Edmund Burke Academy (GA)" --commit
+
+REMAP https://www.maxpreps.com/ga/waynesboro/edmund-burke-academy-spartans/football/schedule/ -> Waynesboro Edmund Burke Academy (GA) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/ga/waynesboro/e  Waynesboro Burke Academy (GA)  38805    Waynesboro Edmund Burke Academy (GA)  47059     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck GA --commit
+
+MAPPING CHECK GA - COMMIT (Team_ID set to the ProperName ID)
+ 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_mapcheck_COMMITTED_20261111_1528.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/ga/martinez/aug  Martinez Augusta (GA)                     13179    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/ga/bainbridge/b  Bainbridge (GA)                           59273    59271   Team_ID points to another name   Bainbridge Grace Christian Academy (GA) 
+   https://www.maxpreps.com/ga/bainbridge/g  Bainbridge Grace Christian Academy (GA)   42015    59273   Team_ID points to another name   Bamberg Carlisle Military (SC)          
+   https://www.maxpreps.com/ga/bethlehem/be  Bethlehem Christian Academy (GA)          34048    59663   Team_ID points to another name   Biloxi Notre Dame (MS)                  
+   https://www.maxpreps.com/ga/chatsworth/n  Chatsworth North Murray (GA)              3825     60474   Team_ID points to another name   Chattahoochee (FL)                      
+   https://www.maxpreps.com/ga/colquitt/mil  Colquitt Miller County (GA)               60969    60942   Team_ID points to another name   Columbia Military Academy (TN)          
+   https://www.maxpreps.com/ga/conyers/youn  Conyers Young Americans Christian (GA)    26061    61052   Team_ID points to another name   Cope Harvest Christian Academy (SC)     
+   https://www.maxpreps.com/ga/dawsonville/  Dawsonville Dawson County (GA)            15489    61290   Team_ID points to another name   Dayton (TN)                             
+   https://www.maxpreps.com/ga/donalsonvill  Donalsonville Seminole County (GA)        32145    61539   Team_ID points to another name   Donalsonville Seminole County Training (
+   https://www.maxpreps.com/ga/duluth/notre  Duluth Notre Dame (GA)                    2155     72471   Team_ID points to another name   None                                    
+   https://www.maxpreps.com/ga/gainesville/  Gainesville Riverside Military Academy (  70800    62390   Team_ID points to another name   Gainesville Riverside Military Academy B
+   https://www.maxpreps.com/ga/milledgevill  Milledgeville Baldwin (GA)                65246    34716   Team_ID points to another name   Milledgeville Georgia Military Academy (
+   https://www.maxpreps.com/ga/milledgevill  Milledgeville Georgia Military College (  71525    4734    Team_ID points to another name   Milledgeville Georgia Military College B
+   https://www.maxpreps.com/ga/monticello/p  Monticello Piedmont Academy (GA)          65488    65441   Team_ID points to another name   Morganton East Fannin (GA)              
+   https://www.maxpreps.com/ga/ocilla/irwin  Ocilla Irwin County (GA)                  71835    66164   Team_ID points to another name   Oglethorpe University B (GA)            
+   https://www.maxpreps.com/ga/savannah/win  Savannah Windsor Forest (GA)              70621    67963   Team_ID points to another name   Savannah YMCA Frosh (GA)                
+   https://www.maxpreps.com/ga/sugar-hill/l  Sugar Hill Lanier (GA)                    72019    68570   Team_ID points to another name   Sugar Hill Lanier B (GA)                
+   https://www.maxpreps.com/ga/talbotton/ce  Talbotton Central (GA)                    22878    68714   Team_ID points to another name   Tallahassee Florida High (FL)           
+   https://www.maxpreps.com/ga/woodstock/et  Woodstock Etowah (GA)                     1570     69985   Team_ID points to another name   Woodstock Northside Christian Academy (G
+   Status     Fixable  Err 
+   COMMITTED  18       None
+
+>>> consolidate GA --reason "GA round 1: HSFHA-GA same-school name variants (typos, Atlanta X -> city-first), renames to the latest name per David's rule (Grady->Midtown, Southside->Jackson, Pacelli->St. Anne-Pacelli, Northwest Georgia->Dade County, Erwin...), GMA->Woodward; county consolidations left split"
+Consolidating GA from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\GA_Alias_Rules.csv
+
+[stderr]
+2026-11-11 15:28:12,367 - INFO - Starting consolidation for state: (GA) using staging table method.
+2026-11-11 15:28:12,379 - WARNING - WARNING: 614 row(s) have identical OldName and NewName (no-op rules).
+2026-11-11 15:28:12,379 - WARNING -   'Acworth Allatoona (GA)' -> 'Acworth Allatoona (GA)' (no change)
+2026-11-11 15:28:12,380 - WARNING -   'Adairsville (GA)' -> 'Adairsville (GA)' (no change)
+2026-11-11 15:28:12,380 - WARNING -   'Adel Cook (GA)' -> 'Adel Cook (GA)' (no change)
+2026-11-11 15:28:12,380 - WARNING -   'Alamo Wheeler County (GA)' -> 'Alamo Wheeler County (GA)' (no change)
+2026-11-11 15:28:12,380 - WARNING -   'Albany (GA)' -> 'Albany (GA)' (no change)
+2026-11-11 15:28:12,380 - WARNING -   'Albany Deerfield-Windsor (GA)' -> 'Albany Deerfield-Windsor (GA)' (no change)
+2026-11-11 15:28:12,380 - WARNING -   'Albany Dougherty (GA)' -> 'Albany Dougherty (GA)' (no change)
+2026-11-11 15:28:12,380 - WARNING -   'Albany Monroe (GA)' -> 'Albany Monroe (GA)' (no change)
+2026-11-11 15:28:12,380 - WARNING -   'Albany Sherwood Christian Academy (GA)' -> 'Albany Sherwood Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Albany Westover (GA)' -> 'Albany Westover (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Alma Bacon County (GA)' -> 'Alma Bacon County (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Alpharetta (GA)' -> 'Alpharetta (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Alpharetta Chattahoochee (GA)' -> 'Alpharetta Chattahoochee (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Alpharetta King's Ridge Christian (GA)' -> 'Alpharetta King's Ridge Christian (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Alpharetta St. Francis (GA)' -> 'Alpharetta St. Francis (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Americus (GA)' -> 'Americus (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Americus Southland Academy (GA)' -> 'Americus Southland Academy (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Americus-Sumter (GA)' -> 'Americus-Sumter (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Ashburn Turner County (GA)' -> 'Ashburn Turner County (GA)' (no change)
+2026-11-11 15:28:12,381 - WARNING -   'Athens (GA)' -> 'Athens (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Athens Academy (GA)' -> 'Athens Academy (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Athens Cedar Shoals (GA)' -> 'Athens Cedar Shoals (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Athens Christian (GA)' -> 'Athens Christian (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Athens Clarke Central (GA)' -> 'Athens Clarke Central (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Athens Monsignor Donovan Catholic (GA)' -> 'Athens Monsignor Donovan Catholic (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Athens Prince Avenue Christian (GA)' -> 'Athens Prince Avenue Christian (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Atlanta Boys (GA)' -> 'Atlanta Boys (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Atlanta Business Engineering Science Tech (GA)' -> 'Atlanta Business Engineering Science Tech (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Atlanta Carver (GA)' -> 'Atlanta Carver (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Atlanta Crim (GA)' -> 'Atlanta Crim (GA)' (no change)
+2026-11-11 15:28:12,382 - WARNING -   'Atlanta Cross Keys (GA)' -> 'Atlanta Cross Keys (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta Douglass (GA)' -> 'Atlanta Douglass (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta Druid Hills (GA)' -> 'Atlanta Druid Hills (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta Hapeville Charter (GA)' -> 'Atlanta Hapeville Charter (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta Holy Innocents Episcopal (GA)' -> 'Atlanta Holy Innocents Episcopal (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta Holy Spirit Prep (GA)' -> 'Atlanta Holy Spirit Prep (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta Howard (GA)' -> 'Atlanta Howard (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta Jackson (GA)' -> 'Atlanta Jackson (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta KIPP Collegiate (GA)' -> 'Atlanta KIPP Collegiate (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta Lakeshore (GA)' -> 'Atlanta Lakeshore (GA)' (no change)
+2026-11-11 15:28:12,383 - WARNING -   'Atlanta Lakeside (GA)' -> 'Atlanta Lakeside (GA)' (no change)
+2026-11-11 15:28:12,384 - WARNING -   'Atlanta Lovett (GA)' -> 'Atlanta Lovett (GA)' (no change)
+2026-11-11 15:28:12,384 - WARNING -   'Atlanta Marist (GA)' -> 'Atlanta Marist (GA)' (no change)
+2026-11-11 15:28:12,384 - WARNING -   'Atlanta Mays (GA)' -> 'Atlanta Mays (GA)' (no change)
+2026-11-11 15:28:12,384 - WARNING -   'Atlanta McNair (GA)' -> 'Atlanta McNair (GA)' (no change)
+2026-11-11 15:28:12,384 - WARNING -   'Atlanta Mount Vernon Presbyterian (GA)' -> 'Atlanta Mount Vernon Presbyterian (GA)' (no change)
+2026-11-11 15:28:12,384 - WARNING -   'Atlanta North Atlanta (GA)' -> 'Atlanta North Atlanta (GA)' (no change)
+2026-11-11 15:28:12,384 - WARNING -   'Atlanta North Springs (GA)' -> 'Atlanta North Springs (GA)' (no change)
+2026-11-11 15:28:12,384 - WARNING -   'Atlanta Northside (GA)' -> 'Atlanta Northside (GA)' (no change)
+2026-11-11 15:28:12,385 - WARNING -   'Atlanta Pace Academy (GA)' -> 'Atlanta Pace Academy (GA)' (no change)
+2026-11-11 15:28:12,385 - WARNING -   'Atlanta Peachtree (GA)' -> 'Atlanta Peachtree (GA)' (no change)
+2026-11-11 15:28:12,385 - WARNING -   'Atlanta Price (GA)' -> 'Atlanta Price (GA)' (no change)
+2026-11-11 15:28:12,385 - WARNING -   'Atlanta Riverwood (GA)' -> 'Atlanta Riverwood (GA)' (no change)
+2026-11-11 15:28:12,385 - WARNING -   'Atlanta Roosevelt (GA)' -> 'Atlanta Roosevelt (GA)' (no change)
+2026-11-11 15:28:12,385 - WARNING -   'Atlanta St. Pius X Catholic (GA)' -> 'Atlanta St. Pius X Catholic (GA)' (no change)
+2026-11-11 15:28:12,385 - WARNING -   'Atlanta Tech (GA)' -> 'Atlanta Tech (GA)' (no change)
+2026-11-11 15:28:12,385 - WARNING -   'Atlanta Therrell (GA)' -> 'Atlanta Therrell (GA)' (no change)
+2026-11-11 15:28:12,385 - WARNING -   'Atlanta Walker (GA)' -> 'Atlanta Walker (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Atlanta Washington (GA)' -> 'Atlanta Washington (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Atlanta Westlake (GA)' -> 'Atlanta Westlake (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Atlanta Westminster (GA)' -> 'Atlanta Westminster (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Augusta Academy of Richmond County (GA)' -> 'Augusta Academy of Richmond County (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Augusta Aquinas (GA)' -> 'Augusta Aquinas (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Augusta Butler (GA)' -> 'Augusta Butler (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Augusta Cross Creek (GA)' -> 'Augusta Cross Creek (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Augusta Curtis Baptist (GA)' -> 'Augusta Curtis Baptist (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Augusta Glenn Hills (GA)' -> 'Augusta Glenn Hills (GA)' (no change)
+2026-11-11 15:28:12,386 - WARNING -   'Augusta Josey (GA)' -> 'Augusta Josey (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Augusta Laney (GA)' -> 'Augusta Laney (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Augusta Prep Day (GA)' -> 'Augusta Prep Day (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Augusta Westminster Schools of Augusta (GA)' -> 'Augusta Westminster Schools of Augusta (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Augusta Westside (GA)' -> 'Augusta Westside (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Austell South Cobb (GA)' -> 'Austell South Cobb (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Avondale Estates Avondale (GA)' -> 'Avondale Estates Avondale (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Baconton Charter (GA)' -> 'Baconton Charter (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Bainbridge (GA)' -> 'Bainbridge (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Bainbridge Grace Christian Academy (GA)' -> 'Bainbridge Grace Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Barnesville Lamar County (GA)' -> 'Barnesville Lamar County (GA)' (no change)
+2026-11-11 15:28:12,387 - WARNING -   'Baxley Appling County (GA)' -> 'Baxley Appling County (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Bellville Pinewood Christian (GA)' -> 'Bellville Pinewood Christian (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Bethlehem Christian Academy (GA)' -> 'Bethlehem Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Blackshear (GA)' -> 'Blackshear (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Blackshear Pierce County (GA)' -> 'Blackshear Pierce County (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Blairsville Union County (GA)' -> 'Blairsville Union County (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Blakely Early County (GA)' -> 'Blakely Early County (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Blakely-Union (GA)' -> 'Blakely-Union (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Blue Ridge Fannin County (GA)' -> 'Blue Ridge Fannin County (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Bogart North Oconee (GA)' -> 'Bogart North Oconee (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Bowdon (GA)' -> 'Bowdon (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Bremen (GA)' -> 'Bremen (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Brooklet Southeast Bulloch (GA)' -> 'Brooklet Southeast Bulloch (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Brunswick (GA)' -> 'Brunswick (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Brunswick Glynn Academy (GA)' -> 'Brunswick Glynn Academy (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Brunswick Risley (GA)' -> 'Brunswick Risley (GA)' (no change)
+2026-11-11 15:28:12,388 - WARNING -   'Buchanan (GA)' -> 'Buchanan (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Buena Vista Marion County (GA)' -> 'Buena Vista Marion County (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Buena Vista Tri-County (GA)' -> 'Buena Vista Tri-County (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Buford (GA)' -> 'Buford (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Butler Taylor County (GA)' -> 'Butler Taylor County (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Cairo (GA)' -> 'Cairo (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Calhoun (GA)' -> 'Calhoun (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Calhoun Gordon Central (GA)' -> 'Calhoun Gordon Central (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Calhoun Sonoraville (GA)' -> 'Calhoun Sonoraville (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Camilla Mitchell County (GA)' -> 'Camilla Mitchell County (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Camilla Westwood (GA)' -> 'Camilla Westwood (GA)' (no change)
+2026-11-11 15:28:12,390 - WARNING -   'Canton (GA)' -> 'Canton (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Canton Cherokee (GA)' -> 'Canton Cherokee (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Canton Creekview (GA)' -> 'Canton Creekview (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Canton North Georgia (GA)' -> 'Canton North Georgia (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Canton Sequoyah (GA)' -> 'Canton Sequoyah (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Carnesville Franklin County (GA)' -> 'Carnesville Franklin County (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Carroll Mount Zion (GA)' -> 'Carroll Mount Zion (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Carrollton (GA)' -> 'Carrollton (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Carrollton Central (GA)' -> 'Carrollton Central (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Cartersville (GA)' -> 'Cartersville (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Cartersville Cass (GA)' -> 'Cartersville Cass (GA)' (no change)
+2026-11-11 15:28:12,391 - WARNING -   'Cartersville Woodland (GA)' -> 'Cartersville Woodland (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Cedartown (GA)' -> 'Cedartown (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Cedartown Cedar Hill (GA)' -> 'Cedartown Cedar Hill (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Chamblee (GA)' -> 'Chamblee (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Chatsworth Murray County (GA)' -> 'Chatsworth Murray County (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Chatsworth North Murray (GA)' -> 'Chatsworth North Murray (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Chattanooga Valley (GA)' -> 'Chattanooga Valley (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Chickamauga Gordon Lee (GA)' -> 'Chickamauga Gordon Lee (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Chula Tiftarea Academy (GA)' -> 'Chula Tiftarea Academy (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Clarkston (GA)' -> 'Clarkston (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Claxton (GA)' -> 'Claxton (GA)' (no change)
+2026-11-11 15:28:12,392 - WARNING -   'Cleveland White County (GA)' -> 'Cleveland White County (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'Cochran (GA)' -> 'Cochran (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'Cochran Bleckley County (GA)' -> 'Cochran Bleckley County (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'Coffee County (GA)' -> 'Coffee County (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'College Park (GA)' -> 'College Park (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'College Park Banneker (GA)' -> 'College Park Banneker (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'College Park North Clayton (GA)' -> 'College Park North Clayton (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'College Park Woodward Academy (GA)' -> 'College Park Woodward Academy (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'Colquitt Miller County (GA)' -> 'Colquitt Miller County (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'Columbus (GA)' -> 'Columbus (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'Columbus Baker (GA)' -> 'Columbus Baker (GA)' (no change)
+2026-11-11 15:28:12,393 - WARNING -   'Columbus Brookstone (GA)' -> 'Columbus Brookstone (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Columbus Calvary Christian (GA)' -> 'Columbus Calvary Christian (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Columbus Carver (GA)' -> 'Columbus Carver (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Columbus Hardaway (GA)' -> 'Columbus Hardaway (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Columbus Jordan (GA)' -> 'Columbus Jordan (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Columbus Kendrick (GA)' -> 'Columbus Kendrick (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Columbus Northside (GA)' -> 'Columbus Northside (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Columbus Shaw (GA)' -> 'Columbus Shaw (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Columbus Spencer (GA)' -> 'Columbus Spencer (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Commerce (GA)' -> 'Commerce (GA)' (no change)
+2026-11-11 15:28:12,394 - WARNING -   'Commerce East Jackson (GA)' -> 'Commerce East Jackson (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Conyers East Atlanta (GA)' -> 'Conyers East Atlanta (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Conyers Heritage (GA)' -> 'Conyers Heritage (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Conyers Rockdale County (GA)' -> 'Conyers Rockdale County (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Conyers Salem (GA)' -> 'Conyers Salem (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Conyers Young Americans Christian (GA)' -> 'Conyers Young Americans Christian (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Cordele (GA)' -> 'Cordele (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Cordele Crisp Academy (GA)' -> 'Cordele Crisp Academy (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Cordele Crisp County (GA)' -> 'Cordele Crisp County (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Cornelia (GA)' -> 'Cornelia (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Covington Alcovy (GA)' -> 'Covington Alcovy (GA)' (no change)
+2026-11-11 15:28:12,395 - WARNING -   'Covington Eastside (GA)' -> 'Covington Eastside (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Covington Newton (GA)' -> 'Covington Newton (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Cumming Forsyth Central (GA)' -> 'Cumming Forsyth Central (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Cumming Horizon Christian Academy (GA)' -> 'Cumming Horizon Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Cumming North Forsyth (GA)' -> 'Cumming North Forsyth (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Cumming Pinecrest Academy (GA)' -> 'Cumming Pinecrest Academy (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Cumming South Forsyth (GA)' -> 'Cumming South Forsyth (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Cumming West Forsyth (GA)' -> 'Cumming West Forsyth (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Cusseta Chattahoochee County (GA)' -> 'Cusseta Chattahoochee County (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Cuthbert Randolph-Clay (GA)' -> 'Cuthbert Randolph-Clay (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Dacula (GA)' -> 'Dacula (GA)' (no change)
+2026-11-11 15:28:12,396 - WARNING -   'Dacula Hebron Christian Academy (GA)' -> 'Dacula Hebron Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dade (GA)' -> 'Dade (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dahlonega Lumpkin County (GA)' -> 'Dahlonega Lumpkin County (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dallas (GA)' -> 'Dallas (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dallas East Paulding (GA)' -> 'Dallas East Paulding (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dallas North Paulding (GA)' -> 'Dallas North Paulding (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dallas Paulding County (GA)' -> 'Dallas Paulding County (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dalton (GA)' -> 'Dalton (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dalton Christian Heritage (GA)' -> 'Dalton Christian Heritage (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dalton Coahulla Creek (GA)' -> 'Dalton Coahulla Creek (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Dalton Southeast Whitfield County (GA)' -> 'Dalton Southeast Whitfield County (GA)' (no change)
+2026-11-11 15:28:12,397 - WARNING -   'Damascus Southwest Georgia Academy (GA)' -> 'Damascus Southwest Georgia Academy (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Danielsville Madison County (GA)' -> 'Danielsville Madison County (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Darien McIntosh County Academy (GA)' -> 'Darien McIntosh County Academy (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Davis (GA)' -> 'Davis (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Dawson Terrell Academy (GA)' -> 'Dawson Terrell Academy (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Dawson Terrell County (GA)' -> 'Dawson Terrell County (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Dawsonville Dawson County (GA)' -> 'Dawsonville Dawson County (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Decatur (GA)' -> 'Decatur (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Decatur Columbia (GA)' -> 'Decatur Columbia (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Decatur Shamrock (GA)' -> 'Decatur Shamrock (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Decatur Southwest DeKalb (GA)' -> 'Decatur Southwest DeKalb (GA)' (no change)
+2026-11-11 15:28:12,398 - WARNING -   'Decatur Towers (GA)' -> 'Decatur Towers (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Dexter West Laurens (GA)' -> 'Dexter West Laurens (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Donalsonville Seminole County (GA)' -> 'Donalsonville Seminole County (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Donalsonville Seminole County Training (GA)' -> 'Donalsonville Seminole County Training (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Doraville Sequoyah (GA)' -> 'Doraville Sequoyah (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Douglas Coffee (GA)' -> 'Douglas Coffee (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Douglasville Alexander (GA)' -> 'Douglasville Alexander (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Douglasville Chapel Hill (GA)' -> 'Douglasville Chapel Hill (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Douglasville Douglas County (GA)' -> 'Douglasville Douglas County (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Douglasville Harvester Christian Academy (GA)' -> 'Douglasville Harvester Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,399 - WARNING -   'Douglasville Kings Way Christian School (GA)' -> 'Douglasville Kings Way Christian School (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'Douglasville New Manchester (GA)' -> 'Douglasville New Manchester (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'Douglasville South Paulding (GA)' -> 'Douglasville South Paulding (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'Dublin (GA)' -> 'Dublin (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'Dublin Trinity Christian (GA)' -> 'Dublin Trinity Christian (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'Duluth (GA)' -> 'Duluth (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'Duluth Notre Dame Academy (GA)' -> 'Duluth Notre Dame Academy (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'Dunwoody (GA)' -> 'Dunwoody (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'East Dublin East Laurens (GA)' -> 'East Dublin East Laurens (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'East Point Tri-Cities (GA)' -> 'East Point Tri-Cities (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'East Rome (GA)' -> 'East Rome (GA)' (no change)
+2026-11-11 15:28:12,400 - WARNING -   'Eastman (GA)' -> 'Eastman (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Eastman Dodge County (GA)' -> 'Eastman Dodge County (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Eatonton Gatewood (GA)' -> 'Eatonton Gatewood (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Eatonton Putnam County (GA)' -> 'Eatonton Putnam County (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Edison Calhoun County (GA)' -> 'Edison Calhoun County (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Edison Pataula Charter Academy (GA)' -> 'Edison Pataula Charter Academy (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Elberton (GA)' -> 'Elberton (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Elberton Elbert County (GA)' -> 'Elberton Elbert County (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Ellaville Schley County (GA)' -> 'Ellaville Schley County (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Ellenwood Cedar Grove (GA)' -> 'Ellenwood Cedar Grove (GA)' (no change)
+2026-11-11 15:28:12,401 - WARNING -   'Ellijay Gilmer (GA)' -> 'Ellijay Gilmer (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Evans (GA)' -> 'Evans (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Evans Greenbrier (GA)' -> 'Evans Greenbrier (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Evans Lakeside (GA)' -> 'Evans Lakeside (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Fairburn Campbell (GA)' -> 'Fairburn Campbell (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Fairburn Creekside (GA)' -> 'Fairburn Creekside (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Fairburn Landmark Christian (GA)' -> 'Fairburn Landmark Christian (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Fairburn Langston Hughes (GA)' -> 'Fairburn Langston Hughes (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Fairburn Our Lady of Mercy (GA)' -> 'Fairburn Our Lady of Mercy (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Fayetteville Fayette County (GA)' -> 'Fayetteville Fayette County (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Fayetteville Starr's Mill (GA)' -> 'Fayetteville Starr's Mill (GA)' (no change)
+2026-11-11 15:28:12,402 - WARNING -   'Fayetteville Whitewater (GA)' -> 'Fayetteville Whitewater (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Fitzgerald (GA)' -> 'Fitzgerald (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Flowery Branch (GA)' -> 'Flowery Branch (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Flowery Branch Lanier Christian Academy (GA)' -> 'Flowery Branch Lanier Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Folkston Charlton County (GA)' -> 'Folkston Charlton County (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Forest Park (GA)' -> 'Forest Park (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Forsyth County (GA)' -> 'Forsyth County (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Forsyth Mary Persons (GA)' -> 'Forsyth Mary Persons (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Forsyth Monroe Academy (GA)' -> 'Forsyth Monroe Academy (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Fort Valley (GA)' -> 'Fort Valley (GA)' (no change)
+2026-11-11 15:28:12,403 - WARNING -   'Fort Valley High - Industrial (GA)' -> 'Fort Valley High - Industrial (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Fort Valley Peach County (GA)' -> 'Fort Valley Peach County (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Franklin Heard County (GA)' -> 'Franklin Heard County (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Gainesville (GA)' -> 'Gainesville (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Gainesville Chestatee (GA)' -> 'Gainesville Chestatee (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Gainesville East Hall (GA)' -> 'Gainesville East Hall (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Gainesville Fair Street (GA)' -> 'Gainesville Fair Street (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Gainesville Johnson (GA)' -> 'Gainesville Johnson (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Gainesville Lakeview Academy (GA)' -> 'Gainesville Lakeview Academy (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Gainesville North Hall (GA)' -> 'Gainesville North Hall (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Gainesville Riverside Military Academy (GA)' -> 'Gainesville Riverside Military Academy (GA)' (no change)
+2026-11-11 15:28:12,404 - WARNING -   'Garden City Groves (GA)' -> 'Garden City Groves (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Georgia Industrial Institute (GA)' -> 'Georgia Industrial Institute (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Georgia School for the Deaf (GA)' -> 'Georgia School for the Deaf (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Gibson Glascock County (GA)' -> 'Gibson Glascock County (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Glennville (GA)' -> 'Glennville (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Gordon (GA)' -> 'Gordon (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Gray Jones County (GA)' -> 'Gray Jones County (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Greensboro (GA)' -> 'Greensboro (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Greensboro Greene County (GA)' -> 'Greensboro Greene County (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Greensboro Lake Oconee Academy (GA)' -> 'Greensboro Lake Oconee Academy (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Greenville (GA)' -> 'Greenville (GA)' (no change)
+2026-11-11 15:28:12,405 - WARNING -   'Griffin (GA)' -> 'Griffin (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Griffin Christian (GA)' -> 'Griffin Christian (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Griffin Skipstone Academy (GA)' -> 'Griffin Skipstone Academy (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Griffin Spalding (GA)' -> 'Griffin Spalding (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Grovetown (GA)' -> 'Grovetown (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Guyton South Effingham (GA)' -> 'Guyton South Effingham (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Hamilton Harris County (GA)' -> 'Hamilton Harris County (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Hampton (GA)' -> 'Hampton (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Hampton Dutchtown (GA)' -> 'Hampton Dutchtown (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Harlem (GA)' -> 'Harlem (GA)' (no change)
+2026-11-11 15:28:12,406 - WARNING -   'Hartwell (GA)' -> 'Hartwell (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hartwell Hart County (GA)' -> 'Hartwell Hart County (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hawkinsville (GA)' -> 'Hawkinsville (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hazlehurst Jeff Davis (GA)' -> 'Hazlehurst Jeff Davis (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hephzibah (GA)' -> 'Hephzibah (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hephzibah Georgia School (GA)' -> 'Hephzibah Georgia School (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hiawassee Towns County (GA)' -> 'Hiawassee Towns County (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hinesville Bradwell Institute (GA)' -> 'Hinesville Bradwell Institute (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hinesville Liberty County (GA)' -> 'Hinesville Liberty County (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hiram (GA)' -> 'Hiram (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hogansville (GA)' -> 'Hogansville (GA)' (no change)
+2026-11-11 15:28:12,407 - WARNING -   'Hogansville Callaway (GA)' -> 'Hogansville Callaway (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Homer Banks County (GA)' -> 'Homer Banks County (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Homerville Clinch County (GA)' -> 'Homerville Clinch County (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Hoschton Mill Creek (GA)' -> 'Hoschton Mill Creek (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Irwinton Wilkinson County (GA)' -> 'Irwinton Wilkinson County (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Jackson (GA)' -> 'Jackson (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Jasper Pickens (GA)' -> 'Jasper Pickens (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Jefferson (GA)' -> 'Jefferson (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Jefferson Jackson County (GA)' -> 'Jefferson Jackson County (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Jeffersonville Twiggs Academy (GA)' -> 'Jeffersonville Twiggs Academy (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Jeffersonville Twiggs County (GA)' -> 'Jeffersonville Twiggs County (GA)' (no change)
+2026-11-11 15:28:12,408 - WARNING -   'Jesup (GA)' -> 'Jesup (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Jesup Wayne County (GA)' -> 'Jesup Wayne County (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Johns Creek (GA)' -> 'Johns Creek (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Johns Creek Mount Pisgah Christian (GA)' -> 'Johns Creek Mount Pisgah Christian (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Johns Creek Northview (GA)' -> 'Johns Creek Northview (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Jonesboro (GA)' -> 'Jonesboro (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Jonesboro Mount Zion (GA)' -> 'Jonesboro Mount Zion (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Jonesboro Mundy's Mill (GA)' -> 'Jonesboro Mundy's Mill (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Kathleen Veterans (GA)' -> 'Kathleen Veterans (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Kennesaw Harrison (GA)' -> 'Kennesaw Harrison (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Kennesaw Mount Paran Christian (GA)' -> 'Kennesaw Mount Paran Christian (GA)' (no change)
+2026-11-11 15:28:12,409 - WARNING -   'Kennesaw Mountain (GA)' -> 'Kennesaw Mountain (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'Kennesaw North Cobb (GA)' -> 'Kennesaw North Cobb (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'Kennesaw North Cobb Christian (GA)' -> 'Kennesaw North Cobb Christian (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'Kennesaw Shiloh Hills Christian (GA)' -> 'Kennesaw Shiloh Hills Christian (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'Kingsland Camden County (GA)' -> 'Kingsland Camden County (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'LaFayette (GA)' -> 'LaFayette (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'LaGrange (GA)' -> 'LaGrange (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'LaGrange Dawson Street Christian (GA)' -> 'LaGrange Dawson Street Christian (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'Lagrange East Depot (GA)' -> 'Lagrange East Depot (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'Lagrange Ethel W. Kight (GA)' -> 'Lagrange Ethel W. Kight (GA)' (no change)
+2026-11-11 15:28:12,410 - WARNING -   'LaGrange Lafayette Christian (GA)' -> 'LaGrange Lafayette Christian (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'LaGrange Troup County (GA)' -> 'LaGrange Troup County (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Lakeland Lanier County (GA)' -> 'Lakeland Lanier County (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Lakeview-Fort Oglethorpe (GA)' -> 'Lakeview-Fort Oglethorpe (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Lavonia (GA)' -> 'Lavonia (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Lawrenceville Archer (GA)' -> 'Lawrenceville Archer (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Lawrenceville Central Gwinnett (GA)' -> 'Lawrenceville Central Gwinnett (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Lawrenceville Mountain View (GA)' -> 'Lawrenceville Mountain View (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Leesburg Lee County (GA)' -> 'Leesburg Lee County (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Lexington Oglethorpe County (GA)' -> 'Lexington Oglethorpe County (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Lilburn Berkmar (GA)' -> 'Lilburn Berkmar (GA)' (no change)
+2026-11-11 15:28:12,411 - WARNING -   'Lilburn Parkview (GA)' -> 'Lilburn Parkview (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Lilburn Providence Christian Academy (GA)' -> 'Lilburn Providence Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Lincolnton West Side (GA)' -> 'Lincolnton West Side (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Lindale Pepperell (GA)' -> 'Lindale Pepperell (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Lithia Springs (GA)' -> 'Lithia Springs (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Lithia Springs Colonial Hills Christian (GA)' -> 'Lithia Springs Colonial Hills Christian (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Lithonia (GA)' -> 'Lithonia (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Lithonia Arabia Mountain (GA)' -> 'Lithonia Arabia Mountain (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Lithonia M.L. King (GA)' -> 'Lithonia M.L. King (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Lithonia Miller Grove (GA)' -> 'Lithonia Miller Grove (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Locust Grove (GA)' -> 'Locust Grove (GA)' (no change)
+2026-11-11 15:28:12,412 - WARNING -   'Locust Grove Strong Rock Christian (GA)' -> 'Locust Grove Strong Rock Christian (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Loganville (GA)' -> 'Loganville (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Loganville Christian Academy (GA)' -> 'Loganville Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Loganville Covenant Christian Academy (GA)' -> 'Loganville Covenant Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Loganville Grayson (GA)' -> 'Loganville Grayson (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Louisville (GA)' -> 'Louisville (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Louisville Jefferson County (GA)' -> 'Louisville Jefferson County (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Louisville Thomas Jefferson Academy (GA)' -> 'Louisville Thomas Jefferson Academy (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Lovejoy (GA)' -> 'Lovejoy (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Ludowici Long County (GA)' -> 'Ludowici Long County (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Luella (GA)' -> 'Luella (GA)' (no change)
+2026-11-11 15:28:12,413 - WARNING -   'Lumpkin Stewart County (GA)' -> 'Lumpkin Stewart County (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Lyons (GA)' -> 'Lyons (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Lyons Robert Toombs Christian Academy (GA)' -> 'Lyons Robert Toombs Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Lyons Toombs County (GA)' -> 'Lyons Toombs County (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Mableton Pebblebrook (GA)' -> 'Mableton Pebblebrook (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Mableton Whitefield Academy (GA)' -> 'Mableton Whitefield Academy (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Macon Academy for Classical Education (GA)' -> 'Macon Academy for Classical Education (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Macon Ballard-Hudson (GA)' -> 'Macon Ballard-Hudson (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Macon Central (GA)' -> 'Macon Central (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Macon Central Fellowship Christian Academy (GA)' -> 'Macon Central Fellowship Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,414 - WARNING -   'Macon Covenant Academy (GA)' -> 'Macon Covenant Academy (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon First Presbyterian Day (GA)' -> 'Macon First Presbyterian Day (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Howard (GA)' -> 'Macon Howard (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Mount de Sales Academy (GA)' -> 'Macon Mount de Sales Academy (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Northeast (GA)' -> 'Macon Northeast (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Rutland (GA)' -> 'Macon Rutland (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Southeast (GA)' -> 'Macon Southeast (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Southwest (GA)' -> 'Macon Southwest (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Stratford Academy (GA)' -> 'Macon Stratford Academy (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Tattnall Square Academy (GA)' -> 'Macon Tattnall Square Academy (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Westside (GA)' -> 'Macon Westside (GA)' (no change)
+2026-11-11 15:28:12,415 - WARNING -   'Macon Windsor Academy (GA)' -> 'Macon Windsor Academy (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Madison (GA)' -> 'Madison (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Madison Morgan County (GA)' -> 'Madison Morgan County (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Manchester (GA)' -> 'Manchester (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Marietta (GA)' -> 'Marietta (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Marietta Dominion Christian (GA)' -> 'Marietta Dominion Christian (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Marietta Johnson Ferry Christian Academy (GA)' -> 'Marietta Johnson Ferry Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Marietta Kell (GA)' -> 'Marietta Kell (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Marietta Lassiter (GA)' -> 'Marietta Lassiter (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Marietta Lemon Street (GA)' -> 'Marietta Lemon Street (GA)' (no change)
+2026-11-11 15:28:12,416 - WARNING -   'Marietta Osborne (GA)' -> 'Marietta Osborne (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'Marietta Pope (GA)' -> 'Marietta Pope (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'Marietta Sprayberry (GA)' -> 'Marietta Sprayberry (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'Marietta Walker (GA)' -> 'Marietta Walker (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'Marietta Walton (GA)' -> 'Marietta Walton (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'Marietta Wheeler (GA)' -> 'Marietta Wheeler (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'Martinez Augusta Christian (GA)' -> 'Martinez Augusta Christian (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'McDonough Creekside Christian Academy (GA)' -> 'McDonough Creekside Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'McDonough Eagle's Landing (GA)' -> 'McDonough Eagle's Landing (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'McDonough Eagle's Landing Christian Academy (GA)' -> 'McDonough Eagle's Landing Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,417 - WARNING -   'McDonough Henry County (GA)' -> 'McDonough Henry County (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'McDonough New Creation Christian (GA)' -> 'McDonough New Creation Christian (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'McDonough Ola (GA)' -> 'McDonough Ola (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'McDonough Peoples Baptist Academy (GA)' -> 'McDonough Peoples Baptist Academy (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'McDonough Union Grove (GA)' -> 'McDonough Union Grove (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'McDonough West Side (GA)' -> 'McDonough West Side (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'McRae Telfair County (GA)' -> 'McRae Telfair County (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'Metter (GA)' -> 'Metter (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'Milledgeville Baldwin (GA)' -> 'Milledgeville Baldwin (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'Milledgeville Georgia Military College (GA)' -> 'Milledgeville Georgia Military College (GA)' (no change)
+2026-11-11 15:28:12,418 - WARNING -   'Milledgeville John Milledge Academy (GA)' -> 'Milledgeville John Milledge Academy (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Millen Jenkins County (GA)' -> 'Millen Jenkins County (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Milner Rock Springs Christian Academy (GA)' -> 'Milner Rock Springs Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Milton (GA)' -> 'Milton (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Milton Cambridge (GA)' -> 'Milton Cambridge (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Mitchell-Baker (GA)' -> 'Mitchell-Baker (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Monroe Area (GA)' -> 'Monroe Area (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Monroe George Walton Academy (GA)' -> 'Monroe George Walton Academy (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Montezuma Douglass (GA)' -> 'Montezuma Douglass (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Montezuma Macon County (GA)' -> 'Montezuma Macon County (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Monticello Jasper County (GA)' -> 'Monticello Jasper County (GA)' (no change)
+2026-11-11 15:28:12,419 - WARNING -   'Monticello Piedmont Academy (GA)' -> 'Monticello Piedmont Academy (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Morganton East Fannin (GA)' -> 'Morganton East Fannin (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Morrow (GA)' -> 'Morrow (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Moultrie (GA)' -> 'Moultrie (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Moultrie Bryant (GA)' -> 'Moultrie Bryant (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Mount Airy Habersham Central (GA)' -> 'Mount Airy Habersham Central (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Murphy (GA)' -> 'Murphy (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Nahunta Brantley County (GA)' -> 'Nahunta Brantley County (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Nashville Berrien (GA)' -> 'Nashville Berrien (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Newnan (GA)' -> 'Newnan (GA)' (no change)
+2026-11-11 15:28:12,420 - WARNING -   'Newnan Heritage (GA)' -> 'Newnan Heritage (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'Newnan Northgate (GA)' -> 'Newnan Northgate (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'Norcross (GA)' -> 'Norcross (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'Norcross Greater Atlanta Christian (GA)' -> 'Norcross Greater Atlanta Christian (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'Norcross Meadowcreek (GA)' -> 'Norcross Meadowcreek (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'Norcross Wesleyan (GA)' -> 'Norcross Wesleyan (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'North Georgia Agricultural College (GA)' -> 'North Georgia Agricultural College (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'North Whitfield (GA)' -> 'North Whitfield (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'Oakwood West Hall (GA)' -> 'Oakwood West Hall (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'Ocilla Irwin County (GA)' -> 'Ocilla Irwin County (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'Old Rome (GA)' -> 'Old Rome (GA)' (no change)
+2026-11-11 15:28:12,421 - WARNING -   'Palmetto (GA)' -> 'Palmetto (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Patterson (GA)' -> 'Patterson (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Peachtree City McIntosh (GA)' -> 'Peachtree City McIntosh (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Pearson Atkinson County (GA)' -> 'Pearson Atkinson County (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Pelham (GA)' -> 'Pelham (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Pembroke Bryan County (GA)' -> 'Pembroke Bryan County (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Pembroke Coastal HomeSchool (GA)' -> 'Pembroke Coastal HomeSchool (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Perry (GA)' -> 'Perry (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Perry Westfield (GA)' -> 'Perry Westfield (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Piedment Institute (GA)' -> 'Piedment Institute (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Pinehurst Fullington Academy (GA)' -> 'Pinehurst Fullington Academy (GA)' (no change)
+2026-11-11 15:28:12,422 - WARNING -   'Portal (GA)' -> 'Portal (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Powder Springs Hillgrove (GA)' -> 'Powder Springs Hillgrove (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Powder Springs McEachern (GA)' -> 'Powder Springs McEachern (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Powder Springs Praise Academy (GA)' -> 'Powder Springs Praise Academy (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Quitman Brooks County (GA)' -> 'Quitman Brooks County (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Rabun Gap-Nacoochee (GA)' -> 'Rabun Gap-Nacoochee (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Randolph County (GA)' -> 'Randolph County (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Ravenwood Academy (GA)' -> 'Ravenwood Academy (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Redbud (GA)' -> 'Redbud (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Reidsville (GA)' -> 'Reidsville (GA)' (no change)
+2026-11-11 15:28:12,423 - WARNING -   'Reidsville Tattnall County (GA)' -> 'Reidsville Tattnall County (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Richmond Academy (GA)' -> 'Richmond Academy (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Richmond Hill (GA)' -> 'Richmond Hill (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Ringgold (GA)' -> 'Ringgold (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Ringgold Heritage (GA)' -> 'Ringgold Heritage (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Riverdale (GA)' -> 'Riverdale (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Riverdale Drew (GA)' -> 'Riverdale Drew (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Riverview Academy (GA)' -> 'Riverview Academy (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Roberta Crawford County (GA)' -> 'Roberta Crawford County (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Rochelle Wilcox County (GA)' -> 'Rochelle Wilcox County (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Rockmart (GA)' -> 'Rockmart (GA)' (no change)
+2026-11-11 15:28:12,424 - WARNING -   'Rocky Face West Side (GA)' -> 'Rocky Face West Side (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Rome (GA)' -> 'Rome (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Rome Armuchee (GA)' -> 'Rome Armuchee (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Rome Coosa (GA)' -> 'Rome Coosa (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Rome Darlington (GA)' -> 'Rome Darlington (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Rome Model (GA)' -> 'Rome Model (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Rome Unity Christian (GA)' -> 'Rome Unity Christian (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Rome West (GA)' -> 'Rome West (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Roopville Holy Ground Baptist Academy (GA)' -> 'Roopville Holy Ground Baptist Academy (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Rossville (GA)' -> 'Rossville (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Rossville Ridgeland (GA)' -> 'Rossville Ridgeland (GA)' (no change)
+2026-11-11 15:28:12,425 - WARNING -   'Roswell (GA)' -> 'Roswell (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Roswell Blessed Trinity (GA)' -> 'Roswell Blessed Trinity (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Roswell Centennial (GA)' -> 'Roswell Centennial (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Roswell Fellowship Christian (GA)' -> 'Roswell Fellowship Christian (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Royston (GA)' -> 'Royston (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Sandersville Brentwood (GA)' -> 'Sandersville Brentwood (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Sandersville Elder (GA)' -> 'Sandersville Elder (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Sandersville Washington County (GA)' -> 'Sandersville Washington County (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Savannah (GA)' -> 'Savannah (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Savannah Beach (GA)' -> 'Savannah Beach (GA)' (no change)
+2026-11-11 15:28:12,426 - WARNING -   'Savannah Benedictine Military (GA)' -> 'Savannah Benedictine Military (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Bethesda Academy (GA)' -> 'Savannah Bethesda Academy (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Bible Baptist (GA)' -> 'Savannah Bible Baptist (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Calvary Day (GA)' -> 'Savannah Calvary Day (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Christian (GA)' -> 'Savannah Christian (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Country Day (GA)' -> 'Savannah Country Day (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Islands (GA)' -> 'Savannah Islands (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Jenkins (GA)' -> 'Savannah Jenkins (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Johnson (GA)' -> 'Savannah Johnson (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Juniors FR (GA)' -> 'Savannah Juniors FR (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah Memorial Day (GA)' -> 'Savannah Memorial Day (GA)' (no change)
+2026-11-11 15:28:12,427 - WARNING -   'Savannah New Hampstead (GA)' -> 'Savannah New Hampstead (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Savannah St. Andrew's (GA)' -> 'Savannah St. Andrew's (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Savannah Tompkins (GA)' -> 'Savannah Tompkins (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Savannah Windsor Forest (GA)' -> 'Savannah Windsor Forest (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Sharpsburg Central Christian (GA)' -> 'Sharpsburg Central Christian (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Sharpsburg East Coweta (GA)' -> 'Sharpsburg East Coweta (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Sharpsburg Trinity Christian (GA)' -> 'Sharpsburg Trinity Christian (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Shellman Southwest Georgia STEM Charter (GA)' -> 'Shellman Southwest Georgia STEM Charter (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Siloam Nathanael Greene Academy (GA)' -> 'Siloam Nathanael Greene Academy (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Smyrna - Old Campbell (GA)' -> 'Smyrna - Old Campbell (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Smyrna Campbell (GA)' -> 'Smyrna Campbell (GA)' (no change)
+2026-11-11 15:28:12,428 - WARNING -   'Snellville Brookwood (GA)' -> 'Snellville Brookwood (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'Snellville Shiloh (GA)' -> 'Snellville Shiloh (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'Snellville South Gwinnett (GA)' -> 'Snellville South Gwinnett (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'Social Circle (GA)' -> 'Social Circle (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'Soperton Treutlen (GA)' -> 'Soperton Treutlen (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'South Atlanta (GA)' -> 'South Atlanta (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'South Fulton (GA)' -> 'South Fulton (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'Spalding ac. -1952 (GA)' -> 'Spalding ac. -1952 (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'Sparta (GA)' -> 'Sparta (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'Sparta Hancock Central (GA)' -> 'Sparta Hancock Central (GA)' (no change)
+2026-11-11 15:28:12,429 - WARNING -   'Sparta John Hancock Academy (GA)' -> 'Sparta John Hancock Academy (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Springfield Effingham County (GA)' -> 'Springfield Effingham County (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'St. Simons Island Frederica Academy (GA)' -> 'St. Simons Island Frederica Academy (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Statesboro (GA)' -> 'Statesboro (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Statesboro Bulloch Academy (GA)' -> 'Statesboro Bulloch Academy (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Stewart-Quitman (GA)' -> 'Stewart-Quitman (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Stillmore David Emanuel Academy (GA)' -> 'Stillmore David Emanuel Academy (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Stockbridge (GA)' -> 'Stockbridge (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Stockbridge Community Christian (GA)' -> 'Stockbridge Community Christian (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Stockbridge Woodland (GA)' -> 'Stockbridge Woodland (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Stone Mountain (GA)' -> 'Stone Mountain (GA)' (no change)
+2026-11-11 15:28:12,430 - WARNING -   'Stone Mountain Redan (GA)' -> 'Stone Mountain Redan (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Stone Mountain Stephenson (GA)' -> 'Stone Mountain Stephenson (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Sugar Hill Georgia Force Christian (GA)' -> 'Sugar Hill Georgia Force Christian (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Sugar Hill Lanier (GA)' -> 'Sugar Hill Lanier (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Sugar Hill Lanier JV (GA)' -> 'Sugar Hill Lanier JV (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Summerville (GA)' -> 'Summerville (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Summerville Chattooga (GA)' -> 'Summerville Chattooga (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Sumter County (GA)' -> 'Sumter County (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Suwanee Collins Hill (GA)' -> 'Suwanee Collins Hill (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Suwanee Lambert (GA)' -> 'Suwanee Lambert (GA)' (no change)
+2026-11-11 15:28:12,431 - WARNING -   'Suwanee North Gwinnett (GA)' -> 'Suwanee North Gwinnett (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Suwanee Peachtree Ridge (GA)' -> 'Suwanee Peachtree Ridge (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Swainsboro (GA)' -> 'Swainsboro (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Sylvania Screven County (GA)' -> 'Sylvania Screven County (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Sylvester (GA)' -> 'Sylvester (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Sylvester Worth County (GA)' -> 'Sylvester Worth County (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Talbotton Central (GA)' -> 'Talbotton Central (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Tallapoosa (GA)' -> 'Tallapoosa (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Tallapoosa Haralson County (GA)' -> 'Tallapoosa Haralson County (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Tallulah Falls (GA)' -> 'Tallulah Falls (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Temple (GA)' -> 'Temple (GA)' (no change)
+2026-11-11 15:28:12,432 - WARNING -   'Tennille (GA)' -> 'Tennille (GA)' (no change)
+2026-11-11 15:28:12,433 - WARNING -   'Thomaston R.E. Lee (GA)' -> 'Thomaston R.E. Lee (GA)' (no change)
+2026-11-11 15:28:12,433 - WARNING -   'Thomaston Upson-Lee (GA)' -> 'Thomaston Upson-Lee (GA)' (no change)
+2026-11-11 15:28:12,433 - WARNING -   'Thomasville (GA)' -> 'Thomasville (GA)' (no change)
+2026-11-11 15:28:12,433 - WARNING -   'Thomasville Brookwood (GA)' -> 'Thomasville Brookwood (GA)' (no change)
+2026-11-11 15:28:12,433 - WARNING -   'Thomasville Douglass (GA)' -> 'Thomasville Douglass (GA)' (no change)
+2026-11-11 15:28:12,433 - WARNING -   'Thomasville Thomas County Central (GA)' -> 'Thomasville Thomas County Central (GA)' (no change)
+2026-11-11 15:28:12,433 - WARNING -   'Thomson (GA)' -> 'Thomson (GA)' (no change)
+2026-11-11 15:28:12,433 - WARNING -   'Tifton (GA)' -> 'Tifton (GA)' (no change)
+2026-11-11 15:28:12,433 - WARNING -   'Tiger Rabun County (GA)' -> 'Tiger Rabun County (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Toccoa (GA)' -> 'Toccoa (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Toccoa Stephens County (GA)' -> 'Toccoa Stephens County (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Trenton Dade County (GA)' -> 'Trenton Dade County (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Trion (GA)' -> 'Trion (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Tucker (GA)' -> 'Tucker (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Tunnel Hill Northwest Whitfield (GA)' -> 'Tunnel Hill Northwest Whitfield (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Twin City Emanuel County Institute (GA)' -> 'Twin City Emanuel County Institute (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Tyrone Sandy Creek (GA)' -> 'Tyrone Sandy Creek (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'University School for Boys (GA)' -> 'University School for Boys (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Valdosta (GA)' -> 'Valdosta (GA)' (no change)
+2026-11-11 15:28:12,434 - WARNING -   'Valdosta Georgia Christian (GA)' -> 'Valdosta Georgia Christian (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Valdosta Lowndes (GA)' -> 'Valdosta Lowndes (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Valdosta Valwood (GA)' -> 'Valdosta Valwood (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Vidalia (GA)' -> 'Vidalia (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Vidalia Heritage Academy (GA)' -> 'Vidalia Heritage Academy (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Vienna (GA)' -> 'Vienna (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Vienna Dooly County (GA)' -> 'Vienna Dooly County (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Villa Rica (GA)' -> 'Villa Rica (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Wadley (GA)' -> 'Wadley (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Walnut Grove (GA)' -> 'Walnut Grove (GA)' (no change)
+2026-11-11 15:28:12,435 - WARNING -   'Warner Robins (GA)' -> 'Warner Robins (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Warner Robins Houston County (GA)' -> 'Warner Robins Houston County (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Warner Robins Houston County Training (GA)' -> 'Warner Robins Houston County Training (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Warner Robins Northside (GA)' -> 'Warner Robins Northside (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Warrenton (GA)' -> 'Warrenton (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Warrenton Briarwood Academy (GA)' -> 'Warrenton Briarwood Academy (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Warrenton Warren County (GA)' -> 'Warrenton Warren County (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Washington (GA)' -> 'Washington (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Washington-Wilkes (GA)' -> 'Washington-Wilkes (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Watkinsville Oconee County (GA)' -> 'Watkinsville Oconee County (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Waycross (GA)' -> 'Waycross (GA)' (no change)
+2026-11-11 15:28:12,436 - WARNING -   'Waycross Center (GA)' -> 'Waycross Center (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'Waycross Ware County (GA)' -> 'Waycross Ware County (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'Waynesboro (GA)' -> 'Waynesboro (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'Waynesboro Burke County (GA)' -> 'Waynesboro Burke County (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'Waynesboro Edmund Burke Academy (GA)' -> 'Waynesboro Edmund Burke Academy (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'West Point (GA)' -> 'West Point (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'Westbrook School (GA)' -> 'Westbrook School (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'Williamson CrossPointe Christian Academy (GA)' -> 'Williamson CrossPointe Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'Winder (GA)' -> 'Winder (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'Winder Apalachee (GA)' -> 'Winder Apalachee (GA)' (no change)
+2026-11-11 15:28:12,437 - WARNING -   'Winder-Barrow (GA)' -> 'Winder-Barrow (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Woodbury Flint River Academy (GA)' -> 'Woodbury Flint River Academy (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Woodstock (GA)' -> 'Woodstock (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Woodstock Etowah (GA)' -> 'Woodstock Etowah (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Woodstock Northside Christian Academy (GA)' -> 'Woodstock Northside Christian Academy (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Woodstock River Ridge (GA)' -> 'Woodstock River Ridge (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Woodstock The King's Academy (GA)' -> 'Woodstock The King's Academy (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Wrens (GA)' -> 'Wrens (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Wrightsville (GA)' -> 'Wrightsville (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Wrightsville Johnson County (GA)' -> 'Wrightsville Johnson County (GA)' (no change)
+2026-11-11 15:28:12,438 - WARNING -   'Zebulon Pike County (GA)' -> 'Zebulon Pike County (GA)' (no change)
+2026-11-11 15:28:12,439 - INFO - Validation passed: 901 rules are clean and ready to upload.
+2026-11-11 15:28:12,467 - INFO - Uploading 901 rules to staging table: ConsolidationRules_Staging...
+2026-11-11 15:28:13,117 - INFO - Upload to staging table complete.
+2026-11-11 15:28:13,122 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-11 15:30:42,449 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-11 15:30:42,449 - INFO - Reason logged to dbo.HS_Consolidation_Log: GA round 1: HSFHA-GA same-school name variants (typos, Atlanta X -> city-first), renames to the latest name per David's rule (Grady->Midtown, Southside->Jackson, Pacelli->St. Anne-Pacelli, Northwest Georgia->Dade County, Erwin...), GMA->Woodward; county consolidations left split
+2026-11-11 15:30:42,449 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-11 15:30:42,450 - INFO - Running post-consolidation safety check...
+2026-11-11 15:30:42,457 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup GA
+
+DEDUP v4 GA - PREVIEW (nothing changed)
+ dedup_archive: 2661 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_dedup_archive_20261111_1530.csv
+ dedup_review: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_dedup_review_20261111_1530.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_dedup_summary_20261111_1530.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  GA     163321        2661                 21               None 
+
+>>> review-pairs GA
+
+REVIEW-ONLY PAIRS GA - PREVIEW (nothing changed)
+ 21 pairs {'LONG': 2, 'SHORT': 19} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_review_pairs_20261111_1530.csv
+
+=== OK 2026-11-11 15:30:58

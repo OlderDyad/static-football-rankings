@@ -1,0 +1,860 @@
+
+>>> move-team AL --from "Huntsville A.L. Johnson (AL)" --to "Huntsville J.O. Johnson (AL)" --seasons 1880-2026 --ids hsfha_mv_00.csv --reason "HSFHA-AL match: game belongs to Huntsville J.O. Johnson (AL) (hsfha.org school code + geography check)" --commit
+ only the 129 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_00.csv
+
+MOVE Huntsville A.L. Johnson (AL) -> Huntsville J.O. Johnson (AL), seasons 1880-2026 - COMMIT
+ move_games: 129 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1149.csv
+ move_by_season: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1149.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  129    1                  None
+
+>>> move-team AL --from "Birmingham West End (AL)" --to "Walnut Grove West End (AL)" --seasons 1880-2026 --ids hsfha_mv_01.csv --reason "HSFHA-AL match: game belongs to Walnut Grove West End (AL) (hsfha.org school code + geography check)" --commit
+ only the 67 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_01.csv
+
+MOVE Birmingham West End (AL) -> Walnut Grove West End (AL), seasons 1880-2026 - COMMIT
+ move_games: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1149.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1149.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  67     1                  None
+
+>>> move-team AL --from "Millport South Lamar (AL)" --to "Millport (AL)" --seasons 1880-2026 --ids hsfha_mv_02.csv --reason "HSFHA-AL match: game belongs to Millport (AL) (hsfha.org school code + geography check)" --commit
+ only the 22 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_02.csv
+
+MOVE Millport South Lamar (AL) -> Millport (AL), seasons 1880-2026 - COMMIT
+ move_games: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 97 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  22     1                  None
+
+>>> move-team AL --from "Elba (AL)" --to "Alba (AL)" --seasons 1880-2026 --ids hsfha_mv_03.csv --reason "HSFHA-AL match: game belongs to Alba (AL) (hsfha.org school code + geography check)" --commit
+ only the 18 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_03.csv
+
+MOVE Elba (AL) -> Alba (AL), seasons 1880-2026 - COMMIT
+ move_games: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  18     1                  None
+
+>>> move-team AL --from "Huntsville Columbia (AL)" --to "Columbia Houston County (AL)" --seasons 1880-2026 --ids hsfha_mv_04.csv --reason "HSFHA-AL match: game belongs to Columbia Houston County (AL) (hsfha.org school code + geography check)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_04.csv
+
+MOVE Huntsville Columbia (AL) -> Columbia Houston County (AL), seasons 1880-2026 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 93 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> move-team AL --from "Columbiana Cornerstone Christian (AL)" --to "Rainsville Cornerstone Christian (AL)" --seasons 1880-2026 --ids hsfha_mv_05.csv --reason "HSFHA-AL match: game belongs to Rainsville Cornerstone Christian (AL) (hsfha.org school code + geography check)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_05.csv
+
+MOVE Columbiana Cornerstone Christian (AL) -> Rainsville Cornerstone Christian (AL), seasons 1880-2026 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> move-team AL --from "Plantersville Dallas County (AL)" --to "Livingston (AL)" --seasons 1880-2026 --ids hsfha_mv_06.csv --reason "HSFHA-AL match: game belongs to Livingston (AL) (hsfha.org school code + geography check)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_06.csv
+
+MOVE Plantersville Dallas County (AL) -> Livingston (AL), seasons 1880-2026 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team AL --from "Huntsville Councill (AL)" --to "Councill Training (AL)" --seasons 1880-2026 --ids hsfha_mv_08.csv --reason "HSFHA-AL match: game belongs to Councill Training (AL) (hsfha.org school code + geography check)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_08.csv
+
+MOVE Huntsville Councill (AL) -> Councill Training (AL), seasons 1880-2026 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team AL --from "Marion (AL)" --to "Marion Military Institute College (AL)" --seasons 1880-2026 --ids hsfha_mv_10.csv --reason "HSFHA-AL match: game belongs to Marion Military Institute College (AL) (hsfha.org school code + geography check)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_10.csv
+
+MOVE Marion (AL) -> Marion Military Institute College (AL), seasons 1880-2026 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 118 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team AL --from "Huntsville Randolph Academy (AL)" --to "Wedowee Randolph County (AL)" --seasons 1880-2026 --ids hsfha_mv_11.csv --reason "HSFHA-AL match: game belongs to Wedowee Randolph County (AL) (hsfha.org school code + geography check)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_11.csv
+
+MOVE Huntsville Randolph Academy (AL) -> Wedowee Randolph County (AL), seasons 1880-2026 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 97 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team AL --from "Augusta Westminster Schools of Augusta (GA)" --to "Huntsville Westminster Christian (AL)" --seasons 1880-2026 --ids hsfha_mv_12.csv --reason "HSFHA-AL match: game belongs to Huntsville Westminster Christian (AL) (hsfha.org school code + geography check)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_12.csv
+
+MOVE Augusta Westminster Schools of Augusta (GA) -> Huntsville Westminster Christian (AL), seasons 1880-2026 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team AL --from "Huntsville Westminster Christian (AL)" --to "Huntsville Whitesburg Christian (AL)" --seasons 1880-2026 --ids hsfha_mv_w1.csv --reason "HSFHA-AL school code + geography check: Whitesburg Christian Academy games filed under Westminster Christian" --commit
+ only the 66 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_w1.csv
+
+MOVE Huntsville Westminster Christian (AL) -> Huntsville Whitesburg Christian (AL), seasons 1880-2026 - COMMIT
+ move_games: 66 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  66     1                  None
+
+>>> move-team AL --from "Alabaster Evangel Christian (AL)" --to "Eight Mile Evangel Christian (AL)" --seasons 1880-2026 --ids hsfha_mv_w2.csv --reason "HSFHA-AL school code + geography check: Evangel Christian (Saraland/Eight Mile) 1971-1987 games filed under Alabaster" --commit
+ only the 26 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_w2.csv
+
+MOVE Alabaster Evangel Christian (AL) -> Eight Mile Evangel Christian (AL), seasons 1880-2026 - COMMIT
+ move_games: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 35 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  26     1                  None
+
+>>> move-team AL --from "Selma Ellwood Christian (AL)" --to "Selma Central Christian Academy (AL)" --seasons 1880-2026 --ids hsfha_mv_w3.csv --reason "HSFHA-AL school code + geography check: Central Christian (Selma) 2004-2007 games filed under Ellwood Christian" --commit
+ only the 29 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\hsfha_mv_w3.csv
+
+MOVE Selma Ellwood Christian (AL) -> Selma Central Christian Academy (AL), seasons 1880-2026 - COMMIT
+ move_games: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  29     1                  None
+
+>>> move-team AL --from "York Sumter Central (AL)" --to "York Sumter County (AL)" --seasons 1880-2010 --reason "Lineage split (consolidation: Sumter County + Livingston -> Sumter Central 2011, HSFHA-AL): Sumter County era" --commit
+
+MOVE York Sumter Central (AL) -> York Sumter County (AL), seasons 1880-2010 - COMMIT
+ move_games: 764 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_games_COMMITTED_20261111_1150.csv
+ move_by_season: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_move_by_season_COMMITTED_20261111_1150.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  764    1                  None
+
+>>> remap AL --url "https://www.maxpreps.com/al/alexander-city/benjamin-russell-wildcats/football/schedule/" --to "Alexander City Benjamin Russell (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/alexander-city/benjamin-russell-wildcats/football/schedule/ -> Alexander City Benjamin Russell (AL) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/al/alexander-ci  Alexander City Russell (AL)  11253    Alexander City Benjamin Russell (AL)  24562     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/alexandria/alexandria-valley-cubs/football/schedule/" --to "Alexandria (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/alexandria/alexandria-valley-cubs/football/schedule/ -> Alexandria (AL) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName    NewTeam_ID
+   https://www.maxpreps.com/al/alexandria/a  Alexandria Valley (AL)  15706    Alexandria (AL)  9593      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/ariton/ariton-purple-cats/football/schedule/" --to "Ariton (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/ariton/ariton-purple-cats/football/schedule/ -> Ariton (AL) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/al/ariton/arito  Ariton Purple (AL)  44563    Ariton (AL)    14028     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/bessemer/bessemer-city-tigers/football/schedule/" --to "Bessemer City Jess Lanier (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/bessemer/bessemer-city-tigers/football/schedule/ -> Bessemer City Jess Lanier (AL) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/al/bessemer/bes  Bessemer City (AL)  41534    Bessemer City Jess Lanier (AL)  29216     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/birmingham/carver-birmingham-rams/football/schedule/" --to "Birmingham Carver (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/birmingham/carver-birmingham-rams/football/schedule/ -> Birmingham Carver (AL) - COMMIT
+   URL                                       ProperName                         Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/al/birmingham/c  Birmingham Carver Birmingham (AL)  2832     Birmingham Carver (AL)  2666      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/cecil/macon-east-montgomery-academy-knights/football/schedule/" --to "Cecil Macon-East Montgomery Academy (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/cecil/macon-east-montgomery-academy-knights/football/schedule/ -> Cecil Macon-East Montgomery Academy (AL) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/al/cecil/macon-  Cecil Macon East (AL)  9755     Cecil Macon-East Montgomery Academy (AL)  38628     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/florence/mars-hill-bible-panthers/football/schedule/" --to "Florence Mars Hill Bible (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/florence/mars-hill-bible-panthers/football/schedule/ -> Florence Mars Hill Bible (AL) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/al/florence/mar  Florence Mars Hill (AL)  14697    Florence Mars Hill Bible (AL)  13934     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/grant/kate-duncan-smith-dar-patriots/football/schedule/" --to "Grant Kate Duncan Smith DAR (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/grant/kate-duncan-smith-dar-patriots/football/schedule/ -> Grant Kate Duncan Smith DAR (AL) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/al/grant/kate-d  Grant Kate Duncan (AL)  28112    Grant Kate Duncan Smith DAR (AL)  16374     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/greenville/fort-dale-academy-eagles/football/schedule/" --to "Greenville Fort Dale Academy (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/greenville/fort-dale-academy-eagles/football/schedule/ -> Greenville Fort Dale Academy (AL) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/al/greenville/f  Greenville Fort Dale (AL)  35657    Greenville Fort Dale Academy (AL)  1985      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/kimberly/mortimer-jordan-blue-devils/football/schedule/" --to "Kimberly Mortimer Jordan (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/kimberly/mortimer-jordan-blue-devils/football/schedule/ -> Kimberly Mortimer Jordan (AL) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/al/kimberly/mor  Morris Jordan (AL)  24390    Kimberly Mortimer Jordan (AL)  63753     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/ragland/ragland-purple-devils/football/schedule/" --to "Ragland (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/ragland/ragland-purple-devils/football/schedule/ -> Ragland (AL) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/al/ragland/ragl  Ragland Purple (AL)  34563    Ragland (AL)   14620     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/semmes/mary-g-montgomery-vikings/football/schedule/" --to "Mary Montgomery (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/semmes/mary-g-montgomery-vikings/football/schedule/ -> Mary Montgomery (AL) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName         NewTeam_ID
+   https://www.maxpreps.com/al/semmes/mary-  Semmes Montgomery (AL)  17835    Mary Montgomery (AL)  64885     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/talladega/alabama-school-for-the-deaf-silent-warriors/football/schedule/" --to "Alabama School for the Deaf (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/talladega/alabama-school-for-the-deaf-silent-warriors/football/schedule/ -> Alabama School for the Deaf (AL) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/al/talladega/al  Talladega Alabama School (AL)  52       Alabama School for the Deaf (AL)  264       
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/troy/pike-liberal-arts-patriots/football/schedule/" --to "Troy Pike Liberal Arts (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/troy/pike-liberal-arts-patriots/football/schedule/ -> Troy Pike Liberal Arts (AL) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/al/troy/pike-li  Troy Pike Liberal (AL)  42310    Troy Pike Liberal Arts (AL)  27765     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap AL --url "https://www.maxpreps.com/al/phenix-city/glenwood-gators/football/schedule/" --to "Phenix City Glenwood Academy (AL)" --commit
+
+REMAP https://www.maxpreps.com/al/phenix-city/glenwood-gators/football/schedule/ -> Phenix City Glenwood Academy (AL) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/al/phenix-city/  Phenix City Glenwood (AL)  32102    Phenix City Glenwood Academy (AL)  66707     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck AL --commit
+
+MAPPING CHECK AL - COMMIT (Team_ID set to the ProperName ID)
+ 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_mapcheck_COMMITTED_20261111_1150.csv
+   URL                                       ProperName                            Team_ID  NameID  Problem                         Team_ID_Name                            
+   https://www.maxpreps.com/al/boaz/sardis-  Boaz Sardis (AL)                      36180    59784   Team_ID points to another name  Boys Industrial School (AL)             
+   https://www.maxpreps.com/al/childersburg  Childersburg (AL)                     71305    60670   Team_ID points to another name  Childersburg Phyllis Wheatley (AL)      
+   https://www.maxpreps.com/al/east-brewton  East Brewton W.S. Neal (AL)           42106    12194   Team_ID points to another name  Eastern North Carolina School for the De
+   https://www.maxpreps.com/al/huntsville/w  Huntsville Whitesburg Christian (AL)  6541     72469   Team_ID points to another name  None                                    
+   https://www.maxpreps.com/al/lanett/lanet  Lanett (AL)                           25379    64055   Team_ID points to another name  Lanett Lafayette Lanier (AL)            
+   https://www.maxpreps.com/al/lanett/sprin  Lanett Springwood (AL)                28387    64056   Team_ID points to another name  Lanier (AL)                             
+   https://www.maxpreps.com/al/mobile/ums-w  Mobile UMS-Wright Prep (AL)           70945    19251   Team_ID points to another name  Mobile West End (AL)                    
+   https://www.maxpreps.com/al/oxford/oxfor  Oxford (AL)                           4041     66430   Team_ID points to another name  Oxford Trinity Christian Academy (AL)   
+   https://www.maxpreps.com/al/phil-campbel  Phil Campbell (AL)                    71111    66709   Team_ID points to another name  Pickens R.J. Kirksey (AL)               
+   https://www.maxpreps.com/al/tallassee/ta  Tallassee (AL)                        68726    30523   Team_ID points to another name  Tallassee Robert Russa Moton (AL)       
+   https://www.maxpreps.com/al/tuscaloosa/n  Tuscaloosa Northridge (AL)            70798    32535   Team_ID points to another name  Tuscaloosa St. Pauls (AL)               
+   https://www.maxpreps.com/al/york/sumter-  York Sumter Central (AL)              70734    30622   Team_ID points to another name  York West End (AL)                      
+   Status     Fixable  Err 
+   COMMITTED  12       None
+
+>>> consolidate AL --reason "AL round 1: HSFHA-AL same-school name variants (city-first names), renames merged to the latest name per David's rule (Jasper Walker->Jasper, Montgomery Lee->Percy Julian, Jefferson Davis->JAG, Fairfax->Valley, Erwin->Center Point...), MaxPreps 2024 pipeline names (Ariton Purple, Alexandria Valley...), Thomaston A.L. Johnson fixed (was Huntsville)"
+Consolidating AL from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\AL_Alias_Rules.csv
+
+[stderr]
+2026-11-11 11:50:42,574 - INFO - Starting consolidation for state: (AL) using staging table method.
+2026-11-11 11:50:42,587 - WARNING - WARNING: 554 row(s) have identical OldName and NewName (no-op rules).
+2026-11-11 11:50:42,587 - WARNING -   'Decatur (AL)' -> 'Decatur (AL)' (no change)
+2026-11-11 11:50:42,587 - WARNING -   'Attalla Etowah (AL)' -> 'Attalla Etowah (AL)' (no change)
+2026-11-11 11:50:42,587 - WARNING -   'Mobile UMS-Wright Prep (AL)' -> 'Mobile UMS-Wright Prep (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Guntersville (AL)' -> 'Guntersville (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Tuscumbia Deshler (AL)' -> 'Tuscumbia Deshler (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Montgomery Lanier (AL)' -> 'Montgomery Lanier (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Albertville (AL)' -> 'Albertville (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Dothan (AL)' -> 'Dothan (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Leighton Colbert County (AL)' -> 'Leighton Colbert County (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Bessemer City Jess Lanier (AL)' -> 'Bessemer City Jess Lanier (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Fayette County (AL)' -> 'Fayette County (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Thomasville (AL)' -> 'Thomasville (AL)' (no change)
+2026-11-11 11:50:42,588 - WARNING -   'Mobile Murphy (AL)' -> 'Mobile Murphy (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Hartselle (AL)' -> 'Hartselle (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Sylacauga (AL)' -> 'Sylacauga (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Huntsville (AL)' -> 'Huntsville (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Phenix City Central (AL)' -> 'Phenix City Central (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Hamilton (AL)' -> 'Hamilton (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Oneonta (AL)' -> 'Oneonta (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Auburn (AL)' -> 'Auburn (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Brewton T.R. Miller (AL)' -> 'Brewton T.R. Miller (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Anniston (AL)' -> 'Anniston (AL)' (no change)
+2026-11-11 11:50:42,589 - WARNING -   'Northport Tuscaloosa County (AL)' -> 'Northport Tuscaloosa County (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Piedmont (AL)' -> 'Piedmont (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Athens (AL)' -> 'Athens (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Oxford (AL)' -> 'Oxford (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Alexander City Benjamin Russell (AL)' -> 'Alexander City Benjamin Russell (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Bay Minette Baldwin County (AL)' -> 'Bay Minette Baldwin County (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Scottsboro (AL)' -> 'Scottsboro (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Cullman (AL)' -> 'Cullman (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Fort Payne (AL)' -> 'Fort Payne (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Centre Cherokee County (AL)' -> 'Centre Cherokee County (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Grove Hill Clarke County (AL)' -> 'Grove Hill Clarke County (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Jackson (AL)' -> 'Jackson (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Talladega (AL)' -> 'Talladega (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Birmingham Shades Valley (AL)' -> 'Birmingham Shades Valley (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Sheffield (AL)' -> 'Sheffield (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Atmore Escambia County (AL)' -> 'Atmore Escambia County (AL)' (no change)
+2026-11-11 11:50:42,590 - WARNING -   'Russellville (AL)' -> 'Russellville (AL)' (no change)
+2026-11-11 11:50:42,591 - WARNING -   'Dora (AL)' -> 'Dora (AL)' (no change)
+2026-11-11 11:50:42,591 - WARNING -   'Birmingham Woodlawn (AL)' -> 'Birmingham Woodlawn (AL)' (no change)
+2026-11-11 11:50:42,591 - WARNING -   'Enterprise (AL)' -> 'Enterprise (AL)' (no change)
+2026-11-11 11:50:42,591 - WARNING -   'Moulton Lawrence County (AL)' -> 'Moulton Lawrence County (AL)' (no change)
+2026-11-11 11:50:42,591 - WARNING -   'Glencoe (AL)' -> 'Glencoe (AL)' (no change)
+2026-11-11 11:50:42,591 - WARNING -   'Cordova (AL)' -> 'Cordova (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Demopolis (AL)' -> 'Demopolis (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Hueytown (AL)' -> 'Hueytown (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Sylacauga Comer (AL)' -> 'Sylacauga Comer (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Foley (AL)' -> 'Foley (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Mobile McGill-Toolen (AL)' -> 'Mobile McGill-Toolen (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Selma (AL)' -> 'Selma (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Greensboro (AL)' -> 'Greensboro (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Sweet Water (AL)' -> 'Sweet Water (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Crossville (AL)' -> 'Crossville (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Fairhope (AL)' -> 'Fairhope (AL)' (no change)
+2026-11-11 11:50:42,592 - WARNING -   'Collinsville (AL)' -> 'Collinsville (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Lanett (AL)' -> 'Lanett (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Roanoke Handley (AL)' -> 'Roanoke Handley (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Tallassee (AL)' -> 'Tallassee (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Fairfield (AL)' -> 'Fairfield (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Alexandria (AL)' -> 'Alexandria (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Carbon Hill (AL)' -> 'Carbon Hill (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Rogersville Lauderdale County (AL)' -> 'Rogersville Lauderdale County (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Opelika (AL)' -> 'Opelika (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Elba (AL)' -> 'Elba (AL)' (no change)
+2026-11-11 11:50:42,593 - WARNING -   'Birmingham Tarrant (AL)' -> 'Birmingham Tarrant (AL)' (no change)
+2026-11-11 11:50:42,594 - WARNING -   'Gordo (AL)' -> 'Gordo (AL)' (no change)
+2026-11-11 11:50:42,594 - WARNING -   'Eufaula (AL)' -> 'Eufaula (AL)' (no change)
+2026-11-11 11:50:42,594 - WARNING -   'Leeds (AL)' -> 'Leeds (AL)' (no change)
+2026-11-11 11:50:42,594 - WARNING -   'Dadeville (AL)' -> 'Dadeville (AL)' (no change)
+2026-11-11 11:50:42,594 - WARNING -   'Centreville Bibb County (AL)' -> 'Centreville Bibb County (AL)' (no change)
+2026-11-11 11:50:42,594 - WARNING -   'Leroy (AL)' -> 'Leroy (AL)' (no change)
+2026-11-11 11:50:42,594 - WARNING -   'Jacksonville (AL)' -> 'Jacksonville (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Reform Pickens County (AL)' -> 'Reform Pickens County (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Adamsville Minor (AL)' -> 'Adamsville Minor (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Wetumpka (AL)' -> 'Wetumpka (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Holt (AL)' -> 'Holt (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Oakman (AL)' -> 'Oakman (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Monroeville Monroe County (AL)' -> 'Monroeville Monroe County (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Greenville (AL)' -> 'Greenville (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Double Springs Winston County (AL)' -> 'Double Springs Winston County (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Arab (AL)' -> 'Arab (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Moundville Hale County (AL)' -> 'Moundville Hale County (AL)' (no change)
+2026-11-11 11:50:42,595 - WARNING -   'Florala (AL)' -> 'Florala (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Andalusia (AL)' -> 'Andalusia (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Cedar Bluff (AL)' -> 'Cedar Bluff (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Haleyville (AL)' -> 'Haleyville (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Prattville (AL)' -> 'Prattville (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Linden (AL)' -> 'Linden (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Heflin Cleburne County (AL)' -> 'Heflin Cleburne County (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Robertsdale (AL)' -> 'Robertsdale (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Troy Charles Henderson (AL)' -> 'Troy Charles Henderson (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Falkville (AL)' -> 'Falkville (AL)' (no change)
+2026-11-11 11:50:42,596 - WARNING -   'Geraldine (AL)' -> 'Geraldine (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Kimberly Mortimer Jordan (AL)' -> 'Kimberly Mortimer Jordan (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Winfield (AL)' -> 'Winfield (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Lincoln (AL)' -> 'Lincoln (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Luverne (AL)' -> 'Luverne (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Fyffe (AL)' -> 'Fyffe (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Hewitt-Trussville (AL)' -> 'Hewitt-Trussville (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Boaz (AL)' -> 'Boaz (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Valley Head (AL)' -> 'Valley Head (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Aliceville (AL)' -> 'Aliceville (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Hokes Bluff (AL)' -> 'Hokes Bluff (AL)' (no change)
+2026-11-11 11:50:42,597 - WARNING -   'Hackleburg (AL)' -> 'Hackleburg (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'Pell City (AL)' -> 'Pell City (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'Gadsden Southside (AL)' -> 'Gadsden Southside (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'Citronelle (AL)' -> 'Citronelle (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'Georgiana (AL)' -> 'Georgiana (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'Chatom Washington County (AL)' -> 'Chatom Washington County (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'Prichard Vigor (AL)' -> 'Prichard Vigor (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'Flomaton (AL)' -> 'Flomaton (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'York Sumter Central (AL)' -> 'York Sumter Central (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'Valley (AL)' -> 'Valley (AL)' (no change)
+2026-11-11 11:50:42,598 - WARNING -   'Gilbertown Southern Choctaw (AL)' -> 'Gilbertown Southern Choctaw (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'McCalla McAdory (AL)' -> 'McCalla McAdory (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Clanton Chilton County (AL)' -> 'Clanton Chilton County (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Blountsville Pennington (AL)' -> 'Blountsville Pennington (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Maplesville (AL)' -> 'Maplesville (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Parrish (AL)' -> 'Parrish (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Jasper Curry (AL)' -> 'Jasper Curry (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Butler Choctaw County (AL)' -> 'Butler Choctaw County (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Ashland Clay County (AL)' -> 'Ashland Clay County (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Ohatchee (AL)' -> 'Ohatchee (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Brookwood (AL)' -> 'Brookwood (AL)' (no change)
+2026-11-11 11:50:42,599 - WARNING -   'Excel (AL)' -> 'Excel (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'Cherokee (AL)' -> 'Cherokee (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'Hanceville (AL)' -> 'Hanceville (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'East Brewton W.S. Neal (AL)' -> 'East Brewton W.S. Neal (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'Wedowee Randolph County (AL)' -> 'Wedowee Randolph County (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'Cottonwood (AL)' -> 'Cottonwood (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'Ozark Carroll (AL)' -> 'Ozark Carroll (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'Brantley (AL)' -> 'Brantley (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'Hartford Geneva County (AL)' -> 'Hartford Geneva County (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'West Blocton (AL)' -> 'West Blocton (AL)' (no change)
+2026-11-11 11:50:42,600 - WARNING -   'Guin Marion County (AL)' -> 'Guin Marion County (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Sulligent (AL)' -> 'Sulligent (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Alabama School for the Deaf (AL)' -> 'Alabama School for the Deaf (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Vernon Lamar County (AL)' -> 'Vernon Lamar County (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Brundidge Pike County (AL)' -> 'Brundidge Pike County (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Abbeville (AL)' -> 'Abbeville (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Gurley Madison County (AL)' -> 'Gurley Madison County (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Geneva (AL)' -> 'Geneva (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Slocomb (AL)' -> 'Slocomb (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Blountsville Susan Moore (AL)' -> 'Blountsville Susan Moore (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Millry (AL)' -> 'Millry (AL)' (no change)
+2026-11-11 11:50:42,601 - WARNING -   'Addison (AL)' -> 'Addison (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'LaFayette (AL)' -> 'LaFayette (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'Columbia Houston County (AL)' -> 'Columbia Houston County (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'Gadsden (AL)' -> 'Gadsden (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'Bessemer Oak Grove (AL)' -> 'Bessemer Oak Grove (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'Boaz Sardis (AL)' -> 'Boaz Sardis (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'Union Springs Bullock County (AL)' -> 'Union Springs Bullock County (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'Alabaster Thompson (AL)' -> 'Alabaster Thompson (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'Samson (AL)' -> 'Samson (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'Deatsville Holtville (AL)' -> 'Deatsville Holtville (AL)' (no change)
+2026-11-11 11:50:42,602 - WARNING -   'Lineville (AL)' -> 'Lineville (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Uriah Blacksher (AL)' -> 'Uriah Blacksher (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Theodore (AL)' -> 'Theodore (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Columbiana Shelby County (AL)' -> 'Columbiana Shelby County (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Brilliant (AL)' -> 'Brilliant (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Red Bay (AL)' -> 'Red Bay (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Munford (AL)' -> 'Munford (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Phil Campbell (AL)' -> 'Phil Campbell (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Town Creek Hazlewood (AL)' -> 'Town Creek Hazlewood (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Woodland (AL)' -> 'Woodland (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Gaylesville (AL)' -> 'Gaylesville (AL)' (no change)
+2026-11-11 11:50:42,603 - WARNING -   'Midland City Dale County (AL)' -> 'Midland City Dale County (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'Elkmont (AL)' -> 'Elkmont (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'Birmingham John Carroll Catholic (AL)' -> 'Birmingham John Carroll Catholic (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'Dothan Rehobeth (AL)' -> 'Dothan Rehobeth (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'Marion (AL)' -> 'Marion (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'McKenzie (AL)' -> 'McKenzie (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'Headland (AL)' -> 'Headland (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'Eclectic Elmore County (AL)' -> 'Eclectic Elmore County (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'Birmingham Ensley (AL)' -> 'Birmingham Ensley (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'Newton Wicksburg (AL)' -> 'Newton Wicksburg (AL)' (no change)
+2026-11-11 11:50:42,604 - WARNING -   'Childersburg (AL)' -> 'Childersburg (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Lynn (AL)' -> 'Lynn (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Arley Meek (AL)' -> 'Arley Meek (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Notasulga (AL)' -> 'Notasulga (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Highland Home (AL)' -> 'Highland Home (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Birmingham West End (AL)' -> 'Birmingham West End (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Tanner (AL)' -> 'Tanner (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Ashford (AL)' -> 'Ashford (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Ardmore (AL)' -> 'Ardmore (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Red Level (AL)' -> 'Red Level (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Vincent (AL)' -> 'Vincent (AL)' (no change)
+2026-11-11 11:50:42,605 - WARNING -   'Fayette Hubbertville (AL)' -> 'Fayette Hubbertville (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Plantersville Dallas County (AL)' -> 'Plantersville Dallas County (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Cleveland (AL)' -> 'Cleveland (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Lexington (AL)' -> 'Lexington (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Sylvania (AL)' -> 'Sylvania (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Mobile Baker (AL)' -> 'Mobile Baker (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Warrior Corner (AL)' -> 'Warrior Corner (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Mobile Williamson (AL)' -> 'Mobile Williamson (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Montevallo (AL)' -> 'Montevallo (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Notasulga Reeltown (AL)' -> 'Notasulga Reeltown (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Verbena (AL)' -> 'Verbena (AL)' (no change)
+2026-11-11 11:50:42,606 - WARNING -   'Hayden (AL)' -> 'Hayden (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Hoover (AL)' -> 'Hoover (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Ranburne (AL)' -> 'Ranburne (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Bear Creek Phillips (AL)' -> 'Bear Creek Phillips (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Jemison (AL)' -> 'Jemison (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Wadley (AL)' -> 'Wadley (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Gadsden Gaston (AL)' -> 'Gadsden Gaston (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Camden Wilcox Central (AL)' -> 'Camden Wilcox Central (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Ider (AL)' -> 'Ider (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Billingsley (AL)' -> 'Billingsley (AL)' (no change)
+2026-11-11 11:50:42,607 - WARNING -   'Birmingham Parker (AL)' -> 'Birmingham Parker (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Smiths Station (AL)' -> 'Smiths Station (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Lester West Limestone (AL)' -> 'Lester West Limestone (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Anniston Wellborn (AL)' -> 'Anniston Wellborn (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Calera (AL)' -> 'Calera (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Marbury (AL)' -> 'Marbury (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Rainsville Plainview (AL)' -> 'Rainsville Plainview (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Maplesville Isabella (AL)' -> 'Maplesville Isabella (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Satsuma (AL)' -> 'Satsuma (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Alpine Winterboro (AL)' -> 'Alpine Winterboro (AL)' (no change)
+2026-11-11 11:50:42,608 - WARNING -   'Akron (AL)' -> 'Akron (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Eight Mile Blount (AL)' -> 'Eight Mile Blount (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Vina (AL)' -> 'Vina (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Locust Fork (AL)' -> 'Locust Fork (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Ashville (AL)' -> 'Ashville (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Birmingham Mountain Brook (AL)' -> 'Birmingham Mountain Brook (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Montgomery Carver (AL)' -> 'Montgomery Carver (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Pisgah (AL)' -> 'Pisgah (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Town Creek Hatton (AL)' -> 'Town Creek Hatton (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Springville (AL)' -> 'Springville (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Autaugaville (AL)' -> 'Autaugaville (AL)' (no change)
+2026-11-11 11:50:42,609 - WARNING -   'Frisco City (AL)' -> 'Frisco City (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Mobile Davidson (AL)' -> 'Mobile Davidson (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Goshen (AL)' -> 'Goshen (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Ragland (AL)' -> 'Ragland (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Leesburg Sand Rock (AL)' -> 'Leesburg Sand Rock (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Florence Rogers (AL)' -> 'Florence Rogers (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Anniston Saks (AL)' -> 'Anniston Saks (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Madison Academy (AL)' -> 'Madison Academy (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Mobile Rain (AL)' -> 'Mobile Rain (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Muscle Shoals (AL)' -> 'Muscle Shoals (AL)' (no change)
+2026-11-11 11:50:42,610 - WARNING -   'Gardendale (AL)' -> 'Gardendale (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'Huntsville Butler (AL)' -> 'Huntsville Butler (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'New Market Buckhorn (AL)' -> 'New Market Buckhorn (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'Livingston (AL)' -> 'Livingston (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'Northport Northside (AL)' -> 'Northport Northside (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'Millbrook Stanhope Elmore (AL)' -> 'Millbrook Stanhope Elmore (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'West Jefferson (AL)' -> 'West Jefferson (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'Athens East Limestone (AL)' -> 'Athens East Limestone (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'Selma Morgan Academy (AL)' -> 'Selma Morgan Academy (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'New Hope (AL)' -> 'New Hope (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'Carrollton (AL)' -> 'Carrollton (AL)' (no change)
+2026-11-11 11:50:42,611 - WARNING -   'Decatur Austin (AL)' -> 'Decatur Austin (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Jack Zion Chapel (AL)' -> 'Jack Zion Chapel (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Monroeville Monroe Academy (AL)' -> 'Monroeville Monroe Academy (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Huntsville Lee (AL)' -> 'Huntsville Lee (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Coffeeville (AL)' -> 'Coffeeville (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Harvest Sparkman (AL)' -> 'Harvest Sparkman (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Butler Patrician Academy (AL)' -> 'Butler Patrician Academy (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Homewood (AL)' -> 'Homewood (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Odenville St. Clair County (AL)' -> 'Odenville St. Clair County (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Hazel Green (AL)' -> 'Hazel Green (AL)' (no change)
+2026-11-11 11:50:42,612 - WARNING -   'Opelika Beauregard (AL)' -> 'Opelika Beauregard (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Courtland R.A. Hubbard (AL)' -> 'Courtland R.A. Hubbard (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Trinity West Morgan (AL)' -> 'Trinity West Morgan (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Cullman Fairview (AL)' -> 'Cullman Fairview (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Cullman West Point (AL)' -> 'Cullman West Point (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Selma Southside (AL)' -> 'Selma Southside (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Seale Russell County (AL)' -> 'Seale Russell County (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Athens Clements (AL)' -> 'Athens Clements (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Mobile St. Paul's Episcopal (AL)' -> 'Mobile St. Paul's Episcopal (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Birmingham Ramsay (AL)' -> 'Birmingham Ramsay (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Killen Brooks (AL)' -> 'Killen Brooks (AL)' (no change)
+2026-11-11 11:50:42,613 - WARNING -   'Daleville (AL)' -> 'Daleville (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Skipperville Long (AL)' -> 'Skipperville Long (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Fruitdale (AL)' -> 'Fruitdale (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Ariton (AL)' -> 'Ariton (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Birmingham Huffman (AL)' -> 'Birmingham Huffman (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Chelsea (AL)' -> 'Chelsea (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Phenix City Glenwood Academy (AL)' -> 'Phenix City Glenwood Academy (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Birmingham Center Point (AL)' -> 'Birmingham Center Point (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Holly Pond (AL)' -> 'Holly Pond (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Vestavia Hills (AL)' -> 'Vestavia Hills (AL)' (no change)
+2026-11-11 11:50:42,614 - WARNING -   'Tuscaloosa (AL)' -> 'Tuscaloosa (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Montgomery Academy (AL)' -> 'Montgomery Academy (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Higdon North Sand Mountain (AL)' -> 'Higdon North Sand Mountain (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Pleasant Grove (AL)' -> 'Pleasant Grove (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Jones Valley (AL)' -> 'Jones Valley (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Tuscumbia Colbert Heights (AL)' -> 'Tuscumbia Colbert Heights (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Birmingham Wenonah (AL)' -> 'Birmingham Wenonah (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Cullman Good Hope (AL)' -> 'Cullman Good Hope (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Pinson Valley (AL)' -> 'Pinson Valley (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Harpersville Coosa Valley Academy (AL)' -> 'Harpersville Coosa Valley Academy (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Mobile LeFlore (AL)' -> 'Mobile LeFlore (AL)' (no change)
+2026-11-11 11:50:42,615 - WARNING -   'Weaver (AL)' -> 'Weaver (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Midfield (AL)' -> 'Midfield (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Walnut Grove West End (AL)' -> 'Walnut Grove West End (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Florence Wilson (AL)' -> 'Florence Wilson (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Huntsville Grissom (AL)' -> 'Huntsville Grissom (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Eutaw (AL)' -> 'Eutaw (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Section (AL)' -> 'Section (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Warrior (AL)' -> 'Warrior (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Birmingham Jackson-Olin (AL)' -> 'Birmingham Jackson-Olin (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Montgomery Trinity Presbyterian (AL)' -> 'Montgomery Trinity Presbyterian (AL)' (no change)
+2026-11-11 11:50:42,616 - WARNING -   'Oneonta Appalachian (AL)' -> 'Oneonta Appalachian (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Montgomery St. James (AL)' -> 'Montgomery St. James (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Dothan Houston Academy (AL)' -> 'Dothan Houston Academy (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Birmingham Briarwood Christian (AL)' -> 'Birmingham Briarwood Christian (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Orrville Keith (AL)' -> 'Orrville Keith (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Vinemont (AL)' -> 'Vinemont (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Madison Bob Jones (AL)' -> 'Madison Bob Jones (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Linden Marengo Academy (AL)' -> 'Linden Marengo Academy (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Birmingham Fultondale (AL)' -> 'Birmingham Fultondale (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Talladega County Central (AL)' -> 'Talladega County Central (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Lowndesboro Lowndes Academy (AL)' -> 'Lowndesboro Lowndes Academy (AL)' (no change)
+2026-11-11 11:50:42,617 - WARNING -   'Spring Garden (AL)' -> 'Spring Garden (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'Thorsby (AL)' -> 'Thorsby (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'Douglas (AL)' -> 'Douglas (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'Anniston White Plains (AL)' -> 'Anniston White Plains (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'Andalusia Straughn (AL)' -> 'Andalusia Straughn (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'Mary Montgomery (AL)' -> 'Mary Montgomery (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'Bremen Cold Springs (AL)' -> 'Bremen Cold Springs (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'New Brockton (AL)' -> 'New Brockton (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'Anniston Donoho (AL)' -> 'Anniston Donoho (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'Kinston (AL)' -> 'Kinston (AL)' (no change)
+2026-11-11 11:50:42,618 - WARNING -   'Somerville Brewer (AL)' -> 'Somerville Brewer (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'McIntosh (AL)' -> 'McIntosh (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Carrollton Pickens Academy (AL)' -> 'Carrollton Pickens Academy (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Pelham (AL)' -> 'Pelham (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Valley Beulah (AL)' -> 'Valley Beulah (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Montgomery Alabama Christian Academy (AL)' -> 'Montgomery Alabama Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Evergreen (AL)' -> 'Evergreen (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Tuscaloosa Central (AL)' -> 'Tuscaloosa Central (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Camden Wilcox Academy (AL)' -> 'Camden Wilcox Academy (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Dixons Mills Marengo (AL)' -> 'Dixons Mills Marengo (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Loachapoka (AL)' -> 'Loachapoka (AL)' (no change)
+2026-11-11 11:50:42,619 - WARNING -   'Waterloo (AL)' -> 'Waterloo (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'Danville (AL)' -> 'Danville (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'Hope Hull Hooper Academy (AL)' -> 'Hope Hull Hooper Academy (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'Toxey South Choctaw Academy (AL)' -> 'Toxey South Choctaw Academy (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'Moody (AL)' -> 'Moody (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'Stevenson (AL)' -> 'Stevenson (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'Bessemer Academy (AL)' -> 'Bessemer Academy (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'LaFayette Chambers Academy (AL)' -> 'LaFayette Chambers Academy (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'Prattville Autauga Academy (AL)' -> 'Prattville Autauga Academy (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'Greensboro Southern Academy (AL)' -> 'Greensboro Southern Academy (AL)' (no change)
+2026-11-11 11:50:42,620 - WARNING -   'Selma Meadowview Christian (AL)' -> 'Selma Meadowview Christian (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Trinity East Lawrence (AL)' -> 'Trinity East Lawrence (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Jackson Academy (AL)' -> 'Jackson Academy (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Louisville (AL)' -> 'Louisville (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Lanett Springwood (AL)' -> 'Lanett Springwood (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Luverne Crenshaw Christian Academy (AL)' -> 'Luverne Crenshaw Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Millport South Lamar (AL)' -> 'Millport South Lamar (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Atmore Escambia Academy (AL)' -> 'Atmore Escambia Academy (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Alba (AL)' -> 'Alba (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Evergreen Sparta Academy (AL)' -> 'Evergreen Sparta Academy (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Abbeville Christian Academy (AL)' -> 'Abbeville Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,621 - WARNING -   'Elmore Edgewood Academy (AL)' -> 'Elmore Edgewood Academy (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Jacksonville Pleasant Valley (AL)' -> 'Jacksonville Pleasant Valley (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Mobile Christian (AL)' -> 'Mobile Christian (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Greenville Fort Dale Academy (AL)' -> 'Greenville Fort Dale Academy (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Bridgeport (AL)' -> 'Bridgeport (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Homewood Rosedale (AL)' -> 'Homewood Rosedale (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Mobile Shaw (AL)' -> 'Mobile Shaw (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Grand Bay (AL)' -> 'Grand Bay (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Stevenson North Jackson (AL)' -> 'Stevenson North Jackson (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Troy Pike Liberal Arts (AL)' -> 'Troy Pike Liberal Arts (AL)' (no change)
+2026-11-11 11:50:42,622 - WARNING -   'Uniontown Hatch (AL)' -> 'Uniontown Hatch (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'Auburn Lee-Scott Academy (AL)' -> 'Auburn Lee-Scott Academy (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'Dothan Northview (AL)' -> 'Dothan Northview (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'Daphne (AL)' -> 'Daphne (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'Coffee Springs (AL)' -> 'Coffee Springs (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'Montgomery St. Jude Educational Institute (AL)' -> 'Montgomery St. Jude Educational Institute (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'Tuscaloosa American Christian Academy (AL)' -> 'Tuscaloosa American Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'Marengo County (AL)' -> 'Marengo County (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'Mobile Faith Academy (AL)' -> 'Mobile Faith Academy (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'York Sumter Academy (AL)' -> 'York Sumter Academy (AL)' (no change)
+2026-11-11 11:50:42,623 - WARNING -   'Tuscaloosa Academy (AL)' -> 'Tuscaloosa Academy (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Rainbow City Westbrook Christian (AL)' -> 'Rainbow City Westbrook Christian (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Letohatchee Calhoun (AL)' -> 'Letohatchee Calhoun (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Repton (AL)' -> 'Repton (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Marion Military Institute College (AL)' -> 'Marion Military Institute College (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Clayton (AL)' -> 'Clayton (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Demopolis Essex (AL)' -> 'Demopolis Essex (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Millport (AL)' -> 'Millport (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Pinson Clay-Chalkville (AL)' -> 'Pinson Clay-Chalkville (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Huntsville J.O. Johnson (AL)' -> 'Huntsville J.O. Johnson (AL)' (no change)
+2026-11-11 11:50:42,624 - WARNING -   'Tuskegee Booker T. Washington (AL)' -> 'Tuskegee Booker T. Washington (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Ashford Academy (AL)' -> 'Ashford Academy (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Lowndes County (AL)' -> 'Lowndes County (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Kennedy (AL)' -> 'Kennedy (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Dozier (AL)' -> 'Dozier (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Montgomery Central Academy (AL)' -> 'Montgomery Central Academy (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'New Site Horseshoe Bend (AL)' -> 'New Site Horseshoe Bend (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Danville Speake (AL)' -> 'Danville Speake (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Clio (AL)' -> 'Clio (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Newbern Sunshine (AL)' -> 'Newbern Sunshine (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Grady South Montgomery County Academy (AL)' -> 'Grady South Montgomery County Academy (AL)' (no change)
+2026-11-11 11:50:42,625 - WARNING -   'Montgomery County (AL)' -> 'Montgomery County (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'Sumiton Christian (AL)' -> 'Sumiton Christian (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'Goodwater (AL)' -> 'Goodwater (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'DeKalb County (AL)' -> 'DeKalb County (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'Birmingham Banks (AL)' -> 'Birmingham Banks (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'Grove Hill Clarke Prep (AL)' -> 'Grove Hill Clarke Prep (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'Pine Hill (AL)' -> 'Pine Hill (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'Tuskegee Institute (AL)' -> 'Tuskegee Institute (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'Irvington Bryant (AL)' -> 'Irvington Bryant (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'Louisville Dixie Academy (AL)' -> 'Louisville Dixie Academy (AL)' (no change)
+2026-11-11 11:50:42,626 - WARNING -   'Bibb Graves (AL)' -> 'Bibb Graves (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Altoona (AL)' -> 'Altoona (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Lyeffion (AL)' -> 'Lyeffion (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Sylacauga Fayetteville (AL)' -> 'Sylacauga Fayetteville (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Huntsville Westminster Christian (AL)' -> 'Huntsville Westminster Christian (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Birmingham Oak Mountain (AL)' -> 'Birmingham Oak Mountain (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Columbiana Cornerstone Christian (AL)' -> 'Columbiana Cornerstone Christian (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Paramount (AL)' -> 'Paramount (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Gadsden Carver (AL)' -> 'Gadsden Carver (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Montevallo Shelby Academy (AL)' -> 'Montevallo Shelby Academy (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Daphne Bayside Academy (AL)' -> 'Daphne Bayside Academy (AL)' (no change)
+2026-11-11 11:50:42,627 - WARNING -   'Gulf Shores (AL)' -> 'Gulf Shores (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Alabaster Evangel Christian (AL)' -> 'Alabaster Evangel Christian (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Berry (AL)' -> 'Berry (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Hoover Spain Park (AL)' -> 'Hoover Spain Park (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Anniston Cobb Avenue (AL)' -> 'Anniston Cobb Avenue (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Walnut Grove (AL)' -> 'Walnut Grove (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Florence (AL)' -> 'Florence (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Gadsden Coosa Christian (AL)' -> 'Gadsden Coosa Christian (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Jackson County (AL)' -> 'Jackson County (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Andalusia Pleasant Home (AL)' -> 'Andalusia Pleasant Home (AL)' (no change)
+2026-11-11 11:50:42,628 - WARNING -   'Eutaw Greene County (AL)' -> 'Eutaw Greene County (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Hayneville (AL)' -> 'Hayneville (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Orrville (AL)' -> 'Orrville (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Clayton Barbour County (AL)' -> 'Clayton Barbour County (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Spanish Fort (AL)' -> 'Spanish Fort (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Pell City Victory Christian (AL)' -> 'Pell City Victory Christian (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Tuscaloosa Hillcrest (AL)' -> 'Tuscaloosa Hillcrest (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Montgomery Catholic (AL)' -> 'Montgomery Catholic (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Huntsville Randolph Academy (AL)' -> 'Huntsville Randolph Academy (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Alexander City (AL)' -> 'Alexander City (AL)' (no change)
+2026-11-11 11:50:42,629 - WARNING -   'Florence Shoals Christian (AL)' -> 'Florence Shoals Christian (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Mount Hope (AL)' -> 'Mount Hope (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Florence Central (AL)' -> 'Florence Central (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Mobile Cottage Hill Christian Academy (AL)' -> 'Mobile Cottage Hill Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Tuscaloosa Druid (AL)' -> 'Tuscaloosa Druid (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Evergreen Hillcrest (AL)' -> 'Evergreen Hillcrest (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Tuscaloosa Northridge (AL)' -> 'Tuscaloosa Northridge (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Huntsville Columbia (AL)' -> 'Huntsville Columbia (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Birmingham Hayes (AL)' -> 'Birmingham Hayes (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Priceville (AL)' -> 'Priceville (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Cottondale Paul W. Bryant (AL)' -> 'Cottondale Paul W. Bryant (AL)' (no change)
+2026-11-11 11:50:42,630 - WARNING -   'Coosa County (AL)' -> 'Coosa County (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Gadsden City (AL)' -> 'Gadsden City (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Sylacauga East Highland (AL)' -> 'Sylacauga East Highland (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Cottondale Tuscaloosa Christian (AL)' -> 'Cottondale Tuscaloosa Christian (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Catherine Academy (AL)' -> 'Catherine Academy (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Cecil Macon-East Montgomery Academy (AL)' -> 'Cecil Macon-East Montgomery Academy (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Eufaula Lakeside School (AL)' -> 'Eufaula Lakeside School (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Alabaster Kingwood Christian (AL)' -> 'Alabaster Kingwood Christian (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Newville (AL)' -> 'Newville (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Rockford Central of Coosa County (AL)' -> 'Rockford Central of Coosa County (AL)' (no change)
+2026-11-11 11:50:42,631 - WARNING -   'Huntsville Freedom Academy (AL)' -> 'Huntsville Freedom Academy (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Shades Cahaba (AL)' -> 'Shades Cahaba (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Dothan Providence Christian (AL)' -> 'Dothan Providence Christian (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Greenville Academy (AL)' -> 'Greenville Academy (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Hayneville Central (AL)' -> 'Hayneville Central (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Gardendale Tabernacle (AL)' -> 'Gardendale Tabernacle (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Demopolis Academy (AL)' -> 'Demopolis Academy (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Saraland (AL)' -> 'Saraland (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Brighton (AL)' -> 'Brighton (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Prattville Christian Academy (AL)' -> 'Prattville Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Tuskegee (AL)' -> 'Tuskegee (AL)' (no change)
+2026-11-11 11:50:42,632 - WARNING -   'Woodville (AL)' -> 'Woodville (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'Tuskegee Macon Academy (AL)' -> 'Tuskegee Macon Academy (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'Guntersville Brindlee Mountain (AL)' -> 'Guntersville Brindlee Mountain (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'Birmingham Carver (AL)' -> 'Birmingham Carver (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'Jacksonville Christian Academy (AL)' -> 'Jacksonville Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'Montgomery Evangel Family Christian Academy (AL)' -> 'Montgomery Evangel Family Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'Russellville Tharptown (AL)' -> 'Russellville Tharptown (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'New Site (AL)' -> 'New Site (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'Tuscaloosa Holy Spirit Catholic (AL)' -> 'Tuscaloosa Holy Spirit Catholic (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'Lineville Central of Clay County (AL)' -> 'Lineville Central of Clay County (AL)' (no change)
+2026-11-11 11:50:42,633 - WARNING -   'Tuscaloosa North River Christian (AL)' -> 'Tuscaloosa North River Christian (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Uniontown (AL)' -> 'Uniontown (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Camp Hill Southern Prep Academy (AL)' -> 'Camp Hill Southern Prep Academy (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Glenn (AL)' -> 'Glenn (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Grant Kate Duncan Smith DAR (AL)' -> 'Grant Kate Duncan Smith DAR (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Mobile St. Luke's Episcopal (AL)' -> 'Mobile St. Luke's Episcopal (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Mobile County Training (AL)' -> 'Mobile County Training (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Decatur Heritage Christian Academy (AL)' -> 'Decatur Heritage Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Beatrice (AL)' -> 'Beatrice (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Selma Ellwood Christian (AL)' -> 'Selma Ellwood Christian (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Jefferson County (AL)' -> 'Jefferson County (AL)' (no change)
+2026-11-11 11:50:42,634 - WARNING -   'Conecuh County (AL)' -> 'Conecuh County (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Buhl Sipsey Valley (AL)' -> 'Buhl Sipsey Valley (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Palmetto (AL)' -> 'Palmetto (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Millbrook New Life Christian (AL)' -> 'Millbrook New Life Christian (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Mobile Central (AL)' -> 'Mobile Central (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Bessemer Dunbar (AL)' -> 'Bessemer Dunbar (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Remlap Southeastern (AL)' -> 'Remlap Southeastern (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Madison James Clemens (AL)' -> 'Madison James Clemens (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Prattville East Memorial Christian Academy (AL)' -> 'Prattville East Memorial Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Hobson City Calhoun County Training (AL)' -> 'Hobson City Calhoun County Training (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Alexander City Laurel (AL)' -> 'Alexander City Laurel (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Huntsville Pope John Paul II (AL)' -> 'Huntsville Pope John Paul II (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Walker County Training (AL)' -> 'Walker County Training (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Semmes (AL)' -> 'Semmes (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Montgomery Ezekiel Academy (AL)' -> 'Montgomery Ezekiel Academy (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Helena (AL)' -> 'Helena (AL)' (no change)
+2026-11-11 11:50:42,635 - WARNING -   'Dothan Northside Methodist Academy (AL)' -> 'Dothan Northside Methodist Academy (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'Montgomery Calvary Christian Academy (AL)' -> 'Montgomery Calvary Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'Millbrook Victory Christian Academy (AL)' -> 'Millbrook Victory Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'Newton (AL)' -> 'Newton (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'Montgomery Park Crossing (AL)' -> 'Montgomery Park Crossing (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'Chickasaw (AL)' -> 'Chickasaw (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'Pike Road (AL)' -> 'Pike Road (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'D.C. Wolfe (AL)' -> 'D.C. Wolfe (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'Joe Bradley (AL)' -> 'Joe Bradley (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'Florence Mars Hill Bible (AL)' -> 'Florence Mars Hill Bible (AL)' (no change)
+2026-11-11 11:50:42,636 - WARNING -   'Fairfield Restoration Academy (AL)' -> 'Fairfield Restoration Academy (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'Mobile Barton Academy (AL)' -> 'Mobile Barton Academy (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'Rison (AL)' -> 'Rison (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'Pelham Hope Christian (AL)' -> 'Pelham Hope Christian (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'Simpson (AL)' -> 'Simpson (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'Camp Hill (AL)' -> 'Camp Hill (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'South Macon (AL)' -> 'South Macon (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'Georgiana South Butler Academy (AL)' -> 'Georgiana South Butler Academy (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'Gorgas (AL)' -> 'Gorgas (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'Phenix City South Girard (AL)' -> 'Phenix City South Girard (AL)' (no change)
+2026-11-11 11:50:42,637 - WARNING -   'Starke University Academy (AL)' -> 'Starke University Academy (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Opelika Darden (AL)' -> 'Opelika Darden (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Mobile Independent Methodist (AL)' -> 'Mobile Independent Methodist (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Fairhope St. Michael Catholic (AL)' -> 'Fairhope St. Michael Catholic (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Jemison Chilton Christian Academy (AL)' -> 'Jemison Chilton Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Foley Snook Christian Academy (AL)' -> 'Foley Snook Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Montgomery Valiant Cross Academy (AL)' -> 'Montgomery Valiant Cross Academy (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Pinson East Central HomeSchool (AL)' -> 'Pinson East Central HomeSchool (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Centreville Cahawba Christian Academy (AL)' -> 'Centreville Cahawba Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Cullman St. Bernard Prep (AL)' -> 'Cullman St. Bernard Prep (AL)' (no change)
+2026-11-11 11:50:42,638 - WARNING -   'Pelham Trinity Christian Homeschool (AL)' -> 'Pelham Trinity Christian Homeschool (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Hurt Military Academy (AL)' -> 'Hurt Military Academy (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Albertville Marshall Christian Academy (AL)' -> 'Albertville Marshall Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Oxford Trinity Christian Academy (AL)' -> 'Oxford Trinity Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Scottsboro Christian (AL)' -> 'Scottsboro Christian (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Sycamore Robert Russa Moton (AL)' -> 'Sycamore Robert Russa Moton (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Oxford Hope Christian Academy (AL)' -> 'Oxford Hope Christian Academy (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Childersburg Phyllis Wheatley (AL)' -> 'Childersburg Phyllis Wheatley (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Birmingham-Southern College (AL)' -> 'Birmingham-Southern College (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Boys Industrial School (AL)' -> 'Boys Industrial School (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Crenshaw County Training (AL)' -> 'Crenshaw County Training (AL)' (no change)
+2026-11-11 11:50:42,639 - WARNING -   'Citronelle Wesleyan Academy (AL)' -> 'Citronelle Wesleyan Academy (AL)' (no change)
+2026-11-11 11:50:42,640 - WARNING -   'Phillips Birmingham (AL)' -> 'Phillips Birmingham (AL)' (no change)
+2026-11-11 11:50:42,640 - WARNING -   'Tennessee Valley (AL)' -> 'Tennessee Valley (AL)' (no change)
+2026-11-11 11:50:42,640 - WARNING -   'Franklin County (AL)' -> 'Franklin County (AL)' (no change)
+2026-11-11 11:50:42,640 - WARNING -   'Emma Sansom (AL)' -> 'Emma Sansom (AL)' (no change)
+2026-11-11 11:50:42,640 - WARNING -   'Maxwell Air Force Base (AL)' -> 'Maxwell Air Force Base (AL)' (no change)
+2026-11-11 11:50:42,640 - INFO - Validation passed: 775 rules are clean and ready to upload.
+2026-11-11 11:50:42,668 - INFO - Uploading 775 rules to staging table: ConsolidationRules_Staging...
+2026-11-11 11:50:42,834 - INFO - Upload to staging table complete.
+2026-11-11 11:50:42,839 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-11 11:52:57,608 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-11 11:52:57,608 - INFO - Reason logged to dbo.HS_Consolidation_Log: AL round 1: HSFHA-AL same-school name variants (city-first names), renames merged to the latest name per David's rule (Jasper Walker->Jasper, Montgomery Lee->Percy Julian, Jefferson Davis->JAG, Fairfax->Valley, Erwin->Center Point...), MaxPreps 2024 pipeline names (Ariton Purple, Alexandria Valley...), Thomaston A.L. Johnson fixed (was Huntsville)
+2026-11-11 11:52:57,608 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-11 11:52:57,608 - INFO - Running post-consolidation safety check...
+2026-11-11 11:52:57,613 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup AL
+
+DEDUP v4 AL - PREVIEW (nothing changed)
+ dedup_archive: 3920 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_archive_20261111_1153.csv
+ dedup_review: 185 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_review_20261111_1153.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_summary_20261111_1153.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  AL     188080        3920                 185              None 
+
+>>> review-pairs AL
+
+REVIEW-ONLY PAIRS AL - PREVIEW (nothing changed)
+ 184 pairs {'LONG': 18, 'SHORT': 166} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_review_pairs_20261111_1153.csv
+
+=== OK 2026-11-11 11:53:13

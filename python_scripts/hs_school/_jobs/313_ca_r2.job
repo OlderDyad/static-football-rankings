@@ -1,0 +1,7 @@
+same-score-fix CA --commit
+consolidate CA --reason "CA round 2 (2026-11-13): same-school names, see _coop_scripts/CA_cfg.py"
+
+dedup CA --commit
+review-pairs CA --commit
+same-score-fix CA
+query CA ca_dump.sql

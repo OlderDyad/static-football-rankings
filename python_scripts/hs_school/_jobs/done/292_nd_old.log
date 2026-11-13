@@ -1,0 +1,55 @@
+
+>>> move-team ND --from "Jamestown-Medina-Montpelier (ND)" --to "Jamestown (ND)" --seasons 1880-2003 --reason "ND: Jamestown co-op name used for pre-MaxPreps seasons (bhs.bismarckschools etc.); co-op split by year, before 2004 = Jamestown (2026-11-12)" --commit
+
+MOVE Jamestown-Medina-Montpelier (ND) -> Jamestown (ND), seasons 1880-2003 - COMMIT
+ move_games: 577 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_move_games_COMMITTED_20261112_1511.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_move_by_season_COMMITTED_20261112_1511.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  577    1                  None
+
+>>> move-team ND --from "Fargo (ND)" --to "Fargo Central (ND)" --seasons 1880-1964 --reason "ND: Fargo (ND) = Fargo Central High (only public HS before Fargo North opened 1965) (2026-11-12)" --commit
+
+MOVE Fargo (ND) -> Fargo Central (ND), seasons 1880-1964 - COMMIT
+ move_games: 229 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_move_games_COMMITTED_20261112_1511.csv
+ move_by_season: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_move_by_season_COMMITTED_20261112_1511.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  229    1                  None
+
+>>> move-team ND --from "Dickinson Trinity (ND)" --to "Dickinson Trinity Old HS (ND)" --seasons 1880-1981 --reason "ND: same school, two names (2026-11-12)" --commit
+
+MOVE Dickinson Trinity (ND) -> Dickinson Trinity Old HS (ND), seasons 1880-1981 - COMMIT
+ move_games: 55 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_move_games_COMMITTED_20261112_1512.csv
+ move_by_season: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_move_by_season_COMMITTED_20261112_1512.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  55     1                  None
+
+>>> dedup ND --commit
+
+DEDUP v4 ND - COMMIT
+ dedup_archive: 289 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_dedup_archive_COMMITTED_20261112_1512.csv
+ dedup_review: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_dedup_review_COMMITTED_20261112_1512.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_dedup_summary_COMMITTED_20261112_1512.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  ND     39255         289                  60               020824EA-9267-40DD-A1B3-E2BB8A507C32
+
+>>> review-pairs ND --commit
+
+REVIEW-ONLY PAIRS ND - COMMIT
+ 60 pairs {'LONG': 1, 'SHORT': 59} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_review_pairs_COMMITTED_20261112_1512.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  60        91FF0F57-9A30-472F-B787-77EE20F91F91  None
+
+>>> same-score-fix ND
+ 2412 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS ND - PREVIEW (nothing changed)
+ 238 pairs {'DROP A': 16, 'DROP B': 23, 'UNDECIDED': 199} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_same_score_20261112_1513.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  38        None   None
+
+>>> query ND nd_dump.sql
+
+QUERY nd_dump (1 result sets)
+ set 1: 38906 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_nd_dump_1_20261112_1513.csv
+
+=== OK 2026-11-12 15:13:18

@@ -1,0 +1,99 @@
+
+>>> addstate LA
+Tracker rows ready for LA
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report LA drift
+
+REPORT drift LA: 142 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_drift_20261111_0832.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                                   N_Games  N_First  N_Last  N_Mapped
+   Abbeville Harvest Time Christian Academy  67       2007     2017    0         None                                      None     None     None    0       
+   Alexandria Bolton (LA)                    887      1909     2025    1         None                                      None     None     None    0       
+   Alexandria University Academy (LA)        44       2014     2017    0         None                                      None     None     None    0       
+   Athens Mt. Olive Christian (LA)           93       1998     2025    1         None                                      None     None     None    0       
+   Avondale Patrick Taylor Science & Tech A  15       2022     2023    0         None                                      None     None     None    0       
+   Baton Rouge Central Baptist (LA)          25       2009     2022    0         Baton Rouge Collegiate (LA)               47       2021     2026    1       
+   Baton Rouge Central Baptist (LA)          25       2009     2022    0         Baton Rouge Liberty Magnet (LA)           62       2020     2026    0       
+   Baton Rouge Central Baptist (LA)          25       2009     2022    0         Baton Rouge Thrive Academy (LA)           58       2019     2026    1       
+   Baton Rouge Christian Life (LA)           386      1970     2018    0         Baton Rouge Thrive Academy (LA)           58       2019     2026    1       
+   Baton Rouge Christian Life (LA)           386      1970     2018    0         Baton Rouge Liberty Magnet (LA)           62       2020     2026    0       
+   Baton Rouge Christian Life (LA)           386      1970     2018    0         Baton Rouge Helix Mentorship Academy (LA  111      2014     2026    1       
+   Baton Rouge The Church Academy (LA)       18       2017     2018    0         Baton Rouge Helix Mentorship Academy (LA  111      2014     2026    1       
+   Baton Rouge The Church Academy (LA)       18       2017     2018    0         Baton Rouge Liberty Magnet (LA)           62       2020     2026    0       
+   Baton Rouge The Church Academy (LA)       18       2017     2018    0         Baton Rouge Thrive Academy (LA)           58       2019     2026    1       
+   Breaux Bridge Christian Academy (LA)      66       2006     2015    0         None                                      None     None     None    0       
+   ... 127 more rows (see CSV)
+
+>>> mapcheck LA
+
+MAPPING CHECK LA - PREVIEW (nothing changed)
+ 40 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_mapcheck_20261111_0832.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/la/athens/mount  Athens Mount Olive Christian (LA)    18718    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/la/grand-coteau  Grand Coteau Berchmans Academy (LA)  41377    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/la/houma/aj-ell  Houma Aj Ellender (LA)               5100     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/la/lafayette/te  Lafayette Teurlings Catholic (LA)    24850    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/la/marrero/lw-h  Marrero Lw Higgins (LA)              34284    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/la/metairie/arc  Metairie Archbishop Rummel (LA)      4451     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/la/st-joseph/te  Saint Joseph Tensas (LA)             6000     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/la/shreveport/c  Shreveport Captain Shreve (LA)       10372    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/la/arnaudville/  Arnaudville Beau Chene (LA)          59165    59083   Team_ID points to another name   Athens Mt. Olive Christian (LA)         
+   https://www.maxpreps.com/la/baton-rouge/  Baton Rouge Liberty Magnet (LA)      70988    33034   Team_ID points to another name   Baton Rouge Louisiana State University H
+   https://www.maxpreps.com/la/baton-rouge/  Baton Rouge Southern Lab (LA)        71182    59436   Team_ID points to another name   Baton Rouge St. Aloysius Catholic (LA)  
+   https://www.maxpreps.com/la/crowley/notr  Crowley Notre Dame (LA)              30924    46905   Team_ID points to another name   Crowley St. Michael's (LA)              
+   https://www.maxpreps.com/la/dequincy/deq  DeQuincy (LA)                        6161     18535   Team_ID points to another name   De Quincy (LA)                          
+   https://www.maxpreps.com/la/grambling/li  Grambling Lincoln Prep (LA)          62582    15598   Team_ID points to another name   Grand Coteau Berchmans Academy of the Sa
+   https://www.maxpreps.com/la/hammond/hamm  Hammond (LA)                         31923    62802   Team_ID points to another name   Hammond Southwood Academy (LA)          
+   https://www.maxpreps.com/la/harvey/west-  Harvey West Jefferson (LA)           70585    62920   Team_ID points to another name   Haughton B (LA)                         
+   https://www.maxpreps.com/la/houma/vandeb  Houma Vandebilt Catholic (LA)        63301    63244   Team_ID points to another name   Huntington Academy (LA)                 
+   https://www.maxpreps.com/la/kaplan/kapla  Kaplan (LA)                          63670    63651   Team_ID points to another name   Keithville Graywood Christian Academy (L
+   https://www.maxpreps.com/la/lafayette/ca  Lafayette Carencro (LA)              63904    63903   Team_ID points to another name   Lafayette Cathedral Carmel (LA)         
+   https://www.maxpreps.com/la/lake-provide  Lake Providence General Trass (LA)   64082    63981   Team_ID points to another name   Laplace St. Charles (LA)                
+   ... 20 more rows (see CSV)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  32       None
+
+>>> dedup LA
+
+DEDUP v4 LA - PREVIEW (nothing changed)
+ dedup_archive: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_archive_20261111_0832.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_review_20261111_0832.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_summary_20261111_0832.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  LA     104213        4                    1                None 
+
+>>> review-pairs LA
+
+REVIEW-ONLY PAIRS LA - PREVIEW (nothing changed)
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_review_pairs_20261111_0832.csv
+
+>>> same-score-fix LA
+
+SAME-SCORE DOUBLE-BOOKINGS LA - PREVIEW (nothing changed)
+ 1248 pairs {'DROP B': 355, 'DROP A': 346, 'UNDECIDED': 547} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_same_score_20261111_0834.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  695       None   None
+
+>>> query LA la_dump.sql
+
+QUERY la_dump (1 result sets)
+ set 1: 104216 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_q_la_dump_1_20261111_0834.csv
+
+=== OK 2026-11-11 08:34:50

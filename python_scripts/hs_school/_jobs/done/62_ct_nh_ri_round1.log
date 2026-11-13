@@ -1,0 +1,344 @@
+
+>>> remap CT --url "https://www.maxpreps.com/ct/ansonia/obrien-rvt-condors/football/schedule/" --to "Ansonia O'Brien RVT (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/ansonia/obrien-rvt-condors/football/schedule/ -> Ansonia O'Brien RVT (CT) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/ct/ansonia/obri  Ansonia Obrien Rvt (CT)  19686    Ansonia O'Brien RVT (CT)  58996     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/avon/avon-old-farms-beavers/football/schedule/" --to "Avon Old Farms (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/avon/avon-old-farms-beavers/football/schedule/ -> Avon Old Farms (CT) - COMMIT
+   URL                                       ProperName     Team_ID  NewProperName        NewTeam_ID
+   https://www.maxpreps.com/ct/avon/avon-ol  Avon Old (CT)  12313    Avon Old Farms (CT)  59244     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/bridgeport/bullard-havens-tigers/football/schedule/" --to "Bridgeport Bullard Havens Tech (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/bridgeport/bullard-havens-tigers/football/schedule/ -> Bridgeport Bullard Havens Tech (CT) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/ct/bridgeport/b  Bridgeport Bullard Havens (CT)  28532    Bridgeport Bullard Havens Tech (CT)  59906     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/coventry/coventry-windham-rvt-bolton-lyman-memorial-patriots/football/schedule/" --to "Coventry-Windham RVT-Bolton (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/coventry/coventry-windham-rvt-bolton-lyman-memorial-patriots/football/schedule/ -> Coventry-Windham RVT-Bolton (CT) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/ct/coventry/cov  Coventry Windham (CT)  7930     Coventry-Windham RVT-Bolton (CT)  61135     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/farmington/farmington-river-hawks/football/schedule/" --to "Farmington (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/farmington/farmington-river-hawks/football/schedule/ -> Farmington (CT) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName    NewTeam_ID
+   https://www.maxpreps.com/ct/farmington/f  Farmington River (CT)  37061    Farmington (CT)  9117      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/griswold/griswold-wheeler-wolverines/football/schedule/" --to "Griswold (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/griswold/griswold-wheeler-wolverines/football/schedule/ -> Griswold (CT) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/ct/griswold/gri  Griswold-Wheeler (CT)  62717    Griswold (CT)  62716     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/hartford/prince-rvt-falcons/football/schedule/" --to "Hartford Prince Tech (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/hartford/prince-rvt-falcons/football/schedule/ -> Hartford Prince Tech (CT) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/ct/hartford/pri  Hartford Prince RVT (CT)  38323    Hartford Prince Tech (CT)  62899     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/hartford/sports-and-medical-sciences-academy-bulkeley-classical-magnet-tigerhawks/football/schedule/" --to "Hartford Sport & Medical Sciences Academy (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/hartford/sports-and-medical-sciences-academy-bulkeley-classical-magnet-tigerhawks/football/schedule/ -> Hartford Sport & Medical Sciences Academy (CT) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ct/hartford/spo  Hartford Sports And (CT)  44994    Hartford Sport & Medical Sciences Academ  45208     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/killingly/killingly-redmen/football/schedule/" --to "Danielson Killingly (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/killingly/killingly-redmen/football/schedule/ -> Danielson Killingly (CT) - COMMIT
+   URL                                       ProperName      Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/ct/killingly/ki  Killingly (CT)  26631    Danielson Killingly (CT)  2827      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/meriden/wilcox-tech-kaynor-rvt/football/schedule/" --to "Meriden Wilcox Tech-Kaynor RVT (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/meriden/wilcox-tech-kaynor-rvt/football/schedule/ -> Meriden Wilcox Tech-Kaynor RVT (CT) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/ct/meriden/wilc  Meriden Wilcox Tech (CT)  26521    Meriden Wilcox Tech-Kaynor RVT (CT)  39267     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/norwich/thames-river-co-op-norwich-rvt-grasso-rvt-st-bernard-crusaders/football/schedule/" --to "Norwich Thames River Academy (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/norwich/thames-river-co-op-norwich-rvt-grasso-rvt-st-bernard-crusaders/football/schedule/ -> Norwich Thames River Academy (CT) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ct/norwich/tham  Norwich Thames River (CT)  1798     Norwich Thames River Academy (CT)  66108     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/oakdale/st-thomas-more-chancellors/football/schedule/" --to "Oakdale St.Thomas More (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/oakdale/st-thomas-more-chancellors/football/schedule/ -> Oakdale St.Thomas More (CT) - COMMIT
+   URL                                       ProperName               Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/ct/oakdale/st-t  Oakdale St. Thomas (CT)  46312    Oakdale St.Thomas More (CT)  66131     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/putnam/quinebaug-valley-coop-pride/football/schedule/" --to "Putnam Quinebaug Valley Coop (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/putnam/quinebaug-valley-coop-pride/football/schedule/ -> Putnam Quinebaug Valley Coop (CT) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ct/putnam/quine  Putnam Quinebaug Valley (CT)  40708    Putnam Quinebaug Valley Coop (CT)  67117     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/stafford-springs/stafford-somers-east-windsor-bulldogs/football/schedule/" --to "Stafford Springs Stafford-Somers-East Windsor (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/stafford-springs/stafford-somers-east-windsor-bulldogs/football/schedule/ -> Stafford Springs Stafford-Somers-East Windsor (CT) - COMMIT
+   URL                                       ProperName                               Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ct/stafford-spr  Stafford Springs St. afford Somers (CT)  47211    Stafford Springs Stafford-Somers-East Wi  5926      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/stamford/king-vikings/football/schedule/" --to "Stamford King Low Heywood Thomas (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/stamford/king-vikings/football/schedule/ -> Stamford King Low Heywood Thomas (CT) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName                          NewTeam_ID
+   https://www.maxpreps.com/ct/stamford/kin  Stamford King (CT)  23633    Stamford King Low Heywood Thomas (CT)  68422     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/washington/frederick-gunn-highlanders/football/schedule/" --to "Washington Federick Gunn (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/washington/frederick-gunn-highlanders/football/schedule/ -> Washington Federick Gunn (CT) - COMMIT
+   URL                                       ProperName                      Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/ct/washington/f  Washington Frederick Gunn (CT)  8568     Washington Federick Gunn (CT)  69478     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/west-haven/west-haven-blue-devils/football/schedule/" --to "West Haven (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/west-haven/west-haven-blue-devils/football/schedule/ -> West Haven (CT) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName    NewTeam_ID
+   https://www.maxpreps.com/ct/west-haven/w  West Haven West Haven (CT)  5241     West Haven (CT)  30861     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck CT --commit
+
+MAPPING CHECK CT - COMMIT (Team_ID set to the ProperName ID)
+ 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_mapcheck_COMMITTED_20261109_1042.csv
+   URL                                       ProperName                 Team_ID  NameID  Problem                         Team_ID_Name                       
+   https://www.maxpreps.com/ct/bridgeport/b  Bridgeport Bassick (CT)    59906    59905   Team_ID points to another name  Bridgeport Bullard Havens Tech (CT)
+   https://www.maxpreps.com/ct/norwich/norw  Norwich Free Academy (CT)  66108    66107   Team_ID points to another name  Norwich Thames River Academy (CT)  
+   https://www.maxpreps.com/ct/suffield/suf  Suffield Academy (CT)      70828    68561   Team_ID points to another name  Thompson Marianapolis Prep (CT)    
+   Status     Fixable  Err 
+   COMMITTED  3        None
+
+>>> remap NH --url "https://www.maxpreps.com/nh/belmont/belmont-gilford-red-raiders/football/schedule/" --to "Belmont-Gilford (NH)" --commit
+
+REMAP https://www.maxpreps.com/nh/belmont/belmont-gilford-red-raiders/football/schedule/ -> Belmont-Gilford (NH) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName         NewTeam_ID
+   https://www.maxpreps.com/nh/belmont/belm  Belmont Gilford (NH)  19247    Belmont-Gilford (NH)  11663     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NH --url "https://www.maxpreps.com/nh/exeter/phillips-exeter-academy-lions/football/schedule/" --to "Phillips Exeter Academy (NH)" --commit
+
+REMAP https://www.maxpreps.com/nh/exeter/phillips-exeter-academy-lions/football/schedule/ -> Phillips Exeter Academy (NH) - COMMIT
+   URL                                       ProperName                   Team_ID  NewProperName                 NewTeam_ID
+   https://www.maxpreps.com/nh/exeter/phill  Exeter Phillips Exeter (NH)  17344    Phillips Exeter Academy (NH)  66735     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NH --url "https://www.maxpreps.com/nh/hillsboro/hillsboro-deering-hopkinton/football/schedule/" --to "Hillsboro-Deering-Hopkinton (NH)" --commit
+
+REMAP https://www.maxpreps.com/nh/hillsboro/hillsboro-deering-hopkinton/football/schedule/ -> Hillsboro-Deering-Hopkinton (NH) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/nh/hillsboro/hi  Hillsboro Deering (NH)  16732    Hillsboro-Deering-Hopkinton (NH)  4443      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NH --url "https://www.maxpreps.com/nh/meredith/inter-lakes-moultonborough-academy-lakers/football/schedule/" --to "Meredith Inter-Lakes-Moultonborough Academy (NH)" --commit
+
+REMAP https://www.maxpreps.com/nh/meredith/inter-lakes-moultonborough-academy-lakers/football/schedule/ -> Meredith Inter-Lakes-Moultonborough Academy (NH) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/nh/meredith/int  Meredith Inter Lakes (NH)  27412    Meredith Inter-Lakes-Moultonborough Acad  27099     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap NH --url "https://www.maxpreps.com/nh/peterborough/conval-cougars/football/schedule/" --to "Peterborough Contoocook Valley Regional (NH)" --commit
+
+REMAP https://www.maxpreps.com/nh/peterborough/conval-cougars/football/schedule/ -> Peterborough Contoocook Valley Regional (NH) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/nh/peterborough  Peterborough ConVal (NH)  3998     Peterborough Contoocook Valley Regional   66685     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck NH --commit
+
+MAPPING CHECK NH - COMMIT (Team_ID set to the ProperName ID)
+ 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_mapcheck_COMMITTED_20261109_1042.csv
+   URL                                       ProperName                      Team_ID  NameID  Problem                         Team_ID_Name                            
+   https://www.maxpreps.com/nh/hanover/hano  Hanover (NH)                    71910    62832   Team_ID points to another name  Hillsboro-Deering (NH)                  
+   https://www.maxpreps.com/nh/penacook/mer  Penacook Merrimack Valley (NH)  66685    66635   Team_ID points to another name  Peterborough Contoocook Valley Regional 
+   Status     Fixable  Err 
+   COMMITTED  2        None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/central-falls/central-falls-blackstone-valley-prep-achievement-first/football/schedule/" --to "Central Falls (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/central-falls/central-falls-blackstone-valley-prep-achievement-first/football/schedule/ -> Central Falls (RI) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName       NewTeam_ID
+   https://www.maxpreps.com/ri/central-fall  Central Falls Central Falls (RI)  27169    Central Falls (RI)  60376     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/east-providence/providence-country-day-highlander-charter-sanchez-complex/football/schedule/" --to "Providence Country Day-Highlander Charter-Sanchez Complex (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/east-providence/providence-country-day-highlander-charter-sanchez-complex/football/schedule/ -> Providence Country Day-Highlander Charter-Sanchez Complex (RI) - COMMIT
+   URL                                       ProperName                               Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ri/east-provide  East Providence Providence Country (RI)  49504    Providence Country Day-Highlander Charte  36699     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/lincoln/davies-career-and-tech-patriots/football/schedule/" --to "Lincoln Davies Career & Tech (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/lincoln/davies-career-and-tech-patriots/football/schedule/ -> Lincoln Davies Career & Tech (RI) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ri/lincoln/davi  Lincoln Davies Career (RI)  15386    Lincoln Davies Career & Tech (RI)  7150      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/north-smithfield/north-smithfield-mount-st-charles-academy/football/schedule/" --to "North Smithfield-Mount St. Charles Academy (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/north-smithfield/north-smithfield-mount-st-charles-academy/football/schedule/ -> North Smithfield-Mount St. Charles Academy (RI) - COMMIT
+   URL                                       ProperName                              Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ri/north-smithf  North Smithfield North Smithfield (RI)  49553    North Smithfield-Mount St. Charles Acade  5394      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/providence/hope-st-patrick-academy/football/schedule/" --to "Providence Hope (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/providence/hope-st-patrick-academy/football/schedule/ -> Providence Hope (RI) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName         NewTeam_ID
+   https://www.maxpreps.com/ri/providence/h  Providence Hope St. Academy (RI)  1419     Providence Hope (RI)  67092     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/providence/la-salle-academy-rams/football/schedule/" --to "Providence Lasalle Academy (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/providence/la-salle-academy-rams/football/schedule/ -> Providence Lasalle Academy (RI) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/ri/providence/l  Providence La Salle (RI)  30989    Providence Lasalle Academy (RI)  67093     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/west-greenwich/exeter-west-greenwich-prout/football/schedule/" --to "Exeter-West Greenwich-Prout (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/west-greenwich/exeter-west-greenwich-prout/football/schedule/ -> Exeter-West Greenwich-Prout (RI) - COMMIT
+   URL                                       ProperName                             Team_ID  NewProperName                     NewTeam_ID
+   https://www.maxpreps.com/ri/west-greenwi  West Greenwich Exeter West-Prout (RI)  23460    Exeter-West Greenwich-Prout (RI)  17974     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/west-greenwich/exeter-west-greenwich-scarlet-knights/football/schedule/" --to "Exeter-West Greenwich (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/west-greenwich/exeter-west-greenwich-scarlet-knights/football/schedule/ -> Exeter-West Greenwich (RI) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName               NewTeam_ID
+   https://www.maxpreps.com/ri/west-greenwi  West Greenwich Exeter West (RI)  49613    Exeter-West Greenwich (RI)  44280     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/woonsocket/woonsocket-villa-novans/football/schedule/" --to "Woonsocket (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/woonsocket/woonsocket-villa-novans/football/schedule/ -> Woonsocket (RI) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName    NewTeam_ID
+   https://www.maxpreps.com/ri/woonsocket/w  Woonsocket Villa (RI)  8863     Woonsocket (RI)  3865      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck RI --commit
+
+MAPPING CHECK RI - COMMIT (Team_ID set to the ProperName ID)
+ 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_mapcheck_COMMITTED_20261109_1042.csv
+   URL                                       ProperName              Team_ID  NameID  Problem                         Team_ID_Name                  
+   https://www.maxpreps.com/ri/warwick/toll  Warwick Toll Gate (RI)  29256    69455   Team_ID points to another name  Warwick Veterans Memorial (RI)
+   Status     Fixable  Err 
+   COMMITTED  1        None
+
+>>> move-team CT --from "New London Buckeley (CT)" --to "New London (CT)" --seasons 1951-1992 --ids ct_nl_from_buckeley_ids.csv --reason "1951-1992 New London HS games mis-assigned to closed Bulkeley School" --commit
+ only the 23 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\ct_nl_from_buckeley_ids.csv
+
+MOVE New London Buckeley (CT) -> New London (CT), seasons 1951-1992 - COMMIT
+ move_games: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_games_COMMITTED_20261109_1042.csv
+ move_by_season: 134 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_by_season_COMMITTED_20261109_1042.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  23     1                  None
+
+>>> move-team CT --from "New London Buckeley (CT)" --to "Hartford Bulkeley (CT)" --seasons 1952-2003 --reason "1952-2003 Hartford Bulkeley games mis-assigned to New London Buckeley" --commit
+
+MOVE New London Buckeley (CT) -> Hartford Bulkeley (CT), seasons 1952-2003 - COMMIT
+ move_games: 170 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_games_COMMITTED_20261109_1042.csv
+ move_by_season: 124 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_by_season_COMMITTED_20261109_1042.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  170    1                  None
+
+>>> move-team CT --from "Bristol (CT)" --to "Bristol (RI)" --seasons 1967-1986 --reason "1967-1986 Bristol RI yearbook games mis-tagged as Bristol CT" --commit
+
+MOVE Bristol (CT) -> Bristol (RI), seasons 1967-1986 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_games_COMMITTED_20261109_1042.csv
+ move_by_season: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_by_season_COMMITTED_20261109_1042.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team CT --from "Waterbury Career Academy (CT)" --to "Waterbury McTernan (CT)" --seasons 1960-1970 --reason "1961 and 1966 Chase Collegiate / McTernan games wrongly merged into Waterbury Career Academy" --commit
+
+MOVE Waterbury Career Academy (CT) -> Waterbury McTernan (CT), seasons 1960-1970 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_games_COMMITTED_20261109_1042.csv
+ move_by_season: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_by_season_COMMITTED_20261109_1042.csv
+   Status   Games  ToNameInTeamNames  Err                                     
+   NOT RUN  0      0                  target name is not in HS_Team_Names - ch
+
+>>> move-team CT --from "Cromwell (CT)" --to "Cromwell-Portland (CT)" --seasons 2015-2026 --reason "2015+ games belong to Cromwell-Portland co-op" --commit
+
+MOVE Cromwell (CT) -> Cromwell-Portland (CT), seasons 2015-2026 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_games_COMMITTED_20261109_1042.csv
+ move_by_season: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_move_by_season_COMMITTED_20261109_1042.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team RI --from "Bristol Mt. Hope (RI)" --to "Providence Hope (RI)" --seasons 1949-1992 --reason "Pre-1993 Boston Globe games of Providence Hope mis-mapped to Bristol Mt. Hope" --commit
+
+MOVE Bristol Mt. Hope (RI) -> Providence Hope (RI), seasons 1949-1992 - COMMIT
+ move_games: 38 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_move_games_COMMITTED_20261109_1042.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_move_by_season_COMMITTED_20261109_1042.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  38     1                  None
+
+>>> move-team RI --from "Pawtucket (RI)" --to "Pawtucket Shea (RI)" --seasons 1953-1953 --ids ri_pawt_shea_1953_id.csv --reason "1953-10-18 vs Providence Classical belongs to Pawtucket West/Shea" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\ri_pawt_shea_1953_id.csv
+
+MOVE Pawtucket (RI) -> Pawtucket Shea (RI), seasons 1953-1953 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_move_games_COMMITTED_20261109_1042.csv
+ move_by_season: 92 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_move_by_season_COMMITTED_20261109_1042.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> consolidate MA
+
+[stderr]
+usage: hs_cleanup.py consolidate [-h] --reason REASON state
+hs_cleanup.py consolidate: error: the following arguments are required: --reason
+
+=== FAILED (exit 2) 2026-11-09 10:42:44

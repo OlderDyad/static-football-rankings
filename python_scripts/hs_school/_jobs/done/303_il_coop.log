@@ -1,0 +1,1618 @@
+
+>>> same-score-fix IL --commit
+ 1923 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IL - COMMIT
+ 1348 pairs {'DROP B': 163, 'DROP A': 165, 'UNDECIDED': 1020} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_COMMITTED_20261112_1610.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  328       3CD03BEB-8F7E-40F8-A6F6-E40F003094C6  None
+
+>>> consolidate IL --reason "IL co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/IL_cfg.py"
+Consolidating IL from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\IL_Alias_Rules.csv
+
+[stderr]
+2026-11-12 16:10:17,711 - INFO - Starting consolidation for state: (IL) using staging table method.
+2026-11-12 16:10:17,723 - WARNING - WARNING: 762 row(s) have identical OldName and NewName (no-op rules).
+2026-11-12 16:10:17,723 - WARNING -   'Abingdon-Avon (IL)' -> 'Abingdon-Avon (IL)' (no change)
+2026-11-12 16:10:17,723 - WARNING -   'Addison Driscoll Catholic (IL)' -> 'Addison Driscoll Catholic (IL)' (no change)
+2026-11-12 16:10:17,723 - WARNING -   'Addison Trail (IL)' -> 'Addison Trail (IL)' (no change)
+2026-11-12 16:10:17,723 - WARNING -   'Albion Edwards County (IL)' -> 'Albion Edwards County (IL)' (no change)
+2026-11-12 16:10:17,723 - WARNING -   'Albion Edwards County-Grayville (IL)' -> 'Albion Edwards County-Grayville (IL)' (no change)
+2026-11-12 16:10:17,723 - WARNING -   'Alden-Hebron-Faith Lutheran (IL)' -> 'Alden-Hebron-Faith Lutheran (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Aledo Mercer County (IL)' -> 'Aledo Mercer County (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Alexis United (IL)' -> 'Alexis United (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Algonquin Jacobs (IL)' -> 'Algonquin Jacobs (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Alton (IL)' -> 'Alton (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Alton Marquette Catholic (IL)' -> 'Alton Marquette Catholic (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Alton Western Military Academy (IL)' -> 'Alton Western Military Academy (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Amboy (IL)' -> 'Amboy (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Amboy-LaMoille (IL)' -> 'Amboy-LaMoille (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Anna-Jonesboro (IL)' -> 'Anna-Jonesboro (IL)' (no change)
+2026-11-12 16:10:17,724 - WARNING -   'Annawan (IL)' -> 'Annawan (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Antioch (IL)' -> 'Antioch (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Arcola (IL)' -> 'Arcola (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Argenta-Oreana (IL)' -> 'Argenta-Oreana (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Arlington Heights (IL)' -> 'Arlington Heights (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Arlington Heights Christian Liberty Academy (IL)' -> 'Arlington Heights Christian Liberty Academy (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Arlington Heights Forest View (IL)' -> 'Arlington Heights Forest View (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Arlington Heights Hersey (IL)' -> 'Arlington Heights Hersey (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Arlington Heights St. Viator (IL)' -> 'Arlington Heights St. Viator (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Ashton (IL)' -> 'Ashton (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Ashton-Franklin Center (IL)' -> 'Ashton-Franklin Center (IL)' (no change)
+2026-11-12 16:10:17,725 - WARNING -   'Assumption (IL)' -> 'Assumption (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Astoria (IL)' -> 'Astoria (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Astoria-Table Grove VIT (IL)' -> 'Astoria-Table Grove VIT (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Athens (IL)' -> 'Athens (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Atkinson (IL)' -> 'Atkinson (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Atwood-Hammond (IL)' -> 'Atwood-Hammond (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Auburn (IL)' -> 'Auburn (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Aurora Central Catholic (IL)' -> 'Aurora Central Catholic (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Aurora Christian (IL)' -> 'Aurora Christian (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Aurora East (IL)' -> 'Aurora East (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Aurora Marmion Military Academy (IL)' -> 'Aurora Marmion Military Academy (IL)' (no change)
+2026-11-12 16:10:17,726 - WARNING -   'Aurora Metea Valley (IL)' -> 'Aurora Metea Valley (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Aurora Waubonsie Valley (IL)' -> 'Aurora Waubonsie Valley (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Avon (IL)' -> 'Avon (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Barrington (IL)' -> 'Barrington (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Barry Western Community (IL)' -> 'Barry Western Community (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Bartlett (IL)' -> 'Bartlett (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Bartonville Limestone (IL)' -> 'Bartonville Limestone (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Batavia (IL)' -> 'Batavia (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Beardstown (IL)' -> 'Beardstown (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Belleville (IL)' -> 'Belleville (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Belleville Althoff Catholic (IL)' -> 'Belleville Althoff Catholic (IL)' (no change)
+2026-11-12 16:10:17,727 - WARNING -   'Belleville East (IL)' -> 'Belleville East (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Belleville West (IL)' -> 'Belleville West (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Belvidere (IL)' -> 'Belvidere (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Belvidere North (IL)' -> 'Belvidere North (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Bement (IL)' -> 'Bement (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Bensenville Fenton (IL)' -> 'Bensenville Fenton (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Benton (IL)' -> 'Benton (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Benton-Scales Mound (IL)' -> 'Benton-Scales Mound (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Benton-Scales Mound (IL)-Shullsburg (WI)' -> 'Benton-Scales Mound (IL)-Shullsburg (WI)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Berwyn Morton West (IL)' -> 'Berwyn Morton West (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Bethalto Civic Memorial (IL)' -> 'Bethalto Civic Memorial (IL)' (no change)
+2026-11-12 16:10:17,728 - WARNING -   'Bethany (IL)' -> 'Bethany (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Biggsville Union (IL)' -> 'Biggsville Union (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Biggsville West Central (IL)' -> 'Biggsville West Central (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Bismarck-Henning (IL)' -> 'Bismarck-Henning (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Bloomington (IL)' -> 'Bloomington (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Bloomington Central Catholic (IL)' -> 'Bloomington Central Catholic (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Bloomington Trinity (IL)' -> 'Bloomington Trinity (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Blue Island Community (IL)' -> 'Blue Island Community (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Blue Island Eisenhower (IL)' -> 'Blue Island Eisenhower (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Bolingbrook (IL)' -> 'Bolingbrook (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Bradford (IL)' -> 'Bradford (IL)' (no change)
+2026-11-12 16:10:17,729 - WARNING -   'Bradley-Bourbonnais Coummunity (IL)' -> 'Bradley-Bourbonnais Coummunity (IL)' (no change)
+2026-11-12 16:10:17,730 - WARNING -   'Braidwood Reed-Custer (IL)' -> 'Braidwood Reed-Custer (IL)' (no change)
+2026-11-12 16:10:17,730 - WARNING -   'Breese Central (IL)' -> 'Breese Central (IL)' (no change)
+2026-11-12 16:10:17,730 - WARNING -   'Breese Mater Dei (IL)' -> 'Breese Mater Dei (IL)' (no change)
+2026-11-12 16:10:17,730 - WARNING -   'Bridgeport (IL)' -> 'Bridgeport (IL)' (no change)
+2026-11-12 16:10:17,730 - WARNING -   'Bridgeport Red Hill (IL)' -> 'Bridgeport Red Hill (IL)' (no change)
+2026-11-12 16:10:17,730 - WARNING -   'Broadlands A-B-L (IL)' -> 'Broadlands A-B-L (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Broadlands Heritage (IL)' -> 'Broadlands Heritage (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Buda Western (IL)' -> 'Buda Western (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Buffalo Grove (IL)' -> 'Buffalo Grove (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Bunker Hill (IL)' -> 'Bunker Hill (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Burbank Reavis (IL)' -> 'Burbank Reavis (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Burbank St. Laurence (IL)' -> 'Burbank St. Laurence (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Burlington Central (IL)' -> 'Burlington Central (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Bushnell Prairie City (IL)' -> 'Bushnell Prairie City (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Bushnell-Prairie City-Avon (IL)' -> 'Bushnell-Prairie City-Avon (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Byron (IL)' -> 'Byron (IL)' (no change)
+2026-11-12 16:10:17,731 - WARNING -   'Cahokia (IL)' -> 'Cahokia (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Cairo (IL)' -> 'Cairo (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Cairo Meridian Coop (IL)' -> 'Cairo Meridian Coop (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Calumet City Thornton Fractional North (IL)' -> 'Calumet City Thornton Fractional North (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Cambridge (IL)' -> 'Cambridge (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Camp Point Central-Southeastern (IL)' -> 'Camp Point Central-Southeastern (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Canton (IL)' -> 'Canton (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Carbondale (IL)' -> 'Carbondale (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Carlinville (IL)' -> 'Carlinville (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Carlyle (IL)' -> 'Carlyle (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Carmi (IL)' -> 'Carmi (IL)' (no change)
+2026-11-12 16:10:17,732 - WARNING -   'Carmi-White County (IL)' -> 'Carmi-White County (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Carol Stream Glenbard North (IL)' -> 'Carol Stream Glenbard North (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Carpentersville Crown (IL)' -> 'Carpentersville Crown (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Carpentersville Dundee (IL)' -> 'Carpentersville Dundee (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Carpentersville Dundee-Crown (IL)' -> 'Carpentersville Dundee-Crown (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Carrollton (IL)' -> 'Carrollton (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Carterville (IL)' -> 'Carterville (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Carthage & Hancock Central (IL)' -> 'Carthage & Hancock Central (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Carthage (IL)' -> 'Carthage (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Carthage Illini West (IL)' -> 'Carthage Illini West (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Cary-Grove (IL)' -> 'Cary-Grove (IL)' (no change)
+2026-11-12 16:10:17,733 - WARNING -   'Casey (IL)' -> 'Casey (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Casey-Westfield (IL)' -> 'Casey-Westfield (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Catlin (IL)' -> 'Catlin (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Centralia (IL)' -> 'Centralia (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Cerro Gordo-DeLand-Weldon-Bement (IL)' -> 'Cerro Gordo-DeLand-Weldon-Bement (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Champaign Centennial (IL)' -> 'Champaign Centennial (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Champaign Central (IL)' -> 'Champaign Central (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Chapin-Triopia (IL)' -> 'Chapin-Triopia (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Charleston (IL)' -> 'Charleston (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Chatham Glenwood (IL)' -> 'Chatham Glenwood (IL)' (no change)
+2026-11-12 16:10:17,734 - WARNING -   'Chatsworth (IL)' -> 'Chatsworth (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chenoa (IL)' -> 'Chenoa (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chester (IL)' -> 'Chester (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chicago Academy (IL)' -> 'Chicago Academy (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chicago Agricultural Science (IL)' -> 'Chicago Agricultural Science (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chicago Amundsen (IL)' -> 'Chicago Amundsen (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chicago Austin Poly (IL)' -> 'Chicago Austin Poly (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chicago Austin Poly (IL)' -> 'Chicago Austin Poly (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chicago Back of the Yards College Prep (IL)' -> 'Chicago Back of the Yards College Prep (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chicago Bogan (IL)' -> 'Chicago Bogan (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chicago Bowen (IL)' -> 'Chicago Bowen (IL)' (no change)
+2026-11-12 16:10:17,735 - WARNING -   'Chicago Bowen-Baker College Prep (IL)' -> 'Chicago Bowen-Baker College Prep (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Brooks College Prep (IL)' -> 'Chicago Brooks College Prep (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Brother Rice (IL)' -> 'Chicago Brother Rice (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Bulls College Prep (IL)' -> 'Chicago Bulls College Prep (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Calumet (IL)' -> 'Chicago Calumet (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Carver (IL)' -> 'Chicago Carver (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Catalyst-Maria (IL)' -> 'Chicago Catalyst-Maria (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Christ the King (IL)' -> 'Chicago Christ the King (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Clark Prep (IL)' -> 'Chicago Clark Prep (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Clemente (IL)' -> 'Chicago Clemente (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Collins Academy (IL)' -> 'Chicago Collins Academy (IL)' (no change)
+2026-11-12 16:10:17,736 - WARNING -   'Chicago Comer Prep (IL)' -> 'Chicago Comer Prep (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago Corliss (IL)' -> 'Chicago Corliss (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago Corliss-Butler College Prep (IL)' -> 'Chicago Corliss-Butler College Prep (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago Curie (IL)' -> 'Chicago Curie (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago De La Salle (IL)' -> 'Chicago De La Salle (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago DePaul College Prep (IL)' -> 'Chicago DePaul College Prep (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago DRW College Prep (IL)' -> 'Chicago DRW College Prep (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago Dunbar (IL)' -> 'Chicago Dunbar (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago DuSable (IL)' -> 'Chicago DuSable (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago Dyett (IL)' -> 'Chicago Dyett (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago Englewood (IL)' -> 'Chicago Englewood (IL)' (no change)
+2026-11-12 16:10:17,737 - WARNING -   'Chicago Englewood (IL)' -> 'Chicago Englewood (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Englewood Stem (IL)' -> 'Chicago Englewood Stem (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Eric Solorio Academy (IL)' -> 'Chicago Eric Solorio Academy (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Farragut (IL)' -> 'Chicago Farragut (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Fenger (IL)' -> 'Chicago Fenger (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Foreman (IL)' -> 'Chicago Foreman (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Forestville (IL)' -> 'Chicago Forestville (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Gage Park (IL)' -> 'Chicago Gage Park (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Goode STEM Academy (IL)' -> 'Chicago Goode STEM Academy (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Hales Franciscan (IL)' -> 'Chicago Hales Franciscan (IL)' (no change)
+2026-11-12 16:10:17,738 - WARNING -   'Chicago Harlan (IL)' -> 'Chicago Harlan (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Harper (IL)' -> 'Chicago Harper (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Harrison Tech (IL)' -> 'Chicago Harrison Tech (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Heights Bloom Township (IL)' -> 'Chicago Heights Bloom Township (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Heights Bloom Trail (IL)' -> 'Chicago Heights Bloom Trail (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Heights Marian Catholic (IL)' -> 'Chicago Heights Marian Catholic (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Hirsch (IL)' -> 'Chicago Hirsch (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Hope Academy (IL)' -> 'Chicago Hope Academy (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Hubbard (IL)' -> 'Chicago Hubbard (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Hyde Park (IL)' -> 'Chicago Hyde Park (IL)' (no change)
+2026-11-12 16:10:17,739 - WARNING -   'Chicago Hyde Park (IL)' -> 'Chicago Hyde Park (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago International Charter-Longwood Academy (IL)' -> 'Chicago International Charter-Longwood Academy (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago ITW David Speer Academy (IL)' -> 'Chicago ITW David Speer Academy (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago John Hope College Prep (IL)' -> 'Chicago John Hope College Prep (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago Johnson College Prep (IL)' -> 'Chicago Johnson College Prep (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago Juarez (IL)' -> 'Chicago Juarez (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago Julian (IL)' -> 'Chicago Julian (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago Kelly (IL)' -> 'Chicago Kelly (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago Kelvyn Park (IL)' -> 'Chicago Kelvyn Park (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago Kennedy (IL)' -> 'Chicago Kennedy (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago Kenwood (IL)' -> 'Chicago Kenwood (IL)' (no change)
+2026-11-12 16:10:17,740 - WARNING -   'Chicago King (IL)' -> 'Chicago King (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Lake View (IL)' -> 'Chicago Lake View (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Lane Tech (IL)' -> 'Chicago Lane Tech (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Leo (IL)' -> 'Chicago Leo (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Lincoln Park (IL)' -> 'Chicago Lincoln Park (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Lindblom (IL)' -> 'Chicago Lindblom (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Little Village Lawndale (IL)' -> 'Chicago Little Village Lawndale (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Luther North (IL)' -> 'Chicago Luther North (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Luthern South (IL)' -> 'Chicago Luthern South (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Manley (IL)' -> 'Chicago Manley (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Marine Leadership Academy (IL)' -> 'Chicago Marine Leadership Academy (IL)' (no change)
+2026-11-12 16:10:17,741 - WARNING -   'Chicago Marist (IL)' -> 'Chicago Marist (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Marshall (IL)' -> 'Chicago Marshall (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Mather (IL)' -> 'Chicago Mather (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Mendel Catholic Prep (IL)' -> 'Chicago Mendel Catholic Prep (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Military Academy (IL)' -> 'Chicago Military Academy (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Military Academy-Bronzeville (IL)' -> 'Chicago Military Academy-Bronzeville (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Morgan Park Academy (IL)' -> 'Chicago Morgan Park Academy (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Mt. Carmel (IL)' -> 'Chicago Mt. Carmel (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Muchin College Prep (IL)' -> 'Chicago Muchin College Prep (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Near North Career Metropolitan (IL)' -> 'Chicago Near North Career Metropolitan (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago North Lawndale College Prep (IL)' -> 'Chicago North Lawndale College Prep (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Orr (IL)' -> 'Chicago Orr (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Parker (IL)' -> 'Chicago Parker (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Payton College Prep (IL)' -> 'Chicago Payton College Prep (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Perspectives Leadership-IIT-Joslin-Tech (IL)' -> 'Chicago Perspectives Leadership-IIT-Joslin-Tech (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Phillips (IL)' -> 'Chicago Phillips (IL)' (no change)
+2026-11-12 16:10:17,742 - WARNING -   'Chicago Phoenix Military Academy (IL)' -> 'Chicago Phoenix Military Academy (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago Pritzker College Prep (IL)' -> 'Chicago Pritzker College Prep (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago Prosser (IL)' -> 'Chicago Prosser (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago Rauner College Prep (IL)' -> 'Chicago Rauner College Prep (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago Robeson (IL)' -> 'Chicago Robeson (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago Roosevelt (IL)' -> 'Chicago Roosevelt (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago Rowe-Clark Math & Science Academy (IL)' -> 'Chicago Rowe-Clark Math & Science Academy (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago Schurz (IL)' -> 'Chicago Schurz (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago Senn (IL)' -> 'Chicago Senn (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago Simeon (IL)' -> 'Chicago Simeon (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago South Shore International (IL)' -> 'Chicago South Shore International (IL)' (no change)
+2026-11-12 16:10:17,743 - WARNING -   'Chicago St. Rita (IL)' -> 'Chicago St. Rita (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Steinmetz College Prep (IL)' -> 'Chicago Steinmetz College Prep (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Sullivan (IL)' -> 'Chicago Sullivan (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Taft (IL)' -> 'Chicago Taft (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago The Noble Academy (IL)' -> 'Chicago The Noble Academy (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Tilden (IL)' -> 'Chicago Tilden (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Uplift (IL)' -> 'Chicago Uplift (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Vocational (IL)' -> 'Chicago Vocational (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Von Steuben (IL)' -> 'Chicago Von Steuben (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Waller (IL)' -> 'Chicago Waller (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Washington (IL)' -> 'Chicago Washington (IL)' (no change)
+2026-11-12 16:10:17,744 - WARNING -   'Chicago Weber (IL)' -> 'Chicago Weber (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Chicago Wells (IL)' -> 'Chicago Wells (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Chicago Westinghouse College Prep (IL)' -> 'Chicago Westinghouse College Prep (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Chicago Whitney M. Young Magnet (IL)' -> 'Chicago Whitney M. Young Magnet (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Chillicothe Illinois Valley Central (IL)' -> 'Chillicothe Illinois Valley Central (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Chillicothe Township (IL)' -> 'Chillicothe Township (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Christopher (IL)' -> 'Christopher (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Christopher Zeigler-Royalton Coop (IL)' -> 'Christopher Zeigler-Royalton Coop (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Cicero Morton East (IL)' -> 'Cicero Morton East (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Cicero Morton East Opp ""St. John"" (IL)' -> 'Cicero Morton East Opp ""St. John"" (IL)' (no change)
+2026-11-12 16:10:17,745 - WARNING -   'Clifton Central (IL)' -> 'Clifton Central (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Clinton (IL)' -> 'Clinton (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Coal City (IL)' -> 'Coal City (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Colfax Octavia (IL)' -> 'Colfax Octavia (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Colfax Ridgeview (IL)' -> 'Colfax Ridgeview (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Colfax Ridgeview-Lexington (IL)' -> 'Colfax Ridgeview-Lexington (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Collinsville (IL)' -> 'Collinsville (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Columbia (IL)' -> 'Columbia (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Concord Triopia-Meredosia-Chambersburg-Virginia (IL)' -> 'Concord Triopia-Meredosia-Chambersburg-Virginia (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Country Club Hills Hillcrest (IL)' -> 'Country Club Hills Hillcrest (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Crete-Monee (IL)' -> 'Crete-Monee (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Crystal Lake Central (IL)' -> 'Crystal Lake Central (IL)' (no change)
+2026-11-12 16:10:17,746 - WARNING -   'Crystal Lake Prairie Ridge (IL)' -> 'Crystal Lake Prairie Ridge (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Crystal Lake South (IL)' -> 'Crystal Lake South (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Cuba (IL)' -> 'Cuba (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Cuba-Spoon River Valley (IL)' -> 'Cuba-Spoon River Valley (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Cullom Tri-Point (IL)' -> 'Cullom Tri-Point (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Dakota (IL)' -> 'Dakota (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Danville (IL)' -> 'Danville (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Danville Schlarman (IL)' -> 'Danville Schlarman (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Danville Schlarman Academy (IL)' -> 'Danville Schlarman Academy (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Darien Hinsdale South (IL)' -> 'Darien Hinsdale South (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Decatur (IL)' -> 'Decatur (IL)' (no change)
+2026-11-12 16:10:17,747 - WARNING -   'Decatur Eisenhower (IL)' -> 'Decatur Eisenhower (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'Decatur Lakeview (IL)' -> 'Decatur Lakeview (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'Decatur MacArthur (IL)' -> 'Decatur MacArthur (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'Decatur Stephen Decatur (IL)' -> 'Decatur Stephen Decatur (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'Deer Creek-Mackinaw (IL)' -> 'Deer Creek-Mackinaw (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'Deerfield (IL)' -> 'Deerfield (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'DeKalb (IL)' -> 'DeKalb (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'DeLand-Weldon (IL)' -> 'DeLand-Weldon (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'DePue (IL)' -> 'DePue (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'Des Plaines Maine West (IL)' -> 'Des Plaines Maine West (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'Dixon (IL)' -> 'Dixon (IL)' (no change)
+2026-11-12 16:10:17,748 - WARNING -   'Dolton Thornridge (IL)' -> 'Dolton Thornridge (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'Downers Grove (IL)' -> 'Downers Grove (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'Downers Grove North (IL)' -> 'Downers Grove North (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'Downers Grove South (IL)' -> 'Downers Grove South (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'Downs Tri-Valley (IL)' -> 'Downs Tri-Valley (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'Dunlap (IL)' -> 'Dunlap (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'Dupo (IL)' -> 'Dupo (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'DuQuoin (IL)' -> 'DuQuoin (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'Durand (IL)' -> 'Durand (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'Durand-Pecatonica (IL)' -> 'Durand-Pecatonica (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'Dwight-Gardner-South Wilmington (IL)' -> 'Dwight-Gardner-South Wilmington (IL)' (no change)
+2026-11-12 16:10:17,749 - WARNING -   'East Alton-Wood River (IL)' -> 'East Alton-Wood River (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'East Dubuque (IL)' -> 'East Dubuque (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'East Moline United Township (IL)' -> 'East Moline United Township (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'East Peoria (IL)' -> 'East Peoria (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'East St. Louis (IL)' -> 'East St. Louis (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'Edwardsville (IL)' -> 'Edwardsville (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'Edwardsville Metro-East Lutheran (IL)' -> 'Edwardsville Metro-East Lutheran (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'Effingham (IL)' -> 'Effingham (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'El Paso (IL)' -> 'El Paso (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'El Paso-Gridley (IL)' -> 'El Paso-Gridley (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'Eldorado (IL)' -> 'Eldorado (IL)' (no change)
+2026-11-12 16:10:17,750 - WARNING -   'Elgin (IL)' -> 'Elgin (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elgin Larkin (IL)' -> 'Elgin Larkin (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elgin St. Edward Central Catholic (IL)' -> 'Elgin St. Edward Central Catholic (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elk Grove Village (IL)' -> 'Elk Grove Village (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elkville Elverado-Trico (IL)' -> 'Elkville Elverado-Trico (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elkville-Elverado (IL)' -> 'Elkville-Elverado (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elmhurst Immaculate Conception (IL)' -> 'Elmhurst Immaculate Conception (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elmhurst York (IL)' -> 'Elmhurst York (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elmwood Coop (IL)' -> 'Elmwood Coop (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elmwood Park (IL)' -> 'Elmwood Park (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Elmwood-Brimfield Coop (IL)' -> 'Elmwood-Brimfield Coop (IL)' (no change)
+2026-11-12 16:10:17,751 - WARNING -   'Erie Community (IL)' -> 'Erie Community (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Erie-Prophetstown Coop (IL)' -> 'Erie-Prophetstown Coop (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Eureka (IL)' -> 'Eureka (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Evanston (IL)' -> 'Evanston (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Evanston Academy (IL)' -> 'Evanston Academy (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Evergreen Park (IL)' -> 'Evergreen Park (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Fairbury Prairie Central (IL)' -> 'Fairbury Prairie Central (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Fairbury-Cropsey (IL)' -> 'Fairbury-Cropsey (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Fairfield (IL)' -> 'Fairfield (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Farmer City Blue Ridge (IL)' -> 'Farmer City Blue Ridge (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Farmington (IL)' -> 'Farmington (IL)' (no change)
+2026-11-12 16:10:17,752 - WARNING -   'Fisher (IL)' -> 'Fisher (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Fithian Oakwood (IL)' -> 'Fithian Oakwood (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Fithian Oakwood-Armstrong (IL)' -> 'Fithian Oakwood-Armstrong (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Flanagan (IL)' -> 'Flanagan (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Flanagan-Woodland (IL)' -> 'Flanagan-Woodland (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Flora Coop (IL)' -> 'Flora Coop (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Flora-North Clay (IL)' -> 'Flora-North Clay (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Forrest (IL)' -> 'Forrest (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Forreston (IL)' -> 'Forreston (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Forrest-Strawn-Wing (IL)' -> 'Forrest-Strawn-Wing (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Fox Lake Grant Community (IL)' -> 'Fox Lake Grant Community (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Frankfort Lincoln-Way (IL)' -> 'Frankfort Lincoln-Way (IL)' (no change)
+2026-11-12 16:10:17,753 - WARNING -   'Frankfort Lincoln-Way East (IL)' -> 'Frankfort Lincoln-Way East (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Franklin Grove Center (IL)' -> 'Franklin Grove Center (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Franklin Park East Leyden (IL)' -> 'Franklin Park East Leyden (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Franklin Park-Northlake Leyden (IL)' -> 'Franklin Park-Northlake Leyden (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Freeburg (IL)' -> 'Freeburg (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Freeport (IL)' -> 'Freeport (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Freeport Aquin Catholic (IL)' -> 'Freeport Aquin Catholic (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Fulton (IL)' -> 'Fulton (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Galena (IL)' -> 'Galena (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Galesburg (IL)' -> 'Galesburg (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Galva (IL)' -> 'Galva (IL)' (no change)
+2026-11-12 16:10:17,754 - WARNING -   'Geneseo (IL)' -> 'Geneseo (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Geneva (IL)' -> 'Geneva (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Genoa-Kingston (IL)' -> 'Genoa-Kingston (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Georgetown (IL)' -> 'Georgetown (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Georgetown-Ridge Farm (IL)' -> 'Georgetown-Ridge Farm (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Gibson City (IL)' -> 'Gibson City (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Gibson City-Melvin-Sibley (IL)' -> 'Gibson City-Melvin-Sibley (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Gillespie (IL)' -> 'Gillespie (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Gilman (IL)' -> 'Gilman (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Gilman Iroquois West-Crescent-Iroquois (IL)' -> 'Gilman Iroquois West-Crescent-Iroquois (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Girard (IL)' -> 'Girard (IL)' (no change)
+2026-11-12 16:10:17,755 - WARNING -   'Glen Ellyn Glenbard (IL)' -> 'Glen Ellyn Glenbard (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Glen Ellyn Glenbard South (IL)' -> 'Glen Ellyn Glenbard South (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Glen Ellyn Glenbard West (IL)' -> 'Glen Ellyn Glenbard West (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Glenview Glenbrook South (IL)' -> 'Glenview Glenbrook South (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Granite City (IL)' -> 'Granite City (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Grayslake (IL)' -> 'Grayslake (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Grayslake Central (IL)' -> 'Grayslake Central (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Grayslake North (IL)' -> 'Grayslake North (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Greenfield-Northwestern Coop (IL)' -> 'Greenfield-Northwestern Coop (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Greenville (IL)' -> 'Greenville (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Gridley (IL)' -> 'Gridley (IL)' (no change)
+2026-11-12 16:10:17,756 - WARNING -   'Gurnee Warren Township (IL)' -> 'Gurnee Warren Township (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Hamilton (IL)' -> 'Hamilton (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Hamilton-Warsaw West Hancock co-op (IL)' -> 'Hamilton-Warsaw West Hancock co-op (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Hampshire (IL)' -> 'Hampshire (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Hanover River Ridge (IL)' -> 'Hanover River Ridge (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Hardin Calhoun (IL)' -> 'Hardin Calhoun (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Hardin Calhoun-Brussels (IL)' -> 'Hardin Calhoun-Brussels (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Harrisburg (IL)' -> 'Harrisburg (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Harvard (IL)' -> 'Harvard (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Harvey Thornton Township (IL)' -> 'Harvey Thornton Township (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Havana (IL)' -> 'Havana (IL)' (no change)
+2026-11-12 16:10:17,757 - WARNING -   'Herrin (IL)' -> 'Herrin (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Herscher (IL)' -> 'Herscher (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Heyworth (IL)' -> 'Heyworth (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Highland (IL)' -> 'Highland (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Highland Park (IL)' -> 'Highland Park (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Hillsboro (IL)' -> 'Hillsboro (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Hillside Proviso West (IL)' -> 'Hillside Proviso West (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Hinsdale Central (IL)' -> 'Hinsdale Central (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Hoffman Estates (IL)' -> 'Hoffman Estates (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Hoffman Estates Conant (IL)' -> 'Hoffman Estates Conant (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Homer (IL)' -> 'Homer (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Homewood-Flossmoor (IL)' -> 'Homewood-Flossmoor (IL)' (no change)
+2026-11-12 16:10:17,758 - WARNING -   'Hoopeston (IL)' -> 'Hoopeston (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Hoopeston-East Lynn (IL)' -> 'Hoopeston-East Lynn (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Huntley (IL)' -> 'Huntley (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Hutsonville-Palestine (IL)' -> 'Hutsonville-Palestine (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Illinois School for the Deaf (IL)' -> 'Illinois School for the Deaf (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Illiopolis Coop (IL)' -> 'Illiopolis Coop (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Jacksonville (IL)' -> 'Jacksonville (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Jacksonville Routt Catholic (IL)' -> 'Jacksonville Routt Catholic (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Jacksonville Routt Catholic-Westfair Christian Academy (IL)' -> 'Jacksonville Routt Catholic-Westfair Christian Academy (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Jerseyville (IL)' -> 'Jerseyville (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Jerseyville Jersey (IL)' -> 'Jerseyville Jersey (IL)' (no change)
+2026-11-12 16:10:17,759 - WARNING -   'Johnsburg (IL)' -> 'Johnsburg (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Johnston City (IL)' -> 'Johnston City (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Joliet (IL)' -> 'Joliet (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Joliet Catholic Academy (IL)' -> 'Joliet Catholic Academy (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Joliet East (IL)' -> 'Joliet East (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Joliet Township (IL)' -> 'Joliet Township (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Joliet West (IL)' -> 'Joliet West (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Joy Westmer (IL)' -> 'Joy Westmer (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Kankakee (IL)' -> 'Kankakee (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Kankakee Bishop McNamara (IL)' -> 'Kankakee Bishop McNamara (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Kankakee Eastridge (IL)' -> 'Kankakee Eastridge (IL)' (no change)
+2026-11-12 16:10:17,760 - WARNING -   'Kankakee Westview (IL)' -> 'Kankakee Westview (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'Kansas Tri-County [Kansas-Shiloh-Oakland] (IL)' -> 'Kansas Tri-County [Kansas-Shiloh-Oakland] (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'Kewanee Coop (IL)' -> 'Kewanee Coop (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'Kewanee Wethersfield (IL)' -> 'Kewanee Wethersfield (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'Kewanee Wethersfield-Annawan (IL)' -> 'Kewanee Wethersfield-Annawan (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'Kincaid (IL)' -> 'Kincaid (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'Kincaid South Fork (IL)' -> 'Kincaid South Fork (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'Kincaid South Fork-Edinburg-Morrisonville (IL)' -> 'Kincaid South Fork-Edinburg-Morrisonville (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'Kirkland Hiawatha (IL)' -> 'Kirkland Hiawatha (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'Knoxville (IL)' -> 'Knoxville (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'La Moille Community (IL)' -> 'La Moille Community (IL)' (no change)
+2026-11-12 16:10:17,761 - WARNING -   'La Salle-Peru (IL)' -> 'La Salle-Peru (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'LaGrange Lyons (IL)' -> 'LaGrange Lyons (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'LaGrange Park Nazareth Academy (IL)' -> 'LaGrange Park Nazareth Academy (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'LaHarpe (IL)' -> 'LaHarpe (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'Lake Forest (IL)' -> 'Lake Forest (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'Lake Forest Academy (IL)' -> 'Lake Forest Academy (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'Lake Villa Lakes (IL)' -> 'Lake Villa Lakes (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'Lake Zurich (IL)' -> 'Lake Zurich (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'Lanark (IL)' -> 'Lanark (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'Lanark Eastland (IL)' -> 'Lanark Eastland (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'Lansing Thornton Fractional South (IL)' -> 'Lansing Thornton Fractional South (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'Lawrenceville (IL)' -> 'Lawrenceville (IL)' (no change)
+2026-11-12 16:10:17,762 - WARNING -   'Leaf River (IL)' -> 'Leaf River (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Lemont (IL)' -> 'Lemont (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Lemont Township (IL)' -> 'Lemont Township (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Lena-Winslow (IL)' -> 'Lena-Winslow (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'LeRoy Coop (IL)' -> 'LeRoy Coop (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Lewistown (IL)' -> 'Lewistown (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Lexington (IL)' -> 'Lexington (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Libertyville (IL)' -> 'Libertyville (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Lincoln (IL)' -> 'Lincoln (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Lincolnshire Stevenson (IL)' -> 'Lincolnshire Stevenson (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Lisle (IL)' -> 'Lisle (IL)' (no change)
+2026-11-12 16:10:17,763 - WARNING -   'Lisle Benet Academy (IL)' -> 'Lisle Benet Academy (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Litchfield (IL)' -> 'Litchfield (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Litchfield-Mt. Olive (IL)' -> 'Litchfield-Mt. Olive (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Lockport Township (IL)' -> 'Lockport Township (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Lombard Glenbard East (IL)' -> 'Lombard Glenbard East (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Lombard Montini Catholic (IL)' -> 'Lombard Montini Catholic (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'London Mills Spoon River Valley (IL)' -> 'London Mills Spoon River Valley (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Lovington (IL)' -> 'Lovington (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Machesney Park Harlem (IL)' -> 'Machesney Park Harlem (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Macomb (IL)' -> 'Macomb (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Macon (IL)' -> 'Macon (IL)' (no change)
+2026-11-12 16:10:17,764 - WARNING -   'Macon Meridian (IL)' -> 'Macon Meridian (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Madison (IL)' -> 'Madison (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Mahomet-Seymour (IL)' -> 'Mahomet-Seymour (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Manlius (IL)' -> 'Manlius (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Manlius Bureau Valley (IL)' -> 'Manlius Bureau Valley (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Manteno (IL)' -> 'Manteno (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Maple Park Kaneland (IL)' -> 'Maple Park Kaneland (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Marengo (IL)' -> 'Marengo (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Marian Central Catholic (IL)' -> 'Marian Central Catholic (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Marion (IL)' -> 'Marion (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Maroa (IL)' -> 'Maroa (IL)' (no change)
+2026-11-12 16:10:17,765 - WARNING -   'Maroa-Forsyth (IL)' -> 'Maroa-Forsyth (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Marseilles (IL)' -> 'Marseilles (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Marshall (IL)' -> 'Marshall (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Martinsville (IL)' -> 'Martinsville (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Mascoutah (IL)' -> 'Mascoutah (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Mattoon (IL)' -> 'Mattoon (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Maywood Proviso East (IL)' -> 'Maywood Proviso East (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'McHenry (IL)' -> 'McHenry (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'McLeansboro Hamilton County (IL)' -> 'McLeansboro Hamilton County (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Melrose Park Walther Christian Academy (IL)' -> 'Melrose Park Walther Christian Academy (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Melrose Park Walther Lutheran (IL)' -> 'Melrose Park Walther Lutheran (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Mendon Unity (IL)' -> 'Mendon Unity (IL)' (no change)
+2026-11-12 16:10:17,766 - WARNING -   'Mendon Unity-Seymour (IL)' -> 'Mendon Unity-Seymour (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Mendota (IL)' -> 'Mendota (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Meredosia (IL)' -> 'Meredosia (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Meredosia-Chambersburg (IL)' -> 'Meredosia-Chambersburg (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Metamora (IL)' -> 'Metamora (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Metropolis Massac County (IL)' -> 'Metropolis Massac County (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Midlothian Bremen (IL)' -> 'Midlothian Bremen (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Milford Township (IL)' -> 'Milford Township (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Milford-Cissna Park (IL)' -> 'Milford-Cissna Park (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Milledgeville (IL)' -> 'Milledgeville (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Minonk Fieldcrest (IL)' -> 'Minonk Fieldcrest (IL)' (no change)
+2026-11-12 16:10:17,767 - WARNING -   'Minonk-Dana-Rutland (IL)' -> 'Minonk-Dana-Rutland (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Minooka (IL)' -> 'Minooka (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Moline (IL)' -> 'Moline (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Momence Coop (IL)' -> 'Momence Coop (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Monmouth (IL)' -> 'Monmouth (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Monmouth Warren (IL)' -> 'Monmouth Warren (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Monmouth Yorkwood (IL)' -> 'Monmouth Yorkwood (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Monmouth-Roseville (IL)' -> 'Monmouth-Roseville (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Monticello (IL)' -> 'Monticello (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Mooseheart (IL)' -> 'Mooseheart (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Morris (IL)' -> 'Morris (IL)' (no change)
+2026-11-12 16:10:17,768 - WARNING -   'Morrison (IL)' -> 'Morrison (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Morton (IL)' -> 'Morton (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Mount Carmel (IL)' -> 'Mount Carmel (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Mount Carroll Coop (IL)' -> 'Mount Carroll Coop (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Mount Morris (IL)' -> 'Mount Morris (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Mount Olive Coop (IL)' -> 'Mount Olive Coop (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Mount Prospect (IL)' -> 'Mount Prospect (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Mount Sterling Brown County (IL)' -> 'Mount Sterling Brown County (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Mount Vernon (IL)' -> 'Mount Vernon (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Mount Zion (IL)' -> 'Mount Zion (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Moweaqua (IL)' -> 'Moweaqua (IL)' (no change)
+2026-11-12 16:10:17,769 - WARNING -   'Moweaqua Central A&M (IL)' -> 'Moweaqua Central A&M (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'Mundelein (IL)' -> 'Mundelein (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'Mundelein Carmel (IL)' -> 'Mundelein Carmel (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'Murphysboro (IL)' -> 'Murphysboro (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'Naperville Central (IL)' -> 'Naperville Central (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'Naperville Neuqua Valley (IL)' -> 'Naperville Neuqua Valley (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'Naperville North (IL)' -> 'Naperville North (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'Nashville (IL)' -> 'Nashville (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'New Berlin (IL)' -> 'New Berlin (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'New Berlin-Franklin-Waverly (IL)' -> 'New Berlin-Franklin-Waverly (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'New Lenox Lincoln-Way Central (IL)' -> 'New Lenox Lincoln-Way Central (IL)' (no change)
+2026-11-12 16:10:17,770 - WARNING -   'New Lenox Lincoln-Way West (IL)' -> 'New Lenox Lincoln-Way West (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'New Lenox Providence Catholic (IL)' -> 'New Lenox Providence Catholic (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Newman (IL)' -> 'Newman (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Newton (IL)' -> 'Newton (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Niantic Tri-City-Sangamon Valley (IL)' -> 'Niantic Tri-City-Sangamon Valley (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Niantic-Harristown (IL)' -> 'Niantic-Harristown (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Niles Notre Dame (IL)' -> 'Niles Notre Dame (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Nokomis-Ramsey-Lincolnwood (IL)' -> 'Nokomis-Ramsey-Lincolnwood (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Normal Community (IL)' -> 'Normal Community (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Normal University High (IL)' -> 'Normal University High (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Normal West (IL)' -> 'Normal West (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'Norridge Ridgewood (IL)' -> 'Norridge Ridgewood (IL)' (no change)
+2026-11-12 16:10:17,771 - WARNING -   'North Chicago (IL)' -> 'North Chicago (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Northbrook Glenbrook North (IL)' -> 'Northbrook Glenbrook North (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Northfield New Trier West (IL)' -> 'Northfield New Trier West (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Northlake West Leyden (IL)' -> 'Northlake West Leyden (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Oak Forest (IL)' -> 'Oak Forest (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Oak Lawn (IL)' -> 'Oak Lawn (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Oak Lawn Richards (IL)' -> 'Oak Lawn Richards (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Oak Park Fenwick (IL)' -> 'Oak Park Fenwick (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Oak Park-River Forest (IL)' -> 'Oak Park-River Forest (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Oakland (IL)' -> 'Oakland (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'Oblong (IL)' -> 'Oblong (IL)' (no change)
+2026-11-12 16:10:17,772 - WARNING -   'O'Fallon (IL)' -> 'O'Fallon (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Ohio Community (IL)' -> 'Ohio Community (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Olney East Richland (IL)' -> 'Olney East Richland (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Olympia Fields Rich Central (IL)' -> 'Olympia Fields Rich Central (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Onarga (IL)' -> 'Onarga (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Oneida ROWVA (IL)' -> 'Oneida ROWVA (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Orangeville (IL)' -> 'Orangeville (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Oregon (IL)' -> 'Oregon (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Orion (IL)' -> 'Orion (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Orland Park Carl Sandburg (IL)' -> 'Orland Park Carl Sandburg (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Oswego (IL)' -> 'Oswego (IL)' (no change)
+2026-11-12 16:10:17,773 - WARNING -   'Oswego East (IL)' -> 'Oswego East (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Ottawa Marquette Academy (IL)' -> 'Ottawa Marquette Academy (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Ottawa Township (IL)' -> 'Ottawa Township (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Palatine (IL)' -> 'Palatine (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Palatine Fremd (IL)' -> 'Palatine Fremd (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Palestine Coop (IL)' -> 'Palestine Coop (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Palmyra Northwestern (IL)' -> 'Palmyra Northwestern (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Palos Heights Chicago Christian (IL)' -> 'Palos Heights Chicago Christian (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Palos Heights Shepard (IL)' -> 'Palos Heights Shepard (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Palos Hills Stagg (IL)' -> 'Palos Hills Stagg (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Pana Coop (IL)' -> 'Pana Coop (IL)' (no change)
+2026-11-12 16:10:17,774 - WARNING -   'Paris (IL)' -> 'Paris (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Park Forest Rich East (IL)' -> 'Park Forest Rich East (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Park Ridge Maine East (IL)' -> 'Park Ridge Maine East (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Park Ridge Maine South (IL)' -> 'Park Ridge Maine South (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Pawnee Coop (IL)' -> 'Pawnee Coop (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Paxton (IL)' -> 'Paxton (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Paxton-Buckley-Loda (IL)' -> 'Paxton-Buckley-Loda (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Pearl City (IL)' -> 'Pearl City (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Pearl City Eastland Coop (IL)' -> 'Pearl City Eastland Coop (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Pecatonica (IL)' -> 'Pecatonica (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Pekin (IL)' -> 'Pekin (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Peoria (IL)' -> 'Peoria (IL)' (no change)
+2026-11-12 16:10:17,775 - WARNING -   'Peoria Bergan (IL)' -> 'Peoria Bergan (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Peoria Heights (IL)' -> 'Peoria Heights (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Peoria Manual Academy (IL)' -> 'Peoria Manual Academy (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Peoria Notre Dame (IL)' -> 'Peoria Notre Dame (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Peoria Richwoods (IL)' -> 'Peoria Richwoods (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Peoria Spalding Institute (IL)' -> 'Peoria Spalding Institute (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Peoria Woodruff (IL)' -> 'Peoria Woodruff (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Peotone Coop (IL)' -> 'Peotone Coop (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Petersburg Porta Ashland (IL)' -> 'Petersburg Porta Ashland (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Petersburg PORTA-Ashland-Chandlerville Central (IL)' -> 'Petersburg PORTA-Ashland-Chandlerville Central (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Piasa Southwestern (IL)' -> 'Piasa Southwestern (IL)' (no change)
+2026-11-12 16:10:17,776 - WARNING -   'Pinckneyville (IL)' -> 'Pinckneyville (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Piper City Ford Central (IL)' -> 'Piper City Ford Central (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Pittsfield Coop (IL)' -> 'Pittsfield Coop (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Pittsfield Griggsville-Perry Coop (IL)' -> 'Pittsfield Griggsville-Perry Coop (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Plainfield (IL)' -> 'Plainfield (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Plainfield Central (IL)' -> 'Plainfield Central (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Plainfield East (IL)' -> 'Plainfield East (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Plainfield North (IL)' -> 'Plainfield North (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Plainfield South (IL)' -> 'Plainfield South (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Plano (IL)' -> 'Plano (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Pleasant Hill Coop (IL)' -> 'Pleasant Hill Coop (IL)' (no change)
+2026-11-12 16:10:17,777 - WARNING -   'Pleasant Hill-Western (IL)' -> 'Pleasant Hill-Western (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Pleasant Plains (IL)' -> 'Pleasant Plains (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Polo (IL)' -> 'Polo (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Pontiac (IL)' -> 'Pontiac (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Poplar Grove North Boone (IL)' -> 'Poplar Grove North Boone (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Port Byron Riverdale (IL)' -> 'Port Byron Riverdale (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Princeton Coop (IL)' -> 'Princeton Coop (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Princeville (IL)' -> 'Princeville (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Prophetstown (IL)' -> 'Prophetstown (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Quincy (IL)' -> 'Quincy (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Quincy Notre Dame (IL)' -> 'Quincy Notre Dame (IL)' (no change)
+2026-11-12 16:10:17,778 - WARNING -   'Rantoul (IL)' -> 'Rantoul (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Red Bud (IL)' -> 'Red Bud (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Reddick (IL)' -> 'Reddick (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Richmond-Burton (IL)' -> 'Richmond-Burton (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Richton Park Rich South (IL)' -> 'Richton Park Rich South (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Rio-Oneida-Wataga-Victoria-Altona-Galva-Williamsfield (IL)' -> 'Rio-Oneida-Wataga-Victoria-Altona-Galva-Williamsfield (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'River Grove Holy Cross (IL)' -> 'River Grove Holy Cross (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Riverside-Brookfield (IL)' -> 'Riverside-Brookfield (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Riverton (IL)' -> 'Riverton (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Robinson (IL)' -> 'Robinson (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Rochelle (IL)' -> 'Rochelle (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Rochester (IL)' -> 'Rochester (IL)' (no change)
+2026-11-12 16:10:17,779 - WARNING -   'Rock Falls (IL)' -> 'Rock Falls (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rock Island (IL)' -> 'Rock Island (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rock Island Alleman (IL)' -> 'Rock Island Alleman (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rockford Auburn (IL)' -> 'Rockford Auburn (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rockford Boylan Catholic (IL)' -> 'Rockford Boylan Catholic (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rockford Christian (IL)' -> 'Rockford Christian (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rockford Christian Life (IL)' -> 'Rockford Christian Life (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rockford East (IL)' -> 'Rockford East (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rockford Guilford (IL)' -> 'Rockford Guilford (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rockford Jefferson (IL)' -> 'Rockford Jefferson (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rockford Lutheran (IL)' -> 'Rockford Lutheran (IL)' (no change)
+2026-11-12 16:10:17,780 - WARNING -   'Rockford Our Lady of the Sacred Heart Academy (IL)' -> 'Rockford Our Lady of the Sacred Heart Academy (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Rockford West (IL)' -> 'Rockford West (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Rockton Hononegah (IL)' -> 'Rockton Hononegah (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Rolling Meadows (IL)' -> 'Rolling Meadows (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Romeoville (IL)' -> 'Romeoville (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Roselle Lake Park (IL)' -> 'Roselle Lake Park (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Roseville (IL)' -> 'Roseville (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Rossville Alvin (IL)' -> 'Rossville Alvin (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Round Lake (IL)' -> 'Round Lake (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Roxana (IL)' -> 'Roxana (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Rushville (IL)' -> 'Rushville (IL)' (no change)
+2026-11-12 16:10:17,781 - WARNING -   'Rushville-Industry Coop (IL)' -> 'Rushville-Industry Coop (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Saint Charles East (IL)' -> 'Saint Charles East (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Saint Charles North (IL)' -> 'Saint Charles North (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Saint Charles Valley Lutheran (IL)' -> 'Saint Charles Valley Lutheran (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Saint Joseph-Ogden (IL)' -> 'Saint Joseph-Ogden (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Salem (IL)' -> 'Salem (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Sandwich (IL)' -> 'Sandwich (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Savanna Community (IL)' -> 'Savanna Community (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Savanna West Carroll Coop (IL)' -> 'Savanna West Carroll Coop (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Schaumburg (IL)' -> 'Schaumburg (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Sciota Northwestern (IL)' -> 'Sciota Northwestern (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Sciota West Prairie (IL)' -> 'Sciota West Prairie (IL)' (no change)
+2026-11-12 16:10:17,782 - WARNING -   'Seneca (IL)' -> 'Seneca (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'Sesser-Valier (IL)' -> 'Sesser-Valier (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'Sesser-Valier-Waltonville-Woodlawn (IL)' -> 'Sesser-Valier-Waltonville-Woodlawn (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'Shelbyville Coop (IL)' -> 'Shelbyville Coop (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'Sherrard (IL)' -> 'Sherrard (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'Sidell Jamaica-Catlin (IL)' -> 'Sidell Jamaica-Catlin (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'Sidell Salt Fork (IL)' -> 'Sidell Salt Fork (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'Skokie Niles East (IL)' -> 'Skokie Niles East (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'Skokie Niles North (IL)' -> 'Skokie Niles North (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'Skokie Niles West (IL)' -> 'Skokie Niles West (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'South Beloit (IL)' -> 'South Beloit (IL)' (no change)
+2026-11-12 16:10:17,783 - WARNING -   'South Elgin (IL)' -> 'South Elgin (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'South Holland Thornwood (IL)' -> 'South Holland Thornwood (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'Sparta-Steeleville (IL)' -> 'Sparta-Steeleville (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'Spring Valley Hall (IL)' -> 'Spring Valley Hall (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'Spring Valley Hall-Putnam County (IL)' -> 'Spring Valley Hall-Putnam County (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'Springfield (IL)' -> 'Springfield (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'Springfield Lanphier (IL)' -> 'Springfield Lanphier (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'Springfield Sacred Heart-Griffin (IL)' -> 'Springfield Sacred Heart-Griffin (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'Springfield Southeast (IL)' -> 'Springfield Southeast (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'St. Elmo (IL)' -> 'St. Elmo (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'Stanford Olympia (IL)' -> 'Stanford Olympia (IL)' (no change)
+2026-11-12 16:10:17,784 - WARNING -   'Staunton (IL)' -> 'Staunton (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Staunton-Bunker Hill (IL)' -> 'Staunton-Bunker Hill (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Sterling (IL)' -> 'Sterling (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Sterling Newman Central Catholic (IL)' -> 'Sterling Newman Central Catholic (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Stillman Valley (IL)' -> 'Stillman Valley (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Stockton (IL)' -> 'Stockton (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Streamwood (IL)' -> 'Streamwood (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Streator Township (IL)' -> 'Streator Township (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Streator Woodland (IL)' -> 'Streator Woodland (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Stronghurst Southern (IL)' -> 'Stronghurst Southern (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Sullivan Coop (IL)' -> 'Sullivan Coop (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Sullivan-Okaw Valley Coop (IL)' -> 'Sullivan-Okaw Valley Coop (IL)' (no change)
+2026-11-12 16:10:17,785 - WARNING -   'Summit Argo (IL)' -> 'Summit Argo (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Sycamore (IL)' -> 'Sycamore (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Table Grove VIT (IL)' -> 'Table Grove VIT (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Tampico (IL)' -> 'Tampico (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Taylor Ridge Rockridge (IL)' -> 'Taylor Ridge Rockridge (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Taylorville (IL)' -> 'Taylorville (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Tinley Park (IL)' -> 'Tinley Park (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Tinley Park Andrew (IL)' -> 'Tinley Park Andrew (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Tiskilwa (IL)' -> 'Tiskilwa (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Toledo Cumberland (IL)' -> 'Toledo Cumberland (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Tolono Unity (IL)' -> 'Tolono Unity (IL)' (no change)
+2026-11-12 16:10:17,786 - WARNING -   'Toulon (IL)' -> 'Toulon (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Toulon Stark County (IL)' -> 'Toulon Stark County (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Tremont (IL)' -> 'Tremont (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Trenton Wesclin (IL)' -> 'Trenton Wesclin (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Troy Triad (IL)' -> 'Troy Triad (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Tuscola (IL)' -> 'Tuscola (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Urbana (IL)' -> 'Urbana (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Vandalia Coop (IL)' -> 'Vandalia Coop (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Varna River Valley [Midland-Henry-Senachwine-Lowpoint-Washburn] (IL)' -> 'Varna River Valley [Midland-Henry-Senachwine-Lowpoint-Washburn] (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Vernon Hills (IL)' -> 'Vernon Hills (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Vienna-Goreville (IL)' -> 'Vienna-Goreville (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Villa Grove-Heritage (IL)' -> 'Villa Grove-Heritage (IL)' (no change)
+2026-11-12 16:10:17,787 - WARNING -   'Villa Park Willowbrook (IL)' -> 'Villa Park Willowbrook (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Viola Winola (IL)' -> 'Viola Winola (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Virden (IL)' -> 'Virden (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Virden North Mac (IL)' -> 'Virden North Mac (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Virginia Coop (IL)' -> 'Virginia Coop (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Walnut Community (IL)' -> 'Walnut Community (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Warren (IL)' -> 'Warren (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Warrensburg-Latham (IL)' -> 'Warrensburg-Latham (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Warsaw (IL)' -> 'Warsaw (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Washington (IL)' -> 'Washington (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Waterloo (IL)' -> 'Waterloo (IL)' (no change)
+2026-11-12 16:10:17,788 - WARNING -   'Watseka Coop (IL)' -> 'Watseka Coop (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'Wauconda (IL)' -> 'Wauconda (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'Waukegan (IL)' -> 'Waukegan (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'Waukegan East (IL)' -> 'Waukegan East (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'Waukegan West (IL)' -> 'Waukegan West (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'West Chicago (IL)' -> 'West Chicago (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'West Chicago Wheaton Academy (IL)' -> 'West Chicago Wheaton Academy (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'West Frankfort (IL)' -> 'West Frankfort (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'Westchester St. Joseph (IL)' -> 'Westchester St. Joseph (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'Western-Wyanet-DePue (IL)' -> 'Western-Wyanet-DePue (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'Westmont (IL)' -> 'Westmont (IL)' (no change)
+2026-11-12 16:10:17,789 - WARNING -   'Westville (IL)' -> 'Westville (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Wheaton (IL)' -> 'Wheaton (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Wheaton Central (IL)' -> 'Wheaton Central (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Wheaton North (IL)' -> 'Wheaton North (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Wheaton Warrenville South (IL)' -> 'Wheaton Warrenville South (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Wheeling (IL)' -> 'Wheeling (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'White Hall North Greene (IL)' -> 'White Hall North Greene (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Williamsville (IL)' -> 'Williamsville (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Wilmette Loyola Academy (IL)' -> 'Wilmette Loyola Academy (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Wilmington (IL)' -> 'Wilmington (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Winchester (IL)' -> 'Winchester (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Winchester West Central Coop (IL)' -> 'Winchester West Central Coop (IL)' (no change)
+2026-11-12 16:10:17,790 - WARNING -   'Winchester-Bluffs West Central co-op (IL)' -> 'Winchester-Bluffs West Central co-op (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Winnebago (IL)' -> 'Winnebago (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Winnetka New Trier East (IL)' -> 'Winnetka New Trier East (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Winnetka North Shore Country Day (IL)' -> 'Winnetka North Shore Country Day (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Woodhull AlWood (IL)' -> 'Woodhull AlWood (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Woodhull Ridgewood [AlWood-Cambridge] (IL)' -> 'Woodhull Ridgewood [AlWood-Cambridge] (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Woodstock (IL)' -> 'Woodstock (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Woodstock North (IL)' -> 'Woodstock North (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Wyanet (IL)' -> 'Wyanet (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Wyoming Community (IL)' -> 'Wyoming Community (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Yorkville (IL)' -> 'Yorkville (IL)' (no change)
+2026-11-12 16:10:17,791 - WARNING -   'Zeigler-Royalton (IL)' -> 'Zeigler-Royalton (IL)' (no change)
+2026-11-12 16:10:17,792 - WARNING -   'Zion-Benton (IL)' -> 'Zion-Benton (IL)' (no change)
+2026-11-12 16:10:17,792 - INFO - Validation passed: 1031 rules are clean and ready to upload.
+2026-11-12 16:10:17,810 - INFO - Uploading 1031 rules to staging table: ConsolidationRules_Staging...
+2026-11-12 16:10:17,981 - INFO - Upload to staging table complete.
+2026-11-12 16:10:17,986 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-12 16:12:59,649 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-12 16:12:59,649 - INFO - Reason logged to dbo.HS_Consolidation_Log: IL co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/IL_cfg.py
+2026-11-12 16:12:59,649 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-12 16:12:59,649 - INFO - Running post-consolidation safety check...
+2026-11-12 16:12:59,654 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team IL --from "Albion (IL)" --to "Albion Edwards County (IL)" --seasons 1936-1963 --ids coop_ids/IL_mv_000.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 31 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_000.csv
+
+MOVE Albion (IL) -> Albion Edwards County (IL), seasons 1936-1963 - COMMIT
+ move_games: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 91 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  29     1                  None
+
+>>> move-team IL --from "Albion Edwards County (IL)" --to "Albion (IL)" --seasons 1924-1956 --ids coop_ids/IL_mv_001.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_001.csv
+
+MOVE Albion Edwards County (IL) -> Albion (IL), seasons 1924-1956 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 91 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Albion Edwards County (IL)" --to "Albion Edwards County-Grayville (IL)" --seasons 1984-1984 --ids coop_ids/IL_mv_002.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_002.csv
+
+MOVE Albion Edwards County (IL) -> Albion Edwards County-Grayville (IL), seasons 1984-1984 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IL --from "Albion Edwards County-Grayville (IL)" --to "Albion Edwards County (IL)" --seasons 1949-2000 --ids coop_ids/IL_mv_003.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 40 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_003.csv
+
+MOVE Albion Edwards County-Grayville (IL) -> Albion Edwards County (IL), seasons 1949-2000 - COMMIT
+ move_games: 39 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  39     1                  None
+
+>>> move-team IL --from "Arlington Heights Christian Liberty Academy (IL)" --to "Arlington Christian Liberty Academy-Christian Heritage Academy (IL)" --seasons 2014-2015 --ids coop_ids/IL_mv_004.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_004.csv
+
+MOVE Arlington Heights Christian Liberty Academy (IL) -> Arlington Christian Liberty Academy-Christian Heritage Academy (IL), seasons 2014-2015 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team IL --from "Arthur (IL)" --to "Arthur Lovington Atwood Hammond (IL)" --seasons 1966-1969 --ids coop_ids/IL_mv_005.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_005.csv
+
+MOVE Arthur (IL) -> Arthur Lovington Atwood Hammond (IL), seasons 1966-1969 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IL --from "Arthur Lovington Atwood Hammond (IL)" --to "Arthur (IL)" --seasons 1968-1968 --ids coop_ids/IL_mv_006.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_006.csv
+
+MOVE Arthur Lovington Atwood Hammond (IL) -> Arthur (IL), seasons 1968-1968 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IL --from "Biggsville (IL)" --to "Biggsville Union (IL)" --seasons 1967-1990 --ids coop_ids/IL_mv_007.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 14 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_007.csv
+
+MOVE Biggsville (IL) -> Biggsville Union (IL), seasons 1967-1990 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 48 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team IL --from "Biggsville Union (IL)" --to "Biggsville (IL)" --seasons 1976-1981 --ids coop_ids/IL_mv_008.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_008.csv
+
+MOVE Biggsville Union (IL) -> Biggsville (IL), seasons 1976-1981 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 48 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IL --from "Bradley-Bourbonnais Community (IL)" --to "Bradley (IL)" --seasons 1965-1965 --ids coop_ids/IL_mv_009.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_009.csv
+
+MOVE Bradley-Bourbonnais Community (IL) -> Bradley (IL), seasons 1965-1965 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IL --from "Bridgeport (IL)" --to "Bridgeport Red Hill (IL)" --seasons 1975-1996 --ids coop_ids/IL_mv_010.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 18 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_010.csv
+
+MOVE Bridgeport (IL) -> Bridgeport Red Hill (IL), seasons 1975-1996 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team IL --from "Bridgeport Red Hill (IL)" --to "Bridgeport (IL)" --seasons 1974-1974 --ids coop_ids/IL_mv_011.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_011.csv
+
+MOVE Bridgeport Red Hill (IL) -> Bridgeport (IL), seasons 1974-1974 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IL --from "Cerro Gordo (IL)" --to "Cerro Gordo-DeLand-Weldon-Bement (IL)" --seasons 1966-1969 --ids coop_ids/IL_mv_012.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_012.csv
+
+MOVE Cerro Gordo (IL) -> Cerro Gordo-DeLand-Weldon-Bement (IL), seasons 1966-1969 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team IL --from "Champaign (IL)" --to "Champaign Central (IL)" --seasons 1921-1967 --ids coop_ids/IL_mv_013.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_013.csv
+
+MOVE Champaign (IL) -> Champaign Central (IL), seasons 1921-1967 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 114 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team IL --from "Champaign Central (IL)" --to "Champaign (IL)" --seasons 1951-1964 --ids coop_ids/IL_mv_014.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_014.csv
+
+MOVE Champaign Central (IL) -> Champaign (IL), seasons 1951-1964 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 114 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team IL --from "Chicago Ellison (IL)" --to "Chicago International Charter-Ellison (IL)" --seasons 2017-2018 --ids coop_ids/IL_mv_015.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_015.csv
+
+MOVE Chicago Ellison (IL) -> Chicago International Charter-Ellison (IL), seasons 2017-2018 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Chicago Longwood (IL)" --to "Chicago International Charter-Longwood Academy (IL)" --seasons 2017-2022 --ids coop_ids/IL_mv_016.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 22 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_016.csv
+
+MOVE Chicago Longwood (IL) -> Chicago International Charter-Longwood Academy (IL), seasons 2017-2022 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IL --from "Chicago Woodlawn (IL)" --to "University of Chicago Charter (IL)" --seasons 2014-2023 --ids coop_ids/IL_mv_017.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 33 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_017.csv
+
+MOVE Chicago Woodlawn (IL) -> University of Chicago Charter (IL), seasons 2014-2023 - COMMIT
+ move_games: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1613.csv
+ move_by_season: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1613.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  22     1                  None
+
+>>> move-team IL --from "Chillicothe Illinois Valley Central (IL)" --to "Chillicothe Township (IL)" --seasons 1958-1983 --ids coop_ids/IL_mv_018.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 36 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_018.csv
+
+MOVE Chillicothe Illinois Valley Central (IL) -> Chillicothe Township (IL), seasons 1958-1983 - COMMIT
+ move_games: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  25     1                  None
+
+>>> move-team IL --from "Chillicothe Township (IL)" --to "Chillicothe Illinois Valley Central (IL)" --seasons 1984-1993 --ids coop_ids/IL_mv_019.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_019.csv
+
+MOVE Chillicothe Township (IL) -> Chillicothe Illinois Valley Central (IL), seasons 1984-1993 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IL --from "DeLand (IL)" --to "DeLand-Weldon (IL)" --seasons 1962-1969 --ids coop_ids/IL_mv_020.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_020.csv
+
+MOVE DeLand (IL) -> DeLand-Weldon (IL), seasons 1962-1969 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team IL --from "DeLand-Weldon (IL)" --to "DeLand (IL)" --seasons 1961-1961 --ids coop_ids/IL_mv_021.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_021.csv
+
+MOVE DeLand-Weldon (IL) -> DeLand (IL), seasons 1961-1961 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IL --from "Decatur (IL)" --to "Decatur Stephen Decatur (IL)" --seasons 1972-1995 --ids coop_ids/IL_mv_022.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_022.csv
+
+MOVE Decatur (IL) -> Decatur Stephen Decatur (IL), seasons 1972-1995 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 85 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team IL --from "Decatur Stephen Decatur (IL)" --to "Decatur (IL)" --seasons 1932-1970 --ids coop_ids/IL_mv_023.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_023.csv
+
+MOVE Decatur Stephen Decatur (IL) -> Decatur (IL), seasons 1932-1970 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 85 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Deer Creek (IL)" --to "Deer Creek-Mackinaw (IL)" --seasons 1957-1963 --ids coop_ids/IL_mv_024.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_024.csv
+
+MOVE Deer Creek (IL) -> Deer Creek-Mackinaw (IL), seasons 1957-1963 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team IL --from "Fairbury Prairie Central (IL)" --to "Fairbury-Cropsey (IL)" --seasons 1965-1980 --ids coop_ids/IL_mv_025.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 14 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_025.csv
+
+MOVE Fairbury Prairie Central (IL) -> Fairbury-Cropsey (IL), seasons 1965-1980 - COMMIT
+ move_games: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  13     1                  None
+
+>>> move-team IL --from "Fairbury-Cropsey (IL)" --to "Fairbury Prairie Central (IL)" --seasons 1930-1962 --ids coop_ids/IL_mv_026.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 21 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_026.csv
+
+MOVE Fairbury-Cropsey (IL) -> Fairbury Prairie Central (IL), seasons 1930-1962 - COMMIT
+ move_games: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  14     1                  None
+
+>>> move-team IL --from "Farmer City Blue Ridge (IL)" --to "Farmer City-Mansfield (IL)" --seasons 1974-1984 --ids coop_ids/IL_mv_027.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 16 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_027.csv
+
+MOVE Farmer City Blue Ridge (IL) -> Farmer City-Mansfield (IL), seasons 1974-1984 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 89 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team IL --from "Farmington (IL)" --to "Farmington East (IL)" --seasons 1976-1985 --ids coop_ids/IL_mv_028.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_028.csv
+
+MOVE Farmington (IL) -> Farmington East (IL), seasons 1976-1985 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Farmington East (IL)" --to "Farmington (IL)" --seasons 1980-1983 --ids coop_ids/IL_mv_029.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_029.csv
+
+MOVE Farmington East (IL) -> Farmington (IL), seasons 1980-1983 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IL --from "Flora Coop (IL)" --to "Flora-North Clay (IL)" --seasons 1929-1969 --ids coop_ids/IL_mv_030.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 99 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_030.csv
+
+MOVE Flora Coop (IL) -> Flora-North Clay (IL), seasons 1929-1969 - COMMIT
+ move_games: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  98     1                  None
+
+>>> move-team IL --from "Flora-North Clay (IL)" --to "Flora Coop (IL)" --seasons 1930-2002 --ids coop_ids/IL_mv_031.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 45 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_031.csv
+
+MOVE Flora-North Clay (IL) -> Flora Coop (IL), seasons 1930-2002 - COMMIT
+ move_games: 42 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  42     1                  None
+
+>>> move-team IL --from "Forrest (IL)" --to "Forrest-Strawn-Wing (IL)" --seasons 1956-1979 --ids coop_ids/IL_mv_032.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 20 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_032.csv
+
+MOVE Forrest (IL) -> Forrest-Strawn-Wing (IL), seasons 1956-1979 - COMMIT
+ move_games: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  14     1                  None
+
+>>> move-team IL --from "Forrest-Strawn-Wing (IL)" --to "Forrest (IL)" --seasons 1954-1961 --ids coop_ids/IL_mv_033.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 25 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_033.csv
+
+MOVE Forrest-Strawn-Wing (IL) -> Forrest (IL), seasons 1954-1961 - COMMIT
+ move_games: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  25     1                  None
+
+>>> move-team IL --from "Frankfort Lincoln-Way (IL)" --to "New Lenox Lincoln-Way Central (IL)" --seasons 1961-1965 --ids coop_ids/IL_mv_034.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_034.csv
+
+MOVE Frankfort Lincoln-Way (IL) -> New Lenox Lincoln-Way Central (IL), seasons 1961-1965 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 74 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IL --from "Franklin Park-Northlake Leyden (IL)" --to "Northlake Leyden (IL)" --seasons 1954-1954 --ids coop_ids/IL_mv_035.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_035.csv
+
+MOVE Franklin Park-Northlake Leyden (IL) -> Northlake Leyden (IL), seasons 1954-1954 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 47 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IL --from "Gibson City (IL)" --to "Gibson City-Melvin-Sibley (IL)" --seasons 1994-1994 --ids coop_ids/IL_mv_036.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_036.csv
+
+MOVE Gibson City (IL) -> Gibson City-Melvin-Sibley (IL), seasons 1994-1994 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IL --from "Gibson City-Melvin-Sibley (IL)" --to "Gibson City (IL)" --seasons 1977-1995 --ids coop_ids/IL_mv_037.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_037.csv
+
+MOVE Gibson City-Melvin-Sibley (IL) -> Gibson City (IL), seasons 1977-1995 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1614.csv
+ move_by_season: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1614.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IL --from "Gilman Iroquois (IL)" --to "Gilman (IL)" --seasons 1953-1963 --ids coop_ids/IL_mv_038.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 27 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_038.csv
+
+MOVE Gilman Iroquois (IL) -> Gilman (IL), seasons 1953-1963 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team IL --from "Greenfield (IL)" --to "Greenfield-Northwestern Coop (IL)" --seasons 1965-1968 --ids coop_ids/IL_mv_039.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_039.csv
+
+MOVE Greenfield (IL) -> Greenfield-Northwestern Coop (IL), seasons 1965-1968 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team IL --from "Hoopeston (IL)" --to "Hoopeston-East Lynn (IL)" --seasons 1978-1988 --ids coop_ids/IL_mv_040.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_040.csv
+
+MOVE Hoopeston (IL) -> Hoopeston-East Lynn (IL), seasons 1978-1988 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IL --from "Hoopeston-East Lynn (IL)" --to "Hoopeston (IL)" --seasons 1976-1993 --ids coop_ids/IL_mv_041.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_041.csv
+
+MOVE Hoopeston-East Lynn (IL) -> Hoopeston (IL), seasons 1976-1993 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IL --from "Jerseyville (IL)" --to "Jerseyville Jersey (IL)" --seasons 1978-2003 --ids coop_ids/IL_mv_042.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 19 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_042.csv
+
+MOVE Jerseyville (IL) -> Jerseyville Jersey (IL), seasons 1978-2003 - COMMIT
+ move_games: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  19     1                  None
+
+>>> move-team IL --from "Jerseyville Jersey (IL)" --to "Jerseyville (IL)" --seasons 1977-1994 --ids coop_ids/IL_mv_043.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_043.csv
+
+MOVE Jerseyville Jersey (IL) -> Jerseyville (IL), seasons 1977-1994 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Joliet (IL)" --to "Joliet Township (IL)" --seasons 1999-2001 --ids coop_ids/IL_mv_044.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_044.csv
+
+MOVE Joliet (IL) -> Joliet Township (IL), seasons 1999-2001 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 123 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IL --from "Joliet Township (IL)" --to "Joliet (IL)" --seasons 1940-1995 --ids coop_ids/IL_mv_045.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 24 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_045.csv
+
+MOVE Joliet Township (IL) -> Joliet (IL), seasons 1940-1995 - COMMIT
+ move_games: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 123 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  19     1                  None
+
+>>> move-team IL --from "Kempton (IL)" --to "Kempton-Cabery (IL)" --seasons 1963-1963 --ids coop_ids/IL_mv_046.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_046.csv
+
+MOVE Kempton (IL) -> Kempton-Cabery (IL), seasons 1963-1963 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IL --from "Kempton-Cabery (IL)" --to "Kempton (IL)" --seasons 1960-1961 --ids coop_ids/IL_mv_047.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_047.csv
+
+MOVE Kempton-Cabery (IL) -> Kempton (IL), seasons 1960-1961 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IL --from "Lewistown (IL)" --to "Lewistown Community (IL)" --seasons 1977-1977 --ids coop_ids/IL_mv_048.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_048.csv
+
+MOVE Lewistown (IL) -> Lewistown Community (IL), seasons 1977-1977 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Lewistown Community (IL)" --to "Lewistown (IL)" --seasons 1965-1986 --ids coop_ids/IL_mv_049.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_049.csv
+
+MOVE Lewistown Community (IL) -> Lewistown (IL), seasons 1965-1986 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Mahomet (IL)" --to "Mahomet-Seymour (IL)" --seasons 1961-2003 --ids coop_ids/IL_mv_050.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 21 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_050.csv
+
+MOVE Mahomet (IL) -> Mahomet-Seymour (IL), seasons 1961-2003 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 80 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team IL --from "Mahomet-Seymour (IL)" --to "Mahomet (IL)" --seasons 1960-1962 --ids coop_ids/IL_mv_051.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_051.csv
+
+MOVE Mahomet-Seymour (IL) -> Mahomet (IL), seasons 1960-1962 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 80 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Manlius (IL)" --to "Manlius Bureau Valley (IL)" --seasons 1977-1980 --ids coop_ids/IL_mv_052.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 21 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_052.csv
+
+MOVE Manlius (IL) -> Manlius Bureau Valley (IL), seasons 1977-1980 - COMMIT
+ move_games: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  21     1                  None
+
+>>> move-team IL --from "Manlius Bureau Valley (IL)" --to "Manlius (IL)" --seasons 1976-1983 --ids coop_ids/IL_mv_053.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 18 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_053.csv
+
+MOVE Manlius Bureau Valley (IL) -> Manlius (IL), seasons 1976-1983 - COMMIT
+ move_games: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  18     1                  None
+
+>>> move-team IL --from "Meredosia (IL)" --to "Meredosia-Chambersburg (IL)" --seasons 1976-1990 --ids coop_ids/IL_mv_054.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_054.csv
+
+MOVE Meredosia (IL) -> Meredosia-Chambersburg (IL), seasons 1976-1990 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team IL --from "Meredosia-Chambersburg (IL)" --to "Meredosia (IL)" --seasons 1965-1989 --ids coop_ids/IL_mv_055.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_055.csv
+
+MOVE Meredosia-Chambersburg (IL) -> Meredosia (IL), seasons 1965-1989 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IL --from "Minonk Fieldcrest (IL)" --to "Minonk-Dana-Rutland (IL)" --seasons 1956-1978 --ids coop_ids/IL_mv_056.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 24 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_056.csv
+
+MOVE Minonk Fieldcrest (IL) -> Minonk-Dana-Rutland (IL), seasons 1956-1978 - COMMIT
+ move_games: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1615.csv
+ move_by_season: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1615.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  16     1                  None
+
+>>> move-team IL --from "Minonk-Dana (IL)" --to "Minonk-Dana-Rutland (IL)" --seasons 1953-1954 --ids coop_ids/IL_mv_057.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_057.csv
+
+MOVE Minonk-Dana (IL) -> Minonk-Dana-Rutland (IL), seasons 1953-1954 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IL --from "Minonk-Dana-Rutland (IL)" --to "Minonk Fieldcrest (IL)" --seasons 1959-1960 --ids coop_ids/IL_mv_058.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_058.csv
+
+MOVE Minonk-Dana-Rutland (IL) -> Minonk Fieldcrest (IL), seasons 1959-1960 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IL --from "Momence (IL)" --to "Momence Coop (IL)" --seasons 1936-1992 --ids coop_ids/IL_mv_059.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 28 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_059.csv
+
+MOVE Momence (IL) -> Momence Coop (IL), seasons 1936-1992 - COMMIT
+ move_games: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 100 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  21     1                  None
+
+>>> move-team IL --from "Momence Coop (IL)" --to "Momence (IL)" --seasons 1953-1959 --ids coop_ids/IL_mv_060.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_060.csv
+
+MOVE Momence Coop (IL) -> Momence (IL), seasons 1953-1959 - COMMIT
+ move_games: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 100 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  13     1                  None
+
+>>> move-team IL --from "Mulkeytown Zeigler-Royalton (IL)" --to "Zeigler-Royalton (IL)" --seasons 1977-1980 --ids coop_ids/IL_mv_061.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_061.csv
+
+MOVE Mulkeytown Zeigler-Royalton (IL) -> Zeigler-Royalton (IL), seasons 1977-1980 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "New Lenox Lincoln-Way Central (IL)" --to "Frankfort Lincoln-Way (IL)" --seasons 1955-1963 --ids coop_ids/IL_mv_062.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_062.csv
+
+MOVE New Lenox Lincoln-Way Central (IL) -> Frankfort Lincoln-Way (IL), seasons 1955-1963 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 74 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IL --from "Northbrook Glenbrook North (IL)" --to "Northfield Township Glenbrook (IL)" --seasons 1958-1958 --ids coop_ids/IL_mv_063.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_063.csv
+
+MOVE Northbrook Glenbrook North (IL) -> Northfield Township Glenbrook (IL), seasons 1958-1958 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status   Games  ToNameInTeamNames  Err                                     
+   NOT RUN  0      0                  target name is not in HS_Team_Names - ch
+
+>>> move-team IL --from "Northfield Township Glenbrook (IL)" --to "Northbrook Glenbrook North (IL)" --seasons 1960-1961 --ids coop_ids/IL_mv_064.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_064.csv
+
+MOVE Northfield Township Glenbrook (IL) -> Northbrook Glenbrook North (IL), seasons 1960-1961 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team IL --from "Northlake Leyden (IL)" --to "Franklin Park-Northlake Leyden (IL)" --seasons 1949-1958 --ids coop_ids/IL_mv_065.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_065.csv
+
+MOVE Northlake Leyden (IL) -> Franklin Park-Northlake Leyden (IL), seasons 1949-1958 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 47 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Northwestern Coop (IL)" --to "Sciota Northwestern (IL)" --seasons 1963-1968 --ids coop_ids/IL_mv_066.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_066.csv
+
+MOVE Northwestern Coop (IL) -> Sciota Northwestern (IL), seasons 1963-1968 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team IL --from "Petersburg (IL)" --to "Petersburg PORTA (IL)" --seasons 1963-1965 --ids coop_ids/IL_mv_067.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_067.csv
+
+MOVE Petersburg (IL) -> Petersburg PORTA (IL), seasons 1963-1965 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team IL --from "Petersburg PORTA (IL)" --to "Petersburg (IL)" --seasons 1956-1956 --ids coop_ids/IL_mv_068.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_068.csv
+
+MOVE Petersburg PORTA (IL) -> Petersburg (IL), seasons 1956-1956 - COMMIT
+ move_games: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  0      1                  None
+
+>>> move-team IL --from "Saybrook (IL)" --to "Saybrook-Arrowsmith (IL)" --seasons 1957-1959 --ids coop_ids/IL_mv_069.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_069.csv
+
+MOVE Saybrook (IL) -> Saybrook-Arrowsmith (IL), seasons 1957-1959 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IL --from "Saybrook-Arrowsmith (IL)" --to "Saybrook (IL)" --seasons 1952-1963 --ids coop_ids/IL_mv_070.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 11 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_070.csv
+
+MOVE Saybrook-Arrowsmith (IL) -> Saybrook (IL), seasons 1952-1963 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team IL --from "Sciota Northwestern (IL)" --to "Northwestern Coop (IL)" --seasons 1951-1962 --ids coop_ids/IL_mv_071.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_071.csv
+
+MOVE Sciota Northwestern (IL) -> Northwestern Coop (IL), seasons 1951-1962 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IL --from "Sesser (IL)" --to "Sesser-Valier (IL)" --seasons 1964-1980 --ids coop_ids/IL_mv_072.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_072.csv
+
+MOVE Sesser (IL) -> Sesser-Valier (IL), seasons 1964-1980 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team IL --from "Sparta (IL)" --to "Sparta-Steeleville (IL)" --seasons 1965-1965 --ids coop_ids/IL_mv_073.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_073.csv
+
+MOVE Sparta (IL) -> Sparta-Steeleville (IL), seasons 1965-1965 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IL --from "Sparta-Steeleville (IL)" --to "Sparta (IL)" --seasons 1944-1962 --ids coop_ids/IL_mv_074.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_074.csv
+
+MOVE Sparta-Steeleville (IL) -> Sparta (IL), seasons 1944-1962 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 98 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team IL --from "Tiskilwa (IL)" --to "Tiskilwa Crossroads (IL)" --seasons 1977-1977 --ids coop_ids/IL_mv_075.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_075.csv
+
+MOVE Tiskilwa (IL) -> Tiskilwa Crossroads (IL), seasons 1977-1977 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team IL --from "Tiskilwa Crossroads (IL)" --to "Tiskilwa (IL)" --seasons 1976-1983 --ids coop_ids/IL_mv_076.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_076.csv
+
+MOVE Tiskilwa Crossroads (IL) -> Tiskilwa (IL), seasons 1976-1983 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> move-team IL --from "Toulon (IL)" --to "Toulon Stark County (IL)" --seasons 1978-1983 --ids coop_ids/IL_mv_077.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 20 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_077.csv
+
+MOVE Toulon (IL) -> Toulon Stark County (IL), seasons 1978-1983 - COMMIT
+ move_games: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1616.csv
+ move_by_season: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1616.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  20     1                  None
+
+>>> move-team IL --from "Toulon Stark County (IL)" --to "Toulon (IL)" --seasons 1966-1982 --ids coop_ids/IL_mv_078.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 21 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_078.csv
+
+MOVE Toulon Stark County (IL) -> Toulon (IL), seasons 1966-1982 - COMMIT
+ move_games: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  20     1                  None
+
+>>> move-team IL --from "University of Chicago Charter (IL)" --to "Chicago Woodlawn (IL)" --seasons 2015-2015 --ids coop_ids/IL_mv_079.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_079.csv
+
+MOVE University of Chicago Charter (IL) -> Chicago Woodlawn (IL), seasons 2015-2015 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team IL --from "Villa Grove (IL)" --to "Villa Grove-Heritage (IL)" --seasons 1965-1965 --ids coop_ids/IL_mv_080.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_080.csv
+
+MOVE Villa Grove (IL) -> Villa Grove-Heritage (IL), seasons 1965-1965 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IL --from "Villa Grove-Heritage (IL)" --to "Villa Grove (IL)" --seasons 1930-1962 --ids coop_ids/IL_mv_081.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_081.csv
+
+MOVE Villa Grove-Heritage (IL) -> Villa Grove (IL), seasons 1930-1962 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IL --from "Warrensburg (IL)" --to "Warrensburg-Latham (IL)" --seasons 1961-1968 --ids coop_ids/IL_mv_082.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 7 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_082.csv
+
+MOVE Warrensburg (IL) -> Warrensburg-Latham (IL), seasons 1961-1968 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team IL --from "Warrensburg-Latham (IL)" --to "Warrensburg (IL)" --seasons 1962-1963 --ids coop_ids/IL_mv_083.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_083.csv
+
+MOVE Warrensburg-Latham (IL) -> Warrensburg (IL), seasons 1962-1963 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team IL --from "Wheaton (IL)" --to "Wheaton Central (IL)" --seasons 1967-1987 --ids coop_ids/IL_mv_084.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 22 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_084.csv
+
+MOVE Wheaton (IL) -> Wheaton Central (IL), seasons 1967-1987 - COMMIT
+ move_games: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  21     1                  None
+
+>>> move-team IL --from "Wheaton Central (IL)" --to "Wheaton (IL)" --seasons 1929-1966 --ids coop_ids/IL_mv_085.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_085.csv
+
+MOVE Wheaton Central (IL) -> Wheaton (IL), seasons 1929-1966 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team IL --from "White Hall (IL)" --to "White Hall North Greene (IL)" --seasons 1951-1976 --ids coop_ids/IL_mv_086.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 16 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_086.csv
+
+MOVE White Hall (IL) -> White Hall North Greene (IL), seasons 1951-1976 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team IL --from "White Hall North Greene (IL)" --to "White Hall (IL)" --seasons 1971-1971 --ids coop_ids/IL_mv_087.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_087.csv
+
+MOVE White Hall North Greene (IL) -> White Hall (IL), seasons 1971-1971 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 101 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IL --from "Wyoming Stark County (IL)" --to "Wyoming Community (IL)" --seasons 1976-1987 --ids coop_ids/IL_mv_088.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 22 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_088.csv
+
+MOVE Wyoming Stark County (IL) -> Wyoming Community (IL), seasons 1976-1987 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261112_1617.csv
+ move_by_season: 59 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261112_1617.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> dedup IL --commit
+
+DEDUP v4 IL - COMMIT
+ dedup_archive: 821 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_archive_COMMITTED_20261112_1617.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_review_COMMITTED_20261112_1617.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_summary_COMMITTED_20261112_1617.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  IL     198604        821                  1                C8E83A72-F808-4EAA-AC43-054DA0317B04
+
+>>> review-pairs IL --commit
+
+REVIEW-ONLY PAIRS IL - COMMIT
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_review_pairs_COMMITTED_20261112_1617.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1         3FBA3A7C-9EB6-4431-A996-3A2966CA8E33  None
+
+>>> same-score-fix IL
+ 1923 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IL - PREVIEW (nothing changed)
+ 508 pairs {'DROP B': 9, 'DROP A': 6, 'UNDECIDED': 493} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_20261112_1619.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  15        None   None
+
+>>> query IL il_dump.sql
+
+QUERY il_dump (1 result sets)
+ set 1: 197782 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_il_dump_1_20261112_1619.csv
+
+=== OK 2026-11-12 16:19:06

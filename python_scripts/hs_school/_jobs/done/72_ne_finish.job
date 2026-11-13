@@ -1,0 +1,4 @@
+archive-ids CT --ids ct_college_dup_ids.csv --reason "Post-1940 college games confirmed present in College_Scores (names+scores match)" --commit
+archive-ids RI --ids ri_college_dup_ids.csv --reason "Post-1940 college games confirmed present in College_Scores (names+scores match)" --commit
+fix-dates NH
+status

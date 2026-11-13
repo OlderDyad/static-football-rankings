@@ -1,0 +1,4 @@
+move-team TN --from "Knoxville Halls (TN)" --to "Halls (TN)" --seasons 1900-2026 --ids khalls_to_halls.csv --reason "Halls (Lauderdale Co., West TN) games tagged Knoxville Halls: opponent in West TN / western KY"
+move-team TN --from "Knoxville Halls (TN)" --to "Harlan Grays Knob Hall (KY)" --seasons 1900-1963 --ids khalls_to_hallky.csv --reason "Hall (Grays Knob, Harlan Co. KY) games tagged Knoxville Halls: Harlan-area KY league opponents"
+move-team TN --from "Halls (TN)" --to "Harlan Grays Knob Hall (KY)" --seasons 1900-1963 --ids halls_to_hallky.csv --reason "Hall (Grays Knob, Harlan Co. KY) games tagged Halls (TN) (Lexington Herald): Harlan-area KY league opponents"
+move-team TN --from "Halls (TN)" --to "Knoxville Halls (TN)" --seasons 1900-2026 --ids halls_to_khalls.csv --reason "Knoxville Halls games tagged Halls (TN): East TN opponents"

@@ -1,0 +1,8 @@
+addstate PA
+report PA drift
+mapcheck PA --commit
+dedup PA
+review-pairs PA
+same-score-fix PA
+query PA pa_dump.sql
+query PA pa_names.sql

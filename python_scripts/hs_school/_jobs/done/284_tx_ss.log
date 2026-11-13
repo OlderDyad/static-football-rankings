@@ -1,0 +1,28 @@
+
+>>> same-score-fix TX --commit
+ 1304 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS TX - COMMIT
+ 2846 pairs {'DROP A': 816, 'DROP B': 852, 'UNDECIDED': 1178} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_same_score_COMMITTED_20261112_1418.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1644      FABFA82E-4F92-469D-9B7B-BDA9BC36F502  None
+
+>>> query TX season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_season_date_1_20261112_1418.csv
+ set 2: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_season_date_2_20261112_1418.csv
+
+>>> query TX forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_forfeits_1_20261112_1419.csv
+ set 2: 208 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_forfeits_2_20261112_1419.csv
+
+>>> step TX 1.1 done "2026-11-12: 23 MaxPreps short names; renames to latest (Houston Reagan -> Heights, Jefferson Davis -> Northside, Tyler Lee -> Legacy, Houston Lee -> Wisdom, Austin Reagan -> Northeast Early College, Austin Lanier -> Navarro, Brownsville -> Hanna); variants (Clear Creek -> League City, Reicher, Quinlan Ford, North Dallas, Kerrville Tivy, Spring Klein, Concordia Lutheran -> Tomball, Fort Bend HomeSchool)"
+Tracker updated: TX 1.1 -> done
+
+>>> step TX 1.2 done "2026-11-12: 27 URLs remapped, mapcheck 128"
+Tracker updated: TX 1.2 -> done
+
+=== OK 2026-11-12 14:19:03

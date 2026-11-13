@@ -1,0 +1,21 @@
+
+>>> commit TN
+
+DEDUP v4 TN - COMMIT
+ dedup_archive: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_archive_COMMITTED_20261110_0912.csv
+ dedup_review: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_review_COMMITTED_20261110_0912.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_dedup_summary_COMMITTED_20261110_0912.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  TN     122196        27                   13               7AFC7A9B-E01E-4F73-8C81-5DDF39563B7B
+
+REVIEW-ONLY PAIRS TN - COMMIT
+ 13 pairs {'LONG': 1, 'SHORT': 12} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_review_pairs_COMMITTED_20261110_0912.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  13        196E196E-DFFE-41C1-8CE5-4D5F5235E14A  None
+
+>>> query TN tn_dump.sql
+
+QUERY tn_dump (1 result sets)
+ set 1: 122157 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_tn_dump_1_20261110_0912.csv
+
+=== OK 2026-11-10 09:12:45

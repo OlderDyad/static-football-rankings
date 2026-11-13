@@ -1,0 +1,30 @@
+
+>>> same-score-fix NE --commit
+
+SAME-SCORE DOUBLE-BOOKINGS NE - COMMIT
+ 810 pairs {'DROP A': 262, 'DROP B': 262, 'UNDECIDED': 286} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_same_score_COMMITTED_20261106_0842.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  514       9B42C0B1-2B69-494E-AE5F-873DE81232E5  None
+
+>>> report NE double-booked
+
+REPORT double-booked NE: 3607 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_double_booked_20261106_0842.csv
+   Kind             Team                        Season  Gap  A_Date      A_Opp                  A_Score  A_Source                                  A_Batch  B_Date      B_Opp                                 B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Adams (NE)                  1959    0    1959-10-31  Sterling (NE)          7-26     Omaha_World_Herald_1959_10_31_10.csv      138      1959-10-31  Roseland (NE)                         7-19     Lincoln_Journal_Star_1959_10_31_7.csv     139      15B84A9D-DA29-4D13-B4C9-35C9A4088636  BB17AC3A-643A-4F93-96BD-42F1A650319A
+   DIFFERENT GAMES  Adams (NE)                  1980    1    1980-10-30  Elmwood (NE)           44-12    31 Oct 1980 - 19 - Lincoln Journal Star   None     1980-10-31  Beemer (NE)                           40-15    http://nsaahome.org/textfile/fbl/fball.h  None     3A50A444-DDB2-4CC4-92EC-518444D06B5B  E4757134-8975-4EA2-AB03-FC835FF28F4C
+   DIFFERENT GAMES  Adams (NE)                  1981    2    1981-10-28  Elmwood (NE)           26-20    29 Oct 1981 - 43 - Omaha World-Herald at  None     1981-10-30  Sidney St. Patrick's Academy (NE)     28-24    http://nsaahome.org/textfile/fbl/fball.h  None     53912C94-5A32-4155-BFB0-1A5DA6C3B2B6  564C9ECF-AD22-4273-A924-73A07174009C
+   DIFFERENT GAMES  Adams (NE)                  1993    1    1993-11-11  Sterling (NE)          49-34    0                                         None     1993-11-12  Osmond (NE)                           56-19    0                                         None     F35CB8D9-E579-4B8B-A54F-6F6A84D2534F  46037A1A-47B3-4444-90F7-CC6BF6F4DA25
+   DIFFERENT GAMES  Adams County Holstein (NE)  1967    0    1967-10-07  Giltner (NE)           6-58     Star_Herald_1967_10_07_8.csv              48       1967-10-07  Doniphan (NE)                         6-76     Star_Herald_1967_10_07_8.csv              48       475F26E0-A9FE-4FC0-A637-CF5E9680A3EA  D1FB74A5-CC13-41AD-844C-ED0654C09686
+   DIFFERENT GAMES  Adams Freeman (NE)          2011    1    2011-11-03  Bancroft-Rosalie (NE)  63-28    0                                         None     2011-11-02  Bruning-Davenport-Shickley (NE)       20-22    www.maxpreps.com                          None     7D3F55B0-30EE-4347-9D82-4DBF4F60A19D  6703C0C8-1AEB-494B-BE5B-854401D50B55
+   DIFFERENT GAMES  Adams Freeman (NE)          2019    1    2019-10-01  Syracuse (NE)          13-0     www.maxpreps.com                          None     2019-10-02  Murray Conestoga (NE)                 35-8     www.maxpreps.com                          None     35A6C8ED-13A5-4629-9940-03C11AE84BD0  2A777030-8D96-4E43-8BD7-6B5F3486B5D1
+   DIFFERENT GAMES  Adams Freeman (NE)          2019    0    2019-10-01  Syracuse (NE)          13-0     www.maxpreps.com                          None     2019-10-01  Tecumseh Johnson County Central (NE)  20-47    www.maxpreps.com                          None     35A6C8ED-13A5-4629-9940-03C11AE84BD0  327D2410-174D-4A34-8524-FC1998589D86
+   DIFFERENT GAMES  Adams Freeman (NE)          2019    2    2019-10-02  Murray Conestoga (NE)  35-8     www.maxpreps.com                          None     2019-10-04  Malcolm (NE)                          6-34     www.maxpreps.com                          None     2A777030-8D96-4E43-8BD7-6B5F3486B5D1  370F5882-F4B4-47FB-9B9B-6C5B32E32B30
+   DIFFERENT GAMES  Adams Freeman (NE)          2019    1    2019-10-02  Murray Conestoga (NE)  35-8     www.maxpreps.com                          None     2019-10-01  Tecumseh Johnson County Central (NE)  20-47    www.maxpreps.com                          None     2A777030-8D96-4E43-8BD7-6B5F3486B5D1  327D2410-174D-4A34-8524-FC1998589D86
+   DIFFERENT GAMES  Ainsworth (NE)              1957    0    1957-09-14  Hyannis (NE)           0-6      Lincoln_Journal_Star_1957_09_14_7 (1).cs  144      1957-09-14  Alliance (NE)                         0-32     Omaha_World_Herald_1957_09_14_12.csv      140      6FBBD8A8-95ED-41E0-8004-173FF3CD16B4  FC0C9EF6-392C-408F-9169-9BD58673B4FF
+   DIFFERENT GAMES  Ainsworth (NE)              1957    0    1957-10-05  Valentine (NE)         13-33    Lincoln_Journal_Star_1957_10_05_7 (1).cs  144      1957-10-05  Morning Sun (IA)                      19-0     The_Des_Moines_Register_1957_10_05_Page_  155      6E3E9FC6-EB42-45C8-BD0C-5C07425B5472  C5E0511F-2628-44FD-9F9A-A81795CC93BB
+   DIFFERENT GAMES  Ainsworth (NE)              1958    0    1958-10-11  O'Neill (NE)           0-19     Omaha_World_Herald_1958_10_11_10 (1).csv  141      1958-10-11  Brighton (IA)                         19-18    The_Des_Moines_Register_1958_10_11_Page_  155      78D2033C-E637-415E-A682-56830CC126EC  7CC3203E-5089-4735-B1F4-AC7F5C01871B
+   DIFFERENT GAMES  Ainsworth (NE)              1959    0    1959-09-19  Gregory (SD)           0-6      Argus_Leader_1959_09_19_Page_3.csv        162      1959-09-19  Mediapolis (IA)                       12-35    The_Des_Moines_Register_1959_09_19_Page_  155      D5E40C10-E274-47BA-8526-08D4E4FA7F5D  7BA4233E-347E-4668-876B-69A6A6F2F08C
+   DIFFERENT GAMES  Ainsworth (NE)              1959    0    1959-10-17  Wayland (IA)           12-44    The_Des_Moines_Register_1959_10_17_Page_  155      1959-10-17  Bassett Rock County (NE)              20-0     Lincoln_Journal_Star_1959_10_17_7 (1).cs  139      C089D58C-3EC8-4E90-9569-2E63F9B55E55  91084B5C-AB31-49B5-850E-CF992E3BD9F1
+   ... 3592 more rows (see CSV)
+
+=== OK 2026-11-06 08:42:58

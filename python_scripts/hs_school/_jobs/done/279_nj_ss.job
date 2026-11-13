@@ -1,0 +1,4 @@
+same-score-fix NJ --commit
+query NJ season_date.sql
+query NJ forfeits.sql
+step NJ 1.1 done "2026-11-12: 7 MaxPreps short names; PSU same-school pairs (Englewood Dwight Morrow, Emerson, Brick Township, Chatham); renames to latest (Woodrow Wilson -> Camden Eastside, East Paterson -> Elmwood Park); 7 URLs whose ProperName did not exist remapped"

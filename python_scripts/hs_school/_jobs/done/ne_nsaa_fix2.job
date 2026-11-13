@@ -1,0 +1,4 @@
+move-team NE --from "Chappell (NE)" --to "Imperial Chase County (NE)" --seasons 1997-1997 --ids NE_nsaa_fix_x1.csv --reason "NSAA playoff page: 1997 Aquinas 26-14 Chase County" --commit
+move-team NE --from "Waco Evangelical Lutheran (NE)" --to "Norfolk Lutheran-Northeast (NE)" --seasons 2013-2013 --ids NE_nsaa_fix_x2.csv --reason "NSAA: Lutheran High Northeast (Norfolk) 28-27 Hartington CC" --commit
+move-team NE --from "Table Rock (NE)" --to "Table Rock-Steinauer (NE)" --seasons 1995-1995 --ids NE_nsaa_fix_x3.csv --reason "1995 Table Rock-Steinauer 40-0 Shickley (copy under old name)" --commit
+dedup NE --commit

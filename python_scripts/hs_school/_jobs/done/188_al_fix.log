@@ -1,0 +1,101 @@
+
+>>> set-dates AL --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-AL game date (both teams + score match)" --commit
+
+SET DATES AL - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_set_dates_COMMITTED_20261111_1200.csv
+   Season  OldDate     NewDate     DayShift  Home                              Home_Score  Visitor                             Visitor_Score  Source                                    Note                    ID                                  
+   1990    1990-10-26  1990-11-02  7         Attalla Etowah (AL)               47          Jasper Marion County (TN)           14             www.hsfdatabase.com/tennessee.htm         hsfha.org game 1082233  84711B10-BA0B-46D4-8E9A-BC6D2724D671
+   1998    1998-11-06  1998-10-28  -9        Alabama School for the Deaf (AL)  45          Tennessee School for the Deaf (TN)  0              http://www.hsfdatabase.com/tennessee.htm  hsfha.org game 1081499  C7C58ED0-B064-4D08-A601-5B2AFC14677D
+   Status     Listed  Updated  Err 
+   COMMITTED  2       2        None
+
+>>> set-dates AL --file hsfha_dates_blank.csv --reason "no-source date replaced by HSFHA-AL game date (both teams + score match)" --commit
+
+SET DATES AL - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_set_dates_COMMITTED_20261111_1201.csv
+   Season  OldDate     NewDate     DayShift  Home                        Home_Score  Visitor                            Visitor_Score  Source  Note                    ID                                  
+   1916    1916-09-15  1916-09-23  8         Gurley Madison County (AL)  7           Harrison Chattanooga Central (TN)  0              None    hsfha.org game 1197228  E6D06BC9-FD22-429D-8571-AC612A741AE3
+   Status     Listed  Updated  Err 
+   COMMITTED  1       1        None
+
+>>> set-dates AL --file hsfha_dates_far.csv --reason "estimated date (>10 days off) replaced by HSFHA-AL date: same teams + same score in season" --commit
+
+SET DATES AL - COMMIT
+ 16 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_set_dates_COMMITTED_20261111_1201.csv
+   Season  OldDate     NewDate     DayShift  Home                               Home_Score  Visitor                      Visitor_Score  Source                                    Note                                      ID                                  
+   1910    1910-09-09  1910-11-05  57        Chattanooga McCallie (TN)          56          Williams (AL)                0              None                                      hsfha.org game 1197963 (same teams+score  6D582297-DC01-4747-96E8-97443C72D24B
+   1916    1916-09-29  1916-10-21  22        Chattanooga Baylor (TN)            13          Jackson County (AL)          0              http://www.hsfdatabase.com/               hsfha.org game 1082392 (same teams+score  7883900B-0AD6-4302-9FE9-ED2EED87210A
+   1921    1921-11-18  1921-11-07  -11       Chattanooga (TN)                   13          Guntersville (AL)            7              http://www.classmates.com/yearbooks/Chat  hsfha.org game 1197002 (same teams+score  AFA40676-ADF5-4AA8-A8BC-C74D33F4199A
+   1921    1921-11-11  1921-11-24  13        Montgomery Lanier (AL)             7           Mobile Barton Academy (AL)   7              http://www.classmates.com/yearbooks/Bart  hsfha.org game 1047576 (same teams+score  88947D56-1A22-438A-AC5E-1E5EFA01ECE0
+   1921    1921-11-18  1921-12-02  14        Mobile Barton Academy (AL)         13          Mobile UMS-Wright Prep (AL)  0              http://www.classmates.com/yearbooks/Bart  hsfha.org game 1047570 (same teams+score  BEFD2262-D61A-4A9A-87CA-85930ADD0F7A
+   1923    1923-09-28  1923-10-19  21        Chattanooga Baylor (TN)            32          Birmingham Ensley (AL)       7              http://www.hsfdatabase.com/               hsfha.org game 1081427 (same teams+score  65675923-2F25-4959-BB35-0ADA039AC6A1
+   1923    1923-11-16  1923-11-29  13        Mobile Barton Academy (AL)         27          Biloxi (MS)                  0              http://www.classmates.com/siteui/yearboo  hsfha.org game 395184 (same teams+score)  C9E84B22-D84E-4D5E-B36D-5C2467A18527
+   1926    1926-09-24  1926-10-28  34        Harrison Chattanooga Central (TN)  44          Gadsden (AL)                 0              None                                      hsfha.org game 1196952 (same teams+score  6D325E09-2862-429D-AED5-74E952A6473F
+   1931    1931-09-18  1931-10-02  14        Chattanooga Baylor (TN)            46          DeKalb County (AL)           0              http://www.hsfdatabase.com/               hsfha.org game 1082238 (same teams+score  CC88A1C8-57BE-4334-8835-8CA4528B4381
+   1944    1944-10-06  1944-11-03  28        Birmingham Woodlawn (AL)           8           Birmingham Phillips (AL)     6              http://www.classmates.com/yearbooks/Wood  hsfha.org game 886593 (same teams+score)  A79DE6D1-8077-491A-A45F-3B70F50DC04B
+   ... 6 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  16      16       None
+
+>>> same-score-fix AL --decisions AL_same_score_decisions.csv --commit
+
+SAME-SCORE DOUBLE-BOOKINGS AL - COMMIT
+ 1908 pairs {'DROP B': 386, 'DROP A': 361, 'UNDECIDED': 1161} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_same_score_COMMITTED_20261111_1202.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  736       FC01B80E-5AF8-46D7-B1C8-9227A6BC4DDC  None
+
+>>> import-games AL --file hsfha_import_AL.csv --reason "HSFHA-AL (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell"
+
+IMPORT GAMES AL - PREVIEW (nothing changed) from hsfha_import_AL.csv (16536 rows)
+   Skip                                Games
+   a team already has a game that day  2089 
+   IMPORT                              14447
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_import_skipped_20261111_1203.csv
+   Status                     Imported  BatchID  Err 
+   PREVIEW (nothing changed)  14447     None     None
+
+>>> import-games AL --file hsfha_import_AL.csv --reason "HSFHA-AL (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell" --commit
+
+IMPORT GAMES AL - COMMIT from hsfha_import_AL.csv (16536 rows)
+   Skip                                Games
+   a team already has a game that day  2089 
+   IMPORT                              14447
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_import_skipped_20261111_1203.csv
+   Status     Imported  BatchID  Err 
+   COMMITTED  14447     201      None
+
+>>> dedup AL
+
+DEDUP v4 AL - PREVIEW (nothing changed)
+ dedup_archive: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_archive_20261111_1203.csv
+ dedup_review: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_review_20261111_1203.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_dedup_summary_20261111_1203.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  AL     197687        63                   82               None 
+
+>>> review-pairs AL
+
+REVIEW-ONLY PAIRS AL - PREVIEW (nothing changed)
+ 22 pairs {'LONG': 7, 'SHORT': 15} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_review_pairs_20261111_1203.csv
+
+>>> query AL season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_season_date_1_20261111_1203.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_season_date_2_20261111_1203.csv
+
+>>> query AL forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_forfeits_1_20261111_1203.csv
+ set 2: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_forfeits_2_20261111_1203.csv
+
+>>> query AL college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_college_check_1_20261111_1204.csv
+ set 2: 95 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_college_check_2_20261111_1204.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_college_check_3_20261111_1204.csv
+ set 4: 993 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_college_check_4_20261111_1204.csv
+
+=== OK 2026-11-11 12:04:03

@@ -1,0 +1,10 @@
+archive-ids MO --ids MO_college_archive_ids.csv --reason "1942 Tulsa-Saint Louis U, 1947 Washington U-Arkansas St, 1949 Washington U-Missouri Mines: college games, copies in College_Scores (names match)" --commit
+fix-dates MO --commit
+step MO 1.1 "in progress" "round 1: 22 rules (2022/2024 MaxPreps drift: Aurora, Ste. Genevieve, Warrenton, Windsor, New Madrid, St. Clair, SLUH, University City, Lincoln College Prep...; Sedalia, Cass Midway, Rogersville, DeSoto, St. Mary's South Side)"
+step MO 1.2 done "22 URLs remapped (10 ProperNames did not exist); mapcheck fixed 10 Team_IDs"
+step MO 1.4 "in progress" "splits: Battle-Columbia Independent 2022-24, Gallatin-Tri-County 2022+, Park Hill South 1998+, Unionville Putnam County 1943+; Washington (MO) 198 KC Washington games moved to KS"
+step MO 2.1 done "dedup 275 + 7 (+95 KC Washington copies in KS)"
+step MO 2.3 "in progress" "same-score 513 archived (94 border-twin decisions overridden: Fort Scott, Lansing, Atchison, KC Washington...); 328 undecided"
+step MO 3.1 done "2 yearbook dates 1912-13"
+step MO 3.2 done "forfeit flags consistent except 2 'The Sun' 2-0 games and NULL on 2026 weekly imports"
+step MO 5.0 "in progress" "3 college copies archived; MO_for_college_chat.csv"

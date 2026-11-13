@@ -1,0 +1,8 @@
+same-score-fix OH --commit
+query OH season_date.sql
+query OH forfeits.sql
+query OH college_check.sql
+step OH 1.1 done "2026-11-12: 26 rules: 2024 MaxPreps short names (Fremont Ross Little, Jackson Ironman, Medina Battling, Oberlin The, Cincinnati Country/North College, Villa Angela, The Athens...), city variants (Bexley, Reading, Columbus Academy, East Clinton, Graham Local, Highland -> Marengo, Fenwick -> Franklin), Moeller typo; Lima Central 2024+ -> Lima Catholic Central (35)"
+step OH 1.2 done "2026-11-12: 28 URLs remapped (incl. 6 ProperNames that did not exist: Waite, Harding, Beaver Local, Western Brown, United Local, Garfield CLC), mapcheck"
+step OH 2.1 done "2026-11-12: dedup 527"
+step OH 2.2 done "2026-11-12: review pairs 48"

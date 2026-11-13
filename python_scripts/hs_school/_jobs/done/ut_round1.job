@@ -1,0 +1,7 @@
+remap UT --url "https://www.maxpreps.com/ut/blanding/san-juan-broncos/football/schedule/" --to "Blanding San Juan County (UT)" --commit
+remap UT --url "https://www.maxpreps.com/ut/fillmore/millard-eagles/football/schedule/" --to "Fillmore Millard County (UT)" --commit
+remap UT --url "https://www.maxpreps.com/ut/monroe/south-sevier-rams/football/schedule/" --to "Monroe South Sevier County (UT)" --commit
+remap UT --url "https://www.maxpreps.com/ut/salina/north-sevier-wolves/football/schedule/" --to "Salina North Sevier County (UT)" --commit
+remap UT --url "https://www.maxpreps.com/ut/vernal/uintah-utes/football/schedule/" --to "Vernal Uintah County (UT)" --commit
+mapcheck UT --commit
+round UT --reason "UT round 1: 2024 MaxPreps drift, same-school, 2023 out-of-state names labelled UT"

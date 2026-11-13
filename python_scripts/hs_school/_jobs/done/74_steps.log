@@ -1,0 +1,49 @@
+
+>>> step MA 1.4 done "2026-11-10 Claude review: Gemini co-op->school merges undone; 16 co-op spans moved back to co-op names (Holbrook-Avon, Manchester Essex-Rockport, Millis-Hopedale, etc.), 3 co-op URLs remapped"
+Tracker updated: MA 1.4 -> done
+
+>>> step MA 2.3 done "2026-11-10: same-score fix archived 2 (71 undecided left)"
+Tracker updated: MA 2.3 -> done
+
+>>> step MA 5.0 done "college copies archived 3 (2026-11-09); recheck 2026-11-10 none new"
+Tracker updated: MA 5.0 -> done
+
+>>> step CT 1.1 done "consolidation 2026-11-10 (Gemini rules, co-op merges set to identity)"
+Tracker updated: CT 1.1 -> done
+
+>>> step CT 1.2 done "MaxPreps remaps by Gemini 2026-11-09 + Griswold-Wheeler co-op URL 2026-11-10"
+Tracker updated: CT 1.2 -> done
+
+>>> step CT 1.4 done "Gemini moves (New London/Bulkeley etc.) reviewed via change log 2026-11-10; co-ops kept separate"
+Tracker updated: CT 1.4 -> done
+
+>>> step CT 2.3 done "same-score fix archived 326 (95 undecided)"
+Tracker updated: CT 2.3 -> done
+
+>>> step CT 3.1 done "season vs date: 0 issues"
+Tracker updated: CT 3.1 -> done
+
+>>> step CT 3.2 done "4 games 2-0 without forfeit flag (Southington-Wolcott 1977, Westerly-Stonington 1978, Pomfret-Andover 1980, Farmington-Enfield 1986) left as-is"
+Tracker updated: CT 3.2 -> done
+
+>>> step CT 5.0 done "2 college copies archived (TCNJ-WCSU 1975, 2010)"
+Tracker updated: CT 5.0 -> done
+
+>>> step NH 1.1 done "consolidation 2026-11-10 (Gemini rules; Hillsboro-Deering co-op kept)"
+Tracker updated: NH 1.1 -> done
+
+>>> step NH 1.2 done "MaxPreps remaps by Gemini 2026-11-09"
+Tracker updated: NH 1.2 -> done
+
+>>> step NH 2.3 done "same-score fix archived 19"
+Tracker updated: NH 2.3 -> done
+
+>>> step NH 3.1 in progress "1 game: Andover-Exeter 1882-11-08 stored as Season 1982 (SQL fix given to user)"
+
+[stderr]
+usage: hs_cleanup.py step [-h]
+                          state stepno {not started,in progress,done,skipped}
+                          [note]
+hs_cleanup.py step: error: argument status: invalid choice: 'in' (choose from 'not started', 'in progress', 'done', 'skipped')
+
+=== FAILED (exit 2) 2026-11-10 04:32:31

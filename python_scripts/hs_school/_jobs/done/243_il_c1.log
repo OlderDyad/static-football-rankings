@@ -1,0 +1,28 @@
+
+>>> commit IL
+
+DEDUP v4 IL - COMMIT
+ dedup_archive: 582 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_archive_COMMITTED_20261112_0653.csv
+ dedup_review: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_review_COMMITTED_20261112_0653.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_summary_COMMITTED_20261112_0653.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  IL     201940        582                  14               C4330408-8A50-4A52-BD6B-87EBEA7625ED
+
+REVIEW-ONLY PAIRS IL - COMMIT
+ 14 pairs {'SHORT': 14} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_review_pairs_COMMITTED_20261112_0653.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  14        B0F612C6-8329-45A5-9BAF-2CB08E9EA1C5  None
+
+>>> same-score-fix IL
+
+SAME-SCORE DOUBLE-BOOKINGS IL - PREVIEW (nothing changed)
+ 3621 pairs {'DROP B': 880, 'DROP A': 818, 'UNDECIDED': 1923} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_20261112_0656.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1672      None   None
+
+>>> query IL il_dump.sql
+
+QUERY il_dump (1 result sets)
+ set 1: 201344 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_il_dump_1_20261112_0656.csv
+
+=== OK 2026-11-12 06:56:54

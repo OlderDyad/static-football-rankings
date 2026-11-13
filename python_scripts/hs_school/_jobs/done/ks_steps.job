@@ -1,0 +1,11 @@
+step KS 1.1 "in progress" "round 1 (16 rules: 2024 drift, same-school) + round 2 (5 merges); Washington (KS) 1,076-game mixed name open"
+step KS 1.2 done "11 URLs remapped (3 ProperNames did not exist); mapcheck fixed 21 Team_IDs; Lorraine Central Plains URL -> Claflin Central Plains"
+step KS 1.3 done "same-town pairs reviewed in names/same-score reports"
+step KS 1.4 "in progress" "18 split-by-year moves (KFH team pages carried one school under old and new names); Washington (KS) open"
+step KS 2.1 done "dedup 122 + 922 (after name merges/splits)"
+step KS 2.2 done "review pairs 14 + 190 (same teams/score, KFH week shifts)"
+step KS 2.3 "in progress" "same-score 457 archived; 315 undecided; ~12,000 KFH different-game same-date pairs = estimated KFH dates"
+step KS 3.1 done "4 odd dates (2 KFH 1923 in 1925, 2 Wichita Cathedral yearbook 1927 in Feb 1928)"
+step KS 3.2 done "forfeit flags consistent except NULL on 2025-26 weekly imports"
+step KS 5.0 "in progress" "2 Drake games archived; KS_for_college_chat.csv (412)"
+report KS double-booked

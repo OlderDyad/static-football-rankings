@@ -1,0 +1,93 @@
+
+>>> addstate IA
+Tracker rows ready for IA
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report IA drift
+
+REPORT drift IA: 133 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_drift_20261111_2008.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                 N_Games  N_First  N_Last  N_Mapped
+   Adair-Casey (IA)                          478      1954     2016    0         None                    None     None     None    0       
+   Adel-Desoto-Minburn (IA)                  372      1934     2023    0         None                    None     None     None    0       
+   AHSTW (IA)                                10       2023     2023    0         None                    None     None     None    0       
+   Algona-C-W-L (IA)                         28       2014     2016    0         None                    None     None     None    0       
+   Ames (IA)                                 941      1906     2023    0         Ames Little (IA)        26       2024     2026    1       
+   Ankeny Christian Academy (IA)             75       2008     2016    0         Ankeny Centennial (IA)  146      2013     2026    1       
+   Aplington-Parkersburg (IA)                329      1990     2023    0         None                    None     None     None    0       
+   Arcadia-Westside-Vail (IA)                522      1957     2023    0         None                    None     None     None    0       
+   Avoca-Hancock-Shelby-Tennant (IA)         395      1970     2019    0         None                    None     None     None    0       
+   Avoca-Hancock-Shelby-Tennant-Walnut (IA)  46       2017     2025    0         None                    None     None     None    0       
+   Battle Creek-Ida Grove-Odebolt-Arthur (I  162      2008     2023    0         None                    None     None     None    0       
+   Beaman-Conrad-Liscomb-Union-Whitten (IA)  298      1986     2023    0         None                    None     None     None    0       
+   Belmond-Klemme (IA)                       317      1977     2023    0         None                    None     None     None    0       
+   Bettendorf-Rivermont Collegiate-Morning   37       2014     2016    0         None                    None     None     None    0       
+   Bloomfield Davis County (IA)              507      1922     2025    1         None                    None     None     None    0       
+   ... 118 more rows (see CSV)
+
+>>> mapcheck IA
+
+MAPPING CHECK IA - PREVIEW (nothing changed)
+ 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_mapcheck_20261111_2008.csv
+   URL                                       ProperName                          Team_ID  NameID  Problem                          Team_ID_Name
+   https://www.maxpreps.com/ia/avoca/ahstw-  Avoca Ahstw (IA)                    35944    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/ia/jefferson/je  Jefferson Scranton (IA)             35893    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/ia/mondamin/wes  Mondamin West Harrison (IA)         29502    None    ProperName not in HS_Team_Names  None        
+   https://www.maxpreps.com/ia/sergeant-blu  Sergeant Bluff Sergeant Bluff (IA)  35484    None    ProperName not in HS_Team_Names  None        
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  0        None
+
+>>> dedup IA
+
+DEDUP v4 IA - PREVIEW (nothing changed)
+ dedup_archive: 42 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_archive_20261111_2008.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_review_20261111_2008.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_summary_20261111_2008.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  IA     135656        42                   1                None 
+
+>>> review-pairs IA
+
+REVIEW-ONLY PAIRS IA - PREVIEW (nothing changed)
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_review_pairs_20261111_2008.csv
+
+>>> same-score-fix IA
+
+SAME-SCORE DOUBLE-BOOKINGS IA - PREVIEW (nothing changed)
+ 2965 pairs {'DROP A': 615, 'DROP B': 566, 'UNDECIDED': 1784} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_20261111_2011.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1149      None   None
+
+>>> query IA ia_dump.sql
+
+QUERY ia_dump (1 result sets)
+ set 1: 135657 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_ia_dump_1_20261111_2011.csv
+
+>>> query IA ia_names.sql
+
+QUERY ia_names (1 result sets)
+ set 1: 1242 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_ia_names_1_20261111_2011.csv
+
+>>> query IA ia_geo_all.sql
+
+QUERY ia_geo_all (2 result sets)
+ set 1: 36437 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_ia_geo_all_1_20261111_2011.csv
+ set 2: 135657 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_ia_geo_all_2_20261111_2011.csv
+
+=== OK 2026-11-11 20:11:34

@@ -1,0 +1,6 @@
+archive-ids MA --ids ma_college_dup_ids.csv --reason "Post-1940 college games confirmed present in College_Scores" --commit
+dedup MA --commit
+review-pairs MA --commit
+block-dups MA --commit
+same-score-fix MA --commit
+fix-dates MA

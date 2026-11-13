@@ -1,0 +1,17 @@
+
+>>> query MA ma_inspect.sql
+
+[stderr]
+Traceback (most recent call last):
+  File "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\hs_cleanup.py", line 1052, in <module>
+    main()
+  File "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\hs_cleanup.py", line 1048, in main
+    a.f(a)
+  File "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\hs_cleanup.py", line 806, in cmd_query
+    sets = run_batch('SET NOCOUNT ON;\n' + sql)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\hs_cleanup.py", line 62, in run_batch
+    cur.execute(sql, params)
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'ID'. (207) (SQLExecDirectW)")
+
+=== FAILED (exit 1) 2026-11-09 08:31:06

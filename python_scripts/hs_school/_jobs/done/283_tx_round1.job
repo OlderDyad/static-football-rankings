@@ -1,0 +1,33 @@
+remap TX --url "https://www.maxpreps.com/tx/austin/liberal-arts-and-science-academy-austin-raptors/football/schedule/" --to "Austin Liberal Arts & Science Academy (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/austin/travis-rebels/football/schedule/" --to "Austin William Travis (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/bartonville/harvest-christian-academy-saints/football/schedule/" --to "Bartonville Harvest Christian Academy (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/comfort/comfort-bobcats-deer/football/schedule/" --to "Comfort (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/corpus-christi/arlington-heights-christian-lions/football/schedule/" --to "Corpus Christi Arlington Heights Christian (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/dallas/covenant-knights/football/schedule/" --to "Dallas The Covenant (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/dallas/episcopal-school-of-dallas-eagles/football/schedule/" --to "Dallas Episcopal School of Dallas (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/fort-worth/timber-creek-falcons/football/schedule/" --to "Fort Worth Keller Timber Creek (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/hamlin/hamlin-pied-pipers/football/schedule/" --to "Hamlin (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/houston/dekaney-wildcats/football/schedule/" --to "Houston Spring Dekaney (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/houston/dobie-longhorns/football/schedule/" --to "Houston Pasadena Dobie (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/houston/summer-creek-bulldogs/football/schedule/" --to "Houston Humble Summer Creek (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/houston/westfield-mustangs/football/schedule/" --to "Houston Spring Westfield (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/irving/highlands-blazers/football/schedule/" --to "Irving The Highlands (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/itasca/itasca-wampus-cats/football/schedule/" --to "Itasca (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/klein/klein-bearkats/football/schedule/" --to "Spring Klein (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/longview/trinity-school-of-texas-titans/football/schedule/" --to "Longview Trinity School of Texas (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/odessa/compass-academy/football/schedule/" --to "Odessa Compass Academy (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/plano/john-paul-ii-cardinals/football/schedule/" --to "Plano John Paul II (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/san-antonio/stevens-falcons/football/schedule/" --to "San Antonio Northside Stevens (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/tomball/concordia-lutheran-crusaders/football/schedule/" --to "Tomball Concordia Lutheran (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/tyler/lee-raiders/football/football/" --to "Tyler Legacy (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/victoria/victoria-cobra-homeschool-cobra/football/schedule/" --to "Victoria Cobra HomeSchool (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/waco/bishop-reicher-catholic-cougars/football/schedule/" --to "Waco Reicher Catholic (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/west-columbia/columbia-roughnecks/football/schedule/" --to "West Columbia (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/wylie/wylie-prep-academy-patriots/football/football/" --to "Wylie Preparatory Academy (TX)" --commit
+remap TX --url "https://www.maxpreps.com/tx/wylie/wylie-prep-academy-patriots/football/schedule/" --to "Wylie Preparatory Academy (TX)" --commit
+mapcheck TX --commit
+consolidate TX --reason "TX round 1: 2024 MaxPreps short names; renames to latest (Reagan -> Heights, Jefferson Davis -> Northside, Tyler Lee -> Legacy, Houston Lee -> Wisdom, Austin Reagan -> Northeast, Lanier -> Navarro, Brownsville -> Hanna); same-school variants (Clear Creek, Reicher, Quinlan Ford, North Dallas, Tivy, Spring Klein, Concordia Lutheran -> Tomball)"
+dedup TX --commit
+review-pairs TX --commit
+same-score-fix TX
+query TX tx_dump.sql

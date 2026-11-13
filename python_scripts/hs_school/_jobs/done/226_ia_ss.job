@@ -1,0 +1,8 @@
+same-score-fix IA --commit
+query IA season_date.sql
+query IA forfeits.sql
+query IA college_check.sql
+step IA 1.1 done "2026-11-12: 21 rules: 2024 MaxPreps drift names (Ames Little, CB Lincoln/Jefferson, Jesup J, Beckman, Coon Rapids, Center Point...), same-school spellings (De Witt/DeWitt Central, Kuemper, WACO, Benton, NESCO, Twin Rivers, Cedar Valley, BCL, Sergeant Bluff-Luton, Iowa City-City), Grandview Park Baptist -> Grand View Christian"
+step IA 1.2 done "2026-11-12: 11 URLs remapped (incl. AHSTW, Jefferson-Scranton), mapcheck"
+step IA 2.1 done "2026-11-12: dedup 511"
+step IA 2.2 done "2026-11-12: review pairs 7"

@@ -1,0 +1,204 @@
+
+>>> consolidate UT --reason "UT round 2: Stansbury Park, Roosevelt, Moab, Westminster College"
+Consolidating UT from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\UT_Alias_Rules.csv
+
+[stderr]
+2026-11-06 16:17:46,393 - INFO - Starting consolidation for state: (UT) using staging table method.
+2026-11-06 16:17:46,403 - WARNING - WARNING: 115 row(s) have identical OldName and NewName (no-op rules).
+2026-11-06 16:17:46,403 - WARNING -   'Altamont (UT)' -> 'Altamont (UT)' (no change)
+2026-11-06 16:17:46,403 - WARNING -   'American Fork (UT)' -> 'American Fork (UT)' (no change)
+2026-11-06 16:17:46,403 - WARNING -   'Beaver (UT)' -> 'Beaver (UT)' (no change)
+2026-11-06 16:17:46,403 - WARNING -   'Blanding San Juan County (UT)' -> 'Blanding San Juan County (UT)' (no change)
+2026-11-06 16:17:46,403 - WARNING -   'Blanding San Juan County JV (UT)' -> 'Blanding San Juan County JV (UT)' (no change)
+2026-11-06 16:17:46,403 - WARNING -   'Bluffdale Summit Academy (UT)' -> 'Bluffdale Summit Academy (UT)' (no change)
+2026-11-06 16:17:46,403 - WARNING -   'Bountiful (UT)' -> 'Bountiful (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Bountiful Viewmont (UT)' -> 'Bountiful Viewmont (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Brigham City Box Elder (UT)' -> 'Brigham City Box Elder (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Brigham City Intermountain Institute (UT)' -> 'Brigham City Intermountain Institute (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Castle Dale Emery County (UT)' -> 'Castle Dale Emery County (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Cedar City (UT)' -> 'Cedar City (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Cedar City Canyon View (UT)' -> 'Cedar City Canyon View (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Clearfield (UT)' -> 'Clearfield (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Coalville North Summit (UT)' -> 'Coalville North Summit (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Delta (UT)' -> 'Delta (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Draper Corner Canyon (UT)' -> 'Draper Corner Canyon (UT)' (no change)
+2026-11-06 16:17:46,404 - WARNING -   'Draper Juan Diego Catholic (UT)' -> 'Draper Juan Diego Catholic (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Duchesne (UT)' -> 'Duchesne (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Dugway (UT)' -> 'Dugway (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Enterprise (UT)' -> 'Enterprise (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Fillmore Millard County (UT)' -> 'Fillmore Millard County (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Garland Bear River (UT)' -> 'Garland Bear River (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Grantsville (UT)' -> 'Grantsville (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Gunnison Valley (UT)' -> 'Gunnison Valley (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Heber City Wasatch County (UT)' -> 'Heber City Wasatch County (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Highland Lone Peak (UT)' -> 'Highland Lone Peak (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Hurricane (UT)' -> 'Hurricane (UT)' (no change)
+2026-11-06 16:17:46,405 - WARNING -   'Hyrum Mountain Crest (UT)' -> 'Hyrum Mountain Crest (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Kamas South Summit (UT)' -> 'Kamas South Summit (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Kanab (UT)' -> 'Kanab (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Kaysville Davis (UT)' -> 'Kaysville Davis (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Kearns (UT)' -> 'Kearns (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Layton (UT)' -> 'Layton (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Layton Christian Academy (UT)' -> 'Layton Christian Academy (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Layton Northridge (UT)' -> 'Layton Northridge (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Lehi (UT)' -> 'Lehi (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Lehi Skyridge (UT)' -> 'Lehi Skyridge (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Logan (UT)' -> 'Logan (UT)' (no change)
+2026-11-06 16:17:46,406 - WARNING -   'Magna Cyprus (UT)' -> 'Magna Cyprus (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Manti (UT)' -> 'Manti (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Midvale Hillcrest (UT)' -> 'Midvale Hillcrest (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Milford (UT)' -> 'Milford (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Millville Ridgeline (UT)' -> 'Millville Ridgeline (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Moab Grand County (UT)' -> 'Moab Grand County (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Monroe South Sevier County (UT)' -> 'Monroe South Sevier County (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Montezuma Creek Whitehorse (UT)' -> 'Montezuma Creek Whitehorse (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Monticello (UT)' -> 'Monticello (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Monument Valley (UT)' -> 'Monument Valley (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Morgan (UT)' -> 'Morgan (UT)' (no change)
+2026-11-06 16:17:46,407 - WARNING -   'Mount Pleasant North Sanpete (UT)' -> 'Mount Pleasant North Sanpete (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Mount Pleasant Wasatch Academy (UT)' -> 'Mount Pleasant Wasatch Academy (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Murray (UT)' -> 'Murray (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Nephi Juab County (UT)' -> 'Nephi Juab County (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'North Logan Green Canyon (UT)' -> 'North Logan Green Canyon (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Ogden (UT)' -> 'Ogden (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Ogden Ben Lomond (UT)' -> 'Ogden Ben Lomond (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Orem (UT)' -> 'Orem (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Orem Mountain View (UT)' -> 'Orem Mountain View (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Orem Timpanogos (UT)' -> 'Orem Timpanogos (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Park City (UT)' -> 'Park City (UT)' (no change)
+2026-11-06 16:17:46,408 - WARNING -   'Parowan (UT)' -> 'Parowan (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Payson (UT)' -> 'Payson (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Plain City Fremont (UT)' -> 'Plain City Fremont (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Pleasant Grove (UT)' -> 'Pleasant Grove (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Pleasant View Weber (UT)' -> 'Pleasant View Weber (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Price Carbon County (UT)' -> 'Price Carbon County (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Provo (UT)' -> 'Provo (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Provo Timpview (UT)' -> 'Provo Timpview (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Randolph Rich (UT)' -> 'Randolph Rich (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Randolph Rich County (UT)' -> 'Randolph Rich County (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Richfield (UT)' -> 'Richfield (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Riverton (UT)' -> 'Riverton (UT)' (no change)
+2026-11-06 16:17:46,409 - WARNING -   'Roosevelt Union (UT)' -> 'Roosevelt Union (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Roy (UT)' -> 'Roy (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Saint George Desert Hills (UT)' -> 'Saint George Desert Hills (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Saint George Dixie (UT)' -> 'Saint George Dixie (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Saint George Pine View (UT)' -> 'Saint George Pine View (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Saint George Snow Canyon (UT)' -> 'Saint George Snow Canyon (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Salem Hills (UT)' -> 'Salem Hills (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Salina North Sevier County (UT)' -> 'Salina North Sevier County (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Salt Lake City Brighton (UT)' -> 'Salt Lake City Brighton (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Salt Lake City Cottonwood (UT)' -> 'Salt Lake City Cottonwood (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Salt Lake City East (UT)' -> 'Salt Lake City East (UT)' (no change)
+2026-11-06 16:17:46,410 - WARNING -   'Salt Lake City Granite (UT)' -> 'Salt Lake City Granite (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Salt Lake City Highland (UT)' -> 'Salt Lake City Highland (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Salt Lake City Judge Memorial Catholic (UT)' -> 'Salt Lake City Judge Memorial Catholic (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Salt Lake City LDSU (UT)' -> 'Salt Lake City LDSU (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Salt Lake City Olympus (UT)' -> 'Salt Lake City Olympus (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Salt Lake City Skyline (UT)' -> 'Salt Lake City Skyline (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Salt Lake City South (UT)' -> 'Salt Lake City South (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Salt Lake City West (UT)' -> 'Salt Lake City West (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Sandy Alta (UT)' -> 'Sandy Alta (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Sandy Jordan (UT)' -> 'Sandy Jordan (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Saratoga Springs Westlake (UT)' -> 'Saratoga Springs Westlake (UT)' (no change)
+2026-11-06 16:17:46,411 - WARNING -   'Smithfield Sky View (UT)' -> 'Smithfield Sky View (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'South Jordan Bingham (UT)' -> 'South Jordan Bingham (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Spanish Fork (UT)' -> 'Spanish Fork (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Spanish Fork American Leadership Academy (UT)' -> 'Spanish Fork American Leadership Academy (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Spanish Fork Maple Mountain (UT)' -> 'Spanish Fork Maple Mountain (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Springville (UT)' -> 'Springville (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Sunnyside East Carbon (UT)' -> 'Sunnyside East Carbon (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Syracuse (UT)' -> 'Syracuse (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Taylorsville (UT)' -> 'Taylorsville (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Tooele (UT)' -> 'Tooele (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Tooele Stansbury (UT)' -> 'Tooele Stansbury (UT)' (no change)
+2026-11-06 16:17:46,412 - WARNING -   'Utah School for the Deaf (UT)' -> 'Utah School for the Deaf (UT)' (no change)
+2026-11-06 16:17:46,413 - WARNING -   'Vernal Uintah County (UT)' -> 'Vernal Uintah County (UT)' (no change)
+2026-11-06 16:17:46,413 - WARNING -   'Washington Terrace Bonneville (UT)' -> 'Washington Terrace Bonneville (UT)' (no change)
+2026-11-06 16:17:46,413 - WARNING -   'West Herriman (UT)' -> 'West Herriman (UT)' (no change)
+2026-11-06 16:17:46,413 - WARNING -   'West Jordan (UT)' -> 'West Jordan (UT)' (no change)
+2026-11-06 16:17:46,413 - WARNING -   'West Jordan Copper Hills (UT)' -> 'West Jordan Copper Hills (UT)' (no change)
+2026-11-06 16:17:46,413 - WARNING -   'West Valley City Granger (UT)' -> 'West Valley City Granger (UT)' (no change)
+2026-11-06 16:17:46,413 - WARNING -   'West Valley City Hunter (UT)' -> 'West Valley City Hunter (UT)' (no change)
+2026-11-06 16:17:46,413 - WARNING -   'Woods Cross (UT)' -> 'Woods Cross (UT)' (no change)
+2026-11-06 16:17:46,413 - INFO - Validation passed: 156 rules are clean and ready to upload.
+2026-11-06 16:17:46,431 - INFO - Uploading 156 rules to staging table: ConsolidationRules_Staging...
+2026-11-06 16:17:46,537 - INFO - Upload to staging table complete.
+2026-11-06 16:17:46,542 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-06 16:18:16,119 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-06 16:18:16,119 - INFO - Reason logged to dbo.HS_Consolidation_Log: UT round 2: Stansbury Park, Roosevelt, Moab, Westminster College
+2026-11-06 16:18:16,119 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-06 16:18:16,119 - INFO - Running post-consolidation safety check...
+2026-11-06 16:18:16,123 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup UT --commit
+
+DEDUP v4 UT - COMMIT
+ dedup_archive: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_dedup_archive_COMMITTED_20261106_1618.csv
+ dedup_review: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_dedup_review_COMMITTED_20261106_1618.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_dedup_summary_COMMITTED_20261106_1618.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  UT     34298         46                   5                4BCB4967-53F9-4CC9-8B6D-BF35107554F9
+
+>>> same-score-fix UT --commit
+
+SAME-SCORE DOUBLE-BOOKINGS UT - COMMIT
+ 75 pairs {'DROP B': 27, 'DROP A': 32, 'UNDECIDED': 16} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_same_score_COMMITTED_20261106_1619.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  59        168CE651-064C-4E10-A9AE-3EA4BA25E80C  None
+
+>>> archive-ids UT --ids UT_college_archive_ids.csv --reason "BYU 1947 and 1965 college games; copies in College_Scores" --commit
+
+ARCHIVE LISTED GAMES UT - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_archive_ids_COMMITTED_20261106_1619.csv
+   Season  Date        Home                           Home_Score  Visitor                         Visitor_Score  Source                                 Access_ID  ID                                  
+   1947    1947-09-27  Brigham Young University (UT)  19          Montana State University (MT)   14             Tulsa_World_1947_09_27_10.csv          None       834A9980-E3BB-408C-8FB9-FAE57E1269AA
+   1965    1965-10-09  Brigham Young University (UT)  34          San Jose State University (CA)  7              The_Tennessean_1965_10_09_Page_15.csv  None       B1CA0993-0B96-47A5-AC26-BCA1E363C35D
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  2       2      86555C28-200D-4F3C-A78C-2C702C060D74  None
+
+>>> step UT 1.1 "in progress" "round 1 (16 rules: 2024 drift, same-school, 2023 out-of-state names) + round 2"
+Tracker updated: UT 1.1 -> in progress
+
+>>> step UT 1.2 done "5 URLs remapped (3 ProperNames did not exist); mapcheck fixed 7 Team_IDs"
+Tracker updated: UT 1.2 -> done
+
+>>> step UT 1.3 done "same-town pairs are real separate schools"
+Tracker updated: UT 1.3 -> done
+
+>>> step UT 1.4 "in progress" "Grantsville 1926-69 held Granite (SLC) games: 151 moved"
+Tracker updated: UT 1.4 -> in progress
+
+>>> step UT 2.1 done "dedup 9 + 21 + round 2"
+Tracker updated: UT 2.1 -> done
+
+>>> step UT 3.1 done "0 season/date mismatches"
+Tracker updated: UT 3.1 -> done
+
+>>> step UT 3.2 done "forfeit flags consistent"
+Tracker updated: UT 3.2 -> done
+
+>>> step UT 5.0 "in progress" "2 BYU games archived; UT_for_college_chat.csv"
+Tracker updated: UT 5.0 -> in progress
+
+>>> report UT double-booked
+
+REPORT double-booked UT: 178 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_double_booked_20261106_1619.csv
+   Kind             Team                           Season  Gap  A_Date      A_Opp                               A_Score  A_Source                            A_Batch  B_Date      B_Opp                           B_Score  B_Source                                  B_Batch  A_ID                                  B_ID                                
+   DIFFERENT GAMES  Altamont (UT)                  2025    1    2025-09-13  Monument Valley (UT)                46-22    MaxPreps                            8        2025-09-12  Monticello (UT)                 44-37    MaxPreps                                  8        243D9392-6713-4DEF-BE02-16684B167C26  C5564A7A-D329-40E1-8520-9C49F1B571A6
+   DIFFERENT GAMES  American Fork (UT)             2019    0    2019-10-01  Draper Corner Canyon (UT)           28-59    www.maxpreps.com                    None     2019-10-01  Highland Lone Peak (UT)         26-21    www.maxpreps.com                          None     1A7CFDDD-1A9E-41A1-B6A9-9F6EE7E01C45  329B7ED3-AFA8-4DF8-9881-E1226407B841
+   DIFFERENT GAMES  Bicknell Wayne (UT)            2015    1    2015-10-23  Parowan (UT)                        20-68    www.maxpreps.com                    None     2015-10-24  Randolph Rich (UT)              6-34     www.maxpreps.com                          None     E9D9733B-808A-4926-AEF3-0ADF97A62976  9E4FA32E-58D9-46CF-82D2-4CFBC6F69071
+   DIFFERENT GAMES  Blanding San Juan County (UT)  1981    1    1981-09-12  Kirtland Central (NM)               13-22    Albuquerque Journal                 None     1981-09-11  Page Sand (AZ)                  14-52    http://www.azfootballarchives.com/indtea  None     B71B005D-7039-4915-9F91-2A5ECE393D9B  EC29EF58-1353-475F-A881-585B1EDED263
+   DIFFERENT GAMES  Bountiful (UT)                 1960    0    1960-10-23  Ogden (UT)                          0-33     The_Sunday_Herald_1960_10_23_7.csv  184      1960-10-23  Pleasant View Weber (UT)        21-6     The_Sunday_Herald_1960_10_23_7.csv        184      BA343665-F9E5-4688-B47F-7CBD746A6D04  68FE4597-125E-43B8-B4CF-8BD5E3FBD5E1
+   DIFFERENT GAMES  Brigham City Box Elder (UT)    2015    0    2015-10-27  Ogden (UT)                          59-0     www.maxpreps.com                    None     2015-10-27  Woods Cross (UT)                21-14    www.maxpreps.com                          None     95FC92CB-49C8-4A8E-8AD3-ABBFC7B5C668  DBCB08FC-6CCC-4BBD-87B3-D73F004136D7
+   DIFFERENT GAMES  Brigham City Box Elder (UT)    2015    0    2015-10-27  Washington Terrace Bonneville (UT)  7-0      www.maxpreps.com                    None     2015-10-27  Woods Cross (UT)                21-14    www.maxpreps.com                          None     F0902E8F-ED8B-419F-9F39-739254270E9F  DBCB08FC-6CCC-4BBD-87B3-D73F004136D7
+   DIFFERENT GAMES  Brigham City Box Elder (UT)    2015    0    2015-10-27  Washington Terrace Bonneville (UT)  7-0      www.maxpreps.com                    None     2015-10-27  Ogden (UT)                      59-0     www.maxpreps.com                          None     F0902E8F-ED8B-419F-9F39-739254270E9F  95FC92CB-49C8-4A8E-8AD3-ABBFC7B5C668
+   DIFFERENT GAMES  Brigham City Box Elder (UT)    2017    2    2017-09-29  Clearfield (UT)                     24-7     www.maxpreps.com                    None     2017-10-01  Woods Cross (UT)                21-37    www.maxpreps.com                          None     240BECCB-2DFD-4AE5-94F7-63F56C36AB06  B91407A6-AD3E-40AE-A0EC-8F1586D0E705
+   DIFFERENT GAMES  Cedar City Canyon View (UT)    2015    0    2015-10-27  Nephi Juab County (UT)              26-36    www.maxpreps.com                    None     2015-10-27  Delta (UT)                      26-48    www.maxpreps.com                          None     30EBD5FA-3904-49F2-8117-C2C922584165  44791D2A-6378-491F-8AC0-DA4A114D244B
+   DIFFERENT GAMES  Delta (UT)                     2019    0    2019-10-01  Mount Pleasant North Sanpete (UT)   7-47     www.maxpreps.com                    None     2019-10-01  Nephi Juab County (UT)          7-28     www.maxpreps.com                          None     63BBD998-BF55-46D4-A4D2-338D71971F30  F03C5CD9-9431-4632-90A4-74DC6489C9F6
+   DIFFERENT GAMES  Draper Corner Canyon (UT)      2016    2    2016-09-27  Roy (UT)                            36-6     www.maxpreps.com                    None     2016-09-29  Orem Mountain View (UT)         56-12    www.maxpreps.com                          None     D2C8D144-D409-47BD-89A6-6BA4F39C230E  BB45D035-1426-4F2A-9497-E2D3771A24AA
+   DIFFERENT GAMES  Draper Corner Canyon (UT)      2019    0    2019-10-01  Lehi Skyridge (UT)                  56-22    www.maxpreps.com                    None     2019-10-01  American Fork (UT)              59-28    www.maxpreps.com                          None     E6C61CFF-1509-4D28-AFE2-51FB5556C7E8  1A7CFDDD-1A9E-41A1-B6A9-9F6EE7E01C45
+   DIFFERENT GAMES  Draper Corner Canyon (UT)      2019    0    2019-11-01  Highland Lone Peak (UT)             34-7     www.maxpreps.com                    None     2019-11-01  Saratoga Springs Westlake (UT)  53-21    www.maxpreps.com                          None     987DAD87-1544-4C4D-9546-09DC7E742A0B  F9CC2AD5-D955-47CE-812C-69A62EC5C4C8
+   DIFFERENT GAMES  Enterprise (UT)                2019    0    2019-10-01  Fillmore Millard County (UT)        14-38    www.maxpreps.com                    None     2019-10-01  Kanab (UT)                      28-14    www.maxpreps.com                          None     D3C373A4-D846-4EF6-AB1E-908BBD1FA66F  01D8AD05-C6A1-4DFA-B691-B9618DD90AF1
+   ... 163 more rows (see CSV)
+
+=== OK 2026-11-06 16:19:55

@@ -1,0 +1,574 @@
+
+>>> remap MA --url "https://www.maxpreps.com/ma/north-adams/drury-mount-greylock-regional/football/schedule/" --to "North Adams Drury-Mount Greylock Regional (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/north-adams/drury-mount-greylock-regional/football/schedule/ -> North Adams Drury-Mount Greylock Regional (MA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ma/north-adams/  North Adams Drury (MA)  48123    North Adams Drury-Mount Greylock Regiona  40148     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap CT --url "https://www.maxpreps.com/ct/griswold/griswold-wheeler-wolverines/football/schedule/" --to "Griswold-Wheeler (CT)" --commit
+
+REMAP https://www.maxpreps.com/ct/griswold/griswold-wheeler-wolverines/football/schedule/ -> Griswold-Wheeler (CT) - COMMIT
+   URL                                       ProperName     Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/ct/griswold/gri  Griswold (CT)  62716    Griswold-Wheeler (CT)  62717     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap RI --url "https://www.maxpreps.com/ri/central-falls/central-falls-blackstone-valley-prep-achievement-first/football/schedule/" --to "Central Falls-Blackstone Valley Prep-Achievement First (RI)" --commit
+
+REMAP https://www.maxpreps.com/ri/central-falls/central-falls-blackstone-valley-prep-achievement-first/football/schedule/ -> Central Falls-Blackstone Valley Prep-Achievement First (RI) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ri/central-fall  Central Falls (RI)  60376    Central Falls-Blackstone Valley Prep-Ach  22521     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> move-team MA --from "Holbrook (MA)" --to "Holbrook-Avon (MA)" --seasons 1998-2020 --reason "co-op split by year: Holbrook-Avon (MA) 1998-2020 (undo co-op merge)" --commit
+
+MOVE Holbrook (MA) -> Holbrook-Avon (MA), seasons 1998-2020 - COMMIT
+ move_games: 202 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0415.csv
+ move_by_season: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0415.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  202    1                  None
+
+>>> move-team MA --from "Manchester Essex (MA)" --to "Manchester Essex-Rockport (MA)" --seasons 1997-2020 --reason "co-op split by year: Manchester Essex-Rockport (MA) 1997-2020 (undo co-op merge)" --commit
+
+MOVE Manchester Essex (MA) -> Manchester Essex-Rockport (MA), seasons 1997-2020 - COMMIT
+ move_games: 234 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0415.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0415.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  234    1                  None
+
+>>> move-team MA --from "Ayer Shirley (MA)" --to "Ayer Shirley-Bromfield (MA)" --seasons 2017-2020 --reason "co-op split by year: Ayer Shirley-Bromfield (MA) 2017-2020 (undo co-op merge)" --commit
+
+MOVE Ayer Shirley (MA) -> Ayer Shirley-Bromfield (MA), seasons 2017-2020 - COMMIT
+ move_games: 31 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0415.csv
+ move_by_season: 68 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0415.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  31     1                  None
+
+>>> move-team MA --from "Maynard (MA)" --to "Maynard-Bromfield (MA)" --seasons 2011-2016 --reason "co-op split by year: Maynard-Bromfield (MA) 2011-2016 (undo co-op merge)" --commit
+
+MOVE Maynard (MA) -> Maynard-Bromfield (MA), seasons 2011-2016 - COMMIT
+ move_games: 76 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0415.csv
+ move_by_season: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0415.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  76     1                  None
+
+>>> move-team MA --from "Millis (MA)" --to "Millis-Hopedale (MA)" --seasons 2010-2018 --reason "co-op split by year: Millis-Hopedale (MA) 2010-2018 (undo co-op merge)" --commit
+
+MOVE Millis (MA) -> Millis-Hopedale (MA), seasons 2010-2018 - COMMIT
+ move_games: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0415.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0415.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  102    1                  None
+
+>>> move-team MA --from "Palmer (MA)" --to "Palmer-Monson (MA)" --seasons 2016-2023 --reason "co-op split by year: Palmer-Monson (MA) 2016-2023 (undo co-op merge)" --commit
+
+MOVE Palmer (MA) -> Palmer-Monson (MA), seasons 2016-2023 - COMMIT
+ move_games: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0415.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0415.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  71     1                  None
+
+>>> move-team MA --from "Sutton (MA)" --to "Sutton-Douglas (MA)" --seasons 2013-2020 --reason "co-op split by year: Sutton-Douglas (MA) 2013-2020 (undo co-op merge)" --commit
+
+MOVE Sutton (MA) -> Sutton-Douglas (MA), seasons 2013-2020 - COMMIT
+ move_games: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0415.csv
+ move_by_season: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0415.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  79     1                  None
+
+>>> move-team MA --from "Worcester Holy Name Central Catholic (MA)" --to "Worcester Holy Name Central Catholic-St. Mary's (MA)" --seasons 2004-2015 --reason "co-op split by year: Worcester Holy Name Central Catholic-St. Mary's (MA) 2004-2015 (undo co-op merge)" --commit
+
+MOVE Worcester Holy Name Central Catholic (MA) -> Worcester Holy Name Central Catholic-St. Mary's (MA), seasons 2004-2015 - COMMIT
+ move_games: 135 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0415.csv
+ move_by_season: 44 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0415.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  135    1                  None
+
+>>> move-team MA --from "West Roxbury (MA)" --to "West Roxbury-Urban Science Academy (MA)" --seasons 2013-2018 --reason "co-op split by year: West Roxbury-Urban Science Academy (MA) 2013-2018 (undo co-op merge)" --commit
+
+MOVE West Roxbury (MA) -> West Roxbury-Urban Science Academy (MA), seasons 2013-2018 - COMMIT
+ move_games: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0415.csv
+ move_by_season: 43 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0415.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  65     1                  None
+
+>>> move-team MA --from "Brighton (MA)" --to "Brighton-Green Academy-Lyon Pilot (MA)" --seasons 2013-2020 --reason "co-op split by year: Brighton-Green Academy-Lyon Pilot (MA) 2013-2020 (undo co-op merge)" --commit
+
+MOVE Brighton (MA) -> Brighton-Green Academy-Lyon Pilot (MA), seasons 2013-2020 - COMMIT
+ move_games: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0416.csv
+ move_by_season: 56 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0416.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  67     1                  None
+
+>>> move-team MA --from "Dorchester Burke (MA)" --to "Dorchester Burke-Community Academy of Science & Health (MA)" --seasons 2013-2016 --reason "co-op split by year: Dorchester Burke-Community Academy of Science & Health (MA) 2013-2016 (undo co-op merge)" --commit
+
+MOVE Dorchester Burke (MA) -> Dorchester Burke-Community Academy of Science & Health (MA), seasons 2013-2016 - COMMIT
+ move_games: 47 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0416.csv
+ move_by_season: 42 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0416.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  47     1                  None
+
+>>> move-team MA --from "Springfield Commerce (MA)" --to "Commerce-Springfield Renaissance (MA)" --seasons 2013-2019 --reason "co-op split by year: Commerce-Springfield Renaissance (MA) 2013-2019 (undo co-op merge)" --commit
+
+MOVE Springfield Commerce (MA) -> Commerce-Springfield Renaissance (MA), seasons 2013-2019 - COMMIT
+ move_games: 73 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0416.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0416.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  73     1                  None
+
+>>> move-team MA --from "Springfield Commerce (MA)" --to "Springfield Renaissance-Commerce (MA)" --seasons 2021-2021 --reason "co-op split by year: Springfield Renaissance-Commerce (MA) 2021-2021 (undo co-op merge)" --commit
+
+MOVE Springfield Commerce (MA) -> Springfield Renaissance-Commerce (MA), seasons 2021-2021 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0416.csv
+ move_by_season: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0416.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team MA --from "North Adams Drury (MA)" --to "North Adams Drury-Mount Greylock Regional (MA)" --seasons 2019-2024 --reason "co-op split by year: North Adams Drury-Mount Greylock Regional (MA) 2019-2024 (undo co-op merge)" --commit
+
+MOVE North Adams Drury (MA) -> North Adams Drury-Mount Greylock Regional (MA), seasons 2019-2024 - COMMIT
+ move_games: 32 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0416.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0416.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  32     1                  None
+
+>>> move-team MA --from "Northampton-Smith Vo-Tech (MA)" --to "Hatfield Smith Academy-Smith Vo-Tech (MA)" --seasons 2013-2020 --reason "co-op split by year: Hatfield Smith Academy-Smith Vo-Tech (MA) 2013-2020 (undo co-op merge)" --commit
+
+MOVE Northampton-Smith Vo-Tech (MA) -> Hatfield Smith Academy-Smith Vo-Tech (MA), seasons 2013-2020 - COMMIT
+ move_games: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0416.csv
+ move_by_season: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0416.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  71     1                  None
+
+>>> move-team MA --from "West Boylston-Tahanto (MA)" --to "West Boylston (MA)" --seasons 1970-2003 --reason "co-op split by year: West Boylston (MA) 1970-2003 (undo co-op merge)" --commit
+
+MOVE West Boylston-Tahanto (MA) -> West Boylston (MA), seasons 1970-2003 - COMMIT
+ move_games: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_games_COMMITTED_20261110_0416.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_move_by_season_COMMITTED_20261110_0416.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  60     1                  None
+
+>>> consolidate CT --reason "CT round 1 (Gemini rules, co-op merges removed 2026-11-10): spelling/MaxPreps variants, prep-school names, Bulkeley/New London splits"
+Consolidating CT from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\CT_Alias_Rules.csv
+
+[stderr]
+2026-11-10 04:16:23,736 - INFO - Starting consolidation for state: (CT) using staging table method.
+2026-11-10 04:16:23,773 - WARNING - WARNING: 206 row(s) have identical OldName and NewName (no-op rules).
+2026-11-10 04:16:23,773 - WARNING -   'Ansonia (CT)' -> 'Ansonia (CT)' (no change)
+2026-11-10 04:16:23,773 - WARNING -   'Ansonia O'Brien RVT (CT)' -> 'Ansonia O'Brien RVT (CT)' (no change)
+2026-11-10 04:16:23,773 - WARNING -   'Avon (CT)' -> 'Avon (CT)' (no change)
+2026-11-10 04:16:23,773 - WARNING -   'Avon Old Farms (CT)' -> 'Avon Old Farms (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Beacon Falls Woodland Regional (CT)' -> 'Beacon Falls Woodland Regional (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Berlin (CT)' -> 'Berlin (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Bethel (CT)' -> 'Bethel (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Bloomfield (CT)' -> 'Bloomfield (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Branford (CT)' -> 'Branford (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Bridgeport Bassick (CT)' -> 'Bridgeport Bassick (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Bridgeport Bullard Havens Tech (CT)' -> 'Bridgeport Bullard Havens Tech (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Bridgeport Capital Prep Harbor (CT)' -> 'Bridgeport Capital Prep Harbor (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Bridgeport Harding (CT)' -> 'Bridgeport Harding (CT)' (no change)
+2026-11-10 04:16:23,774 - WARNING -   'Bristol Central (CT)' -> 'Bristol Central (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Bristol Eastern (CT)' -> 'Bristol Eastern (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Bristol St. Paul Catholic (CT)' -> 'Bristol St. Paul Catholic (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Brookfield (CT)' -> 'Brookfield (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Burlington Lewis Mills (CT)' -> 'Burlington Lewis Mills (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Canton (CT)' -> 'Canton (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Central Village Plainfield (CT)' -> 'Central Village Plainfield (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Cheshire (CT)' -> 'Cheshire (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Cheshire Academy (CT)' -> 'Cheshire Academy (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Clinton Morgan (CT)' -> 'Clinton Morgan (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Colchester Bacon Academy (CT)' -> 'Colchester Bacon Academy (CT)' (no change)
+2026-11-10 04:16:23,775 - WARNING -   'Coventry-Windham RVT-Bolton (CT)' -> 'Coventry-Windham RVT-Bolton (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Cromwell (CT)' -> 'Cromwell (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Cromwell-Portland (CT)' -> 'Cromwell-Portland (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Danbury (CT)' -> 'Danbury (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Danbury ATI [Abbott RVT-Immaculate] (CT)' -> 'Danbury ATI [Abbott RVT-Immaculate] (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Danbury Immaculate (CT)' -> 'Danbury Immaculate (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Danbury Wooster School (CT)' -> 'Danbury Wooster School (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Danielson Killingly (CT)' -> 'Danielson Killingly (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Darien (CT)' -> 'Darien (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Deep River Valley Regional (CT)' -> 'Deep River Valley Regional (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Deep River Valley Regional-Old Lyme (CT)' -> 'Deep River Valley Regional-Old Lyme (CT)' (no change)
+2026-11-10 04:16:23,776 - WARNING -   'Derby (CT)' -> 'Derby (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'East Hartford (CT)' -> 'East Hartford (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'East Hartford Penney (CT)' -> 'East Hartford Penney (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'East Haven (CT)' -> 'East Haven (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'East Lyme (CT)' -> 'East Lyme (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'Enfield (CT)' -> 'Enfield (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'Enfield Fermi (CT)' -> 'Enfield Fermi (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'Fairfield Ludlowe (CT)' -> 'Fairfield Ludlowe (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'Fairfield Notre Dame Catholic (CT)' -> 'Fairfield Notre Dame Catholic (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'Fairfield Prep (CT)' -> 'Fairfield Prep (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'Fairfield Warde (CT)' -> 'Fairfield Warde (CT)' (no change)
+2026-11-10 04:16:23,777 - WARNING -   'Falls Village Housatonic (CT)' -> 'Falls Village Housatonic (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Farmington (CT)' -> 'Farmington (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Glastonbury (CT)' -> 'Glastonbury (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Granby Memorial (CT)' -> 'Granby Memorial (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Granby Memorial-Canton (CT)' -> 'Granby Memorial-Canton (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Greenwich (CT)' -> 'Greenwich (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Greenwich Brunswick School (CT)' -> 'Greenwich Brunswick School (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Greenwich Country Day (CT)' -> 'Greenwich Country Day (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Griswold (CT)' -> 'Griswold (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Griswold-Wheeler (CT)' -> 'Griswold-Wheeler (CT)' (no change)
+2026-11-10 04:16:23,778 - WARNING -   'Groton Fitch (CT)' -> 'Groton Fitch (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Guilford (CT)' -> 'Guilford (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hamden (CT)' -> 'Hamden (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hamden Hall Country Day (CT)' -> 'Hamden Hall Country Day (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hamden Hyde Leadership (CT)' -> 'Hamden Hyde Leadership (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hartford Bulkeley (CT)' -> 'Hartford Bulkeley (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hartford Prince Tech (CT)' -> 'Hartford Prince Tech (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hartford Public (CT)' -> 'Hartford Public (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hartford South Catholic (CT)' -> 'Hartford South Catholic (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hartford Sports & Medical Sciences Academy-University Science & Engineering (CT)' -> 'Hartford Sports & Medical Sciences Academy-University Science & Engineering (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hartford Sport & Medical Sciences Academy (CT)' -> 'Hartford Sport & Medical Sciences Academy (CT)' (no change)
+2026-11-10 04:16:23,779 - WARNING -   'Hartford Sports & Medical Sciences Academy-Bulkeley-Classical Magnet (CT)' -> 'Hartford Sports & Medical Sciences Academy-Bulkeley-Classical Magnet (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Hartford Sports & Medical Sciences Academy-University Science & Engineering-Classical Magnet (CT)' -> 'Hartford Sports & Medical Sciences Academy-University Science & Engineering-Classical Magnet (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Hartford Weaver (CT)' -> 'Hartford Weaver (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Hebron RHAM (CT)' -> 'Hebron RHAM (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Higganum Haddam-Killingworth (CT)' -> 'Higganum Haddam-Killingworth (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Kent School (CT)' -> 'Kent School (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Lakeville Hotchkiss School (CT)' -> 'Lakeville Hotchkiss School (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Ledyard (CT)' -> 'Ledyard (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Litchfield Forman (CT)' -> 'Litchfield Forman (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Madison Hand (CT)' -> 'Madison Hand (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Manchester (CT)' -> 'Manchester (CT)' (no change)
+2026-11-10 04:16:23,780 - WARNING -   'Manchester Cheney RVT (CT)' -> 'Manchester Cheney RVT (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Manchester East Catholic (CT)' -> 'Manchester East Catholic (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Meriden Maloney (CT)' -> 'Meriden Maloney (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Meriden Platt (CT)' -> 'Meriden Platt (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Meriden Wilcox RVT (CT)' -> 'Meriden Wilcox RVT (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Middletown (CT)' -> 'Middletown (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Middletown Vinal RVT-Coginchaug (CT)' -> 'Middletown Vinal RVT-Coginchaug (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Middletown Xavier (CT)' -> 'Middletown Xavier (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Milford Foran (CT)' -> 'Milford Foran (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Milford Law (CT)' -> 'Milford Law (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Milford Platt RVT (CT)' -> 'Milford Platt RVT (CT)' (no change)
+2026-11-10 04:16:23,781 - WARNING -   'Monroe Masuk (CT)' -> 'Monroe Masuk (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'Naugatuck (CT)' -> 'Naugatuck (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New Britain (CT)' -> 'New Britain (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New Canaan (CT)' -> 'New Canaan (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New Canaan St. Luke's (CT)' -> 'New Canaan St. Luke's (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New Fairfield (CT)' -> 'New Fairfield (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New Haven Hillhouse (CT)' -> 'New Haven Hillhouse (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New Haven Hopkins (CT)' -> 'New Haven Hopkins (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New Haven St. Mary's (CT)' -> 'New Haven St. Mary's (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New Haven Wilbur Cross (CT)' -> 'New Haven Wilbur Cross (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New London (CT)' -> 'New London (CT)' (no change)
+2026-11-10 04:16:23,782 - WARNING -   'New London Admiral Billard Academy (CT)' -> 'New London Admiral Billard Academy (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'New London Buckeley (CT)' -> 'New London Buckeley (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'New London Chapman Tech (CT)' -> 'New London Chapman Tech (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'New Milford (CT)' -> 'New Milford (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'New Milford Canterbury (CT)' -> 'New Milford Canterbury (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'Newington (CT)' -> 'Newington (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'Newtown (CT)' -> 'Newtown (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'North Branford (CT)' -> 'North Branford (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'North Haven (CT)' -> 'North Haven (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'Norwalk (CT)' -> 'Norwalk (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'Norwalk Central Catholic (CT)' -> 'Norwalk Central Catholic (CT)' (no change)
+2026-11-10 04:16:23,783 - WARNING -   'Norwalk McMahon (CT)' -> 'Norwalk McMahon (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Norwich Free Academy (CT)' -> 'Norwich Free Academy (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Norwich Thames River Academy (CT)' -> 'Norwich Thames River Academy (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Oakdale Montville (CT)' -> 'Oakdale Montville (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Oakdale St.Thomas More (CT)' -> 'Oakdale St.Thomas More (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Old Saybrook (CT)' -> 'Old Saybrook (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Old Saybrook-Westbrook (CT)' -> 'Old Saybrook-Westbrook (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Oxford (CT)' -> 'Oxford (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Plainville (CT)' -> 'Plainville (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Pomfret School (CT)' -> 'Pomfret School (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Putnam (CT)' -> 'Putnam (CT)' (no change)
+2026-11-10 04:16:23,784 - WARNING -   'Putnam Quinebaug Valley Coop (CT)' -> 'Putnam Quinebaug Valley Coop (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'Redding Joel Barlow (CT)' -> 'Redding Joel Barlow (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'Ridgefield (CT)' -> 'Ridgefield (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'Rocky Hill (CT)' -> 'Rocky Hill (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'Salisbury School (CT)' -> 'Salisbury School (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'Seymour (CT)' -> 'Seymour (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'Shelton (CT)' -> 'Shelton (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'Simsbury (CT)' -> 'Simsbury (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'Simsbury Westminster (CT)' -> 'Simsbury Westminster (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'South Kent School (CT)' -> 'South Kent School (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'South Windsor (CT)' -> 'South Windsor (CT)' (no change)
+2026-11-10 04:16:23,785 - WARNING -   'Southbury Pomperaug (CT)' -> 'Southbury Pomperaug (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Southington (CT)' -> 'Southington (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Stafford (CT)' -> 'Stafford (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Stamford (CT)' -> 'Stamford (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Stamford King Low Heywood Thomas (CT)' -> 'Stamford King Low Heywood Thomas (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Stamford Trinity Catholic (CT)' -> 'Stamford Trinity Catholic (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Stamford Westhill (CT)' -> 'Stamford Westhill (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Stonington (CT)' -> 'Stonington (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Storrs Edwin O. Smith (CT)' -> 'Storrs Edwin O. Smith (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Stratford (CT)' -> 'Stratford (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Stratford Bunnell (CT)' -> 'Stratford Bunnell (CT)' (no change)
+2026-11-10 04:16:23,786 - WARNING -   'Suffield Academy (CT)' -> 'Suffield Academy (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Thompson Marianapolis Prep (CT)' -> 'Thompson Marianapolis Prep (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Tolland (CT)' -> 'Tolland (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Torrington (CT)' -> 'Torrington (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Torrington Northwest United (CT)' -> 'Torrington Northwest United (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Trumbull (CT)' -> 'Trumbull (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Trumbull Saint Joseph (CT)' -> 'Trumbull Saint Joseph (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Uncasville St. Bernard (CT)' -> 'Uncasville St. Bernard (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'University of Connecticut Frosh (CT)' -> 'University of Connecticut Frosh (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Vernon Rockville (CT)' -> 'Vernon Rockville (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Wallingford Choate Rosemary Hall (CT)' -> 'Wallingford Choate Rosemary Hall (CT)' (no change)
+2026-11-10 04:16:23,787 - WARNING -   'Wallingford Lyman Hall (CT)' -> 'Wallingford Lyman Hall (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Wallingford Sheehan (CT)' -> 'Wallingford Sheehan (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Washington Federick Gunn (CT)' -> 'Washington Federick Gunn (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Waterbury Career Academy (CT)' -> 'Waterbury Career Academy (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Waterbury Crosby (CT)' -> 'Waterbury Crosby (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Waterbury Holy Cross (CT)' -> 'Waterbury Holy Cross (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Waterbury Kennedy (CT)' -> 'Waterbury Kennedy (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Waterbury Sacred Heart (CT)' -> 'Waterbury Sacred Heart (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Waterbury Wilby (CT)' -> 'Waterbury Wilby (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Waterford (CT)' -> 'Waterford (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Watertown (CT)' -> 'Watertown (CT)' (no change)
+2026-11-10 04:16:23,788 - WARNING -   'Watertown Taft School (CT)' -> 'Watertown Taft School (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'West Hartford Conard (CT)' -> 'West Hartford Conard (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'West Hartford Hall (CT)' -> 'West Hartford Hall (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'West Hartford Kingswood-Oxford (CT)' -> 'West Hartford Kingswood-Oxford (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'West Hartford Northwest Catholic (CT)' -> 'West Hartford Northwest Catholic (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'West Haven (CT)' -> 'West Haven (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'West Haven Notre Dame (CT)' -> 'West Haven Notre Dame (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'Weston (CT)' -> 'Weston (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'Westport Staples (CT)' -> 'Westport Staples (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'Wethersfield (CT)' -> 'Wethersfield (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'Willimantic Windham (CT)' -> 'Willimantic Windham (CT)' (no change)
+2026-11-10 04:16:23,789 - WARNING -   'Wilton (CT)' -> 'Wilton (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Windsor (CT)' -> 'Windsor (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Windsor Locks (CT)' -> 'Windsor Locks (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Windsor Loomis Chaffee (CT)' -> 'Windsor Loomis Chaffee (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Winsted Gilbert (CT)' -> 'Winsted Gilbert (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Winsted Gilbert-Northwestern Regional (CT)' -> 'Winsted Gilbert-Northwestern Regional (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Winsted Gilbert-Northwestern-Housatonic (CT)' -> 'Winsted Gilbert-Northwestern-Housatonic (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Wolcott (CT)' -> 'Wolcott (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Woodbridge Amity Regional (CT)' -> 'Woodbridge Amity Regional (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Woodbury Nonnewaug (CT)' -> 'Woodbury Nonnewaug (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Woodstock Academy (CT)' -> 'Woodstock Academy (CT)' (no change)
+2026-11-10 04:16:23,790 - WARNING -   'Woodstock Hyde (CT)' -> 'Woodstock Hyde (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Stamford Rippowam (CT)' -> 'Stamford Rippowam (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Uncasville St. Bernard-Norwich RVT (CT)' -> 'Uncasville St. Bernard-Norwich RVT (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Durham Coginchaug Regional (CT)' -> 'Durham Coginchaug Regional (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'American School for the Deaf (CT)' -> 'American School for the Deaf (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Stafford Springs Stafford (CT)' -> 'Stafford Springs Stafford (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Durham Coginchaug Regional-East Hampton-Hale Ray (CT)' -> 'Durham Coginchaug Regional-East Hampton-Hale Ray (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Durham Coginchaug Regional-Hale Ray (CT)' -> 'Durham Coginchaug Regional-Hale Ray (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Hartford Capital Prep-Achievement First (CT)' -> 'Hartford Capital Prep-Achievement First (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Hartford Capital Prep-Classical Magnet-Achievement First (CT)' -> 'Hartford Capital Prep-Classical Magnet-Achievement First (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Hartford Capital Prep-Classical Magnet (CT)' -> 'Hartford Capital Prep-Classical Magnet (CT)' (no change)
+2026-11-10 04:16:23,791 - WARNING -   'Windsor Locks-Suffield (CT)' -> 'Windsor Locks-Suffield (CT)' (no change)
+2026-11-10 04:16:23,792 - WARNING -   'Windsor Locks-Suffield-East Granby (CT)' -> 'Windsor Locks-Suffield-East Granby (CT)' (no change)
+2026-11-10 04:16:23,792 - WARNING -   'Ellington-Somers (CT)' -> 'Ellington-Somers (CT)' (no change)
+2026-11-10 04:16:23,792 - WARNING -   'Ellington-Somers-East Windsor (CT)' -> 'Ellington-Somers-East Windsor (CT)' (no change)
+2026-11-10 04:16:23,792 - WARNING -   'Bulkeley-Hartford Magnet Trinity College Academy (CT)' -> 'Bulkeley-Hartford Magnet Trinity College Academy (CT)' (no change)
+2026-11-10 04:16:23,792 - WARNING -   'Bulkeley-Hartford Magnet Trinity College Academy-Weaver (CT)' -> 'Bulkeley-Hartford Magnet Trinity College Academy-Weaver (CT)' (no change)
+2026-11-10 04:16:23,792 - WARNING -   'Hartford Bulkeley-Weaver (CT)' -> 'Hartford Bulkeley-Weaver (CT)' (no change)
+2026-11-10 04:16:23,792 - INFO - Validation passed: 341 rules are clean and ready to upload.
+2026-11-10 04:16:23,822 - INFO - Uploading 341 rules to staging table: ConsolidationRules_Staging...
+2026-11-10 04:16:24,063 - INFO - Upload to staging table complete.
+2026-11-10 04:16:24,068 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-10 04:17:25,639 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-10 04:17:25,639 - INFO - Reason logged to dbo.HS_Consolidation_Log: CT round 1 (Gemini rules, co-op merges removed 2026-11-10): spelling/MaxPreps variants, prep-school names, Bulkeley/New London splits
+2026-11-10 04:17:25,639 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-10 04:17:25,639 - INFO - Running post-consolidation safety check...
+2026-11-10 04:17:25,645 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> consolidate NH --reason "NH round 1 (Gemini rules, Hillsboro-Deering co-op kept separate)"
+Consolidating NH from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\NH_Alias_Rules.csv
+
+[stderr]
+2026-11-10 04:17:26,590 - INFO - Starting consolidation for state: (NH) using staging table method.
+2026-11-10 04:17:26,598 - WARNING - WARNING: 74 row(s) have identical OldName and NewName (no-op rules).
+2026-11-10 04:17:26,598 - WARNING -   'Alstead Fall Mountain (NH)' -> 'Alstead Fall Mountain (NH)' (no change)
+2026-11-10 04:17:26,598 - WARNING -   'Amherst Souhegan (NH)' -> 'Amherst Souhegan (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Andover Proctor Academy (NH)' -> 'Andover Proctor Academy (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Bedford (NH)' -> 'Bedford (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Belmont-Gilford (NH)' -> 'Belmont-Gilford (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Berlin (NH)' -> 'Berlin (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Bow (NH)' -> 'Bow (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Bristol Newfound Regional (NH)' -> 'Bristol Newfound Regional (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Canaan Mascoma (NH)' -> 'Canaan Mascoma (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Claremont Stevens (NH)' -> 'Claremont Stevens (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Concord (NH)' -> 'Concord (NH)' (no change)
+2026-11-10 04:17:26,599 - WARNING -   'Concord Bishop Brady (NH)' -> 'Concord Bishop Brady (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Concord St. Paul's (NH)' -> 'Concord St. Paul's (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Conway Kennett (NH)' -> 'Conway Kennett (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Derry Pinkerton (NH)' -> 'Derry Pinkerton (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Dover (NH)' -> 'Dover (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Dover St. Thomas Aquinas (NH)' -> 'Dover St. Thomas Aquinas (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'East Swanzey Monadnock (NH)' -> 'East Swanzey Monadnock (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Epping-Newmarket (NH)' -> 'Epping-Newmarket (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Exeter (NH)' -> 'Exeter (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Farmington-Nute (NH)' -> 'Farmington-Nute (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Franklin (NH)' -> 'Franklin (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Gilford (NH)' -> 'Gilford (NH)' (no change)
+2026-11-10 04:17:26,600 - WARNING -   'Goffstown (NH)' -> 'Goffstown (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Hampton Winnacunnet (NH)' -> 'Hampton Winnacunnet (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Hanover (NH)' -> 'Hanover (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Hillsboro-Deering (NH)' -> 'Hillsboro-Deering (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Hollis-Brookline (NH)' -> 'Hollis-Brookline (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Hudson Alvirne (NH)' -> 'Hudson Alvirne (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Keene (NH)' -> 'Keene (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Kingston Sanborn Regional (NH)' -> 'Kingston Sanborn Regional (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Laconia (NH)' -> 'Laconia (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Lebanon (NH)' -> 'Lebanon (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Litchfield Campbell (NH)' -> 'Litchfield Campbell (NH)' (no change)
+2026-11-10 04:17:26,601 - WARNING -   'Littleton (NH)' -> 'Littleton (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Londonderry (NH)' -> 'Londonderry (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Manchester Central (NH)' -> 'Manchester Central (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Manchester Memorial (NH)' -> 'Manchester Memorial (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Manchester St. Joseph Cathedral (NH)' -> 'Manchester St. Joseph Cathedral (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Manchester Trinity (NH)' -> 'Manchester Trinity (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Manchester West (NH)' -> 'Manchester West (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Meredith Inter-Lakes-Moultonborough Academy (NH)' -> 'Meredith Inter-Lakes-Moultonborough Academy (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Meriden Kimball Union Academy (NH)' -> 'Meriden Kimball Union Academy (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Merrimack (NH)' -> 'Merrimack (NH)' (no change)
+2026-11-10 04:17:26,602 - WARNING -   'Milford (NH)' -> 'Milford (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'Nashua (NH)' -> 'Nashua (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'Nashua Bishop Guertin (NH)' -> 'Nashua Bishop Guertin (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'Nashua North (NH)' -> 'Nashua North (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'Nashua South (NH)' -> 'Nashua South (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'New Hampshire State University Frosh (NH)' -> 'New Hampshire State University Frosh (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'New Hampton School (NH)' -> 'New Hampton School (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'Newport (NH)' -> 'Newport (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'North Sutton Kearsarge (NH)' -> 'North Sutton Kearsarge (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'Pelham (NH)' -> 'Pelham (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'Pembroke (NH)' -> 'Pembroke (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'Penacook Merrimack Valley (NH)' -> 'Penacook Merrimack Valley (NH)' (no change)
+2026-11-10 04:17:26,603 - WARNING -   'Peterborough Contoocook Valley Regional (NH)' -> 'Peterborough Contoocook Valley Regional (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Phillips Exeter Academy (NH)' -> 'Phillips Exeter Academy (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Plaistow Timberlane (NH)' -> 'Plaistow Timberlane (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Plymouth (NH)' -> 'Plymouth (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Plymouth Holderness (NH)' -> 'Plymouth Holderness (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Portsmouth (NH)' -> 'Portsmouth (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Portsmouth-Oyster River (NH)' -> 'Portsmouth-Oyster River (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Raymond (NH)' -> 'Raymond (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Rochester Spaulding (NH)' -> 'Rochester Spaulding (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Salem (NH)' -> 'Salem (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Somersworth (NH)' -> 'Somersworth (NH)' (no change)
+2026-11-10 04:17:26,604 - WARNING -   'Tilton School (NH)' -> 'Tilton School (NH)' (no change)
+2026-11-10 04:17:26,605 - WARNING -   'Tilton Winnisquam (NH)' -> 'Tilton Winnisquam (NH)' (no change)
+2026-11-10 04:17:26,605 - WARNING -   'University of New Hampshire Frosh (NH)' -> 'University of New Hampshire Frosh (NH)' (no change)
+2026-11-10 04:17:26,605 - WARNING -   'University of New Hampshire JV (NH)' -> 'University of New Hampshire JV (NH)' (no change)
+2026-11-10 04:17:26,605 - WARNING -   'Weare Stark (NH)' -> 'Weare Stark (NH)' (no change)
+2026-11-10 04:17:26,605 - WARNING -   'Windham (NH)' -> 'Windham (NH)' (no change)
+2026-11-10 04:17:26,605 - WARNING -   'Wolfeboro Kingswood (NH)' -> 'Wolfeboro Kingswood (NH)' (no change)
+2026-11-10 04:17:26,605 - INFO - Validation passed: 121 rules are clean and ready to upload.
+2026-11-10 04:17:26,622 - INFO - Uploading 121 rules to staging table: ConsolidationRules_Staging...
+2026-11-10 04:17:26,728 - INFO - Upload to staging table complete.
+2026-11-10 04:17:26,733 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-10 04:17:51,777 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-10 04:17:51,777 - INFO - Reason logged to dbo.HS_Consolidation_Log: NH round 1 (Gemini rules, Hillsboro-Deering co-op kept separate)
+2026-11-10 04:17:51,777 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-10 04:17:51,777 - INFO - Running post-consolidation safety check...
+2026-11-10 04:17:51,781 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> consolidate RI --reason "RI round 1 (Gemini rules, Central Falls co-op kept separate)"
+Consolidating RI from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\RI_Alias_Rules.csv
+
+[stderr]
+2026-11-10 04:17:52,681 - INFO - Starting consolidation for state: (RI) using staging table method.
+2026-11-10 04:17:52,689 - WARNING - WARNING: 56 row(s) have identical OldName and NewName (no-op rules).
+2026-11-10 04:17:52,689 - WARNING -   'Barrington (RI)' -> 'Barrington (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'Bristol (RI)' -> 'Bristol (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'Bristol Mt. Hope (RI)' -> 'Bristol Mt. Hope (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'Central Falls (RI)' -> 'Central Falls (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'Coventry (RI)' -> 'Coventry (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'Cranston East (RI)' -> 'Cranston East (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'Cranston West (RI)' -> 'Cranston West (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'Cumberland (RI)' -> 'Cumberland (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'East Greenwich (RI)' -> 'East Greenwich (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'East Providence (RI)' -> 'East Providence (RI)' (no change)
+2026-11-10 04:17:52,690 - WARNING -   'East Providence Country Day-Wheeler-Sanchez Complex (RI)' -> 'East Providence Country Day-Wheeler-Sanchez Complex (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'East Providence Providence Country Day (RI)' -> 'East Providence Providence Country Day (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Esmond Smithfield (RI)' -> 'Esmond Smithfield (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Exeter-West Greenwich (RI)' -> 'Exeter-West Greenwich (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Harrisville Burrillville (RI)' -> 'Harrisville Burrillville (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Johnston (RI)' -> 'Johnston (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Lincoln (RI)' -> 'Lincoln (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Middletown (RI)' -> 'Middletown (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Middletown St. George's (RI)' -> 'Middletown St. George's (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Narragansett (RI)' -> 'Narragansett (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Newport De La Salle Academy (RI)' -> 'Newport De La Salle Academy (RI)' (no change)
+2026-11-10 04:17:52,691 - WARNING -   'Newport Rogers (RI)' -> 'Newport Rogers (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'North Kingstown (RI)' -> 'North Kingstown (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'North Providence (RI)' -> 'North Providence (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'North Scituate Ponaganset (RI)' -> 'North Scituate Ponaganset (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'North Scituate Scituate (RI)' -> 'North Scituate Scituate (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'North Smithfield (RI)' -> 'North Smithfield (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'North Smithfield-Mount St. Charles Academy (RI)' -> 'North Smithfield-Mount St. Charles Academy (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'Pawtucket Shea (RI)' -> 'Pawtucket Shea (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'Pawtucket St. Raphael Academy (RI)' -> 'Pawtucket St. Raphael Academy (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'Pawtucket Tolman (RI)' -> 'Pawtucket Tolman (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'Portsmouth (RI)' -> 'Portsmouth (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'Portsmouth Abbey (RI)' -> 'Portsmouth Abbey (RI)' (no change)
+2026-11-10 04:17:52,692 - WARNING -   'Providence Career and Technical Academy (RI)' -> 'Providence Career and Technical Academy (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Providence Central (RI)' -> 'Providence Central (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Providence Classical (RI)' -> 'Providence Classical (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Providence Commercial (RI)' -> 'Providence Commercial (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Providence Hope (RI)' -> 'Providence Hope (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Providence Lasalle Academy (RI)' -> 'Providence Lasalle Academy (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Providence Moses Brown (RI)' -> 'Providence Moses Brown (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Providence Mt. Pleasant (RI)' -> 'Providence Mt. Pleasant (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Tiverton (RI)' -> 'Tiverton (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Wakefield South Kingstown (RI)' -> 'Wakefield South Kingstown (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Warren (RI)' -> 'Warren (RI)' (no change)
+2026-11-10 04:17:52,693 - WARNING -   'Warwick Aldrich (RI)' -> 'Warwick Aldrich (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Warwick Bishop Hendricken (RI)' -> 'Warwick Bishop Hendricken (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Warwick Pilgrim (RI)' -> 'Warwick Pilgrim (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Warwick Toll Gate (RI)' -> 'Warwick Toll Gate (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Warwick Veterans Memorial (RI)' -> 'Warwick Veterans Memorial (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'West Warwick (RI)' -> 'West Warwick (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Westerly (RI)' -> 'Westerly (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Wood River Junction Chariho (RI)' -> 'Wood River Junction Chariho (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Woonsocket (RI)' -> 'Woonsocket (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Woonsocket Mt. St. Charles Academy (RI)' -> 'Woonsocket Mt. St. Charles Academy (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Central Falls-Blackstone Valley Prep (RI)' -> 'Central Falls-Blackstone Valley Prep (RI)' (no change)
+2026-11-10 04:17:52,694 - WARNING -   'Central Falls-Blackstone Valley Prep-Achievement First (RI)' -> 'Central Falls-Blackstone Valley Prep-Achievement First (RI)' (no change)
+2026-11-10 04:17:52,694 - INFO - Validation passed: 99 rules are clean and ready to upload.
+2026-11-10 04:17:52,711 - INFO - Uploading 99 rules to staging table: ConsolidationRules_Staging...
+2026-11-10 04:17:52,795 - INFO - Upload to staging table complete.
+2026-11-10 04:17:52,799 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-10 04:18:14,487 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-10 04:18:14,487 - INFO - Reason logged to dbo.HS_Consolidation_Log: RI round 1 (Gemini rules, Central Falls co-op kept separate)
+2026-11-10 04:18:14,487 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-10 04:18:14,487 - INFO - Running post-consolidation safety check...
+2026-11-10 04:18:14,492 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup MA
+
+DEDUP v4 MA - PREVIEW (nothing changed)
+ dedup_archive: 131 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_archive_20261110_0418.csv
+ dedup_review: 42 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_review_20261110_0418.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_summary_20261110_0418.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MA     96235         131                  42               None 
+
+>>> dedup CT
+
+DEDUP v4 CT - PREVIEW (nothing changed)
+ dedup_archive: 541 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_dedup_archive_20261110_0418.csv
+ dedup_review: 214 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_dedup_review_20261110_0418.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_dedup_summary_20261110_0418.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  CT     51480         541                  214              None 
+
+>>> dedup NH
+
+DEDUP v4 NH - PREVIEW (nothing changed)
+ dedup_archive: 228 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_dedup_archive_20261110_0418.csv
+ dedup_review: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_dedup_review_20261110_0418.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_dedup_summary_20261110_0418.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  NH     16792         228                  88               None 
+
+>>> dedup RI
+
+DEDUP v4 RI - PREVIEW (nothing changed)
+ dedup_archive: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_dedup_archive_20261110_0418.csv
+ dedup_review: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_dedup_review_20261110_0418.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_dedup_summary_20261110_0418.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  RI     11292         108                  50               None 
+
+=== OK 2026-11-10 04:18:44

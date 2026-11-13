@@ -1,0 +1,35 @@
+
+>>> archive-ids CT --ids ct_college_dup_ids.csv --reason "Post-1940 college games confirmed present in College_Scores (names+scores match)" --commit
+
+ARCHIVE LISTED GAMES CT - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_archive_ids_COMMITTED_20261110_0430.csv
+   Season  Date        Home                            Home_Score  Visitor                                   Visitor_Score  Source                                    Access_ID  ID                                  
+   1975    1975-11-14  The College of New Jersey (NJ)  28          Western Connecticut State University (CT  7              https://digital.libraries.psu.edu/digita  None       3486F92B-2418-4508-B244-AB5F2EDC486D
+   2010    2010-10-29  The College of New Jersey (NJ)  22          Western Connecticut State University (CT  16             https://digital.libraries.psu.edu/digita  None       D58C349A-5B85-43A5-B2B9-D608165C1190
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  2       2      547212D9-4AD1-4A3F-A1E5-BC2E06D5CE2E  None
+
+>>> archive-ids RI --ids ri_college_dup_ids.csv --reason "Post-1940 college games confirmed present in College_Scores (names+scores match)" --commit
+
+ARCHIVE LISTED GAMES RI - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_archive_ids_COMMITTED_20261110_0430.csv
+   Season  Date        Home                     Home_Score  Visitor                Visitor_Score  Source                                    Access_ID  ID                                  
+   1943    1943-11-26  Colgate University (NY)  21          Brown University (RI)  14             Lexington_Herald_Leader_1943_11_26_7 (1)  None       95CD4A25-1C3D-437B-84CF-DD5C2058CBFD
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       1      97EDB531-F93F-40C2-AD4B-6C94785809B1  None
+
+>>> fix-dates NH
+
+FIX DATES NH - PREVIEW (nothing changed)
+ 0 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_fix_dates_20261110_0430.csv
+   (no rows)
+   Status                     Updated  Err 
+   PREVIEW (nothing changed)  0        None
+
+>>> status
+
+[stderr]
+usage: hs_cleanup.py status [-h] state
+hs_cleanup.py status: error: the following arguments are required: state
+
+=== FAILED (exit 2) 2026-11-10 04:30:38

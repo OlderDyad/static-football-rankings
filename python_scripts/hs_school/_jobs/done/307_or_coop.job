@@ -1,0 +1,8 @@
+same-score-fix OR --commit
+consolidate OR --reason "OR co-op/consolidation round (2026-11-12): same-school names, see _coop_scripts/OR_cfg.py"
+move-team OR --from "Coquille-Pacific (OR)" --to "Coquille (OR)" --seasons 2015-2024 --ids coop_ids/OR_mv_000.csv --reason "OR co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team OR --from "Portland Washington (OR)" --to "Portland Washington-Monroe (OR)" --seasons 1978-1980 --ids coop_ids/OR_mv_001.csv --reason "OR co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup OR --commit
+review-pairs OR --commit
+same-score-fix OR
+query OR or_dump.sql

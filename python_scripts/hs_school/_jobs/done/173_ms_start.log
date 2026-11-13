@@ -1,0 +1,105 @@
+
+>>> addstate MS
+Tracker rows ready for MS
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report MS drift
+
+REPORT drift MS: 64 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_drift_20261111_0932.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                         N_Games  N_First  N_Last  N_Mapped
+   Bassfield (MS)                            756      1948     2016    0         None                            None     None     None    0       
+   Bassfield Jefferson Davis County (MS)     95       1971     2023    0         Bassfield Jefferson Davis (MS)  33       2024     2026    1       
+   Bay Springs Sylva Bay Academy (MS)        533      1971     2023    0         Bay Springs Sylva Bay (MS)      27       2024     2026    1       
+   Bay St. Louis Bay (MS)                    819      1927     2020    0         None                            None     None     None    0       
+   Benoit Brooks (MS)                        334      1970     2020    0         None                            None     None     None    0       
+   Benton County [Hickory Flat-Ashland] (MS  41       2013     2019    0         None                            None     None     None    0       
+   Booneville New Site (MS)                  82       2008     2017    0         None                            None     None     None    0       
+   Booneville Thrasher (MS)                  449      1983     2025    1         None                            None     None     None    0       
+   Brooklyn Forrest County Agricultural (MS  871      1922     2023    0         None                            None     None     None    0       
+   Carriere Pearl River Central (MS)         805      1950     2023    0         Carriere Pearl River (MS)       31       2024     2026    1       
+   Carthage Leake Central (MS)               232      2004     2025    1         None                            None     None     None    0       
+   Charleston Strider Academy (MS)           513      1971     2017    0         None                            None     None     None    0       
+   Clarke Enterprise (MS)                    884      1927     2023    0         None                            None     None     None    0       
+   Clarksdale Coahoma Agricultural (MS)      507      1970     2019    0         None                            None     None     None    0       
+   Cleveland East Side (MS)                  555      1970     2016    0         None                            None     None     None    0       
+   ... 49 more rows (see CSV)
+
+>>> mapcheck MS
+
+MAPPING CHECK MS - PREVIEW (nothing changed)
+ 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_mapcheck_20261111_0932.csv
+   URL                                       ProperName                           Team_ID  NameID  Problem                          Team_ID_Name                    
+   https://www.maxpreps.com/ms/bay-st-louis  Bay Saint Louis Bay (MS)             43868    None    ProperName not in HS_Team_Names  None                            
+   https://www.maxpreps.com/ms/liberty/amit  Liberty Amite (MS)                   33552    None    ProperName not in HS_Team_Names  None                            
+   https://www.maxpreps.com/ms/rolling-fork  Rolling Fork Sharkey Issaquena (MS)  23295    None    ProperName not in HS_Team_Names  None                            
+   https://www.maxpreps.com/ms/vicksburg/st  Vicksburg St. Aloysius (MS)          35481    None    ProperName not in HS_Team_Names  None                            
+   https://www.maxpreps.com/ms/amory/amory-  Amory (MS)                           71924    5524    Team_ID points to another name   Amory B (MS)                    
+   https://www.maxpreps.com/ms/clarksdale/c  Clarksdale (MS)                      72087    11730   Team_ID points to another name   Clarksdale B (MS)               
+   https://www.maxpreps.com/ms/columbia/col  Columbia Academy (MS)                71449    5907    Team_ID points to another name   Columbia B (MS)                 
+   https://www.maxpreps.com/ms/columbus/wes  Columbus West Lowndes (MS)           72133    29699   Team_ID points to another name   Copiah Academy (MS)             
+   https://www.maxpreps.com/ms/forest/fores  Forest (MS)                          71151    27121   Team_ID points to another name   Forest B (MS)                   
+   https://www.maxpreps.com/ms/greenville/g  Greenville (MS)                      72026    62683   Team_ID points to another name   Greenville B (MS)               
+   https://www.maxpreps.com/ms/greenville/o  Greenville O'Bannon (MS)             62699    62694   Team_ID points to another name   Greenville St. Joseph (MS)      
+   https://www.maxpreps.com/ms/greenville/s  Greenville St. Joseph (MS)           45499    62699   Team_ID points to another name   Greenville T.L. Weston (MS)     
+   https://www.maxpreps.com/ms/greenwood/am  Greenwood Amanda Elzy (MS)           71149    13408   Team_ID points to another name   Greenwood B (MS)                
+   https://www.maxpreps.com/ms/hattiesburg/  Hattiesburg (MS)                     62932    35644   Team_ID points to another name   Hattiesburg B (MS)              
+   https://www.maxpreps.com/ms/holly-spring  Holly Springs Marshall Academy (MS)  63170    19906   Team_ID points to another name   Holmes Academy (MS)             
+   https://www.maxpreps.com/ms/kossuth/koss  Kossuth (MS)                         70985    63851   Team_ID points to another name   Lafayette Academy (MS)          
+   https://www.maxpreps.com/ms/lake-cormora  Lake Cormorant (MS)                  47893    63957   Team_ID points to another name   Lamar Academy (MS)              
+   https://www.maxpreps.com/ms/laurel/laure  Laurel (MS)                          71422    17400   Team_ID points to another name   Laurel B (MS)                   
+   https://www.maxpreps.com/ms/madden/leake  Madden Leake Academy (MS)            71938    39840   Team_ID points to another name   Madison Academy (MS)            
+   https://www.maxpreps.com/ms/madison/germ  Madison Germantown (MS)              64702    29459   Team_ID points to another name   Madison St. Joseph Catholic (MS)
+   ... 10 more rows (see CSV)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  26       None
+
+>>> dedup MS
+
+DEDUP v4 MS - PREVIEW (nothing changed)
+ dedup_archive: 102 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_archive_20261111_0932.csv
+ dedup_review: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_review_20261111_0932.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_dedup_summary_20261111_0932.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MS     140763        102                  6                None 
+
+>>> review-pairs MS
+
+REVIEW-ONLY PAIRS MS - PREVIEW (nothing changed)
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_review_pairs_20261111_0932.csv
+
+>>> same-score-fix MS
+
+SAME-SCORE DOUBLE-BOOKINGS MS - PREVIEW (nothing changed)
+ 8853 pairs {'DROP B': 713, 'DROP A': 691, 'UNDECIDED': 7449} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_same_score_20261111_0940.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1376      None   None
+
+>>> query MS ms_dump.sql
+
+QUERY ms_dump (1 result sets)
+ set 1: 140765 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_ms_dump_1_20261111_0940.csv
+
+>>> query MS ms_geo_all.sql
+
+QUERY ms_geo_all (2 result sets)
+ set 1: 36437 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_ms_geo_all_1_20261111_0940.csv
+ set 2: 140765 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MS\MS_q_ms_geo_all_2_20261111_0940.csv
+
+=== OK 2026-11-11 09:40:22

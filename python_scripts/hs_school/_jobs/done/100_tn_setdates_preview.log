@@ -1,0 +1,40 @@
+
+>>> set-dates TN --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-TN game date (both teams + score match)"
+
+SET DATES TN - PREVIEW (nothing changed)
+ 15993 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_set_dates_20261110_0907.csv
+   Season  OldDate     NewDate     DayShift  Home                                    Home_Score  Visitor                                 Visitor_Score  Source                             Note                    ID                                  
+   1905    1905-10-13  1905-10-07  -6        Nashville Montgomery Bell Academy (TN)  0           Nashville Wallace Academy (TN)          0              www.hsfdatabase.com-tennessee.htm  hsfha.org game 1177663  EFD4E3A0-3804-4118-8159-2FE7390A812E
+   1921    1921-09-09  1921-09-17  8         Chattanooga Baylor (TN)                 45          Jasper Marion County (TN)               6              http://www.hsfdatabase.com/        hsfha.org game 1180318  C75717B6-3B40-46CA-91F2-09A9E358D976
+   1921    1921-09-16  1921-09-24  8         Chattanooga Baylor (TN)                 6           Benton Polk County (TN)                 0              http://www.hsfdatabase.com/        hsfha.org game 1177827  711000EB-BF64-455C-B5FF-1F966937C31E
+   1921    1921-09-23  1921-10-01  8         Chattanooga Baylor (TN)                 21          Nashville Central (TN)                  0              http://www.hsfdatabase.com/        hsfha.org game 1178246  D1A242A9-FD0C-4939-8656-D2DD858B5693
+   1921    1921-10-14  1921-10-21  7         Chattanooga Baylor (TN)                 31          Nashville Montgomery Bell Academy (TN)  7              http://www.hsfdatabase.com/        hsfha.org game 1535920  B34C4226-B5AF-40C7-A9D9-1BD54E6AD202
+   1921    1921-10-21  1921-10-27  6         Chattanooga Baylor (TN)                 7           Harrison Chattanooga Central (TN)       0              http://www.hsfdatabase.com/        hsfha.org game 1177910  8F3FE0C9-3D25-489B-897A-27194AA14D0F
+   1922    1922-11-03  1922-10-27  -7        Chattanooga Baylor (TN)                 20          Harrison Chattanooga Central (TN)       7              http://www.hsfdatabase.com/        hsfha.org game 1181662  089FC5C1-3A81-4F23-BE00-C9A41DE2E886
+   1926    1926-09-10  1926-09-18  8         Chattanooga Baylor (TN)                 73          Jasper Marion County (TN)               0              http://www.hsfdatabase.com/        hsfha.org game 1551805  4D84CAFB-8D72-4519-9739-9E7D83677A0C
+   1926    1926-09-17  1926-09-23  6         Chattanooga Baylor (TN)                 46          Dalton (GA)                             0              http://www.hsfdatabase.com/        hsfha.org game 1551480  496EEFE1-B2F5-4856-BBE9-3DC7186358BA
+   1926    1926-09-24  1926-10-01  7         Knoxville Central (TN)                  12          Chattanooga Baylor (TN)                 0              http://www.hsfdatabase.com/        hsfha.org game 1565262  15C3E2D1-05AC-46DC-9956-D03D01A27677
+   ... 15983 more rows (see CSV)
+   Status                     Listed  Updated  Err 
+   PREVIEW (nothing changed)  15993   15993    None
+
+>>> set-dates TN --file hsfha_dates_blank.csv --reason "no-source estimated date replaced by HSFHA-TN game date (both teams + score match)"
+
+SET DATES TN - PREVIEW (nothing changed)
+ 4430 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_set_dates_20261110_0907.csv
+   Season  OldDate     NewDate     DayShift  Home                             Home_Score  Visitor                            Visitor_Score  Source  Note                    ID                                  
+   1924    1924-09-26  1924-09-27  1         Erwin Unicoi County (TN)         74          Greeneville (TN)                   0              None    hsfha.org game 1195301  BEF97B68-3BBD-4FDE-BB49-D8D34B6596F1
+   1924    1924-10-03  1924-10-10  7         Morristown (TN)                  28          Greeneville (TN)                   0              None    hsfha.org game 1549524  614AA278-8D22-4364-8EF6-DE4B96437927
+   1937    1937-10-15  1937-10-22  7         Cookeville (TN)                  13          Carthage Smith County (TN)         0              None    hsfha.org game 1590858  DFBAC4AA-A454-449C-87AA-781627D34915
+   1938    1938-09-02  1938-09-12  10        Strawberry Plains Carter (TN)    0           Alcoa (TN)                         13             None    hsfha.org game 1515185  74741FF9-190A-458C-B279-A165D74A3B40
+   1939    1939-10-06  1939-10-12  6         Cleveland Bradley Central (TN)   7           Harrison Chattanooga Central (TN)  6              None    hsfha.org game 1180078  C400A93A-B71D-4957-9A43-3830AC381C05
+   1941    1941-10-17  1941-10-22  5         Memphis Tech (TN)                22          Memphis Christian Brothers (TN)    0              None    hsfha.org game 1130805  2A97E6DD-48BE-40FF-84B0-ED7465F79D4F
+   1942    1942-09-25  1942-10-02  7         Knoxville Rule (TN)              33          Maryville (TN)                     0              None    hsfha.org game 1168261  B29DB188-421B-43D8-A36B-5D087AF28884
+   1944    1944-09-29  1944-09-22  -7        Gallatin (TN)                    20          White House (TN)                   0              None    hsfha.org game 1174943  8E7940B2-A9DE-4C48-9FE9-D018BA77454B
+   1946    1946-10-18  1946-10-17  -1        Memphis Christian Brothers (TN)  13          Memphis Tech (TN)                  7              None    hsfha.org game 1128900  265A5D20-0143-4183-83AF-6E7CA6B8C132
+   1946    1946-11-01  1946-11-08  7         Huntingdon (TN)                  7           Waverly Central (TN)               6              None    hsfha.org game 1180534  F9B80C0A-CBF4-4D41-8EBB-A7A150EA62A1
+   ... 4420 more rows (see CSV)
+   Status                     Listed  Updated  Err 
+   PREVIEW (nothing changed)  4430    4430     None
+
+=== OK 2026-11-10 09:07:25

@@ -1,0 +1,4 @@
+# Grantsville (UT) held Granite (Salt Lake City) games in its double-booked seasons (Ogden Standard-Examiner "Granite" matched to Grantsville)
+move-team UT --from "Grantsville (UT)" --to "Salt Lake City Granite (UT)" --seasons 1920-1975 --ids UT_grantsville_to_granite_ids.csv --reason "Grantsville games vs Salt Lake valley schools in its double-booked seasons are Granite's" --commit
+dedup UT
+report UT double-booked

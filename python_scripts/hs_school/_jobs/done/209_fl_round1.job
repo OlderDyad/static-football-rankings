@@ -1,0 +1,26 @@
+move-team FL --from "Oakland Park Northeast (FL)" --to "Saint Petersburg Northeast (FL)" --seasons 1880-2026 --ids hsfha_mv_01.csv --reason "HSFHA-FL match: game belongs to Saint Petersburg Northeast (FL) (hsfha.org school code)" --commit
+move-team FL --from "Savannah Jenkins (GA)" --to "Lakeland George Jenkins (FL)" --seasons 1880-2026 --ids hsfha_mv_02.csv --reason "HSFHA-FL match: game belongs to Lakeland George Jenkins (FL) (hsfha.org school code)" --commit
+move-team FL --from "Miami Booker T. Washington (FL)" --to "Pensacola Booker T. Washington (FL)" --seasons 1880-2026 --ids hsfha_mv_03.csv --reason "HSFHA-FL match: game belongs to Pensacola Booker T. Washington (FL) (hsfha.org school code)" --commit
+move-team FL --from "Palm Bay Heritage (FL)" --to "Orlando Heritage Prep (FL)" --seasons 1880-2026 --ids hsfha_mv_04.csv --reason "HSFHA-FL match: game belongs to Orlando Heritage Prep (FL) (hsfha.org school code)" --commit
+move-team FL --from "Saint Petersburg Northeast (FL)" --to "Oakland Park Northeast (FL)" --seasons 1880-2026 --ids hsfha_mv_13.csv --reason "HSFHA-FL match: game belongs to Oakland Park Northeast (FL) (hsfha.org school code)" --commit
+move-team FL --from "Dover Specially Fit Academy (FL)" --to "Dover Strawberry Crest (FL)" --seasons 1880-2026 --ids hsfha_mv_w1.csv --reason "HSFHA-FL school code: Strawberry Crest games 2009-2026 filed under Specially Fit Academy" --commit
+move-team FL --from "Havana Gadsden County (FL)" --to "Quincy East Gadsden (FL)" --seasons 1880-2026 --ids hsfha_mv_w2.csv --reason "HSFHA-FL school code: East Gadsden 2003-2016 games filed under Gadsden County (consolidation 2017)" --commit
+move-team FL --from "Lakeland Victory Christian Academy (FL)" --to "Lakeland Evangel Christian (FL)" --seasons 1880-2026 --ids hsfha_mv_w3.csv --reason "HSFHA-FL school code: Evangel Christian 2004-2005 games filed under Victory Christian" --commit
+remap FL --url "https://www.maxpreps.com/fl/fort-walton-beach/fort-walton-beach-vikings/football/schedule/" --to "Fort Walton Beach (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/greenacres/palm-beach-christian-prep-saints/football/schedule/" --to "Greenacres Palm Beach Christian Prep (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/jacksonville/north-florida-educational-institute-fighting-eagles/football/schedule/" --to "Jacksonville North Florida Educational Institute (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/miami/booker-t-washington-tornadoes/football/schedule/" --to "Miami Booker T. Washington (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/miami/immaculata-la-salle-royal-lions/football/schedule/" --to "Miami LaSalle (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/palm-harbor/palm-harbor-university-hurricanes/football/schedule/" --to "Palm Harbor University (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/riverview/bell-creek-academy-panthers/football/schedule/" --to "Riverview Bell Creek Academy (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-augustine/st-joseph-academy-fighting-flashes/football/schedule/" --to "Saint Augustine St. Joseph (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/tampa/tampa-bay-tech-titans/football/schedule/" --to "Tampa Bay Tech (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/west-palm-beach/atlantic-christian-sharks/football/schedule/" --to "West Palm Beach Summit Christian (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/west-palm-beach/cardinal-newman-crusaders/football/schedule/" --to "West Palm Beach Cardinal Newman (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/pensacola/booker-t-washington-wildcats/football/schedule/" --to "Pensacola Booker T. Washington (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/north-fort-myers/north-fort-myers-red-knights/football/schedule/" --to "North Fort Myers (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/dover/specially-fit-academy-rams/football/schedule/" --to "Dover Specially Fit Academy (FL)" --commit
+mapcheck FL --commit
+consolidate FL --reason "FL round 3 (HSFHA-FL): same-school name variants (Tampa Bay Tech, Miami Booker T. Washington, Palm Harbor University, Fort Walton Beach, Glen St. Mary Baker County...), renames to latest (Immaculata-LaSalle -> LaSalle, St. Ann -> Cardinal Newman, Florida Air Academy -> Florida Prep)"
+dedup FL
+review-pairs FL

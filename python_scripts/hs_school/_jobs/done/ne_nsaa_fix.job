@@ -1,0 +1,14 @@
+# NE Source "0" games checked against the NSAA playoff results page (hs_school/NE/nsaa_fball.txt): opponent names corrected where NSAA gives a different school for the same game and score
+move-team NE --from "Bancroft-Rosalie (NE)" --to "Axtell (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_00.csv --reason "NSAA playoff page: this game was vs Axtell (NE)" --commit
+move-team NE --from "Chappell (NE)" --to "Imperial Chase County (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_01.csv --reason "NSAA playoff page: this game was vs Imperial Chase County (NE)" --commit
+move-team NE --from "Columbus Scotus Central Catholic (NE)" --to "Scottsbluff (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_02.csv --reason "NSAA playoff page: this game was vs Scottsbluff (NE)" --commit
+move-team NE --from "Gretna (NE)" --to "West Point Guardian Angels Central Catholic (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_03.csv --reason "NSAA playoff page: this game was vs West Point Guardian Angels Central Catholic (NE)" --commit
+move-team NE --from "Hartington Cedar Catholic (NE)" --to "Cedar Bluffs (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_04.csv --reason "NSAA playoff page: this game was vs Cedar Bluffs (NE)" --commit
+move-team NE --from "Imperial Chase County (NE)" --to "Chappell (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_05.csv --reason "NSAA playoff page: this game was vs Chappell (NE)" --commit
+move-team NE --from "Laurel (NE)" --to "Laurel-Concord (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_06.csv --reason "NSAA playoff page: this game was vs Laurel-Concord (NE)" --commit
+move-team NE --from "North Platte St. Patrick's (NE)" --to "Saint Edward (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_07.csv --reason "NSAA playoff page: this game was vs Saint Edward (NE)" --commit
+move-team NE --from "O'Neill Saint Mary's (NE)" --to "North Platte St. Patrick's (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_08.csv --reason "NSAA playoff page: this game was vs North Platte St. Patrick's (NE)" --commit
+move-team NE --from "O'Neill Saint Mary's (NE)" --to "Saint Edward (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_09.csv --reason "NSAA playoff page: this game was vs Saint Edward (NE)" --commit
+move-team NE --from "Springfield Platteview (NE)" --to "Wahoo (NE)" --seasons 1960-2026 --ids NE_nsaa_fix_10.csv --reason "NSAA playoff page: this game was vs Wahoo (NE)" --commit
+dedup NE --commit
+report NE double-booked

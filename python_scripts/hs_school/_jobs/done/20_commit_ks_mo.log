@@ -1,0 +1,30 @@
+
+>>> commit KS
+
+DEDUP v4 KS - COMMIT
+ dedup_archive: 95 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_archive_COMMITTED_20261108_1937.csv
+ dedup_review: 74 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_review_COMMITTED_20261108_1937.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_summary_COMMITTED_20261108_1937.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  KS     125483        95                   74               BBDD6D4E-81BF-4E76-8DCF-F590A3FD03DF
+
+REVIEW-ONLY PAIRS KS - COMMIT
+ 74 pairs {'SHORT': 74} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_review_pairs_COMMITTED_20261108_1937.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  74        62AD9974-B9C0-496D-837E-734750FF792E  None
+
+>>> commit MO
+
+DEDUP v4 MO - COMMIT
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_archive_COMMITTED_20261108_1937.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_review_COMMITTED_20261108_1937.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_summary_COMMITTED_20261108_1937.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   COMMITTED  MO     102334        0                    0                None 
+
+REVIEW-ONLY PAIRS MO - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_review_pairs_COMMITTED_20261108_1938.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         A69F460E-052E-4D92-B4AA-7B3554690C62  None
+
+=== OK 2026-11-08 19:38:03

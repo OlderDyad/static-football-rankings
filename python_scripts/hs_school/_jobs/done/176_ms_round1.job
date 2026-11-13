@@ -1,0 +1,19 @@
+move-team MS --from "Homewood Rosedale (AL)" --to "Rosedale (MS)" --seasons 1880-2026 --ids ms_mv_00.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+move-team MS --from "Decatur (AL)" --to "Decatur (MS)" --seasons 1880-2026 --ids ms_mv_01.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+move-team MS --from "Montgomery Central Academy (AL)" --to "Macon Central Academy (MS)" --seasons 1880-2026 --ids ms_mv_02.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+move-team MS --from "Tuskegee Macon Academy (AL)" --to "Macon (MS)" --seasons 1880-2026 --ids ms_mv_03.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+move-team MS --from "Camden Jackson (SC)" --to "Camden Velma Jackson (MS)" --seasons 1880-2026 --ids ms_mv_04.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+move-team MS --from "Montgomery Lanier (AL)" --to "Jackson Lanier (MS)" --seasons 1880-2026 --ids ms_mv_05.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+move-team MS --from "Huntsville Columbia (AL)" --to "Columbia (MS)" --seasons 1880-2026 --ids ms_mv_06.csv --reason "Mississippi school filed under an out-of-state name (ahsfhs MS pages; all opponents MS; HSFHA-MS code)" --commit
+move-team MS --from "Calhoun City (MS)" --to "Calhoun (MS)" --seasons 1880-2026 --ids ms_mv_07.csv --reason "HSFHA-MS school code + geography/double-booking check: game belongs to Calhoun (MS)" --commit
+move-team MS --from "Bay St. Louis St. Stanislaus (MS)" --to "Bay St. Louis Bay (MS)" --seasons 1880-2026 --ids ms_mv_08.csv --reason "HSFHA-MS school code + geography/double-booking check: game belongs to Bay St. Louis Bay (MS)" --commit
+move-team MS --from "Liberty Amite County (MS)" --to "Liberty Amite School Center (MS)" --seasons 1880-2026 --ids ms_mv_09.csv --reason "HSFHA-MS school code + geography/double-booking check: game belongs to Liberty Amite School Center (MS)" --commit
+move-team MS --from "Woodville Wilkinson County Christian Academy (MS)" --to "Woodville Wilkinson County (MS)" --seasons 1880-2026 --ids ms_mv_10.csv --reason "HSFHA-MS school code + geography/double-booking check: game belongs to Woodville Wilkinson County (MS)" --commit
+remap MS --url "https://www.maxpreps.com/ms/bay-st-louis/bay-tigers/football/schedule/" --to "Bay St. Louis Bay (MS)" --commit
+remap MS --url "https://www.maxpreps.com/ms/liberty/amite-school-center-rebels/football/schedule/" --to "Liberty Amite School Center (MS)" --commit
+remap MS --url "https://www.maxpreps.com/ms/rolling-fork/sharkey-issaquena-academy-confederates/football/schedule/" --to "Rolling Fork Sharkey Issaquena Academy (MS)" --commit
+remap MS --url "https://www.maxpreps.com/ms/vicksburg/st-aloysius-flashes/football/schedule/" --to "Vicksburg St. Aloysius (MS)" --commit
+mapcheck MS --commit
+consolidate MS --reason "MS round 1: long-pending MS rules (AHS->Academy, B-team quotes, Saint->St. school names, Natchez, Greenville Weston...) + HSFHA-MS same-school variants; wrong old rules fixed (Bay HS vs St. Stanislaus, Baton Rouge Broadmoor LA, Vicksburg St. Aloysius spacing)"
+dedup MS
+review-pairs MS

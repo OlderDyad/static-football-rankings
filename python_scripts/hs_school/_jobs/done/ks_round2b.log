@@ -1,0 +1,31 @@
+
+>>> remap KS --url "https://www.maxpreps.com/ks/claflin/central-plains-oilers/football/schedule/" --to "Claflin Central Plains (KS)" --commit
+
+REMAP https://www.maxpreps.com/ks/claflin/central-plains-oilers/football/schedule/ -> Claflin Central Plains (KS) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName                NewTeam_ID
+   https://www.maxpreps.com/ks/claflin/cent  Lorraine Central Plains (KS)  60756    Claflin Central Plains (KS)  60756     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> commit KS
+
+DEDUP v4 KS - COMMIT
+ dedup_archive: 922 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_archive_COMMITTED_20261106_1918.csv
+ dedup_review: 194 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_review_COMMITTED_20261106_1918.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_summary_COMMITTED_20261106_1918.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  KS     127338        922                  194              0B3068CD-F63B-45A3-8320-B5ECC3CE7B6B
+
+REVIEW-ONLY PAIRS KS - COMMIT
+ 190 pairs {'LONG': 7, 'SHORT': 183} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_review_pairs_COMMITTED_20261106_1918.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  190       CC358AAF-23D5-46CE-BDA3-6C5D6F10FF28  None
+
+>>> same-score-fix KS
+
+SAME-SCORE DOUBLE-BOOKINGS KS - PREVIEW (nothing changed)
+ 777 pairs {'DROP B': 275, 'DROP A': 285, 'UNDECIDED': 217} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_same_score_20261106_1920.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  555       None   None
+
+=== OK 2026-11-06 19:20:13

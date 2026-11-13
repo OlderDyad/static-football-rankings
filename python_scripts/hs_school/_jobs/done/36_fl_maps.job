@@ -1,0 +1,27 @@
+remap FL --url "https://www.maxpreps.com/fl/auburndale/jordan-christian-prep-seahawks/football/schedule/" --to "Auburndale Jordan Christian Prep (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/miami/belen-jesuit-wolverines/football/schedule/" --to "Miami Belen Jesuit Prep School (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/bradenton/saint-stephens-episcopal-falcons/football/schedule/" --to "Bradenton St.Stephen's Episcopal (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/fort-lauderdale/stranahan-mighty-dragons/football/schedule/" --to "Fort Lauderdale Stranahan (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/fort-myers/gateway-eagles/football/schedule/" --to "Fort Myers Gateway Charter (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/fort-pierce/john-carroll-catholic-rams/football/schedule/" --to "Fort Pierce John Carroll Catholic (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/gainesville/saint-francis-catholic-wolves/football/schedule/" --to "Gainesville St.Francis Catholic (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/hollywood/avant-garde-academy-sharks/football/schedule/" --to "Hollywood Avant Garde Academy (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/homestead/everglades-prep-academy-panther/football/schedule/" --to "Homestead Everglades Prep Academy (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/jacksonville/first-coast-christian-knights/football/schedule/" --to "Jacksonville First Coast (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/jacksonville/stanton-blue-devils/football/schedule/" --to "Jacksonville Stanton College Prep (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/labelle/labelle-cowboys-cowgirls/football/schedule/" --to "La Belle (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/land-o-lakes/land-o-lakes-gators/football/schedule/" --to "Land O'Lakes (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/lecanto/seven-rivers-christian-warriors/football/schedule/" --to "Lecanto Seven Rivers Christian (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/lithia/newsome-wolves/football/schedule/" --to "Fish Hawk Lithia Newsome (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/miami/miami-stingarees/football/schedule/" --to "Miami Senior (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/miami-gardens/tru-prep-academy-saints/football/schedule/" --to "Miami Gardens Tru Prep Academy (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/miami/immaculata-la-salle-royal-lions/football/schedule/" --to "Miami Immaculata-Lasalle (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/monticello/aucilla-christian-warriors/football/schedule/" --to "Monticello Aucilla Christian Academy (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/ocala/ocala-christian-crusaders/football/schedule/" --to "Ocala Christian Academy (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/orlando/oak-ridge-pioneers/football/schedule/" --to "Orlando Oakridge (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/oviedo/masters-academy-eagles/football/schedule/" --to "Oviedo Master's Academy (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-augustine/st-augustine-yellow-jackets/football/schedule/" --to "Saint Augustine (FL)" --commit
+remap FL --url "https://www.maxpreps.com/fl/st-petersburg/canterbury-crusaders/football/schedule/" --to "St. Petersburg Canterbury (FL)" --commit
+mapcheck FL --commit
+consolidate FL --reason "Lithia Newsome = Fish Hawk Lithia Newsome"
+dedup FL

@@ -1,0 +1,14 @@
+
+>>> import-games TN --file hsfha_import_TN.csv --reason "HSFHA-TN (hsfha.org) games missing from HS_Scores; data-sharing agreement with Loren Maxwell"
+
+IMPORT GAMES TN - PREVIEW (nothing changed) from hsfha_import_TN.csv (26239 rows)
+   Skip                                Games
+   a team already has a game that day  1252 
+   IMPORT                              24161
+   name not in HS_Team_Names           741  
+   teams already meet that season      85   
+ skipped rows (first 2000) -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_import_skipped_20261110_1140.csv
+   Status                     Imported  BatchID  Err 
+   PREVIEW (nothing changed)  24161     None     None
+
+=== OK 2026-11-10 11:40:45

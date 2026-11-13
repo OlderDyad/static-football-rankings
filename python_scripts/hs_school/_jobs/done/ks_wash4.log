@@ -1,0 +1,25 @@
+
+>>> move-team KS --from "Washington (KS)" --to "Kansas City Washington (KS)" --seasons 1900-2026 --ids KS_washington_to_kcw_ids_2.csv --reason "Washington (KS) games vs Kansas City-area opponents (KC Washington's KFH schedule); score variants of KFH games" --commit
+ only the 53 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_washington_to_kcw_ids_2.csv
+
+MOVE Washington (KS) -> Kansas City Washington (KS), seasons 1900-2026 - COMMIT
+ move_games: 53 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_move_games_COMMITTED_20261107_0625.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_move_by_season_COMMITTED_20261107_0625.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  53     1                  None
+
+>>> dedup KS
+
+DEDUP v4 KS - PREVIEW (nothing changed)
+ dedup_archive: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_archive_20261107_0625.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_review_20261107_0625.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_summary_20261107_0625.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  KS     125523        3                    0                None 
+
+>>> query KS ks_wash_verify.sql
+
+QUERY ks_wash_verify (1 result sets)
+ set 1: 1520 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_ks_wash_verify_1_20261107_0625.csv
+
+=== OK 2026-11-07 06:25:11

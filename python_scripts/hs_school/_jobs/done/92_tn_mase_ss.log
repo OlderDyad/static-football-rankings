@@ -1,0 +1,16 @@
+
+>>> query TN tn_mase.sql
+
+QUERY tn_mase (3 result sets)
+ set 1: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_tn_mase_1_20261110_0539.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_tn_mase_2_20261110_0539.csv
+ set 3: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_tn_mase_3_20261110_0539.csv
+
+>>> same-score-fix TN
+
+SAME-SCORE DOUBLE-BOOKINGS TN - PREVIEW (nothing changed)
+ 955 pairs {'DROP B': 271, 'DROP A': 259, 'UNDECIDED': 425} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_same_score_20261110_0540.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  522       None   None
+
+=== OK 2026-11-10 05:40:54

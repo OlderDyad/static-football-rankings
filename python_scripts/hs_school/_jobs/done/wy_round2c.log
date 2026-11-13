@@ -1,0 +1,19 @@
+
+>>> dedup WY --commit
+
+DEDUP v4 WY - COMMIT
+ dedup_archive: 296 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_dedup_archive_COMMITTED_20261106_0739.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_dedup_review_COMMITTED_20261106_0739.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_dedup_summary_COMMITTED_20261106_0739.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  WY     28001         296                  0                702A88C2-7EF9-40CA-B00D-9DD33D37C80F
+   (tracker: no row for WY step 2.1; run: EXEC dbo.HS_Cleanup_AddState 'WY')
+
+>>> same-score-fix WY
+
+SAME-SCORE DOUBLE-BOOKINGS WY - PREVIEW (nothing changed)
+ 776 pairs {'DROP B': 270, 'DROP A': 288, 'UNDECIDED': 218} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_same_score_20261106_0740.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  553       None   None
+
+=== OK 2026-11-06 07:40:36

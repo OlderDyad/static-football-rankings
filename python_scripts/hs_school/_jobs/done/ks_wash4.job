@@ -1,0 +1,3 @@
+move-team KS --from "Washington (KS)" --to "Kansas City Washington (KS)" --seasons 1900-2026 --ids KS_washington_to_kcw_ids_2.csv --reason "Washington (KS) games vs Kansas City-area opponents (KC Washington's KFH schedule); score variants of KFH games" --commit
+dedup KS
+query KS ks_wash_verify.sql

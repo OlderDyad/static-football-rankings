@@ -1,0 +1,22 @@
+
+>>> query TN season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_season_date_1_20261110_1116.csv
+ set 2: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_season_date_2_20261110_1116.csv
+
+>>> query TN forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_forfeits_1_20261110_1116.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_forfeits_2_20261110_1116.csv
+
+>>> query TN college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 33 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_college_check_1_20261110_1116.csv
+ set 2: 131 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_college_check_2_20261110_1116.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_college_check_3_20261110_1116.csv
+ set 4: 1723 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TN\TN_q_college_check_4_20261110_1116.csv
+
+=== OK 2026-11-10 11:16:44

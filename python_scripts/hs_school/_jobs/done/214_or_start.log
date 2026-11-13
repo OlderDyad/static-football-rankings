@@ -1,0 +1,95 @@
+
+>>> addstate OR
+Tracker rows ready for OR
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report OR drift
+
+REPORT drift OR: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_drift_20261111_1903.csv
+   Stopped                             S_Games  S_First  S_Last  S_Mapped  Started                    N_Games  N_First  N_Last  N_Mapped
+   Adrian-Jordan Valley (OR)           31       2017     2020    0         None                       None     None     None    0       
+   Alsea (OR)                          175      1955     2025    1         None                       None     None     None    0       
+   Arlington (OR)                      142      1933     2022    0         None                       None     None     None    0       
+   Arlington-Condon (OR)               30       2015     2018    0         None                       None     None     None    0       
+   Athena Weston-McEwen-Griswold (OR)  209      1959     2023    0         Athena Weston Mcewen (OR)  9        2024     2024    1       
+   Baker (OR)                          1086     1901     2023    0         None                       None     None     None    0       
+   Beaverton Valley Catholic (OR)      155      2007     2025    1         None                       None     None     None    0       
+   Bend (OR)                           1134     1910     2023    0         Bend Caldera (OR)          40       2022     2026    1       
+   Bend (OR)                           1134     1910     2023    0         Bend Lava (OR)             28       2024     2026    1       
+   Butte Falls (OR)                    136      1947     2016    0         None                       None     None     None    0       
+   Butte Falls-Crater Lake (OR)        24       2017     2020    0         None                       None     None     None    0       
+   Chiloquin (OR)                      215      1940     2023    0         Chiloquin Panthers (OR)    25       2024     2026    1       
+   Coquille-Pacific (OR)               45       2015     2024    1         None                       None     None     None    0       
+   Corbett-Corbett Envirostem (OR)     15       2014     2015    0         None                       None     None     None    0       
+   Dayville-Monument (OR)              126      2004     2022    0         None                       None     None     None    0       
+   ... 64 more rows (see CSV)
+
+>>> mapcheck OR
+
+MAPPING CHECK OR - PREVIEW (nothing changed)
+ 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_mapcheck_20261111_1903.csv
+   URL                                       ProperName                 Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/or/coquille/coq  Coquille Pacific (OR)      19654    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/or/moro/sherman  Moro Sherman Condon (OR)   1580     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/or/prospect/pro  Prospect Butte (OR)        2863     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/or/coquille/coq  Coquille (OR)              35712    61065   Team_ID points to another name   Coquille-Pacific (OR)                   
+   https://www.maxpreps.com/or/klamath-fall  Klamath Falls Mazama (OR)  40509    63817   Team_ID points to another name   Klamath Falls Sacred Heart Academy (OR) 
+   https://www.maxpreps.com/or/nyssa/nyssa-  Nyssa (OR)                 71712    10575   Team_ID points to another name   Oregon Agricultural College (OR)        
+   https://www.maxpreps.com/or/oakridge/oak  Oakridge (OR)              70281    7022    Team_ID points to another name   Oregon Agricultural College Frosh (OR)  
+   https://www.maxpreps.com/or/portland/roo  Portland Roosevelt (OR)    71539    67009   Team_ID points to another name   Portland St. John's (OR)                
+   https://www.maxpreps.com/or/springfield/  Springfield Thurston (OR)  71610    68375   Team_ID points to another name   Saint Helens Alumni (OR)                
+   https://www.maxpreps.com/or/the-dalles/t  The Dalles (OR)            18789    68836   Team_ID points to another name   The Dalles-Wahtonka-South Wasco County (
+   https://www.maxpreps.com/or/union/union-  Union (OR)                 70629    2605    Team_ID points to another name   University of Oregon Frosh (OR)         
+   https://www.maxpreps.com/or/vale/vale-vi  Vale (OR)                  63211    26102   Team_ID points to another name   Hood River Wy'east (OR)                 
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  9        None
+
+>>> dedup OR
+
+DEDUP v4 OR - PREVIEW (nothing changed)
+ dedup_archive: 33 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_archive_20261111_1903.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_review_20261111_1903.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_dedup_summary_20261111_1903.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  OR     74559         33                   0                None 
+
+>>> review-pairs OR
+
+REVIEW-ONLY PAIRS OR - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_review_pairs_20261111_1903.csv
+
+>>> same-score-fix OR
+
+SAME-SCORE DOUBLE-BOOKINGS OR - PREVIEW (nothing changed)
+ 1120 pairs {'DROP B': 215, 'DROP A': 231, 'UNDECIDED': 674} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_same_score_20261111_1904.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  439       None   None
+
+>>> query OR or_dump.sql
+
+QUERY or_dump (1 result sets)
+ set 1: 74561 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_or_dump_1_20261111_1905.csv
+
+>>> query OR or_names.sql
+
+QUERY or_names (1 result sets)
+ set 1: 853 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_or_names_1_20261111_1905.csv
+
+=== OK 2026-11-11 19:05:03

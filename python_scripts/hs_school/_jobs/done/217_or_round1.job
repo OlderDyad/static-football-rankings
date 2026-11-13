@@ -1,0 +1,15 @@
+move-team OR --from "Jefferson (OR)" --to "Portland Jefferson (OR)" --seasons 1880-2026 --ids or_mv_jefferson.csv --reason "Portland Jefferson games filed under Jefferson (OR) (town of Jefferson): opponents in the Portland league / Portland area before 1950" --commit
+remap OR --url "https://www.maxpreps.com/or/chiloquin/chiloquin-panthers-queens/football/schedule/" --to "Chiloquin (OR)" --commit
+remap OR --url "https://www.maxpreps.com/or/madras/madras-white-buffaloes/football/schedule/" --to "Madras (OR)" --commit
+remap OR --url "https://www.maxpreps.com/or/mapleton/mapleton-siuslaw-sailors/football/schedule/" --to "Mapleton (OR)" --commit
+remap OR --url "https://www.maxpreps.com/or/milwaukie/milwaukie-milwaukie-academy-of-the-arts-mustangs/football/schedule/" --to "Milwaukie Academy of the Arts (OR)" --commit
+remap OR --url "https://www.maxpreps.com/or/portland/david-douglas-scots/football/schedule/" --to "Portland David Douglas (OR)" --commit
+remap OR --url "https://www.maxpreps.com/or/portland/mcdaniel-mountain-lions/football/schedule/" --to "Portland McDaniel (OR)" --commit
+remap OR --url "https://www.maxpreps.com/or/reedsport/reedsport/football/schedule/" --to "Reedsport Charter (OR)" --commit
+remap OR --url "https://www.maxpreps.com/or/salem/mckay-royal-scots/football/schedule/" --to "Salem McKay (OR)" --commit
+remap OR --url "https://www.maxpreps.com/or/baker-city/baker-bulldogs/football/schedule/" --to "Baker (OR)" --commit
+mapcheck OR --commit
+consolidate OR --reason "OR round 1: renames to the latest name (Salem->North Salem, Eugene->South Eugene, Albany->West Albany, Wilson->Ida B. Wells, Madison->McDaniel, James John->Roosevelt, Columbia University->Columbia Prep, Prineville->Crook County); NorthSalem typo; 2024 MaxPreps drift names (Chiloquin Panthers, Madras White, Portland Douglas, Salem Mckay Royal, Reedsport, Baker City Baker...)"
+dedup OR
+review-pairs OR
+same-score-fix OR

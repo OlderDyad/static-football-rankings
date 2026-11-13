@@ -1,0 +1,4 @@
+archive-ids NE --ids NE_college_archive_ids.csv --reason "1953 UNO-Doane college game; copy in College_Scores" --commit
+step NE 3.1 done "0 season/date mismatches"
+step NE 3.2 done "forfeit flags consistent; 2025-26 MaxPreps imports leave Forfeit NULL"
+step NE 5.0 "in progress" "1 archived; NE_for_college_chat.csv"

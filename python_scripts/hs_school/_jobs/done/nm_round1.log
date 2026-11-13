@@ -1,0 +1,167 @@
+
+>>> remap NM --url "https://www.maxpreps.com/nm/santa-fe/new-mexico-school-for-the-deaf-roadrunners/football/schedule/" --to "New Mexico School for the Deaf (NM)" --commit
+
+REMAP https://www.maxpreps.com/nm/santa-fe/new-mexico-school-for-the-deaf-roadrunners/football/schedule/ -> New Mexico School for the Deaf (NM) - COMMIT
+   URL                                       ProperName                Team_ID  NewProperName                        NewTeam_ID
+   https://www.maxpreps.com/nm/santa-fe/new  Santa Fe New Mexico (NM)  41397    New Mexico School for the Deaf (NM)  65829     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck NM --commit
+
+MAPPING CHECK NM - COMMIT (Team_ID set to the ProperName ID)
+ 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_mapcheck_COMMITTED_20261106_1503.csv
+   URL                                       ProperName    Team_ID  NameID  Problem                         Team_ID_Name   
+   https://www.maxpreps.com/nm/socorro/soco  Socorro (NM)  70298    68220   Team_ID points to another name  Socorro JV (NM)
+   Status     Fixable  Err 
+   COMMITTED  1        None
+
+>>> round NM --reason "NM round 1: Onate renamed Organ Mountain (2021), Hatch, T or C, typos, Illinois 2021 names labelled NM"
+Consolidating NM from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\NM_Alias_Rules.csv
+
+DEDUP v4 NM - PREVIEW (nothing changed)
+ dedup_archive: 62 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_archive_20261106_1504.csv
+ dedup_review: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_review_20261106_1504.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_dedup_summary_20261106_1504.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  NM     38219         62                   26               None 
+
+REVIEW-ONLY PAIRS NM - PREVIEW (nothing changed)
+ 26 pairs {'LONG': 15, 'SHORT': 11} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_review_pairs_20261106_1504.csv
+
+Nothing deleted yet. Check the CSVs (or ask Claude to), then run:  python hs_cleanup.py commit NM
+
+[stderr]
+2026-11-06 15:03:43,942 - INFO - Starting consolidation for state: (NM) using staging table method.
+2026-11-06 15:03:43,951 - WARNING - WARNING: 120 row(s) have identical OldName and NewName (no-op rules).
+2026-11-06 15:03:43,951 - WARNING -   'Alamogordo (NM)' -> 'Alamogordo (NM)' (no change)
+2026-11-06 15:03:43,952 - WARNING -   'Albuquerque (NM)' -> 'Albuquerque (NM)' (no change)
+2026-11-06 15:03:43,952 - WARNING -   'Albuquerque Academy (NM)' -> 'Albuquerque Academy (NM)' (no change)
+2026-11-06 15:03:43,952 - WARNING -   'Albuquerque Atrisco Heritage Academy (NM)' -> 'Albuquerque Atrisco Heritage Academy (NM)' (no change)
+2026-11-06 15:03:43,952 - WARNING -   'Albuquerque Cibola (NM)' -> 'Albuquerque Cibola (NM)' (no change)
+2026-11-06 15:03:43,952 - WARNING -   'Albuquerque Del Norte (NM)' -> 'Albuquerque Del Norte (NM)' (no change)
+2026-11-06 15:03:43,952 - WARNING -   'Albuquerque Eldorado (NM)' -> 'Albuquerque Eldorado (NM)' (no change)
+2026-11-06 15:03:43,952 - WARNING -   'Albuquerque Highland (NM)' -> 'Albuquerque Highland (NM)' (no change)
+2026-11-06 15:03:43,952 - WARNING -   'Albuquerque Hope Christian (NM)' -> 'Albuquerque Hope Christian (NM)' (no change)
+2026-11-06 15:03:43,952 - WARNING -   'Albuquerque La Cueva (NM)' -> 'Albuquerque La Cueva (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Albuquerque Manzano (NM)' -> 'Albuquerque Manzano (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Albuquerque Menaul (NM)' -> 'Albuquerque Menaul (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Albuquerque Rio Grande (NM)' -> 'Albuquerque Rio Grande (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Albuquerque Sandia (NM)' -> 'Albuquerque Sandia (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Albuquerque St. Pius X (NM)' -> 'Albuquerque St. Pius X (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Albuquerque Valley (NM)' -> 'Albuquerque Valley (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Albuquerque Volcano Vista (NM)' -> 'Albuquerque Volcano Vista (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Albuquerque West Mesa (NM)' -> 'Albuquerque West Mesa (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Animas (NM)' -> 'Animas (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Anthony Gadsden (NM)' -> 'Anthony Gadsden (NM)' (no change)
+2026-11-06 15:03:43,953 - WARNING -   'Artesia (NM)' -> 'Artesia (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Aztec (NM)' -> 'Aztec (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Bayard Cobre (NM)' -> 'Bayard Cobre (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Belen (NM)' -> 'Belen (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Bernalillo (NM)' -> 'Bernalillo (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Bloomfield (NM)' -> 'Bloomfield (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Capitan (NM)' -> 'Capitan (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Carlsbad (NM)' -> 'Carlsbad (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Carrizozo (NM)' -> 'Carrizozo (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Chaparral (NM)' -> 'Chaparral (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Clayton (NM)' -> 'Clayton (NM)' (no change)
+2026-11-06 15:03:43,954 - WARNING -   'Cloudcroft (NM)' -> 'Cloudcroft (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Clovis (NM)' -> 'Clovis (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Crown Point (NM)' -> 'Crown Point (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Cuba (NM)' -> 'Cuba (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Deming (NM)' -> 'Deming (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Dexter (NM)' -> 'Dexter (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Dora (NM)' -> 'Dora (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Dulce (NM)' -> 'Dulce (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Espanola McCurdy (NM)' -> 'Espanola McCurdy (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Espanola Valley (NM)' -> 'Espanola Valley (NM)' (no change)
+2026-11-06 15:03:43,955 - WARNING -   'Estancia (NM)' -> 'Estancia (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Eunice (NM)' -> 'Eunice (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Farmington (NM)' -> 'Farmington (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Farmington Navajo Prep (NM)' -> 'Farmington Navajo Prep (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Farmington Piedra Vista (NM)' -> 'Farmington Piedra Vista (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Floyd (NM)' -> 'Floyd (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Fort Sumner (NM)' -> 'Fort Sumner (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Fort Sumner-House (NM)' -> 'Fort Sumner-House (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Fort Wingate (NM)' -> 'Fort Wingate (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Gallup (NM)' -> 'Gallup (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Gallup Miyamura (NM)' -> 'Gallup Miyamura (NM)' (no change)
+2026-11-06 15:03:43,956 - WARNING -   'Grants (NM)' -> 'Grants (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Hagerman (NM)' -> 'Hagerman (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Hatch Valley (NM)' -> 'Hatch Valley (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Hobbs (NM)' -> 'Hobbs (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Hondo (NM)' -> 'Hondo (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Jal (NM)' -> 'Jal (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Kirtland Central (NM)' -> 'Kirtland Central (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Lake Arthur (NM)' -> 'Lake Arthur (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Las Cruces (NM)' -> 'Las Cruces (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Las Cruces Centennial (NM)' -> 'Las Cruces Centennial (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Las Cruces Mayfield (NM)' -> 'Las Cruces Mayfield (NM)' (no change)
+2026-11-06 15:03:43,957 - WARNING -   'Las Cruces Mesilla Valley Christian (NM)' -> 'Las Cruces Mesilla Valley Christian (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Las Vegas Robertson (NM)' -> 'Las Vegas Robertson (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Logan (NM)' -> 'Logan (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Lordsburg (NM)' -> 'Lordsburg (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Los Alamos (NM)' -> 'Los Alamos (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Los Lunas (NM)' -> 'Los Lunas (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Los Lunas Valencia (NM)' -> 'Los Lunas Valencia (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Loving (NM)' -> 'Loving (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Lovington (NM)' -> 'Lovington (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Magdalena (NM)' -> 'Magdalena (NM)' (no change)
+2026-11-06 15:03:43,958 - WARNING -   'Magdalena Alamo Navajo (NM)' -> 'Magdalena Alamo Navajo (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'Melrose (NM)' -> 'Melrose (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'Mescalero Apache (NM)' -> 'Mescalero Apache (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'Moriarty (NM)' -> 'Moriarty (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'Mountainair (NM)' -> 'Mountainair (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'Navajo Pine (NM)' -> 'Navajo Pine (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'New Laguna Acoma (NM)' -> 'New Laguna Acoma (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'New Mexico School for the Deaf (NM)' -> 'New Mexico School for the Deaf (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'New Mexico State University (NM)' -> 'New Mexico State University (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'Newcomb (NM)' -> 'Newcomb (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'Pojoaque Valley (NM)' -> 'Pojoaque Valley (NM)' (no change)
+2026-11-06 15:03:43,959 - WARNING -   'Portales (NM)' -> 'Portales (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Questa (NM)' -> 'Questa (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Ramah (NM)' -> 'Ramah (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Raton (NM)' -> 'Raton (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Reserve (NM)' -> 'Reserve (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Rio Rancho (NM)' -> 'Rio Rancho (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Rio Rancho Cleveland (NM)' -> 'Rio Rancho Cleveland (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Roswell (NM)' -> 'Roswell (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Roswell Gateway Christian (NM)' -> 'Roswell Gateway Christian (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Roswell Goddard (NM)' -> 'Roswell Goddard (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Roswell New Mexico Military Institute (NM)' -> 'Roswell New Mexico Military Institute (NM)' (no change)
+2026-11-06 15:03:43,960 - WARNING -   'Ruidoso (NM)' -> 'Ruidoso (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Santa Fe (NM)' -> 'Santa Fe (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Santa Fe Capital (NM)' -> 'Santa Fe Capital (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Santa Fe Indian (NM)' -> 'Santa Fe Indian (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Santa Fe St. Michaels (NM)' -> 'Santa Fe St. Michaels (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Santa Rosa (NM)' -> 'Santa Rosa (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Santa Teresa (NM)' -> 'Santa Teresa (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Shiprock (NM)' -> 'Shiprock (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Silver City (NM)' -> 'Silver City (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Socorro (NM)' -> 'Socorro (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Socorro JV (NM)' -> 'Socorro JV (NM)' (no change)
+2026-11-06 15:03:43,961 - WARNING -   'Springer (NM)' -> 'Springer (NM)' (no change)
+2026-11-06 15:03:43,962 - WARNING -   'Taos (NM)' -> 'Taos (NM)' (no change)
+2026-11-06 15:03:43,962 - WARNING -   'Tatum (NM)' -> 'Tatum (NM)' (no change)
+2026-11-06 15:03:43,962 - WARNING -   'Texico (NM)' -> 'Texico (NM)' (no change)
+2026-11-06 15:03:43,962 - WARNING -   'Thoreau (NM)' -> 'Thoreau (NM)' (no change)
+2026-11-06 15:03:43,962 - WARNING -   'Tierra Amarilla Escalante (NM)' -> 'Tierra Amarilla Escalante (NM)' (no change)
+2026-11-06 15:03:43,962 - WARNING -   'Tohatchi (NM)' -> 'Tohatchi (NM)' (no change)
+2026-11-06 15:03:43,962 - WARNING -   'Truth or Consequences Hot Springs (NM)' -> 'Truth or Consequences Hot Springs (NM)' (no change)
+2026-11-06 15:03:43,962 - WARNING -   'Tucumcari (NM)' -> 'Tucumcari (NM)' (no change)
+2026-11-06 15:03:43,963 - WARNING -   'Tularosa (NM)' -> 'Tularosa (NM)' (no change)
+2026-11-06 15:03:43,963 - WARNING -   'Vaughn (NM)' -> 'Vaughn (NM)' (no change)
+2026-11-06 15:03:43,963 - WARNING -   'West Las Vegas (NM)' -> 'West Las Vegas (NM)' (no change)
+2026-11-06 15:03:43,963 - WARNING -   'Zuni (NM)' -> 'Zuni (NM)' (no change)
+2026-11-06 15:03:43,963 - WARNING -   'Crownpoint (NM)' -> 'Crownpoint (NM)' (no change)
+2026-11-06 15:03:43,963 - INFO - Validation passed: 161 rules are clean and ready to upload.
+2026-11-06 15:03:43,992 - INFO - Uploading 161 rules to staging table: ConsolidationRules_Staging...
+2026-11-06 15:03:44,746 - INFO - Upload to staging table complete.
+2026-11-06 15:03:44,751 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-06 15:04:15,937 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-06 15:04:15,937 - INFO - Reason logged to dbo.HS_Consolidation_Log: NM round 1: Onate renamed Organ Mountain (2021), Hatch, T or C, typos, Illinois 2021 names labelled NM
+2026-11-06 15:04:15,937 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-06 15:04:15,937 - INFO - Running post-consolidation safety check...
+2026-11-06 15:04:15,944 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+=== OK 2026-11-06 15:04:27

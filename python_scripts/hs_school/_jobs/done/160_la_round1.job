@@ -1,0 +1,23 @@
+move-team LA --from "Dallas Sunset (TX)" --to "Sunset (LA)" --seasons 1880-2026 --ids hsfha_mv_05.csv --reason "HSFHA-LA match: game belongs to Sunset (LA) (hsfha.org school code)" --commit
+move-team LA --from "Farmersville (TX)" --to "Farmerville Union Parish (LA)" --seasons 1880-2026 --ids hsfha_mv_07.csv --reason "HSFHA-LA match: game belongs to Farmerville Union Parish (LA) (hsfha.org school code)" --commit
+move-team LA --from "Menard (TX)" --to "Alexandria Menard Memorial (LA)" --seasons 1880-2026 --ids hsfha_mv_09.csv --reason "HSFHA-LA match: game belongs to Alexandria Menard Memorial (LA) (hsfha.org school code)" --commit
+move-team LA --from "West Helena DeSoto (AR)" --to "Mansfield DeSoto (LA)" --seasons 1880-2026 --ids hsfha_mv_17.csv --reason "HSFHA-LA match: game belongs to Mansfield DeSoto (LA) (hsfha.org school code)" --commit
+move-team LA --from "Jonesboro (AR)" --to "Jonesboro-Hodge (LA)" --seasons 1880-2026 --ids hsfha_mv_20.csv --reason "HSFHA-LA match: game belongs to Jonesboro-Hodge (LA) (hsfha.org school code)" --commit
+move-team LA --from "Pine Bluff Watson Chapel (AR)" --to "Waterproof (LA)" --seasons 1880-2026 --ids hsfha_mv_24.csv --reason "HSFHA-LA match: game belongs to Waterproof (LA) (hsfha.org school code)" --commit
+move-team LA --from "Lake Charles College Prep (La)" --to "Lake Charles College Prep (LA)" --seasons 1880-2026 --ids hsfha_mv_32.csv --reason "HSFHA-LA match: game belongs to Lake Charles College Prep (LA) (hsfha.org school code)" --commit
+move-team LA --from "Vicksburg St.Aloysius (MS)" --to "New Orleans St. Aloysius (LA)" --seasons 1880-2026 --ids hsfha_mv_41.csv --reason "HSFHA-LA match: game belongs to New Orleans St. Aloysius (LA) (hsfha.org school code)" --commit
+move-team LA --from "Americus Southland Academy (GA)" --to "Hammond Southwood Academy (LA)" --seasons 1880-2026 --ids hsfha_mv_48.csv --reason "HSFHA-LA match: game belongs to Hammond Southwood Academy (LA) (hsfha.org school code)" --commit
+move-team LA --from "Longview Spring Hill (TX)" --to "Springhill (LA)" --seasons 1880-2026 --ids hsfha_mv_49.csv --reason "HSFHA-LA match: game belongs to Springhill (LA) (hsfha.org school code)" --commit
+move-team LA --from "Biloxi Nichols (MS)" --to "New Orleans F.T. Nicholls (LA)" --seasons 1880-2026 --ids hsfha_mv_62.csv --reason "HSFHA-LA match: game belongs to New Orleans F.T. Nicholls (LA) (hsfha.org school code)" --commit
+remap LA --url "https://www.maxpreps.com/la/athens/mount-olive-christian/football/schedule/" --to "Athens Mt. Olive Christian (LA)" --commit
+remap LA --url "https://www.maxpreps.com/la/grand-coteau/berchmans-academy-saints/football/schedule/" --to "Grand Coteau Berchmans Academy of the Sacred Heart (LA)" --commit
+remap LA --url "https://www.maxpreps.com/la/houma/aj-ellender-patriots/football/schedule/" --to "Houma A.J. Ellender (LA)" --commit
+remap LA --url "https://www.maxpreps.com/la/lafayette/teurlings-catholic-rebels/football/schedule/" --to "Lafayette Teurlings Catholic (LA)" --commit
+remap LA --url "https://www.maxpreps.com/la/marrero/lw-higgins-hurricanes/football/schedule/" --to "Marrero L.W. Higgins (LA)" --commit
+remap LA --url "https://www.maxpreps.com/la/metairie/archbishop-rummel-raiders/football/schedule/" --to "Metairie Archbishop Rummel (LA)" --commit
+remap LA --url "https://www.maxpreps.com/la/st-joseph/tensas-panthers/football/schedule/" --to "St. Joseph Tensas (LA)" --commit
+remap LA --url "https://www.maxpreps.com/la/shreveport/captain-shreve-gators/football/schedule/" --to "Shreveport Captain Shreve (LA)" --commit
+mapcheck LA --commit
+consolidate LA --reason "LA round 1: HSFHA-LA match - same-school name variants and renames to latest name (Holy Savior Menard, St. Michael, Lincoln Prep, Liberty Magnet, Dunham, Willow, Univ Christian Prep, Loyola Prep, Booker T. Washington, Warren Easton...), 2024 MaxPreps names, spacing fixes"
+dedup LA
+review-pairs LA

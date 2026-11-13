@@ -1,0 +1,92 @@
+
+>>> addstate OH
+Tracker rows ready for OH
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report OH drift
+
+REPORT drift OH: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_drift_20261112_0537.csv
+   Stopped                                  S_Games  S_First  S_Last  S_Mapped  Started                          N_Games  N_First  N_Last  N_Mapped
+   Akron Garfield (OH)                      767      1926     2024    0         None                             None     None     None    0       
+   Akron Kenmore (OH)                       548      1918     2022    0         None                             None     None     None    0       
+   Akron Kenmore-Garfield (OH)              54       2017     2022    0         None                             None     None     None    0       
+   Akron St. Vincent-St. Mary (OH)          575      1933     2023    0         None                             None     None     None    0       
+   Ashtabula Sts. John & Paul (OH)          86       1973     2015    0         None                             None     None     None    0       
+   Batavia Amelia (OH)                      391      1956     2016    0         None                             None     None     None    0       
+   Beallsville (OH)                         433      1957     2024    1         None                             None     None     None    0       
+   Beaver Creek (OH)                        607      1948     2024    0         None                             None     None     None    0       
+   Bedford Heights St. Peter Chanel (OH)    237      1959     2025    0         None                             None     None     None    0       
+   Bellaire St. John's Central (OH)         466      1926     2015    0         None                             None     None     None    0       
+   Berea (OH)                               619      1920     2022    0         None                             None     None     None    0       
+   Bloom-Carroll (OH)                       418      1968     2023    0         None                             None     None     None    0       
+   Brecksville-Broadview Heights (OH)       213      1983     2023    0         None                             None     None     None    0       
+   Chardon Notre Dame-Cathedral Latin (OH)  247      1978     2023    0         Chardon Notre Dame (OH)          34       2024     2026    1       
+   Cincinnati College Prep Academy (OH)     132      2010     2023    0         Cincinnati College Academy (OH)  32       2024     2026    1       
+   ... 90 more rows (see CSV)
+
+>>> mapcheck OH
+
+MAPPING CHECK OH - PREVIEW (nothing changed)
+ 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_mapcheck_20261112_0537.csv
+   URL                                       ProperName                     Team_ID  NameID  Problem                          Team_ID_Name                  
+   https://www.maxpreps.com/oh/akron/garfie  Akron Garfield Community (OH)  31174    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/columbus/st-  Columbus St. Francis (OH)      15866    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/hanoverton/u  Hanoverton United (OH)         36817    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/leavittsburg  Leavittsburg LaBrae (OH)       27053    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/lisbon/beave  Lisbon Beaver (OH)             16051    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/mt-orab/west  Mount Orab Western (OH)        37017    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/toledo/waite  Toledo Waite (OH)              12588    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/warren/hardi  Warren Harding (OH)            24481    None    ProperName not in HS_Team_Names  None                          
+   https://www.maxpreps.com/oh/middletown/m  Middletown Madison (OH)        3861     71674   Team_ID points to another name   Middletown Madison Senior (OH)
+   Status                     Fixable  Err 
+   PREVIEW (nothing changed)  1        None
+
+>>> dedup OH
+
+DEDUP v4 OH - PREVIEW (nothing changed)
+ dedup_archive: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_dedup_archive_20261112_0537.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_dedup_review_20261112_0537.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_dedup_summary_20261112_0537.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  OH     248694        2                    0                None 
+
+>>> review-pairs OH
+
+REVIEW-ONLY PAIRS OH - PREVIEW (nothing changed)
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_review_pairs_20261112_0537.csv
+
+>>> same-score-fix OH
+
+SAME-SCORE DOUBLE-BOOKINGS OH - PREVIEW (nothing changed)
+ 2964 pairs {'DROP B': 696, 'DROP A': 745, 'UNDECIDED': 1523} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_same_score_20261112_0540.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  1420      None   None
+
+>>> query OH oh_dump.sql
+
+QUERY oh_dump (1 result sets)
+ set 1: 248696 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_oh_dump_1_20261112_0540.csv
+
+>>> query OH oh_names.sql
+
+QUERY oh_names (1 result sets)
+ set 1: 2372 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_oh_names_1_20261112_0540.csv
+
+=== OK 2026-11-12 05:40:53

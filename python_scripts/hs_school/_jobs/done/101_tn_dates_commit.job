@@ -1,0 +1,7 @@
+set-dates TN --file hsfha_dates_hsfdatabase.csv --reason "hsfdatabase estimated date replaced by HSFHA-TN game date (both teams + score match)" --commit
+set-dates TN --file hsfha_dates_blank.csv --reason "no-source estimated date replaced by HSFHA-TN game date (both teams + score match)" --commit
+move-team TN --from "Tennessee Polytechnic Institute (TN)" --to "Sweetwater Tennessee Military Institute (TN)" --seasons 1880-2026 --ids hsfha_tpi_to_tmi.csv --reason "HSFHA-TN match: games belong to Tennessee Military Institute (Sweetwater)" --commit
+consolidate TN --reason "TN round 3: Tennessee Industrial School -> Tennessee Preparatory School (renamed), Sevierville, Auburndale"
+dedup TN
+review-pairs TN
+same-score-fix TN

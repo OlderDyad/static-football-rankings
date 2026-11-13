@@ -1,0 +1,3 @@
+set-scores TN --file hsfha_scores_estimated.csv --reason "hsfdatabase/no-source score replaced by HSFHA-TN score (David 2026-11-10: HSFHA volunteer-corrected)" --commit
+dedup TN
+same-score-fix TN

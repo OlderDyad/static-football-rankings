@@ -1,0 +1,674 @@
+
+>>> addstate WA
+Tracker rows ready for WA
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report WA drift
+
+REPORT drift WA: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_drift_20261112_0924.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started               N_Games  N_First  N_Last  N_Mapped
+   Amanda Park Twin Valley [Lake Quinault-W  15       2014     2015    0         None                  None     None     None    0       
+   Arlington Lakewood (WA)                   97       2014     2023    0         None                  None     None     None    0       
+   Burlington (WA)                           325      1924     2015    0         None                  None     None     None    0       
+   Chelan (WA)                               539      1927     2023    0         Chelan Mountain (WA)  29       2024     2026    1       
+   Chimacum (WA)                             434      1926     2020    0         None                  None     None     None    0       
+   Clarkston-Adams (WA)                      419      1922     2023    0         None                  None     None     None    0       
+   Cle Elum-Roslyn (WA)                      215      1951     2023    1         None                  None     None     None    0       
+   Colton-Pullman Christian (WA)             298      1955     2019    0         None                  None     None     None    0       
+   Covington Rainier Christian (WA)          92       2010     2020    0         None                  None     None     None    0       
+   Dayton-Waitsburg (WA)                     71       2016     2022    0         None                  None     None     None    0       
+   East Jefferson [Port Townsend-Chimacum]   22       2021     2023    0         None                  None     None     None    0       
+   Easton-Thorp (WA)                         27       2004     2015    0         None                  None     None     None    0       
+   Eastsound Orcas Island-Lopez (WA)         21       2015     2016    0         None                  None     None     None    0       
+   Garfield-Palouse (WA)                     334      1981     2023    0         None                  None     None     None    0       
+   Hartline Almira-Coulee-Hartline (WA)      356      1987     2023    0         None                  None     None     None    0       
+   ... 55 more rows (see CSV)
+
+>>> mapcheck WA --commit
+
+MAPPING CHECK WA - COMMIT (Team_ID set to the ProperName ID)
+ 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_mapcheck_COMMITTED_20261112_0924.csv
+   URL                                       ProperName                   Team_ID  NameID  Problem                          Team_ID_Name                    
+   https://www.maxpreps.com/wa/vancouver/pr  Brush Prairie Prairie (WA)   388      None    ProperName not in HS_Team_Names  None                            
+   https://www.maxpreps.com/wa/longview/ra-  Longview Ra Long (WA)        33169    None    ProperName not in HS_Team_Names  None                            
+   https://www.maxpreps.com/wa/seattle/king  Seattle Kings (WA)           48191    None    ProperName not in HS_Team_Names  None                            
+   https://www.maxpreps.com/wa/tacoma/mount  Tacoma Mount Tahoma (WA)     15061    None    ProperName not in HS_Team_Names  None                            
+   https://www.maxpreps.com/wa/cle-elum/cle  Cle Elum (WA)                60799    60798   Team_ID points to another name   Cle Elum-Roslyn (WA)            
+   https://www.maxpreps.com/wa/lacey/river-  Lacey River Ridge (WA)       72017    63888   Team_ID points to another name   Lacey St. Martin's (WA)         
+   https://www.maxpreps.com/wa/longview/mar  Longview Mark Morris (WA)    64476    64474   Team_ID points to another name   Longview R.A. Long (WA)         
+   https://www.maxpreps.com/wa/mill-creek/j  Mill Creek Jackson (WA)      65366    35774   Team_ID points to another name   Moclips Aloha (WA)              
+   https://www.maxpreps.com/wa/port-angeles  Port Angeles (WA)            66971    66952   Team_ID points to another name   Port Orchard South Kitsap (WA)  
+   https://www.maxpreps.com/wa/st-john/st-j  Saint John (WA)              67642    38652   Team_ID points to another name   Saint John-Endicott (WA)        
+   https://www.maxpreps.com/wa/seattle/shor  Seattle Shorecrest (WA)      68025    68024   Team_ID points to another name   Seattle Tyee (WA)               
+   https://www.maxpreps.com/wa/tacoma/linco  Tacoma Lincoln (WA)          68707    68706   Team_ID points to another name   Tacoma Mt.Tahoma (WA)           
+   https://www.maxpreps.com/wa/union-gap/la  Union Gap La Salle (WA)      70419    69165   Team_ID points to another name   University of Washington JV (WA)
+   https://www.maxpreps.com/wa/vancouver/he  Vancouver Heritage (WA)      69244    69243   Team_ID points to another name   Vancouver Hudson's Bay (WA)     
+   https://www.maxpreps.com/wa/vancouver/hu  Vancouver Hudson's Bay (WA)  70613    69244   Team_ID points to another name   Vancouver Hudson's Bay JV (WA)  
+   Status     Fixable  Err 
+   COMMITTED  11       None
+
+>>> dedup WA --commit
+
+DEDUP v4 WA - COMMIT
+ dedup_archive: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_dedup_archive_COMMITTED_20261112_0924.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_dedup_review_COMMITTED_20261112_0924.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_dedup_summary_COMMITTED_20261112_0924.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  WA     95036         5                    0                DB0D4DEB-E950-4686-830F-E69583BBF1A0
+
+>>> review-pairs WA --commit
+
+REVIEW-ONLY PAIRS WA - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_review_pairs_COMMITTED_20261112_0924.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         5B97F08C-D303-4FF4-8993-1D68292816B4  None
+
+>>> same-score-fix WA --commit
+
+SAME-SCORE DOUBLE-BOOKINGS WA - COMMIT
+ 805 pairs {'DROP A': 201, 'DROP B': 198, 'UNDECIDED': 406} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_same_score_COMMITTED_20261112_0925.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  396       39C67FE2-1589-4A56-BD8C-38FD2FF28BAA  None
+
+>>> query WA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_season_date_1_20261112_0925.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_season_date_2_20261112_0925.csv
+
+>>> query WA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_forfeits_1_20261112_0925.csv
+ set 2: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_forfeits_2_20261112_0925.csv
+
+>>> addstate ID
+Tracker rows ready for ID
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report ID drift
+
+REPORT drift ID: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_drift_20261112_0926.csv
+   Stopped                                S_Games  S_First  S_Last  S_Mapped  Started  N_Games  N_First  N_Last  N_Mapped
+   Baker City (ID)                        10       1952     2023    1         None     None     None     None    0       
+   Bruneau Rimrock (ID)                   444      1938     2025    1         None     None     None     None    0       
+   Dubois Clark County (ID)               278      1952     2023    0         None     None     None     None    0       
+   Dubois Clark County-Watersprings (ID)  24       2017     2019    0         None     None     None     None    0       
+   Fort Hall Shoshone-Bannock (ID)        184      1988     2019    0         None     None     None     None    0       
+   Greenleaf Friends Academy (ID)         342      1948     2023    0         None     None     None     None    0       
+   Harrison Kootenai (ID)                 294      1957     2023    0         None     None     None     None    0       
+   Horseshoe Bend (ID)                    256      1991     2025    1         None     None     None     None    0       
+   Mullan (ID)                            302      1927     2023    0         None     None     None     None    0       
+   Murtaugh-Hansen (ID)                   36       2013     2016    0         None     None     None     None    0       
+   New Meadows Valley (ID)                301      1940     2022    0         None     None     None     None    0       
+   Nezperce (ID)                          117      1926     2022    1         None     None     None     None    0       
+   Owyhee (ID)                            11       2023     2023    0         None     None     None     None    0       
+   Twin Falls Lighthouse Christian (ID)   206      2003     2023    0         None     None     None     None    0       
+   Weippe Timberline (ID)                 254      1952     2025    1         None     None     None     None    0       
+
+>>> mapcheck ID --commit
+
+MAPPING CHECK ID - COMMIT (Team_ID set to the ProperName ID)
+ 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_mapcheck_COMMITTED_20261112_0926.csv
+   URL                                       ProperName                 Team_ID  NameID  Problem                         Team_ID_Name         
+   https://www.maxpreps.com/id/ashton/north  Ashton North Fremont (ID)  8858     59141   Team_ID points to another name  Baker City (ID)      
+   https://www.maxpreps.com/id/weiser/weise  Weiser (ID)                71174    20494   Team_ID points to another name  Weiser Institute (ID)
+   Status     Fixable  Err 
+   COMMITTED  2        None
+
+>>> dedup ID --commit
+
+DEDUP v4 ID - COMMIT
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_dedup_archive_COMMITTED_20261112_0927.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_dedup_review_COMMITTED_20261112_0927.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_dedup_summary_COMMITTED_20261112_0927.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   COMMITTED  ID     39169         0                    0                None 
+
+>>> review-pairs ID --commit
+
+REVIEW-ONLY PAIRS ID - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_review_pairs_COMMITTED_20261112_0927.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         B56C673C-1322-448A-9A83-FE3B43EDC191  None
+
+>>> same-score-fix ID --commit
+
+SAME-SCORE DOUBLE-BOOKINGS ID - COMMIT
+ 177 pairs {'DROP B': 46, 'DROP A': 54, 'UNDECIDED': 77} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_same_score_COMMITTED_20261112_0927.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  99        FB522320-E82A-414F-8557-0D770E479FD8  None
+
+>>> query ID season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_season_date_1_20261112_0927.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_season_date_2_20261112_0927.csv
+
+>>> query ID forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_forfeits_1_20261112_0928.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_forfeits_2_20261112_0928.csv
+
+>>> addstate MT
+Tracker rows ready for MT
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report MT drift
+
+REPORT drift MT: 65 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_drift_20261112_0928.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started               N_Games  N_First  N_Last  N_Mapped
+   Alberton (MT)                             169      1939     2025    1         None                  None     None     None    0       
+   Ashland St. Labre Indian Catholic (MT)    198      1955     2024    1         None                  None     None     None    0       
+   Augusta (MT)                              369      1946     2017    0         None                  None     None     None    0       
+   Bigfork (MT)                              484      1948     2023    0         Bigfork Vikings (MT)  26       2024     2026    1       
+   Billings Rimrock Christian (MT)           45       2008     2016    0         None                  None     None     None    0       
+   Broadview-Lavina (MT)                     180      2002     2023    0         None                  None     None     None    0       
+   Busby Northern Cheyenne Tribal (MT)       112      1954     2018    0         None                  None     None     None    0       
+   Chester-Joplin-Inverness (MT)             195      1990     2023    0         None                  None     None     None    0       
+   Clark Fork co-op [Alberton-St. Regis] (M  287      1975     2022    1         None                  None     None     None    0       
+   Colstrip-Lame Deer (MT)                   50       2013     2016    0         None                  None     None     None    0       
+   Culbertson-Bainville (MT)                 157      1988     2015    0         None                  None     None     None    0       
+   Custer County (MT)                        49       1943     2016    0         None                  None     None     None    0       
+   Custer-Hysham-Melstone (MT)               16       2022     2023    0         None                  None     None     None    0       
+   Custer-Melstone (MT)                      153      1995     2024    0         None                  None     None     None    0       
+   Dawson County (MT)                        21       1945     2023    0         None                  None     None     None    0       
+   ... 50 more rows (see CSV)
+
+>>> mapcheck MT --commit
+
+MAPPING CHECK MT - COMMIT (Team_ID set to the ProperName ID)
+ 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_mapcheck_COMMITTED_20261112_0928.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/mt/ashland/st-l  Ashland St. Labre (MT)                    27168    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mt/custer/custe  Custer Melstone (MT)                      40144    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mt/red-lodge/re  Red Lodge Red Lodge (MT)                  20611    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mt/hobson/hobso  Tri-City co-op [Hobson-Moore-Judith Gap]  667      None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mt/whitehall/wh  Whitehall Harrison (MT)                   27730    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mt/arlee/arlee/  Arlee (MT)                                59130    59061   Team_ID points to another name   Ashland St. Labre Indian Catholic (MT)  
+   https://www.maxpreps.com/mt/circle/circl  Circle (MT)                               60769    60745   Team_ID points to another name   Clark Fork co-op [Alberton-St. Regis] (M
+   https://www.maxpreps.com/mt/great-falls/  Great Falls C M Russell (MT)              71523    15060   Team_ID points to another name   Great Falls C M Russell JV (MT)         
+   https://www.maxpreps.com/mt/jordan/garfi  Jordan Garfield County (MT)               63608    63586   Team_ID points to another name   Kalispell Flathead (MT)                 
+   https://www.maxpreps.com/mt/kalispell/fl  Kalispell Flathead (MT)                   71190    63608   Team_ID points to another name   Kalispell Flathead JV (MT)              
+   https://www.maxpreps.com/mt/rudyard/nort  Rudyard North Star (MT)                   29641    67521   Team_ID points to another name   Saint Regis (MT)                        
+   https://www.maxpreps.com/mt/townsend/bro  Townsend Broadwater (MT)                  69014    68981   Team_ID points to another name   Tri-City co-op [Hobson-Moore-JudithGap] 
+   https://www.maxpreps.com/mt/whitefish/wh  Whitefish (MT)                            69746    69739   Team_ID points to another name   Whitehall-Harrison (MT)                 
+   Status     Fixable  Err 
+   COMMITTED  8        None
+
+>>> dedup MT --commit
+
+DEDUP v4 MT - COMMIT
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_dedup_archive_COMMITTED_20261112_0929.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_dedup_review_COMMITTED_20261112_0929.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_dedup_summary_COMMITTED_20261112_0929.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   COMMITTED  MT     41175         0                    1                None 
+
+>>> review-pairs MT --commit
+
+REVIEW-ONLY PAIRS MT - COMMIT
+ 1 pairs {'SHORT': 1} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_review_pairs_COMMITTED_20261112_0929.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  1         5FEACD0C-9AD8-46DE-9842-42F773AFB142  None
+
+>>> same-score-fix MT --commit
+
+SAME-SCORE DOUBLE-BOOKINGS MT - COMMIT
+ 381 pairs {'DROP B': 98, 'DROP A': 112, 'UNDECIDED': 171} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_same_score_COMMITTED_20261112_0930.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  209       908657B7-67FF-468A-AE5F-7E358A770160  None
+
+>>> query MT season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_season_date_1_20261112_0930.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_season_date_2_20261112_0930.csv
+
+>>> query MT forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_forfeits_1_20261112_0930.csv
+ set 2: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_forfeits_2_20261112_0930.csv
+
+>>> addstate ND
+Tracker rows ready for ND
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report ND drift
+
+REPORT drift ND: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_drift_20261112_0931.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                 N_Games  N_First  N_Last  N_Mapped
+   Benson County [Leeds-Maddock] (ND)        77       2009     2022    0         None                    None     None     None    0       
+   Berthold (ND)                             365      1966     2016    0         None                    None     None     None    0       
+   Bowman County co-op [Bowman-Scranton] (N  105      2000     2022    0         None                    None     None     None    0       
+   Cando North Star (ND)                     92       2008     2016    0         None                    None     None     None    0       
+   Carrington Old HS (ND)                    642      1913     2016    0         None                    None     None     None    0       
+   Carrington-Pingree-Buchanan (ND)          14       2017     2021    0         None                    None     None     None    0       
+   Center-Stanton (ND)                       216      2003     2023    0         None                    None     None     None    0       
+   Des Lacs-Burlington (ND)                  479      1975     2023    0         Des Lacs Des Lacs (ND)  29       2024     2026    1       
+   Devils Lake-Minnewaukan (ND)              26       2015     2021    0         None                    None     None     None    0       
+   Drake-Anamoose (ND)                       229      1975     2022    0         None                    None     None     None    0       
+   Drayton-Valley-Edinburg (ND)              20       2014     2016    0         None                    None     None     None    0       
+   Ellendale (ND)                            704      1924     2015    0         None                    None     None     None    0       
+   Ellendale-Edgeley-Kulm (ND)               103      2013     2023    0         None                    None     None     None    0       
+   Fargo Oak Grove Lutheran (ND)             590      1947     2023    0         None                    None     None     None    0       
+   Fessenden Wells County (ND)               40       2004     2016    0         None                    None     None     None    0       
+   ... 91 more rows (see CSV)
+
+>>> mapcheck ND --commit
+
+MAPPING CHECK ND - COMMIT (Team_ID set to the ProperName ID)
+ 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_mapcheck_COMMITTED_20261112_0931.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/nd/turtle-lake/  Central McLean [Turtle Lake-Mercer-Under  39110    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/nd/westhope/wes  Westhope Newburg (ND)                     16874    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/nd/grand-forks/  Grand Forks Red River (ND)                62623    62584   Team_ID points to another name   Grant County co-op [Carson-Elgin-New Lei
+   Status     Fixable  Err 
+   COMMITTED  1        None
+
+>>> dedup ND --commit
+
+DEDUP v4 ND - COMMIT
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_dedup_archive_COMMITTED_20261112_0931.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_dedup_review_COMMITTED_20261112_0931.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_dedup_summary_COMMITTED_20261112_0931.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   COMMITTED  ND     43085         0                    0                None 
+
+>>> review-pairs ND --commit
+
+REVIEW-ONLY PAIRS ND - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_review_pairs_COMMITTED_20261112_0931.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         D2053D9F-06A8-4EBA-9BED-03057F8F2267  None
+
+>>> same-score-fix ND --commit
+
+SAME-SCORE DOUBLE-BOOKINGS ND - COMMIT
+ 2850 pairs {'DROP B': 219, 'DROP A': 209, 'UNDECIDED': 2422} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_same_score_COMMITTED_20261112_0935.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  420       7F3546F9-592B-466D-84DA-0F0CE5A355A8  None
+
+>>> query ND season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_season_date_1_20261112_0935.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_season_date_2_20261112_0935.csv
+
+>>> query ND forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_forfeits_1_20261112_0935.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_forfeits_2_20261112_0935.csv
+
+>>> addstate SD
+Tracker rows ready for SD
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report SD drift
+
+REPORT drift SD: 59 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_drift_20261112_0936.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started        N_Games  N_First  N_Last  N_Mapped
+   Alcester-Hudson (SD)                      336      1971     2023    0         None           None     None     None    0       
+   Arlington-Lake Preston (SD)               59       2015     2021    0         None           None     None     None    0       
+   Armour Tripp-Delmont-Armour (SD)          120      2004     2017    0         None           None     None     None    0       
+   Bison (SD)                                340      1955     2020    0         None           None     None     None    0       
+   Bonesteel Burke-South Central (SD)        56       2014     2019    0         None           None     None     None    0       
+   Bridgewater-Emery-Ethan (SD)              151      2010     2023    0         None           None     None     None    0       
+   Britton-Hecla (SD)                        195      2002     2023    0         None           None     None     None    0       
+   Buffalo Harding County-Bison (SD)         18       2021     2022    0         None           None     None     None    0       
+   Canistota-Freeman (SD)                    55       2017     2021    0         None           None     None     None    0       
+   Canton (SD)                               784      1921     2023    0         Canton C (SD)  29       2024     2026    1       
+   Castlewood-Estelline (SD)                 16       2015     2016    0         None           None     None     None    0       
+   Colome (SD)                               639      1923     2025    1         None           None     None     None    0       
+   Dakota Hills [Wilmot-Waubay-Summit] (SD)  70       2015     2023    0         None           None     None     None    0       
+   De Smet (SD)                              548      1921     2024    0         None           None     None     None    0       
+   DeSmet-Iroquois (SD)                      79       1992     2015    0         None           None     None     None    0       
+   ... 44 more rows (see CSV)
+
+>>> mapcheck SD --commit
+
+MAPPING CHECK SD - COMMIT (Team_ID set to the ProperName ID)
+ 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_mapcheck_COMMITTED_20261112_0936.csv
+   URL                                       ProperName                   Team_ID  NameID  Problem                          Team_ID_Name                       
+   https://www.maxpreps.com/sd/dell-rapids/  Dell Rapids-Saint Mary (SD)  28131    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/sd/rosholt/tri-  Rosholt Tri St. ate (SD)     26204    None    ProperName not in HS_Team_Names  None                               
+   https://www.maxpreps.com/sd/dell-rapids/  Dell Rapids (SD)             10554    61390   Team_ID points to another name   Dell Rapids St. Mary's (SD)        
+   https://www.maxpreps.com/sd/mt-vernon/mt  Mount Vernon (SD)            39415    65594   Team_ID points to another name   Mount Vernon-Plankinton (SD)       
+   https://www.maxpreps.com/sd/rapid-city/m  Rapid City More (SD)         71253    67182   Team_ID points to another name   Rapid City St.Martin's Academy (SD)
+   https://www.maxpreps.com/sd/stephan/crow  Stephan Crow Creek (SD)      68493    21757   Team_ID points to another name   Stickney-Mount Vernon (SD)         
+   Status     Fixable  Err 
+   COMMITTED  4        None
+
+>>> dedup SD --commit
+
+DEDUP v4 SD - COMMIT
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_archive_COMMITTED_20261112_0936.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_review_COMMITTED_20261112_0936.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_dedup_summary_COMMITTED_20261112_0936.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   COMMITTED  SD     57296         0                    0                None 
+
+>>> review-pairs SD --commit
+
+REVIEW-ONLY PAIRS SD - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_review_pairs_COMMITTED_20261112_0936.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         26D9608C-497B-4EF4-965A-68A8555A9B54  None
+
+>>> same-score-fix SD --commit
+
+SAME-SCORE DOUBLE-BOOKINGS SD - COMMIT
+ 2043 pairs {'DROP A': 355, 'DROP B': 386, 'UNDECIDED': 1302} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_same_score_COMMITTED_20261112_0939.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  734       11C7C5A8-591A-4C16-9EE6-EF740E28EB88  None
+
+>>> query SD season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_season_date_1_20261112_0939.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_season_date_2_20261112_0939.csv
+
+>>> query SD forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_forfeits_1_20261112_0939.csv
+ set 2: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_forfeits_2_20261112_0939.csv
+
+>>> addstate MN
+Tracker rows ready for MN
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report MN drift
+
+REPORT drift MN: 180 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_drift_20261112_0940.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                      N_Games  N_First  N_Last  N_Mapped
+   Ada-Borup-Norman County West (MN)         45       2017     2023    0         None                         None     None     None    0       
+   Adrian (MN)                               534      1923     2022    0         None                         None     None     None    0       
+   Alden-Conger-Glenville-Emmons (MN)        47       2017     2023    0         None                         None     None     None    0       
+   Anoka-Legacy Christian Academy-PACT Char  28       2019     2022    0         None                         None     None     None    0       
+   Atwater-Cosmos-Grove City (MN)            263      1993     2023    0         None                         None     None     None    0       
+   Babbitt Northeast Range (MN)              77       2011     2020    0         None                         None     None     None    0       
+   Badger-Greenbush-Middle River (MN)        183      2004     2023    0         None                         None     None     None    0       
+   Barrett West Central Area-Ashby (MN)      100      2015     2024    0         None                         None     None     None    0       
+   Battle Lake Henning Ottertail Central co  207      2000     2023    0         Battle Lake Otter Tail (MN)  29       2024     2026    1       
+   Baudette Lake of the Woods-Indus (MN)     408      1937     2023    0         None                         None     None     None    0       
+   Baudette Lake of the Woods-Indus-Rainy R  31       2017     2022    0         None                         None     None     None    0       
+   Belgrade-Brooten-Elrosa (MN)              307      1988     2023    0         None                         None     None     None    0       
+   Belle Plaine-Holy Family Academy (MN)     84       2004     2020    0         None                         None     None     None    0       
+   Bird Island-Olivia-Lake Lillian (MN)      288      1988     2018    0         None                         None     None     None    0       
+   Blue Earth Area (MN)                      697      1920     2025    0         None                         None     None     None    0       
+   ... 165 more rows (see CSV)
+
+>>> mapcheck MN --commit
+
+MAPPING CHECK MN - COMMIT (Team_ID set to the ProperName ID)
+ 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_mapcheck_COMMITTED_20261112_0940.csv
+   URL                                       ProperName                       Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/mn/barrett/west  Barrett West Central (MN)        17186    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/barrett/west  Barrett West Central Ashby (MN)  20486    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/blue-earth/b  Blue Earth (MN)                  11348    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/edgerton/edg  Edgerton Ellsworth (MN)          9559     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/hill-city/hi  Hill City Northland (MN)         17263    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/leroy/leroy-  Leroy Ostrander (MN)             7564     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/minneapolis/  Minneapolis DeLaSalle (MN)       43735    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/mound/mound-  Mound Westonka Christian (MN)    11013    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/st-james/st-  Saint James (MN)                 43752    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/st-louis-par  Saint Louis Park St. Louis (MN)  20565    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/mn/alexandria/a  Alexandria (MN)                  58925    58847   Team_ID points to another name   Amboy-Good Thunder Lake (MN)            
+   https://www.maxpreps.com/mn/barnum/barnu  Barnum (MN)                      59375    59374   Team_ID points to another name   Barrett West Central Area (MN)          
+   https://www.maxpreps.com/mn/cambridge/ca  Cambridge-Isanti (MN)            60188    60169   Team_ID points to another name   Campbell-Tintah (MN)                    
+   https://www.maxpreps.com/mn/edgerton/edg  Edgerton (MN)                    61693    61692   Team_ID points to another name   Edgerton-Ellsworth (MN)                 
+   https://www.maxpreps.com/mn/elk-river/el  Elk River (MN)                   61773    61771   Team_ID points to another name   Elk River St. Michael-Albertville (MN)  
+   https://www.maxpreps.com/mn/fergus-falls  Fergus Falls (MN)                62076    62075   Team_ID points to another name   Fergus Falls Hillcrest Lutheran Academy 
+   https://www.maxpreps.com/mn/howard-lake/  Howard Lake (MN)                 63263    63262   Team_ID points to another name   Howard Lake-Waverly (MN)                
+   https://www.maxpreps.com/mn/luverne/luve  Luverne (MN)                     64625    64621   Team_ID points to another name   Lyle (MN)                               
+   https://www.maxpreps.com/mn/minneota/min  Minneota (MN)                    65325    65323   Team_ID points to another name   Minnesota School For The Deaf (MN)      
+   https://www.maxpreps.com/mn/mountain-iro  Mountain Iron (MN)               65605    65604   Team_ID points to another name   Mountain Iron-Buhl (MN)                 
+   ... 8 more rows (see CSV)
+   Status     Fixable  Err 
+   COMMITTED  18       None
+
+>>> dedup MN --commit
+
+DEDUP v4 MN - COMMIT
+ dedup_archive: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_dedup_archive_COMMITTED_20261112_0940.csv
+ dedup_review: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_dedup_review_COMMITTED_20261112_0940.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_dedup_summary_COMMITTED_20261112_0940.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  MN     137543        5                    3                987EDBC8-9B0A-42B1-9528-ACE69DFD07A7
+
+>>> review-pairs MN --commit
+
+REVIEW-ONLY PAIRS MN - COMMIT
+ 3 pairs {'LONG': 1, 'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_review_pairs_COMMITTED_20261112_0940.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  3         841EBCE7-74F2-42FB-9981-A79950B77C1A  None
+
+>>> same-score-fix MN --commit
+
+SAME-SCORE DOUBLE-BOOKINGS MN - COMMIT
+ 1985 pairs {'DROP B': 370, 'DROP A': 371, 'UNDECIDED': 1244} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_same_score_COMMITTED_20261112_0943.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  729       D454C480-EA9C-4BD3-8733-33908F13FB87  None
+
+>>> query MN season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_season_date_1_20261112_0943.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_season_date_2_20261112_0943.csv
+
+>>> query MN forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_forfeits_1_20261112_0943.csv
+ set 2: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_forfeits_2_20261112_0943.csv
+
+>>> addstate WI
+Tracker rows ready for WI
+   StepNo  Step                     Status       Updated  RunIDs  Notes
+   0.0     College-link collisions  not started  None     None    None 
+   1.1     Name inventory           not started  None     None    None 
+   1.2     MaxPreps drift           not started  None     None    None 
+   1.3     Same-town same-opponent  not started  None     None    None 
+   1.4     Split two-school names   not started  None     None    None 
+   2.1     Dedup v4                 not started  None     None    None 
+   2.2     Review-only pairs        not started  None     None    None 
+   2.3     Double-booked dates      not started  None     None    None 
+   3.1     Season vs date           not started  None     None    None 
+   3.2     Forfeits                 not started  None     None    None 
+   4.1     Source histograms        not started  None     None    None 
+   4.2     Phantom pair scan        not started  None     None    None 
+   4.3     Outside-source compare   not started  None     None    None 
+   5.0     College games            not started  None     None    None 
+   6.0     Re-rate dirty seasons    not started  None     None    None 
+   7.0     Residuals                not started  None     None    None 
+   8.0     Gap audit                not started  None     None    None 
+
+>>> report WI drift
+
+REPORT drift WI: 184 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_drift_20261112_0944.csv
+   Stopped                                   S_Games  S_First  S_Last  S_Mapped  Started                       N_Games  N_First  N_Last  N_Mapped
+   Abundant Life-Madison Country Day-St. Am  20       2014     2017    0         None                          None     None     None    0       
+   Alma Center Lincoln (WI)                  411      1961     2023    0         Alma Center Alma Center (WI)  20       2024     2026    1       
+   Beaver Dam Wayland Academy (WI)           223      1923     2024    0         None                          None     None     None    0       
+   Benton-Scales Mound (IL)-Shullsburg (WI)  30       2019     2023    0         None                          None     None     None    0       
+   Birchwood (WI)                            133      1960     2016    0         None                          None     None     None    0       
+   Black Hawk-Warren (IL)-South Wayne (WI)   19       2021     2022    0         None                          None     None     None    0       
+   Bowler (WI)                               230      1968     2019    0         None                          None     None     None    0       
+   Bowler-Gresham Community (WI)             88       2010     2022    0         None                          None     None     None    0       
+   Brodhead-Juda (WI)                        398      1973     2023    0         None                          None     None     None    0       
+   Bruce (WI)                                402      1949     2023    0         None                          None     None     None    0       
+   Cambria Friesland (WI)                    21       2024     2025    1         None                          None     None     None    0       
+   Cambria-Friesland (WI)                    479      1972     2023    0         None                          None     None     None    0       
+   Cassville (WI)                            480      1959     2018    0         None                          None     None     None    0       
+   Cazenovia Weston (WI)                     500      1956     2016    0         None                          None     None     None    0       
+   Cedar Grove-Belgium (WI)                  239      2001     2025    0         Cedar Grove Cedar Grove (WI)  1        2026     2026    0       
+   ... 169 more rows (see CSV)
+
+>>> mapcheck WI --commit
+
+MAPPING CHECK WI - COMMIT (Team_ID set to the ProperName ID)
+ 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_mapcheck_COMMITTED_20261112_0944.csv
+   URL                                       ProperName                                Team_ID  NameID  Problem                          Team_ID_Name                            
+   https://www.maxpreps.com/wi/beloit/turne  Beloit Turner (WI)                        7404     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/cedar-grove/  Cedar Grove Cedar Grove (WI)              26650    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/fond-du-lac/  Fond Du Lac Fond Du (WI)                  5030     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/green-lake/g  Green Lake Green Lake (WI)                33048    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/greendale/ma  Greendale Martin Luther (WI)              38092    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/kenosha/brad  Kenosha Bradford Reuther (WI)             12616    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/milwaukee/ma  Milwaukee Marquette University (WI)       23522    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/neenah/st-ma  Neenah St. Mary (WI)                      5070     None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/oshkosh/lour  Oshkosh Lourdes (WI)                      43162    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/wausau/newma  Wausau Newman (WI)                        10660    None    ProperName not in HS_Team_Names  None                                    
+   https://www.maxpreps.com/wi/beloit/beloi  Beloit Memorial (WI)                      59584    59581   Team_ID points to another name   Beloit Turner Memorial (WI)             
+   https://www.maxpreps.com/wi/greendale/gr  Greendale (WI)                            62662    62661   Team_ID points to another name   Greendale Martin Luther Prep (WI)       
+   https://www.maxpreps.com/wi/milwaukee/mi  Milwaukee Madison University-Northwest (  65281    65280   Team_ID points to another name   Milwaukee Marquette University High (WI)
+   https://www.maxpreps.com/wi/neenah/neena  Neenah (WI)                               65736    65735   Team_ID points to another name   Neenah St. Mary Central (WI)            
+   https://www.maxpreps.com/wi/prairie-du-c  Prairie du Chien (WI)                     1491     67054   Team_ID points to another name   Prairie Du Chien Martin Luther Prep (WI)
+   https://www.maxpreps.com/wi/shawano/shaw  Shawano Community (WI)                    71877    68086   Team_ID points to another name   Shawano-Gresham Community (WI)          
+   https://www.maxpreps.com/wi/spencer/spen  Spencer (WI)                              68318    68314   Team_ID points to another name   Spencer-Columbus Catholic (WI)          
+   https://www.maxpreps.com/wi/wausau/wausa  Wausau East (WI)                          69557    69556   Team_ID points to another name   Wausau Newman Catholic (WI)             
+   Status     Fixable  Err 
+   COMMITTED  8        None
+
+>>> dedup WI --commit
+
+DEDUP v4 WI - COMMIT
+ dedup_archive: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_dedup_archive_COMMITTED_20261112_0944.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_dedup_review_COMMITTED_20261112_0944.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_dedup_summary_COMMITTED_20261112_0944.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  WI     128615        2                    0                38D5AD2A-918E-4F00-8571-C7CB51836F7A
+
+>>> review-pairs WI --commit
+
+REVIEW-ONLY PAIRS WI - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_review_pairs_COMMITTED_20261112_0944.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         EDE198BF-642B-408D-9A62-3AEA9CD85602  None
+
+>>> same-score-fix WI --commit
+
+SAME-SCORE DOUBLE-BOOKINGS WI - COMMIT
+ 867 pairs {'DROP A': 190, 'DROP B': 199, 'UNDECIDED': 478} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_same_score_COMMITTED_20261112_0946.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  380       427D279F-B453-457D-8879-B5B4F62E11D4  None
+
+>>> query WI season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_season_date_1_20261112_0946.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_season_date_2_20261112_0946.csv
+
+>>> query WI forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_forfeits_1_20261112_0946.csv
+ set 2: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_forfeits_2_20261112_0946.csv
+
+=== OK 2026-11-12 09:46:16

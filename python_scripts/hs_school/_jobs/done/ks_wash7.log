@@ -1,0 +1,20 @@
+
+>>> move-team KS --from "Washington (KS)" --to "Kansas City Washington (KS)" --seasons 1985-1990 --ids KS_washington_eudora_to_kcw_ids.csv --reason "Eudora 1985-90 opponent is KC Washington: Kansas City Star 1986-09-28 p207 Kansas City area results 'Washington (Kan.) 20, Eudora 13'" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_washington_eudora_to_kcw_ids.csv
+
+MOVE Washington (KS) -> Kansas City Washington (KS), seasons 1985-1990 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_move_games_COMMITTED_20261107_0754.csv
+ move_by_season: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_move_by_season_COMMITTED_20261107_0754.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> dedup KS
+
+DEDUP v4 KS - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_archive_20261107_0754.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_review_20261107_0754.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_dedup_summary_20261107_0754.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  KS     125516        0                    0                None 
+
+=== OK 2026-11-07 07:54:59

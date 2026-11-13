@@ -1,0 +1,21 @@
+# KS round 2: one school under two names in the same seasons (kansasfootballhistory team pages / MaxPreps); names split by year
+remap KS --url "https://www.maxpreps.com/ks/lorraine/central-plains-oilers/football/schedule/" --to "Claflin Central Plains (KS)"
+move-team KS --from "Alma (KS)" --to "Alma Wabaunsee (KS)" --seasons 1972-2026 --reason "KS split by year: Wabaunsee from 1972" --commit
+move-team KS --from "Basehor (KS)" --to "Basehor-Linwood (KS)" --seasons 1970-2026 --reason "KS split by year: Basehor-Linwood from 1970" --commit
+move-team KS --from "Belleville Republic County (KS)" --to "Belleville (KS)" --seasons 1900-2005 --reason "KS split by year: Republic County from 2006" --commit
+move-team KS --from "Jetmore Hodgeman County (KS)" --to "Jetmore (KS)" --seasons 1900-2005 --reason "KS split by year: Hodgeman County from 2006" --commit
+move-team KS --from "Pomona West Franklin (KS)" --to "Pomona (KS)" --seasons 1900-2005 --reason "KS split by year: West Franklin from 2006" --commit
+move-team KS --from "Dighton (KS)" --to "Ness City-Dighton (KS)" --seasons 2004-2009 --reason "KS co-op split by year: Ness City-Dighton 2004-2009" --commit
+move-team KS --from "Ness City (KS)" --to "Ness City-Dighton (KS)" --seasons 2004-2009 --reason "KS co-op split by year: Ness City-Dighton 2004-2009" --commit
+move-team KS --from "Gardner (KS)" --to "Gardner-Edgerton (KS)" --seasons 1969-2026 --reason "KS split by year: Gardner-Edgerton from 1969" --commit
+move-team KS --from "Lindsborg (KS)" --to "Lindsborg Smoky Valley (KS)" --seasons 1985-2026 --reason "KS split by year: Smoky Valley from 1985" --commit
+move-team KS --from "Lindsborg Smoky Valley (KS)" --to "Lindsborg (KS)" --seasons 1900-1984 --reason "KS split by year: Lindsborg to 1984" --commit
+move-team KS --from "Moran Marmaton Valley (KS)" --to "Moran (KS)" --seasons 1900-1970 --reason "KS split by year: Marmaton Valley from 1971" --commit
+move-team KS --from "Peabody (KS)" --to "Peabody-Burns (KS)" --seasons 1970-2026 --reason "KS split by year: Peabody-Burns from 1970" --commit
+move-team KS --from "Peabody-Burns (KS)" --to "Peabody (KS)" --seasons 1900-1969 --reason "KS split by year: Peabody to 1969" --commit
+move-team KS --from "Perry (KS)" --to "Perry-Lecompton (KS)" --seasons 1970-2026 --reason "KS split by year: Perry-Lecompton from 1970" --commit
+move-team KS --from "Shawnee Mission Bishop Miege (KS)" --to "Roeland Park St. Agnes Catholic (KS)" --seasons 1900-1957 --reason "KS split by year: Bishop Miege from 1958 (St. Agnes before)" --commit
+move-team KS --from "Seneca Nemaha Valley (KS)" --to "Seneca Nemaha Central (KS)" --seasons 2014-2026 --reason "KS split by year: Nemaha Central from 2014" --commit
+move-team KS --from "Turon Fairfield (KS)" --to "Langdon Fairfield (KS)" --seasons 1962-2026 --reason "KS: Fairfield (Langdon) from 1962" --commit
+move-team KS --from "Assaria Southeast of Saline (KS)" --to "Gypsum Southeast of Saline (KS)" --seasons 1964-2026 --reason "KS: Southeast of Saline (Gypsum) from 1964" --commit
+round KS --reason "KS round 2: Acchs, Hoxie-Sheridan County, Shawnee Mission, KC Bishop Miege, Lorraine Central Plains"

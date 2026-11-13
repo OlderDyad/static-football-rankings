@@ -1,0 +1,9 @@
+﻿COLUMN_NAME,DATA_TYPE
+LogID,int
+StateCode,nvarchar
+OldName,nvarchar
+NewName,nvarchar
+RowsAffectedHome,int
+RowsAffectedVisitor,int
+Reason,nvarchar
+LoggedAt,datetime

@@ -1,0 +1,16 @@
+addstate ME
+report ME drift
+mapcheck ME
+dedup ME
+review-pairs ME
+same-score-fix ME
+query ME me_dump.sql
+query ME me_names.sql
+addstate VT
+report VT drift
+mapcheck VT
+dedup VT
+review-pairs VT
+same-score-fix VT
+query VT vt_dump.sql
+query VT vt_names.sql

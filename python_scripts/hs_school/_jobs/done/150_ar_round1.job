@@ -1,0 +1,35 @@
+move-team AR --from "Lake Village Lakeside (AR)" --to "Hot Springs Lakeside (AR)" --seasons 1880-2026 --ids hsfha_mv_00.csv --reason "HSFHA-AR match: game belongs to Hot Springs Lakeside (AR) (hsfha.org school code)" --commit
+move-team AR --from "Fort Smith Northside (AR)" --to "Fort Smith Southside (AR)" --seasons 1880-2026 --ids hsfha_mv_01.csv --reason "HSFHA-AR match: game belongs to Fort Smith Southside (AR) (hsfha.org school code)" --commit
+move-team AR --from "White Hall (AR)" --to "Little Rock Hall (AR)" --seasons 1880-2026 --ids hsfha_mv_02.csv --reason "HSFHA-AR match: game belongs to Little Rock Hall (AR) (hsfha.org school code)" --commit
+move-team AR --from "Sedan (KS)" --to "Searcy (AR)" --seasons 1880-2026 --ids hsfha_mv_03.csv --reason "HSFHA-AR match: game belongs to Searcy (AR) (hsfha.org school code)" --commit
+move-team AR --from "Elkins (AR)" --to "Atkins (AR)" --seasons 1880-2026 --ids hsfha_mv_04.csv --reason "HSFHA-AR match: game belongs to Atkins (AR) (hsfha.org school code)" --commit
+move-team AR --from "West Memphis Christian (AR)" --to "West Memphis (AR)" --seasons 1880-2026 --ids hsfha_mv_06.csv --reason "HSFHA-AR match: game belongs to West Memphis (AR) (hsfha.org school code)" --commit
+move-team AR --from "Texarkana Texas (TX)" --to "Texarkana (AR)" --seasons 1880-2026 --ids hsfha_mv_07.csv --reason "HSFHA-AR match: game belongs to Texarkana (AR) (hsfha.org school code)" --commit
+move-team AR --from "Lewisville (TX)" --to "Lewisville (AR)" --seasons 1880-2026 --ids hsfha_mv_08.csv --reason "HSFHA-AR match: game belongs to Lewisville (AR) (hsfha.org school code)" --commit
+move-team AR --from "Springhill (LA)" --to "Hope Spring Hill (AR)" --seasons 1880-2026 --ids hsfha_mv_09.csv --reason "HSFHA-AR match: game belongs to Hope Spring Hill (AR) (hsfha.org school code)" --commit
+move-team AR --from "Jonesboro Westside (AR)" --to "Jonesboro Westside Christian (AR)" --seasons 1880-2026 --ids hsfha_mv_10.csv --reason "HSFHA-AR match: game belongs to Jonesboro Westside Christian (AR) (hsfha.org school code)" --commit
+move-team AR --from "Clarksville (TX)" --to "Clarksville (AR)" --seasons 1880-2026 --ids hsfha_mv_11.csv --reason "HSFHA-AR match: game belongs to Clarksville (AR) (hsfha.org school code)" --commit
+move-team AR --from "Vacherie Magnolia (LA)" --to "Magnolia (AR)" --seasons 1880-2026 --ids hsfha_mv_12.csv --reason "HSFHA-AR match: game belongs to Magnolia (AR) (hsfha.org school code)" --commit
+move-team AR --from "West Memphis (AR)" --to "West Memphis Christian (AR)" --seasons 1880-2026 --ids hsfha_mv_13.csv --reason "HSFHA-AR match: game belongs to West Memphis Christian (AR) (hsfha.org school code)" --commit
+move-team AR --from "Benton (LA)" --to "Benton (AR)" --seasons 1880-2026 --ids hsfha_mv_14.csv --reason "HSFHA-AR match: game belongs to Benton (AR) (hsfha.org school code)" --commit
+move-team AR --from "Warren (TX)" --to "Warren (AR)" --seasons 1880-2026 --ids hsfha_mv_15.csv --reason "HSFHA-AR match: game belongs to Warren (AR) (hsfha.org school code)" --commit
+move-team AR --from "Jonesboro Westside (AR)" --to "Hartman Coal Hill Westside (AR)" --seasons 1880-2026 --ids hsfha_mv_17.csv --reason "HSFHA-AR match: game belongs to Hartman Coal Hill Westside (AR) (hsfha.org school code)" --commit
+move-team AR --from "Batesville Southside (AR)" --to "Fort Smith Southside (AR)" --seasons 1880-2026 --ids hsfha_mv_18.csv --reason "HSFHA-AR match: game belongs to Fort Smith Southside (AR) (hsfha.org school code)" --commit
+move-team AR --from "Drew Central (MS)" --to "Monticello Drew Central (AR)" --seasons 1880-2026 --ids hsfha_mv_19.csv --reason "HSFHA-AR match: game belongs to Monticello Drew Central (AR) (hsfha.org school code)" --commit
+move-team AR --from "Camden Harmony Grove (AR)" --to "Benton Harmony Grove (AR)" --seasons 1880-2026 --ids hsfha_mv_20.csv --reason "HSFHA-AR match: game belongs to Benton Harmony Grove (AR) (hsfha.org school code)" --commit
+move-team AR --from "Little Rock Arkansas Baptist (AR)" --to "Arkansas School for the Deaf (AR)" --seasons 1880-2026 --ids hsfha_mv_21.csv --reason "HSFHA-AR match: game belongs to Arkansas School for the Deaf (AR) (hsfha.org school code)" --commit
+move-team AR --from "Paris (TX)" --to "Paris (AR)" --seasons 1880-2026 --ids hsfha_mv_22.csv --reason "HSFHA-AR match: game belongs to Paris (AR) (hsfha.org school code)" --commit
+move-team AR --from "Amity Centerpoint (AR)" --to "Amity (AR)" --seasons 1880-2026 --ids hsfha_lin_00.csv --reason "HSFHA-AR school code: game belongs to Amity (AR)" --commit
+move-team AR --from "Little Rock Southwest Christian Academy (AR)" --to "Little Rock Southwest (AR)" --seasons 1880-2026 --ids hsfha_lin_01.csv --reason "HSFHA-AR school code: game belongs to Little Rock Southwest (AR)" --commit
+move-team AR --from "West Helena Central (AR)" --to "West Helena Woodruff (AR)" --seasons 1880-2026 --ids hsfha_lin_02.csv --reason "HSFHA-AR school code: game belongs to West Helena Woodruff (AR)" --commit
+move-team AR --from "Hartman Johnson County Westside (AR)" --to "Hartman (AR)" --seasons 1880-2026 --ids hsfha_lin_03.csv --reason "HSFHA-AR school code: game belongs to Hartman (AR)" --commit
+move-team AR --from "Palestine-Wheatley (AR)" --to "Palestine (AR)" --seasons 1880-1986 --reason "Lineage split (consolidation 1987, HSFHA-AR): Palestine era" --commit
+remap AR --url "https://www.maxpreps.com/ar/des-arc/des-arc-eagles/football/schedule/" --to "Des Arc (AR)" --commit
+remap AR --url "https://www.maxpreps.com/ar/little-rock/arkansas-school-for-the-deaf-leopards/football/schedule/" --to "Arkansas School for the Deaf (AR)" --commit
+remap AR --url "https://www.maxpreps.com/ar/little-rock/little-rock-southwest-gryphons/football/schedule/" --to "Little Rock Southwest (AR)" --commit
+remap AR --url "https://www.maxpreps.com/ar/north-little-rock/north-little-rock-charging-wildcats/football/schedule/" --to "North Little Rock (AR)" --commit
+remap AR --url "https://www.maxpreps.com/ar/coal-hill/westside-rebels/football/schedule/" --to "Hartman Coal Hill Westside (AR)" --commit
+mapcheck AR --commit
+consolidate AR --reason "AR round 1: HSFHA-AR match - 2024 MaxPreps short names, Fort Smith->Northside (rename), Helena-West Helena Central variants, Des Arc spelling, wrong-school/wrong-state fixes"
+dedup AR
+review-pairs AR

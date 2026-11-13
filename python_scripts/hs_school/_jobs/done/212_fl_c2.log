@@ -1,0 +1,27 @@
+
+>>> commit FL
+
+DEDUP v4 FL - COMMIT
+ dedup_archive: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_archive_COMMITTED_20261111_1859.csv
+ dedup_review: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_review_COMMITTED_20261111_1859.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_dedup_summary_COMMITTED_20261111_1859.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  FL     129952        17                   3                A6A5172D-3A36-4BC5-92E3-61411BAAE355
+
+REVIEW-ONLY PAIRS FL - COMMIT
+ 3 pairs {'LONG': 1, 'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_review_pairs_COMMITTED_20261111_1859.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  3         5873A3B6-FCCF-4D36-A61D-CD938786EB4F  None
+
+>>> query FL fl_dump.sql
+
+QUERY fl_dump (1 result sets)
+ set 1: 129933 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_dump_1_20261111_1859.csv
+
+>>> query FL fl_export.sql
+
+QUERY fl_export (2 result sets)
+ set 1: 129933 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_export_1_20261111_1900.csv
+ set 2: 1754 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_fl_export_2_20261111_1900.csv
+
+=== OK 2026-11-11 19:00:05

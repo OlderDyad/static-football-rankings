@@ -1,0 +1,595 @@
+
+>>> remap MA --url "https://www.maxpreps.com/ma/arlington/arlington-spy-ponders/football/schedule/" --to "Arlington (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/arlington/arlington-spy-ponders/football/schedule/ -> Arlington (MA) - COMMIT
+   URL                                       ProperName          Team_ID  NewProperName   NewTeam_ID
+   https://www.maxpreps.com/ma/arlington/ar  Arlington Spy (MA)  46521    Arlington (MA)  4848      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/boston/boston-college-high-eagles/football/schedule/" --to "Boston College High (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/boston/boston-college-high-eagles/football/schedule/ -> Boston College High (MA) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName             NewTeam_ID
+   https://www.maxpreps.com/ma/boston/bosto  Boston College (MA)  3488     Boston College High (MA)  1663      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/dorchester/boston-latin-academy-dragons/football/schedule/" --to "Dorchester Boston Latin Academy (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/dorchester/boston-latin-academy-dragons/football/schedule/ -> Dorchester Boston Latin Academy (MA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName                         NewTeam_ID
+   https://www.maxpreps.com/ma/dorchester/b  Boston Latin Academy (MA)  49467    Dorchester Boston Latin Academy (MA)  16308     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/boxford/masconomet-regional-chieftains/football/schedule/" --to "Topsfield Masconomet Regional (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/boxford/masconomet-regional-chieftains/football/schedule/ -> Topsfield Masconomet Regional (MA) - COMMIT
+   URL                                       ProperName                        Team_ID  NewProperName                       NewTeam_ID
+   https://www.maxpreps.com/ma/boxford/masc  Boxford Masconomet Regional (MA)  11602    Topsfield Masconomet Regional (MA)  17613     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/brighton/brighton-kennedy-health-careers/football/schedule/" --to "Brighton (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/brighton/brighton-kennedy-health-careers/football/schedule/ -> Brighton (MA) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/ma/brighton/bri  Brighton Kennedy (MA)  9040     Brighton (MA)  4988      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/cambridge/cambridge-rindge-and-latin-falcons/football/schedule/" --to "Cambridge Rindge & Latin (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/cambridge/cambridge-rindge-and-latin-falcons/football/schedule/ -> Cambridge Rindge & Latin (MA) - COMMIT
+   URL                                       ProperName                  Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/ma/cambridge/ca  Cambridge Rindge Tech (MA)  6359     Cambridge Rindge & Latin (MA)  25965     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/harwich/cape-cod-rvt-crusaders/football/schedule/" --to "Harwich Cape Cod RVT (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/harwich/cape-cod-rvt-crusaders/football/schedule/ -> Harwich Cape Cod RVT (MA) - COMMIT
+   URL                                       ProperName                 Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/ma/harwich/cape  Cape Cod RVT-Harwich (MA)  38221    Harwich Cape Cod RVT (MA)  27316     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/easthampton/williston-northampton-wildcats/football/schedule/" --to "Easthampton Williston Northampton School (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/easthampton/williston-northampton-wildcats/football/schedule/ -> Easthampton Williston Northampton School (MA) - COMMIT
+   URL                                       ProperName                              Team_ID  NewProperName                             NewTeam_ID
+   https://www.maxpreps.com/ma/easthampton/  Easthampton Williston Northampton (MA)  49507    Easthampton Williston Northampton School  61669     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/fitchburg/montachusett-rvt-bulldogs/football/schedule/" --to "Fitchburg Montachusett RVT (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/fitchburg/montachusett-rvt-bulldogs/football/schedule/ -> Fitchburg Montachusett RVT (MA) - COMMIT
+   URL                                       ProperName                       Team_ID  NewProperName                    NewTeam_ID
+   https://www.maxpreps.com/ma/fitchburg/mo  Fitchburg Montachusett Rvt (MA)  38676    Fitchburg Montachusett RVT (MA)  38676     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/groton/groton-dunstable-crusaders/football/schedule/" --to "Groton-Dunstable (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/groton/groton-dunstable-crusaders/football/schedule/ -> Groton-Dunstable (MA) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName          NewTeam_ID
+   https://www.maxpreps.com/ma/groton/groto  Groton Dunstable (MA)  1847     Groton-Dunstable (MA)  15311     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/holyoke/holyoke-purple-knights/football/schedule/" --to "Holyoke (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/holyoke/holyoke-purple-knights/football/schedule/ -> Holyoke (MA) - COMMIT
+   URL                                       ProperName           Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/ma/holyoke/holy  Holyoke Purple (MA)  47631    Holyoke (MA)   17688     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/hyannis/st-john-paul-ii-lions/football/schedule/" --to "Hyannis Pope John Paul II (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/hyannis/st-john-paul-ii-lions/football/schedule/ -> Hyannis Pope John Paul II (MA) - COMMIT
+   URL                                       ProperName             Team_ID  NewProperName                   NewTeam_ID
+   https://www.maxpreps.com/ma/hyannis/st-j  Hyannis St. John (MA)  49524    Hyannis Pope John Paul II (MA)  39496     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/lynn/kipp-academy-lynn-collegiate-panthers/football/schedule/" --to "Lynn Collegiate-KIPP Academy (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/lynn/kipp-academy-lynn-collegiate-panthers/football/schedule/ -> Lynn Collegiate-KIPP Academy (MA) - COMMIT
+   URL                                       ProperName              Team_ID  NewProperName                      NewTeam_ID
+   https://www.maxpreps.com/ma/lynn/kipp-ac  Lynn Kipp Academy (MA)  24739    Lynn Collegiate-KIPP Academy (MA)  40268     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/milford/milford-scarlet-hawks/football/schedule/" --to "Milford (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/milford/milford-scarlet-hawks/football/schedule/ -> Milford (MA) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName  NewTeam_ID
+   https://www.maxpreps.com/ma/milford/milf  Milford Scarlet (MA)  19519    Milford (MA)   28770     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/north-adams/drury-mount-greylock-regional/football/schedule/" --to "North Adams Drury (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/north-adams/drury-mount-greylock-regional/football/schedule/ -> North Adams Drury (MA) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName           NewTeam_ID
+   https://www.maxpreps.com/ma/north-adams/  North Adams Drury Mount (MA)  49548    North Adams Drury (MA)  48123     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/south-dartmouth/dartmouth-indians/football/schedule/" --to "Dartmouth (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/south-dartmouth/dartmouth-indians/football/schedule/ -> Dartmouth (MA) - COMMIT
+   URL                                       ProperName            Team_ID  NewProperName   NewTeam_ID
+   https://www.maxpreps.com/ma/south-dartmo  South Dartmouth (MA)  42786    Dartmouth (MA)  49441     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/south-hamilton/hamilton-wenham-regional-generals/football/schedule/" --to "Hamilton-Wenham Regional (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/south-hamilton/hamilton-wenham-regional-generals/football/schedule/ -> Hamilton-Wenham Regional (MA) - COMMIT
+   URL                                       ProperName                           Team_ID  NewProperName                  NewTeam_ID
+   https://www.maxpreps.com/ma/south-hamilt  South Hamilton Hamilton Wenham (MA)  14768    Hamilton-Wenham Regional (MA)  41086     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/springfield/springfield-international/football/schedule/" --to "Springfield Sci-Tech (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/springfield/springfield-international/football/schedule/ -> Springfield Sci-Tech (MA) - COMMIT
+   URL                                       ProperName        Team_ID  NewProperName              NewTeam_ID
+   https://www.maxpreps.com/ma/springfield/  Springfield (MA)  19738    Springfield Sci-Tech (MA)  48155     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/sudbury/lincoln-sudbury-warriors/football/schedule/" --to "Lincoln-Sudbury (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/sudbury/lincoln-sudbury-warriors/football/schedule/ -> Lincoln-Sudbury (MA) - COMMIT
+   URL                                       ProperName                    Team_ID  NewProperName         NewTeam_ID
+   https://www.maxpreps.com/ma/sudbury/linc  Sudbury Lincoln Sudbury (MA)  14383    Lincoln-Sudbury (MA)  17332     
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> remap MA --url "https://www.maxpreps.com/ma/townsend/north-middlesex-regional-patriots/football/schedule/" --to "Townsend North Middlesex Regional (MA)" --commit
+
+REMAP https://www.maxpreps.com/ma/townsend/north-middlesex-regional-patriots/football/schedule/ -> Townsend North Middlesex Regional (MA) - COMMIT
+   URL                                       ProperName                     Team_ID  NewProperName                           NewTeam_ID
+   https://www.maxpreps.com/ma/townsend/nor  Townsend North Middlesex (MA)  49595    Townsend North Middlesex Regional (MA)  9418      
+   Status     Rows  Err 
+   COMMITTED  1     None
+
+>>> mapcheck MA --commit
+
+MAPPING CHECK MA - COMMIT (Team_ID set to the ProperName ID)
+ 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_mapcheck_COMMITTED_20261109_0858.csv
+   URL                                       ProperName                          Team_ID  NameID  Problem                         Team_ID_Name                            
+   https://www.maxpreps.com/ma/boston/bosto  Boston Latin (MA)                   59822    19529   Team_ID points to another name  Boston Latin School (MA)                
+   https://www.maxpreps.com/ma/brookline/br  Brookline (MA)                      38216    32321   Team_ID points to another name  Brookline Dexter Southfield (MA)        
+   https://www.maxpreps.com/ma/brookline/de  Brookline Dexter Southfield (MA)    70451    38216   Team_ID points to another name  Brookline St. Mary's of the Assumption (
+   https://www.maxpreps.com/ma/east-sandwic  East Sandwich (MA)                  61669    25461   Team_ID points to another name  Easthampton Williston Northampton School
+   https://www.maxpreps.com/ma/pittsfield/t  Pittsfield Taconic (MA)             36138    46696   Team_ID points to another name  Pittsfield St. Joseph Central (MA)      
+   https://www.maxpreps.com/ma/springfield/  Springfield Commerce (MA)           29510    14862   Team_ID points to another name  Springfield Putnam Vo-Tech (MA)         
+   https://www.maxpreps.com/ma/springfield/  Springfield Putnam Vo-Tech (MA)     48155    29510   Team_ID points to another name  Springfield Sci-Tech (MA)               
+   https://www.maxpreps.com/ma/worcester/wo  Worcester Tech (MA)                 70006    69999   Team_ID points to another name  Wrentham King Philip Regional (MA)      
+   https://www.maxpreps.com/ma/wrentham/kin  Wrentham King Philip Regional (MA)  7502     70006   Team_ID points to another name  Yale University Frosh (CT)              
+   Status     Fixable  Err 
+   COMMITTED  9        None
+
+>>> consolidate MA --reason "MA Round 1: MaxPreps short-name/mascot drift, regional/co-op splits, and school renames"
+Consolidating MA from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\MA_Alias_Rules.csv
+
+[stderr]
+2026-11-09 08:58:52,395 - INFO - Starting consolidation for state: (MA) using staging table method.
+2026-11-09 08:58:52,404 - WARNING - WARNING: 344 row(s) have identical OldName and NewName (no-op rules).
+2026-11-09 08:58:52,404 - WARNING -   'Abington (MA)' -> 'Abington (MA)' (no change)
+2026-11-09 08:58:52,405 - WARNING -   'Acton-Boxborough (MA)' -> 'Acton-Boxborough (MA)' (no change)
+2026-11-09 08:58:52,405 - WARNING -   'Agawam (MA)' -> 'Agawam (MA)' (no change)
+2026-11-09 08:58:52,405 - WARNING -   'Amesbury (MA)' -> 'Amesbury (MA)' (no change)
+2026-11-09 08:58:52,405 - WARNING -   'Amherst Regional (MA)' -> 'Amherst Regional (MA)' (no change)
+2026-11-09 08:58:52,405 - WARNING -   'Amherst-Pelham Regional (MA)' -> 'Amherst-Pelham Regional (MA)' (no change)
+2026-11-09 08:58:52,405 - WARNING -   'Andover (MA)' -> 'Andover (MA)' (no change)
+2026-11-09 08:58:52,405 - WARNING -   'Andover Greater Lawrence (MA)' -> 'Andover Greater Lawrence (MA)' (no change)
+2026-11-09 08:58:52,405 - WARNING -   'Andover Phillips Academy (MA)' -> 'Andover Phillips Academy (MA)' (no change)
+2026-11-09 08:58:52,405 - WARNING -   'Arlington (MA)' -> 'Arlington (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Arlington Catholic (MA)' -> 'Arlington Catholic (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Ashburnham Cushing Academy (MA)' -> 'Ashburnham Cushing Academy (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Ashburnham Oakmont Regional (MA)' -> 'Ashburnham Oakmont Regional (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Ashland (MA)' -> 'Ashland (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Athol (MA)' -> 'Athol (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Attleboro (MA)' -> 'Attleboro (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Attleboro Bishop Feehan (MA)' -> 'Attleboro Bishop Feehan (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Auburn (MA)' -> 'Auburn (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Ayer Shirley (MA)' -> 'Ayer Shirley (MA)' (no change)
+2026-11-09 08:58:52,406 - WARNING -   'Baldwinville Narragansett Regional (MA)' -> 'Baldwinville Narragansett Regional (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Barre Quabbin Regional (MA)' -> 'Barre Quabbin Regional (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Bedford (MA)' -> 'Bedford (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Belchertown (MA)' -> 'Belchertown (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Bellingham (MA)' -> 'Bellingham (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Belmont (MA)' -> 'Belmont (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Belmont Hill (MA)' -> 'Belmont Hill (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Beverly (MA)' -> 'Beverly (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Billerica Memorial (MA)' -> 'Billerica Memorial (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Billerica Shawsheen Valley Tech (MA)' -> 'Billerica Shawsheen Valley Tech (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Blackstone-Millville (MA)' -> 'Blackstone-Millville (MA)' (no change)
+2026-11-09 08:58:52,407 - WARNING -   'Bolton Nashoba Regional (MA)' -> 'Bolton Nashoba Regional (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Boston Cathedral (MA)' -> 'Boston Cathedral (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Boston College High (MA)' -> 'Boston College High (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Boston Columbus (MA)' -> 'Boston Columbus (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Boston Don Bosco Tech (MA)' -> 'Boston Don Bosco Tech (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Boston English (MA)' -> 'Boston English (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Boston English-New Mission (MA)' -> 'Boston English-New Mission (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Boston Huntington School for Boys (MA)' -> 'Boston Huntington School for Boys (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Boston Latin (MA)' -> 'Boston Latin (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Bourne (MA)' -> 'Bourne (MA)' (no change)
+2026-11-09 08:58:52,408 - WARNING -   'Bourne Upper Cape Cod RVT (MA)' -> 'Bourne Upper Cape Cod RVT (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Braintree (MA)' -> 'Braintree (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Braintree Archbishop Williams (MA)' -> 'Braintree Archbishop Williams (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Braintree Thayer Academy (MA)' -> 'Braintree Thayer Academy (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Bridgewater-Raynham (MA)' -> 'Bridgewater-Raynham (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Brighton (MA)' -> 'Brighton (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Brockton (MA)' -> 'Brockton (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Brockton Cardinal Spellman (MA)' -> 'Brockton Cardinal Spellman (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Brookline (MA)' -> 'Brookline (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Brookline Dexter Southfield (MA)' -> 'Brookline Dexter Southfield (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Brookline St. Mary's of the Assumption (MA)' -> 'Brookline St. Mary's of the Assumption (MA)' (no change)
+2026-11-09 08:58:52,409 - WARNING -   'Buckland Mohawk Trail Regional (MA)' -> 'Buckland Mohawk Trail Regional (MA)' (no change)
+2026-11-09 08:58:52,410 - WARNING -   'Burlington (MA)' -> 'Burlington (MA)' (no change)
+2026-11-09 08:58:52,410 - WARNING -   'Byfield Governor's Academy (MA)' -> 'Byfield Governor's Academy (MA)' (no change)
+2026-11-09 08:58:52,410 - WARNING -   'Byfield Triton Regional (MA)' -> 'Byfield Triton Regional (MA)' (no change)
+2026-11-09 08:58:52,410 - WARNING -   'Cambridge Buckingham Browne & Nichols (MA)' -> 'Cambridge Buckingham Browne & Nichols (MA)' (no change)
+2026-11-09 08:58:52,410 - WARNING -   'Cambridge Matignon (MA)' -> 'Cambridge Matignon (MA)' (no change)
+2026-11-09 08:58:52,410 - WARNING -   'Cambridge Rindge & Latin (MA)' -> 'Cambridge Rindge & Latin (MA)' (no change)
+2026-11-09 08:58:52,410 - WARNING -   'Cambridge Rindge Tech (MA)' -> 'Cambridge Rindge Tech (MA)' (no change)
+2026-11-09 08:58:52,410 - WARNING -   'Canton (MA)' -> 'Canton (MA)' (no change)
+2026-11-09 08:58:52,410 - WARNING -   'Canton Blue Hills RVT (MA)' -> 'Canton Blue Hills RVT (MA)' (no change)
+2026-11-09 08:58:52,411 - WARNING -   'Carver (MA)' -> 'Carver (MA)' (no change)
+2026-11-09 08:58:52,411 - WARNING -   'Charlestown (MA)' -> 'Charlestown (MA)' (no change)
+2026-11-09 08:58:52,411 - WARNING -   'Charlton Bay Path RVT (MA)' -> 'Charlton Bay Path RVT (MA)' (no change)
+2026-11-09 08:58:52,411 - WARNING -   'Chelsea (MA)' -> 'Chelsea (MA)' (no change)
+2026-11-09 08:58:52,411 - WARNING -   'Cheshire Hoosac Valley (MA)' -> 'Cheshire Hoosac Valley (MA)' (no change)
+2026-11-09 08:58:52,411 - WARNING -   'Chicopee (MA)' -> 'Chicopee (MA)' (no change)
+2026-11-09 08:58:52,411 - WARNING -   'Chicopee Comp (MA)' -> 'Chicopee Comp (MA)' (no change)
+2026-11-09 08:58:52,411 - WARNING -   'Chicopee St. George (MA)' -> 'Chicopee St. George (MA)' (no change)
+2026-11-09 08:58:52,411 - WARNING -   'Clinton (MA)' -> 'Clinton (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Cohasset (MA)' -> 'Cohasset (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Concord Middlesex (MA)' -> 'Concord Middlesex (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Concord-Carlisle (MA)' -> 'Concord-Carlisle (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Dalton Wahconah Regional (MA)' -> 'Dalton Wahconah Regional (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Danvers (MA)' -> 'Danvers (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Danvers St. John's Prep (MA)' -> 'Danvers St. John's Prep (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Dartmouth (MA)' -> 'Dartmouth (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Dedham (MA)' -> 'Dedham (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Dedham Noble & Greenough (MA)' -> 'Dedham Noble & Greenough (MA)' (no change)
+2026-11-09 08:58:52,412 - WARNING -   'Deerfield Academy (MA)' -> 'Deerfield Academy (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'Derry Pinkerton (MA)' -> 'Derry Pinkerton (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'Dorchester (MA)' -> 'Dorchester (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'Dorchester Boston Latin Academy (MA)' -> 'Dorchester Boston Latin Academy (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'Dorchester Burke (MA)' -> 'Dorchester Burke (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'Dorchester Tech-Boston Academy (MA)' -> 'Dorchester Tech-Boston Academy (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'Dover-Sherborn (MA)' -> 'Dover-Sherborn (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'Dracut (MA)' -> 'Dracut (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'Dudley Shepherd Hill Regional (MA)' -> 'Dudley Shepherd Hill Regional (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'Duxbury (MA)' -> 'Duxbury (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'East Boston (MA)' -> 'East Boston (MA)' (no change)
+2026-11-09 08:58:52,413 - WARNING -   'East Boston Savio Prep (MA)' -> 'East Boston Savio Prep (MA)' (no change)
+2026-11-09 08:58:52,414 - WARNING -   'East Bridgewater (MA)' -> 'East Bridgewater (MA)' (no change)
+2026-11-09 08:58:52,414 - WARNING -   'East Longmeadow (MA)' -> 'East Longmeadow (MA)' (no change)
+2026-11-09 08:58:52,414 - WARNING -   'East Sandwich (MA)' -> 'East Sandwich (MA)' (no change)
+2026-11-09 08:58:52,414 - WARNING -   'Easthampton Williston Northampton School (MA)' -> 'Easthampton Williston Northampton School (MA)' (no change)
+2026-11-09 08:58:52,414 - WARNING -   'Easthampton-Hampshire (MA)' -> 'Easthampton-Hampshire (MA)' (no change)
+2026-11-09 08:58:52,414 - WARNING -   'Everett (MA)' -> 'Everett (MA)' (no change)
+2026-11-09 08:58:52,414 - WARNING -   'Everett Pope John XXIII (MA)' -> 'Everett Pope John XXIII (MA)' (no change)
+2026-11-09 08:58:52,414 - WARNING -   'Fairhaven (MA)' -> 'Fairhaven (MA)' (no change)
+2026-11-09 08:58:52,414 - WARNING -   'Fall River Diman Regional Vo-Tech (MA)' -> 'Fall River Diman Regional Vo-Tech (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Fall River Durfee (MA)' -> 'Fall River Durfee (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Fiskdale Tantasqua Regional (MA)' -> 'Fiskdale Tantasqua Regional (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Fitchburg (MA)' -> 'Fitchburg (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Fitchburg Montachusett RVT (MA)' -> 'Fitchburg Montachusett RVT (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Fitchburg St. Bernard's Central Catholic (MA)' -> 'Fitchburg St. Bernard's Central Catholic (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Foxborough (MA)' -> 'Foxborough (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Framingham (MA)' -> 'Framingham (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Framingham Keefe Tech (MA)' -> 'Framingham Keefe Tech (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Framingham Marian (MA)' -> 'Framingham Marian (MA)' (no change)
+2026-11-09 08:58:52,415 - WARNING -   'Framingham North (MA)' -> 'Framingham North (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Framingham South (MA)' -> 'Framingham South (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Franklin (MA)' -> 'Franklin (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Franklin Tri-County RVT (MA)' -> 'Franklin Tri-County RVT (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Gardner (MA)' -> 'Gardner (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Georgetown (MA)' -> 'Georgetown (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Gloucester (MA)' -> 'Gloucester (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Grafton Memorial (MA)' -> 'Grafton Memorial (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Great Barrington Monument Mountain (MA)' -> 'Great Barrington Monument Mountain (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Great Barrington Monument Mountain-Mt. Everett (MA)' -> 'Great Barrington Monument Mountain-Mt. Everett (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Greater New Bedford RVT (MA)' -> 'Greater New Bedford RVT (MA)' (no change)
+2026-11-09 08:58:52,416 - WARNING -   'Greenfield (MA)' -> 'Greenfield (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Groton Lawrence Academy (MA)' -> 'Groton Lawrence Academy (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Groton School (MA)' -> 'Groton School (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Groton-Dunstable (MA)' -> 'Groton-Dunstable (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Hamilton-Wenham Regional (MA)' -> 'Hamilton-Wenham Regional (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Hanover (MA)' -> 'Hanover (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Hanover South Shore Vo-Tech (MA)' -> 'Hanover South Shore Vo-Tech (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Harwich Cape Cod RVT (MA)' -> 'Harwich Cape Cod RVT (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Harwich Monomoy (MA)' -> 'Harwich Monomoy (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Hathorne Essex Tech (MA)' -> 'Hathorne Essex Tech (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Haverhill (MA)' -> 'Haverhill (MA)' (no change)
+2026-11-09 08:58:52,417 - WARNING -   'Haverhill Whittier RVT (MA)' -> 'Haverhill Whittier RVT (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Hingham (MA)' -> 'Hingham (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Holbrook (MA)' -> 'Holbrook (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Holden Wachusett Regional (MA)' -> 'Holden Wachusett Regional (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Holliston (MA)' -> 'Holliston (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Holyoke (MA)' -> 'Holyoke (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Holyoke Dean Tech (MA)' -> 'Holyoke Dean Tech (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Hopkinton (MA)' -> 'Hopkinton (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Hudson (MA)' -> 'Hudson (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Hudson Catholic (MA)' -> 'Hudson Catholic (MA)' (no change)
+2026-11-09 08:58:52,418 - WARNING -   'Hull (MA)' -> 'Hull (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Hyannis Barnstable (MA)' -> 'Hyannis Barnstable (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Hyannis Pope John Paul II (MA)' -> 'Hyannis Pope John Paul II (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Hyde Park (MA)' -> 'Hyde Park (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Ipswich (MA)' -> 'Ipswich (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Jamaica Plain (MA)' -> 'Jamaica Plain (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Kingston Silver Lake Regional (MA)' -> 'Kingston Silver Lake Regional (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Lakeville Apponequet Regional (MA)' -> 'Lakeville Apponequet Regional (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Lawrence (MA)' -> 'Lawrence (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Lawrence Central Catholic (MA)' -> 'Lawrence Central Catholic (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Lee (MA)' -> 'Lee (MA)' (no change)
+2026-11-09 08:58:52,419 - WARNING -   'Lee-Lenox Memorial (MA)' -> 'Lee-Lenox Memorial (MA)' (no change)
+2026-11-09 08:58:52,420 - WARNING -   'Leicester (MA)' -> 'Leicester (MA)' (no change)
+2026-11-09 08:58:52,420 - WARNING -   'Leominster (MA)' -> 'Leominster (MA)' (no change)
+2026-11-09 08:58:52,420 - WARNING -   'Lexington (MA)' -> 'Lexington (MA)' (no change)
+2026-11-09 08:58:52,420 - WARNING -   'Lexington Minuteman Regional (MA)' -> 'Lexington Minuteman Regional (MA)' (no change)
+2026-11-09 08:58:52,420 - WARNING -   'Lincoln-Sudbury (MA)' -> 'Lincoln-Sudbury (MA)' (no change)
+2026-11-09 08:58:52,420 - WARNING -   'Littleton (MA)' -> 'Littleton (MA)' (no change)
+2026-11-09 08:58:52,420 - WARNING -   'Longmeadow (MA)' -> 'Longmeadow (MA)' (no change)
+2026-11-09 08:58:52,420 - WARNING -   'Lowell (MA)' -> 'Lowell (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Lowell Catholic (MA)' -> 'Lowell Catholic (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Ludlow (MA)' -> 'Ludlow (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Lunenburg (MA)' -> 'Lunenburg (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Lynn Classical (MA)' -> 'Lynn Classical (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Lynn English (MA)' -> 'Lynn English (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Lynn St. Mary's (MA)' -> 'Lynn St. Mary's (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Lynn Vo-Tech (MA)' -> 'Lynn Vo-Tech (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Lynnfield (MA)' -> 'Lynnfield (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Malden (MA)' -> 'Malden (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Malden Catholic (MA)' -> 'Malden Catholic (MA)' (no change)
+2026-11-09 08:58:52,421 - WARNING -   'Malden Mystic Valley Regional (MA)' -> 'Malden Mystic Valley Regional (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Mansfield (MA)' -> 'Mansfield (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Marblehead (MA)' -> 'Marblehead (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Marion Tabor Academy (MA)' -> 'Marion Tabor Academy (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Marlborough (MA)' -> 'Marlborough (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Marlborough Assabet Valley RVT (MA)' -> 'Marlborough Assabet Valley RVT (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Marshfield (MA)' -> 'Marshfield (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Mashpee (MA)' -> 'Mashpee (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Mattapoisett Old Rochester Regional (MA)' -> 'Mattapoisett Old Rochester Regional (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Maynard (MA)' -> 'Maynard (MA)' (no change)
+2026-11-09 08:58:52,422 - WARNING -   'Medfield (MA)' -> 'Medfield (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Medford (MA)' -> 'Medford (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Medford St. Clement (MA)' -> 'Medford St. Clement (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Medway (MA)' -> 'Medway (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Melrose (MA)' -> 'Melrose (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Methuen (MA)' -> 'Methuen (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Middleborough (MA)' -> 'Middleborough (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Milford (MA)' -> 'Milford (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Millbury (MA)' -> 'Millbury (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Millis (MA)' -> 'Millis (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Milton (MA)' -> 'Milton (MA)' (no change)
+2026-11-09 08:58:52,423 - WARNING -   'Milton Academy (MA)' -> 'Milton Academy (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Montague Turners Falls (MA)' -> 'Montague Turners Falls (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Nantucket (MA)' -> 'Nantucket (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Natick (MA)' -> 'Natick (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Needham (MA)' -> 'Needham (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Needham St. Sebastian's School (MA)' -> 'Needham St. Sebastian's School (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'New Bedford (MA)' -> 'New Bedford (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Newburyport (MA)' -> 'Newburyport (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Newton (MA)' -> 'Newton (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Newton North (MA)' -> 'Newton North (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Newton South (MA)' -> 'Newton South (MA)' (no change)
+2026-11-09 08:58:52,424 - WARNING -   'Newton Trinity Catholic (MA)' -> 'Newton Trinity Catholic (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Adams Drury (MA)' -> 'North Adams Drury (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Adams McCann Tech (MA)' -> 'North Adams McCann Tech (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Andover (MA)' -> 'North Andover (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Andover Brooks (MA)' -> 'North Andover Brooks (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Attleborough (MA)' -> 'North Attleborough (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Chelmsford (MA)' -> 'North Chelmsford (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Dartmouth Bishop Stang (MA)' -> 'North Dartmouth Bishop Stang (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Dighton-Rehoboth Regional (MA)' -> 'North Dighton-Rehoboth Regional (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Eastham Nauset Regional (MA)' -> 'North Eastham Nauset Regional (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Easton Oliver Ames (MA)' -> 'North Easton Oliver Ames (MA)' (no change)
+2026-11-09 08:58:52,425 - WARNING -   'North Quincy (MA)' -> 'North Quincy (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'North Reading (MA)' -> 'North Reading (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Northampton (MA)' -> 'Northampton (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Northampton-Smith Vo-Tech (MA)' -> 'Northampton-Smith Vo-Tech (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Northborough Algonquin Regional (MA)' -> 'Northborough Algonquin Regional (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Northfield Mount Hermon (MA)' -> 'Northfield Mount Hermon (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Northfield Pioneer Valley Regional (MA)' -> 'Northfield Pioneer Valley Regional (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Norton (MA)' -> 'Norton (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Norwell (MA)' -> 'Norwell (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Norwood (MA)' -> 'Norwood (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Oak Bluffs Martha's Vineyard Regional (MA)' -> 'Oak Bluffs Martha's Vineyard Regional (MA)' (no change)
+2026-11-09 08:58:52,426 - WARNING -   'Orange Mahar Regional (MA)' -> 'Orange Mahar Regional (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Oxford (MA)' -> 'Oxford (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Palmer (MA)' -> 'Palmer (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Palmer Pathfinder RVT (MA)' -> 'Palmer Pathfinder RVT (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Peabody Bishop Fenwick (MA)' -> 'Peabody Bishop Fenwick (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Peabody Veterans Memorial (MA)' -> 'Peabody Veterans Memorial (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Pembroke (MA)' -> 'Pembroke (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Pittsfield (MA)' -> 'Pittsfield (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Pittsfield St. Joseph Central (MA)' -> 'Pittsfield St. Joseph Central (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Pittsfield Taconic (MA)' -> 'Pittsfield Taconic (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Plymouth (MA)' -> 'Plymouth (MA)' (no change)
+2026-11-09 08:58:52,427 - WARNING -   'Plymouth North (MA)' -> 'Plymouth North (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Plymouth South (MA)' -> 'Plymouth South (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Plymouth-Carver (MA)' -> 'Plymouth-Carver (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Quincy (MA)' -> 'Quincy (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Randolph (MA)' -> 'Randolph (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Reading Austin Prep (MA)' -> 'Reading Austin Prep (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Reading Memorial (MA)' -> 'Reading Memorial (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Revere (MA)' -> 'Revere (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Rochester Old Colony RVT (MA)' -> 'Rochester Old Colony RVT (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Rockland (MA)' -> 'Rockland (MA)' (no change)
+2026-11-09 08:58:52,428 - WARNING -   'Roxbury Madison Park RVT (MA)' -> 'Roxbury Madison Park RVT (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Roxbury Madison Park RVT-McKinley RVT-Fenway (MA)' -> 'Roxbury Madison Park RVT-McKinley RVT-Fenway (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Roxbury O'Bryant (MA)' -> 'Roxbury O'Bryant (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Salem (MA)' -> 'Salem (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Saugus (MA)' -> 'Saugus (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Scituate (MA)' -> 'Scituate (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Seekonk (MA)' -> 'Seekonk (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Sharon (MA)' -> 'Sharon (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Sheffield Berkshire School (MA)' -> 'Sheffield Berkshire School (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Shrewsbury (MA)' -> 'Shrewsbury (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Shrewsbury St. John's (MA)' -> 'Shrewsbury St. John's (MA)' (no change)
+2026-11-09 08:58:52,429 - WARNING -   'Somerset Berkley Regional (MA)' -> 'Somerset Berkley Regional (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'Somerville (MA)' -> 'Somerville (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'South Boston (MA)' -> 'South Boston (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'South Deerfield Frontier Regional (MA)' -> 'South Deerfield Frontier Regional (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'South Easton Southeastern RVT (MA)' -> 'South Easton Southeastern RVT (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'South Hadley (MA)' -> 'South Hadley (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'South Hamilton Pingree (MA)' -> 'South Hamilton Pingree (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'South Weymouth Weymouth (MA)' -> 'South Weymouth Weymouth (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'South Yarmouth Dennis-Yarmouth Regional (MA)' -> 'South Yarmouth Dennis-Yarmouth Regional (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'Southborough St. Mark's (MA)' -> 'Southborough St. Mark's (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'Southbridge (MA)' -> 'Southbridge (MA)' (no change)
+2026-11-09 08:58:52,430 - WARNING -   'Spencer Prouty (MA)' -> 'Spencer Prouty (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Springfield Cathedral (MA)' -> 'Springfield Cathedral (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Springfield Central (MA)' -> 'Springfield Central (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Springfield Commerce (MA)' -> 'Springfield Commerce (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Springfield Putnam Vo-Tech (MA)' -> 'Springfield Putnam Vo-Tech (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Springfield Sci-Tech (MA)' -> 'Springfield Sci-Tech (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Stoneham (MA)' -> 'Stoneham (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Stoughton (MA)' -> 'Stoughton (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Swampscott (MA)' -> 'Swampscott (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Swansea Case (MA)' -> 'Swansea Case (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Taunton (MA)' -> 'Taunton (MA)' (no change)
+2026-11-09 08:58:52,431 - WARNING -   'Taunton Bristol-Plymouth RVT (MA)' -> 'Taunton Bristol-Plymouth RVT (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Taunton Coyle-Cassidy (MA)' -> 'Taunton Coyle-Cassidy (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Tewksbury Memorial (MA)' -> 'Tewksbury Memorial (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Topsfield Masconomet Regional (MA)' -> 'Topsfield Masconomet Regional (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Townsend North Middlesex Regional (MA)' -> 'Townsend North Middlesex Regional (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Tufts University Frosh (MA)' -> 'Tufts University Frosh (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Turners Falls Franklin County Tech (MA)' -> 'Turners Falls Franklin County Tech (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Tyngsborough (MA)' -> 'Tyngsborough (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Tyngsborough Greater Lowell Tech (MA)' -> 'Tyngsborough Greater Lowell Tech (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Upton Blackstone Valley RVT (MA)' -> 'Upton Blackstone Valley RVT (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Upton Nipmuc Regional (MA)' -> 'Upton Nipmuc Regional (MA)' (no change)
+2026-11-09 08:58:52,432 - WARNING -   'Uxbridge (MA)' -> 'Uxbridge (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Wakefield Memorial (MA)' -> 'Wakefield Memorial (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Wakefield Northeast Metro RVT (MA)' -> 'Wakefield Northeast Metro RVT (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Walpole (MA)' -> 'Walpole (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Waltham (MA)' -> 'Waltham (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Wareham (MA)' -> 'Wareham (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Warren Quaboag Regional (MA)' -> 'Warren Quaboag Regional (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Watertown (MA)' -> 'Watertown (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Watertown St. Patrick's (MA)' -> 'Watertown St. Patrick's (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Wayland (MA)' -> 'Wayland (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Webster Bartlett (MA)' -> 'Webster Bartlett (MA)' (no change)
+2026-11-09 08:58:52,433 - WARNING -   'Wellesley (MA)' -> 'Wellesley (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'West Boylston-Tahanto (MA)' -> 'West Boylston-Tahanto (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'West Bridgewater (MA)' -> 'West Bridgewater (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'West Newbury Pentucket Regional (MA)' -> 'West Newbury Pentucket Regional (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'West Roxbury (MA)' -> 'West Roxbury (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'West Roxbury Catholic Memorial (MA)' -> 'West Roxbury Catholic Memorial (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'West Roxbury Latin (MA)' -> 'West Roxbury Latin (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'West Springfield (MA)' -> 'West Springfield (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'Westborough (MA)' -> 'Westborough (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'Westfield (MA)' -> 'Westfield (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'Westford Academy (MA)' -> 'Westford Academy (MA)' (no change)
+2026-11-09 08:58:52,434 - WARNING -   'Westford Nashoba Valley Tech (MA)' -> 'Westford Nashoba Valley Tech (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Weston (MA)' -> 'Weston (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Weston Rivers (MA)' -> 'Weston Rivers (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Westwood (MA)' -> 'Westwood (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Westwood Xaverian Brothers (MA)' -> 'Westwood Xaverian Brothers (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Weymouth North (MA)' -> 'Weymouth North (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Weymouth South (MA)' -> 'Weymouth South (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Whitinsville Northbridge (MA)' -> 'Whitinsville Northbridge (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Whitman-Hanson Regional (MA)' -> 'Whitman-Hanson Regional (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Wilbraham & Monson Academy (MA)' -> 'Wilbraham & Monson Academy (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Wilbraham Minnechaug Regional (MA)' -> 'Wilbraham Minnechaug Regional (MA)' (no change)
+2026-11-09 08:58:52,435 - WARNING -   'Williamstown Mt. Greylock Regional (MA)' -> 'Williamstown Mt. Greylock Regional (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Wilmington (MA)' -> 'Wilmington (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Winchendon Murdock (MA)' -> 'Winchendon Murdock (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Winchester (MA)' -> 'Winchester (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Winthrop (MA)' -> 'Winthrop (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Woburn Memorial (MA)' -> 'Woburn Memorial (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Worcester Abby Kelley Foster (MA)' -> 'Worcester Abby Kelley Foster (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Worcester Academy (MA)' -> 'Worcester Academy (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Worcester Burncoat (MA)' -> 'Worcester Burncoat (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Worcester Doherty Memorial (MA)' -> 'Worcester Doherty Memorial (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Worcester Holy Name Central Catholic (MA)' -> 'Worcester Holy Name Central Catholic (MA)' (no change)
+2026-11-09 08:58:52,436 - WARNING -   'Worcester North (MA)' -> 'Worcester North (MA)' (no change)
+2026-11-09 08:58:52,437 - WARNING -   'Worcester South (MA)' -> 'Worcester South (MA)' (no change)
+2026-11-09 08:58:52,437 - WARNING -   'Worcester St. Paul (MA)' -> 'Worcester St. Paul (MA)' (no change)
+2026-11-09 08:58:52,437 - WARNING -   'Worcester St. Peter-Marian (MA)' -> 'Worcester St. Peter-Marian (MA)' (no change)
+2026-11-09 08:58:52,437 - WARNING -   'Worcester Tech (MA)' -> 'Worcester Tech (MA)' (no change)
+2026-11-09 08:58:52,437 - WARNING -   'Wrentham King Philip Regional (MA)' -> 'Wrentham King Philip Regional (MA)' (no change)
+2026-11-09 08:58:52,437 - WARNING -   ' Boston Thompson Island Farm and Trades School (MA)' -> 'Boston Thompson Island Farm and Trades School (MA)' (no change)
+2026-11-09 08:58:52,437 - WARNING -   'Falmouth (MA)' -> 'Falmouth (MA)' (no change)
+2026-11-09 08:58:52,437 - WARNING -   'Lynn Collegiate-KIPP Academy (MA)' -> 'Lynn Collegiate-KIPP Academy (MA)' (no change)
+2026-11-09 08:58:52,437 - WARNING -   'Manchester Essex (MA)' -> 'Manchester Essex (MA)' (no change)
+2026-11-09 08:58:52,437 - INFO - Validation passed: 499 rules are clean and ready to upload.
+2026-11-09 08:58:52,455 - INFO - Uploading 499 rules to staging table: ConsolidationRules_Staging...
+2026-11-09 08:58:52,583 - INFO - Upload to staging table complete.
+2026-11-09 08:58:52,589 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-09 09:00:21,686 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-09 09:00:21,686 - INFO - Reason logged to dbo.HS_Consolidation_Log: MA Round 1: MaxPreps short-name/mascot drift, regional/co-op splits, and school renames
+2026-11-09 09:00:21,686 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-09 09:00:21,686 - INFO - Running post-consolidation safety check...
+2026-11-09 09:00:21,907 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> dedup MA
+
+DEDUP v4 MA - PREVIEW (nothing changed)
+ dedup_archive: 323 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_archive_20261109_0900.csv
+ dedup_review: 137 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_review_20261109_0900.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_dedup_summary_20261109_0900.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  MA     96955         323                  137              None 
+
+>>> review-pairs MA
+
+REVIEW-ONLY PAIRS MA - PREVIEW (nothing changed)
+ 136 pairs {'LONG': 3, 'SHORT': 133} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_review_pairs_20261109_0900.csv
+
+>>> same-score-fix MA
+
+SAME-SCORE DOUBLE-BOOKINGS MA - PREVIEW (nothing changed)
+ 348 pairs {'DROP A': 96, 'DROP B': 99, 'UNDECIDED': 153} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_same_score_20261109_0901.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  195       None   None
+
+>>> block-dups MA
+
+ONE-DATE SOURCE BLOCKS MA - PREVIEW (nothing changed)
+ blocks: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_blocks_20261109_0901.csv
+ block_dups: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_block_dups_20261109_0901.csv
+   Source                                  Season  BlockDate   RepeatTeams  Games  CopiedElsewhere
+   The_Boston_Globe_1943_10_03_25.csv      1943    1943-10-03  3            28     0              
+   The_Boston_Globe_1948_10_24_37 (1).csv  1948    1948-10-24  3            25     0              
+   The_Boston_Globe_1951_09_30_47 (1).csv  1951    1951-09-30  39           71     0              
+   The_Boston_Globe_1951_10_14_49.csv      1951    1951-10-14  3            51     0              
+   The_Boston_Globe_1951_11_11_54.csv      1951    1951-11-11  19           64     0              
+   The_Boston_Globe_1953_11_01_47.csv      1953    1953-11-01  3            43     0              
+   The_Boston_Globe_1954_10_17_61 (4).csv  1954    1954-10-17  4            12     0              
+   The_Boston_Globe_1956_09_30_62.csv      1956    1956-09-30  3            63     1              
+   The_Boston_Globe_1956_10_21_59.csv      1956    1956-10-21  5            55     0              
+   The_Boston_Globe_1956_11_11_47.csv      1956    1956-11-11  5            60     2              
+   The_Boston_Globe_1957_09_29_47.csv      1957    1957-09-29  4            55     0              
+   The_Boston_Globe_1957_10_13_63.csv      1957    1957-10-13  3            46     0              
+   The_Boston_Globe_1958_10_12_82.csv      1958    1958-10-12  3            66     1              
+   The_Boston_Globe_1958_10_19_76.csv      1958    1958-10-19  5            54     0              
+   The_Boston_Globe_1959_09_27_76.csv      1959    1959-09-27  3            73     1              
+   The_Boston_Globe_1959_10_11_82.csv      1959    1959-10-11  5            79     1              
+   The_Boston_Globe_1959_10_18_81.csv      1959    1959-10-18  4            74     0              
+   The Boston Globe                        1977    1977-10-30  3            97     1              
+   The Boston Globe                        1977    1977-11-06  3            100    1              
+   The Boston Globe                        1977    1977-11-25  5            99     1              
+   The Boston Globe                        1977    1977-09-18  4            69     0              
+   The Boston Globe                        1977    1977-10-02  3            93     0              
+   The Boston Globe                        1977    1977-10-09  4            95     0              
+   The Boston Globe                        1977    1977-10-23  5            107    0              
+   The Boston Globe                        1977    1977-11-13  4            91     0              
+   ... 63 more rows (see CSV)
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  28        None   None
+
+=== OK 2026-11-09 09:01:37

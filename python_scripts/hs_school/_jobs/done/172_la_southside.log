@@ -1,0 +1,20 @@
+
+>>> move-team LA --from "Youngsville Southside (LA)" --to "Monroe Southside (LA)" --seasons 1880-2026 --ids la_rev_mv_13.csv --reason "HSFHA-LA school code + opponent geography/double-booking check: game belongs to Monroe Southside (LA)" --commit
+ only the 28 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\la_rev_mv_13.csv
+
+MOVE Youngsville Southside (LA) -> Monroe Southside (LA), seasons 1880-2026 - COMMIT
+ move_games: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_games_COMMITTED_20261111_0930.csv
+ move_by_season: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_move_by_season_COMMITTED_20261111_0930.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  28     1                  None
+
+>>> dedup LA
+
+DEDUP v4 LA - PREVIEW (nothing changed)
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_archive_20261111_0930.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_review_20261111_0930.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\LA\LA_dedup_summary_20261111_0930.csv
+   Mode                       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   PREVIEW (nothing changed)  LA     111209        0                    0                None 
+
+=== OK 2026-11-11 09:30:55
