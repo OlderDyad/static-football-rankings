@@ -71,7 +71,7 @@
             </div>
             <div class="collapse" id="methodologyBody"><hr class="my-2">
                 <p>The <strong>line</strong> is what our ratings said before kickoff: the difference in the two teams' <strong>Combined Ratings from the week before the game</strong>, in points, plus 1.6 points for the home team (none at a neutral site), rounded to the half point. <strong>&minus;7.5</strong> means the team was favored by 7.5; <strong>+3.5</strong> means it was a 3.5-point underdog; <strong>PK</strong> means even.</p>
-                <p><strong>ATS</strong> (against the spread) shows whether the team beat that line: <span class="ats ats-W">Covered</span> it, <span class="ats ats-L">Missed</span> it, or landed exactly on it (Push). The ATS record counts every game with a line this season.</p>
+                <p><strong>Ratings pick</strong>: the team the line favored is the ratings' pick to win. <span class="ats ats-W">&#10003; Right</span> means that team won; <span class="ats ats-L">&#10007; Upset</span> means the underdog won (no pick on a PK game). Under each team, <strong>Picks 9-1</strong> counts its games this season: right picks, then upsets. The small number shows how far the result landed from the line (<em>+13 vs line</em> = won by 13 more than the line said).</p>
                 <p class="mb-0">Games played before this season's first weekly ratings have no line (&mdash;). Results update Saturday and Sunday mornings from MaxPreps; ratings and lines update weekly. This is a measure of how well the ratings predict games, not betting advice.</p>
             </div>
         </div></div>
@@ -79,12 +79,13 @@
         <div id="loadingIndicator"><div class="spinner-border text-primary mb-3" role="status"></div><p>Loading&hellip;</p></div>
 
         <div id="content" style="display:none;">
+            <div id="pickSummary" class="mb-2"></div>
             <p class="text-muted small mb-2">Click a team to see its full season with the line for every game.</p>
             <div class="table-responsive">
                 <table class="table table-hover table-sm align-middle">
                     <thead><tr>
                         <th>#</th><th>Team</th>
-                        <th>Last game</th><th>Line</th><th>Final</th><th>ATS</th>
+                        <th>Last game</th><th>Line</th><th>Final</th><th>Ratings pick</th>
                         <th class="col-hide">Next game</th>
                     </tr></thead>
                     <tbody id="teamsBody"></tbody>
@@ -112,10 +113,11 @@
         const opp = g => `${g.site === 'H' ? 'vs' : g.site === 'A' ? '@' : 'vs'} ${g.opponent_rank ? '<span class="text-muted small">#' + g.opponent_rank + '</span> ' : ''}${esc(g.opponent.replace(/ \([A-Z]{2}\)$/, ''))}${g.site === 'N' ? ' <span class="text-muted small">(N)</span>' : ''}`;
         const final = g => `<span class="res-${g.result}">${g.result}</span> ${g.points_for}-${g.points_against}`;
         const atsCell = g => {
-            if (!g.ats) return '<span class="text-muted">&mdash;</span>';
-            const label = g.ats === 'W' ? 'Covered' : g.ats === 'L' ? 'Missed' : 'Push';
-            const by = g.ats === 'P' ? '' : ` <span class="small">by ${Math.abs(g.ats_margin).toFixed(1)}</span>`;
-            return `<span class="ats ats-${g.ats}">${label}</span>${by}`;
+            if (!g.pick) return '<span class="text-muted">&mdash;</span>';
+            const badge = g.pick === 'R' ? '<span class="ats ats-W">&#10003; Right</span>' : '<span class="ats ats-L">&#10007; Upset</span>';
+            const v = g.vs_line;
+            const vl = (v === null || v === undefined) ? '' : ` <span class="small text-muted">${v > 0 ? '+' : ''}${v.toFixed(1)} vs line</span>`;
+            return badge + vl;
         };
         const teamName = t => esc(t.team.replace(/ \(([A-Z]{2})\)$/, '')) + ` <span class="text-muted small">${t.team.slice(-3, -1)}</span>`;
         function row(t, i) {
@@ -129,15 +131,20 @@
             return `<tr class="team-row" data-log="${i}">
                 <td class="rank-cell">${t.rank}</td>
                 <td><span class="fw-semibold">${teamName(t)}</span>
-                    <div class="text-muted small">${esc(t.record)} &middot; ATS ${esc(t.ats_record)} &middot; Rtg ${t.rating.toFixed(1)}</div></td>
+                    <div class="text-muted small">${esc(t.record)} &middot; Picks ${esc(t.picks)} &middot; Rtg ${t.rating.toFixed(1)}</div></td>
                 ${last}<td class="col-hide small">${next}</td></tr>` + log;
         }
-        fetch(DATA_URL).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(d => {
+        fetch(DATA_URL + '?v=' + Date.now(), {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(d => {
             const md = d.metadata || {};
             if (md.timestamp) document.getElementById('lastUpdated').textContent = new Date(md.timestamp).toLocaleString('en-US',
                 {weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'});
             document.getElementById('pageSubtitle').textContent =
                 `${md.season} season \u00b7 rankings and lines from Week ${md.ratings_week} ratings \u00b7 click a team for its season`;
+            const pw = md.picks_last_7_days || {}, ps = md.picks_season || {};
+            const pct = x => x.pct === null || x.pct === undefined ? '' : ` (${x.pct.toFixed(0)}%)`;
+            document.getElementById('pickSummary').innerHTML =
+                `<span class="badge bg-light text-dark border me-2">Last 7 days: ratings picked the winner in ${pw.right ?? 0} of ${pw.games ?? 0} games${pct(pw)}</span>`
+              + `<span class="badge bg-light text-dark border">Season: ${ps.right ?? 0} of ${ps.games ?? 0}${pct(ps)}</span>`;
             const tb = document.getElementById('teamsBody');
             tb.innerHTML = (d.teams || []).slice().sort((a, b) => a.rank - b.rank).map(row).join('');
             tb.addEventListener('click', ev => {
