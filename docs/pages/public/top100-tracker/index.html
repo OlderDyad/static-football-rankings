@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 100 Tracker - McKnight's American Football Rankings</title>
+    <title>Last Week's Top 100 Results - McKnight's American Football Rankings</title>
     <meta name="description" content="The national top 100 high school football teams and how each game compared with the margin expected from the two teams' ratings.">
 
     <!-- Bootstrap CSS -->
@@ -18,6 +18,9 @@
         .methodology-card { border-left: 4px solid #0d6efd; background: #f8f9fa; }
         .methodology-card .card-body { padding: 1.25rem 1.5rem; }
         .last-updated { font-size: 0.8rem; color: #6c757d; }
+        .ats { font-weight: 600; padding: 1px 7px; border-radius: 4px; font-size: 0.8rem; white-space: nowrap; }
+        .ats-W { background: #d4edda; color: #155724; } .ats-L { background: #f8d7da; color: #721c24; } .ats-P { background: #e9ecef; color: #495057; }
+        .line { font-weight: 600; font-variant-numeric: tabular-nums; }
         .dev { font-weight: 600; padding: 2px 7px; border-radius: 4px; font-size: 0.8rem; white-space: nowrap; }
         .dev-up2 { background: #c3e6cb; color: #155724; }
         .dev-up1 { background: #e2f3e5; color: #1e7e34; }
@@ -43,57 +46,47 @@
     <link rel="apple-touch-icon" href="/static-football-rankings/images/icons/apple-touch-icon.png">
     <link rel="manifest" href="/static-football-rankings/site.webmanifest">
     <meta name="theme-color" content="#1b5e20">
-</head>
-<body>
-    <div class="header-banner">
+</h    <div class="header-banner">
         <img src="/static-football-rankings/images/football-field-top.jpg" alt="Football Field Header" class="w-100" />
     </div>
     <div class="container mt-3">
         <nav aria-label="breadcrumb"><ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/static-football-rankings/index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Top 100 Tracker</li>
+            <li class="breadcrumb-item active" aria-current="page">Last Week's Top 100 Results</li>
         </ol></nav>
     </div>
     <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-2">
             <div>
-                <h1 class="mb-1">Top 100 Tracker</h1>
-                <p class="text-muted mb-0" id="pageSubtitle">How the nation's top 100 played against expectations</p>
+                <h1 class="mb-1">Last Week's Top 100 Results</h1>
+                <p class="text-muted mb-0" id="pageSubtitle">The nation's top 100, their latest game, and how they did against our line</p>
             </div>
-            <div class="text-end"><span class="last-updated">Last updated: <span id="lastUpdated">&mdash;</span></span></div>
+            <div class="text-end"><span class="last-updated">Updated <span id="lastUpdated">&mdash;</span></span></div>
         </div>
 
-        <div class="card methodology-card mb-4 mt-3"><div class="card-body">
+        <div class="card methodology-card mb-3 mt-3"><div class="card-body py-2">
             <div class="d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">How "vs. expected" works</h5>
+                <span class="fw-semibold">How the line works</span>
                 <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#methodologyBody">Show / Hide</button>
             </div>
-            <div class="collapse" id="methodologyBody"><hr>
-                <p>The top 100 are the highest current-season <strong>Combined Ratings</strong> in the country (11-man programs), from the latest weekly calculation.</p>
-                <p>For every game, the expected margin comes from both teams' ratings <em>before</em> that game (the last weekly rating before game week; last season's final rating before the first rating of the season):</p>
-                <p class="font-monospace bg-light p-2 rounded">Expected margin = (Team rating &minus; Opponent rating) &divide; 0.958 &plusmn; 1.6 home field<br>
-                vs. expected = Actual margin &minus; Expected margin</p>
-                <p>A positive number means the team beat its expectation by that many points; negative means it fell short. The 1.6-point home-field figure is measured from 1.76 million games, 2004&ndash;2025; neutral-site games get none.</p>
-                <p class="mb-0">Updated Saturday and Sunday mornings from MaxPreps. Ratings themselves are recalculated weekly, so a team's expectation only changes once a week.</p>
+            <div class="collapse" id="methodologyBody"><hr class="my-2">
+                <p>The <strong>line</strong> is what our ratings said before kickoff: the difference in the two teams' <strong>Combined Ratings from the week before the game</strong>, in points, plus 1.6 points for the home team (none at a neutral site), rounded to the half point. <strong>&minus;7.5</strong> means the team was favored by 7.5; <strong>+3.5</strong> means it was a 3.5-point underdog; <strong>PK</strong> means even.</p>
+                <p><strong>ATS</strong> (against the spread) shows whether the team beat that line: <span class="ats ats-W">Covered</span> it, <span class="ats ats-L">Missed</span> it, or landed exactly on it (Push). The ATS record counts every game with a line this season.</p>
+                <p class="mb-0">Games played before this season's first weekly ratings have no line (&mdash;). Results update Saturday and Sunday mornings from MaxPreps; ratings and lines update weekly. This is a measure of how well the ratings predict games, not betting advice.</p>
             </div>
         </div></div>
 
         <div id="loadingIndicator"><div class="spinner-border text-primary mb-3" role="status"></div><p>Loading&hellip;</p></div>
 
         <div id="content" style="display:none;">
-            <h3 class="mt-2">This weekend's results <small class="text-muted fs-6" id="recentNote"></small></h3>
-            <div class="table-responsive mb-5">
-                <table class="table table-hover table-sm align-middle">
-                    <thead><tr><th>Rank</th><th>Team</th><th>Opponent</th><th>Score</th><th class="col-hide">Expected</th><th>vs. Expected</th></tr></thead>
-                    <tbody id="recentBody"></tbody>
-                </table>
-                <div id="noRecent" class="text-muted" style="display:none;">No results for the top 100 in the last few days yet.</div>
-            </div>
-
-            <h3>Season tracker <small class="text-muted fs-6">click a team for its game log</small></h3>
+            <p class="text-muted small mb-2">Click a team to see its full season with the line for every game.</p>
             <div class="table-responsive">
                 <table class="table table-hover table-sm align-middle">
-                    <thead><tr><th>#</th><th>Team</th><th>Rating</th><th>Record</th><th>Avg vs. Exp.</th><th class="col-hide">Last game</th></tr></thead>
+                    <thead><tr>
+                        <th>#</th><th>Team</th>
+                        <th>Last game</th><th>Line</th><th>Final</th><th>ATS</th>
+                        <th class="col-hide">Next game</th>
+                    </tr></thead>
                     <tbody id="teamsBody"></tbody>
                 </table>
             </div>
@@ -110,52 +103,57 @@
         const DATA_URL = '/static-football-rankings/data/top100-tracker/top100-tracker.json';
         const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
         const fmtDate = (iso, o) => { const [y,m,d] = iso.split('-').map(Number); return new Date(y, m-1, d).toLocaleDateString('en-US', o); };
-        const short = {weekday: 'short', month: 'numeric', day: 'numeric'};
-        function devBadge(v) {
-            if (v === null || v === undefined) return '<span class="text-muted small">n/a</span>';
-            const cls = v >= 14 ? 'dev-up2' : v >= 3 ? 'dev-up1' : v > -3 ? 'dev-even' : v > -14 ? 'dev-dn1' : 'dev-dn2';
-            return `<span class="dev ${cls}">${v > 0 ? '+' : ''}${v.toFixed(1)}</span>`;
-        }
-        const site = s => s === 'H' ? 'vs' : s === 'A' ? 'at' : 'vs (N)';
-        const opp = g => `${site(g.site)} ${g.opponent_rank ? '<span class="text-muted small">#' + g.opponent_rank + '</span> ' : ''}${esc(g.opponent)}`;
-        const score = g => `<span class="res-${g.result}">${g.result}</span> ${g.points_for}-${g.points_against}`;
-        const expected = g => g.expected_margin === null ? 'n/a' : (g.expected_margin >= 0 ? 'by ' + g.expected_margin.toFixed(1) : 'dog ' + (-g.expected_margin).toFixed(1));
-        function recentRow(g) {
-            return `<tr><td class="rank-cell">${g.rank}</td><td>${esc(g.team)}<div class="text-muted small">${fmtDate(g.date, short)}</div></td>
-                <td>${opp(g)}</td><td>${score(g)}</td><td class="col-hide">${expected(g)}</td><td>${devBadge(g.deviation)}</td></tr>`;
-        }
-        function teamRow(t, i) {
-            const lg = t.last_game;
-            const last = lg ? `${fmtDate(lg.date, short)} ${opp(lg)} ${score(lg)} ${devBadge(lg.deviation)}` : '';
-            const log = t.game_log.map(g => `<tr class="gamelog"><td></td><td>${fmtDate(g.date, short)}</td>
-                <td colspan="2">${opp(g)} &nbsp; ${score(g)}</td><td>${expected(g)}</td><td class="col-hide">${devBadge(g.deviation)}</td></tr>`).join('');
+        const short = {month: 'numeric', day: 'numeric'};
+        const line = (s, wk) => {
+            if (s === null || s === undefined) return '<span class="text-muted">&mdash;</span>';
+            const txt = s === 0 ? 'PK' : (s < 0 ? '&minus;' + (-s).toFixed(1) : '+' + s.toFixed(1));
+            return `<span class="line" title="From Week ${wk} ratings">${txt}</span>`;
+        };
+        const opp = g => `${g.site === 'H' ? 'vs' : g.site === 'A' ? '@' : 'vs'} ${g.opponent_rank ? '<span class="text-muted small">#' + g.opponent_rank + '</span> ' : ''}${esc(g.opponent.replace(/ \([A-Z]{2}\)$/, ''))}${g.site === 'N' ? ' <span class="text-muted small">(N)</span>' : ''}`;
+        const final = g => `<span class="res-${g.result}">${g.result}</span> ${g.points_for}-${g.points_against}`;
+        const atsCell = g => {
+            if (!g.ats) return '<span class="text-muted">&mdash;</span>';
+            const label = g.ats === 'W' ? 'Covered' : g.ats === 'L' ? 'Missed' : 'Push';
+            const by = g.ats === 'P' ? '' : ` <span class="small">by ${Math.abs(g.ats_margin).toFixed(1)}</span>`;
+            return `<span class="ats ats-${g.ats}">${label}</span>${by}`;
+        };
+        const teamName = t => esc(t.team.replace(/ \(([A-Z]{2})\)$/, '')) + ` <span class="text-muted small">${t.team.slice(-3, -1)}</span>`;
+        function row(t, i) {
+            const lg = t.last_game, ng = t.next_game;
+            const last = lg ? `<td class="small">${fmtDate(lg.date, short)} ${opp(lg)}</td><td>${line(lg.spread, lg.line_week)}</td><td>${final(lg)}</td><td>${atsCell(lg)}</td>`
+                            : '<td colspan="4" class="text-muted small">No games yet</td>';
+            const next = ng ? `${fmtDate(ng.date, short)} ${opp(ng)} ${line(ng.spread, ng.line_week)}` : '<span class="text-muted">&mdash;</span>';
+            const log = t.game_log.map(g => `<tr class="gamelog d-none log-${i}"><td></td>
+                <td class="small text-muted">${fmtDate(g.date, short)}</td><td class="small">${opp(g)}</td>
+                <td>${line(g.spread, g.line_week)}</td><td>${final(g)}</td><td>${atsCell(g)}</td><td class="col-hide"></td></tr>`).join('');
             return `<tr class="team-row" data-log="${i}">
-                <td class="rank-cell">${t.rank}</td><td>${esc(t.team)}</td><td>${t.rating.toFixed(1)}</td><td>${esc(t.record)}</td>
-                <td>${devBadge(t.avg_deviation)}</td><td class="col-hide small">${last}</td></tr>`
-                + log.replace(/<tr class="gamelog">/g, `<tr class="gamelog d-none log-${i}">`);
+                <td class="rank-cell">${t.rank}</td>
+                <td><span class="fw-semibold">${teamName(t)}</span>
+                    <div class="text-muted small">${esc(t.record)} &middot; ATS ${esc(t.ats_record)} &middot; Rtg ${t.rating.toFixed(1)}</div></td>
+                ${last}<td class="col-hide small">${next}</td></tr>` + log;
         }
         fetch(DATA_URL).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(d => {
             const md = d.metadata || {};
             if (md.timestamp) document.getElementById('lastUpdated').textContent = new Date(md.timestamp).toLocaleString('en-US',
-                {month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit'});
-            document.getElementById('pageSubtitle').textContent = `${md.season} season, ratings through Week ${md.ratings_week}`;
-            if (md.recent_since) document.getElementById('recentNote').textContent = `(games since ${fmtDate(md.recent_since, {month: 'long', day: 'numeric'})}, best vs. expected first)`;
-            document.getElementById('recentBody').innerHTML = (d.recent || []).map(recentRow).join('');
-            document.getElementById('noRecent').style.display = (d.recent || []).length ? 'none' : 'block';
+                {weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'});
+            document.getElementById('pageSubtitle').textContent =
+                `${md.season} season \u00b7 rankings and lines from Week ${md.ratings_week} ratings \u00b7 click a team for its season`;
             const tb = document.getElementById('teamsBody');
-            tb.innerHTML = (d.teams || []).map(teamRow).join('');
+            tb.innerHTML = (d.teams || []).slice().sort((a, b) => a.rank - b.rank).map(row).join('');
             tb.addEventListener('click', ev => {
-                const row = ev.target.closest('.team-row'); if (!row) return;
-                tb.querySelectorAll('.log-' + row.dataset.log).forEach(r => r.classList.toggle('d-none'));
+                const r = ev.target.closest('.team-row'); if (!r) return;
+                tb.querySelectorAll('.log-' + r.dataset.log).forEach(x => x.classList.toggle('d-none'));
             });
             document.getElementById('loadingIndicator').style.display = 'none';
             document.getElementById('content').style.display = 'block';
         }).catch(e => {
             console.error(e);
-            document.getElementById('loadingIndicator').innerHTML = '<p class="text-danger">Unable to load the tracker. Please try again later.</p>';
+            document.getElementById('loadingIndicator').innerHTML = '<p class="text-danger">Unable to load results. Please try again later.</p>';
         });
     })();
     </script>
+
+ </script>
 
     <div class="container mt-5">
         <div class="comments-section">
