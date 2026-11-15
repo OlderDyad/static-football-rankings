@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "timestamp": "2026-11-14T21:59:27.000Z",
+    "timestamp": "2026-11-15T10:53:43.000Z",
     "type": "top100-tracker",
     "season": 2026,
     "ratings_week": 45,
     "home_field_adv": 1.6,
     "points_per_rating": 0.958,
-    "recent_since": "2026-11-11",
+    "recent_since": "2026-11-12",
     "total_teams": 100,
     "description": "The national top 100 by Combined Rating, and how each game's margin compared with the margin expected from the two teams' pre-game ratings."
   },
@@ -624,6 +624,23 @@
       "deviation": 3.5
     },
     {
+      "team": "Carrollton (GA)",
+      "rank": 8,
+      "date": "2026-11-13",
+      "opponent": "Cumming North Forsyth (GA)",
+      "opponent_rank": null,
+      "site": "H",
+      "points_for": 55,
+      "points_against": 7,
+      "result": "W",
+      "team_rating_pre": 66.46,
+      "opponent_rating_pre": 25.13,
+      "ratings_week": 45,
+      "expected_margin": 44.7,
+      "actual_margin": 48,
+      "deviation": 3.3
+    },
+    {
       "team": "Desoto (TX)",
       "rank": 47,
       "date": "2026-11-12",
@@ -639,6 +656,23 @@
       "expected_margin": 62.9,
       "actual_margin": 66,
       "deviation": 3.1
+    },
+    {
+      "team": "Puyallup (WA)",
+      "rank": 92,
+      "date": "2026-11-14",
+      "opponent": "Richland (WA)",
+      "opponent_rank": null,
+      "site": "H",
+      "points_for": 56,
+      "points_against": 14,
+      "result": "W",
+      "team_rating_pre": 46.69,
+      "opponent_rating_pre": 10.52,
+      "ratings_week": 45,
+      "expected_margin": 39.4,
+      "actual_margin": 42,
+      "deviation": 2.6
     },
     {
       "team": "Chattanooga Baylor (TN)",
@@ -791,6 +825,23 @@
       "ratings_week": 45,
       "expected_margin": 23.4,
       "actual_margin": 24,
+      "deviation": 0.6
+    },
+    {
+      "team": "San Mateo Junipero Serra (CA)",
+      "rank": 68,
+      "date": "2026-11-14",
+      "opponent": "Salinas Palma (CA)",
+      "opponent_rank": null,
+      "site": "H",
+      "points_for": 44,
+      "points_against": 0,
+      "result": "W",
+      "team_rating_pre": 50.61,
+      "opponent_rating_pre": 10.57,
+      "ratings_week": 45,
+      "expected_margin": 43.4,
+      "actual_margin": 44,
       "deviation": 0.6
     },
     {
@@ -1100,6 +1151,23 @@
       "deviation": -8.1
     },
     {
+      "team": "Chicago Brother Rice (IL)",
+      "rank": 64,
+      "date": "2026-11-14",
+      "opponent": "Normal Community (IL)",
+      "opponent_rank": null,
+      "site": "A",
+      "points_for": 41,
+      "points_against": 10,
+      "result": "W",
+      "team_rating_pre": 50.73,
+      "opponent_rating_pre": 11.72,
+      "ratings_week": 45,
+      "expected_margin": 39.1,
+      "actual_margin": 31,
+      "deviation": -8.1
+    },
+    {
       "team": "Tampa Carrollwood Day (FL)",
       "rank": 36,
       "date": "2026-11-13",
@@ -1404,6 +1472,23 @@
       "expected_margin": -2.7,
       "actual_margin": -45,
       "deviation": -42.3
+    },
+    {
+      "team": "Bradenton IMG Academy (FL)",
+      "rank": 3,
+      "date": "2026-11-14",
+      "opponent": "Baltimore St. Frances (MD)",
+      "opponent_rank": null,
+      "site": "A",
+      "points_for": 17,
+      "points_against": 9,
+      "result": "W",
+      "team_rating_pre": 72.61,
+      "opponent_rating_pre": null,
+      "ratings_week": 45,
+      "expected_margin": null,
+      "actual_margin": 8,
+      "deviation": null
     }
   ],
   "teams": [
@@ -1776,23 +1861,23 @@
       "rank": 3,
       "team": "Bradenton IMG Academy (FL)",
       "rating": 72.61,
-      "record": "7-0",
-      "games": 7,
+      "record": "8-0",
+      "games": 8,
       "avg_deviation": 4.8,
       "last_game": {
-        "date": "2026-10-31",
-        "opponent": "Princeton Hun School (NJ)",
+        "date": "2026-11-14",
+        "opponent": "Baltimore St. Frances (MD)",
         "opponent_rank": null,
-        "site": "H",
-        "points_for": 42,
-        "points_against": 14,
+        "site": "A",
+        "points_for": 17,
+        "points_against": 9,
         "result": "W",
-        "team_rating_pre": 75.7,
-        "opponent_rating_pre": 39.52,
-        "ratings_week": 43,
-        "expected_margin": 39.4,
-        "actual_margin": 28,
-        "deviation": -11.4
+        "team_rating_pre": 72.61,
+        "opponent_rating_pre": null,
+        "ratings_week": 45,
+        "expected_margin": null,
+        "actual_margin": 8,
+        "deviation": null
       },
       "game_log": [
         {
@@ -1819,7 +1904,7 @@
           "points_against": 10,
           "result": "W",
           "team_rating_pre": 58.56,
-          "opponent_rating_pre": 9.27,
+          "opponent_rating_pre": 9.26,
           "ratings_week": 0,
           "expected_margin": 53.1,
           "actual_margin": 49,
@@ -1899,6 +1984,21 @@
           "expected_margin": 39.4,
           "actual_margin": 28,
           "deviation": -11.4
+        },
+        {
+          "date": "2026-11-14",
+          "opponent": "Baltimore St. Frances (MD)",
+          "opponent_rank": null,
+          "site": "A",
+          "points_for": 17,
+          "points_against": 9,
+          "result": "W",
+          "team_rating_pre": 72.61,
+          "opponent_rating_pre": null,
+          "ratings_week": 45,
+          "expected_margin": null,
+          "actual_margin": 8,
+          "deviation": null
         }
       ]
     },
@@ -2184,7 +2284,7 @@
           "points_against": 7,
           "result": "W",
           "team_rating_pre": 58.91,
-          "opponent_rating_pre": -9.13,
+          "opponent_rating_pre": -9.14,
           "ratings_week": 0,
           "expected_margin": 72.6,
           "actual_margin": 55,
@@ -2636,23 +2736,23 @@
       "rank": 8,
       "team": "Carrollton (GA)",
       "rating": 66.46,
-      "record": "10-0",
-      "games": 10,
-      "avg_deviation": 9.8,
+      "record": "11-0",
+      "games": 11,
+      "avg_deviation": 9.2,
       "last_game": {
-        "date": "2026-10-30",
-        "opponent": "Sharpsburg East Coweta (GA)",
+        "date": "2026-11-13",
+        "opponent": "Cumming North Forsyth (GA)",
         "opponent_rank": null,
         "site": "H",
-        "points_for": 48,
-        "points_against": 17,
+        "points_for": 55,
+        "points_against": 7,
         "result": "W",
-        "team_rating_pre": 66.27,
-        "opponent_rating_pre": 42.78,
-        "ratings_week": 43,
-        "expected_margin": 26.1,
-        "actual_margin": 31,
-        "deviation": 4.9
+        "team_rating_pre": 66.46,
+        "opponent_rating_pre": 25.13,
+        "ratings_week": 45,
+        "expected_margin": 44.7,
+        "actual_margin": 48,
+        "deviation": 3.3
       },
       "game_log": [
         {
@@ -2711,9 +2811,9 @@
           "team_rating_pre": 61.75,
           "opponent_rating_pre": 22.04,
           "ratings_week": 0,
-          "expected_margin": 43.0,
+          "expected_margin": 43.1,
           "actual_margin": 56,
-          "deviation": 13.0
+          "deviation": 12.9
         },
         {
           "date": "2026-09-18",
@@ -2804,6 +2904,21 @@
           "expected_margin": 26.1,
           "actual_margin": 31,
           "deviation": 4.9
+        },
+        {
+          "date": "2026-11-13",
+          "opponent": "Cumming North Forsyth (GA)",
+          "opponent_rank": null,
+          "site": "H",
+          "points_for": 55,
+          "points_against": 7,
+          "result": "W",
+          "team_rating_pre": 66.46,
+          "opponent_rating_pre": 25.13,
+          "ratings_week": 45,
+          "expected_margin": 44.7,
+          "actual_margin": 48,
+          "deviation": 3.3
         }
       ]
     },
@@ -5264,7 +5379,7 @@
           "points_against": 43,
           "result": "W",
           "team_rating_pre": 55.8,
-          "opponent_rating_pre": 54.23,
+          "opponent_rating_pre": 54.24,
           "ratings_week": 0,
           "expected_margin": 0.0,
           "actual_margin": 7,
@@ -6069,7 +6184,7 @@
           "points_against": 30,
           "result": "L",
           "team_rating_pre": 58.26,
-          "opponent_rating_pre": 56.13,
+          "opponent_rating_pre": 56.14,
           "ratings_week": 0,
           "expected_margin": 0.6,
           "actual_margin": -8,
@@ -8159,7 +8274,7 @@
           "points_against": 0,
           "result": "W",
           "team_rating_pre": 31.07,
-          "opponent_rating_pre": -9.13,
+          "opponent_rating_pre": -9.14,
           "ratings_week": 0,
           "expected_margin": 43.6,
           "actual_margin": 62,
@@ -10614,7 +10729,7 @@
           "points_against": 0,
           "result": "W",
           "team_rating_pre": 46.02,
-          "opponent_rating_pre": 6.18,
+          "opponent_rating_pre": 6.17,
           "ratings_week": 0,
           "expected_margin": 40.0,
           "actual_margin": 37,
@@ -10819,7 +10934,7 @@
           "points_against": 17,
           "result": "W",
           "team_rating_pre": 41.08,
-          "opponent_rating_pre": 56.13,
+          "opponent_rating_pre": 56.14,
           "ratings_week": 0,
           "expected_margin": -14.1,
           "actual_margin": 6,
@@ -11214,7 +11329,7 @@
           "points_against": 13,
           "result": "W",
           "team_rating_pre": 48.17,
-          "opponent_rating_pre": 54.23,
+          "opponent_rating_pre": 54.24,
           "ratings_week": 0,
           "expected_margin": -4.7,
           "actual_margin": 36,
@@ -13186,23 +13301,23 @@
       "rank": 64,
       "team": "Chicago Brother Rice (IL)",
       "rating": 50.73,
-      "record": "9-2",
-      "games": 11,
-      "avg_deviation": 2.3,
+      "record": "10-2",
+      "games": 12,
+      "avg_deviation": 1.4,
       "last_game": {
-        "date": "2026-11-07",
-        "opponent": "Batavia (IL)",
+        "date": "2026-11-14",
+        "opponent": "Normal Community (IL)",
         "opponent_rank": null,
-        "site": "H",
-        "points_for": 49,
-        "points_against": 6,
+        "site": "A",
+        "points_for": 41,
+        "points_against": 10,
         "result": "W",
-        "team_rating_pre": 48.32,
-        "opponent_rating_pre": 31.55,
-        "ratings_week": 44,
-        "expected_margin": 19.1,
-        "actual_margin": 43,
-        "deviation": 23.9
+        "team_rating_pre": 50.73,
+        "opponent_rating_pre": 11.72,
+        "ratings_week": 45,
+        "expected_margin": 39.1,
+        "actual_margin": 31,
+        "deviation": -8.1
       },
       "game_log": [
         {
@@ -13369,6 +13484,21 @@
           "expected_margin": 19.1,
           "actual_margin": 43,
           "deviation": 23.9
+        },
+        {
+          "date": "2026-11-14",
+          "opponent": "Normal Community (IL)",
+          "opponent_rank": null,
+          "site": "A",
+          "points_for": 41,
+          "points_against": 10,
+          "result": "W",
+          "team_rating_pre": 50.73,
+          "opponent_rating_pre": 11.72,
+          "ratings_week": 45,
+          "expected_margin": 39.1,
+          "actual_margin": 31,
+          "deviation": -8.1
         }
       ]
     },
@@ -13916,23 +14046,23 @@
       "rank": 68,
       "team": "San Mateo Junipero Serra (CA)",
       "rating": 50.61,
-      "record": "9-1",
-      "games": 10,
-      "avg_deviation": 6.8,
+      "record": "10-1",
+      "games": 11,
+      "avg_deviation": 6.3,
       "last_game": {
-        "date": "2026-11-07",
-        "opponent": "Mountain View St.Francis (CA)",
+        "date": "2026-11-14",
+        "opponent": "Salinas Palma (CA)",
         "opponent_rank": null,
         "site": "H",
-        "points_for": 42,
+        "points_for": 44,
         "points_against": 0,
         "result": "W",
-        "team_rating_pre": 48.21,
-        "opponent_rating_pre": 16.66,
-        "ratings_week": 44,
-        "expected_margin": 34.5,
-        "actual_margin": 42,
-        "deviation": 7.5
+        "team_rating_pre": 50.61,
+        "opponent_rating_pre": 10.57,
+        "ratings_week": 45,
+        "expected_margin": 43.4,
+        "actual_margin": 44,
+        "deviation": 0.6
       },
       "game_log": [
         {
@@ -14084,6 +14214,21 @@
           "expected_margin": 34.5,
           "actual_margin": 42,
           "deviation": 7.5
+        },
+        {
+          "date": "2026-11-14",
+          "opponent": "Salinas Palma (CA)",
+          "opponent_rank": null,
+          "site": "H",
+          "points_for": 44,
+          "points_against": 0,
+          "result": "W",
+          "team_rating_pre": 50.61,
+          "opponent_rating_pre": 10.57,
+          "ratings_week": 45,
+          "expected_margin": 43.4,
+          "actual_margin": 44,
+          "deviation": 0.6
         }
       ]
     },
@@ -14719,7 +14864,7 @@
           "points_against": 0,
           "result": "W",
           "team_rating_pre": 24.06,
-          "opponent_rating_pre": -9.13,
+          "opponent_rating_pre": -9.14,
           "ratings_week": 0,
           "expected_margin": 33.0,
           "actual_margin": 64,
@@ -17921,9 +18066,9 @@
           "team_rating_pre": 50.59,
           "opponent_rating_pre": 10.31,
           "ratings_week": 0,
-          "expected_margin": 43.6,
+          "expected_margin": 43.7,
           "actual_margin": 44,
-          "deviation": 0.4
+          "deviation": 0.3
         },
         {
           "date": "2026-09-25",
@@ -18416,23 +18561,23 @@
       "rank": 92,
       "team": "Puyallup (WA)",
       "rating": 46.69,
-      "record": "10-0",
-      "games": 10,
-      "avg_deviation": -4.4,
+      "record": "11-0",
+      "games": 11,
+      "avg_deviation": -3.8,
       "last_game": {
-        "date": "2026-11-06",
-        "opponent": "Spokane Lewis & Clark (WA)",
+        "date": "2026-11-14",
+        "opponent": "Richland (WA)",
         "opponent_rank": null,
         "site": "H",
-        "points_for": 57,
-        "points_against": 16,
+        "points_for": 56,
+        "points_against": 14,
         "result": "W",
-        "team_rating_pre": 45.81,
-        "opponent_rating_pre": -12.76,
-        "ratings_week": 44,
-        "expected_margin": 62.7,
-        "actual_margin": 41,
-        "deviation": -21.7
+        "team_rating_pre": 46.69,
+        "opponent_rating_pre": 10.52,
+        "ratings_week": 45,
+        "expected_margin": 39.4,
+        "actual_margin": 42,
+        "deviation": 2.6
       },
       "game_log": [
         {
@@ -18584,6 +18729,21 @@
           "expected_margin": 62.7,
           "actual_margin": 41,
           "deviation": -21.7
+        },
+        {
+          "date": "2026-11-14",
+          "opponent": "Richland (WA)",
+          "opponent_rank": null,
+          "site": "H",
+          "points_for": 56,
+          "points_against": 14,
+          "result": "W",
+          "team_rating_pre": 46.69,
+          "opponent_rating_pre": 10.52,
+          "ratings_week": 45,
+          "expected_margin": 39.4,
+          "actual_margin": 42,
+          "deviation": 2.6
         }
       ]
     },
