@@ -1,0 +1,43 @@
+
+>>> query TX season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_season_date_1_20261113_0720.csv
+ set 2: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_season_date_2_20261113_0720.csv
+
+>>> query TX forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_forfeits_1_20261113_0720.csv
+ set 2: 208 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_forfeits_2_20261113_0720.csv
+
+>>> query TX college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 56 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_college_check_1_20261113_0720.csv
+ set 2: 208 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_college_check_2_20261113_0720.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_college_check_3_20261113_0720.csv
+ set 4: 2424 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_q_college_check_4_20261113_0720.csv
+
+>>> report TX same-town
+
+REPORT same-town TX: 3859 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\TX\TX_same_town_20261113_0721.csv
+   A                            B                           Hits  Seasons  FirstSeason  LastSeason  A_Games  B_Games
+   El Paso (TX)                 El Paso Bowie (TX)          193   81       1930         2023        1188     1054   
+   El Paso (TX)                 El Paso Austin (TX)         191   76       1929         2025        1188     1144   
+   Houston Heights (TX)         Houston Milby (TX)          185   73       1914         2015        1223     1091   
+   Arlington (TX)               Arlington Sam Houston (TX)  174   57       1966         2025        1159     661    
+   El Paso Austin (TX)          El Paso Bowie (TX)          169   80       1931         2026        1144     1054   
+   El Paso Austin (TX)          El Paso Burges (TX)         163   54       1955         2023        1144     807    
+   Dallas Sunset (TX)           Dallas Wilson (TX)          145   59       1929         2021        1035     1006   
+   Corpus Christi Miller (TX)   Corpus Christi Ray (TX)     145   59       1950         2024        1311     838    
+   Dallas Adamson (TX)          Dallas Wilson (TX)          144   66       1928         2025        1131     1006   
+   Irving MacArthur (TX)        Irving Nimitz (TX)          143   48       1970         2026        682      625    
+   Corpus Christi Carroll (TX)  Corpus Christi Miller (TX)  142   53       1957         2026        789      1311   
+   Houston Austin (TX)          Houston Northside (TX)      142   61       1937         2026        714      885    
+   El Paso Austin (TX)          El Paso Irvin (TX)          141   57       1960         2026        1144     779    
+   Laredo Martin (TX)           Laredo Nixon (TX)           140   46       1968         2026        1000     646    
+   Odessa (TX)                  Odessa Permian (TX)         139   58       1959         2025        1085     870    
+   ... 3844 more rows (see CSV)
+
+=== OK 2026-11-13 07:21:18

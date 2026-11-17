@@ -1,0 +1,603 @@
+
+>>> same-score-fix MO --commit
+ 104 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS MO - COMMIT
+ 319 pairs {'DROP A': 60, 'DROP B': 51, 'UNDECIDED': 208} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_same_score_COMMITTED_20261113_1057.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  111       7DE2C257-08BD-43CF-9FCC-262DE4533DB7  None
+
+>>> consolidate MO --reason "MO round 2 (2026-11-13): same-school names, see _coop_scripts/MO_cfg.py"
+Consolidating MO from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\MO_Alias_Rules.csv
+
+[stderr]
+2026-11-13 10:57:35,335 - INFO - Starting consolidation for state: (MO) using staging table method.
+2026-11-13 10:57:35,346 - WARNING - WARNING: 458 row(s) have identical OldName and NewName (no-op rules).
+2026-11-13 10:57:35,347 - WARNING -   'Adrian (MO)' -> 'Adrian (MO)' (no change)
+2026-11-13 10:57:35,347 - WARNING -   'Albany (MO)' -> 'Albany (MO)' (no change)
+2026-11-13 10:57:35,347 - WARNING -   'Alma Santa Fe (MO)' -> 'Alma Santa Fe (MO)' (no change)
+2026-11-13 10:57:35,347 - WARNING -   'Amoret Miami (MO)' -> 'Amoret Miami (MO)' (no change)
+2026-11-13 10:57:35,347 - WARNING -   'Anderson McDonald County (MO)' -> 'Anderson McDonald County (MO)' (no change)
+2026-11-13 10:57:35,347 - WARNING -   'Appleton City (MO)' -> 'Appleton City (MO)' (no change)
+2026-11-13 10:57:35,347 - WARNING -   'Archie (MO)' -> 'Archie (MO)' (no change)
+2026-11-13 10:57:35,347 - WARNING -   'Arnold Fox (MO)' -> 'Arnold Fox (MO)' (no change)
+2026-11-13 10:57:35,347 - WARNING -   'Ash Grove (MO)' -> 'Ash Grove (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Ashland Southern Boone (MO)' -> 'Ashland Southern Boone (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Aurora (MO)' -> 'Aurora (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Ava (MO)' -> 'Ava (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Ballwin Parkway West (MO)' -> 'Ballwin Parkway West (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Barnard South Nodaway (MO)' -> 'Barnard South Nodaway (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Barnard South Nodaway-Jefferson (MO)' -> 'Barnard South Nodaway-Jefferson (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Belton (MO)' -> 'Belton (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Benton Kelly (MO)' -> 'Benton Kelly (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Berkeley (MO)' -> 'Berkeley (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Bethany South Harrison (MO)' -> 'Bethany South Harrison (MO)' (no change)
+2026-11-13 10:57:35,348 - WARNING -   'Blue Springs (MO)' -> 'Blue Springs (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Blue Springs South (MO)' -> 'Blue Springs South (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Bolivar (MO)' -> 'Bolivar (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Bonne Terre North County (MO)' -> 'Bonne Terre North County (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Boonville (MO)' -> 'Boonville (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Boonville Kemper Military School & College (MO)' -> 'Boonville Kemper Military School & College (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Bowling Green (MO)' -> 'Bowling Green (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Branson (MO)' -> 'Branson (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Braymer (MO)' -> 'Braymer (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Brentwood (MO)' -> 'Brentwood (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Brookfield (MO)' -> 'Brookfield (MO)' (no change)
+2026-11-13 10:57:35,349 - WARNING -   'Buffalo (MO)' -> 'Buffalo (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Burlington Junction West Nodaway (MO)' -> 'Burlington Junction West Nodaway (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Butler (MO)' -> 'Butler (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Cabool (MO)' -> 'Cabool (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'California (MO)' -> 'California (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Camdenton (MO)' -> 'Camdenton (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Cameron (MO)' -> 'Cameron (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Cape Girardeau Central (MO)' -> 'Cape Girardeau Central (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Carl Junction (MO)' -> 'Carl Junction (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Carrollton (MO)' -> 'Carrollton (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Carterville (MO)' -> 'Carterville (MO)' (no change)
+2026-11-13 10:57:35,350 - WARNING -   'Carthage (MO)' -> 'Carthage (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Caruthersville (MO)' -> 'Caruthersville (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Cassville (MO)' -> 'Cassville (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Cedar Hill Northwest (MO)' -> 'Cedar Hill Northwest (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Center Mark Twain (MO)' -> 'Center Mark Twain (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Centerview Crest Ridge (MO)' -> 'Centerview Crest Ridge (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Centralia (MO)' -> 'Centralia (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Chaffee (MO)' -> 'Chaffee (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Charleston (MO)' -> 'Charleston (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Chesterfield Marquette (MO)' -> 'Chesterfield Marquette (MO)' (no change)
+2026-11-13 10:57:35,351 - WARNING -   'Chesterfield Parkway Central (MO)' -> 'Chesterfield Parkway Central (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Chillicothe (MO)' -> 'Chillicothe (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Clarksville Clopton-Elsberry (MO)' -> 'Clarksville Clopton-Elsberry (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Cleveland Midway (MO)' -> 'Cleveland Midway (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Clinton (MO)' -> 'Clinton (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Cole Camp (MO)' -> 'Cole Camp (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Columbia Battle (MO)' -> 'Columbia Battle (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Columbia Battle-Columbia Independent (MO)' -> 'Columbia Battle-Columbia Independent (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Columbia Father Tolton (MO)' -> 'Columbia Father Tolton (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Columbia Hickman (MO)' -> 'Columbia Hickman (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Columbia Rock Bridge (MO)' -> 'Columbia Rock Bridge (MO)' (no change)
+2026-11-13 10:57:35,352 - WARNING -   'Concordia (MO)' -> 'Concordia (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Concordia St. Paul Lutheran (MO)' -> 'Concordia St. Paul Lutheran (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Craig (MO)' -> 'Craig (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Creighton Sherwood (MO)' -> 'Creighton Sherwood (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Crystal City (MO)' -> 'Crystal City (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Cuba (MO)' -> 'Cuba (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Dearborn North Platte (MO)' -> 'Dearborn North Platte (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'DeKalb (MO)' -> 'DeKalb (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Dexter (MO)' -> 'Dexter (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Diamond (MO)' -> 'Diamond (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Doniphan (MO)' -> 'Doniphan (MO)' (no change)
+2026-11-13 10:57:35,353 - WARNING -   'Drexel (MO)' -> 'Drexel (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'East Prairie (MO)' -> 'East Prairie (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'Edina Knox County (MO)' -> 'Edina Knox County (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'El Dorado Springs (MO)' -> 'El Dorado Springs (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'Eldon (MO)' -> 'Eldon (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'Eureka (MO)' -> 'Eureka (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'Ewing Highland (MO)' -> 'Ewing Highland (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'Excelsior Springs (MO)' -> 'Excelsior Springs (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'Fair Grove (MO)' -> 'Fair Grove (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'Fairfax (MO)' -> 'Fairfax (MO)' (no change)
+2026-11-13 10:57:35,354 - WARNING -   'Farmington (MO)' -> 'Farmington (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Faucett Mid-Buchanan (MO)' -> 'Faucett Mid-Buchanan (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Fayette (MO)' -> 'Fayette (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Fenton Rockwood Summit (MO)' -> 'Fenton Rockwood Summit (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Ferguson McCluer South-Berkeley (MO)' -> 'Ferguson McCluer South-Berkeley (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Festus (MO)' -> 'Festus (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Festus Jefferson (MO)' -> 'Festus Jefferson (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Festus St. Pius X (MO)' -> 'Festus St. Pius X (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Flat River Central (MO)' -> 'Flat River Central (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Florissant Hazelwood Central (MO)' -> 'Florissant Hazelwood Central (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Florissant McCluer (MO)' -> 'Florissant McCluer (MO)' (no change)
+2026-11-13 10:57:35,355 - WARNING -   'Florissant McCluer North (MO)' -> 'Florissant McCluer North (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Florissant St. Thomas Aquinas (MO)' -> 'Florissant St. Thomas Aquinas (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Fredericktown (MO)' -> 'Fredericktown (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Fulton (MO)' -> 'Fulton (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Gallatin (MO)' -> 'Gallatin (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Gallatin-Tri-County (MO)' -> 'Gallatin-Tri-County (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Golden City (MO)' -> 'Golden City (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Gower East Buchanan (MO)' -> 'Gower East Buchanan (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Graham Nodaway-Holt (MO)' -> 'Graham Nodaway-Holt (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Grain Valley (MO)' -> 'Grain Valley (MO)' (no change)
+2026-11-13 10:57:35,356 - WARNING -   'Granby East Newton (MO)' -> 'Granby East Newton (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Grandview (MO)' -> 'Grandview (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Grant City Worth County (MO)' -> 'Grant City Worth County (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Grant City Worth County-Northeast Nodaway (MO)' -> 'Grant City Worth County-Northeast Nodaway (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Greenfield (MO)' -> 'Greenfield (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Hallsville (MO)' -> 'Hallsville (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Hamilton Penney (MO)' -> 'Hamilton Penney (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Hannibal (MO)' -> 'Hannibal (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Hardin-Central (MO)' -> 'Hardin-Central (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Harrisburg (MO)' -> 'Harrisburg (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Harrisonville (MO)' -> 'Harrisonville (MO)' (no change)
+2026-11-13 10:57:35,357 - WARNING -   'Hayti (MO)' -> 'Hayti (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Hazelwood West (MO)' -> 'Hazelwood West (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Herculaneum (MO)' -> 'Herculaneum (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Hermann (MO)' -> 'Hermann (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Higginsville Lafayette County (MO)' -> 'Higginsville Lafayette County (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Hillsboro (MO)' -> 'Hillsboro (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Hillsboro Grandview (MO)' -> 'Hillsboro Grandview (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Holden (MO)' -> 'Holden (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Hollister (MO)' -> 'Hollister (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Hopkins North Nodaway (MO)' -> 'Hopkins North Nodaway (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Houston (MO)' -> 'Houston (MO)' (no change)
+2026-11-13 10:57:35,358 - WARNING -   'Hughesville Northwest (MO)' -> 'Hughesville Northwest (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Huntsville Westran (MO)' -> 'Huntsville Westran (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Imperial Seckman (MO)' -> 'Imperial Seckman (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Imperial Windsor (MO)' -> 'Imperial Windsor (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Independence Chrisman (MO)' -> 'Independence Chrisman (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Independence Fort Osage (MO)' -> 'Independence Fort Osage (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Independence St. Mary's (MO)' -> 'Independence St. Mary's (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Independence Truman (MO)' -> 'Independence Truman (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Independence Van Horn (MO)' -> 'Independence Van Horn (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Jackson (MO)' -> 'Jackson (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Jasper (MO)' -> 'Jasper (MO)' (no change)
+2026-11-13 10:57:35,359 - WARNING -   'Jefferson City (MO)' -> 'Jefferson City (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Jefferson City Blair Oaks (MO)' -> 'Jefferson City Blair Oaks (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Jefferson City Helias (MO)' -> 'Jefferson City Helias (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Jennings (MO)' -> 'Jennings (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Joplin (MO)' -> 'Joplin (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Joplin Cornerstone (MO)' -> 'Joplin Cornerstone (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Joplin McAuley Catholic (MO)' -> 'Joplin McAuley Catholic (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Joplin Memorial (MO)' -> 'Joplin Memorial (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Joplin Parkwood (MO)' -> 'Joplin Parkwood (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Kahoka Clark County (MO)' -> 'Kahoka Clark County (MO)' (no change)
+2026-11-13 10:57:35,360 - WARNING -   'Kansas City Bishop Hogan (MO)' -> 'Kansas City Bishop Hogan (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City Bishop Lillis (MO)' -> 'Kansas City Bishop Lillis (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City Center (MO)' -> 'Kansas City Center (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City Central (MO)' -> 'Kansas City Central (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City De La Salle (MO)' -> 'Kansas City De La Salle (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City East (MO)' -> 'Kansas City East (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City Hickman Mills (MO)' -> 'Kansas City Hickman Mills (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City Hogan Prep Academy (MO)' -> 'Kansas City Hogan Prep Academy (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City Lincoln College Prep (MO)' -> 'Kansas City Lincoln College Prep (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City Northeast (MO)' -> 'Kansas City Northeast (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City Oak Park (MO)' -> 'Kansas City Oak Park (MO)' (no change)
+2026-11-13 10:57:35,361 - WARNING -   'Kansas City O'Hara (MO)' -> 'Kansas City O'Hara (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City Park Hill (MO)' -> 'Kansas City Park Hill (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City Park Hill South (MO)' -> 'Kansas City Park Hill South (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City Paseo (MO)' -> 'Kansas City Paseo (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City Pembroke Hill (MO)' -> 'Kansas City Pembroke Hill (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City Rockhurst (MO)' -> 'Kansas City Rockhurst (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City Ruskin (MO)' -> 'Kansas City Ruskin (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City Southwest (MO)' -> 'Kansas City Southwest (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City St. Pius X (MO)' -> 'Kansas City St. Pius X (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City Staley (MO)' -> 'Kansas City Staley (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City University Academy Charter (MO)' -> 'Kansas City University Academy Charter (MO)' (no change)
+2026-11-13 10:57:35,362 - WARNING -   'Kansas City Westport (MO)' -> 'Kansas City Westport (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Kansas City Winnetonka (MO)' -> 'Kansas City Winnetonka (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Kearney (MO)' -> 'Kearney (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Kennett (MO)' -> 'Kennett (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'King City (MO)' -> 'King City (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Kingdom City North Callaway (MO)' -> 'Kingdom City North Callaway (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Kirksville (MO)' -> 'Kirksville (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Kirkwood (MO)' -> 'Kirkwood (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Kirkwood St. John Vianney (MO)' -> 'Kirkwood St. John Vianney (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Knob Noster (MO)' -> 'Knob Noster (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Lamar (MO)' -> 'Lamar (MO)' (no change)
+2026-11-13 10:57:35,363 - WARNING -   'Lancaster Schuyler County (MO)' -> 'Lancaster Schuyler County (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Lathrop (MO)' -> 'Lathrop (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Lawson (MO)' -> 'Lawson (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Leavenworth (MO)' -> 'Leavenworth (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Lebanon (MO)' -> 'Lebanon (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Lee's Summit (MO)' -> 'Lee's Summit (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Lee's Summit North (MO)' -> 'Lee's Summit North (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Lee's Summit St. Michael the Archangel (MO)' -> 'Lee's Summit St. Michael the Archangel (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Lee's Summit Summit Christian Academy (MO)' -> 'Lee's Summit Summit Christian Academy (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Lee's Summit West (MO)' -> 'Lee's Summit West (MO)' (no change)
+2026-11-13 10:57:35,364 - WARNING -   'Lexington (MO)' -> 'Lexington (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Lexington Wentworth Military Academy (MO)' -> 'Lexington Wentworth Military Academy (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Liberal (MO)' -> 'Liberal (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Liberty (MO)' -> 'Liberty (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Liberty North (MO)' -> 'Liberty North (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Lincoln (MO)' -> 'Lincoln (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Lockwood (MO)' -> 'Lockwood (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Logan-Rogersville (MO)' -> 'Logan-Rogersville (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Lone Jack (MO)' -> 'Lone Jack (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Lone Jack-Kingsville (MO)' -> 'Lone Jack-Kingsville (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Louisiana (MO)' -> 'Louisiana (MO)' (no change)
+2026-11-13 10:57:35,365 - WARNING -   'Ludlow Southwest (MO)' -> 'Ludlow Southwest (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Macon (MO)' -> 'Macon (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Malden (MO)' -> 'Malden (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Manchester Kennedy (MO)' -> 'Manchester Kennedy (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Manchester Parkway South (MO)' -> 'Manchester Parkway South (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Maplewood-Richmond Heights (MO)' -> 'Maplewood-Richmond Heights (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Marceline (MO)' -> 'Marceline (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Marionville (MO)' -> 'Marionville (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Marshall (MO)' -> 'Marshall (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Marshfield (MO)' -> 'Marshfield (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Maryland Heights Pattonville (MO)' -> 'Maryland Heights Pattonville (MO)' (no change)
+2026-11-13 10:57:35,366 - WARNING -   'Maryville (MO)' -> 'Maryville (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Maysville (MO)' -> 'Maysville (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Maysville-Winston (MO)' -> 'Maysville-Winston (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Memphis Scotland County (MO)' -> 'Memphis Scotland County (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Mexico (MO)' -> 'Mexico (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Mexico McMillan (MO)' -> 'Mexico McMillan (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Mexico Missouri Military Academy (MO)' -> 'Mexico Missouri Military Academy (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Milan (MO)' -> 'Milan (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Miller (MO)' -> 'Miller (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Missouri School for the Deaf (MO)' -> 'Missouri School for the Deaf (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Moberly (MO)' -> 'Moberly (MO)' (no change)
+2026-11-13 10:57:35,367 - WARNING -   'Mokane South Callaway (MO)' -> 'Mokane South Callaway (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Monett (MO)' -> 'Monett (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Monroe City (MO)' -> 'Monroe City (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Montgomery City Montgomery County (MO)' -> 'Montgomery City Montgomery County (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Mound City (MO)' -> 'Mound City (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Mount Vernon (MO)' -> 'Mount Vernon (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Mountain Grove (MO)' -> 'Mountain Grove (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Mountain View Liberty (MO)' -> 'Mountain View Liberty (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Neosho (MO)' -> 'Neosho (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Nevada (MO)' -> 'Nevada (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'New Madrid County Central (MO)' -> 'New Madrid County Central (MO)' (no change)
+2026-11-13 10:57:35,368 - WARNING -   'Nixa (MO)' -> 'Nixa (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'Norborne (MO)' -> 'Norborne (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'North Kansas City (MO)' -> 'North Kansas City (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'Oak Grove (MO)' -> 'Oak Grove (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'Odessa (MO)' -> 'Odessa (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'O'Fallon Christian School District (MO)' -> 'O'Fallon Christian School District (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'O'Fallon Fort Zumwalt North (MO)' -> 'O'Fallon Fort Zumwalt North (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'O'Fallon Fort Zumwalt West (MO)' -> 'O'Fallon Fort Zumwalt West (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'O'Fallon Living Word Christian (MO)' -> 'O'Fallon Living Word Christian (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'Oregon South Holt (MO)' -> 'Oregon South Holt (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'Orrick (MO)' -> 'Orrick (MO)' (no change)
+2026-11-13 10:57:35,369 - WARNING -   'Osceola (MO)' -> 'Osceola (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Overland Ritenour (MO)' -> 'Overland Ritenour (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Owensville (MO)' -> 'Owensville (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Ozark (MO)' -> 'Ozark (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Pacific (MO)' -> 'Pacific (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Palmyra (MO)' -> 'Palmyra (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Paris (MO)' -> 'Paris (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Park Hills Central (MO)' -> 'Park Hills Central (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Perryville (MO)' -> 'Perryville (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Perryville St. Vincent (MO)' -> 'Perryville St. Vincent (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Pierce City (MO)' -> 'Pierce City (MO)' (no change)
+2026-11-13 10:57:35,370 - WARNING -   'Platte City Platte County (MO)' -> 'Platte City Platte County (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Plattsburg (MO)' -> 'Plattsburg (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Pleasant Hill (MO)' -> 'Pleasant Hill (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Pleasant Hope (MO)' -> 'Pleasant Hope (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Polo (MO)' -> 'Polo (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Poplar Bluff (MO)' -> 'Poplar Bluff (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Portageville (MO)' -> 'Portageville (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Potosi (MO)' -> 'Potosi (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Princeton (MO)' -> 'Princeton (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Raymore-Peculiar (MO)' -> 'Raymore-Peculiar (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Raytown (MO)' -> 'Raytown (MO)' (no change)
+2026-11-13 10:57:35,371 - WARNING -   'Raytown South (MO)' -> 'Raytown South (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Republic (MO)' -> 'Republic (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Rich Hill (MO)' -> 'Rich Hill (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Richmond (MO)' -> 'Richmond (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Riverside Park Hill South (MO)' -> 'Riverside Park Hill South (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Rock Port (MO)' -> 'Rock Port (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Rolla (MO)' -> 'Rolla (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Rosendale North Andrew (MO)' -> 'Rosendale North Andrew (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Saint Charles (MO)' -> 'Saint Charles (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Saint Charles Duchesne (MO)' -> 'Saint Charles Duchesne (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Saint Charles Francis Howel North (MO)' -> 'Saint Charles Francis Howel North (MO)' (no change)
+2026-11-13 10:57:35,372 - WARNING -   'Saint Charles Francis Howell South (MO)' -> 'Saint Charles Francis Howell South (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Charles Lutheran (MO)' -> 'Saint Charles Lutheran (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Charles Military Academy (MO)' -> 'Saint Charles Military Academy (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Charles Orchard Farm (MO)' -> 'Saint Charles Orchard Farm (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Charles West (MO)' -> 'Saint Charles West (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Clair (MO)' -> 'Saint Clair (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint James (MO)' -> 'Saint James (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Joseph (MO)' -> 'Saint Joseph (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Joseph Acme Club (MO)' -> 'Saint Joseph Acme Club (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Joseph Benton (MO)' -> 'Saint Joseph Benton (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Joseph Bishop LeBlond (MO)' -> 'Saint Joseph Bishop LeBlond (MO)' (no change)
+2026-11-13 10:57:35,373 - WARNING -   'Saint Joseph Cathedral (MO)' -> 'Saint Joseph Cathedral (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Joseph Catholic (MO)' -> 'Saint Joseph Catholic (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Joseph Central ""B"" (MO)' -> 'Saint Joseph Central ""B"" (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Joseph Central (MO)' -> 'Saint Joseph Central (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Joseph Christian (MO)' -> 'Saint Joseph Christian (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Joseph Hanson Heights (MO)' -> 'Saint Joseph Hanson Heights (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Joseph Lafayette (MO)' -> 'Saint Joseph Lafayette (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Joseph Robidoux (MO)' -> 'Saint Joseph Robidoux (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Louis (MO)' -> 'Saint Louis (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Louis Affton (MO)' -> 'Saint Louis Affton (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Louis Aquinas (MO)' -> 'Saint Louis Aquinas (MO)' (no change)
+2026-11-13 10:57:35,374 - WARNING -   'Saint Louis Assumption (MO)' -> 'Saint Louis Assumption (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Augustinian Academy (MO)' -> 'Saint Louis Augustinian Academy (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Bayless (MO)' -> 'Saint Louis Bayless (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Bayless-Hancock (MO)' -> 'Saint Louis Bayless-Hancock (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Beaumont (MO)' -> 'Saint Louis Beaumont (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Bishop DuBourg (MO)' -> 'Saint Louis Bishop DuBourg (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Bishop DuBourg-Hancock (MO)' -> 'Saint Louis Bishop DuBourg-Hancock (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Brentwood (MO)' -> 'Saint Louis Brentwood (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Burroughs (MO)' -> 'Saint Louis Burroughs (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Cardinal Ritter College Prep (MO)' -> 'Saint Louis Cardinal Ritter College Prep (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Carnahan (MO)' -> 'Saint Louis Carnahan (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Central (MO)' -> 'Saint Louis Central (MO)' (no change)
+2026-11-13 10:57:35,375 - WARNING -   'Saint Louis Chaminade (MO)' -> 'Saint Louis Chaminade (MO)' (no change)
+2026-11-13 10:57:35,376 - WARNING -   'Saint Louis Christian Brothers College (MO)' -> 'Saint Louis Christian Brothers College (MO)' (no change)
+2026-11-13 10:57:35,376 - WARNING -   'Saint Louis Clayton (MO)' -> 'Saint Louis Clayton (MO)' (no change)
+2026-11-13 10:57:35,376 - WARNING -   'Saint Louis Clayton-Brentwood (MO)' -> 'Saint Louis Clayton-Brentwood (MO)' (no change)
+2026-11-13 10:57:35,376 - WARNING -   'Saint Louis Cleveland (MO)' -> 'Saint Louis Cleveland (MO)' (no change)
+2026-11-13 10:57:35,376 - WARNING -   'Saint Louis Cleveland Junior Naval Academy (MO)' -> 'Saint Louis Cleveland Junior Naval Academy (MO)' (no change)
+2026-11-13 10:57:35,376 - WARNING -   'Saint Louis Confluence Prep Academy (MO)' -> 'Saint Louis Confluence Prep Academy (MO)' (no change)
+2026-11-13 10:57:35,376 - WARNING -   'Saint Louis Confluence Prep Academy-Grand Center Arts Academy (MO)' -> 'Saint Louis Confluence Prep Academy-Grand Center Arts Academy (MO)' (no change)
+2026-11-13 10:57:35,376 - WARNING -   'Saint Louis Country Day (MO)' -> 'Saint Louis Country Day (MO)' (no change)
+2026-11-13 10:57:35,376 - WARNING -   'Saint Louis Crossroads (MO)' -> 'Saint Louis Crossroads (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis DeAndreis (MO)' -> 'Saint Louis DeAndreis (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis DeSmet Jesuit (MO)' -> 'Saint Louis DeSmet Jesuit (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis Gateway Tech (MO)' -> 'Saint Louis Gateway Tech (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis Hadley Tech (MO)' -> 'Saint Louis Hadley Tech (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis Hazelwood Central (MO)' -> 'Saint Louis Hazelwood Central (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis Hazelwood East (MO)' -> 'Saint Louis Hazelwood East (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis Holy Rosary (MO)' -> 'Saint Louis Holy Rosary (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis Humboldt Academy (MO)' -> 'Saint Louis Humboldt Academy (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis Imagine College Prep (MO)' -> 'Saint Louis Imagine College Prep (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis Immaculata (MO)' -> 'Saint Louis Immaculata (MO)' (no change)
+2026-11-13 10:57:35,377 - WARNING -   'Saint Louis Kennedy (MO)' -> 'Saint Louis Kennedy (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Kirkwood Military Academy (MO)' -> 'Saint Louis Kirkwood Military Academy (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Laboure (MO)' -> 'Saint Louis Laboure (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Ladue Horton Watkins (MO)' -> 'Saint Louis Ladue Horton Watkins (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Lindbergh (MO)' -> 'Saint Louis Lindbergh (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Lutheran Central (MO)' -> 'Saint Louis Lutheran Central (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Lutheran North (MO)' -> 'Saint Louis Lutheran North (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Lutheran South (MO)' -> 'Saint Louis Lutheran South (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Madison (MO)' -> 'Saint Louis Madison (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Manual Training (MO)' -> 'Saint Louis Manual Training (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Maplewood (MO)' -> 'Saint Louis Maplewood (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis Mary Institute and Country Day (MO)' -> 'Saint Louis Mary Institute and Country Day (MO)' (no change)
+2026-11-13 10:57:35,378 - WARNING -   'Saint Louis McBride (MO)' -> 'Saint Louis McBride (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis McKinley (MO)' -> 'Saint Louis McKinley (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis Mehlville (MO)' -> 'Saint Louis Mehlville (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis Mercy (MO)' -> 'Saint Louis Mercy (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis Miller Career Academy (MO)' -> 'Saint Louis Miller Career Academy (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis Normandy (MO)' -> 'Saint Louis Normandy (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis Northside Catholic (MO)' -> 'Saint Louis Northside Catholic (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis Northwest Academy of Law (MO)' -> 'Saint Louis Northwest Academy of Law (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis Oakville (MO)' -> 'Saint Louis Oakville (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis O'Fallon Tech (MO)' -> 'Saint Louis O'Fallon Tech (MO)' (no change)
+2026-11-13 10:57:35,379 - WARNING -   'Saint Louis Parkway (MO)' -> 'Saint Louis Parkway (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Parkway North (MO)' -> 'Saint Louis Parkway North (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Principia (MO)' -> 'Saint Louis Principia (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Priory (MO)' -> 'Saint Louis Priory (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Ranken Trades (MO)' -> 'Saint Louis Ranken Trades (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Ritenour (MO)' -> 'Saint Louis Ritenour (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Riverview Gardens (MO)' -> 'Saint Louis Riverview Gardens (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Roosevelt (MO)' -> 'Saint Louis Roosevelt (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Rosary (MO)' -> 'Saint Louis Rosary (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Smith Academy (MO)' -> 'Saint Louis Smith Academy (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Soldan International Studies (MO)' -> 'Saint Louis Soldan International Studies (MO)' (no change)
+2026-11-13 10:57:35,380 - WARNING -   'Saint Louis Soldan International Studies-Sumner (MO)' -> 'Saint Louis Soldan International Studies-Sumner (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis Soldan-Blewett (MO)' -> 'Saint Louis Soldan-Blewett (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis South Side (MO)' -> 'Saint Louis South Side (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis Southside Catholic (MO)' -> 'Saint Louis Southside Catholic (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis Southwest (MO)' -> 'Saint Louis Southwest (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis St. Charles (MO)' -> 'Saint Louis St. Charles (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis St. Mary's (MO)' -> 'Saint Louis St. Mary's (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis St. Pius V (MO)' -> 'Saint Louis St. Pius V (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis Sumner (MO)' -> 'Saint Louis Sumner (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis TDW Academy (MO)' -> 'Saint Louis TDW Academy (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis Tower Grove Christian (MO)' -> 'Saint Louis Tower Grove Christian (MO)' (no change)
+2026-11-13 10:57:35,381 - WARNING -   'Saint Louis Trinity Catholic (MO)' -> 'Saint Louis Trinity Catholic (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis University (MO)' -> 'Saint Louis University (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis University City JV (MO)' -> 'Saint Louis University City JV (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis University Fresh (MO)' -> 'Saint Louis University Fresh (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis Vashon (MO)' -> 'Saint Louis Vashon (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis Vashon-Miller Career Academy (MO)' -> 'Saint Louis Vashon-Miller Career Academy (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis Wakefield (MO)' -> 'Saint Louis Wakefield (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis Washington Tech (MO)' -> 'Saint Louis Washington Tech (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis Webster Groves (MO)' -> 'Saint Louis Webster Groves (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis Wellston (MO)' -> 'Saint Louis Wellston (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis West (MO)' -> 'Saint Louis West (MO)' (no change)
+2026-11-13 10:57:35,382 - WARNING -   'Saint Louis Western (MO)' -> 'Saint Louis Western (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Saint Louis Westminster Christian (MO)' -> 'Saint Louis Westminster Christian (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Saint Louis Yeatman (MO)' -> 'Saint Louis Yeatman (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Saint Mary's (MO)' -> 'Saint Mary's (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Saint Peters Fort Zumwalt (MO)' -> 'Saint Peters Fort Zumwalt (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Saint Peters Fort Zumwalt East (MO)' -> 'Saint Peters Fort Zumwalt East (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Saint Peters Fort Zumwalt South (MO)' -> 'Saint Peters Fort Zumwalt South (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Saint Peters Fort Zumwalt West (MO)' -> 'Saint Peters Fort Zumwalt West (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Saint Peters Lutheran (MO)' -> 'Saint Peters Lutheran (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Salem (MO)' -> 'Salem (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Salisbury (MO)' -> 'Salisbury (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Sarcoxie (MO)' -> 'Sarcoxie (MO)' (no change)
+2026-11-13 10:57:35,383 - WARNING -   'Savannah (MO)' -> 'Savannah (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Scott City (MO)' -> 'Scott City (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Sedalia Smith-Cotton (MO)' -> 'Sedalia Smith-Cotton (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Seneca (MO)' -> 'Seneca (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Shelbina South Shelby (MO)' -> 'Shelbina South Shelby (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Shelbyville North Shelby (MO)' -> 'Shelbyville North Shelby (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Sikeston (MO)' -> 'Sikeston (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Slater (MO)' -> 'Slater (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Smithville (MO)' -> 'Smithville (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Springfield Catholic (MO)' -> 'Springfield Catholic (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Springfield Central (MO)' -> 'Springfield Central (MO)' (no change)
+2026-11-13 10:57:35,384 - WARNING -   'Springfield Glendale (MO)' -> 'Springfield Glendale (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Springfield Greenwood (MO)' -> 'Springfield Greenwood (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Springfield Hillcrest (MO)' -> 'Springfield Hillcrest (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Springfield Kickapoo (MO)' -> 'Springfield Kickapoo (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Springfield Lighthouse Christian (MO)' -> 'Springfield Lighthouse Christian (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Springfield Parkview (MO)' -> 'Springfield Parkview (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Stanberry (MO)' -> 'Stanberry (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Ste. Genevieve (MO)' -> 'Ste. Genevieve (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Ste. Genevieve Valle Catholic (MO)' -> 'Ste. Genevieve Valle Catholic (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Stewartsville (MO)' -> 'Stewartsville (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Stockton (MO)' -> 'Stockton (MO)' (no change)
+2026-11-13 10:57:35,385 - WARNING -   'Strafford (MO)' -> 'Strafford (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Sullivan (MO)' -> 'Sullivan (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Sweet Springs (MO)' -> 'Sweet Springs (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Tarkio (MO)' -> 'Tarkio (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Tarkio East Atchison [Tarkio-Fairfax] (MO)' -> 'Tarkio East Atchison [Tarkio-Fairfax] (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Thayer (MO)' -> 'Thayer (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Tipton (MO)' -> 'Tipton (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Trenton (MO)' -> 'Trenton (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Troy-Buchanan (MO)' -> 'Troy-Buchanan (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Union (MO)' -> 'Union (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Union Star (MO)' -> 'Union Star (MO)' (no change)
+2026-11-13 10:57:35,386 - WARNING -   'Unionville Putnam County (MO)' -> 'Unionville Putnam County (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'University City (MO)' -> 'University City (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Urbana Skyline (MO)' -> 'Urbana Skyline (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Vandalia Van-Far (MO)' -> 'Vandalia Van-Far (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Versailles (MO)' -> 'Versailles (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Warrensburg (MO)' -> 'Warrensburg (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Warrenton Warren County (MO)' -> 'Warrenton Warren County (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Warsaw (MO)' -> 'Warsaw (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Washington (MO)' -> 'Washington (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Waynesville (MO)' -> 'Waynesville (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Webb City (MO)' -> 'Webb City (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Webster Groves (MO)' -> 'Webster Groves (MO)' (no change)
+2026-11-13 10:57:35,387 - WARNING -   'Wellington-Napoleon (MO)' -> 'Wellington-Napoleon (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Wellsville-Middletown (MO)' -> 'Wellsville-Middletown (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Wentzville (MO)' -> 'Wentzville (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Wentzville Holt (MO)' -> 'Wentzville Holt (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Wentzville Timberland (MO)' -> 'Wentzville Timberland (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'West Plains (MO)' -> 'West Plains (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Weston West Platte (MO)' -> 'Weston West Platte (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Wildwood Lafayette (MO)' -> 'Wildwood Lafayette (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Willard (MO)' -> 'Willard (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Willow Springs (MO)' -> 'Willow Springs (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Windsor Henry County (MO)' -> 'Windsor Henry County (MO)' (no change)
+2026-11-13 10:57:35,388 - WARNING -   'Winfield (MO)' -> 'Winfield (MO)' (no change)
+2026-11-13 10:57:35,389 - WARNING -   'Wright City (MO)' -> 'Wright City (MO)' (no change)
+2026-11-13 10:57:35,389 - WARNING -   'Saint Louis University College (MO)' -> 'Saint Louis University College (MO)' (no change)
+2026-11-13 10:57:35,389 - INFO - Validation passed: 598 rules are clean and ready to upload.
+2026-11-13 10:57:35,406 - INFO - Uploading 598 rules to staging table: ConsolidationRules_Staging...
+2026-11-13 10:57:35,541 - INFO - Upload to staging table complete.
+2026-11-13 10:57:35,546 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-13 10:59:12,358 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-13 10:59:12,358 - INFO - Reason logged to dbo.HS_Consolidation_Log: MO round 2 (2026-11-13): same-school names, see _coop_scripts/MO_cfg.py
+2026-11-13 10:59:12,359 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-13 10:59:12,359 - INFO - Running post-consolidation safety check...
+2026-11-13 10:59:12,363 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team MO --from "Centerview Crest Ridge-Chilhowee (MO)" --to "Centerview Crest Ridge (MO)" --seasons 2022-2022 --ids coop_ids/MO_c3_000.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_000.csv
+
+MOVE Centerview Crest Ridge-Chilhowee (MO) -> Centerview Crest Ridge (MO), seasons 2022-2022 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 45 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team MO --from "Drexel (MO)" --to "Drexel-Miami (MO)" --seasons 2016-2018 --ids coop_ids/MO_c3_001.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_001.csv
+
+MOVE Drexel (MO) -> Drexel-Miami (MO), seasons 2016-2018 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team MO --from "Drexel-Miami (MO)" --to "Drexel (MO)" --seasons 2022-2022 --ids coop_ids/MO_c3_002.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_002.csv
+
+MOVE Drexel-Miami (MO) -> Drexel (MO), seasons 2022-2022 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 60 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team MO --from "Grant City Worth County (MO)" --to "Grant City Worth County-Northeast Nodaway (MO)" --seasons 1975-1983 --ids coop_ids/MO_c3_003.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 13 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_003.csv
+
+MOVE Grant City Worth County (MO) -> Grant City Worth County-Northeast Nodaway (MO), seasons 1975-1983 - COMMIT
+ move_games: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  13     1                  None
+
+>>> move-team MO --from "Grant City Worth County-Northeast Nodaway (MO)" --to "Grant City Worth County (MO)" --seasons 1977-2022 --ids coop_ids/MO_c3_004.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_004.csv
+
+MOVE Grant City Worth County-Northeast Nodaway (MO) -> Grant City Worth County (MO), seasons 1977-2022 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team MO --from "Kansas City Bishop Hogan (MO)" --to "Kansas City Hogan Prep Academy (MO)" --seasons 1982-1991 --ids coop_ids/MO_c3_005.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 5 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_005.csv
+
+MOVE Kansas City Bishop Hogan (MO) -> Kansas City Hogan Prep Academy (MO), seasons 1982-1991 - COMMIT
+ move_games: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  5      1                  None
+
+>>> move-team MO --from "Kansas City Hogan Prep Academy (MO)" --to "Kansas City Bishop Hogan (MO)" --seasons 1978-1978 --ids coop_ids/MO_c3_006.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_006.csv
+
+MOVE Kansas City Hogan Prep Academy (MO) -> Kansas City Bishop Hogan (MO), seasons 1978-1978 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team MO --from "Saint Louis Mary Institute and Country Day (MO)" --to "Saint Louis Country Day (MO)" --seasons 1956-1987 --ids coop_ids/MO_c3_007.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 24 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_007.csv
+
+MOVE Saint Louis Mary Institute and Country Day (MO) -> Saint Louis Country Day (MO), seasons 1956-1987 - COMMIT
+ move_games: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 93 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  24     1                  None
+
+>>> move-team MO --from "Saint Louis Miller Career Academy (MO)" --to "Saint Louis Vashon-Miller Career Academy (MO)" --seasons 2022-2022 --ids coop_ids/MO_c3_008.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_008.csv
+
+MOVE Saint Louis Miller Career Academy (MO) -> Saint Louis Vashon-Miller Career Academy (MO), seasons 2022-2022 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team MO --from "Saint Louis Vashon-Miller Career Academy (MO)" --to "Saint Louis Miller Career Academy (MO)" --seasons 2026-2026 --ids coop_ids/MO_c3_009.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\coop_ids/MO_c3_009.csv
+
+MOVE Saint Louis Vashon-Miller Career Academy (MO) -> Saint Louis Miller Career Academy (MO), seasons 2026-2026 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_games_COMMITTED_20261113_1059.csv
+ move_by_season: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_move_by_season_COMMITTED_20261113_1059.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> dedup MO --commit
+
+DEDUP v4 MO - COMMIT
+ dedup_archive: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_archive_COMMITTED_20261113_1059.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_review_COMMITTED_20261113_1059.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_dedup_summary_COMMITTED_20261113_1059.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  MO     102107        99                   0                D8E967B4-4342-4EC3-82B2-227CC7D3CFCF
+
+>>> review-pairs MO --commit
+
+REVIEW-ONLY PAIRS MO - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_review_pairs_COMMITTED_20261113_1059.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         E19CB61F-2E66-4F1B-A888-4AD5BA2E2E94  None
+
+>>> same-score-fix MO
+ 104 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS MO - PREVIEW (nothing changed)
+ 134 pairs {'DROP B': 1, 'DROP A': 1, 'UNDECIDED': 132} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_same_score_20261113_1100.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  2         None   None
+
+>>> query MO mo_dump.sql
+
+QUERY mo_dump (1 result sets)
+ set 1: 102009 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_mo_dump_1_20261113_1100.csv
+
+=== OK 2026-11-13 11:00:45

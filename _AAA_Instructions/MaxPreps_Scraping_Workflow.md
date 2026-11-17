@@ -4,6 +4,7 @@ cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
 
 Morning check:
 python check_last_night_run.py
+python maxpreps_scraper_db.py --preview   # read-only: what tonight's run will do
 Get-Content "C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\data_import\maxpreps_wrapper_log.txt" -Tail 8
 
 
@@ -28,7 +29,7 @@ EXEC dbo.RemoveDuplicateGamesParameterized
     @Preview = 0;
 
 cd C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts
-   python run_full_rankings_recalc.py --begin 2026 --end 2026 --week 443 --yes (10/28/2026)
+   python run_full_rankings_recalc.py --begin 2026 --end 2026 --week 45 --yes (11/12/2026)
    python run_full_rankings_recalc.py --begin 1959 --end 1940 --week 52 --yes
 
 
@@ -199,6 +200,42 @@ authoritative reference now, not this file. Highlights:
   to backfill. See the guide for the full writeup; this is being handled as
   a team-record consolidation task, folded into the ongoing per-state alias
   cleanup work, not a URL-mapping fix.
+
+### Playoff mode (ISO week 46 through January) — added 2026-11-13
+
+- **Automatic switch.** `maxpreps_scraper_db.py --mode auto` (the default,
+  and what the watcher and `weekly_pipeline.py` use, since both launch the
+  scraper with no arguments) runs in **playoff mode** from ISO week 46
+  (mid-November) through January, and full-sweep mode the rest of the year.
+  `--mode full` or `--mode playoff` forces one for a manual run.
+- **Who gets scraped.** A playoff batch holds only teams still playing:
+  (A) a game in `dbo.Future_Games` from 6 days before to 7 days after the
+  run date, or (B) their most recent game this season was a win within the
+  last 15 days (alive but on a bye, or next game not posted yet). Losers
+  with nothing scheduled are skipped. Roughly 5.8k teams vs ~16k for a
+  full sweep. Batches are named `MaxPreps Playoff Scrape - <timestamp>`.
+- **One per week.** A new playoff batch is created only on Sunday (or Monday,
+  if Sunday's run was missed), and only if no playoff batch was created in
+  the last 6 days.
+- **Other nights.** If a full-sweep batch is still `running`, the scraper
+  keeps draining it. Otherwise it does nothing. It never starts a new full
+  sweep during playoff season.
+- **Switch-over.** When the first playoff batch is created, any full-sweep
+  batch still `running` is finalized and marked `completed` first, so it
+  isn't resumed next August with last season's teams.
+- **Checking what the next run will do:**
+  ```
+  python maxpreps_scraper_db.py --preview
+  ```
+  Read-only: shows the resolved mode, which batch would be resumed or
+  created, team-status counts, and how many teams (by state) the next run
+  would scrape. Writes nothing, takes no lock, starts no browser, so it is
+  safe to run while the scraper or pipeline is running.
+- **Expected leftovers.** Teams whose `URL_ProperName_Mapping` row was
+  removed after their batch was created (e.g. closed schools merged away)
+  stay `pending` forever and are skipped. They don't block completion.
+  Seen 2026-11-13 on batch 42: 12 such teams (Moton, Phyllis Wheatley,
+  Kirksey, etc.).
 
 ---
 
@@ -442,6 +479,11 @@ explicitly verified yet. Worth running Step 3's verification query in
 late November/December this year to confirm the continuous automation
 actually covers this need before assuming the manual two-phase process
 below is no longer necessary.
+
+**2026-11-13 note**: from ISO week 46 on, the weekly Sunday full sweep is
+replaced by **playoff mode** (weekly batches of only the teams still
+playing). See "Playoff mode" under *Current workflow* above. Step 3's
+verification query is still the way to confirm late-December games land.
 
 Phase 1: Initial Season Scrape (Run Immediately - ~December 10)
 Step 1: Run Full Season Scrape

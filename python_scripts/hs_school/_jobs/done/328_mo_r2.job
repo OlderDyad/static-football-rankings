@@ -1,0 +1,16 @@
+same-score-fix MO --commit
+consolidate MO --reason "MO round 2 (2026-11-13): same-school names, see _coop_scripts/MO_cfg.py"
+move-team MO --from "Centerview Crest Ridge-Chilhowee (MO)" --to "Centerview Crest Ridge (MO)" --seasons 2022-2022 --ids coop_ids/MO_c3_000.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MO --from "Drexel (MO)" --to "Drexel-Miami (MO)" --seasons 2016-2018 --ids coop_ids/MO_c3_001.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MO --from "Drexel-Miami (MO)" --to "Drexel (MO)" --seasons 2022-2022 --ids coop_ids/MO_c3_002.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MO --from "Grant City Worth County (MO)" --to "Grant City Worth County-Northeast Nodaway (MO)" --seasons 1975-1983 --ids coop_ids/MO_c3_003.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MO --from "Grant City Worth County-Northeast Nodaway (MO)" --to "Grant City Worth County (MO)" --seasons 1977-2022 --ids coop_ids/MO_c3_004.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MO --from "Kansas City Bishop Hogan (MO)" --to "Kansas City Hogan Prep Academy (MO)" --seasons 1982-1991 --ids coop_ids/MO_c3_005.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MO --from "Kansas City Hogan Prep Academy (MO)" --to "Kansas City Bishop Hogan (MO)" --seasons 1978-1978 --ids coop_ids/MO_c3_006.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MO --from "Saint Louis Mary Institute and Country Day (MO)" --to "Saint Louis Country Day (MO)" --seasons 1956-1987 --ids coop_ids/MO_c3_007.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MO --from "Saint Louis Miller Career Academy (MO)" --to "Saint Louis Vashon-Miller Career Academy (MO)" --seasons 2022-2022 --ids coop_ids/MO_c3_008.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team MO --from "Saint Louis Vashon-Miller Career Academy (MO)" --to "Saint Louis Miller Career Academy (MO)" --seasons 2026-2026 --ids coop_ids/MO_c3_009.csv --reason "MO co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup MO --commit
+review-pairs MO --commit
+same-score-fix MO
+query MO mo_dump.sql

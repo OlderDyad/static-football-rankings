@@ -1,0 +1,13 @@
+same-score-fix WA --commit
+consolidate WA --reason "WA round 2 (2026-11-13): same-school names, see _coop_scripts/WA_cfg.py"
+move-team WA --from "Burlington (WA)" --to "Burlington-Edison (WA)" --seasons 1947-2015 --ids coop_ids/WA_c3_000.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team WA --from "Burlington-Edison (WA)" --to "Burlington (WA)" --seasons 1965-1985 --ids coop_ids/WA_c3_001.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team WA --from "Colton-Pullman Christian (WA)" --to "Colton (WA)" --seasons 1974-1983 --ids coop_ids/WA_c3_002.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team WA --from "Fort Vancouver (WA)" --to "Vancouver (WA)" --seasons 1950-1955 --ids coop_ids/WA_c3_003.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team WA --from "Ocean Shores North Beach (WA)" --to "Moclips Aloha (WA)" --seasons 1975-1980 --ids coop_ids/WA_c3_004.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team WA --from "Wilbur-Creston (WA)" --to "Wilbur-Creston-Keller (WA)" --seasons 2020-2020 --ids coop_ids/WA_c3_005.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team WA --from "Wilbur-Creston-Keller (WA)" --to "Wilbur-Creston (WA)" --seasons 2021-2022 --ids coop_ids/WA_c3_006.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup WA --commit
+review-pairs WA --commit
+same-score-fix WA
+query WA wa_dump.sql

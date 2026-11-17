@@ -1,0 +1,48 @@
+
+>>> same-score-fix WY --commit
+ 10 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS WY - COMMIT
+ 139 pairs {'DROP B': 16, 'DROP A': 10, 'UNDECIDED': 113} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_same_score_COMMITTED_20261113_1112.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  25        D73B980C-0C68-4CC3-BA9C-14332CE9648B  None
+
+>>> move-team WY --from "Basin Riverside (WY)" --to "Basin (WY)" --seasons 1975-1986 --ids coop_ids/WY_c3_000.csv --reason "WY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 29 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\coop_ids/WY_c3_000.csv
+
+MOVE Basin Riverside (WY) -> Basin (WY), seasons 1975-1986 - COMMIT
+ move_games: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_move_games_COMMITTED_20261113_1112.csv
+ move_by_season: 105 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_move_by_season_COMMITTED_20261113_1112.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  28     1                  None
+
+>>> dedup WY --commit
+
+DEDUP v4 WY - COMMIT
+ dedup_archive: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_dedup_archive_COMMITTED_20261113_1112.csv
+ dedup_review: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_dedup_review_COMMITTED_20261113_1112.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_dedup_summary_COMMITTED_20261113_1112.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  WY     26833         27                   0                D96B3A4B-C992-46DA-AF37-5AF6A699518F
+
+>>> review-pairs WY --commit
+
+REVIEW-ONLY PAIRS WY - COMMIT
+ 0 pairs {} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_review_pairs_COMMITTED_20261113_1112.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  0         106798B7-0DE7-4D41-96DB-7F71E0D007EE  None
+
+>>> same-score-fix WY
+ 10 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS WY - PREVIEW (nothing changed)
+ 95 pairs {'UNDECIDED': 95} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_same_score_20261113_1113.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  0         None   None
+
+>>> query WY wy_dump.sql
+
+QUERY wy_dump (1 result sets)
+ set 1: 26806 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WY\WY_q_wy_dump_1_20261113_1113.csv
+
+=== OK 2026-11-13 11:13:19

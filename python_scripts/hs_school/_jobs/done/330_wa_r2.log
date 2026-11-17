@@ -1,0 +1,489 @@
+
+>>> same-score-fix WA --commit
+ 394 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS WA - COMMIT
+ 258 pairs {'DROP B': 36, 'DROP A': 23, 'UNDECIDED': 199} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_same_score_COMMITTED_20261113_1105.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  59        2F22DA97-72D1-4FC6-A4BB-F4C5B5C28382  None
+
+>>> consolidate WA --reason "WA round 2 (2026-11-13): same-school names, see _coop_scripts/WA_cfg.py"
+Consolidating WA from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\WA_Alias_Rules.csv
+
+[stderr]
+2026-11-13 11:05:19,462 - INFO - Starting consolidation for state: (WA) using staging table method.
+2026-11-13 11:05:19,471 - WARNING - WARNING: 371 row(s) have identical OldName and NewName (no-op rules).
+2026-11-13 11:05:19,472 - WARNING -   'Aberdeen Wishkah Valley (WA)' -> 'Aberdeen Wishkah Valley (WA)' (no change)
+2026-11-13 11:05:19,472 - WARNING -   'Aberdeen-Weatherwax (WA)' -> 'Aberdeen-Weatherwax (WA)' (no change)
+2026-11-13 11:05:19,472 - WARNING -   'Adna (WA)' -> 'Adna (WA)' (no change)
+2026-11-13 11:05:19,472 - WARNING -   'Amanda Park Lake Quinault (WA)' -> 'Amanda Park Lake Quinault (WA)' (no change)
+2026-11-13 11:05:19,472 - WARNING -   'Anacortes (WA)' -> 'Anacortes (WA)' (no change)
+2026-11-13 11:05:19,472 - WARNING -   'Arlington (WA)' -> 'Arlington (WA)' (no change)
+2026-11-13 11:05:19,472 - WARNING -   'Asotin (WA)' -> 'Asotin (WA)' (no change)
+2026-11-13 11:05:19,472 - WARNING -   'Auburn (WA)' -> 'Auburn (WA)' (no change)
+2026-11-13 11:05:19,472 - WARNING -   'Auburn Jefferson (WA)' -> 'Auburn Jefferson (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Auburn Mountainview (WA)' -> 'Auburn Mountainview (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Auburn Muckleshoot Tribal (WA)' -> 'Auburn Muckleshoot Tribal (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Auburn Riverside (WA)' -> 'Auburn Riverside (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Bainbridge (WA)' -> 'Bainbridge (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Bainbridge Island (WA)' -> 'Bainbridge Island (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Battle Ground (WA)' -> 'Battle Ground (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Belfair North Mason (WA)' -> 'Belfair North Mason (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Bellevue (WA)' -> 'Bellevue (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Bellevue Interlake (WA)' -> 'Bellevue Interlake (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Bellevue Newport (WA)' -> 'Bellevue Newport (WA)' (no change)
+2026-11-13 11:05:19,473 - WARNING -   'Bellevue Sammamish (WA)' -> 'Bellevue Sammamish (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Bellingham (WA)' -> 'Bellingham (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Bellingham Lummi (WA)' -> 'Bellingham Lummi (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Bellingham Meridian (WA)' -> 'Bellingham Meridian (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Bellingham North Side (WA)' -> 'Bellingham North Side (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Bellingham Sehome (WA)' -> 'Bellingham Sehome (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Bellingham Squalicum (WA)' -> 'Bellingham Squalicum (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Benton City Kiona-Benton (WA)' -> 'Benton City Kiona-Benton (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Blaine (WA)' -> 'Blaine (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Bonney Lake (WA)' -> 'Bonney Lake (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Bothell (WA)' -> 'Bothell (WA)' (no change)
+2026-11-13 11:05:19,474 - WARNING -   'Bothell Cedar Park Christian (WA)' -> 'Bothell Cedar Park Christian (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Bothell Lynnwood (WA)' -> 'Bothell Lynnwood (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Bremerton (WA)' -> 'Bremerton (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Bremerton Olympic (WA)' -> 'Bremerton Olympic (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Brewster (WA)' -> 'Brewster (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Bridgeport (WA)' -> 'Bridgeport (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Brush Prairie Hockinson (WA)' -> 'Brush Prairie Hockinson (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Buckley White River (WA)' -> 'Buckley White River (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Burbank Columbia (WA)' -> 'Burbank Columbia (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Burien Highline (WA)' -> 'Burien Highline (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Burien Kennedy Catholic (WA)' -> 'Burien Kennedy Catholic (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Burlington-Edison (WA)' -> 'Burlington-Edison (WA)' (no change)
+2026-11-13 11:05:19,475 - WARNING -   'Camas (WA)' -> 'Camas (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Carnation Tolt (WA)' -> 'Carnation Tolt (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Cashmere (WA)' -> 'Cashmere (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Castle Rock (WA)' -> 'Castle Rock (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Cathlamet Wahkiakum (WA)' -> 'Cathlamet Wahkiakum (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Centralia (WA)' -> 'Centralia (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Chattaroy Riverside (WA)' -> 'Chattaroy Riverside (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Chehalis W.F. West (WA)' -> 'Chehalis W.F. West (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Chelan (WA)' -> 'Chelan (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Cheney (WA)' -> 'Cheney (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Chewelah Jenkins (WA)' -> 'Chewelah Jenkins (WA)' (no change)
+2026-11-13 11:05:19,476 - WARNING -   'Chimacum (WA)' -> 'Chimacum (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Clallam Bay (WA)' -> 'Clallam Bay (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Clarkston (WA)' -> 'Clarkston (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Clarkston-Adams (WA)' -> 'Clarkston-Adams (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Cle Elum (WA)' -> 'Cle Elum (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Cle Elum-Roslyn (WA)' -> 'Cle Elum-Roslyn (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Clyde Hill Bellevue Christian (WA)' -> 'Clyde Hill Bellevue Christian (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Colbert Northwest Christian School (WA)' -> 'Colbert Northwest Christian School (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Colfax (WA)' -> 'Colfax (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Colton (WA)' -> 'Colton (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Colton-Pullman Christian (WA)' -> 'Colton-Pullman Christian (WA)' (no change)
+2026-11-13 11:05:19,477 - WARNING -   'Columbia (WA)' -> 'Columbia (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Colville (WA)' -> 'Colville (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Concrete (WA)' -> 'Concrete (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Connell (WA)' -> 'Connell (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Coulee Dam Lake Roosevelt (WA)' -> 'Coulee Dam Lake Roosevelt (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Coupeville (WA)' -> 'Coupeville (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Covington Kentwood (WA)' -> 'Covington Kentwood (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Cowiche Highland (WA)' -> 'Cowiche Highland (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Curlew (WA)' -> 'Curlew (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Cusick (WA)' -> 'Cusick (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Darrington (WA)' -> 'Darrington (WA)' (no change)
+2026-11-13 11:05:19,478 - WARNING -   'Davenport (WA)' -> 'Davenport (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Dayton (WA)' -> 'Dayton (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Deer Park (WA)' -> 'Deer Park (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Deming Mt. Baker (WA)' -> 'Deming Mt. Baker (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Des Moines Mt. Rainier (WA)' -> 'Des Moines Mt. Rainier (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Duvall Cedarcrest (WA)' -> 'Duvall Cedarcrest (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'East Wenatchee Eastmont (WA)' -> 'East Wenatchee Eastmont (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Easton-Thorp (WA)' -> 'Easton-Thorp (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Eastsound Orcas Island (WA)' -> 'Eastsound Orcas Island (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Eatonville (WA)' -> 'Eatonville (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Edmonds (WA)' -> 'Edmonds (WA)' (no change)
+2026-11-13 11:05:19,479 - WARNING -   'Edmonds-Woodway (WA)' -> 'Edmonds-Woodway (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Ellensburg (WA)' -> 'Ellensburg (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Elma (WA)' -> 'Elma (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Elma Mary M. Knight (WA)' -> 'Elma Mary M. Knight (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Entiat (WA)' -> 'Entiat (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Enumclaw (WA)' -> 'Enumclaw (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Ephrata (WA)' -> 'Ephrata (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Everett (WA)' -> 'Everett (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Everett Archbishop Murphy (WA)' -> 'Everett Archbishop Murphy (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Everett Cascade (WA)' -> 'Everett Cascade (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Everett Mariner (WA)' -> 'Everett Mariner (WA)' (no change)
+2026-11-13 11:05:19,480 - WARNING -   'Everson Nooksack Valley (WA)' -> 'Everson Nooksack Valley (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Federal Way (WA)' -> 'Federal Way (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Federal Way Beamer (WA)' -> 'Federal Way Beamer (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Federal Way Decatur (WA)' -> 'Federal Way Decatur (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Ferndale (WA)' -> 'Ferndale (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Forks (WA)' -> 'Forks (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Fort Vancouver (WA)' -> 'Fort Vancouver (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Friday Harbor (WA)' -> 'Friday Harbor (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Garfield-Palouse (WA)' -> 'Garfield-Palouse (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Gig Harbor (WA)' -> 'Gig Harbor (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Gig Harbor Peninsula (WA)' -> 'Gig Harbor Peninsula (WA)' (no change)
+2026-11-13 11:05:19,481 - WARNING -   'Goldendale (WA)' -> 'Goldendale (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Graham-Kapowsin (WA)' -> 'Graham-Kapowsin (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Grandview (WA)' -> 'Grandview (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Granger (WA)' -> 'Granger (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Granite Falls (WA)' -> 'Granite Falls (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Hartline Almira-Coulee-Hartline (WA)' -> 'Hartline Almira-Coulee-Hartline (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Hoquiam (WA)' -> 'Hoquiam (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Hunters Columbia-Inchelium (WA)' -> 'Hunters Columbia-Inchelium (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Ilwaco (WA)' -> 'Ilwaco (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Inchelium (WA)' -> 'Inchelium (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Ione Selkirk (WA)' -> 'Ione Selkirk (WA)' (no change)
+2026-11-13 11:05:19,482 - WARNING -   'Issaquah (WA)' -> 'Issaquah (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Issaquah Liberty (WA)' -> 'Issaquah Liberty (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Joyce Crescent (WA)' -> 'Joyce Crescent (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Kalama (WA)' -> 'Kalama (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Kelso (WA)' -> 'Kelso (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Kenmore Inglemoor (WA)' -> 'Kenmore Inglemoor (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Kennewick (WA)' -> 'Kennewick (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Kennewick Kamiakin (WA)' -> 'Kennewick Kamiakin (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Kennewick River View (WA)' -> 'Kennewick River View (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Kennewick Southridge (WA)' -> 'Kennewick Southridge (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Kentlake (WA)' -> 'Kentlake (WA)' (no change)
+2026-11-13 11:05:19,483 - WARNING -   'Kent-Meridian (WA)' -> 'Kent-Meridian (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Kentridge (WA)' -> 'Kentridge (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Kettle Falls (WA)' -> 'Kettle Falls (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Kingston (WA)' -> 'Kingston (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Kirkland Juanita (WA)' -> 'Kirkland Juanita (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Kirkland Lake Washington (WA)' -> 'Kirkland Lake Washington (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Kittitas (WA)' -> 'Kittitas (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'La Center (WA)' -> 'La Center (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Lacey North Thurston (WA)' -> 'Lacey North Thurston (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Lacey River Ridge (WA)' -> 'Lacey River Ridge (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Lacey St. Martin's (WA)' -> 'Lacey St. Martin's (WA)' (no change)
+2026-11-13 11:05:19,484 - WARNING -   'Lacey Timberline (WA)' -> 'Lacey Timberline (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'LaConner (WA)' -> 'LaConner (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'LaCrosse-Washtucna-Kahlotus (WA)' -> 'LaCrosse-Washtucna-Kahlotus (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Lake Stevens (WA)' -> 'Lake Stevens (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Lakewood Clover Park (WA)' -> 'Lakewood Clover Park (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Lakewood Lakes (WA)' -> 'Lakewood Lakes (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Langley South Whidbey (WA)' -> 'Langley South Whidbey (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Leavenworth Cascade (WA)' -> 'Leavenworth Cascade (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Lind (WA)' -> 'Lind (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Longview Mark Morris (WA)' -> 'Longview Mark Morris (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Longview R.A. Long (WA)' -> 'Longview R.A. Long (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Lyle-Wishram (WA)' -> 'Lyle-Wishram (WA)' (no change)
+2026-11-13 11:05:19,485 - WARNING -   'Lynden (WA)' -> 'Lynden (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Lynden Christian (WA)' -> 'Lynden Christian (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Lynnwood Meadowdale (WA)' -> 'Lynnwood Meadowdale (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Mabton (WA)' -> 'Mabton (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Manson (WA)' -> 'Manson (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Marysville (WA)' -> 'Marysville (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Marysville Getchell (WA)' -> 'Marysville Getchell (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Marysville-Pilchuck (WA)' -> 'Marysville-Pilchuck (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Mattawa Wahluke (WA)' -> 'Mattawa Wahluke (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Mead Mt. Spokane (WA)' -> 'Mead Mt. Spokane (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Medical Lake (WA)' -> 'Medical Lake (WA)' (no change)
+2026-11-13 11:05:19,486 - WARNING -   'Menlo Pe Ell-Willapa Valley (WA)' -> 'Menlo Pe Ell-Willapa Valley (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Menlo Willapa Valley (WA)' -> 'Menlo Willapa Valley (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Mercer Island (WA)' -> 'Mercer Island (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Mill Creek Jackson (WA)' -> 'Mill Creek Jackson (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Moclips Aloha (WA)' -> 'Moclips Aloha (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Monroe (WA)' -> 'Monroe (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Montesano (WA)' -> 'Montesano (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Morton (WA)' -> 'Morton (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Moses Lake (WA)' -> 'Moses Lake (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Mossyrock (WA)' -> 'Mossyrock (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Mount Vernon (WA)' -> 'Mount Vernon (WA)' (no change)
+2026-11-13 11:05:19,487 - WARNING -   'Mountlake Terrace (WA)' -> 'Mountlake Terrace (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Mukilteo Kamiak (WA)' -> 'Mukilteo Kamiak (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Naches Valley (WA)' -> 'Naches Valley (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Napavine (WA)' -> 'Napavine (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Naselle (WA)' -> 'Naselle (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Neah Bay (WA)' -> 'Neah Bay (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Newport (WA)' -> 'Newport (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Nine Mile Falls Lakeside (WA)' -> 'Nine Mile Falls Lakeside (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'North Lakewood (WA)' -> 'North Lakewood (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Northport (WA)' -> 'Northport (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Oak Harbor (WA)' -> 'Oak Harbor (WA)' (no change)
+2026-11-13 11:05:19,488 - WARNING -   'Oakville (WA)' -> 'Oakville (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Ocean Shores North Beach (WA)' -> 'Ocean Shores North Beach (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Odessa (WA)' -> 'Odessa (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Okanogan (WA)' -> 'Okanogan (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Olympia (WA)' -> 'Olympia (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Olympia Capital (WA)' -> 'Olympia Capital (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Omak (WA)' -> 'Omak (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Onalaska (WA)' -> 'Onalaska (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Oroville (WA)' -> 'Oroville (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Orting (WA)' -> 'Orting (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Othello (WA)' -> 'Othello (WA)' (no change)
+2026-11-13 11:05:19,489 - WARNING -   'Pasco (WA)' -> 'Pasco (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Pasco Chiawana (WA)' -> 'Pasco Chiawana (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Pasco Tri-Cities Prep (WA)' -> 'Pasco Tri-Cities Prep (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Pateros (WA)' -> 'Pateros (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Pe Ell (WA)' -> 'Pe Ell (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Pomeroy (WA)' -> 'Pomeroy (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Port Angeles (WA)' -> 'Port Angeles (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Port Orchard South Kitsap (WA)' -> 'Port Orchard South Kitsap (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Port Orchard South Kitsap JV (WA)' -> 'Port Orchard South Kitsap JV (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Port Townsend (WA)' -> 'Port Townsend (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Poulsbo North Kitsap (WA)' -> 'Poulsbo North Kitsap (WA)' (no change)
+2026-11-13 11:05:19,490 - WARNING -   'Prescott (WA)' -> 'Prescott (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Prescott Jubilee Christian Academy (WA)' -> 'Prescott Jubilee Christian Academy (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Prosser (WA)' -> 'Prosser (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Pullman (WA)' -> 'Pullman (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Puyallup (WA)' -> 'Puyallup (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Puyallup Cascade Christian (WA)' -> 'Puyallup Cascade Christian (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Puyallup Chief Leschi (WA)' -> 'Puyallup Chief Leschi (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Puyallup Rogers (WA)' -> 'Puyallup Rogers (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Quilcene (WA)' -> 'Quilcene (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Quincy (WA)' -> 'Quincy (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Rainier (WA)' -> 'Rainier (WA)' (no change)
+2026-11-13 11:05:19,491 - WARNING -   'Randle Morton-White Pass (WA)' -> 'Randle Morton-White Pass (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Randle White Pass (WA)' -> 'Randle White Pass (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Raymond (WA)' -> 'Raymond (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Raymond-South Bend (WA)' -> 'Raymond-South Bend (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Reardan (WA)' -> 'Reardan (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Redmond (WA)' -> 'Redmond (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Renton (WA)' -> 'Renton (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Renton Hazen (WA)' -> 'Renton Hazen (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Renton Liberty (WA)' -> 'Renton Liberty (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Renton Lindbergh (WA)' -> 'Renton Lindbergh (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Republic (WA)' -> 'Republic (WA)' (no change)
+2026-11-13 11:05:19,492 - WARNING -   'Richland (WA)' -> 'Richland (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Richland Hanford (WA)' -> 'Richland Hanford (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Richland Liberty Christian (WA)' -> 'Richland Liberty Christian (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Ridgefield (WA)' -> 'Ridgefield (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Ritzville (WA)' -> 'Ritzville (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Rochester (WA)' -> 'Rochester (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Rockford Freeman (WA)' -> 'Rockford Freeman (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Royal City Royal (WA)' -> 'Royal City Royal (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Saint John (WA)' -> 'Saint John (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Saint John-Endicott-LaCrosse (WA)' -> 'Saint John-Endicott-LaCrosse (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Sammamish Eastlake (WA)' -> 'Sammamish Eastlake (WA)' (no change)
+2026-11-13 11:05:19,493 - WARNING -   'Sammamish Eastside Catholic (WA)' -> 'Sammamish Eastside Catholic (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Sammamish Skyline (WA)' -> 'Sammamish Skyline (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle Ballard (WA)' -> 'Seattle Ballard (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle Bishop Blanchet (WA)' -> 'Seattle Bishop Blanchet (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle Chief Sealth (WA)' -> 'Seattle Chief Sealth (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle Cleveland (WA)' -> 'Seattle Cleveland (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle Evergreen (WA)' -> 'Seattle Evergreen (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle Franklin (WA)' -> 'Seattle Franklin (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle Garfield (WA)' -> 'Seattle Garfield (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle Ingraham (WA)' -> 'Seattle Ingraham (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle King's (WA)' -> 'Seattle King's (WA)' (no change)
+2026-11-13 11:05:19,494 - WARNING -   'Seattle Lakeside (WA)' -> 'Seattle Lakeside (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Seattle Lutheran (WA)' -> 'Seattle Lutheran (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Seattle Nathan Hale (WA)' -> 'Seattle Nathan Hale (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Seattle O'Dea (WA)' -> 'Seattle O'Dea (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Seattle Prep (WA)' -> 'Seattle Prep (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Seattle Rainier Beach (WA)' -> 'Seattle Rainier Beach (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Seattle Roosevelt (WA)' -> 'Seattle Roosevelt (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Seattle Shorecrest (WA)' -> 'Seattle Shorecrest (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Seattle Tyee (WA)' -> 'Seattle Tyee (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Sedro-Woolley (WA)' -> 'Sedro-Woolley (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Selah (WA)' -> 'Selah (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Sequim (WA)' -> 'Sequim (WA)' (no change)
+2026-11-13 11:05:19,495 - WARNING -   'Shelton (WA)' -> 'Shelton (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'Shoreline Shorewood (WA)' -> 'Shoreline Shorewood (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'Silverdale Central Kitsap (WA)' -> 'Silverdale Central Kitsap (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'Silverdale Klahowya (WA)' -> 'Silverdale Klahowya (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'Snohomish (WA)' -> 'Snohomish (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'Snohomish Glacier Peak (WA)' -> 'Snohomish Glacier Peak (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'Snoqualmie Mount Si (WA)' -> 'Snoqualmie Mount Si (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'Soap Lake (WA)' -> 'Soap Lake (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'Soap Lake-Wilson Creek (WA)' -> 'Soap Lake-Wilson Creek (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'South Bend (WA)' -> 'South Bend (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'South Hill Emerald Ridge (WA)' -> 'South Hill Emerald Ridge (WA)' (no change)
+2026-11-13 11:05:19,496 - WARNING -   'Spanaway Bethel (WA)' -> 'Spanaway Bethel (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spanaway Lake (WA)' -> 'Spanaway Lake (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spangle Liberty (WA)' -> 'Spangle Liberty (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spokane East Valley (WA)' -> 'Spokane East Valley (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spokane Ferris (WA)' -> 'Spokane Ferris (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spokane Gonzaga Prep (WA)' -> 'Spokane Gonzaga Prep (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spokane Lewis & Clark (WA)' -> 'Spokane Lewis & Clark (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spokane Mead (WA)' -> 'Spokane Mead (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spokane North Central (WA)' -> 'Spokane North Central (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spokane Rogers (WA)' -> 'Spokane Rogers (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spokane Shadle Park (WA)' -> 'Spokane Shadle Park (WA)' (no change)
+2026-11-13 11:05:19,497 - WARNING -   'Spokane University (WA)' -> 'Spokane University (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Spokane Valley Central Valley (WA)' -> 'Spokane Valley Central Valley (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Spokane West Valley (WA)' -> 'Spokane West Valley (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Sprague-Harrington (WA)' -> 'Sprague-Harrington (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Springdale Mary Walker (WA)' -> 'Springdale Mary Walker (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Stanwood (WA)' -> 'Stanwood (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Stanwood Twin Cities (WA)' -> 'Stanwood Twin Cities (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Steilacoom (WA)' -> 'Steilacoom (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Stevenson (WA)' -> 'Stevenson (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Sultan (WA)' -> 'Sultan (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Sumner (WA)' -> 'Sumner (WA)' (no change)
+2026-11-13 11:05:19,498 - WARNING -   'Sunnyside (WA)' -> 'Sunnyside (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Sunnyside Christian (WA)' -> 'Sunnyside Christian (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Bellarmine Prep (WA)' -> 'Tacoma Bellarmine Prep (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Charles Wright (WA)' -> 'Tacoma Charles Wright (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Evergreen Lutheran (WA)' -> 'Tacoma Evergreen Lutheran (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Fife (WA)' -> 'Tacoma Fife (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Foss (WA)' -> 'Tacoma Foss (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Franklin Pierce (WA)' -> 'Tacoma Franklin Pierce (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Life Christian Academy (WA)' -> 'Tacoma Life Christian Academy (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Lincoln (WA)' -> 'Tacoma Lincoln (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Mt.Tahoma (WA)' -> 'Tacoma Mt.Tahoma (WA)' (no change)
+2026-11-13 11:05:19,499 - WARNING -   'Tacoma Stadium (WA)' -> 'Tacoma Stadium (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Tacoma Washington (WA)' -> 'Tacoma Washington (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Taholah (WA)' -> 'Taholah (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Tekoa-Oakesdale (WA)' -> 'Tekoa-Oakesdale (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Tekoa-Oakesdale-Rosalia (WA)' -> 'Tekoa-Oakesdale-Rosalia (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Tekoa-Rosalia (WA)' -> 'Tekoa-Rosalia (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Tenino (WA)' -> 'Tenino (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Toledo (WA)' -> 'Toledo (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Tonasket (WA)' -> 'Tonasket (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Toppenish (WA)' -> 'Toppenish (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Toppenish Yakama Nation Tribal (WA)' -> 'Toppenish Yakama Nation Tribal (WA)' (no change)
+2026-11-13 11:05:19,500 - WARNING -   'Touchet (WA)' -> 'Touchet (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'Toutle Lake (WA)' -> 'Toutle Lake (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'Tukwila Foster (WA)' -> 'Tukwila Foster (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'Tumwater (WA)' -> 'Tumwater (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'Tumwater Black Hills (WA)' -> 'Tumwater Black Hills (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'Union Gap La Salle (WA)' -> 'Union Gap La Salle (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'University of Washington Frosh (WA)' -> 'University of Washington Frosh (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'University of Washington JV (WA)' -> 'University of Washington JV (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'University Place Curtis (WA)' -> 'University Place Curtis (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'Vancouver (WA)' -> 'Vancouver (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'Vancouver Columbia River (WA)' -> 'Vancouver Columbia River (WA)' (no change)
+2026-11-13 11:05:19,501 - WARNING -   'Vancouver Evergreen (WA)' -> 'Vancouver Evergreen (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Vancouver Heritage (WA)' -> 'Vancouver Heritage (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Vancouver Hudson's Bay (WA)' -> 'Vancouver Hudson's Bay (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Vancouver Hudson's Bay JV (WA)' -> 'Vancouver Hudson's Bay JV (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Vancouver King's Way Christian (WA)' -> 'Vancouver King's Way Christian (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Vancouver Mountain View (WA)' -> 'Vancouver Mountain View (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Vancouver Seton Catholic (WA)' -> 'Vancouver Seton Catholic (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Vancouver Skyview (WA)' -> 'Vancouver Skyview (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Vancouver Union (WA)' -> 'Vancouver Union (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Vashon Island (WA)' -> 'Vashon Island (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Waitsburg (WA)' -> 'Waitsburg (WA)' (no change)
+2026-11-13 11:05:19,502 - WARNING -   'Waitsburg-Prescott (WA)' -> 'Waitsburg-Prescott (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Walla DeSales (WA)' -> 'Walla DeSales (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Walla Walla (WA)' -> 'Walla Walla (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Wapato (WA)' -> 'Wapato (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Warden (WA)' -> 'Warden (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Washington School for the Deaf (WA)' -> 'Washington School for the Deaf (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Washington State Unversity JV (WA)' -> 'Washington State Unversity JV (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Washougal (WA)' -> 'Washougal (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Waterville (WA)' -> 'Waterville (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Wellpinit (WA)' -> 'Wellpinit (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'Wenatchee (WA)' -> 'Wenatchee (WA)' (no change)
+2026-11-13 11:05:19,503 - WARNING -   'West Seattle (WA)' -> 'West Seattle (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'Westport Ocosta (WA)' -> 'Westport Ocosta (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'White Salmon Columbia (WA)' -> 'White Salmon Columbia (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'White Swan (WA)' -> 'White Swan (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'Wilbur-Creston (WA)' -> 'Wilbur-Creston (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'Winlock (WA)' -> 'Winlock (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'Winthrop Liberty Bell (WA)' -> 'Winthrop Liberty Bell (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'Woodinville (WA)' -> 'Woodinville (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'Woodland (WA)' -> 'Woodland (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'Yakima Davis (WA)' -> 'Yakima Davis (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'Yakima East Valley (WA)' -> 'Yakima East Valley (WA)' (no change)
+2026-11-13 11:05:19,504 - WARNING -   'Yakima Eisenhower (WA)' -> 'Yakima Eisenhower (WA)' (no change)
+2026-11-13 11:05:19,505 - WARNING -   'Yakima West Valley (WA)' -> 'Yakima West Valley (WA)' (no change)
+2026-11-13 11:05:19,505 - WARNING -   'Yelm (WA)' -> 'Yelm (WA)' (no change)
+2026-11-13 11:05:19,505 - WARNING -   'Zillah (WA)' -> 'Zillah (WA)' (no change)
+2026-11-13 11:05:19,505 - WARNING -   'Maple Valley Tahoma (WA)' -> 'Maple Valley Tahoma (WA)' (no change)
+2026-11-13 11:05:19,505 - WARNING -   'Tacoma Sound Christian (WA)' -> 'Tacoma Sound Christian (WA)' (no change)
+2026-11-13 11:05:19,505 - WARNING -   'Tacoma Silas (WA)' -> 'Tacoma Silas (WA)' (no change)
+2026-11-13 11:05:19,505 - WARNING -   'Vancouver Prairie (WA)' -> 'Vancouver Prairie (WA)' (no change)
+2026-11-13 11:05:19,505 - INFO - Validation passed: 456 rules are clean and ready to upload.
+2026-11-13 11:05:19,524 - INFO - Uploading 456 rules to staging table: ConsolidationRules_Staging...
+2026-11-13 11:05:19,642 - INFO - Upload to staging table complete.
+2026-11-13 11:05:19,647 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-13 11:06:30,537 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-13 11:06:30,538 - INFO - Reason logged to dbo.HS_Consolidation_Log: WA round 2 (2026-11-13): same-school names, see _coop_scripts/WA_cfg.py
+2026-11-13 11:06:30,538 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-13 11:06:30,538 - INFO - Running post-consolidation safety check...
+2026-11-13 11:06:30,543 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team WA --from "Burlington (WA)" --to "Burlington-Edison (WA)" --seasons 1947-2015 --ids coop_ids/WA_c3_000.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 77 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\coop_ids/WA_c3_000.csv
+
+MOVE Burlington (WA) -> Burlington-Edison (WA), seasons 1947-2015 - COMMIT
+ move_games: 77 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_games_COMMITTED_20261113_1106.csv
+ move_by_season: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_by_season_COMMITTED_20261113_1106.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  77     1                  None
+
+>>> move-team WA --from "Burlington-Edison (WA)" --to "Burlington (WA)" --seasons 1965-1985 --ids coop_ids/WA_c3_001.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 10 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\coop_ids/WA_c3_001.csv
+
+MOVE Burlington-Edison (WA) -> Burlington (WA), seasons 1965-1985 - COMMIT
+ move_games: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_games_COMMITTED_20261113_1106.csv
+ move_by_season: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_by_season_COMMITTED_20261113_1106.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  10     1                  None
+
+>>> move-team WA --from "Colton-Pullman Christian (WA)" --to "Colton (WA)" --seasons 1974-1983 --ids coop_ids/WA_c3_002.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 18 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\coop_ids/WA_c3_002.csv
+
+MOVE Colton-Pullman Christian (WA) -> Colton (WA), seasons 1974-1983 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_games_COMMITTED_20261113_1106.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_by_season_COMMITTED_20261113_1106.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team WA --from "Fort Vancouver (WA)" --to "Vancouver (WA)" --seasons 1950-1955 --ids coop_ids/WA_c3_003.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 41 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\coop_ids/WA_c3_003.csv
+
+MOVE Fort Vancouver (WA) -> Vancouver (WA), seasons 1950-1955 - COMMIT
+ move_games: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_games_COMMITTED_20261113_1106.csv
+ move_by_season: 119 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_by_season_COMMITTED_20261113_1106.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  41     1                  None
+
+>>> move-team WA --from "Ocean Shores North Beach (WA)" --to "Moclips Aloha (WA)" --seasons 1975-1980 --ids coop_ids/WA_c3_004.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\coop_ids/WA_c3_004.csv
+
+MOVE Ocean Shores North Beach (WA) -> Moclips Aloha (WA), seasons 1975-1980 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_games_COMMITTED_20261113_1106.csv
+ move_by_season: 74 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_by_season_COMMITTED_20261113_1106.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team WA --from "Wilbur-Creston (WA)" --to "Wilbur-Creston-Keller (WA)" --seasons 2020-2020 --ids coop_ids/WA_c3_005.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\coop_ids/WA_c3_005.csv
+
+MOVE Wilbur-Creston (WA) -> Wilbur-Creston-Keller (WA), seasons 2020-2020 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_games_COMMITTED_20261113_1106.csv
+ move_by_season: 39 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_by_season_COMMITTED_20261113_1106.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team WA --from "Wilbur-Creston-Keller (WA)" --to "Wilbur-Creston (WA)" --seasons 2021-2022 --ids coop_ids/WA_c3_006.csv --reason "WA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\coop_ids/WA_c3_006.csv
+
+MOVE Wilbur-Creston-Keller (WA) -> Wilbur-Creston (WA), seasons 2021-2022 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_games_COMMITTED_20261113_1106.csv
+ move_by_season: 39 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_move_by_season_COMMITTED_20261113_1106.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> dedup WA --commit
+
+DEDUP v4 WA - COMMIT
+ dedup_archive: 242 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_dedup_archive_COMMITTED_20261113_1107.csv
+ dedup_review: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_dedup_review_COMMITTED_20261113_1107.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_dedup_summary_COMMITTED_20261113_1107.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  WA     94387         242                  2                4A8B8522-B1B9-479F-9949-D5C4FCF883CC
+
+>>> review-pairs WA --commit
+
+REVIEW-ONLY PAIRS WA - COMMIT
+ 2 pairs {'SHORT': 2} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_review_pairs_COMMITTED_20261113_1107.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  2         06EC249D-710A-4AAD-9B61-B825F9096AF1  None
+
+>>> same-score-fix WA
+ 394 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS WA - PREVIEW (nothing changed)
+ 76 pairs {'UNDECIDED': 76} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_same_score_20261113_1107.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  0         None   None
+
+>>> query WA wa_dump.sql
+
+QUERY wa_dump (1 result sets)
+ set 1: 94145 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_wa_dump_1_20261113_1107.csv
+
+=== OK 2026-11-13 11:07:51

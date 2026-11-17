@@ -1,0 +1,9 @@
+same-score-fix OK --commit
+consolidate OK --reason "OK round 2 (2026-11-13): same-school names, see _coop_scripts/OK_cfg.py"
+move-team OK --from "Bartlesville (OK)" --to "Bartlesville Sooner (OK)" --seasons 1967-1975 --ids coop_ids/OK_c3_000.csv --reason "OK co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team OK --from "Bartlesville Sooner (OK)" --to "Bartlesville (OK)" --seasons 1925-1950 --ids coop_ids/OK_c3_001.csv --reason "OK co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team OK --from "Choctaw Life Christian (OK)" --to "Oklahoma City Life Christian (OK)" --seasons 2014-2021 --ids coop_ids/OK_c3_002.csv --reason "OK co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup OK --commit
+review-pairs OK --commit
+same-score-fix OK
+query OK ok_dump.sql

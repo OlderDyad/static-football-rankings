@@ -1,0 +1,7 @@
+same-score-fix KS --commit
+consolidate KS --reason "KS round 2 (2026-11-13): same-school names, see _coop_scripts/KS_cfg.py"
+move-team KS --from "Wichita (KS)" --to "Wichita East (KS)" --seasons 1880-1928 --reason "KS same school, older name -> later name for 1880-1928 (2026-11-12)" --commit
+dedup KS --commit
+review-pairs KS --commit
+same-score-fix KS
+query KS ks_dump.sql

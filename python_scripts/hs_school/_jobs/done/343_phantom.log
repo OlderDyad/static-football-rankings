@@ -1,0 +1,34 @@
+
+>>> archive-ids US --ids phantom_archive_ids.csv --reason "4.2 winner-flip phantom copies: same game credited to the opposite team; kept the MaxPreps/newspaper copy over yearbook/estimated-date copy (2026-11-16)" --commit
+
+ARCHIVE LISTED GAMES US - COMMIT
+ 100 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\US\US_archive_ids_COMMITTED_20261116_1001.csv
+   Season  Date        Home                                Home_Score  Visitor                           Visitor_Score  Source                                    Access_ID  ID                                  
+   1928    1928-10-12  Galesburg (IL)                      7           Davenport Central (IA)            0              http://www.e-yearbook.com/sp/eybb?school  None       B25FEBF0-EE31-41AB-8DF0-105B0E53AD2C
+   1930    1930-09-26  Worland (WY)                        6           Basin (WY)                        0              http:-/wyoming-football.com/              None       6D6BB282-8BB2-4057-9D98-61B690384394
+   1931    1931-10-09  Lexington Henry Clay (KY)           7           Louisville Male (KY)              19             http://fourseasonsfootball.com/va.html    None       1C0E405E-FFB4-4D12-B2EC-30686A3ECD76
+   1933    1933-09-29  Lynchburg Moore County (TN)         6           Cookeville (TN)                   0              None                                      None       281FE21D-8E9C-4444-84BC-803FBB766537
+   1933    1933-11-17  Rocky Mount (NC)                    6           Wilmington New Hanover (NC)       0              http://www.classmates.com/yearbooks/New-  None       72941A90-3967-4425-95EB-80CDD66F6072
+   1937    1937-10-22  Fort Smith Northside (AR)           32          Little Rock Central (AR)          0              http://www.classmates.com/siteui/yearboo  None       1F55A810-08CC-47A0-A47D-3ECEBF5F87FE
+   1938    1938-10-28  Fort Smith Northside (AR)           19          Little Rock Central (AR)          0              http://www.classmates.com/siteui/yearboo  None       312A0DD3-BF51-4AED-95C7-582D792CDE66
+   1939    1939-11-10  Watertown (SD)                      7           Aberdeen Central (SD)             6              http://www.classmates.com/yearbooks/Cent  None       218172EA-D5CA-4C14-8D6D-892E96352F99
+   1940    1940-10-04  Picayune (MS)                       13          Gulf Coast Military Academy (MS)  0              http://www.ahsfhs.org/MISSISSIPPI/        None       D1774E53-85AD-4BA8-A4D5-CFD564FABC86
+   1940    1940-10-11  Longmont (CO)                       13          Fort Collins (CO)                 6              http://www.classmates.com/yearbooks/Long  None       1C229548-53D4-4B48-9C74-1CF5DCF46224
+   1942    1942-11-06  Davenport St. Ambrose Academy (IA)  0           Davenport Central (IA)            12             http://www.e-yearbook.com/sp/eybb?school  None       6C72749A-2CCA-4637-A2CB-F3F52D5FA905
+   1942    1942-11-13  Hammond Tech (IN)                   30          Hammond (IN)                      0              http://ifca.zebras.net/ifca/candler/foot  None       D5F14FF9-104A-4E99-9A99-3439DD7EDA64
+   1944    1944-11-03  Rockland (MA)                       13          Whitman (MA)                      0              https://archive.org/stream/whitmanhanson  None       CE54D9E1-D529-4BA5-88CC-D9D41B4D4B39
+   1945    1945-09-28  Harlan (KY)                         7           Corbin Lynn Camp (KY)             34             http://fourseasonsfootball.com/va.html    None       2ACBC986-6F4A-4622-87D1-5BF09DC53ADC
+   1945    1945-10-05  South Portland (ME)                 7           Auburn Edward Little (ME)         6              http://www.classmates.com/siteui/yearboo  None       E22AFF12-834B-40EE-BC8D-AAADFAB4EBB8
+   1945    1945-10-26  Shreveport Fair Park (LA)           15          Monroe Ouachita Parish (LA)       6              https://www.classmates.com/siteui/yearbo  None       3DAC491F-D64C-4609-B7A4-02A2FD775905
+   1945    1945-10-26  New London Chapman Tech (CT)        9           Stonington (CT)                   0              http://www.classmates.com/siteui/yearboo  None       B270E0ED-5BB3-41BC-84E0-6BD531FD4580
+   1946    1946-09-27  East Chicago Washington (IN)        14          Hammond (IN)                      13             http://www.classmates.com/siteui/yearboo  None       6CD1A4C4-50CD-49E8-BD62-317001E2DFAA
+   1949    1949-10-14  Gulf Coast Military Academy (MS)    0           Metairie Ridgewood (LA)           39             http://www.ahsfhs.org/MISSISSIPPI/        None       3F87E8BA-D63C-48E7-BD1A-8A367BB9F84C
+   1949    1949-10-14  Marysville (WA)                     15          Burlington-Edison (WA)            0              http://www.classmates.com/siteui/yearboo  None       8D0534E9-7DAE-4D97-BBDB-F147DA532BD1
+   ... 80 more rows (see CSV)
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  100     100    5AA84451-D95E-43B3-9A23-0C8E9F875B48  None
+
+>>> step AL 4.2 done "2026-11-16: national winner-flip scan (US\\queries\\phantom.sql): 200 pairs, 100 archived by source rank, 100 left (same source type)"
+Tracker updated: AL 4.2 -> done
+
+=== OK 2026-11-16 10:01:37

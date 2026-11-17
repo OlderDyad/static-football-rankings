@@ -1,0 +1,680 @@
+
+>>> archive-ids CA --ids CA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES CA - COMMIT
+ 5 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_archive_ids_COMMITTED_20261115_1540.csv
+   Season  Date        Home                                    Home_Score  Visitor                                  Visitor_Score  Source                                    Access_ID  ID                                  
+   1949    1949-10-29  Drake University (IA)                   13          Saint Mary's College of California (CA)  13             The_Des_Moines_Register_1949_10_29_Page_  None       1DAC46F0-9D46-4B3D-97E0-15063B77B278
+   1951    1951-11-10  University of California-Davis (CA)     34          Chico State College (CA)                 21             The_Sacramento_Bee_1951_11_10_10.csv      None       B0E684DD-B243-41B1-B1EB-965C9B99DBB0
+   1953    1953-10-03  University of Southern California (CA)  27          University of Indiana (IN)               14             The_Sacramento_Bee_1953_10_03_9.csv       None       E93DE912-DCDF-4825-B006-84E326EF84E0
+   1954    1954-11-14  University of California (CA)           46          Oregon State University (OR)             7              Hartford_Courant_1954_11_14_60.csv        None       09263B44-6796-4A58-89DA-13804358B8A6
+   1955    1955-11-13  Humboldt State University (CA)          47          University of Nevada (NV)                6              Las_Cruces_Sun_News_1955_11_13_12.csv     None       692DBC41-092B-49A7-B8C0-9BEDDA04FDBC
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  5       5      E77DBE43-C697-489C-B2F1-D155985A3389  None
+
+>>> archive-ids DE --ids DE_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES DE - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_archive_ids_COMMITTED_20261115_1540.csv
+   Season  Date        Home                         Home_Score  Visitor                 Visitor_Score  Source                              Access_ID  ID                                  
+   1954    1954-11-14  University of Delaware (DE)  41          Lafayette College (PA)  7              The_Boston_Globe_1954_11_14_50.csv  None       9E74600E-8191-4AA9-BF65-4425819A2E63
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       1      001C8EF0-C124-4F79-BD4A-8DA2A72CFCBF  None
+
+>>> set-dates GA --file GA_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+
+SET DATES GA - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_set_dates_COMMITTED_20261115_1540.csv
+   Season  OldDate     NewDate     DayShift  Home                       Home_Score  Visitor                  Visitor_Score  Source             Note                                      ID                                  
+   1898    1989-11-24  1898-11-24  -33237    Gordon State College (GA)  30          Thomaston R.E. Lee (GA)  0              http://ghsfha.com  date year typo 1989-11-24 for season 189  9DA14767-24B6-45E3-9BDE-F7121A0D7888
+   1898    1989-12-01  1898-12-01  -33237    Gordon State College (GA)  21          Thomaston R.E. Lee (GA)  0              http://ghsfha.com  date year typo 1989-12-01 for season 189  784D7838-6EA6-45C6-A8F0-26D057D4D5BE
+   Status     Listed  Updated  Err 
+   COMMITTED  2       2        None
+
+>>> archive-ids GA --ids GA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES GA - COMMIT
+ 4 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_archive_ids_COMMITTED_20261115_1540.csv
+   Season  Date        Home                        Home_Score  Visitor                    Visitor_Score  Source                                    Access_ID  ID                                  
+   1940    1940-10-05  Oglethorpe University (GA)  26          Wofford University (SC)    14             The_Times_Picayune_1940_10_05_14.csv      None       C707C0A2-222C-4193-83F4-489F758ACC1F
+   1943    1943-09-18  University of Georgia (GA)  25          Presbyterian College (SC)  7              The_Des_Moines_Register_1943_09_18_Page_  None       D072199B-2320-4D80-912B-4C0F9DA159AE
+   1944    1944-10-07  University of Georgia (GA)  67          Presbyterian College (SC)  0              The_Times_Picayune_1944_10_07_10.csv      None       EBA6A36C-924E-48DB-BEDA-FD6AF8F397CA
+   1947    1947-09-20  University of Georgia (GA)  13          Furman University (SC)     7              Lexington_Herald_Leader_1947_09_20_3.csv  None       3AB62B47-4A23-4E2D-B3F1-317B619CD0C4
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  4       4      97261C1A-2595-4745-8BC1-F78F2C28555D  None
+
+>>> set-dates IA --file IA_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+
+SET DATES IA - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_set_dates_COMMITTED_20261115_1540.csv
+   Season  OldDate     NewDate     DayShift  Home               Home_Score  Visitor                       Visitor_Score  Source                                    Note                                      ID                                  
+   1923    1924-02-22  1923-12-14  -70       Toledo Scott (OH)  24          Cedar Rapids Washington (IA)  20             http://www.hsfdatabase.com/nationalchamp  estimated date 1924-02-22 past season ->  BE885FC7-7806-4F02-86D3-B18E057E06F6
+   Status     Listed  Updated  Err 
+   COMMITTED  1       1        None
+
+>>> archive-ids IA --ids IA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES IA - COMMIT
+ 12 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_archive_ids_COMMITTED_20261115_1541.csv
+   Season  Date        Home                        Home_Score  Visitor                             Visitor_Score  Source                                    Access_ID  ID                                  
+   1943    1943-10-09  Drake University (IA)       50          Western Illinois University (IL)    0              The_Dispatch_1943_10_09_9.csv             None       5158CA10-C0A7-4BA8-867A-7027DF4D94E0
+   1944    1944-09-30  Drake University (IA)       27          Cornell College (IA)                0              The_Des_Moines_Register_1944_09_30_Page_  None       58D15628-E939-493D-BECC-D639E8973576
+   1944    1944-10-21  Drake University (IA)       14          Gustavus Adolphus College (MN)      2              The_Des_Moines_Register_1944_10_21_Page_  None       EA72020C-68BE-4E35-8BB0-5D4498EADA62
+   1944    1944-11-04  Drake University (IA)       26          St. Olaf College (MN)               13             The_Des_Moines_Register_1944_11_04_Page_  None       BE6D294D-2F10-4BC4-AF69-36F51B2B66EC
+   1945    1945-10-27  University of Detroit (MI)  19          Drake University (IA)               14             The_Des_Moines_Register_1945_10_27_Page_  None       1956C5B7-2550-4C94-9AB6-683B23D8BA1D
+   1948    1948-09-18  Drake University (IA)       47          South Dakota State University (SD)  0              The_Des_Moines_Register_1948_09_18_Page_  None       5504C2BE-7BC9-41C8-AC85-4C564DCA999A
+   1948    1948-10-16  Drake University (IA)       17          Bradley College (IL)                14             The_Des_Moines_Register_1948_10_16_Page_  None       71D2552D-5069-4C2F-8581-4D41C0FFDE88
+   1949    1949-09-17  Drake University (IA)       40          South Dakota State University (SD)  0              The_Des_Moines_Register_1949_09_17_Page_  None       3C755E77-54B8-417B-9FC4-9D9DD207B1A8
+   1949    1949-10-08  Drake University (IA)       48          University of South Dakota (SD)     6              The_Des_Moines_Register_1949_10_08_Page_  None       24C4B0E7-6BBF-4AD2-8C83-7DE53F07F42F
+   1952    1952-10-25  Bradley College (IL)        33          Drake University (IA)               0              The_Des_Moines_Register_1952_10_25_Page_  None       430BF2BB-7EC8-4D58-94E7-A263FF84B510
+   1953    1953-11-14  Drake University (IA)       27          Iowa State Teachers College (IA)    20             The_Orlando_Sentinel_1953_11_14_Page_6.c  None       E36BAA91-CD91-410B-ADF4-128DACA39D03
+   1955    1955-09-17  Drake University (IA)       28          North Dakota State University (ND)  6              The_Des_Moines_Register_1955_09_17_Page_  None       5B3E7128-FF87-47B8-9101-39390F5FB855
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  12      12     286E35B5-CBD4-4D96-956D-640AD120C839  None
+
+>>> archive-ids ID --ids ID_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES ID - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_archive_ids_COMMITTED_20261115_1541.csv
+   Season  Date        Home                        Home_Score  Visitor                      Visitor_Score  Source                                    Access_ID  ID                                  
+   1967    1967-10-22  University of Montana (MT)  20          Idaho State University (ID)  0              Great_Falls_Tribune_1967_10_22_Page_14.c  None       EA83793D-9450-4E11-8A53-8AEF2CA3E5D3
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       1      E5C455AD-89C1-4270-9CB7-A561474F526F  None
+
+>>> set-dates IL --file IL_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+
+SET DATES IL - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_set_dates_COMMITTED_20261115_1541.csv
+   Season  OldDate     NewDate     DayShift  Home        Home_Score  Visitor                Visitor_Score  Source                                    Note                                      ID                                  
+   1899    1889-11-08  1899-11-08  3652      Elgin (IL)  16          Rockford Central (IL)  11             https://www.classmates.com/siteui/yearbo  date year typo 1889-11-08 for season 189  82845A37-5964-49A7-8CB3-F5BEF32330E0
+   Status     Listed  Updated  Err 
+   COMMITTED  1       1        None
+
+>>> archive-ids IL --ids IL_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES IL - COMMIT
+ 5 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_archive_ids_COMMITTED_20261115_1541.csv
+   Season  Date        Home                               Home_Score  Visitor                           Visitor_Score  Source                                    Access_ID  ID                                  
+   1949    1949-10-30  Eureka College (IL)                36          Principia College (IL)            7              St_Louis_Post_Dispatch_1949_10_30_Page_5  None       5322021A-B45F-4F38-BAD0-4C0BB590714F
+   1956    1956-10-27  Lewis University (IL)              14          Illinois State University (IL)    13             The_Pantagraph_1956_10_27_Page_14.csv     None       5BE1D478-551B-4822-8DAF-D4735D4C4F77
+   1957    1957-09-22  Illinois State University (IL)     14          Ball State University (IN)        12             The_Pantagraph_1957_09_22_Page_26.csv     None       1A3D7FDD-84A9-4C18-B158-37C2FF22A345
+   1959    1959-10-31  Southern Illinois University (IL)  41          Eastern Michigan University (MI)  14             The_Billings_Gazette_1959_10_31_8.csv     None       A9D6EC1B-5800-476D-89A9-123F472EC9C1
+   1962    1962-09-23  Illinois State University (IL)     13          Decatur Millikin University (IL)  7              The_Pantagraph_1962_09_23_Page_15.csv     None       E1E5767E-573B-496E-B78E-F7F6DEC400F9
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  8       5      6A4AD745-845F-4424-8E6B-4E98FA727145  None
+
+>>> archive-ids IN --ids IN_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES IN - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_archive_ids_COMMITTED_20261115_1541.csv
+   Season  Date        Home                        Home_Score  Visitor                 Visitor_Score  Source                                    Access_ID  ID                                  
+   1949    1949-10-23  Washington University (MO)  7           Butler University (IN)  0              St_Louis_Post_Dispatch_1949_10_23_Page_5  None       EF2B38D0-92D6-4397-869C-5F466C6C9C9B
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  3       1      337BA3F6-EB09-4D82-8BAA-C1F96D538731  None
+
+>>> archive-ids MD --ids MD_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES MD - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_archive_ids_COMMITTED_20261115_1541.csv
+   Season  Date        Home                            Home_Score  Visitor                         Visitor_Score  Source                                    Access_ID  ID                                  
+   1981    1981-10-16  The College of New Jersey (NJ)  20          Salisbury University (MD)       9              https://digital.libraries.psu.edu/digita  None       6EB3F9A5-FC7C-443E-AAB2-8C2AF1458321
+   1985    1985-10-18  Salisbury University (MD)       37          The College of New Jersey (NJ)  8              https://digital.libraries.psu.edu/digita  None       90C158C2-1F50-4C8C-A6E1-4B2A2361168E
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  2       2      A753040F-82C7-40FE-A321-9E121FE8427F  None
+
+>>> archive-ids MI --ids MI_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES MI - COMMIT
+ 5 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_archive_ids_COMMITTED_20261115_1541.csv
+   Season  Date        Home                              Home_Score  Visitor                       Visitor_Score  Source                                    Access_ID  ID                                  
+   1940    1940-09-21  Hope College (MI)                 35          Ferris State University (MI)  0              The_Des_Moines_Register_1940_09_21_Page_  None       DDD193EA-DAE2-4C74-A1E3-9AAC52949656
+   1943    1943-10-09  Central Michigan University (MI)  7           Alma College (MI)             0              The_Daily_Sentinel_1943_10_09_4.csv       None       EE79B5D5-950C-4494-ACD6-12160C822CB5
+   1946    1946-09-21  Hope College (MI)                 38          Ferris State University (MI)  6              The_Bay_City_Times_1946_09_21_5.csv       None       0590817D-B9FF-4E1B-ADD6-67135110A0A7
+   1950    1950-11-04  University of Detroit (MI)        18          University of Villanova (PA)  7              The_Indianapolis_Star_1950_11_04_17.csv   None       A37F004D-E5CB-4B17-A9DF-42BB1C6290D1
+   1962    1962-10-27  University of Dayton (OH)         13          University of Detroit (MI)    12             The_Orlando_Sentinel_1962_10_27_Page_19.  None       F0D3F62B-D6E2-407D-9A32-F4B6FF2EF785
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  7       5      9C937A38-1C33-41B9-AA92-943FC5BEFCF9  None
+
+>>> archive-ids MN --ids MN_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES MN - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_archive_ids_COMMITTED_20261115_1541.csv
+   Season  Date        Home                                Home_Score  Visitor                        Visitor_Score  Source                               Access_ID  ID                                  
+   1947    1947-09-13  North Dakota State University (ND)  20          Bemidji State University (MN)  0              Star_Tribune_1947_09_13_Page_12.csv  None       321F854E-472A-4149-9C04-BAA8DDBA9BBC
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  3       1      7BE8F9F4-BAB1-440F-859C-E0B055EFFC3D  None
+
+>>> archive-ids MT --ids MT_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES MT - COMMIT
+ 0 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_archive_ids_COMMITTED_20261115_1541.csv
+   (no rows)
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       0      AE63B2A4-E4BB-4926-92EC-2E78A2D970BF  None
+
+>>> archive-ids ND --ids ND_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES ND - COMMIT
+ 3 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_archive_ids_COMMITTED_20261115_1542.csv
+   Season  Date        Home                                Home_Score  Visitor                             Visitor_Score  Source                              Access_ID  ID                                  
+   1940    1940-11-02  South Dakota State University (SD)  7           North Dakota State University (ND)  0              Argus_Leader_1940_11_02_Page_5.csv  None       039A0CDD-2B74-415A-9B12-220C9BC271B4
+   1942    1942-10-03  University of North Dakota (ND)     7           Morningside University (IA)         6              Argus_Leader_1942_10_03_Page_3.csv  None       7F4F4B31-B5E6-4379-BEB4-EA183CAE9ECD
+   1948    1948-09-11  University of Oklahoma (OK)         27          University of North Dakota (ND)     12             Argus_Leader_1948_09_11_Page_3.csv  None       49D6BD86-FE33-4E4A-A48B-6CDF7E6686E3
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  4       3      1030B08C-04C4-4E32-A398-2F8A718724EA  None
+
+>>> set-dates NJ --file NJ_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+
+SET DATES NJ - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_set_dates_COMMITTED_20261115_1542.csv
+   Season  OldDate     NewDate     DayShift  Home                      Home_Score  Visitor                         Visitor_Score  Source                                    Note                                      ID                                  
+   1950    1951-02-02  1950-12-15  -49       Gloucester Catholic (NJ)  19          Norristown Bishop Kenrick (PA)  14             https://digital.libraries.psu.edu/digita  estimated date 1951-02-02 past season ->  F93F79F3-F2AD-4544-A400-FE5AA1FDB004
+   Status     Listed  Updated  Err 
+   COMMITTED  1       1        None
+
+>>> archive-ids NJ --ids NJ_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES NJ - COMMIT
+ 9 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_archive_ids_COMMITTED_20261115_1542.csv
+   Season  Date        Home                            Home_Score  Visitor                         Visitor_Score  Source                                    Access_ID  ID                                  
+   1951    1951-09-29  West Chester University (PA)    33          Rider University (NJ)           12             The_Des_Moines_Register_1951_09_29_Page_  None       3D00BA56-B990-426D-8706-23BC01A4C140
+   1952    1952-10-10  Bloomsburg University (PA)      13          The College of New Jersey (NJ)  6              https://digital.libraries.psu.edu/digita  None       F2A8DC60-1FB1-466D-B49F-6294C179C7B2
+   1953    1953-11-14  Upsala College (NJ)             15          Hofstra University (NY)         13             The_Orlando_Sentinel_1953_11_14_Page_6.c  None       F048BF7C-340C-4FA3-B4AD-228B180A9305
+   1968    1968-10-25  The College of New Jersey (NJ)  16          Shepherd University (WV)        13             https://digital.libraries.psu.edu/digita  None       A31CC7A7-4399-4EA5-ADA2-5AD8451A96DD
+   1982    1982-11-05  The College of New Jersey (NJ)  26          Kean University (NJ)            17             https://digital.libraries.psu.edu/digita  None       4DA4CFA9-7C34-45D8-900F-FDF4ABD817B0
+   1999    1999-11-12  The College of New Jersey (NJ)  38          Kean University (NJ)            20             https://digital.libraries.psu.edu/digita  None       D3578E85-8673-4232-BA96-169E69EA8A8F
+   2004    2004-11-12  The College of New Jersey (NJ)  37          Kean University (NJ)            0              https://digital.libraries.psu.edu/digita  None       51208A5B-4B69-4D04-B0BE-55C3D47771FE
+   2006    2006-10-27  Cortland University (NY)        26          The College of New Jersey (NJ)  14             https://digital.libraries.psu.edu/digita  None       FED8E5C0-D129-464A-8277-15974AD56019
+   2009    2009-10-02  Kean University (NJ)            28          The College of New Jersey (NJ)  7              https://digital.libraries.psu.edu/digita  None       B2847A6F-2094-4D84-940B-5080DF6535B2
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  11      9      E1E5674D-0417-4E0C-BC45-69DE3B5BEE5E  None
+
+>>> archive-ids NV --ids NV_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES NV - COMMIT
+ 0 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_archive_ids_COMMITTED_20261115_1542.csv
+   (no rows)
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       0      0675C790-A6F2-4435-ABE2-66550CC09ADB  None
+
+>>> archive-ids NY --ids NY_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES NY - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_archive_ids_COMMITTED_20261115_1542.csv
+   Season  Date        Home                              Home_Score  Visitor                                   Visitor_Score  Source                                    Access_ID  ID                                  
+   1953    1953-10-02  The College of New Jersey (NJ)    6           Central Connecticut State University (NY  6              https://digital.libraries.psu.edu/digita  None       19B5A810-46A3-4E1E-A0AA-EEA68C1F8E27
+   1974    1974-11-04  Poughkeepsie Marist College (NY)  25          Oswego State University (NY)              24             The_Reporter_Dispatch_1974_11_04_43.csv   None       EABE7702-4F08-43FD-94E5-094CCC24B8F5
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  4       2      76F17FB9-5A03-4012-9C18-1EEAA2B28E6B  None
+
+>>> set-dates OH --file OH_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+
+SET DATES OH - COMMIT
+ 3 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_set_dates_COMMITTED_20261115_1542.csv
+   Season  OldDate     NewDate     DayShift  Home               Home_Score  Visitor                       Visitor_Score  Source                                    Note                                      ID                                  
+   1923    1924-02-01  1923-11-30  -63       Toledo Scott (OH)  20          Cleveland East Tech (OH)      0              http://www.hsfdatabase.com/nationalchamp  estimated date 1924-02-01 past season ->  D6BA0D6B-0520-4E11-A05E-21A35149902E
+   1923    1923-12-14  1923-12-07  -7        Toledo Scott (OH)  24          Cedar Rapids Washington (IA)  20             http://www.hsfdatabase.com/nationalchamp  estimated date 1924-02-22 past season ->  BE885FC7-7806-4F02-86D3-B18E057E06F6
+   1923    1924-02-29  1923-12-14  -77       Toledo Scott (OH)  20          Portland Columbia Prep (OR)   17             http://www.hsfdatabase.com/nationalchamp  estimated date 1924-02-29 past season ->  E78C8764-57A4-41A0-8F47-B0D69F836ADA
+   Status     Listed  Updated  Err 
+   COMMITTED  3       3        None
+
+>>> archive-ids OH --ids OH_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES OH - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_archive_ids_COMMITTED_20261115_1542.csv
+   Season  Date        Home                             Home_Score  Visitor                              Visitor_Score  Source                                    Access_ID  ID                                  
+   1957    1957-10-05  Mount Union College (OH)         32          Marietta College (OH)                26             The_Orlando_Sentinel_1957_10_05_Page_13.  None       D2F37881-C018-472D-B03E-B7B6D56E9E94
+   1961    1961-09-16  Xavier University Reserves (OH)  16          Kent State University Reserves (OH)  8              The_Forum_MN_1961_09_16_6 (1).csv         None       B480B30B-B637-46B3-B4FC-80FBC3DED40D
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  3       2      877002E3-B31C-4BF3-BC30-DA618B9AEC21  None
+
+>>> set-dates OR --file OR_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+
+SET DATES OR - COMMIT
+ 15 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_set_dates_COMMITTED_20261115_1542.csv
+   Season  OldDate     NewDate     DayShift  Home                       Home_Score  Visitor                              Visitor_Score  Source                                    Note                                      ID                                  
+   1937    1938-02-18  1937-11-05  -105      Portland Cleveland (OR)    7           Portland Roosevelt (OR)              6              http://www.beasport.com/all-time-fb-scor  estimated date 1938-02-18 past season ->  9F694B92-7B61-46D2-9FCF-9DB07492E1D6
+   1937    1938-02-25  1937-11-12  -105      Portland Grant (OR)        13          Portland Roosevelt (OR)              6              http://www.beasport.com/all-time-fb-scor  estimated date 1938-02-25 past season ->  D7A40E07-749F-4F97-B4CA-07FCA8E5CCB8
+   1937    1938-03-04  1937-11-19  -105      Portland Benson Poly (OR)  12          Portland Roosevelt (OR)              6              http://www.beasport.com/all-time-fb-scor  estimated date 1938-03-04 past season ->  F6E0D77E-05D1-48EA-85A4-C606009E76D8
+   1937    1938-03-11  1937-11-26  -105      Portland Roosevelt (OR)    6           Portland Washington (OR)             6              http://www.beasport.com/all-time-fb-scor  estimated date 1938-03-11 past season ->  4B4D9FEF-F3C4-4A1C-96F2-BCBD58823D1E
+   1937    1938-03-18  1937-12-03  -105      Portland Jefferson (OR)    22          Portland Roosevelt (OR)              6              http://www.beasport.com/all-time-fb-scor  estimated date 1938-03-18 past season ->  63C9CA62-E94D-4B1C-A1C5-ADC15DEFBE8A
+   1937    1938-03-25  1937-12-10  -105      Portland Roosevelt (OR)    13          Portland Lincoln (OR)                6              http://www.beasport.com/all-time-fb-scor  estimated date 1938-03-25 past season ->  80EFFC10-A2B9-40E3-BA2A-B18FB26A2CE3
+   1937    1938-04-01  1937-12-17  -105      Portland Franklin (OR)     12          Portland Roosevelt (OR)              7              http://www.beasport.com/all-time-fb-scor  estimated date 1938-04-01 past season ->  CAEBEFFE-B45C-4BE2-BF5B-432FAC740E81
+   1939    1940-02-02  1939-12-01  -63       Saint Helens (OR)          25          Portland Hill Military Academy (OR)  6              http://www.beasport.com/all-time-fb-scor  estimated date 1940-02-02 past season ->  DD86BF42-EB0B-4724-944E-0D8F72DCB014
+   1939    1940-02-09  1939-12-08  -63       Saint Helens (OR)          9           Scappoose (OR)                       7              http://www.beasport.com/all-time-fb-scor  estimated date 1940-02-09 past season ->  81AC3E54-64DA-443A-8790-01817D243241
+   1939    1940-02-16  1939-12-15  -63       Rainier (OR)               13          Saint Helens (OR)                    6              http://www.beasport.com/all-time-fb-scor  estimated date 1940-02-16 past season ->  72A514F6-4634-4BAA-A090-61CDF44F2B98
+   ... 5 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  16      15       None
+
+>>> archive-ids OR --ids OR_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES OR - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_archive_ids_COMMITTED_20261115_1542.csv
+   Season  Date        Home                        Home_Score  Visitor                      Visitor_Score  Source                             Access_ID  ID                                  
+   1946    1946-11-02  Willamette University (OR)  6           University of Portland (OR)  6              The_Daily_Herald_1946_11_02_9.csv  None       D10B92C7-0B52-481E-9DB4-061AEC57A772
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  2       1      A77E5A5C-6035-4CCD-A0E7-66226256EFCD  None
+
+>>> set-dates PA --file PA_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+
+SET DATES PA - COMMIT
+ 11 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_set_dates_COMMITTED_20261115_1542.csv
+   Season  OldDate     NewDate     DayShift  Home                            Home_Score  Visitor                                   Visitor_Score  Source                                    Note                                      ID                                  
+   1958    1959-02-06  1958-12-05  -63       Norristown Bishop Kenrick (PA)  32          Pennsylvania School for the Deaf (PA)     14             https://digital.libraries.psu.edu/digita  estimated date 1959-02-06 past season ->  1AC585B7-5267-42AF-A041-F91A48CA3242
+   1958    1959-02-13  1958-12-12  -63       Norristown Bishop Kenrick (PA)  32          Pottsville Nativity Blessed Virgin Mary   6              https://digital.libraries.psu.edu/digita  estimated date 1959-02-13 past season ->  A4CA6848-98C5-416B-ADB8-EF7C7A69613E
+   1958    1959-02-20  1958-12-19  -63       Norristown Bishop Kenrick (PA)  46          Villanova Academy of Notre Dame (PA)      7              https://digital.libraries.psu.edu/digita  estimated date 1959-02-20 past season ->  BD71B768-083B-406E-999E-8615D0C64404
+   1959    1960-02-05  1959-12-18  -49       Norristown Bishop Kenrick (PA)  33          Pennsylvania School for the Deaf (PA)     6              https://digital.libraries.psu.edu/digita  estimated date 1960-02-05 past season ->  10C24CFA-C2DE-4F5A-9664-4369EE4E05C1
+   1962    1963-02-01  1962-12-14  -49       Norristown Bishop Kenrick (PA)  33          Lansdale Catholic (PA)                    7              https://digital.libraries.psu.edu/digita  estimated date 1963-02-01 past season ->  61B16D11-5760-48E9-AA62-49891D6AE582
+   1972    1973-02-02  1972-12-01  -63       Chester St. James (PA)          29          Norristown Bishop Kenrick (PA)            27             https://digital.libraries.psu.edu/digita  estimated date 1973-02-02 past season ->  7C3305DC-D3FB-4D52-BC55-CC11373EBD02
+   1972    1973-02-09  1972-12-08  -63       Norristown Bishop Kenrick (PA)  28          Philadelphia Father Judge (PA)            0              https://digital.libraries.psu.edu/digita  estimated date 1973-02-09 past season ->  C458047E-B225-4B0D-B84E-967B763BBAFE
+   1972    1973-02-16  1972-12-15  -63       Norristown Bishop Kenrick (PA)  49          Philadelphia Cardinal Dougherty (PA)      6              https://digital.libraries.psu.edu/digita  estimated date 1973-02-16 past season ->  BE194C95-EB0B-48EC-AFFE-D0C7868409A1
+   1975    1976-02-06  1975-12-12  -56       Norristown Bishop Kenrick (PA)  24          Philadelphia Father Judge (PA)            16             https://digital.libraries.psu.edu/digita  estimated date 1976-02-06 past season ->  8368EE4D-9118-489A-A78E-B46F93550029
+   1975    1976-02-13  1975-12-19  -56       Norristown Bishop Kenrick (PA)  35          Conshohocken Archbishop Kennedy (PA)      0              https://digital.libraries.psu.edu/digita  estimated date 1976-02-13 past season ->  BEEF23D7-C333-4E18-A526-208C7DAA7A5E
+   ... 1 more rows (see CSV)
+   Status     Listed  Updated  Err 
+   COMMITTED  12      11       None
+
+>>> archive-ids PA --ids PA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES PA - COMMIT
+ 8 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_archive_ids_COMMITTED_20261115_1542.csv
+   Season  Date        Home                          Home_Score  Visitor                                  Visitor_Score  Source                                    Access_ID  ID                                  
+   1943    1943-10-16  Ursinus College (PA)          10          Temple University (PA)                   6              The_Times_Picayune_1943_10_16_10.csv      None       48330D6C-D663-4C48-8752-74462B0B9185
+   1943    1943-11-26  Bucknell University (PA)      21          Franklin & Marshall College (PA)         13             Lexington_Herald_Leader_1943_11_26_7 (1)  None       C1F86112-1756-4194-9889-005946C875E1
+   1945    1945-10-13  Temple University (PA)        64          Bucknell University (PA)                 0              Star_Tribune_1945_10_13_Page_7.csv        None       D2568447-3D45-4544-B868-744E3EDB79AF
+   1953    1953-10-31  West Chester University (PA)  53          Kutztown Normal College (PA)             6              Omaha_World_Herald_1953_10_31_10 (1).csv  None       3C4AC72B-335F-41D9-987F-92710DA09370
+   1954    1954-11-14  Haverford College (PA)        66          Susquehanna University (PA)              0              The_Boston_Globe_1954_11_14_50.csv        None       830F3E5C-3F37-42A9-B92D-ED4791715D45
+   1954    1954-11-14  Muhlenberg College (PA)       33          Franklin & Marshall College (PA)         6              The_Boston_Globe_1954_11_14_50.csv        None       6330FDBD-C26B-4A23-B9C9-F12573DA9202
+   1958    1958-11-08  West Chester University (PA)  56          Bloomsburg University (PA)               0              The_Des_Moines_Register_1958_11_08_Page_  None       82DBC019-AEE0-483B-9D47-8F2603941B38
+   1966    1966-09-17  Shippensburg University (PA)  39          Commonwealth University-Bloomsburg (PA)  25             The_Courier_Journal_1966_09_17_Page_24 (  None       2DF73FA4-098D-4D0C-A8BB-3482D844E4CD
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  11      8      8C482D4D-D686-42E6-AC9E-0673B0823A9B  None
+
+>>> archive-ids SD --ids SD_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES SD - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_archive_ids_COMMITTED_20261115_1543.csv
+   Season  Date        Home                             Home_Score  Visitor                          Visitor_Score  Source                               Access_ID  ID                                  
+   1948    1948-10-02  University of South Dakota (SD)  54          Dakota Wesleyan University (SD)  0              Star_Tribune_1948_10_02_Page_12.csv  None       96451805-F53B-421D-A2BE-816388CFE9CE
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  4       1      DB6086B0-92C9-4A3F-9EB2-CDB4C41E763A  None
+
+>>> archive-ids VA --ids VA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES VA - COMMIT
+ 2 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_archive_ids_COMMITTED_20261115_1543.csv
+   Season  Date        Home                              Home_Score  Visitor                      Visitor_Score  Source                                    Access_ID  ID                                  
+   1948    1948-09-25  Wofford University (SC)           6           Hampden�Sydney College (VA)  6              Star_Tribune_1948_09_25_Page_12 (1).csv   None       93B34894-BBEE-459D-8661-97DAB46808AA
+   1967    1967-11-04  Emory & Henry College Frosh (VA)  32          Concord University (WV)      13             Des_Moines_Tribune_1967_11_04_10 (1).csv  None       3A6E3083-89F7-485B-92E3-5B7314EBD3DD
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  2       2      942501C4-CBFF-407D-B4A0-664CA5500676  None
+
+>>> archive-ids WV --ids WV_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES WV - COMMIT
+ 0 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_archive_ids_COMMITTED_20261115_1543.csv
+   (no rows)
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  1       0      735CCD57-196A-49B3-B543-8AE6BF645997  None
+
+>>> archive-ids SC --ids SC_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+
+ARCHIVE LISTED GAMES SC - COMMIT
+ 0 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_archive_ids_COMMITTED_20261115_1543.csv
+   (no rows)
+   Status     Listed  Found  RunID                                 Err 
+   COMMITTED  4       0      C022C6D6-9262-4A04-96A8-99C2C82862B8  None
+
+>>> step AK 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: AK 3.1 -> done
+
+>>> step AK 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: AK 3.2 -> done
+
+>>> step AK 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: AK 5.0 -> done
+
+>>> step CA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: CA 3.1 -> done
+
+>>> step CA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: CA 3.2 -> done
+
+>>> step CA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: CA 5.0 -> done
+
+>>> step DC 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: DC 3.1 -> done
+
+>>> step DC 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: DC 3.2 -> done
+
+>>> step DC 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: DC 5.0 -> done
+
+>>> step DE 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: DE 3.1 -> done
+
+>>> step DE 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: DE 3.2 -> done
+
+>>> step DE 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: DE 5.0 -> done
+
+>>> step GA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: GA 3.1 -> done
+
+>>> step GA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: GA 3.2 -> done
+
+>>> step GA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: GA 5.0 -> done
+
+>>> step HI 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: HI 3.1 -> done
+
+>>> step HI 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: HI 3.2 -> done
+
+>>> step HI 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: HI 5.0 -> done
+
+>>> step IA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: IA 3.1 -> done
+
+>>> step IA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: IA 3.2 -> done
+
+>>> step IA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: IA 5.0 -> done
+
+>>> step ID 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: ID 3.1 -> done
+
+>>> step ID 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: ID 3.2 -> done
+
+>>> step ID 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: ID 5.0 -> done
+
+>>> step IL 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: IL 3.1 -> done
+
+>>> step IL 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: IL 3.2 -> done
+
+>>> step IL 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: IL 5.0 -> done
+
+>>> step IN 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: IN 3.1 -> done
+
+>>> step IN 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: IN 3.2 -> done
+
+>>> step IN 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: IN 5.0 -> done
+
+>>> step KY 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: KY 3.1 -> done
+
+>>> step KY 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: KY 3.2 -> done
+
+>>> step KY 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: KY 5.0 -> done
+
+>>> step MD 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: MD 3.1 -> done
+
+>>> step MD 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: MD 3.2 -> done
+
+>>> step MD 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: MD 5.0 -> done
+
+>>> step ME 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: ME 3.1 -> done
+
+>>> step ME 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: ME 3.2 -> done
+
+>>> step ME 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: ME 5.0 -> done
+
+>>> step MI 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: MI 3.1 -> done
+
+>>> step MI 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: MI 3.2 -> done
+
+>>> step MI 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: MI 5.0 -> done
+
+>>> step MN 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: MN 3.1 -> done
+
+>>> step MN 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: MN 3.2 -> done
+
+>>> step MN 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: MN 5.0 -> done
+
+>>> step MT 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: MT 3.1 -> done
+
+>>> step MT 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: MT 3.2 -> done
+
+>>> step MT 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: MT 5.0 -> done
+
+>>> step ND 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: ND 3.1 -> done
+
+>>> step ND 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: ND 3.2 -> done
+
+>>> step ND 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: ND 5.0 -> done
+
+>>> step NJ 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: NJ 3.1 -> done
+
+>>> step NJ 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: NJ 3.2 -> done
+
+>>> step NJ 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: NJ 5.0 -> done
+
+>>> step NV 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: NV 3.1 -> done
+
+>>> step NV 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: NV 3.2 -> done
+
+>>> step NV 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: NV 5.0 -> done
+
+>>> step NY 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: NY 3.1 -> done
+
+>>> step NY 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: NY 3.2 -> done
+
+>>> step NY 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: NY 5.0 -> done
+
+>>> step OH 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: OH 3.1 -> done
+
+>>> step OH 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: OH 3.2 -> done
+
+>>> step OH 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: OH 5.0 -> done
+
+>>> step OR 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: OR 3.1 -> done
+
+>>> step OR 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: OR 3.2 -> done
+
+>>> step OR 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: OR 5.0 -> done
+
+>>> step PA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: PA 3.1 -> done
+
+>>> step PA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: PA 3.2 -> done
+
+>>> step PA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: PA 5.0 -> done
+
+>>> step SD 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: SD 3.1 -> done
+
+>>> step SD 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: SD 3.2 -> done
+
+>>> step SD 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: SD 5.0 -> done
+
+>>> step VA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: VA 3.1 -> done
+
+>>> step VA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: VA 3.2 -> done
+
+>>> step VA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: VA 5.0 -> done
+
+>>> step VT 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: VT 3.1 -> done
+
+>>> step VT 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: VT 3.2 -> done
+
+>>> step VT 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: VT 5.0 -> done
+
+>>> step WA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: WA 3.1 -> done
+
+>>> step WA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: WA 3.2 -> done
+
+>>> step WA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: WA 5.0 -> done
+
+>>> step WI 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: WI 3.1 -> done
+
+>>> step WI 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: WI 3.2 -> done
+
+>>> step WI 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: WI 5.0 -> done
+
+>>> step WV 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: WV 3.1 -> done
+
+>>> step WV 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: WV 3.2 -> done
+
+>>> step WV 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: WV 5.0 -> done
+
+>>> step AL 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: AL 3.1 -> done
+
+>>> step AL 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: AL 3.2 -> done
+
+>>> step AL 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: AL 5.0 -> done
+
+>>> step SC 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: SC 3.1 -> done
+
+>>> step SC 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: SC 3.2 -> done
+
+>>> step SC 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: SC 5.0 -> done
+
+>>> step AZ 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: AZ 3.1 -> done
+
+>>> step AZ 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: AZ 3.2 -> done
+
+>>> step AZ 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: AZ 5.0 -> done
+
+>>> step CO 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: CO 3.1 -> done
+
+>>> step CO 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: CO 3.2 -> done
+
+>>> step CO 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: CO 5.0 -> done
+
+>>> step FL 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: FL 3.1 -> done
+
+>>> step FL 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: FL 3.2 -> done
+
+>>> step FL 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: FL 5.0 -> done
+
+>>> step KS 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: KS 3.1 -> done
+
+>>> step KS 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: KS 3.2 -> done
+
+>>> step KS 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: KS 5.0 -> done
+
+>>> step MO 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: MO 3.1 -> done
+
+>>> step MO 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: MO 3.2 -> done
+
+>>> step MO 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: MO 5.0 -> done
+
+>>> step NE 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: NE 3.1 -> done
+
+>>> step NE 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: NE 3.2 -> done
+
+>>> step NE 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: NE 5.0 -> done
+
+>>> step NM 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: NM 3.1 -> done
+
+>>> step NM 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: NM 3.2 -> done
+
+>>> step NM 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: NM 5.0 -> done
+
+>>> step UT 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+Tracker updated: UT 3.1 -> done
+
+>>> step UT 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+Tracker updated: UT 3.2 -> done
+
+>>> step UT 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+Tracker updated: UT 5.0 -> done
+
+=== OK 2026-11-15 15:43:41

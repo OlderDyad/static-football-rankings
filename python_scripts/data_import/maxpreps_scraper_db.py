@@ -33,6 +33,24 @@ DATABASE_NAME = "hs_football_database"
 URL_PROCESS_LIMIT = 2000
 WAIT_TIMEOUT = 15
 BATCH_NAME = f"MaxPreps Scrape - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+
+# 2026-11-13: PLAYOFF MODE. From ISO week 46 (mid-November) through January most
+# states are in the playoffs, and a full ~16,000-team sweep (4-5 nights) mostly
+# re-reads finished seasons. Playoff mode scrapes only teams that are still
+# playing: (A) a game in dbo.Future_Games from 6 days before to 7 days after the
+# run date, or (B) their most recent game this season was a WIN within the last
+# 15 days (alive but on a bye, or next game not posted when we last looked).
+# Losers with nothing scheduled are skipped. Test run (as of 2026-11-15):
+# 5,819 teams vs 16,079 for a full sweep. One playoff batch per week: a new one
+# is created only if no playoff batch was created in the last 6 days.
+# --mode auto (default) = playoff from PLAYOFF_START_ISO_WEEK through January,
+# full otherwise; --mode full / --mode playoff force either one.
+PLAYOFF_START_ISO_WEEK = 46
+PLAYOFF_BATCH_PREFIX = "MaxPreps Playoff Scrape - "
+PLAYOFF_BATCH_NAME = f"{PLAYOFF_BATCH_PREFIX}{datetime.now().strftime('%Y-%m-%d %H:%M')}"
+PLAYOFF_SCHEDULE_DAYS_BACK = 6
+PLAYOFF_SCHEDULE_DAYS_AHEAD = 7
+PLAYOFF_WON_WITHIN_DAYS = 15
 DB_CONNECTION_STRING = (
     f"DRIVER={{ODBC Driver 17 for SQL Server}};"
     f"SERVER={SERVER_NAME};"
@@ -346,6 +364,107 @@ def setup_and_get_batch(cursor, batch_name, force_new=False):
     logger.info(f"Successfully created and populated batch {batch_id}.")
     return batch_id
 
+def _is_playoff_season(today=None):
+    """True from ISO week PLAYOFF_START_ISO_WEEK through January."""
+    today = today or datetime.now()
+    return today.month in (12, 1) or (today.month == 11 and today.isocalendar()[1] >= PLAYOFF_START_ISO_WEEK)
+
+
+PLAYOFF_TEAMS_SQL = """
+    SET NOCOUNT ON;
+    DECLARE @Now date = CAST(GETDATE() AS date);
+    DECLARE @Season int = CASE WHEN MONTH(@Now) >= 7 THEN YEAR(@Now) ELSE YEAR(@Now) - 1 END;
+    IF OBJECT_ID('tempdb..#pt') IS NOT NULL DROP TABLE #pt;
+    CREATE TABLE #pt (Team_ID int);
+    -- A: a game scheduled this week or next (Future_Games is filled by FinalizeMaxPrepsData)
+    INSERT INTO #pt
+    SELECT m.Team_ID
+    FROM dbo.Future_Games f
+    CROSS APPLY (VALUES (f.RawHomeTeam), (f.RawAwayTeam)) t(Name)
+    JOIN dbo.URL_ProperName_Mapping m ON m.ProperName = t.Name
+    WHERE f.GameDate BETWEEN DATEADD(day, -?, @Now) AND DATEADD(day, ?, @Now);
+    -- B: most recent game this season was a win, within the last N days
+    WITH g AS (
+        SELECT Name = s.Home, s.[Date], Won = CASE WHEN s.Home_Score > s.Visitor_Score THEN 1 ELSE 0 END
+        FROM dbo.HS_Scores s WHERE s.Season = @Season AND s.[Date] <= @Now
+        UNION ALL
+        SELECT s.Visitor, s.[Date], CASE WHEN s.Visitor_Score > s.Home_Score THEN 1 ELSE 0 END
+        FROM dbo.HS_Scores s WHERE s.Season = @Season AND s.[Date] <= @Now),
+    lastg AS (SELECT Name, [Date], Won, rn = ROW_NUMBER() OVER (PARTITION BY Name ORDER BY [Date] DESC) FROM g)
+    INSERT INTO #pt
+    SELECT m.Team_ID
+    FROM lastg l JOIN dbo.URL_ProperName_Mapping m ON m.ProperName = l.Name
+    WHERE l.rn = 1 AND l.Won = 1 AND l.[Date] >= DATEADD(day, -?, @Now);
+    SELECT DISTINCT p.Team_ID FROM #pt p JOIN dbo.HS_Team_Names t ON t.ID = p.Team_ID WHERE p.Team_ID IS NOT NULL;
+"""
+
+
+def setup_playoff_batch(cursor):
+    """Playoff mode: resume this week's playoff batch, or build a new one from
+    teams still playing. Returns None when this week's batch is already done."""
+    running = cursor.execute(
+        "SELECT TOP 1 batch_id FROM scraping_batches WHERE status = 'running' "
+        "AND batch_name LIKE ? ORDER BY created_date DESC;", PLAYOFF_BATCH_PREFIX + '%').fetchone()
+    if running:
+        logger.info(f"Resuming existing 'running' playoff batch with ID: {running[0]}")
+        return running[0]
+
+    recent = cursor.execute(
+        "SELECT TOP 1 batch_id, created_date FROM scraping_batches WHERE batch_name LIKE ? "
+        "AND created_date >= DATEADD(day, -6, GETDATE()) ORDER BY created_date DESC;",
+        PLAYOFF_BATCH_PREFIX + '%').fetchone()
+    # A new playoff batch starts only on Sunday (or Monday, if Sunday's run was
+    # missed), after the weekend's games are posted. On other nights keep
+    # draining a full-sweep batch that is still running -- but never start a
+    # new full sweep in playoff season.
+    if recent or datetime.now().weekday() not in (6, 0):
+        full = cursor.execute(
+            "SELECT TOP 1 batch_id FROM scraping_batches WHERE status = 'running' "
+            "AND batch_name LIKE 'MaxPreps Scrape - %' ORDER BY created_date DESC;").fetchone()
+        if full:
+            logger.info(f"Playoff mode: no playoff batch to run tonight; continuing full-sweep batch {full[0]}.")
+            return full[0]
+        if recent:
+            logger.info(f"This week's playoff batch ({recent[0]}, created {recent[1]}) is finished; "
+                        f"next one starts Sunday.")
+        else:
+            logger.info("Playoff mode: new playoff batches start on Sunday (or Monday); nothing to do tonight.")
+        return None
+
+    # A full-sweep batch left 'running' would otherwise be resumed next August
+    # with last season's teams. Finalize it and close it before switching modes.
+    for (old_id,) in cursor.execute(
+            "SELECT batch_id FROM scraping_batches WHERE status = 'running' "
+            "AND batch_name LIKE 'MaxPreps Scrape - %';").fetchall():
+        logger.info(f"Closing full-sweep batch {old_id} before starting playoff mode (finalizing first).")
+        try:
+            cursor.execute("EXEC dbo.FinalizeMaxPrepsData @BatchID = ?", old_id)
+            cursor.connection.commit()
+        except Exception as e:
+            logger.error(f"FinalizeMaxPrepsData failed for batch {old_id}: {e}", exc_info=True)
+        cursor.execute("UPDATE scraping_batches SET status = 'completed' WHERE batch_id = ?", old_id)
+        cursor.connection.commit()
+
+    cursor.execute(PLAYOFF_TEAMS_SQL, PLAYOFF_SCHEDULE_DAYS_BACK, PLAYOFF_SCHEDULE_DAYS_AHEAD,
+                   PLAYOFF_WON_WITHIN_DAYS)
+    while cursor.description is None and cursor.nextset():
+        pass
+    teams = cursor.fetchall()
+    if not teams:
+        logger.warning("Playoff mode: no teams with a game this week or a recent win -- season looks finished.")
+        return None
+
+    batch_id = cursor.execute(
+        "INSERT INTO scraping_batches (batch_name, created_date, total_teams, status) "
+        "OUTPUT INSERTED.batch_id VALUES (?, GETDATE(), ?, 'running');",
+        PLAYOFF_BATCH_NAME, len(teams)).fetchone()[0]
+    cursor.executemany("INSERT INTO dbo.team_scraping_status (team_id, batch_id) VALUES (?, ?);",
+                       [(t[0], batch_id) for t in teams])
+    cursor.connection.commit()
+    logger.info(f"Created playoff batch {batch_id} with {len(teams)} teams still playing.")
+    return batch_id
+
+
 def update_team_status(cursor, batch_id, team_id, status, games_found=0, error_message=None):
     """Updates the status of a scraped team."""
     sql = """
@@ -484,6 +603,153 @@ def release_lock():
     except Exception:
         pass
 
+# --- PREVIEW (read-only dry run) ---------------------------------------------
+# 2026-11-13: --preview shows what the next real run would do -- resolved mode,
+# which batch it would resume or create, and how many teams (by state) the
+# next chunk would scrape -- WITHOUT changing anything. It mirrors the
+# decision logic of setup_and_get_batch() / setup_playoff_batch() using
+# SELECTs only (PLAYOFF_TEAMS_SQL writes only to its own #temp table),
+# reuses get_urls_to_process() (read-only), never takes the lock, never
+# starts Chrome, never finalizes, and rolls back before closing. Keep this
+# in step with those two functions if their batch rules change.
+_STATE_SUFFIX_RE = re.compile(r'\(([A-Z]{2})\)\s*$')
+
+def _state_of(proper_name):
+    m = _STATE_SUFFIX_RE.search(proper_name or "")
+    return m.group(1) if m else "??"
+
+def _print_state_counts(names, label):
+    counts = {}
+    for n in names:
+        st = _state_of(n)
+        counts[st] = counts.get(st, 0) + 1
+    print(f"  {label}: {len(names)} teams across {len(counts)} states")
+    items = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))
+    line = "    "
+    for st, c in items:
+        piece = f"{st} {c}   "
+        if len(line) + len(piece) > 100:
+            print(line.rstrip()); line = "    "
+        line += piece
+    if line.strip():
+        print(line.rstrip())
+
+def _preview_existing_batch(cursor, batch_id):
+    row = cursor.execute("SELECT batch_name, created_date, total_teams, status "
+                         "FROM scraping_batches WHERE batch_id = ?", batch_id).fetchone()
+    if row:
+        print(f"  Batch {batch_id}: '{row.batch_name}' (created {row.created_date}, "
+              f"total_teams {row.total_teams}, status {row.status})")
+    counts = cursor.execute("SELECT status, COUNT(*) FROM dbo.team_scraping_status "
+                            "WHERE batch_id = ? GROUP BY status ORDER BY status", batch_id).fetchall()
+    print("  Team status: " + (", ".join(f"{st} {n}" for st, n in counts) or "(no status rows)"))
+    urls = get_urls_to_process(cursor, batch_id, URL_PROCESS_LIMIT)
+    if not urls:
+        print("  Next run: nothing left to scrape -> would mark this batch 'completed' and run "
+              "FinalizeMaxPrepsData on it. The run after that would start a fresh batch.")
+        return
+    retries = cursor.execute("SELECT COUNT(*) FROM dbo.team_scraping_status "
+                             "WHERE batch_id = ? AND status = 'failed'", batch_id).fetchone()[0]
+    print(f"  Next run would scrape {len(urls)} teams (limit {URL_PROCESS_LIMIT}; "
+          f"failed teams go first -- {retries} failed in this batch).")
+    _print_state_counts([u[2] for u in urls], "Next run")
+
+def _preview_new_batch(cursor, team_ids, kind):
+    names = dict(cursor.execute("SELECT Team_ID, MIN(ProperName) FROM dbo.URL_ProperName_Mapping "
+                                "WHERE Team_ID IS NOT NULL GROUP BY Team_ID").fetchall())
+    ids = sorted(set(team_ids))
+    print(f"  Would CREATE a new {kind} batch with {len(ids)} teams.")
+    _print_state_counts([names.get(t) for t in ids], "Whole batch")
+    first = ids[:URL_PROCESS_LIMIT]
+    print(f"  Next run would scrape the first {len(first)} by team_id (limit {URL_PROCESS_LIMIT}).")
+    _print_state_counts([names.get(t) for t in first], "Next run")
+
+def run_preview(args, playoff):
+    logging.disable(logging.INFO)  # keep get_urls_to_process() chatter out of the scraper log
+    connection = None
+    try:
+        connection = pyodbc.connect(DB_CONNECTION_STRING)
+        cursor = connection.cursor()
+        print("\n" + "=" * 60)
+        print("  PREVIEW -- read-only, nothing will be written")
+        print("=" * 60)
+        auto_note = (f" (auto chose {'PLAYOFF' if playoff else 'FULL SWEEP'}: ISO week "
+                     f"{datetime.now().isocalendar()[1]}, playoff from week {PLAYOFF_START_ISO_WEEK} "
+                     f"through January)") if args.mode == 'auto' else ""
+        print(f"Mode: --mode {args.mode}{auto_note}")
+        if args.force_new_batch:
+            print("Note: --force-new-batch no longer changes behavior (see setup_and_get_batch).")
+        if _os.path.exists(_LOCK_FILE):
+            print(f"Lock file present ({_LOCK_FILE}) -- a scraper may be running now; "
+                  f"a real run would wait or refuse to start.")
+
+        if not playoff:
+            running = cursor.execute(
+                "SELECT TOP 1 batch_id FROM scraping_batches WHERE status = 'running' "
+                "AND batch_name LIKE 'MaxPreps Scrape - %' ORDER BY created_date DESC;").fetchone()
+            if running:
+                print(f"Would RESUME full-sweep batch {running[0]}.")
+                _preview_existing_batch(cursor, running[0])
+            else:
+                teams = cursor.execute(
+                    "SELECT DISTINCT M.Team_ID FROM dbo.URL_ProperName_Mapping AS M "
+                    "JOIN dbo.HS_Team_Names AS T ON T.ID = M.Team_ID "
+                    "WHERE M.Team_ID IS NOT NULL;").fetchall()
+                if not teams:
+                    print("No teams found -- a real run would not create a batch.")
+                else:
+                    _preview_new_batch(cursor, [t[0] for t in teams], "full-sweep")
+            return
+
+        running = cursor.execute(
+            "SELECT TOP 1 batch_id FROM scraping_batches WHERE status = 'running' "
+            "AND batch_name LIKE ? ORDER BY created_date DESC;", PLAYOFF_BATCH_PREFIX + '%').fetchone()
+        if running:
+            print(f"Would RESUME playoff batch {running[0]}.")
+            _preview_existing_batch(cursor, running[0])
+            return
+
+        recent = cursor.execute(
+            "SELECT TOP 1 batch_id, created_date FROM scraping_batches WHERE batch_name LIKE ? "
+            "AND created_date >= DATEADD(day, -6, GETDATE()) ORDER BY created_date DESC;",
+            PLAYOFF_BATCH_PREFIX + '%').fetchone()
+        full_running = cursor.execute(
+            "SELECT batch_id FROM scraping_batches WHERE status = 'running' "
+            "AND batch_name LIKE 'MaxPreps Scrape - %' ORDER BY created_date DESC;").fetchall()
+        if recent or datetime.now().weekday() not in (6, 0):
+            if full_running:
+                print(f"No playoff batch to run tonight -> would CONTINUE full-sweep batch {full_running[0][0]}.")
+                _preview_existing_batch(cursor, full_running[0][0])
+            elif recent:
+                print(f"This week's playoff batch ({recent[0]}, created {recent[1]}) is finished; "
+                      f"next one starts Sunday (or Monday). A real run would do nothing.")
+            else:
+                print("New playoff batches start on Sunday (or Monday); a real run today would do nothing.")
+            return
+
+        for (old_id,) in full_running:
+            print(f"Would FINALIZE and close full-sweep batch {old_id} before switching to playoff mode.")
+        cursor.execute(PLAYOFF_TEAMS_SQL, PLAYOFF_SCHEDULE_DAYS_BACK, PLAYOFF_SCHEDULE_DAYS_AHEAD,
+                       PLAYOFF_WON_WITHIN_DAYS)
+        while cursor.description is None and cursor.nextset():
+            pass
+        teams = cursor.fetchall()
+        if not teams:
+            print("No teams with a game this week or a recent win -- a real run would not create a batch.")
+        else:
+            _preview_new_batch(cursor, [t[0] for t in teams], "playoff")
+    except Exception as e:
+        print(f"Preview failed: {e}")
+    finally:
+        if connection:
+            try:
+                connection.rollback()
+            except Exception:
+                pass
+            connection.close()
+        logging.disable(logging.NOTSET)
+        print("=" * 60 + "\n  End of preview -- no changes made.\n" + "=" * 60 + "\n")
+
 # --- MAIN EXECUTION BLOCK ---
 def main():
     import argparse
@@ -492,7 +758,19 @@ def main():
                          help="Start a new full-sweep batch now even if today isn't Sunday. "
                               "For manual/deliberate kickoffs only -- never pass this from "
                               "an unattended/scheduled run.")
+    parser.add_argument('--mode', choices=['auto', 'full', 'playoff'], default='auto',
+                         help="auto (default): playoff mode from ISO week %d through January, "
+                              "full sweep otherwise. full / playoff force one." % PLAYOFF_START_ISO_WEEK)
+    parser.add_argument('--preview', action='store_true',
+                        help="Read-only dry run: show the resolved mode, the batch the next run "
+                             "would resume or create, and how many teams (by state) it would "
+                             "scrape. Writes nothing, takes no lock, starts no browser.")
     args = parser.parse_args()
+    playoff = args.mode == 'playoff' or (args.mode == 'auto' and _is_playoff_season())
+
+    if args.preview:
+        run_preview(args, playoff)
+        return
 
     logger.info("=== Starting Simplified DB-Driven MaxPreps Scraper ===" +
                 (" (--force-new-batch)" if args.force_new_batch else ""))
@@ -506,7 +784,12 @@ def main():
         cursor = connection.cursor()
         logger.info("Connected to database successfully.")
 
-        batch_id = setup_and_get_batch(cursor, BATCH_NAME, force_new=args.force_new_batch)
+        if playoff:
+            logger.info(f"Mode: PLAYOFF (--mode {args.mode}) -- only teams still playing.")
+            batch_id = setup_playoff_batch(cursor)
+        else:
+            logger.info(f"Mode: FULL SWEEP (--mode {args.mode}).")
+            batch_id = setup_and_get_batch(cursor, BATCH_NAME, force_new=args.force_new_batch)
         if not batch_id: return
 
         urls_to_process = get_urls_to_process(cursor, batch_id, URL_PROCESS_LIMIT)
@@ -524,7 +807,7 @@ def main():
             cursor.execute("UPDATE scraping_batches SET status = 'completed' WHERE batch_id = ?", batch_id)
             cursor.connection.commit()
             logger.info(f"Batch {batch_id} marked 'completed'. Next run will start a fresh batch "
-                        f"covering every mapped team in dbo.URL_ProperName_Mapping.")
+                        f"({'playoff mode: next week' if playoff else 'covering every mapped team in dbo.URL_ProperName_Mapping'}).")
 
             # 2026-09-13: auto-finalize when the batch flips running ->
             # completed. 2026-09-19: FinalizeMaxPrepsData's Unmatched_Opponents

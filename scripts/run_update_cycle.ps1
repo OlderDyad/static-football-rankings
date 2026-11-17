@@ -1,4 +1,4 @@
-# ========================================================
+﻿# ========================================================
 #  MASTER UPDATE CYCLE (v9 - Updated January 27, 2026)
 #  0. Updates Combined Ratings in SQL (before JSON gen)
 #  1. Syncs Google Sheets & Images to SQL (Python)
@@ -29,11 +29,18 @@ $sqlDatabase = "hs_football_database"
 Write-Host "STEP 0: Updating Combined Ratings..." -ForegroundColor Cyan
 
 try {
-    $result = Invoke-Sqlcmd `
-        -ServerInstance $sqlServer `
-        -Database $sqlDatabase `
-        -Query "EXEC UpdateCombinedRating @Season = NULL, @Week = NULL" `
-        -TrustServerCertificate
+    # 2026-11-17: -TrustServerCertificate only exists in SqlServer module v22+;
+    # the installed Invoke-Sqlcmd rejected it, so step 0 had silently been skipped.
+    $sqlArgs = @{
+        ServerInstance = $sqlServer
+        Database       = $sqlDatabase
+        Query          = "EXEC UpdateCombinedRating @Season = NULL, @Week = NULL"
+        QueryTimeout   = 0
+    }
+    if ((Get-Command Invoke-Sqlcmd).Parameters.ContainsKey('TrustServerCertificate')) {
+        $sqlArgs.TrustServerCertificate = $true
+    }
+    $result = Invoke-Sqlcmd @sqlArgs
 
     $rowsUpdated = $result.Rows_Updated
     $duration = $result.Duration_Seconds

@@ -1,0 +1,19 @@
+
+>>> set-dates MA --file MA_season_date_fix.csv --reason "date-year typo (2026-11-15)" --commit
+
+SET DATES MA - COMMIT
+ 1 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_set_dates_COMMITTED_20261115_1543.csv
+   Season  OldDate     NewDate     DayShift  Home           Home_Score  Visitor         Visitor_Score  Source                                    Note                                      ID                                  
+   1899    1999-11-03  1899-11-03  -36524    Brockton (MA)  0           Hyde Park (MA)  0              http://www.brocktonpublicschools.com/pag  date year typo 1999-11-03 for season 189  67F453C5-CF17-4342-B0E4-8AEE4B6EC00D
+   Status     Listed  Updated  Err 
+   COMMITTED  1       1        None
+
+>>> set-dates NC --file NC_season_date_fix.csv --reason "date-year typo (2026-11-15)" --commit
+
+SET DATES NC - COMMIT
+ 0 games -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NC\NC_set_dates_COMMITTED_20261115_1543.csv
+   (no rows)
+   Status     Listed  Updated  Err 
+   COMMITTED  1       0        None
+
+=== OK 2026-11-15 15:43:50

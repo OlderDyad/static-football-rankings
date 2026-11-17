@@ -1,0 +1,6 @@
+same-score-fix WY --commit
+move-team WY --from "Basin Riverside (WY)" --to "Basin (WY)" --seasons 1975-1986 --ids coop_ids/WY_c3_000.csv --reason "WY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup WY --commit
+review-pairs WY --commit
+same-score-fix WY
+query WY wy_dump.sql

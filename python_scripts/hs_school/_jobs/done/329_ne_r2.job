@@ -1,0 +1,9 @@
+same-score-fix NE --commit
+consolidate NE --reason "NE round 2 (2026-11-13): same-school names, see _coop_scripts/NE_cfg.py"
+move-team NE --from "Cedar Rapids (NE)" --to "Cedar Rapids Riverside (NE)" --seasons 1980-2003 --ids coop_ids/NE_c3_000.csv --reason "NE co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NE --from "Emerson (NE)" --to "Emerson-Hubbard (NE)" --seasons 1972-1990 --ids coop_ids/NE_c3_001.csv --reason "NE co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+move-team NE --from "Scribner (NE)" --to "Scribner-Snyder (NE)" --seasons 1989-2003 --ids coop_ids/NE_c3_002.csv --reason "NE co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+dedup NE --commit
+review-pairs NE --commit
+same-score-fix NE
+query NE ne_dump.sql

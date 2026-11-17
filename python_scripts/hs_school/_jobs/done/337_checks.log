@@ -1,0 +1,782 @@
+
+>>> query AK season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_season_date_1_20261115_1520.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_season_date_2_20261115_1520.csv
+
+>>> query AK college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_college_check_1_20261115_1521.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_college_check_2_20261115_1521.csv
+ set 3: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_college_check_3_20261115_1521.csv
+ set 4: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_college_check_4_20261115_1521.csv
+
+>>> query AK forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_forfeits_1_20261115_1521.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AK\AK_q_forfeits_2_20261115_1521.csv
+
+>>> query CA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_season_date_1_20261115_1521.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_season_date_2_20261115_1521.csv
+
+>>> query CA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_college_check_1_20261115_1521.csv
+ set 2: 213 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_college_check_2_20261115_1521.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_college_check_3_20261115_1521.csv
+ set 4: 3021 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_college_check_4_20261115_1521.csv
+
+>>> query CA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_forfeits_1_20261115_1521.csv
+ set 2: 85 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CA\CA_q_forfeits_2_20261115_1521.csv
+
+>>> query DC season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_season_date_1_20261115_1521.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_season_date_2_20261115_1521.csv
+
+>>> query DC college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_college_check_1_20261115_1522.csv
+ set 2: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_college_check_2_20261115_1522.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_college_check_3_20261115_1522.csv
+ set 4: 59 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_college_check_4_20261115_1522.csv
+
+>>> query DC forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_forfeits_1_20261115_1522.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DC\DC_q_forfeits_2_20261115_1522.csv
+
+>>> query DE season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_season_date_1_20261115_1522.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_season_date_2_20261115_1522.csv
+
+>>> query DE college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_college_check_1_20261115_1522.csv
+ set 2: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_college_check_2_20261115_1522.csv
+ set 3: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_college_check_3_20261115_1522.csv
+ set 4: 118 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_college_check_4_20261115_1522.csv
+
+>>> query DE forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_forfeits_1_20261115_1522.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\DE\DE_q_forfeits_2_20261115_1522.csv
+
+>>> query GA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_season_date_1_20261115_1522.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_season_date_2_20261115_1522.csv
+
+>>> query GA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_college_check_1_20261115_1523.csv
+ set 2: 94 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_college_check_2_20261115_1523.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_college_check_3_20261115_1523.csv
+ set 4: 1662 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_college_check_4_20261115_1523.csv
+
+>>> query GA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_forfeits_1_20261115_1523.csv
+ set 2: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\GA\GA_q_forfeits_2_20261115_1523.csv
+
+>>> query HI season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_season_date_1_20261115_1523.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_season_date_2_20261115_1523.csv
+
+>>> query HI college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_college_check_1_20261115_1523.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_college_check_2_20261115_1523.csv
+ set 3: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_college_check_3_20261115_1523.csv
+ set 4: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_college_check_4_20261115_1523.csv
+
+>>> query HI forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_forfeits_1_20261115_1523.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\HI\HI_q_forfeits_2_20261115_1523.csv
+
+>>> query IA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_season_date_1_20261115_1523.csv
+ set 2: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_season_date_2_20261115_1523.csv
+
+>>> query IA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_college_check_1_20261115_1524.csv
+ set 2: 122 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_college_check_2_20261115_1524.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_college_check_3_20261115_1524.csv
+ set 4: 347 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_college_check_4_20261115_1524.csv
+
+>>> query IA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_forfeits_1_20261115_1524.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_q_forfeits_2_20261115_1524.csv
+
+>>> query ID season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_season_date_1_20261115_1524.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_season_date_2_20261115_1524.csv
+
+>>> query ID college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_college_check_1_20261115_1524.csv
+ set 2: 33 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_college_check_2_20261115_1524.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_college_check_3_20261115_1524.csv
+ set 4: 91 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_college_check_4_20261115_1524.csv
+
+>>> query ID forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_forfeits_1_20261115_1524.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ID\ID_q_forfeits_2_20261115_1524.csv
+
+>>> query IL season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_season_date_1_20261115_1524.csv
+ set 2: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_season_date_2_20261115_1524.csv
+
+>>> query IL college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 75 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_college_check_1_20261115_1525.csv
+ set 2: 124 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_college_check_2_20261115_1525.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_college_check_3_20261115_1525.csv
+ set 4: 461 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_college_check_4_20261115_1525.csv
+
+>>> query IL forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_forfeits_1_20261115_1525.csv
+ set 2: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_q_forfeits_2_20261115_1525.csv
+
+>>> query IN season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_season_date_1_20261115_1525.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_season_date_2_20261115_1525.csv
+
+>>> query IN college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_college_check_1_20261115_1525.csv
+ set 2: 84 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_college_check_2_20261115_1525.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_college_check_3_20261115_1525.csv
+ set 4: 159 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_college_check_4_20261115_1525.csv
+
+>>> query IN forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_forfeits_1_20261115_1525.csv
+ set 2: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_forfeits_2_20261115_1525.csv
+
+>>> query KY season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_season_date_1_20261115_1525.csv
+ set 2: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_season_date_2_20261115_1525.csv
+
+>>> query KY college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 29 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_college_check_1_20261115_1526.csv
+ set 2: 116 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_college_check_2_20261115_1526.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_college_check_3_20261115_1526.csv
+ set 4: 282 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_college_check_4_20261115_1526.csv
+
+>>> query KY forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_forfeits_1_20261115_1526.csv
+ set 2: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KY\KY_q_forfeits_2_20261115_1526.csv
+
+>>> query MD season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_season_date_1_20261115_1526.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_season_date_2_20261115_1526.csv
+
+>>> query MD college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_college_check_1_20261115_1526.csv
+ set 2: 32 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_college_check_2_20261115_1526.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_college_check_3_20261115_1526.csv
+ set 4: 922 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_college_check_4_20261115_1526.csv
+
+>>> query MD forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_forfeits_1_20261115_1526.csv
+ set 2: 24 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MD\MD_q_forfeits_2_20261115_1526.csv
+
+>>> query ME season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_season_date_1_20261115_1526.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_season_date_2_20261115_1526.csv
+
+>>> query ME college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_college_check_1_20261115_1527.csv
+ set 2: 48 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_college_check_2_20261115_1527.csv
+ set 3: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_college_check_3_20261115_1527.csv
+ set 4: 311 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_college_check_4_20261115_1527.csv
+
+>>> query ME forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_forfeits_1_20261115_1527.csv
+ set 2: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ME\ME_q_forfeits_2_20261115_1527.csv
+
+>>> query MI season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_season_date_1_20261115_1527.csv
+ set 2: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_season_date_2_20261115_1527.csv
+
+>>> query MI college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 59 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_college_check_1_20261115_1527.csv
+ set 2: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_college_check_2_20261115_1527.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_college_check_3_20261115_1527.csv
+ set 4: 1571 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_college_check_4_20261115_1527.csv
+
+>>> query MI forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_forfeits_1_20261115_1527.csv
+ set 2: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MI\MI_q_forfeits_2_20261115_1527.csv
+
+>>> query MN season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_season_date_1_20261115_1527.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_season_date_2_20261115_1527.csv
+
+>>> query MN college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 25 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_college_check_1_20261115_1528.csv
+ set 2: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_college_check_2_20261115_1528.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_college_check_3_20261115_1528.csv
+ set 4: 120 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_college_check_4_20261115_1528.csv
+
+>>> query MN forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_forfeits_1_20261115_1528.csv
+ set 2: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MN\MN_q_forfeits_2_20261115_1528.csv
+
+>>> query MT season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_season_date_1_20261115_1528.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_season_date_2_20261115_1528.csv
+
+>>> query MT college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_college_check_1_20261115_1528.csv
+ set 2: 33 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_college_check_2_20261115_1528.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_college_check_3_20261115_1528.csv
+ set 4: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_college_check_4_20261115_1528.csv
+
+>>> query MT forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_forfeits_1_20261115_1528.csv
+ set 2: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MT\MT_q_forfeits_2_20261115_1528.csv
+
+>>> query ND season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_season_date_1_20261115_1528.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_season_date_2_20261115_1528.csv
+
+>>> query ND college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_college_check_1_20261115_1529.csv
+ set 2: 43 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_college_check_2_20261115_1529.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_college_check_3_20261115_1529.csv
+ set 4: 58 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_college_check_4_20261115_1529.csv
+
+>>> query ND forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_forfeits_1_20261115_1529.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\ND\ND_q_forfeits_2_20261115_1529.csv
+
+>>> query NJ season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_season_date_1_20261115_1529.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_season_date_2_20261115_1529.csv
+
+>>> query NJ college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_college_check_1_20261115_1529.csv
+ set 2: 178 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_college_check_2_20261115_1529.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_college_check_3_20261115_1529.csv
+ set 4: 1368 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_college_check_4_20261115_1529.csv
+
+>>> query NJ forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_forfeits_1_20261115_1529.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NJ\NJ_q_forfeits_2_20261115_1529.csv
+
+>>> query NV season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_season_date_1_20261115_1529.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_season_date_2_20261115_1529.csv
+
+>>> query NV college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_college_check_1_20261115_1530.csv
+ set 2: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_college_check_2_20261115_1530.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_college_check_3_20261115_1530.csv
+ set 4: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_college_check_4_20261115_1530.csv
+
+>>> query NV forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_forfeits_1_20261115_1530.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NV\NV_q_forfeits_2_20261115_1530.csv
+
+>>> query NY season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_season_date_1_20261115_1530.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_season_date_2_20261115_1530.csv
+
+>>> query NY college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_college_check_1_20261115_1530.csv
+ set 2: 134 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_college_check_2_20261115_1530.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_college_check_3_20261115_1530.csv
+ set 4: 692 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_college_check_4_20261115_1530.csv
+
+>>> query NY forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_forfeits_1_20261115_1530.csv
+ set 2: 74 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_forfeits_2_20261115_1530.csv
+
+>>> query OH season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_season_date_1_20261115_1530.csv
+ set 2: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_season_date_2_20261115_1530.csv
+
+>>> query OH college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 51 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_college_check_1_20261115_1531.csv
+ set 2: 168 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_college_check_2_20261115_1531.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_college_check_3_20261115_1531.csv
+ set 4: 2014 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_college_check_4_20261115_1531.csv
+
+>>> query OH forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_forfeits_1_20261115_1531.csv
+ set 2: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OH\OH_q_forfeits_2_20261115_1531.csv
+
+>>> query OR season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_season_date_1_20261115_1531.csv
+ set 2: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_season_date_2_20261115_1531.csv
+
+>>> query OR college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_college_check_1_20261115_1531.csv
+ set 2: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_college_check_2_20261115_1531.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_college_check_3_20261115_1531.csv
+ set 4: 236 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_college_check_4_20261115_1531.csv
+
+>>> query OR forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_forfeits_1_20261115_1531.csv
+ set 2: 5 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\OR\OR_q_forfeits_2_20261115_1531.csv
+
+>>> query PA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_season_date_1_20261115_1531.csv
+ set 2: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_season_date_2_20261115_1531.csv
+
+>>> query PA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_college_check_1_20261115_1532.csv
+ set 2: 343 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_college_check_2_20261115_1532.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_college_check_3_20261115_1532.csv
+ set 4: 4757 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_college_check_4_20261115_1532.csv
+
+>>> query PA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_forfeits_1_20261115_1532.csv
+ set 2: 16 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\PA\PA_q_forfeits_2_20261115_1532.csv
+
+>>> query SD season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_season_date_1_20261115_1532.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_season_date_2_20261115_1532.csv
+
+>>> query SD college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_college_check_1_20261115_1532.csv
+ set 2: 45 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_college_check_2_20261115_1532.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_college_check_3_20261115_1532.csv
+ set 4: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_college_check_4_20261115_1532.csv
+
+>>> query SD forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_forfeits_1_20261115_1532.csv
+ set 2: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SD\SD_q_forfeits_2_20261115_1532.csv
+
+>>> query VA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_season_date_1_20261115_1532.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_season_date_2_20261115_1532.csv
+
+>>> query VA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_college_check_1_20261115_1533.csv
+ set 2: 88 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_college_check_2_20261115_1533.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_college_check_3_20261115_1533.csv
+ set 4: 471 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_college_check_4_20261115_1533.csv
+
+>>> query VA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_forfeits_1_20261115_1533.csv
+ set 2: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VA\VA_q_forfeits_2_20261115_1533.csv
+
+>>> query VT season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_season_date_1_20261115_1533.csv
+ set 2: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_season_date_2_20261115_1533.csv
+
+>>> query VT college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_college_check_1_20261115_1533.csv
+ set 2: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_college_check_2_20261115_1533.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_college_check_3_20261115_1533.csv
+ set 4: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_college_check_4_20261115_1533.csv
+
+>>> query VT forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_forfeits_1_20261115_1533.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\VT\VT_q_forfeits_2_20261115_1533.csv
+
+>>> query WA season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_season_date_1_20261115_1533.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_season_date_2_20261115_1533.csv
+
+>>> query WA college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_college_check_1_20261115_1533.csv
+ set 2: 53 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_college_check_2_20261115_1533.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_college_check_3_20261115_1533.csv
+ set 4: 1164 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_college_check_4_20261115_1533.csv
+
+>>> query WA forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_forfeits_1_20261115_1534.csv
+ set 2: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WA\WA_q_forfeits_2_20261115_1534.csv
+
+>>> query WI season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_season_date_1_20261115_1534.csv
+ set 2: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_season_date_2_20261115_1534.csv
+
+>>> query WI college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_college_check_1_20261115_1534.csv
+ set 2: 47 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_college_check_2_20261115_1534.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_college_check_3_20261115_1534.csv
+ set 4: 661 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_college_check_4_20261115_1534.csv
+
+>>> query WI forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_forfeits_1_20261115_1534.csv
+ set 2: 22 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WI\WI_q_forfeits_2_20261115_1534.csv
+
+>>> query WV season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_season_date_1_20261115_1534.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_season_date_2_20261115_1534.csv
+
+>>> query WV college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_college_check_1_20261115_1534.csv
+ set 2: 106 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_college_check_2_20261115_1534.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_college_check_3_20261115_1534.csv
+ set 4: 1142 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_college_check_4_20261115_1534.csv
+
+>>> query WV forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_forfeits_1_20261115_1534.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\WV\WV_q_forfeits_2_20261115_1534.csv
+
+>>> query AL season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_season_date_1_20261115_1534.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_season_date_2_20261115_1534.csv
+
+>>> query AL college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_college_check_1_20261115_1535.csv
+ set 2: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_college_check_2_20261115_1535.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_college_check_3_20261115_1535.csv
+ set 4: 993 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_college_check_4_20261115_1535.csv
+
+>>> query AL forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 13 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_forfeits_1_20261115_1535.csv
+ set 2: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AL\AL_q_forfeits_2_20261115_1535.csv
+
+>>> query SC season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_season_date_1_20261115_1535.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_season_date_2_20261115_1535.csv
+
+>>> query SC college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_college_check_1_20261115_1535.csv
+ set 2: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_college_check_2_20261115_1535.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_college_check_3_20261115_1535.csv
+ set 4: 121 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_college_check_4_20261115_1535.csv
+
+>>> query SC forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_forfeits_1_20261115_1535.csv
+ set 2: 21 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\SC\SC_q_forfeits_2_20261115_1535.csv
+
+>>> query AZ season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_season_date_1_20261115_1535.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_season_date_2_20261115_1535.csv
+
+>>> query AZ college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_1_20261115_1536.csv
+ set 2: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_2_20261115_1536.csv
+ set 3: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_3_20261115_1536.csv
+ set 4: 173 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_college_check_4_20261115_1536.csv
+
+>>> query AZ forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_forfeits_1_20261115_1536.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_forfeits_2_20261115_1536.csv
+
+>>> query CO season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_q_season_date_1_20261115_1536.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_q_season_date_2_20261115_1536.csv
+
+>>> query CO college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_q_college_check_1_20261115_1536.csv
+ set 2: 32 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_q_college_check_2_20261115_1536.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_q_college_check_3_20261115_1536.csv
+ set 4: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_q_college_check_4_20261115_1536.csv
+
+>>> query CO forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_q_forfeits_1_20261115_1536.csv
+ set 2: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_q_forfeits_2_20261115_1536.csv
+
+>>> query FL season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_season_date_1_20261115_1536.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_season_date_2_20261115_1536.csv
+
+>>> query FL college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 10 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_1_20261115_1537.csv
+ set 2: 46 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_2_20261115_1537.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_3_20261115_1537.csv
+ set 4: 1509 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_college_check_4_20261115_1537.csv
+
+>>> query FL forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_forfeits_1_20261115_1537.csv
+ set 2: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\FL\FL_q_forfeits_2_20261115_1537.csv
+
+>>> query KS season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_season_date_1_20261115_1537.csv
+ set 2: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_season_date_2_20261115_1537.csv
+
+>>> query KS college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 37 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_college_check_1_20261115_1537.csv
+ set 2: 103 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_college_check_2_20261115_1537.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_college_check_3_20261115_1537.csv
+ set 4: 403 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_college_check_4_20261115_1537.csv
+
+>>> query KS forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_forfeits_1_20261115_1537.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\KS\KS_q_forfeits_2_20261115_1537.csv
+
+>>> query MO season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_season_date_1_20261115_1537.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_season_date_2_20261115_1537.csv
+
+>>> query MO college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 27 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_college_check_1_20261115_1537.csv
+ set 2: 121 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_college_check_2_20261115_1537.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_college_check_3_20261115_1537.csv
+ set 4: 1933 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_college_check_4_20261115_1537.csv
+
+>>> query MO forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_forfeits_1_20261115_1537.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MO\MO_q_forfeits_2_20261115_1537.csv
+
+>>> query NE season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_season_date_1_20261115_1537.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_season_date_2_20261115_1537.csv
+
+>>> query NE college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_college_check_1_20261115_1538.csv
+ set 2: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_college_check_2_20261115_1538.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_college_check_3_20261115_1538.csv
+ set 4: 263 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_college_check_4_20261115_1538.csv
+
+>>> query NE forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_forfeits_1_20261115_1538.csv
+ set 2: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NE\NE_q_forfeits_2_20261115_1538.csv
+
+>>> query NM season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_season_date_1_20261115_1538.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_season_date_2_20261115_1538.csv
+
+>>> query NM college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_college_check_1_20261115_1538.csv
+ set 2: 20 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_college_check_2_20261115_1538.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_college_check_3_20261115_1538.csv
+ set 4: 45 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_college_check_4_20261115_1538.csv
+
+>>> query NM forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_forfeits_1_20261115_1538.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_forfeits_2_20261115_1538.csv
+
+>>> query UT season_date.sql
+
+QUERY season_date (2 result sets)
+ set 1: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_q_season_date_1_20261115_1538.csv
+ set 2: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_q_season_date_2_20261115_1538.csv
+
+>>> query UT college_check.sql
+
+QUERY college_check (4 result sets)
+ set 1: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_q_college_check_1_20261115_1538.csv
+ set 2: 30 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_q_college_check_2_20261115_1538.csv
+ set 3: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_q_college_check_3_20261115_1538.csv
+ set 4: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_q_college_check_4_20261115_1538.csv
+
+>>> query UT forfeits.sql
+
+QUERY forfeits (2 result sets)
+ set 1: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_q_forfeits_1_20261115_1539.csv
+ set 2: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_q_forfeits_2_20261115_1539.csv
+
+=== OK 2026-11-15 15:39:00

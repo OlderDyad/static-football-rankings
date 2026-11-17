@@ -105,7 +105,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 11.23,1942,1942-11-28,32821,Boston College,12,Holy Cross,55,,37.1,24.0,13.1,-43,-56.1,-5.29,10,10,MA,MA,
 11.22,1982,1982-10-30,308998,Maranatha Baptist,7,Northwestern College,3,,-51.9,-21.4,-30.5,4,34.5,2.98,8,5,WI,WI,
 11.21,1951,1951-11-17,900012448,SW Oklahoma St,8,Midwestern St,77,,-43.6,-5.2,-38.4,-69,-30.6,-2.75,5,6,OK,TX,
-11.2,2026,2026-10-03,445617,Presbyterian,55,St Thomas MN,21,,-17.3,1.7,-19.0,34,53.0,4.36,9,10,SC,MN,scores swapped?; far apart (SC vs MN)
 11.2,1921,1921-10-15,344605,Cornell NY,110,Case Western Reserve,0,,55.4,-16.2,71.6,110,38.4,3.55,8,6,NY,OH,huge score
 11.19,1999,1999-11-06,239389,St Francis IN,61,Trine,14,,-16.7,-25.2,8.5,47,38.5,3.04,11,5,IN,IN,
 11.17,1906,1906-10-20,13250,Vanderbilt,78,Alabama,0,,36.3,-1.5,37.8,78,40.2,4.4,9,6,TN,AL,
@@ -174,6 +173,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 10.66,1967,1967-10-07,900011753,Whitworth,21,Central Washington,0,,-33.3,-18.8,-14.5,21,35.5,2.96,5,10,WA,WA,scores swapped?
 10.65,1912,1912-10-05,15503,Utah,9,Wyoming,0,,25.4,-25.6,50.9,9,-41.9,-3.63,7,9,UT,WY,
 10.64,1951,1951-10-20,274381,Massachusetts,40,Rhode Island,7,,-19.7,-10.1,-9.6,33,42.6,3.83,8,8,MA,RI,
+10.63,2026,2026-11-14,900028152,Washington St,73,Colorado St,7,,41.9,29.1,12.9,66,53.1,4.28,10,10,WA,CO,
 10.63,2022,2022-09-24,427780,Midwestern St,77,Simon Fraser,0,,-9.5,-33.9,24.4,77,52.6,4.21,11,9,TX,,
 10.63,1937,1937-10-30,29460,McDaniel,0,West Virginia,64,Y,-12.2,16.4,-28.6,-64,-35.4,-3.72,5,10,MD,WV,
 10.6,1922,1922-11-11,900015208,Carson-Newman,86,Cumberlands KY,0,,-1.5,-53.4,51.9,86,34.1,3.24,9,5,TN,KY,
@@ -198,6 +198,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 10.43,1952,1952-11-08,204530,Lenoir-Rhyne,76,Guilford,0,,11.7,-30.8,42.5,76,33.5,3.03,9,5,NC,NC,
 10.43,1917,1917-10-27,344552,Baylor,103,Hardin-Simmons,0,,17.5,-48.0,65.4,103,37.6,3.23,9,6,TX,TX,huge score
 10.42,1938,1938-09-05,900007541,Northern St SD,0,Dakota Wesleyan,35,Y,-35.1,-26.1,-8.9,-35,-26.1,-2.64,5,5,SD,SD,
+10.42,2026,2026-10-03,445617,Presbyterian,55,St Thomas MN,21,,-19.4,1.2,-20.6,34,54.6,4.4,10,11,SC,MN,scores swapped?; far apart (SC vs MN)
 10.42,1949,1949-11-24,131972,Pacific,33,UC-Davis,15,Y,46.1,-25.5,71.6,18,-53.6,-4.67,12,9,CA,CA,
 10.42,1997,1997-10-18,238244,Alma,56,Albion,16,,-29.1,-22.2,-6.9,40,46.9,3.85,9,9,MI,MI,
 10.41,1908,1908-11-23,91114,Louisiana Tech,0,LSU,22,,-23.8,32.9,-56.7,-22,34.7,3.85,5,10,LA,LA,
@@ -219,6 +220,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 10.29,1925,1925-11-28,22272,Mercer,30,Marquette,0,,-5.4,-2.3,-3.1,30,33.1,3.17,9,5,GA,WI,
 10.29,1939,1939-11-17,271655,San Diego Marines,7,Cal Poly SLO,20,,1.8,-18.3,20.1,-13,-33.1,-3.7,5,9,CA,CA,scores swapped?
 10.29,1913,1913-10-04,345635,Maryland,45,Richmond,0,,4.1,-9.2,13.3,45,31.7,2.65,5,8,MD,VA,
+10.28,2026,2026-11-14,900027862,Bridgewater VA,70,Averett,0,,-58.3,-76.9,18.6,70,51.4,4.14,10,10,VA,VA,
 10.26,1975,1975-11-15,900015836,Mars Hill,65,Newberry,7,,4.4,-13.2,17.6,58,40.4,3.49,7,9,NC,SC,
 10.25,1887,1887-11-12,8503,Trinity CT,26,Stevens,0,,-13.6,-1.2,-12.4,26,38.4,2.55,10,6,CT,NJ,
 10.25,1926,1926-11-06,22670,Ohio State,13,Wilmington,7,,29.4,-8.2,37.5,6,-31.5,-3.13,8,5,OH,OH,
@@ -619,7 +621,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 8.82,1926,1926-08-01,355622,Arkansas,0,Ouachita Baptist,49,Y,13.2,18.5,-5.3,-49,-43.7,-4.33,11,9,AR,AR,undated
 8.82,1983,1983-08-01,360301,Manhattan,7,St Peter's,21,Y,-35.0,-48.1,13.1,-14,-27.1,-2.33,8,5,NY,NJ,scores swapped?; undated
 8.82,2013,2013-11-09,389666,Bluffton,24,Franklin,17,,-60.3,-19.2,-41.1,7,48.1,3.78,10,12,OH,IN,
-8.81,2026,2026-08-28,443911,Lenoir-Rhyne,45,Virginia Union,3,,-11.0,-9.0,-2.1,42,44.1,3.62,10,10,NC,VA,
 8.81,1974,1974-09-28,50463,UCLA,56,Michigan St,14,,30.8,37.2,-6.4,42,48.4,4.1,11,11,CA,MI,far apart (CA vs MI)
 8.81,1964,1964-11-07,900026766,Western Colorado,77,Fort Lewis,13,,-5.5,-34.2,28.8,64,35.2,3.27,8,8,CO,CO,
 8.81,1920,1920-10-23,900017035,Lawrence,27,Northwestern,0,,7.7,16.0,-8.2,27,35.2,3.07,8,8,WI,IL,
@@ -689,6 +690,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 8.68,1952,1952-10-11,325745,North Dakota St,48,South Dakota St,14,,-17.1,-12.1,-5.1,34,39.1,3.53,9,9,ND,SD,
 8.68,1916,1916-08-01,360690,Bloomsburg,21,Susquehanna,0,Y,-15.3,4.9,-20.1,21,41.1,3.54,9,10,PA,PA,scores swapped?; undated
 8.68,2012,2012-09-22,383505,Widener,90,Wilkes,0,,-23.8,-66.4,42.7,90,47.3,3.71,12,10,PA,PA,huge score
+8.67,2026,2026-10-10,445847,Greenville,28,Martin Luther,0,,-95.4,-80.1,-15.4,28,43.4,3.49,10,10,IL,MN,scores swapped?
 8.67,1891,1891-09-29,8825,Lehigh,62,Bucknell,4,,32.1,21.6,10.5,58,47.5,3.48,14,9,PA,PA,
 8.67,1925,1925-11-07,22099,Dartmouth,62,Cornell NY,13,,37.4,23.1,14.3,49,34.7,3.33,8,8,NH,NY,
 8.67,1962,1962-11-24,43571,Colorado,34,Air Force,10,,3.5,22.9,-19.4,24,43.4,4.16,10,10,CO,CO,scores swapped?
@@ -877,13 +879,13 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 8.35,1919,1919-11-15,88065,Arkansas Tech,19,Arkansas St,0,,-42.0,-36.6,-5.4,19,24.4,2.17,5,7,AR,AR,
 8.35,1921,1921-11-04,329575,Millsaps,7,Birmingham-Southern,7,,-54.7,-26.9,-27.8,0,27.8,2.57,5,10,MS,AL,
 8.35,1971,1971-10-16,900000679,Olivet,28,Hope,7,,-23.7,-20.4,-3.3,21,24.3,2.01,5,7,MI,MI,
-8.34,2026,2026-10-24,900003954,Pittsburg St,52,Central Oklahoma,14,,-6.1,-2.4,-3.7,38,41.7,3.43,10,10,KS,OK,
 8.34,1944,1944-11-11,33618,Bucknell,78,New York,0,,-6.3,-47.3,40.9,78,37.1,3.46,10,8,PA,NY,
 8.34,2001,2001-11-03,75579,West Virginia,80,Rutgers,7,,37.2,10.1,27.2,73,45.8,3.65,11,11,WV,NJ,
 8.34,1957,1957-10-19,217234,Wheaton,66,Illinois Wesleyan,7,,-2.8,-35.0,32.2,59,26.8,2.43,9,5,IL,IL,
 8.34,1960,1960-10-15,257356,Buffalo,40,Youngstown St,13,,-1.8,-0.2,-1.6,27,28.6,2.63,6,8,NY,OH,
 8.34,1958,1958-11-15,276859,Presbyterian,42,Appalachian St,0,,8.3,-2.5,10.7,42,31.3,2.77,6,10,SC,NC,
 8.34,1974,1974-11-23,364276,Northwestern St,40,SE Louisiana St,3,,0.5,7.2,-6.7,37,43.7,3.7,11,10,LA,LA,
+8.33,2026,2026-11-14,900027991,Martin Luther,57,Greenville,0,,-80.1,-95.4,15.4,57,41.6,3.35,10,10,MN,IL,
 8.33,1914,1914-11-26,16665,Florida,14,Mercer,0,,3.6,-34.7,38.3,14,-24.3,-2.11,7,5,FL,GA,
 8.33,1936,1936-10-03,28461,Fordham,66,Franklin & Marshall,7,,27.4,3.7,23.7,59,35.3,3.55,8,9,NY,PA,
 8.33,1945,1945-11-17,34181,Michigan St,33,Penn State,0,,15.6,17.9,-2.3,33,35.3,3.2,9,8,MI,PA,
@@ -895,7 +897,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 8.33,1985,1985-11-09,288727,Western Illinois,7,Winona St,3,,-1.2,-36.4,35.2,4,-31.2,-2.65,10,6,IL,MN,
 8.33,1989,1989-10-14,310641,Southern Oregon,52,Lewis & Clark,14,,-18.3,-29.5,11.2,38,26.8,2.28,9,5,OR,OR,
 8.32,2016,2016-10-01,401761,Guilford,59,Catholic,0,,-40.1,-57.5,17.4,59,41.6,3.27,10,10,NC,DC,
-8.32,2026,2026-10-03,445638,Seton Hill,29,California PA,0,,-20.7,-6.2,-14.6,29,43.6,3.58,11,10,PA,PA,
 8.32,1917,1917-11-29,18090,TCU,34,Baylor,0,,12.0,17.5,-5.4,34,39.4,3.39,10,9,TX,TX,
 8.32,1950,1950-09-30,36862,Stanford,55,San Francisco,7,,30.8,26.4,4.4,48,43.6,3.79,10,11,CA,CA,
 8.32,1959,1959-11-21,41894,Duke,0,North Carolina,50,,23.8,32.2,-8.4,-50,-41.6,-3.76,10,10,NC,NC,
@@ -1138,6 +1139,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.99,2000,2000-09-23,314924,Eastern Oregon,49,Simon Fraser,18,,-15.0,-19.4,4.4,31,26.6,2.19,5,10,OR,,
 7.99,1920,1920-11-20,344598,Carnegie Mellon,6,Wash & Jeff,0,,14.2,34.8,-20.6,6,26.6,2.32,5,10,PA,PA,
 7.99,1906,1906-11-04,345187,Chattanooga,0,Samford,63,,-53.3,-19.1,-34.2,-63,-28.8,-3.15,6,9,TN,AL,
+7.98,2026,2026-08-28,443911,Lenoir-Rhyne,45,Virginia Union,3,,-12.8,-11.0,-1.9,42,43.9,3.53,11,11,NC,VA,
 7.98,1982,1982-10-23,172762,Alabama St,61,Lane,7,,-7.4,-25.5,18.1,54,35.9,3.1,9,9,AL,TN,
 7.98,1989,1989-10-21,229239,Howard Payne,44,Tarleton St,7,,-20.4,-26.4,6.0,37,31.0,2.64,11,6,TX,TX,
 7.98,1969,1969-11-15,257430,Youngstown St,8,Gustavus Adolphus,40,,-6.3,1.1,-7.5,-32,-24.5,-1.99,8,5,OH,MN,
@@ -1200,6 +1202,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.91,2003,2003-11-15,261057,East Tennessee St,68,Chattanooga,7,,-0.2,-13.7,13.5,61,47.5,3.81,12,12,TN,TN,
 7.91,1958,1958-11-22,332521,Delaware Valley,0,New Jersey,40,,-47.5,-37.1,-10.5,-40,-29.5,-2.61,8,7,PA,NJ,
 7.9,2021,2021-10-09,424322,St Norbert,68,Wisconsin Lutheran,0,,-48.7,-77.2,28.5,68,39.5,3.04,10,10,WI,WI,
+7.9,2026,2026-10-03,445638,Seton Hill,29,California PA,0,,-21.8,-7.3,-14.5,29,43.5,3.5,11,11,PA,PA,
 7.9,1891,1891-11-21,8946,Dickinson,0,Bucknell,0,,-3.8,21.6,-25.4,0,25.4,1.86,5,9,PA,PA,
 7.9,1982,1982-11-06,79794,Troy,45,West Alabama,0,,1.8,-3.7,5.5,45,39.5,3.41,10,10,AL,AL,
 7.9,1972,1972-10-14,87515,Akron,49,Northern Michigan,0,,8.7,-9.2,17.9,49,31.1,2.62,9,7,OH,MI,
@@ -1221,7 +1224,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.89,1962,1962-10-06,900019778,East Stroudsburg,52,Kutztown,7,,-10.2,-26.8,16.6,45,28.4,2.72,9,6,PA,PA,
 7.88,2014,2014-10-04,392626,Lakeland,47,Wisconsin Lutheran,7,,-49.9,-50.5,0.6,40,39.4,3.09,10,10,WI,WI,
 7.88,2016,2016-09-17,401236,Southern U.,64,Alabama St,6,,1.7,-13.0,14.7,58,43.3,3.41,11,11,LA,AL,
-7.88,2026,2026-09-19,444893,Millsaps,27,Hendrix,36,,-32.4,-58.9,26.5,-9,-35.5,-2.92,9,9,MS,AR,
 7.88,1924,1924-11-08,21515,Cornell NY,91,Susquehanna,0,,17.3,-42.2,59.5,91,31.5,3.12,8,8,NY,PA,huge score
 7.88,1928,1928-10-06,23488,Texas A&M,69,Sewanee,0,,15.6,-16.0,31.7,69,37.3,3.48,10,9,TX,TN,
 7.88,1985,1985-10-26,199934,North Dakota,30,St Cloud St,3,,-11.4,0.6,-12.0,27,39.0,3.31,11,9,ND,MN,
@@ -1254,7 +1256,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.85,1961,1961-10-21,82437,Ball St,0,Indiana St,41,,-24.8,-15.2,-9.6,-41,-31.4,-2.94,8,8,IN,IN,
 7.85,1953,1953-12-05,88461,Texas College,46,Arkansas-Pine Bluff,13,,4.8,-1.2,6.0,33,27.0,2.49,5,11,TX,AR,
 7.85,1935,1935-10-12,900022348,Bowling Green,0,Baldwin Wallace,41,,-42.8,23.5,-66.4,-41,25.4,2.61,7,6,OH,OH,
-7.85,2026,2026-10-31,900022156,Martin Luther,42,Westminster MO,14,,-85.4,-78.1,-7.3,28,35.3,2.9,9,9,MN,MO,
 7.85,1943,1943-08-01,253827,Central Michigan,0,Western Michigan,19,,-32.3,9.6,-41.9,-19,22.9,2.22,7,5,MI,MI,undated
 7.85,1952,1952-11-15,264051,Southern Miss,52,Louisiana Tech,0,,32.7,11.6,21.1,52,30.9,2.79,7,9,MS,LA,
 7.85,1980,1980-11-22,286066,Murray St,49,Western Kentucky,0,,14.2,6.4,7.9,49,41.1,3.44,11,10,KY,KY,
@@ -1292,7 +1293,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.83,1981,1981-11-07,286444,Salisbury,13,Delaware St,7,,-37.9,-17.0,-20.9,6,26.9,2.29,5,11,MD,DE,
 7.82,1981,1981-11-07,900007058,Missouri Western,52,Washburn,0,,-5.3,-25.1,19.8,52,32.2,2.73,7,10,MO,KS,
 7.82,2020,2021-02-27,422143,Nicholls St,55,Lamar,0,,12.4,-15.3,27.6,55,27.4,2.31,7,7,LA,TX,
-7.82,2026,2026-09-19,444746,Boston College,22,Maine,16,,38.9,-2.3,41.2,6,-35.2,-2.89,9,9,MA,ME,
 7.82,2004,2004-09-02,1016,Nicholls St,37,Eastern Washington,14,,6.3,27.5,-21.2,23,44.2,3.49,10,13,LA,WA,scores swapped?; far apart (LA vs WA)
 7.82,1896,1896-11-07,9812,Cornell NY,54,Bucknell,0,,31.4,12.6,18.8,54,35.2,3.68,9,9,NY,PA,
 7.82,1984,1984-11-03,178446,Jackson St,47,Texas Southern,0,,2.9,-5.4,8.3,47,38.7,3.26,9,11,MS,TX,
@@ -1347,7 +1347,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.77,1912,1912-11-16,360657,Illinois St,3,Eastern Illinois,32,Y,-96.3,-47.9,-48.4,-29,19.4,1.68,5,5,IL,IL,
 7.77,2013,2013-10-05,388059,Lake Erie,10,Ashland,62,,-15.9,-4.6,-11.3,-52,-40.7,-3.2,11,10,OH,OH,
 7.77,1966,1966-10-08,900023864,Fairmont St,20,Concord,58,,-9.0,-0.2,-8.9,-38,-29.1,-2.57,6,10,WV,WV,
-7.77,2026,2026-11-07,900027756,Tulane,10,Tulsa,60,,34.0,49.0,-15.0,-50,-35.0,-2.88,9,9,LA,OK,
 7.76,1931,1931-10-17,25325,Oklahoma St,39,Haskell,0,,12.9,5.8,7.2,39,31.8,3.1,13,6,OK,KS,
 7.76,1974,1974-10-26,76779,Washington,66,Oregon,0,,29.0,5.7,23.3,66,42.7,3.61,11,11,WA,OR,
 7.76,1923,1923-10-06,78756,Haverford,3,Temple,0,,-19.2,-41.6,22.4,3,-19.4,-1.92,5,5,PA,PA,
@@ -1360,6 +1359,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.75,1927,1927-08-01,355899,Harding,0,Hendrix,12,Y,-40.6,1.9,-42.5,-12,30.5,2.91,7,9,AR,AR,undated
 7.75,2013,2013-10-19,388626,Bacone,47,Oklahoma Panhandle St,9,,-44.5,-39.9,-4.6,38,42.6,3.35,11,11,OK,OK,
 7.74,1981,1981-10-31,900003538,Cameron,12,Central Oklahoma,38,,3.7,1.9,1.9,-26,-27.9,-2.37,6,9,OK,OK,
+7.74,2026,2026-10-24,900003954,Pittsburg St,52,Central Oklahoma,14,,-7.7,-3.1,-4.6,38,42.6,3.43,11,11,KS,OK,
 7.74,1942,1942-11-07,32663,Oklahoma,76,Kansas St,0,,13.0,-18.6,31.6,76,44.4,4.18,12,11,OK,KS,
 7.74,1980,1980-11-22,55261,Michigan St,0,Iowa,41,,22.8,21.3,1.6,-41,-42.6,-3.56,11,11,MI,IA,
 7.74,1954,1954-11-13,900026907,Guilford,7,Catawba,33,,-14.8,-12.6,-2.2,-26,-23.8,-2.19,5,8,NC,NC,
@@ -1499,7 +1499,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.62,1981,1981-10-31,900006067,Minn St-Mankato,41,St Cloud St,7,,-21.1,-22.5,1.4,34,32.6,2.77,11,7,MN,MN,
 7.62,2019,2019-10-05,416328,Lyon,7,Langston,60,,-44.2,-29.4,-14.9,-53,-38.1,-3.0,10,10,TX,OK,
 7.62,2020,2020-11-20,421847,MidAmerica Nazarene,3,Baker,24,,-67.0,-19.8,-47.1,-21,26.1,2.2,8,6,KS,KS,
-7.62,2026,2026-09-26,445290,Reinhardt,48,Faulkner,0,,-33.8,-43.7,9.9,48,38.1,3.13,10,10,,AL,
 7.62,1940,1940-10-12,31157,Clemson,39,Wake Forest,0,,18.4,15.5,2.9,39,36.1,3.81,9,10,SC,NC,
 7.62,1941,1941-11-16,32114,Portland,37,Gonzaga,0,,-18.9,-27.3,8.4,37,28.6,2.93,6,10,OR,WA,
 7.62,1974,1974-11-23,900015430,Mars Hill,52,Carson-Newman,7,,-6.7,-14.0,7.3,45,37.7,3.19,11,9,NC,TN,
@@ -1511,8 +1510,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.62,1978,1978-09-30,900023178,St Norbert,15,Hillsdale,48,,-27.5,-19.9,-7.6,-33,-25.4,-2.13,5,10,WI,MI,
 7.62,1956,1956-11-10,900010280,Mansfield,26,Millersville,0,,-37.0,-40.7,3.8,26,22.2,2.0,5,7,PA,PA,
 7.62,1991,1991-09-28,900018866,Southwestern KS,55,Kansas Wesleyan,0,,-47.1,-68.3,21.1,55,33.9,2.83,8,10,KS,KS,
-7.61,2026,2026-10-24,900003862,Indiana Wesleyan,86,Madonna,7,,-6.8,-47.8,40.9,79,38.1,3.13,10,10,,,
-7.61,2026,2026-11-05,900027451,Florida Atlantic,60,Texas-San Antonio,29,,40.7,43.9,-3.3,31,34.3,2.82,9,9,FL,,
 7.61,2020,2020-11-21,421868,North Texas,27,Rice,17,,12.4,27.8,-15.4,10,25.4,2.14,10,5,TX,TX,scores swapped?
 7.61,1893,1893-10-28,9241,Princeton,7,Wesleyan,0,,51.5,8.2,43.3,7,-36.3,-3.22,15,7,NJ,CT,
 7.61,1997,1997-11-08,65384,Ball St,35,Toledo,3,,25.4,37.1,-11.7,32,43.7,3.59,11,12,IN,OH,
@@ -1525,8 +1522,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.61,1992,1992-09-12,900022903,Montana Tech,28,Minot St,6,,-19.5,-17.0,-2.5,22,24.5,2.09,5,9,MT,ND,
 7.61,1925,1925-11-06,900002420,Little Rock,33,Northeastern St,0,,-17.5,-27.1,9.6,33,23.4,2.24,5,8,AR,OK,
 7.6,2023,2023-12-21,434910,South Florida,45,Syracuse,0,Y,24.6,29.0,-4.4,45,49.4,3.86,13,13,FL,NY,
-7.6,2026,2026-09-19,445054,Wittenberg,24,Washington U.,31,,-51.0,-9.8,-41.2,-7,34.2,2.81,9,9,OH,MO,
-7.6,2026,2026-10-10,445940,Oregon St,66,San Diego St,14,,53.5,35.7,17.8,52,34.2,2.81,9,9,OR,CA,
 7.6,1950,1950-10-28,37097,Ohio State,83,Iowa,21,,45.7,17.9,27.8,62,34.2,2.98,9,9,OH,IA,
 7.6,1953,1953-11-21,193534,McMurry,52,Texas A&M-Kingsville,6,,1.5,-14.5,16.1,46,29.9,2.77,7,9,TX,TX,
 7.6,1958,1958-11-01,218623,Wabash,30,Bradley,6,,-19.5,-19.0,-0.4,24,24.4,2.16,9,5,IN,IL,
@@ -1540,7 +1535,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.6,1970,1970-08-01,359107,Savannah St,29,Alabama A&M,0,Y,-29.7,-26.5,-3.2,29,32.2,2.64,8,9,TN,AL,undated
 7.59,2018,2018-10-13,412520,Black Hills St,42,New Mexico Highlands,7,,-32.5,-25.8,-6.7,35,41.7,3.23,11,11,SD,NM,
 7.59,2023,2023-10-21,433428,Ripon,12,Lake Forest,0,,-66.0,-40.0,-26.0,12,38.0,2.96,10,10,WI,IL,
-7.59,2026,2026-10-17,900000235,Redlands,48,La Verne,0,,-56.2,-70.1,13.9,48,34.1,2.81,9,9,CA,CA,
 7.59,1913,1913-11-22,16210,Ohio State,58,Northwestern,0,,26.3,-5.1,31.4,58,26.6,2.23,7,7,OH,IL,
 7.59,1957,1957-11-23,40785,Yale,54,Harvard,0,,16.1,-5.8,21.9,54,32.1,2.92,9,8,CT,MA,
 7.59,1983,1983-11-12,79806,Troy,45,Jacksonville St,3,,1.1,0.8,0.2,42,41.8,3.58,11,11,AL,AL,
@@ -1552,7 +1546,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.58,1961,1961-09-30,900004701,Central Washington,33,Whitworth,14,,-23.3,-6.4,-16.9,19,35.9,3.36,9,10,WA,WA,scores swapped?
 7.58,2018,2018-11-03,413766,Ottawa AZ,75,Wayland Baptist,14,,-24.9,-51.8,26.9,61,34.1,2.64,9,9,AZ,TX,
 7.58,2018,2018-11-10,414186,Stonehill,31,Assumption,20,,-39.2,-12.3,-26.9,11,37.9,2.93,10,10,MA,MA,
-7.58,2026,2026-10-10,445847,Greenville,28,Martin Luther,0,,-91.5,-85.4,-6.1,28,34.1,2.8,9,9,IL,MN,
 7.58,1914,1914-11-21,16655,Yale,0,Harvard,36,,56.3,58.2,-1.9,-36,-34.1,-2.96,9,9,CT,MA,
 7.58,1924,1924-10-11,21269,Cornell NY,7,Williams,14,,17.3,1.0,16.3,-7,-23.3,-2.31,8,5,NY,MA,
 7.58,1954,1954-10-23,39422,Pacific,20,Texas Tech,7,,17.4,40.3,-22.9,13,35.9,3.31,9,10,CA,TX,scores swapped?
@@ -1571,7 +1564,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.57,1967,1967-10-28,316380,Adams St,80,Fort Lewis,14,,-4.1,-36.0,31.9,66,34.1,2.84,9,9,CO,CO,
 7.57,1981,1981-12-05,360249,Texas St-San Marcos,62,Northern Michigan,0,Y,34.8,14.2,20.5,62,41.5,3.52,14,9,TX,MI,far apart (TX vs MI)
 7.57,1978,1978-09-30,900022813,Bridgewater VA,10,Hampden-Sydney,9,,-37.5,-17.8,-19.7,1,20.7,1.73,6,5,VA,VA,
-7.56,2026,2026-10-24,900003769,California PA,49,Indiana PA,0,,-6.2,-17.3,11.2,49,37.8,3.11,10,10,PA,PA,
 7.56,2017,2017-10-14,408546,Southern Illinois,42,Illinois St,7,,20.1,26.7,-6.6,35,41.6,3.29,11,11,IL,IL,
 7.56,2022,2022-09-10,427167,St Anselm,56,American Int'l,7,,-23.5,-34.7,11.2,49,37.8,3.02,10,10,NH,MA,
 7.56,2004,2004-09-18,2772,Truman St,0,Washburn,62,,-20.3,-1.7,-18.6,-62,-43.4,-3.43,11,12,MO,KS,
@@ -1716,6 +1708,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.46,2000,2000-10-21,900017576,Benedict,10,Miles,49,,-37.0,-25.9,-11.0,-39,-28.0,-2.29,6,10,SC,AL,
 7.46,1921,1921-09-30,900018317,Haskell,89,Kansas Wesleyan,0,,13.1,-52.9,66.0,89,23.0,2.12,5,8,KS,KS,
 7.45,2016,2016-10-29,403097,Culver-Stockton,0,Grand View,90,,-74.2,-27.0,-47.2,-90,-42.8,-3.37,11,12,MO,IA,huge score
+7.45,2026,2026-09-19,444746,Boston College,22,Maine,16,,37.6,-5.7,43.2,6,-37.2,-3.0,10,10,MA,ME,
 7.45,1913,1913-11-08,16126,Navy,70,Bucknell,7,,60.7,33.0,27.7,63,35.3,2.96,9,10,MD,PA,
 7.45,1925,1925-10-31,22078,Wake Forest,25,Guilford,0,,0.6,-48.3,48.9,25,-23.9,-2.29,9,5,NC,NC,
 7.45,1942,1942-10-24,32566,William & Mary,61,George Washington,0,,27.0,2.9,24.1,61,36.9,3.48,11,9,VA,DC,
@@ -1867,6 +1860,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.35,1926,1926-11-25,241959,Albion,58,North Central,0,,-10.9,-34.1,23.2,58,34.8,3.45,9,10,MI,MN,
 7.35,1954,1954-10-23,362728,Morningside,41,South Dakota,7,,-12.3,-19.8,7.5,34,26.5,2.44,6,9,IA,SD,
 7.35,1968,1968-10-26,900012967,Oklahoma Panhandle St,28,East Central OK,21,,-14.2,6.4,-20.6,7,27.6,2.36,6,10,OK,OK,
+7.34,2026,2026-11-05,900027451,Florida Atlantic,60,Texas-San Antonio,29,,38.8,44.5,-5.7,31,36.7,2.95,10,10,FL,,
 7.34,2004,2004-10-23,4267,Paul Quinn,37,Allen,62,,-53.7,-59.8,6.1,-25,-31.1,-2.46,8,9,TX,SC,far apart (TX vs SC)
 7.34,1888,1888-11-17,8585,Dartmouth,30,MIT,0,,27.9,26.8,1.1,30,28.9,1.82,9,7,NH,MA,
 7.34,1945,1945-10-20,33991,Idaho,46,Montana,0,,-19.4,-42.8,23.4,46,22.6,2.05,8,5,ID,MT,
@@ -1910,7 +1904,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.32,1967,1967-11-11,298885,Eastern New Mexico,60,Arkansas-Monticello,28,,-15.5,-9.8,-5.6,32,37.6,3.13,9,12,NM,AR,
 7.32,1986,1986-10-04,301185,Bentley,41,Boston,6,,-10.8,-5.9,-4.9,35,39.9,3.31,10,12,MA,MA,
 7.32,1969,1969-11-08,333845,Norwich,56,WPI,0,,-26.3,-55.0,28.7,56,27.3,2.21,7,8,VT,MA,
-7.32,2026,2026-11-07,900027476,Assumption,56,Franklin Pierce,12,,-8.6,-19.6,11.0,44,33.0,2.71,9,9,MA,,
 7.32,2012,2012-10-20,900018974,Kansas Wesleyan,51,Bethel TN,12,,-43.4,-35.0,-8.3,39,47.3,3.71,12,14,KS,TN,
 7.31,2017,2017-09-23,407388,Heidelberg,47,John Carroll,21,,-29.0,-18.5,-10.6,26,36.6,2.89,10,10,OH,OH,
 7.31,2004,2004-10-16,3900,Michigan Tech,54,Northwood,7,,19.8,14.7,5.0,47,42.0,3.32,11,12,MI,MI,
@@ -1936,6 +1929,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.3,1925,1925-08-01,355497,Harding,38,Ozarks,0,Y,-6.5,-23.2,16.7,38,21.3,2.04,5,7,AR,AR,undated
 7.3,2011,2011-09-24,379105,Coast Guard,61,Massachusetts Maritime,30,,-58.2,-56.4,-1.9,31,32.9,2.6,9,9,CT,MA,
 7.3,2014,2014-10-25,900018976,Bethel TN,28,Kansas Wesleyan,55,,-39.9,-58.5,18.6,-27,-45.6,-3.58,13,12,TN,KS,scores swapped?
+7.29,2026,2026-09-19,444893,Millsaps,27,Hendrix,36,,-33.0,-60.5,27.5,-9,-36.5,-2.94,10,10,MS,AR,
 7.29,1906,1906-11-17,13377,Minnesota,0,Carlisle Indian School,17,,36.5,26.7,9.9,-17,-26.9,-2.94,5,14,MN,PA,scores swapped?; far apart (MN vs PA)
 7.29,1908,1908-11-07,14080,Georgia Tech,0,Auburn,44,,5.1,20.4,-15.3,-44,-28.7,-3.19,9,7,GA,AL,
 7.29,1914,1914-10-03,16325,Syracuse,81,Hamilton,0,,41.2,-9.8,51.0,81,30.0,2.6,10,7,NY,WY,far apart (NY vs WY)
@@ -1976,7 +1970,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.27,1931,1931-10-03,262318,New York,54,WV Wesleyan,0,,19.8,4.5,15.3,54,38.7,3.76,13,9,NY,WV,
 7.27,1993,1993-11-13,337383,Elizabeth City St,51,Lane,16,,-40.2,-42.4,2.3,35,32.7,2.72,9,9,NC,TN,
 7.26,2017,2017-09-09,406749,Lamar,72,Texas-Permian Basin,6,,-8.8,-34.9,26.1,66,39.9,3.16,11,11,TX,TX,
-7.26,2026,2026-09-19,444927,Northwestern MN,13,Loras,49,,-71.2,-67.8,-3.3,-36,-32.7,-2.69,9,9,MN,IA,
 7.26,2001,2001-10-27,75231,Illinois St,42,Northern Iowa,14,,-4.3,12.4,-16.7,28,44.7,3.56,11,14,IL,IA,scores swapped?
 7.26,2005,2005-10-01,151851,King's PA,56,Susquehanna,0,,-35.2,-54.9,19.7,56,36.3,2.87,10,10,PA,PA,
 7.26,1950,1950-10-14,183411,South Carolina St,26,Clark Atlanta,0,,-20.3,-15.6,-4.7,26,30.7,2.67,8,9,SC,GA,
@@ -2088,7 +2081,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.2,1948,1948-09-17,900010949,Lincoln PA,0,Lock Haven,20,,8.7,-0.9,9.7,-20,-29.7,-2.76,7,10,PA,PA,
 7.19,2016,2016-10-29,403138,Gettysburg,52,Moravian,21,,-50.2,-45.3,-5.0,31,36.0,2.83,10,10,PA,PA,
 7.19,2018,2018-09-01,410615,Elizabeth City St,19,Central St OH,10,,-57.7,-34.8,-22.9,9,31.9,2.47,8,10,NC,OH,
-7.19,2026,2026-10-03,445573,Mississippi Valley St,28,Prairie View A&M,27,,-26.7,8.2,-34.9,1,35.9,2.95,10,10,MS,TX,
 7.19,1922,1922-11-04,20318,Pittsburgh,62,Geneva,0,,33.6,-4.5,38.0,62,24.0,2.28,10,5,PA,PA,
 7.19,1951,1951-11-17,37887,New Mexico,34,Brigham Young,0,,-7.5,-3.9,-3.6,34,37.6,3.39,11,10,NM,UT,
 7.19,1955,1955-11-24,72148,Wichita St,54,Tulsa,0,,20.6,2.5,18.0,54,36.0,3.22,10,10,KS,OK,
@@ -2140,6 +2132,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.16,2015,2015-09-26,397334,UNLV,80,Idaho St,8,,24.0,-6.9,30.9,72,41.1,3.26,12,11,NV,ID,
 7.16,2020,2020-11-14,421808,Michigan,11,Wisconsin,49,,40.8,55.6,-14.9,-38,-23.1,-1.95,6,7,MI,WI,
 7.16,2021,2021-10-23,424957,Ohio Northern,28,Capital,35,,-31.1,-59.9,28.8,-7,-35.8,-2.76,10,10,OH,OH,
+7.16,2026,2026-10-10,445940,Oregon St,66,San Diego St,14,,53.1,36.9,16.2,52,35.8,2.88,10,10,OR,CA,
 7.16,1989,1989-10-14,194109,Stonehill,42,MIT,20,,-40.5,-36.7,-3.8,22,25.8,2.2,9,6,MA,MA,
 7.16,1911,1911-10-05,244250,Southwestern KS,7,Pittsburg St,2,,7.8,-25.4,33.2,5,-28.2,-3.5,7,9,KS,KS,
 7.16,1962,1962-09-22,303208,Ferris St,41,Michigan Tech,0,,-16.5,-30.8,14.3,41,26.7,2.56,8,7,MI,MI,
@@ -2153,7 +2146,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.15,1958,1958-09-27,900006931,Nebraska-Omaha,6,Washburn,19,,-51.3,-15.3,-36.0,-13,23.0,2.03,5,9,NE,KS,
 7.15,1941,1941-11-01,900005127,Mississippi College,21,Millsaps,0,Y,-7.7,-6.7,-1.0,21,22.0,2.26,8,5,MS,MS,
 7.15,2022,2022-11-19,430513,South Carolina,63,Tennessee,38,,47.5,69.0,-21.5,25,46.5,3.71,13,13,SC,TN,scores swapped?
-7.15,2026,2026-08-28,443914,Northeastern St,52,Delta St,0,,-4.3,-26.0,21.7,52,30.3,2.49,9,8,OK,MS,
 7.15,2002,2002-09-07,4943,Gustavus Adolphus,35,Alma,6,,-22.0,-13.5,-8.4,29,37.4,3.02,10,11,MN,MI,
 7.15,1931,1931-09-19,25075,Minnesota,30,Ripon,0,,21.2,-32.6,53.8,30,-23.8,-2.32,10,5,MN,WI,
 7.15,1946,1946-10-25,80874,Central Michigan,58,Northern Illinois,7,,-3.1,-16.7,13.6,51,37.4,3.61,10,11,MI,IL,
@@ -2171,7 +2163,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.15,2011,2011-10-08,379954,Shippensburg,17,West Chester,52,,-9.0,-13.3,4.3,-35,-39.3,-3.11,11,11,PA,PA,
 7.15,2013,2013-11-02,389593,Union KY,9,Lindsey Wilson,72,,-46.2,-22.5,-23.7,-63,-39.3,-3.09,11,11,KY,KY,
 7.14,2025,2025-11-15,443323,Nevada,55,San José St,10,,25.6,23.5,2.2,45,42.8,3.41,12,12,NV,CA,
-7.14,2026,2026-09-19,444898,Minot St,59,SW Minnesota St,0,,-11.0,-34.3,23.3,59,35.7,2.94,10,10,ND,MN,
 7.14,2002,2002-11-09,7895,Ursinus,56,FDU-Florham,20,,-46.8,-47.1,0.3,36,35.7,2.88,10,10,PA,NJ,
 7.14,1964,1964-11-07,176141,Butler,48,Evansville,21,,-10.3,-9.2,-1.1,27,28.1,2.61,9,7,IN,IN,
 7.14,1999,1999-09-11,227857,Johns Hopkins,31,Washington and Lee,14,,-45.2,-38.4,-6.8,17,23.8,1.88,10,5,MD,VA,
@@ -2183,7 +2174,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.14,1951,1951-10-27,331803,Concord,0,Glenville St,31,,-53.2,-48.9,-4.3,-31,-26.7,-2.4,8,7,WV,WV,
 7.14,2010,2010-11-13,376730,Wabash,47,DePauw,0,,-17.7,-27.3,9.6,47,37.4,3.04,10,11,IN,IN,
 7.14,1995,1995-09-30,900002281,Cheyney,7,Kutztown,17,,-52.8,-5.4,-47.4,-10,37.4,3.08,11,10,PA,PA,
-7.14,2026,2026-11-07,900027730,St Francis IL,0,Olivet Nazarene,70,,-58.5,-22.3,-36.2,-70,-33.8,-2.78,10,9,IL,IL,
 7.14,1954,1954-11-06,900019746,Cortland St,19,East Stroudsburg,0,,-20.5,-17.6,-3.0,19,22.0,2.02,5,8,NY,PA,
 7.13,2018,2018-09-15,411288,Lindsey Wilson,69,Pikeville,14,,-20.7,-38.4,17.6,55,37.4,2.89,10,11,KY,KY,
 7.13,2021,2021-10-23,424947,North Park,45,Elmhurst,3,,-65.6,-71.9,6.4,42,35.6,2.75,10,10,IL,IL,
@@ -2282,7 +2272,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.08,1972,1972-11-18,313426,Oregon Tech,14,St Mary's CA,65,,-58.1,-28.9,-29.2,-51,-21.8,-1.84,5,8,OR,CA,
 7.08,1929,1929-10-12,348082,Hampton,20,St Paul's,0,,-31.4,-29.6,-1.8,20,21.8,2.24,8,5,VA,MN,far apart (VA vs MN)
 7.07,2021,2021-10-30,425361,St Norbert,77,Rockford,7,,-48.7,-83.4,34.7,70,35.3,2.72,10,10,WI,IL,
-7.07,2026,2026-09-05,444319,Texas,59,Texas St-San Marcos,7,,75.1,54.9,20.2,52,31.8,2.62,9,9,TX,TX,
 7.07,1949,1949-09-24,36185,Colgate,32,Buffalo,0,,-1.9,-3.9,2.1,32,29.9,2.61,9,8,NY,NY,
 7.07,1990,1990-10-13,61107,Tennessee,45,Florida,3,,54.4,54.5,-0.1,42,42.1,3.5,13,11,TN,FL,
 7.07,2008,2008-09-27,165702,Ohio Dominican,59,McKendree,0,,-8.3,-32.0,23.7,59,35.3,2.97,10,10,OH,IL,
@@ -2371,7 +2360,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.03,1928,1928-10-20,347833,Chattanooga,70,Louisville,0,,20.4,-23.2,43.7,70,26.3,2.45,10,6,TN,KY,
 7.03,1948,1948-10-15,363943,SE Louisiana St,0,Northwestern St,49,,-18.9,-3.2,-15.7,-49,-33.3,-3.1,10,9,LA,LA,
 7.03,2012,2012-11-03,385550,Wabash,16,Oberlin,31,,-36.1,-56.3,20.2,-15,-35.2,-2.76,10,10,IN,OH,scores swapped?
-7.02,2026,2026-10-24,900003829,Fort Lewis,21,Colorado St-Pueblo,28,,-32.6,7.6,-40.3,-7,33.3,2.73,9,10,CO,CO,
 7.02,1903,1903-11-26,12063,Brown,0,Dartmouth,62,Y,29.3,54.5,-25.3,-62,-36.7,-3.79,11,10,RI,NH,
 7.02,1919,1919-11-01,18687,Navy,20,WV Wesleyan,6,,49.3,11.3,38.1,14,-24.1,-2.14,8,6,MD,WV,
 7.02,1929,1929-09-28,23949,LSU,58,Louisiana Christian,0,,11.0,-24.5,35.4,58,22.6,2.32,9,5,LA,LA,
@@ -2409,7 +2397,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 7.0,2020,2020-12-31,422052,San José St,13,Ball St,34,Y,47.9,40.9,7.0,-21,-28.0,-2.36,8,8,CA,IN,far apart (CA vs IN)
 7.0,2023,2023-09-09,431274,Illinois College,6,Lake Forest,37,,-34.3,-40.0,5.7,-31,-36.7,-2.86,11,10,IL,IL,
 7.0,2024,2024-11-23,438960,Southern Illinois,62,Murray St,0,,13.2,-6.8,20.0,62,42.0,3.37,12,12,IL,KY,
-7.0,2026,2026-10-03,445722,Wisconsin Lutheran,70,Eureka,0,,-70.8,-109.3,38.5,70,31.5,2.59,9,9,WI,IL,
 7.0,1914,1914-10-03,16283,Alabama,13,Samford,0,,19.1,-23.6,42.7,13,-29.7,-2.57,9,8,AL,AL,
 7.0,1920,1920-10-02,18951,Kansas,47,Emporia St,0,,17.4,-8.1,25.5,47,21.5,1.88,8,5,KS,KS,
 7.0,1920,1920-11-06,19222,Catholic,0,Maryland,14,,-28.8,10.4,-39.2,-14,25.2,2.2,6,9,DC,MD,
@@ -2438,7 +2425,9 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 6.99,1921,1921-11-12,350263,WPI,6,RPI,7,,-22.5,4.6,-27.1,-1,26.1,2.41,7,8,MA,NY,
 6.99,1953,1953-08-01,360994,Mississippi Valley St,6,Jackson St,7,Y,-20.0,0.0,-20.1,-1,19.1,1.76,6,5,MS,MS,undated
 6.99,2011,2011-11-12,381482,Coe,77,Cornell IA,7,,-29.1,-64.2,35.1,70,34.9,2.76,10,10,IA,IA,
+6.98,2026,2026-10-24,900003829,Fort Lewis,21,Colorado St-Pueblo,28,,-36.2,7.3,-43.6,-7,36.6,2.94,10,11,CO,CO,
 6.98,1942,1942-11-11,900008636,Nebraska-Kearney,7,Chadron St,13,,-23.7,-41.6,17.9,-6,-23.9,-2.25,8,6,NE,NE,
+6.98,2026,2026-09-26,445290,Reinhardt,48,Faulkner,0,,-33.2,-44.6,11.4,48,36.6,2.94,11,10,,AL,
 6.98,1954,1954-10-23,39412,Michigan,34,Minnesota,0,,42.8,40.2,2.6,34,31.4,2.89,9,9,MI,MN,
 6.98,1964,1964-11-14,79622,Louisiana Christian,6,Troy,33,,-8.7,-11.2,2.6,-27,-29.6,-2.75,8,9,LA,AL,
 6.98,2007,2007-09-15,161362,Tusculum,69,St Paul's,0,,-6.2,-38.6,32.4,69,36.6,2.99,11,10,TN,MN,
@@ -2504,6 +2493,7 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 6.95,1931,1931-11-21,307945,Hardin-Simmons,0,Howard Payne,20,,6.3,-5.8,12.2,-20,-32.2,-3.13,11,8,TX,TX,scores swapped?
 6.95,1996,1996-10-26,337994,West Liberty St,59,WV Wesleyan,34,,-26.6,-18.7,-7.9,25,32.9,2.73,10,9,WV,WV,
 6.95,2012,2012-09-01,382453,Rockford,0,Westminster MO,40,,-83.8,-78.6,-5.2,-40,-34.8,-2.73,10,10,IL,MO,
+6.95,2026,2026-11-07,900027756,Tulane,10,Tulsa,60,,33.7,48.9,-15.3,-50,-34.7,-2.8,10,10,LA,OK,
 6.94,2012,2012-10-20,900024722,Wayland Baptist,58,Southwestern Assemblies,37,,-67.4,-55.6,-11.9,21,32.9,2.58,9,10,TX,TX,scores swapped?
 6.94,2021,2021-10-02,423920,Morehouse,13,Edward Waters,37,,-20.4,-32.7,12.3,-24,-36.3,-2.8,10,11,GA,FL,
 6.94,2025,2025-11-08,443009,Oberlin,13,Wabash,42,,-100.4,-35.0,-65.4,-29,36.4,2.89,10,11,OH,IN,
@@ -2693,7 +2683,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 6.86,1998,1998-10-31,900010447,Cheyney,40,Mansfield,13,,-51.0,-42.1,-8.9,27,35.9,3.08,11,10,PA,PA,
 6.85,2024,2024-09-28,436322,Lawrence Tech,77,Judson IL,18,,-55.3,-80.1,24.8,59,34.2,2.75,10,10,,IL,
 6.85,2024,2024-11-16,438690,Merchant Marine,21,Coast Guard,42,,-49.4,-60.9,11.4,-21,-32.4,-2.6,9,10,NY,CT,scores swapped?
-6.85,2026,2026-09-12,444529,Liberty,24,Gardner-Webb,23,,50.6,17.2,33.4,1,-32.4,-2.67,9,10,VA,NC,
 6.85,2004,2004-10-23,4323,Tennessee-Martin,32,Eastern Illinois,14,,-25.1,-5.5,-19.7,18,37.7,2.98,11,11,TN,IL,scores swapped?
 6.85,1930,1930-11-01,24816,California,46,Montana,0,,1.3,-15.7,17.0,46,29.0,2.83,9,8,CA,MT,
 6.85,1965,1965-11-20,45295,Idaho,54,Montana St,0,,23.7,4.0,19.7,54,34.3,3.11,10,10,ID,MT,
@@ -2727,7 +2716,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 6.84,1907,1907-11-09,345259,Virginia Tech,22,VMI,0,,15.8,22.7,-7.0,22,29.0,2.91,9,8,VA,VA,
 6.84,1922,1922-11-25,346673,Michigan St,45,Massachusetts,0,,3.9,-13.8,17.6,45,27.4,2.6,8,8,MI,MA,far apart (MI vs MA)
 6.84,1973,1973-10-06,363034,Montana,31,South Dakota,19,,1.2,25.0,-23.8,12,35.8,3.02,10,11,MT,SD,
-6.84,2026,2026-11-07,900027784,Wayne St NE,62,Sioux Falls,14,,2.5,-11.3,13.8,48,34.2,2.81,10,10,NE,SD,
 6.83,2016,2016-10-15,402356,Belhaven,7,McMurry,56,,-53.2,-36.6,-16.7,-49,-32.3,-2.55,10,9,TN,TX,
 6.83,2017,2017-09-09,406710,Gallaudet,21,Greensboro,23,,-62.4,-94.6,32.2,-2,-34.2,-2.7,10,10,DC,NC,
 6.83,2025,2025-11-01,442412,Wooster,49,Kenyon,6,,-62.0,-70.8,8.8,43,34.2,2.72,10,10,OH,OH,
@@ -2752,7 +2740,6 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 6.83,1998,1998-09-26,900019395,Hillsdale,0,Westminster PA,24,,-26.9,-31.0,4.1,-24,-28.1,-2.41,10,7,MI,PA,
 6.82,2014,2014-10-11,393069,Shenandoah,47,Guilford,31,,-46.5,-28.4,-18.1,16,34.1,2.68,10,10,VA,NC,scores swapped?
 6.82,2015,2015-10-17,398301,Southeastern FL,66,Ave Maria,0,,-21.0,-53.3,32.2,66,33.8,2.68,9,11,FL,FL,
-6.82,2026,2026-10-17,900000183,Millikin,42,Illinois Wesleyan,35,,-56.7,-31.4,-25.3,7,32.3,2.66,10,9,IL,IL,
 6.82,1930,1930-11-08,24910,Southern Cal,74,California,0,,43.0,1.3,41.7,74,32.3,3.15,10,9,CA,CA,
 6.82,1934,1934-10-06,27133,Princeton,75,Amherst,0,,32.7,-15.1,47.7,75,27.3,3.03,8,8,NJ,MA,
 6.82,1948,1948-11-20,36060,Purdue,39,Indiana,0,,26.4,18.1,8.3,39,30.7,2.86,9,9,IN,IN,
@@ -2880,10 +2867,8 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 6.76,2014,2014-10-25,393656,Lebanon Valley,46,Wilkes,0,,-41.6,-53.9,12.2,46,33.8,2.65,10,10,PA,PA,
 6.76,2014,2014-11-15,394841,Trinity TX,41,Austin,0,,-45.3,-52.6,7.2,41,33.8,2.65,10,10,TX,TX,
 6.76,1980,1980-09-20,900003525,Central Oklahoma,34,NW Oklahoma St,0,,-12.8,-25.0,12.3,34,21.7,1.81,9,5,OK,OK,
-6.76,2026,2026-10-24,900003820,Faulkner,55,U of Fort Lauderdale,6,,-43.7,-64.9,21.2,49,27.8,2.29,10,7,AL,FL,
 6.76,1963,1963-11-09,900013993,Tarleton St,29,McMurry,13,,-13.6,-7.7,-5.8,16,21.8,1.97,6,7,TX,TX,
 6.76,2020,2020-11-21,421865,Nebraska,23,Illinois,41,,43.7,34.7,9.0,-18,-27.0,-2.28,8,8,NE,IL,
-6.76,2026,2026-09-19,444875,Marian IN,27,Madonna,25,,-12.0,-47.8,35.8,2,-33.8,-2.78,10,10,IN,,
 6.76,2000,2000-09-09,643,Penn State,67,Louisiana Tech,7,,32.0,12.6,19.5,60,40.5,3.33,12,12,PA,LA,far apart (PA vs LA)
 6.76,1950,1950-12-02,37367,Navy,14,Army,2,,23.0,41.5,-18.4,12,30.4,2.65,9,9,MD,NY,scores swapped?
 6.76,1951,1951-10-12,37572,Alabama,18,Villanova,41,,34.3,26.0,8.3,-23,-31.3,-2.82,11,8,AL,PA,far apart (AL vs PA)
@@ -2948,11 +2933,13 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 6.74,2011,2011-09-10,378608,Pace,23,Stonehill,20,,-63.1,-30.8,-32.3,3,35.3,2.79,10,11,NY,MA,
 6.74,1983,1983-10-22,900016760,Minot St,27,Valley City St,7,,-20.6,-22.2,1.6,20,18.4,1.58,6,5,ND,ND,
 6.74,1959,1959-10-17,900010704,Edinboro,31,Lock Haven,9,,-30.2,-25.3,-5.0,22,27.0,2.44,8,8,PA,PA,
+6.73,2026,2026-11-14,900027868,Capital,0,Ohio Northern,54,,-45.7,-25.4,-20.4,-54,-33.6,-2.71,10,10,OH,OH,
 6.73,2014,2014-11-08,394403,Missouri Western,55,Nebraska-Kearney,0,,-2.6,-20.6,18.0,55,37.0,2.91,11,11,MO,NE,
 6.73,2018,2018-10-13,412518,Bethany KS,35,Sterling,14,,-69.5,-55.2,-14.3,21,35.3,2.73,11,10,KS,KS,scores swapped?
 6.73,2018,2018-10-27,413230,Campbell,7,Gardner-Webb,35,,-1.1,-10.1,9.0,-28,-37.0,-2.86,11,11,NC,NC,
 6.73,2018,2018-10-27,413326,Holy Cross,56,Lehigh,0,,10.6,-8.3,19.0,56,37.0,2.86,11,11,MA,PA,
 6.73,2019,2019-11-16,418437,Montana Tech,23,Rocky Mountain,38,,-10.6,-30.8,20.3,-15,-35.3,-2.77,10,11,MT,MT,scores swapped?
+6.73,2026,2026-09-19,445054,Wittenberg,24,Washington U.,31,,-48.1,-7.4,-40.7,-7,33.7,2.71,10,10,OH,MO,
 6.73,2004,2004-09-18,2734,SE Oklahoma St,7,Midwestern St,33,,3.0,-8.0,11.0,-26,-37.0,-2.93,11,11,OK,TX,
 6.73,2002,2002-09-14,5224,Iowa Wesleyan,59,Peru St,14,,-46.9,-58.3,11.4,45,33.6,2.71,10,10,IA,NE,
 6.73,1974,1974-11-23,50950,Richmond,12,William & Mary,54,,4.9,11.7,-6.8,-42,-35.2,-2.98,10,11,VA,VA,
@@ -2978,13 +2965,10 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 6.73,1991,1991-10-19,337127,Concord,68,West Virginia Tech,12,,-11.1,-33.4,22.3,56,33.7,2.81,10,10,WV,WV,
 6.73,1907,1907-10-05,344281,Knox,10,Carthage,0,,-22.7,-55.8,33.1,10,-23.1,-2.32,6,8,,IL,
 6.73,1928,1928-08-01,356066,St Mary's CA,7,Gonzaga,20,Y,12.0,3.4,8.6,-13,-21.6,-2.01,9,5,CA,WA,scores swapped?; undated
-6.73,2026,2026-11-07,900027691,Oklahoma Panhandle St,58,Texas College,0,,-51.7,-84.5,32.8,58,25.2,2.07,10,6,OK,TX,
 6.72,2014,2014-10-18,393385,NW Oklahoma St,7,East Central OK,67,,-45.8,-21.0,-24.8,-60,-35.2,-2.77,10,11,OK,OK,
 6.72,2014,2014-12-29,395238,Clemson,40,Oklahoma,6,Y,47.2,56.9,-9.7,34,43.7,3.43,13,13,SC,OK,far apart (SC vs OK)
 6.72,2023,2023-08-26,430745,Cumberland TN,0,Union KY,27,,-49.1,-55.7,6.6,-27,-33.6,-2.62,10,10,TN,KY,
 6.72,2023,2023-10-28,433669,Illinois College,93,Grinnell,0,,-34.3,-92.1,57.8,93,35.2,2.75,11,10,IL,IA,huge score
-6.72,2026,2026-09-05,444326,Tulsa,24,Oklahoma St,10,,49.0,65.2,-16.2,14,30.2,2.49,9,9,OK,OK,scores swapped?
-6.72,2026,2026-10-17,900000252,Shaw,13,Virginia St,76,,-45.7,-16.3,-29.4,-63,-33.6,-2.76,10,10,NC,VA,
 6.72,1889,1889-11-02,8664,Wesleyan,0,Princeton,98,,32.9,89.5,-56.6,-98,-41.4,-3.14,14,11,CT,NJ,huge score
 6.72,1901,1901-11-23,11161,Michigan,89,Beloit,0,,64.6,14.2,50.4,89,38.6,4.12,11,12,MI,WI,
 6.72,1903,1903-10-17,11852,Wisconsin,87,Beloit,0,,36.0,-17.4,53.4,87,33.6,3.47,10,10,WI,WI,
@@ -2999,3 +2983,19 @@ Impact,Season,Date,Access_ID,Home,Home_Score,Visitor,Visitor_Score,Neutral,Home_
 6.72,1988,1988-10-15,213470,New Haven,21,American Int'l,51,,-1.0,-4.6,3.6,-30,-33.6,-2.85,10,10,CT,MA,
 6.72,2003,2003-11-08,260889,Maine Maritime,48,Framingham St,0,,-48.7,-66.4,17.8,48,30.2,2.43,9,9,ME,MA,
 6.72,1952,1952-10-04,274580,Muhlenberg,12,Bucknell,46,,-4.4,5.4,-9.8,-34,-24.2,-2.19,6,9,PA,PA,
+6.72,1969,1969-09-20,280838,Idaho St,48,Parsons,6,,11.8,-5.0,16.8,42,25.2,2.04,10,6,ID,IA,
+6.72,1951,1951-09-21,900014366,Minn St-Moorhead,8,Jamestown,7,,-53.0,-75.7,22.7,1,-21.7,-1.95,6,7,MN,ND,
+6.72,2000,2000-10-14,297604,Princeton,55,Brown,28,,-0.5,6.1,-6.6,27,33.6,2.76,10,10,NJ,RI,
+6.72,1973,1973-10-27,300079,Bemidji St,31,St Cloud St,7,,-21.2,-23.6,2.4,24,21.6,1.82,9,5,MN,MN,
+6.72,1937,1937-10-01,304710,North Dakota St,33,Morningside,6,,-16.3,-19.1,2.8,27,24.2,2.54,9,6,ND,IA,
+6.72,1976,1976-10-16,313579,Santa Clara,14,Cal St-Fullerton,58,,-10.2,-3.2,-7.0,-44,-37.0,-3.07,11,11,CA,CA,
+6.72,1971,1971-10-09,362280,Dickinson St,6,Jamestown,44,Y,-50.3,-32.9,-17.3,-38,-20.7,-1.71,8,5,ND,ND,
+6.72,2011,2011-09-24,379292,South Carolina St,69,Delaware St,0,,4.8,-27.2,32.0,69,37.0,2.92,11,11,SC,DE,
+6.71,1971,1971-10-16,900000720,Wittenberg,56,Findlay,7,,-2.2,-23.5,21.4,49,27.6,2.28,7,10,OH,OH,
+6.71,1992,1992-09-26,900007244,New Mexico Highlands,52,Colorado Mesa,3,,-22.7,-36.6,13.9,49,35.1,3.01,11,10,NM,CO,
+6.71,2022,2022-10-08,428377,DePauw,7,Wittenberg,30,,-29.8,-41.9,12.1,-23,-35.1,-2.81,11,10,IN,OH,
+6.71,2026,2026-10-17,900000183,Millikin,42,Illinois Wesleyan,35,,-56.9,-30.4,-26.6,7,33.6,2.7,10,10,IL,IL,
+6.71,1899,1899-10-14,10387,Franklin & Marshall,0,Dickinson,51,,4.9,18.2,-13.2,-51,-37.8,-3.59,9,15,PA,PA,
+6.71,1937,1937-09-25,29084,Georgia,60,Oglethorpe,0,,17.2,-19.8,37.0,60,23.0,2.42,11,5,GA,TN,
+6.71,2005,2005-08-27,152043,Western New Mexico,48,St Paul's,6,,-25.2,-33.7,8.5,42,33.5,2.66,10,10,NM,MN,
+6.71,2005,2005-10-08,152326,Tarleton St,37,Midwestern St,7,,-3.9,-0.3,-3.6,30,33.6,2.66,10,10,TX,TX,

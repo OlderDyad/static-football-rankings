@@ -1,0 +1,561 @@
+
+>>> same-score-fix IN --commit
+ 2338 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IN - COMMIT
+ 838 pairs {'DROP B': 50, 'DROP A': 59, 'UNDECIDED': 729} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_same_score_COMMITTED_20261113_0650.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  109       7A419202-0E82-4BE4-941C-F86B32933FB0  None
+
+>>> consolidate IN --reason "IN round 2 (2026-11-13): same-school names, see _coop_scripts/IN_cfg.py"
+Consolidating IN from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\IN_Alias_Rules.csv
+
+[stderr]
+2026-11-13 06:51:00,173 - INFO - Starting consolidation for state: (IN) using staging table method.
+2026-11-13 06:51:00,184 - WARNING - WARNING: 381 row(s) have identical OldName and NewName (no-op rules).
+2026-11-13 06:51:00,185 - WARNING -   'Akron Tippecanoe Valley (IN)' -> 'Akron Tippecanoe Valley (IN)' (no change)
+2026-11-13 06:51:00,185 - WARNING -   'Albion Central Noble (IN)' -> 'Albion Central Noble (IN)' (no change)
+2026-11-13 06:51:00,185 - WARNING -   'Alexandria-Monroe (IN)' -> 'Alexandria-Monroe (IN)' (no change)
+2026-11-13 06:51:00,185 - WARNING -   'Anderson (IN)' -> 'Anderson (IN)' (no change)
+2026-11-13 06:51:00,185 - WARNING -   'Anderson Highland (IN)' -> 'Anderson Highland (IN)' (no change)
+2026-11-13 06:51:00,185 - WARNING -   'Anderson Madison-Heights (IN)' -> 'Anderson Madison-Heights (IN)' (no change)
+2026-11-13 06:51:00,185 - WARNING -   'Angola (IN)' -> 'Angola (IN)' (no change)
+2026-11-13 06:51:00,185 - WARNING -   'Arcadia Hamilton Heights (IN)' -> 'Arcadia Hamilton Heights (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Attica (IN)' -> 'Attica (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Auburn (IN)' -> 'Auburn (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Aurora South Dearborn (IN)' -> 'Aurora South Dearborn (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Avon (IN)' -> 'Avon (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Batesville (IN)' -> 'Batesville (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Bedford (IN)' -> 'Bedford (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Bedford North Lawrence (IN)' -> 'Bedford North Lawrence (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Beech Grove (IN)' -> 'Beech Grove (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Berne South Adams (IN)' -> 'Berne South Adams (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Bicknell (IN)' -> 'Bicknell (IN)' (no change)
+2026-11-13 06:51:00,186 - WARNING -   'Bicknell North Knox (IN)' -> 'Bicknell North Knox (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Bloomfield Eastern Greene (IN)' -> 'Bloomfield Eastern Greene (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Bloomington (IN)' -> 'Bloomington (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Bloomington North (IN)' -> 'Bloomington North (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Bloomington South (IN)' -> 'Bloomington South (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Bloomington University High (IN)' -> 'Bloomington University High (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Bluffton (IN)' -> 'Bluffton (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Boonville (IN)' -> 'Boonville (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Bourbon Triton (IN)' -> 'Bourbon Triton (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Brazil (IN)' -> 'Brazil (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Brazil Northview (IN)' -> 'Brazil Northview (IN)' (no change)
+2026-11-13 06:51:00,187 - WARNING -   'Bremen (IN)' -> 'Bremen (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Brookville Franklin County (IN)' -> 'Brookville Franklin County (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Brownsburg (IN)' -> 'Brownsburg (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Brownstown Central (IN)' -> 'Brownstown Central (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Bunker Hill Maconaquah (IN)' -> 'Bunker Hill Maconaquah (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Butler Eastside (IN)' -> 'Butler Eastside (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Cambridge City Lincoln (IN)' -> 'Cambridge City Lincoln (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Campbellsburg West Washington (IN)' -> 'Campbellsburg West Washington (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Cannelton (IN)' -> 'Cannelton (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Carmel (IN)' -> 'Carmel (IN)' (no change)
+2026-11-13 06:51:00,188 - WARNING -   'Cayuga North Vermillion (IN)' -> 'Cayuga North Vermillion (IN)' (no change)
+2026-11-13 06:51:00,189 - WARNING -   'Cedar Lake Hanover Central (IN)' -> 'Cedar Lake Hanover Central (IN)' (no change)
+2026-11-13 06:51:00,189 - WARNING -   'Centerville (IN)' -> 'Centerville (IN)' (no change)
+2026-11-13 06:51:00,189 - WARNING -   'Chalmers Frontier (IN)' -> 'Chalmers Frontier (IN)' (no change)
+2026-11-13 06:51:00,189 - WARNING -   'Charlestown (IN)' -> 'Charlestown (IN)' (no change)
+2026-11-13 06:51:00,189 - WARNING -   'Charlottesville Eastern Hancock (IN)' -> 'Charlottesville Eastern Hancock (IN)' (no change)
+2026-11-13 06:51:00,189 - WARNING -   'Chesterton (IN)' -> 'Chesterton (IN)' (no change)
+2026-11-13 06:51:00,189 - WARNING -   'Churubusco (IN)' -> 'Churubusco (IN)' (no change)
+2026-11-13 06:51:00,189 - WARNING -   'Clarksville (IN)' -> 'Clarksville (IN)' (no change)
+2026-11-13 06:51:00,189 - WARNING -   'Clarksville Providence (IN)' -> 'Clarksville Providence (IN)' (no change)
+2026-11-13 06:51:00,190 - WARNING -   'Clayton Cascade (IN)' -> 'Clayton Cascade (IN)' (no change)
+2026-11-13 06:51:00,190 - WARNING -   'Clinton (IN)' -> 'Clinton (IN)' (no change)
+2026-11-13 06:51:00,190 - WARNING -   'Clinton South Vermillion (IN)' -> 'Clinton South Vermillion (IN)' (no change)
+2026-11-13 06:51:00,190 - WARNING -   'Cloverdale (IN)' -> 'Cloverdale (IN)' (no change)
+2026-11-13 06:51:00,190 - WARNING -   'Columbia City (IN)' -> 'Columbia City (IN)' (no change)
+2026-11-13 06:51:00,190 - WARNING -   'Columbus (IN)' -> 'Columbus (IN)' (no change)
+2026-11-13 06:51:00,190 - WARNING -   'Columbus East (IN)' -> 'Columbus East (IN)' (no change)
+2026-11-13 06:51:00,190 - WARNING -   'Columbus North (IN)' -> 'Columbus North (IN)' (no change)
+2026-11-13 06:51:00,190 - WARNING -   'Connersville (IN)' -> 'Connersville (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Converse Oak Hill (IN)' -> 'Converse Oak Hill (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Corydon Central (IN)' -> 'Corydon Central (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Covington (IN)' -> 'Covington (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Crawfordsville (IN)' -> 'Crawfordsville (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Crawfordsville North Montgomery (IN)' -> 'Crawfordsville North Montgomery (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Crawfordsville Southmont (IN)' -> 'Crawfordsville Southmont (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Crown Point (IN)' -> 'Crown Point (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Culver Community (IN)' -> 'Culver Community (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Danville Community (IN)' -> 'Danville Community (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Decatur Bellmont (IN)' -> 'Decatur Bellmont (IN)' (no change)
+2026-11-13 06:51:00,191 - WARNING -   'Delphi Community (IN)' -> 'Delphi Community (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'Denver North Miami (IN)' -> 'Denver North Miami (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'Dugger Union (IN)' -> 'Dugger Union (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'East Chicago Central (IN)' -> 'East Chicago Central (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'East Chicago Roosevelt (IN)' -> 'East Chicago Roosevelt (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'East Chicago Roosevelt (IN)' -> 'East Chicago Roosevelt (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'East Chicago Washington (IN)' -> 'East Chicago Washington (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'Edinburgh (IN)' -> 'Edinburgh (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'Edison Lake Station Edison (IN)' -> 'Edison Lake Station Edison (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'Elkhart Central (IN)' -> 'Elkhart Central (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'Elkhart Concord (IN)' -> 'Elkhart Concord (IN)' (no change)
+2026-11-13 06:51:00,192 - WARNING -   'Elkhart Memorial (IN)' -> 'Elkhart Memorial (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Ellettsville Edgewood (IN)' -> 'Ellettsville Edgewood (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Elnora North Daviess (IN)' -> 'Elnora North Daviess (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Elwood (IN)' -> 'Elwood (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Evansville Bosse (IN)' -> 'Evansville Bosse (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Evansville Central (IN)' -> 'Evansville Central (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Evansville Harrison (IN)' -> 'Evansville Harrison (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Evansville Mater Dei (IN)' -> 'Evansville Mater Dei (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Evansville North (IN)' -> 'Evansville North (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Evansville Reitz (IN)' -> 'Evansville Reitz (IN)' (no change)
+2026-11-13 06:51:00,193 - WARNING -   'Evansville Reitz Memorial (IN)' -> 'Evansville Reitz Memorial (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Evansville Rex Mundi (IN)' -> 'Evansville Rex Mundi (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Fairland Triton Central (IN)' -> 'Fairland Triton Central (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Fairmount Madison-Grant (IN)' -> 'Fairmount Madison-Grant (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Farmersburg North Central (IN)' -> 'Farmersburg North Central (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Ferdinand Forest Park (IN)' -> 'Ferdinand Forest Park (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Fishers (IN)' -> 'Fishers (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Fishers Hamilton Southeastern (IN)' -> 'Fishers Hamilton Southeastern (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Flora Carroll (IN)' -> 'Flora Carroll (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Floyds Knobs Floyd Central (IN)' -> 'Floyds Knobs Floyd Central (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Fort Branch Gibson Southern (IN)' -> 'Fort Branch Gibson Southern (IN)' (no change)
+2026-11-13 06:51:00,194 - WARNING -   'Fort Wayne Bishop Dwenger (IN)' -> 'Fort Wayne Bishop Dwenger (IN)' (no change)
+2026-11-13 06:51:00,195 - WARNING -   'Fort Wayne Bishop Luers (IN)' -> 'Fort Wayne Bishop Luers (IN)' (no change)
+2026-11-13 06:51:00,195 - WARNING -   'Fort Wayne Blackhawk Christian (IN)' -> 'Fort Wayne Blackhawk Christian (IN)' (no change)
+2026-11-13 06:51:00,195 - WARNING -   'Fort Wayne Carroll (IN)' -> 'Fort Wayne Carroll (IN)' (no change)
+2026-11-13 06:51:00,195 - WARNING -   'Fort Wayne Central (IN)' -> 'Fort Wayne Central (IN)' (no change)
+2026-11-13 06:51:00,195 - WARNING -   'Fort Wayne Central Catholic (IN)' -> 'Fort Wayne Central Catholic (IN)' (no change)
+2026-11-13 06:51:00,195 - WARNING -   'Fort Wayne Concordia Lutheran (IN)' -> 'Fort Wayne Concordia Lutheran (IN)' (no change)
+2026-11-13 06:51:00,195 - WARNING -   'Fort Wayne Elmhurst (IN)' -> 'Fort Wayne Elmhurst (IN)' (no change)
+2026-11-13 06:51:00,195 - WARNING -   'Fort Wayne Harding (IN)' -> 'Fort Wayne Harding (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Fort Wayne Homestead (IN)' -> 'Fort Wayne Homestead (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Fort Wayne North Side (IN)' -> 'Fort Wayne North Side (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Fort Wayne Northrop (IN)' -> 'Fort Wayne Northrop (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Fort Wayne Snider (IN)' -> 'Fort Wayne Snider (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Fort Wayne South Side (IN)' -> 'Fort Wayne South Side (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Fort Wayne Wayne (IN)' -> 'Fort Wayne Wayne (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Fortville Mt. Vernon (IN)' -> 'Fortville Mt. Vernon (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Fountain City Northeastern (IN)' -> 'Fountain City Northeastern (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Francesville West Central (IN)' -> 'Francesville West Central (IN)' (no change)
+2026-11-13 06:51:00,196 - WARNING -   'Frankfort (IN)' -> 'Frankfort (IN)' (no change)
+2026-11-13 06:51:00,197 - WARNING -   'Frankfort Clinton Prairie (IN)' -> 'Frankfort Clinton Prairie (IN)' (no change)
+2026-11-13 06:51:00,197 - WARNING -   'Franklin Community (IN)' -> 'Franklin Community (IN)' (no change)
+2026-11-13 06:51:00,197 - WARNING -   'Frankton (IN)' -> 'Frankton (IN)' (no change)
+2026-11-13 06:51:00,197 - WARNING -   'Fremont (IN)' -> 'Fremont (IN)' (no change)
+2026-11-13 06:51:00,197 - WARNING -   'French Lick Springs Valley (IN)' -> 'French Lick Springs Valley (IN)' (no change)
+2026-11-13 06:51:00,197 - WARNING -   'Fulton Caston (IN)' -> 'Fulton Caston (IN)' (no change)
+2026-11-13 06:51:00,197 - WARNING -   'Garrett (IN)' -> 'Garrett (IN)' (no change)
+2026-11-13 06:51:00,197 - WARNING -   'Gary Bowman Academy (IN)' -> 'Gary Bowman Academy (IN)' (no change)
+2026-11-13 06:51:00,197 - WARNING -   'Gary Calumet (IN)' -> 'Gary Calumet (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Calumet New Tech (IN)' -> 'Gary Calumet New Tech (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Edison (IN)' -> 'Gary Edison (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Emerson (IN)' -> 'Gary Emerson (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Froebel (IN)' -> 'Gary Froebel (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Horace Mann (IN)' -> 'Gary Horace Mann (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Lo-X (IN)' -> 'Gary Lo-X (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Roosevelt (IN)' -> 'Gary Roosevelt (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Tolleston (IN)' -> 'Gary Tolleston (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Wallace (IN)' -> 'Gary Wallace (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary West Side (IN)' -> 'Gary West Side (IN)' (no change)
+2026-11-13 06:51:00,198 - WARNING -   'Gary Wirt (IN)' -> 'Gary Wirt (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Gas City Mississinewa (IN)' -> 'Gas City Mississinewa (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Gaston Wes-Del (IN)' -> 'Gaston Wes-Del (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Goshen (IN)' -> 'Goshen (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Goshen Fairfield (IN)' -> 'Goshen Fairfield (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Greencastle (IN)' -> 'Greencastle (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Greencastle South Putnam (IN)' -> 'Greencastle South Putnam (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Greenfield-Central (IN)' -> 'Greenfield-Central (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Greensburg (IN)' -> 'Greensburg (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Greensburg North Decatur (IN)' -> 'Greensburg North Decatur (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Greensburg South Decatur (IN)' -> 'Greensburg South Decatur (IN)' (no change)
+2026-11-13 06:51:00,199 - WARNING -   'Greentown Eastern (IN)' -> 'Greentown Eastern (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Greenwood (IN)' -> 'Greenwood (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Greenwood Center Grove (IN)' -> 'Greenwood Center Grove (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Greenwood Christian Academy (IN)' -> 'Greenwood Christian Academy (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Greenwood Community (IN)' -> 'Greenwood Community (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Griffith (IN)' -> 'Griffith (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Hagerstown (IN)' -> 'Hagerstown (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Hammond (IN)' -> 'Hammond (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Hammond Bishop Noll (IN)' -> 'Hammond Bishop Noll (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Hammond Central Catholic (IN)' -> 'Hammond Central Catholic (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Hammond Gavit (IN)' -> 'Hammond Gavit (IN)' (no change)
+2026-11-13 06:51:00,200 - WARNING -   'Hammond Morton (IN)' -> 'Hammond Morton (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Hammond Tech (IN)' -> 'Hammond Tech (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Harlan Tri-State Crusaders (IN)' -> 'Harlan Tri-State Crusaders (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Hartford City Blackford (IN)' -> 'Hartford City Blackford (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Highland (IN)' -> 'Highland (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Hobart (IN)' -> 'Hobart (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Hobart River Forest (IN)' -> 'Hobart River Forest (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Howe Military Academy (IN)' -> 'Howe Military Academy (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Huntingburg (IN)' -> 'Huntingburg (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Huntingburg Southridge (IN)' -> 'Huntingburg Southridge (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Huntington (IN)' -> 'Huntington (IN)' (no change)
+2026-11-13 06:51:00,201 - WARNING -   'Huntington North (IN)' -> 'Huntington North (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indiana School for the Deaf (IN)' -> 'Indiana School for the Deaf (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Arlington (IN)' -> 'Indianapolis Arlington (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Arsenal Technical (IN)' -> 'Indianapolis Arsenal Technical (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Ben Davis (IN)' -> 'Indianapolis Ben Davis (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Bishop Chatard (IN)' -> 'Indianapolis Bishop Chatard (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Brebeuf Jesuit Prep (IN)' -> 'Indianapolis Brebeuf Jesuit Prep (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Broad Ripple (IN)' -> 'Indianapolis Broad Ripple (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Calumet Heritage Christian (IN)' -> 'Indianapolis Calumet Heritage Christian (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Cardinal Ritter (IN)' -> 'Indianapolis Cardinal Ritter (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Cathedral (IN)' -> 'Indianapolis Cathedral (IN)' (no change)
+2026-11-13 06:51:00,202 - WARNING -   'Indianapolis Christel House (IN)' -> 'Indianapolis Christel House (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Covenant Christian (IN)' -> 'Indianapolis Covenant Christian (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Crimson Knights (IN)' -> 'Indianapolis Crimson Knights (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Crispus Attucks (IN)' -> 'Indianapolis Crispus Attucks (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Decatur Central (IN)' -> 'Indianapolis Decatur Central (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Emmerich Manual (IN)' -> 'Indianapolis Emmerich Manual (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Franklin Central (IN)' -> 'Indianapolis Franklin Central (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Howe (IN)' -> 'Indianapolis Howe (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Lawrence Central (IN)' -> 'Indianapolis Lawrence Central (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Lawrence North (IN)' -> 'Indianapolis Lawrence North (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Lutheran (IN)' -> 'Indianapolis Lutheran (IN)' (no change)
+2026-11-13 06:51:00,203 - WARNING -   'Indianapolis Marshall (IN)' -> 'Indianapolis Marshall (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis North Central (IN)' -> 'Indianapolis North Central (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Northwest (IN)' -> 'Indianapolis Northwest (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Park Tudor (IN)' -> 'Indianapolis Park Tudor (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Perry Meridian (IN)' -> 'Indianapolis Perry Meridian (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Phalen Leadership Academy (IN)' -> 'Indianapolis Phalen Leadership Academy (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Pike (IN)' -> 'Indianapolis Pike (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Purdue Poly (IN)' -> 'Indianapolis Purdue Poly (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Roncalli (IN)' -> 'Indianapolis Roncalli (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Scecina Memorial (IN)' -> 'Indianapolis Scecina Memorial (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Shortridge (IN)' -> 'Indianapolis Shortridge (IN)' (no change)
+2026-11-13 06:51:00,204 - WARNING -   'Indianapolis Tindley (IN)' -> 'Indianapolis Tindley (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Indianapolis Warren Central (IN)' -> 'Indianapolis Warren Central (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Indianapolis Washington (IN)' -> 'Indianapolis Washington (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Jasper (IN)' -> 'Jasper (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Jeffersonville (IN)' -> 'Jeffersonville (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Jimtown (IN)' -> 'Jimtown (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Kendallville (IN)' -> 'Kendallville (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Kendallville East Noble (IN)' -> 'Kendallville East Noble (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Kentland South Newton (IN)' -> 'Kentland South Newton (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Knightstown (IN)' -> 'Knightstown (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Knox (IN)' -> 'Knox (IN)' (no change)
+2026-11-13 06:51:00,205 - WARNING -   'Kokomo (IN)' -> 'Kokomo (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'Kokomo Northwestern (IN)' -> 'Kokomo Northwestern (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'Kokomo Taylor (IN)' -> 'Kokomo Taylor (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'La Porte (IN)' -> 'La Porte (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'La Porte La Lumiere (IN)' -> 'La Porte La Lumiere (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'Lafayette Central Catholic (IN)' -> 'Lafayette Central Catholic (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'Lafayette Jefferson (IN)' -> 'Lafayette Jefferson (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'Lafayette McCutcheon (IN)' -> 'Lafayette McCutcheon (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'LaGrange Lakeland (IN)' -> 'LaGrange Lakeland (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'LaGrange Prairie Heights (IN)' -> 'LaGrange Prairie Heights (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'Lakeville LaVille (IN)' -> 'Lakeville LaVille (IN)' (no change)
+2026-11-13 06:51:00,206 - WARNING -   'Lapel (IN)' -> 'Lapel (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'LaPorte South Central (IN)' -> 'LaPorte South Central (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Lawrenceburg (IN)' -> 'Lawrenceburg (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Lebanon (IN)' -> 'Lebanon (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Leo (IN)' -> 'Leo (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Leopold Perry Central (IN)' -> 'Leopold Perry Central (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Liberty Union County (IN)' -> 'Liberty Union County (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Ligonier West Noble (IN)' -> 'Ligonier West Noble (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Lincoln City Heritage Hills (IN)' -> 'Lincoln City Heritage Hills (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Linton-Stockton (IN)' -> 'Linton-Stockton (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Lizton Tri-West Hendricks (IN)' -> 'Lizton Tri-West Hendricks (IN)' (no change)
+2026-11-13 06:51:00,207 - WARNING -   'Logansport (IN)' -> 'Logansport (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Lowell (IN)' -> 'Lowell (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Lynnville Tecumseh (IN)' -> 'Lynnville Tecumseh (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Madison (IN)' -> 'Madison (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Marengo Crawford County (IN)' -> 'Marengo Crawford County (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Marion (IN)' -> 'Marion (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Marion Eastbrook (IN)' -> 'Marion Eastbrook (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Marshall Turkey Run (IN)' -> 'Marshall Turkey Run (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Martinsville (IN)' -> 'Martinsville (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Martinsville Tabernacle Christian (IN)' -> 'Martinsville Tabernacle Christian (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Merrillville (IN)' -> 'Merrillville (IN)' (no change)
+2026-11-13 06:51:00,208 - WARNING -   'Merrillville Andrean (IN)' -> 'Merrillville Andrean (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Michigan City (IN)' -> 'Michigan City (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Michigan City Elston (IN)' -> 'Michigan City Elston (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Michigan City Rogers (IN)' -> 'Michigan City Rogers (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Michigan City St. Mary's (IN)' -> 'Michigan City St. Mary's (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Michigantown Clinton Central (IN)' -> 'Michigantown Clinton Central (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Middlebury Northridge (IN)' -> 'Middlebury Northridge (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Middletown Shenandoah (IN)' -> 'Middletown Shenandoah (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Milan (IN)' -> 'Milan (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Mishawaka (IN)' -> 'Mishawaka (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Mishawaka Marian (IN)' -> 'Mishawaka Marian (IN)' (no change)
+2026-11-13 06:51:00,209 - WARNING -   'Mishawaka Penn (IN)' -> 'Mishawaka Penn (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Mitchell (IN)' -> 'Mitchell (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Monon North White (IN)' -> 'Monon North White (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Monroe Adams Central (IN)' -> 'Monroe Adams Central (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Monroeville Heritage (IN)' -> 'Monroeville Heritage (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Monrovia (IN)' -> 'Monrovia (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Montezuma Riverton Parke (IN)' -> 'Montezuma Riverton Parke (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Monticello Twin Lakes (IN)' -> 'Monticello Twin Lakes (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Mooresville (IN)' -> 'Mooresville (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Morocco North Newton (IN)' -> 'Morocco North Newton (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Muncie Central (IN)' -> 'Muncie Central (IN)' (no change)
+2026-11-13 06:51:00,210 - WARNING -   'Muncie Delta (IN)' -> 'Muncie Delta (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'Muncie Southside (IN)' -> 'Muncie Southside (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'Munster (IN)' -> 'Munster (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'Nappanee (IN)' -> 'Nappanee (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'Nappanee NorthWood (IN)' -> 'Nappanee NorthWood (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'Nashville Brown County (IN)' -> 'Nashville Brown County (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'New Albany (IN)' -> 'New Albany (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'New Carlisle New Prairie (IN)' -> 'New Carlisle New Prairie (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'New Castle (IN)' -> 'New Castle (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'New Haven (IN)' -> 'New Haven (IN)' (no change)
+2026-11-13 06:51:00,211 - WARNING -   'New Palestine (IN)' -> 'New Palestine (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'Newburgh Castle (IN)' -> 'Newburgh Castle (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'Noblesville (IN)' -> 'Noblesville (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'Noblesville Guerin Catholic (IN)' -> 'Noblesville Guerin Catholic (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'Noblesville Homeschoolers (IN)' -> 'Noblesville Homeschoolers (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'North Judson-San Pierre (IN)' -> 'North Judson-San Pierre (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'North Manchester (IN)' -> 'North Manchester (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'North Vernon Jennings County (IN)' -> 'North Vernon Jennings County (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'Oakland City Wood Memorial (IN)' -> 'Oakland City Wood Memorial (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'Ossian Norwell (IN)' -> 'Ossian Norwell (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'Owensville (IN)' -> 'Owensville (IN)' (no change)
+2026-11-13 06:51:00,212 - WARNING -   'Oxford Benton Central (IN)' -> 'Oxford Benton Central (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Paoli (IN)' -> 'Paoli (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Parker City Monroe Central (IN)' -> 'Parker City Monroe Central (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Pekin Eastern (IN)' -> 'Pekin Eastern (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Pendleton Heights (IN)' -> 'Pendleton Heights (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Peru (IN)' -> 'Peru (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Petersburg (IN)' -> 'Petersburg (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Petersburg Pike Central (IN)' -> 'Petersburg Pike Central (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Plainfield (IN)' -> 'Plainfield (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Plainfield Charlton School for Boys (IN)' -> 'Plainfield Charlton School for Boys (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Plymouth (IN)' -> 'Plymouth (IN)' (no change)
+2026-11-13 06:51:00,213 - WARNING -   'Poneto Southern Wells (IN)' -> 'Poneto Southern Wells (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Portage (IN)' -> 'Portage (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Portland Jay County (IN)' -> 'Portland Jay County (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Poseyville North Posey (IN)' -> 'Poseyville North Posey (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Princeton (IN)' -> 'Princeton (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Ramsey North Harrison (IN)' -> 'Ramsey North Harrison (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Rensselaer Central (IN)' -> 'Rensselaer Central (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Richmond (IN)' -> 'Richmond (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Roachdale North Putnam (IN)' -> 'Roachdale North Putnam (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Rochester (IN)' -> 'Rochester (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Rockport South Spencer (IN)' -> 'Rockport South Spencer (IN)' (no change)
+2026-11-13 06:51:00,214 - WARNING -   'Rockville (IN)' -> 'Rockville (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Royal Center Pioneer (IN)' -> 'Royal Center Pioneer (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Rushville (IN)' -> 'Rushville (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Russiaville Western (IN)' -> 'Russiaville Western (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Saint John Lake Central (IN)' -> 'Saint John Lake Central (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Saint Leon East Central (IN)' -> 'Saint Leon East Central (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Salem (IN)' -> 'Salem (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Scottsburg (IN)' -> 'Scottsburg (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Sellersburg Rock Creek Academy (IN)' -> 'Sellersburg Rock Creek Academy (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Sellersburg Silver Creek (IN)' -> 'Sellersburg Silver Creek (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Seymour (IN)' -> 'Seymour (IN)' (no change)
+2026-11-13 06:51:00,215 - WARNING -   'Sharpsville Tri-Central (IN)' -> 'Sharpsville Tri-Central (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'Shelbyville (IN)' -> 'Shelbyville (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'Sheridan (IN)' -> 'Sheridan (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'South Bend (IN)' -> 'South Bend (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'South Bend Adams (IN)' -> 'South Bend Adams (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'South Bend Central (IN)' -> 'South Bend Central (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'South Bend Central Catholic (IN)' -> 'South Bend Central Catholic (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'South Bend Clay (IN)' -> 'South Bend Clay (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'South Bend Riley (IN)' -> 'South Bend Riley (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'South Bend St. Joseph (IN)' -> 'South Bend St. Joseph (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'South Bend Washington (IN)' -> 'South Bend Washington (IN)' (no change)
+2026-11-13 06:51:00,216 - WARNING -   'South Whitley Whitko (IN)' -> 'South Whitley Whitko (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Southport (IN)' -> 'Southport (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Speedway (IN)' -> 'Speedway (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Spencer Owen Valley (IN)' -> 'Spencer Owen Valley (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Straughn Tri (IN)' -> 'Straughn Tri (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Sullivan (IN)' -> 'Sullivan (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Syracuse Wawasee (IN)' -> 'Syracuse Wawasee (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Tell City (IN)' -> 'Tell City (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Terre Haute Gerstmeyer (IN)' -> 'Terre Haute Gerstmeyer (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Terre Haute North Vigo (IN)' -> 'Terre Haute North Vigo (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Terre Haute South Vigo (IN)' -> 'Terre Haute South Vigo (IN)' (no change)
+2026-11-13 06:51:00,217 - WARNING -   'Thorntown Western Boone (IN)' -> 'Thorntown Western Boone (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Tipton (IN)' -> 'Tipton (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Trafalgar Indian Creek (IN)' -> 'Trafalgar Indian Creek (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Union City Community (IN)' -> 'Union City Community (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Union Mills South Central (IN)' -> 'Union Mills South Central (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Valparaiso (IN)' -> 'Valparaiso (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Valparaiso Boone Grove (IN)' -> 'Valparaiso Boone Grove (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Valparaiso Wheeler (IN)' -> 'Valparaiso Wheeler (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Veedersburg Fountain Central (IN)' -> 'Veedersburg Fountain Central (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Vevay Switzerland County (IN)' -> 'Vevay Switzerland County (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Vincennes Lincoln (IN)' -> 'Vincennes Lincoln (IN)' (no change)
+2026-11-13 06:51:00,218 - WARNING -   'Wabash (IN)' -> 'Wabash (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'Wabash Northfield (IN)' -> 'Wabash Northfield (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'Wabash Southwood (IN)' -> 'Wabash Southwood (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'Walkerton John Glenn (IN)' -> 'Walkerton John Glenn (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'Walton Lewis Cass (IN)' -> 'Walton Lewis Cass (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'Warsaw (IN)' -> 'Warsaw (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'Washington (IN)' -> 'Washington (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'Waterloo DeKalb (IN)' -> 'Waterloo DeKalb (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'West Lafayette (IN)' -> 'West Lafayette (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'West Lafayette Harrison (IN)' -> 'West Lafayette Harrison (IN)' (no change)
+2026-11-13 06:51:00,219 - WARNING -   'West Lebanon Seeger (IN)' -> 'West Lebanon Seeger (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'West Terre Haute West Vigo (IN)' -> 'West Terre Haute West Vigo (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Westfield (IN)' -> 'Westfield (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Wheatfield Kankakee Valley (IN)' -> 'Wheatfield Kankakee Valley (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Whiteland (IN)' -> 'Whiteland (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Whitestown Traders Point Christian Academy (IN)' -> 'Whitestown Traders Point Christian Academy (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Whiting (IN)' -> 'Whiting (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Whiting George Rogers Clark (IN)' -> 'Whiting George Rogers Clark (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Winamac (IN)' -> 'Winamac (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Winchester Community (IN)' -> 'Winchester Community (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Wolcott Tri-County (IN)' -> 'Wolcott Tri-County (IN)' (no change)
+2026-11-13 06:51:00,220 - WARNING -   'Woodburn Woodlan (IN)' -> 'Woodburn Woodlan (IN)' (no change)
+2026-11-13 06:51:00,221 - WARNING -   'Yorktown (IN)' -> 'Yorktown (IN)' (no change)
+2026-11-13 06:51:00,221 - WARNING -   'Zionsville (IN)' -> 'Zionsville (IN)' (no change)
+2026-11-13 06:51:00,221 - INFO - Validation passed: 487 rules are clean and ready to upload.
+2026-11-13 06:51:00,238 - INFO - Uploading 487 rules to staging table: ConsolidationRules_Staging...
+2026-11-13 06:51:00,363 - INFO - Upload to staging table complete.
+2026-11-13 06:51:00,368 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-13 06:52:20,265 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-13 06:52:20,265 - INFO - Reason logged to dbo.HS_Consolidation_Log: IN round 2 (2026-11-13): same-school names, see _coop_scripts/IN_cfg.py
+2026-11-13 06:52:20,265 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-13 06:52:20,265 - INFO - Running post-consolidation safety check...
+2026-11-13 06:52:20,270 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team IN --from "Bloomington (IN)" --to "Bloomington South (IN)" --seasons 1972-2026 --reason "IN same school, older name -> later name for 1972-2026 (2026-11-12)" --commit
+
+MOVE Bloomington (IN) -> Bloomington South (IN), seasons 1972-2026 - COMMIT
+ move_games: 232 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 108 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  232    1                  None
+
+>>> move-team IN --from "Aurora South Dearborn (IN)" --to "Aurora (IN)" --seasons 1946-1972 --ids coop_ids/IN_c3_000.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_000.csv
+
+MOVE Aurora South Dearborn (IN) -> Aurora (IN), seasons 1946-1972 - COMMIT
+ move_games: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 82 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  15     1                  None
+
+>>> move-team IN --from "Bedford North Lawrence (IN)" --to "Bedford (IN)" --seasons 1948-1974 --ids coop_ids/IN_c3_001.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 55 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_001.csv
+
+MOVE Bedford North Lawrence (IN) -> Bedford (IN), seasons 1948-1974 - COMMIT
+ move_games: 42 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 80 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  42     1                  None
+
+>>> move-team IN --from "Bloomfield Eastern Greene (IN)" --to "Bloomfield (IN)" --seasons 1924-1942 --ids coop_ids/IN_c3_002.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 20 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_002.csv
+
+MOVE Bloomfield Eastern Greene (IN) -> Bloomfield (IN), seasons 1924-1942 - COMMIT
+ move_games: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 49 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  18     1                  None
+
+>>> move-team IN --from "Brazil Northview (IN)" --to "Brazil (IN)" --seasons 1921-1962 --ids coop_ids/IN_c3_003.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 54 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_003.csv
+
+MOVE Brazil Northview (IN) -> Brazil (IN), seasons 1921-1962 - COMMIT
+ move_games: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 110 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  54     1                  None
+
+>>> move-team IN --from "Fort Branch Gibson Southern (IN)" --to "Fort Branch (IN)" --seasons 1968-1973 --ids coop_ids/IN_c3_004.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 19 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_004.csv
+
+MOVE Fort Branch Gibson Southern (IN) -> Fort Branch (IN), seasons 1968-1973 - COMMIT
+ move_games: 19 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 69 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  19     1                  None
+
+>>> move-team IN --from "Gary Calumet (IN)" --to "Gary Calumet New Tech (IN)" --seasons 1960-2024 --ids coop_ids/IN_c3_005.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 25 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_005.csv
+
+MOVE Gary Calumet (IN) -> Gary Calumet New Tech (IN), seasons 1960-2024 - COMMIT
+ move_games: 18 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  18     1                  None
+
+>>> move-team IN --from "Gary Calumet New Tech (IN)" --to "Gary Calumet (IN)" --seasons 1959-1973 --ids coop_ids/IN_c3_006.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 24 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_006.csv
+
+MOVE Gary Calumet New Tech (IN) -> Gary Calumet (IN), seasons 1959-1973 - COMMIT
+ move_games: 23 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 72 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  23     1                  None
+
+>>> move-team IN --from "Hammond Central (IN)" --to "Hammond (IN)" --seasons 1923-1997 --ids coop_ids/IN_c3_007.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 116 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_007.csv
+
+MOVE Hammond Central (IN) -> Hammond (IN), seasons 1923-1997 - COMMIT
+ move_games: 99 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 125 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  99     1                  None
+
+>>> move-team IN --from "Huntington North (IN)" --to "Huntington (IN)" --seasons 1924-1959 --ids coop_ids/IN_c3_008.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 67 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_008.csv
+
+MOVE Huntington North (IN) -> Huntington (IN), seasons 1924-1959 - COMMIT
+ move_games: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 116 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  63     1                  None
+
+>>> move-team IN --from "New Carlisle New Prairie (IN)" --to "New Carlisle (IN)" --seasons 1955-1966 --ids coop_ids/IN_c3_009.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 29 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_009.csv
+
+MOVE New Carlisle New Prairie (IN) -> New Carlisle (IN), seasons 1955-1966 - COMMIT
+ move_games: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 74 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  28     1                  None
+
+>>> move-team IN --from "North Judson (IN)" --to "North Judson-San Pierre (IN)" --seasons 1950-1962 --ids coop_ids/IN_c3_010.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 27 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_010.csv
+
+MOVE North Judson (IN) -> North Judson-San Pierre (IN), seasons 1950-1962 - COMMIT
+ move_games: 26 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0652.csv
+ move_by_season: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0652.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  26     1                  None
+
+>>> move-team IN --from "North Judson-San Pierre (IN)" --to "North Judson (IN)" --seasons 1966-1980 --ids coop_ids/IN_c3_011.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 17 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_011.csv
+
+MOVE North Judson-San Pierre (IN) -> North Judson (IN), seasons 1966-1980 - COMMIT
+ move_games: 11 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0653.csv
+ move_by_season: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0653.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  11     1                  None
+
+>>> move-team IN --from "North Vernon Jennings County (IN)" --to "North Vernon (IN)" --seasons 1950-1959 --ids coop_ids/IN_c3_012.csv --reason "IN co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 15 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\coop_ids/IN_c3_012.csv
+
+MOVE North Vernon Jennings County (IN) -> North Vernon (IN), seasons 1950-1959 - COMMIT
+ move_games: 14 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_games_COMMITTED_20261113_0653.csv
+ move_by_season: 79 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_move_by_season_COMMITTED_20261113_0653.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  14     1                  None
+
+>>> dedup IN --commit
+
+DEDUP v4 IN - COMMIT
+ dedup_archive: 621 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_dedup_archive_COMMITTED_20261113_0653.csv
+ dedup_review: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_dedup_review_COMMITTED_20261113_0653.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_dedup_summary_COMMITTED_20261113_0653.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  IN     119997        621                  6                E558F184-B823-4054-917E-9F52E25B6D8D
+
+>>> review-pairs IN --commit
+
+REVIEW-ONLY PAIRS IN - COMMIT
+ 6 pairs {'LONG': 1, 'SHORT': 5} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_review_pairs_COMMITTED_20261113_0653.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  6         65F239F1-96E7-4D80-9AB7-4E965C575F89  None
+
+>>> same-score-fix IN
+ 2338 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IN - PREVIEW (nothing changed)
+ 230 pairs {'DROP B': 2, 'DROP A': 4, 'UNDECIDED': 224} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_same_score_20261113_0654.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  6         None   None
+
+>>> query IN in_dump.sql
+
+QUERY in_dump (1 result sets)
+ set 1: 119371 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IN\IN_q_in_dump_1_20261113_0654.csv
+
+=== OK 2026-11-13 06:54:18

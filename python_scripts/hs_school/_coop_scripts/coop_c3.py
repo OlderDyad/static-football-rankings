@@ -22,7 +22,8 @@ for x in rows:
       n+=1
 csv.DictWriter(open(decf,'w',newline='',encoding='utf-8-sig'),fieldnames=['AID','BID','Keep']).writeheader() if False else None
 with open(decf,'w',newline='',encoding='utf-8-sig') as fh:
-  w=csv.DictWriter(fh,fieldnames=['AID','BID','Keep']); w.writeheader(); w.writerows(dec)
+  fn=['AID','BID','Keep']+[k for d in dec[:1] for k in d if k not in ('AID','BID','Keep')]
+  w=csv.DictWriter(fh,fieldnames=fn,extrasaction='ignore'); w.writeheader(); w.writerows(dec)
 print('wrong-name decisions',n)
 # 2 alias rules
 rf=R+f'excel_files/State_Aliases_ProperNames/{ST}_Alias_Rules.csv'

@@ -1,0 +1,81 @@
+
+>>> move-team IA --from "Corydon Wayne (IA)" --to "Corydon (IA)" --seasons 1958-1958 --ids coop_ids/IA_mv_012.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_012.csv
+
+MOVE Corydon Wayne (IA) -> Corydon (IA), seasons 1958-1958 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261113_1131.csv
+ move_by_season: 104 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261113_1131.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IA --from "Dunlap Boyer Valley (IA)" --to "Dunlap (IA)" --seasons 1952-1957 --ids coop_ids/IA_mv_017.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_017.csv
+
+MOVE Dunlap Boyer Valley (IA) -> Dunlap (IA), seasons 1952-1957 - COMMIT
+ move_games: 9 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261113_1131.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261113_1131.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  9      1                  None
+
+>>> move-team IA --from "Leon Central Decatur (IA)" --to "Leon (IA)" --seasons 1958-1958 --ids coop_ids/IA_mv_035.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_035.csv
+
+MOVE Leon Central Decatur (IA) -> Leon (IA), seasons 1958-1958 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261113_1131.csv
+ move_by_season: 107 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261113_1131.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team IA --from "Tabor Fremont-Mills (IA)" --to "Tabor (IA)" --seasons 1948-1958 --ids coop_ids/IA_mv_058.csv --reason "IA co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\coop_ids/IA_mv_058.csv
+
+MOVE Tabor Fremont-Mills (IA) -> Tabor (IA), seasons 1948-1958 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_games_COMMITTED_20261113_1131.csv
+ move_by_season: 96 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_move_by_season_COMMITTED_20261113_1131.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> dedup IA --commit
+
+DEDUP v4 IA - COMMIT
+ dedup_archive: 15 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_archive_COMMITTED_20261113_1131.csv
+ dedup_review: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_review_COMMITTED_20261113_1131.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_dedup_summary_COMMITTED_20261113_1131.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  IA     132265        15                   1                7295A2EA-57C9-4603-B658-A5A313674F3D
+
+>>> same-score-fix IA
+ 1429 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IA - PREVIEW (nothing changed)
+ 298 pairs {'DROP B': 5, 'DROP A': 3, 'UNDECIDED': 290} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IA\IA_same_score_20261113_1132.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  8         None   None
+
+>>> move-team IL --from "Northbrook Glenbrook North (IL)" --to "Northfield Township Glenbrook (IL)" --seasons 1958-1958 --ids coop_ids/IL_mv_063.csv --reason "IL co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\coop_ids/IL_mv_063.csv
+
+MOVE Northbrook Glenbrook North (IL) -> Northfield Township Glenbrook (IL), seasons 1958-1958 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_games_COMMITTED_20261113_1132.csv
+ move_by_season: 81 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_move_by_season_COMMITTED_20261113_1132.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> dedup IL --commit
+
+DEDUP v4 IL - COMMIT
+ dedup_archive: 0 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_archive_COMMITTED_20261113_1132.csv
+ dedup_review: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_review_COMMITTED_20261113_1132.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_dedup_summary_COMMITTED_20261113_1132.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID
+   COMMITTED  IL     197749        0                    3                None 
+
+>>> same-score-fix IL
+ 1923 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS IL - PREVIEW (nothing changed)
+ 503 pairs {'DROP B': 9, 'DROP A': 6, 'UNDECIDED': 488} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\IL\IL_same_score_20261113_1133.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  15        None   None
+
+=== OK 2026-11-13 11:33:31

@@ -1,0 +1,362 @@
+"""
+top100_tracker.py  (added 2026-11-14)
+=====================================
+Weekend "Top 100 tracker": scrapes the MaxPreps schedule pages of the current
+national top 100 (Combined Rating), finalizes the new results into HS_Scores,
+then builds a page showing how each team did against its rating expectation.
+
+Generates: docs/data/top100-tracker/top100-tracker.json
+Page:      docs/pages/public/top100-tracker/index.html (static, reads the JSON)
+
+For each game of a top-100 team this season:
+    expected margin = (Team pre-game CR - Opponent pre-game CR) / 0.958
+                      + 1.6 home-field pts (+ at home, - away, 0 if Neutral)
+    deviation       = actual margin - expected margin   (+ = beat expectation)
+"Pre-game CR" = the team's Combined Rating from the latest rated week BEFORE
+the game's week (HS_Rankings, DATEPART(WEEK) like the pipeline). Before the
+first rated week of a season, last season's week-52 rating is used.
+Top 100 = latest rated week, 11-man programs only (same filter as Games of
+the Week, generate_upcoming_games_json.py).
+
+Scraping reuses maxpreps_scraper_db.py (driver, page parser, raw-game insert)
+and its lock file, so it never runs at the same time as the nightly scraper or
+weekly_pipeline.py (the pipeline waits while the lock is held). Its batches
+are named "Top100 Tracker - <date>", which neither the scraper's resume logic
+nor weekly_pipeline.py's BATCH_PREFIX matches.
+
+Usage (python_scripts\\data_import):
+    python top100_tracker.py                 # scrape + build + git push
+    python top100_tracker.py --no-scrape     # build page from current data only
+    python top100_tracker.py --no-push       # don't commit/push
+    python top100_tracker.py --limit 5       # test: scrape only 5 teams
+Scheduled by top100_watcher.ps1 (Saturday and Sunday mornings).
+"""
+
+import argparse
+import json
+import os
+import random
+import subprocess
+import sys
+import time
+from datetime import date, datetime, timedelta, timezone
+
+import pyodbc
+
+import maxpreps_scraper_db as mp
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
+OUTPUT_DIR = os.path.join(REPO_ROOT, "docs", "data", "top100-tracker")
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "top100-tracker.json")
+PAGE_DIR = os.path.join(REPO_ROOT, "docs", "pages", "public", "top100-tracker")
+LOG_FILE = os.path.join(SCRIPT_DIR, "top100_tracker_log.txt")
+
+TOP_N = 100
+HOME_FIELD_PTS = 1.6          # measured 2004-2025, see generate_upcoming_games_json.py
+COMBINED_PER_POINT = 0.958    # Combined_Rating = 0.958 x Margin rating + 2.791
+BATCH_PREFIX = "Top100 Tracker - "
+LOCK_WAIT_MINUTES = 45
+RECENT_DAYS = 3               # "this weekend" = games in the last 3 days
+
+CR_EXPR = "ISNULL(Combined_Rating, 0.958 * Avg_Of_Avg_Of_Home_Modified_Score + 2.791)"
+
+SQL_LATEST = """
+SELECT TOP 1 Season, Week FROM HS_Rankings
+WHERE Season <= YEAR(GETDATE()) ORDER BY Season DESC, Week DESC
+"""
+
+SQL_TOP = f"""
+;WITH cur AS (
+    SELECT Home AS Team, {CR_EXPR} AS CR FROM HS_Rankings WHERE Season = ? AND Week = ?
+), ok AS (
+    SELECT c.Team, c.CR FROM cur c
+    WHERE NOT EXISTS (SELECT 1 FROM HS_Team_Level_History lh
+                      WHERE lh.TeamName = c.Team AND lh.PlayerLevel IN (6, 8, 9)
+                        AND ? BETWEEN lh.Season_Begin AND lh.Season_End)
+)
+SELECT TOP ({TOP_N}) Team, CR, ROW_NUMBER() OVER (ORDER BY CR DESC) AS NatRank
+FROM ok ORDER BY CR DESC
+"""
+
+SQL_URLS = """
+SELECT m.Team_ID, m.ProperName, m.URL FROM dbo.URL_ProperName_Mapping m
+JOIN dbo.HS_Team_Names t ON t.ID = m.Team_ID WHERE m.ProperName = ?
+"""
+
+SQL_GAMES = """
+SELECT s.ID, CAST(s.[Date] AS date) AS GameDate, DATEPART(WEEK, s.[Date]) AS Wk,
+       s.Home, s.Visitor, s.Home_Score, s.Visitor_Score, ISNULL(CAST(s.Neutral AS int), 0) AS Neutral
+FROM HS_Scores s
+WHERE s.Season = ? AND s.Home_Score IS NOT NULL AND s.Visitor_Score IS NOT NULL
+  AND (s.Future_Game IS NULL OR s.Future_Game = 0)
+  AND (s.Home IN (SELECT Team FROM #t100) OR s.Visitor IN (SELECT Team FROM #t100))
+ORDER BY s.[Date]
+"""
+
+SQL_RATINGS = f"""
+SELECT Home AS Team, Season, Week, {CR_EXPR} AS CR FROM HS_Rankings
+WHERE Season = ? OR (Season = ? AND Week = 52)
+"""
+
+
+def log(msg):
+    line = f"{datetime.now():%Y-%m-%d %H:%M:%S} - {msg}"
+    print(line)
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(line + "\n")
+
+
+def connect():
+    return pyodbc.connect(mp.DB_CONNECTION_STRING, timeout=30)
+
+
+# --- scraping ----------------------------------------------------------------
+
+def wait_for_lock():
+    deadline = time.time() + LOCK_WAIT_MINUTES * 60
+    while True:
+        if mp.acquire_lock():
+            return True
+        if time.time() > deadline:
+            return False
+        log("Another scraper holds the lock; waiting 5 minutes...")
+        time.sleep(300)
+
+
+def scrape(cur, top, limit=None):
+    teams = []
+    for t in top[:limit] if limit else top:
+        rows = cur.execute(SQL_URLS, t["team"]).fetchall()
+        if not rows:
+            log(f"  no MaxPreps URL mapped for {t['team']} - skipped")
+            continue
+        urls = []
+        for r in rows:
+            u = mp._clean_schedule_url(r.URL)
+            if u not in urls:
+                urls.append(u)
+        teams.append((rows[0].Team_ID, t["team"], urls))
+    if not teams:
+        log("No teams to scrape.")
+        return None
+
+    name = f"{BATCH_PREFIX}{datetime.now():%Y-%m-%d %H:%M}"
+    batch_id = cur.execute(
+        "INSERT INTO scraping_batches (batch_name, created_date, total_teams, status) "
+        "OUTPUT INSERTED.batch_id VALUES (?, GETDATE(), ?, 'running');", name, len(teams)).fetchone()[0]
+    cur.executemany("INSERT INTO dbo.team_scraping_status (team_id, batch_id) VALUES (?, ?);",
+                    [(tid, batch_id) for tid, _, _ in {t[0]: t for t in teams}.values()])
+    cur.connection.commit()
+    log(f"Batch {batch_id} '{name}': {len(teams)} teams.")
+
+    mp.kill_orphaned_scraper_chrome()
+    driver = mp.setup_driver()
+    total = 0
+    try:
+        for i, (tid, proper, urls) in enumerate(teams, 1):
+            games, err = [], None
+            for url in urls:
+                try:
+                    driver.get(url)
+                    mp.handle_popups(driver)
+                    games = mp.scrape_schedule_data_robust(driver, batch_id, proper)
+                    if games:
+                        break
+                except Exception as e:
+                    err = str(e).strip()[:500]
+                    # same dead-browser signatures maxpreps_scraper_db.py restarts on,
+                    # plus 10054 (connection reset): the 2026-11-14 test run hit it
+                    low = err.lower()
+                    if any(k in low for k in ("winerror 10061", "winerror 10054", "connection aborted",
+                                              "connection reset", "invalid session id",
+                                              "session not created", "max retries exceeded")):
+                        log(f"  dead browser session ({err[:60]}...) -- restarting the driver")
+                        try:
+                            driver.quit()
+                        except Exception:
+                            pass
+                        mp.kill_orphaned_scraper_chrome()
+                        time.sleep(3)
+                        driver = mp.setup_driver()
+            if games:
+                mp.save_raw_games_to_db(cur, games)
+                mp.update_team_status(cur, batch_id, tid, "completed", len(games))
+                total += len(games)
+            elif err is None:
+                mp.update_team_status(cur, batch_id, tid, "completed", 0)
+            else:
+                mp.update_team_status(cur, batch_id, tid, "failed", error_message=err)
+                log(f"  [{i}] {proper}: failed ({err[:120]})")
+            if i < len(teams):
+                time.sleep(random.uniform(4, 8))
+    finally:
+        try:
+            driver.quit()
+        except Exception:
+            pass
+        mp.kill_orphaned_scraper_chrome()
+
+    log(f"Scraped {total} raw schedule rows; finalizing batch {batch_id}...")
+    cur.execute("EXEC dbo.FinalizeMaxPrepsData @BatchID = ?", batch_id)
+    cur.connection.commit()
+    cur.execute("UPDATE scraping_batches SET status = 'completed' WHERE batch_id = ?", batch_id)
+    cur.connection.commit()
+    log(f"Batch {batch_id} finalized and completed.")
+    return batch_id
+
+
+# --- expectation vs result ------------------------------------------------------
+
+def build(cur, season, week, top):
+    cur.execute("IF OBJECT_ID('tempdb..#t100') IS NOT NULL DROP TABLE #t100; "
+                "CREATE TABLE #t100 (Team varchar(150) PRIMARY KEY);")
+    cur.executemany("INSERT INTO #t100 VALUES (?)", [(t["team"],) for t in top])
+    games = cur.execute(SQL_GAMES, season).fetchall()
+
+    ratings, prior = {}, {}
+    for r in cur.execute(SQL_RATINGS, season, season - 1).fetchall():
+        if r.Season == season:
+            ratings.setdefault(r.Team, []).append((int(r.Week), float(r.CR)))
+        else:
+            prior[r.Team] = float(r.CR)
+    for v in ratings.values():
+        v.sort()
+
+    def pre(team, wk):
+        best = None
+        for w, cr in ratings.get(team, []):
+            if w < wk:
+                best = (cr, w)
+            else:
+                break
+        if best:
+            return best
+        return (prior[team], 0) if team in prior else (None, None)
+
+    info = {t["team"]: t for t in top}
+    per_team = {t["team"]: [] for t in top}
+    for g in games:
+        for side in ("home", "visitor"):
+            team = g.Home if side == "home" else g.Visitor
+            if team not in info:
+                continue
+            opp = g.Visitor if side == "home" else g.Home
+            pf, pa = (g.Home_Score, g.Visitor_Score) if side == "home" else (g.Visitor_Score, g.Home_Score)
+            tcr, tw = pre(team, g.Wk)
+            ocr, _ = pre(opp, g.Wk)
+            hfa = 0.0 if g.Neutral else (HOME_FIELD_PTS if side == "home" else -HOME_FIELD_PTS)
+            exp = (tcr - ocr) / COMBINED_PER_POINT + hfa if tcr is not None and ocr is not None else None
+            act = pf - pa
+            per_team[team].append({
+                "date": g.GameDate.isoformat(),
+                "opponent": opp,
+                "opponent_rank": info[opp]["rank"] if opp in info else None,
+                "site": "N" if g.Neutral else ("H" if side == "home" else "A"),
+                "points_for": int(pf), "points_against": int(pa),
+                "result": "W" if act > 0 else ("L" if act < 0 else "T"),
+                "team_rating_pre": round(tcr, 2) if tcr is not None else None,
+                "opponent_rating_pre": round(ocr, 2) if ocr is not None else None,
+                "ratings_week": tw,
+                "expected_margin": round(exp, 1) if exp is not None else None,
+                "actual_margin": int(act),
+                "deviation": round(act - exp, 1) if exp is not None else None,
+            })
+
+    cutoff = (date.today() - timedelta(days=RECENT_DAYS)).isoformat()
+    teams_out, recent = [], []
+    for t in top:
+        gl = per_team[t["team"]]
+        devs = [x["deviation"] for x in gl if x["deviation"] is not None]
+        w = sum(1 for x in gl if x["result"] == "W"); l = sum(1 for x in gl if x["result"] == "L")
+        tie = sum(1 for x in gl if x["result"] == "T")
+        teams_out.append({
+            "rank": t["rank"], "team": t["team"], "rating": round(t["cr"], 2),
+            "record": f"{w}-{l}" + (f"-{tie}" if tie else ""),
+            "games": len(gl),
+            "avg_deviation": round(sum(devs) / len(devs), 1) if devs else None,
+            "last_game": gl[-1] if gl else None,
+            "game_log": gl,
+        })
+        for x in gl:
+            if x["date"] >= cutoff:
+                recent.append({"team": t["team"], "rank": t["rank"], **x})
+    recent.sort(key=lambda x: (x["deviation"] is None, -(x["deviation"] or 0)))
+
+    return {
+        "metadata": {
+            "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+            "type": "top100-tracker", "season": int(season), "ratings_week": int(week),
+            "home_field_adv": HOME_FIELD_PTS, "points_per_rating": COMBINED_PER_POINT,
+            "recent_since": cutoff, "total_teams": len(teams_out),
+            "description": "The national top 100 by Combined Rating, and how each game's "
+                           "margin compared with the margin expected from the two teams' "
+                           "pre-game ratings.",
+        },
+        "recent": recent,
+        "teams": teams_out,
+    }
+
+
+# --- publish -----------------------------------------------------------------------
+
+def git(*args):
+    r = subprocess.run(["git", *args], cwd=REPO_ROOT, capture_output=True, text=True)
+    return r.returncode, (r.stdout + r.stderr).strip()
+
+
+def publish():
+    paths = ["docs/data/top100-tracker", "docs/pages/public/top100-tracker"]
+    git("add", *paths)
+    rc, out = git("diff", "--cached", "--quiet", "--", *paths)
+    if rc == 0:
+        log("Nothing changed on the page; no commit.")
+        return
+    rc, out = git("commit", "-m", f"Top 100 tracker update {datetime.now():%Y-%m-%d %H:%M}", "--", *paths)
+    log(f"git commit: {out.splitlines()[0] if out else rc}")
+    rc, out = git("push", "origin", "main")
+    if rc != 0:
+        log(f"git push failed ({rc}): {out[-300:]}  -- run 'git pull --rebase' then 'git push' by hand.")
+    else:
+        log("Pushed to GitHub.")
+
+
+def main():
+    ap = argparse.ArgumentParser(description="Top 100 weekend tracker")
+    ap.add_argument("--no-scrape", action="store_true")
+    ap.add_argument("--no-push", action="store_true")
+    ap.add_argument("--limit", type=int, help="scrape only the first N teams (testing)")
+    a = ap.parse_args()
+
+    log("=== Top 100 tracker started ===")
+    cn = connect(); cur = cn.cursor()
+    season, week = cur.execute(SQL_LATEST).fetchone()
+    top = [{"team": r.Team, "cr": float(r.CR), "rank": int(r.NatRank)}
+           for r in cur.execute(SQL_TOP, season, week, season).fetchall()]
+    log(f"Ratings: season {season}, week {week}; top {len(top)} teams (#1 {top[0]['team'] if top else '-'}).")
+
+    if not a.no_scrape:
+        if wait_for_lock():
+            try:
+                scrape(cur, top, a.limit)
+            except Exception as e:
+                log(f"Scrape failed: {e} -- building the page from the data already in HS_Scores.")
+            finally:
+                mp.release_lock()
+        else:
+            log(f"Lock still held after {LOCK_WAIT_MINUTES} min; building from existing data without scraping.")
+
+    data = build(cur, season, week, top)
+    cn.close()
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    log(f"Written {OUTPUT_FILE}: {len(data['teams'])} teams, {len(data['recent'])} recent games.")
+
+    if not a.no_push:
+        publish()
+    log("=== Done ===")
+
+
+if __name__ == "__main__":
+    main()

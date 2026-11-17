@@ -1,0 +1,146 @@
+archive-ids CA --ids CA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids DE --ids DE_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+set-dates GA --file GA_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+archive-ids GA --ids GA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+set-dates IA --file IA_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+archive-ids IA --ids IA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids ID --ids ID_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+set-dates IL --file IL_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+archive-ids IL --ids IL_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids IN --ids IN_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids MD --ids MD_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids MI --ids MI_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids MN --ids MN_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids MT --ids MT_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids ND --ids ND_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+set-dates NJ --file NJ_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+archive-ids NJ --ids NJ_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids NV --ids NV_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids NY --ids NY_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+set-dates OH --file OH_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+archive-ids OH --ids OH_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+set-dates OR --file OR_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+archive-ids OR --ids OR_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+set-dates PA --file PA_season_date_fix.csv --reason "estimated dates past the season moved to December Fridays; date-year typos (2026-11-15)" --commit
+archive-ids PA --ids PA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids SD --ids SD_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids VA --ids VA_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids WV --ids WV_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+archive-ids SC --ids SC_college_copies_archive.csv --reason "Post-1940 college-vs-college games present in College_Scores (names matched) (2026-11-15)" --commit
+step AK 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step AK 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step AK 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step CA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step CA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step CA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step DC 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step DC 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step DC 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step DE 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step DE 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step DE 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step GA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step GA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step GA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step HI 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step HI 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step HI 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step IA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step IA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step IA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step ID 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step ID 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step ID 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step IL 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step IL 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step IL 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step IN 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step IN 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step IN 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step KY 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step KY 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step KY 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step MD 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step MD 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step MD 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step ME 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step ME 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step ME 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step MI 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step MI 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step MI 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step MN 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step MN 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step MN 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step MT 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step MT 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step MT 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step ND 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step ND 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step ND 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step NJ 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step NJ 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step NJ 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step NV 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step NV 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step NV 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step NY 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step NY 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step NY 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step OH 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step OH 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step OH 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step OR 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step OR 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step OR 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step PA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step PA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step PA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step SD 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step SD 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step SD 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step VA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step VA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step VA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step VT 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step VT 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step VT 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step WA 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step WA 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step WA 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step WI 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step WI 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step WI 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step WV 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step WV 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step WV 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step AL 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step AL 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step AL 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step SC 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step SC 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step SC 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step AZ 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step AZ 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step AZ 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step CO 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step CO 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step CO 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step FL 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step FL 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step FL 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step KS 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step KS 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step KS 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step MO 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step MO 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step MO 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step NE 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step NE 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step NE 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step NM 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step NM 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step NM 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"
+step UT 3.1 done "2026-11-15: season/date check run; fixes applied; Season-year corrections sent to David as SQL"
+step UT 3.2 done "2026-11-15: forfeits reviewed; post-1949 2-0 games without forfeit flag left as-is (house convention)"
+step UT 5.0 done "2026-11-15: college check run; 1940+ college-vs-college copies in College_Scores archived when names matched"

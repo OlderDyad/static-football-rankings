@@ -1,0 +1,942 @@
+
+>>> same-score-fix NY --commit
+ 1793 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS NY - COMMIT
+ 979 pairs {'DROP A': 120, 'DROP B': 128, 'UNDECIDED': 731} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_same_score_COMMITTED_20261113_0638.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  248       5312F8B9-8396-434B-B7DA-35BCD992B676  None
+
+>>> consolidate NY --reason "NY round 2 (2026-11-13): same-school names, see _coop_scripts/NY_cfg.py"
+Consolidating NY from C:/Users/demck/OneDrive/Football_2024/static-football-rankings/excel_files/State_Aliases_ProperNames\NY_Alias_Rules.csv
+
+[stderr]
+2026-11-13 06:38:05,186 - INFO - Starting consolidation for state: (NY) using staging table method.
+2026-11-13 06:38:05,197 - WARNING - WARNING: 752 row(s) have identical OldName and NewName (no-op rules).
+2026-11-13 06:38:05,197 - WARNING -   'Accord Rondout Valley (NY)' -> 'Accord Rondout Valley (NY)' (no change)
+2026-11-13 06:38:05,197 - WARNING -   'Adams South Jefferson (NY)' -> 'Adams South Jefferson (NY)' (no change)
+2026-11-13 06:38:05,197 - WARNING -   'Afton Central (NY)' -> 'Afton Central (NY)' (no change)
+2026-11-13 06:38:05,197 - WARNING -   'Akron (NY)' -> 'Akron (NY)' (no change)
+2026-11-13 06:38:05,197 - WARNING -   'Albany (NY)' -> 'Albany (NY)' (no change)
+2026-11-13 06:38:05,197 - WARNING -   'Albany Academy for Boys (NY)' -> 'Albany Academy for Boys (NY)' (no change)
+2026-11-13 06:38:05,197 - WARNING -   'Albany Bishop Maginn (NY)' -> 'Albany Bishop Maginn (NY)' (no change)
+2026-11-13 06:38:05,197 - WARNING -   'Albany Christian Brothers Academy (NY)' -> 'Albany Christian Brothers Academy (NY)' (no change)
+2026-11-13 06:38:05,197 - WARNING -   'Albany Colonie Central (NY)' -> 'Albany Colonie Central (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Albany Green Tech (NY)' -> 'Albany Green Tech (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Albion (NY)' -> 'Albion (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Alden (NY)' -> 'Alden (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Alexandria Bay Alexandria Central (NY)' -> 'Alexandria Bay Alexandria Central (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Allegany-Limestone (NY)' -> 'Allegany-Limestone (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Altmar-Parish-Williamstown (NY)' -> 'Altmar-Parish-Williamstown (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Amherst Central (NY)' -> 'Amherst Central (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Amherst Sweet Home (NY)' -> 'Amherst Sweet Home (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Amityville Memorial (NY)' -> 'Amityville Memorial (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Amsterdam (NY)' -> 'Amsterdam (NY)' (no change)
+2026-11-13 06:38:05,198 - WARNING -   'Angola Lake Shore (NY)' -> 'Angola Lake Shore (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Ardsley (NY)' -> 'Ardsley (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Armonk Byram Hills (NY)' -> 'Armonk Byram Hills (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Astoria St. John's Prep (NY)' -> 'Astoria St. John's Prep (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Attica (NY)' -> 'Attica (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Auburn (NY)' -> 'Auburn (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Averill Park (NY)' -> 'Averill Park (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Avon (NY)' -> 'Avon (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Babylon (NY)' -> 'Babylon (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Bainbridge-Guilford (NY)' -> 'Bainbridge-Guilford (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Bainbridge-Guilford-Afton (NY)' -> 'Bainbridge-Guilford-Afton (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Baldwin (NY)' -> 'Baldwin (NY)' (no change)
+2026-11-13 06:38:05,199 - WARNING -   'Baldwinsville Baker (NY)' -> 'Baldwinsville Baker (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Ballston Spa (NY)' -> 'Ballston Spa (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Bardonia Albertus Magnus (NY)' -> 'Bardonia Albertus Magnus (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Barker (NY)' -> 'Barker (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Batavia (NY)' -> 'Batavia (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Batavia Notre Dame (NY)' -> 'Batavia Notre Dame (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Bath Haverling (NY)' -> 'Bath Haverling (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Bay Shore (NY)' -> 'Bay Shore (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Bayport-Blue Point (NY)' -> 'Bayport-Blue Point (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Bayside (NY)' -> 'Bayside (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Bayside Cardozo (NY)' -> 'Bayside Cardozo (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Beacon (NY)' -> 'Beacon (NY)' (no change)
+2026-11-13 06:38:05,200 - WARNING -   'Beaver Falls Beaver River (NY)' -> 'Beaver Falls Beaver River (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Bedford Fox Lane (NY)' -> 'Bedford Fox Lane (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Bellmore John F. Kennedy (NY)' -> 'Bellmore John F. Kennedy (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Bemus Point Maple Grove (NY)' -> 'Bemus Point Maple Grove (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Bemus Point Maple Grove-Chautauqua Lake (NY)' -> 'Bemus Point Maple Grove-Chautauqua Lake (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Berne-Knox-Westerlo (NY)' -> 'Berne-Knox-Westerlo (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Bethpage (NY)' -> 'Bethpage (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Binghampton North (NY)' -> 'Binghampton North (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Binghamton (NY)' -> 'Binghamton (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Binghamton Chenango Forks (NY)' -> 'Binghamton Chenango Forks (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Binghamton Chenango Valley Central (NY)' -> 'Binghamton Chenango Valley Central (NY)' (no change)
+2026-11-13 06:38:05,201 - WARNING -   'Binghamton Seton Catholic Central (NY)' -> 'Binghamton Seton Catholic Central (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Bohemia Connetquot (NY)' -> 'Bohemia Connetquot (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Boiceville Onteora (NY)' -> 'Boiceville Onteora (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Bolivar (NY)' -> 'Bolivar (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Bolivar-Richburg (NY)' -> 'Bolivar-Richburg (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Boonville Adirondack (NY)' -> 'Boonville Adirondack (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Brasher Falls St. Lawrence Central (NY)' -> 'Brasher Falls St. Lawrence Central (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Brentwood (NY)' -> 'Brentwood (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Brewster (NY)' -> 'Brewster (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Briarcliff Manor Briarcliff (NY)' -> 'Briarcliff Manor Briarcliff (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Broadalbin-Perth (NY)' -> 'Broadalbin-Perth (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Brockport (NY)' -> 'Brockport (NY)' (no change)
+2026-11-13 06:38:05,202 - WARNING -   'Brocton (NY)' -> 'Brocton (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Cardinal Hayes (NY)' -> 'Bronx Cardinal Hayes (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Cardinal Spellman (NY)' -> 'Bronx Cardinal Spellman (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Columbus (NY)' -> 'Bronx Columbus (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx DeWitt Clinton (NY)' -> 'Bronx DeWitt Clinton (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Evander Childs (NY)' -> 'Bronx Evander Childs (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Fieldston (NY)' -> 'Bronx Fieldston (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Fordham Prep (NY)' -> 'Bronx Fordham Prep (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Kennedy (NY)' -> 'Bronx Kennedy (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Lehman (NY)' -> 'Bronx Lehman (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Mott Haven (NY)' -> 'Bronx Mott Haven (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Riverdale Country (NY)' -> 'Bronx Riverdale Country (NY)' (no change)
+2026-11-13 06:38:05,203 - WARNING -   'Bronx Smith (NY)' -> 'Bronx Smith (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Bronx St. Catharine Academy (NY)' -> 'Bronx St. Catharine Academy (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Bronx Stevenson (NY)' -> 'Bronx Stevenson (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Bronx Truman (NY)' -> 'Bronx Truman (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Bronxville (NY)' -> 'Bronxville (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Bronxville Concordia Prep (NY)' -> 'Bronxville Concordia Prep (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Brookhaven Bellport (NY)' -> 'Brookhaven Bellport (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Brooklyn Automotive (NY)' -> 'Brooklyn Automotive (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Brooklyn Bishop Ford (NY)' -> 'Brooklyn Bishop Ford (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Brooklyn Boys & Girls (NY)' -> 'Brooklyn Boys & Girls (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Brooklyn Canarsie (NY)' -> 'Brooklyn Canarsie (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Brooklyn Erasmus Hall (NY)' -> 'Brooklyn Erasmus Hall (NY)' (no change)
+2026-11-13 06:38:05,204 - WARNING -   'Brooklyn Evening (NY)' -> 'Brooklyn Evening (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Fort Hamilton (NY)' -> 'Brooklyn Fort Hamilton (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Frank J. Macchiarola (NY)' -> 'Brooklyn Frank J. Macchiarola (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Grady (NY)' -> 'Brooklyn Grady (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Grand Street Campus (NY)' -> 'Brooklyn Grand Street Campus (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Jefferson (NY)' -> 'Brooklyn Jefferson (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn John Jay (NY)' -> 'Brooklyn John Jay (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Lafayette (NY)' -> 'Brooklyn Lafayette (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Lane (NY)' -> 'Brooklyn Lane (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Lincoln (NY)' -> 'Brooklyn Lincoln (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Madison (NY)' -> 'Brooklyn Madison (NY)' (no change)
+2026-11-13 06:38:05,205 - WARNING -   'Brooklyn Midwood (NY)' -> 'Brooklyn Midwood (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn Nazareth (NY)' -> 'Brooklyn Nazareth (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn New Utrecht (NY)' -> 'Brooklyn New Utrecht (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn Poly Prep Country Day (NY)' -> 'Brooklyn Poly Prep Country Day (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn Sheepshead Bay (NY)' -> 'Brooklyn Sheepshead Bay (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn South Shore (NY)' -> 'Brooklyn South Shore (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn St Johns Prep (NY)' -> 'Brooklyn St Johns Prep (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn St. John's Prep (NY)' -> 'Brooklyn St. John's Prep (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn Tech (NY)' -> 'Brooklyn Tech (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn Tilden (NY)' -> 'Brooklyn Tilden (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brooklyn Xaverian (NY)' -> 'Brooklyn Xaverian (NY)' (no change)
+2026-11-13 06:38:05,206 - WARNING -   'Brookville Long Island Lutheran (NY)' -> 'Brookville Long Island Lutheran (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Bennett (NY)' -> 'Buffalo Bennett (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Bishop Timon (NY)' -> 'Buffalo Bishop Timon (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Burgard-Math Science Tech Prep at Seneca (NY)' -> 'Buffalo Burgard-Math Science Tech Prep at Seneca (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Canisius (NY)' -> 'Buffalo Canisius (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Grover Cleveland (NY)' -> 'Buffalo Grover Cleveland (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Health Sciences Academy (NY)' -> 'Buffalo Health Sciences Academy (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Hutchinson Tech (NY)' -> 'Buffalo Hutchinson Tech (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Hutchinson-Central Tech-Emerson Vo-Tech (NY)' -> 'Buffalo Hutchinson-Central Tech-Emerson Vo-Tech (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Kenmore West (NY)' -> 'Buffalo Kenmore West (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Kensington (NY)' -> 'Buffalo Kensington (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Lafayette (NY)' -> 'Buffalo Lafayette (NY)' (no change)
+2026-11-13 06:38:05,207 - WARNING -   'Buffalo Lewis J. Bennett (NY)' -> 'Buffalo Lewis J. Bennett (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Buffalo McKinley (NY)' -> 'Buffalo McKinley (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Buffalo Nichols (NY)' -> 'Buffalo Nichols (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Buffalo Riverside (NY)' -> 'Buffalo Riverside (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Buffalo Riverside-International Prep at Grove-LaFayette-Da Vinci (NY)' -> 'Buffalo Riverside-International Prep at Grove-LaFayette-Da Vinci (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Buffalo Seneca Voc-Tech (NY)' -> 'Buffalo Seneca Voc-Tech (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Buffalo South Park (NY)' -> 'Buffalo South Park (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Buffalo South Park-Middle Early College (NY)' -> 'Buffalo South Park-Middle Early College (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Buffalo Turner-Carroll (NY)' -> 'Buffalo Turner-Carroll (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Buffalo Western New York Maritime Charter (NY)' -> 'Buffalo Western New York Maritime Charter (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Burnt Hills (NY)' -> 'Burnt Hills (NY)' (no change)
+2026-11-13 06:38:05,208 - WARNING -   'Burnt Hills-Ballston Lake (NY)' -> 'Burnt Hills-Ballston Lake (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Cairo-Durham (NY)' -> 'Cairo-Durham (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Caledonia-Mumford (NY)' -> 'Caledonia-Mumford (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Cambria Heights Campus Magnet (NY)' -> 'Cambria Heights Campus Magnet (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Cambridge (NY)' -> 'Cambridge (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Camden (NY)' -> 'Camden (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Camillus West Genesee (NY)' -> 'Camillus West Genesee (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Canajoharie Central (NY)' -> 'Canajoharie Central (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Canajoharie-Fort Plain (NY)' -> 'Canajoharie-Fort Plain (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Canandaigua Academy (NY)' -> 'Canandaigua Academy (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Canastota (NY)' -> 'Canastota (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Candor (NY)' -> 'Candor (NY)' (no change)
+2026-11-13 06:38:05,209 - WARNING -   'Canisteo (NY)' -> 'Canisteo (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Canisteo-Greenwood (NY)' -> 'Canisteo-Greenwood (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Canton (NY)' -> 'Canton (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Carle Place (NY)' -> 'Carle Place (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Carmel (NY)' -> 'Carmel (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Carthage (NY)' -> 'Carthage (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Cato-Meridian (NY)' -> 'Cato-Meridian (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Cattaraugus-Little Valley (NY)' -> 'Cattaraugus-Little Valley (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Cazenovia (NY)' -> 'Cazenovia (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Cedarhurst Lawrence (NY)' -> 'Cedarhurst Lawrence (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Center Moriches (NY)' -> 'Center Moriches (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Centereach (NY)' -> 'Centereach (NY)' (no change)
+2026-11-13 06:38:05,210 - WARNING -   'Central Islip (NY)' -> 'Central Islip (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Central Square (NY)' -> 'Central Square (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Central Valley Monroe-Woodbury (NY)' -> 'Central Valley Monroe-Woodbury (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Chappaqua Greeley (NY)' -> 'Chappaqua Greeley (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Chatham (NY)' -> 'Chatham (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Cheektowaga (NY)' -> 'Cheektowaga (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Cheektowaga Cleveland Hill (NY)' -> 'Cheektowaga Cleveland Hill (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Cheektowaga Kennedy (NY)' -> 'Cheektowaga Kennedy (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Cheektowaga Maryvale (NY)' -> 'Cheektowaga Maryvale (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Chester (NY)' -> 'Chester (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Chester-Seward Park (NY)' -> 'Chester-Seward Park (NY)' (no change)
+2026-11-13 06:38:05,211 - WARNING -   'Chittenango (NY)' -> 'Chittenango (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Churchville-Chili (NY)' -> 'Churchville-Chili (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Cicero-North Syracuse (NY)' -> 'Cicero-North Syracuse (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Clarence (NY)' -> 'Clarence (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Clayton Thousand Islands (NY)' -> 'Clayton Thousand Islands (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Clifton Park Shenendehowa (NY)' -> 'Clifton Park Shenendehowa (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Clifton Springs Midlakes (NY)' -> 'Clifton Springs Midlakes (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Clinton (NY)' -> 'Clinton (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Clintonville AuSable Valley (NY)' -> 'Clintonville AuSable Valley (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Clyde-Savannah (NY)' -> 'Clyde-Savannah (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Clymer Central (NY)' -> 'Clymer Central (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Cobleskill-Richmondville (NY)' -> 'Cobleskill-Richmondville (NY)' (no change)
+2026-11-13 06:38:05,212 - WARNING -   'Cohoes (NY)' -> 'Cohoes (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Cold Spring Haldane (NY)' -> 'Cold Spring Haldane (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Cold Spring Harbor (NY)' -> 'Cold Spring Harbor (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Cold Spring Harbor Eastern Military Academy (NY)' -> 'Cold Spring Harbor Eastern Military Academy (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Commack (NY)' -> 'Commack (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Conklin Susquehanna Valley (NY)' -> 'Conklin Susquehanna Valley (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Cooperstown (NY)' -> 'Cooperstown (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Copiague (NY)' -> 'Copiague (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Corfu Pembroke (NY)' -> 'Corfu Pembroke (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Corinth (NY)' -> 'Corinth (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Corning Northside (NY)' -> 'Corning Northside (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Corning-Painted Post (NY)' -> 'Corning-Painted Post (NY)' (no change)
+2026-11-13 06:38:05,213 - WARNING -   'Corning-Painted Post East (NY)' -> 'Corning-Painted Post East (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Corning-Painted Post West (NY)' -> 'Corning-Painted Post West (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Cornwall-on-Hudson New York Military Academy (NY)' -> 'Cornwall-on-Hudson New York Military Academy (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Cornwall-On-Hudson Storm King (NY)' -> 'Cornwall-On-Hudson Storm King (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Cortland (NY)' -> 'Cortland (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Cortlandt Manor Walter Panas (NY)' -> 'Cortlandt Manor Walter Panas (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Coxsackie-Athens (NY)' -> 'Coxsackie-Athens (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Craryville Taconic Hills (NY)' -> 'Craryville Taconic Hills (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Cross River John Jay (NY)' -> 'Cross River John Jay (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Croton on Hudson Croton-Harmon (NY)' -> 'Croton on Hudson Croton-Harmon (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Cuba-Rushford (NY)' -> 'Cuba-Rushford (NY)' (no change)
+2026-11-13 06:38:05,214 - WARNING -   'Dansville (NY)' -> 'Dansville (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Deer Park (NY)' -> 'Deer Park (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Delhi Delaware Academy (NY)' -> 'Delhi Delaware Academy (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Delmar Bethlehem Central (NY)' -> 'Delmar Bethlehem Central (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Depew (NY)' -> 'Depew (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Deposit (NY)' -> 'Deposit (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Deposit-Hancock (NY)' -> 'Deposit-Hancock (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Dexter General Brown (NY)' -> 'Dexter General Brown (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Dix Hills Half Hollow Hills East (NY)' -> 'Dix Hills Half Hollow Hills East (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Dix Hills Half Hollow Hills West (NY)' -> 'Dix Hills Half Hollow Hills West (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Dobbs Ferry (NY)' -> 'Dobbs Ferry (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Dobbs Ferry Mackenzie School (NY)' -> 'Dobbs Ferry Mackenzie School (NY)' (no change)
+2026-11-13 06:38:05,215 - WARNING -   'Dolgeville (NY)' -> 'Dolgeville (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'Dover Plains (NY)' -> 'Dover Plains (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'Dryden (NY)' -> 'Dryden (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'Dundee (NY)' -> 'Dundee (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'Dunkirk (NY)' -> 'Dunkirk (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'Dunkirk St. Mary's (NY)' -> 'Dunkirk St. Mary's (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'East Amherst Williamsville East (NY)' -> 'East Amherst Williamsville East (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'East Aurora (NY)' -> 'East Aurora (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'East Aurora-Holland (NY)' -> 'East Aurora-Holland (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'East Greenbush Columbia (NY)' -> 'East Greenbush Columbia (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'East Hampton (NY)' -> 'East Hampton (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'East Hampton-Bridgehampton-Pierson (NY)' -> 'East Hampton-Bridgehampton-Pierson (NY)' (no change)
+2026-11-13 06:38:05,216 - WARNING -   'East Meadow (NY)' -> 'East Meadow (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'East Rochester (NY)' -> 'East Rochester (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'East Rochester-Gananda (NY)' -> 'East Rochester-Gananda (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'East Rockaway (NY)' -> 'East Rockaway (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'East Setauket Ward Melville (NY)' -> 'East Setauket Ward Melville (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'East Syracuse Bishop Grimes (NY)' -> 'East Syracuse Bishop Grimes (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'East Syracuse-Minoa (NY)' -> 'East Syracuse-Minoa (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'Eastchester (NY)' -> 'Eastchester (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'Eastchester Tuckahoe (NY)' -> 'Eastchester Tuckahoe (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'Eden (NY)' -> 'Eden (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'Eden-North Collins (NY)' -> 'Eden-North Collins (NY)' (no change)
+2026-11-13 06:38:05,217 - WARNING -   'Elba (NY)' -> 'Elba (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Eldred (NY)' -> 'Eldred (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Ellenville (NY)' -> 'Ellenville (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Ellicottville (NY)' -> 'Ellicottville (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Elma Iroquois (NY)' -> 'Elma Iroquois (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Elmira Free Academy (NY)' -> 'Elmira Free Academy (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Elmira Heights Edison (NY)' -> 'Elmira Heights Edison (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Elmira Notre Dame (NY)' -> 'Elmira Notre Dame (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Elmira Southside (NY)' -> 'Elmira Southside (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Elmont Memorial (NY)' -> 'Elmont Memorial (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Elwood John Glenn (NY)' -> 'Elwood John Glenn (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Fairport (NY)' -> 'Fairport (NY)' (no change)
+2026-11-13 06:38:05,218 - WARNING -   'Falconer (NY)' -> 'Falconer (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Far Rockaway (NY)' -> 'Far Rockaway (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Farmingdale (NY)' -> 'Farmingdale (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Farmingville Sachem East (NY)' -> 'Farmingville Sachem East (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Fayetteville-Manlius (NY)' -> 'Fayetteville-Manlius (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Floral Park Memorial (NY)' -> 'Floral Park Memorial (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Floral Park Sewanhaka (NY)' -> 'Floral Park Sewanhaka (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Flushing (NY)' -> 'Flushing (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Flushing Holy Cross (NY)' -> 'Flushing Holy Cross (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Fonda-Fultonville (NY)' -> 'Fonda-Fultonville (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Forestville Central (NY)' -> 'Forestville Central (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Fort Edward (NY)' -> 'Fort Edward (NY)' (no change)
+2026-11-13 06:38:05,219 - WARNING -   'Frankfort-Schuyler (NY)' -> 'Frankfort-Schuyler (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Franklin Square Carey (NY)' -> 'Franklin Square Carey (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Franklin Square Valley Stream North (NY)' -> 'Franklin Square Valley Stream North (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Franklinville (NY)' -> 'Franklinville (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Franklinville-Ellicottville (NY)' -> 'Franklinville-Ellicottville (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Fredonia (NY)' -> 'Fredonia (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Freeport (NY)' -> 'Freeport (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Fresh Meadows St. Francis Prep (NY)' -> 'Fresh Meadows St. Francis Prep (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Frewsburg (NY)' -> 'Frewsburg (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Fulton Bodley (NY)' -> 'Fulton Bodley (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Gainesville Letchworth (NY)' -> 'Gainesville Letchworth (NY)' (no change)
+2026-11-13 06:38:05,220 - WARNING -   'Gananda (NY)' -> 'Gananda (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Garden City (NY)' -> 'Garden City (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Garden City St.Paul's (NY)' -> 'Garden City St.Paul's (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Geneseo (NY)' -> 'Geneseo (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Geneseo-Mount Morris (NY)' -> 'Geneseo-Mount Morris (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Geneva (NY)' -> 'Geneva (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Geneva DeSales (NY)' -> 'Geneva DeSales (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Glen Cove (NY)' -> 'Glen Cove (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Glen Head North Shore (NY)' -> 'Glen Head North Shore (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Glens Falls (NY)' -> 'Glens Falls (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Gloversville (NY)' -> 'Gloversville (NY)' (no change)
+2026-11-13 06:38:05,221 - WARNING -   'Goshen Burke Catholic (NY)' -> 'Goshen Burke Catholic (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Goshen Central (NY)' -> 'Goshen Central (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Gouverneur (NY)' -> 'Gouverneur (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Gowanda (NY)' -> 'Gowanda (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Grahamsville Tri-Valley (NY)' -> 'Grahamsville Tri-Valley (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Grand Island (NY)' -> 'Grand Island (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Granville (NY)' -> 'Granville (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Great Neck North (NY)' -> 'Great Neck North (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Great Neck South (NY)' -> 'Great Neck South (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Greene (NY)' -> 'Greene (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Greenlawn Harborfields (NY)' -> 'Greenlawn Harborfields (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Greenport (NY)' -> 'Greenport (NY)' (no change)
+2026-11-13 06:38:05,222 - WARNING -   'Greenport-Southold-Mattituck (NY)' -> 'Greenport-Southold-Mattituck (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Greenwich (NY)' -> 'Greenwich (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Groton (NY)' -> 'Groton (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Guilderland Center (NY)' -> 'Guilderland Center (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Hamburg (NY)' -> 'Hamburg (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Hamburg Frontier (NY)' -> 'Hamburg Frontier (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Hamilton (NY)' -> 'Hamilton (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Hampton Bays (NY)' -> 'Hampton Bays (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Hancock (NY)' -> 'Hancock (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Hannibal (NY)' -> 'Hannibal (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Harpursville (NY)' -> 'Harpursville (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Harpursville-Afton (NY)' -> 'Harpursville-Afton (NY)' (no change)
+2026-11-13 06:38:05,223 - WARNING -   'Harrison (NY)' -> 'Harrison (NY)' (no change)
+2026-11-13 06:38:05,224 - WARNING -   'Hartsdale Woodlands (NY)' -> 'Hartsdale Woodlands (NY)' (no change)
+2026-11-13 06:38:05,224 - WARNING -   'Hastings-on-Hudson Dobbs-Hastings (NY)' -> 'Hastings-on-Hudson Dobbs-Hastings (NY)' (no change)
+2026-11-13 06:38:05,224 - WARNING -   'Hauppauge (NY)' -> 'Hauppauge (NY)' (no change)
+2026-11-13 06:38:05,224 - WARNING -   'Hempstead (NY)' -> 'Hempstead (NY)' (no change)
+2026-11-13 06:38:05,224 - WARNING -   'Herkimer (NY)' -> 'Herkimer (NY)' (no change)
+2026-11-13 06:38:05,224 - WARNING -   'Hewlett (NY)' -> 'Hewlett (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Hicksville (NY)' -> 'Hicksville (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Hicksville Long Holy Trinity (NY)' -> 'Hicksville Long Holy Trinity (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Highland (NY)' -> 'Highland (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Highland Falls O'Neill (NY)' -> 'Highland Falls O'Neill (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Hilton (NY)' -> 'Hilton (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Hinsdale Central (NY)' -> 'Hinsdale Central (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Hobart College Frosh (NY)' -> 'Hobart College Frosh (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Holland Patent (NY)' -> 'Holland Patent (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Holley (NY)' -> 'Holley (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Homer (NY)' -> 'Homer (NY)' (no change)
+2026-11-13 06:38:05,225 - WARNING -   'Honeoye Falls (NY)' -> 'Honeoye Falls (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Honeoye Falls-Lima (NY)' -> 'Honeoye Falls-Lima (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Hoosick Falls (NY)' -> 'Hoosick Falls (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Hopewell Junction John Jay (NY)' -> 'Hopewell Junction John Jay (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Hornell (NY)' -> 'Hornell (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Horseheads (NY)' -> 'Horseheads (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Hudson (NY)' -> 'Hudson (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Hudson Falls (NY)' -> 'Hudson Falls (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Huntington (NY)' -> 'Huntington (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Huntington Station Walt Whitman (NY)' -> 'Huntington Station Walt Whitman (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Hyde Park Roosevelt (NY)' -> 'Hyde Park Roosevelt (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Ilion (NY)' -> 'Ilion (NY)' (no change)
+2026-11-13 06:38:05,226 - WARNING -   'Ilion Central Valley Academy (NY)' -> 'Ilion Central Valley Academy (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Irvington (NY)' -> 'Irvington (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Islip (NY)' -> 'Islip (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Islip Terrace East Islip (NY)' -> 'Islip Terrace East Islip (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Ithaca (NY)' -> 'Ithaca (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Jamaica (NY)' -> 'Jamaica (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Jamaica Martin (NY)' -> 'Jamaica Martin (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Jamestown (NY)' -> 'Jamestown (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Jamestown Southwestern (NY)' -> 'Jamestown Southwestern (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Jamesville-DeWitt (NY)' -> 'Jamesville-DeWitt (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Jericho (NY)' -> 'Jericho (NY)' (no change)
+2026-11-13 06:38:05,227 - WARNING -   'Johnson City (NY)' -> 'Johnson City (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Johnstown (NY)' -> 'Johnstown (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Jordan-Elbridge (NY)' -> 'Jordan-Elbridge (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Katonah The Harvey School (NY)' -> 'Katonah The Harvey School (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Kings Park (NY)' -> 'Kings Park (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Kingston (NY)' -> 'Kingston (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Lackawanna (NY)' -> 'Lackawanna (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'LaFayette (NY)' -> 'LaFayette (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'LaGrangeville Arlington (NY)' -> 'LaGrangeville Arlington (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Lake George (NY)' -> 'Lake George (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Lake Huntington Sullivan West (NY)' -> 'Lake Huntington Sullivan West (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Lake Ronkonkoma Sachem (NY)' -> 'Lake Ronkonkoma Sachem (NY)' (no change)
+2026-11-13 06:38:05,228 - WARNING -   'Lake Ronkonkoma Sachem North (NY)' -> 'Lake Ronkonkoma Sachem North (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Lancaster (NY)' -> 'Lancaster (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Lancaster St. Mary's (NY)' -> 'Lancaster St. Mary's (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Lansing (NY)' -> 'Lansing (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Latham Shaker (NY)' -> 'Latham Shaker (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Lawrence Woodmere Academy (NY)' -> 'Lawrence Woodmere Academy (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Le Roy (NY)' -> 'Le Roy (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Levittown Division (NY)' -> 'Levittown Division (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Levittown Island Trees (NY)' -> 'Levittown Island Trees (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Levittown MacArthur (NY)' -> 'Levittown MacArthur (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Liberty (NY)' -> 'Liberty (NY)' (no change)
+2026-11-13 06:38:05,229 - WARNING -   'Limestone (NY)' -> 'Limestone (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Lincolndale Somers (NY)' -> 'Lincolndale Somers (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Lindenhurst (NY)' -> 'Lindenhurst (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Little Falls (NY)' -> 'Little Falls (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Little Valley Central (NY)' -> 'Little Valley Central (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Liverpool (NY)' -> 'Liverpool (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Livonia (NY)' -> 'Livonia (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Lockport (NY)' -> 'Lockport (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Lockport DeSales Catholic (NY)' -> 'Lockport DeSales Catholic (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Lockport Starpoint (NY)' -> 'Lockport Starpoint (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Locust Valley (NY)' -> 'Locust Valley (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Locust Valley Friends Academy (NY)' -> 'Locust Valley Friends Academy (NY)' (no change)
+2026-11-13 06:38:05,230 - WARNING -   'Long Beach (NY)' -> 'Long Beach (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Long Island City (NY)' -> 'Long Island City (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Long Island City Information Tech (NY)' -> 'Long Island City Information Tech (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Lowville (NY)' -> 'Lowville (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Lynbrook (NY)' -> 'Lynbrook (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Lyons (NY)' -> 'Lyons (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Mahopac (NY)' -> 'Mahopac (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Maine-Endwell (NY)' -> 'Maine-Endwell (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Malone Franklin Academy (NY)' -> 'Malone Franklin Academy (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Malverne (NY)' -> 'Malverne (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Mamaroneck (NY)' -> 'Mamaroneck (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Mamaroneck F. E. Bellows (NY)' -> 'Mamaroneck F. E. Bellows (NY)' (no change)
+2026-11-13 06:38:05,231 - WARNING -   'Mamaroneck Rye Neck (NY)' -> 'Mamaroneck Rye Neck (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Manhasset (NY)' -> 'Manhasset (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Manhattan McBurney School (NY)' -> 'Manhattan McBurney School (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Manhattan St. Paul's-St. Mary's (NY)' -> 'Manhattan St. Paul's-St. Mary's (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Manorville Eastport-South Manor (NY)' -> 'Manorville Eastport-South Manor (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Marcellus (NY)' -> 'Marcellus (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Marcy Whitesboro (NY)' -> 'Marcy Whitesboro (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Marlboro Central (NY)' -> 'Marlboro Central (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Massapequa (NY)' -> 'Massapequa (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Massapequa Plainedge (NY)' -> 'Massapequa Plainedge (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Massena (NY)' -> 'Massena (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Mastic Beach William Floyd (NY)' -> 'Mastic Beach William Floyd (NY)' (no change)
+2026-11-13 06:38:05,232 - WARNING -   'Mattituck-Southold-Greenport (NY)' -> 'Mattituck-Southold-Greenport (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Mayville Chautauqua Lake (NY)' -> 'Mayville Chautauqua Lake (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Mechanicville (NY)' -> 'Mechanicville (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Mechanicville-Hoosic Valley (NY)' -> 'Mechanicville-Hoosic Valley (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Medina (NY)' -> 'Medina (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Melville Saint Anthony's (NY)' -> 'Melville Saint Anthony's (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Merrick Calhoun (NY)' -> 'Merrick Calhoun (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Mexico (NY)' -> 'Mexico (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Middle Island Longwood (NY)' -> 'Middle Island Longwood (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Middle Village Christ the King (NY)' -> 'Middle Village Christ the King (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Middleport Royalton-Hartland (NY)' -> 'Middleport Royalton-Hartland (NY)' (no change)
+2026-11-13 06:38:05,233 - WARNING -   'Middletown (NY)' -> 'Middletown (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Millbrook (NY)' -> 'Millbrook (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Miller Place (NY)' -> 'Miller Place (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Mineola Chaminade (NY)' -> 'Mineola Chaminade (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Mohawk (NY)' -> 'Mohawk (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Montgomery Valley Central (NY)' -> 'Montgomery Valley Central (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Monticello (NY)' -> 'Monticello (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Montrose Hendrick Hudson (NY)' -> 'Montrose Hendrick Hudson (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Moravia (NY)' -> 'Moravia (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Morrisville-Eaton (NY)' -> 'Morrisville-Eaton (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Mount Morris (NY)' -> 'Mount Morris (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Mount Sinai (NY)' -> 'Mount Sinai (NY)' (no change)
+2026-11-13 06:38:05,234 - WARNING -   'Mount Vernon (NY)' -> 'Mount Vernon (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'Nanuet (NY)' -> 'Nanuet (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'Nedrow Onondaga (NY)' -> 'Nedrow Onondaga (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New Berlin Unadilla Valley (NY)' -> 'New Berlin Unadilla Valley (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New City Clarkstown North (NY)' -> 'New City Clarkstown North (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New Hartford (NY)' -> 'New Hartford (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New Hyde Park Herricks (NY)' -> 'New Hyde Park Herricks (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New Hyde Park Memorial (NY)' -> 'New Hyde Park Memorial (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New Hyde Park Mineola (NY)' -> 'New Hyde Park Mineola (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New Paltz (NY)' -> 'New Paltz (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New Rochelle (NY)' -> 'New Rochelle (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New Rochelle Iona Prep (NY)' -> 'New Rochelle Iona Prep (NY)' (no change)
+2026-11-13 06:38:05,235 - WARNING -   'New Windsor Cornwall Central (NY)' -> 'New Windsor Cornwall Central (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Collegiate School (NY)' -> 'New York Collegiate School (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Cooke School (NY)' -> 'New York Cooke School (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Dalton (NY)' -> 'New York Dalton (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York KIPP NYC College Prep (NY)' -> 'New York KIPP NYC College Prep (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Mills (NY)' -> 'New York Mills (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Powers Memorial Academy (NY)' -> 'New York Powers Memorial Academy (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Straubenmuller Textile (NY)' -> 'New York Straubenmuller Textile (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Stuyvesant (NY)' -> 'New York Stuyvesant (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Trinity School (NY)' -> 'New York Trinity School (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Washington (NY)' -> 'New York Washington (NY)' (no change)
+2026-11-13 06:38:05,236 - WARNING -   'New York Xavier (NY)' -> 'New York Xavier (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Newark (NY)' -> 'Newark (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Newark Valley (NY)' -> 'Newark Valley (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Newburgh Free Academy (NY)' -> 'Newburgh Free Academy (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Newfane (NY)' -> 'Newfane (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Newfield (NY)' -> 'Newfield (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Newport West Canada Valley (NY)' -> 'Newport West Canada Valley (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Niagara Falls (NY)' -> 'Niagara Falls (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Niagara Falls LaSalle Prep (NY)' -> 'Niagara Falls LaSalle Prep (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Niagara Falls Niagara Catholic (NY)' -> 'Niagara Falls Niagara Catholic (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Niagara Falls St. Mary's (NY)' -> 'Niagara Falls St. Mary's (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'Niagara Falls Trott Voc. (NY)' -> 'Niagara Falls Trott Voc. (NY)' (no change)
+2026-11-13 06:38:05,237 - WARNING -   'North Babylon (NY)' -> 'North Babylon (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'North Bellmore Mepham (NY)' -> 'North Bellmore Mepham (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'North Tonawanda (NY)' -> 'North Tonawanda (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'Northport (NY)' -> 'Northport (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'Norwich (NY)' -> 'Norwich (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'Oakdale La Salle Military Academy (NY)' -> 'Oakdale La Salle Military Academy (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'Oakfield-Alabama (NY)' -> 'Oakfield-Alabama (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'Oceanside (NY)' -> 'Oceanside (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'Odessa-Montour (NY)' -> 'Odessa-Montour (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'Ogdensburg Free Academy (NY)' -> 'Ogdensburg Free Academy (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'Old Westbury (NY)' -> 'Old Westbury (NY)' (no change)
+2026-11-13 06:38:05,238 - WARNING -   'Olean (NY)' -> 'Olean (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Olean Archbishop Walsh (NY)' -> 'Olean Archbishop Walsh (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Oneida (NY)' -> 'Oneida (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Oneonta (NY)' -> 'Oneonta (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Ontario Center Wayne (NY)' -> 'Ontario Center Wayne (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Orangeburg Tappan Zee (NY)' -> 'Orangeburg Tappan Zee (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Orchard Park (NY)' -> 'Orchard Park (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Oriskany (NY)' -> 'Oriskany (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Ossining (NY)' -> 'Ossining (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Oswego (NY)' -> 'Oswego (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Otego Unatego (NY)' -> 'Otego Unatego (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Ovid South Seneca (NY)' -> 'Ovid South Seneca (NY)' (no change)
+2026-11-13 06:38:05,239 - WARNING -   'Owego Free Academy (NY)' -> 'Owego Free Academy (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Oxford Academy (NY)' -> 'Oxford Academy (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Oyster Bay (NY)' -> 'Oyster Bay (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Oyster Bay St. Dominic (NY)' -> 'Oyster Bay St. Dominic (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Painted Post (NY)' -> 'Painted Post (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Palmyra-Macedon (NY)' -> 'Palmyra-Macedon (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Panama (NY)' -> 'Panama (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Patchogue-Medford (NY)' -> 'Patchogue-Medford (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Pawling (NY)' -> 'Pawling (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Pearl River (NY)' -> 'Pearl River (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Peekskill (NY)' -> 'Peekskill (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Pelham Memorial (NY)' -> 'Pelham Memorial (NY)' (no change)
+2026-11-13 06:38:05,240 - WARNING -   'Penfield (NY)' -> 'Penfield (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Penfield Finney-Northstar Christian Academy (NY)' -> 'Penfield Finney-Northstar Christian Academy (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Penn Yan Academy (NY)' -> 'Penn Yan Academy (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Perry (NY)' -> 'Perry (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Peru (NY)' -> 'Peru (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Philadelphia Indian River (NY)' -> 'Philadelphia Indian River (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Phoenix (NY)' -> 'Phoenix (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Phoenix Birdlebough (NY)' -> 'Phoenix Birdlebough (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Pine Bush (NY)' -> 'Pine Bush (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Pine Plains (NY)' -> 'Pine Plains (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Pittsford (NY)' -> 'Pittsford (NY)' (no change)
+2026-11-13 06:38:05,241 - WARNING -   'Pittsford Mendon-Sutherland (NY)' -> 'Pittsford Mendon-Sutherland (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Plainview-Old Bethpage John F. Kennedy (NY)' -> 'Plainview-Old Bethpage John F. Kennedy (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Plattsburgh (NY)' -> 'Plattsburgh (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Plattsburgh Beekmantown (NY)' -> 'Plattsburgh Beekmantown (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Plattsburgh St. John's Academy (NY)' -> 'Plattsburgh St. John's Academy (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Pleasantville (NY)' -> 'Pleasantville (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Port Byron (NY)' -> 'Port Byron (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Port Chester (NY)' -> 'Port Chester (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Port Henry Moriah (NY)' -> 'Port Henry Moriah (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Port Jefferson (NY)' -> 'Port Jefferson (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Port Jefferson Station Comsewogue (NY)' -> 'Port Jefferson Station Comsewogue (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Port Jervis (NY)' -> 'Port Jervis (NY)' (no change)
+2026-11-13 06:38:05,242 - WARNING -   'Port Washington (NY)' -> 'Port Washington (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Portville (NY)' -> 'Portville (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Potsdam (NY)' -> 'Potsdam (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Poughkeepsie (NY)' -> 'Poughkeepsie (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Poughkeepsie Our Lady of Lourdes (NY)' -> 'Poughkeepsie Our Lady of Lourdes (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Poughkeepsie Spackenkill (NY)' -> 'Poughkeepsie Spackenkill (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Pulaski (NY)' -> 'Pulaski (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Putnam Valley (NY)' -> 'Putnam Valley (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Queens Bryant (NY)' -> 'Queens Bryant (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Queensbury (NY)' -> 'Queensbury (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Randolph (NY)' -> 'Randolph (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Ravena-Coeymans-Selkirk (NY)' -> 'Ravena-Coeymans-Selkirk (NY)' (no change)
+2026-11-13 06:38:05,243 - WARNING -   'Red Hook (NY)' -> 'Red Hook (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Rensselaer (NY)' -> 'Rensselaer (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Retsof York (NY)' -> 'Retsof York (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Retsof York-Pavilion (NY)' -> 'Retsof York-Pavilion (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Rhinecliff Cardinal Farley Military Academy (NY)' -> 'Rhinecliff Cardinal Farley Military Academy (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Richfield Springs Central (NY)' -> 'Richfield Springs Central (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Riverdale Horace Mann (NY)' -> 'Riverdale Horace Mann (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Riverhead (NY)' -> 'Riverhead (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Riverhead Mercy (NY)' -> 'Riverhead Mercy (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Rochester Aquinas Institute (NY)' -> 'Rochester Aquinas Institute (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Rochester Bishop Kearney (NY)' -> 'Rochester Bishop Kearney (NY)' (no change)
+2026-11-13 06:38:05,244 - WARNING -   'Rochester Bishop Kearney-Rochester Academy (NY)' -> 'Rochester Bishop Kearney-Rochester Academy (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Brighton (NY)' -> 'Rochester Brighton (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Cardinal Mooney (NY)' -> 'Rochester Cardinal Mooney (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester East (NY)' -> 'Rochester East (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Eastridge (NY)' -> 'Rochester Eastridge (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester East-World of Inquiry (NY)' -> 'Rochester East-World of Inquiry (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Edison Tech (NY)' -> 'Rochester Edison Tech (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Franklin-Jefferson (NY)' -> 'Rochester Franklin-Jefferson (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Gates Chili (NY)' -> 'Rochester Gates Chili (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Greece Arcadia (NY)' -> 'Rochester Greece Arcadia (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Greece Athena (NY)' -> 'Rochester Greece Athena (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Greece Olympia (NY)' -> 'Rochester Greece Olympia (NY)' (no change)
+2026-11-13 06:38:05,245 - WARNING -   'Rochester Greece Olympia-Greece Odyssey (NY)' -> 'Rochester Greece Olympia-Greece Odyssey (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rochester Irondequoit (NY)' -> 'Rochester Irondequoit (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rochester Marshall (NY)' -> 'Rochester Marshall (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rochester McQuaid Jesuit (NY)' -> 'Rochester McQuaid Jesuit (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rochester University Prep (NY)' -> 'Rochester University Prep (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rochester Webster Schroeder (NY)' -> 'Rochester Webster Schroeder (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rochester Webster Thomas (NY)' -> 'Rochester Webster Thomas (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rochester Wilson Magnet (NY)' -> 'Rochester Wilson Magnet (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rochester Wilson Magnet-School Without Walls (NY)' -> 'Rochester Wilson Magnet-School Without Walls (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rockaway Park Beach Channel (NY)' -> 'Rockaway Park Beach Channel (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rockville Centre South Side (NY)' -> 'Rockville Centre South Side (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rocky Point (NY)' -> 'Rocky Point (NY)' (no change)
+2026-11-13 06:38:05,246 - WARNING -   'Rome Catholic (NY)' -> 'Rome Catholic (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Rome Free Academy (NY)' -> 'Rome Free Academy (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Romulus Central (NY)' -> 'Romulus Central (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Roosevelt (NY)' -> 'Roosevelt (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Roslyn Heights Roslyn (NY)' -> 'Roslyn Heights Roslyn (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Roslyn Heights Roslyn-Friends Academy (NY)' -> 'Roslyn Heights Roslyn-Friends Academy (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Rush-Henrietta (NY)' -> 'Rush-Henrietta (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Rush-Henrietta-Sperry (NY)' -> 'Rush-Henrietta-Sperry (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Rushville Whitman (NY)' -> 'Rushville Whitman (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Rye (NY)' -> 'Rye (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Rye Country Day (NY)' -> 'Rye Country Day (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Rye Neck-Blind Brook (NY)' -> 'Rye Neck-Blind Brook (NY)' (no change)
+2026-11-13 06:38:05,247 - WARNING -   'Salamanca (NY)' -> 'Salamanca (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Salem (NY)' -> 'Salem (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Sanborn Niagara-Wheatfield (NY)' -> 'Sanborn Niagara-Wheatfield (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Sandy Creek (NY)' -> 'Sandy Creek (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Saranac (NY)' -> 'Saranac (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Saranac Lake (NY)' -> 'Saranac Lake (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Saratoga Springs (NY)' -> 'Saratoga Springs (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Saratoga Springs Saratoga Central Catholic (NY)' -> 'Saratoga Springs Saratoga Central Catholic (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Saugerties (NY)' -> 'Saugerties (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Sauquoit Valley (NY)' -> 'Sauquoit Valley (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Sayville (NY)' -> 'Sayville (NY)' (no change)
+2026-11-13 06:38:05,248 - WARNING -   'Scarsdale (NY)' -> 'Scarsdale (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Scarsdale Edgemont (NY)' -> 'Scarsdale Edgemont (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Schaghticoke Hoosic Valley (NY)' -> 'Schaghticoke Hoosic Valley (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Schenectady (NY)' -> 'Schenectady (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Schenectady Mohonasen (NY)' -> 'Schenectady Mohonasen (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Schenectady Mont Pleasant (NY)' -> 'Schenectady Mont Pleasant (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Schenectady Niskayuna (NY)' -> 'Schenectady Niskayuna (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Schenectady Notre Dame Bishop Gibbons (NY)' -> 'Schenectady Notre Dame Bishop Gibbons (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Schenectady Schalmont (NY)' -> 'Schenectady Schalmont (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Schuylerville Central (NY)' -> 'Schuylerville Central (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Scotia-Glenville (NY)' -> 'Scotia-Glenville (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Seaford (NY)' -> 'Seaford (NY)' (no change)
+2026-11-13 06:38:05,249 - WARNING -   'Selden Newfield (NY)' -> 'Selden Newfield (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Seneca Falls Mynderse Academy (NY)' -> 'Seneca Falls Mynderse Academy (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Sherburne-Earlville (NY)' -> 'Sherburne-Earlville (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Sherman Central (NY)' -> 'Sherman Central (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Sherman-Ripley (NY)' -> 'Sherman-Ripley (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Shoreham-Wading River (NY)' -> 'Shoreham-Wading River (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Shortsville Red Jacket (NY)' -> 'Shortsville Red Jacket (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Shrub Oak Lakeland (NY)' -> 'Shrub Oak Lakeland (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Sidney (NY)' -> 'Sidney (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Silver Creek (NY)' -> 'Silver Creek (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Silver Creek-Forestville Central (NY)' -> 'Silver Creek-Forestville Central (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Sinclairville Cassadaga Valley (NY)' -> 'Sinclairville Cassadaga Valley (NY)' (no change)
+2026-11-13 06:38:05,250 - WARNING -   'Skaneateles (NY)' -> 'Skaneateles (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'Slate Hill Minisink Valley (NY)' -> 'Slate Hill Minisink Valley (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'Sleepy Hollow (NY)' -> 'Sleepy Hollow (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'Smithtown East (NY)' -> 'Smithtown East (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'Smithtown West (NY)' -> 'Smithtown West (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'Sodus-Lyons (NY)' -> 'Sodus-Lyons (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'Solvay (NY)' -> 'Solvay (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'Somers Kennedy Catholic (NY)' -> 'Somers Kennedy Catholic (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'South Dayton Pine Valley Central (NY)' -> 'South Dayton Pine Valley Central (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'South Glens Falls (NY)' -> 'South Glens Falls (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'Southampton (NY)' -> 'Southampton (NY)' (no change)
+2026-11-13 06:38:05,251 - WARNING -   'Spencerport (NY)' -> 'Spencerport (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Spencer-Van Etten (NY)' -> 'Spencer-Van Etten (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Spring Valley (NY)' -> 'Spring Valley (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Spring Valley Ramapo (NY)' -> 'Spring Valley Ramapo (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Springfield Gardens (NY)' -> 'Springfield Gardens (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Springville-Griffith Institute (NY)' -> 'Springville-Griffith Institute (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Staten Island Curtis (NY)' -> 'Staten Island Curtis (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Staten Island McKee Vo-Tech (NY)' -> 'Staten Island McKee Vo-Tech (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Staten Island Monsignor Farrell (NY)' -> 'Staten Island Monsignor Farrell (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Staten Island Moore Catholic (NY)' -> 'Staten Island Moore Catholic (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Staten Island New Dorp (NY)' -> 'Staten Island New Dorp (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Staten Island Notre Dame Academy (NY)' -> 'Staten Island Notre Dame Academy (NY)' (no change)
+2026-11-13 06:38:05,252 - WARNING -   'Staten Island Petrides (NY)' -> 'Staten Island Petrides (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Staten Island Port Richmond (NY)' -> 'Staten Island Port Richmond (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Staten Island Saint Joseph-by-the-Sea (NY)' -> 'Staten Island Saint Joseph-by-the-Sea (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Staten Island St. Joseph Hill Academy (NY)' -> 'Staten Island St. Joseph Hill Academy (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Staten Island St. Peter's (NY)' -> 'Staten Island St. Peter's (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Staten Island Tottenville (NY)' -> 'Staten Island Tottenville (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Staten Island Wagner (NY)' -> 'Staten Island Wagner (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Stillwater (NY)' -> 'Stillwater (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Stony Brook (NY)' -> 'Stony Brook (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Suffern (NY)' -> 'Suffern (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Syosset (NY)' -> 'Syosset (NY)' (no change)
+2026-11-13 06:38:05,253 - WARNING -   'Syracuse Bishop Ludden (NY)' -> 'Syracuse Bishop Ludden (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Syracuse Christian Brothers Academy (NY)' -> 'Syracuse Christian Brothers Academy (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Syracuse Corcoran (NY)' -> 'Syracuse Corcoran (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Syracuse Henninger (NY)' -> 'Syracuse Henninger (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Syracuse Institute of Tech (NY)' -> 'Syracuse Institute of Tech (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Syracuse Nottingham (NY)' -> 'Syracuse Nottingham (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Syracuse Public Service Leadership Academy (NY)' -> 'Syracuse Public Service Leadership Academy (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Syracuse Westhill (NY)' -> 'Syracuse Westhill (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Tarrytown Hackley School (NY)' -> 'Tarrytown Hackley School (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Tarrytown Irving School for Boys (NY)' -> 'Tarrytown Irving School for Boys (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Thiells North Rockland (NY)' -> 'Thiells North Rockland (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Thornwood Westlake (NY)' -> 'Thornwood Westlake (NY)' (no change)
+2026-11-13 06:38:05,254 - WARNING -   'Ticonderoga (NY)' -> 'Ticonderoga (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Tioga Center Tioga (NY)' -> 'Tioga Center Tioga (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Tonawanda (NY)' -> 'Tonawanda (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Tonawanda Cardinal O'Hara (NY)' -> 'Tonawanda Cardinal O'Hara (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Tonawanda Kenmore East (NY)' -> 'Tonawanda Kenmore East (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Trinity-Pawling (NY)' -> 'Trinity-Pawling (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Troy (NY)' -> 'Troy (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Troy Catholic Central-Notre Dame Bishop Gibbons-Saratoga Central Catholic (NY)' -> 'Troy Catholic Central-Notre Dame Bishop Gibbons-Saratoga Central Catholic (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Troy La Salle Institute (NY)' -> 'Troy La Salle Institute (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Troy Lansingburgh (NY)' -> 'Troy Lansingburgh (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Troy Tamarac (NY)' -> 'Troy Tamarac (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Trumansburg Charles O. Dickerson (NY)' -> 'Trumansburg Charles O. Dickerson (NY)' (no change)
+2026-11-13 06:38:05,255 - WARNING -   'Tully (NY)' -> 'Tully (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Tully Southern Hills (NY)' -> 'Tully Southern Hills (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Tupper Lake Central (NY)' -> 'Tupper Lake Central (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Turin South Lewis (NY)' -> 'Turin South Lewis (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Union Springs (NY)' -> 'Union Springs (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Uniondale (NY)' -> 'Uniondale (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Uniondale Kellenberg Memorial (NY)' -> 'Uniondale Kellenberg Memorial (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Union-Endicott (NY)' -> 'Union-Endicott (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Upper Nyack (NY)' -> 'Upper Nyack (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Utica Free Academy (NY)' -> 'Utica Free Academy (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Utica Notre Dame-Catholic (NY)' -> 'Utica Notre Dame-Catholic (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Utica Proctor (NY)' -> 'Utica Proctor (NY)' (no change)
+2026-11-13 06:38:05,256 - WARNING -   'Valatie Ichabod Crane (NY)' -> 'Valatie Ichabod Crane (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Valhalla (NY)' -> 'Valhalla (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Valley Stream Central (NY)' -> 'Valley Stream Central (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Valley Stream South (NY)' -> 'Valley Stream South (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Vernon-Verona-Sherrill (NY)' -> 'Vernon-Verona-Sherrill (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Vestal (NY)' -> 'Vestal (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Victor (NY)' -> 'Victor (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Voorheesville (NY)' -> 'Voorheesville (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Wallkill (NY)' -> 'Wallkill (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Walton (NY)' -> 'Walton (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Wantagh (NY)' -> 'Wantagh (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Wappingers Falls Ketcham (NY)' -> 'Wappingers Falls Ketcham (NY)' (no change)
+2026-11-13 06:38:05,257 - WARNING -   'Warrensburg (NY)' -> 'Warrensburg (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Warsaw (NY)' -> 'Warsaw (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Warwick Valley Central (NY)' -> 'Warwick Valley Central (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Washingtonville (NY)' -> 'Washingtonville (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Waterloo (NY)' -> 'Waterloo (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Watertown (NY)' -> 'Watertown (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Watertown Immaculate Heart Central (NY)' -> 'Watertown Immaculate Heart Central (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Waterville (NY)' -> 'Waterville (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Watervliet (NY)' -> 'Watervliet (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Watkins Glen (NY)' -> 'Watkins Glen (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Waverly (NY)' -> 'Waverly (NY)' (no change)
+2026-11-13 06:38:05,258 - WARNING -   'Wayland-Cohocton (NY)' -> 'Wayland-Cohocton (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'Weedsport (NY)' -> 'Weedsport (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'Wellsville (NY)' -> 'Wellsville (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'West Babylon (NY)' -> 'West Babylon (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'West Hempstead (NY)' -> 'West Hempstead (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'West Islip (NY)' -> 'West Islip (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'West Islip St. John the Baptist (NY)' -> 'West Islip St. John the Baptist (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'West Nyack Clarkstown South (NY)' -> 'West Nyack Clarkstown South (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'West Seneca East (NY)' -> 'West Seneca East (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'West Seneca West (NY)' -> 'West Seneca West (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'West Valley Central (NY)' -> 'West Valley Central (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'West Winfield Mt. Markham (NY)' -> 'West Winfield Mt. Markham (NY)' (no change)
+2026-11-13 06:38:05,259 - WARNING -   'Westbury Clarke (NY)' -> 'Westbury Clarke (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'Westfield (NY)' -> 'Westfield (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'Westhampton Beach (NY)' -> 'Westhampton Beach (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'Westmoreland (NY)' -> 'Westmoreland (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'Westmoreland-Oriskany (NY)' -> 'Westmoreland-Oriskany (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'White Plains (NY)' -> 'White Plains (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'White Plains Archbishop Stepinac (NY)' -> 'White Plains Archbishop Stepinac (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'Whitehall (NY)' -> 'Whitehall (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'Whitney Point (NY)' -> 'Whitney Point (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'Williamsville North (NY)' -> 'Williamsville North (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'Williamsville South (NY)' -> 'Williamsville South (NY)' (no change)
+2026-11-13 06:38:05,260 - WARNING -   'Wilson (NY)' -> 'Wilson (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Windsor Central (NY)' -> 'Windsor Central (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Wyandanch (NY)' -> 'Wyandanch (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Yonkers (NY)' -> 'Yonkers (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Yonkers Force (NY)' -> 'Yonkers Force (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Yonkers Gorton (NY)' -> 'Yonkers Gorton (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Yonkers Lincoln (NY)' -> 'Yonkers Lincoln (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Yonkers Saunders Trades & Tech (NY)' -> 'Yonkers Saunders Trades & Tech (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Yonkers Theodore Roosevelt (NY)' -> 'Yonkers Theodore Roosevelt (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Yorkshire Pioneer (NY)' -> 'Yorkshire Pioneer (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Yorktown Heights Yorktown (NY)' -> 'Yorktown Heights Yorktown (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Youngstown Lewiston-Porter (NY)' -> 'Youngstown Lewiston-Porter (NY)' (no change)
+2026-11-13 06:38:05,261 - WARNING -   'Brooklyn Roosevelt (NY)' -> 'Brooklyn Roosevelt (NY)' (no change)
+2026-11-13 06:38:05,262 - WARNING -   'Newark-Marion  (NY)' -> 'Newark-Marion  (NY)' (no change)
+2026-11-13 06:38:05,262 - WARNING -   'Ozone Park John Adams (NY)' -> 'Ozone Park John Adams (NY)' (no change)
+2026-11-13 06:38:05,262 - WARNING -   'Athol Springs St. Francis (NY)' -> 'Athol Springs St. Francis (NY)' (no change)
+2026-11-13 06:38:05,262 - WARNING -   'Jeffersonville-Youngsville (NY)' -> 'Jeffersonville-Youngsville (NY)' (no change)
+2026-11-13 06:38:05,262 - INFO - Validation passed: 1002 rules are clean and ready to upload.
+2026-11-13 06:38:05,278 - INFO - Uploading 1002 rules to staging table: ConsolidationRules_Staging...
+2026-11-13 06:38:05,444 - INFO - Upload to staging table complete.
+2026-11-13 06:38:05,449 - INFO - Executing dbo.sp_ConsolidateNames_FromStaging...
+2026-11-13 06:40:33,468 - INFO - SUCCESS: Consolidation from staging table is complete.
+2026-11-13 06:40:33,468 - INFO - Reason logged to dbo.HS_Consolidation_Log: NY round 2 (2026-11-13): same-school names, see _coop_scripts/NY_cfg.py
+2026-11-13 06:40:33,468 - INFO - TIP: Run option 1 again to refresh GameCount values and see which aliases remain.
+2026-11-13 06:40:33,468 - INFO - Running post-consolidation safety check...
+2026-11-13 06:40:33,473 - INFO - POST-RUN CHECK PASSED: No 'nan' values found in HS_Scores.
+
+>>> move-team NY --from "Brooklyn Frank J. Macchiarola (NY)" --to "Brooklyn Sheepshead Bay (NY)" --seasons 2017-2022 --ids coop_ids/NY_c3_000.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 31 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_000.csv
+
+MOVE Brooklyn Frank J. Macchiarola (NY) -> Brooklyn Sheepshead Bay (NY), seasons 2017-2022 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0640.csv
+ move_by_season: 45 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0640.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team NY --from "Buffalo Bishop Timon (NY)" --to "Buffalo Bishop Timon-St. Jude (NY)" --seasons 1989-2003 --ids coop_ids/NY_c3_001.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 9 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_001.csv
+
+MOVE Buffalo Bishop Timon (NY) -> Buffalo Bishop Timon-St. Jude (NY), seasons 1989-2003 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0640.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0640.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team NY --from "Buffalo Bishop Timon-St. Jude (NY)" --to "Buffalo Bishop Timon (NY)" --seasons 1983-1992 --ids coop_ids/NY_c3_002.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 6 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_002.csv
+
+MOVE Buffalo Bishop Timon-St. Jude (NY) -> Buffalo Bishop Timon (NY), seasons 1983-1992 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0640.csv
+ move_by_season: 71 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0640.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> move-team NY --from "Buffalo Hutchinson Tech (NY)" --to "Buffalo Hutchinson-Central Tech-Emerson Vo-Tech (NY)" --seasons 1980-2000 --ids coop_ids/NY_c3_003.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 40 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_003.csv
+
+MOVE Buffalo Hutchinson Tech (NY) -> Buffalo Hutchinson-Central Tech-Emerson Vo-Tech (NY), seasons 1980-2000 - COMMIT
+ move_games: 28 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0640.csv
+ move_by_season: 77 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0640.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  28     1                  None
+
+>>> move-team NY --from "Cicero (NY)" --to "Cicero-North Syracuse (NY)" --seasons 1976-1976 --ids coop_ids/NY_c3_004.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 3 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_004.csv
+
+MOVE Cicero (NY) -> Cicero-North Syracuse (NY), seasons 1976-1976 - COMMIT
+ move_games: 3 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0640.csv
+ move_by_season: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0640.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  3      1                  None
+
+>>> move-team NY --from "Cicero-North Syracuse (NY)" --to "Cicero (NY)" --seasons 1969-1980 --ids coop_ids/NY_c3_005.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 30 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_005.csv
+
+MOVE Cicero-North Syracuse (NY) -> Cicero (NY), seasons 1969-1980 - COMMIT
+ move_games: 17 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0640.csv
+ move_by_season: 63 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0640.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  17     1                  None
+
+>>> move-team NY --from "Coxsackie (NY)" --to "Coxsackie-Athens (NY)" --seasons 1966-1999 --ids coop_ids/NY_c3_006.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 12 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_006.csv
+
+MOVE Coxsackie (NY) -> Coxsackie-Athens (NY), seasons 1966-1999 - COMMIT
+ move_games: 6 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0640.csv
+ move_by_season: 41 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0640.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  6      1                  None
+
+>>> move-team NY --from "Cuba (NY)" --to "Cuba-Rushford (NY)" --seasons 1980-1995 --ids coop_ids/NY_c3_007.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 16 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_007.csv
+
+MOVE Cuba (NY) -> Cuba-Rushford (NY), seasons 1980-1995 - COMMIT
+ move_games: 12 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0640.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0640.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  12     1                  None
+
+>>> move-team NY --from "Cuba-Rushford (NY)" --to "Cuba (NY)" --seasons 1974-1978 --ids coop_ids/NY_c3_008.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 2 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_008.csv
+
+MOVE Cuba-Rushford (NY) -> Cuba (NY), seasons 1974-1978 - COMMIT
+ move_games: 2 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0641.csv
+ move_by_season: 67 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0641.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  2      1                  None
+
+>>> move-team NY --from "Geneseo (NY)" --to "Geneseo-Mount Morris (NY)" --seasons 2020-2024 --ids coop_ids/NY_c3_009.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_009.csv
+
+MOVE Geneseo (NY) -> Geneseo-Mount Morris (NY), seasons 2020-2024 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0641.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0641.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team NY --from "Geneseo-Mount Morris (NY)" --to "Geneseo (NY)" --seasons 2022-2022 --ids coop_ids/NY_c3_010.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 1 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_010.csv
+
+MOVE Geneseo-Mount Morris (NY) -> Geneseo (NY), seasons 2022-2022 - COMMIT
+ move_games: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0641.csv
+ move_by_season: 70 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0641.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  1      1                  None
+
+>>> move-team NY --from "Morrisville (NY)" --to "Morrisville-Eaton (NY)" --seasons 1968-1974 --ids coop_ids/NY_c3_011.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 14 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_011.csv
+
+MOVE Morrisville (NY) -> Morrisville-Eaton (NY), seasons 1968-1974 - COMMIT
+ move_games: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0641.csv
+ move_by_season: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0641.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  7      1                  None
+
+>>> move-team NY --from "Morrisville-Eaton (NY)" --to "Morrisville (NY)" --seasons 1965-1970 --ids coop_ids/NY_c3_012.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 8 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_012.csv
+
+MOVE Morrisville-Eaton (NY) -> Morrisville (NY), seasons 1965-1970 - COMMIT
+ move_games: 8 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0641.csv
+ move_by_season: 57 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0641.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  8      1                  None
+
+>>> move-team NY --from "Troy Catholic Central-Notre Dame Bishop Gibbons-Saratoga Central Catholic (NY)" --to "Schenectady Notre Dame Bishop Gibbons (NY)" --seasons 1990-2003 --ids coop_ids/NY_c3_013.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 69 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_013.csv
+
+MOVE Troy Catholic Central-Notre Dame Bishop Gibbons-Saratoga Central Catholic (NY) -> Schenectady Notre Dame Bishop Gibbons (NY), seasons 1990-2003 - COMMIT
+ move_games: 54 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0641.csv
+ move_by_season: 50 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0641.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  54     1                  None
+
+>>> move-team NY --from "Utica Proctor (NY)" --to "Utica (NY)" --seasons 1989-1992 --ids coop_ids/NY_c3_014.csv --reason "NY co-op/consolidation names in the same season: one name per season (majority, or pre-consolidation name) (2026-11-12)" --commit
+ only the 4 games listed in C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\coop_ids/NY_c3_014.csv
+
+MOVE Utica Proctor (NY) -> Utica (NY), seasons 1989-1992 - COMMIT
+ move_games: 4 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_games_COMMITTED_20261113_0641.csv
+ move_by_season: 83 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_move_by_season_COMMITTED_20261113_0641.csv
+   Status     Games  ToNameInTeamNames  Err 
+   COMMITTED  4      1                  None
+
+>>> dedup NY --commit
+
+DEDUP v4 NY - COMMIT
+ dedup_archive: 296 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_dedup_archive_COMMITTED_20261113_0641.csv
+ dedup_review: 7 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_dedup_review_COMMITTED_20261113_0641.csv
+ dedup_summary: 1 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_dedup_summary_COMMITTED_20261113_0641.csv
+   Mode       State  GamesInScope  DuplicatesToArchive  ReviewOnlyPairs  RunID                               
+   COMMITTED  NY     156277        296                  7                4A8C5D9F-4AC4-43A0-937C-A1CD53DD73F9
+
+>>> review-pairs NY --commit
+
+REVIEW-ONLY PAIRS NY - COMMIT
+ 7 pairs {'SHORT': 7} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_review_pairs_COMMITTED_20261113_0641.csv
+   Status     Archived  RunID                                 Err 
+   COMMITTED  7         9AB18FAE-FD43-473F-9EDC-03E162BDD8E9  None
+
+>>> same-score-fix NY
+ 1793 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS NY - PREVIEW (nothing changed)
+ 478 pairs {'DROP B': 4, 'DROP A': 3, 'UNDECIDED': 471} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_same_score_20261113_0642.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  7         None   None
+
+>>> query NY ny_dump.sql
+
+QUERY ny_dump (1 result sets)
+ set 1: 155975 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NY\NY_q_ny_dump_1_20261113_0642.csv
+
+=== OK 2026-11-13 06:42:47

@@ -1,0 +1,8 @@
+set-dates TX --file TX_season_date_fix.csv --reason "lonestarfootball estimated dates past the season (Feb-Apr of next year) moved to December Fridays of the season, order kept" --commit
+archive-ids TX --ids TX_college_copies_archive.csv --reason "Post-1940 college games confirmed present in College_Scores (names+scores match)" --commit
+query TX season_date.sql
+step TX 3.1 done "2026-11-13: 14 lonestar playoff dates past the season moved to December Fridays; 3 classmates 1913 games dated Feb 1914 left (listed for Loren)"
+step TX 3.2 done "2026-11-13: reviewed; 208 post-1949 2-0 games without forfeit flag left as-is (house convention: may be real safeties), listed for Loren"
+step TX 5.0 done "2026-11-13: 5 post-1940 college-vs-college copies archived (in College_Scores); college-like HS names (Waco University, Early College, College Park) are HS schools"
+step TX 1.3 in progress "2026-11-13: same-town report 3,859 pairs = city schools sharing district opponents; real mix-ups handled through same-score rounds"
+query TX tx_export.sql

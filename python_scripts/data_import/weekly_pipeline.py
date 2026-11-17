@@ -94,7 +94,9 @@ AUTO_PUBLISH = False         # start False; flip to True once you trust it
 
 LOG_FILE = os.path.join(SCRIPT_DIR, "weekly_pipeline_log.txt")
 STATUS_FILE = os.path.join(SCRIPT_DIR, "weekly_pipeline_status.txt")
-BATCH_PREFIX = "MaxPreps Scrape - %"
+# 2026-11-13: also matches playoff batches ("MaxPreps Playoff Scrape - ...") that
+# maxpreps_scraper_db.py creates from ISO week 46 through January (playoff mode).
+BATCH_PREFIX = "MaxPreps %Scrape - %"
 # ---------------------------------------------------------------------------
 
 
@@ -258,6 +260,17 @@ def scrape_phase(season, week):
 
         b = batch_row(tracked)
         if b.status == "completed":
+            # 2026-11-13: in playoff mode the scraper closes a running full-sweep
+            # batch and starts a playoff batch in the same run. Follow the newer
+            # batch instead of rating on a half-scraped week.
+            newer = latest_batch()
+            if newer and newer.batch_id != tracked and newer.status == "running":
+                log(f"Batch {tracked} was closed by the scraper; following newer batch "
+                    f"{newer.batch_id} ({newer.total_teams} teams).")
+                execute("EXEC dbo.FinalizeMaxPrepsData @BatchID = ?", tracked)
+                tracked, prev_remaining, no_progress = newer.batch_id, None, 0
+                time.sleep(60)
+                continue
             log(f"Batch {tracked} is completed.")
             break
 
@@ -291,6 +304,22 @@ def scrape_phase(season, week):
 
 # --- ratings + checks ------------------------------------------------------
 
+def other_recalc_pids():
+    """PIDs of python processes running run_full_rankings_recalc.py (Windows)."""
+    try:
+        out = subprocess.run(
+            [os.path.join(os.environ.get("SystemRoot", r"C:\Windows"), "System32", "WindowsPowerShell",
+                          "v1.0", "powershell.exe"), "-NoProfile", "-Command",
+             "Get-CimInstance Win32_Process -Filter \"Name like 'python%'\" | "
+             "Where-Object { $_.CommandLine -like '*run_full_rankings_recalc*' } | "
+             "ForEach-Object { $_.ProcessId }"],
+            capture_output=True, text=True, timeout=60).stdout
+        return [x.strip() for x in out.splitlines() if x.strip().isdigit()]
+    except Exception as e:
+        log(f"(could not check for other recalc runs: {e})")
+        return []
+
+
 def ratings_phase(season, week):
     later = query_all("SELECT DISTINCT Week FROM dbo.HS_Rankings WHERE Season = ? AND Week > ?",
                       season, week)
@@ -301,6 +330,20 @@ def ratings_phase(season, week):
             f"the highest week, so this week's ratings would be hidden. If those are stale test "
             f"runs, delete them (DELETE FROM HS_Rankings WHERE Season = {season} AND Week > "
             f"{week};) and re-run with --skip-scrape --now.")
+
+    # 2026-11-16: never run two recalcs at once (they share staging tables).
+    # David runs historical re-rates (run_full_rankings_recalc.py) in idle time;
+    # wait for any such run to finish before starting this week's ratings.
+    waited = 0
+    while (other := other_recalc_pids()):
+        if waited == 0:
+            log(f"Another run_full_rankings_recalc.py is running (PID {', '.join(other)}); "
+                f"waiting for it to finish before this week's ratings.")
+        write_status("WAITING_FOR_OTHER_RECALC", PIDs=",".join(other), MinutesWaited=waited)
+        time.sleep(600)
+        waited += 10
+    if waited:
+        log(f"Other recalc finished after about {waited} minutes; starting ratings.")
 
     write_status("CALCULATING_RATINGS", Season=season, Week=week)
     log(f"Running ratings for {season}, Week {week}")

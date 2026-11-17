@@ -1,0 +1,99 @@
+
+>>> query AZ az_dump.sql
+
+QUERY az_dump (1 result sets)
+ set 1: 56777 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_q_az_dump_1_20261113_1250.csv
+
+>>> same-score-fix AZ
+
+SAME-SCORE DOUBLE-BOOKINGS AZ - PREVIEW (nothing changed)
+ 60 pairs {'DROP B': 6, 'DROP A': 2, 'UNDECIDED': 52} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\AZ\AZ_same_score_20261113_1251.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  8         None   None
+
+>>> query CO co_dump.sql
+
+QUERY co_dump (1 result sets)
+ set 1: 70302 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_q_co_dump_1_20261113_1251.csv
+
+>>> same-score-fix CO
+ 33 manual decisions from C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_same_score_decisions.csv
+
+SAME-SCORE DOUBLE-BOOKINGS CO - PREVIEW (nothing changed)
+ 26 pairs {'DROP B': 5, 'DROP A': 5, 'UNDECIDED': 16} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CO\CO_same_score_20261113_1251.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  10        None   None
+
+>>> query CT ct_dump.sql
+
+QUERY ct_dump (1 result sets)
+ set 1: 50360 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_q_ct_dump_1_20261113_1252.csv
+
+>>> same-score-fix CT
+
+SAME-SCORE DOUBLE-BOOKINGS CT - PREVIEW (nothing changed)
+ 92 pairs {'DROP B': 2, 'DROP A': 1, 'UNDECIDED': 89} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\CT\CT_same_score_20261113_1252.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  3         None   None
+
+>>> query MA ma_dump.sql
+
+QUERY ma_dump (1 result sets)
+ set 1: 95965 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_q_ma_dump_1_20261113_1252.csv
+
+>>> same-score-fix MA
+
+SAME-SCORE DOUBLE-BOOKINGS MA - PREVIEW (nothing changed)
+ 72 pairs {'DROP A': 2, 'UNDECIDED': 70} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\MA\MA_same_score_20261113_1253.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  2         None   None
+
+>>> query NH nh_dump.sql
+
+QUERY nh_dump (1 result sets)
+ set 1: 16444 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_q_nh_dump_1_20261113_1253.csv
+
+>>> same-score-fix NH
+
+SAME-SCORE DOUBLE-BOOKINGS NH - PREVIEW (nothing changed)
+ 7 pairs {'UNDECIDED': 7} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NH\NH_same_score_20261113_1253.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  0         None   None
+
+>>> query NM nm_dump.sql
+
+QUERY nm_dump (1 result sets)
+ set 1: 37974 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_q_nm_dump_1_20261113_1253.csv
+
+>>> same-score-fix NM
+
+SAME-SCORE DOUBLE-BOOKINGS NM - PREVIEW (nothing changed)
+ 26 pairs {'DROP B': 3, 'DROP A': 1, 'UNDECIDED': 22} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\NM\NM_same_score_20261113_1254.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  4         None   None
+
+>>> query RI ri_dump.sql
+
+QUERY ri_dump (1 result sets)
+ set 1: 11111 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_q_ri_dump_1_20261113_1254.csv
+
+>>> same-score-fix RI
+
+SAME-SCORE DOUBLE-BOOKINGS RI - PREVIEW (nothing changed)
+ 9 pairs {'UNDECIDED': 9} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\RI\RI_same_score_20261113_1254.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  0         None   None
+
+>>> query UT ut_dump.sql
+
+QUERY ut_dump (1 result sets)
+ set 1: 34171 rows -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_q_ut_dump_1_20261113_1254.csv
+
+>>> same-score-fix UT
+
+SAME-SCORE DOUBLE-BOOKINGS UT - PREVIEW (nothing changed)
+ 15 pairs {'UNDECIDED': 15} -> C:\Users\demck\OneDrive\Football_2024\static-football-rankings\python_scripts\hs_school\UT\UT_same_score_20261113_1254.csv
+   Status                     Archived  RunID  Err 
+   PREVIEW (nothing changed)  0         None   None
+
+=== OK 2026-11-13 12:54:56
