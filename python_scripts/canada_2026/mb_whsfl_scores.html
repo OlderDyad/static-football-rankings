@@ -1,0 +1,2532 @@
+<!DOCTYPE html>
+<html>
+<!-- canvas_01 -->
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="TeamLinkt" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<!-- Favicon -->
+		<link rel="icon" type="image/png" href="https://cdn-app.teamlinkt.com/media/association_data/17820/favicon-32x32.png" sizes="32x32">
+	
+	<title>Winnipeg High School Football League : Powered by TeamLinkt</title>
+
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="en_US" />
+	<!-- <meta property="fb:app_id" content="" /> -->
+	<meta property="article:publisher" content="TeamLinkt" />
+	<meta property="article:author" content="TeamLinkt" />
+
+	<meta property="og:title" content="Winnipeg High School Football League - Scores" />
+	<meta name="twitter:title" content="Winnipeg High School Football League - Scores" />
+
+	<meta property="og:url" content="http://whsfl.ca/whsfl/Scores" />
+	<meta property="twitter:url" content="http://whsfl.ca/whsfl/Scores" />
+	<meta property="twitter:domain" content="whsfl.ca" />
+	<meta property="og:description" content="Powered by TeamLinkt" />
+	<meta name="twitter:description" content="Powered by TeamLinkt" />
+
+	<meta property="og:image" content="https://cdn-app.teamlinkt.com/media/association_data/17820/site_data/images/site_logo.png?v=1782317551" />
+	<meta property="og:image:url" content="https://cdn-app.teamlinkt.com/media/association_data/17820/site_data/images/site_logo.png?v=1782317551" />
+	<meta property="og:image:secure_url" content="https://cdn-app.teamlinkt.com/media/association_data/17820/site_data/images/site_logo.png?v=1782317551" />
+	<meta name="twitter:image" content="https://cdn-app.teamlinkt.com/media/association_data/17820/site_data/images/site_logo.png?v=1782317551" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" /> -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700|Commissioner:100,200,300,regular,500,600,700,800,900|Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic&subset=latin,latin-ext&display=swap" type="text/css" />
+	<link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/style.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/shared/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" />
+	<!-- <link rel="stylesheet" href="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/css/components/bs-datatable.css" type="text/css" /> -->
+
+	<script src="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/js/jquery.js"></script>
+	<script src="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/js/bootstrap.bundle.min.js"></script>
+
+
+	<!--Slick Slider-->
+	<link href="https://cdn-league-prod-static.teamlinkt.com/themes/default/css/slick.css" rel="stylesheet" />
+	<link href="https://cdn-league-prod-static.teamlinkt.com/themes/default/css/slick-theme.css" rel="stylesheet" />
+
+	<!-- Datatables -->
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+	<script src="https://cdn-league-prod-static.teamlinkt.com/themes/default/js/jquery-cookie.js"></script>
+
+	<style>
+		:root {
+			--template-name: "league_canvas_01";
+			--primary-color: #127FAC;
+			--secondary-color: #FF0000;
+			--primary-contrast-color: #FFFFFF;
+			--page-background: #71797E;
+			--header-background: #000000;
+			--header-text-color: #FFFFFF;
+			--header-background-url: url("https://cdn-league-prod-static.teamlinkt.com/shared/placeholder_images/header_1920_500/football.jpg");
+			--header-background-video-url: url("");
+			--header-overlay-url: url("");
+			--footer-background: #FFFFFF;
+			--footer-text-color: #FFFFFF;
+			--button-primary-background: #3EA9F3;
+			--button-primary-contrast: #FFFFFF;
+			--site-contrast-color: #FFFFFF;
+			--logo-url: url("https://cdn-app.teamlinkt.com/media/association_data/17820/site_data/images/site_logo.png?v=1782317551");
+			--page-background-url: url("");
+		}
+
+		/* START OF UPGRADED STYLES */
+		html {
+			font-family: 'Commissioner', Helvetica, Arial, Lucida, sans-serif !important;
+			font-weight: 500;
+		}
+
+		body {
+			font-family: 'Commissioner', Helvetica, Arial, Lucida, sans-serif !important;
+			font-weight: 500;
+		}
+
+		span,
+		p,
+		div,
+		a,
+		label,
+		table,
+		th,
+		td,
+		em,
+		strong,
+		b {
+			font-family: 'Commissioner', Helvetica, Arial, Lucida, sans-serif !important;
+			/* font-weight: 500; */
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif !important;
+			font-weight: bold !important;
+			text-transform: uppercase !important;
+			text-decoration: none !important;
+		}
+
+		h1 *,
+		h2 *,
+		h3 *,
+		h4 *,
+		h5 *,
+		h6 * {
+			font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif !important;
+			font-weight: bold !important;
+			text-transform: uppercase !important;
+			text-decoration: none !important;
+		}
+
+		.menu-link {
+			font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif !important;
+			font-size: 16px;
+			font-weight: 500 !important;
+			text-transform: uppercase !important;
+			text-decoration: none !important;
+		}
+
+		.sub-menu-container .menu-item>.menu-link {
+			color: #444 !important;
+			font-size: 0.85rem !important;
+		}
+
+		label {
+			display: inline-block;
+			font-weight: 600;
+			font-size: 14px !important;
+			letter-spacing: normal !important;
+			font-family: 'Commissioner', Helvetica, Arial, Lucida, sans-serif !important;
+			text-transform: uppercase;
+			color: #212529;
+			cursor: initial !important;
+		}
+
+		.table td,
+		.table th {
+			background-color: white;
+			/* white-space: nowrap; */
+		}
+
+		table td {
+			/* font-weight: 400; */
+		}
+
+		.form-control,
+		.btn,
+		.form-select,
+		.card {
+			border-radius: 9.75px !important;
+			font-weight: 500;
+		}
+
+		table.dataTable>thead .sorting:before,
+		table.dataTable>thead .sorting:after,
+		table.dataTable>thead .sorting_desc:before,
+		table.dataTable>thead .sorting_asc:after {
+			content: "" !important;
+		}
+
+		table.dataTable>thead .sorting_asc:before,
+		table.dataTable>thead .sorting_desc:after {
+			right: 0em !important;
+		}
+
+
+		.table {
+			width: 100% !important;
+		}
+
+		table a[href]:not([href=""]):not(.btn) {
+			color: #121212;
+		}
+
+		a:not(.btn):hover {
+			color: #2454ff !important;
+		}
+
+		.table-striped>tbody>tr:nth-child(odd)>td,
+		.table-striped>tbody>tr:nth-child(odd)>th,
+		.table-striped>tbody>tr:nth-child(odd) {
+			background-color: white !important;
+		}
+
+		/* END OF UPGRADED STYLES */
+
+		p {
+			margin-bottom: 1rem !important;
+		}
+
+		a {
+			color: #127FAC;
+		}
+
+		#wrapper {
+			background-color: #71797E;
+		}
+
+		section div.container {
+			padding-top: 1px;
+			background-color: #FFFFFF;
+			word-wrap: break-word;
+		}
+
+		#body-section {
+			background-image: url();
+			background-repeat: no-repeat;
+			background-position: top;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+
+		.footer-big-contacts h3 {
+			margin-bottom: 0px;
+		}
+
+		#logo img {
+			max-height: 250px !important;
+			height: auto !important;
+		}
+
+		.footer-logo {
+			margin-bottom: 0px !important;
+		}
+
+		#footer .footer-widgets-wrap {
+			padding: 20px !important;
+		}
+
+
+		/* li.menu-item.current.sub-menu>ul>li.menu-item.current>a {
+			color: #FFFFFFFF;
+			background-color: #FFFFFF;
+			text-decoration: underline 3px #FFFFFF !important;
+			text-underline-offset: 10px !important;
+		} */
+
+		.menu-item:hover>.menu-link,
+		.menu-item.current>.menu-link {
+			color: #FFFFFFFF;
+			text-decoration: underline 3px #FFFFFF !important;
+			text-underline-offset: 10px !important;
+		}
+
+		ul.sub-menu-container>.menu-item:hover>.menu-link {
+			color: #000;
+		}
+
+		.menu-link {
+			text-transform: none;
+			font-weight: normal;
+			color: #FFFFFFFF;
+		}
+
+		#primary-menu-trigger svg path {
+			stroke: #FFFFFFFF;
+		}
+
+		.btn-link,
+		.page-link,
+		.page-link:hover,
+		.page-link:focus {
+			background-color: #3EA9F3;
+			color: #FFFFFF;
+		}
+
+		.btn.btn-primary,
+		.btn.btn-outline-primary.active,
+		.btn.btn-outline-primary:hover {
+			background-color: #3EA9F3;
+			border-color: #3EA9F3;
+			color: #FFFFFF;
+			box-shadow: none;
+		}
+
+		.btn.btn-outline-primary {
+			border-color: #3EA9F3;
+			color: black;
+		}
+
+		.page-item.active .page-link,
+		.page-link:hover,
+		.page-link:focus {
+			color: #FFFFFF !important;
+			background-color: #127FAC !important;
+			border-color: #FFFFFF !important;
+		}
+
+		.fa.fa-2 {
+			font-size: 2em;
+		}
+
+		.fa.fa-3 {
+			font-size: 3em;
+		}
+
+		.fa.fa-4 {
+			font-size: 4em;
+		}
+
+		.fa.fa-5 {
+			font-size: 5em;
+		}
+
+		.fbox-icon i,
+		.fbox-icon img {
+			background-color: #127FAC;
+			color: #FFFFFF		}
+
+		.form-control {
+			appearance: auto;
+			-webkit-appearance: auto;
+		}
+
+		/* show the down arrow on a dropdown */
+		.entry-title h2 a:hover,
+		.entry-title .h2 a:hover,
+		.entry-title h3 a:hover,
+		.entry-title .h3 a:hover,
+		.entry-title h4 a:hover,
+		.entry-title .h4 a:hover {
+			color: #127FAC;
+		}
+
+		::selection {
+			background-color: #127FAC;
+			color: #FFFFFF;
+			text-shadow: none;
+		}
+
+		::-moz-selection {
+			background-color: #127FAC;
+			color: #FFFFFF;
+			text-shadow: none;
+		}
+
+		::-webkit-selection {
+			background-color: #127FAC;
+			color: #FFFFFF;
+			text-shadow: none;
+		}
+
+		#footer {
+			background-color: #000000 !important;
+		}
+
+		#footer>.container {
+			background-color: #000000 !important;
+			color: #FFFFFF !important;
+		}
+
+		.footer-big-contacts>a,
+		.footer-big-contacts>h1,
+		.footer-big-contacts>h2,
+		.footer-big-contacts>h3 {
+			color: #FFFFFF !important;
+		}
+
+		.img_center {
+			max-width: 100%;
+			height: 300px;
+			display: block;
+			margin: auto;
+		}
+
+		ol,
+		ul {
+			list-style-position: inside !important;
+			padding: 8px;
+		}
+
+		ul>ul {
+			padding: 0px 8px !important;
+		}
+
+		.editor_btn {
+			margin: auto;
+			width: auto;
+		}
+
+		.template_container {
+			padding: 20px;
+		}
+
+		.vertical-middle {
+			z-index: 0;
+		}
+
+		#gotoTop:hover {
+			background-color: #000;
+		}
+
+		#hero_background_video {
+			width: 100%;
+			height: 290px;
+			object-fit: cover;
+			position: absolute;
+		}
+
+		#header_background_container {
+			background-color: #000000 !important;
+			background: url('https://cdn-league-prod-static.teamlinkt.com/shared/placeholder_images/header_1920_500/football.jpg');background-size: cover;background-position: center;		}
+
+		#header-wrap {
+			/* position: absolute !important;
+			width: 100% !important;
+			z-index: 100 !important; */
+			color: #FFFFFFFF !important;
+			background-color: #000000 !important;
+		}
+
+		figure.image-style-side {
+			float: right;
+			margin-left: var(--ck-image-style-spacing);
+			max-width: 50%;
+		}
+
+		figure.image {
+			clear: both;
+			display: table;
+			margin: .9em auto;
+			min-width: 50px;
+			text-align: center;
+		}
+
+		.image-inline {
+			align-items: flex-start;
+			display: inline-flex;
+			max-width: 100%;
+		}
+
+		/* #logo {
+			margin-top: 40px !important;
+		} */
+
+		.menu-item .sub-menu-trigger {
+			color: #FFFFFF !important;
+		}
+
+		/* mobile screen */
+		@media (max-width: 575px) {
+			/* #logo {
+				margin-top: 60px !important;
+			} */
+		}
+
+		@media (max-width: 991px) {
+			.sub-menu-container .menu-item>.menu-link {
+				color: #FFFFFF !important;
+			}
+
+			.menu-item .sub-menu-trigger {
+				width: 64px !important;
+			}
+
+			.img_center {
+				max-height: 150px !important;
+			}
+
+			.display-4 {
+				font-size: calc(1.475rem + 2.7vw) !important;
+			}
+
+			#teamlinkt_links_div {
+				display: none;
+			}
+
+			.menu-item>.menu-link {
+				color: #FFFFFF !important;
+				max-width: calc(100% - 64px);
+			}
+
+			.sub-menu-container .menu-link {
+				margin-left: 1.5em;
+			}
+		}
+
+		@media (min-width: 992px) {
+			#header-wrap {
+				position: absolute !important;
+				width: 100% !important;
+				z-index: 100 !important;
+				color: #FFFFFFFF !important;
+				background-color: #000000 !important;
+			}
+
+			.sub-menu-container,
+			.mega-menu-content {
+				border-top: 2px solid #127FAC;
+			}
+
+			.sub-menu-container .menu-item:hover>.menu-link,
+			.sub-menu-container .menu-item.current>.menu-link {
+				text-decoration: underline 2px black !important;
+				text-underline-offset: 5px !important;
+				background-color: white !important;
+				color: black !important;
+			}
+		}
+
+		.download_button::before {
+			font-family: 'FontAwesome';
+			content: "\f019";
+			display: inline-block;
+			padding-right: 7px;
+		}
+
+		.adjust-left {
+			left: -100% !important;
+		}
+
+		.adjust-right {
+			right: -100% !important;
+		}
+	</style>
+	
+
+
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3589489409148698" crossorigin="anonymous"></script>
+	</head>
+
+<body class="stretched">
+	
+
+
+
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0" nonce="xXQ52F3t"></script>
+
+	
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+		<div id="top-bar">
+			<div class="container">
+				<div class="d-flex justify-content-between my-2">
+					<div class="align-items-center d-flex">
+						<span class="mb-0 text-center text-md-start" style="font-size: 14px;">
+							Winnipeg High School Football League						</span>
+					</div>
+					<div class="me-1 me-sm-3 d-flex align-items-center justify-content-end" style="z-index: 100; right: 0;">
+													<i class="ms-0 ms-sm-3 me-1 me-sm-3 my-auto d-none d-md-inline" style="font-size: 14px; color: #000">Follow us on</i>
+																															<a target="_blank" href="https://instagram.com/thewhsfl" class="social-icon my-auto si-small si-colored si-rounded si-instagram"> <i class="icon-instagram"></i><i class="icon-instagram"></i> </a>
+																								
+					</div>
+				</div>
+			</div>
+		</div>
+		<header id="header" class="header-size-sm">
+			
+			<!-- <div class="container"> -->
+			<div id="header_background_container" class="header-row" style="height: 300px;">
+				<div id="logo" class="m-auto">
+					<a href="/whsfl" class="standard-logo">
+						<img src="https://cdn-app.teamlinkt.com/media/association_data/17820/site_data/images/site_logo.png?v=1782317551" alt="Winnipeg High School Football League">
+					</a>
+					<a href="/whsfl" class="retina-logo">
+						<img src="https://cdn-app.teamlinkt.com/media/association_data/17820/site_data/images/site_logo.png?v=1782317551" alt="Winnipeg High School Football League" />
+					</a>
+				</div>
+				<!-- #logo end -->
+			</div>
+			<!-- </div> -->
+			<div id="header-wrap" class="border-top border-f5">
+				<div class="container">
+					<div class="header-row flex-row-reverse flex-lg-column">
+						<div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100">
+								<path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path>
+								<path d="m 30,50 h 40"></path>
+								<path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path>
+							</svg>
+						</div>
+						<nav class="primary-menu" data-trigger-speed="250" style="margin: auto;">
+							<ul class="menu-container" style="display: none;">
+								<li class="menu-item "><a href="/whsfl/Home" class="menu-link">Home</a></li><li class="menu-item "><a href="/whsfl/Teams" class="menu-link">Teams</a></li><li class="menu-item current"><a href="/whsfl/Scores" class="menu-link">Scores</a></li><li class="menu-item "><a href="/whsfl/Schedule" class="menu-link">Schedule</a></li><li class="menu-item "><a href="/whsfl/Standings" class="menu-link">Standings</a></li><li class="menu-item "><a href="/whsfl/Statistics" class="menu-link">Statistics</a></li><li class="menu-item "><a href="/whsfl/ContactUs" class="menu-link">Contact Us</a></li><li class="menu-item "><a href="/whsfl/Awards" class="menu-link">Awards</a></li><li class="menu-item "><a href="/whsfl/Champions" class="menu-link">Champions</a></li><li class="menu-item "><a href="/whsfl/Combine" class="menu-link">Combine</a></li>								<li class="menu-item sub-menu more-btn" id="MoreMenuItem" style="display: none;">
+									<a class="menu-link dropdown-toggle">More</a>
+									<ul class="sub-menu-container ps-2 p-lg-0" id="MoreMenuItemList">
+									</ul>
+								</li>
+							</ul>
+						</nav>
+						<!-- #primary-menu end -->
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<style>
+    #bottom_content_row .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    #bottom_content_row [class^="col-"] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    
+	.image-left {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.image-center {
+		display: flex;
+		justify-content: center;
+	}
+
+	.image-right {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	li > p {
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+</style>
+    <div class="container pt-3 ps-3 ps-sm-0 pb-0 pe-0">
+        <h2 class="mt-0 mt-sm-3 mb-0" style="color: #FFFFFF;">Scores</h2>
+    </div>
+<section id="body-section">
+    <div class="container mt-3 mb-5" style="box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2); border-radius: 10px;">
+        <div class="row pt-3">
+            <div class="col-12">
+                <div><div class="row"><div class="col-12"></div></div></div>            </div>
+        </div>
+        <div class="row">
+            <div class='col-md-12 mb-3'>
+                <div><div class="row"><div class="col-12">
+<style>
+	.line,
+	.double-line {
+		clear: initial;
+		position: initial;
+		width: auto;
+		margin: 0;
+		border-top: none;
+	}
+
+	div.dataTables_wrapper div.dataTables_processing {
+		z-index: 100;
+	}
+
+	.status_link {
+		color: black;
+	}
+
+	.status_link.active {
+		color: #2f89fc;
+	}
+
+	div#schedule .event-row {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	div#schedule .event-row:hover {
+		background-color: #F0F0F0;
+	}
+
+	#btnToTop {
+		display: none;
+		position: fixed;
+		bottom: 20px;
+		right: 30px;
+		z-index: 99;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		background-color: #216da9;
+		color: white;
+		cursor: pointer;
+		padding: 15px;
+		border-radius: 4px;
+	}
+
+	#btnToTop:hover {
+		background-color: #555;
+	}
+
+	#calendar .fc-toolbar-title {
+		font-size: 1em;
+		/* font-weight: 400; */
+	}
+
+	#calendar.fc button.fc-button-primary.fc-button-active {
+		background-color: #6c757d;
+		color: white;
+	}
+
+	#calendar table.fc-col-header,
+	#calendar table.fc-scrollgrid-sync-table {
+		margin-bottom: 0;
+	}
+
+	#calendar.fc .fc-button-primary {
+		color: black;
+		background-color: white;
+		border-color: #6c757d;
+	}
+
+	#calendar.fc .fc-button-group .fc-button:first-child {
+		border-top-left-radius: 9.75px;
+		border-bottom-left-radius: 9.75px;
+	}
+
+	#calendar.fc .fc-button-group .fc-button:last-child {
+		border-top-right-radius: 9.75px;
+		border-bottom-right-radius: 9.75px;
+	}
+
+	/* Column Header and Event title text */
+	#calendar.fc .fc-col-header-cell-cushion,
+	#calendar.fc .fc-daygrid-dot-event .fc-event-title {
+		font-weight: 500;
+	}
+
+	.popover {
+		max-width: 500px;
+		position: fixed;
+	}
+
+	/* If the screen is wider than 520 px make let each chunk take 33% and align the buttons to their respective alignments*/
+	@media only screen and (min-width: 776px) {
+
+		#calendar.fc .fc-toolbar-chunk {
+			width: 33%;
+		}
+
+		#calendar.fc .fc-toolbar-chunk:nth-child(2) {
+			text-align: center;
+		}
+
+		#calendar.fc .fc-toolbar-chunk:nth-child(3) {
+			text-align: end;
+		}
+	}
+
+	/* If the screen is thinner than 520 px make .fc-header-toolbar.fc-toolbar-chunk full width*/
+	@media only screen and (max-width: 775px) {
+		#calendar .fc-header-toolbar.fc-toolbar {
+			display: inline-block;
+			text-align: center;
+		}
+
+		#calendar .fc-header-toolbar.fc-toolbar .fc-toolbar-chunk:nth-child(1),
+		#calendar .fc-header-toolbar.fc-toolbar .fc-toolbar-chunk:nth-child(2) {
+			width: 100%;
+			margin-bottom: 0.5rem;
+		}
+
+		/* have the 3rd fc-toolbar-chunk have its items align at the end */
+		#calendar .fc-header-toolbar.fc-toolbar .fc-toolbar-chunk:nth-child(3) {
+			/* display: flex;
+			justify-content: flex-end; */
+		}
+	}
+
+	.nav-link {
+		font-weight: normal;
+	}
+
+	.nav-link.active {
+		font-weight: bold;
+	}
+
+	.date-row {
+		--bs-table-accent-bg: var(--bs-table-hover-bg);
+		color: var(--bs-table-hover-color);
+	}
+
+	.week_heading_row {
+		background-color: #666;
+		padding-bottom: 0;
+		margin-top: 1em;
+	}
+
+	.week_heading {
+		font-size: 1.5em;
+		color: white;
+	}
+
+	.game_details_container {
+		font-size: 1em;
+		padding-bottom: 4px;
+		padding-top: 4px;
+		margin-top: 1em;
+		background-color: #f0f0f0;
+	}
+
+	.game_teams_container {
+		font-size: 1.05em;
+		border: 1px solid #DDD;
+		padding-bottom: 2px;
+		margin-bottom: 2px;
+	}
+
+	.game_container.game_type_bye .game_details_container {
+		background-color: #ffa0a085;
+
+	}
+
+	.highlightValidationError {
+		/* border: 2px solid #FF0000; */
+		color: red;
+	}
+
+	.table-wrapper {
+		overflow-x: scroll;
+		margin-bottom: 20px;
+	}
+
+	th.team_name,
+	th.location_name {
+		white-space: nowrap;
+	}
+
+	.table-wrapper table.table-bordered tbody td {
+		line-height: normal;
+	}
+
+	.popover-content {
+		line-height: normal;
+	}
+
+	#topLevelTabbableContent .tab-pane.fade.active.in {
+		opacity: 1 !important;
+	}
+
+	.bracket {
+		display: block;
+		white-space: nowrap;
+		padding: 1em;
+		margin-bottom: 1em;
+	}
+
+	.bracket .round {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.bracket .round .winners>div,
+	.bracket .round .losers>div {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.bracket .round .winners>div.matchups .matchup:last-child,
+	.bracket .round .losers>div.matchups .matchup:last-child {
+		margin-bottom: 0;
+	}
+
+	.bracket .round .winners>div.matchups .matchup .participants,
+	.bracket .round .losers>div.matchups .matchup .participants {
+		border-radius: 0.25em;
+		overflow: hidden;
+	}
+
+	.bracket .round .winners>div.matchups .matchup .participants .participant,
+	.bracket .round .losers>div.matchups .matchup .participants .participant {
+		background: white;
+	}
+
+	.bracket .round .winners>div.matchups .matchup .participants .participant.winner,
+	.bracket .round .losers>div.matchups .matchup .participants .participant.winner {
+		border-color: #6ec44b;
+	}
+
+	.bracket .round .winners>div.matchups .matchup .participants .participant.loser,
+	.bracket .round .losers>div.matchups .matchup .participants .participant.loser {
+		border-color: #d62e2e;
+	}
+
+	.bracket .round .winners>div.matchups .matchup .participants .participant.tie,
+	.bracket .round .losers>div.matchups .matchup .participants .participant.tie {
+		border-color: #ffa735;
+	}
+
+	.bracket .round .winners>div.matchups .matchup .participants .participant span,
+	.bracket .round .losers>div.matchups .matchup .participants .participant span {
+		margin: 0 1.25em;
+		line-height: 2;
+		font-size: 0.8em;
+	}
+
+	.roundname {
+		text-align: center;
+		font-size: 16px;
+		float: left;
+		width: 14.8em;
+	}
+
+	.roundname.finals {
+		margin-left: 100px;
+	}
+
+	.roundname_games {
+		margin: 1px;
+		text-align: center;
+		font-size: 12px;
+	}
+
+	.matchup_info {
+		width: 64px;
+		font-size: 12px;
+		float: left;
+		height: 96px;
+		background-color: white;
+		vertical-align: middle;
+	}
+
+
+	.matchup_info_horiz {
+		font-size: 1em;
+		vertical-align: middle;
+		text-align: center;
+		margin-left: 4px;
+		margin-right: 4px;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.matchup_info_horiz.top {
+		border-top-right-radius: 0.5em;
+		border-top-left-radius: 0.5em;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		text-align: left;
+	}
+
+	.matchup_info_horiz.bottom {
+		border-bottom-right-radius: 0.5em;
+		border-bottom-left-radius: 0.5em;
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+
+	.game_id {
+		position: relative;
+		height: 0px;
+		font-size: 12px;
+		top: 40px;
+		left: 10px;
+	}
+
+	.round_wrapper {
+		display: inline-block;
+	}
+
+
+	.current_team {
+		color: green;
+		text-decoration: underline;
+	}
+
+	.team_name_winner {
+		color: green;
+	}
+
+	.team_name_loser {
+		color: red;
+	}
+
+	.team_name_tie {
+		color: darkgrey;
+	}
+
+	.bracket .round .winners>div.matchups .matchup .participants .participant span.score_link,
+	.bracket .round .losers>div.matchups .matchup .participants .participant span.score_link {
+		margin: 0 0.5em;
+		float: right;
+		font-size: 0.8em;
+		margin-right: 0.5em;
+		margin-top: 0.4em;
+	}
+
+	.bracket .round .winners>div.matchups .matchup .participants .participant span.team_link,
+	.bracket .round .losers>div.matchups .matchup .participants .participant span.team_link {
+		margin: 0 0.5em;
+		float: left;
+		font-size: 1em;
+		margin-left: 0.5em;
+		width: 160px;
+		overflow: hidden;
+	}
+
+	.table>tbody>tr>td.winner {
+		font-weight: bold;
+	}
+
+	ul.connectedPools {
+		background-color: #ebebeb;
+		border: thin solid lightgrey;
+		min-height: 2em;
+		margin-bottom: 0px;
+	}
+
+	ul.connectedPools.c {
+		border: 2px solid red;
+	}
+
+	.series-info {
+		background: white;
+		display: flex;
+		padding: 0 6px;
+	}
+
+	.series-info span {
+		line-height: 1.5;
+		/* 1.5 is the max with 2 things in this span before it starts to cut off. */
+		font-size: 0.8em;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.series-id {
+		min-width: 25px;
+		text-align: end;
+	}
+
+	.empty-round {
+		width: 18em;
+	}
+
+	.matchups {
+		position: relative;
+	}
+
+	.matchups .finals-line {
+		border-top: 1px solid #ababab;
+		width: 100px;
+		position: absolute;
+	}
+
+	.participant.winner a,
+	.participant.winner span {
+		color: #6ec44b;
+	}
+
+	.participant.loser a,
+	.participant.loser span {
+		color: #d62e2e;
+	}
+
+	.bracket .round.round1 .winners:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 1rem;
+		}.bracket .round.round1 .winners .matchups .matchup:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 1rem;
+		}.bracket .round.round1 .losers .matchups .matchup:not(.empty-matchup) {
+			margin-bottom: 8rem;
+		}.round.round1 .losers.empty-matchup {
+			height: 80px;
+		}.bracket .round.round2 .winners:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 6.77rem;
+		}.bracket .round.round2 .winners .matchups .matchup:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 6.77rem;
+		}.bracket .round.round2 .losers .matchups .matchup:not(.empty-matchup) {
+			margin-bottom: 5rem;
+		}.round.round2 .losers.empty-matchup {
+			height: 80px;
+		}.bracket .round.round3 .winners:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 14.5rem;
+		}.bracket .round.round3 .winners .matchups .matchup:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 14.5rem;
+		}.bracket .round.round3 .losers .matchups .matchup:not(.empty-matchup) {
+			margin-bottom: 14rem;
+		}.round.round3 .losers.empty-matchup {
+			height: 40px;
+		}.bracket .round.round4 .winners:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 12rem;
+		}.bracket .round.round4 .winners .matchups .matchup:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 12rem;
+		}.bracket .round.round4 .losers .matchups .matchup:not(.empty-matchup) {
+			margin-bottom: 28rem;
+		}.round.round4 .losers.empty-matchup {
+			height: 140px;
+		}.bracket .round.round5 .winners:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 16rem;
+		}.bracket .round.round5 .winners .matchups .matchup:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 16rem;
+		}.bracket .round.round5 .losers .matchups .matchup:not(.empty-matchup) {
+			margin-bottom: 14rem;
+		}.round.round5 .losers.empty-matchup {
+			height: 40px;
+		}.bracket .round.round6 .winners:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 20rem;
+		}.bracket .round.round6 .winners .matchups .matchup:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 20rem;
+		}.bracket .round.round6 .losers .matchups .matchup:not(.empty-matchup) {
+			margin-bottom: 34rem;
+		}.round.round6 .losers.empty-matchup {
+			height: 80px;
+		}.bracket .round.round7 .winners:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 24rem;
+		}.bracket .round.round7 .winners .matchups .matchup:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 24rem;
+		}.bracket .round.round7 .losers .matchups .matchup:not(.empty-matchup) {
+			margin-bottom: 42rem;
+		}.round.round7 .losers.empty-matchup {
+			height: 40px;
+		}.bracket .round.round8 .winners:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 24rem;
+		}.bracket .round.round8 .winners .matchups .matchup:not(:last-child):not(.empty-matchup) {
+			margin-bottom: 24rem;
+		}.bracket .round.round8 .losers .matchups .matchup:not(.empty-matchup) {
+			margin-bottom: 49rem;
+		}.round.round8 .losers.empty-matchup {
+			height: 80px;
+		}.bracket_games_container .table>thead>tr>th {
+		text-transform: none;
+		font-size: 1em;
+		color: #3f4254;
+	}
+
+	.bracket_games_container .table>tbody>tr>td,
+	.bracket_games_container .table>tbody>tr>th {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+
+	.bracket_games_container .table>tbody>tr.week_date_row td {
+		background-color: #ebebeb;
+	}
+
+	div.bootstrap-select button:hover {
+		color: #000 !important;
+		background-color: #FFF !important;
+	}
+
+	.pac-container {
+		z-index: 100000;
+	}
+
+	.matchup:not(.empty-shell) {
+		width: 18em;
+		position: static;
+		border: 1px solid #ababab;
+		border-left: none !important;
+	}
+
+	.matchup.empty-shell {
+		width: 18em;
+		position: static;
+	}
+
+	.matchup.finals {
+		top: -40px;
+		position: absolute;
+		left: 100px;
+		border-left: 1px solid #ababab !important;
+	}
+
+	.matchup.position-absolute {
+		border: 1px dashed #ababab;
+		margin-bottom: 0 !important;
+		bottom: 0px;
+	}
+
+	.dataTable td,
+	.dataTable th {
+		background-color: white;
+		white-space: nowrap;
+	}
+</style>
+
+<form action="/whsfl/Scores" /whsfl/Scores="/whsfl/Scores" novalidate="novalidate" id="filterScheduleForm" class="mb-0" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div><div class="row me-0 ms-0">
+		<style>
+	.form-select {
+		height: 48px !important;
+	}
+
+	.select2.select2-container {
+		padding: 0 !important;
+		margin-bottom: 1rem !important;
+		width: 250px !important;
+		margin-right: 0.5rem !important;
+	}
+
+	.select2-selection {
+		border-radius: 9.75px !important;
+		height: 48px !important;
+		border-color: rgb(206, 212, 218) !important;
+	}
+
+	.select2-selection__rendered {
+		height: 48px !important;
+		align-content: center !important;
+		padding-left: 10px !important;
+		padding-right: 30px !important;
+	}
+
+	.select2-selection__arrow {
+		top: 10px !important;
+		right: 6px !important;
+	}
+
+	.select2-container .select2-dropdown {
+		border: 0 !important;
+		box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15) !important;
+		border-radius: 9.75px !important;
+		padding: 1rem 0 !important;
+		background-color: white;
+	}
+
+	.select2-results__options {
+		scrollbar-width: thin !important;
+	}
+
+	.select2-results__option--selectable {
+		word-break: break-word;
+		padding: 8px 12px !important;
+		font-size: 14px !important;
+	}
+
+	.select2-search__field {
+		border-radius: 9.75px !important;
+		border-color: rgb(206, 212, 218) !important;
+	}
+
+	.select2-search--dropdown {
+		padding-bottom: 1rem !important;
+	}
+
+	.select2-container--default .select2-results>.select2-results__options {
+		max-height: 400px !important;
+	}
+
+	@media screen and (max-width: 575px) {
+		.select2.select2-container {
+			width: 100% !important;
+		}
+
+		.select2-container--open .select2-dropdown--below {
+			min-width: calc(100% - 25px) !important;
+		}
+	}
+
+	@media screen and (min-width: 576px) {
+		.select2-container--open .select2-dropdown--below {
+			width: max-content !important;
+			min-width: 250px !important;
+			max-width: 500px !important;
+		}
+		.w-sm-200px {
+			width: 200px !important;
+		}
+
+		.w-sm-250px {
+			width: 250px !important;
+		}
+	}
+</style>
+	<input type="hidden" name="data[schedule_type]" class="mt-3 me-1" value="regular_season" id="schedule_type"/><select name="data[season_id]" class="form-select d-inline-block mb-3 me-2 w-100 w-sm-250px" onChange="changeSeason(this);" id="season_id">
+<option value="54997" selected="selected">2026 WHSFL</option>
+<option value="52508">2026 FLAG SEASON</option>
+<option value="38424">2025 WHSFL</option>
+<option value="32796">2024 WHSFL</option>
+<option value="21800">2023 WHSFL</option>
+</select>
+<input type="hidden" name="data[playoff_id]" class="mt-3 me-1" id="playoff_id"/><select name="data[hierarchy_filter]" class="form-select d-inline-block mb-3 me-2 w-100 w-sm-250px" style="width: auto; display: block" onchange="resetPaging();$(&quot;#filterScheduleForm&quot;).submit();" id="hierarchy_filter">
+<option value="">All Divisions</option>
+<option value="309268">Varsity</option>
+<option value="309277">Varsity / Tier 1 - AAAA</option>
+<option value="309279">Varsity / Tier 1 - AAAA / Potter Division</option>
+<option value="309280">Varsity / Tier 1 - AAAA / Vidruk Division</option>
+<option value="309278">Varsity / Tier 2 - AAAA</option>
+<option value="309281">Varsity / Tier 2 - AAAA / Gustafsson Divison</option>
+<option value="309286">Varsity / AAA</option>
+<option value="309287">Varsity / AAA / Currie Division</option>
+<option value="309271">Junior Varsity</option>
+<option value="309283">Junior Varsity / Junior Varsity</option>
+<option value="309284">Junior Varsity / Junior Varsity / JV12</option>
+<option value="309285">Junior Varsity / Junior Varsity / JV9</option>
+</select><select name="data[team_id]" class="form-select d-inline-block mb-3 w-100 w-sm-250px" id="filter_team_id" style="width: auto; display: block" onchange="resetPaging();$(&quot;#filterScheduleForm&quot;).submit();">
+<option value="">All Teams</option>
+<option value="859813">Beaver Brae Broncos (Varsity / AAA / Currie Division)</option>
+<option value="860019">Churchill Bulldogs (Varsity / AAA / Currie Division)</option>
+<option value="860045">Crocus Plains Plainsmen (Varsity / Tier 1 - AAAA / Vidruk Division)</option>
+<option value="860044">Crocus Plains Plainsmen JV (Junior Varsity / Junior Varsity / JV9)</option>
+<option value="860048">Dakota Lancers (Varsity / Tier 1 - AAAA / Vidruk Division)</option>
+<option value="860047">Dakota Lancers JV (Junior Varsity / Junior Varsity / JV12)</option>
+<option value="860062">Daniel McIntyre Maroons (Varsity / AAA / Currie Division)</option>
+<option value="860069">Dryden Eagles (Varsity / AAA / Currie Division)</option>
+<option value="860074">Elmwood Giants (Varsity / Tier 1 - AAAA / Potter Division)</option>
+<option value="860078">Fort Frances Muskies (Varsity / AAA / Currie Division)</option>
+<option value="860080">Garden City Gophers (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="860082">Grant Park Pirates (Varsity / Tier 1 - AAAA / Vidruk Division)</option>
+<option value="860081">Grant Park Pirates JV (Junior Varsity / Junior Varsity / JV9)</option>
+<option value="860091">John Taylor Pipers (Varsity / AAA / Currie Division)</option>
+<option value="860092">John Taylor Pipers JV (Junior Varsity / Junior Varsity / JV9)</option>
+<option value="860094">Kelvin Clippers (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="860100">Kildonan East Reivers (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="860101">Kildonan East Reivers JV (Junior Varsity / Junior Varsity / JV9)</option>
+<option value="860261">Maples Marauders (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="860264">Miles Mac Buckeyes (Varsity / Tier 1 - AAAA / Potter Division)</option>
+<option value="860271">Murdoch MacKay (Varsity / Tier 1 - AAAA / Vidruk Division)</option>
+<option value="902294">Murdoch Mackay JV (Junior Varsity / Junior Varsity / JV9)</option>
+<option value="860273">Oak Park Raiders (Varsity / Tier 1 - AAAA / Vidruk Division)</option>
+<option value="860272">Oak Park Raiders JV (Junior Varsity / Junior Varsity / JV12)</option>
+<option value="860293">Portage Trojans (Varsity / AAA / Currie Division)</option>
+<option value="860302">River East Kodiaks (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="860301">River East Kodiaks JV (Junior Varsity / Junior Varsity / JV9)</option>
+<option value="860304">Sisler Spartans (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="860305">Springfield Sabres (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="860312">St. John&#039;s Tigers (Varsity / AAA / Currie Division)</option>
+<option value="860313">St. Norbert Celtics (Varsity / AAA / Currie Division)</option>
+<option value="860315">St. Paul&#039;s Crusaders (Varsity / Tier 1 - AAAA / Potter Division)</option>
+<option value="860314">St. Paul&#039;s Crusaders JV (Junior Varsity / Junior Varsity / JV12)</option>
+<option value="860317">Steinbach Sabres (Varsity / Tier 1 - AAAA / Vidruk Division)</option>
+<option value="860318">Steinbach Sabres JV (Junior Varsity / Junior Varsity / JV9)</option>
+<option value="860320">Sturgeon Heights Huskies (Varsity / Tier 1 - AAAA / Potter Division)</option>
+<option value="860321">Sturgeon Heights JV (Junior Varsity / Junior Varsity / JV9)</option>
+<option value="860323">Tec Voc Hornets (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="860336">Vincent Massey Trojans (Varsity / Tier 1 - AAAA / Potter Division)</option>
+<option value="860335">Vincent Massey Trojans JV (Junior Varsity / Junior Varsity / JV12)</option>
+<option value="860325">Vincent Massey Vikings (Varsity / Tier 1 - AAAA / Potter Division)</option>
+<option value="860324">Vincent Massey Vikings JV (Junior Varsity / Junior Varsity / JV9)</option>
+<option value="860350">West Kildonan Wolverines (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="860352">Windsor Park Royals (Varsity / Tier 2 - AAAA / Gustafsson Divison)</option>
+<option value="881159">Windsor Park Royals JV (Junior Varsity / Junior Varsity / JV9)</option>
+</select>
+<input type="hidden" name="data[group_count]" class="mt-3 me-1" value="3" id="group_count"/>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+	const CHILD_GROUP_TEAMS = {"309279":[860074,860264,860315,860320,860336,860325],"309280":[860045,860048,860082,860271,860273,860317],"309281":[860080,860094,860100,860261,860302,860304,860305,860323,860350,860352],"309287":[859813,860019,860062,860069,860078,860091,860293,860312,860313],"309284":[860047,860272,860314,860335],"309285":[860044,860081,860092,860101,902294,860301,860318,860321,860324,881159]};
+	var group_count = 3;
+	var tree = [{"id":309268,"parent_instance_id":309268,"parent_name":"Varsity","sport_id":16,"sport_name":"","children":[{"id":309277,"parent_instance_id":309277,"parent_name":"Tier 1 - AAAA","sport_id":16,"sport_name":"Football","children":[{"id":309279,"parent_instance_id":309279,"parent_name":"Potter Division","sport_id":16,"sport_name":"Football","children":[]},{"id":309280,"parent_instance_id":309280,"parent_name":"Vidruk Division","sport_id":16,"sport_name":"Football","children":[]}]},{"id":309278,"parent_instance_id":309278,"parent_name":"Tier 2 - AAAA","sport_id":16,"sport_name":"Football","children":[{"id":309281,"parent_instance_id":309281,"parent_name":"Gustafsson Divison","sport_id":16,"sport_name":"Football","children":[]}]},{"id":309286,"parent_instance_id":309286,"parent_name":"AAA","sport_id":16,"sport_name":"Football","children":[{"id":309287,"parent_instance_id":309287,"parent_name":"Currie Division","sport_id":16,"sport_name":"Football","children":[]}]}]},{"id":309271,"parent_instance_id":309271,"parent_name":"Junior Varsity","sport_id":16,"sport_name":"","children":[{"id":309283,"parent_instance_id":309283,"parent_name":"Junior Varsity","sport_id":16,"sport_name":"Football","children":[{"id":309284,"parent_instance_id":309284,"parent_name":"JV12","sport_id":16,"sport_name":"Football","children":[]},{"id":309285,"parent_instance_id":309285,"parent_name":"JV9","sport_id":16,"sport_name":"Football","children":[]}]}]}];
+	var teams = {"309279":{"teams":[{"Team":{"id":860074,"name":"Elmwood Giants","original_team_name":"Elmwood Giants","record":"","initials":"EG"}},{"Team":{"id":860264,"name":"Miles Mac Buckeyes","original_team_name":"Miles Mac Buckeyes","record":"","initials":"MMB"}},{"Team":{"id":860315,"name":"St. Paul's Crusaders","original_team_name":"St. Paul's Crusaders","record":"","initials":"SPC"}},{"Team":{"id":860320,"name":"Sturgeon Heights Huskies","original_team_name":"Sturgeon Heights Huskies","record":"","initials":"SHH"}},{"Team":{"id":860336,"name":"Vincent Massey Trojans","original_team_name":"Vincent Massey Trojans","record":"","initials":"VMT"}},{"Team":{"id":860325,"name":"Vincent Massey Vikings","original_team_name":"Vincent Massey Vikings","record":"","initials":"VMV"}}],"label":"Varsity \/ Tier 1 - AAAA \/ Potter Division"},"309280":{"teams":[{"Team":{"id":860045,"name":"Crocus Plains Plainsmen","original_team_name":"Crocus Plains Plainsmen","record":"","initials":"CPP"}},{"Team":{"id":860048,"name":"Dakota Lancers","original_team_name":"Dakota Lancers","record":"","initials":"DL"}},{"Team":{"id":860082,"name":"Grant Park Pirates","original_team_name":"Grant Park Pirates","record":"","initials":"GPP"}},{"Team":{"id":860271,"name":"Murdoch MacKay","original_team_name":"Murdoch MacKay","record":"","initials":"MM"}},{"Team":{"id":860273,"name":"Oak Park Raiders","original_team_name":"Oak Park Raiders","record":"","initials":"OPR"}},{"Team":{"id":860317,"name":"Steinbach Sabres","original_team_name":"Steinbach Sabres","record":"","initials":"SS"}}],"label":"Varsity \/ Tier 1 - AAAA \/ Vidruk Division"},"309277":{"teams":[{"Team":{"id":860045,"name":"Crocus Plains Plainsmen","original_team_name":"Crocus Plains Plainsmen","record":"","initials":"CPP"}},{"Team":{"id":860048,"name":"Dakota Lancers","original_team_name":"Dakota Lancers","record":"","initials":"DL"}},{"Team":{"id":860074,"name":"Elmwood Giants","original_team_name":"Elmwood Giants","record":"","initials":"EG"}},{"Team":{"id":860082,"name":"Grant Park Pirates","original_team_name":"Grant Park Pirates","record":"","initials":"GPP"}},{"Team":{"id":860264,"name":"Miles Mac Buckeyes","original_team_name":"Miles Mac Buckeyes","record":"","initials":"MMB"}},{"Team":{"id":860271,"name":"Murdoch MacKay","original_team_name":"Murdoch MacKay","record":"","initials":"MM"}},{"Team":{"id":860273,"name":"Oak Park Raiders","original_team_name":"Oak Park Raiders","record":"","initials":"OPR"}},{"Team":{"id":860315,"name":"St. Paul's Crusaders","original_team_name":"St. Paul's Crusaders","record":"","initials":"SPC"}},{"Team":{"id":860317,"name":"Steinbach Sabres","original_team_name":"Steinbach Sabres","record":"","initials":"SS"}},{"Team":{"id":860320,"name":"Sturgeon Heights Huskies","original_team_name":"Sturgeon Heights Huskies","record":"","initials":"SHH"}},{"Team":{"id":860336,"name":"Vincent Massey Trojans","original_team_name":"Vincent Massey Trojans","record":"","initials":"VMT"}},{"Team":{"id":860325,"name":"Vincent Massey Vikings","original_team_name":"Vincent Massey Vikings","record":"","initials":"VMV"}}],"label":"Varsity \/ Tier 1 - AAAA"},"309281":{"teams":[{"Team":{"id":860080,"name":"Garden City Gophers","original_team_name":"Garden City Gophers","record":"","initials":"GCG"}},{"Team":{"id":860094,"name":"Kelvin Clippers","original_team_name":"Kelvin Clippers","record":"","initials":"KC"}},{"Team":{"id":860100,"name":"Kildonan East Reivers","original_team_name":"Kildonan East Reivers","record":"","initials":"KER"}},{"Team":{"id":860261,"name":"Maples Marauders","original_team_name":"Maples Marauders","record":"","initials":"MM"}},{"Team":{"id":860302,"name":"River East Kodiaks","original_team_name":"River East Kodiaks","record":"","initials":"REK"}},{"Team":{"id":860304,"name":"Sisler Spartans","original_team_name":"Sisler Spartans","record":"","initials":"SS"}},{"Team":{"id":860305,"name":"Springfield Sabres","original_team_name":"Springfield Sabres","record":"","initials":"SS"}},{"Team":{"id":860323,"name":"Tec Voc Hornets","original_team_name":"Tec Voc Hornets","record":"","initials":"TVH"}},{"Team":{"id":860350,"name":"West Kildonan Wolverines","original_team_name":"West Kildonan Wolverines","record":"","initials":"WKW"}},{"Team":{"id":860352,"name":"Windsor Park Royals","original_team_name":"Windsor Park Royals","record":"","initials":"WPR"}}],"label":"Varsity \/ Tier 2 - AAAA \/ Gustafsson Divison"},"309278":{"teams":[{"Team":{"id":860080,"name":"Garden City Gophers","original_team_name":"Garden City Gophers","record":"","initials":"GCG"}},{"Team":{"id":860094,"name":"Kelvin Clippers","original_team_name":"Kelvin Clippers","record":"","initials":"KC"}},{"Team":{"id":860100,"name":"Kildonan East Reivers","original_team_name":"Kildonan East Reivers","record":"","initials":"KER"}},{"Team":{"id":860261,"name":"Maples Marauders","original_team_name":"Maples Marauders","record":"","initials":"MM"}},{"Team":{"id":860302,"name":"River East Kodiaks","original_team_name":"River East Kodiaks","record":"","initials":"REK"}},{"Team":{"id":860304,"name":"Sisler Spartans","original_team_name":"Sisler Spartans","record":"","initials":"SS"}},{"Team":{"id":860305,"name":"Springfield Sabres","original_team_name":"Springfield Sabres","record":"","initials":"SS"}},{"Team":{"id":860323,"name":"Tec Voc Hornets","original_team_name":"Tec Voc Hornets","record":"","initials":"TVH"}},{"Team":{"id":860350,"name":"West Kildonan Wolverines","original_team_name":"West Kildonan Wolverines","record":"","initials":"WKW"}},{"Team":{"id":860352,"name":"Windsor Park Royals","original_team_name":"Windsor Park Royals","record":"","initials":"WPR"}}],"label":"Varsity \/ Tier 2 - AAAA"},"309287":{"teams":[{"Team":{"id":859813,"name":"Beaver Brae Broncos","original_team_name":"Beaver Brae Broncos","record":"","initials":"BBB"}},{"Team":{"id":860019,"name":"Churchill Bulldogs","original_team_name":"Churchill Bulldogs","record":"","initials":"CB"}},{"Team":{"id":860062,"name":"Daniel McIntyre Maroons","original_team_name":"Daniel McIntyre Maroons","record":"","initials":"DMM"}},{"Team":{"id":860069,"name":"Dryden Eagles","original_team_name":"Dryden Eagles","record":"","initials":"DE"}},{"Team":{"id":860078,"name":"Fort Frances Muskies","original_team_name":"Fort Frances Muskies","record":"","initials":"FFM"}},{"Team":{"id":860091,"name":"John Taylor Pipers","original_team_name":"John Taylor Pipers","record":"","initials":"JTP"}},{"Team":{"id":860293,"name":"Portage Trojans","original_team_name":"Portage Trojans","record":"","initials":"PT"}},{"Team":{"id":860312,"name":"St. John's Tigers","original_team_name":"St. John's Tigers","record":"","initials":"SJT"}},{"Team":{"id":860313,"name":"St. Norbert Celtics","original_team_name":"St. Norbert Celtics","record":"","initials":"SNC"}}],"label":"Varsity \/ AAA \/ Currie Division"},"309286":{"teams":[{"Team":{"id":859813,"name":"Beaver Brae Broncos","original_team_name":"Beaver Brae Broncos","record":"","initials":"BBB"}},{"Team":{"id":860019,"name":"Churchill Bulldogs","original_team_name":"Churchill Bulldogs","record":"","initials":"CB"}},{"Team":{"id":860062,"name":"Daniel McIntyre Maroons","original_team_name":"Daniel McIntyre Maroons","record":"","initials":"DMM"}},{"Team":{"id":860069,"name":"Dryden Eagles","original_team_name":"Dryden Eagles","record":"","initials":"DE"}},{"Team":{"id":860078,"name":"Fort Frances Muskies","original_team_name":"Fort Frances Muskies","record":"","initials":"FFM"}},{"Team":{"id":860091,"name":"John Taylor Pipers","original_team_name":"John Taylor Pipers","record":"","initials":"JTP"}},{"Team":{"id":860293,"name":"Portage Trojans","original_team_name":"Portage Trojans","record":"","initials":"PT"}},{"Team":{"id":860312,"name":"St. John's Tigers","original_team_name":"St. John's Tigers","record":"","initials":"SJT"}},{"Team":{"id":860313,"name":"St. Norbert Celtics","original_team_name":"St. Norbert Celtics","record":"","initials":"SNC"}}],"label":"Varsity \/ AAA"},"309268":{"teams":[{"Team":{"id":859813,"name":"Beaver Brae Broncos","original_team_name":"Beaver Brae Broncos","record":"","initials":"BBB"}},{"Team":{"id":860019,"name":"Churchill Bulldogs","original_team_name":"Churchill Bulldogs","record":"","initials":"CB"}},{"Team":{"id":860045,"name":"Crocus Plains Plainsmen","original_team_name":"Crocus Plains Plainsmen","record":"","initials":"CPP"}},{"Team":{"id":860048,"name":"Dakota Lancers","original_team_name":"Dakota Lancers","record":"","initials":"DL"}},{"Team":{"id":860062,"name":"Daniel McIntyre Maroons","original_team_name":"Daniel McIntyre Maroons","record":"","initials":"DMM"}},{"Team":{"id":860069,"name":"Dryden Eagles","original_team_name":"Dryden Eagles","record":"","initials":"DE"}},{"Team":{"id":860074,"name":"Elmwood Giants","original_team_name":"Elmwood Giants","record":"","initials":"EG"}},{"Team":{"id":860078,"name":"Fort Frances Muskies","original_team_name":"Fort Frances Muskies","record":"","initials":"FFM"}},{"Team":{"id":860080,"name":"Garden City Gophers","original_team_name":"Garden City Gophers","record":"","initials":"GCG"}},{"Team":{"id":860082,"name":"Grant Park Pirates","original_team_name":"Grant Park Pirates","record":"","initials":"GPP"}},{"Team":{"id":860091,"name":"John Taylor Pipers","original_team_name":"John Taylor Pipers","record":"","initials":"JTP"}},{"Team":{"id":860094,"name":"Kelvin Clippers","original_team_name":"Kelvin Clippers","record":"","initials":"KC"}},{"Team":{"id":860100,"name":"Kildonan East Reivers","original_team_name":"Kildonan East Reivers","record":"","initials":"KER"}},{"Team":{"id":860261,"name":"Maples Marauders","original_team_name":"Maples Marauders","record":"","initials":"MM"}},{"Team":{"id":860264,"name":"Miles Mac Buckeyes","original_team_name":"Miles Mac Buckeyes","record":"","initials":"MMB"}},{"Team":{"id":860271,"name":"Murdoch MacKay","original_team_name":"Murdoch MacKay","record":"","initials":"MM"}},{"Team":{"id":860273,"name":"Oak Park Raiders","original_team_name":"Oak Park Raiders","record":"","initials":"OPR"}},{"Team":{"id":860293,"name":"Portage Trojans","original_team_name":"Portage Trojans","record":"","initials":"PT"}},{"Team":{"id":860302,"name":"River East Kodiaks","original_team_name":"River East Kodiaks","record":"","initials":"REK"}},{"Team":{"id":860304,"name":"Sisler Spartans","original_team_name":"Sisler Spartans","record":"","initials":"SS"}},{"Team":{"id":860305,"name":"Springfield Sabres","original_team_name":"Springfield Sabres","record":"","initials":"SS"}},{"Team":{"id":860312,"name":"St. John's Tigers","original_team_name":"St. John's Tigers","record":"","initials":"SJT"}},{"Team":{"id":860313,"name":"St. Norbert Celtics","original_team_name":"St. Norbert Celtics","record":"","initials":"SNC"}},{"Team":{"id":860315,"name":"St. Paul's Crusaders","original_team_name":"St. Paul's Crusaders","record":"","initials":"SPC"}},{"Team":{"id":860317,"name":"Steinbach Sabres","original_team_name":"Steinbach Sabres","record":"","initials":"SS"}},{"Team":{"id":860320,"name":"Sturgeon Heights Huskies","original_team_name":"Sturgeon Heights Huskies","record":"","initials":"SHH"}},{"Team":{"id":860323,"name":"Tec Voc Hornets","original_team_name":"Tec Voc Hornets","record":"","initials":"TVH"}},{"Team":{"id":860336,"name":"Vincent Massey Trojans","original_team_name":"Vincent Massey Trojans","record":"","initials":"VMT"}},{"Team":{"id":860325,"name":"Vincent Massey Vikings","original_team_name":"Vincent Massey Vikings","record":"","initials":"VMV"}},{"Team":{"id":860350,"name":"West Kildonan Wolverines","original_team_name":"West Kildonan Wolverines","record":"","initials":"WKW"}},{"Team":{"id":860352,"name":"Windsor Park Royals","original_team_name":"Windsor Park Royals","record":"","initials":"WPR"}}],"label":"Varsity"},"309284":{"teams":[{"Team":{"id":860047,"name":"Dakota Lancers JV","original_team_name":"Dakota Lancers JV","record":"","initials":"DLJ"}},{"Team":{"id":860272,"name":"Oak Park Raiders JV","original_team_name":"Oak Park Raiders JV","record":"","initials":"OPRJ"}},{"Team":{"id":860314,"name":"St. Paul's Crusaders JV","original_team_name":"St. Paul's Crusaders JV","record":"","initials":"SPCJ"}},{"Team":{"id":860335,"name":"Vincent Massey Trojans JV","original_team_name":"Vincent Massey Trojans JV","record":"","initials":"VMTJ"}}],"label":"Junior Varsity \/ Junior Varsity \/ JV12"},"309285":{"teams":[{"Team":{"id":860044,"name":"Crocus Plains Plainsmen JV","original_team_name":"Crocus Plains Plainsmen JV","record":"","initials":"CPPJ"}},{"Team":{"id":860081,"name":"Grant Park Pirates JV","original_team_name":"Grant Park Pirates JV","record":"","initials":"GPPJ"}},{"Team":{"id":860092,"name":"John Taylor Pipers JV","original_team_name":"John Taylor Pipers JV","record":"","initials":"JTPJ"}},{"Team":{"id":860101,"name":"Kildonan East Reivers JV","original_team_name":"Kildonan East Reivers JV","record":"","initials":"KERJ"}},{"Team":{"id":902294,"name":"Murdoch Mackay JV","original_team_name":"Murdoch Mackay JV","record":"","initials":"MMJ"}},{"Team":{"id":860301,"name":"River East Kodiaks JV","original_team_name":"River East Kodiaks JV","record":"","initials":"REKJ"}},{"Team":{"id":860318,"name":"Steinbach Sabres JV","original_team_name":"Steinbach Sabres JV","record":"","initials":"SSJ"}},{"Team":{"id":860321,"name":"Sturgeon Heights JV","original_team_name":"Sturgeon Heights JV","record":"","initials":"SHJ"}},{"Team":{"id":860324,"name":"Vincent Massey Vikings JV","original_team_name":"Vincent Massey Vikings JV","record":"","initials":"VMVJ"}},{"Team":{"id":881159,"name":"Windsor Park Royals JV","original_team_name":"Windsor Park Royals JV","record":"","initials":"WPRJ"}}],"label":"Junior Varsity \/ Junior Varsity \/ JV9"},"309283":{"teams":[{"Team":{"id":860044,"name":"Crocus Plains Plainsmen JV","original_team_name":"Crocus Plains Plainsmen JV","record":"","initials":"CPPJ"}},{"Team":{"id":860047,"name":"Dakota Lancers JV","original_team_name":"Dakota Lancers JV","record":"","initials":"DLJ"}},{"Team":{"id":860081,"name":"Grant Park Pirates JV","original_team_name":"Grant Park Pirates JV","record":"","initials":"GPPJ"}},{"Team":{"id":860092,"name":"John Taylor Pipers JV","original_team_name":"John Taylor Pipers JV","record":"","initials":"JTPJ"}},{"Team":{"id":860101,"name":"Kildonan East Reivers JV","original_team_name":"Kildonan East Reivers JV","record":"","initials":"KERJ"}},{"Team":{"id":902294,"name":"Murdoch Mackay JV","original_team_name":"Murdoch Mackay JV","record":"","initials":"MMJ"}},{"Team":{"id":860272,"name":"Oak Park Raiders JV","original_team_name":"Oak Park Raiders JV","record":"","initials":"OPRJ"}},{"Team":{"id":860301,"name":"River East Kodiaks JV","original_team_name":"River East Kodiaks JV","record":"","initials":"REKJ"}},{"Team":{"id":860314,"name":"St. Paul's Crusaders JV","original_team_name":"St. Paul's Crusaders JV","record":"","initials":"SPCJ"}},{"Team":{"id":860318,"name":"Steinbach Sabres JV","original_team_name":"Steinbach Sabres JV","record":"","initials":"SSJ"}},{"Team":{"id":860321,"name":"Sturgeon Heights JV","original_team_name":"Sturgeon Heights JV","record":"","initials":"SHJ"}},{"Team":{"id":860335,"name":"Vincent Massey Trojans JV","original_team_name":"Vincent Massey Trojans JV","record":"","initials":"VMTJ"}},{"Team":{"id":860324,"name":"Vincent Massey Vikings JV","original_team_name":"Vincent Massey Vikings JV","record":"","initials":"VMVJ"}},{"Team":{"id":881159,"name":"Windsor Park Royals JV","original_team_name":"Windsor Park Royals JV","record":"","initials":"WPRJ"}}],"label":"Junior Varsity \/ Junior Varsity"},"309271":{"teams":[{"Team":{"id":860044,"name":"Crocus Plains Plainsmen JV","original_team_name":"Crocus Plains Plainsmen JV","record":"","initials":"CPPJ"}},{"Team":{"id":860047,"name":"Dakota Lancers JV","original_team_name":"Dakota Lancers JV","record":"","initials":"DLJ"}},{"Team":{"id":860081,"name":"Grant Park Pirates JV","original_team_name":"Grant Park Pirates JV","record":"","initials":"GPPJ"}},{"Team":{"id":860092,"name":"John Taylor Pipers JV","original_team_name":"John Taylor Pipers JV","record":"","initials":"JTPJ"}},{"Team":{"id":860101,"name":"Kildonan East Reivers JV","original_team_name":"Kildonan East Reivers JV","record":"","initials":"KERJ"}},{"Team":{"id":902294,"name":"Murdoch Mackay JV","original_team_name":"Murdoch Mackay JV","record":"","initials":"MMJ"}},{"Team":{"id":860272,"name":"Oak Park Raiders JV","original_team_name":"Oak Park Raiders JV","record":"","initials":"OPRJ"}},{"Team":{"id":860301,"name":"River East Kodiaks JV","original_team_name":"River East Kodiaks JV","record":"","initials":"REKJ"}},{"Team":{"id":860314,"name":"St. Paul's Crusaders JV","original_team_name":"St. Paul's Crusaders JV","record":"","initials":"SPCJ"}},{"Team":{"id":860318,"name":"Steinbach Sabres JV","original_team_name":"Steinbach Sabres JV","record":"","initials":"SSJ"}},{"Team":{"id":860321,"name":"Sturgeon Heights JV","original_team_name":"Sturgeon Heights JV","record":"","initials":"SHJ"}},{"Team":{"id":860335,"name":"Vincent Massey Trojans JV","original_team_name":"Vincent Massey Trojans JV","record":"","initials":"VMTJ"}},{"Team":{"id":860324,"name":"Vincent Massey Vikings JV","original_team_name":"Vincent Massey Vikings JV","record":"","initials":"VMVJ"}},{"Team":{"id":881159,"name":"Windsor Park Royals JV","original_team_name":"Windsor Park Royals JV","record":"","initials":"WPRJ"}}],"label":"Junior Varsity"}};
+	var filter_hierarchy = ["conference","division","tier","filter_team_id"];
+	var group_type_names = ["Conference","Division","Tier"];
+	var filter_tree;
+	var page_type = `scores`;
+
+	$(document).ready(function() {
+		$(".form-select").select2({
+			minimumResultsForSearch: 5
+		});
+
+		$("#hierarchy_filter").change(function() {
+			var parent_group_id = $(this).val();
+			$("#filter_team_id").empty();
+			if(page_type != "standings")
+			{
+				if (parent_group_id != null && parent_group_id != '' && teams[parent_group_id] != undefined && teams[parent_group_id] != null) {
+					var options = [];
+					var blank = "<option value='all'>All Teams</option>";
+					options.push(blank);
+					var a = teams[parent_group_id]['teams'] || [];
+					var hierarchy = teams[parent_group_id]['label'] || '';
+
+					// Iterate over data 'a' and build new options
+					for (var key in a) {
+						//capitalize each word in original team name
+						let original_team_name = a[key].Team.original_team_name;
+						let capitalized_team_name = original_team_name.replace(/\b\w/g, l => l.toUpperCase());
+
+						//If it's a parent group, we want to show the complete division structure as the hierarchy
+						//Ex: 3-level structure with Conference (id 1000) / Division (id 1001) / Tier (id 1002).
+						//We want to show "Conference 1 / Division A / Tier 2" as the hierarchy if they selected "Conference 1" or "Conference 1 / Division A"
+						if(CHILD_GROUP_TEAMS[parent_group_id] == undefined) {
+							let found_hierarchy = false;
+
+							for(var child_id in CHILD_GROUP_TEAMS) {
+								if(found_hierarchy) {
+									break;
+								}
+								//Check to see if the team id is in this child group, if it is, then we've found the hierarchy we want to show, so break out
+								if (CHILD_GROUP_TEAMS[child_id].includes(a[key].Team.id)) {
+									hierarchy = teams[child_id].label;
+									found_hierarchy = true;
+									break;
+								}
+							}
+						}
+						else {
+							hierarchy = '';
+						}
+
+						//Hierarchy will be '' if it's a child-level group, which we don't need to display the division name. Save that space :) 
+						if(hierarchy != null && hierarchy != '') {
+							option = `<option value="${a[key].Team.id}">${capitalized_team_name} (${hierarchy})</option>`;
+						}
+						else {
+							option = `<option value="${a[key].Team.id}">${capitalized_team_name}</option>`;
+						}
+						options.push(option);
+					}
+
+					// Append new options to select
+					$("#filter_team_id").append(options.join(''));
+				} else {
+					var options = [];
+					var blank = "<option value='all'>All Teams</option>";
+					options.push(blank);
+
+					// Iterate over data 'a' and build new options
+					for (var group_id in teams) {
+						//Only want to show the child level teams
+						if ((!teams[group_id].label.includes('/') && !teams[group_id].label.includes('|')) || CHILD_GROUP_TEAMS[group_id] == undefined) {
+							continue;
+						}
+
+						var hierarchy = teams[group_id].label;
+
+						for (let key in teams[group_id].teams) {
+							//capitalize each word in original team name
+							let original_team_name = teams[group_id].teams[key].Team.original_team_name;
+							let capitalized_team_name = original_team_name.replace(/\b\w/g, l => l.toUpperCase());
+							let option = `<option value="${teams[group_id].teams[key].Team.id}">${capitalized_team_name} (${hierarchy})</option>`;
+
+							options.push(option);
+						}
+					}
+					// Append new options to select
+					$("#filter_team_id").append(options.join(''));
+				}
+			}
+		});
+	});
+
+	function changeSeason(ele) {
+		//if the element select option id contains 'playoff', then we need to make schedule_type = playoffs
+		if (ele.value.includes('playoff')) {
+			$("#schedule_type").val('playoffs');
+		} else {
+			$("#schedule_type").val('regular_season');
+		}
+		ele.form.submit();
+	}
+</script>
+	<input type="hidden" name="status" class="mt-3 me-1" id="status" value="past"/></div>
+<div class="row me-0 ms-0">
+	<button type="button" class="btn me-2 mb-3 w-auto btn-primary d-inline-block" id="table-view-btn" onclick="toggleView('table');" title="Table View">
+		<i class="fa fa-lg fa-table"></i>
+		Table View	</button>
+	<button type="button" class="btn mb-3 w-auto btn-outline-primary d-inline-block" id="calendar-view-btn" onclick="toggleView('calendar');" title="Calendar View">
+		<i class="fa fa-lg fa-calendar"></i>
+		Calendar View	</button>
+</div>
+</form>
+<div class="row">
+	<div class="col-12 text-center" style="display: none; top: 350px; position:absolute; z-index: 9999;" id="calendar_processing_message">
+		<p class="m-0 mx-auto bg-white border border-1 rounded" style="height:60px; width: 180px; padding-top: 15px;">Processing...</p>
+	</div>
+	<div class="col-md-12">
+		<div id="table-bracket-view">
+							<table id="schedule_table" class="table table-striped nowrap dataTable gs-7 gy-5">
+					<thead>
+						<th>Date</th>
+						<th>Time</th>
+						<th>Title</th>
+						<th>Home</th>
+						<th>Away</th>
+						<th>Location</th>
+					</thead>
+				</table>
+				<nav aria-label="pagination">
+					<ul class="pagination justify-content-center">
+						<a id="prev_btn" class="btn page-link me-1" onclick="prevScheduleTablePage();" style="width: 125px;">
+							<i class="fa fa-fw fa-caret-left"></i>
+							Previous						</a>
+						<a id="next_btn" class="btn page-link" onclick="nextScheduleTablePage();" style="width: 125px;">
+							Next							<i class="fa fa-fw fa-caret-right"></i>
+						</a>
+					</ul>
+				</nav>
+					</div>
+		<div id="calendar-view" class="mt-2" style="display: none;">
+			<div id="calendar"></div>
+		</div>
+	</div>
+</div>
+
+<div class="row mt-3">
+	<div class="col-md-12" id="schedule">
+	</div>
+</div>
+<div id="show_volleyball_sets_mdl" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Sets</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table class="table table-hover no-footer" id="volleyball_set_scores_table">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	function showVolleyballSetScores(sets, home_team_name=`Home`, away_team_name=`Away`) {
+		let home_wins = 0;
+		let away_wins = 0;
+		$('#volleyball_set_scores_table').html('');
+		$('#volleyball_set_scores_table').append('<thead><tr><th></th><th class="text-center">'+home_team_name+'</th><th class="text-center">'+away_team_name+'</th></tr></thead>');
+		$('#volleyball_set_scores_table').append('<tbody>');
+		$.each(sets, function(index, set) {
+			// find which score is higher and attribute to the winner
+			let home_score = set.home;
+			let away_score = set.away;
+			if (set.home > set.away) {
+				home_score = `<strong>${set.home}</strong>`;
+				home_wins++;
+			} else if (set.home < set.away) {
+				away_score = `<strong>${set.away}</strong>`;
+				away_wins++;
+			}
+			$('#volleyball_set_scores_table').append('<tr><td>'+set.name+'</td><td class="text-center">'+home_score+'</td><td class="text-center">'+away_score+'</td></tr>');
+		});
+		//add a row for the totals
+		if (home_wins > away_wins) {
+			$('#volleyball_set_scores_table').append('<tr><td>Total</td><td class="text-center"><strong>'+home_wins+'</strong></td><td class="text-center">'+away_wins+'</td></tr>');
+		} else if (home_wins < away_wins) {
+			$('#volleyball_set_scores_table').append('<tr><td>Total</td><td class="text-center">'+home_wins+'</td><td class="text-center"><strong>'+away_wins+'</strong></td></tr>');
+		} else {
+			$('#volleyball_set_scores_table').append('<tr><td>Total</td><td class="text-center">'+home_wins+'</td><td class="text-center">'+away_wins+'</td></tr>');
+		}
+		$('#volleyball_set_scores_table').append('</tbody>');
+		$("#volleyball_set_scores_table").removeClass("table-bordered");
+		$('#show_volleyball_sets_mdl').modal('show');
+	}
+</script><!-- TODO: Move this to S3 -->
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+<script>
+	var schedule_type = $("#schedule_type").val();
+	var status = "past";
+	var group_ids = {};
+	var team_id = '';
+	var season_id = 54997;
+	var filter_title = '';
+	var filter_fields = {"conference":"conference","division":"division","tier":"tier"};
+	var page_length = 25,
+		offset = 0,
+		recordsTotal = 0;
+	var prev_team_id = $("#filter_team_id").val();
+	var prev_filter_id = $("#hierarchy_filter").val();
+	var page_type = `scores`;
+	var schedule_datatable = null;
+	var schedule_calendar = null;
+	var schedule_view_type = 'table';
+	var practice_types = [2];
+	var game_types = [1,7];
+	var loaded_schedule = false;
+
+	function updateGroupIds() {
+		$.each(filter_fields, function(index, value) {
+			group_ids[index] = $("#" + value).val();
+		});
+		group_ids[`tier`] = $("#hierarchy_filter").val();
+		return group_ids;
+	}
+
+	function updateTeamId() {
+		team_id = $("#filter_team_id").val();
+		return team_id;
+	}
+
+	function updateSeasonId() {
+		season_id = $("#season_id").val();
+		return season_id;
+	}
+
+	function updateFilterTitle() {
+		filter_title = "";
+		var count = 1;
+		$.each(filter_fields, function(index, value) {
+			var elt = document.getElementById("" + value);
+			if (count > 1) {
+				filter_title = filter_title + ' / ';
+			}
+			count++;
+			filter_title = filter_title + elt.options[elt.selectedIndex].text;
+		});
+		return filter_title;
+	}
+
+	function updateStatus() {
+		status = $("#status").val();
+		$(".status_link").removeClass("active");
+		if (status == 'past') {
+			$("#status_past").addClass("active");
+		} else {
+			$("#status_upcoming").addClass("active");
+		}
+	}
+
+	$(document).ready(function() {
+		updateStatus(status);
+
+		$("#filterScheduleForm").submit(function(e) {
+			e.preventDefault();
+			refreshSchedule();
+		});
+
+		if (schedule_type !== 'playoffs' && "scores" !== 'tabbed_home') {
+			initScheduleDataTable();
+		} else {
+			//find all empty .matchups and remove them
+			$(".matchups").each(function(index, element) {
+				if ($(element).children().length == 0) {
+					$(element).parent().remove();
+				}
+			});
+
+					}
+
+		//hide popovers on each calendar element except the one that was clicked
+		document.addEventListener('click', function(e) {
+			$('#calendar [data-bs-toggle="popover"]').popover('hide');
+			$('.popover.fade.show.bs-popover-top').remove();
+			if ($(e.target).closest('#calendar .fc-event') != null && $(e.target).closest('#calendar .fc-event').attr('aria-described-by') == undefined) {
+				$(e.target).closest('#calendar .fc-event').popover('show');
+			}
+		});
+	});
+
+	function showClaimModal() {
+		let claim_modal_count = localStorage.getItem('claim_modal_count_54997');
+		if (claim_modal_count == null) claim_modal_count = 0;
+		else if (!isNaN(parseInt(claim_modal_count))) claim_modal_count = parseInt(claim_modal_count);
+		else claim_modal_count = 0;
+		if (claim_modal_count > 10) return;
+
+		let claim_requested = localStorage.getItem('claim_requested_54997');
+		if (claim_requested == null) claim_requested = false;
+		if (claim_requested) return;
+
+		let date = new Date();
+		let todayStr = [date.getFullYear(), date.getMonth(), date.getDate()].join("-");
+
+		let claim_modal_last_shown = localStorage.getItem('claim_modal_last_shown_54997');
+		if (claim_modal_last_shown == null) claim_modal_last_shown = 0;
+		if (claim_modal_last_shown == todayStr) return;
+
+		localStorage.setItem('claim_modal_count_54997', claim_modal_count + 1);
+		localStorage.setItem('claim_modal_last_shown_54997', todayStr);
+		$('#mdl_claim_team').modal({
+			backdrop: 'static',
+			keyboard: false
+		});
+	}
+
+	function claimTeamCompleteCallback(success) {
+		if (success) {
+			$('#mdl_claim_requested').modal('show');
+		}
+	}
+
+	function resetPaging() {
+		offset = 0;
+	}
+
+	function prevScheduleTablePage() {
+		if (offset > 0) {
+			offset -= page_length;
+			if (offset < 0) offset = 0;
+			schedule_datatable.ajax.reload();
+		}
+	}
+
+	function nextScheduleTablePage() {
+		if (offset + page_length < recordsTotal) {
+			offset += page_length;
+			schedule_datatable.ajax.reload();
+		}
+	}
+
+	function changeTab() {
+		$("#topLevelTabbableContent .tab-pane").removeClass('active');
+		$(`#topLevelTabbableContent #${$("#playoff_bracket_id").val()}`).addClass('active');
+		$(`#topLevelTabbableContent #${$("#playoff_bracket_id").val()} #sub${$("#playoff_bracket_id").val()}`).addClass('active');
+	}
+
+	function toggleView(view_type = 'table') {
+		if (view_type == 'calendar') {
+			$(`#table-bracket-view`).hide();
+			$(`#calendar-view`).show();
+			$("#calendar-view-btn").addClass("btn-primary").removeClass("btn-outline-primary");
+			$("#table-view-btn").addClass("btn-outline-primary").removeClass("btn-primary");
+
+			//refetch events
+			renderCalendar();
+
+			let dropdown_button_html = `
+				<select id="calendar-view-select" class="form-select w-auto m-auto" onchange="changeCalendarView();" value="dayGridMonth">
+					<option value="dayGridDay">Day</option>
+					<option value="dayGridWeek">Week</option>
+					<option value="dayGridMonth" selected>Month</option>
+				</select>
+			`;
+			$("#calendar-view #calendar .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr .fc-toolbar-chunk:eq(1)").html(dropdown_button_html);
+
+			if (window.matchMedia('(max-width: 768px)').matches) {
+				$("#calendar-view-select").val('dayGridWeek');
+			}
+			//hide upcoming / past filter
+			$("#filterScheduleForm #status").hide();
+
+			schedule_view_type = 'calendar';
+		} else {
+			$(`#table-bracket-view`).show();
+			$(`#calendar-view`).hide();
+			$("#table-view-btn").addClass("btn-primary").removeClass("btn-outline-primary");
+			$("#calendar-view-btn").addClass("btn-outline-primary").removeClass("btn-primary");
+
+			//hide upcoming / past filter
+			$("#filterScheduleForm #status").show();
+
+			schedule_view_type = 'table';
+			//refetch the data
+			if (schedule_datatable != null) {
+				schedule_datatable.ajax.reload();
+			}
+		}
+	}
+
+	function changeCalendarView() {
+		schedule_calendar.changeView($("#calendar-view-select").val());
+	}
+
+	function renderCalendar() {
+
+		updateStatus();
+		updateGroupIds();
+		updateSeasonId();
+
+		if (schedule_calendar != null) {
+			schedule_calendar.destroy();
+		}
+
+		let initialView = 'dayGridMonth';
+
+		//if the screen is smaller than bootstrap md set it to week view
+		if (window.matchMedia('(max-width: 768px)').matches) {
+			initialView = 'dayGridWeek';
+		}
+
+		schedule_calendar = new FullCalendar.Calendar(document.getElementById("calendar"), {
+			initialView: initialView,
+			headerToolbar: {
+				left: 'title',
+				// center: 'dayGridDay,dayGridWeek,dayGridMonth', // buttons to change the view type
+				// center: 'dayGridWeek,dayGridMonth', // buttons to change the view type
+				center: ``, // buttons to change the view type
+				right: 'prev,next'
+			},
+			buttonText: {
+				// dayGridDay: `Day`,
+				// dayGridWeek: `Week`,
+				// dayGridMonth: `Month`
+			},
+			loading: function(isLoading) {
+				if (isLoading) $("#calendar_processing_message").show();
+				else $("#calendar_processing_message").hide();
+			},
+			eventSources: [{
+				url: '/leagues/getEventsForCalendar/17820',
+				method: 'POST',
+				failure: function() {
+					console.log(`Failed to get events for calendar.`);
+				},
+				extraParams: { //these are all of the filters
+					filters: JSON.stringify(group_ids),
+					status: status,
+					length: page_length,
+					start: offset,
+					prev_team_id: prev_team_id,
+					prev_filter_id: prev_filter_id,
+					team_id: $("#filter_team_id").val() ?? team_id,
+					type: page_type,
+					is_league_site: 1,
+					show_team_links: 1,
+					season_id: season_id,
+					show_games_only: 1,
+					location_id: $("#filter_location_id").val(),
+				}
+			}],
+			eventSourceFailure: function(error) {
+				$("#calendar_processing_message").hide();
+				if (error instanceof JsonRequestError) {
+					console.log(`Request to ${error.response.url} failed`)
+				}
+			},
+			eventSourceSuccess: function(content, xhr) {
+				$("#calendar_processing_message").hide();
+				let calendar_events = [];
+				if (content != null && content.code != undefined && content.code == 200 && content.payload != undefined && Object.keys(content.payload).length > 0) {
+					//format the events to match the Event Model
+					if (content.payload.events == undefined || content.payload.events.length == 0) {
+						content.payload.events = [];
+					}
+					for (let i in content.payload.events) {
+						let event = content.payload.events[i];
+
+						let home_team_name = event.HomeTeam?.Team?.original_team_name ?? null;
+						if (home_team_name == undefined || home_team_name == null || home_team_name == '') home_team_name = event.HomeTeam.name;
+						if (home_team_name == undefined || home_team_name == null) home_team_name = 'TBD';
+
+						let away_team_name = event.AwayTeam?.Team?.original_team_name ?? null;
+						if (away_team_name == undefined || away_team_name == null || away_team_name == '') away_team_name = event.AwayTeam.name;
+						if (away_team_name == undefined || away_team_name == null) away_team_name = 'TBD';
+
+						let temp_event = {
+							id: event.AssociationEvent.id,
+							start: new Date(event.AssociationEvent.start),
+							end: new Date(event.AssociationEvent.end),
+							title: `${home_team_name} ${(event.AssociationEvent.away_id != null && event.AssociationEvent.away_id != 0) ? 'vs' : '-'} ${(event.AssociationEvent.away_id != null && event.AssociationEvent.away_id != 0) ? away_team_name : event.AssociationEvent.title}`,
+							url: `/leagues/event/${event.AssociationEvent.association_id}/${event.AssociationEvent.id}`,
+							extraParams: event
+						};
+
+						//Check if it is a shared practice
+						if (event.AssociationEvent.team_selection_type == 'team_list' && event.AssociationEvent.teams != undefined && event.AssociationEvent.teams != null && event.AssociationEvent.teams.length > 0) {
+							temp_event.title = ``;
+							for (let t in event.AssociationEvent.teams) {
+								team = event.AssociationEvent.teams[t];
+
+								if (team.Opponent == undefined || team.Opponent == null) continue;
+								temp_event.title += `${t > 0 ? ', ' : ''}${team.Opponent.name}`;
+							}
+
+							if (event.AssociationEvent.event_type != "9") {
+								temp_event.title += ` - Shared Practice`;
+							} else {
+								temp_event.title += ` - Tournament`;
+							}
+						}
+
+						let background_color = "slategray";
+						let color = "#FFFFFF"
+
+						if (practice_types.includes(parseInt(event.AssociationEvent.event_type))) {
+							background_color = "rgba(255,193,7)";
+							//remove the url for practices
+							delete temp_event.url;
+
+						} else if (game_types.includes(parseInt(event.AssociationEvent.event_type))) {
+							background_color = "rgba(13,110,253)";
+
+							if (event.AssociationScore && event.AssociationScore.result_type == 'in_progress') {
+								background_color = "rgba(220,53,69)";
+							}
+						} else {
+							//unset the url key
+							delete temp_event.url;
+						}
+
+						temp_event.backgroundColor = background_color;
+						temp_event.textColor = color;
+
+						calendar_events.push(temp_event);
+
+					}
+
+					if (content.payload.non_team_events == undefined || content.payload.non_team_events == null) {
+						content.payload.non_team_events = [];
+					}
+
+					for (let i in content.payload.non_team_events) {
+						let event = content.payload.non_team_events[i];
+						if (event.AssociationNonTeamEvent.status === 'inactive') {
+							continue;
+						}
+						let temp_event = {
+							id: event.AssociationNonTeamEvent.id,
+							start: new Date(event.AssociationNonTeamEvent.start_dt),
+							end: new Date(event.AssociationNonTeamEvent.end_dt),
+							title: event.AssociationNonTeamEvent.title,
+							extraParams: event
+						};
+
+						let background_color = "rgba(255,193,7)";
+						let color = "#FFFFFF"
+
+						//if the game is in the past
+						if (event.AssociationNonTeamEvent.end < moment().format('YYYY-MM-DD hh:mm:ss')) {
+							background_color = "rgba(33,37,41)";
+						}
+
+						temp_event.backgroundColor = background_color;
+						temp_event.textColor = color;
+
+						calendar_events.push(temp_event);
+					}
+
+				}
+
+				return calendar_events;
+			},
+			eventClick: function(info) { //This handles the clicking of an event, directs them to game summary on new page
+				info.jsEvent.preventDefault(); // don't let the browser navigate
+
+				let event = info.event.extendedProps.extraParams;
+				//build the popover with event information
+				$(info.el).attr("data-bs-container", "body");
+				$(info.el).attr("data-bs-toggle", "popover");
+				$(info.el).attr("data-bs-placement", "top");
+				$(info.el).attr("data-bs-html", "true");
+				$(info.el).attr("tabindex", "0");
+				$(info.el).attr("role", "button");
+				//$(info.el).attr("title", `${info.event.title}`);
+				let event_title = `<h5 class="m-0 text-center">${info.event.title}</h5>`;
+				let game_summary = '';
+				if (event.AssociationEvent != undefined && event.AssociationEvent != null) {
+					let home_team_name = `<a target="_blank" href="/leagues/team/${event.AssociationEvent.association_id}/${event.HomeTeam?.Team?.id ?? 0}">${event.HomeTeam?.Team?.original_team_name ?? null}</a>`;
+
+					//if its null or undefined they may be a non league opponent or TBD
+					if (event.HomeTeam?.Team?.id == undefined || event.HomeTeam?.Team?.id == null || event.HomeTeam?.Team?.id == '') home_team_name = event.HomeTeam.name;
+					if (home_team_name == undefined || home_team_name == null) home_team_name = 'TBD';
+
+					if (game_types.includes(parseInt(event.AssociationEvent.event_type))) {
+						let away_team_name = `<a target="_blank" href="/leagues/team/${event.AssociationEvent.association_id}/${event.AwayTeam?.Team?.id ?? 0}">${event.AwayTeam?.Team?.original_team_name ?? null}</a>`;
+
+						//if its null or undefined they may be a non league opponent or TBD
+						if (event.AwayTeam?.Team?.id == undefined || event.AwayTeam?.Team?.id == null || event.AwayTeam?.Team?.id == '') away_team_name = event.AwayTeam.name;
+						if (away_team_name == undefined || away_team_name == null) away_team_name = 'TBD';
+
+						if (event.AssociationScore.id != undefined && event.AssociationScore.id != null) {
+							home_team_name += ` (${event.AssociationScore.home_score}) vs.`;
+							away_team_name += `  (${event.AssociationScore.away_score})`;
+						} else {
+							home_team_name += " vs.";
+						}
+
+						event_title = `<h5 class="m-0">${home_team_name}</h5><h5 class="m-0">${away_team_name}</h5>`;
+						game_summary = `<a target="_blank" href="/leagues/event/${event.AssociationEvent.association_id}/${event.AssociationEvent.id}">Game Summary</a>`;
+					} else {
+						//Check if it is a shared practice
+						if (event.AssociationEvent.team_selection_type == 'team_list' && event.AssociationEvent.teams != undefined && event.AssociationEvent.teams != null && event.AssociationEvent.teams.length > 0) {
+							event_title = ``;
+							for (let t in event.AssociationEvent.teams) {
+								team = event.AssociationEvent.teams[t];
+
+								if (team.Opponent == undefined || team.Opponent == null) continue;
+								let opponent_name = team.Opponent.name;
+								if (team.Team != undefined && team.Team.id != undefined && team.Team.id != null) {
+									opponent_name = `<a target="_blank" href="/leagues/team/${team.Opponent.association_id}/${team.Team.id}">${opponent_name}</a>`
+								}
+
+								event_title += `${t > 0 ? ', ' : ''}${opponent_name}`;
+							}
+							if (event.AssociationEvent.event_type != "9") {
+								event_title = `<h5 class="m-0">${event_title} - Shared Practice</h5>`;
+							} else if (event.AssociationEvent.event_type == "9") {
+								event_title = `<h5 class="m-0">${event_title} - Tournament</h5>`;
+							}
+						}
+					}
+				}
+
+				let start = null;
+				if (event.AssociationEvent != undefined && event.AssociationEvent != null) {
+					start = moment(event.AssociationEvent.start);
+				} else if (event.AssociationNonTeamEvent != undefined && event.AssociationNonTeamEvent != null) {
+					start = moment(event.AssociationNonTeamEvent.start_dt);
+				}
+
+				let end = null;
+				if (event.AssociationEvent != undefined && event.AssociationEvent != null) {
+					end = moment(event.AssociationEvent.end);
+				} else if (event.AssociationNonTeamEvent != undefined && event.AssociationNonTeamEvent != null) {
+					end = moment(event.AssociationNonTeamEvent.end_dt);
+				}
+
+				$(info.el).attr("data-bs-content", `<div class="text-center">
+					<div class="text-start">${event_title}</div>
+					${start.format('MMM D, YYYY')}<br>
+					${parseInt(event?.AssociationEvent?.start_tbd) === 1 ? "TBD" : start.format('h:mm A')+" - "+end.format('h:mm A')}
+					<br>
+					${event.Location.name}
+					<br>
+					${game_summary}
+
+				</div>`);
+				$(info.el).attr("data-bs-trigger", "focus");
+
+				//$(info.el).attr("aria-described-by", `${info.event.id}-popover`);
+
+				if (!$(info.el).data('bs.popover')) new bootstrap.Popover(info.el);
+
+			},
+			eventDidMount: function(info) { //if the start is TBD, replace the text in the start time
+
+				let event = info.event.extendedProps.extraParams;
+				if (parseInt(event?.AssociationEvent?.start_tbd) === 1) {
+					info.el.childNodes[1].innerHTML = 'TBD';
+				}
+			}
+		});
+		schedule_calendar.render();
+
+		return true;
+	}
+
+	function initScheduleDataTable() {
+		loaded_schedule = true;
+
+		schedule_datatable = $('#schedule_table').DataTable({
+			pageLength: page_length,
+			serverSide: true,
+			processing: true,
+			searching: false,
+			ordering: false,
+			lengthChange: false,
+			scrollX: true,
+			responsive: true,
+			language: {
+				url: `https://cdn-app-static.teamlinkt.com/datatables/i18n/English.json`
+			},
+			oLanguage: {
+				sEmptyTable: `No Events found`,
+				sProcessing: `Loading Schedule...`,
+			},
+			order: [
+				[0, "desc"]
+			],
+			dom: '<"row">rt<"row">',
+			aoColumns: [{
+					"orderable": false,
+					"targets": 0
+				},
+				{
+					"orderable": false,
+					"targets": 0
+				},
+				{
+					"orderable": false,
+					"targets": 0
+				},
+				{
+					"orderable": false,
+					"targets": 0
+				},
+				{
+					"orderable": false,
+					"targets": 0
+				},
+				{
+					"orderable": false,
+					"targets": 0
+				}
+			],
+			columnDefs: [{
+					targets: 0
+				},
+				{
+					targets: 1
+				},
+				{
+					targets: 2
+				},
+				{
+					targets: 3
+				},
+				{
+					targets: 4
+				},
+				{
+					targets: 5
+				},
+			],
+			fixedColumns: true,
+			ajax: {
+				url: '/leagues/getAllEvents/17820',
+				type: 'POST',
+				dataType: 'json',
+				data: function(d) {
+					updateStatus();
+					updateGroupIds();
+					updateSeasonId();
+
+					d.filters = group_ids;
+					d.status = status;
+					d.length = page_length;
+					d.start = offset;
+					d.prev_team_id = prev_team_id;
+					d.prev_filter_id = prev_filter_id;
+					d.team_id = getTeamFilterValue() ?? team_id;
+					d.type = page_type;
+					d.is_league_site = 1;
+					d.show_team_links = 1;
+					d.season_id = season_id;
+					d.show_games_only = 1;
+					d.schedule_type = schedule_type;
+					d.location_id = getLocationFilterValue();
+					return d;
+				}
+			},
+			initComplete: function(settings, json) {
+				if (json.recordsTotal != undefined) {
+					recordsTotal = json.recordsTotal;
+				}
+				if (offset == 0) {
+					$("#prev_btn").addClass('disabled');
+				}
+				if (offset + page_length >= recordsTotal) {
+					$("#next_btn").addClass('disabled');
+				}
+
+				if (schedule_datatable != null) {
+					// schedule_datatable.ajax.reload();
+				}
+			},
+			fnDrawCallback: function(settings) {
+				if (settings.json != undefined && settings.json.recordsTotal != undefined && settings.json.recordsTotal != null) {
+					recordsTotal = settings.json.recordsTotal;
+				}
+				if (settings.json != undefined && settings.json.offset != undefined && settings.json.offset != null) {
+					offset = settings.json.offset;
+				}
+				if (settings.json != undefined && settings.json.prev_team_id != undefined && settings.json.prev_team_id != null) {
+					prev_team_id = settings.json.prev_team_id;
+				}
+				if (settings.json != undefined && settings.json.prev_filter_id != undefined && settings.json.prev_filter_id != null) {
+					prev_filter_id = settings.json.prev_filter_id;
+				}
+				if (offset == 0) {
+					$("#prev_btn").addClass('disabled');
+				} else {
+					$("#prev_btn").removeClass('disabled');
+				}
+
+				if (offset + page_length >= recordsTotal) {
+					$("#next_btn").addClass('disabled');
+				} else {
+					$("#next_btn").removeClass('disabled');
+				}
+			}
+		});
+	}
+
+	function refreshSchedule() {
+		var filters = updateGroupIds();
+		updateTeamId();
+		filters['team_id'] = team_id;
+		filters['location_id'] = $("#filter_location_id")?.val();
+		filters['division'] = (document.getElementById("hierarchy_filter") ? document.getElementById("hierarchy_filter").value : "");
+		localStorage.setItem("hierarchy_filter", filters['division']);
+		// $.cookie("filters", JSON.stringify(filters));
+
+		if (schedule_view_type == 'calendar') {
+			renderCalendar();
+		} else {
+			if (schedule_datatable != null) {
+				schedule_datatable.ajax.reload();
+			}
+		}
+		loaded_schedule = true;
+	}
+
+	function getLocationFilterValue() {
+		return $('#filter_location_id').val() ?? null;
+	}
+
+	function getTeamFilterValue() {
+		return $("#filter_team_id").val() ?? null;
+	}
+</script></div></div></div>            </div>
+
+                    </div>
+        <div class="row">
+            <div class="col-12">
+                <div><div class="row"><div class="col-12"></div></div></div>            </div>
+        </div>
+    </div>
+    <!-- Comment out for now until we figure out how to do full screen stuff properly -->
+    <!-- <div id="bottom_content_row">
+        <div class="col-12">
+        </div>
+    </div> -->
+</section>
+		<style type="text/css">
+			#adsbygoogle_container {
+				display: none;
+			}
+
+			@media screen and (max-width: 500px) {
+				#adsbygoogle_container {
+					display: block;
+				}
+			}
+		</style>
+
+		
+		<i id="gotoTop" class="icon-angle-up"></i>
+
+		<style>
+	#footer .container {
+		color: white;
+	}
+
+	#footer .row div,
+	#footer h1,
+	#footer h2,
+	#footer h3,
+	#footer h4,
+	#footer h5,
+	#footer h6,
+	#footer a,
+	#footer p,
+	#footer div,
+	#footer span {
+		color: #FFFFFF;
+	}
+
+	#footer .teamlinkt_footer {
+		color: white;
+	}
+
+	#footer a {
+		color: #FFFFFF !important;
+	}
+
+	#footer a:hover {
+		color: #FFFFFF !important;
+		text-decoration: underline !important;
+
+	}
+</style>
+<footer id="footer" data-scrollto-settings='{"offset":140,"speed":1250,"easing":"easeOutQuad"}' style="background-color: #000000; border-top: 10px solid #127FAC !important;">
+	<div class="py-4 px-4">
+		<div class="container" style="border-bottom: 10px solid #127FAC; padding-bottom: 30px;">
+			<div class="row clearfix">
+				<div class="col-12 col-sm-6 col-lg-3 my-auto mb-3 text-center text-sm-start">
+					<div class="widget clearfix">
+						<img style="max-height: 150px;" src="https://cdn-app.teamlinkt.com/media/association_data/17820/site_data/images/site_logo.png?v=1782317551" alt="Image" class="">
+					</div>
+				</div>
+									<div class="col-12 col-sm-6 col-lg-3 my-auto">
+						<div class="row mb-3">
+							<h2 class="mb-3 pb-3 m-auto mx-sm-0" style="border-bottom: 5px solid #127FAC; width: auto;">Follow Us</h2>
+							<div class="d-flex align-contents-center ps-0">
+								<div class="text-center m-auto mx-sm-0">
+																																					<a target="_blank" href="https://instagram.com/thewhsfl" class="social-icon si-small si-colored si-rounded si-instagram"> <i class="icon-instagram"></i><i class="icon-instagram"></i> </a>
+																																												</div>
+							</div>
+						</div>
+					</div>
+				
+				<div class="col-12 col-sm-6 col-lg-3 my-auto">
+					<div class="row mb-3">
+						<h2 class="mb-3 pb-3 m-auto mx-sm-0" style="border-bottom: 5px solid #127FAC; width: auto;">Location</h2>
+													<div class="mb-1 text-center text-sm-start ps-0" style="font-size: 14px;">Winnipeg, Manitoba</div>
+							<div class="text-center text-sm-start ps-0" style="font-size: 14px;">&nbsp;</div>
+											</div>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-3 my-auto">
+					<div class="row mb-0 mb-sm-3">
+						<h2 class="mb-3 pb-3 m-auto mx-sm-0" style="border-bottom: 5px solid #127FAC; width: auto;">Contact Us</h2>
+
+						<div class="mb-1 text-center text-sm-start ps-0" style="font-size: 14px;">
+													</div>
+						<div class="text-center text-sm-start ps-0" style="font-size: 14px;">
+							<a href="/whsfl/ContactUs?page_type=contact" style="text-decoration: underline !important;">Email Us</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Copyrights ============================================= -->
+		<div class="container p-0 mt-3">
+			<div class="d-flex teamlinkt_footer text-center text-sm-start flex-column flex-sm-row">
+				<div class="mb-3 mb-sm-0" style="font-size: 14px;">
+					<i class="fa fa-copyright"></i>
+					Winnipeg High School Football League 2026				</div>
+				<div class="d-flex m-auto me-sm-0">
+					<div class="d-flex align-items-center me-1" style="font-size: 11px;">Powered By</div>
+					<a href="https://teamlinkt.com/league-software/?utm_source=footer&utm_medium=referral&utm_campaign=customer" target="_blank">
+						<img src="https://cdn-app-static.teamlinkt.com/marketing/logos/combination_white_w300_h62.png" style="max-width: 150px;" />
+					</a>
+				</div>
+			</div>
+			<div class="text-center text-sm-end">
+				<a href="https://app.teamlinkt.com" class="text-decoration-underline" style="font-size: 14px;" target="_blank">Login</a>
+			</div>
+		</div>
+	</div>
+</footer>		<script>
+	var submitted_teamlinkt_sponsor_asset_views = false;
+
+	$(document).ready(function() {
+		//check if there are no sponsor addons
+		if ($('.sponsors_addon').length == 0) {
+			submitTeamlinktSponsorAssetViews(); // try to submit any views that may have been missed
+		}
+	});
+
+
+	function submitTeamlinktSponsorAssetViews() {
+		let asset_views = JSON.parse(localStorage.getItem('teamlinkt_sponsor_asset_views') ?? '{}');
+		let teamlinkt_sponsor_asset_ids = Object.keys(asset_views);
+
+		if (submitted_teamlinkt_sponsor_asset_views || teamlinkt_sponsor_asset_ids.length == 0 || getUnsubmittedTeamlinktSponsorAssetViewsCount() < 3) {
+			return;
+		}
+
+		$.ajax({
+			url: 'https://leagues.teamlinkt.com/Leagues/recordTeamlinktSponsorAssetViews/17820',
+			type: 'POST',
+			data: {
+				teamlinkt_sponsor_asset_ids: teamlinkt_sponsor_asset_ids,
+				asset_views: asset_views
+			},
+			success: function(data) {
+				if (typeof data == 'string') {
+					data = JSON.parse(data);
+				}
+				if (data['code'] == 200) {
+					localStorage.setItem('teamlinkt_sponsor_asset_views', '{}');
+					submitted_teamlinkt_sponsor_asset_views = true;
+				}
+			}
+		}).always(function() {
+		});
+	}
+
+	function getUnsubmittedTeamlinktSponsorAssetViewsCount() {
+		let asset_views = JSON.parse(localStorage.getItem('teamlinkt_sponsor_asset_views') ?? '{}');
+		let teamlinkt_sponsor_asset_ids = Object.keys(asset_views);
+
+		let total_views = 0;
+		for (let i = 0; i < teamlinkt_sponsor_asset_ids.length; i++) {
+			let teamlinkt_sponsor_asset_id = teamlinkt_sponsor_asset_ids[i];
+			let dates = Object.keys(asset_views[teamlinkt_sponsor_asset_id]);
+			for (let j = 0; j < dates.length; j++) {
+				let date = dates[j];
+				total_views += asset_views[teamlinkt_sponsor_asset_id][date];
+			}
+		}
+
+		return total_views;
+	}
+</script>
+		<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/colreorder/1.7.0/js/dataTables.colReorder.min.js"></script>
+		<script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
+		<script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone.min.js"></script>
+		<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
+
+		<script src="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/js/plugins.min.js"></script>
+		<script src="https://cdn-league-prod-static.teamlinkt.com/themes/canvas01/js/functions.js"></script>
+
+		<script src="https://cdn-league-prod-static.teamlinkt.com/themes/default/js/slick.min.js"></script>
+
+		<script src='https://www.hCaptcha.com/1/api.js' async defer></script>
+
+
+		<script>
+			var checkOverflowTimer = null;
+			var isResizingMenuItems = false;
+			const IS_PREVIEW = parseInt(0);
+
+			//We do not want to scroll the page if an a tag has the href of #
+			//This is for our nav items for non-linked pages
+			var links = document.querySelectorAll('a[href="#"]');
+
+			links.forEach(function(link) {
+				link.addEventListener('click', function(event) {
+					event.preventDefault();
+				});
+			});
+
+			$(document).ready(function() {
+				if (IS_PREVIEW) {
+					$("nav ul .menu-link").each(function(i, ele) {
+						$(ele).attr('href', $(ele).attr('href') + '?preview');
+					});
+				}
+				// $("table").not(".events-marquee-event-content").not(".dataTable").not("#tbl_standings").not("#stats_table").not(".table-borderless").addClass("table table-bordered");
+				$("table td").addClass("align-middle");
+				$("table td p").addClass("mb-3");
+
+				$(window).resize(function() {
+					clearTimeout(checkOverflowTimer);
+					checkOverflowTimer = setTimeout(hideOverflowMenuItems, 100);
+				});
+				checkOverflowTimer = hideOverflowMenuItems();
+				// $(".menu-container").show();
+
+				document.querySelectorAll('.menu-item').forEach(function(menuItem) {
+					//remove adjust-left and adjust-right classes
+					$(".sub-menu-container").removeClass('adjust-left');
+					$(".sub-menu-container").removeClass('adjust-right');
+
+					menuItem.addEventListener('mouseenter', function() {
+						const submenu = menuItem.querySelector('.sub-menu-container');
+
+						// Check if submenu exists
+						if (submenu) {
+							//make it invisible
+							submenu.style.visibility = 'hidden';
+							// Get the bounding rectangle of the submenu
+							const rect = submenu.getBoundingClientRect();
+
+							// Check if the right side of the submenu overflows off the screen
+							if (rect.right > document.documentElement.clientWidth) {
+								// If overflow, adjust the position
+								submenu.classList.add('adjust-left');
+								//make it visible
+								submenu.style.visibility = 'visible';
+							}
+							// Check if the left side of the submenu overflows off the screen
+							else if (rect.left > document.documentElement.clientWidth) {
+								// If overflow, adjust the position
+								submenu.classList.add('adjust-right');
+								//make it visible
+								submenu.style.visibility = 'visible';
+							} else {
+								//make it visible
+								submenu.style.visibility = 'visible';
+							}
+						}
+					});
+				});
+			});
+
+			function hideOverflowMenuItems() {
+				if (isResizingMenuItems) {
+					return false;
+				}
+				isResizingMenuItems = true;
+
+				// If the mobile menu is showing, don't use the More item
+				if (window.matchMedia('(max-width: 991px)').matches) {
+					$("#MoreMenuItemList>li").each(function(i, e) {
+						$e = $(e);
+						$e.detach().insertBefore("#MoreMenuItem");
+					});
+					$("#MoreMenuItem").hide();
+					isResizingMenuItems = false;
+					return true;
+				}
+
+				let availableWidth = $(".menu-container").closest(".header-row").width();
+				let menuItemWidths = [];
+
+				$("#MoreMenuItem").show();
+				let moreMenuItemWidth = $("#MoreMenuItem").width();
+				$("#MoreMenuItem").hide();
+
+				// make all menu items visible
+				$("#MoreMenuItemList>li").each(function(i, e) {
+					$e = $(e);
+					$e.detach().insertBefore("#MoreMenuItem");
+				});
+
+				// any items that are wider than the available space should be moved to the More item
+				let shouldMoveToMoreButton = false;
+				$(".menu-container>li.menu-item").not(".more-btn").each(function(i, e) {
+					$e = $(e);
+					if (!shouldMoveToMoreButton) {
+						let menuItemsWidth = menuItemWidths.reduce((previousValue, currentValue) => previousValue + currentValue, 0) + $e.width();
+
+						if (menuItemsWidth > (availableWidth - moreMenuItemWidth - 40)) {
+							shouldMoveToMoreButton = true;
+						}
+					}
+
+					// move menu items to the More menu
+					if (shouldMoveToMoreButton) $e.detach().appendTo("#MoreMenuItemList");
+					else menuItemWidths.push($e.width());
+				});
+
+				if ($("#MoreMenuItemList>li").length > 0) $("#MoreMenuItem").show();
+				else $("#MoreMenuItem").hide();
+
+				// update the height of the clone, which isn't absolutely positioned
+				$(".header-wrap-clone").height($(".header-wrap-clone").siblings("#header-wrap").height());
+				isResizingMenuItems = false;
+				return true;
+			}
+		</script>
+		<script>
+(function () {
+	const teamlinkt_emi = new URLSearchParams(window.location.search).has("teamlinkt_emi");
+	const params = new URLSearchParams({
+		position: "right",
+		teamlinkt_emi,
+		association_id: 17820,
+	});
+	const s = document.createElement("script");
+	s.src = `https://app.teamlinkt.com/emi-embed?${params}`;
+	s.async = true;
+	document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
