@@ -19,7 +19,7 @@ $ga4Snippet = @'
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-GC17GSJ4S0');
+      if (!navigator.webdriver && !/HeadlessChrome/.test(navigator.userAgent)) gtag('config', 'G-GC17GSJ4S0');
     </script>
 '@
 
@@ -103,7 +103,7 @@ if (-not (Test-Path $generateScript)) {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-GC17GSJ4S0');
+      if (!navigator.webdriver && !/HeadlessChrome/.test(navigator.userAgent)) gtag('config', 'G-GC17GSJ4S0');
     </script>
 </head>
 '@

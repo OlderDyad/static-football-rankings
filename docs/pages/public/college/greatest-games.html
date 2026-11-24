@@ -11,7 +11,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-GC17GSJ4S0');
+      if (!navigator.webdriver && !/HeadlessChrome/.test(navigator.userAgent)) gtag('config', 'G-GC17GSJ4S0');
     </script>
     <style>
       .college-table th, .college-table td { white-space: nowrap; }
